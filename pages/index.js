@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import VisibilitySensor from 'react-visibility-sensor';
 import ScrollProgress from '../components/ScrollProgress';
 import Link from 'next/link';
+import AOS from 'aos';
 
 
 
