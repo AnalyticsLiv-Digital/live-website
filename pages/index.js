@@ -2,17 +2,21 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Counter from '../components/Counter'
+import { useEffect } from 'react'
 import { motion } from 'framer-motion';
 import VisibilitySensor from 'react-visibility-sensor';
 import ScrollProgress from '../components/ScrollProgress';
 import Link from 'next/link';
 import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 
 
 export default function Home() {
-
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <>
     <ScrollProgress/>
@@ -20,9 +24,7 @@ export default function Home() {
       <title>Test</title>
       <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
       <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-      <script>
-      AOS.init();
-      </script>
+    
       <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"></link>
     </Head>
         <div className='overflow-x-hidden'>
