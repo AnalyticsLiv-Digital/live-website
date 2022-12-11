@@ -24,9 +24,9 @@ useEffect(() => {
     let headerSize = () => {
         
         const totalScroll = document.documentElement.scrollTop;
-       if(totalScroll >> 200){
+       if(totalScroll > 100){
         setHeader(60);
-       }else{
+       }else if(totalScroll < 95){
         setHeader(80);
        }
 
@@ -193,7 +193,7 @@ useEffect(() => {
             </div>
           )}
         </Transition>
-        <NextNProgress color="red" showOnShallow={true}/>
+        <NextNProgress color="red" showOnShallow={true} showSpinner={false}/>
       </header>
 
   )
