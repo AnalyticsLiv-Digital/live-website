@@ -42,21 +42,19 @@ const index= () => {
     </Head>
     <ScrollProgress/>
     <div className='overflow-x-hidden'>
-        <section className="">
+        <section className="relative">
     <div className="overflow-hidden pb-20">
         <img src="/static/services.png" className="-rotate-6"/>
     </div>
-    <div>
-        <svg xmlns="http://www.w3.org/2000/svg"  className="-rotate-90 fill-cyan-500 absolute w-28 lg:w-72 right-8 lg:right-20 lg:bottom-28 top-80" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15">
-            <path d="M7.932 1.248a.5.5 0 0 0-.864 0l-7 12A.5.5 0 0 0 .5 14h14a.5.5 0 0 0 .432-.752l-7-12Z"/>
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" className="absolute -rotate-12 stroke-slate-800 w-24 lg:w-60 lg:right-8 right-6 lg:bottom-32 top-80" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15">
-            <path fill="none" strokeLinejoin="round" d="m7.5 1.5l-7 12h14l-7-12Z"/>
-        </svg>
+    <div className='relative'>
+    <svg xmlns="http://www.w3.org/2000/svg" className='absolute w-28 lg:w-52 lg:right-6 right-6 lg:-top-40 -top-28 rotate-45 blur' preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15">
+        <path fill='#6b21a8 ' d="M7.932 1.248a.5.5 0 0 0-.864 0l-7 12A.5.5 0 0 0 .5 14h14a.5.5 0 0 0 .432-.752l-7-12Z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" className='absolute w-28 lg:w-52 lg:right-20 right-6 lg:-top-40 -top-28' preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15">
+        <path fill='#ddd6fe  ' d="M7.932 1.248a.5.5 0 0 0-.864 0l-7 12A.5.5 0 0 0 .5 14h14a.5.5 0 0 0 .432-.752l-7-12Z"/>
+    </svg>
     </div>
-    <h1 className="absolute lg:bottom-48 top-96 lg:mt-16 lg:right-60 right-32 text-center uppercase tracking-widest text-slate-800 font-bold text-2xl lg:text-4xl">
-        Services
-    </h1>
+    <h1 className='absolute lg:right-32 right-12 lg:bottom-4 bottom-2 tracking-wider text-cyan-900 text-3xl lg:text-4xl uppercase font-semibold text-right pr-12'>Services</h1>
 </section>
 
 <section>
@@ -86,30 +84,11 @@ const index= () => {
         </div>
         <div className="w-full" data-aos="fade-left" data-aos-once="true">
             <h2 className="text-xl text-gray-800 uppercase">
-                <svg xmlns="http://www.w3.org/2000/svg" className="inline w-10" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                    <path fill="#06b6d4" fillOpacity="0" d="M6 4H10V6H14V4H18V20H6V4Z"><animate fill="freeze" attributeName="fillOpacity" begin="1.6s" dur="0.15s" values="0;0.3"/></path>
-                    <g fill="none" stroke="rgb(31 41 55 / var(--tw-text-opacity))" strokeLinecap="round" strokeLinejoin="round">
-                        <g strokeWidth="2">
-                            <path strokeDasharray="66" strokeDashoffset="66" d="M12 3H19V21H5V3H12Z">
-                        <animate fill="freeze" attributeName="strokeDashoffset" dur="0.6s" values="66;0"/>
-                    </path>
-                    <path strokeDasharray="5" strokeDashoffset="5" d="M9 10H12">
-                        <animate fill="freeze" attributeName="strokeDashoffset" begin="1s" dur="0.2s" values="5;0"/>
-                    </path>
-                    <path strokeDasharray="6" strokeDashoffset="6" d="M9 13H14">
-                        <animate fill="freeze" attributeName="strokeDashoffset" begin="1.2s" dur="0.2s" values="6;0"/>
-                    </path>
-                    <path strokeDasharray="7" strokeDashoffset="7" d="M9 16H15">
-                        <animate fill="freeze" attributeName="strokeDashoffset" begin="1.4s" dur="0.2s" values="7;0"/>
-                    </path></g>
-                    <path strokeDasharray="12" strokeDashoffset="12" d="M14.5 3.5V6.5H9.5V3.5">
-                        <animate fill="freeze" attributeName="strokeDashoffset" begin="0.7s" dur="0.2s" values="12;0"/>
-                    </path></g>
-                </svg>
+                
                 SERVICES TO OFFER
             </h2>
             <div className="lg:flex uppercase">
-            <ul className="space-y-2 px-8 pt-10 lg:w-1/2">
+            <ul className="space-y-2 px-2 lg:px-8 pt-10 lg:w-1/2">
                 <li>
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                         <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
@@ -147,7 +126,7 @@ const index= () => {
                     Integrating online & offline data
                 </li>
             </ul>
-            <ul className="space-y-2 px-8 pt-2 lg:pt-10 lg:w-1/2">
+            <ul className="space-y-2 px-2 lg:px-8 pt-2 lg:pt-10 lg:w-1/2">
                 <li>
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                         <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
@@ -217,30 +196,11 @@ const index= () => {
         </div>
         <div className="w-full text-left" data-aos="fade-left" data-aos-once="true">
             <h2 className="text-xl text-gray-800 uppercase">
-                <svg xmlns="http://www.w3.org/2000/svg" className="inline w-10" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                    <path fill="#06b6d4" fillOpacity="0" d="M6 4H10V6H14V4H18V20H6V4Z"><animate fill="freeze" attributeName="fillOpacity" begin="1.6s" dur="0.15s" values="0;0.3"/></path>
-                    <g fill="none" stroke="rgb(31 41 55 / var(--tw-text-opacity))" strokeLinecap="round" strokeLinejoin="round">
-                        <g strokeWidth="2">
-                            <path strokeDasharray="66" strokeDashoffset="66" d="M12 3H19V21H5V3H12Z">
-                        <animate fill="freeze" attributeName="strokeDashoffset" dur="0.6s" values="66;0"/>
-                    </path>
-                    <path strokeDasharray="5" strokeDashoffset="5" d="M9 10H12">
-                        <animate fill="freeze" attributeName="strokeDashoffset" begin="1s" dur="0.2s" values="5;0"/>
-                    </path>
-                    <path strokeDasharray="6" strokeDashoffset="6" d="M9 13H14">
-                        <animate fill="freeze" attributeName="strokeDashoffset" begin="1.2s" dur="0.2s" values="6;0"/>
-                    </path>
-                    <path strokeDasharray="7" strokeDashoffset="7" d="M9 16H15">
-                        <animate fill="freeze" attributeName="strokeDashoffset" begin="1.4s" dur="0.2s" values="7;0"/>
-                    </path></g>
-                    <path strokeDasharray="12" strokeDashoffset="12" d="M14.5 3.5V6.5H9.5V3.5">
-                        <animate fill="freeze" attributeName="strokeDashoffset" begin="0.7s" dur="0.2s" values="12;0"/>
-                    </path></g>
-                </svg>
+                
                 SERVICES TO OFFER
             </h2>
             <div className="lg:flex uppercase">
-            <ul className="space-y-2 px-8 pt-10 lg:w-1/2">
+            <ul className="space-y-2 px-2 lg:px-8 pt-10 lg:w-1/2">
                 <li>
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                         <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
@@ -278,7 +238,7 @@ const index= () => {
                     A/B Testing & Heat map
                 </li>
             </ul>
-            <ul className="space-y-2 px-8 pt-2 lg:pt-10 lg:w-1/2">
+            <ul className="space-y-2 px-2 lg:px-8 pt-2 lg:pt-10 lg:w-1/2">
                 <li>
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                         <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
@@ -346,30 +306,11 @@ const index= () => {
         </div>
         <div className="w-full" data-aos="fade-left" data-aos-once="true">
             <h2 className="text-xl text-gray-800 uppercase">
-                <svg xmlns="http://www.w3.org/2000/svg" className="inline w-10" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                    <path fill="#06b6d4" fillOpacity="0" d="M6 4H10V6H14V4H18V20H6V4Z"><animate fill="freeze" attributeName="fillOpacity" begin="1.6s" dur="0.15s" values="0;0.3"/></path>
-                    <g fill="none" stroke="rgb(31 41 55 / var(--tw-text-opacity))" strokeLinecap="round" strokeLinejoin="round">
-                        <g strokeWidth="2">
-                            <path strokeDasharray="66" strokeDashoffset="66" d="M12 3H19V21H5V3H12Z">
-                        <animate fill="freeze" attributeName="strokeDashoffset" dur="0.6s" values="66;0"/>
-                    </path>
-                    <path strokeDasharray="5" strokeDashoffset="5" d="M9 10H12">
-                        <animate fill="freeze" attributeName="strokeDashoffset" begin="1s" dur="0.2s" values="5;0"/>
-                    </path>
-                    <path strokeDasharray="6" strokeDashoffset="6" d="M9 13H14">
-                        <animate fill="freeze" attributeName="strokeDashoffset" begin="1.2s" dur="0.2s" values="6;0"/>
-                    </path>
-                    <path strokeDasharray="7" strokeDashoffset="7" d="M9 16H15">
-                        <animate fill="freeze" attributeName="strokeDashoffset" begin="1.4s" dur="0.2s" values="7;0"/>
-                    </path></g>
-                    <path strokeDasharray="12" strokeDashoffset="12" d="M14.5 3.5V6.5H9.5V3.5">
-                        <animate fill="freeze" attributeName="strokeDashoffset" begin="0.7s" dur="0.2s" values="12;0"/>
-                    </path></g>
-                </svg>
+                
                 SERVICES TO OFFER
             </h2>
             <div className="lg:flex uppercase">
-            <ul className="space-y-2 px-8 pt-10 lg:w-1/2">
+            <ul className="space-y-2 px-2 lg:px-8 pt-10 lg:w-1/2">
                 <li>
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                         <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
@@ -407,7 +348,7 @@ const index= () => {
                     Shopping Behavior Analysis
                 </li>
             </ul>
-            <ul className="space-y-2 px-8 pt-2 lg:pt-10 lg:w-1/2">
+            <ul className="space-y-2 px-2 lg:px-8 pt-2 lg:pt-10 lg:w-1/2">
                 <li>
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                         <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
@@ -475,30 +416,11 @@ const index= () => {
         </div>
         <div className="w-full text-left" data-aos="fade-left" data-aos-once="true">
             <h2 className="text-xl text-gray-800 uppercase">
-                <svg xmlns="http://www.w3.org/2000/svg" className="inline w-10" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                    <path fill="#06b6d4" fillOpacity="0" d="M6 4H10V6H14V4H18V20H6V4Z"><animate fill="freeze" attributeName="fillOpacity" begin="1.6s" dur="0.15s" values="0;0.3"/></path>
-                    <g fill="none" stroke="rgb(31 41 55 / var(--tw-text-opacity))" strokeLinecap="round" strokeLinejoin="round">
-                        <g strokeWidth="2">
-                            <path strokeDasharray="66" strokeDashoffset="66" d="M12 3H19V21H5V3H12Z">
-                        <animate fill="freeze" attributeName="strokeDashoffset" dur="0.6s" values="66;0"/>
-                    </path>
-                    <path strokeDasharray="5" strokeDashoffset="5" d="M9 10H12">
-                        <animate fill="freeze" attributeName="strokeDashoffset" begin="1s" dur="0.2s" values="5;0"/>
-                    </path>
-                    <path strokeDasharray="6" strokeDashoffset="6" d="M9 13H14">
-                        <animate fill="freeze" attributeName="strokeDashoffset" begin="1.2s" dur="0.2s" values="6;0"/>
-                    </path>
-                    <path strokeDasharray="7" strokeDashoffset="7" d="M9 16H15">
-                        <animate fill="freeze" attributeName="strokeDashoffset" begin="1.4s" dur="0.2s" values="7;0"/>
-                    </path></g>
-                    <path strokeDasharray="12" strokeDashoffset="12" d="M14.5 3.5V6.5H9.5V3.5">
-                        <animate fill="freeze" attributeName="strokeDashoffset" begin="0.7s" dur="0.2s" values="12;0"/>
-                    </path></g>
-                </svg>
+                
                 SERVICES TO OFFER
             </h2>
             <div className="lg:flex uppercase">
-            <ul className="space-y-2 px-8 pt-10 lg:w-1/2">
+            <ul className="space-y-2 px-2 lg:px-8 pt-10 lg:w-1/2">
                 <li>
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                         <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
@@ -531,7 +453,7 @@ const index= () => {
                 </li>
                 
             </ul>
-            <ul className="list-outside space-y-2 px-8 pt-2 lg:pt-10 lg:w-1/2">
+            <ul className="list-outside space-y-2 px-2 lg:px-8 pt-2 lg:pt-10 lg:w-1/2">
                 <li>
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                         <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
@@ -585,30 +507,11 @@ const index= () => {
         </div>
         <div className="w-full" data-aos="fade-left" data-aos-once="true">
             <h2 className="text-xl text-gray-800 uppercase">
-                <svg xmlns="http://www.w3.org/2000/svg" className="inline w-10" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                    <path fill="#06b6d4" fillOpacity="0" d="M6 4H10V6H14V4H18V20H6V4Z"><animate fill="freeze" attributeName="fillOpacity" begin="1.6s" dur="0.15s" values="0;0.3"/></path>
-                    <g fill="none" stroke="rgb(31 41 55 / var(--tw-text-opacity))" strokeLinecap="round" strokeLinejoin="round">
-                        <g strokeWidth="2">
-                            <path strokeDasharray="66" strokeDashoffset="66" d="M12 3H19V21H5V3H12Z">
-                        <animate fill="freeze" attributeName="strokeDashoffset" dur="0.6s" values="66;0"/>
-                    </path>
-                    <path strokeDasharray="5" strokeDashoffset="5" d="M9 10H12">
-                        <animate fill="freeze" attributeName="strokeDashoffset" begin="1s" dur="0.2s" values="5;0"/>
-                    </path>
-                    <path strokeDasharray="6" strokeDashoffset="6" d="M9 13H14">
-                        <animate fill="freeze" attributeName="strokeDashoffset" begin="1.2s" dur="0.2s" values="6;0"/>
-                    </path>
-                    <path strokeDasharray="7" strokeDashoffset="7" d="M9 16H15">
-                        <animate fill="freeze" attributeName="strokeDashoffset" begin="1.4s" dur="0.2s" values="7;0"/>
-                    </path></g>
-                    <path strokeDasharray="12" strokeDashoffset="12" d="M14.5 3.5V6.5H9.5V3.5">
-                        <animate fill="freeze" attributeName="strokeDashoffset" begin="0.7s" dur="0.2s" values="12;0"/>
-                    </path></g>
-                </svg>
+               
                 SERVICES TO OFFER
             </h2>
             <div className="lg:flex uppercase">
-            <ul className="space-y-2 px-8 pt-10 lg:w-1/2">
+            <ul className="space-y-2 px-2 lg:px-8 pt-10 lg:w-1/2">
                 <li>
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                         <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
@@ -646,7 +549,7 @@ const index= () => {
                     UTM & Campaign Naming Structure
                 </li>
             </ul>
-            <ul className="space-y-2 px-8 pt-2 lg:pt-10 lg:w-1/2">
+            <ul className="space-y-2 px-2 lg:px-8 pt-2 lg:pt-10 lg:w-1/2">
                 <li>
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                         <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
@@ -716,30 +619,11 @@ const index= () => {
         </div>
         <div className="w-full text-left" data-aos="fade-left" data-aos-once="true">
             <h2 className="text-xl text-gray-800 uppercase">
-                <svg xmlns="http://www.w3.org/2000/svg" className="inline w-10" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                    <path fill="#06b6d4" fillOpacity="0" d="M6 4H10V6H14V4H18V20H6V4Z"><animate fill="freeze" attributeName="fillOpacity" begin="1.6s" dur="0.15s" values="0;0.3"/></path>
-                    <g fill="none" stroke="rgb(31 41 55 / var(--tw-text-opacity))" strokeLinecap="round" strokeLinejoin="round">
-                        <g strokeWidth="2">
-                            <path strokeDasharray="66" strokeDashoffset="66" d="M12 3H19V21H5V3H12Z">
-                        <animate fill="freeze" attributeName="strokeDashoffset" dur="0.6s" values="66;0"/>
-                    </path>
-                    <path strokeDasharray="5" strokeDashoffset="5" d="M9 10H12">
-                        <animate fill="freeze" attributeName="strokeDashoffset" begin="1s" dur="0.2s" values="5;0"/>
-                    </path>
-                    <path strokeDasharray="6" strokeDashoffset="6" d="M9 13H14">
-                        <animate fill="freeze" attributeName="strokeDashoffset" begin="1.2s" dur="0.2s" values="6;0"/>
-                    </path>
-                    <path strokeDasharray="7" strokeDashoffset="7" d="M9 16H15">
-                        <animate fill="freeze" attributeName="strokeDashoffset" begin="1.4s" dur="0.2s" values="7;0"/>
-                    </path></g>
-                    <path strokeDasharray="12" strokeDashoffset="12" d="M14.5 3.5V6.5H9.5V3.5">
-                        <animate fill="freeze" attributeName="strokeDashoffset" begin="0.7s" dur="0.2s" values="12;0"/>
-                    </path></g>
-                </svg>
+               
                 SERVICES TO OFFER
             </h2>
             <div className="lg:flex uppercase">
-            <ul className="space-y-4 px-8 pt-10 lg:w-1/2">
+            <ul className="space-y-4 px-2 lg:px-8 pt-10 lg:w-1/2">
                 <li>
                     <svg xmlns="http://www.w3.org/2000/svg" className="absolute w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                         <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
@@ -778,7 +662,7 @@ const index= () => {
                 </li>
                 
             </ul>
-            <ul className="list-outside space-y-4 px-8 pt-4 lg:pt-10 lg:w-1/2">
+            <ul className="list-outside space-y-4 px-2 lg:px-8 pt-4 lg:pt-10 lg:w-1/2">
                 <li>
                     <svg xmlns="http://www.w3.org/2000/svg" className="absolute w-8 fill-cyan-800 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                         <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
