@@ -13,7 +13,10 @@ const aboutus = () => {
     <Head>
       <title>Test</title>
     </Head>
-    <div>404 Page</div>
+    <div className='w-4/5 mx-auto p-8 my-4'>
+    <img  src="static/404.svg" className="w-3/4 mx-auto"/>
+     <div><a >Click Here</a> to Go to Home Page</div>
+      </div>
     </>
   )
 }
