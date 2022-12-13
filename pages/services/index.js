@@ -47,14 +47,15 @@ const index= () => {
         <img src="/static/services.png" className="-rotate-6"/>
     </div>
     <div className='relative'>
-    <svg xmlns="http://www.w3.org/2000/svg" className='absolute w-28 lg:w-52 lg:right-6 right-6 lg:-top-40 -top-28 rotate-45 blur' preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15">
-        <path fill='#6b21a8 ' d="M7.932 1.248a.5.5 0 0 0-.864 0l-7 12A.5.5 0 0 0 .5 14h14a.5.5 0 0 0 .432-.752l-7-12Z"/>
-    </svg>
+    
     <svg xmlns="http://www.w3.org/2000/svg" className='absolute w-28 lg:w-52 lg:right-20 right-6 lg:-top-40 -top-28' preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15">
-        <path fill='#ddd6fe  ' d="M7.932 1.248a.5.5 0 0 0-.864 0l-7 12A.5.5 0 0 0 .5 14h14a.5.5 0 0 0 .432-.752l-7-12Z"/>
+        <path fill='#38bdf8 ' d="M7.932 1.248a.5.5 0 0 0-.864 0l-7 12A.5.5 0 0 0 .5 14h14a.5.5 0 0 0 .432-.752l-7-12Z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" className='absolute w-28 lg:w-52 lg:right-12 right-2 lg:-top-40 -top-28 rotate-45 ' preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15">
+        <path fill="none" stroke="#1e293b" stroke-linejoin="round" d="m7.5 1.5l-7 12h14l-7-12Z"/>
     </svg>
     </div>
-    <h1 className='absolute lg:right-32 right-12 lg:bottom-4 bottom-2 tracking-wider text-cyan-900 text-3xl lg:text-4xl uppercase font-semibold text-right pr-12'>Services</h1>
+    <h1 className='absolute lg:right-48 right-16 lg:-bottom-4 bottom-2 tracking-wider text-cyan-900 text-3xl lg:text-4xl uppercase font-semibold text-right pr-12'>Services</h1>
 </section>
 
 <section>
