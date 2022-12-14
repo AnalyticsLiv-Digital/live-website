@@ -21,8 +21,9 @@ const slug = ()=>{
     AOS.init();
     </script>
   </Head>
+  <ScrollProgress/>
     <section>
-        <ScrollProgress/>
+        
     <div className="lg:flex">
         <div className="hidden lg:block h-100% w-1/6 my-8 space-y-4 mx-4">
             <div className="flex space-x-2">

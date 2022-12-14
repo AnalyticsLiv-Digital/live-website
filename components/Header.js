@@ -140,14 +140,13 @@ useEffect(() => {
           leaveTo="opacity-0 scale-95"
         >
           {() => (
-            <div className="bg-white lg:hidden" id="mobile-menu">
+            <div className="bg-white lg:hidden absolute w-full"  id="mobile-menu">
               <div className="px-4 pt-2 pb-3 space-y-1 sm:px-3">
-                <a
-                  href="#"
+                <p
                   className=" text-slate-900 block px-3 py-2 rounded-md text-base font-medium"
                 >
                  <div onClick={() => {setIsServices(!isServices); setIsResources(false);}} >Services</div>
-                  {isServices ? (<div className='px-4 text-cyan-400  divide-y-2'>
+                  {isServices ? (<div className='transition ease-out duration-200 px-4 text-cyan-400  divide-y-2'>
                             
                             <Link onClick={() => {setIsOpen(!isOpen); setIsServices(false);}} scroll={false} href={{ pathname: '/services',query: { id: 'data-collection' }}}><div className="py-2 w-56 ">Data Collection</div></Link>
                             <Link onClick={() => {setIsOpen(!isOpen); setIsServices(false);}} scroll={false} href={{ pathname: '/services',query: { id: 'data-reporting' }}}><div className="py-2 w-56 ">Data reporting</div></Link>
@@ -156,9 +155,9 @@ useEffect(() => {
                             <Link onClick={() => {setIsOpen(!isOpen); setIsServices(false);}} scroll={false} href={{ pathname: '/services',query: { id: 'paid-search-marketing' }}}><div className="py-2 w-56 ">Paid Search Marketing</div></Link>
                             <Link onClick={() => {setIsOpen(!isOpen); setIsServices(false);}} scroll={false} href={{ pathname: '/services',query: { id: 'media-planning' }}}><div className="py-2 w-56 ">Media Planning & Buying</div></Link>
                        </div>):(<></>)}
-                </a>
+                </p>
 
-                <a
+                <p
                   href="#"
                   className="text-slate-900 block px-3 py-2 rounded-md text-base font-medium"
                 >
@@ -167,7 +166,7 @@ useEffect(() => {
                             <Link onClick={() => {setIsOpen(!isOpen); setIsResources(false);}}  href='/blogs'><div className="py-2 w-56 ">Blogs</div></Link>
                             <Link onClick={() => {setIsOpen(!isOpen); setIsResources(false);}} href='/case-studies'><div className="py-2 w-56 ">Case Studies</div></Link>
                        </div>):(<></>)}
-                </a>
+                </p>
 
                 <a onClick={() => setIsOpen(!isOpen)}
                   href="about-us"

@@ -246,8 +246,8 @@ export default function Home() {
             <div className="lg:w-2/3"><img src="/static/help.png" /></div>
             <div className="lg:w-1/3 align-middle rounded-lg bg-purple-200 text-center py-8 lg:py-0">
                 <h1 className="font-medium text-slate-700 text-2xl whitespace-pre lg:mt-16 mb-4 tracking-wider">Let Us Help!</h1>
-                <input placeholder="E-mail" className="my-4 border border-gray-400 px-4 py-2 bg-orange-50 w-1/2 md:w-4/5 rounded-xl"/>
-                <button className="rounded-xl bg-cyan-500 shadow-md text-white shadow-gray-500/40 mt-1 w-1/2 lg:w-52 p-2 border border-slate-200">Request A Quote</button>
+            
+                <Link href="/contact"><button className="rounded-xl bg-cyan-500 shadow-md text-white shadow-gray-500/40 mt-1 w-1/2 lg:w-52 p-2 border border-slate-200">Request A Quote</button></Link>
                 <div className="mt-4 text-gray-700">Or Contact Us @</div>
                 <div className="underline text-sm cursor-pointer text-blue-900"><a >data.analytics@analyticsliv.com</a></div>
             </div>

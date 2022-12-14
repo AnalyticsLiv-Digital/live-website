@@ -168,41 +168,46 @@ const contact = () => {
                             </div>
                             <div data-aos="fade-down" data-aos-once="true" className="relative lg:w-2/3 rounded-lg p-4 bg-white font-regular">
                                 {formSubmit ? <div>Thanks {formValues.firstName}, for contacting us. We will get back to you very soon. </div>: 
-                                <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
-                                    <div className="relative w-full md:flex justify-evenly md:space-x-4">
-                                        <div className="relative">
+                                <form className="space-y-4 md:space-y-6 " onSubmit={handleSubmit}>
+                                    <div className="relative w-full md:flex justify-around md:space-x-2">
+                                        <div className="relative md:w-1/3">
                                             <input type="text" id="firstname" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent dark:bg-gray-700 border-0 border-b-2 border-slate-500 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " name="firstName" value={formValues.firstName} onChange={handleChange} />
                                             <label htmlFor="firstname" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">First Name</label>
                                             <p className="text-red-600 text-sm">{formErrors.firstName}</p>
                                         </div>
-                                        <div className="relative">
+                                        <div className="relative md:w-1/3 md:pr-8">
                                             <input type="text" id="lastname" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent dark:bg-gray-700 border-0 border-b-2 border-slate-500 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " name="lastName" value={formValues.lastName} onChange={handleChange} />
                                             <label htmlFor="lastname" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Last Name</label>
                                             <p className="text-red-600 text-sm">{formErrors.lastName}</p>
                                         </div>
                                     </div>
-                                    <div className="w-full md:flex justify-evenly md:space-x-4">
-                                        <div className="relative">
-                                            <input type="emaild" id="email" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent dark:bg-gray-700 border-0 border-b-2 border-slate-500 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " name="email" value={formValues.email} onChange={handleChange} />
+                                    <div className="w-full">
+                                        <div className="relative md:ml-12 w-full md:w-4/5">
+                                            <input type="emaild" id="email" className="px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent dark:bg-gray-700 border-0 border-b-2 border-slate-500 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " name="email" value={formValues.email} onChange={handleChange} />
                                             <label htmlFor="emaild" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">E-mail</label>
                                             <p className="text-red-600 text-sm">{formErrors.email}</p>
                                         </div>
-                                        <br />
-                                        <ReactFlagsSelect style={{ border: 'none' }} placeholder="Select Country" className="pb-4 pl-2 w-full md:w-1/3 text-sm text-gray-500 bg-transparent border-0 border-b-2 border-slate-500 dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-cyan-500 outline-none" name="country" onChange={handleChange} value={formValues.country} selected={selected} onSelect={(code) => { setSelected(code); setFormValues({ ...formValues, country: code }); console.log(formValues) }} />
+                                    </div>
+
+                                     <div className="w-full md:flex justify-around md:space-x-4">
+                                        <div className="relative md:w-1/3">
+                                        <ReactFlagsSelect  className="pb-4 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-slate-500 dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-b focus:border-cyan-500 outline-none" name="country" onChange={handleChange} value={formValues.country} selected={selected} onSelect={(code) => { setSelected(code); setFormValues({ ...formValues, country: code }); console.log(formValues) }} />
                                         <p className="text-red-600 text-sm">{formErrors.country}</p>
-                                        <div className="relative">
+                                        </div>
+                                        <div className='relative md:w-1/3 md:pr-8'>
                                             <input type="number" id="tel" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent dark:bg-gray-700 border-0 border-b-2 border-slate-500 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " name="contactno" value={formValues.contactno} onChange={handleChange} />
                                             <label htmlFor="tel" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Contact No</label>
                                             <p className="text-red-600 text-sm">{formErrors.contactno}</p>
                                         </div>
                                     </div>
-                                    <div className="w-full md:flex space-y-4 justify-evenly md:space-x-4">
-                                        <div className="relative">
+                                    <div className="w-full md:flex md:pl-4 space-y-4 justify-around md:space-x-2">
+                                        <div className="relative md:w-1/3 ">
                                             <input type="Cname" id="company" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent dark:bg-gray-700 border-0 border-b-2 border-slate-500 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " name="company" value={formValues.company} onChange={handleChange} />
                                             <label htmlFor="Cname" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Company Name</label>
                                             <p className="text-red-600 text-sm">{formErrors.company}</p>
                                         </div>
-                                        <select className="pb-4 pl-2 w-full md:w-1/3 text-sm text-gray-500 bg-transparent border-0 border-b-2 border-slate-500 dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-cyan-500 outline-none" placeholder="Role in Comapany" name="role" value={formValues.role} onChange={handleChange}>
+                                        <div className='relative w-full md:w-1/3'>
+                                        <select className="pb-2.5 pl-2 min-w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-slate-500 dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-cyan-500 outline-none" placeholder="Role in Comapany" name="role" value={formValues.role} onChange={handleChange}>
                                             <option>Role in Company</option>
                                             <option>C-Level Executive</option>
                                             <option>Management/Executive</option>
@@ -210,6 +215,8 @@ const contact = () => {
                                             <option>Department Manager</option>
                                             <option>Finance Head</option>
                                         </select>
+                                        </div>
+                                        
                                         <p className="text-red-600 text-sm">{formErrors.role}</p>
                                     </div>
                                     <div className="relative w-full md:flex justify-evenly ">
