@@ -1,5 +1,6 @@
 {
   "name": "live-website",
+  "homepage":"https://www.analyticsliv.com/staging/",
   "version": "0.1.0",
   "private": true,
   "scripts": {
