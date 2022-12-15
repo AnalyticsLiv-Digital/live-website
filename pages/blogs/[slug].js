@@ -49,7 +49,32 @@ const slug = ()=>{
                 <div>Media</div>
             </div>
            
-          </div>
+         
+
+          <div className='absolute text-center space-y-1 -right-0 top-16'>
+                                  
+                                 <div className='rounded-full px-2 py-1 bg-blue-400'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" className='w-6 fill-white' preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                      <path  d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/>
+                                   </svg>
+                                 </div>
+                                <div className=' rounded-full px-2 py-1 bg-indigo-600'>
+                                     <svg xmlns="http://www.w3.org/2000/svg" className='w-6 fill-white' preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                        <path  d="M6.94 5a2 2 0 1 1-4-.002a2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z"/>
+                                     </svg>
+                                 </div>
+                                 <div className=' rounded-full px-2 py-1 bg-green-700'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" className='w-6 fill-white' preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256">
+                                      <path d="M232 96a16 16 0 0 0-16-16h-32V48a16 16 0 0 0-16-16H40a16 16 0 0 0-16 16v128a7.9 7.9 0 0 0 4.6 7.2a8.1 8.1 0 0 0 3.4.8a7.7 7.7 0 0 0 5-1.8L72 154v30a16 16 0 0 0 16 16h93.6l37.4 30.2a7.8 7.8 0 0 0 8.4 1a7.9 7.9 0 0 0 4.6-7.2ZM66.6 137.8L40 159.2V48h128v88H71.6a7.7 7.7 0 0 0-5 1.8Zm122.8 48a7.7 7.7 0 0 0-5-1.8H88v-32h80a16 16 0 0 0 16-16V96h32v111.2Z"/>
+                                    </svg>
+                                </div>
+                                <div className='absolute rounded-full px-2 py-2 bg-amber-400'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" className='w-6 fill-white' preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                      <path d="M18 22q-1.25 0-2.125-.875T15 19q0-.175.025-.363q.025-.187.075-.337l-7.05-4.1q-.425.375-.95.587Q6.575 15 6 15q-1.25 0-2.125-.875T3 12q0-1.25.875-2.125T6 9q.575 0 1.1.212q.525.213.95.588l7.05-4.1q-.05-.15-.075-.337Q15 5.175 15 5q0-1.25.875-2.125T18 2q1.25 0 2.125.875T21 5q0 1.25-.875 2.125T18 8q-.575 0-1.1-.213q-.525-.212-.95-.587L8.9 11.3q.05.15.075.337Q9 11.825 9 12t-.025.362q-.025.188-.075.338l7.05 4.1q.425-.375.95-.588Q17.425 16 18 16q1.25 0 2.125.875T21 19q0 1.25-.875 2.125T18 22Z"/>
+                                   </svg>
+                                 </div>
+                            </div>
+                            </div>
         
           <div className=" mx-4 lg:w-2/3 text-left pr-4 my-4">
             <h1 className="text-4xl font-medium tracking-wider">

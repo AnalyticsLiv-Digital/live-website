@@ -45,24 +45,24 @@ useEffect(() => {
         <Link href="/"><img src="/static/logo.png" className="h-10 lg:mx-4 cursor-pointer"/></Link>
             <nav className="lg:flex text-center">
                 <ul className="lg:flex text-left lg:text-center z-[-1] lg:z-auto lg:mr-4 lg:w-auto lg:space-x-6 items-center  uppercase tracking-wide cursor-pointer">
-                <li className="hover:border-b-4 hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2" onMouseEnter={()=>submenushow(1)} onMouseLeave={()=>submenuhide(1)}>
+                <li className="relative hover:border-b-4 hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2" onMouseEnter={()=>submenushow(1)} onMouseLeave={()=>submenuhide(1)}>
                 <Link href="/services">Services</Link>
-            
-                    <div style={{display : "none"}} onMouseEnter={()=>submenushow(1)} onMouseLeave={()=>submenuhide(1)} id="submenu1" className="absolute w-56 text-sm flex flex-col lg:-ml-20 lg:mt-6 divide-y bg-gray-100 bg-opacity-90 text-cyan-900 items-center align-middle font-semibold transition duration-1200 ease-in-out delay-150 hover:-translate-y-1 ">
-                    
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-collection' }}}><div className="py-2 w-56 hover:bg-cyan-500">Data Collection</div></Link>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-reporting' }}}><div className="py-2 w-56 hover:bg-cyan-500">Data reporting</div></Link>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'insight-generation' }}}><div className="py-2 w-56 hover:bg-cyan-500">Insight Generation</div></Link>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-utilization' }}}><div className="py-2 w-56 hover:bg-cyan-500">Data Utilization</div></Link>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'paid-search-marketing' }}}><div className="py-2 w-56 hover:bg-cyan-500">Paid Search Marketing</div></Link>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'media-planning' }}}><div className="py-2 w-56 hover:bg-cyan-500">Media Planning & Buying</div></Link>
-                           
+               
+                    <div style={{display : "none"}} onMouseEnter={()=>submenushow(1)} onMouseLeave={()=>submenuhide(1)} id="submenu1" className="absolute w-64 -left-20 top-10 min-w-max text-sm flex flex-col divide-y bg-gray-100 text-cyan-900 items-center align-middle font-semibold ">
+
+                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-collection' }}}><div className="py-2 hover:bg-cyan-500">Data Collection</div></Link>
+                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-reporting' }}}><div className="py-2 hover:bg-cyan-500">Data reporting</div></Link>
+                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'insight-generation' }}}><div className="py-2 hover:bg-cyan-500">Insight Generation</div></Link>
+                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-utilization' }}}><div className="py-2 hover:bg-cyan-500">Data Utilization</div></Link>
+                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'paid-search-marketing' }}}><div className="py-2 hover:bg-cyan-500">Paid Search Marketing</div></Link>
+                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'media-planning' }}}><div className="py-2 hover:bg-cyan-500">Media Planning & Buying</div></Link>
+                            
                         </div>
-                        
+                      
                     </li>
                     <li className="hover:border-b-4 hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2" onMouseEnter={()=>submenushow(2)} onMouseLeave={()=>submenuhide(2)}>
                     Resources
-                    <div style={{display : "none"}} onMouseEnter={()=>submenushow(2)} onMouseLeave={()=>submenuhide(2)} id="submenu2" className="absolute w-56 text-sm flex flex-col lg:-ml-20 lg:mt-6 divide-y bg-gray-100 bg-opacity-90 text-cyan-900 items-center align-middle font-semibold">
+                    <div style={{display : "none"}} onMouseEnter={()=>submenushow(2)} onMouseLeave={()=>submenuhide(2)} id="submenu2" className="absolute w-56 text-sm flex flex-col lg:-ml-20 lg:mt-2 divide-y bg-gray-100 text-cyan-900 items-center align-middle font-semibold">
                             <Link  href='/blogs'><div className="py-2 w-56 hover:bg-cyan-500">Blogs</div></Link>
                             <Link  href='/case-studies'><div className="py-2 w-56 hover:bg-cyan-500">Case Studies</div></Link>
                             <Link  href='/webinars'><div className="py-2 w-56 hover:bg-cyan-500">Webinars</div></Link>
