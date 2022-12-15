@@ -22,64 +22,38 @@ const slug = ()=>{
     </script>
   </Head>
   <ScrollProgress/>
-    <section>
+    <section> 
+    <div className="relative lg:flex ">
         
-    <div className="lg:flex">
-        <div className="hidden lg:block h-100% w-1/6 my-8 space-y-4 mx-4">
-            <div className="flex space-x-2">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-8" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                    <path fill="none" stroke="#65217a" stroke-width="2" d="m12 3l9 4.5l-9 4.5l-9-4.5L12 3Zm4.5 7.25L21 12.5L12 17l-9-4.5l4.5-2.25m9 5L21 17.5L12 22l-9-4.5l4.5-2.25"/>
-                </svg>
-                <h2 className="font-medium py-1">Resources</h2>
-            </div>
-            <div> 
-                <h2 className="text-cyan-500 font-medium ml-8">Blogs</h2>
-            </div>
-            <div className="space-y-2 text-sm text-left pl-10">
-                <h2 className="text-base text-sm text-slate-800 font-medium pl-5">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="absolute w-6 left-12 fill-purple-900" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path  d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/>
-                    </svg>
-                 Categories
-                </h2>
-                <div>GA 4</div>
-                <div>Social Media Marketing</div>
-                <div>Analytics</div>
-                <div>Data Reporting</div>
-                <div>Media</div>
-            </div>
-           
-         
-
-          <div className='absolute text-center space-y-1 -right-0 top-16'>
+        <div className='absolute text-center space-y-1 left-10 top-56 fixed'>
                                   
-                                 <div className='rounded-full px-2 py-1 bg-blue-400'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" className='w-6 fill-white' preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                                      <path  d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/>
-                                   </svg>
-                                 </div>
-                                <div className=' rounded-full px-2 py-1 bg-indigo-600'>
-                                     <svg xmlns="http://www.w3.org/2000/svg" className='w-6 fill-white' preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                                        <path  d="M6.94 5a2 2 0 1 1-4-.002a2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z"/>
-                                     </svg>
-                                 </div>
-                                 <div className=' rounded-full px-2 py-1 bg-green-700'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" className='w-6 fill-white' preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256">
-                                      <path d="M232 96a16 16 0 0 0-16-16h-32V48a16 16 0 0 0-16-16H40a16 16 0 0 0-16 16v128a7.9 7.9 0 0 0 4.6 7.2a8.1 8.1 0 0 0 3.4.8a7.7 7.7 0 0 0 5-1.8L72 154v30a16 16 0 0 0 16 16h93.6l37.4 30.2a7.8 7.8 0 0 0 8.4 1a7.9 7.9 0 0 0 4.6-7.2ZM66.6 137.8L40 159.2V48h128v88H71.6a7.7 7.7 0 0 0-5 1.8Zm122.8 48a7.7 7.7 0 0 0-5-1.8H88v-32h80a16 16 0 0 0 16-16V96h32v111.2Z"/>
-                                    </svg>
-                                </div>
-                                <div className='absolute rounded-full px-2 py-2 bg-amber-400'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" className='w-6 fill-white' preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                                      <path d="M18 22q-1.25 0-2.125-.875T15 19q0-.175.025-.363q.025-.187.075-.337l-7.05-4.1q-.425.375-.95.587Q6.575 15 6 15q-1.25 0-2.125-.875T3 12q0-1.25.875-2.125T6 9q.575 0 1.1.212q.525.213.95.588l7.05-4.1q-.05-.15-.075-.337Q15 5.175 15 5q0-1.25.875-2.125T18 2q1.25 0 2.125.875T21 5q0 1.25-.875 2.125T18 8q-.575 0-1.1-.213q-.525-.212-.95-.587L8.9 11.3q.05.15.075.337Q9 11.825 9 12t-.025.362q-.025.188-.075.338l7.05 4.1q.425-.375.95-.588Q17.425 16 18 16q1.25 0 2.125.875T21 19q0 1.25-.875 2.125T18 22Z"/>
-                                   </svg>
-                                 </div>
-                            </div>
-                            </div>
-        
-          <div className=" mx-4 lg:w-2/3 text-left pr-4 my-4">
-            <h1 className="text-4xl font-medium tracking-wider">
+            <div className='rounded-full p-2 bg-blue-700'>
+                <svg xmlns="http://www.w3.org/2000/svg" className='w-5 fill-white' preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                    <path  d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/>
+                 </svg>
+            </div>
+            <div className=' rounded-full p-2 bg-indigo-900'>
+                 <svg xmlns="http://www.w3.org/2000/svg" className='w-5 fill-white' preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                    <path  d="M6.94 5a2 2 0 1 1-4-.002a2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z"/>
+                 </svg>
+             </div>
+            <div className=' rounded-full p-2 bg-green-700'>
+                <svg xmlns="http://www.w3.org/2000/svg" className='w-5 fill-white' preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256">
+                    <path d="M232 96a16 16 0 0 0-16-16h-32V48a16 16 0 0 0-16-16H40a16 16 0 0 0-16 16v128a7.9 7.9 0 0 0 4.6 7.2a8.1 8.1 0 0 0 3.4.8a7.7 7.7 0 0 0 5-1.8L72 154v30a16 16 0 0 0 16 16h93.6l37.4 30.2a7.8 7.8 0 0 0 8.4 1a7.9 7.9 0 0 0 4.6-7.2ZM66.6 137.8L40 159.2V48h128v88H71.6a7.7 7.7 0 0 0-5 1.8Zm122.8 48a7.7 7.7 0 0 0-5-1.8H88v-32h80a16 16 0 0 0 16-16V96h32v111.2Z"/>
+                </svg>
+            </div>
+            <div className='absolute rounded-full p-2 bg-amber-400'>
+                <svg xmlns="http://www.w3.org/2000/svg" className='w-5 fill-white' preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                    <path d="M18 22q-1.25 0-2.125-.875T15 19q0-.175.025-.363q.025-.187.075-.337l-7.05-4.1q-.425.375-.95.587Q6.575 15 6 15q-1.25 0-2.125-.875T3 12q0-1.25.875-2.125T6 9q.575 0 1.1.212q.525.213.95.588l7.05-4.1q-.05-.15-.075-.337Q15 5.175 15 5q0-1.25.875-2.125T18 2q1.25 0 2.125.875T21 5q0 1.25-.875 2.125T18 8q-.575 0-1.1-.213q-.525-.212-.95-.587L8.9 11.3q.05.15.075.337Q9 11.825 9 12t-.025.362q-.025.188-.075.338l7.05 4.1q.425-.375.95-.588Q17.425 16 18 16q1.25 0 2.125.875T21 19q0 1.25-.875 2.125T18 22Z"/>
+                </svg>
+            </div>
+           </div>
+           
+          <div className="  lg:w-2/3 mx-auto text-left p-8 my-4">
+          <h1 className=" text-4xl font-bold tracking-wide text-slate-800">
             {slug} The GA4 Attribution Model: How to implement and succeed.
             </h1>
+            
             <div className="my-3 flex space-x-2 justify-between">
                 <div>
                     <span className="flex text-sm font-medium text-slate-400">
@@ -104,12 +78,28 @@ const slug = ()=>{
                 </span>
                 </div>
             </div>
-            <div className="mb-4">
+            <div className="mb-4 flex justify-between mr-8">
+                <div>
                 <span className="bg-gray-100 px-2 py-0.5 font-medium text-sm rounded text-gray-400">GA4</span>
                 <span className="bg-gray-100 px-2 py-0.5 font-medium text-sm rounded text-gray-400">Analytics</span>
                 <span className="bg-gray-100 px-2 py-0.5 font-medium text-sm rounded text-gray-400">UA vs GA4</span>
+                </div>
+                <div className='flex space-x-4'>
+                <svg xmlns="http://www.w3.org/2000/svg" className='w-4 fill-slate-800 hover:fill-blue-700' preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                    <path  d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/>
+                 </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" className='w-5 fill-slate-800 hover:fill-indigo-900' preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                    <path  d="M6.94 5a2 2 0 1 1-4-.002a2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z"/>
+                 </svg> 
+                 <svg xmlns="http://www.w3.org/2000/svg" className='w-5 fill-slate-800 hover:fill-green-700' preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256">
+                    <path d="M232 96a16 16 0 0 0-16-16h-32V48a16 16 0 0 0-16-16H40a16 16 0 0 0-16 16v128a7.9 7.9 0 0 0 4.6 7.2a8.1 8.1 0 0 0 3.4.8a7.7 7.7 0 0 0 5-1.8L72 154v30a16 16 0 0 0 16 16h93.6l37.4 30.2a7.8 7.8 0 0 0 8.4 1a7.9 7.9 0 0 0 4.6-7.2ZM66.6 137.8L40 159.2V48h128v88H71.6a7.7 7.7 0 0 0-5 1.8Zm122.8 48a7.7 7.7 0 0 0-5-1.8H88v-32h80a16 16 0 0 0 16-16V96h32v111.2Z"/>
+                </svg> 
+                 
+                </div>
             </div>
-             <img src="/static/big-image.png"/>
+             <img src="/static/big-image.png" className="w-screen"/>
+
+             
             <div className="py-4">
                 <h2 className="font-medium text-lg">The GA4 Attribution Model: How to implement and succeed.</h2>
                 <p className="whitespace-pre-line">
@@ -143,7 +133,7 @@ these changes within the GA interface.
             </div>
         </div>
 
-        <div className="lg:w-1/5 space-y-4">
+        <div className="lg:w-1/5 mx-auto space-y-4">
             <div className="space-y-6">
                 <h3 className="w-full text-slate-700 pt-2 px-3 font-bold tracking-wider">Similar Posts</h3>
                 <div className="min-w-full px-3">

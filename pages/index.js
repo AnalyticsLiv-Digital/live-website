@@ -100,7 +100,7 @@ export default function Home() {
                     specialists with 8+ years of experience in the industry. We create data driven 
                     marketing strategies to help our clients’ businesses stand out.
                 </p>
-                <Link href="/services"><div className="bg-blue-500 text-white rounded w-1/3 mx-auto lg:my-8 text-center px-2 py-2 shadow-md shadow-slate-800">Learn More</div></Link>
+                <Link href="/services"><div className="bg-blue-400 hover:bg-blue-500 transition duration-200 delay-75 text-slate-900 font-semibold rounded w-1/3 mx-auto lg:my-8 text-center px-2 py-2 shadow-md shadow-slate-800">Learn More</div></Link>
             </div>
         </div>
     </section>
@@ -150,60 +150,59 @@ export default function Home() {
            </ul>
            </div>
            
-           <div className="w-full text-center md:text-left">
-           <Link href="/services"><button className="mx-auto text-purple-200 border rounded px-6 py-1 shadow-sm shadow-purple-200 hover:bg-cyan-600 hover:text-slate-900 hover:border-black hover:shadow-none">Learn More</button></Link>
+           <div className="relative w-full">
+           <Link href="/services"><button className="text-white border rounded px-4 py-2 ml-4 shadow-sm shadow-lime-300 hover:bg-emerald-600 transition origin-top-left duration-300 delay-150 ease-in">Learn More</button></Link>
            </div>
         </div>
         
     </div>
-    <div className="relative  mt-16 pb-16 ">
+    <div className="relative mt-16 pb-8 ">
         <img className="absolute -top-28 right-0  bg-gradient-to-b from-blue-400 to-transparent w-96 h-96 rounded-full blur-2xl "/>
         <img className="absolute mt-24 bottom-0 left-0 bg-gradient-to-t from-red-800 to-transparent w-96 h-96 rounded-full blur-2xl "/>
-        <h1 className="text-white w-full h-auto font-semibold text-xl pt-6 text-center uppercase tracking-widest">Hear from the clients !</h1>
-        <div className="text-center items-center lg:flex lg:justify-evenly py-12 lg:py-24">
+        <h1 className="text-white w-full h-auto font-semibold text-xl pt-6 text-center uppercase tracking-widest ">Hear from the clients !</h1>
+        <div className="text-justify items-center lg:flex lg:justify-evenly py-12 lg:py-24">
             
-            <div className=" rounded relative pt-3 px-2 lg:pt-10 lg:px-2 pb-2 backdrop-blur bg-gray-200 shadow-lg shadow-black h-auto w-4/5 mx-auto lg:w-1/4 text-center ">
-            <img src="/static/dp-1.png" className="absolute lg:-top-12 lg:left-24 rounded-full"/>   
+            <div className=" rounded relative pt-3 px-2 lg:pt-4 lg:px-4 pb-8 lg:backdrop-blur bg-gray-200 shadow-lg shadow-black  w-4/5 mx-auto lg:w-1/4 text-center ">  
             <h2 className="lg:text-2xl text-slate-900 font-medium underline ">Nikola McCarthy</h2>
             <h4 className="ml-8 lg:ml-0 text-sm text-gray-800">Director at Tasman Digital</h4>
-            <div className="text-4xl text-blue-900 ">"</div>
-            <p className="align-middle text-ellipsis overflow-hidden text-sm text-gray-700">Highly recommended for anything related to campaign management, 
+            <div className="text-blue-900">
+                <svg xmlns="http://www.w3.org/2000/svg" className='w-8 mx-auto' preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16">
+                <path fill="currentColor" d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054c.062-.372.166-.703.31-.992c.145-.29.331-.517.559-.683c.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992a4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054c.062-.372.166-.703.31-.992c.145-.29.331-.517.559-.683c.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992a4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z"/></svg>
+            </div>
+            <p className="align-middle  overflow-hidden h-24 text-sm text-gray-700">Highly recommended for anything related to campaign management, 
                 planning, reporting and execution. Response has been timely and excellent skills in 
                 telling data stories with visualization.</p>
           </div>
 
-          <div className="hidden lg:block rounded relative lg:pt-10 lg:px-2 pb-2 bg-gray-200 shadow-lg shadow-black h-auto lg:w-1/3 mx-auto text-center ">
-            <img src="/static/dp-2.png" className="absolute -top-12 left-40 rounded-full"/>    
+          <div className="hidden lg:block rounded relative lg:pt-4 lg:px-4 pb-8 bg-gray-200 shadow-lg shadow-black h-auto lg:w-1/3 mx-auto text-center ">
+               
             <h2 className="text-2xl text-slate-900 font-medium underline ">Greg Jones</h2>
             <h4 className="text-sm text-gray-800">Managing Director at PhysioEd. LLC</h4>
-            <div className="text-4xl text-blue-900 ">"</div>
-            <p className="align-middle text-ellipsis overflow-hidden h-36 text-sm text-gray-700">This was a comprehensive analytics project for our 
+            <div className="text-blue-900">
+                <svg xmlns="http://www.w3.org/2000/svg" className='w-10 mx-auto' preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16">
+                <path fill="currentColor" d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054c.062-.372.166-.703.31-.992c.145-.29.331-.517.559-.683c.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992a4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054c.062-.372.166-.703.31-.992c.145-.29.331-.517.559-.683c.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992a4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z"/></svg>
+            </div>
+            <p className="align-middle text-ellipsis overflow-hidden h-32 text-sm text-gray-700">This was a comprehensive analytics project for our 
                 membership-based website, PhysioEd.com. Data is an important component to our business
-                decisions. AnalyticsLiv team worked through a long list of tasks successfully</p>
+                decisions. AnalyticsLiv team worked through a long list of tasks successfully.</p>
           </div>
 
-          <div className="hidden lg:block rounded relative lg:pt-10 lg:px-2 pb-2 backdrop-blur bg-gray-200 shadow-lg shadow-black h-auto lg:w-1/4 mx-auto text-center ">
-            <img src="/static/dp-3.png" className="absolute -top-12 left-28 rounded-full"/>    
+          <div className="hidden lg:block rounded relative lg:pt-4 lg:px-4 pb-8 lg:backdrop-blur bg-gray-200 shadow-lg shadow-black text-ellipsis lg:w-1/4 mx-auto text-center ">
+            
             <h2 className="text-2xl text-slate-900 font-medium underline ">Max Bidna</h2>
             <h4 className="text-sm text-gray-800">CEO at Hell's Creative</h4>
-            <div className="text-4xl text-blue-900 ">"</div>
-            <p className="align-middle text-ellipsis overflow-hidden h-36 text-sm text-gray-700">AnalyticsLiv has been an amazing partner to our 
+            <div className="text-blue-900">
+                <svg xmlns="http://www.w3.org/2000/svg" className='w-8 mx-auto' preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16">
+                <path fill="currentColor" d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054c.062-.372.166-.703.31-.992c.145-.29.331-.517.559-.683c.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992a4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054c.062-.372.166-.703.31-.992c.145-.29.331-.517.559-.683c.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992a4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z"/></svg>
+            </div>
+            <p className="align-middle text-ellipsis overflow-hidden h-24 text-sm text-gray-700">AnalyticsLiv has been an amazing partner to our 
                 fast growing agency! They helped us think through the best reporting options for our clients and 
                 quickly customized numerous Google Data Studio to fit our clients’ unique requests. Team is always 
                 responsive, not too pushy, and really understands how to cut then report data. We will be working 
                 with the team and AnalyticsLiv for years to come!</p>
           </div>
         </div>
-        <span className="hidden lg:block absolute h-24 top-56 align-middle">
-            <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" className="fill-red-800 w-24 t-10">
-                <path d="M14.71 15.88L10.83 12l3.88-3.88a.996.996 0 1 0-1.41-1.41L8.71 11.3a.996.996 0 0 0 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0c.38-.39.39-1.03 0-1.42z"/>
-            </svg>
-        </span>
-        <span className="hidden lg:block absolute h-24 top-56 right-0 align-middle">
-            <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" className="fill-red-800 w-24 t-10">
-                <path d="M9.29 15.88L13.17 12L9.29 8.12a.996.996 0 1 1 1.41-1.41l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3a.996.996 0 0 1-1.41 0c-.38-.39-.39-1.03 0-1.42z"/>
-            </svg>
-        </span>
+        
     </div>
    </section>
    <section>
@@ -245,9 +244,11 @@ export default function Home() {
         <div className="lg:flex lg:rounded-lg bg-white shadow-lg shadow-gray-800/40 lg:w-3/5 mx-auto">
             <div className="lg:w-2/3"><img src="/static/help.png" /></div>
             <div className="lg:w-1/3 align-middle rounded-lg bg-purple-200 text-center py-8 lg:py-0">
-                <h1 className="font-medium text-slate-700 text-2xl whitespace-pre lg:mt-16 mb-4 tracking-wider">Let Us Help!</h1>
+                <img srcSet='static/support.png' className="mx-auto mt-2"/>
+                <h1 className="font-medium text-slate-700 text-2xl whitespace-pre lg:mt-6 mb-4 tracking-wider">Let Us Help!</h1>
             
-                <Link href="/contact"><button className="rounded-xl bg-cyan-500 shadow-md text-white shadow-gray-500/40 mt-1 w-1/2 lg:w-52 p-2 border border-slate-200">Request A Quote</button></Link>
+                <Link href="/contact">
+                <button className="rounded-xl bg-cyan-500 hover:bg-blue-500 transition duration-200 delay-75 shadow-md text-white shadow-gray-500/40 mt-1 w-1/2 lg:w-52 p-2 border border-slate-200">Request A Quote</button></Link>
                 <div className="mt-4 text-gray-700">Or Contact Us @</div>
                 <div className="underline text-sm cursor-pointer text-blue-900"><a >data.analytics@analyticsliv.com</a></div>
             </div>

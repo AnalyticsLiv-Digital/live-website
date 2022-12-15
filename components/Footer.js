@@ -5,7 +5,7 @@ export const Footer = () => {
   return (
     <footer>
     <div className="block lg:flex text-sm justify-center bg-slate-900 item">
-        <div className="w-10/12 text-center lg:text-left lg:w-1/4 mx-auto my-4">
+        <div className="w-10/12 text-center lg:text-left lg:w-1/4 mx-auto py-4">
             <div className="relative text-white">
                 <span className="">Connect with us</span>
                 <div className="my-2 w-full h-0.5 bg-sky-800"></div>
