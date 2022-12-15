@@ -4,18 +4,12 @@ import Link from 'next/link';
 import NextNProgress from 'nextjs-progressbar';
 import { Transition } from "@headlessui/react";
 
-const submenushow = (e) => {
-    document.getElementById('submenu'+e).style.display = 'block';
-    
-}
-const submenuhide = (e) => {
-    document.getElementById('submenu'+e).style.display = 'none';
-   
-}
+
 
 const header = () => {
   const [header, setHeader] = useState(80);
-  
+  const [isWebResources, setIsWebResources] = useState(false);
+  const [isWebServices, setIsSWebervices] = useState(false);
   const [isResources, setIsResources] = useState(false);
   const [isServices, setIsServices] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -45,10 +39,10 @@ useEffect(() => {
         <Link href="/"><img src="/static/logo.png" className="h-10 lg:mx-4 cursor-pointer"/></Link>
             <nav className="lg:flex text-center">
                 <ul className="lg:flex text-left lg:text-center z-[-1] lg:z-auto lg:mr-4 lg:w-auto lg:space-x-6 items-center  uppercase tracking-wide cursor-pointer">
-                <li className="relative hover:border-b-4 hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2" onMouseEnter={()=>submenushow(1)} onMouseLeave={()=>submenuhide(1)}>
+                <li className="relative hover:border-b-4 hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2" onMouseEnter={()=>setIsSWebervices(true)} onMouseLeave={()=>setIsSWebervices(false)}>
                 <Link href="/services">Services</Link>
                
-                    <div style={{display : "none"}} onMouseEnter={()=>submenushow(1)} onMouseLeave={()=>submenuhide(1)} id="submenu1" className="absolute w-64 -left-20 top-10 min-w-max text-sm flex flex-col divide-y bg-gray-100 text-cyan-900 items-center align-middle font-semibold ">
+                    {isWebServices && <div onMouseEnter={()=>setIsSWebervices(true)} onMouseLeave={()=>setIsSWebervices(false)} className="absolute w-64 -left-20 top-10 min-w-max text-sm flex flex-col divide-y bg-gray-100 text-cyan-900 items-center align-middle font-semibold ">
 
                             <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-collection' }}}><div className="py-2 hover:bg-cyan-500">Data Collection</div></Link>
                             <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-reporting' }}}><div className="py-2 hover:bg-cyan-500">Data reporting</div></Link>
@@ -57,16 +51,16 @@ useEffect(() => {
                             <Link scroll={false} href={{ pathname: '/services',query: { id: 'paid-search-marketing' }}}><div className="py-2 hover:bg-cyan-500">Paid Search Marketing</div></Link>
                             <Link scroll={false} href={{ pathname: '/services',query: { id: 'media-planning' }}}><div className="py-2 hover:bg-cyan-500">Media Planning & Buying</div></Link>
                             
-                        </div>
+                        </div> }
                       
                     </li>
-                    <li className="hover:border-b-4 hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2" onMouseEnter={()=>submenushow(2)} onMouseLeave={()=>submenuhide(2)}>
+                    <li className="hover:border-b-4 hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2" onMouseEnter={()=>setIsWebResources(true)} onMouseLeave={()=>setIsWebResources(false)}>
                     Resources
-                    <div style={{display : "none"}} onMouseEnter={()=>submenushow(2)} onMouseLeave={()=>submenuhide(2)} id="submenu2" className="absolute w-56 text-sm flex flex-col lg:-ml-20 lg:mt-2 divide-y bg-gray-100 text-cyan-900 items-center align-middle font-semibold">
+                   {isWebResources && <div  onMouseEnter={()=>setIsWebResources(true)} onMouseLeave={()=>setIsWebResources(false)} id="submenu2" className="absolute w-56 text-sm flex flex-col lg:-ml-20 lg:mt-2 divide-y bg-gray-100 text-cyan-900 items-center align-middle font-semibold">
                             <Link  href='/blogs'><div className="py-2 w-56 hover:bg-cyan-500">Blogs</div></Link>
                             <Link  href='/case-studies'><div className="py-2 w-56 hover:bg-cyan-500">Case Studies</div></Link>
                             <Link  href='/webinars'><div className="py-2 w-56 hover:bg-cyan-500">Webinars</div></Link>
-                             </div>
+                             </div>} 
                     </li>
                     <Link href="/about-us"><li className="hover:border-b-4 hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2">
                     About Us
