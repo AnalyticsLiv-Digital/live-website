@@ -1,6 +1,6 @@
 {
   "name": "live-website",
-  "homepage":"https://www.analyticsliv.com/staging/",
+  "homepage": "https://www.analyticsliv.com/staging/",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -28,6 +28,7 @@
     "react-countup": "^6.4.0",
     "react-dom": "18.2.0",
     "react-flags-select": "^2.2.3",
+    "react-gtm-module": "^2.0.11",
     "react-scripts": "^5.0.1",
     "react-scroll": "^1.8.8",
     "react-visibility-sensor": "^5.1.1"

@@ -156,7 +156,7 @@ export default function Home() {
         </div>
         
     </div>
-    <div className="relative mt-16 pb-8 ">
+    <div data-aos="fade-up" data-aos-duration="1000" data-aos-once="true" className="relative mt-16 pb-8 ">
         <img className="absolute -top-28 right-0  bg-gradient-to-b from-blue-400 to-transparent w-96 h-96 rounded-full blur-2xl "/>
         <img className="absolute mt-24 bottom-0 left-0 bg-gradient-to-t from-red-800 to-transparent w-96 h-96 rounded-full blur-2xl "/>
         <h1 className="text-white w-full h-auto font-semibold text-xl pt-6 text-center uppercase tracking-widest ">Hear from the clients !</h1>
@@ -205,7 +205,7 @@ export default function Home() {
         
     </div>
    </section>
-   <section>
+   <section >
     <div style={{backgroundImage: `url("/static/bg2.png")`}} className="bg-cover lg:bg-fixed">
         <h1 className="text-black w-full h-auto font-bold text-3xl pt-12 text-center uppercase tracking-widest">B L O G S</h1>
          <div data-aos="zoom-in" data-aos-once="true" className="text-center lg:flex justify-evenly  p-12">

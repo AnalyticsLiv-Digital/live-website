@@ -3,7 +3,8 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import NextNProgress from 'nextjs-progressbar';
 import { Transition } from "@headlessui/react";
-
+import Head from 'next/head';
+import Script from 'next/script';
 
 
 const header = () => {
@@ -32,6 +33,27 @@ useEffect(() => {
     return () => window.removeEventListener("scroll", headerSize);
 });
   return (
+    <>
+    <Head><meta charset="UTF-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="description" content="" />
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <meta http-equiv="cache-control" content="no-cache" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="-1" />
+  <Script strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-XXXXXXX');`}}></Script>
+  </Head>
+
+
     <header className="sticky min-w-full top-0 z-50 shadow-md bg-white">
         
         <div style={{height: header}} className="navbar hidden lg:flex py-2 h-auto flex-wrap px-4 lg:flex-row items-center justify-between">
@@ -42,16 +64,16 @@ useEffect(() => {
                 <li className="relative hover:border-b-4 hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2" onMouseEnter={()=>setIsSWebervices(true)} onMouseLeave={()=>setIsSWebervices(false)}>
                 <Link href="/services">Services</Link>
                
-                    {isWebServices && <div onMouseEnter={()=>setIsSWebervices(true)} onMouseLeave={()=>setIsSWebervices(false)} className="absolute w-64 -left-20 top-10 min-w-max text-sm flex flex-col divide-y bg-gray-100 text-cyan-900 items-center align-middle font-semibold ">
-
+                    {isWebServices && <div onMouseEnter={()=>setIsSWebervices(true)} onMouseLeave={()=>setIsSWebervices(false)} className="subheader transition-opacity duration-1000 ease-out opacity-100 absolute w-64 -left-20 top-10 min-w-max text-sm flex flex-col divide-y bg-gray-100 text-cyan-900 items-center align-middle font-semibold ">
+ 
                             <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-collection' }}}><div className="py-2 hover:bg-cyan-500">Data Collection</div></Link>
                             <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-reporting' }}}><div className="py-2 hover:bg-cyan-500">Data reporting</div></Link>
                             <Link scroll={false} href={{ pathname: '/services',query: { id: 'insight-generation' }}}><div className="py-2 hover:bg-cyan-500">Insight Generation</div></Link>
                             <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-utilization' }}}><div className="py-2 hover:bg-cyan-500">Data Utilization</div></Link>
                             <Link scroll={false} href={{ pathname: '/services',query: { id: 'paid-search-marketing' }}}><div className="py-2 hover:bg-cyan-500">Paid Search Marketing</div></Link>
                             <Link scroll={false} href={{ pathname: '/services',query: { id: 'media-planning' }}}><div className="py-2 hover:bg-cyan-500">Media Planning & Buying</div></Link>
-                            
-                        </div> }
+                             
+                        </div>}
                       
                     </li>
                     <li className="hover:border-b-4 hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2" onMouseEnter={()=>setIsWebResources(true)} onMouseLeave={()=>setIsWebResources(false)}>
@@ -188,7 +210,7 @@ useEffect(() => {
         </Transition>
         <NextNProgress color="red" showOnShallow={true} showSpinner={false}/>
       </header>
-
+      </>
   )
 }
 
