@@ -25,7 +25,7 @@ const slug = ()=>{
     <section> 
     <div className="relative lg:flex ">
         
-        <div className='absolute text-center space-y-1 left-10 top-56 fixed'>
+        <div className=' text-center space-y-1 left-5 top-56 fixed'>
                                   
             <div className='rounded-full p-2 bg-blue-700'>
                 <svg xmlns="http://www.w3.org/2000/svg" className='w-5 fill-white' preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
