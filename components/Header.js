@@ -60,18 +60,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
         <Link href="/"><img src="/static/logo.png" className="h-10 lg:mx-4 cursor-pointer"/></Link>
             <nav className="lg:flex text-center">
-                <ul className="lg:flex text-left lg:text-center z-[-1] lg:z-auto lg:mr-4 lg:w-auto lg:space-x-6 items-center  uppercase tracking-wide cursor-pointer">
+                <ul className="lg:flex font-semibold text-left lg:text-center z-[-1] lg:z-auto lg:mr-4 lg:w-auto lg:space-x-6 items-center  uppercase tracking-wide cursor-pointer">
                 <li className="relative hover:border-b-4 hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2" onMouseEnter={()=>setIsSWebervices(true)} onMouseLeave={()=>setIsSWebervices(false)}>
                 <Link href="/services">Services</Link>
                
-                    {isWebServices && <div onMouseEnter={()=>setIsSWebervices(true)} onMouseLeave={()=>setIsSWebervices(false)} className="subheader transition-opacity duration-1000 ease-out opacity-100 absolute w-64 -left-20 top-10 min-w-max text-sm flex flex-col divide-y bg-gray-100 text-cyan-900 items-center align-middle font-semibold ">
+                    {isWebServices && <div onMouseEnter={()=>setIsSWebervices(true)} onMouseLeave={()=>setIsSWebervices(false)} className="subheader absolute w-56 text-sm flex flex-col lg:-ml-20 lg:mt-2 divide-y bg-gray-100 text-cyan-900 items-center align-middle font-semibold">
  
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-collection' }}}><div className="py-2 hover:bg-cyan-500">Data Collection</div></Link>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-reporting' }}}><div className="py-2 hover:bg-cyan-500">Data reporting</div></Link>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'insight-generation' }}}><div className="py-2 hover:bg-cyan-500">Insight Generation</div></Link>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-utilization' }}}><div className="py-2 hover:bg-cyan-500">Data Utilization</div></Link>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'paid-search-marketing' }}}><div className="py-2 hover:bg-cyan-500">Paid Search Marketing</div></Link>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'media-planning' }}}><div className="py-2 hover:bg-cyan-500">Media Planning & Buying</div></Link>
+                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-collection' }}}><div className="w-56 py-2 hover:bg-cyan-500">Data Collection</div></Link>
+                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-reporting' }}}><div className="w-56 py-2 hover:bg-cyan-500">Data reporting</div></Link>
+                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'insight-generation' }}}><div className="w-56 py-2 hover:bg-cyan-500">Insight Generation</div></Link>
+                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-utilization' }}}><div className="w-56 py-2 hover:bg-cyan-500">Data Utilization</div></Link>
+                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'paid-search-marketing' }}}><div className="w-56 py-2 hover:bg-cyan-500">Paid Search Marketing</div></Link>
+                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'media-planning' }}}><div className="w-56 py-2 hover:bg-cyan-500">Media Planning & Buying</div></Link>
                              
                         </div>}
                       

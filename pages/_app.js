@@ -23,6 +23,9 @@ Router.events.on('routeChangeComplete', ()=>{
   setShowloader(false);
 })
   return <>
+  <Head>
+  <style> @import url('https://fonts.googleapis.com/css2?family=Poppins'); </style>
+  </Head>
   <Header />
   {showLoader ? <div className='flex h-screen'><HashLoader
   color="#271d90"

@@ -9,7 +9,7 @@ import ScrollProgress from '../components/ScrollProgress';
 import Link from 'next/link';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
+import { Typewriter } from 'react-simple-typewriter'
 
 
 
@@ -28,10 +28,19 @@ export default function Home() {
       <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"></link>
     </Head>
         <div className='overflow-x-hidden'>
-      <section className="bg-slate-500 ">
+      <section className="bg-sky-900" data-aos="fade-down" data-aos-once="true">
             <div className="text-center xl:text-left xl:flex xl:items-center xl:justify-between xl:pl-12">
             <div className="py-8 xl:w-2/5 xl:pr-16">
-            <h1 className="title-font font-medium uppercase leading-relaxed tracking-wide text-4xl xl:text-5xl text-white">Unleash the Power of Data</h1>
+            <h1 className="title-font font-medium uppercase leading-relaxed tracking-wide text-4xl xl:text-5xl text-white">Unleash the Power of <br/><Typewriter
+            words={['Data', 'Analytics', 'Reporting', 'Marketing']}
+            cursor
+            loop={false}
+            cursorStyle='_'
+            typeSpeed={175}
+            deleteSpeed={100}
+            delaySpeed={1000}
+
+          /></h1>
             
             <p className="whitespace-pre-line text-xl text-gray-300 mt-8 ">
                 Data analytics and Marketing Digital 
@@ -41,7 +50,7 @@ export default function Home() {
             </p>
             </div>
             <div className="xl:w-3/5 flex flex-col  md:ml-auto w-full  md:mt-0">
-                <img src="/static/hero.jpg" className="h-full"/>
+                <img src="/static/hero.gif" className="h-full"/>
                 </div>
             </div>
          </section>
