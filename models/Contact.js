@@ -9,7 +9,8 @@ const ContactSchema = new mongoose.Schema({
     role:{type: String, required: true},
     purpose:{type: String, required: true},
     requirments:{type: String, required: true},
-    company:{type: String, required: true}
+    company:{type: String, required: true},
+    timestamp: { type: Date, default: Date.now}
 });
 mongoose.models = {};
 export default mongoose.model("Contact", ContactSchema);

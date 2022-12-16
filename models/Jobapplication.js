@@ -8,7 +8,8 @@ const JobapplicationSchema = new mongoose.Schema({
     contact:{type: String, required: true},
     linkedin:{type: String},
     experience:{type: String, required: true},
-    resume:{type: String, required: true}
+    resume:{type: String, required: true},
+    timestamp: { type: Date, default: Date.now}
 });
 mongoose.models = {};
 export default mongoose.model("Jobapplication", JobapplicationSchema);
