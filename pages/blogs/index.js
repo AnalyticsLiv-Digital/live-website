@@ -53,7 +53,7 @@ const index = () => {
 
                 </div>
 
-                <section>
+                <section className="hidden">
                     <div className="text-center bg-cyan-50 md:bg-white pt-7 lg:pt-16 z-2">
                         <h1 className="text-center mb-4 text-lg font-medium tracking-wide text-cyan-800 text-lg">Search</h1>
                         <input type="search" placeholder="Search" className="bg-stone-100 w-3/5 lg:w-2/5 rounded-l-full border border-cyan-500 py-2 pl-9 focus:outline-none focus:caret-gray-400" />
