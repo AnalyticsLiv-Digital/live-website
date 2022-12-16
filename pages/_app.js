@@ -23,7 +23,7 @@ Router.events.on('routeChangeComplete', ()=>{
   setShowloader(false);
 })
   return <>
-  
+  <Header />
   {showLoader ? <div className='flex h-screen'><HashLoader
   color="#271d90"
   loading
@@ -31,7 +31,7 @@ Router.events.on('routeChangeComplete', ()=>{
   className="m-auto align-middle"
 /></div> :
 <>
-<Header />
+
   <Component {...pageProps} />
   <Footer/></>}
   </>
