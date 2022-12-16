@@ -148,10 +148,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
             <Transition
           show={isOpen}
-          enter="transition-opacity origin-center ease-in-out duration-800 delay-300 transform"
-          enterFrom="opacity-0 "
-          enterTo="opacity-100 "
-          leave=""
+          enter="transition ease-out duration-100 transform"
+          enterFrom="opacity-0 scale-95"
+          enterTo="opacity-100 scale-100"
+          leave="transition ease-in duration-75 transform"
           leaveFrom="opacity-100 scale-100"
           leaveTo="opacity-0 scale-95"
         >
@@ -162,7 +162,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   className=" text-slate-900 block px-3 py-2 rounded-md text-base font-medium"
                 >
                  <div onClick={() => {setIsServices(!isServices); setIsResources(false);}} >Services</div>
-                  {isServices ? (<div className=' px-4 text-cyan-400  divide-y-2'>
+                  {isServices ? (<div className='transition ease-out duration-200 px-4 text-cyan-400  divide-y-2'>
                             
                             <Link onClick={() => {setIsOpen(!isOpen); setIsServices(false);}} scroll={false} href={{ pathname: '/services',query: { id: 'data-collection' }}}><div className="py-2 w-56 ">Data Collection</div></Link>
                             <Link onClick={() => {setIsOpen(!isOpen); setIsServices(false);}} scroll={false} href={{ pathname: '/services',query: { id: 'data-reporting' }}}><div className="py-2 w-56 ">Data reporting</div></Link>
@@ -208,7 +208,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
           )}
         </Transition>
-        <NextNProgress color="red" showOnShallow={true} showSpinner={false}/>
+        {/*<NextNProgress color="red" showSpinner={false}/>*/}
       </header>
       </>
   )
