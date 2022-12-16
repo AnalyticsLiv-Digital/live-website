@@ -7,7 +7,7 @@ const index = () => {
 
 <p><img alt="download" src="https://www.analyticsvidhya.com/wp-content/themes/analytics-vidhya/icon/pdf.svg" title="Download PDF" /></p>
 
-<h2><strong>Introduction</strong></h2>
+<h2><strong>Introducti</strong></h2>
 
 <p>Machine learning is one of the most advancing technologies in Computer Science in the present era. A lot of Researchers, Academicians, and Industrialists are investing their efforts to innovate in this field. If you find the process of training machines to learn to make decisions on their own fascinating, then this tutorial will be very helpful to you. A demonstration is shown on how by providing some data, we can actually train our models to learn something and use it over and over again for decision making.</p>
 
