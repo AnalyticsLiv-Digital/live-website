@@ -15,7 +15,7 @@ const aboutus = () => {
     </Head>
     <ScrollProgress/>
     
-    <section>
+    <section className='overflow-x-hidden'>
         <div className="relative" data-aos="fade-down" data-aos-once="true">
             <img src="/static/about us.png" className="h-40 lg:h-fit"/>
             <div className="absolute w-24 h-24 lg:w-80 lg:h-80 bg-gradient-to-b from-blue-900 to-transparent blur rounded-full top-2 right-0"></div>

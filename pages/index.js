@@ -100,7 +100,7 @@ export default function Home() {
                     specialists with 8+ years of experience in the industry. We create data driven 
                     marketing strategies to help our clients’ businesses stand out.
                 </p>
-                <Link href="/services"><div className="bg-blue-400 hover:bg-blue-500 transition duration-200 delay-75 text-slate-900 font-semibold rounded w-1/3 mx-auto lg:my-8 text-center px-2 py-2 shadow-md shadow-slate-800">Learn More</div></Link>
+                <Link href="/services"><div className="bg-blue-400 hover:bg-blue-500 transition duration-200 delay-75 text-white tracking-wide font-semibold rounded w-1/3 mx-auto lg:my-8 text-center px-2 py-2 shadow-md shadow-slate-800">Learn More</div></Link>
             </div>
         </div>
     </section>

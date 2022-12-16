@@ -169,8 +169,14 @@ const post = () => {
                 <path  d="M7.932 1.248a.5.5 0 0 0-.864 0l-7 12A.5.5 0 0 0 .5 14h14a.5.5 0 0 0 .432-.752l-7-12Z"/>
             </svg>
 
-           <div className="lg:flex relative w-full lg:w-4/5 space-y-4 lg:space-y-0 lg:space-x-4 mx-auto pt-4 pb-8 px-4">
-                <div className="p-4 lg:w-3/4 space-y-6 bg-white">
+           <div className=" lg:flex relative w-full lg:w-4/5 space-y-4 lg:space-y-0 lg:space-x-4 mx-auto pt-4 pb-8 px-4">
+           {formSubmit ? <div className='w-full bg-white p-2 lg:p-0 mx-auto h-auto lg:text-center text-slate-600'>
+                    <h1 className='m-4 font-bold text-4xl '>Thank You {formValues.firstName}, for your interest.</h1>
+                    <div className='ml-4 text-xl py-4'>We will get back to you shortly.</div>
+                    <div><a className='underline text-blue-600 mx-2'>Click here</a> to go to Home Page</div>
+                    <img className=' mx-auto opacity-80' src='https://img.freepik.com/free-vector/tiny-people-standing-near-big-checkmark-team-male-female-characters-finishing-work-with-list-good-job-sign-flat-vector-illustration-done-job-checklist-time-management-concept_74855-21019.jpg?t=st=1671165312~exp=1671165912~hmac=3278782597e388c76a1bbb109240c67b98b714c0c9c354659a1ab5643b354abd' />
+                </div>:<>
+                <div className=" p-4 lg:w-3/4 space-y-6 bg-white">
                     <h1 className="text-2xl">Google Data Studio Reporting</h1>
                     <div className="h-0.5 bg-cyan-500"></div>
                    
@@ -201,16 +207,11 @@ const post = () => {
                           Nov 20, 2022
                         </p>
                     </div>
-                    <div>
-                        <h2 className="uppercase font-semibold text-slate-800">PDF Download:</h2>
-                        <p className="px-8 mt-4 text-gray-600">
-                         Ahmedabad, Gujarat
-                        </p>
-                    </div>
+                    
                 </div>
 
-                <div className="lg:w-1/2 bg-white px-10 py-4">
-                {formSubmit ? <div>Thanks {formValues.firstName}, for applying for the job. We will get back to you very soon. </div>:
+                <div className=" lg:w-1/2 bg-white px-10 py-4">
+                
                     <form className="space-y-4 md:space-y-6 " onSubmit={handleSubmit}>
                         <h1 className="text-center text-xl">Apply Now</h1>
                         <div className="h-0.5 bg-cyan-600"></div>
@@ -260,8 +261,10 @@ const post = () => {
                         <div className="text-center">
                             <button className="tracking-wider w-full mt-4 px-8 py-2 m-auto bg-cyan-700 uppercase text-white rounded hover:border hover:border-cyan-400 hover:shadow-md hover:shadow-cyan-400 transition-shadow delay-150">Submit</button>
                         </div>
-                    </form>}
+                    </form>
                 </div>
+
+                </>}
            </div>
           
        </section>

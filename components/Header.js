@@ -44,11 +44,11 @@ useEffect(() => {
             
         <Link href="/"><img src="/static/logo.png" className="h-10 lg:mx-4 cursor-pointer"/></Link>
             <nav className="lg:flex text-center">
-                <ul className="lg:flex text-left lg:text-center z-[-1] lg:z-auto lg:mr-4 lg:w-auto lg:space-x-6 items-center  uppercase tracking-wide cursor-pointer">
+                <ul className="lg:flex text-left lg:text-center z-[-1] lg:z-auto lg:mr-4 lg:w-auto lg:space-x-6 font-medium text-slate-800 items-center uppercase tracking-wide cursor-pointer">
                 <li className="relative hover:border-b-4 hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2" onMouseEnter={()=>submenushow(1)} onMouseLeave={()=>submenuhide(1)}>
                 <Link href="/services">Services</Link>
                
-                    <div style={{display : "none"}} onMouseEnter={()=>submenushow(1)} onMouseLeave={()=>submenuhide(1)} id="submenu1" className="absolute w-64 -left-20 top-10 min-w-max text-sm flex flex-col divide-y bg-gray-100 text-cyan-900 items-center align-middle font-semibold ">
+                    <div style={{display : "none"}} onMouseEnter={()=>submenushow(1)} onMouseLeave={()=>submenuhide(1)} id="submenu1" className="absolute w-64 -left-20 top-10 min-w-max text-sm flex flex-col bg-gray-100 text-cyan-900 items-center align-middle font-semibold ">
 
                             <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-collection' }}}><div className="py-2 hover:bg-cyan-500">Data Collection</div></Link>
                             <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-reporting' }}}><div className="py-2 hover:bg-cyan-500">Data reporting</div></Link>
@@ -132,10 +132,10 @@ useEffect(() => {
             </div>
             <Transition
           show={isOpen}
-          enter="transition ease-out duration-100 transform"
-          enterFrom="opacity-0 scale-95"
-          enterTo="opacity-100 scale-100"
-          leave="transition ease-in duration-75 transform"
+          enter="transition-opacity origin-center ease-in-out duration-800 delay-300 transform"
+          enterFrom="opacity-0 "
+          enterTo="opacity-100 "
+          leave=""
           leaveFrom="opacity-100 scale-100"
           leaveTo="opacity-0 scale-95"
         >
@@ -146,7 +146,7 @@ useEffect(() => {
                   className=" text-slate-900 block px-3 py-2 rounded-md text-base font-medium"
                 >
                  <div onClick={() => {setIsServices(!isServices); setIsResources(false);}} >Services</div>
-                  {isServices ? (<div className='transition ease-out duration-200 px-4 text-cyan-400  divide-y-2'>
+                  {isServices ? (<div className=' px-4 text-cyan-400  divide-y-2'>
                             
                             <Link onClick={() => {setIsOpen(!isOpen); setIsServices(false);}} scroll={false} href={{ pathname: '/services',query: { id: 'data-collection' }}}><div className="py-2 w-56 ">Data Collection</div></Link>
                             <Link onClick={() => {setIsOpen(!isOpen); setIsServices(false);}} scroll={false} href={{ pathname: '/services',query: { id: 'data-reporting' }}}><div className="py-2 w-56 ">Data reporting</div></Link>
