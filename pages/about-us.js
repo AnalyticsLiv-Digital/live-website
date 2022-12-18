@@ -11,7 +11,7 @@ const aboutus = () => {
   return (
     <>
     <Head>
-      <title>Test</title>
+      <title>AnalyticsLiv - About us</title>
     </Head>
     <ScrollProgress/>
     

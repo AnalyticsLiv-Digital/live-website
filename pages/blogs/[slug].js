@@ -4,6 +4,7 @@ import ScrollProgress from '../../components/ScrollProgress';
 import Head from 'next/head';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Link } from 'react-scroll';
 
 
 const slug = ()=>{
@@ -14,34 +15,37 @@ const slug = ()=>{
     const {slug} = router.query;
     return (<>
     <Head>
-    <title>Test</title>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-    AOS.init();
-    </script>
+    <title>AnalyticsLiv - {slug}</title>
   </Head>
   <ScrollProgress/>
     <section> 
     <div className="relative lg:flex ">
         
-        <div className=' text-center space-y-1 left-5 top-56 fixed'>
+        <div className=' text-center space-y-1 left-5 top-56 fixed '>
                                   
+        <a target="blank" href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//www.analyticsliv.com/blogs/${slug}`}>
             <div className='rounded-full p-2 bg-blue-700'>
                 <svg xmlns="http://www.w3.org/2000/svg" className='w-5 fill-white' preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                     <path  d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/>
                  </svg>
+                 
             </div>
-            <div className=' rounded-full p-2 bg-indigo-900'>
+            </a>
+            <a target="blank" href={`https://www.linkedin.com/shareArticle?mini=true&url=https%3A//www.analyticsliv.com/blogs/${slug}`}>
+                <div className=' rounded-full p-2 bg-indigo-900'>
                  <svg xmlns="http://www.w3.org/2000/svg" className='w-5 fill-white' preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                     <path  d="M6.94 5a2 2 0 1 1-4-.002a2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z"/>
                  </svg>
              </div>
-            <div className=' rounded-full p-2 bg-green-700'>
-                <svg xmlns="http://www.w3.org/2000/svg" className='w-5 fill-white' preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256">
-                    <path d="M232 96a16 16 0 0 0-16-16h-32V48a16 16 0 0 0-16-16H40a16 16 0 0 0-16 16v128a7.9 7.9 0 0 0 4.6 7.2a8.1 8.1 0 0 0 3.4.8a7.7 7.7 0 0 0 5-1.8L72 154v30a16 16 0 0 0 16 16h93.6l37.4 30.2a7.8 7.8 0 0 0 8.4 1a7.9 7.9 0 0 0 4.6-7.2ZM66.6 137.8L40 159.2V48h128v88H71.6a7.7 7.7 0 0 0-5 1.8Zm122.8 48a7.7 7.7 0 0 0-5-1.8H88v-32h80a16 16 0 0 0 16-16V96h32v111.2Z"/>
+             </a>
+            <a target="blank" href={`https://www.linkedin.com/shareArticle?mini=true&url=https%3A//www.analyticsliv.com/blogs/${slug}`}>
+
+            <div className=' rounded-full p-2 bg-cyan-500'>
+            <svg xmlns="http://www.w3.org/2000/svg" className='w-5 fill-white' preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256">
+                <path  d="M251.1 67.4A12 12 0 0 0 240 60h-28.2A52 52 0 0 0 116 88v.8c-37.3-11.5-67.2-41-67.5-41.3a12 12 0 0 0-20.3 6.4c-9 49.6 6 83 20.1 102.2a112.3 112.3 0 0 0 22 22.5C55.9 193 36 200.7 35.8 200.8a11.7 11.7 0 0 0-7.2 7.5a12.3 12.3 0 0 0 1.4 10.4c1.9 2.9 13.4 17.3 50 17.3c72.1 0 132.5-55.1 139.3-126.4l29.2-29.1a12.2 12.2 0 0 0 2.6-13.1Zm-51.8 28.4a11.3 11.3 0 0 0-3.5 7.7C191.9 164.3 141 212 80 212a89.4 89.4 0 0 1-12.5-.8c10.4-6.7 22.2-16.1 30.5-28.5a12.1 12.1 0 0 0 1.6-9.8a11.8 11.8 0 0 0-6.2-7.6c-2-1.1-45.6-24.2-43.9-85.4c17.2 13.1 45 30.7 76.5 35.9a12 12 0 0 0 14-11.8V88a28.3 28.3 0 0 1 28.4-28a28 28 0 0 1 25.3 16.8a11.9 11.9 0 0 0 11 7.2h6.3Z"/>
                 </svg>
             </div>
+            </a>
             <div className='absolute rounded-full p-2 bg-amber-400'>
                 <svg xmlns="http://www.w3.org/2000/svg" className='w-5 fill-white' preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                     <path d="M18 22q-1.25 0-2.125-.875T15 19q0-.175.025-.363q.025-.187.075-.337l-7.05-4.1q-.425.375-.95.587Q6.575 15 6 15q-1.25 0-2.125-.875T3 12q0-1.25.875-2.125T6 9q.575 0 1.1.212q.525.213.95.588l7.05-4.1q-.05-.15-.075-.337Q15 5.175 15 5q0-1.25.875-2.125T18 2q1.25 0 2.125.875T21 5q0 1.25-.875 2.125T18 8q-.575 0-1.1-.213q-.525-.212-.95-.587L8.9 11.3q.05.15.075.337Q9 11.825 9 12t-.025.362q-.025.188-.075.338l7.05 4.1q.425-.375.95-.588Q17.425 16 18 16q1.25 0 2.125.875T21 19q0 1.25-.875 2.125T18 22Z"/>

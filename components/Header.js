@@ -5,7 +5,7 @@ import NextNProgress from 'nextjs-progressbar';
 import { Transition } from "@headlessui/react";
 import Head from 'next/head';
 import Script from 'next/script';
-
+import { motion } from "framer-motion"
 
 const header = () => {
   const [header, setHeader] = useState(80);
@@ -19,9 +19,10 @@ useEffect(() => {
     let headerSize = () => {
         
         const totalScroll = document.documentElement.scrollTop;
-       if(totalScroll > 100){
+       
+       if(( totalScroll > 130)){
         setHeader(60);
-       }else if(totalScroll < 95){
+       }else if(( totalScroll < 100)){
         setHeader(80);
        }
 
@@ -64,7 +65,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <li className="relative hover:border-b-4 hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2" onMouseEnter={()=>setIsSWebervices(true)} onMouseLeave={()=>setIsSWebervices(false)}>
                 <Link href="/services">Services</Link>
                
-                    {isWebServices && <div onMouseEnter={()=>setIsSWebervices(true)} onMouseLeave={()=>setIsSWebervices(false)} className="subheader absolute w-56 text-sm flex flex-col lg:-ml-20 lg:mt-2 divide-y bg-gray-100 text-cyan-900 items-center align-middle font-semibold">
+                    {isWebServices && <motion.div  initial={{ y: 10, opacity:0 }} animate={{ y:0, opacity:1 }} transition={{  type: "spring",  stiffness: 260,  damping: 20  }} onMouseEnter={()=>setIsSWebervices(true)} onMouseLeave={()=>setIsSWebervices(false)} className="subheader absolute w-56 text-sm flex flex-col lg:-ml-20 lg:mt-2 divide-y bg-gray-100 text-cyan-900 items-center align-middle font-semibold">
  
                             <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-collection' }}}><div className="w-56 py-2 hover:bg-cyan-500">Data Collection</div></Link>
                             <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-reporting' }}}><div className="w-56 py-2 hover:bg-cyan-500">Data reporting</div></Link>
@@ -73,16 +74,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             <Link scroll={false} href={{ pathname: '/services',query: { id: 'paid-search-marketing' }}}><div className="w-56 py-2 hover:bg-cyan-500">Paid Search Marketing</div></Link>
                             <Link scroll={false} href={{ pathname: '/services',query: { id: 'media-planning' }}}><div className="w-56 py-2 hover:bg-cyan-500">Media Planning & Buying</div></Link>
                              
-                        </div>}
+                        </motion.div>}
                       
                     </li>
                     <li className="hover:border-b-4 hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2" onMouseEnter={()=>setIsWebResources(true)} onMouseLeave={()=>setIsWebResources(false)}>
                     Resources
-                   {isWebResources && <div  onMouseEnter={()=>setIsWebResources(true)} onMouseLeave={()=>setIsWebResources(false)} id="submenu2" className="absolute w-56 text-sm flex flex-col lg:-ml-20 lg:mt-2 divide-y bg-gray-100 text-cyan-900 items-center align-middle font-semibold">
+                   {isWebResources && <motion.div initial={{ y: 10, opacity:0 }} animate={{ y:0, opacity:1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} onMouseEnter={()=>setIsWebResources(true)} onMouseLeave={()=>setIsWebResources(false)} id="submenu2" className="absolute w-56 text-sm flex flex-col lg:-ml-20 lg:mt-2 divide-y bg-gray-100 text-cyan-900 items-center align-middle font-semibold">
                             <Link  href='/blogs'><div className="py-2 w-56 hover:bg-cyan-500">Blogs</div></Link>
                             <Link  href='/case-studies'><div className="py-2 w-56 hover:bg-cyan-500">Case Studies</div></Link>
-                            <Link  href='/webinars'><div className="py-2 w-56 hover:bg-cyan-500">Webinars</div></Link>
-                             </div>} 
+                            {/*<Link  href='/webinars'><div className="py-2 w-56 hover:bg-cyan-500">Webinars</div></Link>*/}
+                             </motion.div>} 
                     </li>
                     <Link href="/about-us"><li className="hover:border-b-4 hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2">
                     About Us
@@ -162,7 +163,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   className=" text-slate-900 block px-3 py-2 rounded-md text-base font-medium"
                 >
                  <div onClick={() => {setIsServices(!isServices); setIsResources(false);}} >Services</div>
-                  {isServices ? (<div className='transition ease-out duration-200 px-4 text-cyan-400  divide-y-2'>
+                  {isServices ? (<motion.div initial={{ y: 10, opacity:0 }} animate={{ y:0, opacity:1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }}className='transition ease-out duration-200 px-4 text-cyan-400  divide-y-2'>
                             
                             <Link onClick={() => {setIsOpen(!isOpen); setIsServices(false);}} scroll={false} href={{ pathname: '/services',query: { id: 'data-collection' }}}><div className="py-2 w-56 ">Data Collection</div></Link>
                             <Link onClick={() => {setIsOpen(!isOpen); setIsServices(false);}} scroll={false} href={{ pathname: '/services',query: { id: 'data-reporting' }}}><div className="py-2 w-56 ">Data reporting</div></Link>
@@ -170,7 +171,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             <Link onClick={() => {setIsOpen(!isOpen); setIsServices(false);}} scroll={false} href={{ pathname: '/services',query: { id: 'data-utilization' }}}><div className="py-2 w-56 ">Data Utilization</div></Link>
                             <Link onClick={() => {setIsOpen(!isOpen); setIsServices(false);}} scroll={false} href={{ pathname: '/services',query: { id: 'paid-search-marketing' }}}><div className="py-2 w-56 ">Paid Search Marketing</div></Link>
                             <Link onClick={() => {setIsOpen(!isOpen); setIsServices(false);}} scroll={false} href={{ pathname: '/services',query: { id: 'media-planning' }}}><div className="py-2 w-56 ">Media Planning & Buying</div></Link>
-                       </div>):(<></>)}
+                       </motion.div>):(<></>)}
                 </p>
 
                 <p
@@ -178,10 +179,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   className="text-slate-900 block px-3 py-2 rounded-md text-base font-medium"
                 >
                   <div onClick={() => {setIsResources(!isResources); setIsServices(false);}}>Resources</div>
-                  {isResources ? (<div className='px-4 text-cyan-400  divide-y-2'>
+                  {isResources ? (<motion.div initial={{ y: 10, opacity:0 }} animate={{ y:0, opacity:1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} className='px-4 text-cyan-400  divide-y-2'>
                             <Link onClick={() => {setIsOpen(!isOpen); setIsResources(false);}}  href='/blogs'><div className="py-2 w-56 ">Blogs</div></Link>
                             <Link onClick={() => {setIsOpen(!isOpen); setIsResources(false);}} href='/case-studies'><div className="py-2 w-56 ">Case Studies</div></Link>
-                       </div>):(<></>)}
+                       </motion.div>):(<></>)}
                 </p>
 
                 <a onClick={() => setIsOpen(!isOpen)}

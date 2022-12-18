@@ -40,7 +40,7 @@ export const Footer = () => {
             <div className="text-center lg:text-right">Quick Links</div>
             <div className="bg-sky-800 w-full h-0.5 my-2"></div>
             <div>
-                <ul className="uppercase text-sm tracking-wider space-x-4 flex lg:justify-end ">
+                <ul className="uppercase text-sm tracking-wider space-x-2 flex lg:justify-end ">
                     <Link href="/services"><li>Services</li></Link>
                     <Link href="/blogs"><li>Blogs</li></Link>
                     <Link href="/about-us"><li className="text-center">About Us</li></Link>

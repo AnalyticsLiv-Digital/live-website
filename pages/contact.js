@@ -5,7 +5,8 @@ import { useState, useEffect } from 'react'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import ReactFlagsSelect from "react-flags-select";
-
+import { ScaleLoader } from 'react-spinners'
+import Link from 'next/link';
 
 
 const contact = () => {
@@ -16,13 +17,14 @@ const contact = () => {
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
+    const [showWaiting, setShowWaiting] = useState(false);
     const [selected, setSelected] = useState("");
     const [formSubmit, setFormSubmit] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormValues({ ...formValues, [name]: value });
-        console.log(formValues);
+       // console.log(formValues);
     };
 
     const handleSubmit = (e) => {
@@ -33,10 +35,10 @@ const contact = () => {
     };
 
     useEffect(() => {
-        console.log(formErrors);
+       // console.log(formErrors);
         if (Object.keys(formErrors).length === 0 && isSubmit) {
-            console.log(formValues);
-
+            //console.log(formValues);
+            setShowWaiting(true);
             fetch('/api/contact', {
                 method: 'POST', // or 'PUT'
                 headers: {
@@ -56,8 +58,9 @@ const contact = () => {
             })
                 .then((response) => response.json())
                 .then((data) => {
-                    console.log('Success:', data);
+                   // console.log('Success:', data);
                     setFormSubmit(true);
+                    setShowWaiting(false);
                 })
                 .catch((error) => {
                     console.error('Error:', error);
@@ -122,29 +125,35 @@ const contact = () => {
     return (
         <>
             <Head>
-                <title>Test</title>
+                <title>AnalyticsLiv - Contact us</title>
 
             </Head>
             <ScrollProgress />
+            {showWaiting && <div className="fixed flex backdrop-blur top-0 left-0 right-0 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full"><ScaleLoader
+  color="#271d90"
+  loading
+  size={100}
+  className="m-auto align-middle"
+/></div>}
             <section className="relative pt-12 pb-12 bg-slate-900">
 
-                <div data-aos="zoom-in" data-aos-once="true" className="z-0 absolute blur-sm lg:w-80 w-40 lg:h-80 h-40 rounded-full bg-gradient-to-b from-violet-500 via-slate-900 to-transparent top-10 lg:left-96 lg:ml-28 left-1/2 -ml-20"></div>
+                <div data-aos="zoom-in" data-aos-once="true" className=" absolute blur-sm lg:w-80 w-40 lg:h-80 h-40 rounded-full bg-gradient-to-b from-violet-500 via-slate-900 to-transparent top-10 lg:left-96 lg:ml-28 left-1/2 -ml-20"></div>
 
 
-                <div className="relative z-10 pt-12 ">
+                <div className="relative pt-12 ">
                     <h1 className=" text-center tracking-wide text-white uppercase text-2xl mb-8">Contact Us</h1>
                     <div className="relative overflow-hidden lg:w-4/5 lg:p-8 pt-2 rounded-lg mx-2 lg:mx-auto bg-white">
                         <div className="absolute rounded-full w-40 h-40 bg-gradient-to-b from-rose-500 to-transparent blur -right-10 top-0"></div>
                         <div className="absolute rounded-full w-40 h-40 bg-gradient-to-r from-cyan-500 to-transparent blur left-1/2 -bottom-10"></div>
-                        <div className="relative mx-2 z-20 lg:flex">
-                            <div data-aos="fade-up" data-aos-once="true" className="relative overflow-hidden lg:w-1/3 rounded-lg bg-slate-900 space-y-9 px-4 pt-12 pb-20 align-middle text-white">
+                        <div className="relative mx-2 lg:flex">
+                            <div data-aos="fade-up" data-aos-once="true" className="relative h-screen overflow-hidden lg:w-1/3 rounded-lg bg-slate-900 space-y-9 px-4 pt-12 pb-20 align-middle text-white">
                                 <h1 className="font-semibold uppercase tracking-wider">Contact Information</h1>
                                 <h2 className="uppercase">Make an appointment for first consultation.</h2>
                                 <div>
                                     <svg xmlns="http://www.w3.org/2000/svg" className="inline w-6" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                                         <path fill="currentColor" d="M4 20q-.825 0-1.412-.587Q2 18.825 2 18V6q0-.825.588-1.412Q3.175 4 4 4h16q.825 0 1.413.588Q22 5.175 22 6v12q0 .825-.587 1.413Q20.825 20 20 20Zm8-7L4 8v10h16V8Zm0-2l8-5H4ZM4 8V6v12Z"></path>
                                     </svg>
-                                    <span>data.analytics@analyticsliv.com</span>
+                                    <span>support@analyticsliv.com</span>
                                 </div>
                                 <div>
                                     <svg xmlns="http://www.w3.org/2000/svg" className="inline w-6" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
@@ -153,62 +162,65 @@ const contact = () => {
                                     <span>+91 80087 83679</span>
                                 </div>
                                 <div className="space-x-2 pl-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 inline fill-current hover:fill-blue-700" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                                        <path  d="M15.402 21v-6.966h2.333l.349-2.708h-2.682V9.598c0-.784.218-1.319 1.342-1.319h1.434V5.857a19.19 19.19 0 0 0-2.09-.107c-2.067 0-3.482 1.262-3.482 3.58v1.996h-2.338v2.708h2.338V21H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1h-4.598z"></path>
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 inline fill-current hover:fill-indigo-800" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77Z"></path>
-                                    </svg>
+                                    <Link href="https://in.linkedin.com/company/analytics-liv-digital"><svg xmlns="http://www.w3.org/2000/svg" className="w-8 inline fill-current hover:fill-blue-700" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                    <path  d="M5 3c0 1.062-.71 1.976-2.001 1.976C1.784 4.976 1 4.114 1 3.052C1 1.962 1.76 1 3 1s1.976.91 2 2zM1 19V6h4v13H1zm6-8.556c0-1.545-.051-2.836-.102-3.951h3.594l.178 1.723h.076c.506-.811 1.746-2 3.822-2C17.1 6.216 19 7.911 19 11.558V19h-4v-6.861c0-1.594-.607-2.81-2-2.81c-1.062 0-1.594.86-1.873 1.569c-.102.254-.127.608-.127.963V19H7v-8.556z"/>
+                                    </svg></Link>
+                                    <Link href="https://www.youtube.com/channel/UCSU9utLB2PDe4VcXiI5kMFw"><svg xmlns="http://www.w3.org/2000/svg" className="w-8 inline fill-current hover:fill-indigo-800" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                    <path d="m10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9c.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83c-.25.9-.83 1.48-1.73 1.73c-.47.13-1.33.22-2.65.28c-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44c-.9-.25-1.48-.83-1.73-1.73c-.13-.47-.22-1.1-.28-1.9c-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83c.25-.9.83-1.48 1.73-1.73c.47-.13 1.33-.22 2.65-.28c1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44c.9.25 1.48.83 1.73 1.73Z"/>
+                                    </svg></Link>
+                                    <Link href="https://www.instagram.com/analyticsliv_digital">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="w-8 inline fill-current hover:fill-pink-500" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                                        <path  d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3Z"/>
+                                    <path  d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3Z"/>
                                     </svg>
+                                    </Link>
                                 </div>
                                 <div className="absolute rounded-full w-56 h-56 bg-white lg:left-48 -right-24 -bottom-24"></div>
                                 <div className="absolute rounded-full lg:w-36 lg:h-36 w-24 h-24 bg-amber-400 right-10 lg:bottom-10 bottom-8"></div>
                             </div>
                             <div data-aos="fade-down" data-aos-once="true" className="relative lg:w-2/3 rounded-lg p-4 bg-white font-regular">
-                                {formSubmit ? <div className='relative text-slate-700 p-4 space-y-4 h-full'>
+                                {formSubmit && <div className='relative text-slate-700 p-4 space-y-4 h-full'>
                                     <h1 className='align-middle font-medium text-4xl'>Thank You for your interest.</h1>
                                     <h2 className='align-middle text-xl'>We will get back to you soon.</h2>
                                     <div><a href='#' className='text-blue-500 underline'>Click here</a> to go to Home Page</div>
                                     <div className='absolute bottom-0 right-2 rounded-full w-20 h-20 bg-emerald-600 opacity-70 animate-bounce hover:animate-none duration-300 delay-75'></div>
-                                </div>: 
-                                <form className="space-y-2 md:space-y-6  md:w-4/5 mx-auto" onSubmit={handleSubmit}>
+                                </div>}
+                            
+                                {!formSubmit && <form className="space-y-2 md:space-y-6  md:w-4/5 mx-auto" onSubmit={handleSubmit}>
                                     <div className="relative w-full md:flex justify-between md:space-x-8">
                                         <div className="relative md:w-1/2">
                                             <input type="text" id="firstname" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent dark:bg-gray-700 border-0 border-b-2 border-slate-500 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " name="firstName" value={formValues.firstName} onChange={handleChange} />
-                                            <label htmlFor="firstname" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">First Name</label>
+                                            <label htmlFor="firstname" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">First Name</label>
                                             <p className="text-red-600 text-sm">{formErrors.firstName}</p>
                                         </div>
                                         <div className="relative md:w-1/2">
                                             <input type="text" id="lastname" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent dark:bg-gray-700 border-0 border-b-2 border-slate-500 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " name="lastName" value={formValues.lastName} onChange={handleChange} />
-                                            <label htmlFor="lastname" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Last Name</label>
+                                            <label htmlFor="lastname" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Last Name</label>
                                             <p className="text-red-600 text-sm">{formErrors.lastName}</p>
                                         </div>
                                     </div>
                                     <div className="w-full">
                                         <div className="relative w-full">
                                             <input type="emaild" id="email" className="px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent dark:bg-gray-700 border-0 border-b-2 border-slate-500 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " name="email" value={formValues.email} onChange={handleChange} />
-                                            <label htmlFor="emaild" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">E-mail</label>
+                                            <label htmlFor="emaild" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">E-mail</label>
                                             <p className="text-red-600 text-sm">{formErrors.email}</p>
                                         </div>
                                     </div>
 
                                      <div className="w-full md:flex justify-between md:space-x-8">
                                         <div className="relative md:w-1/2">
-                                        <ReactFlagsSelect  className="pb-4 pt-2 w-full text-sm text-gray-400 bg-transparent border-0 border-b-2 border-slate-500 dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-b focus:border-cyan-500 outline-none" name="country" onChange={handleChange} value={formValues.country} selected={selected} onSelect={(code) => { setSelected(code); setFormValues({ ...formValues, country: code }); console.log(formValues) }} />
+                                        <ReactFlagsSelect  className="pb-4 pt-2 w-full text-sm text-gray-400 bg-transparent border-0 border-b-2 border-slate-500 dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-b focus:border-cyan-500 outline-none" name="country" onChange={handleChange} value={formValues.country} selected={selected} onSelect={(code) => { setSelected(code); setFormValues({ ...formValues, country: code }); /*console.log(formValues)*/ }} />
                                         <p className="text-red-600 text-sm">{formErrors.country}</p>
                                         </div>
                                         <div className='relative md:w-1/2 '>
                                             <input type="number" id="tel" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent dark:bg-gray-700 border-0 border-b-2 border-slate-500 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " name="contactno" value={formValues.contactno} onChange={handleChange} />
-                                            <label htmlFor="tel" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Contact No</label>
+                                            <label htmlFor="tel" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Contact No</label>
                                             <p className="text-red-600 text-sm">{formErrors.contactno}</p>
                                         </div>
                                     </div>
                                     <div className="w-full md:flex space-y-4 justify-around md:space-x-8">
                                         <div className="relative md:w-1/2 ">
                                             <input type="Cname" id="company" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent dark:bg-gray-700 border-0 border-b-2 border-slate-500 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " name="company" value={formValues.company} onChange={handleChange} />
-                                            <label htmlFor="Cname" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Company Name</label>
+                                            <label htmlFor="Cname" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Company Name</label>
                                             <p className="text-red-600 text-sm">{formErrors.company}</p>
                                         </div>
                                         <div className='relative w-full md:w-1/2'>
@@ -244,8 +256,8 @@ const contact = () => {
                                     <div className="text-center">
                                         <button className="tracking-wider my-4 px-8 py-2 m-auto bg-slate-900 text-white rounded hover:border hover:border-cyan-400 hover:shadow-md hover:shadow-cyan-400 transition-shadow delay-150">Submit</button>
                                     </div>
-                                </form>
-                                }
+                                </form>}
+                                
                                 
 
 

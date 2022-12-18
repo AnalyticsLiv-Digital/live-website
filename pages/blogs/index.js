@@ -4,6 +4,7 @@ import Head from 'next/head';
 import BlogCard from '../../components/BlogCard';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Link from 'next/link';
 
 const blogdata = [{
     title: "xyz",
@@ -27,15 +28,12 @@ const index = () => {
     }, []);
     return (
         <><Head>
-            <title>Test</title>
-            <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-            <script>
-                AOS.init();
-            </script>
+            <title>AnalyticsLiv - Blogs</title>
+ 
         </Head>
+        <ScrollProgress/>
             <div>
-                <ScrollProgress />
+                
                 <div className="relative lg:mb-32">
                     <div className="">
                         <div className="absolute right-0 bg-slate-900 w-4/5 lg:w-4/5 lg:h-80 h-full rounded-bl-full"></div>
@@ -67,7 +65,7 @@ const index = () => {
                         <div className="hidden bg-gray-50  h-100% w-1/2 my-8 p-4 space-y-4 mx-4">
                             <div className="flex space-x-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="w-8" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                                    <path fill="none" stroke="#65217a" stroke-width="2" d="m12 3l9 4.5l-9 4.5l-9-4.5L12 3Zm4.5 7.25L21 12.5L12 17l-9-4.5l4.5-2.25m9 5L21 17.5L12 22l-9-4.5l4.5-2.25" />
+                                    <path fill="none" stroke="#65217a" strokeWidth="2" d="m12 3l9 4.5l-9 4.5l-9-4.5L12 3Zm4.5 7.25L21 12.5L12 17l-9-4.5l4.5-2.25m9 5L21 17.5L12 22l-9-4.5l4.5-2.25" />
                                 </svg>
                                 <h2 className="font-medium py-1">Resources</h2>
                             </div>
@@ -93,7 +91,7 @@ const index = () => {
                         <div className='bg-cover py-8 lg:py-16 bg-scroll' style={{backgroundImage: `url("https://img.freepik.com/free-vector/white-abstract-background_23-2148810113.jpg?t=st=1671082381~exp=1671082981~hmac=659665427411ee225ef245d30444c4a2513e113dcfebb8e1dabf685749e40e1e")`}} >
                             <div className="mx-8 lg:mx-32 grid grid-rows-1 lg:grid-cols-3 gap-6 lg:gap-20 ">
                                 <div className="relative lg:block bg-gray-50 rounded text-center shadow-md shadow-gray-500 ">
-                                
+                                <Link href="/blogs/why-you-should-move-to-ga4">
                                     <img src="/static/blog2.png" className=" rounded-t w-screen " />
                                     <div className="mx-4 mt-2 mb-2 lg:mb-8 text-left">
                                         <div className="flex justify-between text-xs text-gray-400">
@@ -111,9 +109,11 @@ const index = () => {
                                             Read More
                                         </div>
                                     </div>
+                                    </Link>
                                 </div>
 
                                 <div className="relative lg:block bg-gray-50 rounded text-center shadow-lg shadow-gray-500 ">
+                                <Link href="/blogs/why-you-should-move-to-ga4">
                                     <img src="/static/blog1.png" className="rounded-t w-screen" />
                                     <div className="mx-4 mb-2 mt-2 lg:mb-8 text-left">
                                         <div className="flex justify-between text-xs text-gray-400">
@@ -131,9 +131,11 @@ const index = () => {
                                             Read More
                                         </div>
                                     </div>
+                                    </Link>
                                 </div>
 
                                 <div className="relative lg:block bg-gray-50 rounded text-center shadow-lg shadow-gray-500 ">
+                                <Link href="/blogs/why-you-should-move-to-ga4">
                                     <img src="/static/blog3.png" className="rounded-t w-screen" />
                                     <div className="mx-4 mt-2 mb-2 lg:mb-8 text-left">
                                         <div className="flex justify-between text-xs text-gray-400">
@@ -151,9 +153,11 @@ const index = () => {
                                             Read More
                                         </div>
                                     </div>
+                                    </Link>
                                 </div>
 
                                 <div className="relative lg:block bg-gray-50 rounded text-center shadow-lg shadow-gray-500 ">
+                                <Link href="/blogs/why-you-should-move-to-ga4">
                                     <img src="/static/blog1.png" className="rounded-t w-screen" />
                                     <div className="mx-4 mt-2 mb-2 lg:mb-8 text-left">
                                         <div className="flex justify-between text-xs text-gray-400">
@@ -171,9 +175,11 @@ const index = () => {
                                             Read More
                                         </div>
                                     </div>
+                                    </Link>
                                 </div>
 
                                 <div className="relative bg-gray-50 lg:block rounded text-center shadow-lg shadow-gray-500">
+                                <Link href="/blogs/why-you-should-move-to-ga4">
                                     <img src="/static/blog2.png" className="rounded-t w-screen" />
                                     <div className="mx-4 mt-2 mb-2 lg:mb-8 text-left">
                                         <div className="flex justify-between text-xs text-gray-400">
@@ -191,9 +197,11 @@ const index = () => {
                                             Read More
                                         </div>
                                     </div>
+                                    </Link>
                                 </div>
 
                                 <div className="relative bg-gray-50 lg:block rounded text-center shadow-lg shadow-gray-500 ">
+                                <Link href="/blogs/why-you-should-move-to-ga4">
                                     <img src="/static/blog3.png" className="rounded-t w-screen" />
                                     <div className="mx-4 mt-2 mb-2 lg:mb-8 text-left">
                                         <div className="flex justify-between text-xs text-gray-400">
@@ -211,7 +219,9 @@ const index = () => {
                                             Read More
                                         </div>
                                     </div>
+                                    </Link>
                                 </div>
+                                
                             </div>
 
                         </div>

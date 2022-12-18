@@ -12,7 +12,7 @@ const aboutus = () => {
   return (
     <>
     <Head>
-      <title>Test</title>
+      <title>AnalyticsLiv - Page Not Found</title>
     </Head>
     <div className='lg:
     w-4/5 mx-auto p-8 my-4'>

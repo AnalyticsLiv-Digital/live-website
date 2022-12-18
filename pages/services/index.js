@@ -17,7 +17,7 @@ const index= () => {
   const { query } = useRouter();
 
   useEffect(() => {
-    if (query.id !== '') {
+    if (query.id !== undefined) {
       setTimeout(() => {
         Scroll.scroller.scrollTo(query.id, {
           duration: 500,
@@ -33,12 +33,7 @@ const index= () => {
     <>
     
     <Head>
-      <title>Test</title>
-      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
-      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-      <script>
-      AOS.init();
-      </script>
+      <title>AnalyticsLiv - Services Offered</title>
     </Head>
     <ScrollProgress/>
     <div className='overflow-x-hidden'>
@@ -52,7 +47,7 @@ const index= () => {
         <path fill='#38bdf8 ' d="M7.932 1.248a.5.5 0 0 0-.864 0l-7 12A.5.5 0 0 0 .5 14h14a.5.5 0 0 0 .432-.752l-7-12Z"/>
     </svg>
     <svg xmlns="http://www.w3.org/2000/svg" className='absolute w-28 lg:w-52 lg:right-12 right-2 lg:-top-40 -top-28 rotate-45 ' preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15">
-        <path fill="none" stroke="#1e293b" stroke-linejoin="round" d="m7.5 1.5l-7 12h14l-7-12Z"/>
+        <path fill="none" stroke="#1e293b" strokeLinejoin="round" d="m7.5 1.5l-7 12h14l-7-12Z"/>
     </svg>
     </div>
     <h1 className='absolute lg:right-48 right-16 lg:-bottom-4 bottom-2 tracking-wider text-cyan-900 text-3xl lg:text-4xl uppercase font-semibold text-right pr-12'>Services</h1>

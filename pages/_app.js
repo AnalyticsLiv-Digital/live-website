@@ -25,6 +25,7 @@ Router.events.on('routeChangeComplete', ()=>{
   return <>
   <Head>
   <style> @import url('https://fonts.googleapis.com/css2?family=Poppins'); </style>
+  <link rel="icon" href="/static/favicon.png" type="image/icon type"></link>
   </Head>
   <Header />
   {showLoader ? <div className='flex h-screen'><HashLoader

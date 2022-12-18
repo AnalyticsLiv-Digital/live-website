@@ -3,6 +3,8 @@ import ScrollProgress from '../../components/ScrollProgress'
 import AOS from 'aos';
 import { useState, useEffect } from 'react';
 import { Router, useRouter } from 'next/router';
+import Head from 'next/head';
+import { ScaleLoader } from 'react-spinners'
 
 const post = () => {
 
@@ -16,6 +18,7 @@ const post = () => {
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
   const [selected, setSelected] = useState("");
+  const [showWaiting, setShowWaiting] = useState(false);
   const [formSubmit, setFormSubmit] = useState(false);
 
   const uploadToClient = async (event) => {
@@ -37,7 +40,51 @@ const post = () => {
     
   };
 
-  useEffect(() => {
+  const uploadPhoto = async (e) => {
+    const file = e.target.files[0];
+    var file_size = e.target.files[0].size;
+
+    if(file_size < 10000000){
+    var re = /(?:\.([^.]+))?$/;
+    var x = Date.now() +''+ Math.floor(Math.random() * 1000);
+    var ext = re.exec(file.name)[1];
+    var new_filename = x+'.'+ext;
+   // console.log(new_filename);
+    //const filename = encodeURIComponent(file.name);
+    const res = await fetch(`/api/resumegoogleupload?file=${new_filename}`);
+    const { url, fields } = await res.json();
+    //console.log(res.json);
+    const formData = new FormData();
+
+    Object.entries({ ...fields, file }).forEach(([key, value]) => {
+      formData.append(key, value);
+    });
+
+    const upload = await fetch(url, {
+      method: 'POST',
+      mode: 'no-cors', // no-cors, *cors, same-origin
+      body: formData,
+    }).then((data)=>{/*console.log(data.json)*/});
+   
+    setFormValues({ ...formValues, resume: new_filename });
+    if (upload) {
+      //console.log('Uploaded successfully!');
+      setFormValues({ ...formValues, resume: new_filename });
+    } else {
+      //console.log(upload);
+      setFormValues({ ...formValues, resume: new_filename });
+    }
+
+    //console.log(formValues)
+}else{
+    alert('file size should be less than 10MB');
+      document.getElementById('resume_file').value='';
+}
+
+
+  };
+
+  /*useEffect(() => {
     
     const body = new FormData();
     body.append("file", resumefile);
@@ -52,7 +99,7 @@ const post = () => {
       })
 
 }, [createObjectURL]);
-
+*/
 ////////////////////////////////////////////////
 
 
@@ -67,7 +114,7 @@ const post = () => {
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormValues({ ...formValues, [name]: value });
-        console.log(formValues);
+        //console.log(formValues);
     };
 
     const handleSubmit = (e) => {
@@ -80,8 +127,9 @@ const post = () => {
     useEffect(() => {
         console.log(formErrors);
         if (Object.keys(formErrors).length === 0 && isSubmit) {
-            console.log(formValues);
-            console.log({post});
+           // console.log(formValues);
+            setShowWaiting(true);
+           // console.log({post});
             fetch('/api/jobapplication', {
                 method: 'POST', // or 'PUT'
                 headers: {
@@ -100,8 +148,9 @@ const post = () => {
             })
                 .then((response) => response.json())
                 .then((data) => {
-                    console.log('Success:', data);
+                   // console.log('Success:', data);
                     setFormSubmit(true);
+                    setShowWaiting(false);
                 })
                 .catch((error) => {
                     console.error('Error:', error);
@@ -159,7 +208,17 @@ const post = () => {
 
 
   return (
-    <><ScrollProgress/>
+    <>
+    <Head>
+        <title>AnalyticsLiv - Job</title>
+    </Head>
+        <ScrollProgress/>
+        {showWaiting && <div className="fixed flex backdrop-blur top-0 left-0 right-0 z-40 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full"><ScaleLoader
+  color="#271d90"
+  loading
+  size={100}
+  className="m-auto align-middle"
+/></div>}
     <div>
         <section className="relative bg-gray-100 pt-12">
             <svg xmlns="http://www.w3.org/2000/svg" className="absolute lg:w-48 w-32 -right-0 top-10 lg:top-8 lg:right-10 fill-orange-500 blur-md rotate-45" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15">
@@ -170,12 +229,15 @@ const post = () => {
             </svg>
 
            <div className=" lg:flex relative w-full lg:w-4/5 space-y-4 lg:space-y-0 lg:space-x-4 mx-auto pt-4 pb-8 px-4">
-           {formSubmit ? <div className='w-full bg-white p-2 lg:p-0 mx-auto h-auto lg:text-center text-slate-600'>
-                    <h1 className='m-4 font-bold text-4xl '>Thank You {formValues.firstName}, for your interest.</h1>
+           {formSubmit && <div className='w-full bg-white p-2 lg:p-0 mx-auto h-auto lg:text-center text-slate-600'>
+                    <h1 className='m-4 font-bold text-4xl '>Thank You {formValues.firstName}, for your applying.</h1>
                     <div className='ml-4 text-xl py-4'>We will get back to you shortly.</div>
                     <div><a className='underline text-blue-600 mx-2'>Click here</a> to go to Home Page</div>
                     <img className=' mx-auto opacity-80' src='https://img.freepik.com/free-vector/tiny-people-standing-near-big-checkmark-team-male-female-characters-finishing-work-with-list-good-job-sign-flat-vector-illustration-done-job-checklist-time-management-concept_74855-21019.jpg?t=st=1671165312~exp=1671165912~hmac=3278782597e388c76a1bbb109240c67b98b714c0c9c354659a1ab5643b354abd' />
-                </div>:<>
+                </div>}
+                
+                
+                {!formSubmit &&<>
                 <div className=" p-4 lg:w-3/4 space-y-6 bg-white">
                     <h1 className="text-2xl">Google Data Studio Reporting</h1>
                     <div className="h-0.5 bg-cyan-500"></div>
@@ -248,12 +310,12 @@ const post = () => {
                             
                             <div className="relative">
                                 <input type="url" id="link" name="linkedin" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent dark:bg-gray-700 border-b border-slate-500 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " value={formValues.linkedin} onChange={handleChange} />
-                                <label htmlFor="link" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">LinkedIn Profile Link</label>
+                                <label htmlFor="link" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">LinkedIn Profile Link (optional)</label>
                             
                             </div>
                         
                             <div className="relative">
-                                <input type="file" id="resume_file" onChange={uploadToClient}  accept=".pdf, .jpg, .jpeg, .docx" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent dark:bg-gray-700 border-b border-slate-500 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder="No file" />
+                                <input type="file" id="resume_file" onChange={uploadPhoto}  accept=".pdf, .jpg, .jpeg, .docx" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent dark:bg-gray-700 border-b border-slate-500 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder="No file" />
                                 <label htmlFor="resume_file" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Upload CV</label>
                                 <p className="text-red-600 text-sm">{formErrors.resume}</p>
                             </div>
@@ -261,6 +323,7 @@ const post = () => {
                         <div className="text-center">
                             <button className="tracking-wider w-full mt-4 px-8 py-2 m-auto bg-cyan-700 uppercase text-white rounded hover:border hover:border-cyan-400 hover:shadow-md hover:shadow-cyan-400 transition-shadow delay-150">Submit</button>
                         </div>
+ 
                     </form>
                 </div>
 

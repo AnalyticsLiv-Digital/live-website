@@ -12,7 +12,7 @@ const Careers = () => {
   return (
     <>
     <Head>
-      <title>Test</title>
+      <title>AnalyticsLiv - Careers</title>
     </Head>
     <ScrollProgress/>
     <section className="pb-12">
@@ -57,7 +57,7 @@ const Careers = () => {
                 </div>
                 </div>
                 <div className="md:w-2/5 md:text-right">
-                    <Link href="careers/sss"><button className="border-b-2 border-rose-400 px-4 py-2 text-gray-200 rounded bg-slate-800 hover:bg-cyan-500 hover:text-slate-800 hover:border-slate-600 tracking-wider">Apply Now</button></Link>
+                    <Link href="careers/3223843"><button className="border-b-2 border-rose-400 px-4 py-2 text-gray-200 rounded bg-slate-800 hover:bg-cyan-500 hover:text-slate-800 hover:border-slate-600 tracking-wider">Apply Now</button></Link>
                 </div>
             </div>
         </div>
@@ -84,7 +84,7 @@ const Careers = () => {
                 </div>
                 </div>
                 <div className="md:w-2/5 md:text-right">
-                <Link href="careers/sss"><button className="border-b-2 border-rose-400 px-4 py-2 text-gray-200 rounded bg-slate-800 hover:bg-cyan-500 hover:text-slate-800 hover:border-slate-600 tracking-wider">Apply Now</button></Link>
+                <Link href="careers/3223533"><button className="border-b-2 border-rose-400 px-4 py-2 text-gray-200 rounded bg-slate-800 hover:bg-cyan-500 hover:text-slate-800 hover:border-slate-600 tracking-wider">Apply Now</button></Link>
                 </div>
             </div>
         </div>
@@ -111,7 +111,7 @@ const Careers = () => {
                 </div>
                 </div>
                 <div className="md:w-2/5 md:text-right">
-                <Link href="careers/sss"><button className="border-b-2 border-rose-400 px-4 py-2 text-gray-200 rounded bg-slate-800 hover:bg-cyan-500 hover:text-slate-800 hover:border-slate-600 tracking-wider">Apply Now</button></Link>
+                <Link href="careers/3223567"><button className="border-b-2 border-rose-400 px-4 py-2 text-gray-200 rounded bg-slate-800 hover:bg-cyan-500 hover:text-slate-800 hover:border-slate-600 tracking-wider">Apply Now</button></Link>
                 </div>
             </div>
         </div>
