@@ -157,7 +157,7 @@ export default function Home() {
                     <div  data-aos="fade-up" data-aos-once="true">
                 <div className="bg-slate-900 relative w-100% text-center text-white text-4xl mb-4">How we power up your brand</div>
                 <Carousel className=" bg-slate-900 font-medium text-center text-white h-50 md:h-40" ssr={true} showDots={true} responsive={responsive} infinite={true} autoPlay autoPlaySpeed={4000} transitionDuration={500} removeArrowOnDeviceType={["tablet", "mobile"]}>
-                    <div className="">
+                    <div className=" ">
                         <div className="text-3xl">1. Collect</div>
                         <div className="text-lg md:p-5 md:px-40">We begin with the deep understanding of client’s business potential, the scope of work, and Track customer’s movement and actions to understand user interaction and experiences, and to attribute conversions accurately</div>
                     </div>
