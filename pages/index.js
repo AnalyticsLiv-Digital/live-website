@@ -130,7 +130,7 @@ export default function Home() {
                     </div>
                 </section>
 
-                <section className="bg-slate-900" >
+                <section className="bg-slate-900">
                     <div className="relative w-100% lg:flex justify-evenly py-6">
                         <div data-aos="fade-left" data-aos-once="true" className="lg:hidden w-full">
                             <img src="/static/collab.png" />
