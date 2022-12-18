@@ -230,7 +230,7 @@ const post = () => {
 
            <div className=" lg:flex relative w-full lg:w-4/5 space-y-4 lg:space-y-0 lg:space-x-4 mx-auto pt-4 pb-8 px-4">
            {formSubmit && <div className='w-full bg-white p-2 lg:p-0 mx-auto h-auto lg:text-center text-slate-600'>
-                    <h1 className='m-4 font-bold text-4xl '>Thank You {formValues.firstName}, for your applying.</h1>
+                    <h1 className='m-4 font-bold text-4xl '>Thank You {formValues.firstName}, for applying.</h1>
                     <div className='ml-4 text-xl py-4'>We will get back to you shortly.</div>
                     <div><a className='underline text-blue-600 mx-2'>Click here</a> to go to Home Page</div>
                     <img className=' mx-auto opacity-80' src='https://img.freepik.com/free-vector/tiny-people-standing-near-big-checkmark-team-male-female-characters-finishing-work-with-list-good-job-sign-flat-vector-illustration-done-job-checklist-time-management-concept_74855-21019.jpg?t=st=1671165312~exp=1671165912~hmac=3278782597e388c76a1bbb109240c67b98b714c0c9c354659a1ab5643b354abd' />
