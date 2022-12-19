@@ -73,7 +73,7 @@ export default function Home() {
 
                 <section>
                     <div className="bg-stone-300">
-                        <div className="w-full py-4">
+                        <div className="w-full md:py-4">
                             <div className="text-center md:flex space-y-6 md:space-y-0 py-3">
                                 <div className="font-medium text-4xl md:w-1/4">
                                     <span className=""><Counter x={100} /></span>
@@ -101,7 +101,7 @@ export default function Home() {
                 <section>
                     <div style={{ backgroundImage: `url("/static/flow.png")` }} className="lg:flex pb-6 lg:pb-0 bg-cover bg-fixed ">
 
-                        <div data-aos="fade-right" data-aos-once="true" className="max-w-full lg:min-w-1/2 content-center py-24">
+                        <div data-aos="fade-right" data-aos-once="true" className="max-w-full lg:min-w-1/2 content-center py-2 md:py-24">
                             <motion.img
                                 initial={{ scale: 0.5 }}
                                 animate={{ scale: 1 }}
@@ -131,13 +131,13 @@ export default function Home() {
                 </section>
 
                 <section className="bg-slate-900">
-                    <div className="relative w-100% lg:flex justify-evenly py-6">
+                    <div className="relative w-100% lg:flex justify-evenly py-4 md:py-6">
                         <div data-aos="fade-left" data-aos-once="true" className="lg:hidden w-full">
                             <img src="/static/collab.png" />
                         </div>
 
                         <div data-aos="fade-right" data-aos-once="true" className="lg:w-1/2 w-4/5 m-auto">
-                            <h1 className="font-medium text-white text-3xl pt-8 pb-4 whitespace-pre leading-relaxed text-center md:text-left">What We Do?</h1>
+                            <h1 className="font-medium text-white text-3xl pt-2 pb-2 md:pt-8 md:pb-4 whitespace-pre leading-relaxed text-center md:text-left">What We Do?</h1>
                             <div className="bg-black w-100% h-0.5 rounded-full"></div>
                             <ul className="text-purple-100 leading-6 py-4 tracking-widest">
                                 <li className="my-2">Understand context, needs and expected outcomes</li>
@@ -153,10 +153,40 @@ export default function Home() {
                     </div>
                 </section>
 
-                <section className="bg-slate-900">
+                
+
+                <section className="relative bg-slate-900">
+
+                    <div className="w-100% lg:flex py-6">
+                        <div data-aos="fade-right" data-aos-once="true" className="lg:w-1/3 m-auto">
+                            <img src="/static/team.png" className="m-auto" />
+                        </div>
+                        <div data-aos="fade-left" data-aos-once="true" className="lg:w-1/2 w-4/5 m-auto">
+                            <h1 className="font-medium text-white text-3xl md:pt-8 md:pb-4 whitespace-pre m-auto leading-relaxed text-center md:text-left">Services we Offer</h1>
+                            <div className="bg-black w-100% h-0.5 rounded-full"></div>
+                            <div className="lg:flex lg:space-x-10 py-2 md:py-4">
+                                <ul className="text-purple-200 tracking-widest ">
+                                    <li className="my-2 flex items-center"><img src="/static/icon-1.png" className="mr-4" /> Data Collection</li>
+                                    <li className="my-2 flex items-center"><img src="/static/icon-2.png" className="mr-4" /> Data Reporting</li>
+                                    <li className="my-2 flex items-center"><img src="/static/icon-3.png" className="mr-4" /> Insight Generation</li>
+                                </ul>
+                                <ul className="text-purple-200 tracking-widest ">
+                                    <li className="my-2 flex items-center"><img src="/static/icon-4.png" className="mr-4" /> Data Utilization</li>
+                                    <li className="my-2 flex items-center"><img src="/static/icon-5.png" className="mr-4" /> Paid Search Marketing</li>
+                                    <li className="my-2 flex items-center"><img src="/static/icon-6.png" className="mr-4" /> Media Planning & Buying</li>
+                                </ul>
+                            </div>
+
+                            <div className="relative w-full">
+                                <Link href="/services"><button className="text-white border rounded px-4 py-2 ml-4 shadow-sm shadow-lime-300 hover:bg-emerald-600 transition origin-top-left duration-300 delay-150 ease-in">Learn More</button></Link>
+                            </div>
+                        </div>
+
+                    </div>
+                    <section className="bg-slate-900">
                     <div  data-aos="fade-up" data-aos-once="true">
                 <div className="bg-slate-900 relative w-100% text-center text-white text-4xl mb-4">How we power up your brand</div>
-                <Carousel className=" bg-slate-900 font-medium text-center text-white h-50 md:h-40" ssr={true} showDots={true} responsive={responsive} infinite={true} autoPlay autoPlaySpeed={4000} transitionDuration={500} removeArrowOnDeviceType={["tablet", "mobile"]}>
+                <Carousel className=" bg-slate-900 font-medium text-center text-white h-60 md:h-40" ssr={true} showDots={true} responsive={responsive} infinite={true} autoPlay autoPlaySpeed={4000} transitionDuration={500} removeArrowOnDeviceType={["tablet", "mobile"]}>
                     <div className=" ">
                         <div className="text-3xl">1. Collect</div>
                         <div className="text-lg md:p-5 md:px-40">We begin with the deep understanding of client’s business potential, the scope of work, and Track customer’s movement and actions to understand user interaction and experiences, and to attribute conversions accurately</div>
@@ -176,39 +206,10 @@ export default function Home() {
                 </Carousel>
                 </div>
                 </section>
-
-                <section className="relative bg-slate-900">
-
-                    <div className="w-100% lg:flex py-6">
-                        <div data-aos="fade-right" data-aos-once="true" className="lg:w-1/3 m-auto">
-                            <img src="/static/team.png" className="m-auto" />
-                        </div>
-                        <div data-aos="fade-left" data-aos-once="true" className="lg:w-1/2 w-4/5 m-auto">
-                            <h1 className="font-medium text-white text-3xl pt-8 pb-4 whitespace-pre m-auto leading-relaxed text-center md:text-left">Services we Offer</h1>
-                            <div className="bg-black w-100% h-0.5 rounded-full"></div>
-                            <div className="lg:flex lg:space-x-10 py-4">
-                                <ul className="text-purple-200 tracking-widest ">
-                                    <li className="my-2 flex items-center"><img src="/static/icon-1.png" className="mr-4" /> Data Collection</li>
-                                    <li className="my-2 flex items-center"><img src="/static/icon-2.png" className="mr-4" /> Data Reporting</li>
-                                    <li className="my-2 flex items-center"><img src="/static/icon-3.png" className="mr-4" /> Insight Generation</li>
-                                </ul>
-                                <ul className="text-purple-200 tracking-widest ">
-                                    <li className="my-2 flex items-center"><img src="/static/icon-4.png" className="mr-4" /> Data Utilization</li>
-                                    <li className="my-2 flex items-center"><img src="/static/icon-5.png" className="mr-4" /> Paid Search Marketing</li>
-                                    <li className="my-2 flex items-center"><img src="/static/icon-6.png" className="mr-4" /> Media Planning & Buying</li>
-                                </ul>
-                            </div>
-
-                            <div className="relative w-full">
-                                <Link href="/services"><button className="text-white border rounded px-4 py-2 ml-4 shadow-sm shadow-lime-300 hover:bg-emerald-600 transition origin-top-left duration-300 delay-150 ease-in">Learn More</button></Link>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div data-aos="fade-up" data-aos-duration="1000" data-aos-once="true" className="relative mt-16 pb-8 ">
+                    <div data-aos="fade-up" data-aos-duration="1000" data-aos-once="true" className="relative mt-4 md:mt-16 md:pb-8 ">
                         <img className="absolute -top-28 right-0  bg-gradient-to-b from-blue-400 to-transparent w-96 h-96 rounded-full blur-2xl " />
                         <img className="absolute mt-24 bottom-0 left-0 bg-gradient-to-t from-red-800 to-transparent w-96 h-96 rounded-full blur-2xl " />
-                        <h1 className="text-white w-full h-auto font-semibold text-xl pt-6 text-center uppercase tracking-widest ">Hear from the clients !</h1>
+                        <h1 className="text-white w-full h-auto font-semibold text-xl md:pt-6 text-center uppercase tracking-widest ">Hear from the clients !</h1>
                         <div className="text-justify items-center lg:flex lg:justify-evenly py-12 lg:py-24">
 
                             <div className=" rounded relative pt-3 px-2 lg:pt-4 lg:px-4 pb-8 lg:backdrop-blur bg-gray-200 shadow-lg shadow-black  w-4/5 mx-auto lg:w-1/4 text-center ">
@@ -254,10 +255,11 @@ export default function Home() {
 
                     </div>
                 </section>
+                
                 <section >
                     <div style={{ backgroundImage: `url("/static/bg2.png")` }} className="bg-cover lg:bg-fixed">
-                        <h1 className="text-black w-full h-auto font-bold text-3xl pt-12 text-center uppercase tracking-widest">B L O G S</h1>
-                        <div data-aos="zoom-in" data-aos-once="true" className="text-center lg:flex justify-evenly  p-12">
+                        <h1 className="text-black w-full h-auto font-bold text-3xl pt-4 md:pt-12 text-center uppercase tracking-widest">B L O G S</h1>
+                        <div data-aos="zoom-in" data-aos-once="true" className="text-center lg:flex justify-evenly p-8 md:p-12">
                             <div className="rounded backdrop-blur-xl border-1 border-amber-100 bg-white shadow-lg shadow-gray-800/40 h-84 lg:w-1/4 p-4 text-center">
                                 <Link href="/blogs/why-you-should-move-to-ga4">
                                     <img src="/static/blog1.png" className="stretch" />

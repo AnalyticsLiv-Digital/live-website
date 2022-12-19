@@ -219,8 +219,8 @@ const post = () => {
   size={100}
   className="m-auto align-middle"
 /></div>}
-    <div>
-        <section className="relative bg-gray-100 pt-12">
+    <div className='overflow-hidden'>
+        <section className="relative bg-gray-100  md:pt-12">
             <svg xmlns="http://www.w3.org/2000/svg" className="absolute lg:w-48 w-32 -right-0 top-10 lg:top-8 lg:right-10 fill-orange-500 blur-md rotate-45" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15">
                 <path  d="M7.932 1.248a.5.5 0 0 0-.864 0l-7 12A.5.5 0 0 0 .5 14h14a.5.5 0 0 0 .432-.752l-7-12Z"/>
             </svg>
@@ -238,13 +238,13 @@ const post = () => {
                 
                 
                 {!formSubmit &&<>
-                <div className=" p-4 lg:w-3/4 space-y-6 bg-white">
+                <div className=" p-4 lg:w-3/4 space-y-6 bg-white ">
                     <h1 className="text-2xl">Google Data Studio Reporting</h1>
                     <div className="h-0.5 bg-cyan-500"></div>
                    
                     <div>
                         <h2 className="uppercase font-semibold text-slate-800">Requirements:</h2>
-                        <p className="px-8 mt-4 text-gray-600">
+                        <p className="px-2 md:px-8 mt-4 text-gray-600">
                           The previous version of GA, widely known as Universal Analytics
                            360 is based on the last non-direct click attribution model, by
                            default. It provides an option to choose different models but temporarily
@@ -259,20 +259,20 @@ const post = () => {
                     </div>
                     <div>
                         <h2 className="uppercase font-semibold text-slate-800">Location:</h2>
-                        <p className="px-8 mt-4 text-gray-600">
+                        <p className="px-2 md:px-8 mt-4 text-gray-600">
                          Ahmedabad, Gujarat
                         </p>
                     </div>
                     <div>
                         <h2 className="uppercase font-semibold text-slate-800">Posted on:</h2>
-                        <p className="px-8 mt-4 text-gray-600">
+                        <p className="px-2 md:px-8 mt-4 text-gray-600">
                           Nov 20, 2022
                         </p>
                     </div>
                     
                 </div>
 
-                <div className=" lg:w-1/2 bg-white px-10 py-4">
+                <div className=" lg:w-1/2 bg-white px-2 md:px-10 py-4">
                 
                     <form className="space-y-4 md:space-y-6 " onSubmit={handleSubmit}>
                         <h1 className="text-center text-xl">Apply Now</h1>

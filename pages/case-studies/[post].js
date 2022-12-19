@@ -119,7 +119,7 @@ const index = () => {
   size={100}
   className="m-auto align-middle"
 /></div>}
-    <div>
+    <div className='overflow-hidden'>
         <section className="relative bg-gray-100 pt-12">
             <svg xmlns="http://www.w3.org/2000/svg" className="absolute lg:w-48 w-32 -right-0 top-10 lg:top-8 lg:right-10 fill-orange-500 blur-md rotate-45" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15">
                 <path  d="M7.932 1.248a.5.5 0 0 0-.864 0l-7 12A.5.5 0 0 0 .5 14h14a.5.5 0 0 0 .432-.752l-7-12Z"/>
@@ -135,7 +135,7 @@ const index = () => {
                     <div className="h-0.5 bg-cyan-500"></div>
                     <img className="w-screen" src="/static/cs1.png"/>
                     <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" className="inline w-10 fill-cyan-800" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="inline mr-2 w-10 fill-cyan-800" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                             <path d="M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4Z"/>
                         </svg>
                         <h2 className="inline uppercase font-semibold text-xl text-slate-800">Client:</h2>
@@ -146,7 +146,7 @@ const index = () => {
 
                     </div>
                     <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" className="inline w-10 fill-red-800" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="inline w-10 mr-2 fill-red-800" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                             <path d="M4 2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6.1l-3.7 3.71c-.2.19-.45.29-.7.29H9a1 1 0 0 1-1-1v-3H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2m8.19 3.5c-.89 0-1.6.18-2.14.54c-.55.36-.83.96-.78 1.65h1.97c0-.28.1-.49.26-.63c.2-.14.42-.21.69-.21c.31 0 .58.08.76.26c.18.17.27.39.27.69c0 .28-.08.53-.22.74c-.17.22-.38.4-.64.54c-.52.32-.86.6-1.07.84c-.19.24-.29.58-.29 1.08h2c0-.28.05-.5.14-.68c.09-.17.26-.32.52-.47c.46-.21.84-.49 1.13-.85c.29-.37.44-.76.44-1.2c0-.7-.27-1.26-.81-1.68c-.54-.41-1.29-.62-2.23-.62M11 12v2h2v-2h-2Z"/>
                         </svg>
                         <h2 className="inline uppercase font-semibold text-xl text-slate-800">Challenge:</h2>
@@ -157,7 +157,7 @@ const index = () => {
                         </p>
                     </div>
                     <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" className="inline w-10 fill-yellow-300" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="inline w-10 mr-2 fill-yellow-300" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                             <path  d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/>
                         </svg>
                         <h2 className="inline uppercase font-semibold text-xl text-slate-800">Solution:</h2>
@@ -170,7 +170,7 @@ const index = () => {
                         </p>
                     </div>
                     <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" className="inline w-10 fill-green-800" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="inline w-10 mr-2 fill-green-800" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                             <path  d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10s10-4.5 10-10S17.5 2 12 2m-2 15l-5-5l1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z"/>
                         </svg>
                         <h2 className="inline uppercase font-semibold text-xl text-slate-800">Out-turn:</h2>
@@ -181,7 +181,7 @@ const index = () => {
                     </div>
                 </div>
 
-                <div className={`${formFixed ? "sticky top-20" : "relative"} h-96 lg:w-1/2 bg-white px-10 py-4`}>
+                <div className={`${formFixed ? "sticky top-20" : "relative"} h-fit lg:w-1/2 bg-white px-10 py-4`}>
                     {formSubmit ? <div className='relative text-slate-700 p-4 space-y-4 h-full'>
                                     <h1 className='align-middle font-medium text-4xl'>Thank You for your interest.</h1>
                                     <h2 className='align-middle text-xl'>The download link for this case study has been sent to the email-id provided.</h2>

@@ -24,13 +24,13 @@ const aboutus = () => {
         </div>
 
         <div data-aos="zoom-in" data-aos-once="true" className="lg:flex justify-evenly p-8">
-             <div className="pt-16 lg:w-1/2 pb-6 lg:pb-0">
+             <div className="md:pt-16 lg:w-1/2 pb-6 lg:pb-0">
                 <img src="/static/story.png" className="mx-auto w-3/4 lg:w-fit"/>
              </div>
              <div className="lg:w-1/2 lg:space-y-4 space-y-2 tracking-wider">
                 <h1 className="uppercase tracking-wider font-semibold text-slate-800 text:xl lg:text-3xl text-center lg:text-left">Our Story</h1>
                 <h2 className="text-cyan-500 underline underline-offset-4 lg:text-xl font-semibold text-center lg:text-left uppercase">Genesis</h2>
-                <p className="lg:pr-24 text-slate-600">
+                <p className="lg:pr-24 text-slate-600 text-justify">
                     The thought was brewed over multiple cups of cutting chai(tea) in the after
                     hours of a corporate professional’s life. Three individuals restricted by 
                     internal processes and systems yearning to create data-centric tangible value 
@@ -48,7 +48,7 @@ const aboutus = () => {
         </div>
         <div className="w-1/3 h-0.5 bg-cyan-600 mx-auto rounded-xl"></div>
 
-        <div className="lg:flex px-8 py-8 tracking-wider">
+        <div className="lg:flex px-2 lg:px-8 py-8 tracking-wider">
             <div data-aos="fade-right" data-aos-once="true" className="flex justify-evenly lg:w-1/2">
                 <div className="px-3 pt-12">
                     <img src="/static/mission.gif" className="inline "/>
@@ -81,7 +81,7 @@ const aboutus = () => {
             </div>
             <div className="lg:w-1/2 tracking-wider lg:space-y-4 lg:pl-28 space-y-2">
                <h1 className="uppercase font-semibold text-slate-800 text:xl lg:text-3xl text-center lg:text-left">About us</h1>
-               <p className="text-slate-600">
+               <p className="text-slate-600 text-justify">
                 Analytics Liv Digital (“AnalyticsLiv”) is a new age marketing firm focused on delivering data driven customer experiences.
                 Cutting through the noise of digital data fatigue to take cognizance of a brand’s first party data is our prime focus.
                 A website, mobile app, PPC campaigns or landing pages- whatever be your customer touchpoint(s), we will make it count.<br/>
@@ -179,9 +179,9 @@ const aboutus = () => {
        </div>
 
        <div data-aos="fade-down" data-aos-once="true" className="py-8 lg:px-16">
-         <h1 className="relative text-slate-800 uppercase tracking-wider text-center lg:text-left lg:inset-x-12 lg:text-3xl">Solutions Offered</h1>
+         <h1 className="relative text-slate-800 uppercase tracking-wider text-center lg:text-left lg:inset-x-12 lg:text-3xl font-semibold">Solutions Offered</h1>
          <div className="lg:flex px-8 justify-center uppercase">
-            <ul className="space-y-2 px-8 pt-10 lg:w-1/2">
+            <ul className="space-y-2 px-8 pt-2 lg:pt-10 lg:w-1/2">
                 <li>
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-8 mr-2 inline fill-amber-400" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                         <path d="m12 2.6l-3 9.8l-7 7.5l10-2.3L22 20l-7-7.5l-3-9.9Z"/>

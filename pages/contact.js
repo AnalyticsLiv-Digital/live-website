@@ -146,7 +146,7 @@ const contact = () => {
                         <div className="absolute rounded-full w-40 h-40 bg-gradient-to-b from-rose-500 to-transparent blur -right-10 top-0"></div>
                         <div className="absolute rounded-full w-40 h-40 bg-gradient-to-r from-cyan-500 to-transparent blur left-1/2 -bottom-10"></div>
                         <div className="relative mx-2 lg:flex">
-                            <div data-aos="fade-up" data-aos-once="true" className="relative h-screen overflow-hidden lg:w-1/3 rounded-lg bg-slate-900 space-y-9 px-4 pt-12 pb-20 align-middle text-white">
+                            <div data-aos="fade-up" data-aos-once="true" className="relative md:h-screen overflow-hidden lg:w-1/3 rounded-lg bg-slate-900 space-y-9 px-4 pt-12 pb-20 align-middle text-white">
                                 <h1 className="font-semibold uppercase tracking-wider">Contact Information</h1>
                                 <h2 className="uppercase">Make an appointment for first consultation.</h2>
                                 <div>
