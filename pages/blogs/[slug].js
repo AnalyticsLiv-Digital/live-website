@@ -7,242 +7,156 @@ import { useState, useEffect } from 'react'
 import { Router, useRouter } from 'next/router';
 import { ScaleLoader } from 'react-spinners'
 
-const index = () => {
-    const router = useRouter();
-    const {post} = router.query;
+const index = ({blogDat}) => {
+    const blogData = blogDat.blog[0];
+    
+    const [formFixed, setFormFixed]  = useState(false);
+   
     useEffect(() => {
+        console.log(blogData);
         AOS.init();
     }, []);
-    const initialValues = { fullName: '', email: '', company: '' };
-    const [formValues, setFormValues] = useState(initialValues);
-    const [formErrors, setFormErrors] = useState({});
-    const [isSubmit, setIsSubmit] = useState(false);
-    const [showWaiting, setShowWaiting] = useState(false);
-    const [selected, setSelected] = useState("");
-    const [formSubmit, setFormSubmit] = useState(false);
-    const [formFixed, setFormFixed] = useState(false);
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormValues({ ...formValues, [name]: value });
-       // console.log(formValues);
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setFormErrors(validate(formValues));
-        setIsSubmit(true);
-
-    };
-
+  
+    
     useEffect(() => {
 
         let headerSize = () => {
-            
-            const totalScroll = document.documentElement.scrollTop;
            
-           if(( totalScroll > 50)){
-            setFormFixed(true);
-           }else if(( totalScroll < 45)){
-            setFormFixed(false);
-           }
-    
-            
+            const totalScroll = document.documentElement.scrollTop;
+
+            if ((totalScroll > 50)) {
+                setFormFixed(true);
+            } else if ((totalScroll < 45)) {
+                setFormFixed(false);
+            }
+
+
         }
-    
+
         window.addEventListener("scroll", headerSize);
-    
+
         return () => window.removeEventListener("scroll", headerSize);
     });
 
-    useEffect(() => {
-       // console.log(formErrors);
-        if (Object.keys(formErrors).length === 0 && isSubmit) {
-            //console.log(formValues);
-            setShowWaiting(true);
-            fetch('/api/casestudylead', {
-                method: 'POST', // or 'PUT'
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    "fullName": formValues.fullName,
-                   "email": formValues.email,
-                   "casestudy": {post}.post,
-                   "company": formValues.company
-       }),
-            })
-                .then((response) => response.json())
-                .then((data) => {
-                   // console.log('Success:', data);
-                    setFormSubmit(true);
-                    setShowWaiting(false);
-                })
-                .catch((error) => {
-                    console.error('Error:', error);
-                });
-
-        }
-    }, [formErrors]);
-
-    const validate = (values) => {
-        const errors = {};
-        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-        const mobile = /^(?=.*\d).{8,}$/i;
-        if (!values.fullName) {
-            errors.fullName = "Fullname is required!";
-        }
-
-        if (!values.company) {
-            errors.company = "Company is required!";
-        }
-
-        if (!values.email) {
-            errors.email = "Email is required!";
-        } else if (!regex.test(values.email)) {
-            errors.email = "This is not a valid email format!";
-        }
 
 
-        return errors;
-    };
+   
 
 
-  return (<>
-  <Head>
-    <title>AnalyticsLiv - Case Sudies</title>
-  </Head>
-  <ScrollProgress/>
-  {showWaiting && <div className="fixed flex backdrop-blur top-0 left-0 right-0 z-40 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full"><ScaleLoader
-  color="#271d90"
-  loading
-  size={100}
-  className="m-auto align-middle"
-/></div>}
-    <div>
-        <section className="relative bg-gray-100 md:pt-12">
+    return (<>
+        <Head>
+            <title>AnalyticsLiv - Case Sudies</title>
+        </Head>
+        <ScrollProgress />
 
-            
+        <div>
+            <section className="relative bg-gray-100 md:pt-12">
 
-            <div className="relative lg:flex w-full lg:w-11/12 space-y-2 lg:space-y-0 mx-auto pt-4 pb-8 px-4">
-                <div className="p-4 lg:w-3/4 space-y-6 bg-white">
-                    
-                <h1 className=" text-4xl font-bold tracking-wide text-slate-800">
-             The GA4 Attribution Model: How to implement and succeed.
-            </h1>
-            
-            <div className=" flex md:space-x-2 justify-between">
-                <div>
-                    <span className="flex text-sm font-medium text-slate-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 fill-cyan-500 mr-1 -mt-0.5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                    <path d="M12 14q-.425 0-.712-.288Q11 13.425 11 13t.288-.713Q11.575 12 12 12t.713.287Q13 12.575 13 13t-.287.712Q12.425 14 12 14Zm-4 0q-.425 0-.713-.288Q7 13.425 7 13t.287-.713Q7.575 12 8 12t.713.287Q9 12.575 9 13t-.287.712Q8.425 14 8 14Zm8 0q-.425 0-.712-.288Q15 13.425 15 13t.288-.713Q15.575 12 16 12t.712.287Q17 12.575 17 13t-.288.712Q16.425 14 16 14Zm-4 4q-.425 0-.712-.288Q11 17.425 11 17t.288-.712Q11.575 16 12 16t.713.288Q13 16.575 13 17t-.287.712Q12.425 18 12 18Zm-4 0q-.425 0-.713-.288Q7 17.425 7 17t.287-.712Q7.575 16 8 16t.713.288Q9 16.575 9 17t-.287.712Q8.425 18 8 18Zm8 0q-.425 0-.712-.288Q15 17.425 15 17t.288-.712Q15.575 16 16 16t.712.288Q17 16.575 17 17t-.288.712Q16.425 18 16 18ZM5 22q-.825 0-1.413-.587Q3 20.825 3 20V6q0-.825.587-1.412Q4.175 4 5 4h1V2h2v2h8V2h2v2h1q.825 0 1.413.588Q21 5.175 21 6v14q0 .825-.587 1.413Q19.825 22 19 22Zm0-2h14V10H5v10Z"/>
-                    </svg>
-                    <h4>Sep 07,2022</h4>
-                </span>
-                </div>
-                <div className="flex space-x-2 pr-4">
-                <span className="flex text-sm font-medium text-slate-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 fill-amber-400 mr-1 -mt-0.5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M9 3V1h6v2Zm2 11h2V8h-2Zm1 8q-1.85 0-3.488-.712q-1.637-.713-2.862-1.938t-1.938-2.862Q3 14.85 3 13t.712-3.488Q4.425 7.875 5.65 6.65t2.862-1.937Q10.15 4 12 4q1.55 0 2.975.5t2.675 1.45l1.4-1.4l1.4 1.4l-1.4 1.4Q20 8.6 20.5 10.025Q21 11.45 21 13q0 1.85-.712 3.488q-.713 1.637-1.938 2.862t-2.862 1.938Q13.85 22 12 22Z"/>
-                    </svg>
-                    <h4>3 Minutes Read</h4>
-                </span>
-                <span className="flex text-sm font-medium text-slate-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 fill-purple-700 mr-1 -mt-0.5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256">
-                        <path d="M232 92.7L163.3 24a16.1 16.1 0 0 0-22.6 0l-25.1 25.1l-58.1 21.8a15.9 15.9 0 0 0-10.1 12.3L26.6 207.8a4 4 0 0 0 6.8 3.5l55-55.1A31.7 31.7 0 0 1 84 140a32 32 0 1 1 32 32a31.7 31.7 0 0 1-16.2-4.4l-55.1 55a4 4 0 0 0 3.5 6.8l124.6-20.7a16.2 16.2 0 0 0 12.3-10.2l21.8-58.1l25.1-25.1a15.9 15.9 0 0 0 0-22.6Zm-32 32L131.3 56L152 35.3l68.7 68.7ZM116 156a16 16 0 1 1 16-16a16 16 0 0 1-16 16Z"/>
-                    </svg>
-                    <h4>By Charles & Eva</h4>
-                </span>
-                </div>
-            </div>
-            <div className="mb-2 flex justify-between mr-8">
-                <div>
-                <span className="bg-gray-100 px-2 py-0.5 font-medium text-sm rounded text-gray-400">GA4</span>
-                <span className="bg-gray-100 px-2 py-0.5 font-medium text-sm rounded text-gray-400">Analytics</span>
-               
-                </div>
-                <div className='flex space-x-4'>
-                <svg xmlns="http://www.w3.org/2000/svg" className='w-4 fill-slate-800 hover:fill-blue-700' preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                    <path  d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/>
-                 </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" className='w-5 fill-slate-800 hover:fill-indigo-900' preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                    <path  d="M6.94 5a2 2 0 1 1-4-.002a2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z"/>
-                 </svg> 
-                 <svg xmlns="http://www.w3.org/2000/svg" className='w-5 fill-slate-800 hover:fill-green-700' preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256">
-                    <path d="M232 96a16 16 0 0 0-16-16h-32V48a16 16 0 0 0-16-16H40a16 16 0 0 0-16 16v128a7.9 7.9 0 0 0 4.6 7.2a8.1 8.1 0 0 0 3.4.8a7.7 7.7 0 0 0 5-1.8L72 154v30a16 16 0 0 0 16 16h93.6l37.4 30.2a7.8 7.8 0 0 0 8.4 1a7.9 7.9 0 0 0 4.6-7.2ZM66.6 137.8L40 159.2V48h128v88H71.6a7.7 7.7 0 0 0-5 1.8Zm122.8 48a7.7 7.7 0 0 0-5-1.8H88v-32h80a16 16 0 0 0 16-16V96h32v111.2Z"/>
-                </svg> 
-                 
-                </div>
-            </div>
 
-                   <img src="/static/big-image.png" className="w-screen"/>
-                    <div className="py-4">
-                <h2 className='font-semibold text-lg'>The GA4 Attribution Model: How to implement and succeed.</h2>
-                <p className='whitespace-pre-line font-thin text-slate-700'>
-It’s no secret that the new version of Google Analytics (called GA4) is already taking over the market. And 
-opinions are abuzz. In this series, we are focussing on how to take advantage and succeed. As, this new version
-is here with some exciting additions like integral machine learning models, AI-based predictive audience, and
-cross-device measurement capabilities.
 
-For this blog, we have picked up one of the most talked about topics in the world of data analytics – Attribution
-Modeling.
+                <div className="relative lg:flex w-full lg:w-11/12 space-y-2 lg:space-y-0 mx-auto pt-4 pb-8 px-4">
+                    <div className="p-4 lg:w-3/4 space-y-6 bg-white">
 
-The ability to analyze marketing data across all of your channels is critical for any business growth. This might 
-include getting answers on:
+                        <h1 className=" text-4xl font-bold tracking-wide text-slate-800">
+                            {blogData && blogData.title}
+                        </h1>
 
-How can you assess your channels to know exactly where to invest more? 
-Which ads make potential customers move to the next step in the funnel? 
-How is the value of a conversion distributed across channels? 
-Well, it’s all about getting the attribution right, the one that makes sense for your business.
+                        <div className=" flex md:space-x-2 justify-between">
+                            <div>
+                                <span className="flex text-sm font-medium text-slate-400">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 fill-cyan-500 mr-1 -mt-0.5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                        <path d="M12 14q-.425 0-.712-.288Q11 13.425 11 13t.288-.713Q11.575 12 12 12t.713.287Q13 12.575 13 13t-.287.712Q12.425 14 12 14Zm-4 0q-.425 0-.713-.288Q7 13.425 7 13t.287-.713Q7.575 12 8 12t.713.287Q9 12.575 9 13t-.287.712Q8.425 14 8 14Zm8 0q-.425 0-.712-.288Q15 13.425 15 13t.288-.713Q15.575 12 16 12t.712.287Q17 12.575 17 13t-.288.712Q16.425 14 16 14Zm-4 4q-.425 0-.712-.288Q11 17.425 11 17t.288-.712Q11.575 16 12 16t.713.288Q13 16.575 13 17t-.287.712Q12.425 18 12 18Zm-4 0q-.425 0-.713-.288Q7 17.425 7 17t.287-.712Q7.575 16 8 16t.713.288Q9 16.575 9 17t-.287.712Q8.425 18 8 18Zm8 0q-.425 0-.712-.288Q15 17.425 15 17t.288-.712Q15.575 16 16 16t.712.288Q17 16.575 17 17t-.288.712Q16.425 18 16 18ZM5 22q-.825 0-1.413-.587Q3 20.825 3 20V6q0-.825.587-1.412Q4.175 4 5 4h1V2h2v2h8V2h2v2h1q.825 0 1.413.588Q21 5.175 21 6v14q0 .825-.587 1.413Q19.825 22 19 22Zm0-2h14V10H5v10Z" />
+                                    </svg>
+                                    <h4>{blogData && blogData.date}</h4>
+                                </span>
+                            </div>
+                            <div className="flex space-x-2 pr-4">
+                                <span className="flex text-sm font-medium text-slate-400">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 fill-amber-400 mr-1 -mt-0.5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                        <path d="M9 3V1h6v2Zm2 11h2V8h-2Zm1 8q-1.85 0-3.488-.712q-1.637-.713-2.862-1.938t-1.938-2.862Q3 14.85 3 13t.712-3.488Q4.425 7.875 5.65 6.65t2.862-1.937Q10.15 4 12 4q1.55 0 2.975.5t2.675 1.45l1.4-1.4l1.4 1.4l-1.4 1.4Q20 8.6 20.5 10.025Q21 11.45 21 13q0 1.85-.712 3.488q-.713 1.637-1.938 2.862t-2.862 1.938Q13.85 22 12 22Z" />
+                                    </svg>
+                                    <h4>3 Minutes Read</h4>
+                                </span>
+                                <span className="flex text-sm font-medium text-slate-400">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 fill-purple-700 mr-1 -mt-0.5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256">
+                                        <path d="M232 92.7L163.3 24a16.1 16.1 0 0 0-22.6 0l-25.1 25.1l-58.1 21.8a15.9 15.9 0 0 0-10.1 12.3L26.6 207.8a4 4 0 0 0 6.8 3.5l55-55.1A31.7 31.7 0 0 1 84 140a32 32 0 1 1 32 32a31.7 31.7 0 0 1-16.2-4.4l-55.1 55a4 4 0 0 0 3.5 6.8l124.6-20.7a16.2 16.2 0 0 0 12.3-10.2l21.8-58.1l25.1-25.1a15.9 15.9 0 0 0 0-22.6Zm-32 32L131.3 56L152 35.3l68.7 68.7ZM116 156a16 16 0 1 1 16-16a16 16 0 0 1-16 16Z" />
+                                    </svg>
+                                    <h4>By {blogData && blogData.author}</h4>
+                                </span>
+                            </div>
+                        </div>
+                        <div className="mb-2 flex justify-between mr-8">
+                            <div>
+                                <span className="bg-gray-100 px-2 py-0.5 font-medium text-sm rounded text-gray-400">GA4</span>
+                                <span className="bg-gray-100 px-2 py-0.5 font-medium text-sm rounded text-gray-400">Analytics</span>
 
-The previous version of GA, widely known as Universal Analytics 360 is based on the last non-direct click 
-attribution model, by default. It provides an option to choose different models but temporarily within
-multi-channel funnel reports and reflects on just those reports. On the other side, GA4’s default model is
-data-driven (I know pretty exciting) but it also provides an enhanced feature where you can change the
-model from Property Settings. And you guessed it right, the impact will be seen on all the reports. This will
-ensure deeper and actionable insights since all your conversions and revenue reports will now be based on
-the model most apt for your business.
+                            </div>
+                            <div className='flex space-x-4'>
+                                <svg xmlns="http://www.w3.org/2000/svg" className='w-4 fill-slate-800 hover:fill-blue-700' preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                    <path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" className='w-5 fill-slate-800 hover:fill-indigo-900' preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                    <path d="M6.94 5a2 2 0 1 1-4-.002a2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" className='w-5 fill-slate-800 hover:fill-green-700' preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256">
+                                    <path d="M232 96a16 16 0 0 0-16-16h-32V48a16 16 0 0 0-16-16H40a16 16 0 0 0-16 16v128a7.9 7.9 0 0 0 4.6 7.2a8.1 8.1 0 0 0 3.4.8a7.7 7.7 0 0 0 5-1.8L72 154v30a16 16 0 0 0 16 16h93.6l37.4 30.2a7.8 7.8 0 0 0 8.4 1a7.9 7.9 0 0 0 4.6-7.2ZM66.6 137.8L40 159.2V48h128v88H71.6a7.7 7.7 0 0 0-5 1.8Zm122.8 48a7.7 7.7 0 0 0-5-1.8H88v-32h80a16 16 0 0 0 16-16V96h32v111.2Z" />
+                                </svg>
 
-We will talk about DDA in more detail in our next blog, but for now, let’s take a look at how you can make
-these changes within the GA interface.
-                </p>
-            </div>
+                            </div>
+                        </div>
 
-                </div>
+                        <img src={blogData && blogData.coverphoto} className="w-screen" />
+                        <div className="py-4">
+                            <h2 className='font-semibold text-lg'>{blogData && blogData.title}.</h2>
+                             {blogData && <div dangerouslySetInnerHTML={{__html: blogData.content}}></div>}
 
-                <div className={`${formFixed ? "sticky top-10" : "relative"} h-fit lg:w-1/4 bg-white px-6 py-4`}>
-                <div className="space-y-6">
-                <h3 className="w-full text-slate-700 pt-2 px-3 font-bold tracking-wider">Similar Posts</h3>
-                <div className="min-w-full px-3">
-                    <img src="/static/blog-random1.png"/>
-                    <h2 className="font-medium">The New era of AI</h2>
-                    <span className="text-xs text-slate-400">Nov 09, 2022</span>
-                    <div className="flex text-sm font-medium text-slate-600">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="w-5 fill-purple-700 mr-1 -mt-0.5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256">
-                            <path d="M232 92.7L163.3 24a16.1 16.1 0 0 0-22.6 0l-25.1 25.1l-58.1 21.8a15.9 15.9 0 0 0-10.1 12.3L26.6 207.8a4 4 0 0 0 6.8 3.5l55-55.1A31.7 31.7 0 0 1 84 140a32 32 0 1 1 32 32a31.7 31.7 0 0 1-16.2-4.4l-55.1 55a4 4 0 0 0 3.5 6.8l124.6-20.7a16.2 16.2 0 0 0 12.3-10.2l21.8-58.1l25.1-25.1a15.9 15.9 0 0 0 0-22.6Zm-32 32L131.3 56L152 35.3l68.7 68.7ZM116 156a16 16 0 1 1 16-16a16 16 0 0 1-16 16Z"/>
-                        </svg>
-                        <h4 className="">By Rahul Nayyar</h4>
+                        </div>
+
+                    </div>
+
+                    <div className={`${formFixed ? "sticky top-10" : "relative"} h-fit lg:w-1/4 bg-white px-6 py-4`}>
+                        <div className="space-y-6">
+                            <h3 className="w-full text-slate-700 pt-2 px-3 font-bold tracking-wider">Similar Posts</h3>
+                            <div className="min-w-full px-3">
+                                <img src="https://storage.googleapis.com/website-bucket-uploads/static/blog-random1.png" />
+                                <h2 className="font-medium">The New era of AI</h2>
+                                <span className="text-xs text-slate-400">Nov 09, 2022</span>
+                                <div className="flex text-sm font-medium text-slate-600">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 fill-purple-700 mr-1 -mt-0.5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256">
+                                        <path d="M232 92.7L163.3 24a16.1 16.1 0 0 0-22.6 0l-25.1 25.1l-58.1 21.8a15.9 15.9 0 0 0-10.1 12.3L26.6 207.8a4 4 0 0 0 6.8 3.5l55-55.1A31.7 31.7 0 0 1 84 140a32 32 0 1 1 32 32a31.7 31.7 0 0 1-16.2-4.4l-55.1 55a4 4 0 0 0 3.5 6.8l124.6-20.7a16.2 16.2 0 0 0 12.3-10.2l21.8-58.1l25.1-25.1a15.9 15.9 0 0 0 0-22.6Zm-32 32L131.3 56L152 35.3l68.7 68.7ZM116 156a16 16 0 1 1 16-16a16 16 0 0 1-16 16Z" />
+                                    </svg>
+                                    <h4 className="">By Rahul Nayyar</h4>
+                                </div>
+                            </div>
+
+                            <div className="min-w-full px-3">
+                                <img src="https://storage.googleapis.com/website-bucket-uploads/static/blog-random2.png" />
+                                <h2 className="font-medium">Work from anywhere.</h2>
+                                <span className="text-xs text-slate-400">Sep  20, 2022</span>
+                                <div className="flex text-sm font-medium text-slate-600">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 fill-purple-700 mr-1 -mt-0.5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256">
+                                        <path d="M232 92.7L163.3 24a16.1 16.1 0 0 0-22.6 0l-25.1 25.1l-58.1 21.8a15.9 15.9 0 0 0-10.1 12.3L26.6 207.8a4 4 0 0 0 6.8 3.5l55-55.1A31.7 31.7 0 0 1 84 140a32 32 0 1 1 32 32a31.7 31.7 0 0 1-16.2-4.4l-55.1 55a4 4 0 0 0 3.5 6.8l124.6-20.7a16.2 16.2 0 0 0 12.3-10.2l21.8-58.1l25.1-25.1a15.9 15.9 0 0 0 0-22.6Zm-32 32L131.3 56L152 35.3l68.7 68.7ZM116 156a16 16 0 1 1 16-16a16 16 0 0 1-16 16Z" />
+                                    </svg>
+                                    <h4>By Kunal Kaushal</h4>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div className="min-w-full px-3">
-                    <img src="/static/blog-random2.png"/>
-                    <h2 className="font-medium">Work from anywhere.</h2>
-                    <span className="text-xs text-slate-400">Sep  20, 2022</span>
-                    <div className="flex text-sm font-medium text-slate-600">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="w-5 fill-purple-700 mr-1 -mt-0.5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256">
-                            <path d="M232 92.7L163.3 24a16.1 16.1 0 0 0-22.6 0l-25.1 25.1l-58.1 21.8a15.9 15.9 0 0 0-10.1 12.3L26.6 207.8a4 4 0 0 0 6.8 3.5l55-55.1A31.7 31.7 0 0 1 84 140a32 32 0 1 1 32 32a31.7 31.7 0 0 1-16.2-4.4l-55.1 55a4 4 0 0 0 3.5 6.8l124.6-20.7a16.2 16.2 0 0 0 12.3-10.2l21.8-58.1l25.1-25.1a15.9 15.9 0 0 0 0-22.6Zm-32 32L131.3 56L152 35.3l68.7 68.7ZM116 156a16 16 0 1 1 16-16a16 16 0 0 1-16 16Z"/>
-                        </svg>
-                        <h4>By Kunal Kaushal</h4>
-                    </div>
-                </div>
-            </div> 
-                </div>
-           </div>   
-
-      </section>
-    </div></>
-  )
+            </section>
+        </div></>
+    )
 }
+
+export async function getServerSideProps(context) {
+    // Fetch data from external API
+  
+    const res = await fetch(`${process.env.domain}/api/fullblog?slug=${context.params.slug}`)
+    const blogDat = await res.json()
+  
+    // Pass data to the page via props
+    return { props: { blogDat } }
+  }
 
 export default index

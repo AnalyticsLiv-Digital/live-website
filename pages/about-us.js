@@ -17,7 +17,7 @@ const aboutus = () => {
     
     <section className='overflow-x-hidden'>
         <div className="relative" data-aos="fade-down" data-aos-once="true">
-            <img src="/static/about us.png" className="h-40 lg:h-fit"/>
+            <img src="https://storage.googleapis.com/website-bucket-uploads/static/about us.png" className="h-40 lg:h-fit"/>
             <div className="absolute w-24 h-24 lg:w-80 lg:h-80 bg-gradient-to-b from-blue-900 to-transparent blur rounded-full top-2 right-0"></div>
             <div className="absolute w-16 h-16 lg:w-40 lg:h-40 bg-gradient-to-b from-amber-400 to-transparent blur rounded-full right-8 -bottom-2 lg:bottom-8 lg:right-40"></div>
             <h1 className="uppercase tracking-wider absolute right-6 bottom-4 text-white lg:text-3xl">We are AnalyticsLiv!</h1>
@@ -25,7 +25,7 @@ const aboutus = () => {
 
         <div data-aos="zoom-in" data-aos-once="true" className="lg:flex justify-evenly p-8">
              <div className="md:pt-16 lg:w-1/2 pb-6 lg:pb-0">
-                <img src="/static/story.png" className="mx-auto w-3/4 lg:w-fit"/>
+                <img src="https://storage.googleapis.com/website-bucket-uploads/static/story.png" className="mx-auto w-3/4 lg:w-fit"/>
              </div>
              <div className="lg:w-1/2 lg:space-y-4 space-y-2 tracking-wider">
                 <h1 className="uppercase tracking-wider font-semibold text-slate-800 text:xl lg:text-3xl text-center lg:text-left">Our Story</h1>
@@ -51,7 +51,7 @@ const aboutus = () => {
         <div className="lg:flex px-2 lg:px-8 py-8 tracking-wider">
             <div data-aos="fade-right" data-aos-once="true" className="flex justify-evenly lg:w-1/2">
                 <div className="px-3 pt-12">
-                    <img src="/static/mission.gif" className="inline "/>
+                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/mission.gif" className="inline "/>
                 </div>
                 <div className="w-2/3">
                     <h1 className="inline text-cyan-500 underline underline-offset-4 text-xl font-semibold ">Mission</h1>
@@ -63,7 +63,7 @@ const aboutus = () => {
 
             <div data-aos="fade-left" data-aos-once="true" className="flex justify-evenly pt-8 lg:pt-0 lg:w-1/2">
                 <div className="px-3 pt-12">
-                    <img src="/static/vision.gif" className="inline "/>
+                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/vision.gif" className="inline "/>
                 </div>
                 <div className="w-2/3">
                     <h1 className="inline text-cyan-500 underline underline-offset-4 text-xl font-semibold ">Vision</h1>
@@ -77,7 +77,7 @@ const aboutus = () => {
 
         <div data-aos="fade-up" data-aos-once="true" className="lg:flex lg:flex-row-reverse justify-evenly p-8">
             <div className="pt-16 lg:w-1/2 pb-6 lg:pb-0">
-               <img src="/static/aboutus.png" className="mx-auto w-3/4 lg:w-fit"/>
+               <img src="https://storage.googleapis.com/website-bucket-uploads/static/aboutus.png" className="mx-auto w-3/4 lg:w-fit"/>
             </div>
             <div className="lg:w-1/2 tracking-wider lg:space-y-4 lg:pl-28 space-y-2">
                <h1 className="uppercase font-semibold text-slate-800 text:xl lg:text-3xl text-center lg:text-left">About us</h1>
@@ -100,22 +100,22 @@ const aboutus = () => {
         <h1 className="relative uppercase tracking-wider text-center lg:text-3xl">Platform Expertise</h1>
         <div className="flex lg:flex-row justify-evenly">
         <div className=" space-y-2">
-            <img src="/static/Bigquery.png" className="mx-auto "/>
+            <img src="https://storage.googleapis.com/website-bucket-uploads/static/Bigquery.png" className="mx-auto "/>
             <div className="text-slate-700">Big Query</div>
         </div>
 
         <div className="hidden lg:block space-y-2">
-            <img src="/static/datastudio.png" className="mx-auto"/>
+            <img src="https://storage.googleapis.com/website-bucket-uploads/static/datastudio.png" className="mx-auto"/>
             <h2 className="text-slate-700 text-center">Data Studio<br/> 360</h2>
         </div>
 
         <div className="space-y-2">
-            <img src="/static/dv360.png" className="mx-auto"/>
+            <img src="https://storage.googleapis.com/website-bucket-uploads/static/dv360.png" className="mx-auto"/>
             <h2 className="text-slate-700 text-center">Display and Video <br/> 360</h2>
         </div>
 
         <div className="hidden lg:block space-y-2">
-            <img src="/static/googlecampaignmanager.png" className="mx-auto"/>
+            <img src="https://storage.googleapis.com/website-bucket-uploads/static/googlecampaignmanager.png" className="mx-auto"/>
             <h2 className="text-slate-700 text-center">Google Campaign <br/>Manager</h2>
         </div>
 
@@ -123,17 +123,17 @@ const aboutus = () => {
 
         <div className="flex flex-row justify-evenly">
             <div className="space-y-2">
-                <img src="/static/GAnalytics.png" className="mx-auto"/>
+                <img src="https://storage.googleapis.com/website-bucket-uploads/static/GAnalytics.png" className="mx-auto"/>
                 <h2 className="text-slate-700 text-center">Google Analytics</h2>
             </div>
     
             <div className="hidden lg:block space-y-2">
-                <img src="/static/Google ads.png" className="h-2/3 mx-auto"/>
+                <img src="https://storage.googleapis.com/website-bucket-uploads/static/Google ads.png" className="h-2/3 mx-auto"/>
                 <h2 className="text-slate-700 text-center">Google Ads</h2>
             </div>
     
             <div className="space-y-2">
-                <img src="/static/Google tag manager.png" className="mx-auto"/>
+                <img src="https://storage.googleapis.com/website-bucket-uploads/static/Google tag manager.png" className="mx-auto"/>
                 <h2 className="text-slate-700 text-center">Google Tag<br/> Manager</h2>
             </div>
                 
@@ -141,38 +141,38 @@ const aboutus = () => {
 
         <div className="flex flex-row text-center justify-around">
             <div className="space-y-2 hidden lg:block">
-                <img src="/static/Linkedin.png" className="mx-auto"/>
+                <img src="https://storage.googleapis.com/website-bucket-uploads/static/Linkedin.png" className="mx-auto"/>
                 <h2 className="text-slate-700 text-center">LinkedIn<br/> Marketing</h2>
             </div>
      
             <div className="space-y-2">
-                <img src="/static/optimize.png" className="mx-auto"/>
+                <img src="https://storage.googleapis.com/website-bucket-uploads/static/optimize.png" className="mx-auto"/>
                 <h2 className="text-slate-700 text-center">Optimize 360</h2>
             </div>
     
             <div className="space-y-2">
-                <img src="/static/search ads.png" className="mx-auto"/>
+                <img src="https://storage.googleapis.com/website-bucket-uploads/static/search ads.png" className="mx-auto"/>
                 <h2 className="text-slate-700 text-center">Search Ads</h2>
             </div>
                 
         </div>
         <div className="lg:hidden flex flex-row text-center justify-around">
             <div className="space-y-2">
-                <img src="/static/Linkedin.png" className="mx-auto"/>
+                <img src="https://storage.googleapis.com/website-bucket-uploads/static/Linkedin.png" className="mx-auto"/>
                 <h2 className="text-slate-700 text-center">LinkedIn<br/> Marketing</h2>
             </div>
             <div className="space-y-2">
-                <img src="/static/Google ads.png" className="mx-auto h-16"/>
+                <img src="https://storage.googleapis.com/website-bucket-uploads/static/Google ads.png" className="mx-auto h-16"/>
                 <h2 className="text-slate-700 text-center">Google Ads</h2>
             </div>
         </div>
         <div className="lg:hidden flex flex-row text-center justify-around">
             <div className="space-y-2">
-                <img src="/static/datastudio.png" className="mx-auto"/>
+                <img src="https://storage.googleapis.com/website-bucket-uploads/static/datastudio.png" className="mx-auto"/>
                 <h2 className="text-slate-700 text-center">Data Studio<br/> 360</h2>
             </div>
             <div className="space-y-2">
-                <img src="/static/googlecampaignmanager.png" className="mx-auto"/>
+                <img src="https://storage.googleapis.com/website-bucket-uploads/static/googlecampaignmanager.png" className="mx-auto"/>
                 <h2 className="text-slate-700">Google Campaign <br/>Manager</h2>
             </div>
         </div>

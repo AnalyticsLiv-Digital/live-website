@@ -51,7 +51,7 @@ export const Footer = () => {
             <div className="text-center lg:text-right mt-10">© Created by Analytics Liv Digital LLP, All rights Reserved.</div>
         </div>
     </div>
-    <div className="bg-gradient-to-l from-cyan-400 to-slate-800 h-8 pt-1"><Link href="/"><img src="/static/logo.png" className="h-6 mx-auto"/></Link></div>
+    <div className="bg-gradient-to-l from-cyan-400 to-slate-800 h-8 pt-1"><Link href="/"><img src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="h-6 mx-auto"/></Link></div>
    </footer>
   )
 }

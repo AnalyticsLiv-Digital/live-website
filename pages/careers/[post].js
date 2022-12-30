@@ -6,7 +6,7 @@ import { Router, useRouter } from 'next/router';
 import Head from 'next/head';
 import { ScaleLoader } from 'react-spinners'
 
-const post = () => {
+const post = ({jobData}) => {
 
     const router = useRouter();
     const {post} = router.query;
@@ -239,34 +239,25 @@ const post = () => {
                 
                 {!formSubmit &&<>
                 <div className=" p-4 lg:w-3/4 space-y-6 bg-white ">
-                    <h1 className="text-2xl">Google Data Studio Reporting</h1>
+                    <h1 className="text-2xl">{jobData.job[0].title}</h1>
                     <div className="h-0.5 bg-cyan-500"></div>
                    
                     <div>
                         <h2 className="uppercase font-semibold text-slate-800">Requirements:</h2>
                         <p className="px-2 md:px-8 mt-4 text-gray-600">
-                          The previous version of GA, widely known as Universal Analytics
-                           360 is based on the last non-direct click attribution model, by
-                           default. It provides an option to choose different models but temporarily
-                           within multi-channel funnel reports and reflects on just those reports.
-                           On the other side, GA4’s default model is data-driven (I know pretty exciting)
-                           but it also provides an enhanced feature where you can change the model from
-                           Property Settings. And you guessed it right, the impact will be seen on all
-                           the reports. This will ensure deeper and actionable insights since all your
-                           conversions and revenue reports will now be based on the model most apt for
-                           your business.
+                        {jobData.job[0].description}
                         </p>
                     </div>
                     <div>
                         <h2 className="uppercase font-semibold text-slate-800">Location:</h2>
                         <p className="px-2 md:px-8 mt-4 text-gray-600">
-                         Ahmedabad, Gujarat
+                        {jobData.job[0].location}
                         </p>
                     </div>
                     <div>
                         <h2 className="uppercase font-semibold text-slate-800">Posted on:</h2>
                         <p className="px-2 md:px-8 mt-4 text-gray-600">
-                          Nov 20, 2022
+                        {jobData.job[0].postingdate}
                         </p>
                     </div>
                     
@@ -335,5 +326,14 @@ const post = () => {
     </>
   )
 }
+export async function getServerSideProps(context) {
+    // Fetch data from external API
+  
+    const res = await fetch(`${process.env.domain}/api/jobdetails?id=${context.params.post}`)
+    const jobData = await res.json()
+  //console.log(casestudyDat);
+    // Pass data to the page via props
+    return { props: { jobData } }
+  }
 
 export default post

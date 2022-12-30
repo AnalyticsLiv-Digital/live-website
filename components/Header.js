@@ -59,7 +59,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         
         <div style={{height: header}} className="navbar hidden lg:flex py-2 h-auto flex-wrap px-4 lg:flex-row items-center justify-between">
             
-        <Link href="/"><img src="/static/logo.png" className="h-10 lg:mx-4 cursor-pointer"/></Link>
+        <Link href="/"><img src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="h-10 lg:mx-4 cursor-pointer"/></Link>
             <nav className="lg:flex text-center">
                 <ul className="lg:flex font-semibold text-left lg:text-center z-[-1] lg:z-auto lg:mr-4 lg:w-auto lg:space-x-6 items-center  uppercase tracking-wide cursor-pointer">
                 <li className="relative hover:border-b-4 hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2" onMouseEnter={()=>setIsSWebervices(true)} onMouseLeave={()=>setIsSWebervices(false)}>
@@ -96,14 +96,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     </li></Link>
                 </ul>
                 <span className="hidden md:inline px-4">
-                    <Link href="https://marketingplatform.google.com/about/partners/company/5088705549172736/gacp/5074370206629888/service/5141028099063808" target="_blank"><img src="/static/gmp.svg"/></Link>
+                    <Link href="https://marketingplatform.google.com/about/partners/company/5088705549172736/gacp/5074370206629888/service/5141028099063808" target="_blank"><img src="https://storage.googleapis.com/website-bucket-uploads/static/gmp.svg"/></Link>
                 </span>
                 
             </nav>
         </div>
         
   <div className="relative  flex lg:hidden p-2">
-  <Link href="/"><img onClick={() => setIsOpen(false)} src="/static/logo.png" className="relative h-10 md:mx-4 cursor-pointer"/></Link>
+  <Link href="/"><img onClick={() => setIsOpen(false)} src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="relative h-10 md:mx-4 cursor-pointer"/></Link>
               <button
                 onClick={() => {setIsOpen(!isOpen); setIsServices(false); setIsResources(false);}}
                 type="button"

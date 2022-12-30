@@ -39,7 +39,7 @@ const index= () => {
     <div className='overflow-x-hidden'>
         <section className="relative">
     <div className="overflow-hidden pb-20">
-        <img src="/static/services.png" className="-rotate-6"/>
+        <img src="https://storage.googleapis.com/website-bucket-uploads/static/services.png" className="-rotate-6"/>
     </div>
     <div className='relative'>
     

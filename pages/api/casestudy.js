@@ -1,11 +1,11 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import Blog from "../../models/Blog";
+import Casestudy from "../../models/Casestudy";
 import connectDb from "../../middleware/mongoose";
 
 
 const handler = async (req, res) => {
-    let blog = await Blog.find({}, { title: 1, description: 2,thumbnail:3, slug:4, author:5 });
-    res.status(200).json({ blog });
+    let data = await Casestudy.find({slug:req.query.slug});
+    res.status(200).json({ data });
 }
 
 

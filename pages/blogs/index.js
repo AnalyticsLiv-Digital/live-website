@@ -1,29 +1,21 @@
-import React, { useEffect } from 'react'
+import React, { useState,useEffect } from 'react'
 import ScrollProgress from '../../components/ScrollProgress'
 import Head from 'next/head';
 import BlogCard from '../../components/BlogCard';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Link from 'next/link';
+import { ScaleLoader } from 'react-spinners'
 
-const blogdata = [{
-    title: "xyz",
-    thumb: "/static/blog2.png",
-    date: "Nov 29 2022",
-    author: "Anshul",
-    slug: "why-god-why",
-    excerpt: "Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate exercitation incididunt aliquip deserunt reprehenderit elit laborum."
-}, {
-    title: "We shall overcome",
-    thumb: "/static/blog1.png",
-    date: "Nov 29 2022",
-    author: "Admin",
-    slug: "we-are-great",
-    excerpt: "Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate exercitation incididunt aliquip deserunt reprehenderit elit laborum."
-}]
 
-const index = () => {
+const index = ({blogDat}) => {
+    const blogData = blogDat.blog;
+    
+    const [blogsData, setBlogsData] = useState(blogData);
+
+ 
     useEffect(() => {
+        
         AOS.init();
     }, []);
     return (
@@ -32,6 +24,7 @@ const index = () => {
  
         </Head>
         <ScrollProgress/>
+
             <div>
                 
                 <div className="relative lg:mb-32">
@@ -40,7 +33,7 @@ const index = () => {
                         <div className="absolute right-0 top-0 -bottom-10 lg:left-32  lg:mt-20 bg-red-700 opacity-70 w-20 h-20 lg:w-60 lg:h-60 rounded-full"></div>
                         <div className="absolute right-6 -bottom-8 lg: lg:left-52  lg:top-0 bg-yellow-300 opacity-80 w-28 h-28 lg:w-48 lg:h-48 rounded-full"></div>
                     </div>
-                    <img src="/static/marketing.jpg" className="absolute h-32 lg:h-48 lg:top-2 lg:right-56 rounded-lg" />
+                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/marketing.jpg" className="absolute h-32 lg:h-48 lg:top-2 lg:right-56 rounded-lg" />
                     <div className="relative lg:border-2 lg:border-slate-900 lg:flex rounded-lg backdrop-blur-xl bg-white h-20 lg:h-36 w-4/5 md:w-3/5 lg:w-1/3 p-6 lg:top-20 top-10 text-left mx-auto mb-6">
                         <div className="lg:pt-8 ">
                             <h2 className="lg:text-2xl text-slate-700 font-semibold whitespace-relaxed ">B L O G S.</h2>
@@ -90,138 +83,11 @@ const index = () => {
 
                         <div className='bg-cover py-8 lg:py-16 bg-scroll' style={{backgroundImage: `url("https://img.freepik.com/free-vector/white-abstract-background_23-2148810113.jpg?t=st=1671082381~exp=1671082981~hmac=659665427411ee225ef245d30444c4a2513e113dcfebb8e1dabf685749e40e1e")`}} >
                             <div className="mx-8 lg:mx-32 grid grid-rows-1 lg:grid-cols-3 gap-6 lg:gap-20 ">
-                                <div className="relative lg:block bg-gray-50 rounded text-center shadow-md shadow-gray-500 ">
-                                <Link href="/blogs/why-you-should-move-to-ga4">
-                                    <img src="/static/blog2.png" className=" rounded-t w-screen " />
-                                    <div className="mx-4 mt-2 mb-2 lg:mb-8 text-left">
-                                        <div className="flex justify-between text-xs text-gray-400">
-                                            <span>Nov 9, 2022</span>
-                                        </div>
-                                        <h1 className="font-medium text-base text-slate-800  ">Why you should move to GA4?</h1>
-                                        <span className="font-normal text-xs text-gray-400 py-2">Cameron Williamson</span>
-                                        <p className="font-normal text-sm text-gray-600 py-1">
-                                            Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate exercitation incididunt aliquip deserunt reprehenderit elit laborum.
-                                        </p>
-                                        <div className="lg:absolute 
-                w-full h-10 bg-gradient-to-t from-gray-300 to-transparent 
-                bottom-0 left-0 text-center pt-2 cursor-pointer 
-                font-medium text-gray-800 hover:text-cyan-500">
-                                            Read More
-                                        </div>
-                                    </div>
-                                    </Link>
-                                </div>
-
-                                <div className="relative lg:block bg-gray-50 rounded text-center shadow-lg shadow-gray-500 ">
-                                <Link href="/blogs/why-you-should-move-to-ga4">
-                                    <img src="/static/blog1.png" className="rounded-t w-screen" />
-                                    <div className="mx-4 mb-2 mt-2 lg:mb-8 text-left">
-                                        <div className="flex justify-between text-xs text-gray-400">
-                                            <span>Nov 9, 2022</span>
-                                        </div>
-                                        <h1 className="font-medium text-base text-slate-800  ">Why you should move to GA4?</h1>
-                                        <span className="font-normal text-xs text-gray-400 py-2">Cameron Williamson</span>
-                                        <p className="font-normal text-sm text-gray-600 py-1">
-                                            Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate exercitation incididunt aliquip deserunt reprehenderit elit laborum.
-                                        </p>
-                                        <div className="lg:absolute 
-                w-full h-10 bg-gradient-to-t from-gray-300 to-transparent 
-                bottom-0 left-0 text-center pt-2 cursor-pointer 
-                font-medium text-gray-800 hover:text-cyan-500">
-                                            Read More
-                                        </div>
-                                    </div>
-                                    </Link>
-                                </div>
-
-                                <div className="relative lg:block bg-gray-50 rounded text-center shadow-lg shadow-gray-500 ">
-                                <Link href="/blogs/why-you-should-move-to-ga4">
-                                    <img src="/static/blog3.png" className="rounded-t w-screen" />
-                                    <div className="mx-4 mt-2 mb-2 lg:mb-8 text-left">
-                                        <div className="flex justify-between text-xs text-gray-400">
-                                            <span>Nov 9, 2022</span>
-                                        </div>
-                                        <h1 className="font-medium text-base text-slate-800  ">Why you should move to GA4?</h1>
-                                        <span className="font-normal text-xs text-gray-400 py-2">Cameron Williamson</span>
-                                        <p className="font-normal text-sm text-gray-600 py-1">
-                                            Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate exercitation incididunt aliquip deserunt reprehenderit elit laborum.
-                                        </p>
-                                        <div className="lg:absolute 
-                w-full h-10 bg-gradient-to-t from-gray-300 to-transparent 
-                bottom-0 left-0 text-center pt-2 cursor-pointer 
-                font-medium text-gray-800 hover:text-cyan-500">
-                                            Read More
-                                        </div>
-                                    </div>
-                                    </Link>
-                                </div>
-
-                                <div className="relative lg:block bg-gray-50 rounded text-center shadow-lg shadow-gray-500 ">
-                                <Link href="/blogs/why-you-should-move-to-ga4">
-                                    <img src="/static/blog1.png" className="rounded-t w-screen" />
-                                    <div className="mx-4 mt-2 mb-2 lg:mb-8 text-left">
-                                        <div className="flex justify-between text-xs text-gray-400">
-                                            <span>Nov 9, 2022</span>
-                                        </div>
-                                        <h1 className="font-medium text-base text-slate-800  ">Why you should move to GA4?</h1>
-                                        <span className="font-normal text-xs text-gray-400 py-2">Cameron Williamson</span>
-                                        <p className="font-normal text-sm text-gray-600 py-1">
-                                            Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate exercitation incididunt aliquip deserunt reprehenderit elit laborum.
-                                        </p>
-                                        <div className="lg:absolute 
-                w-full h-10 bg-gradient-to-t from-gray-300 to-transparent 
-                bottom-0 left-0 text-center pt-2 cursor-pointer 
-                font-medium text-gray-800 hover:text-cyan-500">
-                                            Read More
-                                        </div>
-                                    </div>
-                                    </Link>
-                                </div>
-
-                                <div className="relative bg-gray-50 lg:block rounded text-center shadow-lg shadow-gray-500">
-                                <Link href="/blogs/why-you-should-move-to-ga4">
-                                    <img src="/static/blog2.png" className="rounded-t w-screen" />
-                                    <div className="mx-4 mt-2 mb-2 lg:mb-8 text-left">
-                                        <div className="flex justify-between text-xs text-gray-400">
-                                            <span>Nov 9, 2022</span>
-                                        </div>
-                                        <h1 className="font-medium text-base text-slate-800  ">Why you should move to GA4?</h1>
-                                        <span className="font-normal text-xs text-gray-400 py-2">Cameron Williamson</span>
-                                        <p className="font-normal text-sm text-gray-600 py-1">
-                                            Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate exercitation incididunt aliquip deserunt reprehenderit elit laborum.
-                                        </p>
-                                        <div className="lg:absolute 
-                w-full h-10 bg-gradient-to-t from-gray-300 to-transparent 
-                bottom-0 left-0 text-center pt-2 cursor-pointer 
-                font-medium text-gray-800 hover:text-cyan-500">
-                                            Read More
-                                        </div>
-                                    </div>
-                                    </Link>
-                                </div>
-
-                                <div className="relative bg-gray-50 lg:block rounded text-center shadow-lg shadow-gray-500 ">
-                                <Link href="/blogs/why-you-should-move-to-ga4">
-                                    <img src="/static/blog3.png" className="rounded-t w-screen" />
-                                    <div className="mx-4 mt-2 mb-2 lg:mb-8 text-left">
-                                        <div className="flex justify-between text-xs text-gray-400">
-                                            <span>Nov 9, 2022</span>
-                                        </div>
-                                        <h1 className="font-medium text-base text-slate-800  ">Why you should move to GA4?</h1>
-                                        <span className="font-normal text-xs text-gray-400 py-2">Cameron Williamson</span>
-                                        <p className="font-normal text-sm text-gray-600 py-1">
-                                            Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate exercitation incididunt aliquip deserunt reprehenderit elit laborum.
-                                        </p>
-                                        <div className="lg:absolute 
-                w-full h-10 bg-gradient-to-t from-gray-300 to-transparent 
-                bottom-0 left-0 text-center pt-2 cursor-pointer 
-                font-medium text-gray-800 hover:text-cyan-500">
-                                            Read More
-                                        </div>
-                                    </div>
-                                    </Link>
-                                </div>
                                 
+                                {blogsData && blogsData.map((blog,key) => (
+            <BlogCard key={key} blog={blog}/>
+          ))}
+                             
                             </div>
 
                         </div>
@@ -232,5 +98,15 @@ const index = () => {
     </>
   )
 }
+
+export async function getServerSideProps(context) {
+    // Fetch data from external API
+
+    const res = await fetch(`${process.env.domain}/api/allblogs`)
+    const blogDat = await res.json()
+  
+    // Pass data to the page via props
+    return { props: { blogDat } }
+  }
 
 export default index

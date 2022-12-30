@@ -12,6 +12,8 @@ import 'aos/dist/aos.css';
 import { Typewriter } from 'react-simple-typewriter'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import Marquee from "react-fast-marquee";
+import HomeBlog from '../components/HomeBlog'
 
 const responsive = {
     superLargeDesktop: {
@@ -33,7 +35,7 @@ const responsive = {
     }
 };
 
-export default function Home() {
+export default function Home({brandsdata,blogsdata}) {
     useEffect(() => {
         AOS.init();
     }, []);
@@ -66,7 +68,7 @@ export default function Home() {
                             </p>
                         </div>
                         <div className="xl:w-3/5 flex flex-col  md:ml-auto w-full  md:mt-0">
-                            <img src="/static/hero.gif" className="h-full" />
+                            <img src="https://storage.googleapis.com/website-bucket-uploads/static/hero.gif" className="h-full" />
                         </div>
                     </div>
                 </section>
@@ -99,7 +101,7 @@ export default function Home() {
                 </section>
 
                 <section>
-                    <div style={{ backgroundImage: `url("/static/flow.png")` }} className="lg:flex pb-6 lg:pb-0 bg-cover bg-fixed ">
+                    <div style={{ backgroundImage: `url("https://storage.googleapis.com/website-bucket-uploads/static/flow.png")` }} className="lg:flex pb-6 lg:pb-0 bg-cover bg-fixed ">
 
                         <div data-aos="fade-right" data-aos-once="true" className="max-w-full lg:min-w-1/2 content-center py-2 md:py-24">
                             <motion.img
@@ -108,7 +110,7 @@ export default function Home() {
                                 transition={{
                                     duration: 1
                                 }}
-                                className="h-96 lg:w-1/2 lg:h-full  m-auto" src="/static/left.png" />
+                                className="h-96 lg:w-1/2 lg:h-full  m-auto" src="https://storage.googleapis.com/website-bucket-uploads/static/left.png" />
                         </div>
 
 
@@ -133,7 +135,7 @@ export default function Home() {
                 <section className="bg-slate-900">
                     <div className="relative w-100% lg:flex justify-evenly py-4 md:py-6">
                         <div data-aos="fade-left" data-aos-once="true" className="lg:hidden w-full">
-                            <img src="/static/collab.png" />
+                            <img src="https://storage.googleapis.com/website-bucket-uploads/static/collab.png" />
                         </div>
 
                         <div data-aos="fade-right" data-aos-once="true" className="lg:w-1/2 w-4/5 m-auto">
@@ -148,7 +150,7 @@ export default function Home() {
                             </ul>
                         </div>
                         <div data-aos="fade-left" data-aos-once="true" className="hidden lg:block lg:w-1/3 w-full">
-                            <img src="/static/collab.png" />
+                            <img src="https://storage.googleapis.com/website-bucket-uploads/static/collab.png" />
                         </div>
                     </div>
                 </section>
@@ -159,21 +161,21 @@ export default function Home() {
 
                     <div className="w-100% lg:flex py-6">
                         <div data-aos="fade-right" data-aos-once="true" className="lg:w-1/3 m-auto">
-                            <img src="/static/team.png" className="m-auto" />
+                            <img src="https://storage.googleapis.com/website-bucket-uploads/static/team.png" className="m-auto" />
                         </div>
                         <div data-aos="fade-left" data-aos-once="true" className="lg:w-1/2 w-4/5 m-auto">
                             <h1 className="font-medium text-white text-3xl md:pt-8 md:pb-4 whitespace-pre m-auto leading-relaxed text-center md:text-left">Services we Offer</h1>
                             <div className="bg-black w-100% h-0.5 rounded-full"></div>
                             <div className="lg:flex lg:space-x-10 py-2 md:py-4">
                                 <ul className="text-purple-200 tracking-widest ">
-                                    <li className="my-2 flex items-center"><img src="/static/icon-1.png" className="mr-4" /> Data Collection</li>
-                                    <li className="my-2 flex items-center"><img src="/static/icon-2.png" className="mr-4" /> Data Reporting</li>
-                                    <li className="my-2 flex items-center"><img src="/static/icon-3.png" className="mr-4" /> Insight Generation</li>
+                                    <li className="my-2 flex items-center"><img src="https://storage.googleapis.com/website-bucket-uploads/static/icon-1.png" className="mr-4" /> Data Collection</li>
+                                    <li className="my-2 flex items-center"><img src="https://storage.googleapis.com/website-bucket-uploads/static/icon-2.png" className="mr-4" /> Data Reporting</li>
+                                    <li className="my-2 flex items-center"><img src="https://storage.googleapis.com/website-bucket-uploads/static/icon-3.png" className="mr-4" /> Insight Generation</li>
                                 </ul>
                                 <ul className="text-purple-200 tracking-widest ">
-                                    <li className="my-2 flex items-center"><img src="/static/icon-4.png" className="mr-4" /> Data Utilization</li>
-                                    <li className="my-2 flex items-center"><img src="/static/icon-5.png" className="mr-4" /> Paid Search Marketing</li>
-                                    <li className="my-2 flex items-center"><img src="/static/icon-6.png" className="mr-4" /> Media Planning & Buying</li>
+                                    <li className="my-2 flex items-center"><img src="https://storage.googleapis.com/website-bucket-uploads/static/icon-4.png" className="mr-4" /> Data Utilization</li>
+                                    <li className="my-2 flex items-center"><img src="https://storage.googleapis.com/website-bucket-uploads/static/icon-5.png" className="mr-4" /> Paid Search Marketing</li>
+                                    <li className="my-2 flex items-center"><img src="https://storage.googleapis.com/website-bucket-uploads/static/icon-6.png" className="mr-4" /> Media Planning & Buying</li>
                                 </ul>
                             </div>
 
@@ -183,9 +185,9 @@ export default function Home() {
                         </div>
 
                     </div>
-                    <section className="bg-slate-900">
+                    <section className="bg-slate-900 py-10">
                     <div  data-aos="fade-up" data-aos-once="true">
-                <div className="bg-slate-900 relative w-100% text-center text-white text-4xl mb-4">How we power up your brand</div>
+                <div className="bg-slate-900 relative w-100% text-center text-sky-300 text-xl tracking-widest font-semibold uppercase mb-4">How we power up your brand</div>
                 <Carousel className=" bg-slate-900 font-medium text-center text-white h-60 md:h-40" ssr={true} showDots={true} responsive={responsive} infinite={true} autoPlay autoPlaySpeed={4000} transitionDuration={500} removeArrowOnDeviceType={["tablet", "mobile"]}>
                     <div className=" ">
                         <div className="text-3xl">1. Collect</div>
@@ -206,11 +208,22 @@ export default function Home() {
                 </Carousel>
                 </div>
                 </section>
+                <div className="brandsimages" data-aos="zoom-in" data-aos-once="true">
+                    <div className='text-center text-xl tracking-widest font-semibold uppercase text-sky-300 py-8'>Clients We’ve Worked With :</div>
+                <Marquee gradient={false} pauseOnHover="true">
+            
+                {brandsdata && brandsdata.brand.map((brands,key) => (
+                <div key={key}><img src={brands.logo} alt={brands.brands}/></div>
+            
+          ))}
+                
+                </Marquee>
+                </div>
                     <div data-aos="fade-up" data-aos-duration="1000" data-aos-once="true" className="relative mt-4 md:mt-16 md:pb-8 ">
                         <img className="absolute -top-28 right-0  bg-gradient-to-b from-blue-400 to-transparent w-96 h-96 rounded-full blur-2xl " />
                         <img className="absolute mt-24 bottom-0 left-0 bg-gradient-to-t from-red-800 to-transparent w-96 h-96 rounded-full blur-2xl " />
-                        <h1 className="text-white w-full h-auto font-semibold text-xl md:pt-6 text-center uppercase tracking-widest ">Hear from the clients !</h1>
-                        <div className="text-justify items-center lg:flex lg:justify-evenly py-12 lg:py-24">
+                        <h1 className="text-sky-300 w-full h-auto font-semibold text-xl md:pt-6 text-center uppercase tracking-widest ">Hear from the clients !</h1>
+                        <div className="text-justify items-center lg:flex lg:justify-evenly py-12 lg:py-16">
 
                             <div className=" rounded relative pt-3 px-2 lg:pt-4 lg:px-4 pb-8 lg:backdrop-blur bg-gray-200 shadow-lg shadow-black  w-4/5 mx-auto lg:w-1/4 text-center ">
                                 <h2 className="lg:text-2xl text-slate-900 font-medium underline ">Nikola McCarthy</h2>
@@ -257,40 +270,16 @@ export default function Home() {
                 </section>
                 
                 <section >
-                    <div style={{ backgroundImage: `url("/static/bg2.png")` }} className="bg-cover lg:bg-fixed">
+                    <div style={{ backgroundImage: `url("https://storage.googleapis.com/website-bucket-uploads/static/bg2.png")` }} className="bg-cover lg:bg-fixed">
                         <h1 className="text-black w-full h-auto font-bold text-3xl pt-4 md:pt-12 text-center uppercase tracking-widest">B L O G S</h1>
                         <div data-aos="zoom-in" data-aos-once="true" className="text-center lg:flex justify-evenly p-8 md:p-12">
-                            <div className="rounded backdrop-blur-xl border-1 border-amber-100 bg-white shadow-lg shadow-gray-800/40 h-84 lg:w-1/4 p-4 text-center">
-                                <Link href="/blogs/why-you-should-move-to-ga4">
-                                    <img src="/static/blog1.png" className="stretch" />
-                                    <h2 className="text-lg text-slate-900 font-semibold whitespace-relaxed ">Why you should move to GA4</h2>
-                                    <p className="align-middle text-left text-ellipsis pt-4 overflow-hidden  h-36 text-m text-gray-500">
-                                        Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.Amet minim mollit non deserunt
-                                        ullamco est sit aliqua dolor do amet sint
-                                    </p></Link>
-                            </div>
+                            
+                        {blogsdata && blogsdata.blog.map((blog,key) => (
+                <HomeBlog blog={blog} key={key}/>
+            
+          ))}
 
-                            <div className="hidden lg:block rounded backdrop-blur-xl border-1 border-amber-100 bg-white shadow-lg shadow-gray-800/40 h-84 w-1/4 p-4 text-center ">
-                                <Link href="/blogs/be-visible-before-others-do">
-                                    <img src="/static/blog2.png" />
-                                    <h2 className="text-lg text-slate-900 font-semibold whitespace-relaxed ">Be visible before others do!</h2>
-                                    <p className="align-middle text-left text-ellipsis pt-4 overflow-hidden  h-36 text-m text-gray-500">
-                                        Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.Amet minim mollit non deserunt
-                                        ullamco est sit aliqua dolor do amet sint
-                                    </p>
-                                </Link>
-                            </div>
 
-                            <div className="hidden lg:block rounded backdrop-blur-xl border-1 border-amber-100 bg-white shadow-lg shadow-gray-800/40 h-84 w-1/4 p-4 text-center ">
-                                <Link href="/blogs/the-game-changers-in-marketing">
-                                    <img src="/static/blog3.png" />
-                                    <h2 className="text-lg text-slate-900 font-semibold whitespace-relaxed ">The game changers in marketing.</h2>
-                                    <p className="align-middle text-left text-ellipsis pt-4 overflow-hidden  h-36 text-m text-gray-500">
-                                        Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.Amet minim mollit non deserunt
-                                        ullamco est sit aliqua dolor do amet sint.
-                                    </p>
-                                </Link>
-                            </div>
                         </div>
                     </div>
                 </section>
@@ -298,7 +287,7 @@ export default function Home() {
                 <section>
                     <div data-aos="flip-up" data-aos-once="true" className="bg-slate-900  lg:py-20">
                         <div className="lg:flex lg:rounded-lg bg-white shadow-lg shadow-gray-800/40 lg:w-3/5 mx-auto">
-                            <div className="lg:w-2/3"><img src="/static/help.png" /></div>
+                            <div className="lg:w-2/3"><img src="https://storage.googleapis.com/website-bucket-uploads/static/help.png" /></div>
                             <div className="lg:w-1/3 align-middle rounded-lg bg-purple-200 text-center py-8 lg:py-0">
                                 <img srcSet='static/support.png' className="mx-auto mt-2" />
                                 <h1 className="font-medium text-slate-700 text-2xl whitespace-pre lg:mt-6 mb-4 tracking-wider">Let Us Help!</h1>
@@ -315,3 +304,16 @@ export default function Home() {
         </>
     )
 }
+
+export async function getServerSideProps(context) {
+    // Fetch data from external API
+  
+    const res = await fetch(`${process.env.domain}/api/brands`)
+    const brandsdata = await res.json()
+
+    const res1 = await fetch(`${process.env.domain}/api/homepageblog`)
+    const blogsdata = await res1.json()
+  //console.log(brandsdata);
+    // Pass data to the page via props
+    return { props: { brandsdata,blogsdata } }
+  }

@@ -5,7 +5,7 @@ import ScrollProgress from '../components/ScrollProgress'
 import Head from 'next/head'
 import TagManager from 'react-gtm-module';
 import { useEffect, useState } from 'react'
-import Router from 'next/router'
+import Router,{ useRouter } from 'next/router'
 import { HashLoader } from 'react-spinners'
 
 
@@ -22,8 +22,9 @@ Router.events.on('routeChangeStart', ()=>{
 Router.events.on('routeChangeComplete', ()=>{
   setShowloader(false);
 })
+const router = useRouter();
   return <>
-  <Head>
+  {router.pathname.includes("liv-admin") ? <Component {...pageProps} /> :<><Head>
   <style> @import url('https://fonts.googleapis.com/css2?family=Poppins'); </style>
   <link rel="icon" href="/static/favicon.png" type="image/icon type"></link>
   </Head>
@@ -37,7 +38,8 @@ Router.events.on('routeChangeComplete', ()=>{
 <>
 
   <Component {...pageProps} />
-  <Footer/></>}
+  <Footer/></>}</>}
+  
   </>
 }
 

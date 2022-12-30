@@ -76,3 +76,27 @@ input[type=number] {
 #nprogress .spinner-icon{
   display:none;
 }
+
+
+.ql-editor img{
+  margin:auto;
+}
+
+.brandsimages img{
+  height: 50px;
+      /* filter: url(filters.svg#grayscale); Firefox 3.5+ */
+      filter: gray; /* IE5+ */
+      -webkit-filter: brightness(0) invert(1); /* Webkit Nightlies & Chrome Canary */
+      -webkit-transition: all 0.5s ease-in-out;  
+      margin-left: 20px;
+      margin-right: 20px;
+}
+
+.brandsimages img:hover {
+  filter: none;
+    -webkit-filter: none;
+    -webkit-transform: scale(1.04);
+
+  }
+
+ 

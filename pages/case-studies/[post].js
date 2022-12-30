@@ -7,13 +7,12 @@ import { useState, useEffect } from 'react'
 import { Router, useRouter } from 'next/router';
 import { ScaleLoader } from 'react-spinners'
 
-const index = () => {
-    const router = useRouter();
-    const {post} = router.query;
+const index = ({casestudyDat}) => {
+var cd = casestudyDat.data[0];
     useEffect(() => {
         AOS.init();
     }, []);
-    const initialValues = { fullName: '', email: '', company: '' };
+    const initialValues = { fullName: '', email: '', company: ''};
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
@@ -68,8 +67,9 @@ const index = () => {
                 body: JSON.stringify({
                     "fullName": formValues.fullName,
                    "email": formValues.email,
-                   "casestudy": {post}.post,
-                   "company": formValues.company
+                   "casestudy": cd.title,
+                   "company": formValues.company,
+                   "id":casestudyDat.data[0].id
        }),
             })
                 .then((response) => response.json())
@@ -131,54 +131,19 @@ const index = () => {
 
             <div className="relative lg:flex w-full lg:w-5/6 space-y-4 lg:space-y-0 lg:space-x-4 mx-auto pt-4 pb-8 px-4">
                 <div className="p-4 lg:w-3/4 space-y-6 bg-white">
-                    <h1 className="text-2xl">MDaudit transforms the healthcare industry with ThoughtSpot Everywhere to drive compliance and revenue outcomes</h1>
+                    <h1 className="text-2xl">{cd.title}</h1>
                     <div className="h-0.5 bg-cyan-500"></div>
-                    <img className="w-screen" src="/static/cs1.png"/>
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" className="inline w-10 fill-cyan-800" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                            <path d="M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4Z"/>
-                        </svg>
-                        <h2 className="inline uppercase font-semibold text-xl text-slate-800">Client:</h2>
-                        <h3 className="px-8 mt-4 text-sky-800 "> MDaudit  </h3>
-                        <p className="px-8 mt-4 text-gray-600">
-                            Healthcare, Financial Services                         
-                        </p>
+                    <img className="w-screen" src={cd.coverimage}/>
 
-                    </div>
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" className="inline w-10 fill-red-800" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                            <path d="M4 2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6.1l-3.7 3.71c-.2.19-.45.29-.7.29H9a1 1 0 0 1-1-1v-3H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2m8.19 3.5c-.89 0-1.6.18-2.14.54c-.55.36-.83.96-.78 1.65h1.97c0-.28.1-.49.26-.63c.2-.14.42-.21.69-.21c.31 0 .58.08.76.26c.18.17.27.39.27.69c0 .28-.08.53-.22.74c-.17.22-.38.4-.64.54c-.52.32-.86.6-1.07.84c-.19.24-.29.58-.29 1.08h2c0-.28.05-.5.14-.68c.09-.17.26-.32.52-.47c.46-.21.84-.49 1.13-.85c.29-.37.44-.76.44-1.2c0-.7-.27-1.26-.81-1.68c-.54-.41-1.29-.62-2.23-.62M11 12v2h2v-2h-2Z"/>
-                        </svg>
-                        <h2 className="inline uppercase font-semibold text-xl text-slate-800">Challenge:</h2>
-                        <p className="px-8 mt-4 text-gray-600">
-                            MDaudit needed a solution for a better way for healthcare organizations to identify the
-                            efficacy of their auditing efforts — what they do, who they
-                            audit, and who to educate
-                        </p>
-                    </div>
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" className="inline w-10 fill-yellow-300" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                            <path  d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/>
-                        </svg>
-                        <h2 className="inline uppercase font-semibold text-xl text-slate-800">Solution:</h2>
-                        <p className="px-8 mt-4 text-gray-600">
-                            MDaudit’s product team has created Liveboards that are
-                            enabling all users to self-serve their ad hoc questions.
-                            To date, ThoughtSpot Everywhere has been adopted by
-                            over 500+ end users, with 10 internal users from product
-                            management and engineering.
-                        </p>
-                    </div>
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" className="inline w-10 fill-green-800" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                            <path  d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10s10-4.5 10-10S17.5 2 12 2m-2 15l-5-5l1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z"/>
-                        </svg>
-                        <h2 className="inline uppercase font-semibold text-xl text-slate-800">Out-turn:</h2>
-                        <p className="px-8 mt-4 text-gray-600">
-                            Growing in healthcare is incredibly hard, yet with ThoughtSpot Everywhere’s user-friendly Live Analytics and scalability,
-                            MDaudit has seen a 25%+ increase in new logos and revenue in 2022.
-                        </p>
-                    </div>
+                    {cd.content && cd.content.map((casestudy,key) => (
+            <div key={key}>
+            <h2 className="inline uppercase font-semibold text-xl text-slate-800">{casestudy.heading}:</h2>
+            <p className="px-8 mt-4 text-gray-600">
+            {casestudy.description}                        
+            </p>
+        </div>
+          ))}
+                 
                 </div>
 
                 <div className={`${formFixed ? "sticky top-20" : "relative"} h-fit lg:w-1/2 bg-white px-10 py-4`}>
@@ -225,5 +190,15 @@ const index = () => {
     </div></>
   )
 }
+
+export async function getServerSideProps(context) {
+    // Fetch data from external API
+  
+    const res = await fetch(`${process.env.domain}/api/casestudy?slug=${context.params.post}`)
+    const casestudyDat = await res.json()
+  console.log(casestudyDat);
+    // Pass data to the page via props
+    return { props: { casestudyDat } }
+  }
 
 export default index
