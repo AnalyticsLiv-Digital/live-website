@@ -1,5 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import Blog from "../../../../models/blog";
+import Blog from "../../../../models/Blog";
 import connectDb from "../../../../middleware/mongoose";
 
 
