@@ -12,7 +12,7 @@ const CasestudySchema = new mongoose.Schema({
         heading:{type: String, required: true},
         description:{type: String, required: true}
     }],
-    status:{type: Boolean, required: true, default: true},
+    active:{type: Boolean, required: true, default: true},
 });
 mongoose.models = {};
 export default mongoose.model("Casestudy", CasestudySchema);

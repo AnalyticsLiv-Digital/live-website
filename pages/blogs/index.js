@@ -82,7 +82,7 @@ const index = ({blogDat}) => {
                         </div>
 
                         <div className='bg-cover py-8 lg:py-16 bg-scroll' style={{backgroundImage: `url("https://img.freepik.com/free-vector/white-abstract-background_23-2148810113.jpg?t=st=1671082381~exp=1671082981~hmac=659665427411ee225ef245d30444c4a2513e113dcfebb8e1dabf685749e40e1e")`}} >
-                            <div className="mx-8 lg:mx-32 grid grid-rows-1 lg:grid-cols-3 gap-6 lg:gap-20 ">
+                            <div className="mx-8 lg:mx-24 grid grid-rows-1 lg:grid-cols-3 gap-6 lg:gap-10 ">
                                 
                                 {blogsData && blogsData.map((blog,key) => (
             <BlogCard key={key} blog={blog}/>

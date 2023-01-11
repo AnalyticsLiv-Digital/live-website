@@ -130,6 +130,11 @@ const post = ({jobData}) => {
            // console.log(formValues);
             setShowWaiting(true);
            // console.log({post});
+           dataLayer.push({
+            event:'job_application',
+            eventCategory :{post}.post,
+            eventAction:'apply'
+        });
             fetch('/api/jobapplication', {
                 method: 'POST', // or 'PUT'
                 headers: {

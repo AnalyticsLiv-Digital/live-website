@@ -39,6 +39,9 @@ const contact = () => {
         if (Object.keys(formErrors).length === 0 && isSubmit) {
             //console.log(formValues);
             setShowWaiting(true);
+            dataLayer.push({
+                event:'contact_submission'
+            });
             fetch('/api/contact', {
                 method: 'POST', // or 'PUT'
                 headers: {
@@ -85,9 +88,10 @@ const contact = () => {
             errors.company = "Company is required!";
         }
 
-        if (!values.role) {
+       /* if (!values.role) {
             errors.role = "Role is required!";
         }
+        */
 
         if (!values.purpose) {
             errors.purpose = "Lastname is required!";
@@ -112,12 +116,12 @@ const contact = () => {
             errors.email = "This is not a valid email format!";
         }
 
-        if (!values.contactno) {
+     /*   if (!values.contactno) {
             errors.contactno = "Contact is required!";
         } else if (!mobile.test(values.contactno)) {
             errors.contactno = "This is not a valid phone number!";
         }
-
+    */
         return errors;
     };
 
@@ -245,6 +249,7 @@ const contact = () => {
                                             <option>Google Cloud Platform</option>
                                             <option>Mobile App Analytics Service</option>
                                             <option>Advanced Funnel Optimization</option>
+                                            <option>Others</option>
                                         </select>
                                         <p className="text-red-600 text-sm">{formErrors.purpose}</p>
                                     </div>

@@ -59,6 +59,11 @@ var cd = casestudyDat.data[0];
         if (Object.keys(formErrors).length === 0 && isSubmit) {
             //console.log(formValues);
             setShowWaiting(true);
+            dataLayer.push({
+                event:'casestudy_download',
+                eventCategory:cd.title,
+                eventAction:'download'
+            });
             fetch('/api/casestudylead', {
                 method: 'POST', // or 'PUT'
                 headers: {

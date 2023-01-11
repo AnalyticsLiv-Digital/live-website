@@ -19,8 +19,8 @@ const handler = async (req, res) => {
         var transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-              user: "anshul.d@analyticsliv.com",
-              pass: "cmptwmtqjrgdhgqn"
+              user: "support@analyticsliv.com",
+              pass: "hbyzdhukcasgmghq"
             }
           });
           

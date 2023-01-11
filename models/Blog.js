@@ -8,7 +8,8 @@ const BlogSchema = new mongoose.Schema({
     author: {type: String, required: true},
     description: {type: String, required: true},
     date:{type: String, required: true},
-    thumbnail:{type: String, required: true}
+    thumbnail:{type: String, required: true},
+    active:{type: Boolean, required: true}
 });
 mongoose.models = {};
 export default mongoose.model("Blog", BlogSchema);

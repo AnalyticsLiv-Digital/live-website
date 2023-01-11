@@ -6,7 +6,8 @@ const JobSchema = new mongoose.Schema({
     description:{type: String, required: true},
     brief:{type: String, required: true},
     location:{type: String, required: true},
-    experience:{type: String, required: true}
+    experience:{type: String, required: true},
+    active:{type: Boolean, required: true}
 });
 mongoose.models = {};
 export default mongoose.model("Job", JobSchema);

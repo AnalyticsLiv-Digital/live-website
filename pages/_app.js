@@ -26,7 +26,7 @@ const router = useRouter();
   return <>
   {router.pathname.includes("liv-admin") ? <Component {...pageProps} /> :<><Head>
   <style> @import url('https://fonts.googleapis.com/css2?family=Poppins'); </style>
-  <link rel="icon" href="/static/favicon.png" type="image/icon type"></link>
+  <link rel="icon" href="https://storage.googleapis.com/website-bucket-uploads/static/favicon.png" type="image/icon type"></link>
   </Head>
   <Header />
   {showLoader ? <div className='flex h-screen'><HashLoader

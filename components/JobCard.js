@@ -4,7 +4,7 @@ import Link from 'next/link'
 const JobCard = ({job}) => {
   return (
     <>
-    <div className="w-4/5 mx-auto space-y-4 py-4">
+    <div className="jobcard w-4/5 mx-auto space-y-4 py-4">
             <div className="h-0.5 w-full bg-gray-300"></div>
             <div className="md:flex space-y-2">
                 <div className="md:w-3/5">

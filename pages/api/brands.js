@@ -4,7 +4,7 @@ import connectDb from "../../middleware/mongoose";
 
 
 const handler = async (req, res) => {
-    let brand = await Brand.find();
+    let brand = await Brand.find({active:true});
     res.status(200).json({ brand });
 }
 

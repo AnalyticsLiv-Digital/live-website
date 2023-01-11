@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const BlogCard = ({blog}) => {
   return (
-    <div className="relative lg:block bg-gray-50 rounded text-center shadow-md shadow-gray-500 ">
+    <div className="blogcard relative lg:block bg-gray-50 rounded text-center shadow-md shadow-gray-500 ">
                                 <Link href={`/blogs/${blog.slug}`}>
                                     <img src={blog.thumbnail} className=" rounded-t w-screen " />
                                     <div className="mx-4 mt-2 mb-2 lg:mb-8 text-left">

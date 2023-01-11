@@ -127,7 +127,7 @@ export default function Home({brandsdata,blogsdata}) {
                                 specialists with 8+ years of experience in the industry. We create data driven
                                 marketing strategies to help our clients’ businesses stand out.
                             </p>
-                            <Link href="/services"><div className="bg-blue-400 hover:bg-blue-500 transition duration-200 delay-75 text-white tracking-wide font-semibold rounded w-1/3 mx-auto lg:my-8 text-center px-2 py-2 shadow-md shadow-slate-800">Learn More</div></Link>
+                            <Link href="/services"><div className="bg-blue-400 hover:bg-blue-500 transition duration-200 delay-75 text-white tracking-wide font-semibold rounded w-1/3 mx-auto lg:my-8 text-center px-2 py-2 shadow-md shadow-slate-800">Our Services</div></Link>
                         </div>
                     </div>
                 </section>
@@ -180,7 +180,7 @@ export default function Home({brandsdata,blogsdata}) {
                             </div>
 
                             <div className="relative w-full">
-                                <Link href="/services"><button className="text-white border rounded px-4 py-2 ml-4 shadow-sm shadow-lime-300 hover:bg-emerald-600 transition origin-top-left duration-300 delay-150 ease-in">Learn More</button></Link>
+                                <Link href="/services"><button className="text-white border rounded px-4 py-2 ml-4 shadow-sm shadow-lime-300 hover:bg-emerald-600 transition origin-top-left duration-300 delay-150 ease-in">Services We Offered</button></Link>
                             </div>
                         </div>
 
@@ -289,7 +289,7 @@ export default function Home({brandsdata,blogsdata}) {
                         <div className="lg:flex lg:rounded-lg bg-white shadow-lg shadow-gray-800/40 lg:w-3/5 mx-auto">
                             <div className="lg:w-2/3"><img src="https://storage.googleapis.com/website-bucket-uploads/static/help.png" /></div>
                             <div className="lg:w-1/3 align-middle rounded-lg bg-purple-200 text-center py-8 lg:py-0">
-                                <img srcSet='static/support.png' className="mx-auto mt-2" />
+                                <img src='https://storage.googleapis.com/website-bucket-uploads/static/support.png' className="mx-auto mt-2" />
                                 <h1 className="font-medium text-slate-700 text-2xl whitespace-pre lg:mt-6 mb-4 tracking-wider">Let Us Help!</h1>
 
                                 <Link href="/contact">

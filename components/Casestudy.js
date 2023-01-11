@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const Casestudy = ({casestudy}) => {
   return (
-    <><div className="bg-white md:flex gap-4 shadow-md shadow-gray">
+    <><div className="casestudy-card bg-white md:flex gap-4 shadow-md shadow-gray">
     <img  src={casestudy.coverimage} className="mx-auto w-screen "/>
       <div className="p-2 space-y-4">
       <div className="md:flex md:justify-between md:space-x-2 text-center md:text-left">
