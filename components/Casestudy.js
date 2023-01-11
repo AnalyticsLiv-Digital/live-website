@@ -4,7 +4,7 @@ import Link from 'next/link'
 const Casestudy = ({casestudy}) => {
   return (
     <><div className="casestudy-card bg-white md:flex gap-4 shadow-md shadow-gray">
-    <img  src={casestudy.coverimage} className="mx-auto w-screen "/>
+    <img src={casestudy.coverimage} className="mx-auto w-[300px] h-auto"/>
       <div className="p-2 space-y-4">
       <div className="md:flex md:justify-between md:space-x-2 text-center md:text-left">
           <h1  className="font-semibold text-xl md:w-4/5 tracking-wider"><Link href={`/case-studies/${casestudy.slug}`}> 

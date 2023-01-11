@@ -8,6 +8,7 @@ const CasestudySchema = new mongoose.Schema({
     filename: {type: String, required: true},
     publishdate: {type: String, required: true},
     coverimage:{type: String, required: true},
+    thumb:{type: String, required: true},
     content:[{
         heading:{type: String, required: true},
         description:{type: String, required: true}
