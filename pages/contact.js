@@ -230,11 +230,12 @@ const contact = () => {
                                         <div className='relative w-full md:w-1/2'>
                                         <select className="pb-2.5 pl-2 min-w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-slate-500 dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-cyan-500 outline-none" placeholder="Role in Comapany" name="role" value={formValues.role} onChange={handleChange}>
                                             <option>Role in Company</option>
-                                            <option>C-Level Executive</option>
+                                            <option>Data Analyst</option>
                                             <option>Management/Executive</option>
-                                            <option>Professional</option>
-                                            <option>Department Manager</option>
-                                            <option>Finance Head</option>
+                                            <option>Sales</option>
+                                            <option>Marketing</option>
+                                            <option>Ecommerce Manager</option>
+                                            <option>Other</option>
                                         </select>
                                         <p className="block text-red-600 text-sm">{formErrors.role}</p>
                                         </div>

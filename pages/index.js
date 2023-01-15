@@ -43,13 +43,14 @@ export default function Home({brandsdata,blogsdata}) {
         <>
             <ScrollProgress />
             <Head>
-                <title>AnalyticsLiv - Leading Web and App Analytics Agency in India</title>
+                <meta name="description" content="AnalyticsLiv Digital is one of the leading Web and App analytics agency. We help our customers embrace Google Products to improve their customer experiences."/>
+                <title>Leading Web and App Analytics Agency in India - AnalyticsLiv</title>
             </Head>
             <div className='overflow-x-hidden'>
                 <section className="bg-sky-900" data-aos="fade-down" data-aos-once="true">
                     <div className="text-center xl:justify-between xl:flex xl:items-center xl:justify-between xl:pl-12">
                         <div className="py-8 xl:w-2/5 xl:pr-16">
-                            <h1 className="title-font font-medium uppercase leading-relaxed tracking-wide text-4xl xl:text-5xl text-white">Unleash the <br /> Power of <br /><Typewriter
+                            <h2 className="title-font font-medium uppercase leading-relaxed tracking-wide text-4xl xl:text-5xl text-white">Unleash the <br /> Power of <br /><Typewriter
                                 words={['Data', 'Analytics', 'Reporting', 'Marketing']}
                                 cursor
                                 loop={false}
@@ -58,7 +59,7 @@ export default function Home({brandsdata,blogsdata}) {
                                 deleteSpeed={100}
                                 delaySpeed={1000}
 
-                            /></h1>
+                            /></h2>
 
                             <p className="whitespace-pre-line text-xl text-gray-300 mt-8 ">
                                 Data analytics and Marketing Digital
@@ -73,9 +74,12 @@ export default function Home({brandsdata,blogsdata}) {
                     </div>
                 </section>
 
+   
+
                 <section>
                     <div className="bg-stone-300">
                         <div className="w-full md:py-4">
+                        
                             <div className="text-center md:flex space-y-6 md:space-y-0 py-3">
                                 <div className="font-medium text-4xl md:w-1/4">
                                     <span className=""><Counter x={100} /></span>
@@ -100,10 +104,11 @@ export default function Home({brandsdata,blogsdata}) {
 
                 </section>
 
-                <section>
-                    <div style={{ backgroundImage: `url("https://storage.googleapis.com/website-bucket-uploads/static/flow.png")` }} className="lg:flex pb-6 lg:pb-0 bg-cover bg-fixed ">
-
-                        <div data-aos="fade-right" data-aos-once="true" className="max-w-full lg:min-w-1/2 content-center py-2 md:py-24">
+                <section style={{ backgroundImage: `url("https://storage.googleapis.com/website-bucket-uploads/static/flow.png")` }}>
+                <h1 className="title-font font-medium text-center uppercase leading-relaxed tracking-wide text-xl xl:text-4xl py-6">Google Marketing Platform Partner</h1>
+                    <div  className="lg:flex pb-6 lg:pb-0 bg-cover bg-fixed ">
+                    
+                        <div data-aos="fade-right" data-aos-once="true" className="max-w-full lg:min-w-1/2 content-center py-2 md:py-6">
                             <motion.img
                                 initial={{ scale: 0.5 }}
                                 animate={{ scale: 1 }}
@@ -271,11 +276,11 @@ export default function Home({brandsdata,blogsdata}) {
                 
                 <section >
                     <div style={{ backgroundImage: `url("https://storage.googleapis.com/website-bucket-uploads/static/bg2.png")` }} className="bg-cover lg:bg-fixed">
-                        <h1 className="text-black w-full h-auto font-bold text-3xl pt-4 md:pt-12 text-center uppercase tracking-widest">B L O G S</h1>
+                        <h1 className="text-black w-full h-auto font-bold text-3xl pt-4 md:pt-12 text-center uppercase tracking-widest"><Link href="/blogs">B L O G S</Link></h1>
                         <div data-aos="zoom-in" data-aos-once="true" className="text-center lg:flex justify-evenly p-8 md:p-12">
                             
                         {blogsdata && blogsdata.blog.map((blog,key) => (
-                <HomeBlog blog={blog} key={key}/>
+                <HomeBlog blog={blog} key={key} num={key}/>
             
           ))}
 

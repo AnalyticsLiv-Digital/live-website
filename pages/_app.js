@@ -12,7 +12,7 @@ import { HashLoader } from 'react-spinners'
 function MyApp({ Component, pageProps }) {
   const [showLoader, setShowloader] = useState(false);
   useEffect(() => {
-    TagManager.initialize({ gtmId: 'GTM-M98J2SJ' });
+    TagManager.initialize({ gtmId: 'GTM-NLH25K8' });
 }, []);
 
 Router.events.on('routeChangeStart', ()=>{
@@ -25,8 +25,11 @@ Router.events.on('routeChangeComplete', ()=>{
 const router = useRouter();
   return <>
   {router.pathname.includes("liv-admin") ? <Component {...pageProps} /> :<><Head>
-  <style> @import url('https://fonts.googleapis.com/css2?family=Poppins'); </style>
   <link rel="icon" href="https://storage.googleapis.com/website-bucket-uploads/static/favicon.png" type="image/icon type"></link>
+  <link
+          href="https://fonts.googleapis.com/css2?family=Poppins"
+          rel="stylesheet"
+        />
   </Head>
   <Header />
   {showLoader ? <div className='flex h-screen'><HashLoader

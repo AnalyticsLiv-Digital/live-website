@@ -693,7 +693,7 @@ const index= () => {
                     <svg xmlns="http://www.w3.org/2000/svg" className="absolute w-8 fill-cyan-800 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                         <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
                     </svg>
-                    <div className="pl-10">Campaign Trafficking hghfggbfgb</div>
+                    <div className="pl-10">Campaign Trafficking </div>
                 </li>
             </ul>
         </div>

@@ -9,7 +9,12 @@ const BlogSchema = new mongoose.Schema({
     description: {type: String, required: true},
     date:{type: String, required: true},
     thumbnail:{type: String, required: true},
-    active:{type: Boolean, required: true}
+    active:{type: Boolean, required: true},
+    duration:{type: String, required: true},
+    category:[
+        {type: String, required: true}
+        
+    ],
 });
 mongoose.models = {};
 export default mongoose.model("Blog", BlogSchema);
