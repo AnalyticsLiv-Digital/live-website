@@ -54,12 +54,12 @@ const index = ({blogDat,similarBlogs}) => {
         <ScrollProgress />
 
         <div>
-            <section className="relative bg-gray-100 md:pt-12">
+            <section className="relative lg:bg-gray-100 md:pt-12">
 
 
 
                 <div className="relative lg:flex w-full lg:w-11/12 space-y-2 lg:space-y-0 mx-auto pt-4 pb-8 px-4">
-                    <div className="p-8 lg:w-3/4 space-y-6 bg-white">
+                    <div className="p-1 lg:p-8 lg:w-3/4 space-y-6 bg-white">
 
                         <h1 className=" text-4xl font-bold tracking-wide text-slate-800">
                             {blogData && blogData.title}
