@@ -25,7 +25,7 @@ const Careers = ({jobsdata}) => {
                 </div>
                 <div className="relative my-4">
                     <h1 className="font-semibold text-5xl my-8">
-                        Be part of the team.
+                        Be part of the team
                     </h1>
                     <p className="text-xl lg:w-3/5">
                         We are looking for passionate and enthusiastic  people to join us
