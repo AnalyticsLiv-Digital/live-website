@@ -19,7 +19,16 @@ a {
   box-sizing: border-box;
 }
 
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: light;
+  }
+  input[type="emailid"],input[type="file"],input[type="tel"],input[type="url"],input[type="email"],input[type="experience"],input[type="text"],input[type="text"], input[type="emaild"], input[type="number"], input[type="Cname"], textarea {
 
+    background-color : white; 
+  
+  }
+}
 
 #progressBarContainer {
   position: fixed;
