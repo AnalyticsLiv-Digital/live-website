@@ -10,10 +10,10 @@ const handler = async (req, res) => {
     let casestudy = await Casestudy.find({active:true}, { slug:1});
     
     for(var i=0; i<blog.length; i++){
-        sitemap.push({'url':'https://analyticsliv.com/blogs/'+blog[i].slug});
+        sitemap.push({'url':'https://www.analyticsliv.com/blogs/'+blog[i].slug});
     }
     for(var i=0; i<casestudy.length; i++){
-        sitemap.push({'url':'https://analyticsliv.com/case-studies/'+casestudy[i].slug});
+        sitemap.push({'url':'https://www.analyticsliv.com/case-studies/'+casestudy[i].slug});
     }
 
     res.status(200).json({ sitemap });
