@@ -17,7 +17,7 @@ const aboutus = () => {
     
     <section className='overflow-x-hidden'>
         <div className="relative" data-aos="fade-down" data-aos-once="true">
-            <img src="https://storage.googleapis.com/website-bucket-uploads/static/about us.png" className="h-40 lg:h-fit"/>
+            <img src="https://storage.googleapis.com/website-bucket-uploads/static/about us.png" className="lg:w-full"/>
             <div className="absolute w-24 h-24 lg:w-80 lg:h-80 bg-gradient-to-b from-blue-900 to-transparent blur rounded-full top-2 right-0"></div>
             <div className="absolute w-16 h-16 lg:w-40 lg:h-40 bg-gradient-to-b from-amber-400 to-transparent blur rounded-full right-8 -bottom-2 lg:bottom-8 lg:right-40"></div>
             <h1 className="uppercase tracking-wider absolute right-6 bottom-4 text-white lg:text-3xl">We are AnalyticsLiv!</h1>

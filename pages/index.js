@@ -300,7 +300,7 @@ export default function Home({brandsdata,blogsdata}) {
                                 <Link href="/contact">
                                     <button className="rounded-xl bg-cyan-500 hover:bg-blue-500 transition duration-200 delay-75 shadow-md text-white shadow-gray-500/40 mt-1 w-1/2 lg:w-52 p-2 border border-slate-200">Request A Quote</button></Link>
                                 <div className="mt-4 text-gray-700">Or Contact Us @</div>
-                                <div className="underline text-sm cursor-pointer text-blue-900"><a >data.analytics@analyticsliv.com</a></div>
+                                <div className="underline text-sm cursor-pointer text-blue-900"><a href="mailto:support@analyticsliv.com">support@analyticsliv.com</a></div>
                             </div>
                         </div>
                     </div>
