@@ -9,7 +9,6 @@ const handler = async (req, res) => {
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             email: req.body.email,
-            country: req.body.country,
             contact: req.body.contact,
             role: req.body.role,
             purpose: req.body.purpose,
@@ -29,9 +28,9 @@ const handler = async (req, res) => {
 
           var mailOptions1 = {
             from: "support@analyticsliv.com",
-            to: "anshul.d@analyticsliv.com",
+            to: ["anuj@analyticsliv.com","nitya@analyticsliv.com","anshul.d@analyticsliv.com"],
             subject: 'New Enquiry!!',
-            html: `Enquiry Submitted by <br> First Name - ${req.body.firstName} <br>Lastname- ${req.body.lastName} <br> Email- ${req.body.email} <br> Contact - ${req.body.contact} <br> Company - ${req.body.company} <br> Country- ${req.body.country} <br> Role- ${req.body.role} <br> Purpose - ${req.body.purpose} <br> Requirements -${req.body.requirments}`
+            html: `Enquiry Submitted by <br> First Name - ${req.body.firstName} <br>Lastname- ${req.body.lastName} <br> Email- ${req.body.email} <br> Contact - ${req.body.contact} <br> Company - ${req.body.company} <br> Role- ${req.body.role} <br> Purpose - ${req.body.purpose} <br> Requirements -${req.body.requirments}`
           };
           
           transporter.sendMail(mailOptions1, function(error, info){

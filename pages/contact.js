@@ -7,13 +7,16 @@ import 'aos/dist/aos.css';
 import ReactFlagsSelect from "react-flags-select";
 import { ScaleLoader } from 'react-spinners'
 import Link from 'next/link';
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/bootstrap.css";
+
 
 
 const contact = () => {
     useEffect(() => {
         AOS.init();
     }, []);
-    const initialValues = { firstName: '', lastName: '', email: '', country: '', contactno: '', company: '', role: '', purpose: '', requirements: '' };
+    const initialValues = { firstName: '', lastName: '', email: '', contactno: '', company: '', role: '', purpose: '', requirements: '' };
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
@@ -24,7 +27,12 @@ const contact = () => {
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormValues({ ...formValues, [name]: value });
-       // console.log(formValues);
+        console.log(formValues);
+    };
+
+    const handleContactChange = (e) => {
+        setFormValues({ ...formValues, ['contactno']: e });
+       console.log(formValues);
     };
 
     const handleSubmit = (e) => {
@@ -51,7 +59,6 @@ const contact = () => {
                     "firstName": formValues.firstName,
                    "lastName": formValues.lastName,
                    "email": formValues.email,
-                   "country": formValues.country,
                    "contact": formValues.contactno,
                    "role": formValues.role,
                    "purpose": formValues.purpose,
@@ -101,9 +108,7 @@ const contact = () => {
             errors.requirements = "Requirement is required!";
         }
 
-        if (!values.country) {
-            errors.country = "Country is required!";
-        }
+   
 
         if (!values.purpose) {
             errors.purpose = "Contact For is required!";
@@ -185,7 +190,7 @@ const contact = () => {
                                 {formSubmit && <div className='relative text-slate-700 p-4 space-y-4 h-full'>
                                     <h1 className='align-middle font-medium text-4xl'>Thank You for your interest.</h1>
                                     <h2 className='align-middle text-xl'>We will get back to you soon.</h2>
-                                    <div><a href='#' className='text-blue-500 underline'>Click here</a> to go to Home Page</div>
+                                    <div><a href='/' className='text-blue-500 underline'>Click here</a> to go to Home Page</div>
                                     <div className='absolute bottom-0 right-2 rounded-full w-20 h-20 bg-emerald-600 opacity-70 animate-bounce hover:animate-none duration-300 delay-75'></div>
                                 </div>}
                             
@@ -202,25 +207,26 @@ const contact = () => {
                                             <p className="text-red-600 text-sm">{formErrors.lastName}</p>
                                         </div>
                                     </div>
-                                    <div className="w-full">
-                                        <div className="relative w-full">
-                                            <input type="emaild" id="email" className="px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent  border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " name="email" value={formValues.email} onChange={handleChange} />
+
+                                    <div className="relative w-full md:flex justify-between md:space-x-8">
+                                        <div className="relative md:w-1/2">
+                                        <input type="emaild" id="email" className="px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent  border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " name="email" value={formValues.email} onChange={handleChange} />
                                             <label htmlFor="emaild" className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-4 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">E-mail</label>
                                             <p className="text-red-600 text-sm">{formErrors.email}</p>
                                         </div>
+                                        <div className="relative md:w-1/2">
+                                        <PhoneInput
+      name="contactno" value={formValues.contactno} onChange={handleContactChange}                                  
+      country={"in"}
+      preferredCountries = {['in','us','au']}
+      enableSearch={true}
+      
+    />
+     <label htmlFor="tel" className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-4 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Contact No</label>
+                                             
+                                             </div>
                                     </div>
 
-                                     <div className="w-full md:flex justify-between md:space-x-8">
-                                        <div className="relative md:w-1/2">
-                                        <ReactFlagsSelect  className="pb-4 pt-2 w-full text-sm text-gray-400 bg-transparent border-0 border-b-2 border-slate-500  focus:outline-none focus:ring-0 focus:border-b focus:border-cyan-500 outline-none" name="country" onChange={handleChange} value={formValues.country} selected={selected} onSelect={(code) => { setSelected(code); setFormValues({ ...formValues, country: code }); /*console.log(formValues)*/ }} />
-                                        <p className="text-red-600 text-sm">{formErrors.country}</p>
-                                        </div>
-                                        <div className='relative md:w-1/2 '>
-                                            <input type="number" id="tel" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent  border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " name="contactno" value={formValues.contactno} onChange={handleChange} />
-                                            <label htmlFor="tel" className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-4 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Contact No</label>
-                                            <p className="text-red-600 text-sm">{formErrors.contactno}</p>
-                                        </div>
-                                    </div>
                                     <div className="w-full md:flex space-y-4 justify-around md:space-x-8">
                                         <div className="relative md:w-1/2 ">
                                             <input type="Cname" id="company" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent  border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " name="company" value={formValues.company} onChange={handleChange} />
