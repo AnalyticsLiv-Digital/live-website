@@ -11,13 +11,6 @@ const header = () => {
   const [header, setHeader] = useState(80);
   const [isWebResources, setIsWebResources] = useState(false);
   const [isWebServices, setIsSWebervices] = useState(false);
-  const [isSubmenu1, setIsSubmenu1] = useState(false);
-  const [isSubmenu2, setIsSubmenu2] = useState(false);
-  const [isSubmenu3, setIsSubmenu3] = useState(false);
-  const [isSubmenu4, setIsSubmenu4] = useState(false);
-  const [isSubmenu5, setIsSubmenu5] = useState(false);
-  const [isSubmenu6, setIsSubmenu6] = useState(false);
-
   const [isResources, setIsResources] = useState(false);
   const [isServices, setIsServices] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -69,79 +62,13 @@ useEffect(() => {
                
                     {isWebServices && <motion.div  initial={{ y: 10, opacity:0 }} animate={{ y:0, opacity:1 }} transition={{  type: "spring",  stiffness: 260,  damping: 20  }} onMouseEnter={()=>setIsSWebervices(true)} onMouseLeave={()=>setIsSWebervices(false)} className="subheader absolute w-56 text-sm flex flex-col lg:-ml-20 lg:mt-2 divide-y bg-gray-100 text-cyan-900 items-center align-middle font-semibold">
  
-                            
-                              <div className="relative w-56 py-2 hover:bg-cyan-500" onMouseEnter={()=>setIsSubmenu2(true)} onMouseLeave={()=>setIsSubmenu2(false)}>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-collection' }}}>Data Collection</Link>
-                              {isSubmenu2 && <motion.div initial={{ y: 10, opacity:0 }} animate={{ y:0, opacity:1 }} transition={{  type: "spring",  stiffness: 260,  damping: 20  }} className="w-56 absolute left-full bg-gray-100 top-0">
-                              <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-collection' }}}><div className="w-56 py-2 hover:bg-cyan-500">Data Collection</div></Link>
+                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-collection' }}}><div className="w-56 py-2 hover:bg-cyan-500">Data Collection</div></Link>
                             <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-reporting' }}}><div className="w-56 py-2 hover:bg-cyan-500">Data reporting</div></Link>
                             <Link scroll={false} href={{ pathname: '/services',query: { id: 'insight-generation' }}}><div className="w-56 py-2 hover:bg-cyan-500">Insight Generation</div></Link>
                             <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-utilization' }}}><div className="w-56 py-2 hover:bg-cyan-500">Data Utilization</div></Link>
                             <Link scroll={false} href={{ pathname: '/services',query: { id: 'paid-search-marketing' }}}><div className="w-56 py-2 hover:bg-cyan-500">Paid Search Marketing</div></Link>
                             <Link scroll={false} href={{ pathname: '/services',query: { id: 'media-planning' }}}><div className="w-56 py-2 hover:bg-cyan-500">Media Planning & Buying</div></Link>
                              
-                                </motion.div>}
-                              </div>
-                              <div className="relative w-56 py-2 hover:bg-cyan-500" onMouseEnter={()=>setIsSubmenu3(true)} onMouseLeave={()=>setIsSubmenu3(false)}>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-reporting' }}}>Data reporting</Link>
-                              {isSubmenu3 && <motion.div initial={{ y: 10, opacity:0 }} animate={{ y:0, opacity:1 }} transition={{  type: "spring",  stiffness: 260,  damping: 20  }} className="w-56 absolute left-full bg-gray-100 top-0">
-                              <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-collection' }}}><div className="w-56 py-2 hover:bg-cyan-500">Data Collection</div></Link>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-reporting' }}}><div className="w-56 py-2 hover:bg-cyan-500">Data reporting</div></Link>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'insight-generation' }}}><div className="w-56 py-2 hover:bg-cyan-500">Insight Generation</div></Link>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-utilization' }}}><div className="w-56 py-2 hover:bg-cyan-500">Data Utilization</div></Link>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'paid-search-marketing' }}}><div className="w-56 py-2 hover:bg-cyan-500">Paid Search Marketing</div></Link>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'media-planning' }}}><div className="w-56 py-2 hover:bg-cyan-500">Media Planning & Buying</div></Link>
-                             
-                                </motion.div>}
-                              </div>
-                              <div className="relative w-56 py-2 hover:bg-cyan-500" onMouseEnter={()=>setIsSubmenu1(true)} onMouseLeave={()=>setIsSubmenu1(false)}>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'media-planning' }}}>Media Planning & Buying</Link>
-                              {isSubmenu1 && <motion.div initial={{ y: 10, opacity:0 }} animate={{ y:0, opacity:1 }} transition={{  type: "spring",  stiffness: 260,  damping: 20  }} className="w-56 absolute left-full bg-gray-100 top-0">
-                              <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-collection' }}}><div className="w-56 py-2 hover:bg-cyan-500">PLATFORM & CAMPAIGN AUDIT</div></Link>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-reporting' }}}><div className="w-56 py-2 hover:bg-cyan-500">MEDIA PLANNING & BUYING</div></Link>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'insight-generation' }}}><div className="w-56 py-2 hover:bg-cyan-500">CAMPAIGN TRAFFICKING</div></Link>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-utilization' }}}><div className="w-56 py-2 hover:bg-cyan-500">PRODUCT INTEGRATIONS</div></Link>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'paid-search-marketing' }}}><div className="w-56 py-2 hover:bg-cyan-500">ONE-VIEW REPORTING</div></Link>
-                             
-                                </motion.div>}
-                              </div>
-                              <div className="relative w-56 py-2 hover:bg-cyan-500" onMouseEnter={()=>setIsSubmenu4(true)} onMouseLeave={()=>setIsSubmenu4(false)}>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'insight-generation' }}}>Insight Generation</Link>
-                              {isSubmenu4 && <motion.div initial={{ y: 10, opacity:0 }} animate={{ y:0, opacity:1 }} transition={{  type: "spring",  stiffness: 260,  damping: 20  }} className="w-56 absolute left-full bg-gray-100 top-0">
-                              <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-collection' }}}><div className="w-56 py-2 hover:bg-cyan-500">Data Collection</div></Link>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-reporting' }}}><div className="w-56 py-2 hover:bg-cyan-500">Data reporting</div></Link>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'insight-generation' }}}><div className="w-56 py-2 hover:bg-cyan-500">Insight Generation</div></Link>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-utilization' }}}><div className="w-56 py-2 hover:bg-cyan-500">Data Utilization</div></Link>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'paid-search-marketing' }}}><div className="w-56 py-2 hover:bg-cyan-500">Paid Search Marketing</div></Link>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'media-planning' }}}><div className="w-56 py-2 hover:bg-cyan-500">Media Planning & Buying</div></Link>
-                             
-                                </motion.div>}
-                              </div>
-                              <div className="relative w-56 py-2 hover:bg-cyan-500" onMouseEnter={()=>setIsSubmenu5(true)} onMouseLeave={()=>setIsSubmenu5(false)}>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-utilization' }}}>Data Utilization</Link>
-                              {isSubmenu5 && <motion.div initial={{ y: 10, opacity:0 }} animate={{ y:0, opacity:1 }} transition={{  type: "spring",  stiffness: 260,  damping: 20  }} className="w-56 absolute left-full bg-gray-100 top-0">
-                              <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-collection' }}}><div className="w-56 py-2 hover:bg-cyan-500">Data Collection</div></Link>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-reporting' }}}><div className="w-56 py-2 hover:bg-cyan-500">Data reporting</div></Link>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'insight-generation' }}}><div className="w-56 py-2 hover:bg-cyan-500">Insight Generation</div></Link>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-utilization' }}}><div className="w-56 py-2 hover:bg-cyan-500">Data Utilization</div></Link>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'paid-search-marketing' }}}><div className="w-56 py-2 hover:bg-cyan-500">Paid Search Marketing</div></Link>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'media-planning' }}}><div className="w-56 py-2 hover:bg-cyan-500">Media Planning & Buying</div></Link>
-                             
-                                </motion.div>}
-                              </div>
-                              <div className="relative w-56 py-2 hover:bg-cyan-500" onMouseEnter={()=>setIsSubmenu6(true)} onMouseLeave={()=>setIsSubmenu6(false)}>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'paid-search-marketing' }}}>Paid Search Marketing</Link>
-                              {isSubmenu6 && <motion.div initial={{ y: 10, opacity:0 }} animate={{ y:0, opacity:1 }} transition={{  type: "spring",  stiffness: 260,  damping: 20  }} className="w-56 absolute left-full bg-gray-100 top-0">
-                              <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-collection' }}}><div className="w-56 py-2 hover:bg-cyan-500">Data Collection</div></Link>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-reporting' }}}><div className="w-56 py-2 hover:bg-cyan-500">Data reporting</div></Link>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'insight-generation' }}}><div className="w-56 py-2 hover:bg-cyan-500">Insight Generation</div></Link>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'data-utilization' }}}><div className="w-56 py-2 hover:bg-cyan-500">Data Utilization</div></Link>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'paid-search-marketing' }}}><div className="w-56 py-2 hover:bg-cyan-500">Paid Search Marketing</div></Link>
-                            <Link scroll={false} href={{ pathname: '/services',query: { id: 'media-planning' }}}><div className="w-56 py-2 hover:bg-cyan-500">Media Planning & Buying</div></Link>
-                             
-                                </motion.div>}
-                              </div>
-                           
                         </motion.div>}
                       
                     </li>
