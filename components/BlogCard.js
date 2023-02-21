@@ -9,7 +9,7 @@ const BlogCard = ({blog}) => {
                                     <img src={blog.thumbnail} className=" rounded-t w-screen " />
                                     <div className="mx-4 mt-2 mb-2 lg:mb-8 text-left">
                                         <div className="flex justify-between text-xs text-gray-400">
-                                            <span>9 Nov, 2022</span>
+                                            <span>{blog.date}</span>
                                         </div>
                                         <h1 className="font-medium text-base text-slate-800  ">{blog.title}</h1>
                                         <span className="font-normal text-xs text-gray-400 py-2">{blog.author}</span>

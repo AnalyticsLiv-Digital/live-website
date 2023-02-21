@@ -168,7 +168,7 @@ const contact = () => {
                                     <svg xmlns="http://www.w3.org/2000/svg" className="inline w-6" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                                         <path fill="currentColor" d="M19.95 21q-3.225 0-6.287-1.425q-3.063-1.425-5.425-3.8q-2.363-2.375-3.8-5.438Q3 7.275 3 4.05v-.525Q3 3.25 3.05 3H8.9l.925 5.025l-2.85 2.875q1.05 1.8 2.638 3.375Q11.2 15.85 13.1 17l2.9-2.9l5 1v5.85q-.25.025-.525.038Q20.2 21 19.95 21Z"></path>
                                     </svg>
-                                    <span><a href="tel:+918008783679">+91 80087 83679</a></span>
+                                    <span><a href="tel:+918320576622">+91 83205 76622</a></span>
                                 </div>
                                 <div className="space-x-2 pl-4">
                                     <Link href="https://in.linkedin.com/company/analytics-liv-digital"><svg xmlns="http://www.w3.org/2000/svg" className="w-8 inline fill-current hover:fill-blue-700" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
