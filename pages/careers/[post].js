@@ -50,10 +50,10 @@ const post = ({jobData}) => {
     var ext = re.exec(file.name)[1];
     var new_filename = x+'.'+ext;
    // console.log(new_filename);
-    //const filename = encodeURIComponent(file.name);
+    const filename = encodeURIComponent(file.name);
     const res = await fetch(`/api/resumegoogleupload?file=${new_filename}`);
     const { url, fields } = await res.json();
-    //console.log(res.json);
+    console.log(res.json);
     const formData = new FormData();
 
     Object.entries({ ...fields, file }).forEach(([key, value]) => {
@@ -68,14 +68,14 @@ const post = ({jobData}) => {
    
     setFormValues({ ...formValues, resume: new_filename });
     if (upload) {
-      //console.log('Uploaded successfully!');
+      console.log('Uploaded successfully!');
       setFormValues({ ...formValues, resume: new_filename });
     } else {
-      //console.log(upload);
+      console.log(upload);
       setFormValues({ ...formValues, resume: new_filename });
     }
 
-    //console.log(formValues)
+    console.log(formValues)
 }else{
     alert('file size should be less than 10MB');
       document.getElementById('resume_file').value='';
@@ -114,7 +114,7 @@ const post = ({jobData}) => {
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormValues({ ...formValues, [name]: value });
-        //console.log(formValues);
+        console.log(formValues);
     };
 
     const handleSubmit = (e) => {
@@ -142,6 +142,7 @@ const post = ({jobData}) => {
                 },
                 body: JSON.stringify({
                     "post":{post}.post,
+                    "postName": document.getElementById("postName").value,
                     "firstName": formValues.firstName,
                    "lastName": formValues.lastName,
                    "email": formValues.email,
@@ -246,13 +247,31 @@ const post = ({jobData}) => {
                 <div className=" p-4 lg:w-3/4 space-y-6 bg-white ">
                     <h1 className="text-2xl">{jobData.job[0].title}</h1>
                     <div className="h-0.5 bg-cyan-500"></div>
-                   
                     <div>
-                        <h2 className="uppercase font-semibold text-slate-800">Requirements:</h2>
-                        <p className="px-2 md:px-8 mt-4 text-gray-600">
-                        {jobData.job[0].description}
+                     <p className="px-2 md:px-8 mt-4 text-gray-600">
+                        {jobData.job[0].our_description}
                         </p>
                     </div>
+                    <div>
+                     <p className="px-2 md:px-8 mt-4 text-gray-600">
+                        {jobData.job[0].job_short_description}
+                        </p>
+                    </div>
+
+                
+
+                    {jobData.job[0].details && jobData.job[0].details.map((details,key) => (
+            <div key={key}>
+            <h2 className="uppercase font-semibold text-slate-800">{details.heading}:</h2>
+            <p className="px-2 md:px-8 mt-4 text-gray-600">
+            {details.points && details.points.map((items,key) => (
+                <p><b className='font-bold'>- </b>{items}</p>
+            ))}                        
+            </p>
+        </div>
+          ))}
+
+
                     <div>
                         <h2 className="uppercase font-semibold text-slate-800">Location:</h2>
                         <p className="px-2 md:px-8 mt-4 text-gray-600">
@@ -268,12 +287,12 @@ const post = ({jobData}) => {
                     
                 </div>
 
-                <div className=" lg:w-1/2 bg-white px-2 md:px-10 py-4">
+                <div className="relative lg:w-1/2 bg-white px-2 md:px-10 py-4">
                 
-                    <form className="space-y-4 md:space-y-6 " onSubmit={handleSubmit}>
+                    <form className="relative sticky top-20 space-y-4 md:space-y-6 " onSubmit={handleSubmit}>
                         <h1 className="text-center text-xl">Apply Now</h1>
                         <div className="h-0.5 bg-cyan-600"></div>
-                        
+                         <input type="hidden" id="postName" name="postName" value={jobData.job[0].title}/>
                             <div className="relative">
                                 <input type="text" name="firstName" id="firstname" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent border-b border-slate-500 appearance-none focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" "  value={formValues.firstName} onChange={handleChange}/>
                                 <label htmlFor="firstname" className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">First Name</label>

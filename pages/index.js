@@ -185,7 +185,7 @@ export default function Home({brandsdata,blogsdata}) {
                             </div>
 
                             <div className="relative w-full">
-                                <Link href="/services"><button className="text-white border rounded px-4 py-2 ml-4 shadow-sm shadow-lime-300 hover:bg-emerald-600 transition origin-top-left duration-300 delay-150 ease-in">Services We Offered</button></Link>
+                                <Link href="/services"><button className="text-white bg-blue-400 hover:bg-blue-500 shadow-md shadow-slate-800 font-semibold tracking-wider border rounded px-4 py-2 ml-4 transition origin-top-left duration-300 delay-150 ease-in">Services We Offered</button></Link>
                             </div>
                         </div>
 
@@ -298,7 +298,7 @@ export default function Home({brandsdata,blogsdata}) {
                                 <h1 className="font-medium text-slate-700 text-2xl whitespace-pre lg:mt-6 mb-4 tracking-wider">Let Us Help!</h1>
 
                                 <Link href="/contact">
-                                    <button className="rounded-xl bg-cyan-500 hover:bg-blue-500 transition duration-200 delay-75 shadow-md text-white shadow-gray-500/40 mt-1 w-1/2 lg:w-52 p-2 border border-slate-200">Request A Quote</button></Link>
+                                    <button className="rounded-xl text-white bg-blue-400 hover:bg-blue-500 shadow-md shadow-slate-800 transition duration-200 delay-75 shadow-md text-white mt-1 w-1/2 lg:w-52 p-2 border border-slate-200">Request A Quote</button></Link>
                                 <div className="mt-4 text-gray-700">Or Contact Us @</div>
                                 <div className="underline text-sm cursor-pointer text-blue-900"><a href="mailto:support@analyticsliv.com">support@analyticsliv.com</a></div>
                             </div>

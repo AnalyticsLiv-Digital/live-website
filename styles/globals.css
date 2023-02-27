@@ -102,3 +102,7 @@ input[type=number] {
   z-index: 17;
 }
  
+
+.react-tel-input .form-control{
+  width: 100%;
+}

@@ -6,6 +6,7 @@ const JobapplicationSchema = new mongoose.Schema({
     lastName:{type: String, required: true},
     email:{type: String, required: true},
     contact:{type: String, required: true},
+    postName:{type: String, required: true},
     linkedin:{type: String},
     experience:{type: String, required: true},
     resume:{type: String, required: true},
