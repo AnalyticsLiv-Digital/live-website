@@ -48,8 +48,8 @@ export default function Home({brandsdata,blogsdata}) {
             </Head>
             <div className='overflow-x-hidden'>
                 <section className="bg-sky-900" data-aos="fade-down" data-aos-once="true">
-                    <div className="text-center xl:justify-between xl:flex xl:items-center xl:justify-between xl:pl-12">
-                        <div className="py-8 xl:w-2/5 xl:pr-16">
+                    <div className="text-center md:flex xl:items-center xl:justify-between xl:pl-12">
+                        <div className="py-8 xl:w-1/2 xl:pr-16">
                             <h2 className="title-font font-medium uppercase leading-relaxed tracking-wide text-4xl xl:text-5xl text-white">Unleash the <br /> Power of <br /><Typewriter
                                 words={['Data', 'Analytics', 'Reporting', 'Marketing']}
                                 cursor
@@ -68,8 +68,8 @@ export default function Home({brandsdata,blogsdata}) {
                                 utilization of data
                             </p>
                         </div>
-                        <div className="xl:w-3/5 flex flex-col  md:ml-auto w-full  md:mt-0">
-                            <img src="https://storage.googleapis.com/website-bucket-uploads/static/hero.gif" className="h-full" />
+                        <div className="xl:w-1/2 md:ml-auto w-full  md:mt-0">
+                            <img src="https://storage.googleapis.com/website-bucket-uploads/static/hero.gif" className="w-full" />
                         </div>
                     </div>
                 </section>
@@ -290,7 +290,7 @@ export default function Home({brandsdata,blogsdata}) {
                 </section>
 
                 <section>
-                    <div data-aos="flip-up" data-aos-once="true" className="bg-slate-900  lg:py-20">
+                    <div data-aos="fade-up" data-aos-once="true" className="bg-slate-900  lg:py-20">
                         <div className="lg:flex lg:rounded-lg bg-white shadow-lg shadow-gray-800/40 lg:w-3/5 mx-auto">
                             <div className="lg:w-2/3"><img src="https://storage.googleapis.com/website-bucket-uploads/static/help.png" /></div>
                             <div className="lg:w-1/3 align-middle rounded-lg bg-purple-200 text-center py-8 lg:py-0">
