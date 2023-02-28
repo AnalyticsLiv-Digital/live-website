@@ -91,7 +91,7 @@ useEffect(() => {
                     </li></Link>
                 </ul>
                 <span className="hidden md:inline px-4">
-                    <Link className="gmp-link" href="https://marketingplatform.google.com/about/partners/company/5088705549172736/gacp/5074370206629888/service/5141028099063808" target="_blank"><img alt="marketing-partner" aria-label="marketing-partner" src="https://storage.googleapis.com/website-bucket-uploads/static/gmp.svg"/></Link>
+                    <img alt="marketing-partner" aria-label="marketing-partner" src="https://storage.googleapis.com/website-bucket-uploads/static/gmp.svg"/>
                 </span>
                 
             </nav>
