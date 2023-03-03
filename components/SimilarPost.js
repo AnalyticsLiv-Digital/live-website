@@ -4,9 +4,9 @@ import Link from 'next/link'
 
 const SimilarBlogCard = ({blog}) => {
   return (
-    <div className="min-w-full px-3">
+    <div className="similar-post min-w-full px-3">
     <Link href={`/blogs/${blog.slug}`}><img src={blog.thumbnail} />
-    <h3 className="font-medium">{blog.title}</h3>
+    <div className="font-medium ">{blog.title}</div>
     </Link>
 </div>
   )

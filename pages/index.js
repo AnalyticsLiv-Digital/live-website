@@ -119,7 +119,7 @@ export default function Home({brandsdata,blogsdata}) {
                         </div>
 
 
-                        <div data-aos="fade-left" data-aos-once="true" className="text-center lg:w-1/3 lg:text-left m-auto">
+                        <div data-aos="fade-left" data-aos-once="true" className="we-are-helpful text-center lg:w-1/3 lg:text-left m-auto">
                             <div className="text-gray-500 font-medium text-xl ">360° Solutions</div>
                             <h1 className="font-medium text-3xl whitespace-pre m-auto leading-relaxed">How are we Helpful?</h1>
                             <p className="text-slate-700 pb-4 px-4 lg:pb-0 lg:px-0 m-auto">
@@ -132,7 +132,7 @@ export default function Home({brandsdata,blogsdata}) {
                                 specialists with 8+ years of experience in the industry. We create data driven
                                 marketing strategies to help our clients’ businesses stand out.
                             </p>
-                            <Link href="/services"><div className="bg-blue-400 hover:bg-blue-500 transition duration-200 delay-75 text-white tracking-wide font-semibold rounded w-1/3 mx-auto lg:my-8 text-center px-2 py-2 shadow-md shadow-slate-800">Our Services</div></Link>
+                            <Link href="/services"><div className="our-services bg-blue-400 hover:bg-blue-500 transition duration-200 delay-75 text-white tracking-wide font-semibold rounded w-1/3 mx-auto lg:my-8 text-center px-2 py-2 shadow-md shadow-slate-800">Our Services</div></Link>
                         </div>
                     </div>
                 </section>
@@ -185,7 +185,7 @@ export default function Home({brandsdata,blogsdata}) {
                             </div>
 
                             <div className="relative w-full">
-                                <Link href="/services"><button className="text-white bg-blue-400 hover:bg-blue-500 shadow-md shadow-slate-800 font-semibold tracking-wider border rounded px-4 py-2 ml-4 transition origin-top-left duration-300 delay-150 ease-in">Services We Offered</button></Link>
+                                <Link href="/services"><button className="services-we-offer text-white bg-blue-400 hover:bg-blue-500 shadow-md shadow-slate-800 font-semibold tracking-wider border rounded px-4 py-2 ml-4 transition origin-top-left duration-300 delay-150 ease-in">Services We Offered</button></Link>
                             </div>
                         </div>
 
@@ -276,7 +276,7 @@ export default function Home({brandsdata,blogsdata}) {
                 
                 <section >
                     <div style={{ backgroundImage: `url("https://storage.googleapis.com/website-bucket-uploads/static/bg2.png")` }} className="bg-cover lg:bg-fixed">
-                        <h1 className="text-black w-full h-auto font-bold text-3xl pt-4 md:pt-12 text-center uppercase tracking-widest"><Link href="/blogs">B L O G S</Link></h1>
+                        <h1 className="text-black w-full h-auto font-bold text-3xl pt-4 md:pt-12 text-center uppercase tracking-widest"><Link className="blog-link" href="/blogs">B L O G S</Link></h1>
                         <div data-aos="zoom-in" data-aos-once="true" className="text-center lg:flex justify-evenly p-8 md:p-12">
                             
                         {blogsdata && blogsdata.blog.map((blog,key) => (
@@ -290,7 +290,7 @@ export default function Home({brandsdata,blogsdata}) {
                 </section>
 
                 <section>
-                    <div data-aos="fade-up" data-aos-once="true" className="bg-slate-900  lg:py-20">
+                    <div className="let-us-help bg-slate-900  lg:py-20">
                         <div className="lg:flex lg:rounded-lg bg-white shadow-lg shadow-gray-800/40 lg:w-3/5 mx-auto">
                             <div className="lg:w-2/3"><img src="https://storage.googleapis.com/website-bucket-uploads/static/help.png" /></div>
                             <div className="lg:w-1/3 align-middle rounded-lg bg-purple-200 text-center py-8 lg:py-0">
