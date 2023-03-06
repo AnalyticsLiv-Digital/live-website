@@ -1,0 +1,64 @@
+<script>
+
+
+
+
+fetch('https://www.google-analytics.com/mp/collect?measurement_id=G-M6XCSP14LR&api_secret=Diqmf446RfqbhBpaynZByg', {
+    method: 'POST',
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+   client_id: '12132323', //client_id 
+    userId: '123423251',
+    events: [{           
+      "name":"purchase",
+      "params" : {
+      transaction_id: "T12345_ecom",// Transaction ID. Required for purchases and refunds.
+      affiliation: "victoria milan Store", // product affiliation to designate a supplying company or store location.
+      value: 2394.00,  // total amount of payment
+      tax: 0.00, // total tax  amount 2
+      shipping: 0.00, // shipping amount for the payment
+      currency: "AED", //currency type of payment
+      coupon: "BF0B015F2890A4E8",//if the user applied bonus code
+      items: [{
+        item_name: "VIP Subscription - 6 Months",    // Name or ID is required.
+       item_id: 555,// Item Sku
+       price: 2394.00, //total price of the item.
+       item_brand: "Victoria Milan", //Brand name
+       item_category: "Premium Platinum", // category of item  
+       item_category3: "credit_card", // type of payment gateway   ex: coinbase,paysafecard  
+       item_category2: "US",// name of the country   
+       item_variant: "399,-/month", // Package per month price
+       item_list_name: "Upgrade_Page",//e.g. Filter results,Search Results,Popular Picks For You 
+       item_list_id: "H3123",//ID of the list in which the item was presented to the user.
+       index: 1,// position of the item
+       quantity: 1 //quantity of the item
+      },
+       {
+       item_name: "Include 1 Month Free Premium Plus",// Name or ID is required.
+       item_id: "999", // Item Sku
+       price: 0.00, //total price of the item.
+       item_brand: "Victoria Milan", //Brand name
+       item_category: "Free Premium Plus ",
+       item_category3: "credit_card", // type of payment gateway  ex: coinbase,paysafecard
+       item_category2: "US",// name of the country     
+       item_variant: "29.99,-/month", // Package per month price
+       item_list_name: "Upgrade_page",//e.g. Filter results,Search Results,Popular Picks For You 
+       item_list_id: "H3123",
+       index: 2,// position of the item
+       promotion_id: "123",//promotion id or promotion name is required
+       promotion_name: "Header_Section_Upgrade",  // name of the banner/promotion
+     } 
+       ]
+      
+  }
+    }]
+  })
+})
+   .then(response => response.json())
+   .then(response => console.log(JSON.stringify(response)))
+
+
+</script>
