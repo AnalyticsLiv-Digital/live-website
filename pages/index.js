@@ -297,7 +297,7 @@ export default function Home({brandsdata,blogsdata}) {
                                 <img src='https://storage.googleapis.com/website-bucket-uploads/static/support.png' className="mx-auto mt-2" />
                                 <h1 className="font-medium text-slate-700 text-2xl whitespace-pre lg:mt-6 mb-4 tracking-wider">Let Us Help!</h1>
 
-                                <Link href="/contact">
+                                <Link className="request-a-quote" href="/contact">
                                     <button className="rounded-xl text-white bg-blue-400 hover:bg-blue-500 shadow-md shadow-slate-800 transition duration-200 delay-75 shadow-md text-white mt-1 w-1/2 lg:w-52 p-2 border border-slate-200">Request A Quote</button></Link>
                                 <div className="mt-4 text-gray-700">Or Contact Us @</div>
                                 <div className="underline text-sm cursor-pointer text-blue-900"><a href="mailto:support@analyticsliv.com">support@analyticsliv.com</a></div>

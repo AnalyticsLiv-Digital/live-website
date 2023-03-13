@@ -98,22 +98,22 @@ const index = ({blogDat,similarBlogs}) => {
                                 
 
                             </div>
-                            <div className='flex space-x-4'>
-                                <Link href={`https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fanalyticsliv.com%2Fblogs%2F${blogData && blogData.slug}`}><svg xmlns="http://www.w3.org/2000/svg" className='w-4 fill-slate-800 hover:fill-blue-700' preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                            <div className='blog-share flex space-x-4'>
+                                <Link share="facebook" className="" href={`https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fanalyticsliv.com%2Fblogs%2F${blogData && blogData.slug}`}><svg xmlns="http://www.w3.org/2000/svg" className='w-4 fill-slate-800 hover:fill-blue-700' preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                                     <path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z" />
                                 </svg>
                                 </Link>
-                                <Link href={`http://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fanalyticsliv.com%2Fblogs%2F${blogData && blogData.slug}&title=`}>
+                                <Link share="linkedin" href={`http://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fanalyticsliv.com%2Fblogs%2F${blogData && blogData.slug}&title=`}>
                                 <svg xmlns="http://www.w3.org/2000/svg" className='w-5 fill-slate-800 hover:fill-indigo-900' preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                                     <path d="M6.94 5a2 2 0 1 1-4-.002a2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z" />
                                 </svg>
                                 </Link>
-                                <Link href={`https://twitter.com/intent/tweet?url=https%3A%2F%2Fanalyticsliv.com%2Fblogs%2F${blogData && blogData.slug}&text=`}>
+                                <Link share="twitter" href={`https://twitter.com/intent/tweet?url=https%3A%2F%2Fanalyticsliv.com%2Fblogs%2F${blogData && blogData.slug}&text=`}>
                                 <svg xmlns="http://www.w3.org/2000/svg" className='w-5 fill-slate-800 hover:fill-sky-700' preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16">
                                 <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/> 
                                 </svg>
                                 </Link>
-                                <Link href={`mailto:?subject=I wanted you to see this site&amp;body=Check out this site https://analyticsliv.com/blogs/${blogData && blogData.slug}.`}>
+                                <Link share="mail" href={`mailto:?subject=I wanted you to see this site&amp;body=Check out this site https://analyticsliv.com/blogs/${blogData && blogData.slug}.`}>
                                 <svg xmlns="http://www.w3.org/2000/svg" className='w-5 fill-slate-800 hover:fill-green-700' preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256">
                                     <path d="M232 96a16 16 0 0 0-16-16h-32V48a16 16 0 0 0-16-16H40a16 16 0 0 0-16 16v128a7.9 7.9 0 0 0 4.6 7.2a8.1 8.1 0 0 0 3.4.8a7.7 7.7 0 0 0 5-1.8L72 154v30a16 16 0 0 0 16 16h93.6l37.4 30.2a7.8 7.8 0 0 0 8.4 1a7.9 7.9 0 0 0 4.6-7.2ZM66.6 137.8L40 159.2V48h128v88H71.6a7.7 7.7 0 0 0-5 1.8Zm122.8 48a7.7 7.7 0 0 0-5-1.8H88v-32h80a16 16 0 0 0 16-16V96h32v111.2Z" />
                                 </svg>
