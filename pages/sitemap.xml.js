@@ -14,16 +14,16 @@ function generateSiteMap(posts) {
        <loc>https://analyticsliv.com/blogs/</loc>
      </url>
      <url>
-       <loc>https://www.analyticsliv.com/case-studies/</loc>
+       <loc>https://analyticsliv.com/case-studies/</loc>
      </url>
      <url>
-       <loc>https://www.analyticsliv.com/about-us/</loc>
+       <loc>https://analyticsliv.com/about-us/</loc>
      </url>
      <url>
-       <loc>https://www.analyticsliv.com/contact/</loc>
+       <loc>https://analyticsliv.com/contact/</loc>
      </url>
      <url>
-       <loc>https://www.analyticsliv.com/careers/</loc>
+       <loc>https://analyticsliv.com/careers/</loc>
      </url>
      
      ${posts
