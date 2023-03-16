@@ -11,6 +11,7 @@ const BlogSchema = new mongoose.Schema({
     thumbnail:{type: String, required: true},
     active:{type: Boolean, required: true},
     duration:{type: String, required: true},
+    sequence:{type: String, required: true},
     category:[
         {type: String, required: true}
         
