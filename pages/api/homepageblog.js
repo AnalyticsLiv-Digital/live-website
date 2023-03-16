@@ -4,7 +4,7 @@ import connectDb from "../../middleware/mongoose";
 
 
 const handler = async (req, res) => {
-    let blog = await Blog.find({active:true},{title:1,thumbnail:2,description:3,slug:4}).limit(3);
+    let blog = await Blog.find({active:true},{title:1,thumbnail:2,description:3,slug:4}).limit(3).sort({ sequence: -1 });;
     res.status(200).json({ blog });
 }
 
