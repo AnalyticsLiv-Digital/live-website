@@ -6,18 +6,21 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Link from 'next/link';
 import { ScaleLoader } from 'react-spinners'
+import { useRouter } from 'next/router'
 
 
-const index = ({blogDat,count}) => {
+const index = ({blogDat,search}) => {
+    const router = useRouter()
+  const {slug} = router.query;
+  
+  console.log(slug);
     const blogData = blogDat.blog;
     
     const [blogsData, setBlogsData] = useState(blogData);
-
-    var rows = [], i = 0, len = count.pages;
-    while (++i <= len) rows.push(i);
+ 
  
     useEffect(() => {
-    
+        
         AOS.init();
     }, []);
     return (
@@ -46,22 +49,43 @@ const index = ({blogDat,count}) => {
 
                 </div>
 
-              
+                <section className="">
+                    <div className="text-center bg-cyan-50 md:bg-white pt-7 lg:pt-16 z-2">
+                        <h1 className="text-center mb-4 text-lg font-medium tracking-wide text-cyan-800 text-lg">Search results for <b>{search}</b></h1>
+                        
+                    </div>
+                </section>
 
                 <section className='relative'>
-                
                     <div className="relative lg:flex flex-row  w-full">
 
-                   <div className='bg-cover py-5 lg:pt-8 pb-20 bg-scroll' style={{backgroundImage: `url("https://img.freepik.com/free-vector/white-abstract-background_23-2148810113.jpg?t=st=1671082381~exp=1671082981~hmac=659665427411ee225ef245d30444c4a2513e113dcfebb8e1dabf685749e40e1e")`}} >
-                      
-                        <div className="text-center pb-8 z-2">
-                       <form method="get" action="/blogs/search">
-                       <input name="s" type="search" placeholder="Search" className="bg-stone-100 w-3/5 lg:w-2/5 rounded-l-full border border-cyan-500 py-2 pl-9 focus:outline-none focus:caret-gray-400" />
-                       <input type="submit" value="Search" id="Search" className="bg-cyan-500 text-white rounded-r-full border border-cyan-500 py-2 px-4 -ml-2 focus:outline-none" />
-                       </form>
-                   </div>
+                        <div className="hidden bg-gray-50  h-100% w-1/2 my-8 p-4 space-y-4 mx-4">
+                            <div className="flex space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-8" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                    <path fill="none" stroke="#65217a" strokeWidth="2" d="m12 3l9 4.5l-9 4.5l-9-4.5L12 3Zm4.5 7.25L21 12.5L12 17l-9-4.5l4.5-2.25m9 5L21 17.5L12 22l-9-4.5l4.5-2.25" />
+                                </svg>
+                                <h2 className="font-medium py-1">Resources</h2>
+                            </div>
+                            <div>
+                                <h2 className="text-cyan-500 font-medium ml-8">Blogs</h2>
+                            </div>
+                            <div className="space-y-2 text-sm text-left pl-10">
+                                <h2 className="text-base text-sm text-slate-800 font-medium pl-5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="absolute w-6 left-12 fill-purple-900" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                        <path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z" />
+                                    </svg>
+                                    Categories
+                                </h2>
+                                <div>GA 4</div>
+                                <div>Social Media Marketing</div>
+                                <div>Analytics</div>
+                                <div>Data Reporting</div>
+                                <div>Media</div>
+                            </div>
 
+                        </div>
 
+                        <div className='bg-cover py-8 lg:py-16 bg-scroll' style={{backgroundImage: `url("https://img.freepik.com/free-vector/white-abstract-background_23-2148810113.jpg?t=st=1671082381~exp=1671082981~hmac=659665427411ee225ef245d30444c4a2513e113dcfebb8e1dabf685749e40e1e")`}} >
                             <div className="mx-8 lg:mx-24 grid grid-rows-1 lg:grid-cols-3 gap-6 lg:gap-10 ">
                                 
                                 {blogsData && blogsData.map((blog,key) => (
@@ -72,27 +96,17 @@ const index = ({blogDat,count}) => {
 
                         </div>
                     </div>
-                    
+
                     <nav className="absolute w-full bottom-0 m-auto inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
                         <div className="m-auto py-4">
 
         
-        
-       
-
-        {rows && rows.map((pages,key) => (
-            key > 0 ? <a href={"/blogs/pages/"+(key+1)} className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">{key+1}</a> : <span aria-current="page" className="relative z-10 inline-flex items-center bg-indigo-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">1</span>
-             
-           
-          ))}
 
           
 
 </div>
       </nav>
                     </section>
-
-                   
             
     </div >
     </>
@@ -102,14 +116,11 @@ const index = ({blogDat,count}) => {
 export async function getServerSideProps(context) {
     // Fetch data from external API
 
-    const res = await fetch(`${process.env.domain}/api/allblogs?page=1`)
+    const res = await fetch(`${process.env.domain}/api/blogsearch?search=${context.query.s}`)
     const blogDat = await res.json()
-
-    const res1 = await fetch(`${process.env.domain}/api/blogtotal`)
-    const count = await res1.json()
-  
+    const search = context.query.s;
     // Pass data to the page via props
-    return { props: { blogDat, count } }
+    return { props: { blogDat,search} }
   }
 
 export default index
