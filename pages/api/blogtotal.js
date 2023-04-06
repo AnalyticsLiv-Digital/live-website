@@ -5,7 +5,7 @@ import connectDb from "../../middleware/mongoose";
 
 const handler = async (req, res) => {
     let count = await Blog.find({active:true}).count();
-    let pages = Math.ceil(count/9);
+    let pages = Math.ceil(count/12);
     res.status(200).json({ pages });
 }
 
