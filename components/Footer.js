@@ -3,6 +3,17 @@ import Link from 'next/link'
 
 export const Footer = () => {
   return (
+    <>            <section>
+    <div className='hidden fxdbtn md:block fixed z-20 w-full h-15 bottom-0 delay-150'>
+    <div className='bg-sky-200 md:w-full  md:h-auto mx-auto align-middle px-2 pb-2 shadow-lg shadow-black text-center'>
+            <span className='text-red-600 ml-0.5 text-sm font-semibold'>Have you migrated to <span className="font-extrabold text-blue-600">GA4</span> yet! <a href="https://ga4.analyticsliv.com"><button className='btn-freemigration  bg-amber-200 hover:bg-amber-300 capitalize transition-colors delay-100 text-black px-3 py-2 font-bold rounded-lg mt-4'>
+                    <p className='animate-pulse text-sm'>Claim free migration now
+                    </p>
+                </button></a></span>
+                
+            </div>
+    </div>
+</section>
     <footer>
     <div className="block lg:flex text-sm justify-center bg-slate-900 item">
         <div className="w-10/12 text-center lg:text-left lg:w-1/4 mx-auto py-4">
@@ -40,7 +51,7 @@ export const Footer = () => {
                     <path d="M128 80a48 48 0 1 0 48 48a48 48 0 0 0-48-48Zm0 80a32 32 0 1 1 32-32a32.1 32.1 0 0 1-32 32Zm44-132H84a56 56 0 0 0-56 56v88a56 56 0 0 0 56 56h88a56 56 0 0 0 56-56V84a56 56 0 0 0-56-56Zm40 144a40 40 0 0 1-40 40H84a40 40 0 0 1-40-40V84a40 40 0 0 1 40-40h88a40 40 0 0 1 40 40Zm-20-96a12 12 0 1 1-12-12a12 12 0 0 1 12 12Z"/></svg></Link>
             </div>
         </div>
-        <div className="quick-links mt-4 w-5/6 text-white lg:w-1/3 mx-auto">
+        <div className="quick-links mt-4 w-5/6 text-white lg:w-1/3 mx-auto md:mb-14">
             <div className="text-center lg:text-right">Quick Links</div>
             <div className="bg-sky-800 w-full h-0.5 my-2"></div>
             <div>
@@ -52,10 +63,10 @@ export const Footer = () => {
                     <Link href="/careers"><li>Careers</li></Link>
                 </ul>
             </div>
-            <div className="text-center lg:text-right mt-10">© Created by Analytics Liv Digital LLP, All rights Reserved.</div>
+            <div className="text-center lg:text-right mt-10 pb-4">© Created by Analytics Liv Digital LLP, All rights Reserved.</div>
         </div>
     </div>
     <div className="bg-gradient-to-l from-cyan-400 to-slate-800 h-8 pt-1"><Link href="/"><img src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="h-6 mx-auto"/></Link></div>
-   </footer>
+   </footer></>
   )
 }

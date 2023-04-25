@@ -148,6 +148,7 @@ const index = ({blogDat,similarBlogs}) => {
                 </div>
 
             </section>
+
         </div></>
     )
 }
