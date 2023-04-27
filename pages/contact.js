@@ -221,7 +221,7 @@ const contact = () => {
                                         </div>
                                         <div className="relative md:w-1/2">
                                         <PhoneInput className="w-0 mt-4 md:mt-0 text-sm"
-      name="contactno" value={formValues.contactno} onChange={handleContactChange}                                  
+      name="contactno" id="contactno" value={formValues.contactno} onChange={handleContactChange}                                  
       country={"in"}
       preferredCountries = {['in','us','au']}
       enableSearch={true}
@@ -239,7 +239,7 @@ const contact = () => {
                                             <p className="text-red-600 text-sm">{formErrors.company}</p>
                                         </div>
                                         <div className='relative w-full md:w-1/2'>
-                                        <select className="pb-2.5 pl-2 min-w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-slate-500  focus:outline-none focus:ring-0 focus:border-cyan-500 outline-none" placeholder="Role in Comapany" name="role" value={formValues.role} onChange={handleChange}>
+                                        <select className="pb-2.5 pl-2 min-w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-slate-500  focus:outline-none focus:ring-0 focus:border-cyan-500 outline-none" placeholder="Role in Comapany" id="role" name="role" value={formValues.role} onChange={handleChange}>
                                             <option>Role in Company</option>
                                             <option>Data Analyst</option>
                                             <option>Management/Executive</option>
@@ -254,7 +254,7 @@ const contact = () => {
                                         
                                     </div>
                                     <div className="relative w-full ">
-                                        <select className="pb-4 pl-2 w-full  mt-4 text-sm text-gray-500 bg-transparent border-0 border-b-2 border-slate-500  focus:outline-none focus:ring-0 focus:border-cyan-500 outline-none" placeholder="Contact for" name="purpose" value={formValues.purpose} onChange={handleChange}>
+                                        <select className="pb-4 pl-2 w-full  mt-4 text-sm text-gray-500 bg-transparent border-0 border-b-2 border-slate-500  focus:outline-none focus:ring-0 focus:border-cyan-500 outline-none" placeholder="Contact for" id="purpose" name="purpose" value={formValues.purpose} onChange={handleChange}>
                                             <option>Contact For</option>
                                             <option>Web Analytics Service</option>
                                             <option>Display &amp; Video 360 Self Serve</option>
@@ -266,7 +266,7 @@ const contact = () => {
                                         <p className="text-red-600 text-sm">{formErrors.purpose}</p>
                                     </div>
                                     <div className="w-full">
-                                        <textarea className="pl-2 mt-4 mx-auto resize-none lg:h-28 text-sm w-full  text-gray-700 bg-transparent border-0 border-b-2 border-slate-500  focus:outline-none focus:ring-0 focus:border-cyan-500 outline-none" name="requirements" placeholder="Requirements" value={formValues.requirements} onChange={handleChange}></textarea>
+                                        <textarea className="pl-2 mt-4 mx-auto resize-none lg:h-28 text-sm w-full  text-gray-700 bg-transparent border-0 border-b-2 border-slate-500  focus:outline-none focus:ring-0 focus:border-cyan-500 outline-none" id="requirements" name="requirements" placeholder="Requirements" value={formValues.requirements} onChange={handleChange}></textarea>
                                         <p className="text-red-600 text-sm">{formErrors.requirements}</p>
 
                                     </div>
