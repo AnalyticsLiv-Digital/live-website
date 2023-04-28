@@ -9,22 +9,33 @@ import { Router, useRouter } from 'next/router';
 import { ScaleLoader } from 'react-spinners'
 import SimilarPost from '../../components/SimilarPost'
 
-const index = ({blogDat,similarBlogs}) => {
+const index = ({ blogDat, similarBlogs }) => {
     const blogData = blogDat.blog[0];
     const similarBlogsdata = similarBlogs.blog;
-    
-    const [formFixed, setFormFixed]  = useState(false);
-   
+
+    const [formFixed, setFormFixed] = useState(false);
+
     useEffect(() => {
         console.log(blogData)
         AOS.init();
+
+
     }, []);
-  
-    
+
+    useEffect(() => {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            'event' : 'blog-page',
+            'author': blogData.author,
+            'title' : blogData.title
+        })
+
+    }, []);
+
     useEffect(() => {
 
         let headerSize = () => {
-           
+
             const totalScroll = document.documentElement.scrollTop;
 
             if ((totalScroll > 50)) {
@@ -43,7 +54,7 @@ const index = ({blogDat,similarBlogs}) => {
 
 
 
-   
+
 
 
     return (<>
@@ -61,7 +72,7 @@ const index = ({blogDat,similarBlogs}) => {
                 <div className="relative lg:flex w-full lg:w-11/12 space-y-2 lg:space-y-0 mx-auto pt-4 pb-8 px-4">
                     <div className="p-1 lg:p-8 lg:w-3/4 space-y-6 bg-white">
 
-                        <h1 className=" text-4xl font-bold tracking-wide text-slate-800">
+                        <h1 className="blog-title text-4xl font-bold tracking-wide text-slate-800">
                             {blogData && blogData.title}
                         </h1>
 
@@ -85,17 +96,17 @@ const index = ({blogDat,similarBlogs}) => {
                                     <svg xmlns="http://www.w3.org/2000/svg" className="w-6 fill-purple-700 mr-1 -mt-0.5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256">
                                         <path d="M232 92.7L163.3 24a16.1 16.1 0 0 0-22.6 0l-25.1 25.1l-58.1 21.8a15.9 15.9 0 0 0-10.1 12.3L26.6 207.8a4 4 0 0 0 6.8 3.5l55-55.1A31.7 31.7 0 0 1 84 140a32 32 0 1 1 32 32a31.7 31.7 0 0 1-16.2-4.4l-55.1 55a4 4 0 0 0 3.5 6.8l124.6-20.7a16.2 16.2 0 0 0 12.3-10.2l21.8-58.1l25.1-25.1a15.9 15.9 0 0 0 0-22.6Zm-32 32L131.3 56L152 35.3l68.7 68.7ZM116 156a16 16 0 1 1 16-16a16 16 0 0 1-16 16Z" />
                                     </svg>
-                                    <h4>By {blogData && blogData.author}</h4>
+                                    <h4 className="blog-author">By {blogData && blogData.author}</h4>
                                 </span>
                             </div>
                         </div>
                         <div className="mb-2 flex justify-between mr-8">
                             <div>
-                            {blogData && blogData.category.map((category,key) => (
-            <span key={key} className="bg-gray-100 px-2 py-0.5 font-medium text-sm rounded text-gray-400">{category}</span>
-          ))}
-                                
-                                
+                                {blogData && blogData.category.map((category, key) => (
+                                    <span key={key} className="bg-gray-100 px-2 py-0.5 font-medium text-sm rounded text-gray-400">{category}</span>
+                                ))}
+
+
 
                             </div>
                             <div className='blog-share flex space-x-4'>
@@ -104,27 +115,27 @@ const index = ({blogDat,similarBlogs}) => {
                                 </svg>
                                 </Link>
                                 <Link share="linkedin" href={`http://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fanalyticsliv.com%2Fblogs%2F${blogData && blogData.slug}&title=`}>
-                                <svg xmlns="http://www.w3.org/2000/svg" className='w-5 fill-slate-800 hover:fill-indigo-900' preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                                    <path d="M6.94 5a2 2 0 1 1-4-.002a2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z" />
-                                </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" className='w-5 fill-slate-800 hover:fill-indigo-900' preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                        <path d="M6.94 5a2 2 0 1 1-4-.002a2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z" />
+                                    </svg>
                                 </Link>
                                 <Link share="twitter" href={`https://twitter.com/intent/tweet?url=https%3A%2F%2Fanalyticsliv.com%2Fblogs%2F${blogData && blogData.slug}&text=`}>
-                                <svg xmlns="http://www.w3.org/2000/svg" className='w-5 fill-slate-800 hover:fill-sky-700' preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16">
-                                <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/> 
-                                </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" className='w-5 fill-slate-800 hover:fill-sky-700' preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16">
+                                        <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                                    </svg>
                                 </Link>
                                 <Link share="mail" href={`mailto:?subject=I wanted you to see this site&amp;body=Check out this site https://analyticsliv.com/blogs/${blogData && blogData.slug}.`}>
-                                <svg xmlns="http://www.w3.org/2000/svg" className='w-5 fill-slate-800 hover:fill-green-700' preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256">
-                                    <path d="M232 96a16 16 0 0 0-16-16h-32V48a16 16 0 0 0-16-16H40a16 16 0 0 0-16 16v128a7.9 7.9 0 0 0 4.6 7.2a8.1 8.1 0 0 0 3.4.8a7.7 7.7 0 0 0 5-1.8L72 154v30a16 16 0 0 0 16 16h93.6l37.4 30.2a7.8 7.8 0 0 0 8.4 1a7.9 7.9 0 0 0 4.6-7.2ZM66.6 137.8L40 159.2V48h128v88H71.6a7.7 7.7 0 0 0-5 1.8Zm122.8 48a7.7 7.7 0 0 0-5-1.8H88v-32h80a16 16 0 0 0 16-16V96h32v111.2Z" />
-                                </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" className='w-5 fill-slate-800 hover:fill-green-700' preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256">
+                                        <path d="M232 96a16 16 0 0 0-16-16h-32V48a16 16 0 0 0-16-16H40a16 16 0 0 0-16 16v128a7.9 7.9 0 0 0 4.6 7.2a8.1 8.1 0 0 0 3.4.8a7.7 7.7 0 0 0 5-1.8L72 154v30a16 16 0 0 0 16 16h93.6l37.4 30.2a7.8 7.8 0 0 0 8.4 1a7.9 7.9 0 0 0 4.6-7.2ZM66.6 137.8L40 159.2V48h128v88H71.6a7.7 7.7 0 0 0-5 1.8Zm122.8 48a7.7 7.7 0 0 0-5-1.8H88v-32h80a16 16 0 0 0 16-16V96h32v111.2Z" />
+                                    </svg>
                                 </Link>
                             </div>
                         </div>
 
                         <img src={blogData && blogData.coverphoto} className="w-screen" />
                         <div className="py-2 blog-cont">
-        
-                             {blogData && <div dangerouslySetInnerHTML={{__html: blogData.content}}></div>}
+
+                            {blogData && <div dangerouslySetInnerHTML={{ __html: blogData.content }}></div>}
 
                         </div>
 
@@ -132,14 +143,14 @@ const index = ({blogDat,similarBlogs}) => {
 
                     <div className={`${formFixed ? "sticky top-10" : "relative"} h-fit lg:w-1/4 bg-white px-6 py-4`}>
                         <div className="space-y-6">
-                           
-                            <h3 className="w-full text-slate-700 pt-2 px-3 font-bold tracking-wider">Similar Posts</h3>
-                            
 
-                            {similarBlogsdata && similarBlogsdata.map((blog,key) => (
-                <SimilarPost blog={blog} key={key}/>
-            
-          ))}
+                            <h3 className="w-full text-slate-700 pt-2 px-3 font-bold tracking-wider">Similar Posts</h3>
+
+
+                            {similarBlogsdata && similarBlogsdata.map((blog, key) => (
+                                <SimilarPost blog={blog} key={key} />
+
+                            ))}
 
 
 
@@ -155,16 +166,17 @@ const index = ({blogDat,similarBlogs}) => {
 
 export async function getServerSideProps(context) {
     // Fetch data from external API
-  
+
     const res = await fetch(`${process.env.domain}/api/fullblog?slug=${context.params.slug}`)
     const blogDat = await res.json()
-  
+
     const res1 = await fetch(`${process.env.domain}/api/similarblogs`)
     const similarBlogs = await res1.json()
 
 
+
     // Pass data to the page via props
-    return { props: { blogDat,similarBlogs } }
-  }
+    return { props: { blogDat, similarBlogs } }
+}
 
 export default index
