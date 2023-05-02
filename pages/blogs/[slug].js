@@ -27,7 +27,8 @@ const index = ({ blogDat, similarBlogs }) => {
         window.dataLayer.push({
             'event' : 'blog-page',
             'author': blogData.author,
-            'title' : blogData.title
+            'title' : blogData.title,
+            'publish_date' : blogData.date
         })
 
     }, []);
@@ -170,7 +171,7 @@ export async function getServerSideProps(context) {
     const res = await fetch(`${process.env.domain}/api/fullblog?slug=${context.params.slug}`)
     const blogDat = await res.json()
 
-    const res1 = await fetch(`${process.env.domain}/api/similarblogs`)
+    const res1 = await fetch(`${process.env.domain}/api/similarblogs?slug=${context.params.slug}`)
     const similarBlogs = await res1.json()
 
 
