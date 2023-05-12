@@ -30,6 +30,9 @@ const router = useRouter();
           href="https://fonts.googleapis.com/css2?family=Poppins"
           rel="stylesheet"
         />
+                <script src="https://www.googleoptimize.com/optimize.js?id=OPT-5L8TQ26"></script>
+        
+        <script src="/antiflicker.js"/>
         <meta name="google-site-verification" content="O18N4BhbU7y11EzEu_fOYfNHdp-fCahcKZUpriC3hyQ" />
   </Head>
   <Header />
