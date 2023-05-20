@@ -1,7 +1,7 @@
 import connectDb from "../../../../middleware/mongoose";
 
 const handler = async (req, res) => {
-
+    var event = req.query.en;
     var event_time= req.query.sid ;
     var event_id= req.query["ep\.event_id"] ;
     var event_name= "PageView" ;
@@ -42,16 +42,19 @@ uap=Windows
 
     var data = {"data":[{"event_name":event_name,"event_time":event_time,"event_id":event_id,"event_source_url":event_source_url,"action_source":"website","user_data":{"em":null,"ph":null,"fbp":fbp},"custom_data":{"contents":null}}],"partner_agent":"gtmss-1.0.0-0.0.4","test_event_code":"TEST3049"};
 
+ if(event == "page_view"){
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
+        .then((response) => response.json())
+        .then((data) => console.log(data));
+ }
+  
 
-  fetch(url, {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data),
-})
-    .then((response) => response.json())
-    .then((data) => console.log(data));
 
     res.status(200).json({  });
 }
