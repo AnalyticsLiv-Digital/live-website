@@ -1,8 +1,10 @@
 import connectDb from "../../../../middleware/mongoose";
 
 const handler = async (req, res) => {
+    const d = new Date();
+   var event_time = d.getTime();  
     var event = req.query.en;
-    var event_time= req.query.sid ;
+   // var event_time= req.query.sid ;
     var event_id= req.query["ep\.event_id"] ;
     var event_name= "PageView" ;
     var event_source_url = req.query.dl ;
