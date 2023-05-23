@@ -2,10 +2,12 @@ import connectDb from "../../../../middleware/mongoose";
 
 const handler = async (req, res) => {
     const d = new Date();
-  // var event_time = d.getTime();  
+    var event_time = Math.floor((d.getTime())/1000);
     var event = req.query.en;
-    var event_time= req.query.sid ;
     var event_id= req.query["ep\.event_id"] ;
+    var access_token= req.query["ep\.access_token"] ;
+    var pixel_id= req.query["ep\.pixel_id"] ;
+    var test_code= req.query["ep\.test_code"] ;
     var event_name= "PageView" ;
     var event_source_url = req.query.dl ;
     var fbp = req.query["ep\.x-fb-ck-fbp"] ;
@@ -40,9 +42,9 @@ uap=Windows
 
     */
     
-    var url = "https://graph.facebook.com/v11.0/398837755682647/events?access_token=EAAGpouBqZCrQBAHi4rIdSQDluRZCqnjpf5R6WgYqL1qDsLLcqNzIzQ68EG2ZAypZCLYSxlrwDHZCjcGgZB6HXzxDnVZA8MBKbBZCSguSA9aEXSgqlIkZA7G0oBAKei2WKZA7Npmq9ZAkfTtxMvHHdIlMoTxgypNIssmOzJPQpJUfaWqzSMuKpQQ5GgPTB9CHfqo858ZD";
+    var url = "https://graph.facebook.com/v11.0/"+pixel_id+"/events?access_token="+access_token;
 
-    var data = {"data":[{"event_name":event_name,"event_time":event_time,"event_id":event_id,"event_source_url":event_source_url,"action_source":"website","user_data":{"em":null,"ph":null,"fbp":fbp},"custom_data":{"contents":null}}],"partner_agent":"gtmss-1.0.0-0.0.4","test_event_code":"TEST3049"};
+    var data = {"data":[{"event_name":event_name,"event_time":event_time,"event_id":event_id,"event_source_url":event_source_url,"action_source":"website","user_data":{"em":null,"ph":null,"fbp":fbp},"custom_data":{"contents":null}}],"partner_agent":"gtmss-1.0.0-0.0.4","test_event_code":test_code};
 
  if(event == "page_view"){
     fetch(url, {
