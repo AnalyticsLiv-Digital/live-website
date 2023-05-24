@@ -171,6 +171,9 @@ const contact = () => {
                                     </svg>
                                     <span><a href="tel:+918320576622">+91 83205 76622</a></span>
                                 </div>
+                                <div>
+                                    <span>503, 31Five, Corporate Road, Prahaladnagar, S.G. Highway, Ahmedabad</span>
+                                </div>
                                 <div className="social-contact space-x-2 pl-4">
                                 <Link site="facebook" href="https://m.facebook.com/100070503960704/"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" className="w-8 inline mx-1 fill-current hover:fill-[#1877f2]">
                 <path  d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/>
@@ -188,9 +191,7 @@ const contact = () => {
                                     </svg>
                                     </Link>
                                 </div>
-                                <div className="absolute rounded-full w-56 h-56 bg-white lg:left-48 -right-24 -bottom-24"></div>
-                                <div className="absolute rounded-full lg:w-36 lg:h-36 w-24 h-24 bg-amber-400 right-10 lg:bottom-10 bottom-8"></div>
-                            </div>
+                                </div>
                             <div data-aos="fade-down" data-aos-once="true" className="relative lg:w-2/3 rounded-lg p-4 bg-white font-regular">
                                 {formSubmit && <div className='relative text-slate-700 p-4 space-y-4 h-full'>
                                     <h1 className='align-middle font-medium text-4xl'>Thank You for your interest.</h1>
