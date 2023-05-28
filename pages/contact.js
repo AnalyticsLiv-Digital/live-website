@@ -1,5 +1,6 @@
 import React from 'react'
 import ScrollProgress from '../components/ScrollProgress'
+import Image from 'next/image';
 import Head from 'next/head'
 import { useState, useEffect } from 'react'
 import AOS from 'aos';
@@ -172,6 +173,7 @@ const contact = () => {
                                     <span><a href="tel:+918320576622">+91 83205 76622</a></span>
                                 </div>
                                 <div>
+                               <span className="inline w-6"><img src="/address-28-16.png" ></img></span>
                                     <span>503, 31Five, Corporate Road, Prahaladnagar, S.G. Highway, Ahmedabad</span>
                                 </div>
                                 <div className="social-contact space-x-2 pl-4">
