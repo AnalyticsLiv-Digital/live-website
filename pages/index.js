@@ -219,22 +219,24 @@ export default function Home({brandsdata,blogsdata}) {
                 </Carousel>
                 </div>
                 </section>
-                <div className="brandsimages" data-aos="zoom-in" data-aos-once="true">
+                <div className="brandsimages hidden" data-aos="zoom-in" data-aos-once="true">
                     <div className='text-center text-xl tracking-widest font-semibold uppercase text-sky-300 py-8'>Clients We’ve Worked With :</div>
                 <Marquee gradient={false} pauseOnHover="true">
             
-                {brandsdata && brandsdata.brand.map((brands,key) => (
+       {/* 
+               {brandsdata && brandsdata.brand.map((brands,key) => (
                 <div key={key}><img src={brands.logo} alt={brands.brands}/></div>
             
           ))}
+          */} 
                 
                 </Marquee>
                 </div>
-                    <div data-aos="fade-up" data-aos-duration="1000" data-aos-once="true" className="relative mt-4 md:mt-16 md:pb-8 ">
+                    <div data-aos="fade-up" data-aos-duration="1000" data-aos-once="true" className="relative md:pb-8 ">
                         <img className="absolute -top-28 right-0  bg-gradient-to-b from-blue-400 to-transparent w-96 h-96 rounded-full blur-2xl " />
                         <img className="absolute mt-24 bottom-0 left-0 bg-gradient-to-t from-red-800 to-transparent w-96 h-96 rounded-full blur-2xl " />
                         <h1 className="text-sky-300 w-full h-auto font-semibold text-xl md:pt-6 text-center uppercase tracking-widest ">Hear from the clients !</h1>
-                        <div className="text-justify items-center lg:flex lg:justify-evenly py-12 lg:py-16">
+                        <div className="text-justify items-center lg:flex lg:justify-evenly py-8 lg:py-12">
 
                             <div className=" rounded relative pt-3 px-2 lg:pt-4 lg:px-4 pb-8 lg:backdrop-blur bg-gray-200 shadow-lg shadow-black  w-4/5 mx-auto lg:w-1/4 text-center ">
                                 <h2 className="lg:text-2xl text-slate-900 font-medium underline ">Nikola McCarthy</h2>

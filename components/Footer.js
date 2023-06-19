@@ -3,7 +3,8 @@ import Link from 'next/link'
 
 export const Footer = () => {
   return (
-    <>            <section>
+    <>      {/*    
+      <section>
     <div className='hidden fxdbtn md:block fixed z-20 w-full h-15 bottom-0 delay-150'>
     <div className='bg-sky-200 md:w-full  md:h-auto mx-auto align-middle px-2 pb-2 shadow-lg shadow-black text-center'>
             <span className='text-red-600 ml-0.5 text-sm font-semibold'>Have you migrated to <span className="font-extrabold text-blue-600">GA4</span> yet! <a href="https://ga4.analyticsliv.com"><button className='btn-freemigration  bg-amber-200 hover:bg-amber-300 capitalize transition-colors delay-100 text-black px-3 py-2 font-bold rounded-lg mt-4'>
@@ -14,6 +15,7 @@ export const Footer = () => {
             </div>
     </div>
 </section>
+*/} 
     <footer>
     <div className="block lg:flex text-sm justify-center bg-slate-900 item">
         <div className="w-10/12 text-center lg:text-left lg:w-1/4 mx-auto py-4">
