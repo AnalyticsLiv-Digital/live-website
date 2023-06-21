@@ -1,0 +1,10 @@
+#robots.txt 
+User-agent: *
+Allow: /
+Disallow: /category/*
+Disallow: /contactl/*
+
+
+#Sitemaps
+Sitemap:https://analyticsliv.com/sitemap.xml
+
