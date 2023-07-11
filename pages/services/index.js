@@ -75,7 +75,7 @@ const index= () => {
                 to understand user interaction and experiences, and to
                 attribute conversions accurately.
             </p>
-            <img className="lg:w-1/3" src="https://img.freepik.com/free-vector/tiny-business-persons-working-jigsaw-puzzle-together-metaphor-cooperation-partnership-collaboration-team-people-flat-vector-illustration-communication-teamwork-concept_74855-25328.jpg?t=st=1669213951~exp=1669214551~hmac=7aa0a02994bc903a1fb79ed971a848473de111c36c33c65ab901bef9b99d0415"/>
+            <img className="lg:w-1/3" src="https://storage.googleapis.com/website-bucket-uploads/static/services1.jpg"/>
             </div>
         </div>
         <div className="w-full" data-aos="fade-left" data-aos-once="true">
@@ -187,7 +187,7 @@ const index= () => {
                 
                 Advertising Platforms: Facebook, Google Ads, DV360, CM360, SA360, LinkedIn, Snapchat, TikTok, Twitter, Reddit, Verizon, Taboola, Outbrain & more
             </p>
-            <img className="lg:w-1/4" src="https://img.freepik.com/free-vector/statistical-analysis-man-cartoon-character-with-magnifying-glass-analyzing-data-circular-diagram-with-colorful-segments-statistics-audit-research-concept-illustration_335657-2063.jpg?t=st=1669219557~exp=1669220157~hmac=023929ad1b414bdb5b2d752b96bbc9a87d9af1047fde1ffb3808d9948d6eb9a3"/>
+            <img className="lg:w-1/4" src="https://storage.googleapis.com/website-bucket-uploads/static/services2.jpg"/>
             </div>
         </div>
         <div className="w-full text-left" data-aos="fade-left" data-aos-once="true">
@@ -297,7 +297,7 @@ const index= () => {
                 Data from multiple sources after being reported, is visualized 
                 and analyzed for generating actionable insights.
             </p>
-            <img className="lg:w-1/3" src="https://img.freepik.com/premium-vector/illustration-vector-graphic-cartoon-character-mentoring-business-tutors_516790-585.jpg"/>
+            <img className="lg:w-1/3" src="https://storage.googleapis.com/website-bucket-uploads/static/services3.jpg"/>
             </div>
         </div>
         <div className="w-full" data-aos="fade-left" data-aos-once="true">
@@ -407,7 +407,7 @@ const index= () => {
                 forecasting the future growth aspects for all businesses.
                 We prepare the businesses to enable them into using the capabilities of Google Cloud Platform and its Machine learning capabilities using data from marketing and analytics platforms.
             </p>
-            <img className="lg:w-1/3" src="https://img.freepik.com/free-vector/crew-creator-building-new-company-utilize-analitics-gathering-statistic-start-production-technology-staff-operating-startup-industry-growth-vector-isolated-concept-metaphor-illustration_335657-4309.jpg?t=st=1669266999~exp=1669267599~hmac=4cf78820218c5ba6fbc3449ea1640143e2094be1938574cadc5b042556e2093a"/>
+            <img className="lg:w-1/3" src="https://storage.googleapis.com/website-bucket-uploads/static/services4.jpg"/>
             </div>
         </div>
         <div className="w-full text-left" data-aos="fade-left" data-aos-once="true">
@@ -498,7 +498,7 @@ const index= () => {
             <p className="text-gray-600 lg:w-2/3">
                 Paid search marketing is a form of online advertising where you only pay for visitors that click through to your website from a targeted advert or “sponsored” link.
             </p>
-            <img className="lg:w-1/3" src="https://img.freepik.com/free-vector/ppc-campaign-abstract-concept-illustration_335657-3747.jpg?t=st=1669441980~exp=1669442580~hmac=e4e1fd07294d8c480963b2a5cd0545c41a8c5fdd599c8309b8071ec31f99b63e"/>
+            <img className="lg:w-1/3" src="https://storage.googleapis.com/website-bucket-uploads/static/services5.jpg"/>
             </div>
         </div>
         <div className="w-full" data-aos="fade-left" data-aos-once="true">
@@ -610,7 +610,7 @@ const index= () => {
                 (Ad server), Facebook Ads, YouTube Advertising, LinkedIn Ads, Taboola
                 Ads, Outbrain Ads, Verizon Ads, Snapchat Ads, TikTok Ads
             </p>
-            <img className="lg:w-1/3" src="https://img.freepik.com/free-vector/abstract-illustration-social-media-apps_52683-62412.jpg?t=st=1669441980~exp=1669442580~hmac=0dc2d399d08d7c8276a068ad0a810edab5b23bfaf08969fdc7026c80219db0df"/>
+            <img className="lg:w-1/3" src="https://storage.googleapis.com/website-bucket-uploads/static/services6.jpg"/>
             </div>
         </div>
         <div className="w-full text-left" data-aos="fade-left" data-aos-once="true">

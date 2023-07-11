@@ -234,7 +234,7 @@ const aboutus = () => {
                 </li>
             </ul>
             <div>
-                <img src="https://img.freepik.com/free-vector/business-team-brainstorm-idea-lightbulb-from-jigsaw-working-team-collaboration-enterprise-cooperation-colleagues-mutual-assistance-concept-bright-vibrant-violet-isolated-illustration_335657-580.jpg?t=st=1670618238~exp=1670618838~hmac=a131dc72835e58699ffe4a725779e2eb46bd57bd6138ad53798070fc88cfb4a8"/>
+                <img src="https://storage.googleapis.com/website-bucket-uploads/static/services7.jpg"/>
             </div>
        </div>
        </div>
