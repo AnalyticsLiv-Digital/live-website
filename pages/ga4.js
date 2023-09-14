@@ -2,6 +2,7 @@ import Head from 'next/head'
 import React from 'react'
 import { useEffect, useState } from 'react';
 import * as Scroll from 'react-scroll';
+import { ScaleLoader } from 'react-spinners'
 
 const { Element: ScrollElement } = Scroll;
 
@@ -18,7 +19,7 @@ const ga4 = () => {
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormValues({ ...formValues, [name]: value });
-        console.log(formValues);
+        //console.log(formValues);
     };
 
 
@@ -30,9 +31,9 @@ const ga4 = () => {
     };
 
     useEffect(() => {
-        console.log(formErrors);
+        //console.log(formErrors);
         if (Object.keys(formErrors).length === 0 && isSubmit) {
-            console.log(formValues);
+           // console.log(formValues);
             setShowWaiting(true);
             dataLayer.push({
                 event:'ga4_submission'
@@ -114,6 +115,12 @@ const ga4 = () => {
           rel="stylesheet"
         />
     </Head>
+    {showWaiting && <div className="fixed z-50 flex backdrop-blur top-0 left-0 right-0 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full"><ScaleLoader
+  color="#271d90"
+  loading
+  size={100}
+  className="m-auto align-middle"
+/></div>}
     <div style={{fontFamily: "'Poppins', sans-serif"}}>
     <section>
     <div className="flex items-center mt-4 md:px-20 pl-4">
@@ -126,11 +133,11 @@ const ga4 = () => {
       <div className="mt-12 md:w-3/4 z-10">
         <h1 className="text-2xl font-bold">Is your GA4 ready to </h1>
         <ul style={{color: '#E37400'}} className="mt-6 mx-2 font-semibold">
-          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="lightblue" fill-rule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clip-rule="evenodd"/></svg>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="lightblue" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
             Explore new features of analytics</li>
-          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="lightblue" fill-rule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clip-rule="evenodd"/></svg>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="lightblue" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
             Better understand website traffic</li>
-          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="lightblue" fill-rule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clip-rule="evenodd"/></svg>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="lightblue" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
             Spend Marketing Budgets more wisely</li>
         </ul>
         <img className="" src="https://storage.googleapis.com/website-bucket-uploads/static/IMG_GROUP.png"/>
@@ -150,7 +157,7 @@ const ga4 = () => {
             <span className="text-xs text-red-600 float-left">{formErrors.fullName}</span>
           </div>
           <div>
-            <input pattern="[0-9]{12}" type="tel" placeholder="CONTACT NO." className="bg-sky-50 border-b-2 w-full pb-2" id="contact" name="contact" value={formValues.contact} onChange={handleChange} />
+            <input type="tel" placeholder="CONTACT NO." className="bg-sky-50 border-b-2 w-full pb-2" id="contact" name="contact" value={formValues.contact} onChange={handleChange} />
            
           </div>
           <div>
@@ -235,7 +242,7 @@ const ga4 = () => {
   </section>
 
   <section className='casestudy'>
-    <div className="bg-sky-300 relative text-center md:px-20 px-2 md:pt-8 py-4 md:pb-16 space-y-8">
+    <div className="bg-sky-300 relative text-center md:px-20 px-2 md:pt-8 py-4 md:pb-6 space-y-8">
       <h1 className="text-4xl text-left font-bold md:mb-16">Case Studies</h1>
       <div className="cstudy md:flex text-left justify-evenly bg-white md:px-20 px-2 md:py-8 py-4 md:rounded-full rounded-xl shadow-md shadow-gray-600">
       <div className="md:w-3/4">
@@ -269,7 +276,7 @@ const ga4 = () => {
           <a href="https://analyticsliv.com/case-studies/ga4-enhanced-ecommerce-implementation-using-gtm-and-shopify-integration"><button className="bg-sky-500 px-16 py-2 text-white font-semibold rounded-full shadow-lg shadow-gray-400 mt-8">View</button></a>
         </div>        
         </div>
-        <a href="https://analyticsliv.com/case-studies"><button className="more-casestudy my-5 bg-amber-600 text-white font-semibold px-8 py-3 shadow-md shadow-gray-600 rounded-full">More Case Studies</button></a>
+        <a href="https://analyticsliv.com/case-studies"><button className="more-casestudy my-8 bg-amber-600 text-white font-semibold px-8 py-3 shadow-md shadow-gray-600 rounded-full">More Case Studies</button></a>
     </div>
   </section>
 
