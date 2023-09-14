@@ -110,6 +110,7 @@ const ga4 = () => {
 
   return (
     <><Head>
+        <link rel="icon" href="https://storage.googleapis.com/website-bucket-uploads/static/favicon.png" type="image/icon type"></link>
         <link
           href="https://fonts.googleapis.com/css2?family=Poppins"
           rel="stylesheet"
