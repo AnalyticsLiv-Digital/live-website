@@ -132,9 +132,12 @@ export default function ga4({brandsdata}) {
 /></div>}
     <div style={{fontFamily: "'Poppins', sans-serif"}}>
     <section>
-    <div className="flex items-center mt-4 md:px-20 pl-4">
-      <div className=" m-2 md:float-none"><img src="https://storage.googleapis.com/website-bucket-uploads/static/Ga4_logo.png"/></div>
-      <h1 className="  md:text-5xl text-2xl font-bold ml-4">Google Analytics 4</h1>
+    <div className="flex items-center justify-between mt-4 md:px-20 pl-4">
+      <div className="flex items-center m-2 md:float-none"><img src="https://storage.googleapis.com/website-bucket-uploads/static/Ga4_logo.png"/>
+      <h1 className="  md:text-5xl text-2xl font-bold ml-4">Google Analytics 4</h1></div>
+      <div className="hidden md:inline px-4">
+                    <img alt="marketing-partner" aria-label="marketing-partner" src="https://storage.googleapis.com/website-bucket-uploads/static/gmp.svg"/>
+                </div>
     </div>
 
     <div className="relative md:flex items-center md:px-20 pl-4">
@@ -196,6 +199,24 @@ export default function ga4({brandsdata}) {
   </section>
 
   <section>
+     <div class="bg-white py-4">
+      <h1 class="text-center font-bold text-xl">200+ Clients served for GA4</h1>
+       <div class="brandsimages flex space-x-8 justify-center py-4 px-4 mt-4">
+       <Marquee gradient={false} pauseOnHover="true">
+            
+            { 
+                    brandsdata.brand.map((brands,key) => (
+                     <div key={key}><img src={brands.logo} alt={brands.brands}/></div>
+                 
+               ))
+               } 
+                     
+                     </Marquee>
+       </div>
+     </div>
+  </section>
+
+  <section>
     <div className="bg-sky-300 relative md:flex md:justify-around md:mt-4 px-4 md:px-20 pt-8 pb-16">
       <div className="text-center mb-8 md:mb-0">
         <h1 className="text-4xl font-bold md:mb-16">Our experts can help you</h1>
@@ -222,7 +243,7 @@ export default function ga4({brandsdata}) {
   </section>
 
   <section>
-    <div className="relative md:flex justify-around md:mt-4 px-4 md:px-20 md:pt-4 md:pb-16">
+    <div className="relative md:flex justify-around md:mt-4 px-4 md:px-20 md:pt-4 pb-4 md:pb-16">
       <div className="text-center">
         <img src="https://storage.googleapis.com/website-bucket-uploads/static/Offer.png" />
       </div>
@@ -298,34 +319,18 @@ export default function ga4({brandsdata}) {
   </section>
 
 
-  <section>
-     <div class="bg-white py-4">
-      <h1 class="text-center font-bold text-xl">Thanks for choosing AnalyticsLiv !</h1>
-       <div class="brandsimages flex space-x-8 justify-center py-4 px-4 mt-4">
-       <Marquee gradient={false} pauseOnHover="true">
-            
-            { 
-                    brandsdata.brand.map((brands,key) => (
-                     <div key={key}><img src={brands.logo} alt={brands.brands}/></div>
-                 
-               ))
-               } 
-                     
-                     </Marquee>
-       </div>
-     </div>
-  </section>
+  
 
    <section>
-    <div className="relative h-full pb-16" style={{backgroundImage: 'url(https://storage.googleapis.com/website-bucket-uploads/static/Working_woman.png)'}} >
+    <div className="relative h-full pb-16" style={{backgroundImage: 'url(https://storage.googleapis.com/website-bucket-uploads/static/Working_woman.png)', backgroundRepeat:'none'}} >
       <h1 className="font-bold text-4xl py-8 md:py-16 text-center">Let's See What Our Clients Have To Say</h1>
-      <div className="relative z-10 md:w-1/3 mx-4 md:mx-auto mt-4 bg-sky-100/80  px-8 pt-4 pb-0">
-        <div className="absolute rounded-full bg-white p-4 -top-12 mx-28 md:mx-36 shadow-md shadow-gray-400">
+      <div className="relative z-10 md:w-1/3 mx-4 md:mx-auto mt-4 bg-sky-100/90  px-8 pt-4 pb-0">
+        <div className="relative w-20 rounded-full bg-white p-4 -top-12 mx-28 md:mx-auto shadow-md shadow-gray-400">
           <svg xmlns="http://www.w3.org/2000/svg" className="w-12" viewBox="0 0 24 24">
             <path fill="CornflowerBlue" d="M6.5 10c-.223 0-.437.034-.65.065c.069-.232.14-.468.254-.68c.114-.308.292-.575.469-.844c.148-.291.409-.488.601-.737c.201-.242.475-.403.692-.604c.213-.21.492-.315.714-.463c.232-.133.434-.28.65-.35l.539-.222l.474-.197l-.485-1.938l-.597.144c-.191.048-.424.104-.689.171c-.271.05-.56.187-.882.312c-.318.142-.686.238-1.028.466c-.344.218-.741.4-1.091.692c-.339.301-.748.562-1.05.945c-.33.358-.656.734-.909 1.162c-.293.408-.492.856-.702 1.299c-.19.443-.343.896-.468 1.336c-.237.882-.343 1.72-.384 2.437c-.034.718-.014 1.315.028 1.747c.015.204.043.402.063.539l.025.168l.026-.006A4.5 4.5 0 1 0 6.5 10zm11 0c-.223 0-.437.034-.65.065c.069-.232.14-.468.254-.68c.114-.308.292-.575.469-.844c.148-.291.409-.488.601-.737c.201-.242.475-.403.692-.604c.213-.21.492-.315.714-.463c.232-.133.434-.28.65-.35l.539-.222l.474-.197l-.485-1.938l-.597.144c-.191.048-.424.104-.689.171c-.271.05-.56.187-.882.312c-.317.143-.686.238-1.028.467c-.344.218-.741.4-1.091.692c-.339.301-.748.562-1.05.944c-.33.358-.656.734-.909 1.162c-.293.408-.492.856-.702 1.299c-.19.443-.343.896-.468 1.336c-.237.882-.343 1.72-.384 2.437c-.034.718-.014 1.315.028 1.747c.015.204.043.402.063.539l.025.168l.026-.006A4.5 4.5 0 1 0 17.5 10z"/>
           </svg>
         </div>
-        <div className="relative flex items-center my-8 w-full justify-center space-x-4 text-center">
+        <div className="relative flex items-center my-4 w-full justify-center space-x-4 text-center">
           <img src="https://storage.googleapis.com/website-bucket-uploads/static/Character_1.png" className=""/>
           <h1 className="font-bold text-3xl">Una</h1>
         </div>
@@ -335,7 +340,7 @@ export default function ga4({brandsdata}) {
           marketing campaigns more effectively, and we're confident that we're making better 
           business decisions as a result."</p>
       </div>
-      <div className="relative md:w-1/3 z-0 bg-sky-100/80 h-52 rounded-b-full mx-4 md:mx-auto pb-0"></div>
+      <div className="relative md:w-1/3 z-0 bg-sky-100/90 h-52 rounded-b-full mx-4 md:mx-auto pb-0"></div>
     </div>
     
   </section> </div>
