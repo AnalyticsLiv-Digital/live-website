@@ -1,6 +1,9 @@
 import Head from 'next/head'
 import React from 'react'
 import { useEffect, useState } from 'react';
+import * as Scroll from 'react-scroll';
+
+const { Element: ScrollElement } = Scroll;
 
 const ga4 = () => {
 
@@ -83,14 +86,25 @@ const ga4 = () => {
             errors.email = "This is not a valid email format!";
         }
 
-        if (!values.contact) {
+      /*  if (!values.contact) {
             errors.contact = "Contact is required!";
         } else if (!mobile.test(values.contact)) {
             errors.contact = "This is not a valid phone number!";
         }
+        */
     
         return errors;
     };
+
+    const scrolling = () => {
+        {
+            Scroll.scroller.scrollTo("contact-form", {
+              duration: 500,
+              smooth: true,
+              offset: -100,
+            });
+          }
+    }
 
 
   return (
@@ -126,14 +140,18 @@ const ga4 = () => {
       {!formSubmit &&<div className="block">
           <h2 className="md:text-xl text-sky-900">We Understand setting up GA4 can be complex sometimes.</h2>
         <h1 className="font-semibold text-2xl p-4 md:p-8 border-dashed border-b-2 border-sky-200">Let us help you !!</h1>
+        <ScrollElement
+        id="contact-form"
+        name="contact-form"
+      ></ScrollElement>
         <form className="px-8 pt-8 pb-2 space-y-6" onSubmit={handleSubmit}>
           <div>
             <input type="text" placeholder="FULL NAME" className="bg-sky-50 border-b-2 w-full pb-2" id="fullName" name="fullName" value={formValues.fullName} onChange={handleChange} />
             <span className="text-xs text-red-600 float-left">{formErrors.fullName}</span>
           </div>
           <div>
-            <input type="tel" placeholder="CONTACT NO." className="bg-sky-50 border-b-2 w-full pb-2" id="contact" name="contact" value={formValues.contact} onChange={handleChange} />
-            <span className="text-xs text-red-500 float-left">{formErrors.contact}</span>
+            <input pattern="[0-9]{12}" type="tel" placeholder="CONTACT NO." className="bg-sky-50 border-b-2 w-full pb-2" id="contact" name="contact" value={formValues.contact} onChange={handleChange} />
+           
           </div>
           <div>
             <input type="email" placeholder="EMAIL" className="bg-sky-50 border-b-2 w-full pb-2" id="email" name="email" value={formValues.email} onChange={handleChange}/>
@@ -178,7 +196,7 @@ const ga4 = () => {
           <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="DarkSlateGray" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
             Make data-driven decisions that will help you grow your business</li>
       </ul>
-      <button className="bg-white p-4 rounded-xl shadow-lg shadow-gray-600 text-slate-800 font-semibold">Schedule Free Consultation</button>
+      <button onClick={scrolling} className="schedule-button bg-white p-4 rounded-xl shadow-lg shadow-gray-600 text-slate-800 font-semibold">Schedule Free Consultation</button>
       </div>
       <div className="text-center">
         <img src="https://storage.googleapis.com/website-bucket-uploads/static/graph.png" />
@@ -216,10 +234,10 @@ const ga4 = () => {
     </div>
   </section>
 
-  <section>
+  <section className='casestudy'>
     <div className="bg-sky-300 relative text-center md:px-20 px-2 md:pt-8 py-4 md:pb-16 space-y-8">
       <h1 className="text-4xl text-left font-bold md:mb-16">Case Studies</h1>
-      <div className="md:flex text-left justify-evenly bg-white md:px-20 px-2 md:py-8 py-4 md:rounded-full rounded-xl shadow-md shadow-gray-600">
+      <div className="cstudy md:flex text-left justify-evenly bg-white md:px-20 px-2 md:py-8 py-4 md:rounded-full rounded-xl shadow-md shadow-gray-600">
       <div className="md:w-3/4">
         <h1 className="text-2xl font-bold mb-4"><svg xmlns="http://www.w3.org/2000/svg" className="inline mr-4" width="24" height="24" viewBox="0 0 24 24"><path fill="DarkSlateGray" fillRule="evenodd" d="M17.9 4.2A3 3 0 0 0 15.5 3h-11a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h11a3 3 0 0 0 2.4-1.2l4.5-6a3 3 0 0 0 0-3.6l-4.5-6Z" clipRule="evenodd"/></svg>
           Universal Analytics (GA3) to GA4 Migration for a Website</h1>
@@ -231,12 +249,12 @@ const ga4 = () => {
         <img src="https://storage.googleapis.com/website-bucket-uploads/static/UA_Logo.png" className="inline" />
         <img src="https://storage.googleapis.com/website-bucket-uploads/static/curved_arrow.png" className="inline" />
         <img src="https://storage.googleapis.com/website-bucket-uploads/static/Ga4_logo_png 1.png" className="inline" />
-        <button className="bg-amber-500 px-16 py-2 text-white font-semibold rounded-full shadow-lg shadow-gray-400 mt-8">View</button>
+        <a href="https://analyticsliv.com/case-studies/ua-to-ga4-migration-for-a-website"><button className="bg-amber-500 px-16 py-2 text-white font-semibold rounded-full shadow-lg shadow-gray-400 mt-8">View</button></a>
       </div>
       
       </div>
 
-      <div className="md:flex text-left justify-evenly bg-white px-2 md:px-20 py-4 md:py-8 md:rounded-full rounded-xl shadow-md shadow-gray-600">
+      <div className="cstudy md:flex text-left justify-evenly bg-white px-2 md:px-20 py-4 md:py-8 md:rounded-full rounded-xl shadow-md shadow-gray-600">
         <div className="md:w-3/4">
           <h1 className="text-2xl font-bold mb-4"><svg xmlns="http://www.w3.org/2000/svg" className="inline mr-4" width="24" height="24" viewBox="0 0 24 24"><path fill="DarkSlateGray" fillRule="evenodd" d="M17.9 4.2A3 3 0 0 0 15.5 3h-11a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h11a3 3 0 0 0 2.4-1.2l4.5-6a3 3 0 0 0 0-3.6l-4.5-6Z" clipRule="evenodd"/></svg>
             GA4 Enhanced Ecommerce Implementation
@@ -248,10 +266,10 @@ const ga4 = () => {
           <img src="https://storage.googleapis.com/website-bucket-uploads/static/GTM_logo.png" className="inline" />
           <img src="https://storage.googleapis.com/website-bucket-uploads/static/AI.png" className="inline" />
           <img src="https://storage.googleapis.com/website-bucket-uploads/static/Shopify_logo.png" className="inline" />
-          <button className="bg-sky-500 px-16 py-2 text-white font-semibold rounded-full shadow-lg shadow-gray-400 mt-8">View</button>
+          <a href="https://analyticsliv.com/case-studies/ga4-enhanced-ecommerce-implementation-using-gtm-and-shopify-integration"><button className="bg-sky-500 px-16 py-2 text-white font-semibold rounded-full shadow-lg shadow-gray-400 mt-8">View</button></a>
         </div>        
         </div>
-        <button className="bg-amber-600 text-white font-semibold px-8 py-3 shadow-md shadow-gray-600 rounded-full">More Case Studies</button>
+        <a href="https://analyticsliv.com/case-studies"><button className="more-casestudy my-5 bg-amber-600 text-white font-semibold px-8 py-3 shadow-md shadow-gray-600 rounded-full">More Case Studies</button></a>
     </div>
   </section>
 
