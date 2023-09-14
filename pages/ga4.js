@@ -2,11 +2,13 @@ import Head from 'next/head'
 import React from 'react'
 import { useEffect, useState } from 'react';
 import * as Scroll from 'react-scroll';
-import { ScaleLoader } from 'react-spinners'
+import { ScaleLoader } from 'react-spinners';
+import Marquee from "react-fast-marquee";
+import StructuredData from '../components/StructuredData';
 
 const { Element: ScrollElement } = Scroll;
 
-const ga4 = () => {
+export default function ga4({brandsdata}) {
 
     const initialValues = { fullName: '', email: '', contact: '',message : ''};
     const [formValues, setFormValues] = useState(initialValues);
@@ -107,6 +109,8 @@ const ga4 = () => {
           }
     }
 
+    const stuctureData = {"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://analyticsliv.com/","url":"https://analyticsliv.com/","name":"Leading Web and App Analytics Agency in India - AnalyticsLiv","isPartOf":{"@id":"https://analyticsliv.com/#website"},"primaryImageOfPage":{"@id":"https://analyticsliv.com/#primaryimage"},"image":{"@id":"https://analyticsliv.com/#primaryimage"},"thumbnailUrl":"https://storage.googleapis.com/website-bucket-uploads/static/logo.png","datePublished":"2023-01-11T18:27:34+00:00","dateModified":"2023-04-07T20:48:38+00:00","description":"AnalyticsLiv Digital is one of the leading Web and App analytics agency. We help our customers embrace Google Products to improve their customer experiences.","breadcrumb":{"@id":"https://analyticsliv.com/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://analyticsliv.com/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://analyticsliv.com/#primaryimage","url":"https://storage.googleapis.com/website-bucket-uploads/static/logo.png","contentUrl":"https://storage.googleapis.com/website-bucket-uploads/static/logo.png","width":1200,"height":628},{"@type":"BreadcrumbList","@id":"https://analyticsliv.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https://analyticsliv.com/#website","url":"https://analyticsliv.com/","name":"Analyticsliv","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.analyticsliv.com/blogs/search?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://www.analyticsliv.com/#organization","name":"Analyticsliv","url":"https://www.analyticsliv.com/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://www.analyticsliv.com/#/schema/logo/image/","url":"https://storage.googleapis.com/website-bucket-uploads/static/logo.png","contentUrl":"https://storage.googleapis.com/website-bucket-uploads/static/logo.png","width":512,"height":114,"caption":"Analyticsliv"},"image":{"@id":"https://www.analyticsliv.com/#/schema/logo/image/"},"sameAs":["https://m.facebook.com/100070503960704/","https://in.linkedin.com/company/analytics-liv-digital","https://www.youtube.com/channel/UCSU9utLB2PDe4VcXiI5kMFw","https://www.instagram.com/analyticsliv_digital"]}]};
+    
 
   return (
     <><Head>
@@ -115,7 +119,11 @@ const ga4 = () => {
           href="https://fonts.googleapis.com/css2?family=Poppins"
           rel="stylesheet"
         />
-    </Head>
+                <meta name="description" content="AnalyticsLiv Digital is one of the leading Web and App analytics agency. We help our customers embrace Google Products to improve their customer experiences."/>
+                <title>Google Analytics 4 - AnalyticsLiv</title>
+                
+            </Head>
+            <StructuredData data={stuctureData} />
     {showWaiting && <div className="fixed z-50 flex backdrop-blur top-0 left-0 right-0 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full"><ScaleLoader
   color="#271d90"
   loading
@@ -129,9 +137,9 @@ const ga4 = () => {
       <h1 className="  md:text-5xl text-2xl font-bold ml-4">Google Analytics 4</h1>
     </div>
 
-    <div className="relative md:flex items-center mt-4 md:px-20 pl-4">
+    <div className="relative md:flex items-center md:px-20 pl-4">
       <div className="absolute z-0 bg-gradient-to-r from-sky-200 to-transparent md:w-96 md:h-96 w-40 h-40 md:top-0 md:-left-36 top-12 -left-16 rounded-full"></div>
-      <div className="mt-12 md:w-3/4 z-10">
+      <div className="pt-12 md:w-3/4 z-10">
         <h1 className="text-2xl font-bold">Is your GA4 ready to </h1>
         <ul style={{color: '#E37400'}} className="mt-6 mx-2 font-semibold">
           <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="lightblue" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
@@ -147,30 +155,31 @@ const ga4 = () => {
        
       {!formSubmit &&<div className="block">
           <h2 className="md:text-xl text-sky-900">We Understand setting up GA4 can be complex sometimes.</h2>
-        <h1 className="font-semibold text-2xl p-4 md:p-8 border-dashed border-b-2 border-sky-200">Let us help you !!</h1>
+        <h1 className="font-semibold text-2xl p-4 md:p-6 border-dashed border-b-2 border-sky-200">Let us help you !!</h1>
         <ScrollElement
         id="contact-form"
         name="contact-form"
       ></ScrollElement>
-        <form className="px-8 pt-8 pb-2 space-y-6" onSubmit={handleSubmit}>
+        <form className="px-8 pt-6 pb-2 space-y-2" onSubmit={handleSubmit}>
           <div>
-            <input type="text" placeholder="FULL NAME" className="bg-sky-50 border-b-2 w-full pb-2" id="fullName" name="fullName" value={formValues.fullName} onChange={handleChange} />
+            <input type="text" placeholder="FULL NAME" className="bg-sky-50 border-b-2 w-full px-4 py-2 focus:outline-none focus:border-2 focus:border-sky-200" id="fullName" name="fullName" value={formValues.fullName} onChange={handleChange} />
             <span className="text-xs text-red-600 float-left">{formErrors.fullName}</span>
           </div>
+          
           <div>
-            <input type="tel" placeholder="CONTACT NO." className="bg-sky-50 border-b-2 w-full pb-2" id="contact" name="contact" value={formValues.contact} onChange={handleChange} />
-           
-          </div>
-          <div>
-            <input type="email" placeholder="EMAIL" className="bg-sky-50 border-b-2 w-full pb-2" id="email" name="email" value={formValues.email} onChange={handleChange}/>
+            <input type="email" placeholder="EMAIL" className="bg-sky-50 border-b-2 w-full px-4 py-2 focus:outline-none focus:border-2 focus:border-sky-200" id="email" name="email" value={formValues.email} onChange={handleChange}/>
             <span className="text-xs text-red-600 float-left">{formErrors.email}</span>
           </div>
           <div>
-            <textarea type="" placeholder="TYPE MESSAGE" className="bg-sky-50 border-b-2 w-full pb-2" id="message" name="message" value={formValues.message} onChange={handleChange}></textarea>
+            <input type="tel" placeholder="CONTACT NO." className="bg-sky-50 border-b-2 w-full px-4 py-2 focus:outline-none focus:border-2 focus:border-sky-200" id="contact" name="contact" value={formValues.contact} onChange={handleChange} />
+           
+          </div>
+          <div>
+            <textarea type="" placeholder="TYPE MESSAGE" className="bg-sky-50 border-b-2 w-full px-4 py-2 focus:outline-none focus:border-2 focus:border-sky-200" id="message" name="message" value={formValues.message} onChange={handleChange}></textarea>
             <span className="text-xs text-red-600 float-left">{formErrors.message}</span>
           </div>
           <div>
-            <button className="bg-amber-600 font-semibold text-white px-8 py-2 rounded-xl shadow-md shadow-gray-600">CONTACT US </button>
+            <button className="bg-amber-600 hover:bg-amber-500 font-semibold text-white px-8 py-2 rounded-xl shadow-md shadow-gray-400 hover:shadow-gray-600 transition-transform delay-100">CONTACT US </button>
             
           </div>
         </form>
@@ -204,7 +213,7 @@ const ga4 = () => {
           <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="DarkSlateGray" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
             Make data-driven decisions that will help you grow your business</li>
       </ul>
-      <button onClick={scrolling} className="schedule-button bg-white p-4 rounded-xl shadow-lg shadow-gray-600 text-slate-800 font-semibold">Schedule Free Consultation</button>
+      <button onClick={scrolling} className="schedule-button bg-white hover:bg-amber-200 transition-all delay-100 p-4 rounded-xl shadow-md shadow-gray-400 hover:shadow-gray-600 text-slate-800 font-semibold">Schedule Free Consultation</button>
       </div>
       <div className="text-center">
         <img src="https://storage.googleapis.com/website-bucket-uploads/static/graph.png" />
@@ -217,9 +226,9 @@ const ga4 = () => {
       <div className="text-center">
         <img src="https://storage.googleapis.com/website-bucket-uploads/static/Offer.png" />
       </div>
-      <div>
-        <h1 className="text-4xl font-bold md:mb-16">Menu of Services</h1>
-        <ul className="my-6 mx-2 text-sm font-semibold space-y-4 mb-8">
+      <div className='text-center'>
+        <h1 className=" text-4xl text-left font-bold md:mb-16">Menu of Services</h1>
+        <ul className="my-6 mx-2 text-left text-sm font-semibold space-y-4 mb-8">
           <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="DarkSlateGray" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
             GA4 Audit :
             <div className="pl-9 text-amber-500">Know about your current GA4 configuration and its gaps</div>
@@ -237,9 +246,16 @@ const ga4 = () => {
             <div className="pl-9 text-amber-500">Get trained by Analytics veterans on how to use GA4 & manage
               your account yourself. </div>
           </li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="DarkSlateGray" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
+          GA4 Insights and Analysis :
+            <div className="pl-9 text-amber-500">Visualize GA4 Data & Generate insights to take actions. </div>
+          </li>
       </ul>
+      <button onClick={scrolling} className="schedule-button bg-sky-300 hover:bg-sky-400 hover:text-white p-4 rounded-xl shadow-md shadow-gray-400 hover:shadow-gray-600 text-slate-700 transition-all delay-100 font-semibold">Schedule Free Consultation</button>
+      
       </div>
     </div>
+    
   </section>
 
   <section className='casestudy'>
@@ -277,8 +293,27 @@ const ga4 = () => {
           <a href="https://analyticsliv.com/case-studies/ga4-enhanced-ecommerce-implementation-using-gtm-and-shopify-integration"><button className="bg-sky-500 px-16 py-2 text-white font-semibold rounded-full shadow-lg shadow-gray-400 mt-8">View</button></a>
         </div>        
         </div>
-        <a href="https://analyticsliv.com/case-studies"><button className="more-casestudy my-8 bg-amber-600 text-white font-semibold px-8 py-3 shadow-md shadow-gray-600 rounded-full">More Case Studies</button></a>
+        <a href="https://analyticsliv.com/case-studies"><button className="more-casestudy my-8 bg-amber-600 hover:bg-amber-500 text-white font-semibold px-8 py-3 shadow-md shadow-gray-400 hover:shadow-gray-600 transition-all delay-100 rounded-full">More Case Studies</button></a>
     </div>
+  </section>
+
+
+  <section>
+     <div class="bg-white py-4">
+      <h1 class="text-center font-bold text-xl">Thanks for choosing AnalyticsLiv !</h1>
+       <div class="brandsimages flex space-x-8 justify-center py-4 px-4 mt-4">
+       <Marquee gradient={false} pauseOnHover="true">
+            
+            { 
+                    brandsdata.brand.map((brands,key) => (
+                     <div key={key}><img src={brands.logo} alt={brands.brands}/></div>
+                 
+               ))
+               } 
+                     
+                     </Marquee>
+       </div>
+     </div>
   </section>
 
    <section>
@@ -308,4 +343,16 @@ const ga4 = () => {
   )
 }
 
-export default ga4
+
+
+export async function getServerSideProps(context) {
+    // Fetch data from external API
+  
+    const res = await fetch(`${process.env.domain}/api/ga4brands`)
+    const brandsdata = await res.json()
+
+ 
+  //console.log(brandsdata);
+    // Pass data to the page via props
+    return { props: { brandsdata} }
+  }
