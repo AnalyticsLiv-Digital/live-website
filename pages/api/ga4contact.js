@@ -5,6 +5,8 @@ var nodemailer = require('nodemailer');
 
 const handler = async (req, res) => {
     if (req.method == 'POST') {
+
+      fetch('https://script.google.com/a/macros/analyticsliv.com/s/AKfycbzK9zVbEjRBYOQL48eu8aieCPbb1bvWmDLY2GJXrKVnmi7hHLYzrdEYyqGd3zrCiYYT/exec?fullname='+req.body.fullName+'&email='+req.body.email+'&contact='+req.body.contact+'&message='+req.body.message);
         let b = new Ga4contact({
             fullName: req.body.fullName,
             email: req.body.email,
@@ -22,7 +24,7 @@ const handler = async (req, res) => {
           });
           
     
-
+//,"anuj@analyticsliv.com","nitya@analyticsliv.com","rajvi@analyticsliv.com","ansuya@analyticsliv.com"
           var mailOptions1 = {
             from: "support@analyticsliv.com",
             to: ["anshul.d@analyticsliv.com"],
