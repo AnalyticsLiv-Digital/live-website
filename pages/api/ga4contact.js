@@ -24,10 +24,10 @@ const handler = async (req, res) => {
           });
           
     
-//,"anuj@analyticsliv.com","nitya@analyticsliv.com","rajvi@analyticsliv.com","ansuya@analyticsliv.com"
+
           var mailOptions1 = {
             from: "support@analyticsliv.com",
-            to: ["anshul.d@analyticsliv.com"],
+            to: ["anshul.d@analyticsliv.com","anuj@analyticsliv.com","nitya@analyticsliv.com","rajvi@analyticsliv.com","ansuya@analyticsliv.com"],
             subject: 'New Enquiry!!',
             html: `Enquiry Submitted by <br> Full Name - ${req.body.fullName}  <br> Email- ${req.body.email} <br> Contact - ${req.body.contact} <br> Message - ${req.body.message} `
           };
