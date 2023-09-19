@@ -62,7 +62,8 @@ export const Footer = () => {
                     <Link href="/blogs"><li>Blogs</li></Link>
                     <Link href="/about-us"><li className="text-center">About Us</li></Link>
                     <Link href="/contact"><li>Contact</li></Link>
-                    <Link href="/careers"><li>Careers</li></Link>
+            
+                    <Link href="/privacy-policy"><li>Privacy Policy</li></Link>
                 </ul>
             </div>
             <div className="text-center lg:text-right mt-10 pb-4">© Created by Analytics Liv Digital LLP, All rights Reserved.</div>

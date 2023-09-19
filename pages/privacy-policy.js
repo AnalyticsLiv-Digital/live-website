@@ -4,7 +4,7 @@ import ScrollProgress from '../components/ScrollProgress'
 const privacypolicy = () => {
     return (<>
     <ScrollProgress/>
-        <div>
+        <div className="p-10">
             <div className="text-3xl font-semibold justify-center">Privacy Policy for Analyticsliv Digital LLP</div>
 
             <p>At analyticsliv.com, accessible from analyticsliv.com, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by analyticsliv.com and how we use it.</p>
