@@ -5,8 +5,30 @@ import * as Scroll from 'react-scroll';
 import { ScaleLoader } from 'react-spinners';
 import Marquee from "react-fast-marquee";
 import StructuredData from '../components/StructuredData';
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 const { Element: ScrollElement } = Scroll;
+
+const responsive = {
+  superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 1
+  },
+  desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 1
+  },
+  tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2
+  },
+  mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1
+  }
+};
 
 export default function ga4({brandsdata}) {
 
@@ -109,6 +131,63 @@ export default function ga4({brandsdata}) {
           }
     }
 
+    const scrolling1 = () =>{
+      {
+        Scroll.scroller.scrollTo("expertise", {
+          duration: 500,
+          smooth: true,
+          offset: -100,
+        });
+      }
+
+    }
+
+    const scrolling2 = () =>{
+      {
+        Scroll.scroller.scrollTo("services", {
+          duration: 500,
+          smooth: true,
+          offset: -100,
+        });
+      }
+
+    }
+
+    const scrolling3 = () =>{
+      {
+        Scroll.scroller.scrollTo("case-studies", {
+          duration: 500,
+          smooth: true,
+          offset: -100,
+        });
+      }
+
+    }
+
+    const scrolling4 = () =>{
+      {
+        Scroll.scroller.scrollTo("testimonial", {
+          duration: 500,
+          smooth: true,
+          offset: -100,
+        });
+      }
+
+    }
+
+    const scrolling5 = () =>{
+      {
+        Scroll.scroller.scrollTo("data-visualisation", {
+          duration: 500,
+          smooth: true,
+          offset: -100,
+        });
+      }
+
+    }
+
+
+
     const stuctureData = {"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://analyticsliv.com/","url":"https://analyticsliv.com/","name":"Leading Web and App Analytics Agency in India - AnalyticsLiv","isPartOf":{"@id":"https://analyticsliv.com/#website"},"primaryImageOfPage":{"@id":"https://analyticsliv.com/#primaryimage"},"image":{"@id":"https://analyticsliv.com/#primaryimage"},"thumbnailUrl":"https://storage.googleapis.com/website-bucket-uploads/static/logo.png","datePublished":"2023-01-11T18:27:34+00:00","dateModified":"2023-04-07T20:48:38+00:00","description":"AnalyticsLiv Digital is one of the leading Web and App analytics agency. We help our customers embrace Google Products to improve their customer experiences.","breadcrumb":{"@id":"https://analyticsliv.com/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://analyticsliv.com/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://analyticsliv.com/#primaryimage","url":"https://storage.googleapis.com/website-bucket-uploads/static/logo.png","contentUrl":"https://storage.googleapis.com/website-bucket-uploads/static/logo.png","width":1200,"height":628},{"@type":"BreadcrumbList","@id":"https://analyticsliv.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https://analyticsliv.com/#website","url":"https://analyticsliv.com/","name":"Analyticsliv","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.analyticsliv.com/blogs/search?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://www.analyticsliv.com/#organization","name":"Analyticsliv","url":"https://www.analyticsliv.com/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://www.analyticsliv.com/#/schema/logo/image/","url":"https://storage.googleapis.com/website-bucket-uploads/static/logo.png","contentUrl":"https://storage.googleapis.com/website-bucket-uploads/static/logo.png","width":512,"height":114,"caption":"Analyticsliv"},"image":{"@id":"https://www.analyticsliv.com/#/schema/logo/image/"},"sameAs":["https://m.facebook.com/100070503960704/","https://in.linkedin.com/company/analytics-liv-digital","https://www.youtube.com/channel/UCSU9utLB2PDe4VcXiI5kMFw","https://www.instagram.com/analyticsliv_digital"]}]};
     
 
@@ -131,13 +210,35 @@ export default function ga4({brandsdata}) {
   className="m-auto align-middle"
 /></div>}
     <div style={{fontFamily: "'Poppins', sans-serif"}}>
+
+    <header className="sticky min-w-full top-0 z-50 shadow-md bg-white">
+    <div className="navbar hidden lg:flex py-2 h-auto flex-wrap px-4 lg:flex-row items-center justify-between">
+        <a className="">
+          <img className="h-8 lg:ml-4 w-auto cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png"/>
+        </a>
+        <nav className="lg:flex text-center">
+          <ul className="lg:flex text-sm font-semibold text-left lg:text-center z-[-1] lg:z-auto lg:mr-4 lg:w-auto lg:space-x-6 items-center tracking-wide cursor-pointer">
+            <li onClick={scrolling1} className="hover:text-amber-500">Expertise</li>
+            <li onClick={scrolling2} className="hover:text-amber-500">Services</li>
+            <li onClick={scrolling3} className="hover:text-amber-500">Case Studies</li>
+            <li onClick={scrolling4} className="hover:text-amber-500">Testimonial</li>
+            <li onClick={scrolling5} className="hover:text-amber-500">Data Visualisation</li>
+          </ul>
+          <a href="tel:7979634379">
+          <button className="px-5 py-2 bg-sky-300 rounded-2xl mx-2 text-sm font-semibold cursor-pointer hover:bg-sky-400">CALL US</button>
+          </a>
+          <span className="hidden md:inline px-4">
+            <img className="h-10 w-auto"   src="https://storage.googleapis.com/website-bucket-uploads/static/gmp.svg" />
+          </span>
+        </nav>
+    </div>
+  </header>
+
     <section>
     <div className="flex items-center justify-between mt-4 md:px-20 pl-4">
       <div className="flex items-center m-2 md:float-none"><img src="https://storage.googleapis.com/website-bucket-uploads/static/Ga4_logo.png"/>
       <h1 className="  md:text-5xl text-2xl font-bold ml-4">Google Analytics 4</h1></div>
-      <div className="hidden md:inline px-4">
-                    <img alt="marketing-partner" aria-label="marketing-partner" src="https://storage.googleapis.com/website-bucket-uploads/static/gmp.svg"/>
-                </div>
+
     </div>
 
     <div className="relative md:flex items-center md:px-20 pl-4">
@@ -199,9 +300,10 @@ export default function ga4({brandsdata}) {
   </section>
 
   <section>
-     <div class="bg-white py-4">
-      <h1 class="text-center font-bold text-xl">200+ Clients served for GA4</h1>
-       <div class="brandsimages flex space-x-8 justify-center py-4 px-4 mt-4">
+ 
+     <div className="bg-white py-4">
+      <h1 className="text-center font-bold text-xl">200+ Clients served for GA4</h1>
+       <div className="brandsimages flex space-x-8 justify-center py-4 px-4 mt-4">
        <Marquee gradient={false} pauseOnHover="true">
             
             { 
@@ -217,6 +319,10 @@ export default function ga4({brandsdata}) {
   </section>
 
   <section>
+  <ScrollElement
+        id="expertise"
+        name="expertise"
+      ></ScrollElement>
     <div className="bg-sky-300 relative md:flex md:justify-around md:mt-4 px-4 md:px-20 pt-8 pb-16">
       <div className="text-center mb-8 md:mb-0">
         <h1 className="text-4xl font-bold md:mb-16">Our experts can help you</h1>
@@ -243,6 +349,10 @@ export default function ga4({brandsdata}) {
   </section>
 
   <section>
+  <ScrollElement
+        id="services"
+        name="services"
+      ></ScrollElement>
     <div className="relative md:flex justify-around md:mt-4 px-4 md:px-20 md:pt-4 pb-4 md:pb-16">
       <div className="text-center">
         <img src="https://storage.googleapis.com/website-bucket-uploads/static/Offer.png" />
@@ -278,7 +388,10 @@ export default function ga4({brandsdata}) {
     </div>
     
   </section>
-
+  <ScrollElement
+        id="case-studies"
+        name="case-studies"
+      ></ScrollElement>
   <section className='casestudy'>
     <div className="bg-sky-300 relative text-center md:px-20 px-2 md:pt-8 py-4 md:pb-6 space-y-8">
       <h1 className="text-4xl text-left font-bold md:mb-16">Case Studies</h1>
@@ -294,7 +407,7 @@ export default function ga4({brandsdata}) {
         <img src="https://storage.googleapis.com/website-bucket-uploads/static/UA_Logo.png" className="inline" />
         <img src="https://storage.googleapis.com/website-bucket-uploads/static/curved_arrow.png" className="inline" />
         <img src="https://storage.googleapis.com/website-bucket-uploads/static/Ga4_logo_png 1.png" className="inline" />
-        <a href="https://analyticsliv.com/case-studies/ua-to-ga4-migration-for-a-website"><button className="bg-amber-500 px-16 py-2 text-white font-semibold rounded-full shadow-lg shadow-gray-400 mt-8">View</button></a>
+        <a onClick={scrolling} href="#"><button className="bg-amber-500 px-16 py-2 text-white font-semibold rounded-full shadow-lg shadow-gray-400 mt-8">View</button></a>
       </div>
       
       </div>
@@ -311,26 +424,33 @@ export default function ga4({brandsdata}) {
           <img src="https://storage.googleapis.com/website-bucket-uploads/static/GTM_logo.png" className="inline" />
           <img src="https://storage.googleapis.com/website-bucket-uploads/static/AI.png" className="inline" />
           <img src="https://storage.googleapis.com/website-bucket-uploads/static/Shopify_logo.png" className="inline" />
-          <a href="https://analyticsliv.com/case-studies/ga4-enhanced-ecommerce-implementation-using-gtm-and-shopify-integration"><button className="bg-sky-500 px-16 py-2 text-white font-semibold rounded-full shadow-lg shadow-gray-400 mt-8">View</button></a>
+          <a onClick={scrolling} href="#"><button className="bg-sky-500 px-16 py-2 text-white font-semibold rounded-full shadow-lg shadow-gray-400 mt-8">View</button></a>
         </div>        
         </div>
-        <a href="https://analyticsliv.com/case-studies"><button className="more-casestudy my-8 bg-amber-600 hover:bg-amber-500 text-white font-semibold px-8 py-3 shadow-md shadow-gray-400 hover:shadow-gray-600 transition-all delay-100 rounded-full">More Case Studies</button></a>
+        <a href="https://analyticsliv.com/case-studies"><button className="hidden more-casestudy my-8 bg-amber-600 hover:bg-amber-500 text-white font-semibold px-8 py-3 shadow-md shadow-gray-400 hover:shadow-gray-600 transition-all delay-100 rounded-full">More Case Studies</button></a>
     </div>
   </section>
 
 
   
 
-   <section>
-    <div className="relative h-full pb-16" style={{backgroundImage: 'url(https://storage.googleapis.com/website-bucket-uploads/static/Working_woman.png)', backgroundRepeat:'none'}} >
-      <h1 className="font-bold text-4xl py-8 md:py-16 text-center">Let's See What Our Clients Have To Say</h1>
+   <section className="review-slider">
+   <ScrollElement
+        id="testimonial"
+        name="testimonial"
+      ></ScrollElement>
+    <div className="relative h-full pb-16" style={{backgroundImage: 'url(https://storage.googleapis.com/website-bucket-uploads/static/Working_woman.png)', backgroundRepeat:'no-repeat'}} >
+      <h1 className="font-bold text-4xl py-8 md:py-12 text-center">Let's See What Our Clients Have To Say</h1>
       <div className="relative z-10 md:w-1/3 mx-4 md:mx-auto mt-4 bg-sky-100/90  px-8 pt-4 pb-0">
-        <div className="relative w-20 rounded-full bg-white p-4 -top-12 mx-28 md:mx-auto shadow-md shadow-gray-400">
+      <div className="relative w-20 rounded-full bg-white p-4 -top-12 mx-28 md:mx-auto shadow-md shadow-gray-400">
           <svg xmlns="http://www.w3.org/2000/svg" className="w-12" viewBox="0 0 24 24">
             <path fill="CornflowerBlue" d="M6.5 10c-.223 0-.437.034-.65.065c.069-.232.14-.468.254-.68c.114-.308.292-.575.469-.844c.148-.291.409-.488.601-.737c.201-.242.475-.403.692-.604c.213-.21.492-.315.714-.463c.232-.133.434-.28.65-.35l.539-.222l.474-.197l-.485-1.938l-.597.144c-.191.048-.424.104-.689.171c-.271.05-.56.187-.882.312c-.318.142-.686.238-1.028.466c-.344.218-.741.4-1.091.692c-.339.301-.748.562-1.05.945c-.33.358-.656.734-.909 1.162c-.293.408-.492.856-.702 1.299c-.19.443-.343.896-.468 1.336c-.237.882-.343 1.72-.384 2.437c-.034.718-.014 1.315.028 1.747c.015.204.043.402.063.539l.025.168l.026-.006A4.5 4.5 0 1 0 6.5 10zm11 0c-.223 0-.437.034-.65.065c.069-.232.14-.468.254-.68c.114-.308.292-.575.469-.844c.148-.291.409-.488.601-.737c.201-.242.475-.403.692-.604c.213-.21.492-.315.714-.463c.232-.133.434-.28.65-.35l.539-.222l.474-.197l-.485-1.938l-.597.144c-.191.048-.424.104-.689.171c-.271.05-.56.187-.882.312c-.317.143-.686.238-1.028.467c-.344.218-.741.4-1.091.692c-.339.301-.748.562-1.05.944c-.33.358-.656.734-.909 1.162c-.293.408-.492.856-.702 1.299c-.19.443-.343.896-.468 1.336c-.237.882-.343 1.72-.384 2.437c-.034.718-.014 1.315.028 1.747c.015.204.043.402.063.539l.025.168l.026-.006A4.5 4.5 0 1 0 17.5 10z"/>
           </svg>
         </div>
-        <div className="relative flex items-center my-4 w-full justify-center space-x-4 text-center">
+      <Carousel className="pb-4" ssr={true} showDots={true} responsive={responsive} infinite={true} autoPlay autoPlaySpeed={4000} transitionDuration={500} removeArrowOnDeviceType={["tablet", "mobile"]}>
+        <div>
+       
+        <div className="relative flex items-center my-2 w-full justify-center space-x-4 text-center">
           <img src="https://storage.googleapis.com/website-bucket-uploads/static/Character_1.png" className=""/>
           <h1 className="font-bold text-3xl">Una</h1>
         </div>
@@ -339,11 +459,95 @@ export default function ga4({brandsdata}) {
           understood what they were doing. We're now able to track our website traffic and 
           marketing campaigns more effectively, and we're confident that we're making better 
           business decisions as a result."</p>
+          </div>
+
+          <div>
+        
+        <div className="relative flex items-center my-4 w-full justify-center space-x-4 text-center">
+          <img src="https://storage.googleapis.com/website-bucket-uploads/static/Character_1.png" className=""/>
+          <h1 className="font-bold text-3xl">Ebenezer Ferreira</h1>
+        </div>
+        <p className=" mx-auto">"AnalyticsLiv has been FUTEK web analytics partner for almost 3 years now. They supported us with GTM implementation, GA to GA4 migration, Looker studio dashboard creations and Google cloud storage implementation. They respond to our request in a timely manner and make their best efforts to resolve the web analytics issues. We are happy with the support provided by AnalyticsLiv"</p>
+          </div>
+
+          <div>
+        
+        <div className="relative flex items-center my-4 w-full justify-center space-x-4 text-center">
+          <img src="https://storage.googleapis.com/website-bucket-uploads/static/Character_1.png" className=""/>
+          <h1 className="font-bold text-3xl">Bobby Bruno</h1>
+        </div>
+        <p className=" mx-auto">"AnalyticsLiv team was an excellent asset to our businesses' switch from Universal Analytics to GA4. They had excellent communication throughout the project, giving me feedback, updates and ideas as the project went on. I would be happy to recommend the AnalyticsLiv team for analytics and tag manager work, and look forward to working with them in the future. Thank you!"</p>
+          </div>
+
+         <div>
+          <div className="relative flex items-center my-4 w-full justify-center space-x-4 text-center">
+          <img src="https://storage.googleapis.com/website-bucket-uploads/static/Character_1.png" className=""/>
+          <h1 className="font-bold text-3xl">Charles Lundy</h1>
+        </div>
+        <p className=" mx-auto">"The AnalyticsLiv team estimated the job length accurately and then carried out the work exactly as briefed, to time and budget. We had one brief hiccup in the conversion tracking code but that was swiftly fixed once identified. Would definitely consider using it again and for more advanced reporting functionality in future"</p>
+          </div>
+
+
+          
+          </Carousel>
       </div>
       <div className="relative md:w-1/3 z-0 bg-sky-100/90 h-52 rounded-b-full mx-4 md:mx-auto pb-0"></div>
     </div>
+                
     
-  </section> </div>
+                
+  </section> 
+  
+  <section>
+  <ScrollElement
+        id="data-visualisation"
+        name="data-visualisation"
+      ></ScrollElement>
+  <h1 className="font-bold text-4xl py-4 md:pb-8 text-center">Data Visualizations Using Google Analytics 4</h1>
+  <Carousel className="" ssr={true} showDots={true} responsive={responsive} infinite={true} autoPlay autoPlaySpeed={4000} transitionDuration={500} removeArrowOnDeviceType={["tablet", "mobile"]}>
+        
+        <div className='md:w-2/3 mx-4 md:mx-auto'>
+          <img className='mx-auto' src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard/image1.png'></img>
+        </div>
+
+        <div className='md:w-2/3 mx-4 md:mx-auto'>
+          <img className='mx-auto' src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard/image2.png'></img>
+        </div>
+
+        <div className='md:w-2/3 mx-4 md:mx-auto'>
+          <img className='mx-auto' src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard/image3.png'></img>
+        </div>
+
+        <div className='md:w-2/3 mx-4 md:mx-auto'>
+          <img className='mx-auto' src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard/image4.png'></img>
+        </div>
+
+        <div className='md:w-2/3 mx-4 md:mx-auto'>
+          <img className='mx-auto' src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard/image5.png'></img>
+        </div>
+
+        <div className='md:w-2/3 mx-4 md:mx-auto'>
+          <img className='mx-auto' src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard/image6.png'></img>
+        </div>
+
+        <div className='md:w-2/3 mx-4 md:mx-auto'>
+          <img className='mx-auto' src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard/image7.png'></img>
+        </div>
+
+
+        <div className='md:w-2/3 mx-4 md:mx-auto'>
+          <img className='mx-auto' src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard/image9.png'></img>
+        </div>
+
+
+          </Carousel>
+  </section>
+  <div className='flex justify-center space-x-20 items-center px-16 bg-sky-300 py-2 text-center'>
+    <h2>Customize Your Data Visualization with GA4</h2>
+    <button onClick={scrolling}  className="px-5 py-2 bg-sky-400 rounded-2xl mx-2 text-sm font-semibold cursor-pointer hover:bg-sky-500">CONTACT US</button>
+  </div>
+
+  </div>
     </>
   )
 }

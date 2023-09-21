@@ -106,3 +106,7 @@ input[type=number] {
 .react-tel-input .form-control{
   width: 100%;
 }
+
+.review-slider .react-multi-carousel-list .react-multiple-carousel__arrow{
+  display:none;
+}
