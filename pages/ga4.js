@@ -7,6 +7,8 @@ import Marquee from "react-fast-marquee";
 import StructuredData from '../components/StructuredData';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import Link from 'next/link';
+import { Transition } from "@headlessui/react";
 
 const { Element: ScrollElement } = Scroll;
 
@@ -39,6 +41,7 @@ export default function ga4({brandsdata}) {
     const [showWaiting, setShowWaiting] = useState(false);
     const [selected, setSelected] = useState("");
     const [formSubmit, setFormSubmit] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -232,6 +235,107 @@ export default function ga4({brandsdata}) {
           </span>
         </nav>
     </div>
+
+
+    <div className="relative  flex lg:hidden p-2">
+  <Link href="/"><img onClick={() => setIsOpen(false)} src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="relative h-10 md:mx-4 cursor-pointer"/></Link>
+  <a className="ml-4" href="tel:7979634379">
+          <button className="px-5 py-2 bg-sky-300 rounded-2xl mx-2 text-sm font-semibold cursor-pointer hover:bg-sky-400">CALL US</button>
+          </a>
+              <button
+                onClick={() => {setIsOpen(!isOpen);}}
+                type="button"
+                className=" absolute inline-flex right-2 items-center justify-center p-2 rounded-md text-gray-400 hover:text-slate-900  focus:outline-none "
+                aria-controls="mobile-menu"
+                aria-expanded="false"
+              >
+                <span className="sr-only">Open main menu</span>
+                {!isOpen ? (
+                  <svg
+                    className="block h-6 w-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                ) : (
+                  <svg
+                    className="block h-6 w-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                )}
+              </button>
+            </div>
+            <Transition
+          show={isOpen}
+          enter="transition ease-out duration-100 transform"
+          enterFrom="opacity-0 scale-95"
+          enterTo="opacity-100 scale-100"
+          leave="transition ease-in duration-75 transform"
+          leaveFrom="opacity-100 scale-100"
+          leaveTo="opacity-0 scale-95"
+        >
+          {() => (
+            <div className="bg-white lg:hidden absolute w-full"  id="mobile-menu">
+              <div className="px-4 pt-2 pb-3 space-y-1 sm:px-3">
+                <p onClick={() => {setIsOpen(!isOpen); scrolling1();}}
+                  className=" text-slate-900 block px-3 py-2 rounded-md text-base font-medium"
+                >
+                 <div>Expertise</div>
+                  
+                </p>
+
+                <p onClick={() => {setIsOpen(!isOpen); scrolling2();}}
+                  href="#"
+                  className="text-slate-900 block px-3 py-2 rounded-md text-base font-medium"
+                >
+                  <div >Services</div>
+                  
+                </p>
+
+                <p onClick={() => {setIsOpen(!isOpen); scrolling3();}}
+                 
+                  className="text-slate-900 block px-3 py-2 rounded-md text-base font-medium"
+                >
+                  Case Studies
+                </p>
+
+                <p onClick={() => {setIsOpen(!isOpen); scrolling4();}}
+    
+                  className="text-slate-900 block px-3 py-2 rounded-md text-base font-medium"
+                >
+                  Testimonial
+                </p>
+
+                <p onClick={() => {setIsOpen(!isOpen); scrolling5();}}
+        
+                  className="text-slate-900 block px-3 py-2 rounded-md text-base font-medium"
+                >
+                  Data Visualisation
+                </p>
+              </div>
+            </div>
+          )}
+        </Transition>
   </header>
 
     <section>
