@@ -9,6 +9,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Link from 'next/link';
 import { Transition } from "@headlessui/react";
+import Iframe from 'react-iframe'
 
 const { Element: ScrollElement } = Scroll;
 
@@ -608,39 +609,39 @@ export default function ga4({brandsdata}) {
         name="data-visualisation"
       ></ScrollElement>
   <h1 className="font-bold text-4xl py-4 md:pb-8 text-center">Data Visualizations Using Google Analytics 4</h1>
-  <Carousel className="" ssr={true} showDots={true} responsive={responsive} infinite={true} autoPlay autoPlaySpeed={4000} transitionDuration={500} removeArrowOnDeviceType={["tablet", "mobile"]}>
+  <Carousel className="h-100" ssr={true} showDots={true} responsive={responsive} infinite={true} autoPlay autoPlaySpeed={4000} transitionDuration={500} removeArrowOnDeviceType={["tablet", "mobile"]}>
         
-        <div className='md:w-2/3 mx-4 md:mx-auto'>
-          <img className='mx-auto' src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard/image1.png'></img>
+        <div className='md:w-2/3 mx-4 md:mx-auto h-auto'>
+          <img className='mx-auto' style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard/image1.png'></img>
+        </div>
+
+        <div className='md:w-2/3 mx-4 md:mx-auto h-auto'>
+          <img className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard/image2.png'></img>
+        </div>
+
+        <div className='md:w-2/3 mx-4 md:mx-auto h-auto'>
+          <img className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard/image3.png'></img>
+        </div>
+
+        <div className='md:w-2/3 mx-4 md:mx-auto h-auto'>
+          <img className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard/image4.png'></img>
         </div>
 
         <div className='md:w-2/3 mx-4 md:mx-auto'>
-          <img className='mx-auto' src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard/image2.png'></img>
+          <img className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard/image5.png'></img>
         </div>
 
-        <div className='md:w-2/3 mx-4 md:mx-auto'>
-          <img className='mx-auto' src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard/image3.png'></img>
+        <div className='md:w-2/3 mx-4 md:mx-auto h-auto'>
+          <img className='mx-auto' style={{height:'440px'}}  src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard/image6.png'></img>
         </div>
 
-        <div className='md:w-2/3 mx-4 md:mx-auto'>
-          <img className='mx-auto' src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard/image4.png'></img>
-        </div>
-
-        <div className='md:w-2/3 mx-4 md:mx-auto'>
-          <img className='mx-auto' src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard/image5.png'></img>
-        </div>
-
-        <div className='md:w-2/3 mx-4 md:mx-auto'>
-          <img className='mx-auto' src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard/image6.png'></img>
-        </div>
-
-        <div className='md:w-2/3 mx-4 md:mx-auto'>
-          <img className='mx-auto' src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard/image7.png'></img>
+        <div className='md:w-2/3 mx-4 md:mx-auto h-auto'>
+          <img className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard/image7.png'></img>
         </div>
 
 
-        <div className='md:w-2/3 mx-4 md:mx-auto'>
-          <img className='mx-auto' src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard/image9.png'></img>
+        <div className='md:w-2/3 mx-4 md:mx-auto h-auto'>
+          <img className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard/image9.png'></img>
         </div>
 
 
@@ -652,6 +653,7 @@ export default function ga4({brandsdata}) {
   </div>
 
   </div>
+
     </>
   )
 }
