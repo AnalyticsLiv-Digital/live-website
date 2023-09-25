@@ -612,33 +612,40 @@ export default function ga4({brandsdata}) {
   <Carousel className="h-100" ssr={true} showDots={true} responsive={responsive} infinite={true} autoPlay autoPlaySpeed={4000} transitionDuration={500} removeArrowOnDeviceType={["tablet", "mobile"]}>
         
         <div className='md:w-2/3 mx-4 md:mx-auto h-auto'>
-          <img className='mx-auto' style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard/image1.png'></img>
+          <img className='mx-auto' style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_1_Small.png'></img>
         </div>
 
         <div className='md:w-2/3 mx-4 md:mx-auto h-auto'>
-          <img className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard/image2.png'></img>
+          <img className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_2_Small.png'></img>
         </div>
 
         <div className='md:w-2/3 mx-4 md:mx-auto h-auto'>
-          <img className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard/image3.png'></img>
+          <img className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_3_Small.png'></img>
         </div>
 
         <div className='md:w-2/3 mx-4 md:mx-auto h-auto'>
-          <img className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard/image4.png'></img>
+          <img className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_4_Small.png'></img>
         </div>
 
         <div className='md:w-2/3 mx-4 md:mx-auto'>
-          <img className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard/image5.png'></img>
+          <img className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_5_Small.png'></img>
         </div>
 
         <div className='md:w-2/3 mx-4 md:mx-auto h-auto'>
-          <img className='mx-auto' style={{height:'440px'}}  src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard/image6.png'></img>
+          <img className='mx-auto' style={{height:'440px'}}  src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_6_Small.png'></img>
         </div>
 
         <div className='md:w-2/3 mx-4 md:mx-auto h-auto'>
-          <img className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard/image7.png'></img>
+          <img className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_7_Small.png'></img>
         </div>
 
+        <div className='md:w-2/3 mx-4 md:mx-auto h-auto'>
+          <img className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_8_small.png'></img>
+        </div>
+
+        <div className='md:w-2/3 mx-4 md:mx-auto h-auto'>
+          <img className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_9_Small.png'></img>
+        </div>
 
         <div className='md:w-2/3 mx-4 md:mx-auto h-auto'>
           <img className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard/image9.png'></img>
