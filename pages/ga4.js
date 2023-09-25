@@ -84,6 +84,7 @@ export default function ga4({brandsdata}) {
                    
                     setFormSubmit(true);
                     setShowWaiting(false);
+                    window.open("https://calendly.com/analyticsliv/30min", '_blank');
                 })
                 .catch((error) => {
                     console.error('Error:', error);
