@@ -104,9 +104,7 @@ export default function dv360({brandsdata}) {
 
 
 
-        if (!values.message) {
-            errors.message = "Message is required!";
-        }
+ 
 
         if (!values.website) {
             errors.website = "Website is required!";
@@ -393,8 +391,8 @@ export default function dv360({brandsdata}) {
                         <span className="text-xs text-red-600 float-left">{formErrors.website}</span>
                       </div>
                       <div>
-                        <textarea type="" placeholder="TYPE MESSAGE*" className="bg-transparent border-b-2 w-full px-4 py-2 focus:outline-none focus:border-2 focus:border-sky-200"  id="message" name="message" value={formValues.message} onChange={handleChange}></textarea>
-                        <span className="text-xs text-red-600 float-left">{formErrors.message}</span>
+                        <textarea type="" placeholder="TYPE MESSAGE" className="bg-transparent border-b-2 w-full px-4 py-2 focus:outline-none focus:border-2 focus:border-sky-200"  id="message" name="message" value={formValues.message} onChange={handleChange}></textarea>
+                        
                       </div>
                       <div>
                         <button className="cta cursor-pointer bg-sky-500 hover:bg-sky-600 transition duration-200 delay-75 font-semibold text-white px-8 py-2 rounded-xl shadow-md shadow-gray-600"> CONTACT US </button>
