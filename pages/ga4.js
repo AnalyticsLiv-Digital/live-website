@@ -230,7 +230,7 @@ export default function ga4({brandsdata}) {
             <li onClick={scrolling5} className="hover:text-amber-500">Data Visualisation</li>
           </ul>
           <a href="tel:7979634379">
-          <button className="px-5 py-2 bg-sky-300 rounded-2xl mx-2 text-sm font-semibold cursor-pointer hover:bg-sky-400">CALL US</button>
+          <button className="cta px-5 py-2 bg-sky-300 rounded-2xl mx-2 text-sm font-semibold cursor-pointer hover:bg-sky-400">CALL US</button>
           </a>
           <span className="hidden md:inline px-4">
             <img className="h-10 w-auto"   src="https://storage.googleapis.com/website-bucket-uploads/static/gmp.svg" />
@@ -242,7 +242,7 @@ export default function ga4({brandsdata}) {
     <div className="relative  flex lg:hidden p-2">
   <Link href="/"><img onClick={() => setIsOpen(false)} src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="relative h-10 md:mx-4 cursor-pointer"/></Link>
   <a className="ml-4" href="tel:7979634379">
-          <button className="px-5 py-2 bg-sky-300 rounded-2xl mx-2 text-sm font-semibold cursor-pointer hover:bg-sky-400">CALL US</button>
+          <button className="cta px-5 py-2 bg-sky-300 rounded-2xl mx-2 text-sm font-semibold cursor-pointer hover:bg-sky-400">CALL US</button>
           </a>
               <button
                 onClick={() => {setIsOpen(!isOpen);}}
@@ -389,7 +389,7 @@ export default function ga4({brandsdata}) {
             <span className="text-xs text-red-600 float-left">{formErrors.message}</span>
           </div>
           <div>
-            <button className="bg-amber-600 hover:bg-amber-500 font-semibold text-white px-8 py-2 rounded-xl shadow-md shadow-gray-400 hover:shadow-gray-600 transition-transform delay-100">CONTACT US </button>
+            <button className="cta bg-amber-600 hover:bg-amber-500 font-semibold text-white px-8 py-2 rounded-xl shadow-md shadow-gray-400 hover:shadow-gray-600 transition-transform delay-100">CONTACT US </button>
             
           </div>
         </form>
@@ -446,7 +446,7 @@ export default function ga4({brandsdata}) {
           <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="DarkSlateGray" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
             Make data-driven decisions that will help you grow your business</li>
       </ul>
-      <button onClick={scrolling} className="schedule-button bg-white hover:bg-amber-200 transition-all delay-100 p-4 rounded-xl shadow-md shadow-gray-400 hover:shadow-gray-600 text-slate-800 font-semibold">Schedule Free Consultation</button>
+      <button onClick={scrolling} className="cta schedule-button bg-white hover:bg-amber-200 transition-all delay-100 p-4 rounded-xl shadow-md shadow-gray-400 hover:shadow-gray-600 text-slate-800 font-semibold">Schedule Free Consultation</button>
       </div>
       <div className="text-center">
         <img src="https://storage.googleapis.com/website-bucket-uploads/static/graph.png" />
@@ -488,7 +488,7 @@ export default function ga4({brandsdata}) {
             <div className="pl-9 text-amber-500">Visualize GA4 Data & Generate insights to take actions. </div>
           </li>
       </ul>
-      <button onClick={scrolling} className="schedule-button bg-sky-300 hover:bg-sky-400 hover:text-white p-4 rounded-xl shadow-md shadow-gray-400 hover:shadow-gray-600 text-slate-700 transition-all delay-100 font-semibold">Schedule Free Consultation</button>
+      <button onClick={scrolling} className="cta schedule-button bg-sky-300 hover:bg-sky-400 hover:text-white p-4 rounded-xl shadow-md shadow-gray-400 hover:shadow-gray-600 text-slate-700 transition-all delay-100 font-semibold">Schedule Free Consultation</button>
       
       </div>
     </div>
@@ -513,7 +513,7 @@ export default function ga4({brandsdata}) {
         <img src="https://storage.googleapis.com/website-bucket-uploads/static/UA_Logo.png" className="inline" />
         <img src="https://storage.googleapis.com/website-bucket-uploads/static/curved_arrow.png" className="inline" />
         <img src="https://storage.googleapis.com/website-bucket-uploads/static/Ga4_logo_png 1.png" className="inline" />
-        <a onClick={scrolling} href="#"><button className="bg-amber-500 px-16 py-2 text-white font-semibold rounded-full shadow-lg shadow-gray-400 mt-8">View</button></a>
+        <a onClick={scrolling} href="#"><button className="cta bg-amber-500 px-16 py-2 text-white font-semibold rounded-full shadow-lg shadow-gray-400 mt-8">View</button></a>
       </div>
       
       </div>
@@ -530,7 +530,7 @@ export default function ga4({brandsdata}) {
           <img src="https://storage.googleapis.com/website-bucket-uploads/static/GTM_logo.png" className="inline" />
           <img src="https://storage.googleapis.com/website-bucket-uploads/static/AI.png" className="inline" />
           <img src="https://storage.googleapis.com/website-bucket-uploads/static/Shopify_logo.png" className="inline" />
-          <a onClick={scrolling} href="#"><button className="bg-sky-500 px-16 py-2 text-white font-semibold rounded-full shadow-lg shadow-gray-400 mt-8">View</button></a>
+          <a onClick={scrolling} href="#"><button className="cta bg-sky-500 px-16 py-2 text-white font-semibold rounded-full shadow-lg shadow-gray-400 mt-8">View</button></a>
         </div>        
         </div>
         <a href="https://analyticsliv.com/case-studies"><button className="hidden more-casestudy my-8 bg-amber-600 hover:bg-amber-500 text-white font-semibold px-8 py-3 shadow-md shadow-gray-400 hover:shadow-gray-600 transition-all delay-100 rounded-full">More Case Studies</button></a>
@@ -657,7 +657,7 @@ export default function ga4({brandsdata}) {
   </section>
   <div className='flex justify-center space-x-20 items-center px-16 bg-sky-300 py-2 text-center'>
     <h2>Customize Your Data Visualization with GA4</h2>
-    <button onClick={scrolling}  className="px-5 py-2 bg-sky-400 rounded-2xl mx-2 text-sm font-semibold cursor-pointer hover:bg-sky-500">CONTACT US</button>
+    <button onClick={scrolling}  className="cta px-5 py-2 bg-sky-400 rounded-2xl mx-2 text-sm font-semibold cursor-pointer hover:bg-sky-500">CONTACT US</button>
   </div>
 
   </div>

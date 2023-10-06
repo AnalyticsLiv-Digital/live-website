@@ -221,7 +221,7 @@ export default function dv360({brandsdata}) {
     
           </ul>
           <a href="tel:7979634379">
-          <button className="px-5 py-2 bg-sky-300 rounded-2xl mx-2 text-sm font-semibold cursor-pointer hover:bg-sky-400">CALL US</button>
+          <button className="cta px-5 py-2 bg-sky-300 rounded-2xl mx-2 text-sm font-semibold cursor-pointer hover:bg-sky-400">CALL US</button>
           </a>
           <span className="hidden md:inline px-4">
             <img className="h-10 w-auto"   src="https://storage.googleapis.com/website-bucket-uploads/static/gmp.svg" />
@@ -233,7 +233,7 @@ export default function dv360({brandsdata}) {
     <div className="relative  flex lg:hidden p-2">
   <Link href="/"><img onClick={() => setIsOpen(false)} src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="relative h-10 md:mx-4 cursor-pointer"/></Link>
   <a className="ml-4" href="tel:7979634379">
-          <button className="px-5 py-2 bg-sky-300 rounded-2xl mx-2 text-sm font-semibold cursor-pointer hover:bg-sky-400">CALL US</button>
+          <button className="cta px-5 py-2 bg-sky-300 rounded-2xl mx-2 text-sm font-semibold cursor-pointer hover:bg-sky-400">CALL US</button>
           </a>
               <button
                 onClick={() => {setIsOpen(!isOpen);}}
@@ -388,7 +388,7 @@ export default function dv360({brandsdata}) {
                         <span className="text-xs text-red-600 float-left">{formErrors.message}</span>
                       </div>
                       <div>
-                        <button className="cursor-pointer bg-sky-500 hover:bg-sky-600 transition duration-200 delay-75 font-semibold text-white px-8 py-2 rounded-xl shadow-md shadow-gray-600"> CONTACT US </button>
+                        <button className="cta cursor-pointer bg-sky-500 hover:bg-sky-600 transition duration-200 delay-75 font-semibold text-white px-8 py-2 rounded-xl shadow-md shadow-gray-600"> CONTACT US </button>
                       </div>
                     </form>
                     </div>}
@@ -467,7 +467,7 @@ export default function dv360({brandsdata}) {
             </div>
           </li>
       </ul>
-      <button onClick={scrolling} className="cursor-pointer bg-sky-700 hover:bg-sky-800 transition duration-200 delay-75 ml-8 p-4 rounded-xl shadow-lg shadow-gray-400 text-white font-semibold">Schedule Free Consultation</button>
+      <button onClick={scrolling} className="cta cursor-pointer bg-sky-700 hover:bg-sky-800 transition duration-200 delay-75 ml-8 p-4 rounded-xl shadow-lg shadow-gray-400 text-white font-semibold">Schedule Free Consultation</button>
       </div>
       <div className="text-center mt-8 md:mt-0">
         <img className="w-3/4 h-auto mx-auto" src="https://storage.googleapis.com/website-bucket-uploads/static/Services_IMG.png" />
@@ -518,7 +518,7 @@ export default function dv360({brandsdata}) {
             Buy from popular OTTs, Publishers at fixed price
           </li>
       </ul>
-      <button className="cursor-pointer bg-sky-700 hover:bg-sky-800 transition duration-200 delay-75 ml-8 p-4 rounded-xl shadow-lg shadow-gray-400 text-white font-semibold">Schedule Free Consultation</button>
+      <button onClick={scrolling} className="cta cursor-pointer bg-sky-700 hover:bg-sky-800 transition duration-200 delay-75 ml-8 p-4 rounded-xl shadow-lg shadow-gray-400 text-white font-semibold">Schedule Free Consultation</button>
       </div>
       <div className="text-center mt-8 md:mt-0">
         <img className="w-3/4 h-auto mx-auto" src="https://storage.googleapis.com/website-bucket-uploads/static/Placement_section_Right.png" />
@@ -574,7 +574,7 @@ export default function dv360({brandsdata}) {
       </div>
       <div className="text-center pt-4 md:pt-0 items-center space-x-4">
         <img src="https://storage.googleapis.com/website-bucket-uploads/static/CREATIVE.png" className="inline w-40" />
-        <button onClick={scrolling} className="bg-emerald-500 cursor-pointer hover:bg-emerald-600 transition duration-200 delay-75 px-16 py-2 text-white font-semibold rounded-full shadow-md shadow-gray-400 mt-8">View</button>
+        <button onClick={scrolling} className="cta bg-emerald-500 cursor-pointer hover:bg-emerald-600 transition duration-200 delay-75 px-16 py-2 text-white font-semibold rounded-full shadow-md shadow-gray-400 mt-8">View</button>
       </div>
       
       </div>
@@ -591,7 +591,7 @@ export default function dv360({brandsdata}) {
         </div>
         <div className="text-center items-center pt-4 md:pt-0 space-x-4">
           <img src="https://storage.googleapis.com/website-bucket-uploads/static/result.png" className="inline w-40" />
-          <button onClick={scrolling} className="bg-emerald-500 cursor-pointer hover:bg-emerald-600 transition duration-200 delay-75 px-16 py-2 text-white font-semibold rounded-full shadow-md shadow-gray-400 mt-8">View</button>
+          <button onClick={scrolling} className="cta bg-emerald-500 cursor-pointer hover:bg-emerald-600 transition duration-200 delay-75 px-16 py-2 text-white font-semibold rounded-full shadow-md shadow-gray-400 mt-8">View</button>
         </div>        
         </div>
     </div>
@@ -663,7 +663,7 @@ export default function dv360({brandsdata}) {
 
 <div className='sticky bottom-0 z-20 shadow-sm border-t-2 border-emerald-200 flex justify-center space-x-20 items-center px-16 bg-emerald-100 py-2 text-center'>
     <h2>Optimize your campaigns with DV360</h2>
-    <button onClick={scrolling}  className="px-5 py-2 bg-sky-500 rounded-2xl mx-2 text-sm font-semibold cursor-pointer hover:bg-sky-500">CONTACT US</button>
+    <button onClick={scrolling}  className="cta px-5 py-2 bg-sky-500 rounded-2xl mx-2 text-sm font-semibold cursor-pointer hover:bg-sky-500">CONTACT US</button>
   </div>
 
  
