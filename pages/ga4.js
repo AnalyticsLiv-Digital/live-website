@@ -372,12 +372,12 @@ export default function ga4({brandsdata}) {
       ></ScrollElement>
         <form className="px-8 pt-6 pb-2 space-y-2" onSubmit={handleSubmit}>
           <div>
-            <input type="text" placeholder="FULL NAME" className="bg-sky-50 border-b-2 w-full px-4 py-2 focus:outline-none focus:border-2 focus:border-sky-200" id="fullName" name="fullName" value={formValues.fullName} onChange={handleChange} />
+            <input type="text" placeholder="FULL NAME*" className="bg-sky-50 border-b-2 w-full px-4 py-2 focus:outline-none focus:border-2 focus:border-sky-200" id="fullName" name="fullName" value={formValues.fullName} onChange={handleChange} />
             <span className="text-xs text-red-600 float-left">{formErrors.fullName}</span>
           </div>
           
           <div>
-            <input type="email" placeholder="EMAIL" className="bg-sky-50 border-b-2 w-full px-4 py-2 focus:outline-none focus:border-2 focus:border-sky-200" id="email" name="email" value={formValues.email} onChange={handleChange}/>
+            <input type="email" placeholder="EMAIL*" className="bg-sky-50 border-b-2 w-full px-4 py-2 focus:outline-none focus:border-2 focus:border-sky-200" id="email" name="email" value={formValues.email} onChange={handleChange}/>
             <span className="text-xs text-red-600 float-left">{formErrors.email}</span>
           </div>
           <div>
@@ -385,7 +385,7 @@ export default function ga4({brandsdata}) {
            
           </div>
           <div>
-            <textarea type="" placeholder="TYPE MESSAGE" className="bg-sky-50 border-b-2 w-full px-4 py-2 focus:outline-none focus:border-2 focus:border-sky-200" id="message" name="message" value={formValues.message} onChange={handleChange}></textarea>
+            <textarea type="" placeholder="TYPE MESSAGE*" className="bg-sky-50 border-b-2 w-full px-4 py-2 focus:outline-none focus:border-2 focus:border-sky-200" id="message" name="message" value={formValues.message} onChange={handleChange}></textarea>
             <span className="text-xs text-red-600 float-left">{formErrors.message}</span>
           </div>
           <div>
