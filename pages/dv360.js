@@ -362,7 +362,10 @@ export default function dv360({brandsdata}) {
             <div className="relative flex justify-end my-4 md:my-0">
                 <div className="absolute rounded-full bg-sky-100 w-56 h-56 left-0 -top-10 z-0 blur-xl"></div>
                 <div className="z-10 text-center bg-gray-50 py-8 md:p-8 md:w-3/4 rounded-xl shadow-xl shadow-gray-400">
-                  
+                <ScrollElement
+        id="contact-form"
+        name="contact-form"
+      ></ScrollElement>              
   {!formSubmit &&<div className="block">
                       <h2 className="text-sky-900">We Understand Its difficult to get DV360 Account and control the outcome</h2>
                     <h1 className="font-semibold text-2xl p-4 border-dashed border-b-2 border-sky-200">Let us help you !!</h1>
@@ -464,7 +467,7 @@ export default function dv360({brandsdata}) {
             </div>
           </li>
       </ul>
-      <button className="cursor-pointer bg-sky-700 hover:bg-sky-800 transition duration-200 delay-75 ml-8 p-4 rounded-xl shadow-lg shadow-gray-400 text-white font-semibold">Schedule Free Consultation</button>
+      <button onClick={scrolling} className="cursor-pointer bg-sky-700 hover:bg-sky-800 transition duration-200 delay-75 ml-8 p-4 rounded-xl shadow-lg shadow-gray-400 text-white font-semibold">Schedule Free Consultation</button>
       </div>
       <div className="text-center mt-8 md:mt-0">
         <img className="w-3/4 h-auto mx-auto" src="https://storage.googleapis.com/website-bucket-uploads/static/Services_IMG.png" />
@@ -571,7 +574,7 @@ export default function dv360({brandsdata}) {
       </div>
       <div className="text-center pt-4 md:pt-0 items-center space-x-4">
         <img src="https://storage.googleapis.com/website-bucket-uploads/static/CREATIVE.png" className="inline w-40" />
-        <button className="bg-emerald-500 cursor-pointer hover:bg-emerald-600 transition duration-200 delay-75 px-16 py-2 text-white font-semibold rounded-full shadow-md shadow-gray-400 mt-8">View</button>
+        <button onClick={scrolling} className="bg-emerald-500 cursor-pointer hover:bg-emerald-600 transition duration-200 delay-75 px-16 py-2 text-white font-semibold rounded-full shadow-md shadow-gray-400 mt-8">View</button>
       </div>
       
       </div>
@@ -588,7 +591,7 @@ export default function dv360({brandsdata}) {
         </div>
         <div className="text-center items-center pt-4 md:pt-0 space-x-4">
           <img src="https://storage.googleapis.com/website-bucket-uploads/static/result.png" className="inline w-40" />
-          <button className="bg-emerald-500 cursor-pointer hover:bg-emerald-600 transition duration-200 delay-75 px-16 py-2 text-white font-semibold rounded-full shadow-md shadow-gray-400 mt-8">View</button>
+          <button onClick={scrolling} className="bg-emerald-500 cursor-pointer hover:bg-emerald-600 transition duration-200 delay-75 px-16 py-2 text-white font-semibold rounded-full shadow-md shadow-gray-400 mt-8">View</button>
         </div>        
         </div>
     </div>
@@ -660,7 +663,7 @@ export default function dv360({brandsdata}) {
 
 <div className='sticky bottom-0 z-20 shadow-sm border-t-2 border-emerald-200 flex justify-center space-x-20 items-center px-16 bg-emerald-100 py-2 text-center'>
     <h2>Optimize your campaigns with DV360</h2>
-    <button onClick={scrolling1}  className="px-5 py-2 bg-sky-500 rounded-2xl mx-2 text-sm font-semibold cursor-pointer hover:bg-sky-500">CONTACT US</button>
+    <button onClick={scrolling}  className="px-5 py-2 bg-sky-500 rounded-2xl mx-2 text-sm font-semibold cursor-pointer hover:bg-sky-500">CONTACT US</button>
   </div>
 
  
