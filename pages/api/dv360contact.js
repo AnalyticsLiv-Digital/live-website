@@ -6,12 +6,13 @@ var nodemailer = require('nodemailer');
 const handler = async (req, res) => {
     if (req.method == 'POST') {
 
-      fetch('https://script.google.com/macros/s/AKfycbzQGNNX7U83XtrDKTemNRAsUDI4211TCgI079HIzJvQ-a3ZO-vXCKZn9_URNBctjdz7/exec?fullname='+req.body.fullName+'&email='+req.body.email+'&contact='+req.body.contact+'&message='+req.body.message);
+      fetch('https://script.google.com/macros/s/AKfycbxVpjOJZxxAySTkuvHYc4D6Hl-XYhOHXQhBRWwJKajepUE13dmr0Ek0TH-ar5KwRhLD/exec?fullname='+req.body.fullName+'&email='+req.body.email+'&contact='+req.body.contact+'&message='+req.body.message+'&website='+req.body.website);
         let b = new Dv360contact({
             fullName: req.body.fullName,
             email: req.body.email,
             contact: req.body.contact,
-            message: req.body.message
+            message: req.body.message,
+            website : req.body.website
             
         });
         await b.save();
@@ -29,7 +30,7 @@ const handler = async (req, res) => {
             from: "support@analyticsliv.com",
             to: ["anshul.d@analyticsliv.com","anuj@analyticsliv.com","nitya@analyticsliv.com","shilpi@analyticsliv.com"],
             subject: 'New DV360 Enquiry!!',
-            html: `Enquiry Submitted by <br> Full Name - ${req.body.fullName}  <br> Email- ${req.body.email} <br> Contact - ${req.body.contact} <br> Message - ${req.body.message} `
+            html: `Enquiry Submitted by <br> Full Name - ${req.body.fullName}  <br> Email- ${req.body.email} <br> Contact - ${req.body.contact} <br> Message - ${req.body.message} <br> Website - ${req.body.website} `
           };
           
           transporter.sendMail(mailOptions1, function(error, info){

@@ -35,7 +35,7 @@ const responsive = {
 
 export default function dv360({brandsdata}) {
 
-    const initialValues = { fullName: '', email: '', contact: '',message : ''};
+    const initialValues = { fullName: '', email: '', contact: '',message : '', website: ''};
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
@@ -76,7 +76,8 @@ export default function dv360({brandsdata}) {
                     "fullName": formValues.fullName,
                    "email": formValues.email,
                    "contact": formValues.contact,
-                   "message": formValues.message
+                   "message": formValues.message,
+                   "website" : formValues.website
        }),
             })
                 .then((response) => response.json())
@@ -382,6 +383,10 @@ export default function dv360({brandsdata}) {
                       <div>
                         <input type="tel" placeholder="CONTACT NO." className="bg-transparent border-b-2 w-full px-4 py-2 focus:outline-none focus:border-2 focus:border-sky-200" id="contact" name="contact" value={formValues.contact} onChange={handleChange} />
                         
+                      </div>
+                      <div>
+                        <input type="text" placeholder="WEBSITE" className="bg-transparent px-4 border-b-2 w-full py-2 focus:outline-none focus:border-2 focus:border-sky-200" id="website" name="website" value={formValues.website} onChange={handleChange}/>
+                       
                       </div>
                       <div>
                         <textarea type="" placeholder="TYPE MESSAGE*" className="bg-transparent border-b-2 w-full px-4 py-2 focus:outline-none focus:border-2 focus:border-sky-200"  id="message" name="message" value={formValues.message} onChange={handleChange}></textarea>

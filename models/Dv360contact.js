@@ -5,6 +5,7 @@ const Dv360contactSchema = new mongoose.Schema({
     email:{type: String, required: true},
     contact:{type: String},
     message:{type: String},
+    website:{type: String},
     timestamp: { type: Date, default: Date.now}
 });
 mongoose.models = {};
