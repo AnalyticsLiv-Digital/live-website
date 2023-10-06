@@ -622,39 +622,27 @@ export default function dv360({brandsdata}) {
        
         <div className="relative flex items-center my-2 w-full justify-center space-x-4 text-center">
           <img src="https://storage.googleapis.com/website-bucket-uploads/static/Character_1.png" className=""/>
-          <h1 className="font-bold text-3xl">Una</h1>
+          <h1 className="font-bold text-3xl">Kal Cooper</h1>
         </div>
-        <p className=" mx-auto">"AnalyticsLiv helped us set up and manage our GA4 account, and we're so glad 
-          we did. They were patient and knowledgeable, and they always made sure we 
-          understood what they were doing. We're now able to track our website traffic and 
-          marketing campaigns more effectively, and we're confident that we're making better 
-          business decisions as a result."</p>
+        <p className=" mx-auto">"We used DV360 account for generating Installs and getting qualified players onto our betting ads platform and we are very happy that we chose AnalyticsLiv team to drive these campaigns, as they worked very responsibly and analytically. Kept us informed about the progress and collaborated on multiple occassions to keep us involved and informed"</p>
           </div>
 
           <div>
         
         <div className="relative flex items-center my-4 w-full justify-center space-x-4 text-center">
-          <img src="https://storage.googleapis.com/website-bucket-uploads/static/Character_1.png" className=""/>
-          <h1 className="font-bold text-3xl">Ebenezer Ferreira</h1>
+          <img src="https://storage.googleapis.com/website-bucket-uploads/static/Character_2.png" className=""/>
+          <h1 className="font-bold text-3xl">Suzie</h1>
         </div>
-        <p className=" mx-auto">"AnalyticsLiv has been FUTEK web analytics partner for almost 3 years now. They supported us with GTM implementation, GA to GA4 migration, Looker studio dashboard creations and Google cloud storage implementation. They respond to our request in a timely manner and make their best efforts to resolve the web analytics issues. We are happy with the support provided by AnalyticsLiv"</p>
+        <p className=" mx-auto">"The most I enjoyed working with a strategy team after a long time. These guys are clear with their goals and measurement, highly knowledgeable about the platform and its abilities. Its a delight to have found a data oriented partner to run our campaigns in DV360."</p>
           </div>
 
           <div>
         
         <div className="relative flex items-center my-4 w-full justify-center space-x-4 text-center">
-          <img src="https://storage.googleapis.com/website-bucket-uploads/static/Character_1.png" className=""/>
-          <h1 className="font-bold text-3xl">Bobby Bruno</h1>
+          <img src="https://storage.googleapis.com/website-bucket-uploads/static/Character_2.png" className=""/>
+          <h1 className="font-bold text-3xl">Nikola McCarthy</h1>
         </div>
-        <p className=" mx-auto">"AnalyticsLiv team was an excellent asset to our businesses' switch from Universal Analytics to GA4. They had excellent communication throughout the project, giving me feedback, updates and ideas as the project went on. I would be happy to recommend the AnalyticsLiv team for analytics and tag manager work, and look forward to working with them in the future. Thank you!"</p>
-          </div>
-
-         <div>
-          <div className="relative flex items-center my-4 w-full justify-center space-x-4 text-center">
-          <img src="https://storage.googleapis.com/website-bucket-uploads/static/Character_1.png" className=""/>
-          <h1 className="font-bold text-3xl">Charles Lundy</h1>
-        </div>
-        <p className=" mx-auto">"The AnalyticsLiv team estimated the job length accurately and then carried out the work exactly as briefed, to time and budget. We had one brief hiccup in the conversion tracking code but that was swiftly fixed once identified. Would definitely consider using it again and for more advanced reporting functionality in future"</p>
+        <p className=" mx-auto">"Highly recommended for anything related to campaign management, planning, reporting and execution. Response has been timely and excellent skills in telling data stories with visualization."</p>
           </div>
 
 
