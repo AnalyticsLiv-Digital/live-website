@@ -387,7 +387,7 @@ export default function dv360({brandsdata}) {
                         
                       </div>
                       <div>
-                        <input type="text" placeholder="WEBSITE" className="bg-transparent px-4 border-b-2 w-full py-2 focus:outline-none focus:border-2 focus:border-sky-200" id="website" name="website" value={formValues.website} onChange={handleChange}/>
+                        <input type="text" placeholder="WEBSITE*" className="bg-transparent px-4 border-b-2 w-full py-2 focus:outline-none focus:border-2 focus:border-sky-200" id="website" name="website" value={formValues.website} onChange={handleChange}/>
                         <span className="text-xs text-red-600 float-left">{formErrors.website}</span>
                       </div>
                       <div>
