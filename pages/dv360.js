@@ -108,6 +108,10 @@ export default function dv360({brandsdata}) {
             errors.message = "Message is required!";
         }
 
+        if (!values.website) {
+            errors.website = "Website is required!";
+        }
+
    
 
 
@@ -386,7 +390,7 @@ export default function dv360({brandsdata}) {
                       </div>
                       <div>
                         <input type="text" placeholder="WEBSITE" className="bg-transparent px-4 border-b-2 w-full py-2 focus:outline-none focus:border-2 focus:border-sky-200" id="website" name="website" value={formValues.website} onChange={handleChange}/>
-                       
+                        <span className="text-xs text-red-600 float-left">{formErrors.website}</span>
                       </div>
                       <div>
                         <textarea type="" placeholder="TYPE MESSAGE*" className="bg-transparent border-b-2 w-full px-4 py-2 focus:outline-none focus:border-2 focus:border-sky-200"  id="message" name="message" value={formValues.message} onChange={handleChange}></textarea>
