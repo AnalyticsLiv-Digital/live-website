@@ -417,7 +417,7 @@ export default function dv360({brandsdata}) {
   <section>
  
      <div className="bg-white py-4">
-      <h1 className="text-center font-bold text-xl">200+ Clients served for GA4</h1>
+      <h1 className="text-center font-bold text-xl">Thanks For Choosing AnalytiscLiv</h1>
        <div className="brandsimages flex space-x-8 justify-center py-4 px-4 mt-4">
        <Marquee gradient={false} pauseOnHover="true">
             
