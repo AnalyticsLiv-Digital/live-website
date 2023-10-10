@@ -9,6 +9,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Link from 'next/link';
 import { Transition } from "@headlessui/react";
+import ScrollProgress from '../components/ScrollProgress'
 import Iframe from 'react-iframe'
 
 const { Element: ScrollElement } = Scroll;
@@ -327,6 +328,7 @@ export default function dv360({brandsdata}) {
             </div>
           )}
         </Transition>
+        <ScrollProgress color="red" showSpinner={false}/>
   </header>
 
     
@@ -347,16 +349,16 @@ export default function dv360({brandsdata}) {
             <div className="space-y-4 md:w-3/4">
                 <h1 className="py-4 text-xl font-semibold text-sky-600">Is your Brand ready to </h1>
                 <ul>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="lightblue" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
+                    <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png'/>
                         Enhance its Reach by 10x
                     </li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="lightblue" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
+                    <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png'/>
                         Buy Placements on Premium Websites and Apps
                     </li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="lightblue" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
+                    <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png'/>
                         Turn Engagements into Experiences
                     </li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="lightblue" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
+                    <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png'/>
                         Get 10x traffic in just few Hours
                     </li>
                 </ul>
@@ -440,34 +442,34 @@ export default function dv360({brandsdata}) {
       <div className="text-left">
         <h1 className="text-4xl text-left font-bold md:mb-16">Menu of Services</h1>
         <ul className="my-6 mx-2 text-left text-sm font-semibold space-y-4 mb-8">
-          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="MediumSeaGreen" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
+          <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png'/>
             Media Planning & Buying
             <div className="pl-9 font-normal text-emerald-800">
                 Plan your media strategy & proactively buy Premium Placements,
                 Run Connected TV Ads, Digital Out of home advertising
             </div>
           </li>
-          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="MediumSeaGreen" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
+          <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png'/>
             Trafficking
             <div className="pl-9 font-normal text-emerald-800">
                 Creating Campaigns, Uploading Creatives, UTM Tracking 
             </div>
           </li>
-          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="MediumSeaGreen" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
+          <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png'/>
             Reporting
             <div className="pl-9 font-normal text-emerald-800">
                 Create Auto generated reports in DV360  to  draw real time 
                 performance comparison
             </div> 
           </li>
-          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="MediumSeaGreen" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
+          <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png'/>
             Training:
             <div className="pl-9 font-normal text-emerald-800">
                 Make your team members an Expert in DV360  Platform with 
                 Training from Our Experts
             </div>
           </li>
-          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="MediumSeaGreen" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
+          <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png'/>
             Creatives : Rich Media, Data-Driven, Animated
             <div className="pl-9 font-normal text-emerald-800">
                 Enhance the Experience of Users
@@ -490,16 +492,16 @@ export default function dv360({brandsdata}) {
       <div>
         <h1 className="text-4xl text-left font-bold md:mb-16">Get Global Reach</h1>
         <ul className="my-6 mx-2 text-left text-sm font-semibold space-y-4 mb-8">
-          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="MediumSeaGreen" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
+          <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png'/>
             100+ Exchanges and Sub Exchanges
           </li>
-          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="MediumSeaGreen" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
+          <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png'/>
             Buy Display, Video, Audio, Native, Connected TV Ads
           </li>
-          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="MediumSeaGreen" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
+          <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png'/>
             3rd Party Audience Avalilability
           </li>
-          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="MediumSeaGreen" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
+          <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png'/>
             Consolidated Frequency Management
           </li>
       </ul>
@@ -512,16 +514,16 @@ export default function dv360({brandsdata}) {
       <div className="text-left">
         <h1 className="text-4xl text-left font-bold md:mb-16">Buy Premium Placements</h1>
         <ul className="my-6 mx-2 text-left text-sm font-semibold space-y-4 mb-8">
-          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="MediumSeaGreen" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
+          <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png'/>
             Consolidated Media Buying Management
           </li>
-          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="MediumSeaGreen" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
+          <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png'/>
             Buy Display, Video, Audio, Native, Connected TV Ads
           </li>
-          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="MediumSeaGreen" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
+          <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png'/>
             Re-targeting & Re-marketing possibility
           </li>
-          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="MediumSeaGreen" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
+          <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png'/>
             Buy from popular OTTs, Publishers at fixed price
           </li>
       </ul>
@@ -541,7 +543,7 @@ export default function dv360({brandsdata}) {
       <div>
         <h1 className="text-4xl text-left font-bold md:mb-16">Granular Targeting</h1>
         <ul className="my-6 mx-2 text-left text-sm font-semibold space-y-4 mb-8">
-          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="MediumSeaGreen" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
+          <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png'/>
             First Party Audiences Available from
              <ul style={{"list-style":"square inside"}} className="pl-8">
                 <li>Floodlight,</li>
@@ -549,13 +551,13 @@ export default function dv360({brandsdata}) {
                 <li>Google Analytics 4</li>
             </ul>      
           </li>
-          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="MediumSeaGreen" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
+          <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png'/>
             Google Audiences - In-Market, Affinity
           </li>
-          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="MediumSeaGreen" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
+          <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png'/>
             Custom Lists - Intent Based & Affinity based
           </li>
-          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="MediumSeaGreen" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
+          <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png'/>
             3rd Party Audiences
           </li>
       </ul>
@@ -572,7 +574,7 @@ export default function dv360({brandsdata}) {
       <h1 className="text-4xl text-left font-bold md:mb-16">Case Studies</h1>
       <div className="md:flex text-left justify-evenly items-center bg-white md:px-20 px-2 md:py-8 py-4 md:rounded-full rounded-xl shadow-md shadow-gray-600">
       <div className="md:w-3/4">
-        <h1 className="text-2xl font-bold mb-4"><svg xmlns="http://www.w3.org/2000/svg" className="inline mr-4" width="24" height="24" viewBox="0 0 24 24"><path fill="DarkSlateGray" fillRule="evenodd" d="M17.9 4.2A3 3 0 0 0 15.5 3h-11a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h11a3 3 0 0 0 2.4-1.2l4.5-6a3 3 0 0 0 0-3.6l-4.5-6Z" clipRule="evenodd"/></svg>
+        <h1 className="text-2xl font-bold mb-4"><svg xmlns="http://www.w3.org/2000/svg" className='inline mr-4 rotate-90' height="1em" viewBox="0 0 448 512"><path d="M160 64c0-8.8 7.2-16 16-16s16 7.2 16 16V200c0 10.3 6.6 19.5 16.4 22.8s20.6-.1 26.8-8.3c3-3.9 7.6-6.4 12.8-6.4c8.8 0 16 7.2 16 16c0 10.3 6.6 19.5 16.4 22.8s20.6-.1 26.8-8.3c3-3.9 7.6-6.4 12.8-6.4c7.8 0 14.3 5.6 15.7 13c1.6 8.2 7.3 15.1 15.1 18s16.7 1.6 23.3-3.6c2.7-2.1 6.1-3.4 9.9-3.4c8.8 0 16 7.2 16 16l0 16V392c0 39.8-32.2 72-72 72H272 212.3h-.9c-37.4 0-72.4-18.7-93.2-49.9L50.7 312.9c-4.9-7.4-2.9-17.3 4.4-22.2s17.3-2.9 22.2 4.4L116 353.2c5.9 8.8 16.8 12.7 26.9 9.7s17-12.4 17-23V320 64zM176 0c-35.3 0-64 28.7-64 64V261.7C91.2 238 55.5 232.8 28.5 250.7C-.9 270.4-8.9 310.1 10.8 339.5L78.3 440.8c29.7 44.5 79.6 71.2 133.1 71.2h.9H272h56c66.3 0 120-53.7 120-120V288l0-16c0-35.3-28.7-64-64-64c-4.5 0-8.8 .5-13 1.3c-11.7-15.4-30.2-25.3-51-25.3c-6.9 0-13.5 1.1-19.7 3.1C288.7 170.7 269.6 160 248 160c-2.7 0-5.4 .2-8 .5V64c0-35.3-28.7-64-64-64zm48 304c0-8.8-7.2-16-16-16s-16 7.2-16 16v96c0 8.8 7.2 16 16 16s16-7.2 16-16V304zm48-16c-8.8 0-16 7.2-16 16v96c0 8.8 7.2 16 16 16s16-7.2 16-16V304c0-8.8-7.2-16-16-16zm80 16c0-8.8-7.2-16-16-16s-16 7.2-16 16v96c0 8.8 7.2 16 16 16s16-7.2 16-16V304z"/></svg>
             Programmatic Ads bringing 19% improvement 
             in cost of acquiring a new customer
         </h1>
@@ -588,7 +590,7 @@ export default function dv360({brandsdata}) {
 
       <div className="md:flex text-left justify-evenly items-center bg-white px-2 md:px-20 py-4 md:py-8 md:rounded-full rounded-xl shadow-md shadow-gray-600">
         <div className="md:w-3/4">
-          <h1 className="text-2xl font-bold mb-4"><svg xmlns="http://www.w3.org/2000/svg" className="inline mr-4" width="24" height="24" viewBox="0 0 24 24"><path fill="DarkSlateGray" fillRule="evenodd" d="M17.9 4.2A3 3 0 0 0 15.5 3h-11a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h11a3 3 0 0 0 2.4-1.2l4.5-6a3 3 0 0 0 0-3.6l-4.5-6Z" clipRule="evenodd"/></svg>
+          <h1 className="text-2xl font-bold mb-4"><svg xmlns="http://www.w3.org/2000/svg" className='inline mr-4 rotate-90' height="1em" viewBox="0 0 448 512"><path d="M160 64c0-8.8 7.2-16 16-16s16 7.2 16 16V200c0 10.3 6.6 19.5 16.4 22.8s20.6-.1 26.8-8.3c3-3.9 7.6-6.4 12.8-6.4c8.8 0 16 7.2 16 16c0 10.3 6.6 19.5 16.4 22.8s20.6-.1 26.8-8.3c3-3.9 7.6-6.4 12.8-6.4c7.8 0 14.3 5.6 15.7 13c1.6 8.2 7.3 15.1 15.1 18s16.7 1.6 23.3-3.6c2.7-2.1 6.1-3.4 9.9-3.4c8.8 0 16 7.2 16 16l0 16V392c0 39.8-32.2 72-72 72H272 212.3h-.9c-37.4 0-72.4-18.7-93.2-49.9L50.7 312.9c-4.9-7.4-2.9-17.3 4.4-22.2s17.3-2.9 22.2 4.4L116 353.2c5.9 8.8 16.8 12.7 26.9 9.7s17-12.4 17-23V320 64zM176 0c-35.3 0-64 28.7-64 64V261.7C91.2 238 55.5 232.8 28.5 250.7C-.9 270.4-8.9 310.1 10.8 339.5L78.3 440.8c29.7 44.5 79.6 71.2 133.1 71.2h.9H272h56c66.3 0 120-53.7 120-120V288l0-16c0-35.3-28.7-64-64-64c-4.5 0-8.8 .5-13 1.3c-11.7-15.4-30.2-25.3-51-25.3c-6.9 0-13.5 1.1-19.7 3.1C288.7 170.7 269.6 160 248 160c-2.7 0-5.4 .2-8 .5V64c0-35.3-28.7-64-64-64zm48 304c0-8.8-7.2-16-16-16s-16 7.2-16 16v96c0 8.8 7.2 16 16 16s16-7.2 16-16V304zm48-16c-8.8 0-16 7.2-16 16v96c0 8.8 7.2 16 16 16s16-7.2 16-16V304c0-8.8-7.2-16-16-16zm80 16c0-8.8-7.2-16-16-16s-16 7.2-16 16v96c0 8.8 7.2 16 16 16s16-7.2 16-16V304z"/></svg>
             Programmatic Ads Buying resulting in 40% improvement in CPA
         </h1>
         <ul  style={{"list-style":"square inside"}} className="pl-8 text-emerald-800">
@@ -609,7 +611,7 @@ export default function dv360({brandsdata}) {
         id="testimonial"
         name="testimonial"
       ></ScrollElement>
-    <div className="relative h-full" style={{backgroundImage: 'url(https://storage.googleapis.com/website-bucket-uploads/static/Working_woman.png)', backgroundRepeat:'no-repeat'}} >
+    <div className="relative h-full" style={{backgroundImage: 'url(https://storage.googleapis.com/website-bucket-uploads/static/Working_woman.png)', backgroundRepeat:'repeat'}} >
       <h1 className="font-bold text-4xl py-8 md:py-12 text-center">Let's See What Our Clients Have To Say</h1>
       <div className="relative z-10 md:w-1/3 mx-4 md:mx-auto mt-4 bg-sky-100/90  px-8 pt-4 pb-0">
       <div className="relative w-20 rounded-full bg-white p-4 -top-12 mx-28 md:mx-auto shadow-md shadow-gray-400">
@@ -656,9 +658,9 @@ export default function dv360({brandsdata}) {
                 
   </section> 
 
-<div className='sticky bottom-0 z-20 shadow-sm border-t-2 border-emerald-200 flex justify-center space-x-20 items-center px-16 bg-emerald-100 py-2 text-center'>
-    <h2>Optimize your campaigns with DV360</h2>
-    <button onClick={scrolling}  className="cta px-5 py-2 bg-sky-500 rounded-2xl mx-2 text-sm font-semibold cursor-pointer hover:bg-sky-500">CONTACT US</button>
+<div className='sticky bottom-0 text-sm md:text-regular z-20 shadow-sm border-t-2 border-emerald-200 md:flex md:justify-center justify-between md:space-x-20 items-center md:px-16 px-2 bg-emerald-100 py-2 text-center'>
+    <h2 className="mb-2 text-left">Optimize your campaigns with DV360</h2>
+    <button onClick={scrolling}  className="cta md:px-5 px-4 py-2 bg-sky-500 rounded-2xl md:mx-2 text-sm font-semibold cursor-pointer hover:bg-sky-500">CONTACT US</button>
   </div>
 
  

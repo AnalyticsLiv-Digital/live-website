@@ -8,6 +8,7 @@ import StructuredData from '../components/StructuredData';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Link from 'next/link';
+import ScrollProgress from '../components/ScrollProgress'
 import { Transition } from "@headlessui/react";
 import Iframe from 'react-iframe'
 
@@ -338,6 +339,7 @@ export default function ga4({brandsdata}) {
             </div>
           )}
         </Transition>
+        <ScrollProgress color="red" showSpinner={false}/>
   </header>
 
     <section>
@@ -352,14 +354,14 @@ export default function ga4({brandsdata}) {
       <div className="pt-12 md:w-3/4 z-10">
         <h1 className="text-2xl font-bold">Is your GA4 ready to </h1>
         <ul style={{color: '#E37400'}} className="mt-6 mx-2 font-semibold">
-          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="lightblue" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
+          <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_6.png'/>
             Explore new features of analytics</li>
-          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="lightblue" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
+          <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_6.png'/>
             Better understand website traffic</li>
-          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="lightblue" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
+          <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_6.png'/>
             Spend Marketing Budgets more wisely</li>
         </ul>
-        <img className="" src="https://storage.googleapis.com/website-bucket-uploads/static/IMG_GROUP.png"/>
+        <img className="" src="https://storage.googleapis.com/website-bucket-uploads/static/IMG_New.png"/>
       </div>
       <div className="text-center bg-sky-50 p-4 md:p-8 md:w-3/5 rounded-xl shadow-xl">
        
@@ -389,7 +391,7 @@ export default function ga4({brandsdata}) {
             <span className="text-xs text-red-600 float-left">{formErrors.message}</span>
           </div>
           <div>
-            <button className="cta bg-amber-600 hover:bg-amber-500 font-semibold text-white px-8 py-2 rounded-xl shadow-md shadow-gray-400 hover:shadow-gray-600 transition-transform delay-100">CONTACT US </button>
+            <button className="cta bg-amber-500 hover:bg-amber-600 font-semibold text-white px-8 py-2 rounded-xl shadow-md shadow-gray-400 hover:shadow-gray-600 transition-transform delay-100">CONTACT US </button>
             
           </div>
         </form>
@@ -431,22 +433,22 @@ export default function ga4({brandsdata}) {
       ></ScrollElement>
     <div className="bg-sky-300 relative md:flex md:justify-around md:mt-4 px-4 md:px-20 pt-8 pb-16">
       <div className="text-center mb-8 md:mb-0">
-        <h1 className="text-4xl font-bold md:mb-16">Our experts can help you</h1>
+        <h1 className="text-4xl font-bold md:mb-16">Our expert can help you</h1>
         <ul className="my-6 mx-2 text-sm text-left font-semibold space-y-4 mb-8">
-          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="DarkSlateGray" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
+          <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_6.png'/>
             Set up your GA4 account and configure the tracking code</li>
-          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="DarkSlateGray" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
+          <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_6.png'/>
             Import your historical data from Universal Analytics</li>
-          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="DarkSlateGray" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
+          <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_6.png'/>
             Create custom reports and dashboards</li>
-          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="DarkSlateGray" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
+          <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_6.png'/>
             Track your website traffic and marketing campaigns</li>
-          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="DarkSlateGray" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
+          <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_6.png'/>
             Analyse your data and identify trends</li>
-          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="DarkSlateGray" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
+          <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_6.png'/>
             Make data-driven decisions that will help you grow your business</li>
       </ul>
-      <button onClick={scrolling} className="cta schedule-button bg-white hover:bg-amber-200 transition-all delay-100 p-4 rounded-xl shadow-md shadow-gray-400 hover:shadow-gray-600 text-slate-800 font-semibold">Schedule Free Consultation</button>
+      <button onClick={scrolling} className="cta schedule-button bg-amber-500 hover:bg-amber-600 transition-all delay-100 p-4 rounded-xl shadow-md shadow-gray-400 hover:shadow-gray-600 text-white font-semibold">Schedule Free Consultation</button>
       </div>
       <div className="text-center">
         <img src="https://storage.googleapis.com/website-bucket-uploads/static/graph.png" />
@@ -466,29 +468,29 @@ export default function ga4({brandsdata}) {
       <div className='text-center'>
         <h1 className=" text-4xl text-left font-bold md:mb-16">Menu of Services</h1>
         <ul className="my-6 mx-2 text-left text-sm font-semibold space-y-4 mb-8">
-          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="DarkSlateGray" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
+          <li><svg xmlns="http://www.w3.org/2000/svg" className="inline mr-4" height="1em" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"/></svg>
             GA4 Audit :
             <div className="pl-9 text-amber-500">Know about your current GA4 configuration and its gaps</div>
           </li>
-          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="DarkSlateGray" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
+          <li><svg xmlns="http://www.w3.org/2000/svg" className="inline mr-4" height="1em" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"/></svg>
             Full Service Management :
             <div className="pl-9 text-amber-500">Configuration, management, and analysis of your GA4 account </div>
           </li>
-          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="DarkSlateGray" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
+          <li><svg xmlns="http://www.w3.org/2000/svg" className="inline mr-4" height="1em" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"/></svg>
             Consulting :
             <div className="pl-9 text-amber-500">Get guidance and support on how GA4 can help improve your business. </div> 
           </li>
-          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="DarkSlateGray" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
+          <li><svg xmlns="http://www.w3.org/2000/svg" className="inline mr-4" height="1em" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"/></svg>
             Training :
             <div className="pl-9 text-amber-500">Get trained by Analytics veterans on how to use GA4 & manage
               your account yourself. </div>
           </li>
-          <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="inline mr-2" viewBox="0 0 24 24"><path fill="DarkSlateGray" fillRule="evenodd" d="M5.5 5.938a1 1 0 0 0-1.5.866v10.392a1 1 0 0 0 1.5.866L8 16.62V7.38L5.5 5.938Zm2.898-.636L6.5 4.206l-.5.866l.5-.866C4.5 3.05 2 4.494 2 6.804v10.392c0 2.31 2.5 3.753 4.5 2.598l1.898-1.096c.785 1.355 2.587 1.971 4.102 1.096l9-5.196c2-1.155 2-4.041 0-5.196l-9-5.196c-1.515-.875-3.317-.259-4.102 1.096Z" clipRule="evenodd"/></svg>
+          <li><svg xmlns="http://www.w3.org/2000/svg" className="inline mr-4" height="1em" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"/></svg>
           GA4 Insights and Analysis :
             <div className="pl-9 text-amber-500">Visualize GA4 Data & Generate insights to take actions. </div>
           </li>
       </ul>
-      <button onClick={scrolling} className="cta schedule-button bg-sky-300 hover:bg-sky-400 hover:text-white p-4 rounded-xl shadow-md shadow-gray-400 hover:shadow-gray-600 text-slate-700 transition-all delay-100 font-semibold">Schedule Free Consultation</button>
+      <button onClick={scrolling} className="cta schedule-button bg-sky-400 hover:bg-sky-500 text-white p-4 rounded-xl shadow-md shadow-gray-400 hover:shadow-gray-600 transition-all delay-100 font-semibold">Schedule Free Consultation</button>
       
       </div>
     </div>
@@ -503,7 +505,7 @@ export default function ga4({brandsdata}) {
       <h1 className="text-4xl text-left font-bold md:mb-16">Case Studies</h1>
       <div className="cstudy md:flex text-left justify-evenly bg-white md:px-20 px-2 md:py-8 py-4 md:rounded-full rounded-xl shadow-md shadow-gray-600">
       <div className="md:w-3/4">
-        <h1 className="text-2xl font-bold mb-4"><svg xmlns="http://www.w3.org/2000/svg" className="inline mr-4" width="24" height="24" viewBox="0 0 24 24"><path fill="DarkSlateGray" fillRule="evenodd" d="M17.9 4.2A3 3 0 0 0 15.5 3h-11a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h11a3 3 0 0 0 2.4-1.2l4.5-6a3 3 0 0 0 0-3.6l-4.5-6Z" clipRule="evenodd"/></svg>
+        <h1 className="text-2xl font-bold mb-4"><svg xmlns="http://www.w3.org/2000/svg" className='inline mr-4 rotate-90' height="1em" viewBox="0 0 448 512"><path d="M160 64c0-8.8 7.2-16 16-16s16 7.2 16 16V200c0 10.3 6.6 19.5 16.4 22.8s20.6-.1 26.8-8.3c3-3.9 7.6-6.4 12.8-6.4c8.8 0 16 7.2 16 16c0 10.3 6.6 19.5 16.4 22.8s20.6-.1 26.8-8.3c3-3.9 7.6-6.4 12.8-6.4c7.8 0 14.3 5.6 15.7 13c1.6 8.2 7.3 15.1 15.1 18s16.7 1.6 23.3-3.6c2.7-2.1 6.1-3.4 9.9-3.4c8.8 0 16 7.2 16 16l0 16V392c0 39.8-32.2 72-72 72H272 212.3h-.9c-37.4 0-72.4-18.7-93.2-49.9L50.7 312.9c-4.9-7.4-2.9-17.3 4.4-22.2s17.3-2.9 22.2 4.4L116 353.2c5.9 8.8 16.8 12.7 26.9 9.7s17-12.4 17-23V320 64zM176 0c-35.3 0-64 28.7-64 64V261.7C91.2 238 55.5 232.8 28.5 250.7C-.9 270.4-8.9 310.1 10.8 339.5L78.3 440.8c29.7 44.5 79.6 71.2 133.1 71.2h.9H272h56c66.3 0 120-53.7 120-120V288l0-16c0-35.3-28.7-64-64-64c-4.5 0-8.8 .5-13 1.3c-11.7-15.4-30.2-25.3-51-25.3c-6.9 0-13.5 1.1-19.7 3.1C288.7 170.7 269.6 160 248 160c-2.7 0-5.4 .2-8 .5V64c0-35.3-28.7-64-64-64zm48 304c0-8.8-7.2-16-16-16s-16 7.2-16 16v96c0 8.8 7.2 16 16 16s16-7.2 16-16V304zm48-16c-8.8 0-16 7.2-16 16v96c0 8.8 7.2 16 16 16s16-7.2 16-16V304c0-8.8-7.2-16-16-16zm80 16c0-8.8-7.2-16-16-16s-16 7.2-16 16v96c0 8.8 7.2 16 16 16s16-7.2 16-16V304z"/></svg>
           Universal Analytics (GA3) to GA4 Migration for a Website</h1>
         <p className="text-amber-600">The migration process was smooth and successful without any data loss,
           increasing efficiency and reducing manual effort by 30%. The client now has a more comprehensive understanding of user behaviour across devices and sessions, enabling them to make more informed decisions and improve website performance.
@@ -513,14 +515,14 @@ export default function ga4({brandsdata}) {
         <img src="https://storage.googleapis.com/website-bucket-uploads/static/UA_Logo.png" className="inline" />
         <img src="https://storage.googleapis.com/website-bucket-uploads/static/curved_arrow.png" className="inline" />
         <img src="https://storage.googleapis.com/website-bucket-uploads/static/Ga4_logo_png 1.png" className="inline" />
-        <a onClick={scrolling} href="#"><button className="cta bg-amber-500 px-16 py-2 text-white font-semibold rounded-full shadow-lg shadow-gray-400 mt-8">View</button></a>
+        <a onClick={scrolling} href="#"><button className="cta bg-amber-500 hover:bg-amber-600 transition-all delay-100 px-16 py-2 text-white font-semibold rounded-full shadow-lg shadow-gray-400 mt-8">View</button></a>
       </div>
       
       </div>
 
       <div className="cstudy md:flex text-left justify-evenly bg-white px-2 md:px-20 py-4 md:py-8 md:rounded-full rounded-xl shadow-md shadow-gray-600">
         <div className="md:w-3/4">
-          <h1 className="text-2xl font-bold mb-4"><svg xmlns="http://www.w3.org/2000/svg" className="inline mr-4" width="24" height="24" viewBox="0 0 24 24"><path fill="DarkSlateGray" fillRule="evenodd" d="M17.9 4.2A3 3 0 0 0 15.5 3h-11a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h11a3 3 0 0 0 2.4-1.2l4.5-6a3 3 0 0 0 0-3.6l-4.5-6Z" clipRule="evenodd"/></svg>
+          <h1 className="text-2xl font-bold mb-4"><svg xmlns="http://www.w3.org/2000/svg" className='inline mr-4 rotate-90' height="1em" viewBox="0 0 448 512"><path d="M160 64c0-8.8 7.2-16 16-16s16 7.2 16 16V200c0 10.3 6.6 19.5 16.4 22.8s20.6-.1 26.8-8.3c3-3.9 7.6-6.4 12.8-6.4c8.8 0 16 7.2 16 16c0 10.3 6.6 19.5 16.4 22.8s20.6-.1 26.8-8.3c3-3.9 7.6-6.4 12.8-6.4c7.8 0 14.3 5.6 15.7 13c1.6 8.2 7.3 15.1 15.1 18s16.7 1.6 23.3-3.6c2.7-2.1 6.1-3.4 9.9-3.4c8.8 0 16 7.2 16 16l0 16V392c0 39.8-32.2 72-72 72H272 212.3h-.9c-37.4 0-72.4-18.7-93.2-49.9L50.7 312.9c-4.9-7.4-2.9-17.3 4.4-22.2s17.3-2.9 22.2 4.4L116 353.2c5.9 8.8 16.8 12.7 26.9 9.7s17-12.4 17-23V320 64zM176 0c-35.3 0-64 28.7-64 64V261.7C91.2 238 55.5 232.8 28.5 250.7C-.9 270.4-8.9 310.1 10.8 339.5L78.3 440.8c29.7 44.5 79.6 71.2 133.1 71.2h.9H272h56c66.3 0 120-53.7 120-120V288l0-16c0-35.3-28.7-64-64-64c-4.5 0-8.8 .5-13 1.3c-11.7-15.4-30.2-25.3-51-25.3c-6.9 0-13.5 1.1-19.7 3.1C288.7 170.7 269.6 160 248 160c-2.7 0-5.4 .2-8 .5V64c0-35.3-28.7-64-64-64zm48 304c0-8.8-7.2-16-16-16s-16 7.2-16 16v96c0 8.8 7.2 16 16 16s16-7.2 16-16V304zm48-16c-8.8 0-16 7.2-16 16v96c0 8.8 7.2 16 16 16s16-7.2 16-16V304c0-8.8-7.2-16-16-16zm80 16c0-8.8-7.2-16-16-16s-16 7.2-16 16v96c0 8.8 7.2 16 16 16s16-7.2 16-16V304z"/></svg>
             GA4 Enhanced Ecommerce Implementation
             Using GTM and Shopify Integration</h1>
           <p className="text-sky-600">We successfully implemented 90% of purchase events, with the exception of UA, which is at 70% and all GA4 enhanced ecommerce events and Shopify parameters are being successfully sent to GA4.
@@ -530,7 +532,7 @@ export default function ga4({brandsdata}) {
           <img src="https://storage.googleapis.com/website-bucket-uploads/static/GTM_logo.png" className="inline" />
           <img src="https://storage.googleapis.com/website-bucket-uploads/static/AI.png" className="inline" />
           <img src="https://storage.googleapis.com/website-bucket-uploads/static/Shopify_logo.png" className="inline" />
-          <a onClick={scrolling} href="#"><button className="cta bg-sky-500 px-16 py-2 text-white font-semibold rounded-full shadow-lg shadow-gray-400 mt-8">View</button></a>
+          <a onClick={scrolling} href="#"><button className="cta bg-sky-400 hover:bg-sky-500 transition-all delay-100 px-16 py-2 text-white font-semibold rounded-full shadow-lg shadow-gray-400 mt-8">View</button></a>
         </div>        
         </div>
         <a href="https://analyticsliv.com/case-studies"><button className="hidden more-casestudy my-8 bg-amber-600 hover:bg-amber-500 text-white font-semibold px-8 py-3 shadow-md shadow-gray-400 hover:shadow-gray-600 transition-all delay-100 rounded-full">More Case Studies</button></a>
@@ -655,8 +657,8 @@ export default function ga4({brandsdata}) {
 
           </Carousel>
   </section>
-  <div className='flex justify-center space-x-20 items-center px-16 bg-sky-300 py-2 text-center'>
-    <h2>Customize Your Data Visualization with GA4</h2>
+  <div className='md:flex justify-center md:space-x-20 items-center px-2 md:px-16 bg-sky-300 py-2 text-center'>
+    <h2 className='text-left mb-2'>Customize Your Data Visualization with GA4</h2>
     <button onClick={scrolling}  className="cta px-5 py-2 bg-sky-400 rounded-2xl mx-2 text-sm font-semibold cursor-pointer hover:bg-sky-500">CONTACT US</button>
   </div>
 
