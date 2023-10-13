@@ -10,7 +10,7 @@ import "react-multi-carousel/lib/styles.css";
 import Link from 'next/link';
 import { Transition } from "@headlessui/react";
 import ScrollProgress from '../components/ScrollProgress'
-import Iframe from 'react-iframe'
+
 
 const { Element: ScrollElement } = Scroll;
 
@@ -235,7 +235,7 @@ export default function dv360({brandsdata}) {
 
 
     <div className="relative  flex lg:hidden p-2">
-  <Link href="/"><img onClick={() => setIsOpen(false)} src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="relative h-10 md:mx-4 cursor-pointer"/></Link>
+  <Link href="#"><img onClick={() => setIsOpen(false)} src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="relative h-10 md:mx-4 cursor-pointer"/></Link>
   <a className="ml-4" href="tel:7979634379">
           <button className="cta px-5 py-2 bg-sky-300 rounded-2xl mx-2 text-sm font-semibold cursor-pointer hover:bg-sky-400">CALL US</button>
           </a>
@@ -659,7 +659,7 @@ export default function dv360({brandsdata}) {
   </section> 
 
 <div className='sticky bottom-0 text-sm md:text-regular z-20 shadow-sm border-t-2 border-emerald-200 md:flex md:justify-center justify-between md:space-x-20 items-center md:px-16 px-2 bg-emerald-100 py-2 text-center'>
-    <h2 className="mb-2 text-left">Optimize your campaigns with DV360</h2>
+    <h2 className="mb-2 text-left font-bold">Optimize your campaigns with DV360</h2>
     <button onClick={scrolling}  className="cta md:px-5 px-4 py-2 bg-sky-500 rounded-2xl md:mx-2 text-sm font-semibold cursor-pointer hover:bg-sky-500">CONTACT US</button>
   </div>
 

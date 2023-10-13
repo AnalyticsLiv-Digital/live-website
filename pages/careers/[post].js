@@ -210,13 +210,14 @@ const post = ({jobData}) => {
     };
 
 
-
+var meta_desc = "Join as " +jobData.job[0].title+ " in Analyticliv, a diverse analytics and marketing agency committed to data-driven growth using first-party data.";
 
 
   return (
     <>
     <Head>
-        <title>AnalyticsLiv - Job</title>
+    <meta name="description" content={meta_desc}/>
+        <title>AnalyticsLiv Job - {jobData && jobData.job[0].title}</title>
     </Head>
         <ScrollProgress/>
         {showWaiting && <div className="fixed flex backdrop-blur top-0 left-0 right-0 z-40 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full"><ScaleLoader

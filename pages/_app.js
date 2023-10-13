@@ -24,7 +24,7 @@ Router.events.on('routeChangeComplete', ()=>{
 })
 const router = useRouter();
   return <>
-  {router.pathname.includes("liv-admin")|| router.pathname=="/ga4"|| router.pathname=="/dv360" ? <Component {...pageProps} /> :<><Head>
+  {router.pathname.includes("liv-admin")|| router.pathname=="/ecommerce"|| router.pathname=="/ga4"|| router.pathname=="/dv360" ? <Component {...pageProps} /> :<><Head>
   <link rel="icon" href="https://storage.googleapis.com/website-bucket-uploads/static/favicon.png" type="image/icon type"></link>
   <link
           href="https://fonts.googleapis.com/css2?family=Poppins"

@@ -61,7 +61,7 @@ const index = ({ blogDat, similarBlogs }) => {
     return (<>
         <Head>
             <meta name="description" content={blogData && blogData.description} />
-            <title>{blogData && blogData.title} - AnalyticsLiv </title>
+            <title>{blogData && blogData.title}</title>
         </Head>
         <ScrollProgress />
 

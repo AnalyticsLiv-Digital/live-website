@@ -110,3 +110,17 @@ input[type=number] {
 .review-slider .react-multi-carousel-list .react-multiple-carousel__arrow{
   display:none;
 }
+
+.commonBtn {
+  /* background-color: #629DF5; */
+  box-shadow: 6px 6px 4px 1px #00000040;
+}
+
+.postResultBg {
+  background: linear-gradient(0deg, #2EE3F9 0%, rgba(46, 227, 249, 0.1) 100%);
+}
+
+.platFormExpert {
+  background: linear-gradient(180deg, #2EE3F9 0%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: 0px 0px 15px 1px #00000040;
+}
