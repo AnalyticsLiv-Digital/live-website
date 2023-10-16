@@ -904,7 +904,7 @@ export default function ecommerce({brandsdata}) {
           <img src="https://storage.googleapis.com/website-bucket-uploads/static/Character_2.png" className=""/>
           <h1 className="font-bold text-3xl">Nikola McCarthy</h1>
         </div>
-        <p className=" mx-auto">""</p>
+        <p className=" mx-auto">"Highly recommended for anything related to campaign management, planning, reporting and execution. Response has been timely and excellent skills in telling data stories with visualization"</p>
           </div>
 
 
