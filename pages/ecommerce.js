@@ -884,40 +884,29 @@ export default function ecommerce({brandsdata}) {
        
         <div className="relative flex items-center my-2 w-full justify-center space-x-4 text-center">
           <img src="https://storage.googleapis.com/website-bucket-uploads/static/Character_1.png" className=""/>
-          <h1 className="font-bold text-3xl">Una</h1>
+          <h1 className="font-bold text-3xl">Amit</h1>
         </div>
-        <p className=" mx-auto">"AnalyticsLiv helped us set up and manage our GA4 account, and we're so glad 
-          we did. They were patient and knowledgeable, and they always made sure we 
-          understood what they were doing. We're now able to track our website traffic and 
-          marketing campaigns more effectively, and we're confident that we're making better 
-          business decisions as a result."</p>
+        <p className=" mx-auto">"We are very happy with the Audit and Approach of AnalyticsLiv team. They have been extremely instrumental in our growth in terms of revenue and number of conversions, while making sure that we are optimized for CPA"</p>
           </div>
 
           <div>
         
         <div className="relative flex items-center my-4 w-full justify-center space-x-4 text-center">
           <img src="https://storage.googleapis.com/website-bucket-uploads/static/Character_1.png" className=""/>
-          <h1 className="font-bold text-3xl">Ebenezer Ferreira</h1>
+          <h1 className="font-bold text-3xl">Nathan</h1>
         </div>
-        <p className=" mx-auto">"AnalyticsLiv has been FUTEK web analytics partner for almost 3 years now. They supported us with GTM implementation, GA to GA4 migration, Looker studio dashboard creations and Google cloud storage implementation. They respond to our request in a timely manner and make their best efforts to resolve the web analytics issues. We are happy with the support provided by AnalyticsLiv"</p>
+        <p className=" mx-auto">"Our App received thousand of Installs and users who are relevant with the 4M strategy of AnalyticsLiv team. They are good and prompt in their response. We are in US timezone but they did not let that be a hurdle in their communication"</p>
           </div>
 
           <div>
         
         <div className="relative flex items-center my-4 w-full justify-center space-x-4 text-center">
-          <img src="https://storage.googleapis.com/website-bucket-uploads/static/Character_1.png" className=""/>
-          <h1 className="font-bold text-3xl">Bobby Bruno</h1>
+          <img src="https://storage.googleapis.com/website-bucket-uploads/static/Character_2.png" className=""/>
+          <h1 className="font-bold text-3xl">Nikola McCarthy</h1>
         </div>
-        <p className=" mx-auto">"AnalyticsLiv team was an excellent asset to our businesses' switch from Universal Analytics to GA4. They had excellent communication throughout the project, giving me feedback, updates and ideas as the project went on. I would be happy to recommend the AnalyticsLiv team for analytics and tag manager work, and look forward to working with them in the future. Thank you!"</p>
+        <p className=" mx-auto">""</p>
           </div>
 
-         <div>
-          <div className="relative flex items-center my-4 w-full justify-center space-x-4 text-center">
-          <img src="https://storage.googleapis.com/website-bucket-uploads/static/Character_1.png" className=""/>
-          <h1 className="font-bold text-3xl">Charles Lundy</h1>
-        </div>
-        <p className=" mx-auto">"The AnalyticsLiv team estimated the job length accurately and then carried out the work exactly as briefed, to time and budget. We had one brief hiccup in the conversion tracking code but that was swiftly fixed once identified. Would definitely consider using it again and for more advanced reporting functionality in future"</p>
-          </div>
 
 
           
