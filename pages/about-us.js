@@ -12,6 +12,7 @@ const aboutus = () => {
     <>
     <Head>
       <title>AnalyticsLiv - About us</title>
+      <meta name="description" content="Google Marketing Platform Partner - Our Journey"/>
     </Head>
     <ScrollProgress/>
     

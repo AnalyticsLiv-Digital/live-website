@@ -1,8 +1,12 @@
 import React from 'react'
 import ScrollProgress from '../components/ScrollProgress'
+import Head from 'next/head'
 
 const privacypolicy = () => {
     return (<>
+    <Head>
+    <meta name="description" content="Google Marketing Platform Partner - Privacy Policy"/>
+    </Head>
     <ScrollProgress/>
         <div className="p-10">
             <div className="text-3xl font-semibold justify-center">Privacy Policy for Analyticsliv Digital LLP</div>
