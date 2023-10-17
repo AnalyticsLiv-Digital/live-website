@@ -10,7 +10,7 @@ const nextConfig = {
               headers: [
                 {
                   key: 'Strict-Transport-Security',
-                  value: 'Strict-Transport-Security: max-age=31536000; includeSubDomains',
+                  value: 'max-age=31536000; includeSubDomains',
               },
                   {
                       key: 'Referrer-Policy',
@@ -22,11 +22,11 @@ const nextConfig = {
                   },
                   {
                       key: 'X-Frame-Options',
-                      value: 'X-Frame-Options: SAMEORIGIN',
+                      value: 'SAMEORIGIN',
                   },
                   {
                       key: 'X-Content-Type-Options',
-                      value: 'X-Content-Type-Options: nosniff',
+                      value: 'nosniff',
                   },
                   {
                       key: 'Permissions-Policy',
