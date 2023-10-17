@@ -27,7 +27,7 @@ const handler = async (req, res) => {
 
           var mailOptions1 = {
             from: "support@analyticsliv.com",
-            to: ["anshul.d@analyticsliv.com","anuj@analyticsliv.com","nitya@analyticsliv.com","rajvi@analyticsliv.com","ansuya@analyticsliv.com"],
+            to: ["anshul.d@analyticsliv.com","anuj@analyticsliv.com","nitya@analyticsliv.com","rajvi@analyticsliv.com","ansuya@analyticsliv.com","chirag.rathod@analyticsliv.com","esha.chhaparwal@analyticsliv.com"],
             subject: 'New GA4 Enquiry!!',
             html: `Enquiry Submitted by <br> Full Name - ${req.body.fullName}  <br> Email- ${req.body.email} <br> Contact - ${req.body.contact} <br> Message - ${req.body.message} `
           };
