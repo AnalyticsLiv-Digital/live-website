@@ -11,7 +11,7 @@ const BlogCard = ({blog}) => {
                                         <div className="flex justify-between text-xs text-gray-400">
                                             <span>{blog.date}</span>
                                         </div>
-                                        <h1 className="font-medium text-base text-slate-800  ">{blog.title}</h1>
+                                        <h2 className="font-medium text-base text-slate-800  ">{blog.title}</h2>
                                         <span className="font-normal text-xs text-gray-400 py-2">{blog.author}</span>
                                         <p className="font-normal text-sm text-gray-600 py-1">
                                             {blog.description}

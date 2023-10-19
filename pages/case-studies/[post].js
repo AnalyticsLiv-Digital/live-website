@@ -112,10 +112,12 @@ var cd = casestudyDat.data[0];
         return errors;
     };
 
+    var url = "https://www.analyticsliv.com/case-studies/"+cd.slug;
 
   return (<>
   <Head>
     <title>AnalyticsLiv - Case Sudies</title>
+    <link rel="canonical" href={url}></link>
   </Head>
   <ScrollProgress/>
   {showWaiting && <div className="fixed flex backdrop-blur top-0 left-0 right-0 z-40 w-full p-4 md:overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full"><ScaleLoader

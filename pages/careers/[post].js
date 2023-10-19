@@ -212,12 +212,14 @@ const post = ({jobData}) => {
 
 var meta_desc = "Join as " +jobData.job[0].title+ " in Analyticliv, a diverse analytics and marketing agency committed to data-driven growth using first-party data.";
 
+var url = "https://www.analyticsliv.com/careers/"+jobData.job[0].id;
 
   return (
     <>
     <Head>
     <meta name="description" content={meta_desc}/>
         <title>AnalyticsLiv Job - {jobData && jobData.job[0].title}</title>
+        <link rel="canonical" href={url}></link>
     </Head>
         <ScrollProgress/>
         {showWaiting && <div className="fixed flex backdrop-blur top-0 left-0 right-0 z-40 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full"><ScaleLoader
@@ -291,7 +293,7 @@ var meta_desc = "Join as " +jobData.job[0].title+ " in Analyticliv, a diverse an
                 <div className="relative lg:w-1/2 bg-white px-2 md:px-10 py-4">
                 
                     <form className="relative sticky top-20 space-y-4 md:space-y-6 " onSubmit={handleSubmit}>
-                        <h1 className="text-center text-xl">Apply Now</h1>
+                        <h2 className="text-center text-xl">Apply Now</h2>
                         <div className="h-0.5 bg-cyan-600"></div>
                          <input type="hidden" id="postName" name="postName" value={jobData.job[0].title}/>
                             <div className="relative">

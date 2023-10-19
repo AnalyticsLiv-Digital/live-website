@@ -13,6 +13,7 @@ const aboutus = () => {
     <Head>
       <title>AnalyticsLiv - About us</title>
       <meta name="description" content="Google Marketing Platform Partner - Our Journey"/>
+      <link rel="canonical" href="https://www.analyticsliv.com/about-us"></link>
     </Head>
     <ScrollProgress/>
     
@@ -21,7 +22,7 @@ const aboutus = () => {
             <img src="https://storage.googleapis.com/website-bucket-uploads/static/about us.png" className="lg:w-full"/>
             <div className="absolute w-24 h-24 lg:w-80 lg:h-80 bg-gradient-to-b from-blue-900 to-transparent blur rounded-full top-2 right-0"></div>
             <div className="absolute w-16 h-16 lg:w-40 lg:h-40 bg-gradient-to-b from-amber-400 to-transparent blur rounded-full right-8 -bottom-2 lg:bottom-8 lg:right-40"></div>
-            <h1 className="uppercase tracking-wider absolute right-6 bottom-4 text-white lg:text-3xl">We are AnalyticsLiv!</h1>
+            <h1 className="uppercase tracking-wider absolute right-6 bottom-4 text-white lg:text-3xl">AnalyticsLiv - Our Journey to Success</h1>
         </div>
 
         <div data-aos="zoom-in" data-aos-once="true" className="lg:flex justify-evenly p-8">
@@ -29,7 +30,7 @@ const aboutus = () => {
                 <img src="https://storage.googleapis.com/website-bucket-uploads/static/story.png" className="mx-auto w-3/4 lg:w-fit"/>
              </div>
              <div className="lg:w-1/2 lg:space-y-4 space-y-2 tracking-wider">
-                <h1 className="uppercase tracking-wider font-semibold text-slate-800 text:xl lg:text-3xl text-center lg:text-left">Our Story</h1>
+                <h2 className="uppercase tracking-wider font-semibold text-slate-800 text:xl lg:text-3xl text-center lg:text-left">Our Story</h2>
                 <h2 className="text-cyan-500 underline underline-offset-4 lg:text-xl font-semibold text-center lg:text-left uppercase">Genesis</h2>
                 <p className="lg:pr-24 text-slate-600 text-justify">
                     The thought was brewed over multiple cups of cutting chai(tea) in the after
@@ -55,7 +56,7 @@ const aboutus = () => {
                     <img src="https://storage.googleapis.com/website-bucket-uploads/static/mission.gif" className="inline "/>
                 </div>
                 <div className="w-2/3">
-                    <h1 className="inline text-cyan-500 underline underline-offset-4 text-xl font-semibold ">Mission</h1>
+                    <h2 className="inline text-cyan-500 underline underline-offset-4 text-xl font-semibold ">Mission</h2>
                 <p className="pt-6 text-slate-700">
                     We learned over the years how different strategies of data come together to help businesses. We intend to spread our learnings while aligning the businesses with the ever changing technology around data, analytics and its usage to empower the business.
                 </p>
@@ -67,7 +68,7 @@ const aboutus = () => {
                     <img src="https://storage.googleapis.com/website-bucket-uploads/static/vision.gif" className="inline "/>
                 </div>
                 <div className="w-2/3">
-                    <h1 className="inline text-cyan-500 underline underline-offset-4 text-xl font-semibold ">Vision</h1>
+                    <h2 className="inline text-cyan-500 underline underline-offset-4 text-xl font-semibold ">Vision</h2>
                 <p className="pt-6 text-slate-700">
                     Enable Business partners to harness the power of data in decision making and gaining digital transformation.
                 </p>
@@ -81,7 +82,7 @@ const aboutus = () => {
                <img src="https://storage.googleapis.com/website-bucket-uploads/static/aboutus.png" className="mx-auto w-3/4 lg:w-fit"/>
             </div>
             <div className="lg:w-1/2 tracking-wider lg:space-y-4 lg:pl-28 space-y-2">
-               <h1 className="uppercase font-semibold text-slate-800 text:xl lg:text-3xl text-center lg:text-left">About us</h1>
+               <h2 className="uppercase font-semibold text-slate-800 text:xl lg:text-3xl text-center lg:text-left">About us</h2>
                <p className="text-slate-600 text-justify">
                 Analytics Liv Digital (“AnalyticsLiv”) is a new age marketing firm focused on delivering data driven customer experiences.
                 Cutting through the noise of digital data fatigue to take cognizance of a brand’s first party data is our prime focus.
@@ -98,7 +99,7 @@ const aboutus = () => {
        </div>
 
        <div data-aos="zoom-in" data-aos-once="true" className="relative py-8 space-y-6 bg-gray-100 ">
-        <h1 className="relative uppercase tracking-wider text-center lg:text-3xl">Platform Expertise</h1>
+        <h2 className="relative uppercase tracking-wider text-center lg:text-3xl">Platform Expertise</h2>
         <div className="flex lg:flex-row justify-evenly">
         <div className=" space-y-2">
             <img src="https://storage.googleapis.com/website-bucket-uploads/static/Bigquery.png" className="mx-auto "/>
@@ -180,7 +181,7 @@ const aboutus = () => {
        </div>
 
        <div data-aos="fade-down" data-aos-once="true" className="py-8 lg:px-16">
-         <h1 className="relative text-slate-800 uppercase tracking-wider text-center lg:text-left lg:inset-x-12 lg:text-3xl font-semibold">Solutions Offered</h1>
+         <h2 className="relative text-slate-800 uppercase tracking-wider text-center lg:text-left lg:inset-x-12 lg:text-3xl font-semibold">Solutions Offered</h2>
          <div className="lg:flex px-8 justify-center uppercase">
             <ul className="space-y-2 px-8 pt-2 lg:pt-10 lg:w-1/2">
                 <li>

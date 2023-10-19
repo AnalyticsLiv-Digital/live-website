@@ -14,6 +14,8 @@ const Careers = ({jobsdata}) => {
     <>
     <Head>
       <title>AnalyticsLiv - Careers</title>
+      <link rel="canonical" href="https://www.analyticsliv.com/careers"></link>
+      <meta name="description" content="Unlock your potential with our dynamic career opportunities. Join a diverse marketing agency committed to data-driven growth using first-party data. "/>
     </Head>
     <ScrollProgress/>
     <section className="pb-12">

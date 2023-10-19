@@ -49,7 +49,7 @@ export default function Home({brandsdata,blogsdata}) {
             <Head>
                 <meta name="description" content="AnalyticsLiv Digital is one of the leading Web and App analytics agency. We help our customers embrace Google Products to improve their customer experiences."/>
                 <title>Leading Web and App Analytics Agency in India - AnalyticsLiv</title>
-                
+                <link rel="canonical"href="https://www.analyticsliv.com/"></link>
             </Head>
             <StructuredData data={stuctureData} />
             <div className='overflow-x-hidden'>
@@ -127,7 +127,7 @@ export default function Home({brandsdata,blogsdata}) {
 
                         <div data-aos="fade-left" data-aos-once="true" className="we-are-helpful text-center lg:w-1/3 lg:text-left m-auto">
                             <div className="text-gray-500 font-medium text-xl ">360° Solutions</div>
-                            <h1 className="font-medium text-3xl whitespace-pre m-auto leading-relaxed">How are we Helpful?</h1>
+                            <h2 className="font-medium text-3xl whitespace-pre m-auto leading-relaxed">How are we Helpful?</h2>
                             <p className="text-slate-700 pb-4 px-4 lg:pb-0 lg:px-0 m-auto">
                                 The Google Marketing Platform is a unified analytics and marketing platform
                                 that enables meaningful insights for effective marketing steering and

@@ -56,12 +56,13 @@ const index = ({ blogDat, similarBlogs }) => {
 
 
 
-
+    var url = "https://www.analyticsliv.com/blogs/"+blogData.slug;
 
     return (<>
         <Head>
             <meta name="description" content={blogData && blogData.description} />
             <title>{blogData && blogData.title}</title>
+            <link rel="canonical" href={url}></link>
         </Head>
         <ScrollProgress />
 

@@ -13,6 +13,8 @@ const index = ({casestudyDat}) => {
   return (<>
   <Head>
 	<title>AnalyticsLiv - Case Studies</title>
+  <meta name="description" content="Google Marketing Platform Partner - Our Case Studies"/>
+  <link rel="canonical"href="https://www.analyticsliv.com/case-studies"></link>
   </Head>
   <ScrollProgress/>
     <div>

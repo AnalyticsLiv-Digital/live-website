@@ -5,7 +5,9 @@ import Head from 'next/head'
 const privacypolicy = () => {
     return (<>
     <Head>
+        <title>Google Marketing Platform Partner - Privacy Policy</title>
     <meta name="description" content="Google Marketing Platform Partner - Privacy Policy"/>
+    <link rel="canonical"href="https://www.analyticsliv.com/privacy-policy"></link>
     </Head>
     <ScrollProgress/>
         <div className="p-10">

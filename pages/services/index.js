@@ -35,7 +35,7 @@ const index= () => {
     <Head>
       <title>AnalyticsLiv - Services Offered</title>
       <meta name="description" content="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads"/>
-      
+      <link rel="canonical"href="https://www.analyticsliv.com/services"></link>
     </Head>
     <ScrollProgress/>
     <div className='overflow-x-hidden'>

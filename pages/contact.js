@@ -138,6 +138,7 @@ const contact = () => {
             <Head>
                 <title>AnalyticsLiv - Contact us</title>
                 <meta name="description" content="Google Marketing Platform Partner - Contact for Support"/>
+                <link rel="canonical"href="https://www.analyticsliv.com/contact"></link>
             </Head>
             <ScrollProgress />
             {showWaiting && <div className="fixed flex backdrop-blur top-0 left-0 right-0 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full"><ScaleLoader
@@ -158,7 +159,7 @@ const contact = () => {
                         <div className="absolute rounded-full w-40 h-40 bg-gradient-to-r from-cyan-500 to-transparent blur left-1/2 -bottom-10"></div>
                         <div className="relative mx-2 lg:flex">
                             <div data-aos="fade-up" data-aos-once="true" className="relative md:h-screen overflow-hidden lg:w-1/3 rounded-lg bg-slate-900 space-y-9 px-4 pt-12 pb-20 align-middle text-white">
-                                <h1 className="font-semibold uppercase tracking-wider">Contact Information</h1>
+                                <h2 className="font-semibold uppercase tracking-wider">Contact Information</h2>
                                 <h2 className="uppercase">Make an appointment for first consultation.</h2>
                                 <div>
                                     <svg xmlns="http://www.w3.org/2000/svg" className="inline w-6" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
