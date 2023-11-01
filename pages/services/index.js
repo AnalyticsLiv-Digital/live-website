@@ -105,44 +105,10 @@ const index= () => {
                     </svg>
                     Enhanced eCommerce Implementation
                 </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Cross-Domain Tracking
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Goals & Events Tracking
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Integrating online & offline data
-                </li>
+                
             </ul>
             <ul className="space-y-2 px-2 lg:px-8 pt-2 lg:pt-10 lg:w-1/2">
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Implementation Audit & Recommendation
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Google Tag Manager Clean Up
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Enhanced eCommerce Implementation
-                </li>
+                
                 <li>
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                         <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
