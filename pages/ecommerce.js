@@ -366,7 +366,7 @@ export default function ecommerce({brandsdata}) {
                         </p>
                     </div>
                     <YoutubeEmbed embedId="JFOc7x5ZgaA" />
-                     </div>
+                      </div>
       
                 <div>
                 <ScrollElement
