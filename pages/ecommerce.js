@@ -9,7 +9,8 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Link from 'next/link';
 import { Transition } from "@headlessui/react";
-import ScrollProgress from '../components/ScrollProgress'
+import ScrollProgress from '../components/ScrollProgress';
+import YoutubeEmbed from '../components/YoutubeEmbed';
 
 
 const { Element: ScrollElement } = Scroll;
@@ -360,12 +361,12 @@ export default function ecommerce({brandsdata}) {
                     </h1>
                     <div className="p-8">
                         <p className="text-xl leading-[30px] text-[#30486A]">
-                        Discover How AnalyticsLiv Achieved an Impressive <span className="font-bold">6.95x</span> ROAS
-                            from <span className="font-bold">2.18x</span>
+                        Discover How AnalyticsLiv Achieved an Impressive <span className="font-bold">7.8x</span> ROAS
+                            from <span className="font-bold">2.4x</span>
                         </p>
                     </div>
-                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/ecomlp/banner-hero.png" alt="banner-hero" className="mx-auto" />
-                </div>
+                    <YoutubeEmbed embedId="JFOc7x5ZgaA" />
+                     </div>
       
                 <div>
                 <ScrollElement
@@ -488,7 +489,7 @@ export default function ecommerce({brandsdata}) {
                     </h2>
                     <p
                         className="lg:text-[32px] text-[24px] lg:leading-[48px] leading-[39px] font-medium text-[ mb-8#000000]">
-                        Discover How the AnalyticsLiv Achieved an Impressive 6.95x ROAS from a Previous 2.18x
+                        Discover How the AnalyticsLiv Achieved an Impressive 7.8x ROAS from a Previous 2.4x
                     </p>
                     <div className="mt-20 text-left">
                         <a onClick={scrolling} className="block text-center cursor-pointer commonBtn text-[23px] leading-[20px] font-semibold text-white py-[40px] px-[45px] lg:h-[93px] bg-[#4285F4] max-w-[50%] w-full rounded-[15px]  min-w-[341px] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 sm:mx-auto

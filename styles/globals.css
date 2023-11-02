@@ -124,3 +124,18 @@ input[type=number] {
   background: linear-gradient(180deg, #2EE3F9 0%, rgba(255, 255, 255, 0) 100%);
   box-shadow: 0px 0px 15px 1px #00000040;
 }
+
+.video-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
