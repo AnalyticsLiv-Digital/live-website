@@ -25,6 +25,15 @@ function generateSiteMap(posts) {
      <url>
        <loc>https://analyticsliv.com/careers/</loc>
      </url>
+     <url>
+       <loc>https://analyticsliv.com/ga4</loc>
+     </url>
+     <url>
+       <loc>https://analyticsliv.com/dv360</loc>
+     </url>
+     <url>
+       <loc>https://analyticsliv.com/ecommerce</loc>
+     </url>
      
      ${posts
        .map(({ url }) => {

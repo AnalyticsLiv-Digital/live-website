@@ -34,6 +34,15 @@ var cd = casestudyDat.data[0];
 
     };
 
+    const dataLayerpush = () =>{
+        dataLayer.push({
+            event:'casestudy_download',
+            eventCategory:cd.title,
+            eventAction:'download'
+        });
+
+    }
+
     useEffect(() => {
 
         let headerSize = () => {
@@ -153,7 +162,7 @@ var cd = casestudyDat.data[0];
                  
                 </div>
 
-                <div className={`${formFixed ? "sticky top-20" : "relative"} h-fit lg:w-1/2 bg-white px-10 py-4`}>
+                <div className={`${formFixed ? "sticky top-20" : "relative"} hidden h-fit lg:w-1/2 bg-white px-10 py-4`}>
                     {formSubmit ? <div className='relative text-slate-700 p-4 space-y-4 h-full'>
                                     <h1 className='align-middle font-medium text-4xl'>Thank You for your interest.</h1>
                                     <h2 className='align-middle text-xl'>The download link for this case study has been sent to the email-id provided.</h2>
@@ -190,6 +199,17 @@ var cd = casestudyDat.data[0];
                             </div>
                         </div>
                     </form>}
+                </div>
+                <div className="sticky top-20 h-fit lg:w-1/2 bg-white px-10 py-4">
+                <div className="text-center">
+                    <a href={cd.filename} target="_blank">
+                            <div className="tracking-wider w-full mt-4 px-8 py-2 m-auto bg-sky-800 uppercase text-white rounded hover:border hover:border-cyan-400 hover:shadow-md hover:shadow-cyan-400 transition-shadow delay-150 cursor-pointer" onClick={dataLayerpush}>Download
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-8 inline text-right" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M12 2C6.49 2 2 6.49 2 12s4.49 10 10 10s10-4.49 10-10S17.51 2 12 2zm-1 8V6h2v4h3l-4 4l-4-4h3zm6 7H7v-2h10v2z"/>
+                                </svg>
+                            </div>
+                            </a>
+                        </div>
                 </div>
            </div>   
 

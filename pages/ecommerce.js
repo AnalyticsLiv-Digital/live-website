@@ -226,7 +226,7 @@ export default function ecommerce({brandsdata}) {
     <header className="sticky min-w-full top-0 z-50 shadow-md bg-white">
     <div className="navbar hidden lg:flex py-2 h-auto flex-wrap px-4 lg:flex-row items-center justify-between">
         <a className="">
-          <img className="h-8 lg:ml-4 w-auto cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png"/>
+          <img alt="Analyticsliv logo" className="h-8 lg:ml-4 w-auto cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png"/>
         </a>
         <nav className="lg:flex text-center">
           <ul className="lg:flex text-sm font-semibold text-left lg:text-center z-[-1] lg:z-auto lg:mr-4 lg:w-auto lg:space-x-6 items-center tracking-wide cursor-pointer">
@@ -241,14 +241,14 @@ export default function ecommerce({brandsdata}) {
           <button className="cta px-5 py-2 bg-sky-300 rounded-2xl mx-2 text-sm font-semibold cursor-pointer hover:bg-sky-400">CALL US</button>
           </a>
           <span className="hidden md:inline px-4">
-            <img className="h-10 w-auto"   src="https://storage.googleapis.com/website-bucket-uploads/static/gmp.svg" />
+            <img alt="GMP logo" className="h-10 w-auto"   src="https://storage.googleapis.com/website-bucket-uploads/static/gmp.svg" />
           </span>
         </nav>
     </div>
 
 
     <div className="relative  flex lg:hidden p-2">
-  <Link href="#"><img onClick={() => setIsOpen(false)} src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="relative h-10 md:mx-4 cursor-pointer"/></Link>
+  <Link href="#"><img alt="Analyticsliv logo" onClick={() => setIsOpen(false)} src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="relative h-10 md:mx-4 cursor-pointer"/></Link>
   <a className="ml-4" href="tel:7979634379">
           <button className="cta px-5 py-2 bg-sky-300 rounded-2xl mx-2 text-sm font-semibold cursor-pointer hover:bg-sky-400">CALL US</button>
           </a>
@@ -411,8 +411,8 @@ export default function ecommerce({brandsdata}) {
                     </div>}
                     {formSubmit && <div className='w-full text-center'>
           <h2 className="md:text-xl text-sky-900">Thank you for showing interest with us!</h2>
-        <h1 className="font-semibold text-2xl p-4 md:p-8 border-dashed border-b-2 border-sky-200">We will get back to you shortly !!</h1>
-        <img className="w-64 mx-auto" src="https://storage.googleapis.com/website-bucket-uploads/static/Na_Dec_46.jpg"/>
+        <h2 className="font-semibold text-2xl p-4 md:p-8 border-dashed border-b-2 border-sky-200">We will get back to you shortly !!</h2>
+        <img alt="Thankyou" className="w-64 mx-auto" src="https://storage.googleapis.com/website-bucket-uploads/static/Na_Dec_46.jpg"/>
         </div>}
 
 
@@ -426,7 +426,7 @@ export default function ecommerce({brandsdata}) {
     <section>
  
      <div className="bg-white py-4">
-      <h1 className="text-center font-bold text-xl">Thanks For Choosing AnalytiscLiv</h1>
+      <h2 className="text-center font-bold text-xl">Thanks For Choosing AnalytiscLiv</h2>
        <div className="brandsimages flex space-x-8 justify-center py-4 px-4 mt-4">
        <Marquee gradient={false} pauseOnHover="true">
             
@@ -752,9 +752,9 @@ export default function ecommerce({brandsdata}) {
                     </div>
                     <div className="text-center basis-2/6">
                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/ecomlp/awareness.png" alt="awareness" className="mx-auto mb-4" />
-                        <p className="text-base leading-[24px] font-medium text-black">20 + Certified <br
+                        <p className="text-base leading-[24px] font-medium text-black">20 + Clients <br
                                 className="hidden lg:block" />
-                            Experts</p>
+                            Served</p>
                     </div>
                     <div className="text-center basis-2/6">
                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/ecomlp/handshake.png" alt="handshake" className="mx-auto mb-4" />
@@ -873,7 +873,7 @@ export default function ecommerce({brandsdata}) {
         name="testimonial"
       ></ScrollElement>
     <div className="relative h-full pb-16" style={{backgroundImage: 'url(https://storage.googleapis.com/website-bucket-uploads/static/Working_woman.png)', backgroundRepeat:'no-repeat'}} >
-      <h1 className="font-bold text-4xl py-8 md:py-12 text-center">Let's See What Our Clients Have To Say</h1>
+      <h2 className="font-bold text-4xl py-8 md:py-12 text-center">Let's See What Our Clients Have To Say</h2>
       <div className="relative z-10 md:w-1/3 mx-4 md:mx-auto mt-4 bg-sky-100/90  px-8 pt-4 pb-0">
       <div className="relative w-20 rounded-full bg-white p-4 -top-12 mx-28 md:mx-auto shadow-md shadow-gray-400">
           <svg xmlns="http://www.w3.org/2000/svg" className="w-12" viewBox="0 0 24 24">
@@ -885,7 +885,7 @@ export default function ecommerce({brandsdata}) {
        
         <div className="relative flex items-center my-2 w-full justify-center space-x-4 text-center">
           <img src="https://storage.googleapis.com/website-bucket-uploads/static/Character_1.png" className=""/>
-          <h1 className="font-bold text-3xl">Amit</h1>
+          <h2 className="font-bold text-3xl">Amit</h2>
         </div>
         <p className=" mx-auto">"We are very happy with the Audit and Approach of AnalyticsLiv team. They have been extremely instrumental in our growth in terms of revenue and number of conversions, while making sure that we are optimized for CPA"</p>
           </div>
@@ -894,7 +894,7 @@ export default function ecommerce({brandsdata}) {
         
         <div className="relative flex items-center my-4 w-full justify-center space-x-4 text-center">
           <img src="https://storage.googleapis.com/website-bucket-uploads/static/Character_1.png" className=""/>
-          <h1 className="font-bold text-3xl">Nathan</h1>
+          <h2 className="font-bold text-3xl">Nathan</h2>
         </div>
         <p className=" mx-auto">"Our App received thousand of Installs and users who are relevant with the 4M strategy of AnalyticsLiv team. They are good and prompt in their response. We are in US timezone but they did not let that be a hurdle in their communication"</p>
           </div>
@@ -903,7 +903,7 @@ export default function ecommerce({brandsdata}) {
         
         <div className="relative flex items-center my-4 w-full justify-center space-x-4 text-center">
           <img src="https://storage.googleapis.com/website-bucket-uploads/static/Character_2.png" className=""/>
-          <h1 className="font-bold text-3xl">Nikola McCarthy</h1>
+          <h2 className="font-bold text-3xl">Nikola McCarthy</h2>
         </div>
         <p className=" mx-auto">"Highly recommended for anything related to campaign management, planning, reporting and execution. Response has been timely and excellent skills in telling data stories with visualization"</p>
           </div>
@@ -925,7 +925,7 @@ export default function ecommerce({brandsdata}) {
         id="data-visualisation"
         name="data-visualisation"
       ></ScrollElement>
-  <h1 className="font-bold text-4xl py-4 md:pb-8 text-center">Unified Ad Data Visualizations</h1>
+  <h2 className="font-bold text-4xl py-4 md:pb-8 text-center">Unified Ad Data Visualizations</h2>
   <Carousel className="h-100" ssr={true} showDots={true} responsive={responsive} infinite={true} autoPlay autoPlaySpeed={4000} transitionDuration={500} removeArrowOnDeviceType={["tablet", "mobile"]}>
         
         <div className='md:w-2/3 mx-4 md:mx-auto h-auto'>

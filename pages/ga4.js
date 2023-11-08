@@ -220,7 +220,7 @@ export default function ga4({brandsdata}) {
     <header className="sticky min-w-full top-0 z-50 shadow-md bg-white">
     <div className="navbar hidden lg:flex py-2 h-auto flex-wrap px-4 lg:flex-row items-center justify-between">
         <a className="">
-          <img className="h-8 lg:ml-4 w-auto cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png"/>
+          <img alt="logo" className="h-8 lg:ml-4 w-auto cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png"/>
         </a>
         <nav className="lg:flex text-center">
           <ul className="lg:flex text-sm font-semibold text-left lg:text-center z-[-1] lg:z-auto lg:mr-4 lg:w-auto lg:space-x-6 items-center tracking-wide cursor-pointer">
@@ -234,7 +234,7 @@ export default function ga4({brandsdata}) {
           <button className="cta px-5 py-2 bg-sky-300 rounded-2xl mx-2 text-sm font-semibold cursor-pointer hover:bg-sky-400">CALL US</button>
           </a>
           <span className="hidden md:inline px-4">
-            <img className="h-10 w-auto"   src="https://storage.googleapis.com/website-bucket-uploads/static/gmp.svg" />
+            <img alt="gmp partner" className="h-10 w-auto"   src="https://storage.googleapis.com/website-bucket-uploads/static/gmp.svg" />
           </span>
         </nav>
     </div>
@@ -344,7 +344,7 @@ export default function ga4({brandsdata}) {
 
     <section>
     <div className="flex items-center justify-between mt-4 md:px-20 pl-4">
-      <div className="flex items-center m-2 md:float-none"><img src="https://storage.googleapis.com/website-bucket-uploads/static/Ga4_logo.png"/>
+      <div className="flex items-center m-2 md:float-none"><img alt="GA4 logo" src="https://storage.googleapis.com/website-bucket-uploads/static/Ga4_logo.png"/>
       <h1 className="  md:text-5xl text-2xl font-bold ml-4">Google Analytics 4</h1></div>
 
     </div>
@@ -352,22 +352,22 @@ export default function ga4({brandsdata}) {
     <div className="relative md:flex items-center md:px-20 pl-4">
       <div className="absolute z-0 bg-gradient-to-r from-sky-200 to-transparent md:w-96 md:h-96 w-40 h-40 md:top-0 md:-left-36 top-12 -left-16 rounded-full"></div>
       <div className="pt-12 md:w-3/4 z-10">
-        <h1 className="text-2xl font-bold">Is your GA4 ready to </h1>
+        <h2 className="text-2xl font-bold">Is your GA4 ready to </h2>
         <ul style={{color: '#E37400'}} className="mt-6 mx-2 font-semibold">
-          <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_6.png'/>
+          <li><img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_6.png'/>
             Explore new features of analytics</li>
-          <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_6.png'/>
+          <li><img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_6.png'/>
             Better understand website traffic</li>
-          <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_6.png'/>
+          <li><img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_6.png'/>
             Spend Marketing Budgets more wisely</li>
         </ul>
-        <img className="" src="https://storage.googleapis.com/website-bucket-uploads/static/IMG_New.png"/>
+        <img alt="img new" className="" src="https://storage.googleapis.com/website-bucket-uploads/static/IMG_New.png"/>
       </div>
       <div className="text-center bg-sky-50 p-4 md:p-8 md:w-3/5 rounded-xl shadow-xl">
        
       {!formSubmit &&<div className="block">
           <h2 className="md:text-xl text-sky-900">We Understand setting up GA4 can be complex sometimes.</h2>
-        <h1 className="font-semibold text-2xl p-4 md:p-6 border-dashed border-b-2 border-sky-200">Let us help you !!</h1>
+        <h2 className="font-semibold text-2xl p-4 md:p-6 border-dashed border-b-2 border-sky-200">Let us help you !!</h2>
         <ScrollElement
         id="contact-form"
         name="contact-form"
@@ -399,8 +399,8 @@ export default function ga4({brandsdata}) {
 
         {formSubmit && <div>
           <h2 className="md:text-xl text-sky-900">Thank you for showing interest with us!</h2>
-        <h1 className="font-semibold text-2xl p-4 md:p-8 border-dashed border-b-2 border-sky-200">We will get back to you shortly !!</h1>
-        <img src="https://storage.googleapis.com/website-bucket-uploads/static/Na_Dec_46.jpg"/>
+        <h2 className="font-semibold text-2xl p-4 md:p-8 border-dashed border-b-2 border-sky-200">We will get back to you shortly !!</h2>
+        <img alt="thank you" src="https://storage.googleapis.com/website-bucket-uploads/static/Na_Dec_46.jpg"/>
         </div>}
 
       </div>
@@ -410,7 +410,7 @@ export default function ga4({brandsdata}) {
   <section>
  
      <div className="bg-white py-4">
-      <h1 className="text-center font-bold text-xl">200+ Clients served for GA4</h1>
+      <h2 className="text-center font-bold text-xl">200+ Clients served for GA4</h2>
        <div className="brandsimages flex space-x-8 justify-center py-4 px-4 mt-4">
        <Marquee gradient={false} pauseOnHover="true">
             
@@ -433,25 +433,25 @@ export default function ga4({brandsdata}) {
       ></ScrollElement>
     <div className="bg-sky-300 relative md:flex md:justify-around md:mt-4 px-4 md:px-20 pt-8 pb-16">
       <div className="text-center mb-8 md:mb-0">
-        <h1 className="text-4xl font-bold md:mb-16">Our expert can help you</h1>
+        <h2 className="text-4xl font-bold md:mb-16">Our expert can help you</h2>
         <ul className="my-6 mx-2 text-sm text-left font-semibold space-y-4 mb-8">
-          <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_6.png'/>
+          <li><img  alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_6.png'/>
             Set up your GA4 account and configure the tracking code</li>
-          <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_6.png'/>
+          <li><img  alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_6.png'/>
             Import your historical data from Universal Analytics</li>
-          <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_6.png'/>
+          <li><img  alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_6.png'/>
             Create custom reports and dashboards</li>
-          <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_6.png'/>
+          <li><img  alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_6.png'/>
             Track your website traffic and marketing campaigns</li>
-          <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_6.png'/>
+          <li><img  alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_6.png'/>
             Analyse your data and identify trends</li>
-          <li><img className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_6.png'/>
+          <li><img  alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_6.png'/>
             Make data-driven decisions that will help you grow your business</li>
       </ul>
       <button onClick={scrolling} className="cta schedule-button bg-amber-500 hover:bg-amber-600 transition-all delay-100 p-4 rounded-xl shadow-md shadow-gray-400 hover:shadow-gray-600 text-white font-semibold">Schedule Free Consultation</button>
       </div>
       <div className="text-center">
-        <img src="https://storage.googleapis.com/website-bucket-uploads/static/graph.png" />
+        <img alt="graph" src="https://storage.googleapis.com/website-bucket-uploads/static/graph.png" />
       </div>
     </div>
   </section>
@@ -463,10 +463,10 @@ export default function ga4({brandsdata}) {
       ></ScrollElement>
     <div className="relative md:flex justify-around md:mt-4 px-4 md:px-20 md:pt-4 pb-4 md:pb-16">
       <div className="text-center">
-        <img src="https://storage.googleapis.com/website-bucket-uploads/static/Offer.png" />
+        <img alt="offer" src="https://storage.googleapis.com/website-bucket-uploads/static/Offer.png" />
       </div>
       <div className='text-center'>
-        <h1 className=" text-4xl text-left font-bold md:mb-16">Menu of Services</h1>
+        <h2 className=" text-4xl text-left font-bold md:mb-16">Menu of Services</h2>
         <ul className="my-6 mx-2 text-left text-sm font-semibold space-y-4 mb-8">
           <li><svg xmlns="http://www.w3.org/2000/svg" className="inline mr-4" height="1em" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"/></svg>
             GA4 Audit :
@@ -502,19 +502,19 @@ export default function ga4({brandsdata}) {
       ></ScrollElement>
   <section className='casestudy'>
     <div className="bg-sky-300 relative text-center md:px-20 px-2 md:pt-8 py-4 md:pb-6 space-y-8">
-      <h1 className="text-4xl text-left font-bold md:mb-16">Case Studies</h1>
+      <h2 className="text-4xl text-left font-bold md:mb-16">Case Studies</h2>
       <div className="cstudy md:flex text-left justify-evenly bg-white md:px-20 px-2 md:py-8 py-4 md:rounded-full rounded-xl shadow-md shadow-gray-600">
       <div className="md:w-3/4">
-        <h1 className="text-2xl font-bold mb-4"><svg xmlns="http://www.w3.org/2000/svg" className='inline mr-4 rotate-90' height="1em" viewBox="0 0 448 512"><path d="M160 64c0-8.8 7.2-16 16-16s16 7.2 16 16V200c0 10.3 6.6 19.5 16.4 22.8s20.6-.1 26.8-8.3c3-3.9 7.6-6.4 12.8-6.4c8.8 0 16 7.2 16 16c0 10.3 6.6 19.5 16.4 22.8s20.6-.1 26.8-8.3c3-3.9 7.6-6.4 12.8-6.4c7.8 0 14.3 5.6 15.7 13c1.6 8.2 7.3 15.1 15.1 18s16.7 1.6 23.3-3.6c2.7-2.1 6.1-3.4 9.9-3.4c8.8 0 16 7.2 16 16l0 16V392c0 39.8-32.2 72-72 72H272 212.3h-.9c-37.4 0-72.4-18.7-93.2-49.9L50.7 312.9c-4.9-7.4-2.9-17.3 4.4-22.2s17.3-2.9 22.2 4.4L116 353.2c5.9 8.8 16.8 12.7 26.9 9.7s17-12.4 17-23V320 64zM176 0c-35.3 0-64 28.7-64 64V261.7C91.2 238 55.5 232.8 28.5 250.7C-.9 270.4-8.9 310.1 10.8 339.5L78.3 440.8c29.7 44.5 79.6 71.2 133.1 71.2h.9H272h56c66.3 0 120-53.7 120-120V288l0-16c0-35.3-28.7-64-64-64c-4.5 0-8.8 .5-13 1.3c-11.7-15.4-30.2-25.3-51-25.3c-6.9 0-13.5 1.1-19.7 3.1C288.7 170.7 269.6 160 248 160c-2.7 0-5.4 .2-8 .5V64c0-35.3-28.7-64-64-64zm48 304c0-8.8-7.2-16-16-16s-16 7.2-16 16v96c0 8.8 7.2 16 16 16s16-7.2 16-16V304zm48-16c-8.8 0-16 7.2-16 16v96c0 8.8 7.2 16 16 16s16-7.2 16-16V304c0-8.8-7.2-16-16-16zm80 16c0-8.8-7.2-16-16-16s-16 7.2-16 16v96c0 8.8 7.2 16 16 16s16-7.2 16-16V304z"/></svg>
-          Universal Analytics (GA3) to GA4 Migration for a Website</h1>
+        <h2 className="text-2xl font-bold mb-4"><svg xmlns="http://www.w3.org/2000/svg" className='inline mr-4 rotate-90' height="1em" viewBox="0 0 448 512"><path d="M160 64c0-8.8 7.2-16 16-16s16 7.2 16 16V200c0 10.3 6.6 19.5 16.4 22.8s20.6-.1 26.8-8.3c3-3.9 7.6-6.4 12.8-6.4c8.8 0 16 7.2 16 16c0 10.3 6.6 19.5 16.4 22.8s20.6-.1 26.8-8.3c3-3.9 7.6-6.4 12.8-6.4c7.8 0 14.3 5.6 15.7 13c1.6 8.2 7.3 15.1 15.1 18s16.7 1.6 23.3-3.6c2.7-2.1 6.1-3.4 9.9-3.4c8.8 0 16 7.2 16 16l0 16V392c0 39.8-32.2 72-72 72H272 212.3h-.9c-37.4 0-72.4-18.7-93.2-49.9L50.7 312.9c-4.9-7.4-2.9-17.3 4.4-22.2s17.3-2.9 22.2 4.4L116 353.2c5.9 8.8 16.8 12.7 26.9 9.7s17-12.4 17-23V320 64zM176 0c-35.3 0-64 28.7-64 64V261.7C91.2 238 55.5 232.8 28.5 250.7C-.9 270.4-8.9 310.1 10.8 339.5L78.3 440.8c29.7 44.5 79.6 71.2 133.1 71.2h.9H272h56c66.3 0 120-53.7 120-120V288l0-16c0-35.3-28.7-64-64-64c-4.5 0-8.8 .5-13 1.3c-11.7-15.4-30.2-25.3-51-25.3c-6.9 0-13.5 1.1-19.7 3.1C288.7 170.7 269.6 160 248 160c-2.7 0-5.4 .2-8 .5V64c0-35.3-28.7-64-64-64zm48 304c0-8.8-7.2-16-16-16s-16 7.2-16 16v96c0 8.8 7.2 16 16 16s16-7.2 16-16V304zm48-16c-8.8 0-16 7.2-16 16v96c0 8.8 7.2 16 16 16s16-7.2 16-16V304c0-8.8-7.2-16-16-16zm80 16c0-8.8-7.2-16-16-16s-16 7.2-16 16v96c0 8.8 7.2 16 16 16s16-7.2 16-16V304z"/></svg>
+          Universal Analytics (GA3) to GA4 Migration for a Website</h2>
         <p className="text-amber-600">The migration process was smooth and successful without any data loss,
           increasing efficiency and reducing manual effort by 30%. The client now has a more comprehensive understanding of user behaviour across devices and sessions, enabling them to make more informed decisions and improve website performance.
         </p>
       </div>
       <div className="text-center space-x-4">
-        <img src="https://storage.googleapis.com/website-bucket-uploads/static/UA_Logo.png" className="inline" />
-        <img src="https://storage.googleapis.com/website-bucket-uploads/static/curved_arrow.png" className="inline" />
-        <img src="https://storage.googleapis.com/website-bucket-uploads/static/Ga4_logo_png 1.png" className="inline" />
+        <img alt="GA3 logo" src="https://storage.googleapis.com/website-bucket-uploads/static/UA_Logo.png" className="inline" />
+        <img alt="arrow" src="https://storage.googleapis.com/website-bucket-uploads/static/curved_arrow.png" className="inline" />
+        <img alt="GA4 logo" src="https://storage.googleapis.com/website-bucket-uploads/static/Ga4_logo_png 1.png" className="inline" />
         <a onClick={scrolling} href="#"><button className="cta bg-amber-500 hover:bg-amber-600 transition-all delay-100 px-16 py-2 text-white font-semibold rounded-full shadow-lg shadow-gray-400 mt-8">View</button></a>
       </div>
       
@@ -522,16 +522,16 @@ export default function ga4({brandsdata}) {
 
       <div className="cstudy md:flex text-left justify-evenly bg-white px-2 md:px-20 py-4 md:py-8 md:rounded-full rounded-xl shadow-md shadow-gray-600">
         <div className="md:w-3/4">
-          <h1 className="text-2xl font-bold mb-4"><svg xmlns="http://www.w3.org/2000/svg" className='inline mr-4 rotate-90' height="1em" viewBox="0 0 448 512"><path d="M160 64c0-8.8 7.2-16 16-16s16 7.2 16 16V200c0 10.3 6.6 19.5 16.4 22.8s20.6-.1 26.8-8.3c3-3.9 7.6-6.4 12.8-6.4c8.8 0 16 7.2 16 16c0 10.3 6.6 19.5 16.4 22.8s20.6-.1 26.8-8.3c3-3.9 7.6-6.4 12.8-6.4c7.8 0 14.3 5.6 15.7 13c1.6 8.2 7.3 15.1 15.1 18s16.7 1.6 23.3-3.6c2.7-2.1 6.1-3.4 9.9-3.4c8.8 0 16 7.2 16 16l0 16V392c0 39.8-32.2 72-72 72H272 212.3h-.9c-37.4 0-72.4-18.7-93.2-49.9L50.7 312.9c-4.9-7.4-2.9-17.3 4.4-22.2s17.3-2.9 22.2 4.4L116 353.2c5.9 8.8 16.8 12.7 26.9 9.7s17-12.4 17-23V320 64zM176 0c-35.3 0-64 28.7-64 64V261.7C91.2 238 55.5 232.8 28.5 250.7C-.9 270.4-8.9 310.1 10.8 339.5L78.3 440.8c29.7 44.5 79.6 71.2 133.1 71.2h.9H272h56c66.3 0 120-53.7 120-120V288l0-16c0-35.3-28.7-64-64-64c-4.5 0-8.8 .5-13 1.3c-11.7-15.4-30.2-25.3-51-25.3c-6.9 0-13.5 1.1-19.7 3.1C288.7 170.7 269.6 160 248 160c-2.7 0-5.4 .2-8 .5V64c0-35.3-28.7-64-64-64zm48 304c0-8.8-7.2-16-16-16s-16 7.2-16 16v96c0 8.8 7.2 16 16 16s16-7.2 16-16V304zm48-16c-8.8 0-16 7.2-16 16v96c0 8.8 7.2 16 16 16s16-7.2 16-16V304c0-8.8-7.2-16-16-16zm80 16c0-8.8-7.2-16-16-16s-16 7.2-16 16v96c0 8.8 7.2 16 16 16s16-7.2 16-16V304z"/></svg>
+          <h2 className="text-2xl font-bold mb-4"><svg xmlns="http://www.w3.org/2000/svg" className='inline mr-4 rotate-90' height="1em" viewBox="0 0 448 512"><path d="M160 64c0-8.8 7.2-16 16-16s16 7.2 16 16V200c0 10.3 6.6 19.5 16.4 22.8s20.6-.1 26.8-8.3c3-3.9 7.6-6.4 12.8-6.4c8.8 0 16 7.2 16 16c0 10.3 6.6 19.5 16.4 22.8s20.6-.1 26.8-8.3c3-3.9 7.6-6.4 12.8-6.4c7.8 0 14.3 5.6 15.7 13c1.6 8.2 7.3 15.1 15.1 18s16.7 1.6 23.3-3.6c2.7-2.1 6.1-3.4 9.9-3.4c8.8 0 16 7.2 16 16l0 16V392c0 39.8-32.2 72-72 72H272 212.3h-.9c-37.4 0-72.4-18.7-93.2-49.9L50.7 312.9c-4.9-7.4-2.9-17.3 4.4-22.2s17.3-2.9 22.2 4.4L116 353.2c5.9 8.8 16.8 12.7 26.9 9.7s17-12.4 17-23V320 64zM176 0c-35.3 0-64 28.7-64 64V261.7C91.2 238 55.5 232.8 28.5 250.7C-.9 270.4-8.9 310.1 10.8 339.5L78.3 440.8c29.7 44.5 79.6 71.2 133.1 71.2h.9H272h56c66.3 0 120-53.7 120-120V288l0-16c0-35.3-28.7-64-64-64c-4.5 0-8.8 .5-13 1.3c-11.7-15.4-30.2-25.3-51-25.3c-6.9 0-13.5 1.1-19.7 3.1C288.7 170.7 269.6 160 248 160c-2.7 0-5.4 .2-8 .5V64c0-35.3-28.7-64-64-64zm48 304c0-8.8-7.2-16-16-16s-16 7.2-16 16v96c0 8.8 7.2 16 16 16s16-7.2 16-16V304zm48-16c-8.8 0-16 7.2-16 16v96c0 8.8 7.2 16 16 16s16-7.2 16-16V304c0-8.8-7.2-16-16-16zm80 16c0-8.8-7.2-16-16-16s-16 7.2-16 16v96c0 8.8 7.2 16 16 16s16-7.2 16-16V304z"/></svg>
             GA4 Enhanced Ecommerce Implementation
-            Using GTM and Shopify Integration</h1>
+            Using GTM and Shopify Integration</h2>
           <p className="text-sky-600">We successfully implemented 90% of purchase events, with the exception of UA, which is at 70% and all GA4 enhanced ecommerce events and Shopify parameters are being successfully sent to GA4.
           </p>
         </div>
         <div className="text-center pt-4 md:pt-0 space-x-4">
-          <img src="https://storage.googleapis.com/website-bucket-uploads/static/GTM_logo.png" className="inline" />
-          <img src="https://storage.googleapis.com/website-bucket-uploads/static/AI.png" className="inline" />
-          <img src="https://storage.googleapis.com/website-bucket-uploads/static/Shopify_logo.png" className="inline" />
+          <img alt="GTM logo" src="https://storage.googleapis.com/website-bucket-uploads/static/GTM_logo.png" className="inline" />
+          <img alt="AI" src="https://storage.googleapis.com/website-bucket-uploads/static/AI.png" className="inline" />
+          <img alt="Shopify logo" src="https://storage.googleapis.com/website-bucket-uploads/static/Shopify_logo.png" className="inline" />
           <a onClick={scrolling} href="#"><button className="cta bg-sky-400 hover:bg-sky-500 transition-all delay-100 px-16 py-2 text-white font-semibold rounded-full shadow-lg shadow-gray-400 mt-8">View</button></a>
         </div>        
         </div>
@@ -548,7 +548,7 @@ export default function ga4({brandsdata}) {
         name="testimonial"
       ></ScrollElement>
     <div className="relative h-full pb-16" style={{backgroundImage: 'url(https://storage.googleapis.com/website-bucket-uploads/static/Working_woman.png)', backgroundRepeat:'no-repeat'}} >
-      <h1 className="font-bold text-4xl py-8 md:py-12 text-center">Let's See What Our Clients Have To Say</h1>
+      <h2 className="font-bold text-4xl py-8 md:py-12 text-center">Let's See What Our Clients Have To Say</h2>
       <div className="relative z-10 md:w-1/3 mx-4 md:mx-auto mt-4 bg-sky-100/90  px-8 pt-4 pb-0">
       <div className="relative w-20 rounded-full bg-white p-4 -top-12 mx-28 md:mx-auto shadow-md shadow-gray-400">
           <svg xmlns="http://www.w3.org/2000/svg" className="w-12" viewBox="0 0 24 24">
@@ -559,8 +559,8 @@ export default function ga4({brandsdata}) {
         <div>
        
         <div className="relative flex items-center my-2 w-full justify-center space-x-4 text-center">
-          <img src="https://storage.googleapis.com/website-bucket-uploads/static/Character_1.png" className=""/>
-          <h1 className="font-bold text-3xl">Una</h1>
+          <img alt="client avatar" src="https://storage.googleapis.com/website-bucket-uploads/static/Character_1.png" className=""/>
+          <h2 className="font-bold text-3xl">Una</h2>
         </div>
         <p className=" mx-auto">"AnalyticsLiv helped us set up and manage our GA4 account, and we're so glad 
           we did. They were patient and knowledgeable, and they always made sure we 
@@ -572,8 +572,8 @@ export default function ga4({brandsdata}) {
           <div>
         
         <div className="relative flex items-center my-4 w-full justify-center space-x-4 text-center">
-          <img src="https://storage.googleapis.com/website-bucket-uploads/static/Character_1.png" className=""/>
-          <h1 className="font-bold text-3xl">Ebenezer Ferreira</h1>
+          <img alt="client avatar" src="https://storage.googleapis.com/website-bucket-uploads/static/Character_1.png" className=""/>
+          <h2 className="font-bold text-3xl">Ebenezer Ferreira</h2>
         </div>
         <p className=" mx-auto">"AnalyticsLiv has been FUTEK web analytics partner for almost 3 years now. They supported us with GTM implementation, GA to GA4 migration, Looker studio dashboard creations and Google cloud storage implementation. They respond to our request in a timely manner and make their best efforts to resolve the web analytics issues. We are happy with the support provided by AnalyticsLiv"</p>
           </div>
@@ -581,16 +581,16 @@ export default function ga4({brandsdata}) {
           <div>
         
         <div className="relative flex items-center my-4 w-full justify-center space-x-4 text-center">
-          <img src="https://storage.googleapis.com/website-bucket-uploads/static/Character_1.png" className=""/>
-          <h1 className="font-bold text-3xl">Bobby Bruno</h1>
+          <img alt="client avatar" src="https://storage.googleapis.com/website-bucket-uploads/static/Character_1.png" className=""/>
+          <h2 className="font-bold text-3xl">Bobby Bruno</h2>
         </div>
         <p className=" mx-auto">"AnalyticsLiv team was an excellent asset to our businesses' switch from Universal Analytics to GA4. They had excellent communication throughout the project, giving me feedback, updates and ideas as the project went on. I would be happy to recommend the AnalyticsLiv team for analytics and tag manager work, and look forward to working with them in the future. Thank you!"</p>
           </div>
 
          <div>
           <div className="relative flex items-center my-4 w-full justify-center space-x-4 text-center">
-          <img src="https://storage.googleapis.com/website-bucket-uploads/static/Character_1.png" className=""/>
-          <h1 className="font-bold text-3xl">Charles Lundy</h1>
+          <img alt="client avatar" src="https://storage.googleapis.com/website-bucket-uploads/static/Character_1.png" className=""/>
+          <h2 className="font-bold text-3xl">Charles Lundy</h2>
         </div>
         <p className=" mx-auto">"The AnalyticsLiv team estimated the job length accurately and then carried out the work exactly as briefed, to time and budget. We had one brief hiccup in the conversion tracking code but that was swiftly fixed once identified. Would definitely consider using it again and for more advanced reporting functionality in future"</p>
           </div>
@@ -611,47 +611,47 @@ export default function ga4({brandsdata}) {
         id="data-visualisation"
         name="data-visualisation"
       ></ScrollElement>
-  <h1 className="font-bold text-4xl py-4 md:pb-8 text-center">Data Visualizations Using Google Analytics 4</h1>
+  <h2 className="font-bold text-4xl py-4 md:pb-8 text-center">Data Visualizations Using Google Analytics 4</h2>
   <Carousel className="h-100" ssr={true} showDots={true} responsive={responsive} infinite={true} autoPlay autoPlaySpeed={4000} transitionDuration={500} removeArrowOnDeviceType={["tablet", "mobile"]}>
         
         <div className='md:w-2/3 mx-4 md:mx-auto h-auto'>
-          <img className='mx-auto' style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_1_Small.png'></img>
+          <img alt="dashboard image" className='mx-auto' style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_1_Small.png'></img>
         </div>
 
         <div className='md:w-2/3 mx-4 md:mx-auto h-auto'>
-          <img className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_2_Small.png'></img>
+          <img alt="dashboard image" className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_2_Small.png'></img>
         </div>
 
         <div className='md:w-2/3 mx-4 md:mx-auto h-auto'>
-          <img className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_3_Small.png'></img>
+          <img alt="dashboard image" className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_3_Small.png'></img>
         </div>
 
         <div className='md:w-2/3 mx-4 md:mx-auto h-auto'>
-          <img className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_4_Small.png'></img>
+          <img alt="dashboard image" className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_4_Small.png'></img>
         </div>
 
         <div className='md:w-2/3 mx-4 md:mx-auto'>
-          <img className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_5_Small.png'></img>
+          <img alt="dashboard image" className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_5_Small.png'></img>
         </div>
 
         <div className='md:w-2/3 mx-4 md:mx-auto h-auto'>
-          <img className='mx-auto' style={{height:'440px'}}  src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_6_Small.png'></img>
+          <img alt="dashboard image" className='mx-auto' style={{height:'440px'}}  src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_6_Small.png'></img>
         </div>
 
         <div className='md:w-2/3 mx-4 md:mx-auto h-auto'>
-          <img className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_7_Small.png'></img>
+          <img alt="dashboard image" className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_7_Small.png'></img>
         </div>
 
         <div className='md:w-2/3 mx-4 md:mx-auto h-auto'>
-          <img className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_8_small.png'></img>
+          <img alt="dashboard image" className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_8_small.png'></img>
         </div>
 
         <div className='md:w-2/3 mx-4 md:mx-auto h-auto'>
-          <img className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_9_Small.png'></img>
+          <img alt="dashboard image" className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_9_Small.png'></img>
         </div>
 
         <div className='md:w-2/3 mx-4 md:mx-auto h-auto'>
-          <img className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard/image9.png'></img>
+          <img alt="dashboard image" className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard/image9.png'></img>
         </div>
 
 
