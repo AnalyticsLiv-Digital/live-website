@@ -217,7 +217,7 @@ export default function dv360({brandsdata}) {
           <img alt="analyticsliv-logo" className="h-8 lg:ml-4 w-auto cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png"/>
         </a>
         <nav className="lg:flex text-center">
-          <ul className="lg:flex text-sm font-semibold text-left lg:text-center z-[-1] lg:z-auto lg:mr-4 lg:w-auto lg:space-x-6 items-center tracking-wide cursor-pointer">
+          <ul className="lg:flex text-base font-semibold text-left lg:text-center z-[-1] lg:z-auto lg:mr-4 lg:w-auto lg:space-x-6 items-center tracking-wide cursor-pointer">
             <li onClick={scrolling1} className="hover:text-amber-500">Expertise</li>
             <li onClick={scrolling2} className="hover:text-amber-500">Services</li>
             <li onClick={scrolling3} className="hover:text-amber-500">Case Studies</li>
@@ -225,7 +225,7 @@ export default function dv360({brandsdata}) {
     
           </ul>
           <a href="tel:7979634379">
-          <button className="cta px-5 py-2 bg-sky-300 rounded-2xl mx-2 text-sm font-semibold cursor-pointer hover:bg-sky-400">CALL US</button>
+          <button className="cta px-5 py-2 bg-sky-300 rounded-2xl mx-2 text-base font-semibold cursor-pointer hover:bg-sky-400">CALL US</button>
           </a>
           <span className="hidden md:inline px-4">
             <img alt="analyticsliv-gmp-partner" className="h-10 w-auto"   src="https://storage.googleapis.com/website-bucket-uploads/static/gmp.svg" />
@@ -237,7 +237,7 @@ export default function dv360({brandsdata}) {
     <div className="relative  flex lg:hidden p-2">
   <Link href="#"><img onClick={() => setIsOpen(false)} src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="relative h-10 md:mx-4 cursor-pointer"/></Link>
   <a className="ml-4" href="tel:7979634379">
-          <button className="cta px-5 py-2 bg-sky-300 rounded-2xl mx-2 text-sm font-semibold cursor-pointer hover:bg-sky-400">CALL US</button>
+          <button className="cta px-5 py-2 bg-sky-300 rounded-2xl mx-2 text-base font-semibold cursor-pointer hover:bg-sky-400">CALL US</button>
           </a>
               <button
                 onClick={() => {setIsOpen(!isOpen);}}
@@ -441,7 +441,7 @@ export default function dv360({brandsdata}) {
     <div className="bg-green-100 relative text-center md:flex justify-around items-center md:mt-4 px-4 md:px-20 pt-8 md:pt-4 md:pb-16">
       <div className="text-left">
         <h2 className="text-4xl text-left font-bold md:mb-16">Menu of Services</h2>
-        <ul className="my-6 mx-2 text-left text-sm font-semibold space-y-4 mb-8">
+        <ul className="my-6 mx-2 text-left text-base font-semibold space-y-4 mb-8">
           <li><img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png'/>
             Media Planning & Buying
             <div className="pl-9 font-normal text-emerald-800">
@@ -491,7 +491,7 @@ export default function dv360({brandsdata}) {
       </div>
       <div>
         <h2 className="text-4xl text-left font-bold md:mb-16">Get Global Reach</h2>
-        <ul className="my-6 mx-2 text-left text-sm font-semibold space-y-4 mb-8">
+        <ul className="my-6 mx-2 text-left text-base font-semibold space-y-4 mb-8">
           <li><img  alt="arrow"className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png'/>
             100+ Exchanges and Sub Exchanges
           </li>
@@ -513,7 +513,7 @@ export default function dv360({brandsdata}) {
     <div className="bg-green-100 relative text-center md:flex justify-around items-center md:mt-4 px-4 md:px-20 pt-8 md:pt-4 md:pb-16">
       <div className="text-left">
         <h2 className="text-4xl text-left font-bold md:mb-16">Buy Premium Placements</h2>
-        <ul className="my-6 mx-2 text-left text-sm font-semibold space-y-4 mb-8">
+        <ul className="my-6 mx-2 text-left text-base font-semibold space-y-4 mb-8">
           <li><img  alt="arrow"className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png'/>
             Consolidated Media Buying Management
           </li>
@@ -542,7 +542,7 @@ export default function dv360({brandsdata}) {
       </div>
       <div>
         <h2 className="text-4xl text-left font-bold md:mb-16">Granular Targeting</h2>
-        <ul className="my-6 mx-2 text-left text-sm font-semibold space-y-4 mb-8">
+        <ul className="my-6 mx-2 text-left text-base font-semibold space-y-4 mb-8">
           <li><img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png'/>
             First Party Audiences Available from
              <ul style={{"list-style":"square inside"}} className="pl-8">
@@ -658,9 +658,9 @@ export default function dv360({brandsdata}) {
                 
   </section> 
 
-<div className='sticky bottom-0 text-sm md:text-regular z-20 shadow-sm border-t-2 border-emerald-200 md:flex md:justify-center justify-between md:space-x-20 items-center md:px-16 px-2 bg-emerald-100 py-2 text-center'>
+<div className='sticky bottom-0 text-base md:text-regular z-20 shadow-sm border-t-2 border-emerald-200 md:flex md:justify-center justify-between md:space-x-20 items-center md:px-16 px-2 bg-emerald-100 py-2 text-center'>
     <h2 className="mb-2 text-left font-bold">Optimize your campaigns with DV360</h2>
-    <button onClick={scrolling}  className="cta md:px-5 px-4 py-2 bg-sky-500 rounded-2xl md:mx-2 text-sm font-semibold cursor-pointer hover:bg-sky-500">CONTACT US</button>
+    <button onClick={scrolling}  className="cta md:px-5 px-4 py-2 bg-sky-500 rounded-2xl md:mx-2 text-base font-semibold cursor-pointer hover:bg-sky-500">CONTACT US</button>
   </div>
 
  

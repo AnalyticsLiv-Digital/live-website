@@ -1,0 +1,12 @@
+.banner{
+    background-image: url(https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/Shape-banner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* .inner-banner::after {
+    content: '';
+    position: absolute;
+    bottom: 50px;
+    left: 85px;
+    background: url(../src/images/ggogle_cerified_partner-removebg-preview\ 1\ Logo.png), #4F7DCA 50% / cover no-repeat;
+} */
