@@ -363,7 +363,7 @@ export default function gtm({brandsdata}) {
                 </div>
                 <div className="lg:flex lg:justify-between">
                     <div className="left space-y-4 lg:w-[85%] mb-5">
-                        <h1 className="py-4 md:text-[27px] text-lg text-start font-semibold text-btn leading-10">Are You
+                        <h1 className="py-4 md:text-[25px] text-lg text-start font-semibold text-btn leading-10">Are You
                             Using Google
                             Tag Manager (GTM)?</h1>
 
