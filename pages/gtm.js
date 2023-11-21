@@ -1107,8 +1107,8 @@ export default function gtm({brandsdata}) {
                    
 
                     <div className="flex items-center justify-between text-start max-[680px]:block">
-                        <h2 className="text-black text-[30px] font-bold mb-6">To Improve Your Conversion Rate Optimization
-                            (CRO)
+                        <h2 className="text-black text-[30px] font-bold mb-6">To Improve Your Conversion Rate
+                        
                         </h2>
                         <button onClick={scrolling} 
                             className="bttn cursor-pointer w-44 bg-btn  hover:bg-sky-800 transition duration-200 delay-75 mx-2 p-4 rounded-[15px] opacity-80 shadow-lg shadow-gray-400 text-white font-semibold">Let’s
@@ -1635,7 +1635,7 @@ export default function gtm({brandsdata}) {
     </section>
 
      <div className='mt-10 md:flex justify-center md:space-x-20 items-center px-2 md:px-16 bg-sec py-2 text-center'>
-    <h2 className='text-left text-[30px] mb-2 font-bold'>To Improve Your Conversion Rate Optimization (CRO)</h2>
+    <h2 className='text-left text-[30px] mb-2 font-bold'>To Improve Your Conversion Rate</h2>
     <button onClick={scrolling}  className="bttn cursor-pointer w-44 bg-btn  hover:bg-sky-800 transition duration-200 delay-75 mx-2 p-4 rounded-[15px] opacity-80 shadow-lg shadow-gray-400 text-white font-semibold">Lets Get Started</button>
   </div>
 
