@@ -1,12 +1,87 @@
-.banner{
-    background-image: url(https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/Shape-banner.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+.bttn{
+    box-shadow: 6px 6px 4px 1px rgba(0, 0, 0, 0.25);
 }
-/* .inner-banner::after {
-    content: '';
-    position: absolute;
-    bottom: 50px;
-    left: 85px;
-    background: url(../src/images/ggogle_cerified_partner-removebg-preview\ 1\ Logo.png), #4F7DCA 50% / cover no-repeat;
-} */
+.form{
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25);
+}
+.case{
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+}
+input::placeholder {
+    color: #D6D6D6;
+}
+textarea::placeholder {
+    color: #D6D6D6;
+}
+.faQ input::placeholder {
+    color: #202020;
+}
+.head{
+    text-align: -webkit-center;
+}
+.right-triangle {
+    transform: rotate(270deg);
+    border-left: 105px solid transparent;
+    border-bottom: 69px solid #7DD3FC;
+}
+.right-triangle2 {
+    transform: rotate(270deg);
+    border-left: 105px solid transparent;
+    border-bottom: 69px solid #7DD3FC;
+}
+
+.triangle {
+    border-right: 66px solid transparent;
+    border-left: 67px solid transparent;
+    border-bottom: 68px solid #7DD3FC;
+}
+.ad{
+    background-color: #7DD3FC;
+}
+
+@media only screen and (min-width: 640px) and (max-width: 767px) {
+    .right-triangle {
+        transform: rotate(270deg);
+        border-left: 82px solid transparent;
+        border-bottom: 70px solid #7DD3FC;
+    }
+    .right-triangle2 {
+        transform: rotate(270deg);
+        border-left: 85px solid transparent;
+        border-bottom: 69px solid #7DD3FC;
+    }
+}
+
+@media only screen and (min-width: 640px) {
+    .right-triangle1 {
+        transform: rotate(270deg);
+        border-left: 67px solid transparent;
+        border-bottom: 69px solid #7DD3FC;
+    }
+    
+}
+@media only screen and (min-width: 768px) {
+    .right-triangle1 {
+        transform: rotate(270deg);
+        border-left: 89px solid transparent;
+        border-bottom: 69px solid #7DD3FC;
+    }
+    .right-triangle2 {
+        transform: rotate(270deg);
+        border-left: 89px solid transparent;
+        border-bottom: 69px solid #7DD3FC;
+    }
+}
+@media only screen and (min-width: 1024px) {
+    .right-triangle1 {
+        transform: rotate(270deg);
+        border-left: 73px solid transparent;
+        border-bottom: 69px solid #7DD3FC;
+    }
+    .right-triangle2 {
+        transform: rotate(270deg);
+        border-left: 73px solid transparent;
+        border-bottom: 69px solid #7DD3FC;
+    }
+    
+}

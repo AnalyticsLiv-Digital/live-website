@@ -12,6 +12,7 @@ import ScrollProgress from '../components/ScrollProgress'
 import { Transition } from "@headlessui/react";
 import Iframe from 'react-iframe'
 
+
 const { Element: ScrollElement } = Scroll;
 
 const responsive = {
@@ -36,19 +37,26 @@ const responsive = {
 
 export default function gtm({brandsdata}) {
 
-    const initialValues = { fullName: '', email: '', contact: '',message : ''};
+    const initialValues = { fullName: '', email: '', contact: '',message : '',website : ''};
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
     const [showWaiting, setShowWaiting] = useState(false);
     const [selected, setSelected] = useState("");
     const [formSubmit, setFormSubmit] = useState(false);
+    const [toggle1, setToggle1] = useState(true);
+    const [toggle2, setToggle2] = useState(true);
+    const [toggle3, setToggle3] = useState(true);
+    const [toggle4, setToggle4] = useState(true);
+    const [toggle5, setToggle5] = useState(true);
+    const [toggle6, setToggle6] = useState(true);
+
     const [isOpen, setIsOpen] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormValues({ ...formValues, [name]: value });
-        //console.log(formValues);
+       // console.log(formValues);
     };
 
 
@@ -65,9 +73,9 @@ export default function gtm({brandsdata}) {
            // console.log(formValues);
             setShowWaiting(true);
             dataLayer.push({
-                event:'ga4_submission'
+                event:'gtm_submission'
             });
-            fetch('/api/ga4contact', {
+            fetch('/api/gtmcontact', {
                 method: 'POST', // or 'PUT'
                 headers: {
                     'Content-Type': 'application/json',
@@ -77,7 +85,8 @@ export default function gtm({brandsdata}) {
                     "fullName": formValues.fullName,
                    "email": formValues.email,
                    "contact": formValues.contact,
-                   "message": formValues.message
+                   "message": formValues.message,
+                   "website": formValues.website
        }),
             })
                 .then((response) => response.json())
@@ -104,8 +113,8 @@ export default function gtm({brandsdata}) {
 
 
 
-        if (!values.message) {
-            errors.message = "Message is required!";
+        if (!values.website) {
+            errors.website = "Website is required!";
         }
 
    
@@ -127,9 +136,10 @@ export default function gtm({brandsdata}) {
         return errors;
     };
 
+
     const scrolling = () => {
         {
-            Scroll.scroller.scrollTo("contact-form", {
+            Scroll.scroller.scrollTo("form", {
               duration: 500,
               smooth: true,
               offset: -100,
@@ -139,7 +149,7 @@ export default function gtm({brandsdata}) {
 
     const scrolling1 = () =>{
       {
-        Scroll.scroller.scrollTo("expertise", {
+        Scroll.scroller.scrollTo("clients", {
           duration: 500,
           smooth: true,
           offset: -100,
@@ -161,7 +171,7 @@ export default function gtm({brandsdata}) {
 
     const scrolling3 = () =>{
       {
-        Scroll.scroller.scrollTo("case-studies", {
+        Scroll.scroller.scrollTo("solutions", {
           duration: 500,
           smooth: true,
           offset: -100,
@@ -172,7 +182,7 @@ export default function gtm({brandsdata}) {
 
     const scrolling4 = () =>{
       {
-        Scroll.scroller.scrollTo("testimonial", {
+        Scroll.scroller.scrollTo("testimonials", {
           duration: 500,
           smooth: true,
           offset: -100,
@@ -183,7 +193,7 @@ export default function gtm({brandsdata}) {
 
     const scrolling5 = () =>{
       {
-        Scroll.scroller.scrollTo("data-visualisation", {
+        Scroll.scroller.scrollTo("case-studies", {
           duration: 500,
           smooth: true,
           offset: -100,
@@ -205,10 +215,11 @@ export default function gtm({brandsdata}) {
           rel="stylesheet"
         />
                 <meta name="description" content="AnalyticsLiv Digital is one of the leading Web and App analytics agency. We help our customers embrace Google Products to improve their customer experiences."/>
-                <title>Google Analytics 4 - AnalyticsLiv</title>
+                <title>Google Tag Manager - AnalyticsLiv</title>
                 
             </Head>
             <StructuredData data={stuctureData} />
+            <div className="gtm">
     {showWaiting && <div className="fixed z-50 flex backdrop-blur top-0 left-0 right-0 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full"><ScaleLoader
   color="#271d90"
   loading
@@ -224,11 +235,11 @@ export default function gtm({brandsdata}) {
         </a>
         <nav className="lg:flex text-center">
           <ul className="lg:flex text-sm font-semibold text-left lg:text-center z-[-1] lg:z-auto lg:mr-4 lg:w-auto lg:space-x-6 items-center tracking-wide cursor-pointer">
-            <li onClick={scrolling1} className="hover:text-amber-500">Expertise</li>
+            <li onClick={scrolling1} className="hover:text-amber-500">Clients</li>
             <li onClick={scrolling2} className="hover:text-amber-500">Services</li>
-            <li onClick={scrolling3} className="hover:text-amber-500">Case Studies</li>
+            <li onClick={scrolling3} className="hover:text-amber-500">Custom Solutions</li>
             <li onClick={scrolling4} className="hover:text-amber-500">Testimonial</li>
-            <li onClick={scrolling5} className="hover:text-amber-500">Data Visualisation</li>
+            <li onClick={scrolling5} className="hover:text-amber-500">Case Studies</li>
           </ul>
           <a href="tel:7979634379">
           <button className="cta px-5 py-2 bg-sky-300 rounded-2xl mx-2 text-sm font-semibold cursor-pointer hover:bg-sky-400">CALL US</button>
@@ -303,7 +314,7 @@ export default function gtm({brandsdata}) {
                 <p onClick={() => {setIsOpen(!isOpen); scrolling1();}}
                   className=" text-slate-900 block px-3 py-2 rounded-md text-base font-medium"
                 >
-                 <div>Expertise</div>
+                 <div>Clients</div>
                   
                 </p>
 
@@ -319,21 +330,21 @@ export default function gtm({brandsdata}) {
                  
                   className="text-slate-900 block px-3 py-2 rounded-md text-base font-medium"
                 >
-                  Case Studies
+                  Custom Solutions
                 </p>
 
                 <p onClick={() => {setIsOpen(!isOpen); scrolling4();}}
     
                   className="text-slate-900 block px-3 py-2 rounded-md text-base font-medium"
                 >
-                  Testimonial
+                  Testimonials
                 </p>
 
                 <p onClick={() => {setIsOpen(!isOpen); scrolling5();}}
         
                   className="text-slate-900 block px-3 py-2 rounded-md text-base font-medium"
                 >
-                  Data Visualisation
+                  Case Studies
                 </p>
               </div>
             </div>
@@ -342,105 +353,112 @@ export default function gtm({brandsdata}) {
         <ScrollProgress color="red" showSpinner={false}/>
   </header>
 
-  <section class="banner relative h-full py-16">
-        <div class="max-w-screen-xl mx-auto">
-            <div class="md:mx-16 mx-4 pb-16 my-2 md:px-4 md:text-center border-b-2">
-                <div class="flex items-center justify-center space-x-4 py-4 mb-6">
-                    <img src="..https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/gtm_logo.png" alt="logo" />
-                    <h1 class="md:text-4xl text-xl font-bold leading-normal not-italic text-h1">Google Tag Manager
+  <section className="banner relative h-full py-16">
+        <div className="mx-auto">
+            <div className="md:mx-16 mx-4 pb-16 my-2 md:px-4 md:text-center border-b-2">
+                <div className="flex items-center justify-center space-x-4 py-4 mb-6">
+                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/gtm_logo.png" alt="logo" />
+                    <h1 className="md:text-4xl text-xl font-bold leading-normal not-italic text-h1">Google Tag Manager
                         Consulting Services</h1>
                 </div>
-                <div class="lg:flex lg:justify-between">
-                    <div class="left space-y-4 lg:w-[85%] mb-5">
-                        <h1 class="py-4 md:text-[30px] text-lg text-start font-semibold text-btn leading-10">Are You
+                <div className="lg:flex lg:justify-between">
+                    <div className="left space-y-4 lg:w-[85%] mb-5">
+                        <h1 className="py-4 md:text-[27px] text-lg text-start font-semibold text-btn leading-10">Are You
                             Using Google
                             Tag Manager (GTM)?</h1>
 
-                        <div class="py-3 text-center">
+                        <div className="py-3 text-center">
 
-                            <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/OBJECTS.png" alt="objects"/>
+                            <img className='mx-auto' src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/OBJECTS.png" alt="objects"/>
                         </div>
 
-                        <div class="py-3 text-center">
-                            <ul class="my-6 mx-2 text-black text-left md:text-xl text-base font-normal space-y-4 mb-8">
-                                <li class="flex">
+                        <div className="py-3 text-center">
+                            <ul className="my-6 mx-2 text-black text-left md:text-xl text-base font-normal space-y-4 mb-8">
+                                <li className="flex">
                                     <div>
-                                        <img src="..https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" class="inline mr-4" alt="#"/>
+                                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" className="inline mr-4" alt="#"/>
                                     </div>
                                     <span>Unlock power of GTM tag Management system</span>
                                 </li>
-                                <li class="flex">
+                                <li className="flex">
                                     <div>
-                                        <img src="..https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" class="inline mr-4" alt="#"/>
+                                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" className="inline mr-4" alt="#"/>
                                     </div>
                                     <span>Make dynamic changes to live website</span>
                                 </li>
-                                <li class="flex">
+                                <li className="flex">
                                     <div>
-                                        <img src="..https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" class="inline mr-4" alt="#"/>
+                                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" className="inline mr-4" alt="#"/>
                                     </div>
                                     <span>Track marketing pixels accurately</span>
                                 </li>
-                                <li class="flex">
+                                <li className="flex">
                                     <div>
-                                        <img src="..https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" class="inline mr-4" alt="#"/>
+                                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" className="inline mr-4" alt="#"/>
                                     </div>
                                     <span>Improve page performance via Server-side tagging</span>
                                 </li>
                             </ul>
-                            <button
-                                class="btn cursor-pointer w-44 bg-btn hover:bg-sky-800 transition duration-200 delay-75 mx-2 p-4 rounded-[15px] shadow-lg shadow-gray-400 text-white font-semibold">Let’s
+                            <button onClick={scrolling} 
+                                className="btn cursor-pointer w-44 bg-btn  hover:bg-sky-800 transition duration-200 delay-75 mx-2 p-4 rounded-[15px] shadow-lg shadow-gray-400 text-white font-semibold">Let’s
                                 chat to get
                                 best out of GTM</button>
                         </div>
 
                     </div>
+                    <ScrollElement
+        id="form"
+        name="form"
+      ></ScrollElement>
 
-                    <div class="right relative lg:flex lg:justify-end my-4 md:my-0">
-                        <div class="absolute rounded-[319px] bg-[#D6E4EE] w-56 h-56 left-0 -top-10 z-[-1] blur-2xl">
+                   {!formSubmit &&
+                    <div className="right relative lg:flex lg:justify-end my-4 md:my-0 h-[37rem]">
+                        <div className="absolute rounded-[319px] bg-[#D6E4EE] w-56 h-56 left-0 -top-10 z-[-1] blur-2xl">
                         </div>
-                        <div class="form z-10 text-center bg-back py-8 md:p-8 lg:w-3/4 rounded-[39px]">
-                            <div class="block">
-                                <h2 class="text-txt text-xl">We Understand Its difficult to get DV360 Account and
-                                    control
-                                    the
-                                    outcome</h2>
+                        <div className="form z-10 text-center bg-back py-8 md:p-8 lg:w-3/4 rounded-[39px]">
+                            <div className="block">
+                                <h2 className="text-txt text-xl">We understand maintaining centralized tag Management System is not an easy job</h2>
                                 <h1
-                                    class="text-black font-semibold text-[29px] p-4 border-dashed border-b-2 border-sky-200">
+                                    className="text-black font-semibold text-[29px] p-4 border-dashed border-b-2 border-sky-200">
                                     Let us
                                     help
                                     you
                                     !!</h1>
                             </div>
-                            <form class="px-4 md:pt-4 pb-2 space-y-4 text-gray-600">
-                                <div>
-                                    <input type="text" placeholder="FULL NAME*"
-                                        class="bg-transparent md:text-lg text-black px-4 border-b-2 w-full py-2 focus:outline-none focus:border-2 focus:border-sky-200"
-                                        id="fullName" name="fullName" value=""/>
-                                </div>
-                                <div>
-                                    <input type="email" placeholder="EMAIL*"
-                                        class="bg-transparent md:text-lg text-black px-4 border-b-2 w-full py-2 focus:outline-none focus:border-2 focus:border-sky-200"
-                                        id="email" name="email" value=""/>
-                                </div>
-                                <div>
-                                    <input type="tel" placeholder="CONTACT NO."
-                                        class="bg-transparent md:text-lg text-black px-4 border-b-2 w-full py-2 focus:outline-none focus:border-2 focus:border-sky-200"
-                                        id="contact" name="contact" value=""/>
-                                </div>
-                                <div>
-                                    <input type="text" placeholder="FULL NAME*"
-                                        class="bg-transparent md:text-lg text-black px-4 border-b-2 w-full py-2 focus:outline-none focus:border-2 focus:border-sky-200"
-                                        id="fullName" name="fullName" value=""/>
-                                </div>
-                                <div>
-                                    <textarea placeholder="TYPE MESSAGE"
-                                        class="bg-transparent md:text-lg text-black border-b-2 w-full px-4 py-2 focus:outline-none focus:border-2 focus:border-sky-200"
-                                        name="message" id="message" cols="30" rows="2"></textarea>
-                                </div>
-                            </form>
+                            <form className="px-4 md:pt-4 pb-2 space-y-4 text-gray-600" onSubmit={handleSubmit}>
+                      <div>
+                        <input type="text" placeholder="FULL NAME*" className="bg-transparent px-4 border-b-2 w-full py-2 focus:outline-none focus:border-2 focus:border-sky-200" id="fullName" name="fullName" value={formValues.fullName} onChange={handleChange}/>
+                       <span className="text-xs text-red-600 float-left">{formErrors.fullName}</span>
+                      </div>
+                      
+                      <div>
+                        <input type="email" placeholder="EMAIL*" className="bg-transparent border-b-2 w-full px-4 py-2 focus:outline-none focus:border-2 focus:border-sky-200" id="email" name="email" value={formValues.email} onChange={handleChange}/>
+                        <span className="text-xs text-red-600 float-left">{formErrors.email}</span>
+                      </div>
+                      <div>
+                        <input type="tel" placeholder="CONTACT NO." className="bg-transparent border-b-2 w-full px-4 py-2 focus:outline-none focus:border-2 focus:border-sky-200" id="contact" name="contact" value={formValues.contact} onChange={handleChange} />
+                        
+                      </div>
+                      <div>
+                        <input type="text" placeholder="WEBSITE*" className="bg-transparent px-4 border-b-2 w-full py-2 focus:outline-none focus:border-2 focus:border-sky-200" id="website" name="website" value={formValues.website} onChange={handleChange}/>
+                        <span className="text-xs text-red-600 float-left">{formErrors.website}</span>
+                      </div>
+                      <div>
+                        <textarea type="" placeholder="TYPE MESSAGE" className="bg-transparent border-b-2 w-full px-4 py-2 focus:outline-none focus:border-2 focus:border-sky-200"  id="message" name="message" value={formValues.message} onChange={handleChange}></textarea>
+                        
+                      </div>
+                      <div>
+                        <button className="cta cursor-pointer bg-sky-500 hover:bg-sky-600 transition duration-200 delay-75 font-semibold text-white px-8 py-2 rounded-xl shadow-md shadow-gray-600"> CONTACT US </button>
+                      </div>
+                    </form>
                         </div>
-                    </div>
+                    </div>}
+
+                    {formSubmit && <div className='w-full text-center'>
+          <h2 className="md:text-xl text-sky-900">Thank you for showing interest with us!</h2>
+        <h2 className="font-semibold text-2xl p-4 md:p-8 border-dashed border-b-2 border-sky-200">We will get back to you shortly !!</h2>
+        <img alt="Thankyou" className="w-64 mx-auto" src="https://storage.googleapis.com/website-bucket-uploads/static/Na_Dec_46.jpg"/>
+        </div>}
                 </div>
 
             </div>
@@ -448,46 +466,102 @@ export default function gtm({brandsdata}) {
     </section>
 
 
-
+    <ScrollElement
+        id="clients"
+        name="clients"
+      ></ScrollElement>
+    <section>
  
-    <section class="py-4">
-        <div class="max-w-screen-xl mx-auto">
-            <div class="md:mx-16 mx-4 pb-16 my-2 md:px-4 md:text-center">
-                <div class="flex items-center justify-center space-x-4 py-4 mb-6">
-                    <span class="bg-menu w-[150px] h-[10px]"></span>
-                    <h2 class="text-black text-center text-4xl md:text-5xl lg:text-6xl font-bold pb-2">Menu Of
+ <div className="bg-white py-4">
+  <h2 className="text-center font-bold text-xl">Thanks For Choosing AnalytiscLiv</h2>
+   <div className="brandsimages flex space-x-8 justify-center py-4 px-4 mt-4">
+   <Marquee gradient={false} pauseOnHover="true">
+        
+        { 
+                brandsdata.brand.map((brands,key) => (
+                 <div key={key}><img src={brands.logo} alt={brands.brands}/></div>
+             
+           ))
+           } 
+                 
+                 </Marquee>
+   </div>
+ </div>
+</section>
+
+<ScrollElement
+        id="services"
+        name="services"
+      ></ScrollElement>
+    <section className="py-4">
+        <div className="max-w-screen-xl mx-auto">
+            <div className="md:mx-16 mx-4 pb-16 my-2 md:px-4 md:text-center">
+                <div className="flex items-center justify-center space-x-4 py-4 mb-6">
+                    <span className="bg-menu w-[150px] h-[10px]"></span>
+                    <h2 className="text-black text-center text-4xl md:text-5xl lg:text-6xl font-bold pb-2">Menu Of
                         Services</h2>
-                    <span class="bg-menu w-[150px] h-[10px]"></span>
+                    <span className="bg-menu w-[150px] h-[10px]"></span>
                 </div>
-                <div class="in-menu my-3 min-[500px]:mx-[52px] mx-0">
+                <div className="in-menu my-3 min-[500px]:mx-[52px] mx-0">
                   
-                    <div class="first-dp  py-10 px-5">
-                        <div class="head1  relative sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
+
+
+                {toggle1 &&
+                    <div className="first-dp  py-10 px-5">
+                        <div className="head1  relative sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
                             <div
-                                class="f bg-menu inline-block relative md:pt-5 md:pb-6 lg:pt-4 lg:pb-[10px] pt-3 pb-2  max-[639px]:rounded-ful max-[639px]:py-3 max-[639px]:px-5">
+                                className="f bg-menu inline-block relative md:pt-5 md:pb-6 lg:pt-4 lg:pb-[10px] pt-3 pb-2  max-[639px]:rounded-[20%] max-[639px]:py-3 max-[639px]:px-5">
                                 <div
-                                    class="right-triangle w-0 h-0 absolute sm:left-[-76px] md:left-[-87px] sm:top-[6px] md:top-[18px] transform rotate-270 border-blue-400 max-[639px]:hidden">
+                                    className="right-triangle w-0 h-0 absolute sm:left-[-76px] md:left-[-87px] sm:top-[6px] md:top-[18px] transform rotate-270 border-blue-400 max-[639px]:hidden">
                                 </div>
-                                <div class="max-[374px]:block mx-auto text-center flex items-center justify-center">
-                                    <img class="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/stethoscope 1.png"
+                                <div className="max-[374px]:block mx-auto text-center flex items-center justify-center">
+                                    <img className="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/stethoscope 1.png"
                                         alt="stethoscope"/>
                                     <h3
-                                        class="text-black text-center flex items-center justify-center sm:text-2xl lg:text-4xl text-xl font-bold">
+                                        className="text-black text-center flex items-center justify-center sm:text-2xl lg:text-4xl text-xl font-bold">
                                         Google
                                         Tag Manager Health Check</h3>
-                                    <img class="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png"
+                                    <img onClick={() => {setToggle1(!toggle1); setToggle2(true); setToggle3(true); setToggle4(true); setToggle5(true); setToggle6(true);}} className="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png"
                                         alt="down-arrow"/>
                                 </div>
                                 <div
-                                    class="triangle w-0 absolute right-[-100px] sm:top-[10px] md:top-5 transform rotate-90 h-0 border-blue-300 max-[639px]:hidden">
+                                    className="triangle w-0 absolute right-[-100px] sm:top-[10px] md:top-5 transform rotate-90 h-0 border-blue-300 max-[639px]:hidden">
                                 </div>
                             </div> <br/>
-                            <div class="drp bg-menu hidden">
-                                <div class="flex">
+                            <br/>
+                        </div>
+
+
+                    </div>} 
+
+                    {!toggle1 &&
+                    <div className="first-dp py-10 px-5 ad">
+                        <div className="head1  relative sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
+                            <div
+                                className="f bg-menu inline-block relative md:pt-5 md:pb-6 lg:pt-4 lg:pb-[10px] pt-3 pb-2  max-[639px]:rounded-[20%] max-[639px]:py-3 max-[639px]:px-5">
+                                <div
+                                    className="right-triangle w-0 h-0 absolute sm:left-[-76px] md:left-[-87px] sm:top-[6px] md:top-[18px] transform rotate-270 border-blue-400 max-[639px]:hidden">
+                                </div>
+                                <div className="max-[374px]:block mx-auto text-center flex items-center justify-center">
+                                    <img className="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/stethoscope 1.png"
+                                        alt="stethoscope"/>
+                                    <h3
+                                        className="text-black text-center flex items-center justify-center sm:text-2xl lg:text-4xl text-xl font-bold">
+                                        Google
+                                        Tag Manager Health Check</h3>
+                                    <img onClick={() => {setToggle1(!toggle1); setToggle2(true); setToggle3(true); setToggle4(true); setToggle5(true); setToggle6(true);}} className="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png"
+                                        alt="down-arrow"/>
+                                </div>
+                                <div
+                                    className="triangle w-0 absolute right-[-100px] sm:top-[10px] md:top-5 transform rotate-90 h-0 border-blue-300 max-[639px]:hidden">
+                                </div>
+                            </div> <br/>
+                            <div className="drp bg-menu">
+                                <div className="flex">
                                     <div>
-                                        <img src="..https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" class="inline mr-4" alt="#"/>
+                                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" className="inline mr-4" alt="#"/>
                                     </div>
-                                    <p class="text-start ml-3 text-black text-[20px] font-medium">Comprehensive audit
+                                    <p className="text-start ml-3 text-black text-[20px] font-medium">Comprehensive audit
                                         will
                                         be
                                         conducted and that stats efficient
@@ -503,11 +577,11 @@ export default function gtm({brandsdata}) {
                                         performance.
                                     </p>
                                 </div> <br/>
-                                <div class="flex">
+                                <div className="flex">
                                     <div>
-                                        <img src="..https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" class="inline mr-4" alt="#"/>
+                                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" className="inline mr-4" alt="#"/>
                                     </div>
-                                    <p class="text-start ml-3 text-black text-[20px] font-medium">By performing this
+                                    <p className="text-start ml-3 text-black text-[20px] font-medium">By performing this
                                         cleanup, we
                                         aim to simplify the tracking
                                         process
@@ -519,12 +593,12 @@ export default function gtm({brandsdata}) {
                                         Analytics, Google Ads, Facebook etc.
                                     </p>
                                 </div> <br/>
-                                <div class="flex">
+                                <div className="flex">
                                     <div>
-                                        <img src="..https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" class="inline mr-4" alt="#"/>
+                                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" className="inline mr-4" alt="#"/>
                                     </div>
-                                    <div class="text-start  min-[320px]:ml-3 md:ml-[5px] lg:ml-0">
-                                        <p class="text-start text-black text-[20px] font-medium">In need to validate
+                                    <div className="text-start  min-[320px]:ml-3 md:ml-[5px] lg:ml-0">
+                                        <p className="text-start text-black text-[20px] font-medium">In need to validate
                                             whether
                                             your Google Analytics is tracking
                                             properly? <br/>
@@ -532,7 +606,7 @@ export default function gtm({brandsdata}) {
                                             data
                                             setup. Google Analytics audit will cover the following:
                                         <ul
-                                            class="text-start ml-5 inline-block list-disc text-black text-[20px] font-medium">
+                                            className="text-start ml-5 inline-block list-disc text-black text-[20px] font-medium">
                                             <li>Gaps in data tracking</li>
                                             <li>Errors or bugs</li>
                                             <li>reported</li>
@@ -544,11 +618,11 @@ export default function gtm({brandsdata}) {
                                         </p>
                                     </div>
                                 </div> <br/>
-                                <div class="flex">
+                                <div className="flex">
                                     <div>
-                                        <img src="..https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" class="inline mr-4" alt="#"/>
+                                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" className="inline mr-4" alt="#"/>
                                     </div>
-                                    <p class="text-start ml-3 text-black text-[20px] font-medium">Our team of certified
+                                    <p className="text-start ml-3 text-black text-[20px] font-medium">Our team of certified
                                         experts
                                         will fix the problems that are
                                         observed. This will also cover recommended and suggested tracking which might be
@@ -557,9 +631,9 @@ export default function gtm({brandsdata}) {
                                         avail analysis for businesses.
                                     </p>
                                 </div> <br/>
-                                <div class="text-center">
-                                    <button
-                                        class="btn cursor-pointer w-44 bg-btn hover:bg-sky-800 transition duration-200 delay-75 mx-2 p-4 rounded-[15px] shadow-lg shadow-gray-400 text-white font-semibold">Do
+                                <div className="text-center">
+                                    <button onClick={scrolling} 
+                                        className="btn cursor-pointer w-44 bg-btn  hover:bg-sky-800 transition duration-200 delay-75 mx-2 p-4 rounded-[15px] shadow-lg shadow-gray-400 text-white font-semibold">Do
                                         your GTM health check up now</button>
                                 </div>
                             </div>
@@ -567,36 +641,67 @@ export default function gtm({brandsdata}) {
                         </div>
 
 
-                    </div> <br/>
+                    </div>} 
+                    
+                    <br/>
              
 
-                    <div class="first-dp py-10 px-5">
-                        <div class="head1 relative sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
+
+
+
+                    {toggle2 &&
+                    <div className="first-dp py-10 px-5">
+                        <div className="head1 relative sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
                             <div
-                                class="f bg-menu inline-block relative md:pt-5 md:pb-5 lg:pt-4 lg:pb-[10px] pt-3 pb-2 max-[639px]:rounded-ful max-[639px]:py-3 max-[639px]:px-5">
+                                className="f bg-menu inline-block relative md:pt-5 md:pb-5 lg:pt-4 lg:pb-[10px] pt-3 pb-2 max-[639px]:rounded-[20%] max-[639px]:py-3 max-[639px]:px-5">
                                 <div
-                                    class="right-triangle1 w-0 h-0 absolute sm:left-[-68px] md:left-[-79px] sm:top-[-1px] md:top-[10px] lg:top-[2px] lg:left-[-71px] transform rotate-270 border-blue-400 max-[639px]:hidden">
+                                    className="right-triangle1 w-0 h-0 absolute sm:left-[-68px] md:left-[-79px] sm:top-[-1px] md:top-[10px] lg:top-[2px] lg:left-[-71px] transform rotate-270 border-blue-400 max-[639px]:hidden">
                                 </div>
-                                <div class="max-[374px]:block mx-auto text-center flex items-center justify-center">
-                                    <img class="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/server_img.png" alt="server_img"/>
+                                <div className="max-[374px]:block mx-auto text-center flex items-center justify-center">
+                                    <img className="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/server_img.png" alt="server_img"/>
                                     <h3
-                                        class="text-black text-center flex items-center justify-center sm:text-2xl lg:text-4xl text-xl font-bold">
+                                        className="text-black text-center flex items-center justify-center sm:text-2xl lg:text-4xl text-xl font-bold">
                                         Server-side Tagging</h3>
-                                    <img class="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png"
+                                    <img onClick={() => {setToggle1(true); setToggle2(!toggle2); setToggle3(true); setToggle4(true); setToggle5(true); setToggle6(true);}} className="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png"
                                         alt="down-arrow"/>
                                 </div>
                                 <div
-                                    class="triangle w-0 absolute right-[-100px] sm:top-[0px] md:top-3 lg:top-1 transform rotate-90 h-0 border-blue-300 max-[639px]:hidden">
+                                    className="triangle w-0 absolute right-[-100px] sm:top-[0px] md:top-3 lg:top-1 transform rotate-90 h-0 border-blue-300 max-[639px]:hidden">
                                 </div>
                             </div>
                         </div> <br/>
+             
+                    </div>} 
 
-                        <div class="drp hidden">
-                            <div class="flex">
-                                <div>
-                                    <img src="..https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" class="inline mr-4" alt="#"/>
+                    {!toggle2 &&
+                    <div className="first-dp py-10 px-5 ad">
+                        <div className="head1 relative sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
+                            <div
+                                className="f bg-menu inline-block relative md:pt-5 md:pb-5 lg:pt-4 lg:pb-[10px] pt-3 pb-2 max-[639px]:rounded-[20%] max-[639px]:py-3 max-[639px]:px-5">
+                                <div
+                                    className="right-triangle1 w-0 h-0 absolute sm:left-[-68px] md:left-[-79px] sm:top-[-1px] md:top-[10px] lg:top-[2px] lg:left-[-71px] transform rotate-270 border-blue-400 max-[639px]:hidden">
                                 </div>
-                                <p class="text-start ml-3 text-black text-[20px] font-medium">Server-side tagging is a
+                                <div className="max-[374px]:block mx-auto text-center flex items-center justify-center">
+                                    <img className="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/server_img.png" alt="server_img"/>
+                                    <h3
+                                        className="text-black text-center flex items-center justify-center sm:text-2xl lg:text-4xl text-xl font-bold">
+                                        Server-side Tagging</h3>
+                                    <img onClick={() => {setToggle1(true); setToggle2(!toggle2); setToggle3(true); setToggle4(true); setToggle5(true); setToggle6(true);}} className="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png"
+                                        alt="down-arrow"/>
+                                </div>
+                                <div
+                                    className="triangle w-0 absolute right-[-100px] sm:top-[0px] md:top-3 lg:top-1 transform rotate-90 h-0 border-blue-300 max-[639px]:hidden">
+                                </div>
+                            </div>
+                        </div>
+
+                       
+                        <div className="drp">
+                            <div className="flex">
+                                <div>
+                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" className="inline mr-4" alt="#"/>
+                                </div>
+                                <p className="text-start ml-3 text-black text-[20px] font-medium">Server-side tagging is a
                                     method used in web analytics and digital marketing to manage and deploy various
                                     tracking
                                     tags and scripts on a website's server using CDP platforms rather than directly on
@@ -608,11 +713,11 @@ export default function gtm({brandsdata}) {
                                     over data collection.
                                 </p>
                             </div> <br/>
-                            <div class="flex">
+                            <div className="flex">
                                 <div>
-                                    <img src="..https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" class="inline mr-4" alt="#"/>
+                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" className="inline mr-4" alt="#"/>
                                 </div>
-                                <p class="text-start ml-3 text-black text-[20px] font-medium">Some other key aspects of
+                                <p className="text-start ml-3 text-black text-[20px] font-medium">Some other key aspects of
                                     the
                                     server-side tagging are:
                                     Improve the page load time, reduce ad blocker impact, flexibility, improve
@@ -620,55 +725,85 @@ export default function gtm({brandsdata}) {
                                     and many more.
                                 </p>
                             </div> <br/>
-                            <div class="flex">
+                            <div className="flex">
                                 <div>
-                                    <img src="..https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" class="inline mr-4" alt="#"/>
+                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" className="inline mr-4" alt="#"/>
                                 </div>
-                                <div class="text-start  min-[320px]:ml-3 md:ml-[5px] lg:ml-0">
-                                    <p class="text-start text-black text-[20px] font-medium">If you're interested in
+                                <div className="text-start  min-[320px]:ml-3 md:ml-[5px] lg:ml-0">
+                                    <p className="text-start text-black text-[20px] font-medium">If you're interested in
                                         implementing server-side tagging, please feel free to contact us for more
                                         details.
                                     </p>
                                 </div>
                             </div> <br/>
 
-                            <div class="text-center">
-                                <button
-                                    class="btn cursor-pointer w-44 bg-btn hover:bg-sky-800 transition duration-200 delay-75 mx-2 p-4 rounded-[15px] shadow-lg shadow-gray-400 text-white font-semibold">Contact
+                            <div className="text-center">
+                                <button onClick={scrolling} 
+                                    className="btn cursor-pointer w-44 bg-btn  hover:bg-sky-800 transition duration-200 delay-75 mx-2 p-4 rounded-[15px] shadow-lg shadow-gray-400 text-white font-semibold">Contact
                                     Us</button>
                             </div>
                         </div>
-                    </div> <br/>
+                        
+                    </div>}
+                   
+
+                    <br/>
                     
 
-                    <div class="first-dp py-10 px-5">
-                        <div class="head1 relative sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
+
+                    {toggle3 &&
+                    <div className="first-dp py-10 px-5">
+                        <div className="head1 relative sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
                             <div
-                                class="f bg-menu inline-block relative md:pt-5 md:pb-6 lg:pt-4 lg:pb-[10px] pt-3 pb-2 max-[639px]:rounded-ful max-[639px]:py-3 max-[639px]:px-5">
+                                className="f bg-menu inline-block relative md:pt-5 md:pb-6 lg:pt-4 lg:pb-[10px] pt-3 pb-2 max-[639px]:rounded-[20%] max-[639px]:py-3 max-[639px]:px-5">
                                 <div
-                                    class="right-triangle w-0 h-0 absolute sm:left-[-76px] md:left-[-87px] sm:top-[6px] md:top-[18px] transform rotate-270 border-blue-400 max-[639px]:hidden">
+                                    className="right-triangle w-0 h-0 absolute sm:left-[-76px] md:left-[-87px] sm:top-[6px] md:top-[18px] transform rotate-270 border-blue-400 max-[639px]:hidden">
                                 </div>
-                                <div class="max-[374px]:block mx-auto text-center flex items-center justify-center">
-                                    <img class="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/Goals_tracking.png"
+                                <div className="max-[374px]:block mx-auto text-center flex items-center justify-center">
+                                    <img className="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/Goals_tracking.png"
                                         alt="Goals_tracking"/>
                                     <h3
-                                        class="text-black text-center flex items-center justify-center sm:text-2xl lg:text-4xl text-xl font-bold">
+                                        className="text-black text-center flex items-center justify-center sm:text-2xl lg:text-4xl text-xl font-bold">
                                         Goals Conversions & Events Tracking</h3>
-                                    <img class="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png"
+                                    <img onClick={() => {setToggle1(true); setToggle2(true); setToggle3(!toggle3); setToggle4(true); setToggle5(true); setToggle6(true);}} className="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png"
                                         alt="down-arrow"/>
                                 </div>
                                 <div
-                                    class="triangle w-0 absolute right-[-100px] sm:top-[10px] md:top-5 transform rotate-90 h-0 border-blue-300 max-[639px]:hidden">
+                                    className="triangle w-0 absolute right-[-100px] sm:top-[10px] md:top-5 transform rotate-90 h-0 border-blue-300 max-[639px]:hidden">
+                                </div>
+                            </div>
+                        </div> <br/>
+                    </div>}
+                    <></>
+                    {!toggle3 &&
+                    <div className="first-dp py-10 px-5 ad">
+                        <div className="head1 relative sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
+                            <div
+                                className="f bg-menu inline-block relative md:pt-5 md:pb-6 lg:pt-4 lg:pb-[10px] pt-3 pb-2 max-[639px]:rounded-[20%] max-[639px]:py-3 max-[639px]:px-5">
+                                <div
+                                    className="right-triangle w-0 h-0 absolute sm:left-[-76px] md:left-[-87px] sm:top-[6px] md:top-[18px] transform rotate-270 border-blue-400 max-[639px]:hidden">
+                                </div>
+                                <div className="max-[374px]:block mx-auto text-center flex items-center justify-center">
+                                    <img className="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/Goals_tracking.png"
+                                        alt="Goals_tracking"/>
+                                    <h3
+                                        className="text-black text-center flex items-center justify-center sm:text-2xl lg:text-4xl text-xl font-bold">
+                                        Goals Conversions & Events Tracking</h3>
+                                    <img onClick={() => {setToggle1(true); setToggle2(true); setToggle3(!toggle3); setToggle4(true); setToggle5(true); setToggle6(true);}} className="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png"
+                                        alt="down-arrow"/>
+                                </div>
+                                <div
+                                    className="triangle w-0 absolute right-[-100px] sm:top-[10px] md:top-5 transform rotate-90 h-0 border-blue-300 max-[639px]:hidden">
                                 </div>
                             </div>
                         </div> <br/>
 
-                        <div class="drp hidden">
-                            <div class="flex">
+                        <div className="drp">
+                            <div className="flex">
                                 <div>
-                                    <img src="..https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" class="inline mr-4" alt="#"/>
+                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" className="inline mr-4" alt="#"/>
                                 </div>
-                                <p class="text-start ml-3 text-black text-[20px] font-medium">If you're uncertain about
+                                <p className="text-start ml-3 text-black text-[20px] font-medium">If you're uncertain about
                                     what's happening on your website/app, such as which sections users are engaging with
                                     the
                                     most, or which buttons, forms, and other elements are performing well, you might be
@@ -682,11 +817,11 @@ export default function gtm({brandsdata}) {
                                     standards
                                 </p>
                             </div> <br/>
-                            <div class="flex">
+                            <div className="flex">
                                 <div>
-                                    <img src="..https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" class="inline mr-4" alt="#"/>
+                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" className="inline mr-4" alt="#"/>
                                 </div>
-                                <p class="text-start ml-3 text-black text-[20px] font-medium">The Custom event tracking
+                                <p className="text-start ml-3 text-black text-[20px] font-medium">The Custom event tracking
                                     in
                                     GA4 can help you gather this information, providing clarity on user behavior and
                                     interaction patterns. This knowledge can guide improvements to your website's
@@ -700,43 +835,71 @@ export default function gtm({brandsdata}) {
                                 </p>
                             </div> <br/>
 
-                            <div class="text-center">
-                                <button
-                                    class="btn cursor-pointer w-44 bg-btn hover:bg-sky-800 transition duration-200 delay-75 mx-2 p-4 rounded-[15px] shadow-lg shadow-gray-400 text-white font-semibold">Contact
+                            <div className="text-center">
+                                <button onClick={scrolling} 
+                                    className="btn cursor-pointer w-44 bg-btn  hover:bg-sky-800 transition duration-200 delay-75 mx-2 p-4 rounded-[15px] shadow-lg shadow-gray-400 text-white font-semibold">Contact
                                     Us</button>
                             </div>
                         </div>
-                    </div> <br/>
+                    </div>} <br/>
                  
 
-                    <div class="first-dp py-10 px-5">
-                        <div class="head1 relative sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
+
+
+                    {toggle4 &&
+                    <div className="first-dp py-10 px-5">
+                        <div className="head1 relative sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
                             <div
-                                class="f bg-menu inline-block relative md:pt-6 md:pb-6 lg:pt-4 lg:pb-[10px] pt-3 pb-[13px] max-[639px]:rounded-ful max-[639px]:py-3 max-[639px]:px-5">
+                                className="f bg-menu inline-block relative md:pt-6 md:pb-6 lg:pt-4 lg:pb-[10px] pt-3 pb-[13px] max-[639px]:rounded-[20%] max-[639px]:py-3 max-[639px]:px-5">
                                 <div
-                                    class="right-triangle w-0 h-0 absolute sm:left-[-76px] md:left-[-87px] sm:top-[6px] md:top-[18px] transform rotate-270 border-blue-400 max-[639px]:hidden">
+                                    className="right-triangle w-0 h-0 absolute sm:left-[-76px] md:left-[-87px] sm:top-[6px] md:top-[18px] transform rotate-270 border-blue-400 max-[639px]:hidden">
                                 </div>
-                                <div class="max-[374px]:block mx-auto text-center flex items-center justify-center">
-                                    <img class="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/ECommerse_img.png"
+                                <div className="max-[374px]:block mx-auto text-center flex items-center justify-center">
+                                    <img  className="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/ECommerse_img.png"
                                         alt="ECommerse_img"/>
                                     <h3
-                                        class="text-black text-center flex items-center justify-center sm:text-[23px] lg:text-4xl text-xl font-bold">
+                                        className="text-black text-center flex items-center justify-center sm:text-[23px] lg:text-3xl text-xl font-bold">
                                         Enhanced E-commerce Implementation</h3>
-                                    <img class="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png"
+                                    <img onClick={() => {setToggle1(true); setToggle2(true); setToggle3(true); setToggle4(!toggle4); setToggle5(true); setToggle6(true);}} className="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png"
                                         alt="down-arrow"/>
                                 </div>
                                 <div
-                                    class="triangle w-0 absolute right-[-100px] sm:top-[10px] md:top-5 transform rotate-90 h-0 border-blue-300 max-[639px]:hidden">
+                                    className="triangle w-0 absolute right-[-100px] sm:top-[10px] md:top-5 transform rotate-90 h-0 border-blue-300 max-[639px]:hidden">
                                 </div>
                             </div>
                         </div> <br/>
 
-                        <div class="drp hidden">
-                            <div class="flex">
-                                <div>
-                                    <img src="..https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" class="inline mr-4" alt="#"/>
+                    </div>}
+                    <></>
+                    {!toggle4 &&
+                    <div className="first-dp py-10 px-5 ad">
+                        <div className="head1 relative sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
+                            <div
+                                className="f bg-menu inline-block relative md:pt-6 md:pb-6 lg:pt-4 lg:pb-[10px] pt-3 pb-[13px] max-[639px]:rounded-[20%] max-[639px]:py-3 max-[639px]:px-5">
+                                <div
+                                    className="right-triangle w-0 h-0 absolute sm:left-[-76px] md:left-[-87px] sm:top-[6px] md:top-[18px] transform rotate-270 border-blue-400 max-[639px]:hidden">
                                 </div>
-                                <p class="text-start ml-3 text-black text-[20px] font-medium">Which products are
+                                <div className="max-[374px]:block mx-auto text-center flex items-center justify-center">
+                                    <img className="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/ECommerse_img.png"
+                                        alt="ECommerse_img"/>
+                                    <h3
+                                        className="text-black text-center flex items-center justify-center sm:text-[23px] lg:text-3xl text-xl font-bold">
+                                        Enhanced E-commerce Implementation</h3>
+                                    <img onClick={() => {setToggle1(true); setToggle2(true); setToggle3(true); setToggle4(!toggle4); setToggle5(true); setToggle6(true);}} className="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png"
+                                        alt="down-arrow"/>
+                                </div>
+                                <div
+                                    className="triangle w-0 absolute right-[-100px] sm:top-[10px] md:top-5 transform rotate-90 h-0 border-blue-300 max-[639px]:hidden">
+                                </div>
+                            </div>
+                        </div> <br/>
+
+                        <div className="drp">
+                            <div className="flex">
+                                <div>
+                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" className="inline mr-4" alt="#"/>
+                                </div>
+                                <p className="text-start ml-3 text-black text-[20px] font-medium">Which products are
                                     performing
                                     well on your website/app or struggling to grasp the situation, it suggests that
                                     managing
@@ -746,11 +909,11 @@ export default function gtm({brandsdata}) {
                                     data that helps in boosting their growth through a range of strategies. 
                                 </p>
                             </div> <br/>
-                            <div class="flex">
+                            <div className="flex">
                                 <div>
-                                    <img src="..https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" class="inline mr-4" alt="#"/>
+                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" className="inline mr-4" alt="#"/>
                                 </div>
-                                <p class="text-start ml-3 text-black text-[20px] font-medium">With enhanced ecommerce,
+                                <p className="text-start ml-3 text-black text-[20px] font-medium">With enhanced ecommerce,
                                     you
                                     can track various stages of the customer journey, including promotions, product
                                     views,
@@ -761,43 +924,71 @@ export default function gtm({brandsdata}) {
                                 </p>
                             </div> <br/>
 
-                            <div class="text-center">
-                                <button
-                                    class="btn cursor-pointer w-44 bg-btn hover:bg-sky-800 transition duration-200 delay-75 mx-2 p-4 rounded-[15px] shadow-lg shadow-gray-400 text-white font-semibold">Contact
+                            <div className="text-center">
+                                <button onClick={scrolling} 
+                                    className="btn cursor-pointer w-44 bg-btn  hover:bg-sky-800 transition duration-200 delay-75 mx-2 p-4 rounded-[15px] shadow-lg shadow-gray-400 text-white font-semibold">Contact
                                     Us</button>
                             </div>
                         </div>
-                    </div> <br/>
+                    </div>} <br/>
                  
 
-                    <div class="first-dp py-10 px-5">
-                        <div class="head1 relative sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
-                            <div
-                                class="f bg-menu inline-block relative md:pt-5 md:pb-1 lg:pt-4 lg:pb-[10px] pt-3 pb-2 max-[639px]:rounded-ful max-[639px]:py-3 max-[639px]:px-5">
+
+
+                    {toggle5 &&
+                    <div className="first-dp py-10 px-5">
+                        <div className="head1 relative sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
+                        <div
+                                className="f bg-menu inline-block relative max-[639px]:py-3 max-[639px]:px-5 md:pt-5 md:pb-6 lg:pt-4 lg:pb-[10px] pt-3 pb-2 max-[639px]:rounded-[20%]">
                                 <div
-                                    class="right-triangle2 w-0 h-0 absolute sm:left-[-77px] md:left-[-79px] sm:top-[8px] md:top-[10px] lg:top-[2px] lg:left-[-71px] transform rotate-270 border-blue-400 max-[639px]:hidden">
+                                    className="right-triangle w-0 h-0 absolute sm:left-[-76px] md:left-[-87px] sm:top-[6px] md:top-[18px] transform rotate-270 border-blue-400 max-[639px]:hidden">
                                 </div>
-                                <div class="max-[374px]:block mx-auto text-center flex items-center justify-center">
-                                    <img class="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/cross_domain.png"
-                                        alt="cross_domain"/>
+                                <div className="max-[374px]:block mx-auto text-center flex items-center justify-center">
+                                    <img className="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/cross_domain.png"
+                                        alt="Configuration_img"/>
                                     <h3
-                                        class="text-black text-center flex items-center justify-center sm:text-2xl lg:text-4xl text-xl font-bold">
-                                        Cross-Domain Tracking</h3>
-                                    <img class="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png"
+                                        className="text-black text-center flex items-center justify-center sm:text-2xl lg:text-4xl text-xl font-bold">
+                                        Cross Domain Tracking</h3>
+                                    <img onClick={() => {setToggle1(true); setToggle2(true); setToggle3(true); setToggle4(true); setToggle5(!toggle5); setToggle6(true);}}  className="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png"
                                         alt="down-arrow"/>
                                 </div>
                                 <div
-                                    class="triangle w-0 absolute right-[-100px] sm:top-[10px] md:top-3 lg:top-1 transform rotate-90 h-0 border-blue-300 max-[639px]:hidden">
+                                    className="triangle w-0 absolute right-[-100px] sm:top-[10px] md:top-5 transform rotate-90 h-0 border-blue-300 max-[639px]:hidden">
                                 </div>
                             </div>
                         </div> <br/>
 
-                        <div class="drp hidden">
-                            <div class="flex">
-                                <div>
-                                    <img src="..https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" class="inline mr-4" alt="#"/>
+                    </div>}
+                    <></>
+                    {!toggle5 &&
+                    <div className="first-dp py-10 px-5 ad">
+                        <div className="head1 relative sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
+                        <div
+                                className="f bg-menu inline-block relative max-[639px]:py-3 max-[639px]:px-5 md:pt-5 md:pb-6 lg:pt-4 lg:pb-[10px] pt-3 pb-2 max-[639px]:rounded-[20%]">
+                                <div
+                                    className="right-triangle w-0 h-0 absolute sm:left-[-76px] md:left-[-87px] sm:top-[6px] md:top-[18px] transform rotate-270 border-blue-400 max-[639px]:hidden">
                                 </div>
-                                <p class="text-start ml-3 text-black text-[20px] font-medium">Server-side tagging is a
+                                <div className="max-[374px]:block mx-auto text-center flex items-center justify-center">
+                                    <img  className="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/cross_domain.png"
+                                        alt="Configuration_img"/>
+                                    <h3
+                                        className="text-black text-center flex items-center justify-center sm:text-2xl lg:text-4xl text-xl font-bold">
+                                        Cross Domain Tracking</h3>
+                                    <img onClick={() => {setToggle1(true); setToggle2(true); setToggle3(true); setToggle4(true); setToggle5(!toggle5); setToggle6(true);}} className="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png"
+                                        alt="down-arrow"/>
+                                </div>
+                                <div
+                                    className="triangle w-0 absolute right-[-100px] sm:top-[10px] md:top-5 transform rotate-90 h-0 border-blue-300 max-[639px]:hidden">
+                                </div>
+                            </div>
+                        </div> <br/>
+
+                        <div className="drp">
+                            <div className="flex">
+                                <div>
+                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" className="inline mr-4" alt="#"/>
+                                </div>
+                                <p className="text-start ml-3 text-black text-[20px] font-medium">Server-side tagging is a
                                     method used in web analytics and digital marketing to manage and deploy various
                                     tracking
                                     tags and scripts on a website's server using CDP platforms rather than directly on
@@ -809,11 +1000,11 @@ export default function gtm({brandsdata}) {
                                     over data collection.
                                 </p>
                             </div> <br/>
-                            <div class="flex">
+                            <div className="flex">
                                 <div>
-                                    <img src="..https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" class="inline mr-4" alt="#"/>
+                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" className="inline mr-4" alt="#"/>
                                 </div>
-                                <p class="text-start ml-3 text-black text-[20px] font-medium">We help our clients in
+                                <p className="text-start ml-3 text-black text-[20px] font-medium">We help our clients in
                                     stitching the journey of users browsing through their different cross-domains
                                     through
                                     custom implementation with the help of cross-domain tracking. By stitching this you
@@ -822,43 +1013,73 @@ export default function gtm({brandsdata}) {
                                 </p>
                             </div> <br/>
 
-                            <div class="text-center">
-                                <button
-                                    class="btn cursor-pointer w-44 bg-btn hover:bg-sky-800 transition duration-200 delay-75 mx-2 p-4 rounded-[15px] shadow-lg shadow-gray-400 text-white font-semibold">Contact
+                            <div className="text-center">
+                                <button onClick={scrolling} 
+                                    className="btn cursor-pointer w-44 bg-btn  hover:bg-sky-800 transition duration-200 delay-75 mx-2 p-4 rounded-[15px] shadow-lg shadow-gray-400 text-white font-semibold">Contact
                                     Us</button>
                             </div>
                         </div>
-                    </div> <br/>
+                    </div>} <br/>
                    
 
-                    <div class="first-dp py-10 px-5">
-                        <div class="head1 relative sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
+
+
+
+
+                    {toggle6 &&
+                    <div className="first-dp py-10 px-5">
+                        <div className="head1 relative sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
                             <div
-                                class="f bg-menu inline-block relative max-[639px]:py-3 max-[639px]:px-5 md:pt-5 md:pb-6 lg:pt-4 lg:pb-[10px] pt-3 pb-2 max-[639px]:rounded-ful">
+                                className="f bg-menu inline-block relative max-[639px]:py-3 max-[639px]:px-5 md:pt-5 md:pb-6 lg:pt-4 lg:pb-[10px] pt-3 pb-2 max-[639px]:rounded-[20%]">
                                 <div
-                                    class="right-triangle w-0 h-0 absolute sm:left-[-76px] md:left-[-87px] sm:top-[6px] md:top-[18px] transform rotate-270 border-blue-400 max-[639px]:hidden">
+                                    className="right-triangle w-0 h-0 absolute sm:left-[-76px] md:left-[-87px] sm:top-[6px] md:top-[18px] transform rotate-270 border-blue-400 max-[639px]:hidden">
                                 </div>
-                                <div class="max-[374px]:block mx-auto text-center flex items-center justify-center">
-                                    <img class="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/Configuration.png"
+                                <div className="max-[374px]:block mx-auto text-center flex items-center justify-center">
+                                    <img className="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/Configuration.png"
                                         alt="Configuration_img"/>
                                     <h3
-                                        class="text-black text-center flex items-center justify-center sm:text-2xl lg:text-4xl text-xl font-bold">
+                                        className="text-black text-center flex items-center justify-center sm:text-2xl lg:text-4xl text-xl font-bold">
                                         Configuration Of Custom Dimensions</h3>
-                                    <img class="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png"
+                                    <img onClick={() => {setToggle1(true); setToggle2(true); setToggle3(true); setToggle4(true); setToggle5(true); setToggle6(!toggle6);}} className="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png"
                                         alt="down-arrow"/>
                                 </div>
                                 <div
-                                    class="triangle w-0 absolute right-[-100px] sm:top-[10px] md:top-5 transform rotate-90 h-0 border-blue-300 max-[639px]:hidden">
+                                    className="triangle w-0 absolute right-[-100px] sm:top-[10px] md:top-5 transform rotate-90 h-0 border-blue-300 max-[639px]:hidden">
                                 </div>
                             </div>
                         </div> <br/>
 
-                        <div class="drp hidden">
-                            <div class="flex">
-                                <div>
-                                    <img src="..https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" class="inline mr-4" alt="#"/>
+                    </div>}
+                    <></>
+                    {!toggle6 &&
+                    <div className="first-dp py-10 px-5 ad">
+                        <div className="head1 relative sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
+                            <div
+                                className="f bg-menu inline-block relative max-[639px]:py-3 max-[639px]:px-5 md:pt-5 md:pb-6 lg:pt-4 lg:pb-[10px] pt-3 pb-2 max-[639px]:rounded-[20%]">
+                                <div
+                                    className="right-triangle w-0 h-0 absolute sm:left-[-76px] md:left-[-87px] sm:top-[6px] md:top-[18px] transform rotate-270 border-blue-400 max-[639px]:hidden">
                                 </div>
-                                <p class="text-start ml-3 text-black text-[20px] font-medium">If you need to include
+                                <div className="max-[374px]:block mx-auto text-center flex items-center justify-center">
+                                    <img className="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/Configuration.png"
+                                        alt="Configuration_img"/>
+                                    <h3
+                                        className="text-black text-center flex items-center justify-center sm:text-2xl lg:text-4xl text-xl font-bold">
+                                        Configuration Of Custom Dimensions</h3>
+                                    <img onClick={() => {setToggle1(true); setToggle2(true); setToggle3(true); setToggle4(true); setToggle5(true); setToggle6(!toggle6);}} className="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png"
+                                        alt="down-arrow"/>
+                                </div>
+                                <div
+                                    className="triangle w-0 absolute right-[-100px] sm:top-[10px] md:top-5 transform rotate-90 h-0 border-blue-300 max-[639px]:hidden">
+                                </div>
+                            </div>
+                        </div> <br/>
+
+                        <div className="drp">
+                            <div className="flex">
+                                <div>
+                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" className="inline mr-4" alt="#"/>
+                                </div>
+                                <p className="text-start ml-3 text-black text-[20px] font-medium">If you need to include
                                     extra
                                     information with your events in GA4 or Firebase, we can efficiently manage this
                                     within
@@ -871,21 +1092,26 @@ export default function gtm({brandsdata}) {
                                 </p>
                             </div> <br/>
 
-                            <div class="text-center">
-                                <button
-                                    class="btn cursor-pointer w-44 bg-btn hover:bg-sky-800 transition duration-200 delay-75 mx-2 p-4 rounded-[15px] shadow-lg shadow-gray-400 text-white font-semibold">Contact
+                            <div className="text-center">
+                                <button onClick={scrolling} 
+                                    className="btn cursor-pointer w-44 bg-btn  hover:bg-sky-800 transition duration-200 delay-75 mx-2 p-4 rounded-[15px] shadow-lg shadow-gray-400 text-white font-semibold">Contact
                                     Us</button>
                             </div>
                         </div>
-                    </div> <br/>
+                    </div>} <br/>
+
+
+
+
+
                    
 
-                    <div class="flex items-center justify-between text-start max-[680px]:block">
-                        <h2 class="text-black text-[32px] font-bold mb-6">To Improve Your Conversion Rate Optimization
+                    <div className="flex items-center justify-between text-start max-[680px]:block">
+                        <h2 className="text-black text-[30px] font-bold mb-6">To Improve Your Conversion Rate Optimization
                             (CRO)
                         </h2>
-                        <button
-                            class="bttn cursor-pointer w-44 bg-btn hover:bg-sky-800 transition duration-200 delay-75 mx-2 p-4 rounded-[15px] opacity-80 shadow-lg shadow-gray-400 text-white font-semibold">Let’s
+                        <button onClick={scrolling} 
+                            className="bttn cursor-pointer w-44 bg-btn  hover:bg-sky-800 transition duration-200 delay-75 mx-2 p-4 rounded-[15px] opacity-80 shadow-lg shadow-gray-400 text-white font-semibold">Let’s
                             Get Started</button>
                     </div> <br/>
                 </div>
@@ -893,29 +1119,32 @@ export default function gtm({brandsdata}) {
         </div>
     </section>
    
-
-    <section class="py-4">
-        <div class="max-w-screen-xl mx-auto">
-            <div class="md:mx-16 mx-4 pb-16 my-2 md:px-4 md:text-center">
-                <div class="flex items-center justify-center space-x-4 py-4 mb-6">
-                    <span class="bg-menu w-[150px] h-[10px]"></span>
-                    <h2 class="text-black text-center text-4xl md:text-5xl lg:text-6xl font-bold pb-2">Custom Solution
+    <ScrollElement
+        id="solutions"
+        name="solutions"
+      ></ScrollElement>
+    <section className="py-4">
+        <div className="max-w-screen-xl mx-auto">
+            <div className="md:mx-16 mx-4 pb-16 my-2 md:px-4 md:text-center">
+                <div className="flex items-center justify-center space-x-4 py-4 mb-6">
+                    <span className="bg-menu w-[150px] h-[10px]"></span>
+                    <h2 className="text-black text-center text-4xl md:text-5xl lg:text-6xl font-bold pb-2">Custom Solution
                     </h2>
-                    <span class="bg-menu w-[150px] h-[10px]"></span>
+                    <span className="bg-menu w-[150px] h-[10px]"></span>
                 </div>
-                <div class="inner-consulting grid items-center md:grid-cols-1 lg:grid-cols-2 py-[60px] md:gap-8 gap-16">
-                    <div class="left-con text-left">
-                        <h1 class="text-black lg:text-[48px] text-3xl leading-normal font-bold mb-[50px]">Conversion
+                <div className="inner-consulting grid items-center md:grid-cols-1 lg:grid-cols-2 py-[60px] md:gap-8 gap-16">
+                    <div className="left-con text-left">
+                        <h1 className="text-black lg:text-[48px] text-3xl leading-normal font-bold mb-[50px]">Conversion
                             API(CAPI)
                             Setup & Implementation</h1>
-                        <p class="text-black text-[20px] font-medium">Conversion APIs (CAPI) setups for Facebook or any
+                        <p className="text-black text-[20px] font-medium">Conversion APIs (CAPI) setups for Facebook or any
                             other marketing tools that allows businesses to send data about customer interactions and
                             conversions directly to tool's servers. It is an alternative or complementary method to the
                             traditional configuration like Facebook Pixel for tracking and measuring website events,
                             especially in cases where third-party cookies are restricted or for more accurate event
                             tracking.</p>
                     </div>
-                    <div class="right-con flex lg:justify-end justify-center">
+                    <div className="right-con flex lg:justify-end justify-center">
                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/Conversion_Section_Right_img.png" alt="Tag-manager"/>
                     </div>
                 </div>
@@ -924,19 +1153,19 @@ export default function gtm({brandsdata}) {
     </section>
    
 
-    <section class="py-[60px] bg-sec">
-        <div class="max-w-screen-xl mx-auto">
+    <section className="py-[60px] bg-sec">
+        <div className="max-w-screen-xl mx-auto">
 
             <div
-                class="inner-data mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
-                <div class="left-data flex lg:justify-end xl:justify-start justify-center">
+                className="inner-data mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
+                <div className="left-data flex lg:justify-end xl:justify-start justify-center">
                     <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/Frame.png" alt="Frame.img"/>
                 </div>
-                <div class="right-data text-left">
-                    <h1 class="text-black lg:text-[48px] text-3xl font-bold leading-normal mb-[50px]">Offline And Online
+                <div className="right-data text-left">
+                    <h1 className="text-black lg:text-[48px] text-3xl font-bold leading-normal mb-[50px]">Offline And Online
                         Data
                         Integration</h1>
-                    <p class="text-black text-[20px] font-medium">If you're interested in visualizing your offline data
+                    <p className="text-black text-[20px] font-medium">If you're interested in visualizing your offline data
                         as
                         reports and conducting more thorough analysis, importing your offline data into GA4 is a
                         definite
@@ -957,14 +1186,14 @@ export default function gtm({brandsdata}) {
     </section>
     
 
-    <section class="py-[60px]">
-        <div class="max-w-screen-xl mx-auto">
+    <section className="py-[60px]">
+        <div className="max-w-screen-xl mx-auto">
             <div
-                class="inner-form-field mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
-                <div class="left-form text-left">
-                    <h1 class="text-black lg:text-[48px] text-3xl font-bold leading-normal mb-[50px]">Form Field
+                className="inner-form-field mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
+                <div className="left-form text-left">
+                    <h1 className="text-black lg:text-[48px] text-3xl font-bold leading-normal mb-[50px]">Form Field
                         Analysis</h1>
-                    <p class="text-black text-[20px] font-medium">Forms play a significant role in your
+                    <p className="text-black text-[20px] font-medium">Forms play a significant role in your
                         business and collecting insights from user submissions is valuable, then form tracking becomes
                         essential. <br/><br/>
 
@@ -976,7 +1205,7 @@ export default function gtm({brandsdata}) {
                         We can calculate the percentage of users who start filling out a form versus those who
                         successfully submit it. This helps identify potential drop-off points.</p>
                 </div>
-                <div class="right-form flex lg:justify-end justify-center">
+                <div className="right-form flex lg:justify-end justify-center">
                     <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/form-field.png" alt="Setup_IMG"/>
                 </div>
             </div>
@@ -984,17 +1213,17 @@ export default function gtm({brandsdata}) {
     </section>
     
 
-    <section class="py-[60px] bg-sec">
-        <div class="max-w-screen-xl mx-auto">
+    <section className="py-[60px] bg-sec">
+        <div className="max-w-screen-xl mx-auto">
             <div
-                class="inner-custom mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
-                <div class="left-tag flex lg:justify-end xl:justify-start justify-center">
+                className="inner-custom mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
+                <div className="left-tag flex lg:justify-end xl:justify-start justify-center">
                     <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/Custom_Campaign_Attri_IMG.png" alt="custom-campaign.img"/>
                 </div>
-                <div class="right-custom text-left">
-                    <h1 class="text-black lg:text-[48px] text-3xl font-bold leading-normal mb-[50px]">Custom Campaign
+                <div className="right-custom text-left">
+                    <h1 className="text-black lg:text-[48px] text-3xl font-bold leading-normal mb-[50px]">Custom Campaign
                         Attribution</h1>
-                    <p class="text-black text-[20px] font-medium">To make sure your campaign tracking, UTM tagging are
+                    <p className="text-black text-[20px] font-medium">To make sure your campaign tracking, UTM tagging are
                         proper and most importantly it is getting attributed properly in Reporting. With our custom
                         attribution approach you will get accurate count with less (not set), actual (direct) / (none)
                         in source/medium and campaign. <br/> <br/>
@@ -1010,20 +1239,20 @@ export default function gtm({brandsdata}) {
     </section>
     
 
-    <section class="py-[60px]">
-        <div class="max-w-screen-xl mx-auto">
+    <section className="py-[60px]">
+        <div className="max-w-screen-xl mx-auto">
             <div
-                class="inner-facebook mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
-                <div class="left-form text-left">
-                    <h1 class="text-black lg:text-[48px] text-3xl font-bold leading-normal mb-[50px]">Facebook
+                className="inner-facebook mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
+                <div className="left-form text-left">
+                    <h1 className="text-black lg:text-[48px] text-3xl font-bold leading-normal mb-[50px]">Facebook
                         Conversion API Implementation For Shopify</h1>
-                    <p class="text-black text-[20px] font-medium">We have expertise in setting up Enhanced Ecommerce
+                    <p className="text-black text-[20px] font-medium">We have expertise in setting up Enhanced Ecommerce
                         Tracking for Shopify for Facebook with custom approaches to capture maximum amount of ecommerce
                         data and to improve the accuracy and enhancement of tracking we can implement conversion API for
                         facebook by setting up Google Tag Manager Server Side Container and configure it to deduplicate
                         the browser and server-side events data.</p>
                 </div>
-                <div class="right-facebook flex lg:justify-end justify-center">
+                <div className="right-facebook flex lg:justify-end justify-center">
                     <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/Facebook_API_IMG.png" alt="Facebook_API_IMG"/>
                 </div>
             </div>
@@ -1031,17 +1260,17 @@ export default function gtm({brandsdata}) {
     </section>
     
 
-    <section class="py-[60px] bg-sec">
-        <div class="max-w-screen-xl mx-auto">
+    <section className="py-[60px] bg-sec">
+        <div className="max-w-screen-xl mx-auto">
             <div
-                class="inner-user mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
-                <div class="left-tag flex lg:justify-end xl:justify-start justify-center">
+                className="inner-user mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
+                <div className="left-tag flex lg:justify-end xl:justify-start justify-center">
                     <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/Client.png" alt="Users.img"/>
                 </div>
-                <div class="right-user text-left">
-                    <h1 class="text-black lg:text-[48px] text-3xl font-bold leading-normal mb-[50px]">User ID
+                <div className="right-user text-left">
+                    <h1 className="text-black lg:text-[48px] text-3xl font-bold leading-normal mb-[50px]">User ID
                         Implementation</h1>
-                    <p class="text-black text-[20px] font-medium">There are countless ways in which users can explore
+                    <p className="text-black text-[20px] font-medium">There are countless ways in which users can explore
                         our website/app. Keeping track of the same user's journey across different
                         devices/browsers/platforms etc. is tricky without any custom approach. <br/><br/>
                         Fortunately, with the help of the user ID implementation solution, we can definitely unify our
@@ -1056,21 +1285,21 @@ export default function gtm({brandsdata}) {
     </section>
    
 
-    <section class="py-[60px]">
-        <div class="max-w-screen-xl mx-auto">
+    <section className="py-[60px]">
+        <div className="max-w-screen-xl mx-auto">
             <div
-                class="inner-client mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
-                <div class="left-client text-left">
-                    <h1 class="text-black lg:text-[48px] text-3xl font-bold leading-normal mb-[50px]">Client ID
+                className="inner-client mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
+                <div className="left-client text-left">
+                    <h1 className="text-black lg:text-[48px] text-3xl font-bold leading-normal mb-[50px]">Client ID
                         Implementation</h1>
-                    <p class="text-black text-[20px] font-medium">Google Analytics automatically tracks Client IDs and
+                    <p className="text-black text-[20px] font-medium">Google Analytics automatically tracks Client IDs and
                         displays them in user exploration reports, BigQuery reports, and more. However, if you want to
                         analyse users alongside events, enhanced ecommerce data, or conduct other types of in-depth
                         analysis, custom Client ID implementation is the solution. <br/> <br/>
                         It enables you to use Client IDs for comprehensive user analysis with various parameters,
                         enhancing your ability to gain valuable insights from your data.</p>
                 </div>
-                <div class="right-client flex lg:justify-end justify-center">
+                <div className="right-client flex lg:justify-end justify-center">
                     <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/Client_id_implementation_Section_right.png" alt="Client-id_Img"/>
                 </div>
             </div>
@@ -1078,17 +1307,17 @@ export default function gtm({brandsdata}) {
     </section>
     
 
-    <section class="py-[60px] bg-sec">
-        <div class="max-w-screen-xl mx-auto">
+    <section className="py-[60px] bg-sec">
+        <div className="max-w-screen-xl mx-auto">
             <div
-                class="inner-app mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
-                <div class="left-tag flex lg:justify-end xl:justify-start justify-center">
+                className="inner-app mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
+                <div className="left-tag flex lg:justify-end xl:justify-start justify-center">
                     <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/web.png" alt="Web.img"/>
                 </div>
-                <div class="right-app text-left">
-                    <h1 class="text-black lg:text-[48px] text-3xl font-bold leading-normal mb-[50px]">App To Web View
+                <div className="right-app text-left">
+                    <h1 className="text-black lg:text-[48px] text-3xl font-bold leading-normal mb-[50px]">App To Web View
                         Stitching Solution</h1>
-                    <p class="text-black text-[20px] font-medium">When an app includes a webview, Firebase may not be
+                    <p className="text-black text-[20px] font-medium">When an app includes a webview, Firebase may not be
                         able to track events that occur within the webview. To address this, we must find a solution and
                         the solution to handle this issue is the app to web view stitching. <br/> <br/>
                         We've assisted numerous clients in addressing this significant issue within their apps. Our
@@ -1101,14 +1330,14 @@ export default function gtm({brandsdata}) {
     </section>
    
 
-    <section class="py-[60px]">
-        <div class="max-w-screen-xl mx-auto">
+    <section className="py-[60px]">
+        <div className="max-w-screen-xl mx-auto">
             <div
-                class="inner-marketing mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
-                <div class="left-marketing text-left">
-                    <h1 class="text-black lg:text-[48px] text-3xl font-bold leading-normal mb-[50px]">Marketing Pixels
+                className="inner-marketing mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
+                <div className="left-marketing text-left">
+                    <h1 className="text-black lg:text-[48px] text-3xl font-bold leading-normal mb-[50px]">Marketing Pixels
                         Implementation</h1>
-                    <p class="text-black text-[20px] font-medium">Pixel implementation typically refers to the process
+                    <p className="text-black text-[20px] font-medium">Pixel implementation typically refers to the process
                         of embedding a tracking pixel or snippet of code into a website, app, or digital platform to
                         collect data and monitor user interactions. Pixels are often used for various purposes,
                         including analytics, advertising, and remarketing. <br/><br/>
@@ -1116,7 +1345,7 @@ export default function gtm({brandsdata}) {
                         platforms like Google Ads, Facebook, Twitter, TikTok, and more. Whether you need assistance with
                         tracking, analytics, or advertising, we will cover each of them.</p>
                 </div>
-                <div class="right-marketing flex lg:justify-end justify-center">
+                <div className="right-marketing flex lg:justify-end justify-center">
                     <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/Pixels_implementation_Section_right.png" alt="Marketing-pixels_Img"/>
                 </div>
             </div>
@@ -1124,17 +1353,17 @@ export default function gtm({brandsdata}) {
     </section>
    
 
-    <section class="py-[60px] bg-sec">
-        <div class="max-w-screen-xl mx-auto">
+    <section className="py-[60px] bg-sec">
+        <div className="max-w-screen-xl mx-auto">
             <div
-                class="inner-shopify mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
-                <div class="left-tag flex lg:justify-end xl:justify-start justify-center">
+                className="inner-shopify mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
+                <div className="left-tag flex lg:justify-end xl:justify-start justify-center">
                     <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/IMG (2).png" alt="Shopify-enhanced.img"/>
                 </div>
-                <div class="right-shopify text-left">
-                    <h1 class="text-black lg:text-[48px] text-3xl font-bold leading-normal mb-[50px]">Shopify And
+                <div className="right-shopify text-left">
+                    <h1 className="text-black lg:text-[48px] text-3xl font-bold leading-normal mb-[50px]">Shopify And
                         Enhanced E-commerce Integration</h1>
-                    <p class="text-black text-[20px] font-medium">Integration of Google Analytics 4 (GA4) with a Shopify
+                    <p className="text-black text-[20px] font-medium">Integration of Google Analytics 4 (GA4) with a Shopify
                         store allows for the tracking and analysis of user behavior and e-commerce transactions. Through
                         GA4 integration in Shopify and with the help of custom approaches, you can comprehensively track
                         enhanced e-commerce journeys and capture all relevant events. Additionally, you have the
@@ -1150,14 +1379,14 @@ export default function gtm({brandsdata}) {
     </section>
     
 
-    <section class="py-[60px]">
-        <div class="max-w-screen-xl mx-auto">
+    <section className="py-[60px]">
+        <div className="max-w-screen-xl mx-auto">
             <div
-                class="inner-gdpr mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
-                <div class="left-gdpr text-left">
-                    <h1 class="text-black lg:text-[48px] text-3xl font-bold leading-normal mb-[50px]">GDPR Cookie
+                className="inner-gdpr mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
+                <div className="left-gdpr text-left">
+                    <h1 className="text-black lg:text-[48px] text-3xl font-bold leading-normal mb-[50px]">GDPR Cookie
                         Integration</h1>
-                    <p class="text-black text-[20px] font-medium">GDPR Cookie Integration refers to the process of
+                    <p className="text-black text-[20px] font-medium">GDPR Cookie Integration refers to the process of
                         incorporating mechanisms and practices into a website or online platform to ensure compliance
                         with the General Data Protection Regulation (GDPR) requirements related to the use of cookies.
                         The GDPR, which came into effect in May 2018, places strict regulations on how websites and
@@ -1171,24 +1400,24 @@ export default function gtm({brandsdata}) {
                         please reach out for more details.
                     </p>
                 </div>
-                <div class="right-gdpr flex lg:justify-end justify-center">
+                <div className="right-gdpr flex lg:justify-end justify-center">
                     <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/GDPR_Cookie_Section_right.png" alt="GDPR-Cookie_Img"/>
                 </div>
             </div>
         </div>
     </section>
     
-    <section class="py-[60px] bg-sec">
-        <div class="max-w-screen-xl mx-auto">
+    <section className="py-[60px] bg-sec">
+        <div className="max-w-screen-xl mx-auto">
             <div
-                class="inner-website mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
-                <div class="left-tag flex lg:justify-end xl:justify-start justify-center">
+                className="inner-website mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
+                <div className="left-tag flex lg:justify-end xl:justify-start justify-center">
                     <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/Website_AB_testing_Section_Left.png" alt="Website_AB.img"/>
                 </div>
-                <div class="right-website text-left">
-                    <h1 class="text-black lg:text-[48px] text-3xl font-bold leading-normal mb-[50px]">Website A/B
+                <div className="right-website text-left">
+                    <h1 className="text-black lg:text-[48px] text-3xl font-bold leading-normal mb-[50px]">Website A/B
                         Testing</h1>
-                    <p class="text-black text-[20px] font-medium">To validate which variant is working as expected.
+                    <p className="text-black text-[20px] font-medium">To validate which variant is working as expected.
                         Before making the changes live to 100% of audiences, this can be tested out for a targeted
                         specified audience using A/B tests tools and then it can be rolled out to wider users. Within
                         Google Tag Manager, A/B testing can be integrated and allows to perform analysis with key
@@ -1201,19 +1430,19 @@ export default function gtm({brandsdata}) {
    
 
     
-    <section class="py-[60px]">
-        <div class="max-w-screen-xl mx-auto">
+    <section className="py-[60px]">
+        <div className="max-w-screen-xl mx-auto">
             <div
-                class="inner-gdpr mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
-                <div class="left-gdpr text-left">
-                    <h1 class="text-black lg:text-[48px] text-3xl font-bold leading-normal mb-[50px]">Tab Enablement
+                className="inner-gdpr mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
+                <div className="left-gdpr text-left">
+                    <h1 className="text-black lg:text-[48px] text-3xl font-bold leading-normal mb-[50px]">Tab Enablement
                     </h1>
-                    <p class="text-black text-[20px] font-medium">This solution helps to measure if site is functioning,
+                    <p className="text-black text-[20px] font-medium">This solution helps to measure if site is functioning,
                         user can interact with Tab key available in keyboard. To see how many users are using this
                         feature and intersecting the same in website.
                     </p>
                 </div>
-                <div class="right-gdpr flex lg:justify-end justify-center">
+                <div className="right-gdpr flex lg:justify-end justify-center">
                     <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/IMG (3).png" alt="GDPR-Cookie_Img"/>
                 </div>
             </div>
@@ -1222,17 +1451,17 @@ export default function gtm({brandsdata}) {
    
 
   
-    <section class="py-[60px] bg-sec">
-        <div class="max-w-screen-xl mx-auto">
+    <section className="py-[60px] bg-sec">
+        <div className="max-w-screen-xl mx-auto">
             <div
-                class="inner-website mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
-                <div class="left-tag flex lg:justify-end xl:justify-start justify-center">
+                className="inner-website mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
+                <div className="left-tag flex lg:justify-end xl:justify-start justify-center">
                     <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/image 5.png" alt="Website_AB.img"/>
                 </div>
-                <div class="right-website text-left">
-                    <h1 class="text-black lg:text-[48px] text-3xl font-bold leading-normal mb-[50px]">Integrating
+                <div className="right-website text-left">
+                    <h1 className="text-black lg:text-[48px] text-3xl font-bold leading-normal mb-[50px]">Integrating
                         Traffic Source Data With Salesforce API</h1>
-                    <p class="text-black text-[20px] font-medium">Using this solution it fetches the users’ traffic
+                    <p className="text-black text-[20px] font-medium">Using this solution it fetches the users’ traffic
                         source data and integrates them with the Salesforce Lead forms on the site. This data is now
                         available in their Salesforce database and they can easily see the performance of each channel
                         without the help of Google Analytics.
@@ -1242,42 +1471,108 @@ export default function gtm({brandsdata}) {
         </div>
     </section>
 
+    <section className="review-slider">
+   <ScrollElement
+        id="testimonials"
+        name="testimonials"
+      ></ScrollElement>
+    <div className="relative h-full pb-16 my-10" style={{backgroundImage: 'url(https://storage.googleapis.com/website-bucket-uploads/static/Working_woman.png)', backgroundRepeat:'no-repeat'}} >
+      <h2 className="font-bold text-4xl py-8 md:py-12 text-center">Let's See What Our Clients Have To Say</h2>
+      <div className="relative z-10 md:w-1/3 mx-4 md:mx-auto mt-4 bg-sky-100/90  px-8 pt-4 pb-0">
+      <div className="relative w-20 rounded-full bg-white p-4 -top-12 mx-28 md:mx-auto shadow-md shadow-gray-400">
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-12" viewBox="0 0 24 24">
+            <path fill="CornflowerBlue" d="M6.5 10c-.223 0-.437.034-.65.065c.069-.232.14-.468.254-.68c.114-.308.292-.575.469-.844c.148-.291.409-.488.601-.737c.201-.242.475-.403.692-.604c.213-.21.492-.315.714-.463c.232-.133.434-.28.65-.35l.539-.222l.474-.197l-.485-1.938l-.597.144c-.191.048-.424.104-.689.171c-.271.05-.56.187-.882.312c-.318.142-.686.238-1.028.466c-.344.218-.741.4-1.091.692c-.339.301-.748.562-1.05.945c-.33.358-.656.734-.909 1.162c-.293.408-.492.856-.702 1.299c-.19.443-.343.896-.468 1.336c-.237.882-.343 1.72-.384 2.437c-.034.718-.014 1.315.028 1.747c.015.204.043.402.063.539l.025.168l.026-.006A4.5 4.5 0 1 0 6.5 10zm11 0c-.223 0-.437.034-.65.065c.069-.232.14-.468.254-.68c.114-.308.292-.575.469-.844c.148-.291.409-.488.601-.737c.201-.242.475-.403.692-.604c.213-.21.492-.315.714-.463c.232-.133.434-.28.65-.35l.539-.222l.474-.197l-.485-1.938l-.597.144c-.191.048-.424.104-.689.171c-.271.05-.56.187-.882.312c-.317.143-.686.238-1.028.467c-.344.218-.741.4-1.091.692c-.339.301-.748.562-1.05.944c-.33.358-.656.734-.909 1.162c-.293.408-.492.856-.702 1.299c-.19.443-.343.896-.468 1.336c-.237.882-.343 1.72-.384 2.437c-.034.718-.014 1.315.028 1.747c.015.204.043.402.063.539l.025.168l.026-.006A4.5 4.5 0 1 0 17.5 10z"/>
+          </svg>
+        </div>
+      <Carousel className="pb-4" ssr={true} showDots={true} responsive={responsive} infinite={true} autoPlay autoPlaySpeed={4000} transitionDuration={500} removeArrowOnDeviceType={["tablet", "mobile"]}>
+        <div>
+       
+        <div className="relative flex items-center my-2 w-full justify-center space-x-4 text-center">
+          <img alt="client avatar" src="https://storage.googleapis.com/website-bucket-uploads/static/Character_1.png" className=""/>
+          <h2 className="font-bold text-3xl">Una</h2>
+        </div>
+        <p className=" mx-auto">"AnalyticsLiv helped us set up and manage our GA4 account, and we're so glad 
+          we did. They were patient and knowledgeable, and they always made sure we 
+          understood what they were doing. We're now able to track our website traffic and 
+          marketing campaigns more effectively, and we're confident that we're making better 
+          business decisions as a result."</p>
+          </div>
 
-    <section class="py-[60px] bg-sec">
-        <div class="max-w-screen-xl mx-auto">
-            <div class="inner-case mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 py-7 md:gap-8 gap-16">
-                <h2 class="text-black text-start text-6xl font-bold pb-2 md:mb-16">Case Studies</h2>
+          <div>
+        
+        <div className="relative flex items-center my-4 w-full justify-center space-x-4 text-center">
+          <img alt="client avatar" src="https://storage.googleapis.com/website-bucket-uploads/static/Character_1.png" className=""/>
+          <h2 className="font-bold text-3xl">Ebenezer Ferreira</h2>
+        </div>
+        <p className=" mx-auto">"AnalyticsLiv has been FUTEK web analytics partner for almost 3 years now. They supported us with GTM implementation, GA to GA4 migration, Looker studio dashboard creations and Google cloud storage implementation. They respond to our request in a timely manner and make their best efforts to resolve the web analytics issues. We are happy with the support provided by AnalyticsLiv"</p>
+          </div>
+
+          <div>
+        
+        <div className="relative flex items-center my-4 w-full justify-center space-x-4 text-center">
+          <img alt="client avatar" src="https://storage.googleapis.com/website-bucket-uploads/static/Character_1.png" className=""/>
+          <h2 className="font-bold text-3xl">Bobby Bruno</h2>
+        </div>
+        <p className=" mx-auto">"AnalyticsLiv team was an excellent asset to our businesses' switch from Universal Analytics to GA4. They had excellent communication throughout the project, giving me feedback, updates and ideas as the project went on. I would be happy to recommend the AnalyticsLiv team for analytics and tag manager work, and look forward to working with them in the future. Thank you!"</p>
+          </div>
+
+         <div>
+          <div className="relative flex items-center my-4 w-full justify-center space-x-4 text-center">
+          <img alt="client avatar" src="https://storage.googleapis.com/website-bucket-uploads/static/Character_1.png" className=""/>
+          <h2 className="font-bold text-3xl">Charles Lundy</h2>
+        </div>
+        <p className=" mx-auto">"The AnalyticsLiv team estimated the job length accurately and then carried out the work exactly as briefed, to time and budget. We had one brief hiccup in the conversion tracking code but that was swiftly fixed once identified. Would definitely consider using it again and for more advanced reporting functionality in future"</p>
+          </div>
+
+
+          
+          </Carousel>
+      </div>
+      <div className="relative md:w-1/3 z-0 bg-sky-100/90 h-52 rounded-b-full mx-4 md:mx-auto pb-0"></div>
+    </div>
+                
+    
+                
+  </section> 
+  <ScrollElement
+        id="case-studies"
+        name="case-studies"
+      ></ScrollElement>
+    <section className="py-[60px] bg-sec">
+        <div className="max-w-screen-xl mx-auto">
+            <div className="inner-case mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 py-7 md:gap-8 gap-16">
+                <h2 className="text-black text-start text-6xl font-bold pb-2 md:mb-16">Case Studies</h2>
                 <div
-                    class="case md:flex text-left justify-evenly items-center bg-white min-[375px]:px-10 md:px-20 px-2 min-[375px]:py-8 md:py-8 py-4 md:rounded-full rounded-xl mt-8">
-                    <div class="md:w-3/4">
-                        <h3 class="relative lg:text-3xl text-[19px] leading-normal font-bold mb-4">
-                            <img class="absolute top-[3px] -left-[35px]" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/point 1.png" alt="arrow"/>
+                    className="case md:flex text-left justify-evenly items-center bg-white min-[375px]:px-10 md:px-20 px-2 min-[375px]:py-8 md:py-8 py-4 md:rounded-full rounded-xl mt-8">
+                    <div className="md:w-3/4">
+                        <h3 className="relative lg:text-3xl text-[19px] leading-normal font-bold mb-4">
+                            <img className="absolute top-[3px] -left-[35px]" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/point 1.png" alt="arrow"/>
                             Universal Analytics (GA3) to GA4 Migration
                             for a Website
                         </h3>
-                        <p class="text-casep">The client faced difficulty migrating their website from Universal
+                        <p className="text-casep">The client faced difficulty migrating their website from Universal
                             Analytics to Google Analytics 4 and had limited knowledge of GA4.</p>
                     </div>
-                    <div class="text-center pt-4 md:pt-0 items-center space-x-4">
-                        <img class="inline w-40" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/CREATIVE.png" alt="creative"/>
-                        <button
-                            class="cta bttn bg-bacbtn cursor-pointer hover:bg-blue-400 transition duration-200 delay-75 px-16 py-2 text-#000 text-2xl font-semibold rounded-full mt-8">View</button>
+                    <div className="text-center pt-4 md:pt-0 items-center space-x-4">
+                        <img className="inline w-40" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/CREATIVE.png" alt="creative"/>
+                        <button onClick={scrolling} 
+                            className="cta cs-btn bttn bg-bacbtn cursor-pointer hover:bg-blue-400 transition duration-200 delay-75 px-16 py-2 text-#000 text-2xl font-semibold rounded-full mt-8"><a href="https://storage.googleapis.com/website-bucket-uploads/cs/5492gjsetdcghtc86683.pdf" target="_blank">View</a></button>
                     </div>
                 </div>
                 <div
-                    class="case md:flex text-left justify-evenly items-center bg-white min-[375px]:px-10 md:px-20 px-2 min-[375px]:py-8 md:py-8 py-4 md:rounded-full rounded-xl mt-8">
-                    <div class="md:w-3/4">
-                        <h3 class="relative lg:text-3xl text-[19px] leading-normal font-bold mb-4">
-                            <img class="absolute top-[3px] -left-[35px]" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/point 1.png" alt="arrow"/>
+                    className="case md:flex text-left justify-evenly items-center bg-white min-[375px]:px-10 md:px-20 px-2 min-[375px]:py-8 md:py-8 py-4 md:rounded-full rounded-xl mt-8">
+                    <div className="md:w-3/4">
+                        <h3 className="relative lg:text-3xl text-[19px] leading-normal font-bold mb-4">
+                            <img className="absolute top-[3px] -left-[35px]" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/point 1.png" alt="arrow"/>
                             GA4 Enhanced Ecommerce Implementation Using GTM and Shopify Integration
                         </h3>
-                        <p class="text-casep">A Shopify-powered e-commerce business in the East was facing challenges
+                        <p className="text-casep">A Shopify-powered e-commerce business in the East was facing challenges
                             with Universal Analytics (UA) in capturing purchase data reliably.</p>
                     </div>
-                    <div class="text-center pt-4 md:pt-0 items-center space-x-4">
-                        <img class="inline w-40" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/ICONS.png" alt="icons"/>
-                        <button
-                            class="cta bttn bg-bacbtn cursor-pointer hover:bg-blue-400 transition duration-200 delay-75 px-16 py-2 text-#000 text-2xl font-semibold rounded-full mt-8">View</button>
+                    <div className="text-center pt-4 md:pt-0 items-center space-x-4">
+                        <img className="inline w-40" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/ICONS.png" alt="icons"/>
+                        <button onClick={scrolling} 
+                            className="cta cs-btn bttn bg-bacbtn cursor-pointer hover:bg-blue-400 transition duration-200 delay-75 px-16 py-2 text-#000 text-2xl font-semibold rounded-full mt-8"><a href="https://storage.googleapis.com/website-bucket-uploads/cs/56445jydcsddg2300.pdf" target="_blank">View</a></button>
                     </div>
                 </div>
             </div>
@@ -1285,59 +1580,66 @@ export default function gtm({brandsdata}) {
     </section>
 
   
-    <section class="faQ py-4">
-        <div class="max-w-screen-xl mx-auto">
-            <div class="inner-faQ mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16">
-                <h2 class="text-black text-[50px] text-center font-bold mb-[34px]">Frequently Asked Questions</h2>
+    <section className="hidden faQ py-4">
+        <div className="max-w-screen-xl mx-auto">
+            <div className="inner-faQ mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16">
+                <h2 className="text-black text-[50px] text-center font-bold mb-[34px]">Frequently Asked Questions</h2>
                 <form>
-                    <label for="default-search"
-                        class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-                    <div class="relative mb-[52px]">
+                    <label htmlFor="default-search"
+                        className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                    <div className="relative mb-[52px]">
                         <input type="search" id="default-search"
-                            class="block w-full py-[27px] px-10 min-[375px]:text-base md:text-xl text-[#202020] border border-gray-300 rounded-[100px] bg-menu focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            className="block w-full py-[27px] px-10 min-[375px]:text-base md:text-xl text-[#202020] border border-gray-300 rounded-[100px] bg-menu focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="Search your question here ..." required/>
-                        <div class="absolute inset-y-0 right-10 flex items-center pointer-events-none">
+                        <div className="absolute inset-y-0 right-10 flex items-center pointer-events-none">
                             <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/search_icon (1).png"
-                                class="min-[375px]:h-[30px] min-[375px]:w-[30px] md:h-[40px] md:w-[40px]"
+                                className="min-[375px]:h-[30px] min-[375px]:w-[30px] md:h-[40px] md:w-[40px]"
                                 alt="search_icon"/>
                         </div>
                     </div>
                     <div
-                        class="Questions grid md:grid-cols-1 lg:grid-cols-2 gap-x-[36px] min-[375px]:gap-y-10 md:gap-y-[60px]">
+                        className="Questions grid md:grid-cols-1 lg:grid-cols-2 gap-x-[36px] min-[375px]:gap-y-10 md:gap-y-[60px]">
                         <div
-                            class="first bg-menu cursor-pointer text-start rounded-[100px] flex items-center min-[375px]:px-10 min-[375px]:py-5 lg:px-[30px] lg:py-5 min-[1440px]:px-[60px] min-[1440px]:py-[30px]">
+                            className="first bg-menu cursor-pointer text-start rounded-[100px] flex items-center min-[375px]:px-10 min-[375px]:py-5 lg:px-[30px] lg:py-5 min-[1440px]:px-[60px] min-[1440px]:py-[30px]">
                             <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow1 (1).png"
-                                class="min-[375px]:h-[30px] min-[375px]:w-[30px] md:h-10 md:w-10" alt="question_arrow"/>
-                            <h3 class="min-[375px]:text-base text-black md:text-xl font-semibold">What is the difference
+                                className="min-[375px]:h-[30px] min-[375px]:w-[30px] md:h-10 md:w-10" alt="question_arrow"/>
+                            <h3 className="min-[375px]:text-base text-black md:text-xl font-semibold">What is the difference
                                 between property and data stream ?</h3>
                         </div>
                         <div
-                            class="first bg-menu cursor-pointer text-start rounded-[100px] flex items-center min-[375px]:px-10 min-[375px]:py-5 lg:px-[30px] lg:py-5 min-[1440px]:px-[60px] min-[1440px]:py-[30px]">
+                            className="first bg-menu cursor-pointer text-start rounded-[100px] flex items-center min-[375px]:px-10 min-[375px]:py-5 lg:px-[30px] lg:py-5 min-[1440px]:px-[60px] min-[1440px]:py-[30px]">
                             <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow1 (1).png"
-                                class="min-[375px]:h-[30px] min-[375px]:w-[30px] md:h-10 md:w-10" alt="question_arrow"/>
-                            <h3 class="min-[375px]:text-base text-black md:text-xl font-semibold">How to use UTM
+                                className="min-[375px]:h-[30px] min-[375px]:w-[30px] md:h-10 md:w-10" alt="question_arrow"/>
+                            <h3 className="min-[375px]:text-base text-black md:text-xl font-semibold">How to use UTM
                                 tracking in GA4 ?</h3>
                         </div>
                         <div
-                            class="first bg-menu cursor-pointer text-start rounded-[100px] flex items-center min-[375px]:px-10 min-[375px]:py-5 lg:px-[30px] lg:py-5 min-[1440px]:px-[60px] min-[1440px]:py-[30px]">
+                            className="first bg-menu cursor-pointer text-start rounded-[100px] flex items-center min-[375px]:px-10 min-[375px]:py-5 lg:px-[30px] lg:py-5 min-[1440px]:px-[60px] min-[1440px]:py-[30px]">
                             <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow1 (1).png"
-                                class="min-[375px]:h-[30px] min-[375px]:w-[30px] md:h-10 md:w-10" alt="question_arrow"/>
-                            <h3 class="min-[375px]:text-base text-black md:text-xl font-semibold">What is the difference
+                                className="min-[375px]:h-[30px] min-[375px]:w-[30px] md:h-10 md:w-10" alt="question_arrow"/>
+                            <h3 className="min-[375px]:text-base text-black md:text-xl font-semibold">What is the difference
                                 between property and data stream ?</h3>
                         </div>
                         <div
-                            class="first bg-menu cursor-pointer text-start rounded-[100px] flex items-center min-[375px]:px-10 min-[375px]:py-5 lg:px-[30px] lg:py-5 min-[1440px]:px-[60px] min-[1440px]:py-[30px]">
+                            className="first bg-menu cursor-pointer text-start rounded-[100px] flex items-center min-[375px]:px-10 min-[375px]:py-5 lg:px-[30px] lg:py-5 min-[1440px]:px-[60px] min-[1440px]:py-[30px]">
                             <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow1 (1).png"
-                                class="min-[375px]:h-[30px] min-[375px]:w-[30px] md:h-10 md:w-10" alt="question_arrow"/>
-                            <h3 class="min-[375px]:text-base text-black md:text-xl font-semibold">What is the difference
+                                className="min-[375px]:h-[30px] min-[375px]:w-[30px] md:h-10 md:w-10" alt="question_arrow"/>
+                            <h3 className="min-[375px]:text-base text-black md:text-xl font-semibold">What is the difference
                                 between property and data stream ?</h3>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
+
     </section>
 
+     <div className='mt-10 md:flex justify-center md:space-x-20 items-center px-2 md:px-16 bg-sec py-2 text-center'>
+    <h2 className='text-left text-[30px] mb-2 font-bold'>To Improve Your Conversion Rate Optimization (CRO)</h2>
+    <button onClick={scrolling}  className="bttn cursor-pointer w-44 bg-btn  hover:bg-sky-800 transition duration-200 delay-75 mx-2 p-4 rounded-[15px] opacity-80 shadow-lg shadow-gray-400 text-white font-semibold">Lets Get Started</button>
+  </div>
+
+</div>
 
 </div>
     </>
