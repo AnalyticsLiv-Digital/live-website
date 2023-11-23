@@ -507,141 +507,129 @@ export default function gtm({brandsdata}) {
 
 
                 {toggle1 &&
-                    <div className="first-dp  py-10 px-5">
-                        <div className="head1  relative sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
-                            <div
-                                className="f bg-menu inline-block relative md:pt-5 md:pb-6 lg:pt-4 lg:pb-[10px] pt-3 pb-2  max-[639px]:rounded-[20%] max-[639px]:py-3 max-[639px]:px-5">
-                                <div
-                                    className="right-triangle w-0 h-0 absolute sm:left-[-76px] md:left-[-87px] sm:top-[6px] md:top-[18px] transform rotate-270 border-blue-400 max-[639px]:hidden">
-                                </div>
-                                <div className="max-[374px]:block mx-auto text-center flex items-center justify-center">
-                                    <img className="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/stethoscope 1.png"
-                                        alt="stethoscope"/>
-                                    <h3
-                                        className="text-black text-center flex items-center justify-center sm:text-2xl lg:text-4xl text-xl font-bold">
-                                        Google
-                                        Tag Manager Health Check</h3>
-                                    <img onClick={() => {setToggle1(!toggle1); setToggle2(true); setToggle3(true); setToggle4(true); setToggle5(true); setToggle6(true);}} className="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png"
-                                        alt="down-arrow"/>
-                                </div>
-                                <div
-                                    className="triangle w-0 absolute right-[-100px] sm:top-[10px] md:top-5 transform rotate-90 h-0 border-blue-300 max-[639px]:hidden">
-                                </div>
-                            </div> <br/>
-                            <br/>
+                    <div className="first-dp py-10 px-5 relative rounded-[30px]">
+                    <div className="head1 sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
+                        <div className="i absolute min-[375px]:top-[-13px] min-[375px]:right-0  min-[425px]:top-[-25px] min-[425px]:right-0 sm:top-[-25px] sm:right-0 md:right-0 lg:top-[-25px] lg:right-[15px] xl:right-[150px]">
+                            <img className="v w-[700px] min-[375px]:h-[230px]" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/image (1).png" alt="#"/>
                         </div>
-
-
-                    </div>} 
+                        <div className="i1 hidden absolute min-[375px]:top-[-13px] min-[375px]:right-0  min-[425px]:top-[-25px] min-[425px]:right-0 sm:top-[-25px] sm:right-0 md:right-0 lg:top-[-25px] lg:right-[15px] xl:right-[150px]" style={{display: "none"}}>
+                            <img className="v w-[700px] min-[375px]:h-[230px]" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/image.png" alt="#"/>
+                        </div>
+                        <div className="f relative">
+                            <div className="max-[374px]:block mx-auto text-center flex items-center justify-between">
+                                <div className="flex items-center md:gap-1.5">
+                                    <img className="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/stethoscope 1.png" alt="stethoscope"/>
+                                    <h3 className="text-black text-left flex items-center justify-center sm:text-2xl lg:text-3xl text-xl font-bold">
+                                        Google Tag Manager Health Check</h3>
+                                </div>
+                                <img onClick={() => {setToggle1(!toggle1); setToggle2(true); setToggle3(true); setToggle4(true); setToggle5(true); setToggle6(true);}} className="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png" alt="down-arrow"/>
+                            </div>
+                        </div> <br/>
+                        
+                    </div>
+                </div>} 
 
                     {!toggle1 &&
-                    <div className="first-dp py-10 px-5 ad">
-                        <div className="head1  relative sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
-                            <div
-                                className="f bg-menu inline-block relative md:pt-5 md:pb-6 lg:pt-4 lg:pb-[10px] pt-3 pb-2  max-[639px]:rounded-[20%] max-[639px]:py-3 max-[639px]:px-5">
-                                <div
-                                    className="right-triangle w-0 h-0 absolute sm:left-[-76px] md:left-[-87px] sm:top-[6px] md:top-[18px] transform rotate-270 border-blue-400 max-[639px]:hidden">
+                    <div className="first-dp py-10 px-5 relative rounded-[30px] ad">
+                    <div className="head1 sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
+                        <div className="i absolute min-[375px]:top-[-13px] min-[375px]:right-0  min-[425px]:top-[-25px] min-[425px]:right-0 sm:top-[-25px] sm:right-0 md:right-0 lg:top-[-25px] lg:right-[15px] xl:right-[150px]" style={{display: "none"}}>
+                            <img className="v w-[700px] min-[375px]:h-[230px]" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/image (1).png" alt="#"/>
+                        </div>
+                        <div className="i1 hidden absolute min-[375px]:top-[-13px] min-[375px]:right-0  min-[425px]:top-[-25px] min-[425px]:right-0 sm:top-[-25px] sm:right-0 md:right-0 lg:top-[-25px] lg:right-[15px] xl:right-[150px]" style={{display: "block"}}>
+                            <img className="v w-[700px] min-[375px]:h-[230px]" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/image.png" alt="#"/>
+                        </div>
+                        <div className="f relative">
+                            <div className="max-[374px]:block mx-auto text-center flex items-center justify-between">
+                                <div className="flex items-center md:gap-1.5">
+                                    <img className="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/stethoscope 1.png" alt="stethoscope"/>
+                                    <h3 className="text-black text-left flex items-center justify-center sm:text-2xl lg:text-3xl text-xl font-bold">
+                                        Google Tag Manager Health Check</h3>
                                 </div>
-                                <div className="max-[374px]:block mx-auto text-center flex items-center justify-center">
-                                    <img className="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/stethoscope 1.png"
-                                        alt="stethoscope"/>
-                                    <h3
-                                        className="text-black text-center flex items-center justify-center sm:text-2xl lg:text-4xl text-xl font-bold">
-                                        Google
-                                        Tag Manager Health Check</h3>
-                                    <img onClick={() => {setToggle1(!toggle1); setToggle2(true); setToggle3(true); setToggle4(true); setToggle5(true); setToggle6(true);}} className="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png"
-                                        alt="down-arrow"/>
+                                <img onClick={() => {setToggle1(!toggle1); setToggle2(true); setToggle3(true); setToggle4(true); setToggle5(true); setToggle6(true);}} className="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png" alt="down-arrow"/>
+                            </div>
+                        </div> <br/>
+                        <div className="drp bg-sec hidden pt-12 text-base sm:text-[20px] font-medium" style={{display: "block"}}>
+                            <div className="flex">
+                                <div>
+                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" className="inline mr-4" alt="#"/>
                                 </div>
-                                <div
-                                    className="triangle w-0 absolute right-[-100px] sm:top-[10px] md:top-5 transform rotate-90 h-0 border-blue-300 max-[639px]:hidden">
+                                <p className="text-start ml-3 text-black">Comprehensive audit
+                                    will
+                                    be
+                                    conducted and that stats efficient
+                                    review
+                                    of your existing Google
+                                    Tag
+                                    Manager setup. This involves, identifying and eliminating unnecessary or
+                                    outdated
+                                    tags,
+                                    triggers, and variables, as well as reorganizing the structure to improve
+                                    efficiency
+                                    and
+                                    performance.
+                                </p>
+                            </div> <br/>
+                            <div className="flex">
+                                <div>
+                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" className="inline mr-4" alt="#"/>
+                                </div>
+                                <p className="text-start ml-3 text-black">By performing this
+                                    cleanup, we
+                                    aim to simplify the tracking
+                                    process
+                                    for analytics and marketing tags on your website. This ensures that only
+                                    relevant
+                                    and
+                                    crucial tracking elements are in use, and flow in our marketing platforms like
+                                    Google
+                                    Analytics, Google Ads, Facebook etc.
+                                </p>
+                            </div> <br/>
+                            <div className="flex">
+                                <div>
+                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" className="inline mr-4" alt="#"/>
+                                </div>
+                                <div className="text-start  min-[320px]:ml-3 md:ml-[5px] lg:ml-0">
+                                    <p className="text-start text-black">In need to validate
+                                        whether
+                                        your Google Analytics is tracking
+                                        properly? <br/>
+                                        AnalyticsLiv can provide detailed audits to validate the health of analytics
+                                        data
+                                        setup. Google Analytics audit will cover the following:
+                                    </p><ul className="text-start ml-5 inline-block list-disc text-black">
+                                        <li>Gaps in data tracking</li>
+                                        <li>Errors or bugs</li>
+                                        <li>reported</li>
+                                        <li>Account or product linking</li>
+                                        <li>Data tracking</li>
+                                        <li>Conversions</li>
+                                        <li>Account setup, and many more</li>
+                                    </ul>
+                                    <p></p>
                                 </div>
                             </div> <br/>
-                            <div className="drp bg-menu">
-                                <div className="flex">
-                                    <div>
-                                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" className="inline mr-4" alt="#"/>
-                                    </div>
-                                    <p className="text-start ml-3 text-black text-[20px] font-medium">Comprehensive audit
-                                        will
-                                        be
-                                        conducted and that stats efficient
-                                        review
-                                        of your existing Google
-                                        Tag
-                                        Manager setup. This involves, identifying and eliminating unnecessary or
-                                        outdated
-                                        tags,
-                                        triggers, and variables, as well as reorganizing the structure to improve
-                                        efficiency
-                                        and
-                                        performance.
-                                    </p>
-                                </div> <br/>
-                                <div className="flex">
-                                    <div>
-                                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" className="inline mr-4" alt="#"/>
-                                    </div>
-                                    <p className="text-start ml-3 text-black text-[20px] font-medium">By performing this
-                                        cleanup, we
-                                        aim to simplify the tracking
-                                        process
-                                        for analytics and marketing tags on your website. This ensures that only
-                                        relevant
-                                        and
-                                        crucial tracking elements are in use, and flow in our marketing platforms like
-                                        Google
-                                        Analytics, Google Ads, Facebook etc.
-                                    </p>
-                                </div> <br/>
-                                <div className="flex">
-                                    <div>
-                                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" className="inline mr-4" alt="#"/>
-                                    </div>
-                                    <div className="text-start  min-[320px]:ml-3 md:ml-[5px] lg:ml-0">
-                                        <p className="text-start text-black text-[20px] font-medium">In need to validate
-                                            whether
-                                            your Google Analytics is tracking
-                                            properly? <br/>
-                                            AnalyticsLiv can provide detailed audits to validate the health of analytics
-                                            data
-                                            setup. Google Analytics audit will cover the following:
-                                        <ul
-                                            className="text-start ml-5 inline-block list-disc text-black text-[20px] font-medium">
-                                            <li>Gaps in data tracking</li>
-                                            <li>Errors or bugs</li>
-                                            <li>reported</li>
-                                            <li>Account or product linking</li>
-                                            <li>Data tracking</li>
-                                            <li>Conversions</li>
-                                            <li>Account setup, and many more</li>
-                                        </ul>
-                                        </p>
-                                    </div>
-                                </div> <br/>
-                                <div className="flex">
-                                    <div>
-                                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" className="inline mr-4" alt="#"/>
-                                    </div>
-                                    <p className="text-start ml-3 text-black text-[20px] font-medium">Our team of certified
-                                        experts
-                                        will fix the problems that are
-                                        observed. This will also cover recommended and suggested tracking which might be
-                                        missing
-                                        to
-                                        avail analysis for businesses.
-                                    </p>
-                                </div> <br/>
-                                <div className="text-center">
-                                    <button onClick={scrolling} 
-                                        className="btn cursor-pointer w-44 bg-btn  hover:bg-sky-800 transition duration-200 delay-75 mx-2 p-4 rounded-[15px] shadow-lg shadow-gray-400 text-white font-semibold">Do
-                                        your GTM health check up now</button>
+                            <div className="flex">
+                                <div>
+                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" className="inline mr-4" alt="#"/>
                                 </div>
+                                <p className="text-start ml-3 text-black">Our team of certified
+                                    experts
+                                    will fix the problems that are
+                                    observed. This will also cover recommended and suggested tracking which might be
+                                    missing
+                                    to
+                                    avail analysis for businesses.
+                                </p>
+                            </div> <br/>
+                            <div className="text-center">
+                                <button onClick={scrolling} className="btn cursor-pointer w-44 bg-btn hover:bg-sky-800 transition duration-200 delay-75 mx-2 p-4 rounded-[15px] shadow-lg shadow-gray-400 text-white text-[17px] font-semibold">Do
+                                    your GTM health check up now</button>
                             </div>
-                            <br/>
                         </div>
-
-
-                    </div>} 
+                        <br/>
+                    </div>
+                </div>} 
                     
                     <br/>
              
@@ -650,101 +638,82 @@ export default function gtm({brandsdata}) {
 
 
                     {toggle2 &&
-                    <div className="first-dp py-10 px-5">
-                        <div className="head1 relative sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
-                            <div
-                                className="f bg-menu inline-block relative md:pt-5 md:pb-5 lg:pt-4 lg:pb-[10px] pt-3 pb-2 max-[639px]:rounded-[20%] max-[639px]:py-3 max-[639px]:px-5">
-                                <div
-                                    className="right-triangle1 w-0 h-0 absolute sm:left-[-68px] md:left-[-79px] sm:top-[-1px] md:top-[10px] lg:top-[2px] lg:left-[-71px] transform rotate-270 border-blue-400 max-[639px]:hidden">
-                                </div>
-                                <div className="max-[374px]:block mx-auto text-center flex items-center justify-center">
-                                    <img className="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/server_img.png" alt="server_img"/>
-                                    <h3
-                                        className="text-black text-center flex items-center justify-center sm:text-2xl lg:text-4xl text-xl font-bold">
+                    <div className="first-dp py-10 px-5 relative rounded-[30px]">
+                    <div className="head1 sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
+                        <div className="i absolute min-[375px]:top-[-27px] min-[375px]:right-0  min-[425px]:top-[-30px] min-[425px]:right-[-16px] sm:top-[-30px] sm:right-0 md:right-0 lg:top-[-30px] lg:right-[15px] xl:right-[150px]" >
+                            <img className="v w-[700px] min-[375px]:h-[230px]" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/image (1).png" alt="#"/>
+                        </div>
+                        <div className="i1 hidden absolute min-[375px]:top-[-27px] min-[375px]:right-0  min-[425px]:top-[-30px] min-[425px]:right-[-16px] sm:top-[-30px] sm:right-0 md:right-0 lg:top-[-30px] lg:right-[15px] xl:right-[150px]" style={{display: "none"}}>
+                            <img className="v w-[700px] min-[375px]:h-[230px]" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/image.png" alt="#"/>
+                        </div>
+                        <div className="f relative">
+                            <div className="max-[374px]:block mx-auto text-center flex items-center justify-between">
+                                <div className="flex items-center md:gap-1.5">
+                                    <img className="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/stethoscope 1.png" alt="stethoscope"/>
+                                    <h3 className="text-black text-left flex items-center justify-center sm:text-2xl lg:text-3xl text-xl font-bold">
                                         Server-side Tagging</h3>
-                                    <img onClick={() => {setToggle1(true); setToggle2(!toggle2); setToggle3(true); setToggle4(true); setToggle5(true); setToggle6(true);}} className="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png"
-                                        alt="down-arrow"/>
                                 </div>
-                                <div
-                                    className="triangle w-0 absolute right-[-100px] sm:top-[0px] md:top-3 lg:top-1 transform rotate-90 h-0 border-blue-300 max-[639px]:hidden">
-                                </div>
+                                <img onClick={() => {setToggle1(true); setToggle2(!toggle2); setToggle3(true); setToggle4(true); setToggle5(true); setToggle6(true);}} className="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png" alt="down-arrow"/>
                             </div>
                         </div> <br/>
-             
-                    </div>} 
+
+                    </div>
+                </div>} 
 
                     {!toggle2 &&
-                    <div className="first-dp py-10 px-5 ad">
-                        <div className="head1 relative sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
-                            <div
-                                className="f bg-menu inline-block relative md:pt-5 md:pb-5 lg:pt-4 lg:pb-[10px] pt-3 pb-2 max-[639px]:rounded-[20%] max-[639px]:py-3 max-[639px]:px-5">
-                                <div
-                                    className="right-triangle1 w-0 h-0 absolute sm:left-[-68px] md:left-[-79px] sm:top-[-1px] md:top-[10px] lg:top-[2px] lg:left-[-71px] transform rotate-270 border-blue-400 max-[639px]:hidden">
-                                </div>
-                                <div className="max-[374px]:block mx-auto text-center flex items-center justify-center">
-                                    <img className="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/server_img.png" alt="server_img"/>
-                                    <h3
-                                        className="text-black text-center flex items-center justify-center sm:text-2xl lg:text-4xl text-xl font-bold">
-                                        Server-side Tagging</h3>
-                                    <img onClick={() => {setToggle1(true); setToggle2(!toggle2); setToggle3(true); setToggle4(true); setToggle5(true); setToggle6(true);}} className="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png"
-                                        alt="down-arrow"/>
-                                </div>
-                                <div
-                                    className="triangle w-0 absolute right-[-100px] sm:top-[0px] md:top-3 lg:top-1 transform rotate-90 h-0 border-blue-300 max-[639px]:hidden">
-                                </div>
-                            </div>
+                    <div className="first-dp py-10 px-5 relative rounded-[30px] ad">
+                    <div className="head1 sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
+                        <div className="i absolute min-[375px]:top-[-27px] min-[375px]:right-0  min-[425px]:top-[-30px] min-[425px]:right-[-16px] sm:top-[-30px] sm:right-0 md:right-0 lg:top-[-30px] lg:right-[15px] xl:right-[150px]" style={{display: "none"}}>
+                            <img className="v w-[700px] min-[375px]:h-[230px]" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/image (1).png" alt="#"/>
                         </div>
-
-                       
-                        <div className="drp">
+                        <div className="i1 hidden absolute min-[375px]:top-[-27px] min-[375px]:right-0  min-[425px]:top-[-30px] min-[425px]:right-[-16px] sm:top-[-30px] sm:right-0 md:right-0 lg:top-[-30px] lg:right-[15px] xl:right-[150px]" style={{display: "block"}}>
+                            <img className="v w-[700px] min-[375px]:h-[230px]" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/image.png" alt="#"/>
+                        </div>
+                        <div className="f relative">
+                            <div className="max-[374px]:block mx-auto text-center flex items-center justify-between">
+                                <div className="flex items-center md:gap-1.5">
+                                    <img className="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/stethoscope 1.png" alt="stethoscope"/>
+                                    <h3 className="text-black text-left flex items-center justify-center sm:text-2xl lg:text-3xl text-xl font-bold">
+                                        Server-side Tagging</h3>
+                                </div>
+                                <img onClick={() => {setToggle1(true); setToggle2(!toggle2); setToggle3(true); setToggle4(true); setToggle5(true); setToggle6(true);}} className="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png" alt="down-arrow"/>
+                            </div>
+                        </div> <br/>
+                        <div className="drp bg-sec hidden pt-12 text-base sm:text-[20px] font-medium" style={{display: "block"}}>
                             <div className="flex">
                                 <div>
                                     <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" className="inline mr-4" alt="#"/>
                                 </div>
-                                <p className="text-start ml-3 text-black text-[20px] font-medium">Server-side tagging is a
-                                    method used in web analytics and digital marketing to manage and deploy various
-                                    tracking
-                                    tags and scripts on a website's server using CDP platforms rather than directly on
-                                    the
+                                <p className="text-start ml-3 text-black">Server-side tagging is a method used in web
+                                    analytics and digital marketing to manage and deploy various tracking tags and
+                                    scripts on a website's server using CDP platforms rather than directly on the
                                     client's browser. This approach offers several advantages and is becoming
-                                    increasingly
-                                    popular due to privacy concerns, performance optimization, and the need for more
-                                    control
-                                    over data collection.
-                                </p>
+                                    increasingly popular due to privacy concerns, performance optimization, and the
+                                    need for more control over data collection.</p>
                             </div> <br/>
                             <div className="flex">
                                 <div>
                                     <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" className="inline mr-4" alt="#"/>
                                 </div>
-                                <p className="text-start ml-3 text-black text-[20px] font-medium">Some other key aspects of
-                                    the
-                                    server-side tagging are:
-                                    Improve the page load time, reduce ad blocker impact, flexibility, improve
-                                    securities,
-                                    and many more.
-                                </p>
+                                <p className="text-start ml-3 text-black">Some other key aspects of the server-side
+                                    tagging are: Improve the page load time, reduce ad blocker impact, flexibility,
+                                    improve securities, and many more.</p>
                             </div> <br/>
                             <div className="flex">
                                 <div>
                                     <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" className="inline mr-4" alt="#"/>
                                 </div>
-                                <div className="text-start  min-[320px]:ml-3 md:ml-[5px] lg:ml-0">
-                                    <p className="text-start text-black text-[20px] font-medium">If you're interested in
-                                        implementing server-side tagging, please feel free to contact us for more
-                                        details.
-                                    </p>
-                                </div>
+                                <p className="text-start ml-3 text-black">If you're interested in implementing
+                                    server-side tagging, please feel free to contact us for more details.</p>
                             </div> <br/>
-
                             <div className="text-center">
-                                <button onClick={scrolling} 
-                                    className="btn cursor-pointer w-44 bg-btn  hover:bg-sky-800 transition duration-200 delay-75 mx-2 p-4 rounded-[15px] shadow-lg shadow-gray-400 text-white font-semibold">Contact
+                                <button onClick={scrolling} className="btn cursor-pointer w-44 bg-btn hover:bg-sky-800 transition duration-200 delay-75 mx-2 p-4 rounded-[15px] shadow-lg shadow-gray-400 text-white text-[17px] font-semibold">Contact
                                     Us</button>
                             </div>
                         </div>
-                        
-                    </div>}
+                        <br/>
+                    </div>
+                </div>}
                    
 
                     <br/>
@@ -752,274 +721,223 @@ export default function gtm({brandsdata}) {
 
 
                     {toggle3 &&
-                    <div className="first-dp py-10 px-5">
-                        <div className="head1 relative sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
-                            <div
-                                className="f bg-menu inline-block relative md:pt-5 md:pb-6 lg:pt-4 lg:pb-[10px] pt-3 pb-2 max-[639px]:rounded-[20%] max-[639px]:py-3 max-[639px]:px-5">
-                                <div
-                                    className="right-triangle w-0 h-0 absolute sm:left-[-76px] md:left-[-87px] sm:top-[6px] md:top-[18px] transform rotate-270 border-blue-400 max-[639px]:hidden">
+                    <div className="first-dp py-10 px-5 relative rounded-[30px]">
+                    <div className="head1 sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
+                        <div className="i absolute min-[375px]:top-[-15px] min-[375px]:right-0  min-[425px]:top-[-30px] min-[425px]:right-[-16px] sm:top-[-30px] sm:right-0 md:right-0 lg:top-[-23px] lg:right-[15px] xl:right-[150px]" >
+                            <img className="v w-[700px] min-[375px]:h-[230px]" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/image (1).png" alt="#"/>
+                        </div>
+                        <div className="i1 hidden absolute min-[375px]:top-[-15px] min-[375px]:right-0  min-[425px]:top-[-30px] min-[425px]:right-[-16px] sm:top-[-30px] sm:right-0 md:right-0 lg:top-[-23px] lg:right-[15px] xl:right-[150px]" style={{display: "none"}}>
+                            <img className="v w-[700px] min-[375px]:h-[230px]" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/image.png" alt="#"/>
+                        </div>
+                        <div className="f relative">
+                            <div className="max-[374px]:block mx-auto text-center flex items-center justify-between">
+                                <div className="flex items-center md:gap-1.5">
+                                    <img className="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/stethoscope 1.png" alt="stethoscope"/>
+                                    <h3 className="text-black text-left flex items-center justify-center sm:text-2xl lg:text-3xl text-xl font-bold">
+                                        Goals Conversions &amp; Events Tracking</h3>
                                 </div>
-                                <div className="max-[374px]:block mx-auto text-center flex items-center justify-center">
-                                    <img className="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/Goals_tracking.png"
-                                        alt="Goals_tracking"/>
-                                    <h3
-                                        className="text-black text-center flex items-center justify-center sm:text-2xl lg:text-4xl text-xl font-bold">
-                                        Goals Conversions & Events Tracking</h3>
-                                    <img onClick={() => {setToggle1(true); setToggle2(true); setToggle3(!toggle3); setToggle4(true); setToggle5(true); setToggle6(true);}} className="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png"
-                                        alt="down-arrow"/>
-                                </div>
-                                <div
-                                    className="triangle w-0 absolute right-[-100px] sm:top-[10px] md:top-5 transform rotate-90 h-0 border-blue-300 max-[639px]:hidden">
-                                </div>
+                                <img onClick={() => {setToggle1(true); setToggle2(true); setToggle3(!toggle3); setToggle4(true); setToggle5(true); setToggle6(true);}} className="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png" alt="down-arrow"/>
                             </div>
                         </div> <br/>
-                    </div>}
+
+                    </div>
+                </div>}
                     <></>
                     {!toggle3 &&
-                    <div className="first-dp py-10 px-5 ad">
-                        <div className="head1 relative sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
-                            <div
-                                className="f bg-menu inline-block relative md:pt-5 md:pb-6 lg:pt-4 lg:pb-[10px] pt-3 pb-2 max-[639px]:rounded-[20%] max-[639px]:py-3 max-[639px]:px-5">
-                                <div
-                                    className="right-triangle w-0 h-0 absolute sm:left-[-76px] md:left-[-87px] sm:top-[6px] md:top-[18px] transform rotate-270 border-blue-400 max-[639px]:hidden">
+                    <div className="first-dp py-10 px-5 relative rounded-[30px] ad">
+                    <div className="head1 sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
+                        <div className="i absolute min-[375px]:top-[-15px] min-[375px]:right-0  min-[425px]:top-[-30px] min-[425px]:right-[-16px] sm:top-[-30px] sm:right-0 md:right-0 lg:top-[-23px] lg:right-[15px] xl:right-[150px]" style={{display: "none"}}>
+                            <img className="v w-[700px] min-[375px]:h-[230px]" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/image (1).png" alt="#"/>
+                        </div>
+                        <div className="i1 hidden absolute min-[375px]:top-[-15px] min-[375px]:right-0  min-[425px]:top-[-30px] min-[425px]:right-[-16px] sm:top-[-30px] sm:right-0 md:right-0 lg:top-[-23px] lg:right-[15px] xl:right-[150px]" style={{display: "block"}}>
+                            <img className="v w-[700px] min-[375px]:h-[230px]" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/image.png" alt="#"/>
+                        </div>
+                        <div className="f relative">
+                            <div className="max-[374px]:block mx-auto text-center flex items-center justify-between">
+                                <div className="flex items-center md:gap-1.5">
+                                    <img className="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/stethoscope 1.png" alt="stethoscope"/>
+                                    <h3 className="text-black text-left flex items-center justify-center sm:text-2xl lg:text-3xl text-xl font-bold">
+                                        Goals Conversions &amp; Events Tracking</h3>
                                 </div>
-                                <div className="max-[374px]:block mx-auto text-center flex items-center justify-center">
-                                    <img className="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/Goals_tracking.png"
-                                        alt="Goals_tracking"/>
-                                    <h3
-                                        className="text-black text-center flex items-center justify-center sm:text-2xl lg:text-4xl text-xl font-bold">
-                                        Goals Conversions & Events Tracking</h3>
-                                    <img onClick={() => {setToggle1(true); setToggle2(true); setToggle3(!toggle3); setToggle4(true); setToggle5(true); setToggle6(true);}} className="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png"
-                                        alt="down-arrow"/>
-                                </div>
-                                <div
-                                    className="triangle w-0 absolute right-[-100px] sm:top-[10px] md:top-5 transform rotate-90 h-0 border-blue-300 max-[639px]:hidden">
-                                </div>
+                                <img onClick={() => {setToggle1(true); setToggle2(true); setToggle3(!toggle3); setToggle4(true); setToggle5(true); setToggle6(true);}} className="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png" alt="down-arrow"/>
                             </div>
                         </div> <br/>
-
-                        <div className="drp">
+                        <div className="drp bg-sec hidden pt-12 text-base sm:text-[20px] font-medium" style={{display: "block"}}>
                             <div className="flex">
                                 <div>
                                     <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" className="inline mr-4" alt="#"/>
                                 </div>
-                                <p className="text-start ml-3 text-black text-[20px] font-medium">If you're uncertain about
-                                    what's happening on your website/app, such as which sections users are engaging with
-                                    the
-                                    most, or which buttons, forms, and other elements are performing well, you might be
-                                    missing out on valuable insights in the website, to measure user interactions. To
-                                    define
-                                    your key KPIs helpful for business as per industries can be converted as
-                                    conversions.
-                                    This helps to measure where the conversions came from, converting from
-                                    non-convertors to
-                                    convertors. Events can be conversions and decided based on the business’ KPI
-                                    standards
-                                </p>
+                                <p className="text-start ml-3 text-black">If you're uncertain about what's happening on
+                                    your website/app, such as which sections users are engaging with the most, or
+                                    which buttons, forms, and other elements are performing well, you might be
+                                    missing out on valuable insights in the website, to measure user interactions.
+                                    To define your key KPIs helpful for business as per industries can be converted
+                                    as conversions. This helps to measure where the conversions came from,
+                                    converting from non-convertors to convertors. Events can be conversions and
+                                    decided based on the business’ KPI standards</p>
                             </div> <br/>
                             <div className="flex">
                                 <div>
                                     <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" className="inline mr-4" alt="#"/>
                                 </div>
-                                <p className="text-start ml-3 text-black text-[20px] font-medium">The Custom event tracking
-                                    in
-                                    GA4 can help you gather this information, providing clarity on user behavior and
-                                    interaction patterns. This knowledge can guide improvements to your website's
-                                    layout,
-                                    content, and functionality, leading to enhanced user experiences and better outcomes
-                                    for
-                                    your business. Unlike default tracking, which covers basic activities like
-                                    pageviews,
-                                    custom event tracking lets you capture specific actions that are crucial to business
-                                    goals.
-                                </p>
+                                <p className="text-start ml-3 text-black">The Custom event tracking in GA4 can help you
+                                    gather this information, providing clarity on user behavior and interaction
+                                    patterns. This knowledge can guide improvements to your website's layout,
+                                    content, and functionality, leading to enhanced user experiences and better
+                                    outcomes for your business. Unlike default tracking, which covers basic
+                                    activities like pageviews, custom event tracking lets you capture specific
+                                    actions that are crucial to business goals.</p>
                             </div> <br/>
-
                             <div className="text-center">
-                                <button onClick={scrolling} 
-                                    className="btn cursor-pointer w-44 bg-btn  hover:bg-sky-800 transition duration-200 delay-75 mx-2 p-4 rounded-[15px] shadow-lg shadow-gray-400 text-white font-semibold">Contact
+                                <button onClick={scrolling} className="btn cursor-pointer w-44 bg-btn hover:bg-sky-800 transition duration-200 delay-75 mx-2 p-4 rounded-[15px] shadow-lg shadow-gray-400 text-white text-[17px] font-semibold">Contact
                                     Us</button>
                             </div>
                         </div>
-                    </div>} <br/>
+                        <br/>
+                    </div>
+                </div>} <br/>
                  
 
 
 
-                    {toggle4 &&
-                    <div className="first-dp py-10 px-5">
-                        <div className="head1 relative sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
-                            <div
-                                className="f bg-menu inline-block relative md:pt-6 md:pb-6 lg:pt-4 lg:pb-[10px] pt-3 pb-[13px] max-[639px]:rounded-[20%] max-[639px]:py-3 max-[639px]:px-5">
-                                <div
-                                    className="right-triangle w-0 h-0 absolute sm:left-[-76px] md:left-[-87px] sm:top-[6px] md:top-[18px] transform rotate-270 border-blue-400 max-[639px]:hidden">
-                                </div>
-                                <div className="max-[374px]:block mx-auto text-center flex items-center justify-center">
-                                    <img  className="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/ECommerse_img.png"
-                                        alt="ECommerse_img"/>
-                                    <h3
-                                        className="text-black text-center flex items-center justify-center sm:text-[23px] lg:text-3xl text-xl font-bold">
+                    {toggle4 &&               
+                    <div className="first-dp py-10 px-5 relative rounded-[30px]">
+                    <div className="head1 sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
+                        <div className="i absolute min-[375px]:top-[-15px] min-[375px]:right-0  min-[425px]:top-[-15px] min-[425px]:right-[-16px] sm:top-[-8px] sm:right-0 md:right-0 lg:top-[-23px] lg:right-[15px] xl:right-[150px]">
+                            <img className="v w-[700px] min-[375px]:h-[230px]" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/image (1).png" alt="#"/>
+                        </div>
+                        <div className="i1 hidden absolute min-[375px]:top-[-15px] min-[375px]:right-0  min-[425px]:top-[-15px] min-[425px]:right-[-16px] sm:top-[-8px] sm:right-0 md:right-0 lg:top-[-23px] lg:right-[15px] xl:right-[150px]">
+                            <img className="v w-[700px] min-[375px]:h-[230px]" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/image.png" alt="#"/>
+                        </div>
+                        <div className="f relative">
+                            <div className="max-[374px]:block mx-auto text-center flex items-center justify-between">
+                                <div className="flex items-center md:gap-1.5">
+                                    <img className="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/stethoscope 1.png" alt="stethoscope"/>
+                                    <h3 className="text-black text-left flex items-center justify-center sm:text-2xl lg:text-3xl text-xl font-bold">
                                         Enhanced E-commerce Implementation</h3>
-                                    <img onClick={() => {setToggle1(true); setToggle2(true); setToggle3(true); setToggle4(!toggle4); setToggle5(true); setToggle6(true);}} className="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png"
-                                        alt="down-arrow"/>
                                 </div>
-                                <div
-                                    className="triangle w-0 absolute right-[-100px] sm:top-[10px] md:top-5 transform rotate-90 h-0 border-blue-300 max-[639px]:hidden">
-                                </div>
+                                <img onClick={() => {setToggle1(true); setToggle2(true); setToggle3(true); setToggle4(!toggle4); setToggle5(true); setToggle6(true);}} className="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png" alt="down-arrow"/>
                             </div>
                         </div> <br/>
-
-                    </div>}
-                    <></>
-                    {!toggle4 &&
-                    <div className="first-dp py-10 px-5 ad">
-                        <div className="head1 relative sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
-                            <div
-                                className="f bg-menu inline-block relative md:pt-6 md:pb-6 lg:pt-4 lg:pb-[10px] pt-3 pb-[13px] max-[639px]:rounded-[20%] max-[639px]:py-3 max-[639px]:px-5">
-                                <div
-                                    className="right-triangle w-0 h-0 absolute sm:left-[-76px] md:left-[-87px] sm:top-[6px] md:top-[18px] transform rotate-270 border-blue-400 max-[639px]:hidden">
-                                </div>
-                                <div className="max-[374px]:block mx-auto text-center flex items-center justify-center">
-                                    <img className="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/ECommerse_img.png"
-                                        alt="ECommerse_img"/>
-                                    <h3
-                                        className="text-black text-center flex items-center justify-center sm:text-[23px] lg:text-3xl text-xl font-bold">
+                        
+                        <br/>
+                    </div>
+                </div>}
+                    
+                    {!toggle4 && 
+                    <div class="first-dp py-10 px-5 relative rounded-[30px] ad">
+                    <div class="head1 sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
+                        <div class="i absolute min-[375px]:top-[-15px] min-[375px]:right-0  min-[425px]:top-[-15px] min-[425px]:right-[-16px] sm:top-[-8px] sm:right-0 md:right-0 lg:top-[-23px] lg:right-[15px] xl:right-[150px]" style={{display: "none"}}>
+                            <img class="v w-[700px] min-[375px]:h-[230px]" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/image (1).png" alt="#"/>
+                        </div>
+                        <div class="i1 hidden absolute min-[375px]:top-[-15px] min-[375px]:right-0  min-[425px]:top-[-15px] min-[425px]:right-[-16px] sm:top-[-8px] sm:right-0 md:right-0 lg:top-[-23px] lg:right-[15px] xl:right-[150px]" style={{display: "block"}}>
+                            <img onClick={() => {setToggle1(true); setToggle2(true); setToggle3(true); setToggle4(!toggle4); setToggle5(true); setToggle6(true);}} class="v w-[700px] min-[375px]:h-[230px]" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/image.png" alt="#"/>
+                        </div>
+                        <div class="f relative">
+                            <div class="max-[374px]:block mx-auto text-center flex items-center justify-between">
+                                <div class="flex items-center md:gap-1.5">
+                                    <img class="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/stethoscope 1.png" alt="stethoscope"/>
+                                    <h3 class="text-black text-left flex items-center justify-center sm:text-2xl lg:text-3xl text-xl font-bold">
                                         Enhanced E-commerce Implementation</h3>
-                                    <img onClick={() => {setToggle1(true); setToggle2(true); setToggle3(true); setToggle4(!toggle4); setToggle5(true); setToggle6(true);}} className="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png"
-                                        alt="down-arrow"/>
                                 </div>
-                                <div
-                                    className="triangle w-0 absolute right-[-100px] sm:top-[10px] md:top-5 transform rotate-90 h-0 border-blue-300 max-[639px]:hidden">
-                                </div>
+                                <img onClick={() => {setToggle1(true); setToggle2(true); setToggle3(true); setToggle4(!toggle4); setToggle5(true); setToggle6(true);}} class="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png" alt="down-arrow"/>
                             </div>
                         </div> <br/>
-
-                        <div className="drp">
-                            <div className="flex">
+                        <div class="drp bg-sec hidden pt-12 text-base sm:text-[20px] font-medium" style={{display: "block"}}>
+                            <div class="flex">
                                 <div>
-                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" className="inline mr-4" alt="#"/>
+                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" class="inline mr-4" alt="#"/>
                                 </div>
-                                <p className="text-start ml-3 text-black text-[20px] font-medium">Which products are
-                                    performing
-                                    well on your website/app or struggling to grasp the situation, it suggests that
-                                    managing
-                                    and comprehending your e-commerce data effectively might be a challenge.
+                                <p class="text-start ml-3 text-black">Which products are performing well on your
+                                    website/app or struggling to grasp the situation, it suggests that managing and
+                                    comprehending your e-commerce data effectively might be a challenge.
                                     This implementation helps Ecommerce/Retail/Travel Clients to receive accurate
-                                    e-commerce
-                                    data that helps in boosting their growth through a range of strategies. 
-                                </p>
+                                    e-commerce data that helps in boosting their growth through a range of
+                                    strategies.</p>
                             </div> <br/>
-                            <div className="flex">
+                            <div class="flex">
                                 <div>
-                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" className="inline mr-4" alt="#"/>
+                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" class="inline mr-4" alt="#"/>
                                 </div>
-                                <p className="text-start ml-3 text-black text-[20px] font-medium">With enhanced ecommerce,
-                                    you
-                                    can track various stages of the customer journey, including promotions, product
-                                    views,
-                                    product detail, adding items to the cart, checkout journey steps, and completing
+                                <p class="text-start ml-3 text-black">With enhanced ecommerce, you can track various
+                                    stages of the customer journey, including promotions, product views, product
+                                    detail, adding items to the cart, checkout journey steps, and completing
                                     purchases. This provides valuable data to analyze user interactions and identify
-                                    areas
-                                    for improvement in the e-commerce process in the website.
-                                </p>
+                                    areas for improvement in the e-commerce process in the website.</p>
                             </div> <br/>
-
-                            <div className="text-center">
-                                <button onClick={scrolling} 
-                                    className="btn cursor-pointer w-44 bg-btn  hover:bg-sky-800 transition duration-200 delay-75 mx-2 p-4 rounded-[15px] shadow-lg shadow-gray-400 text-white font-semibold">Contact
+                            <div class="text-center">
+                                <button onClick={scrolling} class="btn cursor-pointer w-44 bg-btn hover:bg-sky-800 transition duration-200 delay-75 mx-2 p-4 rounded-[15px] shadow-lg shadow-gray-400 text-white text-[17px] font-semibold">Contact
                                     Us</button>
                             </div>
                         </div>
-                    </div>} <br/>
+                        <br/>
+                    </div>
+                </div>} <br/>
                  
 
 
 
                     {toggle5 &&
-                    <div className="first-dp py-10 px-5">
-                        <div className="head1 relative sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
-                        <div
-                                className="f bg-menu inline-block relative max-[639px]:py-3 max-[639px]:px-5 md:pt-5 md:pb-6 lg:pt-4 lg:pb-[10px] pt-3 pb-2 max-[639px]:rounded-[20%]">
-                                <div
-                                    className="right-triangle w-0 h-0 absolute sm:left-[-76px] md:left-[-87px] sm:top-[6px] md:top-[18px] transform rotate-270 border-blue-400 max-[639px]:hidden">
+                    <div className="first-dp py-10 px-5 relative rounded-[30px]">
+                    <div className="head1 sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
+                        <div className="i absolute min-[375px]:top-[-27px] min-[375px]:right-0  min-[425px]:top-[-30px] min-[425px]:right-[-16px] sm:top-[-30px] sm:right-0 md:right-0 lg:top-[-30px] lg:right-[15px] xl:right-[150px]">
+                            <img className="v w-[700px] min-[375px]:h-[230px]" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/image (1).png" alt="#"/>
+                        </div>
+                        <div className="i1 hidden absolute min-[375px]:top-[-27px] min-[375px]:right-0  min-[425px]:top-[-30px] min-[425px]:right-[-16px] sm:top-[-30px] sm:right-0 md:right-0 lg:top-[-30px] lg:right-[15px] xl:right-[150px]">
+                            <img className="v w-[700px] min-[375px]:h-[230px]" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/image.png" alt="#"/>
+                        </div>
+                        <div className="f relative">
+                            <div className="max-[374px]:block mx-auto text-center flex items-center justify-between">
+                                <div className="flex items-center md:gap-1.5">
+                                    <img className="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/stethoscope 1.png" alt="stethoscope"/>
+                                    <h3 className="text-black text-left flex items-center justify-center sm:text-2xl lg:text-3xl text-xl font-bold">
+                                        Cross-Domain Tracking</h3>
                                 </div>
-                                <div className="max-[374px]:block mx-auto text-center flex items-center justify-center">
-                                    <img className="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/cross_domain.png"
-                                        alt="Configuration_img"/>
-                                    <h3
-                                        className="text-black text-center flex items-center justify-center sm:text-2xl lg:text-4xl text-xl font-bold">
-                                        Cross Domain Tracking</h3>
-                                    <img onClick={() => {setToggle1(true); setToggle2(true); setToggle3(true); setToggle4(true); setToggle5(!toggle5); setToggle6(true);}}  className="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png"
-                                        alt="down-arrow"/>
-                                </div>
-                                <div
-                                    className="triangle w-0 absolute right-[-100px] sm:top-[10px] md:top-5 transform rotate-90 h-0 border-blue-300 max-[639px]:hidden">
-                                </div>
+                                <img onClick={() => {setToggle1(true); setToggle2(true); setToggle3(true); setToggle4(true); setToggle5(!toggle5); setToggle6(true);}} className="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png" alt="down-arrow"/>
                             </div>
                         </div> <br/>
-
-                    </div>}
-                    <></>
+                        
+                        <br/>
+                    </div>
+                </div>}
+                    
                     {!toggle5 &&
-                    <div className="first-dp py-10 px-5 ad">
-                        <div className="head1 relative sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
-                        <div
-                                className="f bg-menu inline-block relative max-[639px]:py-3 max-[639px]:px-5 md:pt-5 md:pb-6 lg:pt-4 lg:pb-[10px] pt-3 pb-2 max-[639px]:rounded-[20%]">
-                                <div
-                                    className="right-triangle w-0 h-0 absolute sm:left-[-76px] md:left-[-87px] sm:top-[6px] md:top-[18px] transform rotate-270 border-blue-400 max-[639px]:hidden">
+                    <div className="first-dp py-10 px-5 relative rounded-[30px] ad">
+                    <div className="head1 sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
+                        <div className="i absolute min-[375px]:top-[-27px] min-[375px]:right-0  min-[425px]:top-[-30px] min-[425px]:right-[-16px] sm:top-[-30px] sm:right-0 md:right-0 lg:top-[-30px] lg:right-[15px] xl:right-[150px]" style={{display: "none"}}>
+                            <img className="v w-[700px] min-[375px]:h-[230px]" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/image (1).png" alt="#"/>
+                        </div>
+                        <div className="i1 hidden absolute min-[375px]:top-[-27px] min-[375px]:right-0  min-[425px]:top-[-30px] min-[425px]:right-[-16px] sm:top-[-30px] sm:right-0 md:right-0 lg:top-[-30px] lg:right-[15px] xl:right-[150px]" style={{display: "block"}}>
+                            <img className="v w-[700px] min-[375px]:h-[230px]" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/image.png" alt="#"/>
+                        </div>
+                        <div className="f relative">
+                            <div className="max-[374px]:block mx-auto text-center flex items-center justify-between">
+                                <div className="flex items-center md:gap-1.5">
+                                    <img className="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/stethoscope 1.png" alt="stethoscope"/>
+                                    <h3 className="text-black text-left flex items-center justify-center sm:text-2xl lg:text-3xl text-xl font-bold">
+                                        Cross-Domain Tracking</h3>
                                 </div>
-                                <div className="max-[374px]:block mx-auto text-center flex items-center justify-center">
-                                    <img  className="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/cross_domain.png"
-                                        alt="Configuration_img"/>
-                                    <h3
-                                        className="text-black text-center flex items-center justify-center sm:text-2xl lg:text-4xl text-xl font-bold">
-                                        Cross Domain Tracking</h3>
-                                    <img onClick={() => {setToggle1(true); setToggle2(true); setToggle3(true); setToggle4(true); setToggle5(!toggle5); setToggle6(true);}} className="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png"
-                                        alt="down-arrow"/>
-                                </div>
-                                <div
-                                    className="triangle w-0 absolute right-[-100px] sm:top-[10px] md:top-5 transform rotate-90 h-0 border-blue-300 max-[639px]:hidden">
-                                </div>
+                                <img onClick={() => {setToggle1(true); setToggle2(true); setToggle3(true); setToggle4(true); setToggle5(!toggle5); setToggle6(true);}} className="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png" alt="down-arrow"/>
                             </div>
                         </div> <br/>
-
-                        <div className="drp">
+                        <div className="drp bg-sec hidden pt-12 text-base sm:text-[20px] font-medium" style={{display: "block"}}>
                             <div className="flex">
                                 <div>
                                     <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" className="inline mr-4" alt="#"/>
                                 </div>
-                                <p className="text-start ml-3 text-black text-[20px] font-medium">Server-side tagging is a
-                                    method used in web analytics and digital marketing to manage and deploy various
-                                    tracking
-                                    tags and scripts on a website's server using CDP platforms rather than directly on
-                                    the
-                                    client's browser. This approach offers several advantages and is becoming
-                                    increasingly
-                                    popular due to privacy concerns, performance optimization, and the need for more
-                                    control
-                                    over data collection.
-                                </p>
+                                <p className="text-start ml-3 text-black">We help our clients in stitching the journey
+                                    of users browsing through their different cross-domains through custom
+                                    implementation with the help of cross-domain tracking. By stitching this you
+                                    will get a unified user journey report</p>
                             </div> <br/>
-                            <div className="flex">
-                                <div>
-                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" className="inline mr-4" alt="#"/>
-                                </div>
-                                <p className="text-start ml-3 text-black text-[20px] font-medium">We help our clients in
-                                    stitching the journey of users browsing through their different cross-domains
-                                    through
-                                    custom implementation with the help of cross-domain tracking. By stitching this you
-                                    will
-                                    get a unified user journey report
-                                </p>
-                            </div> <br/>
-
                             <div className="text-center">
-                                <button onClick={scrolling} 
-                                    className="btn cursor-pointer w-44 bg-btn  hover:bg-sky-800 transition duration-200 delay-75 mx-2 p-4 rounded-[15px] shadow-lg shadow-gray-400 text-white font-semibold">Contact
+                                <button onClick={scrolling} className="btn cursor-pointer w-44 bg-btn hover:bg-sky-800 transition duration-200 delay-75 mx-2 p-4 rounded-[15px] shadow-lg shadow-gray-400 text-white text-[17px] font-semibold">Contact
                                     Us</button>
                             </div>
                         </div>
-                    </div>} <br/>
+                        <br/>
+                    </div>
+                </div>} <br/>
                    
 
 
@@ -1027,78 +945,70 @@ export default function gtm({brandsdata}) {
 
 
                     {toggle6 &&
-                    <div className="first-dp py-10 px-5">
-                        <div className="head1 relative sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
-                            <div
-                                className="f bg-menu inline-block relative max-[639px]:py-3 max-[639px]:px-5 md:pt-5 md:pb-6 lg:pt-4 lg:pb-[10px] pt-3 pb-2 max-[639px]:rounded-[20%]">
-                                <div
-                                    className="right-triangle w-0 h-0 absolute sm:left-[-76px] md:left-[-87px] sm:top-[6px] md:top-[18px] transform rotate-270 border-blue-400 max-[639px]:hidden">
-                                </div>
-                                <div className="max-[374px]:block mx-auto text-center flex items-center justify-center">
-                                    <img className="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/Configuration.png"
-                                        alt="Configuration_img"/>
-                                    <h3
-                                        className="text-black text-center flex items-center justify-center sm:text-2xl lg:text-4xl text-xl font-bold">
+                    <div className="first-dp py-10 px-5 relative rounded-[30px]">
+                    <div className="head1 sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
+                        <div className="i absolute min-[375px]:top-[-17px] min-[375px]:right-0  min-[425px]:top-[-30px] min-[425px]:right-[-16px] sm:top-[-30px] sm:right-0 md:right-0 lg:top-[-30px] lg:right-[15px] xl:right-[150px]">
+                            <img className="v w-[700px] min-[375px]:h-[230px]" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/image (1).png" alt="#"/>
+                        </div>
+                        <div className="i1 hidden absolute min-[375px]:top-[-17px] min-[375px]:right-0  min-[425px]:top-[-30px] min-[425px]:right-[-16px] sm:top-[-30px] sm:right-0 md:right-0 lg:top-[-30px] lg:right-[15px] xl:right-[150px]">
+                            <img className="v w-[700px] min-[375px]:h-[230px]" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/image.png" alt="#"/>
+                        </div>
+                        <div className="f relative">
+                            <div className="max-[374px]:block mx-auto text-center flex items-center justify-between">
+                                <div className="flex items-center md:gap-1.5">
+                                    <img className="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/stethoscope 1.png" alt="stethoscope"/>
+                                    <h3 className="text-black text-left flex items-center justify-center sm:text-2xl lg:text-3xl text-xl font-bold">
                                         Configuration Of Custom Dimensions</h3>
-                                    <img onClick={() => {setToggle1(true); setToggle2(true); setToggle3(true); setToggle4(true); setToggle5(true); setToggle6(!toggle6);}} className="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png"
-                                        alt="down-arrow"/>
                                 </div>
-                                <div
-                                    className="triangle w-0 absolute right-[-100px] sm:top-[10px] md:top-5 transform rotate-90 h-0 border-blue-300 max-[639px]:hidden">
-                                </div>
+                                <img onClick={() => {setToggle1(true); setToggle2(true); setToggle3(true); setToggle4(true); setToggle5(true); setToggle6(!toggle6);}} className="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png" alt="down-arrow"/>
                             </div>
                         </div> <br/>
 
-                    </div>}
+                        <br/>
+                    </div>
+                </div>}
                     <></>
+                    
                     {!toggle6 &&
-                    <div className="first-dp py-10 px-5 ad">
-                        <div className="head1 relative sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
-                            <div
-                                className="f bg-menu inline-block relative max-[639px]:py-3 max-[639px]:px-5 md:pt-5 md:pb-6 lg:pt-4 lg:pb-[10px] pt-3 pb-2 max-[639px]:rounded-[20%]">
-                                <div
-                                    className="right-triangle w-0 h-0 absolute sm:left-[-76px] md:left-[-87px] sm:top-[6px] md:top-[18px] transform rotate-270 border-blue-400 max-[639px]:hidden">
-                                </div>
-                                <div className="max-[374px]:block mx-auto text-center flex items-center justify-center">
-                                    <img className="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/Configuration.png"
-                                        alt="Configuration_img"/>
-                                    <h3
-                                        className="text-black text-center flex items-center justify-center sm:text-2xl lg:text-4xl text-xl font-bold">
+                    <div className="first-dp py-10 px-5 relative rounded-[30px] ad">
+                    <div className="head1 sm:w-[400px] lg:w-[550px] m-auto text-center p-4">
+                        <div className="i absolute min-[375px]:top-[-17px] min-[375px]:right-0  min-[425px]:top-[-30px] min-[425px]:right-[-16px] sm:top-[-30px] sm:right-0 md:right-0 lg:top-[-30px] lg:right-[15px] xl:right-[150px]" style={{display: "none"}}>
+                            <img className="v w-[700px] min-[375px]:h-[230px]" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/image (1).png" alt="#"/>
+                        </div>
+                        <div className="i1 hidden absolute min-[375px]:top-[-17px] min-[375px]:right-0  min-[425px]:top-[-30px] min-[425px]:right-[-16px] sm:top-[-30px] sm:right-0 md:right-0 lg:top-[-30px] lg:right-[15px] xl:right-[150px]" style={{display: "block"}}>
+                            <img className="v w-[700px] min-[375px]:h-[230px]" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/image.png" alt="#"/>
+                        </div>
+                        <div className="f relative">
+                            <div className="max-[374px]:block mx-auto text-center flex items-center justify-between">
+                                <div className="flex items-center md:gap-1.5">
+                                    <img className="h-12 w-12 mr-3" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/stethoscope 1.png" alt="stethoscope"/>
+                                    <h3 className="text-black text-left flex items-center justify-center sm:text-2xl lg:text-3xl text-xl font-bold">
                                         Configuration Of Custom Dimensions</h3>
-                                    <img onClick={() => {setToggle1(true); setToggle2(true); setToggle3(true); setToggle4(true); setToggle5(true); setToggle6(!toggle6);}} className="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png"
-                                        alt="down-arrow"/>
                                 </div>
-                                <div
-                                    className="triangle w-0 absolute right-[-100px] sm:top-[10px] md:top-5 transform rotate-90 h-0 border-blue-300 max-[639px]:hidden">
-                                </div>
+                                <img onClick={() => {setToggle1(true); setToggle2(true); setToggle3(true); setToggle4(true); setToggle5(true); setToggle6(!toggle6);}} className="down ml-3 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/down-arrow (8) 1.png" alt="down-arrow"/>
                             </div>
                         </div> <br/>
-
-                        <div className="drp">
+                        <div className="drp bg-sec hidden pt-12 text-base sm:text-[20px] font-medium" style={{display: "block"}}>
                             <div className="flex">
                                 <div>
                                     <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_lp/arrow5.png" className="inline mr-4" alt="#"/>
                                 </div>
-                                <p className="text-start ml-3 text-black text-[20px] font-medium">If you need to include
-                                    extra
-                                    information with your events in GA4 or Firebase, we can efficiently manage this
-                                    within
-                                    the analytics platform. Custom dimensions and metrics are valuable features that
-                                    enhance
-                                    our data analysis capabilities. These dimensions allow us to enrich our event
-                                    tracking
-                                    with the specific information that matters most to our analysis. Please feel free to
-                                    reach out to us anytime for further assistance and support. We're here to help.
-                                </p>
+                                <p className="text-start ml-3 text-black">If you need to include extra information with
+                                    your events in GA4 or Firebase, we can efficiently manage this within the
+                                    analytics platform. Custom dimensions and metrics are valuable features that
+                                    enhance our data analysis capabilities. These dimensions allow us to enrich our
+                                    event tracking with the specific information that matters most to our analysis.
+                                    Please feel free to reach out to us anytime for further assistance and support.
+                                    We're here to help.</p>
                             </div> <br/>
-
                             <div className="text-center">
-                                <button onClick={scrolling} 
-                                    className="btn cursor-pointer w-44 bg-btn  hover:bg-sky-800 transition duration-200 delay-75 mx-2 p-4 rounded-[15px] shadow-lg shadow-gray-400 text-white font-semibold">Contact
+                                <button onClick={scrolling} className="btn cursor-pointer w-44 bg-btn hover:bg-sky-800 transition duration-200 delay-75 mx-2 p-4 rounded-[15px] shadow-lg shadow-gray-400 text-white text-[17px] font-semibold">Contact
                                     Us</button>
                             </div>
                         </div>
-                    </div>} <br/>
+                        <br/>
+                    </div>
+                </div> }<br/>
 
 
 
@@ -1106,14 +1016,13 @@ export default function gtm({brandsdata}) {
 
                    
 
-                    <div className="flex items-center justify-between text-start max-[680px]:block">
-                        <h2 className="text-black text-[30px] font-bold mb-6">To Improve Your Conversion Rate
-                        
+                <div className="flex items-center justify-between text-start max-[680px]:block">
+                        <h2 className="text-black text-[32px] font-bold mb-6">To Improve Your Conversion Rate
                         </h2>
-                        <button onClick={scrolling} 
-                            className="bttn cursor-pointer w-44 bg-btn  hover:bg-sky-800 transition duration-200 delay-75 mx-2 p-4 rounded-[15px] opacity-80 shadow-lg shadow-gray-400 text-white font-semibold">Let’s
+                        <button onClick={scrolling}
+                            className="bttn cursor-pointer w-44 bg-btn hover:bg-sky-800 transition duration-200 delay-75 mx-2 p-4 rounded-[15px] opacity-80 shadow-lg shadow-gray-400 text-white font-semibold">Let’s
                             Get Started</button>
-                    </div> <br/>
+                    </div> <br/> <br/>
                 </div>
             </div>
         </div>

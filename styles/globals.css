@@ -140,7 +140,6 @@ input[type=number] {
   position: absolute;
 }
 
-
 .gtm .bttn{
   box-shadow: 6px 6px 4px 1px rgba(0, 0, 0, 0.25);
 }
@@ -162,69 +161,6 @@ input[type=number] {
 .gtm .head{
   text-align: -webkit-center;
 }
-.gtm .right-triangle {
-  transform: rotate(270deg);
-  border-left: 105px solid transparent;
-  border-bottom: 69px solid #7DD3FC;
-}
-.gtm .right-triangle2 {
-  transform: rotate(270deg);
-  border-left: 105px solid transparent;
-  border-bottom: 69px solid #7DD3FC;
-}
-
-.gtm .triangle {
-  border-right: 66px solid transparent;
-  border-left: 67px solid transparent;
-  border-bottom: 68px solid #7DD3FC;
-}
 .gtm .ad{
-  background-color: #7DD3FC;
-}
-
-@media only screen and (min-width: 640px) and (max-width: 767px) {
-  .gtm .right-triangle {
-      transform: rotate(270deg);
-      border-left: 82px solid transparent;
-      border-bottom: 70px solid #7DD3FC;
-  }
-  .gtm .right-triangle2 {
-      transform: rotate(270deg);
-      border-left: 85px solid transparent;
-      border-bottom: 69px solid #7DD3FC;
-  }
-}
-
-@media only screen and (min-width: 640px) {
-  .gtm .right-triangle1 {
-      transform: rotate(270deg);
-      border-left: 67px solid transparent;
-      border-bottom: 69px solid #7DD3FC;
-  }
-  
-}
-@media only screen and (min-width: 768px) {
-  .gtm .right-triangle1 {
-      transform: rotate(270deg);
-      border-left: 89px solid transparent;
-      border-bottom: 69px solid #7DD3FC;
-  }
-  .gtm .right-triangle2 {
-      transform: rotate(270deg);
-      border-left: 89px solid transparent;
-      border-bottom: 69px solid #7DD3FC;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .gtm .right-triangle1 {
-      transform: rotate(270deg);
-      border-left: 73px solid transparent;
-      border-bottom: 69px solid #7DD3FC;
-  }
-  .gtm .right-triangle2 {
-      transform: rotate(270deg);
-      border-left: 73px solid transparent;
-      border-bottom: 69px solid #7DD3FC;
-  }
-  
+  background-color: #DFEBFF;
 }
