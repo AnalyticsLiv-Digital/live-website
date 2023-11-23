@@ -28,7 +28,7 @@ const handler = async (req, res) => {
 
           var mailOptions1 = {
             from: "support@analyticsliv.com",
-            to: ["anshul.d@analyticsliv.com","anuj@analyticsliv.com","nitya@analyticsliv.com","shilpi.ravat@analyticsliv.com","chirag.rathod@analyticsliv.com","esha.chhaparwal@analyticsliv.com"],
+            to: ["sales@analyticsliv.com","anshul.d@analyticsliv.com","anuj@analyticsliv.com","nitya@analyticsliv.com","shilpi.ravat@analyticsliv.com","chirag.rathod@analyticsliv.com","esha.chhaparwal@analyticsliv.com"],
             subject: 'New DV360 Enquiry!!',
             html: `Enquiry Submitted by <br> Full Name - ${req.body.fullName}  <br> Email- ${req.body.email} <br> Contact - ${req.body.contact} <br> Message - ${req.body.message} <br> Website - ${req.body.website} `
           };

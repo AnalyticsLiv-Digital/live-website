@@ -28,7 +28,7 @@ const handler = async (req, res) => {
 
           var mailOptions1 = {
             from: "support@analyticsliv.com",
-            to: ["anuj@analyticsliv.com","nitya@analyticsliv.com","anshul.d@analyticsliv.com"],
+            to: ["sales@analyticsliv.com","anuj@analyticsliv.com","nitya@analyticsliv.com","anshul.d@analyticsliv.com"],
             subject: 'New Enquiry!!',
             html: `Enquiry Submitted by <br> First Name - ${req.body.firstName} <br>Lastname- ${req.body.lastName} <br> Email- ${req.body.email} <br> Contact - ${req.body.contact} <br> Company - ${req.body.company} <br> Role- ${req.body.role} <br> Purpose - ${req.body.purpose} <br> Requirements -${req.body.requirments}`
           };
