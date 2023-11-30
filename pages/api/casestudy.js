@@ -4,7 +4,7 @@ import connectDb from "../../middleware/mongoose";
 
 
 const handler = async (req, res) => {
-    let data = await Casestudy.find({slug:req.query.slug}).sort({ sequence: -1 });;
+    let data = await Casestudy.find({slug:req.query.slug}).sort({ sequence: -1 });
     res.status(200).json({ data });
 }
 

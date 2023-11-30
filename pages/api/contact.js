@@ -5,6 +5,8 @@ var nodemailer = require('nodemailer');
 
 const handler = async (req, res) => {
     if (req.method == 'POST') {
+
+      fetch('https://script.google.com/macros/s/AKfycbxS43B15oUP4-LaHnzA5KZ5ly7OgE59ZQpvujB1TRGDvt48JpHVa92OPlq9zPPQ7V7N4g/exec?firstName='+req.body.firstName+'&lastName='+req.body.lastName+'&email='+req.body.email+'&contact='+req.body.contact+'&role='+req.body.role+'&purpose='+req.body.purpose+'&requirements='+req.body.requirments+'&company='+req.body.company);
         let b = new Contact({
             firstName: req.body.firstName,
             lastName: req.body.lastName,
@@ -33,13 +35,15 @@ const handler = async (req, res) => {
             html: `Enquiry Submitted by <br> First Name - ${req.body.firstName} <br>Lastname- ${req.body.lastName} <br> Email- ${req.body.email} <br> Contact - ${req.body.contact} <br> Company - ${req.body.company} <br> Role- ${req.body.role} <br> Purpose - ${req.body.purpose} <br> Requirements -${req.body.requirments}`
           };
           
-          transporter.sendMail(mailOptions1, function(error, info){
+         transporter.sendMail(mailOptions1, function(error, info){
             if (error) {
               console.log(error);
             } else {
               console.log('Email sent: ' + info.response);
             }
           });
+
+        
 
     } else {
         res.status(400).json({ error: "Bad Request" });

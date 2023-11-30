@@ -11,6 +11,7 @@ const index = ({casestudyDat}) => {
 var cd = casestudyDat.data[0];
     useEffect(() => {
         AOS.init();
+        console.log(cd.open);
     }, []);
     const initialValues = { fullName: '', email: '', company: ''};
     const [formValues, setFormValues] = useState(initialValues);
@@ -162,7 +163,9 @@ var cd = casestudyDat.data[0];
                  
                 </div>
 
-                <div className={`${formFixed ? "sticky top-20" : "relative"} hidden h-fit lg:w-1/2 bg-white px-10 py-4`}>
+                {!cd.open && 
+
+                <div className={`${formFixed ? "sticky top-20" : "relative"} h-fit lg:w-1/2 bg-white px-10 py-4`}>
                     {formSubmit ? <div className='relative text-slate-700 p-4 space-y-4 h-full'>
                                     <h1 className='align-middle font-medium text-4xl'>Thank You for your interest.</h1>
                                     <h2 className='align-middle text-xl'>The download link for this case study has been sent to the email-id provided.</h2>
@@ -200,6 +203,10 @@ var cd = casestudyDat.data[0];
                         </div>
                     </form>}
                 </div>
+                }
+
+               {cd.open && 
+
                 <div className="sticky top-20 h-fit lg:w-1/2 bg-white px-10 py-4">
                 <div className="text-center">
                     <a href={cd.filename} target="_blank">
@@ -211,6 +218,8 @@ var cd = casestudyDat.data[0];
                             </a>
                         </div>
                 </div>
+}
+
            </div>   
 
       </section>
