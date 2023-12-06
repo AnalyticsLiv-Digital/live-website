@@ -650,10 +650,6 @@ export default function ga4({brandsdata}) {
           <img alt="dashboard image" className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_9_Small.png'></img>
         </div>
 
-        <div className='md:w-2/3 mx-4 md:mx-auto h-auto'>
-          <img alt="dashboard image" className='mx-auto'  style={{height:'440px'}} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard/image9.png'></img>
-        </div>
-
 
           </Carousel>
   </section>

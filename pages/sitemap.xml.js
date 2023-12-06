@@ -11,6 +11,36 @@ function generateSiteMap(posts) {
        <loc>https://analyticsliv.com/services/</loc>
      </url>
      <url>
+       <loc>https://analyticsliv.com/services/app-marketing</loc>
+     </url>
+     <url>
+       <loc>https://analyticsliv.com/services/lead-generation</loc>
+     </url>
+     <url>
+       <loc>https://analyticsliv.com/services/ecommerce-marketing</loc>
+     </url>
+     <url>
+       <loc>https://analyticsliv.com/services/programatic-advertising</loc>
+     </url>
+     <url>
+       <loc>https://analyticsliv.com/services/analytics?id=audit-and-health-check</loc>
+     </url>
+     <url>
+       <loc>https://analyticsliv.com/services/analytics?id=web-app-measurement</loc>
+     </url>
+     <url>
+       <loc>https://analyticsliv.com/services/analytics?id=ga4-implementation</loc>
+     </url>
+     <url>
+       <loc>https://analyticsliv.com/services/data-reporting-analysis</loc>
+     </url>
+     <url>
+       <loc>https://analyticsliv.com/services/looker-bi-platform</loc>
+     </url>
+     <url>
+       <loc>https://analyticsliv.com/services/training</loc>
+     </url>
+     <url>
        <loc>https://analyticsliv.com/blogs/</loc>
      </url>
      <url>

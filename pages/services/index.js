@@ -6,11 +6,17 @@ import * as Scroll from 'react-scroll';
 import ScrollProgress from '../../components/ScrollProgress';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useState } from 'react';
+import Link from 'next/link';
+
 
 const { Element: ScrollElement } = Scroll;
 
 
+
 const index= () => {
+
+    
     useEffect(() => {
         AOS.init();
       }, []);
@@ -29,648 +35,280 @@ const index= () => {
  
   }, [query]);
 
+  const [activetab, setActivetab] = useState("1");
+
   return (
     <>
     
     <Head>
       <title>AnalyticsLiv - Services Offered</title>
       <meta name="description" content="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads"/>
-      <link rel="canonical"href="https://www.analyticsliv.com/services"></link>
+      <link rel="canonical" href="https://www.analyticsliv.com/services"></link>
     </Head>
     <ScrollProgress/>
-    <div className='overflow-x-hidden'>
-        <section className="relative">
-    <div className="overflow-hidden pb-20">
-        <img src="https://storage.googleapis.com/website-bucket-uploads/static/services.png" className="w-full -rotate-6"/>
-    </div>
-    <div className='relative'>
-    
-    <svg xmlns="http://www.w3.org/2000/svg" className='absolute w-28 lg:w-52 lg:right-20 right-6 lg:-top-40 -top-28' preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15">
-        <path fill='#38bdf8 ' d="M7.932 1.248a.5.5 0 0 0-.864 0l-7 12A.5.5 0 0 0 .5 14h14a.5.5 0 0 0 .432-.752l-7-12Z"/>
-    </svg>
-    <svg xmlns="http://www.w3.org/2000/svg" className='absolute w-28 lg:w-52 lg:right-12 right-2 lg:-top-40 -top-28 rotate-45 ' preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15">
-        <path fill="none" stroke="#1e293b" strokeLinejoin="round" d="m7.5 1.5l-7 12h14l-7-12Z"/>
-    </svg>
-    </div>
-    <h1 className='absolute lg:right-48 right-16 lg:-bottom-4 bottom-2 tracking-wider text-cyan-900 text-3xl lg:text-4xl uppercase font-semibold text-right pr-12'>Services</h1>
-</section>
 
-<section>
-    <div className="py-2 md:py-10 my-4 lg:mx-12">
-       <div className="mx-8 lg:w-4/5">
-       <ScrollElement
-        id="data-collection"
-        name="data-collection"
-      ></ScrollElement>
-        <div data-aos="fade-right" data-aos-once="true">
-            <h2 className="text-2xl text-gray-800 uppercase">
-                Data Collection
-            </h2>
-            <div className="bg-slate-800 h-1 my-4"></div>
-           <div className="lg:flex">
-            <p className="text-gray-600 lg:w-2/3">
-                Based on the principal of “Begin with the end in Mind”,
-                create measurement frameworks, data architectures to help
-                businesses achieve comprehensive collection of data points
-                for gaining access to objective information about the
-                Business KPIs. Track your customer’s movement and actions
-                to understand user interaction and experiences, and to
-                attribute conversions accurately.
-            </p>
-            <img className="lg:w-1/3" src="https://storage.googleapis.com/website-bucket-uploads/static/services1.jpg"/>
+    <section className="relative">
+        <div className="md:mt-4 px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16 grid grid-cols-1 md:gap-12 lg:gap-20">
+            <div className="top-banner text-center md:flex md:items-center md:justify-between">
+                <h1 className="text-start text-black sm:text-[40px] text-[33px] font-semibold pb-10">At
+                    AnalyticsLiv, <br/>
+                    we craft global solutions……</h1>
+                <div className="text-center">
+                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/Hand_service_img.png" alt="Hand_service_img"/>
+                </div>
+                <div className="absolute hidden md:block sm:top-[41%] md:top-[27%] lg:top-1/3 left-0 inline-block">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="sm:w-24 md:w-40" width="213" height="225"
+                        viewBox="0 0 213 225" fill="none">
+                        <path
+                            d="M-41.7459 103.817C-47.6849 88.485 -77.1186 7.77481 92.0951 1.15802C261.309 -5.45878 209.028 95.1528 187.867 132.382C166.705 169.611 174.474 221.4 123.636 224.253C72.7984 227.107 46.2064 176.864 21.3556 159.53C4.05609 147.622 -23.1619 147.677 -41.7459 103.817Z"
+                            fill="#60B8C4" />
+                    </svg>
+                </div>
+            </div> <br/> <br/>
+            <div
+                className="bottom-banner text-center md:flex md:items-center md:justify-between sm:pb-20 md:pb-[100px] lg:pb-[70px]">
+                <div className="text-center">
+                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/Laptop_service_img.png" alt="laptop_service_img"/>
+                </div>
+                <h2 className="text-right text-black sm:text-[40px] text-[33px] font-semibold pt-10">… designed to
+                    excel in today's <br/> digital-driven landscape</h2>
+                <div className="absolute hidden md:block bottom-0 right-0 inline-block">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="sm:w-24 md:w-40" width="263" height="223"
+                        viewBox="0 0 263 223" fill="none">
+                        <path
+                            d="M4.19636 160.152C4.19636 160.152 -20.6305 106.763 50.4623 68.6248C121.555 30.4871 101.026 9.62789 147.511 1.06463C193.996 -7.49862 209.604 37.3276 218.857 58.2543C225.953 74.283 245.201 89.9738 262.527 113.029C277.292 132.689 287.185 197.006 242.773 215.062C198.362 233.117 177.883 213.373 161.5 200.84C145.118 188.308 119.364 172.6 80.2444 188.696C41.1248 204.792 15.7755 185.791 4.19636 160.152Z"
+                            fill="#5D8DBC" />
+                    </svg>
+                </div>
             </div>
         </div>
-        <div className="w-full" data-aos="fade-left" data-aos-once="true">
-            <h2 className="text-xl text-gray-800 uppercase">
-                
-                SERVICES TO OFFER
-            </h2>
-            <div className="lg:flex uppercase">
-            <ul className="space-y-2 px-2 lg:px-8 pt-10 lg:w-1/2">
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Implementation Audit & Recommendation
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Google Tag Manager Clean Up
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Enhanced eCommerce Implementation
-                </li>
-                
-            </ul>
-            <ul className="space-y-2 px-2 lg:px-8 pt-2 lg:pt-10 lg:w-1/2">
-                
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Cross-Domain Tracking
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Goals & Events Tracking
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Integrating online & offline data
-                </li>
-            </ul>
-        </div>
-        </div>
-       </div>
+    </section>
+  
+    <section className="expertise relative overflow-hidden">
+        <div className="md:mt-4 px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16 relative">
+            <div>
+                <h2 className=" text-black text-[50px] font-semibold">
+                    <span
+                        className="relative after:absolute after:left-0 after:bottom-0 after:bg-[#FF7D7D] after:h-[9px] after:w-20 after:rounded-2xl">
+                        We </span> are Expert in
+                </h2>
+            </div> <br/>
        
-    </div>
-</section>
+            <div className="flex max-[1023px]:hidden">
+                <div className="p-4">
+                    <button onClick={() => setActivetab('1')}
+                        className={`${activetab==1 && 'bg-[#30486A] text-white'} ${activetab!=1 && ' text-black hover:text-servicemedia'} tab text-[40px] font-semibold tablink block p-5 rounded-3xl text-start active`}>
+                        Media</button>
+                    <button onClick={() => setActivetab('2')}
+                        className={`${activetab==2 && 'bg-[#6A305D] text-white'} ${activetab!=2 && ' text-black hover:text-serviceanalytics'} tab  text-[40px] font-semibold tablink block p-5 rounded-3xl text-start`}>Analytics</button>
+                    <button onClick={() => setActivetab('3')}
+                        className={`${activetab==3 && 'bg-[#1B8AAD] text-white'} ${activetab!=3 && ' text-black hover:text-servicesolutions'} tab hidden text-[40px] font-semibold tablink block p-5 rounded-3xl text-start`}>Solutions</button>
+                    <button onClick={() => setActivetab('4')}
+                        className={`${activetab==4 && 'bg-[#6A3030] text-white'} ${activetab!=4 && ' text-black hover:text-servicetraining'} tab  text-[40px] font-semibold tablink block p-5 rounded-3xl text-start`}>Training
+                        and Consultation</button>
+                </div>
 
-<section>
-    <div className="py-10 my-4 lg:mx-12 lg:text-right">
-       <div className="mx-8 lg:w-4/5 lg:ml-48 "> 
-       <ScrollElement
-        id="data-reporting"
-        name="data-reporting"
-      ></ScrollElement>      
-        <div data-aos="fade-right" data-aos-once="true">
-            <h2 className="text-2xl text-gray-800 uppercase">
-                Data Reporting
-            </h2>
-            <div className="bg-slate-800 h-1 my-4"></div>
-           <div className="lg:flex flex-row-reverse">
-            <p className="text-gray-600 lg:w-2/3">
-                Measurement Plan implemented helps in reporting the data to various Analytics and Advertising platforms.
+                <div className="w-3/4 p-4">
+                    <div id="tab1" className={`${activetab==1 && 'block'} ${activetab!=1 && 'hidden'} relative tab-content bg-servicemedia p-8 rounded-[40px]`}>
+                        <div
+                            className="absolute bottom-[calc(100%+1rem)] right-[-5rem] h-44 w-44 bg-transparent border-2 border-servicemedia rounded-full transition-transform ease-in-out duration-500">
+                        </div>
+                        <div
+                            className="absolute right-[-310px] bottom-[-111px] z-[-1] h-64 w-64 bg-servicemedia rounded-[30px] transform rotate-[-10deg] transition-transform ease-in-out duration-500">
+                        </div>
+                        <h2 className="text-white text-[35px] font-semibold leading-normal">Strengthening Businesses</h2>
+                        <p className="text-white text-[16px] font-semibold">Our focus is not limited to targeting.
+                            We transform customers into devoted brand advocates</p>
+                        <ul className="list-disc text-white text-[16px] font-semibold ml-[18px]">
+                            <li><Link className="underline" href="/services/app-marketing">Mobile app marketing</Link></li>
+                            <li><Link className="underline" href="/services/lead-generation">Lead generation</Link></li>
+                            <li><Link className="underline" href="/services/ecommerce-marketing">Search/E-Commerce Marketing</Link></li>
+                            <li><Link className="underline" href="/services/programatic-advertising">Programatic Media Buying</Link></li>
+                        </ul>
+                    </div>
 
-                Analytics Platforms: Google Analytics, GA4, Mix Panel, Exponea, Firebase
-                
-                Advertising Platforms: Facebook, Google Ads, DV360, CM360, SA360, LinkedIn, Snapchat, TikTok, Twitter, Reddit, Verizon, Taboola, Outbrain & more
-            </p>
-            <img className="lg:w-1/4" src="https://storage.googleapis.com/website-bucket-uploads/static/services2.jpg"/>
+                    <div id="tab2" className={`${activetab==2 && 'block'} ${activetab!=2 && 'hidden'} relative tab-content bg-serviceanalytics mt-[115px] p-8 rounded-[40px]`}>
+                        <div
+                            className="absolute bottom-[calc(100%+1rem)] right-[-5rem] h-44 w-44 bg-transparent border-2 border-serviceanalytics rounded-full transition-transform ease-in-out duration-500">
+                        </div>
+                        <div
+                            className="absolute right-[-310px] bottom-[-111px] z-[-1] h-64 w-64 bg-serviceanalytics rounded-[30px] transform rotate-[-10deg] transition-transform ease-in-out duration-500">
+                        </div>
+                        <h2 className="text-white text-[35px] font-semibold leading-[45px]">Navigating the Digital Landscape
+                            with Expertise
+                        </h2>
+                        <ul className="text-white text-[16px] font-semibold">
+                            <li><Link className="underline" href="/services/analytics?id=ga4-implementation">GA4 Implementation</Link></li>
+                            <li><Link className="underline" href="/services/analytics?id=audit-and-health-check">Audit and Health Check</Link></li>
+                            <li><Link className="underline" href="/services/analytics?id=web-app-measurement">Web and App measurement</Link></li>
+                            <li><Link className="underline" href="/services/data-reporting-analysis">Data Reporting & Analysis</Link></li>
+                            <li><Link className="underline" href="/services/looker-bi-platform">Looker BI Platform</Link></li>
+                        </ul>
+                    </div>
+
+                    <div id="tab3" className={`${activetab==3 && 'block'} ${activetab!=3 && 'hidden'} relative tab-content bg-servicesolutions mt-[220px] p-8 rounded-[40px]`}>
+                        <div
+                            className="absolute bottom-[calc(100%+1rem)] right-[-1rem] h-44 w-44 bg-transparent border-2 border-servicesolutions rounded-full transition-transform ease-in-out duration-500">
+                        </div>
+                        <div
+                            className="absolute right-[-310px] bottom-[-111px] z-[-1] h-64 w-64 bg-servicesolutions rounded-[30px] transform rotate-[-10deg] transition-transform ease-in-out duration-500">
+                        </div>
+                        <ul className="list-disc text-white text-[26px] font-semibold ml-[18px] leading-normal">
+                            <li><a href="">Preserving Historical UA Data</a></li>
+                            <li><a href="">GDPR Compliance</a></li>
+                            <li><a href="">Data Science Solutions</a></li>
+                        </ul>
+                    </div>
+
+                    <div id="tab4"
+                        className={`${activetab==4 && 'block'} ${activetab!=4 && 'hidden'} relative tab-content bg-servicetraining w3-container city mt-[300px] p-8 rounded-[40px]`}>
+                        <div
+                            className="absolute bottom-[calc(100%+1rem)] right-[-1rem] h-44 w-44 bg-transparent border-2 border-servicetraining rounded-full transition-transform ease-in-out duration-500">
+                        </div>
+                        <div
+                            className="absolute right-[-310px] bottom-[-111px] z-[-1] h-64 w-64 bg-servicetraining rounded-[30px] transform rotate-[-10deg] transition-transform ease-in-out duration-500">
+                        </div>
+                        <h2 className="text-white text-[30px] font-semibold leading-normal">Starting Your Analytics Journey
+                            or Feeling
+                            Confused ?</h2> <br/>
+                        <p className="text-white text-[26px] font-semibold">Schedule a One-Hour Consultation</p> <br/>
+                        <Link className="underline text-white text-[16px] font-semibold" href="/services/training">Training Details</Link>
+                    </div>
+
+                </div>
             </div>
-        </div>
-        <div className="w-full text-left" data-aos="fade-left" data-aos-once="true">
-            <h2 className="text-xl text-gray-800 uppercase">
-                
-                SERVICES TO OFFER
-            </h2>
-            <div className="lg:flex uppercase">
-            <ul className="space-y-2 px-2 lg:px-8 pt-10 lg:w-1/2">
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Google Analytics Configuration
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Enhanced eCommerce Reporting
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Custom Channel Grouping
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Facebook Ads Reporting
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Google Marketing Platform Reporting
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    A/B Testing & Heat map
-                </li>
-            </ul>
-            <ul className="space-y-2 px-2 lg:px-8 pt-2 lg:pt-10 lg:w-1/2">
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Google Analytics Audit
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Supermetrics & Other Paid Connectors
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Audience Metrics Reports
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Google Ads Reporting
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Google Data Studio Dashboarding
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Campaign Analysis Reports
-                </li>
-            </ul>
-        </div>
-        </div>
-       </div>
-       
-    </div>
-    
-</section>
 
-<section>
-    <div className="py-10 my-4 lg:mx-12">
-       <div className="mx-8 lg:w-4/5">
-       <ScrollElement
-        id="insight-generation"
-        name="insight-generation"
-      ></ScrollElement>
-        <div data-aos="fade-right" data-aos-once="true">
-            <h2 className="text-2xl text-gray-800 uppercase">
-                Insight Generation
-            </h2>
-            <div className="bg-slate-800 h-1 my-4"></div>
-           <div className="lg:flex">
-            <p className="text-gray-600 lg:w-2/3">
-                Data from multiple sources after being reported, is visualized 
-                and analyzed for generating actionable insights.
-            </p>
-            <img className="lg:w-1/3" src="https://storage.googleapis.com/website-bucket-uploads/static/services3.jpg"/>
-            </div>
-        </div>
-        <div className="w-full" data-aos="fade-left" data-aos-once="true">
-            <h2 className="text-xl text-gray-800 uppercase">
-                
-                SERVICES TO OFFER
-            </h2>
-            <div className="lg:flex uppercase">
-            <ul className="space-y-2 px-2 lg:px-8 pt-10 lg:w-1/2">
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Cohort Analysis
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Funnel Analytics and Visualization
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    User Journey Analysis
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Creating and managing centralized CDP
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Investigating User Behavior & Affinity
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Shopping Behavior Analysis
-                </li>
-            </ul>
-            <ul className="space-y-2 px-2 lg:px-8 pt-2 lg:pt-10 lg:w-1/2">
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Feature Attribution Analysis
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Campaign Attribution Analysis
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Recency & Frequency Analysis
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2  inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Dashboarding & creating model using real     time ETL Jobs
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Business ROI Analysis
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Keyword Analysis
-                </li>
-            </ul>
-        </div>
-        </div>
-       </div>
        
-    </div>
-</section>
+            <div className="flex flex-col justify-start max-w-md lg:hidden">
+                <div className="panel_list bg-white mb-4">
+                    <div className="panel_heading p-4 cursor-pointer inline-block bg-servicemedia text-white">
+                        <h3 className="m-0 text-[40px] font-semibold rounded-3xl text-start">Media</h3>
+                    </div>
+                    <div className="panel_para p-4 hidden text-base bg-servicemedia mt-2">
+                        <h2 className="text-white text-[35px] font-semibold leading-normal">Strengthening Businesses</h2>
+                        <p className="text-white text-[16px] font-semibold">Our focus is not limited to targeting.
+                            We transform customers into devoted brand advocates</p>
+                        <ul className="list-disc text-white text-[16px] font-semibold ml-[18px]">
+                            <li><a className="underline" href="">Mobile app marketing</a></li>
+                            <li><a className="underline" href="">Lead generation</a></li>
+                            <li><a className="underline" href="">Search/E-Commerce Marketing</a></li>
+                            <li><a className="underline" href="">Programatic Media Buying</a></li>
+                        </ul>
+                    </div>
+                </div>
+            
+                <div className="panel_list bg-white mb-4">
+                    <div className="panel_heading p-4 cursor-pointer inline-block bg-serviceanalytics text-white">
+                        <h3 className="m-0 text-[40px] font-semibold rounded-3xl text-start">Analytics</h3>
+                    </div>
+                    <div className="panel_para p-4 hidden text-base bg-serviceanalytics mt-2">
+                        <h2 className="text-white text-[35px] font-semibold leading-[45px]">Navigating the Digital Landscape
+                            with Expertise
+                        </h2>
+                        <ul className="text-white text-[16px] font-semibold">
+                            <li><a href="../src/Analytics.html">GA4 Implementation</a></li>
+                            <li><a href="../src/Analytics.html">Audit and Health Check</a></li>
+                            <li><a href="../src/Analytics.html">Web and App measurement</a></li>
+                            <li><a href="../src/Data_reporting_&_analysis.html">Data Reporting & Analysis</a></li>
+                            <li><a href="../src/Looker_bi_platform_services.html">Looker BI Platform</a></li>
+                        </ul>
+                    </div>
+                </div>
+            
+                <div className="panel_list bg-white mb-4">
+                    <div className="panel_heading p-4 cursor-pointer inline-block bg-servicesolutions text-white">
+                        <h3 className="m-0 text-[40px] font-semibold rounded-3xl text-start">Solutions</h3>
+                    </div>
+                    <div className="panel_para p-4 hidden text-base bg-servicesolutions mt-2">
+                        <ul className="list-disc text-white text-[26px] font-semibold ml-[18px] leading-normal">
+                            <li><a href="">Preserving Historical UA Data</a></li>
+                            <li><a href="">GDPR Compliance</a></li>
+                            <li><a href="">Data Science Solutions</a></li>
+                        </ul>
+                    </div>
+                </div>
+            
+                <div className="panel_list bg-white mb-1">
+                    <div className="panel_heading p-4 cursor-pointer inline-block bg-servicetraining text-white w-72">
+                        <h3 className="m-0 text-[40px] font-semibold rounded-3xl text-start">Training
+                            and Consultation</h3>
+                    </div>
+                    <div className="panel_para p-4 hidden text-base bg-servicetraining mt-2">
+                        <h2 className="text-white text-[30px] font-semibold leading-normal">Starting Your Analytics Journey
+                            or Feeling
+                            Confused ?</h2> <br/>
+                        <p className="text-white text-[26px] font-semibold">Schedule a One-Hour Consultation</p> <br/>
+                        <a className="underline text-white text-[16px] font-semibold" href="../src/Training.html">Training Details</a>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+    </section>
+  
+    <section>
+        <div className="md:mt-4 px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16">
+            <h2 className="text-black text-start text-6xl font-bold pb-2 md:mb-16">Case Studies</h2>
+            <div
+                className="case md:flex text-left justify-evenly items-center bg-servicesection min-[375px]:px-10 md:px-20 px-2 min-[375px]:py-8 md:py-8 py-4 md:rounded-full rounded-xl mt-8">
+                <div className="md:w-3/4">
+                    <h3 className="relative lg:text-3xl text-[19px] leading-normal font-bold mb-4">
+                        <img className="absolute top-[3px] -left-[35px]" src="https://storage.googleapis.com/website-bucket-uploads/static/point(1).png" alt="arrow"/>
+                        Universal Analytics (GA3) to GA4 Migration
+                        for a Website
+                    </h3>
+                    <p className="text-serviceheading text-base font-medium">The migration process was smooth and successful
+                        without any data loss,
+                        increasing efficiency and reducing manual effort by 30%. The client now has a more comprehensive
+                        understanding of user behaviour across devices and sessions, enabling them to make more informed
+                        decisions and improve website performance.
+                    </p>
+                </div>
+                <div className="text-center pt-4 md:pt-0 items-center space-x-4">
+                    <img className="inline w-40" src="https://storage.googleapis.com/website-bucket-uploads/static/Case_studies.png" alt="creative"/>
+                    <Link href="/case-studies/ua-to-ga4-migration-for-a-website"><button
+                        className="btn bg-serviceheading cursor-pointer hover:bg-blue-400 transition duration-200 delay-75 px-16 py-2 text-white text-2xl font-semibold rounded-full mt-8">View</button></Link>
+                </div>
+            </div>
+            <div
+                className="case md:flex text-left justify-evenly items-center bg-servicesection min-[375px]:px-10 md:px-20 px-2 min-[375px]:py-8 md:py-8 py-4 md:rounded-full rounded-xl mt-8">
+                <div className="md:w-3/4">
+                    <h3 className="relative lg:text-3xl text-[19px] leading-normal font-bold mb-4">
+                        <img className="absolute top-[3px] -left-[35px]" src="https://storage.googleapis.com/website-bucket-uploads/static/point(1).png" alt="arrow"/>
+                        GA4 Enhanced Ecommerce Implementation
+                        Using GTM and Shopify Integration
+                    </h3>
+                    <p className="text-serviceheading text-base font-medium">We successfully implemented 90% of purchase events,
+                        with the exception of UA, which is at 70% and all GA4 enhanced ecommerce events and Shopify
+                        parameters are being successfully sent to GA4.</p>
+                </div>
+                <div className="text-center pt-4 md:pt-0 items-center space-x-4">
+                    <img className="inline w-40" src="https://storage.googleapis.com/website-bucket-uploads/static/Case_studies(1).png" alt="icons"/>
+                    <Link href="/case-studies/ga4-enhanced-ecommerce-implementation-using-gtm-and-shopify-integration"><button
+                        className="btn bg-serviceheading cursor-pointer hover:bg-blue-400 transition duration-200 delay-75 px-16 py-2 text-white text-2xl font-semibold rounded-full mt-8">View</button></Link>
+                </div>
+            </div>
+            <div className="text-center">
+            <Link href="/case-studies"><button
+                    className="btn cursor-pointer w-44 bg-serviceheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold mt-8">More
+                    Case Study</button></Link>
+            </div>
 
-<section>
-    <div className="py-10 my-4 lg:mx-12 lg:text-right">
-       <div className="mx-8 lg:w-4/5 lg:ml-48 ">   
-       <ScrollElement
-        id="data-utilization"
-        name="data-utilization"
-      ></ScrollElement>    
-        <div data-aos="fade-right" data-aos-once="true">
-            <h2 className="text-2xl text-gray-800 uppercase">
-                Data Utilization
-            </h2>
-            <div className="bg-slate-800 h-1 my-4"></div>
-           <div className="lg:flex flex-row-reverse">
-            <p className="text-gray-600 lg:w-2/3">
-                ML is playing a huge role in generating insights and 
-                forecasting the future growth aspects for all businesses.
-                We prepare the businesses to enable them into using the capabilities of Google Cloud Platform and its Machine learning capabilities using data from marketing and analytics platforms.
-            </p>
-            <img className="lg:w-1/3" src="https://storage.googleapis.com/website-bucket-uploads/static/services4.jpg"/>
-            </div>
         </div>
-        <div className="w-full text-left" data-aos="fade-left" data-aos-once="true">
-            <h2 className="text-xl text-gray-800 uppercase">
-                
-                SERVICES TO OFFER
-            </h2>
-            <div className="lg:flex uppercase">
-            <ul className="space-y-2 px-2 lg:px-8 pt-10 lg:w-1/2">
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Creating and managing centralized CDP
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Online Offline Data Integration through DWH
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Conversion API (Facebook Ads)
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    CLTV Data Model Creation
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Custom Attribution Model
-                </li>
-                
-            </ul>
-            <ul className="list-outside space-y-2 px-2 lg:px-8 pt-2 lg:pt-10 lg:w-1/2">
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Dashboarding & creating model using real time ETL Jobs
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    <span>Offline Conversion Upload Architecture (Google Ads & DV360)</span>
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Lead Conversion Modelling
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Conversion Rate Optimization
-                </li>
-            </ul>
-        </div>
-        </div>
-       </div>
-       
-    </div>
-</section>
+    </section>
 
-<section>
-    <div className="py-10 my-4 lg:mx-12">
-       <div className="mx-8 lg:w-4/5">
-       <ScrollElement
-        id="paid-search-marketing"
-        name="paid-search-marketing"
-      ></ScrollElement>
-        <div data-aos="fade-right" data-aos-once="true">
-            <h2 className="text-2xl text-gray-800 uppercase">
-                Paid Search Marketing
-            </h2>
-            <div className="bg-slate-800 h-1 my-4"></div>
-           <div className="lg:flex">
-            <p className="text-gray-600 lg:w-2/3">
-                Paid search marketing is a form of online advertising where you only pay for visitors that click through to your website from a targeted advert or “sponsored” link.
-            </p>
-            <img className="lg:w-1/3" src="https://storage.googleapis.com/website-bucket-uploads/static/services5.jpg"/>
-            </div>
+    <div className="bg-serviceheading">
+        <div className="md:mt-4 px-4 md:px-20 py-8 md:py-11">
+            
+                <div className="flex flex-wrap items-center justify-between ">
+                    <h2 className="text-white text-[32px] font-bold mt-4">Optimize Your Camapigns  with DV360</h2>
+                    <Link href="/contact?id=dv360"><button id="output"
+                        className="btn text-[25px] cursor-pointer w-44 bg-white hover:bg-slate-100 transition duration-200 delay-75 mt-4 p-4 rounded-[5px] shadow-lg shadow-gray-400 text-serviceheading font-semibold">Contact Us</button></Link>
+                </div>
+            
         </div>
-        <div className="w-full" data-aos="fade-left" data-aos-once="true">
-            <h2 className="text-xl text-gray-800 uppercase">
-               
-                SERVICES TO OFFER
-            </h2>
-            <div className="lg:flex uppercase">
-            <ul className="space-y-2 px-2 lg:px-8 pt-10 lg:w-1/2">
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Google Ads & Microsoft Ads Audit
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Campaign Monitoring and Optimization
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Conversion Action Tracking (Online & Offline)
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    PLA Planning & Management
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Search & Shopping Campaign Set Up
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    UTM & Campaign Naming Structure
-                </li>
-            </ul>
-            <ul className="space-y-2 px-2 lg:px-8 pt-2 lg:pt-10 lg:w-1/2">
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Keyword Research
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Product Integrations
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    RLSA Campaign Set Up
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2  inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Search Ads Reporting Dashboard
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Troubleshooting Data Discrepancy
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    Feed Creation and Management
-                </li>
-            </ul>
-        </div>
-        </div>
-       </div>
-       
     </div>
-</section>
 
-<section>
-    <div className="py-10 my-4 lg:mx-12 lg:text-right">
-       <div className="mx-8 lg:w-4/5 lg:ml-48 "> 
-       <ScrollElement
-        id="media-planning"
-        name="media-planning"
-      ></ScrollElement>      
-        <div data-aos="fade-right" data-aos-once="true">
-            <h2 className="text-2xl text-gray-800 uppercase">
-                Media Planning & Buying
-            </h2>
-            <div className="bg-slate-800 h-1 my-4"></div>
-           <div className="lg:flex flex-row-reverse">
-            <p className="text-gray-600 lg:w-2/3">
-                Media buying is done for online advertising to identify and purchase 
-                ad space on channels that are relevant to the target audience at the
-                optimal time, for the least amount of money. Platforms: DV360, CM360
-                (Ad server), Facebook Ads, YouTube Advertising, LinkedIn Ads, Taboola
-                Ads, Outbrain Ads, Verizon Ads, Snapchat Ads, TikTok Ads
-            </p>
-            <img className="lg:w-1/3" src="https://storage.googleapis.com/website-bucket-uploads/static/services6.jpg"/>
-            </div>
-        </div>
-        <div className="w-full text-left" data-aos="fade-left" data-aos-once="true">
-            <h2 className="text-xl text-gray-800 uppercase">
-               
-                SERVICES TO OFFER
-            </h2>
-            <div className="lg:flex uppercase">
-            <ul className="space-y-4 px-2 lg:px-8 pt-10 lg:w-1/2">
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="absolute w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    <div className="pl-10">Platform & Campaign Audit</div>
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="absolute w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    <div className="pl-10">Campaign Monitoring and Optimization</div>
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="absolute w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    <div className="pl-10">Audience & Media Channel Analysis</div>
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="absolute w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    <div className="pl-10">Media Planning & Buying</div>
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="absolute w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    <div className="pl-10">One-View Reporting</div>
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="absolute w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    <div className="pl-10">Dynamic Ads Set Up (DV360)</div>
-                </li>
-                
-            </ul>
-            <ul className="list-outside space-y-4 px-2 lg:px-8 pt-4 lg:pt-10 lg:w-1/2">
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="absolute w-8 fill-cyan-800 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    <div className="pl-10">Conversion / Pixel / Events Configuration</div>
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="absolute w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    <div className="pl-10">Product Integrations</div>
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="absolute w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    <div className="pl-10">Targeting Criteria Identification</div>
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="absolute w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    <div className="pl-10">Troubleshooting Data Discrepancy</div>
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="absolute w-8 fill-cyan-800 mr-2 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    <div className="pl-10">UTM & Campaign Naming Structure</div>
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="absolute w-8 fill-cyan-800 inline" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                        <path d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3l-3-8Z"/>
-                    </svg>
-                    <div className="pl-10">Campaign Trafficking </div>
-                </li>
-            </ul>
-        </div>
-        </div>
-       </div>
-       
-    </div>
-</section>
-</div>
     </>
   )
 }

@@ -37,7 +37,7 @@ var cd = casestudyDat.data[0];
 
     const dataLayerpush = () =>{
         dataLayer.push({
-            event:'casestudy_download',
+            event:'free_casestudy_download',
             eventCategory:cd.title,
             eventAction:'download'
         });

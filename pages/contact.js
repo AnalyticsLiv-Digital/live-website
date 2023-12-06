@@ -265,6 +265,7 @@ const contact = () => {
                                             <option>Google Cloud Platform</option>
                                             <option>Mobile App Analytics Service</option>
                                             <option>Advanced Funnel Optimization</option>
+                                            <option>Training</option>
                                             <option>Others</option>
                                         </select>
                                         <p className="text-red-600 text-sm">{formErrors.purpose}</p>
