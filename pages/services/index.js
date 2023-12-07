@@ -36,6 +36,7 @@ const index= () => {
   }, [query]);
 
   const [activetab, setActivetab] = useState("1");
+  const [activemtab, setActivemtab] = useState("0");
 
   return (
     <>
@@ -178,48 +179,51 @@ const index= () => {
                 </div>
             </div>
 
+        
+
        
             <div className="flex flex-col justify-start max-w-md lg:hidden">
                 <div className="panel_list bg-white mb-4">
-                    <div className="panel_heading p-4 cursor-pointer inline-block bg-servicemedia text-white">
+                    <div onClick={() => setActivemtab('1')} className="panel_heading p-4 cursor-pointer inline-block bg-servicemedia text-white">
                         <h3 className="m-0 text-[40px] font-semibold rounded-3xl text-start">Media</h3>
                     </div>
-                    <div className="panel_para p-4 hidden text-base bg-servicemedia mt-2">
+                    <div className={`${activemtab==1 && 'block'} ${activemtab!=1 && 'hidden'} p-4 text-base bg-servicemedia mt-2`}>
                         <h2 className="text-white text-[35px] font-semibold leading-normal">Strengthening Businesses</h2>
                         <p className="text-white text-[16px] font-semibold">Our focus is not limited to targeting.
                             We transform customers into devoted brand advocates</p>
                         <ul className="list-disc text-white text-[16px] font-semibold ml-[18px]">
-                            <li><a className="underline" href="">Mobile app marketing</a></li>
-                            <li><a className="underline" href="">Lead generation</a></li>
-                            <li><a className="underline" href="">Search/E-Commerce Marketing</a></li>
-                            <li><a className="underline" href="">Programatic Media Buying</a></li>
+                            <li><Link className="underline" href="/services/app-marketing">Mobile app marketing</Link></li>
+                            <li><Link className="underline" href="/services/lead-generation">Lead generation</Link></li>
+                            <li><Link className="underline" href="/services/ecommerce-marketing">Search/E-Commerce Marketing</Link></li>
+                            <li><Link className="underline" href="/services/programatic-advertising">Programatic Media Buying</Link></li>
+                        
                         </ul>
                     </div>
                 </div>
             
                 <div className="panel_list bg-white mb-4">
-                    <div className="panel_heading p-4 cursor-pointer inline-block bg-serviceanalytics text-white">
+                    <div onClick={() => setActivemtab('2')} className="panel_heading p-4 cursor-pointer inline-block bg-serviceanalytics text-white">
                         <h3 className="m-0 text-[40px] font-semibold rounded-3xl text-start">Analytics</h3>
                     </div>
-                    <div className="panel_para p-4 hidden text-base bg-serviceanalytics mt-2">
+                    <div className={`${activemtab==2 && 'block'} ${activemtab!=2 && 'hidden'} p-4 text-base bg-serviceanalytics mt-2`}>
                         <h2 className="text-white text-[35px] font-semibold leading-[45px]">Navigating the Digital Landscape
                             with Expertise
                         </h2>
                         <ul className="text-white text-[16px] font-semibold">
-                            <li><a href="../src/Analytics.html">GA4 Implementation</a></li>
-                            <li><a href="../src/Analytics.html">Audit and Health Check</a></li>
-                            <li><a href="../src/Analytics.html">Web and App measurement</a></li>
-                            <li><a href="../src/Data_reporting_&_analysis.html">Data Reporting & Analysis</a></li>
-                            <li><a href="../src/Looker_bi_platform_services.html">Looker BI Platform</a></li>
-                        </ul>
+                        <li><Link className="underline" href="/services/analytics?id=ga4-implementation">GA4 Implementation</Link></li>
+                            <li><Link className="underline" href="/services/analytics?id=audit-and-health-check">Audit and Health Check</Link></li>
+                            <li><Link className="underline" href="/services/analytics?id=web-app-measurement">Web and App measurement</Link></li>
+                            <li><Link className="underline" href="/services/data-reporting-analysis">Data Reporting & Analysis</Link></li>
+                            <li><Link className="underline" href="/services/looker-bi-platform">Looker BI Platform</Link></li>
+                         </ul>
                     </div>
                 </div>
             
-                <div className="panel_list bg-white mb-4">
-                    <div className="panel_heading p-4 cursor-pointer inline-block bg-servicesolutions text-white">
+                <div className="panel_list bg-white mb-4 hidden">
+                    <div onClick={() => setActivemtab('3')} className="panel_heading p-4 cursor-pointer inline-block bg-servicesolutions text-white">
                         <h3 className="m-0 text-[40px] font-semibold rounded-3xl text-start">Solutions</h3>
                     </div>
-                    <div className="panel_para p-4 hidden text-base bg-servicesolutions mt-2">
+                    <div className={`${activemtab==3 && 'block'} ${activemtab!=3 && 'hidden'} panel_para p-4 text-base bg-servicesolutions mt-2`}>
                         <ul className="list-disc text-white text-[26px] font-semibold ml-[18px] leading-normal">
                             <li><a href="">Preserving Historical UA Data</a></li>
                             <li><a href="">GDPR Compliance</a></li>
@@ -229,17 +233,17 @@ const index= () => {
                 </div>
             
                 <div className="panel_list bg-white mb-1">
-                    <div className="panel_heading p-4 cursor-pointer inline-block bg-servicetraining text-white w-72">
+                    <div onClick={() => setActivemtab('4')} className="panel_heading p-4 cursor-pointer inline-block bg-servicetraining text-white w-72">
                         <h3 className="m-0 text-[40px] font-semibold rounded-3xl text-start">Training
                             and Consultation</h3>
                     </div>
-                    <div className="panel_para p-4 hidden text-base bg-servicetraining mt-2">
+                    <div className={`${activemtab==4 && 'block'} ${activemtab!=4 && 'hidden'} panel_para p-4 text-base bg-servicetraining mt-2`}>
                         <h2 className="text-white text-[30px] font-semibold leading-normal">Starting Your Analytics Journey
                             or Feeling
                             Confused ?</h2> <br/>
                         <p className="text-white text-[26px] font-semibold">Schedule a One-Hour Consultation</p> <br/>
-                        <a className="underline text-white text-[16px] font-semibold" href="../src/Training.html">Training Details</a>
-                    </div>
+                        <Link className="underline text-white text-[16px] font-semibold" href="/services/training">Training Details</Link>
+                   </div>
                 </div>
             </div>
         
