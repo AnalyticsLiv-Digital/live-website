@@ -71,7 +71,7 @@ export default class AutoPlay extends Component {
                         essential tools and expertise to harness the power of data-driven decision-making.</p>
                     <br/>
                     <Link href="/contact?id=looker-bi"><button
-                        class="btn cursor-pointer w-44 bg-lookerheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold">Get
+                        class=" bg-lookerheading btn cursor-pointer hover:bg-sky-800 transition duration-200 delay-75 rounded-[5px] shadow-lg text-white text-lg font-semibold py-[15px] px-[50px] hover:scale-110">Get
                         in Touch</button></Link>
                 </div>
                 <div class="right flex lg:justify-end">
@@ -324,7 +324,7 @@ export default class AutoPlay extends Component {
                     to help you transform your data into a powerful engine for growth and efficiency.</p> <br/> <br/>
                 <h3 class="text-lookerheading text-3xl font-medium">Ready to Transform Your Data?</h3> <br/> <br/>
                 <Link href="/contact?id=looker-bi"><button
-                    class="btn cursor-pointer w-44 bg-lookerheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold">Contact
+                    class=" bg-lookerheading btn cursor-pointer hover:bg-sky-800 transition duration-200 delay-75 rounded-[5px] shadow-lg text-white text-lg font-semibold py-[15px] px-[50px] hover:scale-110">Contact
                     Us Now</button></Link>
             </div>
         </div>

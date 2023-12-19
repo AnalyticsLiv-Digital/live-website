@@ -159,22 +159,22 @@ useEffect(() => {
                                     ">
                                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-search.png" alt="display_logo"/>
                                         <Link href="/services/app-marketing"
-                                            class="text-heading font-poppins text-base font-medium leading-normal">Mobile app marketing</Link>
+                                            class="text-menuheading font-poppins text-base font-medium leading-normal">Mobile app marketing</Link>
                                     </div>
                                     <div class="flex items-center py-1 gap-2">
                                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-paid.png" alt="paid_logo"/>
                                         <Link href="/services/lead-generation"
-                                            class="text-heading font-poppins text-base font-medium leading-normal">Lead generation</Link>
+                                            class="text-menuheading font-poppins text-base font-medium leading-normal">Lead generation</Link>
                                     </div>
                                     <div class="flex items-center py-1 gap-2">
                                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-paid.png" alt="paid_logo"/>
                                         <Link href="/services/ecommerce-marketing"
-                                            class="text-heading font-poppins text-base font-medium leading-normal">Search/E-Commerce Marketing</Link>
+                                            class="text-menuheading font-poppins text-base font-medium leading-normal">Search/E-Commerce Marketing</Link>
                                     </div>
                                     <div class="flex items-center py-1 gap-2">
                                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-paid.png" alt="paid_logo"/>
                                         <Link href="/services/programatic-advertising"
-                                            class="text-heading font-poppins text-base font-medium leading-normal">Programatic Media Buying</Link>
+                                            class="text-menuheading font-poppins text-base font-medium leading-normal">Programatic Media Buying</Link>
                                     </div>
                             </motion.div>}  
                             <div onClick={() => {setSubmenu("2")}} ><div className="py-2 w-56 ">Analytics</div></div>
@@ -183,32 +183,32 @@ useEffect(() => {
                                     ">
                                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytics-audit-logo.png" alt="audit_logo"/>
                                         <Link href="/services/analytics?id=audit-and-health-check"
-                                            class="text-heading font-poppins text-base font-medium leading-normal">Audit
+                                            class="text-menuheading font-poppins text-base font-medium leading-normal">Audit
                                             and Health Check</Link>
                                     </div>
                                     <div class="flex items-center py-1 gap-2">
                                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytics_webapp_logo.png" alt="webapp_logo"/>
                                         <Link href="/services/analytics?id=web-app-measurements"
-                                            class="text-heading font-poppins text-base font-medium leading-normal">Web
+                                            class="text-menuheading font-poppins text-base font-medium leading-normal">Web
                                             and App measurement</Link>
                                     </div>
                                     <div class="flex items-center py-1 gap-2">
                                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytics_GA4_logo.png" alt="GA4_logo"/>
                                         <Link href="/services/analytics?id=ga4-implementation"
-                                            class="text-heading font-poppins text-base font-medium leading-normal">GA4
+                                            class="text-menuheading font-poppins text-base font-medium leading-normal">GA4
                                             Implementation</Link>
                                     </div>
                                     <div class="flex items-center py-1 gap-2">
                                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytis_data-reporting.logo.png"
                                             alt="data-reporting_logo"/>
                                         <Link href="/services/data-reporting-analysis"
-                                            class="text-heading font-poppins text-base font-medium leading-normal">Data
+                                            class="text-menuheading font-poppins text-base font-medium leading-normal">Data
                                             Reporting & Analysis</Link>
                                     </div>
                                     <div class="flex items-center py-1 gap-2">
                                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytics_Looker.logo.png" alt="Looker_logo"/>
                                         <Link href="/services/looker-bi-platform"
-                                            class="text-heading font-poppins text-base font-medium leading-normal">Looker
+                                            class="text-menuheading font-poppins text-base font-medium leading-normal">Looker
                                             BI Platform</Link>
                                     </div>
                             </motion.div>}  
@@ -219,20 +219,20 @@ useEffect(() => {
                                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_data-migration.logo.png"
                                             alt="data-migration_logo"/>
                                         <Link href="#"
-                                            class="text-heading font-poppins text-base font-medium leading-normal">Seamless
+                                            class="text-menuheading font-poppins text-base font-medium leading-normal">Seamless
                                             Data Migration</Link>
                                     </div>
                                     <div class="flex items-center py-1 gap-2">
                                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_GDRP.logo.png" alt="GDRP_logo"/>
                                         <Link href="#"
-                                            class="text-heading font-poppins text-base font-medium leading-normal">GDPR
+                                            class="text-menuheading font-poppins text-base font-medium leading-normal">GDPR
                                             Compliance</Link>
                                     </div>
                                     <div class="flex items-center py-1 gap-2">
                                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/Solutions_Data-Science.logo.png"
                                             alt="Data-Science_logo"/>
                                         <Link href="#"
-                                            class="text-heading font-poppins text-base font-medium leading-normal">Data
+                                            class="text-menuheading font-poppins text-base font-medium leading-normal">Data
                                             Science Solution & Automation</Link>
                                     </div>
                             </motion.div>}  
@@ -243,7 +243,7 @@ useEffect(() => {
                                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_Training-Details.logo.png"
                                             alt="Training-Details_logo"/>
                                         <Link href="/services/training"
-                                            class="text-heading font-poppins text-base font-medium leading-normal">Training
+                                            class="text-menuheading font-poppins text-base font-medium leading-normal">Training
                                             Details</Link>
                                     </div>
                             </motion.div>}  
@@ -296,68 +296,68 @@ useEffect(() => {
                                     class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b lg:border-b-0 pb-6 pt-6 lg:pt-3">
                                     <div class="flex items-center">
 
-                                        <h3 class="text-heading font-poppins text-2xl font-bold">Media</h3>
+                                        <h3 class="text-menuheading font-poppins text-2xl font-bold">Media</h3>
                                     </div> <br/>
 
                                     <div class="flex items-center py-3 gap-2
                                     ">
-                                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-search.png" alt="display_logo"/>
+                                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-mobile.png" alt="display_logo"/>
                                         <Link href="/services/app-marketing"
-                                            class="text-heading font-poppins text-base font-medium leading-normal">Mobile app marketing</Link>
+                                            class="text-menuheading font-poppins text-base font-medium leading-normal">Mobile app marketing</Link>
                                     </div>
                                     <div class="flex items-center py-3 gap-2">
-                                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-paid.png" alt="paid_logo"/>
+                                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-lead.png" alt="paid_logo"/>
                                         <Link href="/services/lead-generation"
-                                            class="text-heading font-poppins text-base font-medium leading-normal">Lead generation</Link>
+                                            class="text-menuheading font-poppins text-base font-medium leading-normal">Lead generation</Link>
                                     </div>
                                     <div class="flex items-center py-3 gap-2">
-                                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-paid.png" alt="paid_logo"/>
+                                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-E-commerce.png" alt="paid_logo"/>
                                         <Link href="/services/ecommerce-marketing"
-                                            class="text-heading font-poppins text-base font-medium leading-normal">Search/E-Commerce Marketing</Link>
+                                            class="text-menuheading font-poppins text-base font-medium leading-normal">Search/E-Commerce Marketing</Link>
                                     </div>
                                     <div class="flex items-center py-3 gap-2">
                                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-paid.png" alt="paid_logo"/>
                                         <Link href="/services/programatic-advertising"
-                                            class="text-heading font-poppins text-base font-medium leading-normal">Programatic Media Buying</Link>
+                                            class="text-menuheading font-poppins text-base font-medium leading-normal">Programatic Media Buying</Link>
                                     </div>
                                 </ul>
                                 <ul
                                     class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b lg:border-b-0 pb-6 pt-6 lg:pt-3">
                                     <div class="flex items-center">
 
-                                        <h3 class="text-heading font-poppins text-2xl font-bold">Analytics</h3>
+                                        <h3 class="text-menuheading font-poppins text-2xl font-bold">Analytics</h3>
                                     </div> <br/>
 
                                     <div class="flex items-center py-3 gap-2
                                     ">
                                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytics-audit-logo.png" alt="audit_logo"/>
                                         <Link href="/services/analytics?id=audit-and-health-check"
-                                            class="text-heading font-poppins text-base font-medium leading-normal">Audit
+                                            class="text-menuheading font-poppins text-base font-medium leading-normal">Audit
                                             and Health Check</Link>
                                     </div>
                                     <div class="flex items-center py-3 gap-2">
                                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytics_webapp_logo.png" alt="webapp_logo"/>
                                         <Link href="/services/analytics?id=web-app-measurement"
-                                            class="text-heading font-poppins text-base font-medium leading-normal">Web
+                                            class="text-menuheading font-poppins text-base font-medium leading-normal">Web
                                             and App measurement</Link>
                                     </div>
                                     <div class="flex items-center py-3 gap-2">
                                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytics_GA4_logo.png" alt="GA4_logo"/>
                                         <Link href="/services/analytics?id=ga4-implementation"
-                                            class="text-heading font-poppins text-base font-medium leading-normal">GA4
+                                            class="text-menuheading font-poppins text-base font-medium leading-normal">GA4
                                             Implementation</Link>
                                     </div>
                                     <div class="flex items-center py-3 gap-2">
                                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytis_data-reporting.logo.png"
                                             alt="data-reporting_logo"/>
                                         <Link href="/services/data-reporting-analysis"
-                                            class="text-heading font-poppins text-base font-medium leading-normal">Data
+                                            class="text-menuheading font-poppins text-base font-medium leading-normal">Data
                                             Reporting & Analysis</Link>
                                     </div>
                                     <div class="flex items-center py-3 gap-2">
                                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytics_Looker.logo.png" alt="Looker_logo"/>
                                         <Link href="/services/looker-bi-platform"
-                                            class="text-heading font-poppins text-base font-medium leading-normal">Looker
+                                            class="text-menuheading font-poppins text-base font-medium leading-normal">Looker
                                             BI Platform</Link>
                                     </div>
                                 </ul>
@@ -365,7 +365,7 @@ useEffect(() => {
                                     class="hidden px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b lg:border-b-0 pb-6 pt-6 lg:pt-3">
                                     <div class="flex items-center">
 
-                                        <h3 class="text-heading font-poppins text-2xl font-bold">Solutions</h3>
+                                        <h3 class="text-menuheading font-poppins text-2xl font-bold">Solutions</h3>
                                     </div> <br/>
 
                                     <div class="flex items-center py-3 gap-2
@@ -373,27 +373,27 @@ useEffect(() => {
                                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_data-migration.logo.png"
                                             alt="data-migration_logo"/>
                                         <Link href="#"
-                                            class="text-heading font-poppins text-base font-medium leading-normal">Seamless
+                                            class="text-menuheading font-poppins text-base font-medium leading-normal">Seamless
                                             Data Migration</Link>
                                     </div>
                                     <div class="flex items-center py-3 gap-2">
                                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_GDRP.logo.png" alt="GDRP_logo"/>
                                         <Link href="#"
-                                            class="text-heading font-poppins text-base font-medium leading-normal">GDPR
+                                            class="text-menuheading font-poppins text-base font-medium leading-normal">GDPR
                                             Compliance</Link>
                                     </div>
                                     <div class="flex items-center py-3 gap-2">
                                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/Solutions_Data-Science.logo.png"
                                             alt="Data-Science_logo"/>
                                         <Link href="#"
-                                            class="text-heading font-poppins text-base font-medium leading-normal">Data
+                                            class="text-menuheading font-poppins text-base font-medium leading-normal">Data
                                             Science Solution & Automation</Link>
                                     </div>
                                 </ul>
                                 <ul
                                     class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b lg:border-b-0 pb-6 pt-6 lg:pt-3">
                                     <div class="flex items-center">
-                                        <h3 class="text-heading font-poppins text-2xl font-bold">Training &
+                                        <h3 class="text-menuheading font-poppins text-2xl font-bold">Training &
                                             Consultation</h3>
                                     </div> <br/>
                                     <div class="flex items-center py-3 gap-2
@@ -401,7 +401,7 @@ useEffect(() => {
                                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_Training-Details.logo.png"
                                             alt="Training-Details_logo"/>
                                         <Link href="/services/training"
-                                            class="text-heading font-poppins text-base font-medium leading-normal">Training
+                                            class="text-menuheading font-poppins text-base font-medium leading-normal">Training
                                             Details</Link>
                                     </div>
                                 </ul>

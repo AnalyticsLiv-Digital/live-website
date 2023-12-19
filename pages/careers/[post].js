@@ -13,7 +13,7 @@ const post = ({jobData}) => {
     ///////////////////////////////////
     const [resumefile, setResumefile] = useState(null);
   const [createObjectURL, setCreateObjectURL] = useState(null);
-  const initialValues = { firstName: '', lastName: '', email: '', contact: '', linkedin: '', experience: '', resume: '' };
+  const initialValues = { firstName: '', lastName: '', email: '', contact: '', linkedin: '', experience: '', resume: '', noticePeriod: '' };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
@@ -149,6 +149,7 @@ const post = ({jobData}) => {
                    "contact": formValues.contact,
                    "linkedin": formValues.linkedin,
                    "experience": formValues.experience,
+                   "noticePeriod": formValues.noticePeriod,
                    "resume": formValues.resume
        }),
             })
@@ -331,6 +332,12 @@ var url = "https://www.analyticsliv.com/careers/"+jobData.job[0].id;
                                 <label htmlFor="link" className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">LinkedIn Profile Link (optional)</label>
                             
                             </div>
+                            {jobData.job[0].notice_period == true &&  
+                            <div className="relative">
+                                <input type="text" id="noticePeriod" name="noticePeriod" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent  border-b border-slate-500 appearance-none focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " value={formValues.noticePeriod} onChange={handleChange} />
+                                <label htmlFor="noticePeriod" className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Notice Period (in days)</label>
+                            
+                            </div>}
                         
                             <div className="relative">
                                 <input type="file" id="resume_file" onChange={uploadPhoto}  accept=".pdf, .jpg, .jpeg, .docx" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent  border-b border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder="No file" />

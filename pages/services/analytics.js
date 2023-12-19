@@ -96,7 +96,7 @@ const index= () => {
                         customer acquisition, activation, and retention across every stage of the customer journey.</p>
                     <br/>
                     <Link href="/contact?id=analytics"><button
-                        class="btn cursor-pointer w-44 bg-analyticsheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold">Get
+                        class="btn cursor-pointer bg-analyticsheading hover:bg-sky-800 transition duration-200 delay-75 rounded-[5px] shadow-lg text-white text-lg font-semibold py-[15px] px-[50px] hover:scale-110">Get
                         in Touch</button></Link>
                 </div>
                 <div class="right flex lg:justify-end">
@@ -244,7 +244,7 @@ const index= () => {
             </div> <br/>
             <div class="text-center pt-5">
                 <Link href="/contact?id=measurement"><button
-                    class="btn cursor-pointer w-44 bg-analyticsheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold">Explore
+                    class="btn cursor-pointer bg-analyticsheading hover:bg-sky-800 transition duration-200 delay-75 rounded-[5px] shadow-lg text-white text-lg font-semibold py-[15px] px-[50px] hover:scale-110">Explore
                     Basic
                     Services</button></Link>
             </div>
@@ -268,7 +268,7 @@ const index= () => {
             </div> <br/>
             <div class="text-center pt-5">
                 <Link href="/contact?id=advance-analytics"><button
-                    class="btn cursor-pointer w-44 bg-analyticsheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold">Explore
+                    class="btn cursor-pointer bg-analyticsheading hover:bg-sky-800 transition duration-200 delay-75 rounded-[5px] shadow-lg text-white text-lg font-semibold py-[15px] px-[50px] hover:scale-110">Explore
                     Advance
                     Services</button></Link>
             </div>
@@ -296,13 +296,13 @@ const index= () => {
                 </ul> <br/>
                 <div class="flex flex-wrap justify-around gap-10">
                     <Link href="/contact?id=ecommerce-audit"><button
-                        class="btn cursor-pointer w-44 bg-analyticsheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold">E-commerce
+                        class="btn cursor-pointer bg-analyticsheading hover:bg-sky-800 transition duration-200 delay-75 rounded-[5px] shadow-lg text-white text-lg font-semibold py-[15px] px-[50px] hover:scale-110">E-commerce
                         Audit</button></Link>
                     <Link href="/contact?id=pixel-audit"><button
-                        class="btn cursor-pointer w-44 bg-analyticsheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold">Pixel
+                        class="btn cursor-pointer bg-analyticsheading hover:bg-sky-800 transition duration-200 delay-75 rounded-[5px] shadow-lg text-white text-lg font-semibold py-[15px] px-[50px] hover:scale-110">Pixel
                         Audit</button></Link>
                     <Link href="/contact?id=events-audit"><button
-                        class="btn cursor-pointer w-44 bg-analyticsheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold">Events
+                        class="btn cursor-pointer bg-analyticsheading hover:bg-sky-800 transition duration-200 delay-75 rounded-[5px] shadow-lg text-white text-lg font-semibold py-[15px] px-[50px] hover:scale-110">Events
                         Audit</button></Link>
                 </div>
             </div> <br/> <br/>
@@ -315,16 +315,16 @@ const index= () => {
                 </ul> <br/>
                 <div class="flex flex-wrap justify-around gap-10">
                     <Link href="/contact?id=revenue-discrepancy"><button
-                        class="btn cursor-pointer w-44 bg-analyticsheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold">Revenue/
-                        conversion
+                        class="btn cursor-pointer bg-analyticsheading hover:bg-sky-800 transition duration-200 delay-75 rounded-[5px] shadow-lg text-white text-lg font-semibold py-[15px] px-[50px] hover:scale-110">Revenue/
+                        conversion <br/>
                         discrepancies</button></Link>
                     <Link href="/contact?id=gtm-health-check"><button
-                        class="btn cursor-pointer w-44 bg-analyticsheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold">Tag
-                        Manager Health
+                        class="btn cursor-pointer bg-analyticsheading hover:bg-sky-800 transition duration-200 delay-75 rounded-[5px] shadow-lg text-white text-lg font-semibold py-[15px] px-[50px] hover:scale-110">Tag
+                        Manager <br/> Health
                         Check</button></Link>
                     <Link href="/contact?id=firebase-healthcheck"><button
-                        class="btn cursor-pointer w-44 bg-analyticsheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold">GA4,
-                        GTM, Firebase Health Check</button></Link>
+                        class="btn cursor-pointer bg-analyticsheading hover:bg-sky-800 transition duration-200 delay-75 rounded-[5px] shadow-lg text-white text-lg font-semibold py-[15px] px-[50px] hover:scale-110">GA4,
+                        GTM, Firebase <br/>Health Check</button></Link>
                 </div>
             </div>
 

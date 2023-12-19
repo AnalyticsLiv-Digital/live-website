@@ -12,6 +12,7 @@ const handler = async (req, res) => {
             email: req.body.email,
             contact: req.body.contact,
             experience: req.body.experience,
+            noticePeriod: req.body.noticePeriod,
             linkedin: req.body.linkedin,
             resume: req.body.resume,
             post: req.body.post
@@ -31,9 +32,10 @@ const handler = async (req, res) => {
             from: "support@analyticsliv.com",
             to: ["anshul.d@analyticsliv.com","hr@analyticsliv.com","aashana.pathak@analyticsliv.com"],
             subject: 'New Job Application!!',
-            html: `Application Submitted by <br> First Name - ${req.body.firstName} <br>Lastname- ${req.body.lastName} <br> Email- ${req.body.email} <br> Contact - ${req.body.contact} <br> Job Title- ${req.body.postName}  <br> Resume -<a href="https://storage.googleapis.com/website-bucket-uploads/${req.body.resume}">Link</a>  <br> Linkedin -${req.body.linkedin} <br> Experience -${req.body.experience}`
+            html: `Application Submitted by <br> First Name - ${req.body.firstName} <br>Lastname- ${req.body.lastName} <br> Email- ${req.body.email} <br> Contact - ${req.body.contact} <br> Job Title- ${req.body.postName}  <br> Resume -<a href="https://storage.googleapis.com/website-bucket-uploads/${req.body.resume}">Link</a>  <br> Linkedin -${req.body.linkedin} <br> Experience -${req.body.experience} <br> Notice Period - ${req.body.noticePeriod} Days`
           };
-          
+      
+         
           transporter.sendMail(mailOptions1, function(error, info){
             if (error) {
               console.log(error);
@@ -44,6 +46,7 @@ const handler = async (req, res) => {
     } else {
         res.status(400).json({ error: "Bad Request" });
     }
+
     let jobapplication = await Jobapplication.find();
     res.status(200).json({ jobapplication });
 }

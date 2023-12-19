@@ -71,7 +71,7 @@ export default class AutoPlay extends Component {
                         others
                     </p> <br/>
                     <Link href="/contact?id=data-reporting"><button
-                        class="btn cursor-pointer w-44 bg-analyticsheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold">Get
+                        class=" bg-analyticsheading btn cursor-pointer hover:bg-sky-800 transition duration-200 delay-75 rounded-[5px] shadow-lg text-white text-lg font-semibold py-[15px] px-[50px] hover:scale-110">Get
                         in Touch</button></Link>
                 </div>
                 <div class="right flex lg:justify-end">
@@ -88,11 +88,10 @@ export default class AutoPlay extends Component {
                 <h2 class="text-analyticsheading text-[40px] font-bold inline">
                     <span
                         class="relative after:absolute after:left-0 after:bottom-0 after:bg-[#07A9F9] after:h-[9px] after:w-20 after:rounded-2xl">
-                        How </span> we can assist you
+                        Here's </span> why you should partner with us:
                 </h2> <br/> <br/>
             </div>
-            <p class="text-analyticsheading text-[30px] font-medium mt-1.5">Our streamlined process activates your data in just a
-                few weeks:</p><br/><br/>
+            
                 
 
                 <div>
@@ -231,7 +230,7 @@ export default class AutoPlay extends Component {
                         <p class="mb-8 text-[#202020] text-base leading-none font-medium">We provide comprehensive data
                             insights across various time periods to track trends and identify patterns.</p>
                         <Link href="/contact?id=data-reporting"><button
-                            class="btn cursor-pointer w-44 bg-analyticsheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold">Explore
+                            class=" bg-analyticsheading btn cursor-pointer hover:bg-sky-800 transition duration-200 delay-75 py-[15px] px-[50px] rounded-[5px] shadow-lg text-white text-lg font-semibold">Explore
                             Now</button></Link>
                     </div>
                 </div>
@@ -249,7 +248,7 @@ export default class AutoPlay extends Component {
                         <p class="mb-8 text-[#202020] text-base leading-none font-medium">We optimize your marketing
                             campaigns based on data-driven insights, maximizing their effectiveness and ROI.</p>
                         <Link href="/contact?id=data-reporting"><button
-                            class="btn cursor-pointer w-44 bg-analyticsheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold">Explore
+                            class="btn cursor-pointer bg-analyticsheading hover:bg-sky-800 transition duration-200 delay-75 py-[15px] px-[50px] rounded-[5px] shadow-lg text-white text-lg font-semibold">Explore
                             Now</button></Link>
                     </div>
                 </div>
@@ -267,7 +266,7 @@ export default class AutoPlay extends Component {
                         <p class="mb-8 text-[#202020] text-base leading-none font-medium">We conduct A/B tests to evaluate
                             different strategies and optimize your website or app for better performance.</p>
                         <Link href="/contact?id=data-reporting"><button
-                            class="btn cursor-pointer w-44 bg-analyticsheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold">Explore
+                            class="btn cursor-pointer bg-analyticsheading hover:bg-sky-800 transition duration-200 delay-75 py-[15px] px-[50px] rounded-[5px] shadow-lg text-white text-lg font-semibold">Explore
                             Now</button></Link>
                     </div>
                 </div>
@@ -286,7 +285,7 @@ export default class AutoPlay extends Component {
                             into distinct groups based on shared characteristics, enabling targeted marketing campaigns
                             and personalized customer experiences.</p>
                         <Link href="/contact?id=data-reporting"><button
-                            class="btn cursor-pointer w-44 bg-analyticsheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold">Explore
+                            class="btn cursor-pointer bg-analyticsheading hover:bg-sky-800 transition duration-200 delay-75 py-[15px] px-[50px] rounded-[5px] shadow-lg text-white text-lg font-semibold">Explore
                             Now</button></Link>
                     </div>
                 </div>
@@ -303,7 +302,7 @@ export default class AutoPlay extends Component {
                         </a>
                         <p class="mb-5 text-[#202020] text-base leading-none font-medium">We leverage advanced predictive modeling to forecast future trends and anticipate customer behavior, allowing you to make proactive decisions.</p>
                         <Link href="/contact?id=data-reporting"><button
-                            class="btn cursor-pointer w-44 bg-analyticsheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold">Explore
+                            class="btn cursor-pointer bg-analyticsheading hover:bg-sky-800 transition duration-200 delay-75 py-[15px] px-[50px] rounded-[5px] shadow-lg text-white text-lg font-semibold">Explore
                             Now</button></Link>
                     </div>
                 </div>
@@ -318,7 +317,7 @@ export default class AutoPlay extends Component {
                 <p class="text-analyticsheading text-3xl font-medium">Partner with AnalyticsLiv and transform your data into a powerful engine for growth and success. Contact us today to embark on your data-driven journey.
                 </p> <br/> <br/>
                 <Link href="/contact?id=data-reporting"><button
-                    class="btn cursor-pointer w-44 bg-analyticsheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold">Contact Us Now</button></Link>
+                    class="btn cursor-pointer bg-analyticsheading hover:bg-sky-800 transition duration-200 delay-75 rounded-[5px] shadow-lg text-white text-lg font-semibold py-[15px] px-[50px] hover:scale-110">Contact Us Now</button></Link>
             </div>
         </div>
     </section>

@@ -162,7 +162,7 @@ const index= () => {
                     </div>
 
                     <div id="tab4"
-                        className={`${activetab==4 && 'block'} ${activetab!=4 && 'hidden'} relative tab-content bg-servicetraining w3-container city mt-[300px] p-8 rounded-[40px]`}>
+                        className={`${activetab==4 && 'block'} ${activetab!=4 && 'hidden'} relative tab-content bg-servicetraining w3-container city mt-[210px] p-8 rounded-[40px]`}>
                         <div
                             className="absolute bottom-[calc(100%+1rem)] right-[-1rem] h-44 w-44 bg-transparent border-2 border-servicetraining rounded-full transition-transform ease-in-out duration-500">
                         </div>
@@ -294,7 +294,7 @@ const index= () => {
             </div>
             <div className="text-center">
             <Link href="/case-studies"><button
-                    className="btn cursor-pointer w-44 bg-serviceheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold mt-8">More
+                    className=" bg-serviceheading btn cursor-pointer hover:bg-sky-800 transition duration-200 delay-75 rounded-[5px] shadow-lg text-white text-lg font-semibold mt-8 py-[15px] px-[50px] hover:scale-110">More
                     Case Study</button></Link>
             </div>
 
@@ -307,7 +307,7 @@ const index= () => {
                 <div className="flex flex-wrap items-center justify-between ">
                     <h2 className="text-white text-[32px] font-bold mt-4">Optimize Your Camapigns  with DV360</h2>
                     <Link href="/contact?id=dv360"><button id="output"
-                        className="btn text-[25px] cursor-pointer w-44 bg-white hover:bg-slate-100 transition duration-200 delay-75 mt-4 p-4 rounded-[5px] shadow-lg shadow-gray-400 text-serviceheading font-semibold">Contact Us</button></Link>
+                        className="btn text-[25px] cursor-pointer bg-white hover:bg-slate-100 transition duration-200 delay-75 mt-4 rounded-[5px] shadow-lg shadow-gray-400 text-serviceheading font-semibold py-[15px] px-[50px] hover:scale-110">Contact Us</button></Link>
                 </div>
             
         </div>

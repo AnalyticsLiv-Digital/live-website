@@ -8,6 +8,7 @@ const JobSchema = new mongoose.Schema({
     brief:{type: String, required: true},
     location:{type: String, required: true},
     experience:{type: String, required: true},
+    notice_period:{type: Boolean},
     active:{type: Boolean, required: true},
     details:[{
         heading:{type: String, required: true},

@@ -31,6 +31,7 @@ module.exports = {
         analyticssection: '#EAF0FF',
         lookerheading: '#30486A',
         lookersection: '#EAF0FF',
+        menuheading: '#30486A'
     }
     },
   },

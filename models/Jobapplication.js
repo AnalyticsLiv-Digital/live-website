@@ -10,6 +10,7 @@ const JobapplicationSchema = new mongoose.Schema({
     linkedin:{type: String},
     experience:{type: String, required: true},
     resume:{type: String, required: true},
+    noticePeriod:{type: String},
     timestamp: { type: Date, default: Date.now}
 });
 mongoose.models = {};
