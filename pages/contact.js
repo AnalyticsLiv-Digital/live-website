@@ -156,7 +156,7 @@ const contact = () => {
                     <h1 className=" text-center tracking-wide text-white uppercase text-2xl mb-8">Contact Us</h1>
                     <div className="relative overflow-hidden lg:w-4/5 lg:p-8 pt-2 rounded-lg mx-2 lg:mx-auto bg-white">
                         <div className="absolute rounded-full w-40 h-40 bg-gradient-to-b from-rose-500 to-transparent blur -right-10 top-0"></div>
-                        <div className="absolute rounded-full w-40 h-40 bg-gradient-to-r from-cyan-500 to-transparent blur left-1/2 -bottom-10"></div>
+                        <div className="hidden absolute rounded-full w-40 h-40 bg-gradient-to-r from-cyan-500 to-transparent blur left-1/2 -bottom-10"></div>
                         <div className="relative mx-2 lg:flex">
                             <div data-aos="fade-up" data-aos-once="true" className="relative md:h-screen overflow-hidden lg:w-1/3 rounded-lg bg-slate-900 space-y-9 px-4 pt-12 pb-20 align-middle text-white">
                                 <h2 className="font-semibold uppercase tracking-wider">Contact Information</h2>
@@ -284,6 +284,10 @@ const contact = () => {
 
 
                             </div>
+                        </div>
+
+                        <div className='w-full h-[200px]'>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.660556214622!2d72.4981082753132!3d22.9995064791899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x613f5a1e7cb48aa3%3A0xaef382143b118f7!2sAnalyticsLiv!5e0!3m2!1sen!2sin!4v1704214142520!5m2!1sen!2sin" className='w-full h-full z-100'></iframe>
                         </div>
                     </div>
                 </div>
