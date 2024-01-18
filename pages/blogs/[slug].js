@@ -19,6 +19,20 @@ const index = ({ blogDat, similarBlogs }) => {
         console.log(blogData)
         AOS.init();
 
+        if(screen.width < 800){
+            var imgs = document.querySelectorAll('.blog-cont img').length;
+           
+            for(var i=0; i<parseInt(imgs); i++){
+                
+        document.querySelectorAll('.blog-cont img')[i].style.width="100%";
+        document.querySelectorAll('.blog-cont img')[i].style.height="auto";
+        document.querySelectorAll('.blog-cont img')[i].closest('span').style.width="100%";
+        document.querySelectorAll('.blog-cont img')[i].closest('span').style.height="auto";
+            }
+        
+    }
+
+
 
     }, []);
 
