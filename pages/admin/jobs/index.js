@@ -5,13 +5,15 @@ const index = ({jobs}) => {
     console.log(job);
   return (
     <>
-    <h1 className='text-center font-bold text-4xl py-4'>CaseStudy</h1>
-    <h2 className='font-semibold text-2xl md:pl-6 pl-2 py-4'><a href="/admin/casestudies/create">Create a New Casestudy</a></h2>
+    <h1 className='text-center font-bold text-4xl py-4'>Jobs</h1>
+    <h2 className='font-semibold text-2xl md:pl-6 pl-2 py-4'><a href="/admin/jobs/create">Create a New Job Listing</a></h2>
     <table><tr className='text-center font-semibold'>
         
             <th>Job Title</th>
             <th>Edit</th>
+            <th>Status</th>
             <th>Preview</th>
+
             <th>Applications</th>
             </tr>
         
@@ -23,9 +25,7 @@ const index = ({jobs}) => {
             <td>
             <a href={`/admin/jobs/edit/${job.id}`}>Edit</a>
             </td>
-            <td>
-             
-            </td>
+
             <td>
             {job.active? 'active':'inactive' }
             </td>

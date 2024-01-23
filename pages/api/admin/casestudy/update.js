@@ -1,14 +1,13 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
 import { MongoClient } from 'mongodb';
-import fetch from 'node-fetch';
 
 // Replace with your MongoDB connection string and database details
 const uri = "mongodb+srv://anshuldhurandhar:Admin123@cluster0.b45r7wt.mongodb.net/?retryWrites=true&w=majority";
 const dbName = "blogsdb";
-const collectionName = "blogs";
+const collectionName = "casestudies";
 
-async function updateDatabaseItem(item,title,description,slug,coverphoto,thumbnail,document_id,author, duration,date, active,sequence) {
+async function updateDatabaseItem(id,title,description,slug,opendownload,coverimage,filename,author, publishdate, active,sequence, content) {
    const client = new MongoClient(uri);
    try {
      await client.connect();
@@ -17,19 +16,19 @@ async function updateDatabaseItem(item,title,description,slug,coverphoto,thumbna
  
      // Update a single item in the database
      // Replace 'itemIdentifier' with the appropriate field you're matching against
-     const filter = { slug: 'blog-testing' };
+     const filter = { id: id };
      const updateDoc = { $set: {
-      'content':item,
+      'slug':slug,
       'title' : title,
       'description' : description,
-      'coverphoto' : coverphoto,
-      'thumbnail' : thumbnail,
-      'document_id' : document_id,
+      'coveriamge' : coverimage,
+      'filename':filename,
       'author' : author,
-      'duration' : duration,
-      'date' : date,
+      'publishdate' : publishdate,
+      'content':content,
       'active' : active,
-      'sequence' : sequence
+      'sequence' : sequence,
+      'open': opendownload
    
    } };
      const result = await collection.updateOne(filter, updateDoc);
@@ -44,23 +43,50 @@ export default async function handler(req, res) {
   if (req.method === 'POST') {
     try {
       // Fetch data from an external API
-      const response = await fetch('https://script.google.com/macros/s/AKfycbxidlMSRADTNk4kjam5Lf58cESQwxrntzlvO_kvcxx2dmSxdbD2NjxAbecDTyrFJNPs_w/exec?1zZa8YVH0_Mrwrc8MVGwGnuzGsalMQInWvF7o0VnplzA');
-      const blogcontent = await response.text();
-
-      console.log(blogcontent);
-      var title = req.body.title;
-      var description = req.body.description;
+      console.log(req.body);
+      var id = req.body.id;
       var slug = req.body.slug;
-      var coverphoto = req.body.coverphoto;
-      var thumbnail = req.body.coverphoto;
-      var document_id = req.body.document_id;
-      var author = req.body.author;
-      var duration = req.body.duration;
-      var date = req.body.date;
-      var active = req.body.active;
-      var sequence = req.body.sequence;
+      var title=req.body.title;
+      var description=req.body.description;
+      var coverimage=req.body.coverimage;
+      var filename=req.body.filename;
+      var author=req.body.author;
+      var publishdate=req.body.publishdate;
+      var content=[];
+      var active=req.body.active;
+      var sequence=req.body.sequence;
+      var opendownload=req.body.open;
+      if(req.body.heading1 !== '' && req.body.content1 !== '')
+        content.push({
+            heading:req.body.heading1,
+            description:req.body.content1
+        });
+
+        if(req.body.heading2 !== '' && req.body.content2 !== '')
+        content.push({
+            heading:req.body.heading2,
+            description:req.body.content2
+        });
+
+        if(req.body.heading3 !== '' && req.body.content3 !== '')
+        content.push({
+            heading:req.body.heading3,
+            description:req.body.content3
+        });
+
+        if(req.body.heading4 !== '' && req.body.content4 !== '')
+        content.push({
+            heading:req.body.heading4,
+            description:req.body.content4
+        });
+
+        if(req.body.heading5 !== '' && req.body.content5 !== '')
+        content.push({
+            heading:req.body.heading5,
+            description:req.body.content5
+        });
       // Update the MongoDB database with this data
-      await updateDatabaseItem(blogcontent,title,description,slug,coverphoto,thumbnail,document_id,author, duration,date, active,sequence);
+      await updateDatabaseItem(id,title,description,slug,opendownload,coverimage,filename,author, publishdate, active,sequence, content);
 
       res.status(200).json({ message: 'Database updated successfully!' });
     } catch (error) {

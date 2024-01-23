@@ -11,8 +11,9 @@ const index = ({casestudies}) => {
         
             <th>Case Study Name</th>
             <th>Link</th>
+            <th>Status</th>
             <th>Preview</th>
-            <th></th>
+            <th>Edit</th>
             </tr>
         
      {casestudy && casestudy.map((casestudy,key) => (
@@ -23,9 +24,7 @@ const index = ({casestudies}) => {
             <td>
             <a href={`${casestudy.filename}`}>Link</a>
             </td>
-            <td>
-             
-            </td>
+  
             <td>
             {casestudy.active? 'active':'inactive' }
             </td>
