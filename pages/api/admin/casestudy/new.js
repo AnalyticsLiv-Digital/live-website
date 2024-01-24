@@ -48,7 +48,7 @@ const handler = async (req, res) => {
                 filename : req.body.filename,
                 author : req.body.author,
                 publishdate : req.body.date,
-                active : req.body.active,
+                active : Boolean(req.body.active),
                 content : content,
                 sequence : req.body.sequence,
                 open:req.body.open

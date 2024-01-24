@@ -26,7 +26,7 @@ async function updateDatabaseItem(id,title,description,slug,opendownload,coverim
       'author' : author,
       'publishdate' : publishdate,
       'content':content,
-      'active' : active,
+      'active' : Boolean(active),
       'sequence' : sequence,
       'open': opendownload
    

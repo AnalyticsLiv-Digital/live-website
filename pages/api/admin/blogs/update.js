@@ -28,7 +28,7 @@ async function updateDatabaseItem(item,title,description,slug,coverphoto,thumbna
       'author' : author,
       'duration' : duration,
       'date' : date,
-      'active' : active,
+      'active' : Boolean(active),
       'sequence' : sequence
    
    } };
