@@ -22,7 +22,7 @@ const handler = async (req, res) => {
             service: 'gmail',
             auth: {
               user: "support@analyticsliv.com",
-              pass: "jnfmgzslhdvmefuk"
+              pass: "pusjypwkhvsltkck"
             }
           });
           

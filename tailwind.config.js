@@ -10,6 +10,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        btnshadow: '1px 1px 23px 2px rgba(255, 251, 251, 0.25)',
+        btn2shadow: '1px 1px 4px 1px rgba(0, 0, 0, 0.25)',
+        formshadow: '0px 5px 10px 0px rgba(0, 0, 0, 0.25)',
+        testishadow: '1px 1px 6px 0px rgba(0, 0, 0, 0.25)',
+      },
       colors: {
         btn: '#4285F4',
         h1: '#6D6D6D',
@@ -31,7 +37,10 @@ module.exports = {
         analyticssection: '#EAF0FF',
         lookerheading: '#30486A',
         lookersection: '#EAF0FF',
-        menuheading: '#30486A'
+        menuheading: '#30486A',
+        homepagebtn: "#30486A",
+        homepagebg: "#F0F0F9",
+        dvbackgrnd: "#F8FBFD"
     }
     },
   },

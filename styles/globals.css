@@ -179,3 +179,90 @@ input[type=number] {
 .slick-slide{
   height: 60px;
 }
+
+.home {
+  background-image: url(../public/dv-home.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.innerglobl{
+  background-image: url(../public/Frame.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* .navbr {
+  position: absolute;
+  top: 0;
+} */
+
+.marquee-container {
+  overflow-x: hidden !important;
+  display: flex !important;
+  flex-direction: row !important;
+  position: relative;
+  width: 100%;
+  --pause-on-hover: paused;
+  --pause-on-click: paused;
+}
+
+.marquee {
+  flex: 0 0 auto;
+  min-width: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  animation: slide 50s linear infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-slide {
+  animation: slide 10s linear infinite;
+}
+
+.marquee:hover {
+  animation-play-state: paused;
+}
+
+.advertising {
+  background-image: url(../public/dv-ads.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.discuss , .contact-footer {
+  background-image: url(../public/dv-ads.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.slick-arrow .slick-next{
+  display: none !important;
+  right: 0 !important;
+}
+
+.slick-next {
+  right: -0 !important;
+}
+
+[data-role="none"] {
+  display: none;
+}
+
+.firstbg {
+  background-image: url(../public/BG\ 1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 20;
+}
