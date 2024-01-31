@@ -13,7 +13,7 @@ const Casestudy = () => {
                     <div className='text-center grid lg:grid-cols-3 gap-4 p-8 md:p-12'>
                         <div className='first group home-blog rounded border border-solid border-[#DBDBDB] hover:border-[#979797] hover:shadow-testishadow p-[25px] text-center relative'>
                             <span className='bg-[#5BF0B2] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                            <a href="">
+                            <a  href="https://storage.googleapis.com/website-bucket-uploads/cs/mnedfr45893kjswl.pdf" target='_blank'>
                                 <div>
                                     <Image
                                         src="/casestudy2.png"
@@ -39,7 +39,7 @@ const Casestudy = () => {
                         </div>
                         <div className='second group home-blog rounded border border-solid border-[#DBDBDB] hover:border-[#979797] hover:shadow-testishadow p-[25px] text-center relative'>
                             <span className='bg-[#5BF0B2] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                            <a href="">
+                            <a  href="https://storage.googleapis.com/website-bucket-uploads/cs/Oifs455fndogt4536f.pdf" target='_blank'>
                                 <div>
                                     <Image
                                         src="/casestudy1.png"
@@ -66,7 +66,7 @@ const Casestudy = () => {
                         </div>
                         <div className='third group home-blog rounded border border-solid border-[#DBDBDB] hover:border-[#979797] hover:shadow-testishadow p-[25px] text-center relative'>
                             <span className='bg-[#5BF0B2] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                            <a href="">
+                            <a href="https://storage.googleapis.com/website-bucket-uploads/cs/1706164120374235.pdf" target='_blank'>
                                 <div>
                                     <Image
                                         src="/casestudy3.png"
