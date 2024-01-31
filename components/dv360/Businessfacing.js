@@ -3,9 +3,19 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { FaArrowRightLong } from "react-icons/fa6";
+import * as Scroll from 'react-scroll';
 
 
 const Businessfacing = () => {
+    const { Element: ScrollElement } = Scroll;
+    const scrolling = () =>{
+        {
+          Scroll.scroller.scrollTo("top", {
+            duration: 500,
+            smooth: true,
+            offset: -100,
+          });
+        }}
 
     const [salesText, setSalesText] = useState('[ LOW SALES ]');
 
@@ -52,7 +62,7 @@ const Businessfacing = () => {
                                 Say GOODBYE to Frustration, and HELLO to Success</p>
                             <div className='w-[250px]'>
                                 <div className='flex items-center justify-between gap-4 border border-solid border-[#fff] p-5 rounded-[10px] text-[#fff] text-[21px] font-bold leading-normal hover:bg-[#fff] hover:text-homepagebtn'>
-                                    <button>Get in Touch</button>
+                                    <button onClick={scrolling}>Get in Touch</button>
                                     <FaArrowRightLong />
                                 </div>
                             </div>

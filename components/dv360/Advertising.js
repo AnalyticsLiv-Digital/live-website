@@ -1,7 +1,16 @@
 import React from 'react'
 import { FaArrowRightLong } from "react-icons/fa6";
+import * as Scroll from 'react-scroll';
 
 const Advertising = () => {
+  const scrolling = () =>{
+    {
+      Scroll.scroller.scrollTo("top", {
+        duration: 500,
+        smooth: true,
+        offset: -100,
+      });
+    }}
   return (
     <>
      <section className='advertising'>
@@ -9,7 +18,7 @@ const Advertising = () => {
             <div className='flex flex-wrap items-center justify-between gap-7'>
                 <h5 className='text-[#fff] text-[25px] font-semibold leading-normal'>41% of Online Advertising Budgets are being wasted</h5>
                 <div className='flex items-center justify-between gap-4 border border-solid border-[#fff] p-5 rounded-[10px] text-[#fff] text-base font-bold leading-normal hover:bg-[#fff] hover:text-homepagebtn'>
-                  <button>Reduce Your Ad Wastage</button>
+                  <button onClick={scrolling}>Reduce Your Ad Wastage</button>
                   <FaArrowRightLong />
                 </div>
             </div>

@@ -2,8 +2,11 @@ import React from 'react'
 import Image from 'next/image';
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { useState, useEffect } from 'react';
+import * as Scroll from 'react-scroll';
+import { ScaleLoader } from 'react-spinners'
 
 const Home = () => {
+    const { Element: ScrollElement } = Scroll;
     const initialValues = { fullName: '', email: '', contact: '',message : '', website: ''};
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
@@ -12,6 +15,15 @@ const Home = () => {
     const [selected, setSelected] = useState("");
     const [formSubmit, setFormSubmit] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
+
+    const scrolling = () =>{
+        {
+          Scroll.scroller.scrollTo("top", {
+            duration: 500,
+            smooth: true,
+            offset: -100,
+          });
+        }}
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -31,7 +43,7 @@ const Home = () => {
         //console.log(formErrors);
         if (Object.keys(formErrors).length === 0 && isSubmit) {
            // console.log(formValues);
-            setShowWaiting(true);
+           setShowWaiting(true);
             dataLayer.push({
                 event:'dv360_submission'
             });
@@ -46,7 +58,7 @@ const Home = () => {
                    "email": formValues.email,
                    "contact": formValues.contact,
                    "message": formValues.message,
-                   "website" : formValues.website
+                   "website" : ''
        }),
             })
                 .then((response) => response.json())
@@ -98,6 +110,12 @@ const Home = () => {
         return errors;
     };
     return (
+        <>{showWaiting && <div className="fixed flex backdrop-blur top-0 left-0 right-0 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full"><ScaleLoader
+  color="#271d90"
+  loading
+  size={100}
+  className="m-auto align-middle"
+/></div>}
         <section className='home flex items-center justify-center text-center'>
             <div className='px-4 md:px-20 pt-8 md:pt-11'>
                 <div className='grid gap-10 pt-8 md:pt-24'>
@@ -107,7 +125,7 @@ const Home = () => {
                             <br />
                             Ready to join the journey?</p>
                         <div className='flex items-center justify-between w-[300px] m-auto text-[#fff] text-[21px] font-bold border border-solid border-[#fff] rounded-[10px] shadow-btnshadow py-4 px-8 hover:bg-[#fff] hover:text-homepagebtn'>
-                            <button>Hire DV360 Experts</button>
+                            <button onClick={scrolling}>Hire DV360 Experts</button>
                             <FaLongArrowAltRight />
                         </div>
                     </div>
@@ -134,11 +152,13 @@ const Home = () => {
                                 className='absolute top-0 right-0'
                             />
                         </div>
+                        
                         <div className='flex justify-center lg:justify-end my-4'>
                             <div className='text-center bg-dvbackgrnd py-8 md:p-8 md:w-3/4 rounded-[10px] shadow-formshadow'>
                             {!formSubmit &&<div className="block">
                                     <h2 className='text-homepagebtn text-base font-medium leading-normal'>We Understand Its difficult to get DV360 Account and control the outcome</h2>
                                     <h2 className='text-[#000] text-[30px] font-semibold leading-normal'>Let us help you !!</h2>
+                                    <ScrollElement id="top" name="top" ></ScrollElement>
                                     <form onSubmit={handleSubmit} className='px-4 md:pt-4 pb-2 space-y-4 text-gray-600'>
                                         <div>
                                             <input type="text" placeholder='FULL NAME*' name="fullName" id="fullname" className='bg-transparent px-4 border border-solid border-homepagebtn rounded-[10px] w-full py-2 focus:outline-none focus:border-2 focus:border-sky-200'  value={formValues.fullName} onChange={handleChange}/>
@@ -170,7 +190,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-        </section>
+        </section></>
     )
 }
 

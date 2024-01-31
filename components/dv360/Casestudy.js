@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { FaLongArrowAltRight } from "react-icons/fa";
+import { Link } from 'react-scroll';
 
 const Casestudy = () => {
     
@@ -26,11 +27,12 @@ const Casestudy = () => {
                                 <div className='grid grid-rows-2 gap-10'>
                                     <h3 className='text-bas text-slate-900 font-semibold text-left pt-5'>From Inefficiency to Precision: Learn How AnalyticsLiv Achieved a 78% CPC Reduction for a News Publisher Giant</h3>
                                     <p className='align-middle text-left text-xs font-medium text-[#3B3C3B]'>By eliminating underperforming areas and focusing on a more relevant audience, the client achieved significant cost savings through a substantial decrease in CPC. This was achieved without compromising the quality of website traffic</p>
-                                    <div>
+                                    <div><a href="https://storage.googleapis.com/website-bucket-uploads/cs/mnedfr45893kjswl.pdf" target='_blank'> 
                                         <div className='flex w-[200px] m-auto items-center p-3 justify-evenly border border-solid text-center border-homepagebtn cursor-pointer rounded-[10px] group-hover:bg-homepagebtn text-[10px] font-medium'>
-                                            <button className='font-medium text-[#4186F5] group-hover:text-white'>View</button>
+                                        <button className='font-medium text-[#4186F5] group-hover:text-white'>View</button> 
                                             <span className='text-homepagebtn group-hover:text-white'><FaLongArrowAltRight /></span>
                                         </div>
+                                        </a>
                                     </div>
                                 </div>
                             </a>
@@ -52,10 +54,12 @@ const Casestudy = () => {
                                     <h3 className='text-base text-slate-900 font-semibold text-left pt-5'>55% Increase in Avg. Session Duration</h3>
                                     <p className='align-middle text-left text-xs font-medium text-[#3B3C3B] pt-2'>Increasing the Session Duration of the Website is a difficult challenge, with steady growth in acquiring new users, holding the returning users and other KPIs. It's not a quick trick but a journey of hard work and discipline that Leads to the conversion. </p>
                                     <div className='lg:pt-[15px]'>
+                                    <a href="https://storage.googleapis.com/website-bucket-uploads/cs/Oifs455fndogt4536f.pdf" target='_blank'>
                                         <div className='flex w-[200px] m-auto items-center p-3 justify-evenly border border-solid text-center border-homepagebtn cursor-pointer rounded-[10px] group-hover:bg-homepagebtn text-[10px] font-medium'>
-                                            <button className='font-medium text-[#4186F5] group-hover:text-white'>View</button>
+                                         <button className='font-medium text-[#4186F5] group-hover:text-white'>View</button>
                                             <span className='text-homepagebtn group-hover:text-white'><FaLongArrowAltRight /></span>
                                         </div>
+                                        </a>
                                     </div>
                                 </div>
                             </a>
@@ -77,10 +81,12 @@ const Casestudy = () => {
                                     <h3 className='text-base text-slate-900 font-semibold text-left pt-5'>Skyrocket Your Campaign's CTR with a 95% Surge in 14 Days!</h3>
                                     <p className='align-middle text-left text-xs font-medium text-[#3B3C3B] pt-2'>Through the strategic removal of underperforming components and the targeting of a more relevant settings, the campaign effectively increased website traffic. Remarkably, this success was achieved without compromising the caliber of website traffic.</p>
                                     <div className='lg:pt-[12px]'>
+                                    <a href="https://storage.googleapis.com/website-bucket-uploads/cs/1706164120374235.pdf" target='_blank'>
                                         <div className='flex w-[200px] m-auto items-center p-3 justify-evenly border border-solid text-center border-homepagebtn cursor-pointer rounded-[10px] group-hover:bg-homepagebtn text-[10px] font-medium'>
                                             <button className='font-medium text-[#4186F5] group-hover:text-white'>View</button>
                                             <span className='text-homepagebtn group-hover:text-white'><FaLongArrowAltRight /></span>
                                         </div>
+                                        </a>
                                     </div>
                                 </div>
                             </a>

@@ -1,7 +1,17 @@
 import React from 'react'
 import { FaArrowRightLong } from "react-icons/fa6";
+import * as Scroll from 'react-scroll';
 
 const Discuss = () => {
+    const { Element: ScrollElement } = Scroll;
+    const scrolling = () =>{
+        {
+          Scroll.scroller.scrollTo("top", {
+            duration: 500,
+            smooth: true,
+            offset: -100,
+          });
+        }}
     return (
         <>
             <section className='discuss'>
@@ -11,7 +21,7 @@ const Discuss = () => {
                             Transform Your Campaigns Today!
                         </h5>
                         <div className='flex items-center justify-between gap-4 border border-solid border-[#fff] p-5 rounded-[10px] text-[#fff] text-base font-bold leading-normal hover:bg-[#fff] hover:text-homepagebtn'>
-                            <button>Discuss Your Project</button>
+                            <button onClick={scrolling}>Discuss Your Project</button>
                             <FaArrowRightLong />
                         </div>
                     </div>
