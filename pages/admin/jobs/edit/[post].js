@@ -1,10 +1,12 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 
-const index = () => {
+const index = ({jobData}) => {
    
     //console.log(blogData);
-    const initialValues = { id: '', our_description:'',job_short_description:'', title: '', brief: '', location: '', experience: '',notice_period:'', postingdate: '', active: '',heading1:'',heading2:'',heading3:'',heading4:'',heading5:'',content1:'',content2:'',content3:'',content4:'',content5:''};
+    const initialValues = { id: jobData.job[0].id, our_description:jobData.job[0].our_description,job_short_description:jobData.job[0].job_short_description, title: jobData.job[0].title, brief: jobData.job[0].brief, location: jobData.job[0].location, experience: jobData.job[0].experience,notice_period:jobData.job[0].notice_period, postingdate: jobData.job[0].postingdate, active: jobData.job[0].active,heading1:jobData.job[0].details[0].heading,content1:jobData.job[0].details[0].points.join(';')};
+    // ,content2:jobData.job[0].details[1].points.join(';'),content3:jobData.job[0].details[2].points.join(';'),content4:jobData.job[0].details[3].points.join(';'),content5:jobData.job[0].details[4].points.join(';')
+    //,heading2:jobData.job[0].details[1].heading,heading3:jobData.job[0].details[2].heading,heading4:jobData.job[0].details[3].heading,heading5:jobData.job[0].details[4].heading
     const [formValues, setFormValues] = useState(initialValues);
     const [isSubmit, setIsSubmit] = useState(false);
     console.log(formValues);
@@ -24,7 +26,7 @@ const index = () => {
         setIsSubmit(true);
         alert('submitted');
         console.log("submit2")
-        fetch('/api/admin/job/new', {
+        fetch('/api/admin/job/update', {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',
@@ -70,7 +72,7 @@ const index = () => {
          if (isSubmit) {
 
             console.log("submit2")
-             fetch('/api/admin/job/new', {
+             fetch('/api/admin/job/update', {
                  method: 'POST', // or 'PUT'
                  headers: {
                      'Content-Type': 'application/json',
@@ -117,8 +119,7 @@ const index = () => {
     <div>
         <form  onSubmit={handleSubmit}>
             Job Title - <input className="px-2.5 pb-2.5 pt-5 w-1/2 text-sm text-gray-900 bg-transparent  border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" type="text" name="title" value={formValues.title} onChange={handleChange} /><br/>
-            ID - <input className="px-2.5 pb-2.5 pt-5 w-1/2 text-sm text-gray-900 bg-transparent  border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" type="text" name="id" value={formValues.id} onChange={handleChange} /><br/>
-            Job Description - <input className="px-2.5 pb-2.5 pt-5 w-1/2 text-sm text-gray-900 bg-transparent  border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" type="text" name="brief" value={formValues.brief} onChange={handleChange} /><br/>
+             Job Description - <input className="px-2.5 pb-2.5 pt-5 w-1/2 text-sm text-gray-900 bg-transparent  border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" type="text" name="brief" value={formValues.brief} onChange={handleChange} /><br/>
             Our Description - <input className="px-2.5 pb-2.5 pt-5 w-1/2 text-sm text-gray-900 bg-transparent  border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" type="text" name="our_description" value={formValues.our_description} onChange={handleChange} /><br/>
             Job Short Description - <input className="px-2.5 pb-2.5 pt-5 w-1/2 text-sm text-gray-900 bg-transparent  border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" type="text" name="job_short_description" value={formValues.job_short_description} onChange={handleChange} /><br/>
             Experience - <input className="px-2.5 pb-2.5 pt-5 w-1/2 text-sm text-gray-900 bg-transparent  border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" type="text" name="experience" value={formValues.experience} onChange={handleChange} /><br/>
@@ -144,5 +145,16 @@ const index = () => {
   )
 }
 
+
+
+export async function getServerSideProps(context) {
+    // Fetch data from external API
+  
+    const res = await fetch(`${process.env.domain}/api/jobdetails?id=${context.params.post}`)
+    const jobData = await res.json()
+  //console.log(casestudyDat);
+    // Pass data to the page via props
+    return { props: { jobData } }
+}
 
 export default index

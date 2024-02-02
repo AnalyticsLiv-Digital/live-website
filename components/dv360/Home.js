@@ -125,16 +125,15 @@ const Home = () => {
                             <br />
                             Ready to join the journey?</p>
                         <div className='flex items-center justify-between w-[300px] m-auto text-[#fff] text-[21px] font-bold border border-solid border-[#fff] rounded-[10px] shadow-btnshadow py-4 px-8 hover:bg-[#fff] hover:text-homepagebtn'>
-                            <button onClick={scrolling}>Hire DV360 Experts</button>
+                            <button onClick={scrolling}>Get Access to DV360</button>
                             <FaLongArrowAltRight />
                         </div>
                     </div>
-                    <div className='botmhome grid lg:grid-cols-2 text-center gap-3'>
-                        <div className='relative text-center flex justify-center'>
-                            <Image
+                    <div className='botmhome w-full flex text-center gap-3'>
+                        <div className='relative w-full md:w-3/5 text-center flex justify-center'>
+                            <img
                                 src="/image (4).png"
-                                width={500}
-                                height={500}
+                                className='relative bottom-0 h-full w-auto -left-[45px]'
                                 alt="Picture of the author"
                             />
                             <Image
@@ -142,19 +141,19 @@ const Home = () => {
                                 width={130}
                                 height={130}
                                 alt="Picture of the author"
-                                className='absolute top-0 left-0'
+                                className='hidden absolute top-0 left-0'
                             />
                             <Image
                                 src="/Trustpilot.png"
                                 width={130}
                                 height={130}
                                 alt="Picture of the author"
-                                className='absolute top-0 right-0'
+                                className='hidden absolute top-0 right-0'
                             />
                         </div>
                         
-                        <div className='flex justify-center lg:justify-end my-4'>
-                            <div className='text-center bg-dvbackgrnd py-8 md:p-8 md:w-3/4 rounded-[10px] shadow-formshadow'>
+                        <div className='w-full md:w-2/5 flex justify-center lg:justify-end my-4'>
+                            <div className='text-center bg-dvbackgrnd py-8 md:p-8 md:w-full rounded-[10px] shadow-formshadow'>
                             {!formSubmit &&<div className="block">
                                     <h2 className='text-homepagebtn text-base font-medium leading-normal'>We Understand Its difficult to get DV360 Account and control the outcome</h2>
                                     <h2 className='text-[#000] text-[30px] font-semibold leading-normal'>Let us help you !!</h2>

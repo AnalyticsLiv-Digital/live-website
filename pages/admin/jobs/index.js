@@ -48,7 +48,7 @@ const index = ({jobs}) => {
 export async function getServerSideProps(context) {
     // Fetch data from external API
 
-    const res = await fetch(`${process.env.domain}/api/alljobs`)
+    const res = await fetch(`${process.env.domain}/api/alljobsadmin`)
     const jobs = await res.json()
   
     // Pass data to the page via props

@@ -1,27 +1,41 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-import Blog from "../../../../models/Blog"
+import Job from "../../../../models/Job"
 import connectDb from "../../../../middleware/mongoose";
 
 
 const handler = async (req, res) => {
     if (req.method == 'POST') {
-        const response = await fetch('https://script.google.com/macros/s/AKfycbxidlMSRADTNk4kjam5Lf58cESQwxrntzlvO_kvcxx2dmSxdbD2NjxAbecDTyrFJNPs_w/exec?'+req.body.document_id);
-      const blogcontent = await response.text();
 
-            let b = new Blog({
-                title : req.body.title,
-                description : req.body.description,
-                slug : req.body.slug,
-                coverphoto : req.body.coverphoto,
-                thumbnail : req.body.coverphoto,
-                document_id : req.body.document_id,
-                author : req.body.author,
-                duration : req.body.duration,
-                date : req.body.date,
-                active : req.body.active,
-                content : blogcontent,
-                sequence : req.body.sequence
+      var id = req.body.id;
+      var brief = req.body.brief;
+      var title=req.body.title;
+      var our_description=req.body.our_description;
+      var job_short_description=req.body.job_short_description;
+      var location=req.body.location;
+      var postingdate=req.body.postingdate;
+      var experience=req.body.experience;
+      var details=[];
+      var active=req.body.active;
+      var notice_period=Boolean(req.body.notice_period);
+      if(req.body.heading1 !== '' && req.body.content1 !== '')
+      details.push({
+            heading:req.body.heading1,
+            points:req.body.content1.toString().split(';')
+        });
+
+            let b = new Job({
+                id : id ,
+                brief : brief,
+                title : title,
+                our_description : our_description,
+                job_short_description : job_short_description,
+                location : location,
+                postingdate : postingdate,
+                experience : experience,
+                active : active,
+                notice_period : notice_period,
+                details : details
         });
         await b.save();
        
@@ -29,8 +43,8 @@ const handler = async (req, res) => {
     } else {
         res.status(400).json({ error: "Bad Request" });
     }
-    let blog = await Blog.find();
-    res.status(200).json({ blog });
+    let job = await Job.find();
+    res.status(200).json({ job });
 }
 
 
