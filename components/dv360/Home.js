@@ -129,7 +129,7 @@ const Home = () => {
                             <FaLongArrowAltRight />
                         </div>
                     </div>
-                    <div className='botmhome w-full flex text-center gap-3'>
+                    <div className='botmhome w-full relative md:flex text-center gap-3'>
                         <div className='relative w-full md:w-3/5 text-center flex justify-center'>
                             <img
                                 src="/image (4).png"
