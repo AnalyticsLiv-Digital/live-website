@@ -58,7 +58,7 @@ const Home = () => {
                    "email": formValues.email,
                    "contact": formValues.contact,
                    "message": formValues.message,
-                   "website" : ''
+                   "website" : formValues.website
        }),
             })
                 .then((response) => response.json())
@@ -85,7 +85,9 @@ const Home = () => {
 
 
 
- 
+        if (!values.website) {
+            errors.website = "Website is required!";
+        }
 
         if (!values.message) {
             errors.message = "Message is required!";
@@ -169,6 +171,10 @@ const Home = () => {
                                         </div>
                                         <div>
                                             <input type="tel" placeholder='CONTACT NO.' name="contact" id="contact" className='bg-transparent px-4 border border-solid border-homepagebtn rounded-[10px] w-full py-2 focus:outline-none focus:border-2 focus:border-sky-200'  value={formValues.contact} onChange={handleChange}/>
+                                        </div>
+                                        <div>
+                                            <textarea placeholder='WEBSITE*' name="website" id="website" className='bg-transparent border border-solid border-homepagebtn rounded-[10px] w-full px-4 py-2 focus:outline-none focus:border-2 focus:border-sky-200'  value={formValues.website} onChange={handleChange}></textarea>
+                                            <span className="text-xs text-red-600 float-left">{formErrors.website}</span>
                                         </div>
                                         <div>
                                             <textarea placeholder='TYPE MESSAGE' name="message" id="message" className='bg-transparent border border-solid border-homepagebtn rounded-[10px] w-full px-4 py-2 focus:outline-none focus:border-2 focus:border-sky-200'  value={formValues.message} onChange={handleChange}></textarea>
