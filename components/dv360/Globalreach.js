@@ -9,21 +9,23 @@ const Globalreach = () => {
                     <div className='innerglobl'>
                         <h2 className='text-[#000] text-[32px] font-semibold leading-normal text-center'>Get Global Reach</h2>
                         <div className='grid lg:grid-cols-2 gap-7 pt-10'>
-                            <div className='relative'>
-                                <Image
-                                    src="/global.png"
-                                    width={500}
-                                    height={500}
-                                    alt="Picture of client"
-                                    className=''
-                                />
-                                <Image
-                                    src="/Boy.png"
-                                    width={500}
-                                    height={500}
-                                    alt="Picture of client"
-                                    className='absolute d bottom-[44px] -left-[132px]'
-                                />
+                            <div className='flex max-[1023px]:justify-center'>
+                                <div className='relative flex'>
+                                    <Image
+                                        src="/global.png"
+                                        width={500}
+                                        height={500}
+                                        alt="Picture of client"
+                                        className=''
+                                    />
+                                    <Image
+                                        src="/Boy.png"
+                                        width={500}
+                                        height={500}
+                                        alt="Picture of client"
+                                        className='absolute d bottom-[44px] -left-[132px] max-[425px]:bottom-[36px] max-[425px]:-left-[100px]'
+                                    />
+                                </div>
                             </div>
                             <div className='global-points grid gap-5'>
                                 <div className="point1 bg-[#fff] flex gap-5 rounded-[10px] border border-solid border-[#E2E2E2] hover:shadow-testishadow p-5">

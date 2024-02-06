@@ -1,8 +1,9 @@
 import React from 'react'
 import GoogleButton from 'react-google-button'
 import {useSession, signIn , signOut} from "next-auth/react"
-import { useEffect,useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { useEffect,useState } from 'react'
+
 
 
 const index = () => {
@@ -14,7 +15,7 @@ const index = () => {
 
     if(session){
       router.push('/admin/dashboard')
-      // console.log(session.user.email)
+       console.log(session.user.email)
     }else{
       router.push('/admin/')
     }

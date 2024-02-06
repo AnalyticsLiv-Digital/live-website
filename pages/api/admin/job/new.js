@@ -1,6 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
 import Job from "../../../../models/Job"
+import Cmslog from "../../../../models/Cmslog"
 import connectDb from "../../../../middleware/mongoose";
 
 
@@ -17,12 +18,37 @@ const handler = async (req, res) => {
       var experience=req.body.experience;
       var details=[];
       var active=req.body.active;
-      var notice_period=Boolean(req.body.notice_period);
-      if(req.body.heading1 !== '' && req.body.content1 !== '')
+      var notice_period=req.body.notice_period;
+      if(req.body.heading1  && req.body.content1 ){
       details.push({
             heading:req.body.heading1,
             points:req.body.content1.toString().split(';')
         });
+    }
+    if(req.body.heading2  && req.body.content2 ){
+        details.push({
+              heading:req.body.heading2,
+              points:req.body.content2.toString().split(';')
+          });
+      }
+      if(req.body.heading3 && req.body.content3 ){
+        details.push({
+              heading:req.body.heading3,
+              points:req.body.content3.toString().split(';')
+          });
+      }
+      if(req.body.heading4  && req.body.content4 ){
+        details.push({
+              heading:req.body.heading4,
+              points:req.body.content4.toString().split(';')
+          });
+      }
+      if(req.body.heading5  && req.body.content5 ){
+        details.push({
+              heading:req.body.heading5,
+              points:req.body.content5.toString().split(';')
+          });
+      }
 
             let b = new Job({
                 id : id ,
@@ -38,6 +64,15 @@ const handler = async (req, res) => {
                 details : details
         });
         await b.save();
+
+        let c = new Cmslog({
+            email:'test',
+            type:'new',
+            section:'jobs',
+            changes:req.body,
+            id:id,
+    });
+    await c.save();
        
 
     } else {

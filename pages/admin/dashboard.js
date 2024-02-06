@@ -1,6 +1,4 @@
 
-
-
 import React from 'react'
 import GoogleButton from 'react-google-button'
 import {useSession, signIn , signOut} from "next-auth/react"
@@ -13,17 +11,7 @@ const index = ({data}) => {
   const { data: session } = useSession()
   const [loginstate, setLoginstate] = useState(session?true:false);
   const router = useRouter();
-  useEffect(() => {
 
-    if(session){
-      if(!session.user.email.includes('analyticsliv.com')){
-        router.push('/admin/')
-      }
-       
-    }else{
-      router.push('/admin/')
-    }
-},[session]);
   if (session) {
     return (
       <><div className='w-1/3 mx-auto mt-36 flex flex-wrap text-center gap-24 justify-center pb-4'>
@@ -56,7 +44,7 @@ const index = ({data}) => {
   }
   return (
     <>
-      Not signed in <br />
+
       <GoogleButton onClick={() => signIn()}>Sign in</GoogleButton>
     </>
   )

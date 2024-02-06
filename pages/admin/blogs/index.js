@@ -1,6 +1,14 @@
 import React from 'react'
+import {useSession, signIn , signOut} from "next-auth/react"
+import { useRouter } from 'next/navigation'
+import { useState,useEffect } from 'react'
 
 const index = ({blogDat}) => {
+  const { data: session } = useSession()
+  const [loginstate, setLoginstate] = useState(session?true:false);
+  
+
+  
     const blogsData = blogDat.blog;
     console.log(blogsData);
   return (

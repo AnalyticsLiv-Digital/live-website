@@ -26,7 +26,7 @@ async function updateDatabaseItem(id,title,description,slug,opendownload,coverim
       'author' : author,
       'publishdate' : publishdate,
       'content':content,
-      'active' : Boolean(active),
+      'active' : active,
       'sequence' : sequence,
       'open': opendownload
    
@@ -56,31 +56,31 @@ export default async function handler(req, res) {
       var active=req.body.active;
       var sequence=req.body.sequence;
       var opendownload=req.body.open;
-      if(req.body.heading1 !== '' && req.body.content1 !== '')
+      if(req.body.heading1  && req.body.content1)
         content.push({
             heading:req.body.heading1,
             description:req.body.content1
         });
 
-        if(req.body.heading2 !== '' && req.body.content2 !== '')
+        if(req.body.heading2 && req.body.content2 )
         content.push({
             heading:req.body.heading2,
             description:req.body.content2
         });
 
-        if(req.body.heading3 !== '' && req.body.content3 !== '')
+        if(req.body.heading3 && req.body.content3 )
         content.push({
             heading:req.body.heading3,
             description:req.body.content3
         });
 
-        if(req.body.heading4 !== '' && req.body.content4 !== '')
+        if(req.body.heading4  && req.body.content4 )
         content.push({
             heading:req.body.heading4,
             description:req.body.content4
         });
 
-        if(req.body.heading5 !== '' && req.body.content5 !== '')
+        if(req.body.heading5  && req.body.content5 )
         content.push({
             heading:req.body.heading5,
             description:req.body.content5

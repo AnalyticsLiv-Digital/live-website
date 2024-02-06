@@ -60,30 +60,32 @@ export default async function handler(req, res) {
             points:req.body.content1.toString().split(';')
         });
 
-      /*  if(req.body.heading2 !== '' && req.body.content2 !== '')
-        details.push({
-            heading:req.body.heading2,
-            points:req.body.content2.split(';')
-        });
+        if(req.body.heading2  && req.body.content2  ){
+          details.push({
+                heading:req.body.heading2,
+                points:req.body.content2.toString().split(';')
+            });
+        }
+        if(req.body.heading3  && req.body.content3 ){
+          details.push({
+                heading:req.body.heading3,
+                points:req.body.content3.toString().split(';')
+            });
+        }
+        if(req.body.heading4  && req.body.content4 ){
+          details.push({
+                heading:req.body.heading4,
+                points:req.body.content4.toString().split(';')
+            });
+        }
+        if(req.body.heading5  && req.body.content5 ){
+          details.push({
+                heading:req.body.heading5,
+                points:req.body.content5.toString().split(';')
+            });
+        }
 
-        if(req.body.heading3 !== '' && req.body.content3 !== '')
-        details.push({
-            heading:req.body.heading3,
-            points:req.body.content3.split(';')
-        });
-
-        if(req.body.heading4 !== '' && req.body.content4 !== '')
-        details.push({
-            heading:req.body.heading4,
-            points:req.body.content4.split(';')
-        });
-
-        if(req.body.heading5 !== '' && req.body.content5 !== '')
-        details.push({
-            heading:req.body.heading5,
-            points:req.body.content5.split(';')
-        });
-        */
+        
       // Update the MongoDB database with this data
       await updateDatabaseItem(id,title,brief,our_description,job_short_description,location,experience, postingdate, active, details,notice_period);
 

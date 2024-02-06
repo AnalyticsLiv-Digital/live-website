@@ -12,7 +12,7 @@ const JobSchema = new mongoose.Schema({
     active:{type: Boolean, required: true},
     details:[{
         heading:{type: String, required: true},
-        list:[{type: String, required: true}]
+        points:[{type: String, required: true}]
     }]
 });
 mongoose.models = {};
