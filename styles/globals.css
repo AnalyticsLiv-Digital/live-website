@@ -266,3 +266,30 @@ input[type=number] {
   background-size: cover;
   z-index: 20;
 }
+
+.testi {
+  display: flex !important;
+}
+.casestd {
+  display: flex !important;
+}
+.slick-dots {
+  bottom: -40px !important;
+  padding: 10px !important;
+}
+.slick-dots li {
+  display: inline-block;
+  width: 10px !important;
+  height: 10px !important;
+  border: 1px solid grey;
+  border-radius: 100%;
+  transition: all 0.5s linear;
+}
+
+.slick-dots .slick-active {
+  background-color: #080808;
+}
+
+.slick-dots li button:before {
+  content: '' !important;
+}
