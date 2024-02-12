@@ -23,14 +23,9 @@ function generateSiteMap(posts) {
        <loc>https://analyticsliv.com/services/programatic-advertising</loc>
      </url>
      <url>
-       <loc>https://analyticsliv.com/services/analytics?id=audit-and-health-check</loc>
+       <loc>https://analyticsliv.com/services/analytics</loc>
      </url>
-     <url>
-       <loc>https://analyticsliv.com/services/analytics?id=web-app-measurement</loc>
-     </url>
-     <url>
-       <loc>https://analyticsliv.com/services/analytics?id=ga4-implementation</loc>
-     </url>
+     
      <url>
        <loc>https://analyticsliv.com/services/data-reporting-analysis</loc>
      </url>

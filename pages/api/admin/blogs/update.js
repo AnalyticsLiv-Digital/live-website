@@ -17,7 +17,7 @@ async function updateDatabaseItem(item,title,description,slug,coverphoto,thumbna
  
      // Update a single item in the database
      // Replace 'itemIdentifier' with the appropriate field you're matching against
-     const filter = { slug: 'blog-testing' };
+     const filter = { slug: slug };
      const updateDoc = { $set: {
       'content':item,
       'title' : title,
@@ -28,7 +28,7 @@ async function updateDatabaseItem(item,title,description,slug,coverphoto,thumbna
       'author' : author,
       'duration' : duration,
       'date' : date,
-      'active' : Boolean(active),
+      'active' : active,
       'sequence' : sequence
    
    } };
