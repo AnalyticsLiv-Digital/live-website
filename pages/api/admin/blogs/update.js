@@ -44,7 +44,7 @@ export default async function handler(req, res) {
   if (req.method === 'POST') {
     try {
       // Fetch data from an external API
-      const response = await fetch('https://script.google.com/macros/s/AKfycbxidlMSRADTNk4kjam5Lf58cESQwxrntzlvO_kvcxx2dmSxdbD2NjxAbecDTyrFJNPs_w/exec?1zZa8YVH0_Mrwrc8MVGwGnuzGsalMQInWvF7o0VnplzA');
+      const response = await fetch('https://script.google.com/macros/s/AKfycbxidlMSRADTNk4kjam5Lf58cESQwxrntzlvO_kvcxx2dmSxdbD2NjxAbecDTyrFJNPs_w/exec?'+req.body.document_id);
       const blogcontent = await response.text();
 
       console.log(blogcontent);
