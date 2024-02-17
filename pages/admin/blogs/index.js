@@ -19,6 +19,7 @@ const index = ({blogDat}) => {
         
             <th>Blog Name</th>
             <th>Author</th>
+            <th>Document ID</th>
             <th>Date</th>
             <th>Status</th>
             <th>Preview</th>
@@ -32,6 +33,9 @@ const index = ({blogDat}) => {
             </td>
             <td>
             {blog.author} 
+            </td>
+            <td>
+            {blog.document_id} 
             </td>
             <td>
             {blog.date} 

@@ -57,13 +57,13 @@ export const Footer = () => {
             <div className="text-center lg:text-right">Quick Links</div>
             <div className="bg-sky-800 w-full h-0.5 my-2"></div>
             <div>
-                <ul className="uppercase text-sm tracking-wider space-x-2 flex lg:justify-end ">
-                    <Link href="/services"><li>Services</li></Link>
-                    <Link href="/blogs"><li>Blogs</li></Link>
-                    <Link href="/about-us"><li className="text-center">About Us</li></Link>
-                    <Link href="/contact"><li>Contact</li></Link>
+                <ul className="uppercase text-sm tracking-wider space-x-2 flex lg:justify-end text-white">
+                    <Link href="/services"><li className="text-white" >Services</li></Link>
+                    <Link href="/blogs"><li className="text-white">Blogs</li></Link>
+                    <Link href="/about-us"><li className="text-center text-white">About Us</li></Link>
+                    <Link href="/contact"><li className="text-white" >Contact</li></Link>
             
-                    <Link href="/privacy-policy"><li>Privacy Policy</li></Link>
+                    <Link href="/privacy-policy"><li className="text-white">Privacy Policy</li></Link>
                 </ul>
             </div>
             <div className="text-center lg:text-right mt-10 pb-4">© Created by Analytics Liv Digital LLP, All rights Reserved.</div>
