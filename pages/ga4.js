@@ -556,18 +556,7 @@ export default function ga4({brandsdata}) {
           </svg>
         </div>
       <Carousel className="pb-4" ssr={true} showDots={true} responsive={responsive} infinite={true} autoPlay autoPlaySpeed={4000} transitionDuration={500} removeArrowOnDeviceType={["tablet", "mobile"]}>
-        <div>
-       
-        <div className="relative flex items-center my-2 w-full justify-center space-x-4 text-center">
-          <img alt="client avatar" src="https://storage.googleapis.com/website-bucket-uploads/static/Character_1.png" className=""/>
-          <h2 className="font-bold text-3xl">Una</h2>
-        </div>
-        <p className=" mx-auto">"AnalyticsLiv helped us set up and manage our GA4 account, and we're so glad 
-          we did. They were patient and knowledgeable, and they always made sure we 
-          understood what they were doing. We're now able to track our website traffic and 
-          marketing campaigns more effectively, and we're confident that we're making better 
-          business decisions as a result."</p>
-          </div>
+        
 
           <div>
         
