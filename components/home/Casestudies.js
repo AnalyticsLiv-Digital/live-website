@@ -20,9 +20,13 @@ const Casestudies = () => {
                         <h2 className='text-maintext text-[40px] font-bold not-italic text-center tracking-widest'>CASE STUDIES</h2>
                         <span className='bg-[#4186F5] w-[140px] h-2.5'></span>
                     </div>
-                    <div data-aos="zoom-in" data-aos-once="true" className='text-center grid lg:grid-cols-3 gap-4 p-8 md:p-12'>
+                    <div className='grid lg:grid-cols-2 mt-8 justify-between px-12'>
+                    <h5 className='text-start text-xl lg:text-base xl:text-xl font-medium text-maintext'>Check out our latest Case Studies</h5>
+                    <h5 className='hidden lg:block text-end text-xl lg:text-[13px] xl:text-xl font-medium leading-none text-maintext '>Check out more case studies</h5>    
+                    </div>
+                    <div data-aos="zoom-in" data-aos-once="true" className='text-center grid lg:grid-cols-3 gap-4 px-8 py-4 md:px-12'>
                         <div>
-                            <h5 className='text-start text-xl lg:text-base xl:text-xl font-medium text-maintext mb-2'>Check out our latest Case Studies</h5>
+                            
                             <div className='first group home-blog rounded border border-solid border-[#DBDBDB] hover:border-[#979797] hover:shadow-serviceoffer p-[25px] text-center relative 2xl:h-[680px] xl:h-[600px] lg:h-[550px]'>
                                 <span className='bg-[#5BF0B2] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
                                 <a href="">
@@ -45,7 +49,7 @@ const Casestudies = () => {
                                 </a>
                             </div>
                         </div>
-                            <div className='second group mt-[35px] home-blog rounded border border-solid border-[#DBDBDB] hover:border-[#979797] hover:shadow-serviceoffer p-[25px] text-center relative 2xl:h-[680px] xl:h-[600px] lg:h-[550px]'>
+                            <div className='second group home-blog rounded border border-solid border-[#DBDBDB] hover:border-[#979797] hover:shadow-serviceoffer p-[25px] text-center relative 2xl:h-[680px] xl:h-[600px] lg:h-[550px]'>
                                 <span className='bg-[#5BF0B2] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
                                 <a href="">
                                     <Image
@@ -67,7 +71,7 @@ const Casestudies = () => {
                                 </a>
                             </div>
                         <div className='hidden lg:grid'>
-                            <h5 className='text-start text-xl lg:text-[13px] xl:text-xl font-medium leading-none text-maintext mb-2'>Check out more case studies</h5>
+                            
                             <div className='third hidden lg:grid gap-2 2xl:h-[680px] xl:h-[600px] lg:h-[550px] overflow-scroll'>
                                 <div className='home-blog group rounded border border-solid border-[#DBDBDB] hover:border-[#979797] hover:shadow-serviceoffer p-[25px] text-center relative'>
                                     <span className='bg-[#5BF0B2] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
