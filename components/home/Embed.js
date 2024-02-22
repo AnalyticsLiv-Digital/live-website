@@ -5,7 +5,7 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 
 const Embed = () => {
-    const [isPlaying, setIsPlaying] = useState(false);
+    const [isPlaying, setIsPlaying] = useState(true);
 
     const playVideo = () => {
         if (!isPlaying) {
@@ -33,7 +33,7 @@ const Embed = () => {
                         {isPlaying && (
                             <div className="video-container w-full h-64 md:h-96 lg:h-[600px]" key="video">
                             <iframe
-                              src="https://www.youtube.com/embed/JFOc7x5ZgaA"
+                              src="https://www.youtube.com/embed/JFOc7x5ZgaA?autoplay=1"
                               title="YouTube video player"
                               frameBorder="0"
                               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

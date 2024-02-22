@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 import Header from '../components/Header'
-import { Footer } from '../components/Footer'
+//import { Footer } from '../components/Footer'
 import ScrollProgress from '../components/ScrollProgress'
 import Head from 'next/head'
 import TagManager from 'react-gtm-module';
@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react'
 import Router,{ useRouter } from 'next/router'
 import { HashLoader } from 'react-spinners'
 import { SessionProvider } from "next-auth/react"
+import Footer from '../components/home/Footer'
 
 
 function MyApp({ Component, pageProps: { session, ...pageProps }, }) {

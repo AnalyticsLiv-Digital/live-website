@@ -7,6 +7,7 @@ import PowerUp from '../components/home/PowerUp'
 import ServicesDo from '../components/home/ServicesDo'
 import ServicesOffer from '../components/home/ServicesOffer'
 import Embed from '../components/home/Embed'
+
 import React from 'react'
 import Testimonial from '../components/home/Testimonial'
 
