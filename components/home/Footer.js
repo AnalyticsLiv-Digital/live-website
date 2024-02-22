@@ -1,0 +1,92 @@
+'use client'
+import React from 'react'
+import Image from 'next/image'
+import { FaSquareFacebook } from "react-icons/fa6"
+import { FaLinkedin } from "react-icons/fa"
+import { FaYoutube } from "react-icons/fa"
+import { FaInstagramSquare } from "react-icons/fa"
+import { FaPhoneVolume } from "react-icons/fa6"
+import { IoIosMail } from "react-icons/io"
+import Link from 'next/link'
+
+const Footer = () => {
+    const backgroundImageUrl = 'url("/src/assets/MAP.png")';
+
+    return (
+        <section className='footer bg-homepagebg'>
+            <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
+                <footer className="bg-cover bg-opacity-60 f">
+                    <div className='relative opacity-100'>
+                        <div className='top-footer w-[70%] m-auto'>
+                            <div className='bg-[#fff] grid sm:grid-cols-2 items-center justify-center mt-7 rounded-[10px] shadow-foter p-4'>
+                                <div className='sm:pr-11'>
+                                    <Image
+                                        src="/Help.png"
+                                        width={200}
+                                        height={200}
+                                        alt="Picture of the author"
+                                        priority={true}
+                                        className='mx-auto my-6'
+                                    />
+                                </div>
+                                <div className='text-center'>
+                                    <h3 className='text-homepagebtn text-[22px] leading-normal font-semibold text-center sm:mt-6 mt-2 mb-4'>Need Quick Advice <br />Chat With Our Expert</h3>
+                                    <a href="/Contact"><button className='butn mt-4'>LET'S CONNECT</button></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='botm-footer block lg:flex lg:justify-between text-sm text-[#000] sm:font-semibold font-medium pt-7'>
+                            <div className='w-10/12 mx-auto text-center lg:text-left lg:w-[40%] py-4'>
+                                <div className='relative'>
+                                    <span>Connect with us</span>
+                                    <div className='my-2 w-full h-0.5 bg-sky-800'></div>
+                                    <div className='ml-0 flex items-center mb-2'>
+                                        <FaPhoneVolume className='w-6 h-6 mr-1' />
+                                        <span><a href="tel:+918320576622">+91 83205 76622</a></span>
+                                    </div>
+                                    <div className='ml-0 flex items-center mb-2'>
+                                        <IoIosMail className='w-6 h-6 mr-1' />
+                                        <span><a href="mailto:support@analyticsliv.com" className=''>support@analyticsliv.com</a></span>
+                                    </div>
+                                </div>
+                                <div className='social flex lg:pl-0'>
+                                    <a href="https://m.facebook.com/100070503960704/"><FaSquareFacebook className='w-7 h-7 mt-4 mr-2' /></a>
+                                    <a href="https://in.linkedin.com/company/analytics-liv-digital/"><FaLinkedin className='w-7 h-7 mt-4 mx-2' /></a>
+                                    <a href="https://www.youtube.com/channel/UCSU9utLB2PDe4VcXiI5kMFw"><FaYoutube className='w-7 h-7 mt-4 mx-2' /></a>
+                                    <a href="https://www.instagram.com/analyticsliv_digital/"><FaInstagramSquare className='w-7 h-7 mt-4 mx-2' /></a>
+                                </div>
+                            </div>
+                            <div className='quick-links mt-4 w-5/6 mx-auto lg:w-[40%]'>
+                                <div className='text-center lg:text-right'>Quick Links</div>
+                                <div className='bg-sky-800 w-full h-0.5 my-2'></div>
+                                <div>
+                                    <ul className='uppercase tracking-wider space-x-2 flex lg:justify-end '>
+                                        <li> <Link href="/Services">SERVICES</Link> </li>
+                                        <li> <Link href="/Resources">BLOGS</Link> </li>
+                                        <li> <Link href="/About">ABOUT US</Link> </li>
+                                        <li> <Link href="/Contact">CONTACT</Link> </li>
+                                        <li> <Link href="/Careers">CAREERS</Link> </li>
+                                    </ul>
+                                </div>
+                                <div className='text-end flex items-end justify-end'>
+                                    <a href="/">
+                                    <Image
+                                        src="/AnalyticsLiv 2.png"
+                                        width={200}
+                                        height={200}
+                                        alt="Picture of the author"
+                                        priority={true}
+                                    />
+                                    </a>
+                                </div>
+                                <div className='text-end lg:text-right text-[15px] font-normal'>© Created by Analytics Liv Digital LLP, All rights Reserved.</div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </section>
+    )
+}
+
+export default Footer

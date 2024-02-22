@@ -556,7 +556,7 @@ export default function ga4({brandsdata}) {
           </svg>
         </div>
       <Carousel className="pb-4" ssr={true} showDots={true} responsive={responsive} infinite={true} autoPlay autoPlaySpeed={4000} transitionDuration={500} removeArrowOnDeviceType={["tablet", "mobile"]}>
-        
+      
 
           <div>
         

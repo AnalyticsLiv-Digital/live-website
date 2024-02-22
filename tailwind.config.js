@@ -15,6 +15,11 @@ module.exports = {
         btn2shadow: '1px 1px 4px 1px rgba(0, 0, 0, 0.25)',
         formshadow: '0px 5px 10px 0px rgba(0, 0, 0, 0.25)',
         testishadow: '1px 1px 6px 0px rgba(0, 0, 0, 0.25)',
+        custom: '-5px 5px 4px 2px rgba(0, 0, 0, 0.25)',
+        cards: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
+        casestudy: '2px 4px 4px 0px rgba(0, 0, 0, 0.25)',
+        foter: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
+        serviceoffer: '1px 1px 6px 0px rgba(0, 0, 0, 0.25)',
       },
       colors: {
         btn: '#4285F4',
@@ -40,7 +45,11 @@ module.exports = {
         menuheading: '#30486A',
         homepagebtn: "#30486A",
         homepagebg: "#F0F0F9",
-        dvbackgrnd: "#F8FBFD"
+        dvbackgrnd: "#F8FBFD",
+        maintext: "#18265B",
+        homepagebtn: "#30486A",
+        homepagebg: "#F0F0F9",
+        ractangl: "rgba(194, 233, 245, 0.92)"
     }
     },
   },
