@@ -9,7 +9,7 @@ const Marketing = () => {
         Aos.init({duration: 2000});
     }, [])
     return (
-        <section className='servicedo bg-homepagebg relative'>
+        <section className='servicedo bg-homepagebg relative overflow-hidden'>
 
             {/* Back-Ground design  */}
             <div className='absolute top-1/2 right-0 w-80 h-80 flex justify-end'>
@@ -21,7 +21,6 @@ const Marketing = () => {
                     <div>
                         <div className='text-start'>
                             <h2 className='text-maintext text-[30px] font-semibold not-italic text-left block'>Why Choose AnalyticsLiv</h2>
-                            <span className='bg-[#18265B] h-[2px] w-full sm:w-[500px] inline-block'></span>
                         </div>
                         <div className='flex flex-col lg:flex-row gap-5 lg:gap-0 justify-between items-center pt-8'>
                             <div  data-aos="fade-right" data-aos-once="true" className='lg:w-3/5 '>
@@ -65,9 +64,9 @@ const Marketing = () => {
                                                 className='transform translate-x-[-20px] transition-transform duration-300 ease-linear group-hover:translate-x-0'
                                             />
                                         </div>
-                                        <h6 className='text-[25px] font-semibold text-[#000] leading-normal'>Expertise</h6>
+                                        <h6 className='text-[24px] font-semibold text-[#000] leading-normal'>Expertise</h6>
                                     </div>
-                                    <p className='text-base font-normal text-[#000] leading-normal'>Our certified team of experts consists of seasoned campaign management, data scientists, and analytics experts who bring a wealth of experience to the table. <a href=""><span className='text-blue-700 underline'>View more</span></a></p>
+                                    <p className='text-[15px] font-normal text-[#000] leading-[1.7em]'>Our certified team of experts consists of seasoned campaign management, data scientists, and analytics experts who bring a wealth of experience to the table.</p>
                                 </div>
                                 <div className="second group bg-white border hover:shadow-serviceoffer border-solid border-[#FDFDFD] rounded-[20px] p-5">
                                     <div className="flex items-start justify-start gap-4 pb-4">
@@ -81,9 +80,9 @@ const Marketing = () => {
                                                 className='transform translate-x-[-20px] transition-transform duration-300 ease-linear group-hover:translate-x-0'
                                             />
                                         </div>
-                                        <h6 className='text-[25px] font-semibold text-[#000] leading-normal'>Innovation</h6>
+                                        <h6 className='text-[24px] font-semibold text-[#000] leading-normal'>Innovation</h6>
                                     </div>
-                                    <p className='text-base font-normal text-[#000] leading-normal'>Stay ahead in the rapidly evolving world of analytics with our commitment to innovative solutions like RFM Analysis, Custom Attribution, and staying abreast of the latest technologies. <a href=""><span className='text-blue-700 underline'>View more</span></a></p>
+                                    <p className='text-[15px] font-normal text-[#000] leading-[1.7em]'>Stay ahead in the rapidly evolving world of analytics with our commitment to innovative solutions like RFM Analysis, Custom Attribution, and staying abreast of the latest technologies.</p>
                                 </div>
                                 <div className="third group bg-white border hover:shadow-serviceoffer border-solid border-[#FDFDFD] rounded-[20px] p-5">
                                     <div className="flex items-start justify-start gap-4 pb-4">
@@ -97,10 +96,10 @@ const Marketing = () => {
                                                 className='transform translate-x-[-20px] transition-transform duration-300 ease-linear group-hover:translate-x-0'
                                             />
                                         </div>
-                                        <h6 className='text-[25px] font-semibold text-[#000] leading-normal'>Client-Centric Approach</h6>
+                                        <h6 className='text-[24px] font-semibold text-[#000] leading-normal'>Client-Centric Approach</h6>
                                     </div>
-                                    <p className='text-base font-normal text-[#000] leading-normal'>We prioritize understanding your unique business challenges, ensuring that our solutions align seamlessly with your business
-                                        goals. <a href=""><span className='text-blue-700 underline'>View more</span></a></p>
+                                    <p className='text-[15px] font-normal text-[#000] leading-[1.7em]'>We prioritize understanding your unique business challenges, ensuring that our solutions align seamlessly with your business
+                                        goals.</p>
                                 </div>
                             </div>
                         </div>

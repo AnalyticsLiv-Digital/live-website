@@ -29,7 +29,7 @@ const Embed = () => {
                                     <FaRegPlayCircle className="text-white w-20 h-20" />
                                 </div>
                             </div>
-                        )}
+                        )} 
                         {isPlaying && (
                             <div className="video-container w-full h-64 md:h-96 lg:h-[600px]" key="video">
                             <iframe

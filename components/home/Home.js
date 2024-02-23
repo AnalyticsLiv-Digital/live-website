@@ -10,7 +10,7 @@ const Home = () => {
     return (
         <>
             <section className='home'>
-                <div className='relative bg-homepagebg'>
+                <div className='relative bg-homepagebg overflow-hidden'>
 
                     {/* Back-Ground design  */}
                     <div className='absolute top-28 right-0 w-80 h-80 flex justify-end'>
@@ -20,12 +20,12 @@ const Home = () => {
 
                     <div data-aos="fade-down" data-aos-once="true">
                         <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
-                            <h1 className='text-maintext text-[40px] text-center font-semibold leading-normal not-italic pb-7'>Redefining Possibilities : Empowering Brands through Strategic Media, Analytics & Cloud Solutions</h1>
-                            <p className='text-[#000] text-2xl font-medium text-center md:pb-10 pb-8'>Data Analytics and Marketing Solutions helps businesses in gaining digital maturity through optimized utilization of data</p>
+                            <h1 className='text-maintext text-[35px] text-center font-medium leading-[1.3em] not-italic pb-[30px] pt-3'> <span className='text-[27px] font-normal'> Redefining Possibilities: Empowering Brands through </span> <br /> <b> Strategic Media, Analytics & Cloud Solutions</b> </h1>
+                            <p className='text-[#000] text-[18px] font-medium leading-[26px] text-center md:pb-10 pb-[30px]'>Data Analytics and Marketing Solutions helps businesses in gaining digital maturity <br /> through optimized utilization of data</p>
                             <div className='flex flex-wrap justify-around'>
-                                <a href="/Contact">
+                                <a href="/contact">
                                 <button className='butn'>
-                                    Contact Us Now
+                                    Let's Connect
                                 </button>
                                 </a>
                             </div>

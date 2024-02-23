@@ -13,12 +13,22 @@ const Footer = () => {
     const backgroundImageUrl = 'url("/src/assets/MAP.png")';
 
     return (
-        <section className='footer bg-homepagebg'>
-            <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
+        <section className='footer bg-homepagebg relative overflow-hidden'>
+            {/* Back-Ground design  */}
+            {/* <div className='absolute -top-[7%] right-0 w-[40%] h-[35%] flex'>
+                < img className="bgd w-[570px] h-[300px] rounded-full blur-xl" />
+            </div> */}
+            {/*  */}
+            {/* Back-Ground design  */}
+            {/* <div className='absolute bottom-0 w-[33rem] h-[13rem]'>
+                < img className="bgd2 w-[550px] h-[333px] rounded-full blur-xl" />
+            </div> */}
+            {/*  */}
+            <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16 relative z-10'>
                 <footer className="bg-cover bg-opacity-60 f">
                     <div className='relative opacity-100'>
-                        <div className='top-footer w-[70%] m-auto'>
-                            <div className='bg-[#fff] grid sm:grid-cols-2 items-center justify-center mt-7 rounded-[10px] shadow-foter p-4'>
+                        <div className='top-footer w-[55%] m-auto'>
+                            <div className=' grid md:grid-cols-2 items-center justify-center mt-7 rounded-[10px] shadow-foter p-4'>
                                 <div className='sm:pr-11'>
                                     <Image
                                         src="/Help.png"
@@ -61,22 +71,22 @@ const Footer = () => {
                                 <div className='bg-sky-800 w-full h-0.5 my-2'></div>
                                 <div>
                                     <ul className='uppercase tracking-wider space-x-2 flex lg:justify-end '>
-                                        <li> <Link href="/Services">SERVICES</Link> </li>
-                                        <li> <Link href="/Resources">BLOGS</Link> </li>
-                                        <li> <Link href="/About">ABOUT US</Link> </li>
-                                        <li> <Link href="/Contact">CONTACT</Link> </li>
-                                        <li> <Link href="/Careers">CAREERS</Link> </li>
+                                        <li> <Link href="/services">SERVICES</Link> </li>
+                                        <li> <Link href="/blogs">BLOGS</Link> </li>
+                                        <li> <Link href="/about-us">ABOUT US</Link> </li>
+                                        <li> <Link href="/contact">CONTACT</Link> </li>
+                                        <li> <Link href="/careers">CAREERS</Link> </li>
                                     </ul>
                                 </div>
                                 <div className='text-end flex items-end justify-end'>
                                     <a href="/">
-                                    <Image
-                                        src="/AnalyticsLiv 2.png"
-                                        width={200}
-                                        height={200}
-                                        alt="Picture of the author"
-                                        priority={true}
-                                    />
+                                        <Image
+                                            src="/AnalyticsLiv 2.png"
+                                            width={200}
+                                            height={200}
+                                            alt="Picture of the author"
+                                            priority={true}
+                                        />
                                     </a>
                                 </div>
                                 <div className='text-end lg:text-right text-[15px] font-normal'>© Created by Analytics Liv Digital LLP, All rights Reserved.</div>

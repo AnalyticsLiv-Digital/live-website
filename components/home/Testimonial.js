@@ -132,30 +132,7 @@ const Testimonial = () => {
                                     </div>
                                     <p className='text-[#000] text-base font-normal leading-normal'>"AnalyticsLiv has been FUTEK web analytics partner for almost 3 years now. They supported us with GTM implementation, GA to GA4 migration, Looker studio dashboard creations and Google cloud storage implementation. They respond to our request in a timely manner and make their best efforts to resolve the web analytics issues. We are happy with the support provided by AnalyticsLiv"</p>
                                 </div>
-                                <div aria-hidden="true" className="testimonial5 text-center">
-                                    <div className='flex items-center justify-center gap-4 pb-8'>
-                                        <Image
-                                            src="/Character_1.svg"
-                                            width={50}
-                                            height={50}
-                                            alt="Picture of client"
-                                        />
-                                        <h4 className='text-[#000] text-[25px] font-semibold leading-normal'>Bobby Bruno</h4>
-                                    </div>
-                                    <p className='text-[#000] text-base font-normal leading-normal'>"AnalyticsLiv team was an excellent asset to our businesses' switch from Universal Analytics to GA4. They had excellent communication throughout the project, giving me feedback, updates and ideas as the project went on. I would be happy to recommend the AnalyticsLiv team for analytics and tag manager work, and look forward to working with them in the future. Thank you!"</p>
-                                </div>
-                                <div aria-hidden="true" className="testimonial6 text-center">
-                                    <div className='flex items-center justify-center gap-4 pb-8'>
-                                        <Image
-                                            src="/Character_1.svg"
-                                            width={50}
-                                            height={50}
-                                            alt="Picture of client"
-                                        />
-                                        <h4 className='text-[#000] text-[25px] font-semibold leading-normal'>Charles Lundy</h4>
-                                    </div>
-                                    <p className='text-[#000] text-base font-normal leading-normal'>"The AnalyticsLiv team estimated the job length accurately and then carried out the work exactly as briefed, to time and budget. We had one brief hiccup in the conversion tracking code but that was swiftly fixed once identified. Would definitely consider using it again and for more advanced reporting functionality in future"</p>
-                                </div>
+                                
                             </Slider>
                         </div>
                     </div>

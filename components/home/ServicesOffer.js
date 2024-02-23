@@ -10,7 +10,7 @@ const ServicesOffer = () => {
         Aos.init({ duration: 2000 });
     }, [])
     return (
-        <section className='serviceoffer relative'>
+        <section className='serviceoffer relative overflow-hidden'>
 
             {/* Back-Ground design  */}
             <div className='absolute top-[20%] -left-[165px] w-80 h-80 flex justify-end'>
@@ -26,11 +26,10 @@ const ServicesOffer = () => {
                 <div>
                     <div className='text-start'>
                         <h2 className='text-maintext text-[30px] font-semibold not-italic text-left block'>Services We Offer</h2>
-                        <span className='bg-[#18265B] h-[2px] w-full sm:w-[500px] inline-block'></span>
                     </div>
                     <div className='grid md:grid-cols-2 items-center gap-10 pt-8'>
                         <div data-aos="fade-right" data-aos-once="true" className='first flex justify-center'>
-                            <div className='group rounded-[10px] border border-solid border-[#EFEFEF] hover:shadow-serviceoffer p-5 lg:h-[610px] md:h-[635px] w-[335px] md:w-[284px] lg:w-[430px]'>
+                            <div className='relative group rounded-[10px] border border-solid border-[#EFEFEF] hover:shadow-serviceoffer p-5 lg:h-[500px] md:h-[560px] w-[335px] md:w-[284px] lg:w-[430px]'>
                                 <div className="flex items-start justify-start gap-4 pb-6">
                                     <div className='rounded-full bg-[#EAF0FF] w-10 h-10 flex items-center justify-center'>
                                         <Image
@@ -44,9 +43,9 @@ const ServicesOffer = () => {
                                     </div>
                                     <h6 className='text-[20px] font-bold text-[#000] leading-normal'>Marketing Services</h6>
                                 </div>
-                                <ul className='grid gap-4 pb-6 lg:pb-[72px] md:pb-[65px]'>
-                                    <li className='flex items-start gap-2'>
-                                        <a href="">
+                                <ul className='grid gap-4 pb-[75px]'>
+                                    <li className=''>
+                                        <a href="/services/programatic-advertising" className='flex items-start gap-2'>
                                             <Image
                                                 src="/check.svg"
                                                 width={30}
@@ -61,8 +60,8 @@ const ServicesOffer = () => {
                                             </div>
                                         </a>
                                     </li>
-                                    <li className='flex items-start gap-2'>
-                                        <a href="">
+                                    <li>
+                                        <a href="/services/ecommerce-marketing" className='flex items-start gap-2'>
                                             <Image
                                                 src="/check.svg"
                                                 width={30}
@@ -77,8 +76,8 @@ const ServicesOffer = () => {
                                             </div>
                                         </a>
                                     </li>
-                                    <li className='flex items-start gap-2'>
-                                        <a href="">
+                                    <li>
+                                        <a href="/services/lead-generation" className='flex items-start gap-2'>
                                             <Image
                                                 src="/check.svg"
                                                 width={30}
@@ -93,8 +92,8 @@ const ServicesOffer = () => {
                                             </div>
                                         </a>
                                     </li>
-                                    <li className='flex items-start gap-2'>
-                                        <a href="">
+                                    <li>
+                                        <a href="/services/app-marketing" className='flex items-start gap-2'>
                                             <Image
                                                 src="/check.svg"
                                                 width={30}
@@ -109,8 +108,8 @@ const ServicesOffer = () => {
                                             </div>
                                         </a>
                                     </li>
-                                    <li className='flex items-start gap-2'>
-                                        <a href="">
+                                    <li>
+                                        <a href="/services/app-marketing" className='flex items-start gap-2'>
                                             <Image
                                                 src="/check.svg"
                                                 width={30}
@@ -126,16 +125,18 @@ const ServicesOffer = () => {
                                         </a>
                                     </li>
                                 </ul>
-                                <a href="">
+                                <a href="/services" className='absolute bottom-[3%] lg:right-[28%] md:right-[15%]'>
                                     <div className='flex w-[200px] m-auto items-center p-3 justify-evenly border border-solid text-center border-homepagebtn cursor-pointer rounded-[10px] group-hover:bg-homepagebtn'>
-                                        <button className='font-medium text-homepagebtn group-hover:text-white'>Explore Now</button>
-                                        <span className='text-homepagebtn group-hover:text-white'><FaLongArrowAltRight /></span>
+                                        <div className='flex items-center justify-center gap-[5px]'>
+                                            <button className='font-medium text-homepagebtn group-hover:text-white'>Explore Now</button>
+                                            <span className='text-homepagebtn group-hover:text-white mt-[2px]'><FaLongArrowAltRight /></span>
+                                        </div>
                                     </div>
                                 </a>
                             </div>
                         </div>
                         <div data-aos="fade-left" data-aos-once="true" className='second flex justify-center'>
-                            <div className='group rounded-[10px] border border-solid border-[#EFEFEF] hover:shadow-serviceoffer p-5 lg:h-[610px] md:h-[635px] w-[335px] md:w-[284px] lg:w-[430px]'>
+                            <div className='relative group rounded-[10px] border border-solid border-[#EFEFEF] hover:shadow-serviceoffer p-5 lg:h-[500px] md:h-[560px] w-[335px] md:w-[284px] lg:w-[430px]'>
                                 <div className="flex items-start justify-start gap-4 pb-6">
                                     <div className='rounded-full bg-[#EAF0FF] w-10 h-10 flex items-center justify-center'>
                                         <Image
@@ -149,9 +150,9 @@ const ServicesOffer = () => {
                                     </div>
                                     <h6 className='text-[20px] font-bold text-[#000] leading-normal'>Analytics Services</h6>
                                 </div>
-                                <ul className='grid gap-4 pb-6 lg:pb-[100px] md:pb-[55px]'>
-                                    <li className='flex items-start gap-2'>
-                                        <a href="">
+                                <ul className='grid gap-4 pb-[75px]'>
+                                    <li>
+                                        <a href="/services/analytics?id=web-app-measurement" className='flex items-start gap-2'>
                                             <Image
                                                 src="/check.svg"
                                                 width={30}
@@ -166,8 +167,8 @@ const ServicesOffer = () => {
                                             </div>
                                         </a>
                                     </li>
-                                    <li className='flex items-start gap-2'>
-                                        <a href="">
+                                    <li>
+                                        <a href="/services/analytics?id=audit-and-health-check" className='flex items-start gap-2'>
                                             <Image
                                                 src="/check.svg"
                                                 width={30}
@@ -182,8 +183,8 @@ const ServicesOffer = () => {
                                             </div>
                                         </a>
                                     </li>
-                                    <li className='flex items-start gap-2'>
-                                        <a href="">
+                                    <li>
+                                        <a href="/services/data-reporting-analysis" className='flex items-start gap-2'>
                                             <Image
                                                 src="/check.svg"
                                                 width={30}
@@ -198,8 +199,8 @@ const ServicesOffer = () => {
                                             </div>
                                         </a>
                                     </li>
-                                    <li className='flex items-start gap-2'>
-                                        <a href="">
+                                    <li>
+                                        <a href="/services/looker-bi-platform" className='flex items-start gap-2'>
                                             <Image
                                                 src="/check.svg"
                                                 width={30}
@@ -215,16 +216,18 @@ const ServicesOffer = () => {
                                         </a>
                                     </li>
                                 </ul>
-                                <a href="">
+                                <a href="/services/analytics?id=audit-and-health-check" className='absolute bottom-[3%] lg:right-[28%] md:right-[15%]'>
                                     <div className='flex w-[200px] m-auto items-center p-3 justify-evenly border border-solid text-center border-homepagebtn cursor-pointer rounded-[10px] group-hover:bg-homepagebtn'>
-                                        <button className='font-medium text-homepagebtn group-hover:text-white'>Explore Now</button>
-                                        <span className='text-homepagebtn group-hover:text-white'><FaLongArrowAltRight /></span>
+                                        <div className='flex items-center justify-center gap-[5px]'>
+                                            <button className='font-medium text-homepagebtn group-hover:text-white'>Explore Now</button>
+                                            <span className='text-homepagebtn group-hover:text-white mt-[2px]'><FaLongArrowAltRight /></span>
+                                        </div>
                                     </div>
                                 </a>
                             </div>
                         </div>
                         <div data-aos="fade-right" data-aos-once="true" className='third flex justify-center'>
-                            <div className='group rounded-[10px] border border-solid border-[#EFEFEF] hover:shadow-serviceoffer p-5 lg:h-[610px] md:h-[635px] w-[335px] md:w-[284px] lg:w-[430px]'>
+                            <div className='relative group rounded-[10px] border border-solid border-[#EFEFEF] hover:shadow-serviceoffer p-5 lg:h-[415px] md:h-[560px] w-[335px] md:w-[284px] lg:w-[430px]'>
                                 <div className="flex items-start justify-start gap-4 pb-6">
                                     <div className='rounded-full bg-[#EAF0FF] w-10 h-10 flex items-center justify-center'>
                                         <Image
@@ -238,9 +241,9 @@ const ServicesOffer = () => {
                                     </div>
                                     <h6 className='text-[20px] font-bold text-[#000] leading-normal'>Solutions</h6>
                                 </div>
-                                <ul className='grid gap-4 pb-6 lg:pb-[180px] md:pb-[110px]'>
-                                    <li className='flex items-start gap-2'>
-                                        <a href="">
+                                <ul className='grid gap-4 pb-[75px]'>
+                                    <li>
+                                        <a href="/contact?id=data-reporting" className='flex items-start gap-2'>
                                             <Image
                                                 src="/check.svg"
                                                 width={30}
@@ -255,8 +258,8 @@ const ServicesOffer = () => {
                                             </div>
                                         </a>
                                     </li>
-                                    <li className='flex items-start gap-2'>
-                                        <a href="">
+                                    <li>
+                                        <a href="/contact?id=data-reporting" className='flex items-start gap-2'>
                                             <Image
                                                 src="/check.svg"
                                                 width={30}
@@ -271,8 +274,8 @@ const ServicesOffer = () => {
                                             </div>
                                         </a>
                                     </li>
-                                    <li className='flex items-start gap-2'>
-                                        <a href="">
+                                    <li>
+                                        <a href="/contact?id=data-reporting" className='flex items-start gap-2'>
                                             <Image
                                                 src="/check.svg"
                                                 width={30}
@@ -288,16 +291,18 @@ const ServicesOffer = () => {
                                         </a>
                                     </li>
                                 </ul>
-                                <a href="">
+                                <a href="/contact?id=data-reporting" className='absolute bottom-[3%] lg:right-[28%] md:right-[15%]'>
                                     <div className='flex w-[200px] m-auto items-center p-3 justify-evenly border border-solid text-center border-homepagebtn cursor-pointer rounded-[10px] group-hover:bg-homepagebtn'>
-                                        <button className='font-medium text-homepagebtn group-hover:text-white'>Explore Now</button>
-                                        <span className='text-homepagebtn group-hover:text-white'><FaLongArrowAltRight /></span>
+                                        <div className='flex items-center justify-center gap-[5px]'>
+                                            <button className='font-medium text-homepagebtn group-hover:text-white'>Explore Now</button>
+                                            <span className='text-homepagebtn group-hover:text-white mt-[2px]'><FaLongArrowAltRight /></span>
+                                        </div>
                                     </div>
                                 </a>
                             </div>
                         </div>
                         <div data-aos="fade-left" data-aos-once="true" className='fourth flex justify-center'>
-                            <div className='group rounded-[10px] border border-solid border-[#EFEFEF] hover:shadow-serviceoffer p-5 lg:h-[610px] md:h-[635px] w-[335px] md:w-[284px] lg:w-[430px]'>
+                            <div className='relative group rounded-[10px] border border-solid border-[#EFEFEF] hover:shadow-serviceoffer p-5 lg:h-[415px] md:h-[560px] w-[335px] md:w-[284px] lg:w-[430px]'>
                                 <div className="flex items-start justify-start gap-4 pb-6">
                                     <div className='rounded-full bg-[#EAF0FF] w-10 h-10 flex items-center justify-center'>
                                         <Image
@@ -311,9 +316,9 @@ const ServicesOffer = () => {
                                     </div>
                                     <h6 className='text-[20px] font-bold text-[#000] leading-normal'>Training and Consultation</h6>
                                 </div>
-                                <ul className='grid gap-4 pb-6 lg:pb-[260px] md:pb-[205px]'>
-                                    <li className='flex items-start gap-2'>
-                                        <a href="">
+                                <ul className='grid gap-4 pb-[75px]'>
+                                    <li>
+                                        <a href="/services/training" className='flex items-start gap-2'>
                                             <Image
                                                 src="/check.svg"
                                                 width={30}
@@ -328,8 +333,8 @@ const ServicesOffer = () => {
                                             </div>
                                         </a>
                                     </li>
-                                    <li className='flex items-start gap-2'>
-                                        <a href="">
+                                    <li>
+                                        <a href="/services/training" className='flex items-start gap-2'>
                                             <Image
                                                 src="/check.svg"
                                                 width={30}
@@ -345,10 +350,12 @@ const ServicesOffer = () => {
                                         </a>
                                     </li>
                                 </ul>
-                                <a href="">
+                                <a href="/services/training" className='absolute bottom-[3%] lg:right-[28%] md:right-[15%]'>
                                     <div className='flex w-[200px] m-auto items-center p-3 justify-evenly border border-solid text-center border-homepagebtn cursor-pointer rounded-[10px] group-hover:bg-homepagebtn'>
-                                        <button className='font-medium text-homepagebtn group-hover:text-white'>Explore Now</button>
-                                        <span className='text-homepagebtn group-hover:text-white'><FaLongArrowAltRight /></span>
+                                        <div className='flex items-center justify-center gap-[5px]'>
+                                            <button className='font-medium text-homepagebtn group-hover:text-white'>Explore Now</button>
+                                            <span className='text-homepagebtn group-hover:text-white mt-[2px]'><FaLongArrowAltRight /></span>
+                                        </div>
                                     </div>
                                 </a>
                             </div>
