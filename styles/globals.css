@@ -295,7 +295,7 @@ input[type=number] {
 }
 
 .butn {
-  @apply relative overflow-hidden z-10 bg-homepagebtn text-[#fff] border border-homepagebtn cursor-pointer font-bold leading-normal not-italic inline rounded-[10px] py-[10px] px-[33px] mb-3 transition-all duration-300 ease-linear hover:text-homepagebtn shadow-foter
+  @apply relative overflow-hidden z-10 bg-homepagebtn text-[#fff] border border-homepagebtn cursor-pointer font-medium not-italic inline rounded-[14px] py-[15px] px-[40px] mb-3 transition-all duration-300 ease-linear hover:text-homepagebtn shadow-foter
 }
 
 .butn::before {
@@ -367,15 +367,6 @@ iframe {
   display: none;
 }
 
-/*  */
-.f {
-  background-image: url(../public/Group\ \(1\).png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: #f0f0f966;
-  background-blend-mode: multiply;
-}
-
 .a {
   grid-area: span 1 / span 2;
 }
@@ -409,4 +400,10 @@ iframe {
 }
 .testimonial h2{
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+section.powerup {
+  background: linear-gradient(177deg, #0170B9, #3a3a3a2b,#06b6d47d);
+}
+.footer{
+  background: linear-gradient(177deg, #0170B9, #3a3a3a2b,#06b6d47d);
 }
