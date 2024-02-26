@@ -18,7 +18,7 @@ const PowerUp = () => {
                     <div data-aos="fade-up" data-aos-duration="1000" data-aos-once="true" class="grid lg:grid-cols-11 md:grid-cols-6 lg:gap-2 gap-[24px] pt-[50px]">
                         <div class="a col-span-1 grid-area-span-1 flex justify-center">
                             <div className='cursor-pointer'>
-                                <div className='bg-[#ffffffcc] hover:shadow-serviceoffer p-[10px] pt-6 rounded-[10px] border border-solid border-[#E4E4E4] 2xl:h-[230px] xl:h-[270px] lg:h-[295px] md:h-[305px] h-[215px] max-[767px]:w-[300px] lg:w-[205px] xl:w-[260px] 2xl:w-[325px]'>
+                                <div className='bg-[#ffffffcc] hover:shadow-serviceoffer p-[10px] pt-6 rounded-[10px] border border-solid border-[#E4E4E4] 2xl:h-[230px] xl:h-[270px] lg:h-[295px] md:h-[305px] h-[235px] max-[767px]:w-[300px] md:w-[240px] lg:w-[205px] xl:w-[260px] 2xl:w-[325px]'>
                                     <div className='flex items-center justify-center gap-2 pb-8'>
                                         <Image
                                             src="/data-collection.svg"
@@ -40,7 +40,7 @@ const PowerUp = () => {
                         </div>
                         <div class="c col-span-1 grid-area-span-3 flex justify-center">
                             <div className='cursor-pointer'>
-                                <div className='bg-[#ffffffcc] hover:shadow-serviceoffer p-[10px] pt-6 rounded-[10px] border border-solid border-[#E4E4E4] 2xl:h-[230px] xl:h-[270px] lg:h-[295px] md:h-[305px] h-[215px] max-[767px]:w-[300px] lg:w-[205px] xl:w-[260px] 2xl:w-[325px]'>
+                                <div className='bg-[#ffffffcc] hover:shadow-serviceoffer p-[10px] pt-6 rounded-[10px] border border-solid border-[#E4E4E4] 2xl:h-[230px] xl:h-[270px] lg:h-[295px] md:h-[305px] h-[235px] max-[767px]:w-[300px] md:w-[240px] lg:w-[205px] xl:w-[260px] 2xl:w-[325px]'>
                                     <div className='flex items-center justify-center gap-2 pb-8'>
                                         <Image
                                             src="/data-collection_2.svg"
@@ -62,7 +62,7 @@ const PowerUp = () => {
                         </div>
                         <div class="e col-span-1 grid-area-span-5 flex justify-center">
                             <div className='cursor-pointer'>
-                                <div className='bg-[#ffffffcc] hover:shadow-serviceoffer p-[10px] pt-6 rounded-[10px] border border-solid border-[#E4E4E4] 2xl:h-[230px] xl:h-[270px] lg:h-[295px] md:h-[290px] h-[215px] max-[767px]:w-[300px] lg:w-[205px] xl:w-[260px] 2xl:w-[325px]'>
+                                <div className='bg-[#ffffffcc] hover:shadow-serviceoffer p-[10px] pt-6 rounded-[10px] border border-solid border-[#E4E4E4] 2xl:h-[230px] xl:h-[270px] lg:h-[295px] md:h-[290px] h-[235px] max-[767px]:w-[300px] md:w-[240px] lg:w-[205px] xl:w-[260px] 2xl:w-[325px]'>
                                     <div className='flex items-center justify-center gap-2 pb-8'>
                                         <Image
                                             src="/data-collection_3.svg"
@@ -84,7 +84,7 @@ const PowerUp = () => {
                         </div>
                         <div class="h col-span-1 grid-area-span-7 flex justify-center">
                             <div className='cursor-pointer'>
-                                <div className='bg-[#ffffffcc] hover:shadow-serviceoffer p-[10px] pt-6 rounded-[10px] border border-solid border-[#E4E4E4] 2xl:h-[230px] xl:h-[270px] lg:h-[295px] md:h-[290px] h-[215px] max-[767px]:w-[300px] lg:w-[205px] xl:w-[260px] 2xl:w-[325px]'>
+                                <div className='bg-[#ffffffcc] hover:shadow-serviceoffer p-[10px] pt-6 rounded-[10px] border border-solid border-[#E4E4E4] 2xl:h-[230px] xl:h-[270px] lg:h-[295px] md:h-[290px] h-[235px] max-[767px]:w-[300px] md:w-[240px] lg:w-[205px] xl:w-[260px] 2xl:w-[325px]'>
                                     <div className='flex items-center justify-center gap-2 pb-8'>
                                         <Image
                                             src="/data-collection_4.svg"

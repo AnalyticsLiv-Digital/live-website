@@ -29,7 +29,7 @@ const ServicesOffer = () => {
                     </div>
                     <div className='grid md:grid-cols-2 items-center gap-10 pt-8'>
                         <div data-aos="fade-right" data-aos-once="true" className='first flex justify-center'>
-                            <div className='relative group rounded-[10px] border border-solid border-[#EFEFEF] hover:shadow-serviceoffer p-5 lg:h-[500px] md:h-[560px] w-[335px] md:w-[284px] lg:w-[430px]'>
+                            <div className='relative group rounded-[10px] border border-solid border-[#EFEFEF] hover:shadow-serviceoffer p-5 lg:h-[500px] md:h-[585px] w-[335px] md:w-[284px] lg:w-[430px]'>
                                 <div className="flex items-start justify-start gap-4 pb-6">
                                     <div className='rounded-full bg-[#EAF0FF] w-10 h-10 flex items-center justify-center'>
                                         <Image
@@ -136,7 +136,7 @@ const ServicesOffer = () => {
                             </div>
                         </div>
                         <div data-aos="fade-left" data-aos-once="true" className='second flex justify-center'>
-                            <div className='relative group rounded-[10px] border border-solid border-[#EFEFEF] hover:shadow-serviceoffer p-5 lg:h-[500px] md:h-[560px] w-[335px] md:w-[284px] lg:w-[430px]'>
+                            <div className='relative group rounded-[10px] border border-solid border-[#EFEFEF] hover:shadow-serviceoffer p-5 lg:h-[500px] md:h-[585px] w-[335px] md:w-[284px] lg:w-[430px]'>
                                 <div className="flex items-start justify-start gap-4 pb-6">
                                     <div className='rounded-full bg-[#EAF0FF] w-10 h-10 flex items-center justify-center'>
                                         <Image
@@ -227,7 +227,7 @@ const ServicesOffer = () => {
                             </div>
                         </div>
                         <div data-aos="fade-right" data-aos-once="true" className='third flex justify-center'>
-                            <div className='relative group rounded-[10px] border border-solid border-[#EFEFEF] hover:shadow-serviceoffer p-5 lg:h-[415px] md:h-[560px] w-[335px] md:w-[284px] lg:w-[430px]'>
+                            <div className='relative group rounded-[10px] border border-solid border-[#EFEFEF] hover:shadow-serviceoffer p-5 lg:h-[415px] md:h-[585px] w-[335px] md:w-[284px] lg:w-[430px]'>
                                 <div className="flex items-start justify-start gap-4 pb-6">
                                     <div className='rounded-full bg-[#EAF0FF] w-10 h-10 flex items-center justify-center'>
                                         <Image
@@ -243,7 +243,7 @@ const ServicesOffer = () => {
                                 </div>
                                 <ul className='grid gap-4 pb-[75px]'>
                                     <li>
-                                        <a href="/contact?id=data-reporting" className='flex items-start gap-2'>
+                                        <a href="/services/data-reporting-analysis" className='flex items-start gap-2'>
                                             <Image
                                                 src="/check.svg"
                                                 width={30}
@@ -259,7 +259,7 @@ const ServicesOffer = () => {
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="/contact?id=data-reporting" className='flex items-start gap-2'>
+                                        <a href="/services/data-reporting-analysis" className='flex items-start gap-2'>
                                             <Image
                                                 src="/check.svg"
                                                 width={30}
@@ -275,7 +275,7 @@ const ServicesOffer = () => {
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="/contact?id=data-reporting" className='flex items-start gap-2'>
+                                        <a href="/services/data-reporting-analysis" className='flex items-start gap-2'>
                                             <Image
                                                 src="/check.svg"
                                                 width={30}
@@ -291,7 +291,7 @@ const ServicesOffer = () => {
                                         </a>
                                     </li>
                                 </ul>
-                                <a href="/contact?id=data-reporting" className='absolute bottom-[3%] lg:right-[28%] md:right-[15%]'>
+                                <a href="/services/data-reporting-analysis" className='absolute bottom-[3%] lg:right-[28%] md:right-[15%]'>
                                     <div className='flex w-[200px] m-auto items-center p-3 justify-evenly border border-solid text-center border-homepagebtn cursor-pointer rounded-[10px] group-hover:bg-homepagebtn'>
                                         <div className='flex items-center justify-center gap-[5px]'>
                                             <button className='font-medium text-homepagebtn group-hover:text-white'>Explore Now</button>
@@ -302,7 +302,7 @@ const ServicesOffer = () => {
                             </div>
                         </div>
                         <div data-aos="fade-left" data-aos-once="true" className='fourth flex justify-center'>
-                            <div className='relative group rounded-[10px] border border-solid border-[#EFEFEF] hover:shadow-serviceoffer p-5 lg:h-[415px] md:h-[560px] w-[335px] md:w-[284px] lg:w-[430px]'>
+                            <div className='relative group rounded-[10px] border border-solid border-[#EFEFEF] hover:shadow-serviceoffer p-5 lg:h-[415px] md:h-[585px] w-[335px] md:w-[284px] lg:w-[430px]'>
                                 <div className="flex items-start justify-start gap-4 pb-6">
                                     <div className='rounded-full bg-[#EAF0FF] w-10 h-10 flex items-center justify-center'>
                                         <Image

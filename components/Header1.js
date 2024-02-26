@@ -153,7 +153,7 @@ useEffect(() => {
                  <div onClick={() => {setIsServices(!isServices); setIsResources(false);}} >Services</div>
                   {isServices ? (<motion.div initial={{ y: 10, opacity:0 }} animate={{ y:0, opacity:1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }}className='transition ease-out duration-200 px-4 text-cyan-400  divide-y-2'>
                             
-                            <div onClick={() => {setSubmenu("1")}} ><div className="py-2 w-56 ">Marketing Services</div></div>
+                            <div onClick={() => {setSubmenu("1")}} ><div className="py-2 w-56 ">Media</div></div>
                             {submenu=="1" && <motion.div onClick={() => {setIsOpen(!isOpen); setIsServices(false);}} initial={{ y: 10, opacity:0 }} animate={{ y:0, opacity:1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }}className='transition ease-out duration-200 px-4 '>
                             <div class="flex items-center py-1 gap-2
                                     ">
@@ -167,22 +167,17 @@ useEffect(() => {
                                             class="text-menuheading font-poppins text-base font-medium leading-normal">Lead generation</Link>
                                     </div>
                                     <div class="flex items-center py-1 gap-2">
-                                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-paid.png" alt="paid_logo" className="-ml-[5px]" />
+                                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-paid.png" alt="paid_logo"/>
                                         <Link href="/services/ecommerce-marketing"
-                                            class="text-menuheading font-poppins text-base font-medium leading-normal">eCommerce Marketing</Link>
+                                            class="text-menuheading font-poppins text-base font-medium leading-normal">Search/E-Commerce Marketing</Link>
                                     </div>
                                     <div class="flex items-center py-1 gap-2">
                                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-paid.png" alt="paid_logo"/>
                                         <Link href="/services/programatic-advertising"
-                                            class="text-menuheading font-poppins text-base font-medium leading-normal">Programmatic Media Solutions</Link>
-                                    </div>
-                                    <div class="flex items-center py-1 gap-2">
-                                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/SEM.png" alt="paid_logo" className='w-[23px]' />
-                                        <Link href="/services/programatic-advertising"
-                                            class="text-menuheading font-poppins text-base font-medium leading-normal">SEM</Link>
+                                            class="text-menuheading font-poppins text-base font-medium leading-normal">Programatic Media Buying</Link>
                                     </div>
                             </motion.div>}  
-                            <div onClick={() => {setSubmenu("2")}} ><div className="py-2 w-56 ">Analytics Services</div></div>
+                            <div onClick={() => {setSubmenu("2")}} ><div className="py-2 w-56 ">Analytics</div></div>
                             {submenu=="2" && <motion.div onClick={() => {setIsOpen(!isOpen); setIsServices(false);}} initial={{ y: 10, opacity:0 }} animate={{ y:0, opacity:1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }}className='transition ease-out duration-200 px-4 '>
                             <div class="flex items-center py-1 gap-2
                                     ">
@@ -198,6 +193,12 @@ useEffect(() => {
                                             and App measurement</Link>
                                     </div>
                                     <div class="flex items-center py-1 gap-2">
+                                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytics_GA4_logo.png" alt="GA4_logo"/>
+                                        <Link href="/services/analytics?id=ga4-implementation"
+                                            class="text-menuheading font-poppins text-base font-medium leading-normal">GA4
+                                            Implementation</Link>
+                                    </div>
+                                    <div class="flex items-center py-1 gap-2">
                                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytis_data-reporting.logo.png"
                                             alt="data-reporting_logo"/>
                                         <Link href="/services/data-reporting-analysis"
@@ -211,8 +212,16 @@ useEffect(() => {
                                             BI Platform</Link>
                                     </div>
                             </motion.div>}  
-                            <div onClick={() => {setSubmenu("3")}} ><div className="py-2 w-56 ">Solutions</div></div>
+                            <div onClick={() => {setSubmenu("3")}} ><div className="hidden py-2 w-56 ">Solutions</div></div>
                             {submenu=="3" && <motion.div onClick={() => {setIsOpen(!isOpen); setIsServices(false);}} initial={{ y: 10, opacity:0 }} animate={{ y:0, opacity:1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }}className='transition ease-out duration-200 px-4 '>
+                            <div class="flex items-center py-1 gap-2
+                                    ">
+                                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_data-migration.logo.png"
+                                            alt="data-migration_logo"/>
+                                        <Link href="#"
+                                            class="text-menuheading font-poppins text-base font-medium leading-normal">Seamless
+                                            Data Migration</Link>
+                                    </div>
                                     <div class="flex items-center py-1 gap-2">
                                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_GDRP.logo.png" alt="GDRP_logo"/>
                                         <Link href="#"
@@ -226,25 +235,12 @@ useEffect(() => {
                                             class="text-menuheading font-poppins text-base font-medium leading-normal">Data
                                             Science Solution & Automation</Link>
                                     </div>
-                                    <div class="flex items-center py-1 gap-2">
-                                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_Data_Attribution.png"
-                                            alt="Data-Science_logo"/>
-                                        <Link href="#"
-                                            class="text-menuheading font-poppins text-base font-medium leading-normal">Custom Data Attribution Model</Link>
-                                    </div>
                             </motion.div>}  
                             <div onClick={() => {setSubmenu("4")}} ><div className="py-2 w-56 ">Training & Consultation</div></div>
                             {submenu=="4" && <motion.div onClick={() => {setIsOpen(!isOpen); setIsServices(false);}} initial={{ y: 10, opacity:0 }} animate={{ y:0, opacity:1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }}className='transition ease-out duration-200 px-4 '>
-                                <div class="flex items-center py-1 gap-2
-                                ">
-                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_Training-Details.logo.png"
-                                        alt="Training-Details_logo"/>
-                                    <Link href="/services/training"
-                                        class="text-menuheading font-poppins text-base font-medium leading-normal">Schedule a One-Hour Consultation</Link>
-                                </div>
-                                <div class="flex items-center py-1 gap-2
+                            <div class="flex items-center py-1 gap-2
                                     ">
-                                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/training_Schedule.png"
+                                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_Training-Details.logo.png"
                                             alt="Training-Details_logo"/>
                                         <Link href="/services/training"
                                             class="text-menuheading font-poppins text-base font-medium leading-normal">Training
@@ -300,7 +296,7 @@ useEffect(() => {
                                     class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b lg:border-b-0 pb-6 pt-6 lg:pt-3">
                                     <div class="flex items-center">
 
-                                        <h3 class="text-menuheading font-poppins text-2xl font-bold">Marketing Services</h3>
+                                        <h3 class="text-menuheading font-poppins text-2xl font-bold">Media</h3>
                                     </div> <br/>
 
                                     <div class="flex items-center py-3 gap-2
@@ -317,24 +313,19 @@ useEffect(() => {
                                     <div class="flex items-center py-3 gap-2">
                                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-E-commerce.png" alt="paid_logo"/>
                                         <Link href="/services/ecommerce-marketing"
-                                            class="text-menuheading font-poppins text-base font-medium leading-normal">eCommerce Marketing</Link>
+                                            class="text-menuheading font-poppins text-base font-medium leading-normal">Search/E-Commerce Marketing</Link>
                                     </div>
                                     <div class="flex items-center py-3 gap-2">
                                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-paid.png" alt="paid_logo"/>
                                         <Link href="/services/programatic-advertising"
-                                            class="text-menuheading font-poppins text-base font-medium leading-normal">Programmatic Media Solutions</Link>
-                                    </div>
-                                    <div class="flex items-center py-3 gap-2">
-                                        <img className='w-[23px]' src="https://storage.googleapis.com/website-bucket-uploads/static/SEM.png" alt="paid_logo" />
-                                        <Link href="/services/programatic-advertising"
-                                            class="text-menuheading font-poppins text-base font-medium leading-normal">SEM</Link>
+                                            class="text-menuheading font-poppins text-base font-medium leading-normal">Programatic Media Buying</Link>
                                     </div>
                                 </ul>
                                 <ul
                                     class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b lg:border-b-0 pb-6 pt-6 lg:pt-3">
                                     <div class="flex items-center">
 
-                                        <h3 class="text-menuheading font-poppins text-2xl font-bold">Analytics Services</h3>
+                                        <h3 class="text-menuheading font-poppins text-2xl font-bold">Analytics</h3>
                                     </div> <br/>
 
                                     <div class="flex items-center py-3 gap-2
@@ -351,6 +342,12 @@ useEffect(() => {
                                             and App measurement</Link>
                                     </div>
                                     <div class="flex items-center py-3 gap-2">
+                                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytics_GA4_logo.png" alt="GA4_logo"/>
+                                        <Link href="/services/analytics?id=ga4-implementation"
+                                            class="text-menuheading font-poppins text-base font-medium leading-normal">GA4
+                                            Implementation</Link>
+                                    </div>
+                                    <div class="flex items-center py-3 gap-2">
                                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytis_data-reporting.logo.png"
                                             alt="data-reporting_logo"/>
                                         <Link href="/services/data-reporting-analysis"
@@ -365,13 +362,20 @@ useEffect(() => {
                                     </div>
                                 </ul>
                                 <ul
-                                    class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b lg:border-b-0 pb-6 pt-6 lg:pt-3">
+                                    class="hidden px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b lg:border-b-0 pb-6 pt-6 lg:pt-3">
                                     <div class="flex items-center">
 
                                         <h3 class="text-menuheading font-poppins text-2xl font-bold">Solutions</h3>
                                     </div> <br/>
 
-                                    
+                                    <div class="flex items-center py-3 gap-2
+                                    ">
+                                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_data-migration.logo.png"
+                                            alt="data-migration_logo"/>
+                                        <Link href="#"
+                                            class="text-menuheading font-poppins text-base font-medium leading-normal">Seamless
+                                            Data Migration</Link>
+                                    </div>
                                     <div class="flex items-center py-3 gap-2">
                                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_GDRP.logo.png" alt="GDRP_logo"/>
                                         <Link href="#"
@@ -385,12 +389,6 @@ useEffect(() => {
                                             class="text-menuheading font-poppins text-base font-medium leading-normal">Data
                                             Science Solution & Automation</Link>
                                     </div>
-                                    <div class="flex items-center py-3 gap-2">
-                                        <img className="w-[23px]" src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_Data_Attribution.png"
-                                            alt="Data-Science_logo"/>
-                                        <Link href="#"
-                                            class="text-menuheading font-poppins text-base font-medium leading-normal">Custom Data Attribution Model</Link>
-                                    </div>
                                 </ul>
                                 <ul
                                     class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b lg:border-b-0 pb-6 pt-6 lg:pt-3">
@@ -398,13 +396,6 @@ useEffect(() => {
                                         <h3 class="text-menuheading font-poppins text-2xl font-bold">Training &
                                             Consultation</h3>
                                     </div> <br/>
-                                    <div class="flex items-center py-3 gap-2
-                                    ">
-                                        <img className='w-[23px]' src="https://storage.googleapis.com/website-bucket-uploads/static/training_Schedule.png"
-                                            alt="Training-Details_logo"/>
-                                        <Link href="/services/training"
-                                            class="text-menuheading font-poppins text-base font-medium leading-normal">Schedule a One-Hour Consultation</Link>
-                                    </div>
                                     <div class="flex items-center py-3 gap-2
                                     ">
                                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_Training-Details.logo.png"

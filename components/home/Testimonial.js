@@ -108,18 +108,6 @@ const Testimonial = () => {
                                     </div>
                                     <p className='text-[#000] text-base font-normal leading-normal'>"The AnalyticsLiv team estimated the job length accurately and then carried out the work exactly as briefed, to time and budget. We had one brief hiccup in the conversion tracking code but that was swiftly fixed once identified. Would definitely consider using it again and for more advanced reporting functionality in future"</p>
                                 </div>
-                                <div aria-hidden="true" className="testimonial3 text-center">
-                                    <div className='flex items-center justify-center gap-4 pb-8'>
-                                        <Image
-                                            src="/Character_1.svg"
-                                            width={50}
-                                            height={50}
-                                            alt="Picture of client"
-                                        />
-                                        <h4 className='text-[#000] text-[25px] font-semibold leading-normal'>Una</h4>
-                                    </div>
-                                    <p className='text-[#000] text-base font-normal leading-normal'>"AnalyticsLiv helped us set up and manage our GA4 account, and we're so glad we did. They were patient and knowledgeable, and they always made sure we understood what they were doing. We're now able to track our website traffic and marketing campaigns more effectively, and we're confident that we're making better business decisions as a result."</p>
-                                </div>
                                 <div aria-hidden="true" className="testimonial4 text-center">
                                     <div className='flex items-center justify-center gap-4 pb-8'>
                                         <Image
@@ -132,7 +120,6 @@ const Testimonial = () => {
                                     </div>
                                     <p className='text-[#000] text-base font-normal leading-normal'>"AnalyticsLiv has been FUTEK web analytics partner for almost 3 years now. They supported us with GTM implementation, GA to GA4 migration, Looker studio dashboard creations and Google cloud storage implementation. They respond to our request in a timely manner and make their best efforts to resolve the web analytics issues. We are happy with the support provided by AnalyticsLiv"</p>
                                 </div>
-                                
                             </Slider>
                         </div>
                     </div>
