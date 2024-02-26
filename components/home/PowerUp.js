@@ -29,7 +29,7 @@ const PowerUp = () => {
                                         />
                                         <h2 className='text-[20px] font-semibold text-[#000] leading-normal'>Collect</h2>
                                     </div>
-                                    <p className='xl:text-[14px] text-[13px] font-normal text-[#000] leading-[24px]'>We begin with the deep understanding of client’s business potential, the scope of work, and Track customer’s movement and actions to understand user interaction and experiences, and to attribute conversions accurately</p>
+                                    <p className='xl:text-[14px] text-[13px] font-normal text-[#000] leading-[24px]'>We start by deeply understanding the client's business potential, scope of work, and track customer movements to gauge user interactions and experiences for accurate conversion attribution</p>
                                 </div>
                             </div>
                         </div>
