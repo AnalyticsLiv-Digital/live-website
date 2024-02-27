@@ -40,6 +40,37 @@ const handler = async (req, res) => {
             }
           });
 
+          var transporter2 = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+              user: "sales@analyticsliv.com",
+              pass: "dnrbtjcwznyhouvo"
+            }
+          });
+          
+    
+  
+          var mailOptions2 = {
+            from: "sales@analyticsliv.com",
+            to: [req.body.email, "anuj@analyticsliv.com"],
+            subject: 'Analyticsliv - Thankyou for contacting us.',
+            html: `Hi ${req.body.fullName},<br>
+            Thank you for reaching out to AnalyticsLiv, one of the fastest growing Google Marketing Platform Partner in India. Our Services have empowered more than 500 businesses to use first party data for analysis and marketing purposes, making businesses independent of third party data intelligence.<br>
+            
+            We will study the details you have shared and will get back to you with a response to help your business. Meanwhile, you can have a look through our services on <a href="https://analyticsliv.com">www.analyticsliv.com </a> or for any quick chat, contact us at: <br>
+            Mobile: <a href="tel:+918320576622">+91 83205 76622</a> <br>
+            Email: <a href="mailto:support@analyticsliv.com" class="">support@analyticsliv.com</a>`
+          };
+          
+          transporter2.sendMail(mailOptions2, function(error, info){
+            if (error) {
+              console.log(error);
+            } else {
+              console.log('Email sent: ' + info.response);
+            }
+          });
+  
+
     } else {
         res.status(400).json({ error: "Bad Request" });
     }
