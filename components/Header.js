@@ -164,7 +164,7 @@ const header = () => {
                           class="text-menuheading font-poppins text-base font-normal leading-normal">Programmatic Media Dv-360</Link>
                       </div>
                       <div class="flex items-center py-1 gap-2">
-                        <img className='w-[23px]' src="https://storage.googleapis.com/website-bucket-uploads/static/SEM.png" alt="paid_logo" />
+                        <img className='w-[35px]' src="https://storage.googleapis.com/website-bucket-uploads/static/SEM.png" alt="paid_logo" />
                         <Link href="/services/ecommerce-marketing"
                           class="text-menuheading font-poppins text-base font-normal leading-normal">eCommerce Marketing</Link>
                       </div>
@@ -174,7 +174,7 @@ const header = () => {
                           class="text-menuheading font-poppins text-base font-normal leading-normal">Lead generation</Link>
                       </div>
                       <div class="flex items-center py-1 gap-2">
-                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/SEM.png" alt="paid_logo" className="-ml-[5px]" />
+                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/SEM.png" alt="paid_logo" className="-ml-[5px] w-[35px]" />
 
                         <Link href="/services/programatic-advertising"
                           class="text-menuheading font-poppins text-base font-normal leading-normal">Search engine marketing</Link>
@@ -231,7 +231,7 @@ const header = () => {
                           Science Solution & Automation</Link>
                       </div>
                       <div class="flex items-center py-1 gap-2">
-                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_Data_Attribution.png"
+                        <img className="w-[35px]" src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_Data_Attribution.png"
                           alt="Data-Science_logo" />
                         <Link href="#"
                           class="text-menuheading font-poppins text-base font-normal leading-normal">Custom Data Attribution Model</Link>
@@ -248,7 +248,7 @@ const header = () => {
                       </div>
                       <div class="flex items-center py-1 gap-2
                                     ">
-                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/training_Schedule.png"
+                        <img className="w-[35px]" src="https://storage.googleapis.com/website-bucket-uploads/static/training_Schedule.png"
                           alt="Training-Details_logo" />
                         <Link href="/services/training"
                           class="text-menuheading font-poppins text-base font-normal leading-normal">Training
