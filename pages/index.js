@@ -18,7 +18,7 @@ const page = () => {
 
   return (
     <>
-    <ScrollProgress />
+  
             <Head>
                 <meta name="description" content="AnalyticsLiv Digital is one of the leading Web and App analytics agency. We help our customers embrace Google Products to improve their customer experiences."/>
                 <title>Leading Web and App Analytics Agency in India - AnalyticsLiv</title>

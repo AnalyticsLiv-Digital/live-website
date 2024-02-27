@@ -401,9 +401,45 @@ iframe {
 .testimonial h2{
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
-section.powerup {
+/* section.powerup {
   background: linear-gradient(177deg, #0170B9, #3a3a3a2b,#06b6d47d);
+} */
+/* .footer{
+  background: linear-gradient(177deg, #0170B9, #3a3a3a2b,#06b6d47d);
+} */
+.marquee-container {
+  overflow-x: hidden !important;
+  display: flex !important;
+  flex-direction: row !important;
+  position: relative;
+  width: 100%;
+  --pause-on-hover: paused;
+  --pause-on-click: paused;
 }
-.footer{
-  background: linear-gradient(177deg, #0170B9, #3a3a3a2b,#06b6d47d);
+
+.marquee {
+  flex: 0 0 auto;
+  min-width: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  animation: slide 50s linear infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-slide {
+  animation: slide 10s linear infinite;
+}
+
+.marquee:hover {
+  animation-play-state: paused;
 }

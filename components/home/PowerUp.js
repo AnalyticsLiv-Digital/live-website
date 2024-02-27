@@ -9,11 +9,11 @@ const PowerUp = () => {
         Aos.init({ duration: 2000 });
     }, [])
     return (
-        <section className='powerup'>
+        <section className='powerup bg-cover bg-no-repeat' style={{backgroundImage: `url('/dv-home.png')`}}>
             <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
                 <div>
                     <div className='flex items-center justify-center'>
-                        <h2 className='text-[#ffffffe8] text-[40px] font-bold not-italic text-center'>HOW WE POWER UP YOUR BRAND</h2>
+                        <h2 className='text-[#ffffffe8] lg:text-[33px] text-2xl font-bold not-italic text-center'>HOW WE POWER UP YOUR BRAND</h2>
                     </div>
                     <div data-aos="fade-up" data-aos-duration="1000" data-aos-once="true" class="grid lg:grid-cols-11 md:grid-cols-6 lg:gap-2 gap-[24px] pt-[50px]">
                         <div class="a col-span-1 grid-area-span-1 flex justify-center">
@@ -29,7 +29,7 @@ const PowerUp = () => {
                                         />
                                         <h2 className='text-[20px] font-semibold text-[#000] leading-normal'>Collect</h2>
                                     </div>
-                                    <p className='xl:text-[14px] text-[13px] font-normal text-[#000] leading-[24px]'>We start by deeply understanding the client's business potential, scope of work, and track customer movements to gauge user interactions and experiences for accurate conversion attribution</p>
+                                    <p className='xl:text-[14px] text-[13px] font-normal text-[#000] leading-[24px]'>We start by comprehensively understanding the client's business potential and scope, tracking customer movements to grasp user interactions, experiences, and accurately attribute conversions.</p>
                                 </div>
                             </div>
                         </div>
