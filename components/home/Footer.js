@@ -7,13 +7,14 @@ import { FaYoutube } from "react-icons/fa"
 import { FaInstagramSquare } from "react-icons/fa"
 import { FaPhoneVolume } from "react-icons/fa6"
 import { IoIosMail } from "react-icons/io"
+import { FaLocationDot } from "react-icons/fa6";
 import Link from 'next/link'
 
 const Footer = () => {
     const backgroundImageUrl = 'url("/src/assets/MAP.png")';
 
     return (
-        <section className='footer bg-homepagebg relative overflow-hidden'>
+        <section className='footer relative overflow-hidden bg-cover bg-no-repeat' style={{ backgroundImage: `url('/dv-home.png')` }}>
             {/* Back-Ground design  */}
             {/* <div className='absolute -top-[7%] right-0 w-[40%] h-[35%] flex'>
                 < img className="bgd w-[570px] h-[300px] rounded-full blur-xl" />
@@ -40,16 +41,16 @@ const Footer = () => {
                                     />
                                 </div>
                                 <div className='text-center'>
-                                    <h3 className='text-homepagebtn text-[22px] leading-normal font-semibold text-center sm:mt-6 mt-2 mb-4'>Need Quick Advice <br />Chat With Our Expert</h3>
-                                    <a href="/contact"><button className='butn mt-4'>LET'S CONNECT</button></a>
+                                    <h3 className='text-white lg:text-[22px] text-[20px] leading-normal font-semibold text-center sm:mt-6 mt-2 mb-4'>Need Quick Advice <br />Chat With Our Expert</h3>
+                                    <a href="/Contact"><button className='butn mt-4'>LET'S CONNECT</button></a>
                                 </div>
                             </div>
                         </div>
                         <div className='botm-footer block lg:flex lg:justify-between text-sm text-[#000] sm:font-semibold font-medium pt-7'>
                             <div className='w-10/12 mx-auto text-center lg:text-left lg:w-[40%] py-4'>
-                                <div className='relative'>
+                                <div className='relative text-white'>
                                     <span className='text-[18px] leading-[1.3em]'>Connect with us</span>
-                                    <div className='my-2 w-full h-0.5 bg-sky-800'></div>
+                                    <div className='my-2 w-full h-0.5 bg-[#fdfdfd]'></div>
                                     <div className='flex items-center lg:justify-start justify-center'>
                                         <div>
                                             <div className='ml-0 flex items-center mb-4'>
@@ -63,23 +64,24 @@ const Footer = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className='social flex items-center justify-center lg:justify-start lg:pl-0 mr-[33px]'>
+                                <div className='social flex items-center justify-center lg:justify-start lg:pl-0 -mr-[5px] text-white'>
                                     <a href="https://m.facebook.com/100070503960704/"><FaSquareFacebook className='w-7 h-7 mt-4 mr-2' /></a>
                                     <a href="https://in.linkedin.com/company/analytics-liv-digital/"><FaLinkedin className='w-7 h-7 mt-4 mx-2' /></a>
                                     <a href="https://www.youtube.com/channel/UCSU9utLB2PDe4VcXiI5kMFw"><FaYoutube className='w-7 h-7 mt-4 mx-2' /></a>
                                     <a href="https://www.instagram.com/analyticsliv_digital/"><FaInstagramSquare className='w-7 h-7 mt-4 mx-2' /></a>
+                                    <a href="https://maps.app.goo.gl/uhJUZFbZZTAL8qr57"><FaLocationDot className='w-7 h-7 mt-4 mx-2' /></a>
                                 </div>
                             </div>
-                            <div className='quick-links lg:mt-4 mt-8 w-5/6 mx-auto lg:w-[40%]'>
+                            <div className='quick-links lg:mt-4 mt-8 w-5/6 mx-auto lg:w-[40%] text-white'>
                                 <div className='text-center lg:text-right text-[18px] leading-[1.3em]'>Quick Links</div>
-                                <div className='bg-sky-800 w-full h-0.5 my-2'></div>
+                                <div className='bg-[#fdfdfd] w-full h-0.5 my-2'></div>
                                 <div className='lg:block hidden'>
-                                    <ul className='uppercase tracking-wider md:space-x-2 md:flex lg:justify-end md:justify-center gap-5'>
-                                        <li className='py-[10px] md:py-0 text-[15px] leading-5'> <Link href="/services">SERVICES</Link> </li>
-                                        <li className='py-[10px] md:py-0 text-[15px] leading-5'> <Link href="/blogs">BLOGS</Link> </li>
-                                        <li className='py-[10px] md:py-0 text-[15px] leading-5'> <Link href="/about-us">ABOUT US</Link> </li>
-                                        <li className='py-[10px] md:py-0 text-[15px] leading-5'> <Link href="/contact">CONTACT</Link> </li>
-                                        <li className='py-[10px] md:py-0 text-[15px] leading-5'> <Link href="/careers">CAREERS</Link> </li>
+                                    <ul className='uppercase tracking-wider text-end'>
+                                        <li className='py-[10px] text-[15px] leading-5'> <Link href="/services">SERVICES</Link> </li>
+                                        <li className='py-[10px] md:pb-4 text-[15px] leading-5'> <Link href="/blogs">BLOGS</Link> </li>
+                                        <li className='py-[10px] md:pb-4 text-[15px] leading-5'> <Link href="/about-us">ABOUT US</Link> </li>
+                                        <li className='py-[10px] md:pb-4 text-[15px] leading-5'> <Link href="/contact">CONTACT</Link> </li>
+                                        <li className='py-[10px] md:pb-4 text-[15px] leading-5'> <Link href="/careers">CAREERS</Link> </li>
                                     </ul>
                                 </div>
                                 {/*  */}
@@ -99,25 +101,26 @@ const Footer = () => {
                                     </div>
 
                                 </div>
-
-
-
-
                                 {/*  */}
-                                <div className='text-end flex items-end lg:justify-end justify-center'>
-                                    <a href="/">
-                                        <Image
-                                            src="/AnalyticsLiv 2.png"
-                                            width={200}
-                                            height={200}
-                                            alt="Picture of the author"
-                                            priority={true}
-                                        />
-                                    </a>
-                                </div>
-                                <div className='text-center md:text-right text-[15px] font-normal'>© Created by Analytics Liv Digital LLP, All rights Reserved.</div>
                             </div>
                         </div>
+                        {/*  */}
+                        <div className='pt-7'>
+                            <div className='text-end flex items-center  justify-center my-4'>
+                                <a href="/" className='inline-block'>
+                                    <Image
+                                        src="/analyticsLiv-logo.png"
+                                        width={200}
+                                        height={200}
+                                        alt="Picture of the author"
+                                        priority={true}
+                                        className='bg-white'
+                                    />
+                                </a>
+                            </div>
+                            <div className='text-center text-[15px] font-normal text-white'>© Created by Analytics Liv Digital LLP, All rights Reserved.</div>
+                        </div>
+                        {/*  */}
                     </div>
                 </footer>
             </div>
