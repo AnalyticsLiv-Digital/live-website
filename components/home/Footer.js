@@ -64,7 +64,7 @@ const Footer = () => {
                                         />
                                     </div>
                                     <div className='text-center'>
-                                        <a href="/Contact"><button className='ftbutn'>LET'S CONNECT</button></a>
+                                        <a href="/contact"><button className='ftbutn'>LET'S CONNECT</button></a>
                                     </div>
                                 </div>
                             </div>
