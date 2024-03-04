@@ -25,7 +25,7 @@ const ServicesOffer = () => {
             <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
                 <div>
                     <div className='text-start'>
-                        <h2 className='text-maintext text-[30px] font-semibold not-italic text-left block'>Services We Offer</h2>
+                        <h2 className='text-maintext lg:text-[28px] text-2xl font-semibold not-italic text-left block'>Services We Offer</h2>
                     </div>
                     <div className='grid md:grid-cols-2 items-center gap-10 pt-8'>
                         <div data-aos="fade-right" data-aos-once="true" className='first flex justify-center'>
@@ -41,7 +41,7 @@ const ServicesOffer = () => {
                                             className='transform translate-x-[-20px] transition-transform duration-300 ease-linear group-hover:translate-x-0'
                                         />
                                     </div>
-                                    <h6 className='text-[20px] font-bold text-[#000] leading-normal'>Marketing Services</h6>
+                                    <h6 className='text-[20px] font-semibold text-[#000] leading-normal'>Marketing Services</h6>
                                 </div>
                                 <ul className='grid gap-4 pb-[75px]'>
                                     <li className=''>
@@ -55,7 +55,7 @@ const ServicesOffer = () => {
                                                 className='w-[18px] h-[18px] mt-1'
                                             />
                                             <div>
-                                                <h6 className='text-[#000] text-base font-semibold leading-normal'>Programmatic Media Solutions</h6>
+                                                <h6 className='text-[#000] text-base font-medium leading-normal'>Programmatic Media Solutions</h6>
                                                 <p className='text-[#000] text-xs font-normal leading-normal'>Buy Display & Video Inventory Programmatically With DV360</p>
                                             </div>
                                         </a>
@@ -71,7 +71,7 @@ const ServicesOffer = () => {
                                                 className='w-[18px] h-[18px] mt-1'
                                             />
                                             <div>
-                                                <h6 className='text-[#000] text-base font-semibold leading-normal'>eCommerce Marketing</h6>
+                                                <h6 className='text-[#000] text-base font-medium leading-normal'>eCommerce Marketing</h6>
                                                 <p className='text-[#000] text-xs font-normal leading-normal'>Steer Catalog Based Product Listing Ads.</p>
                                             </div>
                                         </a>
@@ -87,7 +87,7 @@ const ServicesOffer = () => {
                                                 className='w-[18px] h-[18px] mt-1'
                                             />
                                             <div>
-                                                <h6 className='text-[#000] text-base font-semibold leading-normal'>Lead Generation</h6>
+                                                <h6 className='text-[#000] text-base font-medium leading-normal'>Lead Generation</h6>
                                                 <p className='text-[#000] text-xs font-normal leading-normal'>Generate Leads At Reduced Costs.</p>
                                             </div>
                                         </a>
@@ -103,7 +103,7 @@ const ServicesOffer = () => {
                                                 className='w-[18px] h-[18px] mt-1'
                                             />
                                             <div>
-                                                <h6 className='text-[#000] text-base font-semibold leading-normal'>Mobile App Marketing</h6>
+                                                <h6 className='text-[#000] text-base font-medium leading-normal'>Mobile App Marketing</h6>
                                                 <p className='text-[#000] text-xs font-normal leading-normal'>Drive App Installs At Lower CPI.</p>
                                             </div>
                                         </a>
@@ -119,7 +119,7 @@ const ServicesOffer = () => {
                                                 className='w-[18px] h-[18px] mt-1'
                                             />
                                             <div>
-                                                <h6 className='text-[#000] text-base font-semibold leading-normal'>SEM</h6>
+                                                <h6 className='text-[#000] text-base font-medium leading-normal'>SEM</h6>
                                                 <p className='text-[#000] text-xs font-normal leading-normal'>Power Your Search Campaigns For Performs.</p>
                                             </div>
                                         </a>
@@ -148,7 +148,7 @@ const ServicesOffer = () => {
                                             className='transform translate-x-[-20px] transition-transform duration-300 ease-linear group-hover:translate-x-0'
                                         />
                                     </div>
-                                    <h6 className='text-[20px] font-bold text-[#000] leading-normal'>Analytics Services</h6>
+                                    <h6 className='text-[20px] font-semibold text-[#000] leading-normal'>Analytics Services</h6>
                                 </div>
                                 <ul className='grid gap-4 pb-[75px]'>
                                     <li>
@@ -162,7 +162,7 @@ const ServicesOffer = () => {
                                                 className='w-[18px] h-[18px] mt-1'
                                             />
                                             <div>
-                                                <h6 className='text-[#000] text-base font-semibold leading-normal'>Web and App Measurement</h6>
+                                                <h6 className='text-[#000] text-base font-medium leading-normal'>Web and App Measurement</h6>
                                                 <p className='text-[#000] text-xs font-normal leading-normal'>Accurate measurement of user interactions across web and app platforms. Build and stitch user journey out of user actions.</p>
                                             </div>
                                         </a>
@@ -178,7 +178,7 @@ const ServicesOffer = () => {
                                                 className='w-[18px] h-[18px] mt-1'
                                             />
                                             <div>
-                                                <h6 className='text-[#000] text-base font-semibold leading-normal'>Audit and Health Check</h6>
+                                                <h6 className='text-[#000] text-base font-medium leading-normal'>Audit and Health Check</h6>
                                                 <p className='text-[#000] text-xs font-normal leading-normal'>Thorough examination and assessment of your analytics setup for optimal performance.</p>
                                             </div>
                                         </a>
@@ -194,7 +194,7 @@ const ServicesOffer = () => {
                                                 className='w-[18px] h-[18px] mt-1'
                                             />
                                             <div>
-                                                <h6 className='text-[#000] text-base font-semibold leading-normal'>Data Reporting & Analysis</h6>
+                                                <h6 className='text-[#000] text-base font-medium leading-normal'>Data Reporting & Analysis</h6>
                                                 <p className='text-[#000] text-xs font-normal leading-normal'>Transform raw data into actionable insights for strategic decision-making.</p>
                                             </div>
                                         </a>
@@ -210,7 +210,7 @@ const ServicesOffer = () => {
                                                 className='w-[18px] h-[18px] mt-1'
                                             />
                                             <div>
-                                                <h6 className='text-[#000] text-base font-semibold leading-normal'>Looker BI Platform</h6>
+                                                <h6 className='text-[#000] text-base font-medium leading-normal'>Looker BI Platform</h6>
                                                 <p className='text-[#000] text-xs font-normal leading-normal'>Utilize Looker for advanced Business Intelligence and data exploration. Create interactive visual dashboards for decision-making</p>
                                             </div>
                                         </a>
@@ -239,7 +239,7 @@ const ServicesOffer = () => {
                                             className='transform translate-x-[-20px] transition-transform duration-300 ease-linear group-hover:translate-x-0'
                                         />
                                     </div>
-                                    <h6 className='text-[20px] font-bold text-[#000] leading-normal'>Solutions</h6>
+                                    <h6 className='text-[20px] font-semibold text-[#000] leading-normal'>Solutions</h6>
                                 </div>
                                 <ul className='grid gap-4 pb-[75px]'>
                                     <li>
@@ -253,7 +253,7 @@ const ServicesOffer = () => {
                                                 className='w-[18px] h-[18px] mt-1'
                                             />
                                             <div>
-                                                <h6 className='text-[#000] text-base font-semibold leading-normal'>GDPR Compliance</h6>
+                                                <h6 className='text-[#000] text-base font-medium leading-normal'>GDPR Compliance</h6>
                                                 <p className='text-[#000] text-xs font-normal leading-normal'>Enhance brand visibility through effective display strategies using DV360.</p>
                                             </div>
                                         </a>
@@ -269,7 +269,7 @@ const ServicesOffer = () => {
                                                 className='w-[18px] h-[18px] mt-1'
                                             />
                                             <div>
-                                                <h6 className='text-[#000] text-base font-semibold leading-normal'>Data Science Solution & Automation</h6>
+                                                <h6 className='text-[#000] text-base font-medium leading-normal'>Data Science Solution & Automation</h6>
                                                 <p className='text-[#000] text-xs font-normal leading-normal'>Implement data science solutions and automation for enhanced efficiency and predictive analytics.</p>
                                             </div>
                                         </a>
@@ -285,7 +285,7 @@ const ServicesOffer = () => {
                                                 className='w-[18px] h-[18px] mt-1'
                                             />
                                             <div>
-                                                <h6 className='text-[#000] text-base font-semibold leading-normal'>Custom Data Attribution Model</h6>
+                                                <h6 className='text-[#000] text-base font-medium leading-normal'>Custom Data Attribution Model</h6>
                                                 <p className='text-[#000] text-xs font-normal leading-normal'>Instead of instead of relying on standard attribution, avail visitors' custom attribution journey and pinpoint their initial or supporting sources which drive conversions and engagement</p>
                                             </div>
                                         </a>
@@ -314,7 +314,7 @@ const ServicesOffer = () => {
                                             className='transform translate-x-[-20px] transition-transform duration-300 ease-linear group-hover:translate-x-0'
                                         />
                                     </div>
-                                    <h6 className='text-[20px] font-bold text-[#000] leading-normal'>Training and Consultation</h6>
+                                    <h6 className='text-[20px] font-semibold text-[#000] leading-normal'>Training and Consultation</h6>
                                 </div>
                                 <ul className='grid gap-4 pb-[75px]'>
                                     <li>
@@ -328,7 +328,7 @@ const ServicesOffer = () => {
                                                 className='w-[18px] h-[18px] mt-1'
                                             />
                                             <div>
-                                                <h6 className='text-[#000] text-base font-semibold leading-normal'>Schedule a One-Hour Consultation</h6>
+                                                <h6 className='text-[#000] text-base font-medium leading-normal'>Schedule a One-Hour Consultation</h6>
                                                 <p className='text-[#000] text-xs font-normal leading-normal'>Book a personalized consultation session to address your specific analytics needs.</p>
                                             </div>
                                         </a>
@@ -344,7 +344,7 @@ const ServicesOffer = () => {
                                                 className='w-[18px] h-[18px] mt-1'
                                             />
                                             <div>
-                                                <h6 className='text-[#000] text-base font-semibold leading-normal'>Training Details</h6>
+                                                <h6 className='text-[#000] text-base font-medium leading-normal'>Training Details</h6>
                                                 <p className='text-[#000] text-xs font-normal leading-normal'>Explore our training programs designed to empower your team skilled with analytics, advertising, marketing, and whole Google Marketing Platform(GMP) stack and knowledge.</p>
                                             </div>
                                         </a>

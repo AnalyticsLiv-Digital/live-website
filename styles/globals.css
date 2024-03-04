@@ -197,105 +197,13 @@ input[type=number] {
   position: absolute;
   top: 0;
 } */
-
-.marquee-container {
-  overflow-x: hidden !important;
-  display: flex !important;
-  flex-direction: row !important;
-  position: relative;
-  width: 100%;
-  --pause-on-hover: paused;
-  --pause-on-click: paused;
-}
-
-.marquee {
-  flex: 0 0 auto;
-  min-width: 100%;
-  z-index: 1;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  animation: slide 50s linear infinite;
-}
-
-@keyframes slide {
-  0% {
-    transform: translateX(100%);
-  }
-
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-.animate-slide {
-  animation: slide 10s linear infinite;
-}
-
-.marquee:hover {
-  animation-play-state: paused;
-}
-
-.advertising {
-  background-image: url(../public/dv-ads.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.discuss , .contact-footer {
-  background-image: url(../public/dv-ads.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.slick-arrow .slick-next{
-  display: none !important;
-  right: 0 !important;
-}
-
-.slick-next {
-  right: -0 !important;
-}
-
-[data-role="none"] {
-  display: none;
-}
-
-.firstbg {
-  background-image: url(../public/BG\ 1.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  z-index: 20;
-}
-
-.testi {
-  display: flex !important;
-}
-.casestd {
-  display: flex !important;
-}
-.slick-dots {
-  bottom: -40px !important;
-  padding: 10px !important;
-}
-.slick-dots li {
-  display: inline-block;
-  width: 10px !important;
-  height: 10px !important;
-  border: 1px solid grey;
-  border-radius: 100%;
-  transition: all 0.5s linear;
-}
-
-.slick-dots .slick-active {
-  background-color: #080808;
-}
-
-.slick-dots li button:before {
-  content: '' !important;
-}
-
+/* Homepage btn-css */
 .butn {
-  @apply relative overflow-hidden z-10 bg-homepagebtn text-[#fff] border border-homepagebtn cursor-pointer font-medium not-italic inline rounded-[14px] py-[15px] px-[40px] mb-3 transition-all duration-300 ease-linear hover:text-homepagebtn shadow-foter
+  @apply relative overflow-hidden z-10 bg-homepagebtn text-[#fff] border border-homepagebtn cursor-pointer text-[15px] font-medium not-italic inline rounded-[14px] py-[15px] px-[40px] mb-3 transition-all duration-300 ease-linear hover:text-homepagebtn shadow-foter
+}
+
+.ftbutn {
+  @apply relative overflow-hidden z-10 text-[11px] font-normal px-5 py-4 not-italic inline rounded-[14px] mb-3 transition-all duration-300 ease-linear hover:text-homepagebtn shadow-foter bg-[#3b82f617] text-white border border-homepagebtn cursor-pointer mt-4
 }
 
 .butn::before {
@@ -318,11 +226,42 @@ input[type=number] {
   z-index: -1;
 }
 
+.ftbutn::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 101%;
+  right: 0px;
+  top: 0;
+  left: 0px;
+  transform: translateY(-85px);
+  background: rgb(244, 239, 239);
+  transition: all 0.3s linear;
+}
+
+.ftbutn:hover::before {
+  background: #fff;
+  transform: translate(0);
+  transition: all 0.3s linear;
+  z-index: -1;
+}
+
+/* Homepage header-css */
+.hoverable:hover .mega-menu {
+  opacity: 1;
+  visibility: visible;
+  z-index: 900;
+}
+
+.hoverable:hover .down {
+  visibility: hidden;
+}
+
 iframe {
   height: inherit;
 }
 
-/* Back-Ground design */
+/* Homepage Back-Ground design-css */
 .bgd {
   background: radial-gradient(51.33% 51.33% at 61.62% 50%, #5273A3 0%, rgba(178, 184, 193, 0.00) 100%);
 }
@@ -331,17 +270,20 @@ iframe {
   background: radial-gradient(51.33% 51.33% at 61.62% 50%, #66E1FC 0%, rgba(178, 184, 193, 0.00) 100%);
 }
 
-/*  */
-.testimonial {
-  background-image: url(../public/testimon.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-blend-mode: multiply;
-  background-color: #bfbbbb;
+/* Homepage testimonials-css */
+
+.testimonials h2 {
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
 
-.slick-dots {
-  bottom: -100px !important;
+.testimonials .slick-dots {
+  bottom: -40px !important;
+}
+
+@media (min-width: 988px) {
+  .testimonials .slick-dots {
+    bottom: -57px !important;
+  }
 }
 
 .slick-prev:before,
@@ -349,64 +291,27 @@ iframe {
   display: none;
 }
 
-.testimonial .slick-dots li {
+.testimonials .slick-dots li {
   border: 2px solid grey;
   border-radius: 100%;
   transition: all 0.5s linear;
 }
 
-.testimonial .slick-dots .slick-active {
+.testimonials .slick-dots .slick-active {
   background-color: #080808;
 }
 
-.testimonial .slick-dots li button:before {
+.testimonials .slick-dots li button:before {
   content: '' !important;
 }
+
 
 [data-role="none"] {
   display: none;
 }
 
-.a {
-  grid-area: span 1 / span 2;
-}
 
-.b {
-  grid-area: span 1 / span 1;
-}
-
-.c {
-  grid-area: span 1 / span 2;
-}
-
-.d {
-  grid-area: span 1 / span 1;
-}
-
-.e {
-  grid-area: span 1 / span 2;
-}
-
-.f1 {
-  grid-area: span 1 / span 1;
-}
-
-.h {
-  grid-area: span 1 / span 2;
-}
-
-.anim {
-  animation: anm 5s linear infinite;
-}
-.testimonial h2{
-  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
-}
-/* section.powerup {
-  background: linear-gradient(177deg, #0170B9, #3a3a3a2b,#06b6d47d);
-} */
-/* .footer{
-  background: linear-gradient(177deg, #0170B9, #3a3a3a2b,#06b6d47d);
-} */
+/* Homepage marquee-css */
 .marquee-container {
   overflow-x: hidden !important;
   display: flex !important;
@@ -424,6 +329,7 @@ iframe {
   display: flex;
   flex-direction: row;
   align-items: center;
+
   animation: slide 50s linear infinite;
 }
 
@@ -431,15 +337,56 @@ iframe {
   0% {
     transform: translateX(-100%);
   }
+
   100% {
     transform: translateX(100%);
   }
 }
 
 .animate-slide {
-  animation: slide 10s linear infinite;
+  animation: slide 2s linear infinite;
 }
 
 .marquee:hover {
   animation-play-state: paused;
+}
+
+/* homepage datepicker css */
+.react-datepicker__time-container {
+  width: 90px !important;
+  /* margin: 0 !important; */
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box {
+  width: 100% !important;
+}
+
+
+@media (min-width: 1024px) and (max-width: 1064px) {
+    .firstcasestdy{
+    height: 306px; /* Height for viewport range 1024px to 1064px */
+  }
+}
+
+/* DV360 page slider-css */
+
+.clients .slick-dots , .services .slick-dots , .buypremium .slick-dots , .targeting .slick-dots {
+  bottom: -40px !important;
+  padding: 10px !important;
+}
+.clients .slick-dots li , .services .slick-dots li , .buypremium .slick-dots li , .targeting .slick-dots li {
+  display: inline-block;
+  width: 10px !important;
+  height: 10px !important;
+  border: 1px solid grey;
+  border-radius: 100%;
+  transition: all 0.5s linear;
+}
+
+.slick-dots .slick-active {
+  background-color: #080808;
+}
+
+.slick-dots li button:before {
+  content: '' !important;
 }

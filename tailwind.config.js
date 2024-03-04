@@ -18,7 +18,8 @@ module.exports = {
         custom: '-5px 5px 4px 2px rgba(0, 0, 0, 0.25)',
         cards: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
         casestudy: '2px 4px 4px 0px rgba(0, 0, 0, 0.25)',
-        foter: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
+        foter: '0px 4px 4px 0px rgba(0, 0, 0, .25)',
+        foter1: '0px 4px 4px 0px #000',
         serviceoffer: '1px 1px 6px 0px rgba(0, 0, 0, 0.25)',
       },
       colors: {
@@ -46,10 +47,10 @@ module.exports = {
         homepagebtn: "#30486A",
         homepagebg: "#F0F0F9",
         dvbackgrnd: "#F8FBFD",
-        maintext: "#18265B",
-        homepagebtn: "#30486A",
-        homepagebg: "#F0F0F9",
-        ractangl: "rgba(194, 233, 245, 0.92)"
+        "maintext": "#18265B",
+        "homepagebtn": "#30486A",
+        "homepagebg": "#F0F0F9",
+        "ractangl": "rgba(194, 233, 245, 0.92)"
     }
     },
   },

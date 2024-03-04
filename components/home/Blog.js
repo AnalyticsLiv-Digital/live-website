@@ -13,15 +13,15 @@ const Blogs = () => {
         <>
             <section className='blog'>
                 <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
-                    <div className='flex items-center justify-center'>
-                        <h2 className='text-maintext text-[40px] font-bold not-italic text-center tracking-widest'>BLOGS</h2>
+                    <div className='flex items-center justify-center pb-5'>
+                        <h2 className='text-maintext lg:text-[28px] text-2xl font-semibold not-italic text-center tracking-widest'>BLOGS</h2>
                     </div>
                     <div data-aos="zoom-in" data-aos-once="true" className='text-center lg:flex items-center justify-between gap-[30px]'>
+                       
                         <div className='lg:w-[66%]'>
-                            <h5 className='text-start text-xl font-medium text-maintext mb-2'>Check out our latest blogs</h5>
+                            <h5 className='text-start text-[15px] font-normal text-maintext mb-2'>Check out our latest blogs</h5>
                             <div className='grid lg:grid-cols-2 gap-[30px]'>
                                 <div className='first relative group home-blog rounded border border-solid border-[#DBDBDB] hover:border-[#979797] hover:shadow-serviceoffer p-[25px] pb-[70px] text-center 2xl:h-[540px] lg:h-[495px]'>
-                                    <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>BLOG</span>
                                     <a href="/blogs/ai-powered-google-analytics-4-insights">
                                         <Image
                                             src="/blog1.png"
@@ -29,29 +29,23 @@ const Blogs = () => {
                                             height={500}
                                             alt="Picture of the author"
                                             priority={true}
-                                            className='mb-[13px] w-full'
+                                            className='mb-[3px] w-full'
                                         />
                                         <div className='flex items-center justify-between gap-3'>
+                                            <div className='flex items-center justify-between gap-1'>
+                                                <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3'>BLOG</span>
+                                            </div>
                                             <div className='flex items-center justify-between gap-1'>
                                                 <Image
                                                     src="/calendar1.svg"
                                                     width={30}
                                                     height={30}
                                                     alt="Picture of the author"
-                                                    priority={true}
+                                                    priority={true}					
                                                 />
-                                                <span className='text-[10px] font-normal'>15th Feb 2024</span>
+                                                <span className='text-[10px] font-normal'>February 15, 2024</span>
                                             </div>
-                                            <div className='flex items-center justify-between gap-1'>
-                                                <Image
-                                                    src="/calendar2.svg"
-                                                    width={30}
-                                                    height={30}
-                                                    alt="Picture of the author"
-                                                    priority={true}
-                                                />
-                                                <span className='text-[10px] font-normal'>Abhishek Tiwari</span>
-                                            </div>
+
                                         </div>
                                         <h3 className='text-lg text-slate-900 text-start font-semibold whitespace-relaxed pt-5'>AI-Powered Google Analytics 4 Insights</h3>
                                         <p className='align-middle text-left text-xs pt-4 pb-7 text-gray-500 leading-[21px]'>Picture Google Analytics 4 (GA4) as a super-smart friend who uses Artificial Intelligence (AI) to help you understand your data better. It's like having a super detective for your business data, pointing out things you might have missed.</p>
@@ -66,7 +60,7 @@ const Blogs = () => {
                                     </a>
                                 </div>
                                 <div className='second group home-blog rounded border border-solid border-[#DBDBDB] hover:border-[#979797]  hover:shadow-serviceoffer p-[25px] pb-[70px] text-center relative 2xl:h-[540px] lg:h-[495px]'>
-                                    <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>BLOG</span>
+                                    
                                     <a href="/blogs/unlocking-the-power-of-bigquery-for-using-looker-studio-and-reporting-tool">
                                         <Image
                                             src="/blog2.png"
@@ -74,9 +68,12 @@ const Blogs = () => {
                                             height={500}
                                             alt="Picture of the author"
                                             priority={true}
-                                            className='mb-[13px] w-full'
+                                            className='mb-[3px] w-full'
                                         />
                                         <div className='flex items-center justify-between'>
+                                        <div className='flex items-center justify-between gap-1'>
+                                        <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3'>BLOG</span>
+                                            </div>
                                             <div className='flex items-center justify-between gap-1'>
                                                 <Image
                                                     src="/calendar1.svg"
@@ -85,18 +82,9 @@ const Blogs = () => {
                                                     alt="Picture of the author"
                                                     priority={true}
                                                 />
-                                                <span className='text-[10px] font-normal'>07th Feb 2024</span>
+                                                <span className='text-[10px] font-normal'>February 7, 2024</span>
                                             </div>
-                                            <div className='flex items-center justify-between gap-1'>
-                                                <Image
-                                                    src="/calendar2.svg"
-                                                    width={30}
-                                                    height={30}
-                                                    alt="Picture of the author"
-                                                    priority={true}
-                                                />
-                                                <span className='text-[10px] font-normal'>Atharva Tandale</span>
-                                            </div>
+                                            
                                         </div>
                                         <h3 className='text-lg text-slate-900 text-start font-semibold whitespace-relaxed pt-5'>Your Ultimate Guide to Using Looker Studio and Reporting Tool</h3>
                                         <p className='align-middle text-left text-xs pt-4 pb-7 text-gray-500 leading-[21px]'>Obtaining data from the user interface of Google Analytics 4 (GA4) according to your specific requirements can be quite challenging and sometimes even impossible.</p>
@@ -113,9 +101,9 @@ const Blogs = () => {
                             </div>
                         </div>
                         <div className='hidden lg:grid lg:w-[33%]'>
-                            <h5 className='text-start text-xl font-medium leading-none text-maintext mb-2'>Check out more blogs</h5>
+                            <h5 className='text-start text-[15px] font-normal leading-none text-maintext mb-2'>Check out more blogs</h5>
                             <div className='third hidden lg:grid gap-[30px] 2xl:h-[540px] lg:h-[495px]'>
-                                <div className='home-blog group rounded border border-solid border-[#DBDBDB] hover:border-[#979797] hover:shadow-serviceoffer p-[25px] pb-3 text-center relative'>
+                                <div className='home-blog group rounded bg-[#5f9ea0] border border-solid border-[#DBDBDB] hover:border-[#979797] hover:shadow-serviceoffer p-[25px] pb-3 text-center relative'>
                                     <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>BLOG</span>
                                     <a href="/blogs/traversing-essentials-of-gdpr-cookie-consent" className='grid gap-1'>
                                         <div className='grid gap-4'>
@@ -128,11 +116,11 @@ const Blogs = () => {
                                                 className='w-full m-auto h-[130px] 2xl:h-[180px]'
                                             />
                                         </div>
-                                        <h3 className='text-[16px] text-slate-900 text-start font-medium whitespace-relaxed pt-[15px]'>Traversing Essentials of GDPR Cookie Consent</h3>
+                                        <h3 className='text-[13px] text-white font-semibold text-start whitespace-relaxed pt-[15px]'>Traversing Essentials of GDPR Cookie Consent</h3>
 
                                     </a>
                                 </div>
-                                <div className='home-blog group rounded border border-solid border-[#DBDBDB] hover:border-[#979797] hover:shadow-serviceoffer p-[25px] pb-3 text-center relative'>
+                                <div className='home-blog group rounded bg-[#5f9ea0] border border-solid border-[#DBDBDB] hover:border-[#979797] hover:shadow-serviceoffer p-[25px] pb-3 text-center relative'>
                                     <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>BLOG</span>
                                     <a href="/blogs/dv-360-ad-personalization-helpful-complex-privacy-breach" className='grid gap-1'>
                                         <div className='grid gap-4'>
@@ -145,12 +133,13 @@ const Blogs = () => {
                                                 className='w-full m-auto h-[130px] 2xl:h-[180px]'
                                             />
                                         </div>
-                                        <h3 className='text-[16px] text-slate-900 text-start font-medium whitespace-relaxed pt-[15px]'>Ad Personalization:  Helpful, Complex, Privacy Breach ?</h3>
+                                        <h3 className='text-[13px] text-white font-semibold text-start whitespace-relaxed pt-[15px]'>Ad Personalization:  Helpful, Complex, Privacy Breach ?</h3>
 
                                     </a>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </section>

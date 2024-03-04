@@ -174,7 +174,7 @@ const header = () => {
                           class="text-menuheading font-poppins text-base font-normal leading-normal">Lead generation</Link>
                       </div>
                       <div class="flex items-center py-1 gap-2">
-                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/SEM.png" alt="paid_logo" className="w-[23px]" />
+                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/SEM.png" alt="paid_logo" className="-ml-[5px]" />
 
                         <Link href="/services/programatic-advertising"
                           class="text-menuheading font-poppins text-base font-normal leading-normal">Search engine marketing</Link>
@@ -231,7 +231,7 @@ const header = () => {
                           Science Solution & Automation</Link>
                       </div>
                       <div class="flex items-center py-1 gap-2">
-                        <img className='w-[35px]' src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_Data_Attribution.png"
+                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_Data_Attribution.png"
                           alt="Data-Science_logo" />
                         <Link href="#"
                           class="text-menuheading font-poppins text-base font-normal leading-normal">Custom Data Attribution Model</Link>
@@ -241,14 +241,14 @@ const header = () => {
                     {submenu == "4" && <motion.div onClick={() => { setIsOpen(!isOpen); setIsServices(false); }} initial={{ y: 10, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} className='transition ease-out duration-200 px-4 '>
                       <div class="flex items-center py-1 gap-2
                                 ">
-                        <img className='w-[23px]' src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_Training-Details.logo.png"
+                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_Training-Details.logo.png"
                           alt="Training-Details_logo" />
                         <Link href="/services/training"
                           class="text-menuheading font-poppins text-base font-normal leading-normal">Schedule a One-Hour Consultation</Link>
                       </div>
                       <div class="flex items-center py-1 gap-2
                                     ">
-                        <img className='w-[23px]' src="https://storage.googleapis.com/website-bucket-uploads/static/training_Schedule.png"
+                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/training_Schedule.png"
                           alt="Training-Details_logo" />
                         <Link href="/services/training"
                           class="text-menuheading font-poppins text-base font-normal leading-normal">Training
@@ -323,7 +323,7 @@ const header = () => {
                     class="text-menuheading font-poppins text-[15px] font-normal leading-normal">Lead generation</Link>
                 </div>
                 <div class="flex items-center py-3 gap-2">
-                  <img className='w-[35px]' src="https://storage.googleapis.com/website-bucket-uploads/static/SEM.png" alt="paid_logo" />
+                  <img src="https://storage.googleapis.com/website-bucket-uploads/static/SEM.png" alt="paid_logo" />
                   <Link href="/services/programatic-advertising"
                     class="text-menuheading font-poppins text-[15px] font-normal leading-normal">Search engine marketing</Link>
                 </div>
@@ -391,7 +391,7 @@ const header = () => {
                     Science Solution & Automation</Link>
                 </div>
                 <div class="flex items-center py-3 gap-2">
-                  <img className='w-[23px]' src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_Data_Attribution.png"
+                  <img src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_Data_Attribution.png"
                     alt="Data-Science_logo" />
                   <Link href="#"
                     class="text-menuheading font-poppins text-[15px] font-normal leading-normal">Custom Data Attribution Model</Link>
@@ -405,7 +405,7 @@ const header = () => {
                 </div> <br />
                 <div class="flex items-center py-3 gap-2
                                     ">
-                  <img className='w-[35px]' src="https://storage.googleapis.com/website-bucket-uploads/static/training_Schedule.png"
+                  <img src="https://storage.googleapis.com/website-bucket-uploads/static/training_Schedule.png"
                     alt="Training-Details_logo" />
                   <Link href="/services/training"
                     class="text-menuheading font-poppins text-[15px] font-normal leading-normal">Schedule a One-Hour Consultation</Link>
