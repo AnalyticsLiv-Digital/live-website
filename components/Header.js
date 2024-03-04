@@ -75,7 +75,7 @@ const header = () => {
                 <span><img src="/Down_Arrow_solution.png" alt="" className='w-[15px] h-[15px]'/></span>
               </li>
               <Link className="header-links" href="/about-us"><li className="hover:border-b-4 hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2">
-                What We Are
+                Who We Are
               </li>
               </Link>
               <Link className="header-links" href="/contact"><li className="hover:border-b-4 hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2">
@@ -152,7 +152,7 @@ const header = () => {
                 <p
                   className=" text-slate-900 block px-3 py-2 rounded-md text-base font-normal"
                 >
-                  <div onClick={() => { setIsServices(!isServices); setIsResources(false); }} >What We Are</div>
+                  <div onClick={() => { setIsServices(!isServices); setIsResources(false); }} >Who We Are</div>
                   {isServices ? (<motion.div initial={{ y: 10, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} className='transition ease-out duration-200 px-4 text-cyan-400 text-base font-medium divide-y-2'>
 
                     <div onClick={() => { setSubmenu("1") }} ><div className="py-2 w-56 ">Marketing Services</div></div>
