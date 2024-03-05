@@ -368,101 +368,13 @@ iframe {
   }
 }
 
-/* // // // // // // // // // // // // // // // */
-
-/* DV360 Page css */
-.home {
-  background-image: url(../public/dv-home.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
-.innerglobl{
-  background-image: url(../public/Frame.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-.marquee-container {
-  overflow-x: hidden !important;
-  display: flex !important;
-  flex-direction: row !important;
-  position: relative;
-  width: 100%;
-  --pause-on-hover: paused;
-  --pause-on-click: paused;
-}
-
-.marquee {
-  flex: 0 0 auto;
-  min-width: 100%;
-  z-index: 1;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  animation: slide 50s linear infinite;
-}
-
-@keyframes slide {
-  0% {
-    transform: translateX(100%);
-  }
-
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-.animate-slide {
-  animation: slide 10s linear infinite;
-}
-
-.marquee:hover {
-  animation-play-state: paused;
-}
-
-.discuss , .advertising , .contact-footer {
-  background-image: url(../public/dv-ads.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.slick-slider .slick-next {
-  display: none !important;
-  right: 0 !important;
-}
-
-.slick-slider .slick-prev {
-  display: none !important;
-  left: 0 !important;
-}
-
-[data-role="none"] {
-  display: none;
-}
-
-.firstbg {
-  background-image: url(../public/BG\ 1.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  z-index: 20;
-}
-
-.testi {
-  display: flex !important;
-}
-.casestd {
-  display: flex !important;
-}
-
 /* DV360 page slider-css */
 
-.clients .slick-dots , .leaders .slick-dots , .casestudy .slick-dots , .services .slick-dots , .buypremium .slick-dots , .targeting .slick-dots {
+.clients .slick-dots , .services .slick-dots , .buypremium .slick-dots , .targeting .slick-dots {
   bottom: -40px !important;
   padding: 10px !important;
 }
-.clients .slick-dots li , .leaders .slick-dots li , .casestudy .slick-dots li , .services .slick-dots li , .buypremium .slick-dots li , .targeting .slick-dots li {
+.clients .slick-dots li , .services .slick-dots li , .buypremium .slick-dots li , .targeting .slick-dots li {
   display: inline-block;
   width: 10px !important;
   height: 10px !important;
