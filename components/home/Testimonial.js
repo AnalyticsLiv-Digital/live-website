@@ -80,7 +80,7 @@ const Testimonial = () => {
                         </div>
 
                         <Slider {...settings}>
-                            <div aria-hidden="true" className="testimonial1 text-center">
+                        <div aria-hidden="true" className="testimonial1 text-center">
                                 <div className='xl:w-[80%] min-[989px]:w-[80%] md:w-[65%] bg-white w-[90%] m-auto p-5 rounded-[10px] min-[989px]:h-[420px]'>
 
                                     <div className='flex items-center justify-start gap-2 py-8'>
@@ -91,7 +91,7 @@ const Testimonial = () => {
                                             <p className='text-left text-sm font-semibold'>Wholesale Socks Deals</p>
                                         </div>
                                     </div>
-                                    <p className='text-[#000] text-[13px] font-normal leading-[26px] mb-7'>"AnalyticsLiv team was an excellent asset to our businesses' switch from Universal Analytics to GA4. They had excellent communication throughout the project, giving me feedback, updates and ideas as the project went on.<br />I would be happy to recommend the AnalyticsLiv team for analytics and tag manager work, and look forward to working with them in the future. Thank you!"</p>
+                                    <p className='text-[#000] text-[13px] text-left font-normal leading-[26px] mb-7'>"AnalyticsLiv team was an excellent asset to our businesses' switch from Universal Analytics to GA4. They had excellent communication throughout the project, giving me feedback, updates and ideas as the project went on.<br />I would be happy to recommend the AnalyticsLiv team for analytics and tag manager work, and look forward to working with them in the future. Thank you!"</p>
                                 </div>
                             </div>
 
@@ -105,7 +105,7 @@ const Testimonial = () => {
                                             <p className='text-left text-sm font-semibold'>Mex Insurance</p>
                                         </div>
                                     </div>
-                                    <p className='text-[#000] text-[13px] font-normal leading-[26px] mb-7'>"The AnalyticsLiv team estimated the job length accurately and then carried out the work exactly as briefed, to time and budget. We had one brief hiccup in the conversion tracking code but that was swiftly fixed once identified. Would definitely consider using it again and for more advanced reporting functionality in future"</p>
+                                    <p className='text-[#000] text-[13px] text-left font-normal leading-[26px] mb-7'>"The AnalyticsLiv team estimated the job length accurately and then carried out the work exactly as briefed, to time and budget. We had one brief hiccup in the conversion tracking code but that was swiftly fixed once identified. Would definitely consider using it again and for more advanced reporting functionality in future"</p>
                                 </div>
                             </div>
                             <div aria-hidden="true" className="testimonial4 text-center">
@@ -118,7 +118,7 @@ const Testimonial = () => {
                                             <p className='text-left text-sm font-semibold'>FUTEK</p>
                                         </div>
                                     </div>
-                                    <p className='text-[#000] text-[13px] font-normal leading-[26px] mb-7'>"AnalyticsLiv has been FUTEK web analytics partner for almost 3 years now. They supported us with GTM implementation, GA to GA4 migration, Looker studio dashboard creations and Google cloud storage implementation. They respond to our request in a timely manner and make their best efforts to resolve the web analytics issues. We are happy with the support provided by AnalyticsLiv"</p>
+                                    <p className='text-[#000] text-[13px] text-left font-normal leading-[26px] mb-7'>"AnalyticsLiv has been FUTEK web analytics partner for almost 3 years now. They supported us with GTM implementation, GA to GA4 migration, Looker studio dashboard creations and Google cloud storage implementation. They respond to our request in a timely manner and make their best efforts to resolve the web analytics issues. We are happy with the support provided by AnalyticsLiv"</p>
                                 </div>
                             </div>
                         </Slider>
