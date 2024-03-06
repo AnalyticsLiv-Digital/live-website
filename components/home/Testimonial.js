@@ -81,7 +81,7 @@ const Testimonial = () => {
 
                         <Slider {...settings}>
                             <div aria-hidden="true" className="testimonial1 text-center">
-                                <div className='xl:w-[60%] min-[989px]:w-[80%] md:w-[65%] bg-white w-[90%] m-auto p-5 rounded-[10px] min-[989px]:h-[420px]'>
+                                <div className='xl:w-[80%] min-[989px]:w-[80%] md:w-[65%] bg-white w-[90%] m-auto p-5 rounded-[10px] min-[989px]:h-[420px]'>
 
                                     <div className='flex items-center justify-start gap-2 py-8'>
                                         <img src="/profile1.png" alt="" className='w-24 h-24' />
@@ -96,7 +96,7 @@ const Testimonial = () => {
                             </div>
 
                             <div aria-hidden="true" className="testimonial2 text-center">
-                                <div className='xl:w-[60%]  min-[989px]:w-[80%] md:w-[65%] bg-white w-[90%] m-auto p-5 rounded-[10px] min-[989px]:h-[420px]'>
+                                <div className='xl:w-[80%]  min-[989px]:w-[80%] md:w-[65%] bg-white w-[90%] m-auto p-5 rounded-[10px] min-[989px]:h-[420px]'>
                                     <div className='flex items-center justify-start gap-2 py-8'>
                                         <img src="/profile4.png" alt="" className='w-24 h-24' />
                                         <div>
@@ -109,7 +109,7 @@ const Testimonial = () => {
                                 </div>
                             </div>
                             <div aria-hidden="true" className="testimonial4 text-center">
-                                <div className='xl:w-[60%]  min-[989px]:w-[80%] md:w-[65%] bg-white w-[90%] m-auto p-5 rounded-[10px] min-[989px]:h-[420px]'>
+                                <div className='xl:w-[80%]  min-[989px]:w-[80%] md:w-[65%] bg-white w-[90%] m-auto p-5 rounded-[10px] min-[989px]:h-[420px]'>
                                     <div className='flex items-center justify-start gap-2 py-8'>
                                         <img src="/profile5.png" alt="" className='w-24 h-24' />
                                         <div>
