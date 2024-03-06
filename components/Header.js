@@ -304,34 +304,34 @@ const header = () => {
                 class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b lg:border-b-0 pb-6 pt-6 lg:pt-3">
                 <div class="flex items-center">
 
-                  <h3 class="text-menuheading font-poppins text-[18px] font-semibold">Marketing Services</h3>
+                  <h3 class="text-menuheading font-poppins text-[16px] font-semibold">Marketing Services</h3>
                 </div> <br />
 
                 <div class="flex items-center py-3 gap-2">
                   <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-paid.png" alt="paid_logo" />
                   <Link href="/services/programatic-advertising"
-                    class="text-menuheading font-poppins text-[15px] font-normal leading-normal">Programmatic Media DV360</Link>
+                    class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Programmatic Media DV360</Link>
                 </div>
                 <div class="flex items-center py-3 gap-2">
                   <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-E-commerce.png" alt="paid_logo" />
                   <Link href="/services/ecommerce-marketing"
-                    class="text-menuheading font-poppins text-[15px] font-normal leading-normal">eCommerce Marketing</Link>
+                    class="text-menuheading font-poppins text-[13px] font-normal leading-normal">eCommerce Marketing</Link>
                 </div>
                 <div class="flex items-center py-3 gap-2">
                   <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-lead.png" alt="paid_logo" />
                   <Link href="/services/lead-generation"
-                    class="text-menuheading font-poppins text-[15px] font-normal leading-normal">Lead generation</Link>
+                    class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Lead generation</Link>
                 </div>
                 <div class="flex items-center py-3 gap-2">
                   <img className='w-[35px]' src="https://storage.googleapis.com/website-bucket-uploads/static/SEM.png" alt="paid_logo" />
                   <Link href="/services/programatic-advertising"
-                    class="text-menuheading font-poppins text-[15px] font-normal leading-normal">Search engine marketing</Link>
+                    class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Search engine marketing</Link>
                 </div>
                 <div class="flex items-center py-3 gap-2
                                     ">
                   <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-mobile.png" alt="display_logo" />
                   <Link href="/services/app-marketing"
-                    class="text-menuheading font-poppins text-[15px] font-normal leading-normal">Mobile app marketing</Link>
+                    class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Mobile app marketing</Link>
                 </div>
 
               </ul>
@@ -339,33 +339,33 @@ const header = () => {
                 class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b lg:border-b-0 pb-6 pt-6 lg:pt-3">
                 <div class="flex items-center">
 
-                  <h3 class="text-menuheading font-poppins text-[18px] font-semibold">Analytics Services</h3>
+                  <h3 class="text-menuheading font-poppins text-[16px] font-semibold">Analytics Services</h3>
                 </div> <br />
 
                 <div class="flex items-center py-3 gap-2
                                     ">
                   <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytics-audit-logo.png" alt="audit_logo" />
                   <Link href="/services/analytics?id=audit-and-health-check"
-                    class="text-menuheading font-poppins text-[15px] font-normal leading-normal">Audit
+                    class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Audit
                     and Health Check</Link>
                 </div>
                 <div class="flex items-center py-3 gap-2">
                   <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytics_webapp_logo.png" alt="webapp_logo" />
                   <Link href="/services/analytics?id=web-app-measurement"
-                    class="text-menuheading font-poppins text-[15px] font-normal leading-normal">Web
+                    class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Web
                     and App measurement</Link>
                 </div>
                 <div class="flex items-center py-3 gap-2">
                   <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytis_data-reporting.logo.png"
                     alt="data-reporting_logo" />
                   <Link href="/services/data-reporting-analysis"
-                    class="text-menuheading font-poppins text-[15px] font-normal leading-normal">Data
+                    class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Data
                     Reporting & Analysis</Link>
                 </div>
                 <div class="flex items-center py-3 gap-2">
                   <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytics_Looker.logo.png" alt="Looker_logo" />
                   <Link href="/services/looker-bi-platform"
-                    class="text-menuheading font-poppins text-[15px] font-normal leading-normal">Looker
+                    class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Looker
                     BI Platform</Link>
                 </div>
               </ul>
@@ -373,34 +373,34 @@ const header = () => {
                 class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b lg:border-b-0 pb-6 pt-6 lg:pt-3">
                 <div class="flex items-center">
 
-                  <h3 class="text-menuheading font-poppins text-[18px] font-semibold">Solutions</h3>
+                  <h3 class="text-menuheading font-poppins text-[16px] font-semibold">Solutions</h3>
                 </div> <br />
 
 
                 <div class="flex items-center py-3 gap-2">
                   <img src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_GDRP.logo.png" alt="GDRP_logo" />
                   <Link href="#"
-                    class="text-menuheading font-poppins text-[15px] font-normal leading-normal">GDPR
+                    class="text-menuheading font-poppins text-[13px] font-normal leading-normal">GDPR
                     Compliance</Link>
                 </div>
                 <div class="flex items-center py-3 gap-2">
                   <img src="https://storage.googleapis.com/website-bucket-uploads/static/Solutions_Data-Science.logo.png"
                     alt="Data-Science_logo" />
                   <Link href="#"
-                    class="text-menuheading font-poppins text-[15px] font-normal leading-normal">Data
+                    class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Data
                     Science Solution & Automation</Link>
                 </div>
                 <div class="flex items-center py-3 gap-2">
                   <img className='w-[23px]' src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_Data_Attribution.png"
                     alt="Data-Science_logo" />
                   <Link href="#"
-                    class="text-menuheading font-poppins text-[15px] font-normal leading-normal">Custom Data Attribution Model</Link>
+                    class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Custom Data Attribution Model</Link>
                 </div>
               </ul>
               <ul
                 class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b lg:border-b-0 pb-6 pt-6 lg:pt-3">
                 <div class="flex items-center">
-                  <h3 class="text-menuheading font-poppins text-[18px] font-semibold">Training &
+                  <h3 class="text-menuheading font-poppins text-[16px] font-semibold">Training &
                     Consultation</h3>
                 </div> <br />
                 <div class="flex items-center py-3 gap-2
@@ -408,14 +408,14 @@ const header = () => {
                   <img className='w-[35px]' src="https://storage.googleapis.com/website-bucket-uploads/static/training_Schedule.png"
                     alt="Training-Details_logo" />
                   <Link href="/services/training"
-                    class="text-menuheading font-poppins text-[15px] font-normal leading-normal">Schedule a One-Hour Consultation</Link>
+                    class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Schedule a One-Hour Consultation</Link>
                 </div>
                 <div class="flex items-center py-3 gap-2
                                     ">
                   <img src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_Training-Details.logo.png"
                     alt="Training-Details_logo" />
                   <Link href="/services/training"
-                    class="text-menuheading font-poppins text-[15px] font-normal leading-normal">Training
+                    class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Training
                     Details</Link>
                 </div>
               </ul>
