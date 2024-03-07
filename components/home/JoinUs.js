@@ -140,17 +140,18 @@ const JoinUs = () => {
         <>
          
     
-            <section className="" id='joinus'>
-            
+            <section className="lg:h-[90vh] bg-[#F5F5F5]" id='joinus'>
                 <div className="relative overflow-hidden px-4 md:pt-4 pb-8 md:pb-16">
                     <div className="relative mx-2 lg:flex">
                         <div data-aos="fade-up" data-aos-once="true" className="relative bg-[#f5f5f5] md:h-screen overflow-hidden lg:w-[40%] rounded-lg space-y-9 px-4 pb-20 align-middle text-white">
-                            <div className="inline-widget">
+                            <div className="inline-widget bg-[#fff]">
                                 <div className="mb-4 py-5">
-                                   
+                                <div className="mb-2 flex items-center justify-center">
+                                        <img src="/AnalyticsLiv 2.png" alt="" className="max-w-[200px] max-h-[100px]" />
+                                    </div>
                                     <div className="flex items-center justify-center">
                                         <div>
-                                            <p className="text-sm font-medium text-homepagebtn leading-[30px]">Book Us Slot For Media & Analytics Consultancy</p>
+                                            <p className="text-sm font-semibold text-homepagebtn leading-[30px]">Book Us Slot For Media & Analytics Consultancy</p>
                                         </div>
                                     </div>
 
@@ -158,10 +159,10 @@ const JoinUs = () => {
                                 <InlineWidget url="https://calendly.com/analyticsliv/30min" />
                             </div>
                         </div>
-                        <div data-aos="fade-down" data-aos-once="true" className="relative lg:w-[60%] rounded-lg p-4 bg-white font-regular">
+                        <div data-aos="fade-down" data-aos-once="true" className="relative lg:w-[60%] rounded-lg p-4 font-regular">
                         
                             <div className="pb-5 md:w-[90%] mx-auto">
-                                <h3 className="text-left text-[20px] font-medium text-homepagebtn leading-[30px]">Fill the form to get in touch with us</h3>
+                                <h3 className="text-left text-[20px] font-semibold text-homepagebtn leading-[30px]">Fill the form to get in touch with us</h3>
                             </div>
                             
                             {formSubmit && <div className='relative text-slate-700 p-4 space-y-4 h-full'>
