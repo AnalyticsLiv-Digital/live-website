@@ -23,9 +23,9 @@ const Home = () => {
 
     return (
         <>
-            <section className='home flex items-center justify-center overflow-hidden'>
-                <div className='bg-homepagebg h-[90vh] w-full'>
-                    <div className='relative bg-homepagebg h-full overflow-hidden'>
+            <section className='homepage flex items-center justify-center overflow-hidden'>
+                <div className='bg-[#ecf9ff] h-[90vh] w-full'>
+                    <div className='relative h-full overflow-hidden'>
 
                         {/* Back-Ground design  */}
                         <div className='absolute top-28 right-0 w-80 h-80 flex justify-end'>

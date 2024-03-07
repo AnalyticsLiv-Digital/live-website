@@ -155,7 +155,7 @@ const header = () => {
                   <div onClick={() => { setIsServices(!isServices); setIsResources(false); }} >What We Are</div>
                   {isServices ? (<motion.div initial={{ y: 10, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} className='transition ease-out duration-200 px-4 text-cyan-400 text-base font-medium divide-y-2'>
 
-                    <div onClick={() => { setSubmenu("1") }} ><div className="py-2 w-56 ">Marketing Services</div></div>
+                    <div onClick={() => { setSubmenu("1") }} ><div className="py-2 w-56 ">Media Services</div></div>
                     {submenu == "1" && <motion.div onClick={() => { setIsOpen(!isOpen); setIsServices(false); }} initial={{ y: 10, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} className='transition ease-out duration-200 px-4 '>
 
                       <div class="flex items-center py-1 gap-2">
@@ -304,7 +304,7 @@ const header = () => {
                 class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b lg:border-b-0 pb-6 pt-6 lg:pt-3">
                 <div class="flex items-center">
 
-                  <h3 class="text-menuheading font-poppins text-[16px] font-semibold">Marketing Services</h3>
+                  <h3 class="text-menuheading font-poppins text-[16px] font-semibold">Media Services</h3>
                 </div> <br />
 
                 <div class="flex items-center py-3 gap-2">
