@@ -9,7 +9,7 @@ const Marketing = () => {
         Aos.init({duration: 2000});
     }, [])
     return (
-        <section className='servicedo bg-homepagebg relative overflow-hidden'>
+        <section className='servicedo bg-[#ecf9ff] relative overflow-hidden'>
 
             {/* Back-Ground design  */}
             <div className='absolute top-1/2 right-0 w-80 h-80 flex justify-end'>

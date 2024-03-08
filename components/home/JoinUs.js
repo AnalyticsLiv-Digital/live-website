@@ -141,7 +141,7 @@ const JoinUs = () => {
         <>
          
     
-            <section className="lg:h-[90vh] bg-[#F5F5F5]" id='joinus'>
+            <section className="bg-[#ecf9ff]" id='joinus'>
                 <div className="relative overflow-hidden px-4 md:pt-4 pb-8 md:pb-16">
                     <div className="relative mx-2 lg:flex">
                         <div data-aos="fade-up" data-aos-once="true" className="relative bg-[#f5f5f5] md:h-screen overflow-hidden lg:w-[40%] rounded-lg space-y-9 px-4 pb-20 align-middle text-white">
