@@ -4,8 +4,20 @@ import Image from 'next/image'
 import Aos from 'aos';
 import 'aos/dist/aos.css'
 import Marquee from "react-fast-marquee";
+import * as Scroll from 'react-scroll';
 
 const Home = () => {
+    const { Element: ScrollElement } = Scroll;
+    const scrolling1 = () =>{
+      {
+        Scroll.scroller.scrollTo("footer", {
+          duration: 500,
+          smooth: true,
+          offset: -100,
+        });
+      }
+  
+    }
     useEffect(() => {
         Aos.init({ duration: 2000 });
     }, [])
@@ -23,9 +35,9 @@ const Home = () => {
 
     return (
         <>
-            <section className='home flex items-center justify-center overflow-hidden'>
-                <div className='bg-homepagebg h-[100vh] w-full'>
-                    <div className='relative bg-homepagebg h-full overflow-hidden'>
+            <section className='homepage flex items-center justify-center overflow-hidden'>
+                <div className='bg-[#ecf9ff] h-[90vh] w-full'>
+                    <div className='relative h-full overflow-hidden'>
 
                         {/* Back-Ground design  */}
                         <div className='absolute top-28 right-0 w-80 h-80 flex justify-end'>
@@ -38,11 +50,11 @@ const Home = () => {
                                 <h1 className='text-maintext text-[26px] md:text-[40px] text-center font-medium leading-[1.3em] md:leading-[1.5em] not-italic pb-[30px]'> <span className='md:text-[27px] text-[24px] md:font-normal font-light'> Redefining Possibilities: Empowering Brands through </span> <br /> <b> Strategic Media, Analytics & Cloud Solutions</b> </h1>
                                 <p className='text-[#000] md:text-[18px] text-base font-medium leading-[1.5em] text-center md:pb-10 pb-[30px]'>Data Analytics and Marketing Solutions helps businesses in gaining digital maturity <br /> through optimized utilization of data</p>
                                 <div className='flex flex-wrap justify-around mb-3'>
-                                    <a href="/contact">
-                                        <button className='butn'>
+                                    
+                                        <button onClick={scrolling1} className='butn'>
                                             Talk to our Experts
                                         </button>
-                                    </a>
+                                    
                                 </div>
                             </div>
                             {/*  */}

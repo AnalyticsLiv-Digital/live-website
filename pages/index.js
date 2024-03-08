@@ -5,6 +5,7 @@ import Home from '../components/home/Home'
 import Marketing from '../components/home/Marketing'
 import PowerUp from '../components/home/PowerUp'
 import ServicesDo from '../components/home/ServicesDo'
+import JoinUs from '../components/home/JoinUs'
 import ServicesOffer from '../components/home/ServicesOffer'
 import Embed from '../components/home/Embed'
 import ScrollProgress from '../components/ScrollProgress';
@@ -35,6 +36,7 @@ const page = () => {
      <Testimonial/>
      <Casestudies/>
      <Blogs/>
+     <JoinUs/>
     </>
   )
 }

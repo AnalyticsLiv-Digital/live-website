@@ -203,7 +203,7 @@ input[type=number] {
 }
 
 .ftbutn {
-  @apply relative overflow-hidden z-10 text-[11px] font-normal px-5 py-4 not-italic inline rounded-[14px] mb-3 transition-all duration-300 ease-linear hover:text-homepagebtn shadow-foter bg-[#3b82f617] text-white border border-homepagebtn cursor-pointer mt-4
+  @apply relative overflow-hidden z-10 text-[11px] font-normal px-5 py-4 not-italic inline rounded-[14px] mb-3 transition-all duration-300 ease-linear hover:text-homepagebtn shadow-foter  text-white border border-[#ffffff69] cursor-pointer mt-4
 }
 
 .butn::before {
@@ -235,7 +235,7 @@ input[type=number] {
   top: 0;
   left: 0px;
   transform: translateY(-85px);
-  background: rgb(244, 239, 239);
+  background: rgba(244, 239, 239, 0.027);
   transition: all 0.3s linear;
 }
 
@@ -268,6 +268,120 @@ iframe {
 
 .bgd2 {
   background: radial-gradient(51.33% 51.33% at 61.62% 50%, #66E1FC 0%, rgba(178, 184, 193, 0.00) 100%);
+}
+
+.powerup {
+  background-color: #000000;
+}
+.powerup:before {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  width: 600px;
+  height: 365px;
+  bottom: 30%;
+  left: -10%;
+  opacity: .5;
+  background: linear-gradient(252.93deg, #d054ce 33.59%, #0092f4 59.88%, #20dc86 87.87%);
+  filter: blur(142.5px);
+  -webkit-filter: blur(142.5px);
+  will-change: filter;
+  transform: rotate(-21.23deg);
+}
+
+.powerup:after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  width: 600px;
+  height: 435px;
+  opacity: .4;
+  top: 0%;
+  transform: rotate(-50.41deg);
+  bottom: 10%;
+  right: -25%;
+  background: linear-gradient(252.93deg, #d054ce 33.59%, #0092f4 59.88%, #20dc86 87.87%);
+  filter: blur(142.5px);
+  -webkit-filter: blur(142.5px);
+  will-change: filter;
+}
+
+.powerbox {
+ background: rgba(19, 19, 20, .7);
+ box-shadow: 0px 4px 20px -5px rgba(8,52,82,.12), 0px 20px 30px rgba(8,52,82,.08);
+}
+.powerbox:hover .inbox:after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  z-index: 10;
+  top: -10px;
+  left: -15px;
+  opacity: .44;
+  border-radius: 50%;
+  background: linear-gradient(267.31deg, #15c474 -22.87%, #0092f4 41.07%, #d054ce 107.64%);
+  filter: blur(28.5px);
+  will-change: filter;
+  transition: opacity .2s ease-in-out;
+}
+
+.homeftr {
+  background-color: #252526;
+}
+
+.homeftr:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  background: linear-gradient(310deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.87) 75.86%);
+  opacity: .8;
+}
+
+.homeftr:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  top: 0;
+  background: linear-gradient(90deg, #ff4800 0%, #d054bc 26.56%, #0092f4 54.69%, #0092f4 54.7%, #15c474 100%);
+}
+
+.inrhomeftr:before {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  width: 500px;
+  height: 365px;
+  left: 0;
+  top: -95px;
+  opacity: .5;
+  background: linear-gradient(190deg, #d054ce 33.59%, #0092f4 59.88%, #20dc86 87.87%);
+  filter: blur(142.5px);
+  -webkit-filter: blur(142.5px);
+  will-change: filter;
+  transform: rotate(-21.23deg);
+}
+
+.inrhomeftr:after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  width: 600px;
+  height: 435px;
+  opacity: .4;
+  transform: rotate(-50.41deg);
+  bottom: 20%;
+  right: 0;
+  background: linear-gradient(108deg, #d054ce 33.59%, #0092f4 59.88%, #20dc86 87.87%);
+  filter: blur(142.5px);
+  -webkit-filter: blur(142.5px);
+  will-change: filter;
 }
 
 /* Homepage testimonials-css */
@@ -368,7 +482,7 @@ iframe {
   }
 }
 
-/* // // // // // // // // // // // // // // // */
+/* // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // */
 
 /* DV360 Page css */
 .home {

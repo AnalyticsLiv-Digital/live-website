@@ -1,216 +1,269 @@
 'use client'
-import React, { useState } from "react";
-import DatePicker from "react-datepicker";
-import { addMonths } from 'date-fns';
-import { format } from 'date-fns';
-import { MdOutlineAccessTime } from "react-icons/md";
-import { BsCameraVideo } from "react-icons/bs";
+import React from 'react'
+// import ScrollProgress from '../components/ScrollProgress'
+import Image from 'next/image';
+import Head from 'next/head'
+import { useState, useEffect } from 'react'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { InlineWidget } from 'react-calendly';
+// import ReactFlagsSelect from "react-flags-select";
+// import "react-flags-select/css/react-flags-select.css";
+import { ScaleLoader } from 'react-spinners'
+import Link from 'next/link';
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/bootstrap.css";
+import * as Scroll from 'react-scroll';
 
-import "react-datepicker/dist/react-datepicker.css";
 
 const JoinUs = () => {
-
-    const [startDate, setStartDate] = useState(new Date());
-    const [endDate, setEndDate] = useState(null);
-    const [currentDate, setCurrentDate] = useState(new Date());
-
-    const onChange = (dates) => {
-        const [start, end] = dates;
-        setStartDate(start);
-        setEndDate(end);
-    };
-
-    // Update current date and time every second
-    setInterval(() => {
-        setCurrentDate(new Date());
-    }, 1000);
-
-    const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
-        companyName: '',
-        email: '',
-        phone: '',
-        howHeard: '',
-        description: ''
-    });
+    const { Element: ScrollElement } = Scroll;
+    useEffect(() => {
+        AOS.init();
+    }, []);
+    const initialValues = { firstName: '', lastName: '', email: '', contactno: '', company: '', role: '', purpose: '', requirements: '' };
+    const [formValues, setFormValues] = useState(initialValues);
+    const [formErrors, setFormErrors] = useState({});
+    const [isSubmit, setIsSubmit] = useState(false);
+    const [showWaiting, setShowWaiting] = useState(false);
+    const [selected, setSelected] = useState("");
+    const [formSubmit, setFormSubmit] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
+        setFormValues({ ...formValues, [name]: value });
+        console.log(formValues);
+    };
+
+    const handleContactChange = (e) => {
+        setFormValues({ ...formValues, ['contactno']: e });
+        console.log(formValues);
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Handle form submission here
-        console.log(formData);
+        setFormErrors(validate(formValues));
+        setIsSubmit(true);
+
     };
+
+    useEffect(() => {
+        // console.log(formErrors);
+        if (Object.keys(formErrors).length === 0 && isSubmit) {
+            //console.log(formValues);
+            setShowWaiting(true);
+            dataLayer.push({
+                event: 'contact_submission'
+            });
+            fetch('/api/contact', {
+                method: 'POST', // or 'PUT'
+                headers: {
+                    'Content-Type': 'application/json',
+                    'mode': 'no-cors'
+                },
+                body: JSON.stringify({
+                    "firstName": formValues.firstName,
+                    "lastName": formValues.lastName,
+                    "email": formValues.email,
+                    "contact": formValues.contactno,
+                    "role": formValues.role,
+                    "purpose": formValues.purpose,
+                    "requirments": formValues.requirements,
+                    "company": formValues.company
+                }),
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log('Success:', data);
+                    setFormSubmit(true);
+                    setShowWaiting(false);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+
+        }
+    }, [formErrors]);
+
+    const validate = (values) => {
+        const errors = {};
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+        const mobile = /^(?=.*\d).{8,}$/i;
+        if (!values.firstName) {
+            errors.firstName = "Firstname is required!";
+        }
+
+        if (!values.lastName) {
+            errors.lastName = "Lastname is required!";
+        }
+
+        if (!values.company) {
+            errors.company = "Company is required!";
+        }
+
+        /* if (!values.role) {
+             errors.role = "Role is required!";
+         }
+         */
+
+        if (!values.purpose) {
+            errors.purpose = "Lastname is required!";
+        }
+
+        if (!values.requirements) {
+            errors.requirements = "Requirement is required!";
+        }
+
+
+
+        if (!values.purpose) {
+            errors.purpose = "Contact For is required!";
+        }
+
+
+        if (!values.email) {
+            errors.email = "Email is required!";
+        } else if (!regex.test(values.email)) {
+            errors.email = "This is not a valid email format!";
+        }
+
+        /*   if (!values.contactno) {
+               errors.contactno = "Contact is required!";
+           } else if (!mobile.test(values.contactno)) {
+               errors.contactno = "This is not a valid phone number!";
+           }
+       */
+        return errors;
+    };
+
 
     return (
         <>
-            <section className="joinus bg-[#F5F5F5]">
-                <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
-                    <div className="grid lg:grid-cols-2 gap-7">
-                        <div className="bg-white lg:pb-0 pb-6">
-                            <div>
-                                <div className="mb-5">
-                                    <div className="mb-2 flex items-center justify-center">
+         
+    
+            <section className="lg:h-[90vh] bg-[#F5F5F5]" id='joinus'>
+                <div className="relative overflow-hidden px-4 md:pt-4 pb-8 md:pb-16">
+                    <div className="relative mx-2 lg:flex">
+                        <div data-aos="fade-up" data-aos-once="true" className="relative bg-[#f5f5f5] md:h-screen overflow-hidden lg:w-[40%] rounded-lg space-y-9 px-4 pb-20 align-middle text-white">
+                            <div className="inline-widget bg-[#fff]">
+                                <div className="mb-4 py-5">
+                                <div className="mb-2 flex items-center justify-center">
                                         <img src="/AnalyticsLiv 2.png" alt="" className="max-w-[200px] max-h-[100px]" />
                                     </div>
                                     <div className="flex items-center justify-center">
                                         <div>
-                                            <div className="text-center mb-5">
-                                                <div className="flex items-center justify-center">
-                                                    <img src="/30e09619.png" alt="" className="w-[65px] h-[65px] rounded-[50px]" />
-                                                </div>
-                                                <div className="text-base leading-6 font-medium text-[#1A1A1A9c]">Netram Sharma</div>
-                                                <p className="text-[18px] font-normal text-[#1A1A1A]">Book Us Slot For Media & Analytics Consultancy</p>
-                                            </div>
-                                            <div className="max-w-[340px] mb-5 mx-auto">
-                                                <div className="text-[#1A1A1A9c] font-semibold">
-                                                    <div className="flex item-center mb-4">
-                                                        <div className="flex items-center">
-                                                            <MdOutlineAccessTime className="w-[20px] h-[20px] mr-2" />
-                                                        </div>
-                                                        <span className="inline-block text-base font-semibold">30 min</span>
-                                                    </div>
-                                                    <div className="flex item-center mb-4">
-                                                        <div className="flex items-center">
-                                                            <BsCameraVideo className="w-[25px] h-[40px] mr-2" />
-                                                        </div>
-                                                        <span className="inline-block text-base font-semibold">Web conferencing details provided upon confirmation.</span>
-                                                    </div>
-                                                </div>
-
-                                            </div>
+                                            <p className="text-sm font-semibold text-homepagebtn leading-[30px]">Book Us Slot For Media & Analytics Consultancy</p>
                                         </div>
                                     </div>
 
                                 </div>
-                            </div>
-                            <div className="overflow-hidden flex items-center justify-center">
-                                <div>
-                                    <div className="flex items-center justify-center mb-3">
-                                        <p className="text-[20px] font-semibold text-[#1A1A1A]">Select a Day</p>
-                                    </div>
-                                    <DatePicker
-                                        selected={startDate}
-                                        onChange={onChange}
-                                        minDate={new Date()}
-                                        maxDate={addMonths(new Date(), 5)}
-                                        startDate={startDate}
-                                        endDate={endDate}
-                                        selectsRange
-                                        inline
-                                        showTimeSelect
-                                        timeIntervals={15}
-                                        dateFormat="MM/dd/yyyy HH:mm"
-                                        timeCaption={format(currentDate, 'dd/MM EEEE')}
-                                    />
-                                </div>
+                                <InlineWidget url="https://calendly.com/analyticsliv/30min" />
                             </div>
                         </div>
-                        <div className="lg:pt-0 pt-7">
-                            <div className="pb-5">
-                                <h3 className="text-[20px] font-medium text-homepagebtn leading-[30px]">Fill the form to get in touch with us</h3>
+                        <div data-aos="fade-down" data-aos-once="true" className="relative lg:w-[60%] rounded-lg p-4 font-regular">
+                        
+                            <div className="pb-5 md:w-[90%] mx-auto">
+                                <h3 className="text-left text-[20px] font-semibold text-homepagebtn leading-[30px]">Fill the form to get in touch with us</h3>
                             </div>
-                            <form onSubmit={handleSubmit} className="space-y-2 md:space-y-6 md:w-4/5 mx-auto">
+                            
+                            {formSubmit && <div className='relative text-slate-700 p-4 space-y-4 h-full'>
+                                <h1 className='align-middle font-medium text-4xl'>Thank You for your interest.</h1>
+                                <h2 className='align-middle text-xl'>We will get back to you soon.</h2>
+                                <div className='absolute bottom-0 right-2 rounded-full w-20 h-20 bg-emerald-600 opacity-70 animate-bounce hover:animate-none duration-300 delay-75'></div>
+                            </div>}
+                            <ScrollElement id="footer" name="footer" ></ScrollElement>
+                            {!formSubmit && <form className="space-y-2 md:space-y-6  md:w-[90%] mx-auto" onSubmit={handleSubmit}>
                                 <div className="relative w-full md:flex justify-between md:space-x-8">
                                     <div className="relative md:w-1/2">
-                                        <input
-                                            type="text"
-                                            name="firstName"
-                                            id="firstName"
-                                            placeholder=""
-                                            value={formData.firstName}
-                                            onChange={handleChange}
-                                            className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-slate-500 appearance-none focus:outline-none focus:ring-0 focus:border-cyan-500 peer"
-                                            required
-                                        />
-                                        <label for="firstname" className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">First Name</label>
-                                        <p className="text-red-600 text-sm"></p>
+                                        <input type="text" id="firstname" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent  border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " name="firstName" value={formValues.firstName} onChange={handleChange} />
+                                        <label htmlFor="firstname" className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-4 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">First Name</label>
+                                        <p className="text-red-600 text-sm">{formErrors.firstName}</p>
                                     </div>
                                     <div className="relative md:w-1/2">
-                                        <input
-                                            type="text"
-                                            name="lasttName"
-                                            id="lasttName"
-                                            placeholder=""
-                                            value={formData.firstName}
-                                            onChange={handleChange}
-                                            className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-slate-500 appearance-none focus:outline-none focus:ring-0 focus:border-cyan-500 peer"
-                                            required
-                                        />
-                                        <label for="lastname" className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Last Name</label>
-                                        <p className="text-red-600 text-sm"></p>
+                                        <input type="text" id="lastname" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent  border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " name="lastName" value={formValues.lastName} onChange={handleChange} />
+                                        <label htmlFor="lastname" className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-4 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Last Name</label>
+                                        <p className="text-red-600 text-sm">{formErrors.lastName}</p>
                                     </div>
                                 </div>
 
                                 <div className="relative w-full md:flex justify-between md:space-x-8">
                                     <div className="relative md:w-1/2">
-                                        <input
-                                            type="emaild"
-                                            id="email"
-                                            name="email"
-                                            placeholder=""
-                                            value={formData.email}
-                                            onChange={handleChange}
-                                            className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-slate-500 appearance-none focus:outline-none focus:ring-0 focus:border-cyan-500 peer"
-                                            required
-                                        />
-                                        <label for="firstname" className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">E-mail</label>
-                                        <p className="text-red-600 text-sm"></p>
+                                        <input type="emaild" id="email" className="px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent  border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " name="email" value={formValues.email} onChange={handleChange} />
+                                        <label htmlFor="emaild" className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-4 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">E-mail</label>
+                                        <p className="text-red-600 text-sm">{formErrors.email}</p>
                                     </div>
                                     <div className="relative md:w-1/2">
-                                        <div className=" react-tel-input w-0 mt-4 md:mt-0 text-sm relative">
-                                            <input
-                                                type="tel"
-                                                placeholder="1 (702) 123-4567"
-                                                value={'+91' + formData.phone}
-                                                onChange={handleChange}
-                                                className="form-control "
-                                                required
-                                            />
-                                            <div className="flag-dropdown ">
-                                                <div className="selected-flag"></div>
-                                            </div>
-                                        </div>
-                                        <label for="tel" className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 origin-[0] left-2.5 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Contact No</label>
-                                        <p className="text-red-600 text-sm"></p>
+                                        <PhoneInput className="w-0 mt-4 md:mt-0 text-sm"
+                                            name="contactno" id="contactno" value={formValues.contactno} onChange={handleContactChange}
+                                            country={"in"}
+                                            preferredCountries={['in', 'us', 'au']}
+                                            enableSearch={true}
+
+                                        />
+                                        <label htmlFor="tel" className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-4 origin-[0] left-2.5 peer-focus:text-blue-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Contact No</label>
+
                                     </div>
                                 </div>
 
-                                
-                                <div className="relative md:w-1/2">
-                                    <input
-                                        type="text"
-                                        name="howHeard"
-                                        placeholder=""
-                                        value={formData.howHeard}
-                                        onChange={handleChange}
-                                        className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-slate-500 appearance-none focus:outline-none focus:ring-0 focus:border-cyan-500 peer"
-                                    />
-                                    <label for="firstname" className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">How did you hear about us</label>
-                                        <p className="text-red-600 text-sm"></p>
+                                <div className="w-full md:flex space-y-4 justify-around md:space-x-8">
+                                    <div className="relative md:w-1/2 ">
+                                        <input type="Cname" id="company" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent  border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " name="company" value={formValues.company} onChange={handleChange} />
+                                        <label htmlFor="Cname" className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-4 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Company Name</label>
+                                        <p className="text-red-600 text-sm">{formErrors.company}</p>
+                                    </div>
+                                    <div className='relative w-full md:w-1/2'>
+                                        <select className="pb-2.5 pl-2 min-w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-slate-500  focus:outline-none focus:ring-0 focus:border-cyan-500 outline-none" placeholder="Role in Comapany" id="role" name="role" value={formValues.role} onChange={handleChange}>
+                                            <option>Role in Company</option>
+                                            <option>Data Analyst</option>
+                                            <option>Management/Executive</option>
+                                            <option>Sales</option>
+                                            <option>Marketing</option>
+                                            <option>Ecommerce Manager</option>
+                                            <option>Other</option>
+                                        </select>
+                                        <p className="block text-red-600 text-sm">{formErrors.role}</p>
+                                    </div>
+
+
                                 </div>
-                                <div className="relative md:w-1/2">
-                                    
-                                    <textarea
-                                        name="description"
-                                        value={formData.description}
-                                        onChange={handleChange}
-                                        rows={3}
-                                        cols={2}
-                                        className="w-full block px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-transparent border-0 border-b-2 border-slate-500 appearance-none focus:outline-none focus:ring-0 focus:border-cyan-500 peer"
-                                    />
-                                    <label className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Tell us what type of solution you are looking for*</label>
+                                <div className="relative w-full ">
+                                    <select className="pb-4 pl-2 w-full  mt-4 text-sm text-gray-500 bg-transparent border-0 border-b-2 border-slate-500  focus:outline-none focus:ring-0 focus:border-cyan-500 outline-none" placeholder="Contact for" id="purpose" name="purpose" value={formValues.purpose} onChange={handleChange}>
+                                        <option>Contact For</option>
+                                        <option>Web Analytics Service</option>
+                                        <option>Display &amp; Video 360 Self Serve</option>
+                                        <option>Google Cloud Platform</option>
+                                        <option>Mobile App Analytics Service</option>
+                                        <option>Advanced Funnel Optimization</option>
+                                        <option>Training</option>
+                                        <option>Others</option>
+                                    </select>
+                                    <p className="text-red-600 text-sm">{formErrors.purpose}</p>
                                 </div>
-                                <button type="submit" className="butn">Submit</button>
-                            </form>
+                                <div className="w-full">
+                                    <textarea className="pl-2 mt-4 mx-auto resize-none lg:h-28 text-sm w-full  text-gray-700 bg-transparent border-0 border-b-2 border-slate-500  focus:outline-none focus:ring-0 focus:border-cyan-500 outline-none" id="requirements" name="requirements" placeholder="Requirements" value={formValues.requirements} onChange={handleChange}></textarea>
+                                    <p className="text-red-600 text-sm">{formErrors.requirements}</p>
+
+                                </div>
+                                <div className="text-left">
+                                    <button className="butn">Submit</button>
+                                </div>
+                            </form>}
+
+
+
+
                         </div>
                     </div>
+
+
                 </div>
             </section>
+            {showWaiting && <div className="fixed flex z-99 backdrop-blur top-0 left-0 right-0 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full"><ScaleLoader
+                color="#271d90"
+                loading
+                size={100}
+                className="m-auto align-middle"
+            /></div>}
         </>
     )
 }
