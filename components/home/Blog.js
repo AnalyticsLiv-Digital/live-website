@@ -103,7 +103,7 @@ const Blogs = () => {
                         <div className='hidden lg:grid lg:w-[33%]'>
                             <h5 className='text-start text-[15px] font-normal leading-none text-maintext mb-2'>Check out more blogs</h5>
                             <div className='third hidden lg:grid gap-[30px] 2xl:h-[540px] lg:h-[495px]'>
-                                <div className='home-blog group rounded bg-[#5f9ea0] border border-solid border-[#DBDBDB] hover:border-[#979797] hover:shadow-serviceoffer p-[25px] pb-3 text-center relative'>
+                                <div style={{ backgroundImage: 'url(/Gradiant_Blog_BG.png)' }} className='home-blog group rounded bg-no-repeat bg-cover border border-solid hover:border-[#979797] hover:shadow-serviceoffer p-[25px] pb-3 text-center relative'>
                                     <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>BLOG</span>
                                     <a href="/blogs/traversing-essentials-of-gdpr-cookie-consent" className='grid gap-1'>
                                         <div className='grid gap-4'>
@@ -116,11 +116,11 @@ const Blogs = () => {
                                                 className='w-full m-auto h-[130px] 2xl:h-[180px]'
                                             />
                                         </div>
-                                        <h3 className='text-[13px] text-white font-semibold text-start whitespace-relaxed pt-[15px]'>Traversing Essentials of GDPR Cookie Consent</h3>
+                                        <h3 className='text-[13px] text-white font-medium text-start whitespace-relaxed pt-[15px]'>Traversing Essentials of GDPR Cookie Consent</h3>
 
                                     </a>
                                 </div>
-                                <div className='home-blog group rounded bg-[#5f9ea0] border border-solid border-[#DBDBDB] hover:border-[#979797] hover:shadow-serviceoffer p-[25px] pb-3 text-center relative'>
+                                <div style={{ backgroundImage: 'url(/Gradiant_Blog_BG.png)' }} className='home-blog group rounded bg-no-repeat bg-cover border border-solid hover:border-[#979797] hover:shadow-serviceoffer p-[25px] pb-3 text-center relative'>
                                     <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>BLOG</span>
                                     <a href="/blogs/dv-360-ad-personalization-helpful-complex-privacy-breach" className='grid gap-1'>
                                         <div className='grid gap-4'>
@@ -133,7 +133,7 @@ const Blogs = () => {
                                                 className='w-full m-auto h-[130px] 2xl:h-[180px]'
                                             />
                                         </div>
-                                        <h3 className='text-[13px] text-white font-semibold text-start whitespace-relaxed pt-[15px]'>Ad Personalization:  Helpful, Complex, Privacy Breach ?</h3>
+                                        <h3 className='text-[13px] text-white font-medium text-start whitespace-relaxed pt-[15px]'>Ad Personalization:  Helpful, Complex, Privacy Breach ?</h3>
 
                                     </a>
                                 </div>
