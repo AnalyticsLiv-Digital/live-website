@@ -4,8 +4,20 @@ import Image from 'next/image'
 import Aos from 'aos';
 import 'aos/dist/aos.css'
 import Marquee from "react-fast-marquee";
+import * as Scroll from 'react-scroll';
 
 const Home = () => {
+    const { Element: ScrollElement } = Scroll;
+    const scrolling1 = () =>{
+      {
+        Scroll.scroller.scrollTo("footer", {
+          duration: 500,
+          smooth: true,
+          offset: -100,
+        });
+      }
+  
+    }
     useEffect(() => {
         Aos.init({ duration: 2000 });
     }, [])
@@ -38,11 +50,11 @@ const Home = () => {
                                 <h1 className='text-maintext text-[26px] md:text-[40px] text-center font-medium leading-[1.3em] md:leading-[1.5em] not-italic mt-[30px] md:pb-5'> <span className='md:text-[27px] text-[24px] md:font-normal font-light'> Redefining Possibilities: Empowering Brands through </span> <br /> <b> Strategic Media, Analytics & Cloud Solutions</b> </h1>
                                 <p className='text-[#000] md:text-[18px] text-base font-medium leading-[1.5em] text-center md:pb-5 pb-[30px]'>Data Analytics and Marketing Solutions helps businesses in gaining digital maturity <br /> through optimized utilization of data</p>
                                 <div className='flex flex-wrap justify-around mb-3'>
-                                    <a href="/contact">
-                                        <button className='butn'>
+                                    
+                                        <button onClick={scrolling1} className='butn'>
                                             Talk to our Experts
                                         </button>
-                                    </a>
+                                    
                                 </div>
                             </div>
                             {/*  */}

@@ -13,10 +13,11 @@ import { ScaleLoader } from 'react-spinners'
 import Link from 'next/link';
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/bootstrap.css";
-
+import * as Scroll from 'react-scroll';
 
 
 const JoinUs = () => {
+    const { Element: ScrollElement } = Scroll;
     useEffect(() => {
         AOS.init();
     }, []);
@@ -170,7 +171,7 @@ const JoinUs = () => {
                                 <h2 className='align-middle text-xl'>We will get back to you soon.</h2>
                                 <div className='absolute bottom-0 right-2 rounded-full w-20 h-20 bg-emerald-600 opacity-70 animate-bounce hover:animate-none duration-300 delay-75'></div>
                             </div>}
-
+                            <ScrollElement id="footer" name="footer" ></ScrollElement>
                             {!formSubmit && <form className="space-y-2 md:space-y-6  md:w-[90%] mx-auto" onSubmit={handleSubmit}>
                                 <div className="relative w-full md:flex justify-between md:space-x-8">
                                     <div className="relative md:w-1/2">
