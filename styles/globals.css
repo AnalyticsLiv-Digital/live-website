@@ -390,7 +390,21 @@ iframe {
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
 
-.testimonials .slick-dots {
+.right-testimonial-item .slick-prev,
+.right-testimonial-item .slick-next {
+    top: 40% !important;
+}
+
+.right-testimonial-item .slick-prev:before,
+.right-testimonial-item .slick-next:before {
+    font-size: 30px !important;
+}
+
+.testimonials .slick-dots li {
+  display: none !important;
+}
+
+/* .testimonials .slick-dots {
   bottom: -40px !important;
 }
 
@@ -417,7 +431,7 @@ iframe {
 
 .testimonials .slick-dots li button:before {
   content: '' !important;
-}
+} */
 
 
 [data-role="none"] {
@@ -542,7 +556,17 @@ iframe {
   background-size: cover;
 }
 
-.slick-slider .slick-next {
+.clients .slick-slider .slick-next , .leaders .slick-slider .slick-next , .casestudy .slick-slider .slick-next , .services .slick-slider .slick-next , .buypremium .slick-slider .slick-next , .targeting .slick-slider .slick-next {
+  display: none !important;
+  right: 0 !important;
+}
+
+.clients .slick-slider .slick-prev , .leaders .slick-slider .slick-prev , .casestudy .slick-slider .slick-prev , .services .slick-slider .slick-prev , .buypremium .slick-slider .slick-prev , .targeting .slick-slider .slick-prev {
+  display: none !important;
+  left: 0 !important;
+}
+
+/* .slick-slider .slick-next {
   display: none !important;
   right: 0 !important;
 }
@@ -550,7 +574,7 @@ iframe {
 .slick-slider .slick-prev {
   display: none !important;
   left: 0 !important;
-}
+} */
 
 [data-role="none"] {
   display: none;
@@ -585,10 +609,18 @@ iframe {
   transition: all 0.5s linear;
 }
 
-.slick-dots .slick-active {
+.clients .slick-dots .slick-active , .leaders .slick-dots .slick-active , .casestudy .slick-dots .slick-active , .services .slick-dots .slick-active , .buypremium .slick-dots .slick-active , .targeting .slick-dots .slick-active {
   background-color: #080808;
 }
 
-.slick-dots li button:before {
+.clients .slick-dots li button:before , .leaders .slick-dots li button:before , .casestudy .slick-dots li button:before , .services .slick-dots li button:before , .buypremium .slick-dots li button:before, .targeting .slick-dots li button:before {
   content: '' !important;
 }
+
+/* .slick-dots .slick-active {
+  background-color: #080808;
+} */
+
+/* .slick-dots li button:before {
+  content: '' !important;
+} */

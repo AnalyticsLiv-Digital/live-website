@@ -34,9 +34,9 @@ const Home = () => {
                         {/*  */}
 
                         <div className='flex flex-col items-center justify-center gap-12 px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16 h-full'>
-                            <div className='vb pb-10'>
-                                <h1 className='text-maintext text-[26px] md:text-[40px] text-center font-medium leading-[1.3em] md:leading-[1.5em] not-italic pb-[30px]'> <span className='md:text-[27px] text-[24px] md:font-normal font-light'> Redefining Possibilities: Empowering Brands through </span> <br /> <b> Strategic Media, Analytics & Cloud Solutions</b> </h1>
-                                <p className='text-[#000] md:text-[18px] text-base font-medium leading-[1.5em] text-center md:pb-10 pb-[30px]'>Data Analytics and Marketing Solutions helps businesses in gaining digital maturity <br /> through optimized utilization of data</p>
+                            <div className='vb pb-5'>
+                                <h1 className='text-maintext text-[26px] md:text-[40px] text-center font-medium leading-[1.3em] md:leading-[1.5em] not-italic mt-[30px] md:pb-5'> <span className='md:text-[27px] text-[24px] md:font-normal font-light'> Redefining Possibilities: Empowering Brands through </span> <br /> <b> Strategic Media, Analytics & Cloud Solutions</b> </h1>
+                                <p className='text-[#000] md:text-[18px] text-base font-medium leading-[1.5em] text-center md:pb-5 pb-[30px]'>Data Analytics and Marketing Solutions helps businesses in gaining digital maturity <br /> through optimized utilization of data</p>
                                 <div className='flex flex-wrap justify-around mb-3'>
                                     <a href="/contact">
                                         <button className='butn'>
