@@ -63,7 +63,7 @@ const Blogs = () => {
                                     
                                     <a href="/blogs/unlocking-the-power-of-bigquery-for-using-looker-studio-and-reporting-tool">
                                         <Image
-                                            src="/blog2.png"
+                                            src="/secondblog.png"
                                             width={500}
                                             height={500}
                                             alt="Picture of the author"
@@ -103,7 +103,7 @@ const Blogs = () => {
                         <div className='hidden lg:grid lg:w-[33%]'>
                             <h5 className='text-start text-[15px] font-normal leading-none text-maintext mb-2'>Check out more blogs</h5>
                             <div className='third hidden lg:grid gap-[30px] 2xl:h-[540px] lg:h-[495px]'>
-                                <div style={{ backgroundImage: 'url(/Gradiant_Blog_BG.png)' }} className='home-blog group rounded bg-no-repeat bg-cover border border-solid hover:border-[#979797] hover:shadow-serviceoffer p-[25px] pb-3 text-center relative'>
+                                <div className='home-blog3 group rounded bg-no-repeat bg-cover border border-solid hover:border-[#979797] hover:shadow-serviceoffer p-[25px] pb-3 text-center relative'>
                                     <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>BLOG</span>
                                     <a href="/blogs/traversing-essentials-of-gdpr-cookie-consent" className='grid gap-1'>
                                         <div className='grid gap-4'>
@@ -120,7 +120,7 @@ const Blogs = () => {
 
                                     </a>
                                 </div>
-                                <div style={{ backgroundImage: 'url(/Gradiant_Blog_BG.png)' }} className='home-blog group rounded bg-no-repeat bg-cover border border-solid hover:border-[#979797] hover:shadow-serviceoffer p-[25px] pb-3 text-center relative'>
+                                <div className='home-blog3 group rounded bg-no-repeat bg-cover border border-solid hover:border-[#979797] hover:shadow-serviceoffer p-[25px] pb-3 text-center relative'>
                                     <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>BLOG</span>
                                     <a href="/blogs/dv-360-ad-personalization-helpful-complex-privacy-breach" className='grid gap-1'>
                                         <div className='grid gap-4'>

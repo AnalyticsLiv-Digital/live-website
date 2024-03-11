@@ -81,7 +81,7 @@ const Casestudies = () => {
                         <div className='hidden lg:grid lg:w-[33%]'>
                             <h5 className='text-start text-[15px] font-normal leading-none text-maintext mb-2'>Check out more case studies</h5>
                             <div className='third hidden lg:grid gap-[30px]'>
-                                <div style={{ backgroundImage: 'url(/Gradiant_Blog_BG.png)' }} className='home-casestd group 2xl:h-[299px] xl:h-[329px] lg:h-[290px] rounded bg-no-repeat bg-cover border border-solid hover:border-[#979797] hover:shadow-serviceoffer p-5 text-center relative'>
+                                <div className='home-casestd3 group 2xl:h-[299px] xl:h-[329px] lg:h-[290px] rounded bg-no-repeat bg-cover border border-solid hover:border-[#979797] hover:shadow-serviceoffer p-5 text-center relative'>
                                     <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
                                     <a href="/case-studies/skyrocket-your-campaigns-ctr-with-a-95-percent-surge-in-14-days" className='grid gap-5'>
                                         <div className=''>
@@ -100,7 +100,7 @@ const Casestudies = () => {
                                         </div>
                                     </a>
                                 </div>
-                                <div style={{ backgroundImage: 'url(/Gradiant_Blog_BG.png)' }} className='home-casestd group 2xl:h-[299px] xl:h-[329px] lg:h-[290px] rounded bg-no-repeat bg-cover border border-solid hover:border-[#979797] hover:shadow-serviceoffer p-5 text-center relative'>
+                                <div className='home-casestd3 group 2xl:h-[299px] xl:h-[329px] lg:h-[290px] rounded bg-no-repeat bg-cover border border-solid hover:border-[#979797] hover:shadow-serviceoffer p-5 text-center relative'>
                                     <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
                                     <a href="/case-studies/driving-campaigns-in-dv360-to-post-click-attribution-success-with-36-percent-reduction-in-cpi" className='grid gap-1'>
                                         <div className='grid gap-4'>

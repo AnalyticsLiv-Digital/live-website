@@ -230,7 +230,8 @@ const JoinUs = () => {
                                     <select className="pb-4 pl-2 w-full  mt-4 text-sm text-gray-500 bg-transparent border-0 border-b-2 border-slate-500  focus:outline-none focus:ring-0 focus:border-cyan-500 outline-none" placeholder="Contact for" id="purpose" name="purpose" value={formValues.purpose} onChange={handleChange}>
                                         <option>Contact For</option>
                                         <option>Web Analytics Service</option>
-                                        <option>Display &amp; Video 360 Self Serve</option>
+                                        <option>Advertising Services</option>
+                                        <option>Display &amp; Video 360 Services</option>
                                         <option>Google Cloud Platform</option>
                                         <option>Mobile App Analytics Service</option>
                                         <option>Advanced Funnel Optimization</option>
