@@ -14,12 +14,11 @@ const Blogs = () => {
             <section className='blog'>
                 <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
                     <div className='flex items-center justify-center pb-5'>
-                        <h2 className='text-maintext lg:text-[28px] text-2xl font-semibold not-italic text-center tracking-widest'>BLOGS</h2>
+                        <h2 className='text-maintext lg:text-[28px] text-2xl font-semibold not-italic text-center tracking-widest'>Check out our latest blogs</h2>
                     </div>
                     <div data-aos="zoom-in" data-aos-once="true" className='text-center lg:flex items-center justify-between gap-[30px]'>
                        
                         <div className='lg:w-[66%]'>
-                            <h5 className='text-start text-[15px] font-normal text-maintext mb-2'>Check out our latest blogs</h5>
                             <div className='grid lg:grid-cols-2 gap-[30px]'>
                                 <div className='first relative group home-blog rounded border border-solid border-[#DBDBDB] hover:border-[#979797] hover:shadow-serviceoffer p-[25px] pb-[70px] text-center 2xl:h-[540px] lg:h-[495px]'>
                                     <a href="/blogs/ai-powered-google-analytics-4-insights">
@@ -101,7 +100,7 @@ const Blogs = () => {
                             </div>
                         </div>
                         <div className='hidden lg:grid lg:w-[33%]'>
-                            <h5 className='text-start text-[15px] font-normal leading-none text-maintext mb-2'>Check out more blogs</h5>
+                            <h5 className='text-start text-[15px] font-normal leading-none text-maintext mb-2'>More blogs</h5>
                             <div className='third hidden lg:grid gap-[30px] 2xl:h-[540px] lg:h-[495px]'>
                                 <div className='home-blog3 group rounded bg-no-repeat bg-cover border border-solid hover:border-[#979797] hover:shadow-serviceoffer p-[25px] pb-3 text-center relative'>
                                     <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>BLOG</span>
