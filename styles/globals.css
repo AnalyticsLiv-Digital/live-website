@@ -386,6 +386,10 @@ iframe {
 
 /* Homepage testimonials-css */
 
+.main-title-testimonial {
+  background: linear-gradient(to top, #5709d4, #b5c1d1);
+}
+
 .testimonials h2 {
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
@@ -479,6 +483,14 @@ iframe {
   animation-play-state: paused;
 }
 
+.home-blog3 {
+  background: linear-gradient(to top, #8d5dd9, #b5c1d1);
+}
+
+.home-casestd3 {
+  background: linear-gradient(to top, #8d5dd9, #b5c1d1);
+}
+
 /* homepage datepicker css */
 .react-datepicker__time-container {
   width: 90px !important;
@@ -492,7 +504,7 @@ iframe {
 
 @media (min-width: 1024px) and (max-width: 1064px) {
     .firstcasestdy{
-    height: 306px; /* Height for viewport range 1024px to 1064px */
+    height: 306px;
   }
 }
 

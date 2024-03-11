@@ -44,6 +44,14 @@ const Testimonial = () => {
             {
                 breakpoint: 988,
                 settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    initialSlide: 2,
+                },
+            },
+            {
+                breakpoint: 768,
+                settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     initialSlide: 2,
@@ -72,7 +80,7 @@ const Testimonial = () => {
                 <div className='relative px-4 pt-8 md:pt-11 pb-8 md:pb-16 overflow-hidden'>
                     <div className='testimonial-component-wrapper flex flex-wrap lg:flex-nowrap justify-between'>
                         <div className='left-testimonial-item lg:w-[22.4%] w-full'>
-                            <div className='main-title-testimonial bg-[#8d5dd9] lg:w-[39%] w-auto lg:h-full h-auto lg:min-h-[1px] min-h-[344px] lg:p-16 lg:pl-5 py-5 px-10 lg:mx-0 -mx-5 flex lg:absolute static top-0 left-0'>
+                            <div className='main-title-testimonial lg:w-[39%] w-auto lg:h-full h-auto lg:min-h-[1px] min-h-[344px] lg:p-16 lg:pl-5 py-5 px-10 lg:mx-0 -mx-5 flex lg:absolute static top-0 left-0'>
                                 <div className='w-full lg:max-w-sm max-w-none'>
                                     <h2 className='text-white lg:text-[28px] text-2xl leading-[55px] text-start font-semibold not-italic pb-8 md:pb-12'>Let's See What Our Clients Have To Say</h2>
                                 </div>
