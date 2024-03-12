@@ -76,7 +76,7 @@ const Testimonial = () => {
     };
     return (
         <>
-            <section className='testimonials bg-no-repeat bg-cover bg-blend-multiply bg-[#282833]'>
+            <section className='testimonials bg-no-repeat bg-cover bg-blend-multiply bg-[#282833] font-gilroy'>
                 <div className='relative px-4 pt-8 md:pt-11 pb-8 md:pb-16 overflow-hidden'>
                     <div className='testimonial-component-wrapper flex flex-wrap lg:flex-nowrap justify-between'>
                         <div className='left-testimonial-item lg:w-[22.4%] w-full'>

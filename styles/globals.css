@@ -390,10 +390,6 @@ iframe {
   background: linear-gradient(to top, #5709d4, #b5c1d1);
 }
 
-.testimonials h2 {
-  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
-}
-
 .right-testimonial-item .slick-prev,
 .right-testimonial-item .slick-next {
     top: 40% !important;
@@ -407,36 +403,6 @@ iframe {
 .testimonials .slick-dots li {
   display: none !important;
 }
-
-/* .testimonials .slick-dots {
-  bottom: -40px !important;
-}
-
-@media (min-width: 988px) {
-  .testimonials .slick-dots {
-    bottom: -57px !important;
-  }
-}
-
-.slick-prev:before,
-.slick-next:before {
-  display: none;
-}
-
-.testimonials .slick-dots li {
-  border: 2px solid grey;
-  border-radius: 100%;
-  transition: all 0.5s linear;
-}
-
-.testimonials .slick-dots .slick-active {
-  background-color: #080808;
-}
-
-.testimonials .slick-dots li button:before {
-  content: '' !important;
-} */
-
 
 [data-role="none"] {
   display: none;
@@ -507,6 +473,50 @@ iframe {
     height: 306px;
   }
 }
+
+/* // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // */
+
+/* Servicepage css */
+.progracasestudy::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  opacity: .9;
+  background-image: radial-gradient(at 9% 72%, #1fff8434 0, rgba(35, 6, 55, 0) 50%);
+}
+
+.programeasurement::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  right: 0;
+  opacity: .5;
+  background-image: url(../public/Mesh-Grad-2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.whydv360 {
+  background: linear-gradient(272.36deg, #8d5dd9, #8ab9ff);
+}
+
+.approach::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  background-color: #26004d;
+  background-image: radial-gradient(at 69% 69%, #ffc31f 0, rgba(35, 6, 55, 0) 50%), radial-gradient(at 43% 46%, #575cfc 0, rgba(35, 6, 55, 0) 50%), radial-gradient(at 31% 89%, #f366e0 0, rgba(35, 6, 55, 0) 50%), radial-gradient(at 56% 26%, #7e33d5 0, rgba(35, 6, 55, 0) 50%), radial-gradient(at 62% 9%, #4b0e75 0, rgba(35, 6, 55, 0) 50%), radial-gradient(at 51% 44%, #7e33d5, rgba(35, 6, 55, 0) 50%), radial-gradient(at 89% 57%, #f366e0 0, rgba(35, 6, 55, 0) 50%);
+}
+
+
 
 /* // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // */
 

@@ -35,7 +35,7 @@ const Home = () => {
 
     return (
         <>
-            <section className='homepage flex items-center justify-center overflow-hidden'>
+            <section className='homepage flex items-center justify-center overflow-hidden font-gilroy'>
                 <div className='bg-[#ecf9ff] h-[90vh] w-full'>
                     <div className='relative h-full overflow-hidden'>
 
