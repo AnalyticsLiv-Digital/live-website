@@ -24,6 +24,9 @@ module.exports = {
         foter: '0px 4px 4px 0px rgba(0, 0, 0, .25)',
         foter1: '0px 4px 4px 0px #000',
         serviceoffer: '1px 1px 6px 0px rgba(0, 0, 0, 0.25)',
+        mediadv360: '0 .5rem 1rem rgba(0,0,0,.15)',
+        programatic: '0 .5rem 1rem rgba(0,0,0,1)',
+        programeasure: '0 .5rem 1rem #2020205c',
       },
       colors: {
         btn: '#4285F4',
