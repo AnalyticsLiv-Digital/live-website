@@ -152,7 +152,7 @@ const JoinUs = () => {
                                     </div>
                                     <div className="flex items-center justify-center">
                                         <div>
-                                            <p className="text-sm font-semibold text-homepagebtn leading-[30px]">Book Us Slot For Media & Analytics Consultancy</p>
+                                            <p className="text-sm font-semibold text-homepagebtn leading-[30px]">Book A Slot For Media & Analytics Consultancy</p>
                                         </div>
                                     </div>
 
