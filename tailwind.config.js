@@ -10,6 +10,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'gilroy': ['Gilroy-Bold', 'sans-serif'],
+      },
       boxShadow: {
         btnshadow: '1px 1px 23px 2px rgba(255, 251, 251, 0.25)',
         btn2shadow: '1px 1px 4px 1px rgba(0, 0, 0, 0.25)',

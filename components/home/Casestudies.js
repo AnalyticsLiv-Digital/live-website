@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect } from 'react'
+import React from 'react'
 import Image from 'next/image'
 import { FaLongArrowAltRight } from "react-icons/fa";
 import Aos from 'aos';
@@ -7,22 +7,18 @@ import 'aos/dist/aos.css'
 
 
 const Casestudies = () => {
-    useEffect(() => {
-        Aos.init({ duration: 2000 });
-    }, [])
 
     return (
         <>
-            <section className='casestudy'>
+            <section className='casestudy font-gilroy'>
                 <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
                     <div className='flex items-center justify-center pb-5'>
-                        <h2 className='text-maintext lg:text-[28px] text-2xl font-semibold not-italic text-center tracking-widest'>Check out our latest Case Studies</h2>
+                        <h2 className='text-maintext lg:text-[26px] text-[19px] font-semibold not-italic text-center tracking-widest'>Check out our latest Case Studies</h2>
                     </div>
-                    <div data-aos="zoom-in" data-aos-once="true" className='text-center lg:flex items-start justify-between gap-[30px]'>
-                        
-
-
-                        <div className='lg:w-[66%]'>               
+                    <div className='text-center lg:flex items-start justify-between gap-[30px]'>
+            
+                        <div className='lg:w-[66%]'>
+                            <h5 className='text-start text-[15px] font-normal leading-none text-maintext mb-2 opacity-0'>Check out our latest Case Studies</h5>                 
                             <div className='lg:grid lg:grid-cols-1 sm:flex sm:justify-between grid justify-center gap-[30px]'>
                                 <div className='first group 2xl:h-[299px] xl:h-[329px] lg:h-[290px] home-blog max-[1024px]:w-full rounded border border-solid border-[#DBDBDB] hover:border-[#979797] hover:shadow-serviceoffer p-[25px] text-center relative'>
                                     <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>

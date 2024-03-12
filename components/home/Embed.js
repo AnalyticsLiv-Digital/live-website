@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FaRegPlayCircle } from 'react-icons/fa';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
@@ -13,14 +13,10 @@ const Embed = () => {
         }
     };
 
-    useEffect(() => {
-        Aos.init({ duration: 2000 });
-    }, []);
-
     return (
-        <section className='embed'>
+        <section className='embed font-gilroy'>
             <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
-                <div className="flex items-center justify-center gap-10" data-aos="fade-up">
+                <div className="flex items-center justify-center gap-10">
                     <div className="relative" key="image">
                         {!isPlaying && (
                             <div className="relative w-full h-64 md:h-96 lg:h-[600px] overflow-hidden rounded-3xl">

@@ -1,15 +1,13 @@
 'use client'
-import React, { useEffect } from 'react'
+import React from 'react'
 import Aos from 'aos';
 import 'aos/dist/aos.css'
 import Image from 'next/image';
 
 const Marketing = () => {
-    useEffect(() => {
-        Aos.init({duration: 2000});
-    }, [])
+    
     return (
-        <section className='servicedo bg-[#ecf9ff] relative overflow-hidden'>
+        <section className='servicedo bg-[#ecf9ff] relative overflow-hidden font-gilroy'>
 
             {/* Back-Ground design  */}
             <div className='absolute top-1/2 right-0 w-80 h-80 flex justify-end'>
@@ -23,7 +21,7 @@ const Marketing = () => {
                             <h2 className='text-maintext lg:text-[28px] text-2xl font-semibold not-italic text-left block'>Why Choose AnalyticsLiv</h2>
                         </div>
                         <div className='flex flex-col lg:flex-row gap-5 lg:gap-0 justify-between items-center pt-8'>
-                            <div  data-aos="fade-right" data-aos-once="true" className='lg:w-3/5 '>
+                            <div className='lg:w-3/5 '>
                                 <div className='relative sm:w-[500px] w-[292px] sm:h-[500px] h-[290px]'>
                                     <Image
                                         src="/Service_img.png"
@@ -51,7 +49,7 @@ const Marketing = () => {
                                     />
                                 </div>
                             </div>
-                            <div  data-aos="fade-left" data-aos-once="true" className='lg:w-2/5 grid gap-4'>
+                            <div className='lg:w-2/5 grid gap-4'>
                                 <div className="first group bg-white hover:shadow-serviceoffer border border-solid border-[#FDFDFD] rounded-[20px] p-5">
                                     <div className="flex items-start justify-start gap-4 pb-4">
                                         <div className='rounded-full bg-[#EAF0FF] w-10 h-10 flex items-center justify-center'>

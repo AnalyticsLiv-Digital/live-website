@@ -1,16 +1,14 @@
 'use client'
-import React, { useEffect } from 'react'
+import React from 'react'
 import Aos from 'aos';
 import 'aos/dist/aos.css'
 import Image from 'next/image'
 import { FaLongArrowAltRight } from "react-icons/fa";
 
 const ServicesOffer = () => {
-    useEffect(() => {
-        Aos.init({ duration: 2000 });
-    }, [])
+    
     return (
-        <section className='serviceoffer relative overflow-hidden'>
+        <section className='serviceoffer relative overflow-hidden font-gilroy'>
 
             {/* Back-Ground design  */}
             <div className='absolute top-[20%] -left-[165px] w-80 h-80 flex justify-end'>
@@ -28,7 +26,7 @@ const ServicesOffer = () => {
                         <h2 className='text-maintext lg:text-[28px] text-2xl font-semibold not-italic text-left block'>Services We Offer</h2>
                     </div>
                     <div className='grid md:grid-cols-2 items-center gap-10 pt-8'>
-                        <div data-aos="fade-right" data-aos-once="true" className='first flex justify-center'>
+                        <div className='first flex justify-center'>
                             <div className='relative group rounded-[10px] border border-solid border-[#EFEFEF] hover:shadow-serviceoffer p-5 lg:h-[500px] md:h-[585px] w-[335px] md:w-[284px] lg:w-[430px]'>
                                 <div className="flex items-start justify-start gap-4 pb-6">
                                     <div className='rounded-full bg-[#EAF0FF] w-10 h-10 flex items-center justify-center'>
@@ -135,7 +133,7 @@ const ServicesOffer = () => {
                                 </a>
                             </div>
                         </div>
-                        <div data-aos="fade-left" data-aos-once="true" className='second flex justify-center'>
+                        <div className='second flex justify-center'>
                             <div className='relative group rounded-[10px] border border-solid border-[#EFEFEF] hover:shadow-serviceoffer p-5 lg:h-[500px] md:h-[585px] w-[335px] md:w-[284px] lg:w-[430px]'>
                                 <div className="flex items-start justify-start gap-4 pb-6">
                                     <div className='rounded-full bg-[#EAF0FF] w-10 h-10 flex items-center justify-center'>
@@ -226,7 +224,7 @@ const ServicesOffer = () => {
                                 </a>
                             </div>
                         </div>
-                        <div data-aos="fade-right" data-aos-once="true" className='third flex justify-center'>
+                        <div className='third flex justify-center'>
                             <div className='relative group rounded-[10px] border border-solid border-[#EFEFEF] hover:shadow-serviceoffer p-5 lg:h-[415px] md:h-[585px] w-[335px] md:w-[284px] lg:w-[430px]'>
                                 <div className="flex items-start justify-start gap-4 pb-6">
                                     <div className='rounded-full bg-[#EAF0FF] w-10 h-10 flex items-center justify-center'>
@@ -301,7 +299,7 @@ const ServicesOffer = () => {
                                 </a>
                             </div>
                         </div>
-                        <div data-aos="fade-left" data-aos-once="true" className='fourth flex justify-center'>
+                        <div className='fourth flex justify-center'>
                             <div className='relative group rounded-[10px] border border-solid border-[#EFEFEF] hover:shadow-serviceoffer p-5 lg:h-[415px] md:h-[585px] w-[335px] md:w-[284px] lg:w-[430px]'>
                                 <div className="flex items-start justify-start gap-4 pb-6">
                                     <div className='rounded-full bg-[#EAF0FF] w-10 h-10 flex items-center justify-center'>
