@@ -87,7 +87,7 @@ const service_A = () => {
                 <meta name="description" content="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads" />
                 <link rel="canonical" href="https://www.analyticsliv.com/services/programatic-advertising"></link>
             </Head>
-            <section className='prograhome lg:h-[90vh] w-full relative font-gilroy overflow-hidden'>
+            <section className='prograhome w-full relative font-gilroy overflow-hidden'>
                 <div className='h-full'>
                     <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 h-full z-20">
                         <div className="z-10 flex lg:flex-nowrap items-center flex-wrap justify-between gap-7 py-8">
@@ -111,7 +111,7 @@ const service_A = () => {
                                 </div>
                             </div>
                             <div className="py-6 md:py-0 w-full lg:w-1/2 flex items-center lg:justify-end justify-center mt-7 lg:mt-0 lg:order-2 order-1">
-                                <img src="/Programmatic_Media_Main_Img_Without_Blur.png" alt="" className='lg:h-auto md:h-[400px]' />
+                                <img src="/Programmatic_Media_Main_Img_Without_Blur.png" alt="" className='md:h-[400px]' />
                             </div>
                         </div>
                         <div className=''>
