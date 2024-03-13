@@ -17,6 +17,7 @@ import * as Scroll from 'react-scroll';
 
 
 const JoinUs = () => {
+
     const { Element: ScrollElement } = Scroll;
     const initialValues = { firstName: '', lastName: '', email: '', contactno: '', company: '', role: '', purpose: '', requirements: '' };
     const [formValues, setFormValues] = useState(initialValues);
