@@ -624,9 +624,9 @@ iframe {
   background-size: cover;
 }
 
-.whydv360 {
+/* .whydv360 {
   background: linear-gradient(272.36deg, #8d5dd9, #8ab9ff);
-}
+} */
 
 .approach::before {
   content: '';
