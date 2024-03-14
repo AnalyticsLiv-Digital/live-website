@@ -9,7 +9,7 @@ const BlogSchema = new mongoose.Schema({
     description: {type: String, required: true},
     date:{type: String, required: true},
     thumbnail:{type: String, required: true},
-    active:{type: Boolean, required: true},
+    active:{type: String, required: true},
     duration:{type: String, required: true},
     document_id:{type: String},
     sequence:{type: String, required: true},
