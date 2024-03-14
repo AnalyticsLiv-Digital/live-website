@@ -19,7 +19,7 @@ const handler = async (req, res) => {
                 author : req.body.author,
                 duration : req.body.duration,
                 date : req.body.date,
-                active : Boolean(req.body.active),
+                active : req.body.active,
                 content : blogcontent,
                 sequence : req.body.sequence
         });
