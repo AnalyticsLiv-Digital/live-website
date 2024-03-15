@@ -152,7 +152,7 @@ const header = () => {
                 <p
                   className=" text-slate-900 block px-3 py-2 rounded-md text-base font-normal"
                 >
-                  <div onClick={() => { setIsServices(!isServices); setIsResources(false); }} >Who We Are</div>
+                  <div onClick={() => { setIsServices(!isServices); setIsResources(false); }} >What We Do</div>
                   {isServices ? (<motion.div initial={{ y: 10, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} className='transition ease-out duration-200 px-4 text-cyan-400 text-base font-medium divide-y-2'>
 
                     <div onClick={() => { setSubmenu("1") }} ><div className="py-2 w-56 ">Media Services</div></div>

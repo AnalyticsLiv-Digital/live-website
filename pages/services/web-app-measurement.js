@@ -23,7 +23,7 @@ const webapp = () => {
                         <div className="z-10 flex lg:flex-nowrap items-center flex-wrap justify-between gap-7 pb-8">
                             <div className="space-y-4 w-full lg:w-1/2 lg:order-1 order-2 lg:mb-7">
                                 <h1 className="2xl:text-[33px] lg:text-[29px] text-[27px] leading-[1.5em] font-gilory font-semibold text-maintext pt-4">
-                                    AnalyticsLiv Digital: Unlock Powerful Insights with App & Web Analytics
+                                    AnalyticsLiv : Unlock Powerful Insights with App & Web Analytics
                                 </h1>
                                 <h3 className="text-[22px] text-[#333333] font-semibold leading-[1.5em]">
                                     Master the User Journey, Drive Growth, and Make Data-Driven Decisions
@@ -97,7 +97,7 @@ const webapp = () => {
                                     <div><h3 className='text-[#ffffff] text-[25px] leading-8 md:mb-[20px] mb-6 font-gilroy font-semibold'>Ready to Unlock the Power of App & Web Analytics?</h3></div>
                                     <div>
                                         <div className='text-[#ffffff] text-base leading-8 md:mb-[15px] mb-6 font-gilroy2 font-medium'>
-                                            <p className='text-[18px] mb-3'> Contact AnalyticsLiv Digital today to schedule a free consultation and discuss how we can help you leverage data to gain a competitive edge and achieve your business goals. </p>
+                                            <p className='text-[18px] mb-3'> Contact AnalyticsLiv today to schedule a free consultation and discuss how we can help you leverage data to gain a competitive edge and achieve your business goals. </p>
                                         </div>
                                     </div>
                                 </div>
