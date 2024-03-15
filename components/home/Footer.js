@@ -29,7 +29,7 @@ const Footer = () => {
                                 <div className='left-footer md:w-2/5 w-full pb-7'>
                                     <div className='text-left'>
                                         <div className='relative text-white'>
-                                            <p className='text-[14px] font-medium leading-[1.3em] mb-4'>Connect with us</p>
+                                        <p className='text-[15px] font-medium leading-[1.3em] mb-4 uppercase'>Connect with us</p>
                                             <div className='flex items-center justify-start'>
                                                 <div>
                                                     <div className='ml-0 flex items-center mb-4'>
@@ -73,7 +73,7 @@ const Footer = () => {
 
                                 <div className='md:w-3/5 w-full flex flex-wrap items-start justify-end'>
                                     <div className='right-footer1  sm:w-[33.33%] w-full pb-7 sm:pt-0 pt-5'>
-                                        <div className='text-[14px] text-[#ffffff] font-medium leading-[1.3em] mb-4'>What We Do</div>
+                                        <div className='text-[15px] text-[#ffffff] font-medium leading-[1.3em] mb-4 uppercase'>What We Do</div>
                                         <div className=''>
                                             <ul className='uppercase tracking-wider text-start'>
                                                 <li className='py-1 md:pb-2 text-[13px] text-[#efefef] font-normal leading-5'> <Link href="/services/programatic-advertising">Advertising</Link> </li>
@@ -85,7 +85,7 @@ const Footer = () => {
                                     </div>
 
                                     <div className='right-footer2  sm:w-[33.33%] w-full pb-7 sm:pt-0'>
-                                        <div className='text-[14px] text-[#ffffff] font-medium leading-[1.3em] mb-4'>Company</div>
+                                        <div className='text-[15px] text-[#ffffff] font-medium leading-[1.3em] mb-4 uppercase'>Company</div>
                                         <div className=''>
                                             <ul className='uppercase tracking-wider text-start'>
                                                 <li className='py-1 md:pb-2 text-[13px] text-[#efefef] font-normal leading-5'> <Link href="/about-us">Vission</Link> </li>
@@ -96,7 +96,7 @@ const Footer = () => {
                                     </div>
 
                                     <div className='right-footer2  sm:w-[33.33%] w-full pb-7 sm:pt-0'>
-                                        <div className='text-[14px] text-[#ffffff] font-medium leading-[1.3em] mb-4'>Quick Links</div>
+                                        <div className='text-[15px] text-[#ffffff] font-medium leading-[1.3em] mb-4 uppercase'>Quick Links</div>
                                         <div className=''>
                                             <ul className='uppercase tracking-wider text-start'>
                                                 <li className='py-1 md:pb-2 text-[13px] text-[#efefef] font-normal leading-5'> <Link href="/blogs">Blogs</Link> </li>

@@ -179,16 +179,10 @@ useEffect(() => {
                             </motion.div>}  
                             <div onClick={() => {setSubmenu("2")}} ><div className="py-2 w-56 ">Analytics</div></div>
                             {submenu=="2" && <motion.div onClick={() => {setIsOpen(!isOpen); setIsServices(false);}} initial={{ y: 10, opacity:0 }} animate={{ y:0, opacity:1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }}className='transition ease-out duration-200 px-4 '>
-                            <div class="flex items-center py-1 gap-2
-                                    ">
-                                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytics-audit-logo.png" alt="audit_logo"/>
-                                        <Link href="/services/analytics?id=audit-and-health-check"
-                                            class="text-menuheading font-poppins text-base font-medium leading-normal">Audit
-                                            and Health Check</Link>
-                                    </div>
+                            
                                     <div class="flex items-center py-1 gap-2">
                                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytics_webapp_logo.png" alt="webapp_logo"/>
-                                        <Link href="/services/analytics?id=web-app-measurements"
+                                        <Link href="/services/web-app-measurement"
                                             class="text-menuheading font-poppins text-base font-medium leading-normal">Web
                                             and App measurement</Link>
                                     </div>
@@ -328,16 +322,10 @@ useEffect(() => {
                                         <h3 class="text-menuheading font-poppins text-2xl font-bold">Analytics</h3>
                                     </div> <br/>
 
-                                    <div class="flex items-center py-3 gap-2
-                                    ">
-                                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytics-audit-logo.png" alt="audit_logo"/>
-                                        <Link href="/services/analytics?id=audit-and-health-check"
-                                            class="text-menuheading font-poppins text-base font-medium leading-normal">Audit
-                                            and Health Check</Link>
-                                    </div>
+                                    
                                     <div class="flex items-center py-3 gap-2">
                                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytics_webapp_logo.png" alt="webapp_logo"/>
-                                        <Link href="/services/analytics?id=web-app-measurement"
+                                        <Link href="/services/web-app-measurement"
                                             class="text-menuheading font-poppins text-base font-medium leading-normal">Web
                                             and App measurement</Link>
                                     </div>
