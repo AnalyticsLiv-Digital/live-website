@@ -10,11 +10,37 @@ import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 const service_A = () => {
 
-    const [isTextVisible, setIsTextVisible] = useState(Array(4).fill(false));
+    const [isFs4mVisible, setIsFs4mVisible] = useState(false);
+    const [isSec4mVisible, setIsSec4mVisible] = useState(false);
+    const [isThr4mVisible, setIsThr4mVisible] = useState(false);
+    const [isFur4mVisible, setIsFur4mVisible] = useState(false);
 
-    const toggleTextVisibility = (index) => {
-        const updatedVisibility = isTextVisible.map((_, i) => i === index ? !isTextVisible[index] : false);
-        setIsTextVisible(updatedVisibility);
+    const toggleFs4mVisibility = () => {
+        setIsFs4mVisible(prevState => !prevState);
+        if (isSec4mVisible) setIsSec4mVisible(true);
+        if (isThr4mVisible) setIsThr4mVisible(false);
+        if (isFur4mVisible) setIsFur4mVisible(false);
+    };
+
+    const toggleSec4mVisibility = () => {
+        setIsSec4mVisible(prevState => !prevState);
+        if (isFs4mVisible) setIsFs4mVisible(true);
+        if (isThr4mVisible) setIsThr4mVisible(false);
+        if (isFur4mVisible) setIsFur4mVisible(false);
+    };
+
+    const toggleThr4mVisibility = () => {
+        setIsThr4mVisible(prevState => !prevState);
+        if (isFs4mVisible) setIsFs4mVisible(false);
+        if (isSec4mVisible) setIsSec4mVisible(false);
+        if (isFur4mVisible) setIsFur4mVisible(true);
+    };
+
+    const toggleFur4mVisibility = () => {
+        setIsFur4mVisible(prevState => !prevState);
+        if (isFs4mVisible) setIsFs4mVisible(false);
+        if (isSec4mVisible) setIsSec4mVisible(false);
+        if (isThr4mVisible) setIsThr4mVisible(true);
     };
 
     const [toggle1, setToggle1] = useState(true);
@@ -50,7 +76,7 @@ const service_A = () => {
             <section className='prograhome w-full relative font-gilroy overflow-hidden'>
                 <div className='h-full'>
                     <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 h-full z-20">
-                        <div className="z-10 flex lg:flex-nowrap items-center flex-wrap justify-between gap-7 py-8">
+                        <div className="z-10 flex lg:flex-nowrap items-center flex-wrap justify-between gap-7 pb-8">
                             <div className="space-y-4 w-full lg:w-1/2 lg:order-1 order-2">
                                 <h1 className="2xl:text-[23px] lg:text-[21px] text-[27px] leading-[33px] font-['Poppins'] font-semibold text-maintext pt-4">
                                     DV360: Programmatic Media Buying Redefined with AnalyticsLiv
@@ -70,8 +96,8 @@ const service_A = () => {
                                     </Link>
                                 </div>
                             </div>
-                            <div className="py-6 md:py-0 w-full lg:w-1/2 flex items-center lg:justify-end justify-center mt-7 lg:mt-0 lg:order-2 order-1">
-                                <img src="/Programmatic_Media_Main_Img_Without_Blur.png" alt="" className='lg:h-auto md:h-[400px]' />
+                            <div className=" w-full lg:w-1/2 flex items-center lg:justify-end justify-center lg:order-2 order-1">
+                                <img src="/Programmatic_Media_Main_Img_Without_Blur.png" alt="" className='lg:h-[470px] md:h-[400px]' />
                             </div>
                         </div>
                         <div className=''>
@@ -98,10 +124,10 @@ const service_A = () => {
                 <div className='relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16'>
                     <div>
                         <div className='flex items-center justify-start pb-7'>
-                            <h3 className='text-[#302E53] font-gilroy text-[28px] font-semibold leading-[1.3em] not-italic pb-5'>Why DV360?</h3>
+                            <h3 className='text-[#302E53] font-gilroy text-[28px] font-semibold leading-[1.5em] not-italic pb-5'>Why DV360?</h3>
                         </div>
                         <div className='grid lg:grid-cols-3 md:grid-cols-2 items-start justify-center gap-10'>
-                            <div className='bg-[#fff8fa] xl:h-[460px] lg:h-[600px] rounded-[10px] py-6 px-4 hover:shadow-programeasure'>
+                            <div className='bg-[#fff8fa] xl:h-[460px] lg:h-[600px] md:h-[516px] rounded-[10px] py-6 px-4 hover:shadow-programeasure'>
                                 <div className='w-full'></div>
                                 <div className='mb-5 w-[50px] h-[50px]'><img src="/Ad_Format.png" alt="" /></div>
                                 <div className='w-full'></div>
@@ -118,7 +144,7 @@ const service_A = () => {
                                         <p>Seamless Integrations: Integrate seamlessly with other platforms and data sources for a unified campaign management experience.</p></li>
                                 </ul>
                             </div>
-                            <div className='bg-[#fff8fa] xl:h-[460px] lg:h-[600px] rounded-[10px] py-6 px-4 hover:shadow-programeasure'>
+                            <div className='bg-[#fff8fa] xl:h-[460px] lg:h-[600px] md:h-[516px] rounded-[10px] py-6 px-4 hover:shadow-programeasure'>
                                 <div className='w-full'></div>
                                 <div className='mb-5 w-[50px] h-[50px]'><img src="/Ad_Format.png" alt="" /></div>
                                 <div className='w-full'></div>
@@ -135,7 +161,7 @@ const service_A = () => {
                                         <p>Dynamic Creative Optimization (DCO): Deliver personalized ads in real-time based on user data and audience segments.</p></li>
                                 </ul>
                             </div>
-                            <div className='bg-[#fff8fa] xl:h-[460px] lg:h-[600px] rounded-[10px] py-6 px-4 hover:shadow-programeasure'>
+                            <div className='bg-[#fff8fa] xl:h-[460px] lg:h-[600px] md:h-[593px] rounded-[10px] py-6 px-4 hover:shadow-programeasure'>
                                 <div className='w-full'></div>
                                 <div className='mb-5 w-[50px] h-[50px]'><img src="/Ad_Format.png" alt="" /></div>
                                 <div className='w-full'></div>
@@ -152,7 +178,7 @@ const service_A = () => {
                                         <p>Data-Driven Decision Making: Make informed decisions based on valuable insights into audience behavior, ad performance, and conversion metrics.</p></li>
                                 </ul>
                             </div>
-                            <div className='bg-[#fff8fa] xl:h-[490px] lg:h-[630px] rounded-[10px] py-6 px-4 hover:shadow-programeasure'>
+                            <div className='bg-[#fff8fa] xl:h-[490px] lg:h-[630px] md:h-[593px] rounded-[10px] py-6 px-4 hover:shadow-programeasure'>
                                 <div className='w-full'></div>
                                 <div className='mb-5 w-[50px] h-[50px]'><img src="/Ad_Format.png" alt="" /></div>
                                 <div className='w-full'></div>
@@ -172,7 +198,7 @@ const service_A = () => {
                                         <p>Simplified Buying Process: Consolidate ad inventory and audience data within a single platform for effortless campaign setup.</p></li>
                                 </ul>
                             </div>
-                            <div className='bg-[#fff8fa] xl:h-[490px] lg:h-[630px] rounded-[10px] py-6 px-4 hover:shadow-programeasure'>
+                            <div className='bg-[#fff8fa] xl:h-[490px] lg:h-[630px] md:h-[593px] rounded-[10px] py-6 px-4 hover:shadow-programeasure'>
                                 <div className='w-full'></div>
                                 <div className='mb-5 w-[50px] h-[50px]'><img src="/Ad_Format.png" alt="" /></div>
                                 <div className='w-full'></div>
@@ -192,7 +218,7 @@ const service_A = () => {
                                         <p>Maximized ROI: Make bid adjustments based on targeted segments and device types to maximize your return on investment.</p></li>
                                 </ul>
                             </div>
-                            <div className='bg-[#fff8fa] rounded-[10px] py-6 px-4 hover:shadow-programeasure'>
+                            <div className='bg-[#fff8fa] xl:h-[490px] lg:h-[630px] md:h-[593px] rounded-[10px] py-6 px-4 hover:shadow-programeasure'>
                                 <div className='w-full'>
                                     <div className='mb-5 w-[50px] h-[50px]'><img src="/Ad_Format.png" alt="" /></div></div>
                                 <div className='w-full'>
@@ -212,89 +238,102 @@ const service_A = () => {
             <section className='approach relative overflow-hidden'>
                 <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 z-20">
                     <div>
-                        <h3 className='text-[28px] font-semibold text-white leading-[27px] font-gilroy'>AnalyticsLiv 4M Approach  for DV360</h3>
+                        <h3 className='text-[28px] font-semibold text-white leading-[1.5em] font-gilroy'>AnalyticsLiv 4M Approach  for DV360</h3>
                     </div>
                     <div className='lg:flex items-center justify-start mt-10'>
                         <div className='lg:w-[40%] w-full flex items-center justify-center'>
                             <img src="/4M_Images_Transparent.png" alt="" className='lg:h-auto md:h-[400px]' />
                         </div>
                         <div className='grid md:grid-cols-2 items-start lg:justify-start gap-7 lg:w-[60%] w-full'>
-                            <div className="fs4m flex items-start justify-center w-full max-[350px]:w-[285px] powerbox2 bg-[#0000001f] m-auto p-[25px] pt-6 border border-[#13131400] hover:shadow-mediadv360 rounded-[10px]">
-                                <div className='cursor-pointer' onClick={() => toggleTextVisibility(0)}>
-                                    <div className='inbox relative pb-4'>
-                                        <img src="/Market.png" alt="" className='h-16 w-16' />
-                                    </div>
-                                    <div className='flex items-center gap-5 text-[#ffffff] mb-4'>
-                                        <h2 className='text-base font-medium text-[#ffffff] leading-normal'>Audience Targeting (Market)</h2>
-                                        <div className='clk'>
-                                            {isTextVisible[0] ? <FaChevronUp className='w-5 h-10' /> : <FaChevronDown className='w-5 h-10' />}
+                            <div className={`fs4m flex items-start gap-5 w-full max-[350px]:w-[285px] powerbox2 bg-[#0000001f] p-[25px] pt-6 border border-[#13131400] hover:shadow-mediadv360 rounded-[10px] ${isFs4mVisible ? 'xl:h-[260px] lg:h-[310px]' : 'h-[120px]'}`}>
+                                <div className='flex items-center justify-between w-full'>
+                                    <div className='cursor-pointer' onClick={toggleFs4mVisibility}>
+                                        <div className={`flex items-center justify-between gap-5 text-[#ffffff] ${isFs4mVisible ? 'mb-4' : 'mb-0'}`}>
+                                            <div className='flex items-center justify-start'>
+                                                <div className='inbox relative mr-[13px]'>
+                                                    <img src="/Market.png" alt="" className='h-12 lg:w-[60px] w-12' />
+                                                </div>
+                                                <h2 className='text-[15px] font-medium text-[#ffffff] leading-normal'>Audience Targeting (Market)</h2>
+                                            </div>
+                                            <div className='clk'>
+                                                {isFs4mVisible ? <FaChevronUp className='w-5 h-10' /> : <FaChevronDown className='w-5 h-10' />}
+                                            </div>
                                         </div>
+                                        {isFs4mVisible && (
+                                            <p className='text-[13px] font-medium text-[#ffffff] leading-[1.7em]'>
+                                                Leverage DV360's segmentation features to pinpoint your ideal customer using demographics, psychographics, and behavioral data.
+                                            </p>
+                                        )}
                                     </div>
-                                    {isTextVisible[0] && (
-                                        <p className='text-[13px] font-medium text-[#ffffff] leading-[1.7em]'>
-                                            Leverage DV360's segmentation features to pinpoint your ideal customer using demographics, psychographics, and behavioral data.
-                                        </p>
-                                    )}
                                 </div>
                             </div>
-
-                            <div className="sec4m flex items-start justify-start w-full max-[350px]:w-[285px] powerbox2 bg-[#0000001f] m-auto p-[25px] pt-6 border border-[#13131400] hover:shadow-mediadv360 rounded-[10px]">
-                                <div className='cursor-pointer' onClick={() => toggleTextVisibility(1)}>
-                                    <div className='inbox relative pb-4'>
-                                        <img src="/Message.png" alt="" className='h-16 w-16' />
-                                    </div>
-                                    <div className='flex items-center gap-5 text-[#ffffff] mb-4'>
-                                        <h2 className='text-base font-medium text-[#ffffff] leading-normal'>Messaging</h2>
-                                        <div className='clk'>
-                                            {isTextVisible[1] ? <FaChevronUp className='w-5 h-10' /> : <FaChevronDown className='w-5 h-10' />}
+                            <div className={`sec4m flex items-start gap-5 w-full max-[350px]:w-[285px] powerbox2 bg-[#0000001f] p-[25px] pt-6 border border-[#13131400] hover:shadow-mediadv360 rounded-[10px] ${isSec4mVisible ? 'xl:h-[260px] lg:h-[310px]' : 'h-[120px]'}`}>
+                                <div className='flex items-center justify-between w-full'>
+                                    <div className='cursor-pointer' onClick={toggleSec4mVisibility}>
+                                        <div className={`flex items-center justify-between gap-5 text-[#ffffff] ${isSec4mVisible ? 'mb-4' : 'mb-0'}`}>
+                                            <div className='flex items-center justify-start'>
+                                                <div className='inbox relative mr-[13px]'>
+                                                    <img src="/Message.png" alt="" className='h-12 w-12' />
+                                                </div>
+                                                <h2 className='text-[15px] font-medium text-[#ffffff] leading-normal'>Messaging</h2>
+                                            </div>
+                                            <div className='clk'>
+                                                {isSec4mVisible ? <FaChevronUp className='w-5 h-10' /> : <FaChevronDown className='w-5 h-10' />}
+                                            </div>
                                         </div>
+                                        {isSec4mVisible && (
+                                            <div>
+                                                <p className='text-[13px] font-medium text-[#ffffff] leading-[1.7em] mb-2'>Craft clear and persuasive messages that resonate with your target audience's needs, desires, and pain points.</p>
+                                                <p className='text-[13px] font-medium text-[#ffffff] leading-[1.7em]'>Experiment with different ad formats, copy variations, and creative assets to optimize message impact.</p>
+                                            </div>
+                                        )}
                                     </div>
-                                    {isTextVisible[1] && (
-                                        <div>
-                                            <p className='text-[13px] font-medium text-[#ffffff] leading-[1.7em] mb-2'>Craft clear and persuasive messages that resonate with your target audience's needs, desires, and pain points.</p>
-                                            <p className='text-[13px] font-medium text-[#ffffff] leading-[1.7em]'>Experiment with different ad formats, copy variations, and creative assets to optimize message impact.</p>
-                                        </div>
-                                    )}
                                 </div>
                             </div>
-
-                            <div className="thr4m flex items-start justify-center w-full max-[350px]:w-[285px] powerbox2 bg-[#0000001f] m-auto p-[25px] pt-6 border border-[#13131400] hover:shadow-mediadv360 rounded-[10px]">
-                                <div className='cursor-pointer' onClick={() => toggleTextVisibility(2)}>
-                                    <div className='inbox relative pb-4'>
-                                        <img src="/Media.png" alt="" className='h-16 w-16' />
-                                    </div>
-                                    <div className='flex items-center gap-5 text-[#ffffff] mb-4'>
-                                        <h2 className='text-base font-medium text-[#ffffff] leading-normal'>Strategic Media Selection</h2>
-                                        <div className='clk'>
-                                            {isTextVisible[2] ? <FaChevronUp className='w-5 h-10' /> : <FaChevronDown className='w-5 h-10' />}
+                            <div className={`thr4m flex items-start gap-5 w-full max-[350px]:w-[285px] powerbox2 bg-[#0000001f] p-[25px] pt-6 border border-[#13131400] hover:shadow-mediadv360 rounded-[10px] ${isThr4mVisible ? 'xl:h-[285px] lg:h-[345px]' : 'h-[120px]'}`}>
+                                <div className='flex items-center justify-between w-full'>
+                                    <div className='cursor-pointer' onClick={() => toggleThr4mVisibility()}>
+                                        <div className={`flex items-center justify-between gap-5 text-[#ffffff] ${isThr4mVisible ? 'mb-4' : 'mb-0'}`}>
+                                            <div className='flex items-center justify-start'>
+                                                <div className='inbox relative mr-[13px]'>
+                                                    <img src="/Media.png" alt="" className='h-12 w-12' />
+                                                </div>
+                                                <h2 className='text-[15px] font-medium text-[#ffffff] leading-normal'>Strategic Media Selection</h2>
+                                            </div>
+                                            <div className='clk'>
+                                                {isThr4mVisible ? <FaChevronUp className='w-5 h-10' /> : <FaChevronDown className='w-5 h-10' />}
+                                            </div>
                                         </div>
+                                        {isThr4mVisible && (
+                                            <div>
+                                                <p className='text-[13px] font-medium text-[#ffffff] leading-[1.7em] mb-2'>Choose the right media channels (programmatic deals, open auction, web/app inventory, etc.) based on audience habits, campaign goals, and budget.</p>
+                                                <p className='text-[13px] font-medium text-[#ffffff] leading-[1.7em]'>DV360's extensive digital media inventory allows for precise targeting and efficient campaign delivery.</p>
+                                            </div>
+                                        )}
                                     </div>
-                                    {isTextVisible[2] && (
-                                        <div>
-                                            <p className='text-[13px] font-medium text-[#ffffff] leading-[1.7em] mb-2'>Choose the right media channels (programmatic deals, open auction, web/app inventory, etc.) based on audience habits, campaign goals, and budget.</p>
-                                            <p className='text-[13px] font-medium text-[#ffffff] leading-[1.7em]'>DV360's extensive digital media inventory allows for precise targeting and efficient campaign delivery.</p>
-                                        </div>
-                                    )}
                                 </div>
                             </div>
-
-                            <div className="fur4m flex items-start justify-center w-full max-[350px]:w-[285px] powerbox2 bg-[#0000001f] m-auto p-[25px] pt-6 border border-[#13131400] hover:shadow-mediadv360 rounded-[10px]">
-                                <div className='cursor-pointer' onClick={() => toggleTextVisibility(3)}>
-                                    <div className='inbox relative pb-4'>
-                                        <img src="/Measurment.png" alt="" className='h-16 w-16' />
-                                    </div>
-                                    <div className='flex items-center gap-5 text-[#ffffff] mb-4'>
-                                        <h2 className='text-base font-medium text-[#ffffff] leading-normal'>Data-Driven Optimization (Measurement)</h2>
-                                        <div className='clk'>
-                                            {isTextVisible[3] ? <FaChevronUp className='w-5 h-10' /> : <FaChevronDown className='w-5 h-10' />}
+                            <div className={`fur4m flex items-start gap-5 w-full max-[350px]:w-[285px] powerbox2 bg-[#0000001f] p-[25px] pt-6 border border-[#13131400] hover:shadow-mediadv360 rounded-[10px] ${isFur4mVisible ? 'xl:h-[285px] lg:h-[345px]' : 'h-[120px]'}`}>
+                                <div className='flex items-center justify-between w-full'>
+                                    <div className='cursor-pointer' onClick={() => toggleFur4mVisibility()}>
+                                        <div className={`flex items-center justify-between gap-5 text-[#ffffff] ${isFur4mVisible ? 'mb-4' : 'mb-0'}`}>
+                                            <div className='flex items-center justify-start'>
+                                                <div className='inbox relative mr-[13px]'>
+                                                    <img src="/Measurment.png" alt="" className='h-12 xl:w-[65px] lg:w-[100px] w-[70px]' />
+                                                </div>
+                                                <h2 className='text-[15px] font-medium text-[#ffffff] leading-normal'>Data-Driven Optimization (Measurement)</h2>
+                                            </div>
+                                            <div className='clk'>
+                                                {isFur4mVisible ? <FaChevronUp className='w-5 h-10' /> : <FaChevronDown className='w-5 h-10' />}
+                                            </div>
                                         </div>
+                                        {isFur4mVisible && (
+                                            <div>
+                                                <p className='text-[13px] font-medium text-[#ffffff] leading-[1.7em] mb-2'>Utilize DV360's built-in reporting and analytics to track key metrics (reach, engagement, conversions, ROI) in real-time.</p>
+                                                <p className='text-[13px] font-medium text-[#ffffff] leading-[1.7em]'>Gain insights into campaign performance, optimize strategies, and make data-driven decisions for future success</p>
+                                            </div>
+                                        )}
                                     </div>
-                                    {isTextVisible[3] && (
-                                        <div>
-                                            <p className='text-[13px] font-medium text-[#ffffff] leading-[1.7em] mb-2'>Utilize DV360's built-in reporting and analytics to track key metrics (reach, engagement, conversions, ROI) in real-time.</p>
-                                            <p className='text-[13px] font-medium text-[#ffffff] leading-[1.7em]'>Gain insights into campaign performance, optimize strategies, and make data-driven decisions for future success</p>
-                                        </div>
-                                    )}
                                 </div>
                             </div>
                         </div>
@@ -306,7 +345,7 @@ const service_A = () => {
                 <div className='inrhomeftr relative'>
                     <div className='relative z-20 px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
                         <div className='flex items-center justify-start pb-7'>
-                            <h3 className='text-[#efefef] text-[28px] font-semibold leading-[1.3em] not-italic pb-5'>Our Comprehensive DV360 Services:</h3>
+                            <h3 className='text-[#efefef] text-[28px] font-semibold leading-[1.5em] not-italic pb-5'>Our Comprehensive DV360 Services:</h3>
                         </div>
 
                         <div className='lg:flex lg:flex-nowrap flex-wrap items-center hidden powerbox rounded-xl'>
@@ -340,9 +379,9 @@ const service_A = () => {
                             </div>
 
                             <div className='xl:w-[60%] lg:w-[65%] w-full h-[690px] flex items-start justify-center rounded-[15px] pt-5'>
-                                <div id="tab1" className={`${activetab == 1 && 'block'} ${activetab != 1 && 'hidden'} relative py-[30px] px-[50px] text-[18px] font-medium leading-8`}>
+                                <div id="tab1" className={`${activetab == 1 && 'block'} ${activetab != 1 && 'hidden'} relative py-[30px] px-[50px] text-base font-medium leading-8`}>
                                     <div className='relative'>
-                                        <p className='text-[#efefef] text-[20px] font-semibold mb-[15px]'>Campaign Strategy and Setup</p>
+                                        <p className='text-[#efefef] text-[20px] font-semibold mb-5'>Campaign Strategy and Setup</p>
                                         <p className='text-[#878787]'>This phase involves a thorough analysis of the client's marketing objectives, target audience, and competitive landscape. We understand their goals and develop a comprehensive strategy for the programmatic campaigns. This strategy takes into account factors such as campaign scheduling, budget allocation, messaging tone, and creative assets. By leveraging data-driven insights, the team ensures that the campaigns are strategically aligned to achieve maximum impact and drive desired outcomes.</p>
                                         <div className=''>
                                             <Link href="/contact?id=programatic-advertising">
@@ -352,9 +391,9 @@ const service_A = () => {
                                     </div>
                                 </div>
 
-                                <div id="tab2" className={`${activetab == 2 && 'block'} ${activetab != 2 && 'hidden'} relative py-[30px] px-[50px] text-[18px] font-medium leading-8`}>
+                                <div id="tab2" className={`${activetab == 2 && 'block'} ${activetab != 2 && 'hidden'} relative py-[30px] px-[50px] text-base font-medium leading-8`}>
                                     <div className='relative pl-1'>
-                                        <p className='text-[#efefef] text-[20px] font-semibold mb-[15px]'>Audience Targeting</p>
+                                        <p className='text-[#efefef] text-[20px] font-semibold mb-5'>Audience Targeting</p>
                                         <p className='text-[#878787]'>With DV360's sophisticated targeting capabilities, the service can precisely identify and reach the client's ideal audience segments. This involves segmenting the audience based on demographics, interests, browsing behaviour, location, and other relevant criteria. By using advanced targeting options such as audience lists, contextual targeting, and lookalike modelling, the service ensures that the client's message is delivered to the most relevant and receptive audience across various devices and channels. This targeted approach increases the likelihood of engagement and conversion, ultimately maximising the campaign's effectiveness.</p>
                                         <div className=''>
                                             <Link href="/contact?id=programatic-advertising">
@@ -364,9 +403,9 @@ const service_A = () => {
                                     </div>
                                 </div>
 
-                                <div id="tab3" className={`${activetab == 3 && 'block'} ${activetab != 3 && 'hidden'} relative py-[30px] px-[40px] text-[18px] font-medium leading-8`}>
+                                <div id="tab3" className={`${activetab == 3 && 'block'} ${activetab != 3 && 'hidden'} relative py-[30px] px-[40px] text-base font-medium leading-8`}>
                                     <div className='relative pl-1'>
-                                        <p className='text-[#efefef] text-[20px] font-semibold mb-[15px]'>Ad Format Optimization</p>
+                                        <p className='text-[#efefef] text-[20px] font-semibold mb-5'>Ad Format Optimization</p>
                                         <p className='text-[#878787]'>The creative team focuses on designing ad formats that are specifically tailored for programmatic buying and created for maximum impact and engagement. This includes creating visually appealing ad creatives, compelling copywriting, and clear calls-to-action that resonate with the target audience. Additionally, the team conducts A/B testing and multivariate testing to identify the most effective ad variations and enhance performance further. By continuously refining and iterating on the ad formats, the service ensures that the client's ads stand out in the crowded digital landscape and drive meaningful interactions with the audience.</p>
                                         <div className=''>
                                             <Link href="/contact?id=programatic-advertising">
@@ -375,8 +414,8 @@ const service_A = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div id="tab4" className={`${activetab == 4 && 'block'} ${activetab != 4 && 'hidden'} relative py-[30px] px-[50px] text-[18px] font-medium leading-8`}>
-                                    <p className='text-[#efefef] text-[20px] font-semibold mb-[15px]'>Real-Time Bidding (RTB) Expertise</p>
+                                <div id="tab4" className={`${activetab == 4 && 'block'} ${activetab != 4 && 'hidden'} relative py-[30px] px-[50px] text-base font-medium leading-8`}>
+                                    <p className='text-[#efefef] text-[20px] font-semibold mb-5'>Real-Time Bidding (RTB) Expertise</p>
                                     <p className='text-[#878787]'>RTB is a critical component of programmatic advertising, allowing advertisers to bid for ad placements in real-time auctions. The service leverages sophisticated bidding strategies and algorithms to participate in these auctions and secure optimal ad placements for the client. This involves evaluating bidding data, monitoring auction dynamics, and adjusting bidding strategies based on factors such as audience targeting, ad placement, and budget constraints. By optimizing bids in real-time, the service ensures that the client gets the most value out of their advertising budget and maximises the return on investment.</p>
                                     <div className=''>
                                         <Link href="/contact?id=programatic-advertising">
@@ -385,8 +424,8 @@ const service_A = () => {
                                     </div>
                                 </div>
 
-                                <div id="tab5" className={`${activetab == 5 && 'block'} ${activetab != 5 && 'hidden'} relative py-[30px] px-[50px] text-[18px] font-medium leading-8`}>
-                                    <p className='text-[#efefef] text-[20px] font-semibold mb-[15px]'>Continuous Campaign Management & Optimization</p>
+                                <div id="tab5" className={`${activetab == 5 && 'block'} ${activetab != 5 && 'hidden'} relative py-[30px] px-[50px] text-base font-medium leading-8`}>
+                                    <p className='text-[#efefef] text-[20px] font-semibold mb-5'>Continuous Campaign Management & Optimization</p>
                                     <p className='text-[#878787]'>This phase involves ongoing monitoring, analysis, and optimization of the campaigns to ensure peak performance and efficiency. We employ a proactive approach to campaign management, continuously monitoring key performance indicators such as click-through rates, conversion rates, cost-per-acquisition, and return on ad spend. Based on performance data and insights, the team makes data-driven optimizations such as adjusting targeting parameters, refining ad creatives, reallocating budget to top-performing channels, and implementing bidding strategy changes. This iterative optimization process ensures that the campaigns remain competitive, relevant, and effective throughout their lifecycle, increasing the client's advertising ROI.</p>
                                     <div className=''>
                                         <Link href="/contact?id=programatic-advertising">
@@ -395,12 +434,12 @@ const service_A = () => {
                                     </div>
                                 </div>
 
-                                <div id="tab6" className={`${activetab == 6 && 'block'} ${activetab != 6 && 'hidden'} relative py-[30px] px-[50px] text-[18px] font-medium leading-8`}>
-                                    <p className='text-[#efefef] text-[20px] font-semibold mb-[15px]'>In-Depth Reporting & Analytics</p>
+                                <div id="tab6" className={`${activetab == 6 && 'block'} ${activetab != 6 && 'hidden'} relative py-[30px] px-[50px] text-base font-medium leading-8`}>
+                                    <p className='text-[#efefef] text-[20px] font-semibold mb-5'>In-Depth Reporting & Analytics</p>
                                     <p className='text-[#878787]'>The service provides comprehensive reports and analytics that offer actionable insights into campaign performance and effectiveness. These reports include detailed metrics such as impressions, clicks, conversions, engagement rates, and ROI, presented in intuitive dashboards and visualizations. Additionally, the service conducts in-depth analysis to identify trends, patterns, and opportunities for improvement. <br /> <br />The client can use these insights to track campaign success, measure the impact of their advertising efforts, and make informed decisions for future optimizations and strategic planning. By providing transparent and actionable reporting, the service helps the client understand the performance drivers of their campaigns and change their marketing strategies accordingly.</p>
                                     <div className=''>
                                         <Link href="/contact?id=programatic-advertising">
-                                            <button className="bg-transparent border border-solid border-[#20dc868f] hover:bg-[#20dc868f] text-white text-base font-normal tracking-wider rounded-xl py-3 px-6 mt-6">Know More</button>
+                                            <button className="bg-transparent border border-solid border-[#20dc868f] hover:bg-[#20dc868f] text-white text-base font-normal tracking-wider rounded-xl py-3 px-6 mt-8">Know More</button>
                                         </Link>
                                     </div>
                                 </div>
@@ -507,7 +546,7 @@ const service_A = () => {
             <section className=' relative prograchoose overflow-hidden'>
                 <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 z-20">
                     <div>
-                        <h3 className='text-[30px] font-gilroy font-semibold text-[#18265b] leading-[27px]'>Why Choose AnalyticsLiv for DV360?</h3>
+                        <h3 className='text-[28px] font-gilroy font-semibold text-[#18265b] leading-[1.5em]'>Why Choose AnalyticsLiv for DV360?</h3>
                     </div>
                     <div className=' py-7 grid lg:grid-cols-3 md:grid-cols-2 gap-10'>
                         <div className='fs border-[3px] border-[#0000] border-solid hover:border-t-[#0371ff] shadow-mediadv360 rounded-b-[15px] p-5'>
@@ -545,7 +584,7 @@ const service_A = () => {
                         </div>
                         <div className='relative lg:w-1/2 md:w-[65%] w-full lg:mt-0 mt-10'>
                             <div className='flex items-center justify-center md:mb-10 mb-5'>
-                                <h3 className='xl:text-[30px] lg:text-[25px] text-[22px] font-semibold text-txt leading-[27px]'>Measurement - Integrations Available</h3>
+                                <h3 className='xl:text-[30px] lg:text-[25px] text-[22px] font-semibold text-txt leading-[1.5em]'>Measurement - Integrations Available</h3>
                             </div>
                             <div className='flex items-center justify-center'>
                                 <Link href="/contact?id=programatic-advertising">
@@ -565,11 +604,11 @@ const service_A = () => {
                                 <div>
                                     <div><h3 className='text-[#ffffff] text-[40px] leading-8 md:mb-[20px] mb-6 font-gilroy font-semibold'>Contact us</h3></div>
                                     <div>
-                                        <div className='text-[#ffffff] text-base leading-8 md:mb-[15px] mb-6 font-gilroy2 font-medium'> 
-                                        <p className='text-[24px] mb-3'> Unlock the power of Display & Video 360 </p> 
-                                         Schedule a free consultation with our experts and discover <br /> how we can elevate your campaigns
-                                         </div>
-                                         </div>
+                                        <div className='text-[#ffffff] text-base leading-8 md:mb-[15px] mb-6 font-gilroy2 font-medium'>
+                                            <p className='text-[24px] mb-3'> Unlock the power of Display & Video 360 </p>
+                                            Schedule a free consultation with our experts and discover <br /> how we can elevate your campaigns
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
