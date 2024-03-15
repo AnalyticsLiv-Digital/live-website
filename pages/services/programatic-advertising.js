@@ -78,10 +78,10 @@ const service_A = () => {
                     <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 h-full z-20">
                         <div className="z-10 flex lg:flex-nowrap items-center flex-wrap justify-between gap-7 pb-8">
                             <div className="space-y-4 w-full lg:w-1/2 lg:order-1 order-2">
-                                <h1 className="2xl:text-[23px] lg:text-[21px] text-[27px] leading-[33px] font-['Poppins'] font-semibold text-maintext pt-4">
+                                <h1 className="2xl:text-[33px] lg:text-[28px] text-[27px] leading-[1.7em] font-['Poppins'] font-semibold text-maintext pt-4">
                                     DV360: Programmatic Media Buying Redefined with AnalyticsLiv
                                 </h1>
-                                <h3 className="text-[20px] text-[#333333] font-semibold leading-[33px]">
+                                <h3 className="text-[23px] text-[#333333] font-semibold leading-[33px]">
                                     Unleash the Power of Precision Targeting and Automated Bidding
                                 </h3>
                                 <p className="text-base font-normal leading-[28px] font-[Poppins]">
