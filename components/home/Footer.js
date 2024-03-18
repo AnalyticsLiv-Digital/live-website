@@ -66,7 +66,7 @@ const Footer = () => {
                                             />
                                         </div>
                                         <div className='text-center'>
-                                            <a href="#joinus"><button className='ftbutn'>LET'S CONNECT</button></a>
+                                            <Link href="/contact"><button className='ftbutn'>LET'S CONNECT</button></Link>
                                         </div>
                                     </div>
                                 </div>
@@ -88,7 +88,7 @@ const Footer = () => {
                                         <div className='text-[15px] text-[#ffffff] font-medium leading-[1.3em] mb-4 uppercase'>Company</div>
                                         <div className=''>
                                             <ul className='uppercase tracking-wider text-start'>
-                                                <li className='py-1 md:pb-2 text-[13px] text-[#efefef] font-normal leading-5'> <Link href="/about-us">Vission</Link> </li>
+                                                <li className='py-1 md:pb-2 text-[13px] text-[#efefef] font-normal leading-5'> <Link href="/about-us">Vision</Link> </li>
                                                 <li className='py-1 md:pb-2 text-[13px] text-[#efefef] font-normal leading-5'> <Link href="/about-us">Mission</Link> </li>
                                                 <li className='py-1 md:pb-2 text-[13px] text-[#efefef] font-normal leading-5'> <Link href="/about-us">About Team</Link> </li>
                                             </ul>
