@@ -67,7 +67,7 @@ const header = () => {
               </li>
               <li className="hover:border-b-4 flex items-center gap-2 hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2" onMouseEnter={() => setIsWebResources(true)} onMouseLeave={() => setIsWebResources(false)}>
                 <a href=""> Resources </a>
-                {isWebResources && <motion.div initial={{ y: 10, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} onMouseEnter={() => setIsWebResources(true)} onMouseLeave={() => setIsWebResources(false)} id="submenu2" className="subheader absolute w-56 text-sm flex flex-col lg:-ml-20 lg:mt-2 divide-y bg-gray-100 text-cyan-900 items-center align-middle font-semibold">
+                {isWebResources && <motion.div initial={{ y: 10, opacity: 0 }} animate={{ y: -5, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} onMouseEnter={() => setIsWebResources(true)} onMouseLeave={() => setIsWebResources(false)} id="submenu2" className="subheader absolute w-56 text-sm flex flex-col lg:-ml-20 lg:mt-2 divide-y bg-gray-100 text-cyan-900 items-center align-middle font-semibold">
                   <Link href='/blogs'><div className="py-2 w-56 hover:bg-cyan-500">Blogs</div></Link>
                   <Link href='/case-studies'><div className="py-2 w-56 hover:bg-cyan-500">Case Studies</div></Link>
                   {/*<Link  href='/webinars'><div className="py-2 w-56 hover:bg-cyan-500">Webinars</div></Link>*/}
