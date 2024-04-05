@@ -297,7 +297,9 @@ const customersegmentation = () => {
                                 </div>
                             </div>
                             <div className='lg:w-1/2 w-full'>
-
+                                <div>
+                                <img src="/Customer_Segment_Sub_Img.png" alt="" className='' />
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -947,6 +947,35 @@ iframe {
   background-image: radial-gradient(20vw 15vh at 35% 13%, #cde2f8 25%, transparent 100%), radial-gradient(20vw 20vh at 43% 21%, #d054ce85 45%, transparent 100%), radial-gradient(9vmin 10vmin at 75% 33%, #e8caff 0%, transparent 100%);
 }
 
+/* .csworkflo .slick-next {
+  right: -25px;
+  top: -45px !important;
+}
+.csworkflo .slick-prev {
+  right: 15px !important;
+  top: -45px !important;
+  left: unset;
+}
+.csworkflo .slick-prev:before, .csworkflo .slick-next:before {
+  font-size: 35px !important;
+} */
+
+.cswebbox:hover .inbox:after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  z-index: 10;
+  top: -10px;
+  left: 0;
+  opacity: .44;
+  border-radius: 50%;
+  background: linear-gradient(267.31deg, #15c474 -22.87%, #0092f4 41.07%, #d054ce 107.64%);
+  filter: blur(28.5px);
+  will-change: filter;
+  transition: opacity .2s ease-in-out;
+}
+
 /* DV360 page slider-css */
 
 .clients .slick-dots , .leaders .slick-dots , .casestudy .slick-dots , .services .slick-dots , .buypremium .slick-dots , .targeting .slick-dots {
