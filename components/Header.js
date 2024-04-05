@@ -219,6 +219,11 @@ const header = () => {
                           class="text-menuheading font-poppins text-base font-normal leading-normal">Looker
                           BI Platform</Link>
                       </div>
+                      <div class="flex items-center py-1 gap-2">
+                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/training_Schedule.png" alt="Looker_logo" />
+                        <Link href="/services/CRO"
+                          class="text-menuheading font-poppins text-base font-normal leading-normal">Conversion Rate Optimization</Link>
+                      </div>
                     </motion.div>}
                     <div onClick={() => { setSubmenu("3") }} ><div className="py-2 w-56 ">Solutions</div></div>
                     {submenu == "3" && <motion.div onClick={() => { setIsOpen(!isOpen); setIsServices(false); }} initial={{ y: 10, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} className='transition ease-out duration-200 px-4 '>
@@ -365,6 +370,11 @@ const header = () => {
                   <Link href="/services/looker-bi-platform"
                     class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Looker
                     BI Platform</Link>
+                </div>
+                <div class="flex items-center py-3 gap-2">
+                  <img src="https://storage.googleapis.com/website-bucket-uploads/static/training_Schedule.png" className='w-[33px]' alt="Looker_logo" />
+                  <Link href="/services/CRO"
+                    class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Conversion Rate Optimization</Link>
                 </div>
               </ul>
               <ul
