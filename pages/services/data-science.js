@@ -138,7 +138,7 @@ const datascience = () => {
                         <div className='flex flex-col lg:flex-row justify-between items-center pt-10'>
                             <div className='lg:w-3/5'>
                                 <Image
-                                    src="/GMP_Product_New_Design.webp"
+                                    src="/Data_Science_Mid_Img.png"
                                     width={500}
                                     height={500}
                                     alt="Picture of Google Marketing Platform Partner"
@@ -390,7 +390,7 @@ const datascience = () => {
                                     </a>
                                 </div>
                             </div>
-                            <div className='foursolst flex justify-center'> 
+                            <div className='foursolst flex justify-center'>
                                 <div className='relative group rounded-[10px] border border-solid border-[#EFEFEF] hover:shadow-serviceoffer p-5 xl:h-[510px] lg:h-[438px] md:h-[630px] w-[335px] md:w-full'>
                                     <div className="flex items-start justify-start gap-4 pb-6">
                                         <div className='rounded-full bg-[#EAF0FF] w-10 h-10 flex items-center justify-center'>
