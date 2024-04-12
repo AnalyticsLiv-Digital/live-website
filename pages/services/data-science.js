@@ -453,7 +453,7 @@ const datascience = () => {
                                             </div>
                                         </li>
                                     </ul>
-                                    <a href="/customer-segmentation" className='absolute bottom-[3%] lg:right-[28%] md:right-[15%]'>
+                                    <a href="/services/customer-segmentation" className='absolute bottom-[3%] lg:right-[28%] md:right-[15%]'>
                                         <div className='flex w-[200px] m-auto items-center p-3 justify-evenly border border-solid text-center border-homepagebtn cursor-pointer rounded-[10px] group-hover:bg-homepagebtn'>
                                             <div className='flex items-center justify-center gap-[5px]'>
                                                 <button className='font-medium text-homepagebtn group-hover:text-white'>Explore Now</button>
