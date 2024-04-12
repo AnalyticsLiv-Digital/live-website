@@ -428,8 +428,8 @@ const cro = () => {
                                     <div><h3 className='text-[#ffffff] text-[30px] leading-8 md:mb-[20px] mb-6 font-gilroy font-semibold'>Contact us</h3></div>
                                     <div>
                                         <div className='text-[#ffffff] text-base leading-8 md:mb-[15px] mb-6 font-gilroy2 font-medium'>
-                                            <p className='text-[22px] mb-3'> Unlock the power of Display & Video 360 </p>
-                                            Schedule a free consultation with our experts and discover <br /> how we can elevate your campaigns
+                                            <p className='text-[22px] mb-3'>Unlock the power of CRO</p>
+                                            Schedule a free consultation with our experts and discover <br /> how we can elevate your business
                                         </div>
                                     </div>
                                 </div>

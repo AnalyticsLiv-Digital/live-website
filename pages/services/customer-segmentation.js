@@ -226,79 +226,79 @@ const customersegmentation = () => {
                         <div class="flex flex-wrap items-center justify-center pt-[50px]">
                             <div className='lg:w-1/2 w-full'>
                                 <div className='grid lg:grid-cols-1 sm:grid-cols-2 lg:gap-3 gap-7'>
-                                <div class="flex items-start cswebbox  p-[10px] pt-6 border border-[#333] rounded-[10px]">
-                                    <div className='cursor-pointer'>
-                                        <div className='inbox relative pb-4 flex items-center gap-2'>
-                                            <Image
-                                                src="/data-collection.png"
-                                                width={30}
-                                                height={30}
-                                                alt="Picture of the author"
-                                                priority={true}
+                                    <div class="flex items-start cswebbox  p-[10px] pt-6 border border-[#333] rounded-[10px]">
+                                        <div className='cursor-pointer'>
+                                            <div className='inbox relative pb-4 flex items-center gap-2'>
+                                                <Image
+                                                    src="/data-collection.png"
+                                                    width={30}
+                                                    height={30}
+                                                    alt="Picture of the author"
+                                                    priority={true}
 
-                                            />
-                                            <h2 className='text-[18px] mb-2 font-medium text-[#efefef] leading-normal'>User Input</h2>
+                                                />
+                                                <h2 className='text-[18px] mb-2 font-medium text-[#efefef] leading-normal'>User Input</h2>
+                                            </div>
+                                            <p className='text-[14px] font-medium text-[#878787] leading-[1.7em]'>The input from the user would typically be a csv file or an excel sheet. This module is responsible for validation, storage, and security of the data that will be provided as an input by the users.</p>
                                         </div>
-                                        <p className='text-[14px] font-medium text-[#878787] leading-[1.7em]'>The input from the user would typically be a csv file or an excel sheet. This module is responsible for validation, storage, and security of the data that will be provided as an input by the users.</p>
                                     </div>
-                                </div>
-                                <div class="flex items-start cswebbox  p-[10px] pt-6 border border-[#333] rounded-[10px]">
-                                    <div className='cursor-pointer'>
-                                        <div className='inbox relative pb-4 flex items-center gap-2'>
-                                            <Image
-                                                src="/report (3).png"
-                                                width={30}
-                                                height={30}
-                                                alt="Picture of the author"
-                                                priority={true}
+                                    <div class="flex items-start cswebbox  p-[10px] pt-6 border border-[#333] rounded-[10px]">
+                                        <div className='cursor-pointer'>
+                                            <div className='inbox relative pb-4 flex items-center gap-2'>
+                                                <Image
+                                                    src="/report (3).png"
+                                                    width={30}
+                                                    height={30}
+                                                    alt="Picture of the author"
+                                                    priority={true}
 
-                                            />
-                                        <h2 className='text-[18px] mb-2 font-medium text-[#efefef] leading-normal'>Data Preparation</h2>
+                                                />
+                                                <h2 className='text-[18px] mb-2 font-medium text-[#efefef] leading-normal'>Data Preparation</h2>
+                                            </div>
+                                            <p className='text-[14px] font-medium text-[#878787] leading-[1.7em]'>The data uploaded by the users cannot be readily used for segmentation. Based on the attributes required for segmentation, the raw data needs to be converted into analysis-specific data. The functionality of this module is to facilitate data preparation</p>
+
                                         </div>
-                                        <p className='text-[14px] font-medium text-[#878787] leading-[1.7em]'>The data uploaded by the users cannot be readily used for segmentation. Based on the attributes required for segmentation, the raw data needs to be converted into analysis-specific data. The functionality of this module is to facilitate data preparation</p>
-
                                     </div>
-                                </div>
-                                <div class="flex items-start cswebbox  p-[10px] pt-6 border border-[#333] rounded-[10px]">
+                                    <div class="flex items-start cswebbox  p-[10px] pt-6 border border-[#333] rounded-[10px]">
 
-                                    <div className='cursor-pointer'>
+                                        <div className='cursor-pointer'>
 
-                                        <div className='inbox relative pb-4 flex items-center gap-2'>
-                                            <Image
-                                                src="/analyzing (1).png"
-                                                width={30}
-                                                height={30}
-                                                alt="Picture of the author"
-                                                priority={true}
+                                            <div className='inbox relative pb-4 flex items-center gap-2'>
+                                                <Image
+                                                    src="/analyzing (1).png"
+                                                    width={30}
+                                                    height={30}
+                                                    alt="Picture of the author"
+                                                    priority={true}
 
-                                            />
-                                        <h2 className='text-[18px] mb-2 font-medium text-[#efefef] leading-normal'>Clustering Algorithm</h2>
+                                                />
+                                                <h2 className='text-[18px] mb-2 font-medium text-[#efefef] leading-normal'>Clustering Algorithm</h2>
+                                            </div>
+                                            <p className='text-[14px] font-medium text-[#878787] leading-[1.7em]'>This module will contain the implementation of the chosen clustering algorithm. Connection between this module and the ones that precede and follow should be robust and flexible, as this module will undergo a lot of changes due to algorithm tweaking.</p>
+
                                         </div>
-                                        <p className='text-[14px] font-medium text-[#878787] leading-[1.7em]'>This module will contain the implementation of the chosen clustering algorithm. Connection between this module and the ones that precede and follow should be robust and flexible, as this module will undergo a lot of changes due to algorithm tweaking.</p>
-
                                     </div>
-                                </div>
-                                <div class="flex items-start cswebbox  p-[10px] pt-6 border border-[#333] rounded-[10px]">
-                                    <div className='cursor-pointer'>
-                                        <div className='inbox relative pb-4 flex items-center gap-2'>
-                                            <Image
-                                                src="/insight (1).png"
-                                                width={30}
-                                                height={30}
-                                                alt="Picture of the author"
-                                                priority={true}
+                                    <div class="flex items-start cswebbox  p-[10px] pt-6 border border-[#333] rounded-[10px]">
+                                        <div className='cursor-pointer'>
+                                            <div className='inbox relative pb-4 flex items-center gap-2'>
+                                                <Image
+                                                    src="/insight (1).png"
+                                                    width={30}
+                                                    height={30}
+                                                    alt="Picture of the author"
+                                                    priority={true}
 
-                                            />
-                                        <h2 className='text-[18px] mb-2 font-medium text-[#efefef] leading-normal'>Insights & Reporting</h2>
+                                                />
+                                                <h2 className='text-[18px] mb-2 font-medium text-[#efefef] leading-normal'>Insights & Reporting</h2>
+                                            </div>
+                                            <p className='text-[14px] font-medium text-[#878787] leading-[1.7em]'>We provide clear reports outlining customer segments, their characteristics, and actionable insights for targeted marketing strategies.</p>
                                         </div>
-                                        <p className='text-[14px] font-medium text-[#878787] leading-[1.7em]'>We provide clear reports outlining customer segments, their characteristics, and actionable insights for targeted marketing strategies.</p>
                                     </div>
-                                </div>
                                 </div>
                             </div>
                             <div className='lg:w-1/2 w-full'>
                                 <div>
-                                <img src="/Customer_Segment_Sub_Img.png" alt="" className='' />
+                                    <img src="/Customer_Segment_Sub_Img.png" alt="" className='' />
                                 </div>
                             </div>
                         </div>
@@ -527,9 +527,11 @@ const customersegmentation = () => {
                         <div className='md:w-[66%] w-full'>
                             <div>
                                 <div>
+                                    <div><h3 className='text-[#ffffff] text-[30px] leading-8 md:mb-[20px] mb-6 font-gilroy font-semibold'>Contact us</h3></div>
                                     <div>
-                                        <div className='text-[#ffffff] text-[20px] leading-8 md:mb-[15px] mb-6 font-gilroy2 font-medium'>
-                                            Ready to Unlock the Power of Customer Segmentation?
+                                        <div className='text-[#ffffff] text-base leading-8 md:mb-[15px] mb-6 font-gilroy2 font-medium'>
+                                            <p className='text-[22px] mb-3'>Ready to Unlock the power of Customer Segmentation</p>
+                                            Schedule a free consultation with our experts and discover <br /> how we can elevate your business
                                         </div>
                                     </div>
                                 </div>

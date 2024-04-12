@@ -220,7 +220,7 @@ const header = () => {
                           BI Platform</Link>
                       </div>
                       <div class="flex items-center py-1 gap-2">
-                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/training_Schedule.png" alt="Looker_logo" />
+                        <img src="/cro_logo.png" className='w-[33px]' alt="Looker_logo" />
                         <Link href="/services/CRO"
                           class="text-menuheading font-poppins text-base font-normal leading-normal">Conversion Rate Optimization</Link>
                       </div>
@@ -236,14 +236,14 @@ const header = () => {
                       <div class="flex items-center py-1 gap-2">
                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/Solutions_Data-Science.logo.png"
                           alt="Data-Science_logo" />
-                        <Link href="#"
+                        <Link href="/services/data-science"
                           class="text-menuheading font-poppins text-base font-normal leading-normal">Data
                           Science Solution & Automation</Link>
                       </div>
                       <div class="flex items-center py-1 gap-2">
                         <img className='w-[35px]' src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_Data_Attribution.png"
                           alt="Data-Science_logo" />
-                        <Link href="#"
+                        <Link href="/services/customer-segmentation"
                           class="text-menuheading font-poppins text-base font-normal leading-normal">Custom Data Attribution Model</Link>
                       </div>
                     </motion.div>}
@@ -328,18 +328,18 @@ const header = () => {
                     class="text-menuheading font-poppins text-[13px] font-normal leading-normal">eCommerce Marketing</Link>
                 </div>
                 <div class="flex items-center py-3 gap-2">
-                  <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-lead.png" alt="paid_logo" />
+                  <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-lead.png" className='w-[33px]' alt="paid_logo" />
                   <Link href="/services/lead-generation"
                     class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Lead generation</Link>
                 </div>
                 <div class="flex items-center py-3 gap-2">
-                  <img className='w-[35px]' src="https://storage.googleapis.com/website-bucket-uploads/static/SEM.png" alt="paid_logo" />
+                  <img className='w-[33px]' src="https://storage.googleapis.com/website-bucket-uploads/static/SEM.png" alt="paid_logo" />
                   <Link href="/services/programatic-advertising"
                     class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Search engine marketing</Link>
                 </div>
                 <div class="flex items-center py-3 gap-2
                                     ">
-                  <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-mobile.png" alt="display_logo" />
+                  <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-mobile.png" className='w-[33px]' alt="display_logo" />
                   <Link href="/services/app-marketing"
                     class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Mobile app marketing</Link>
                 </div>
@@ -372,7 +372,7 @@ const header = () => {
                     BI Platform</Link>
                 </div>
                 <div class="flex items-center py-3 gap-2">
-                  <img src="https://storage.googleapis.com/website-bucket-uploads/static/training_Schedule.png" className='w-[33px]' alt="Looker_logo" />
+                  <img src="/cro_logo.png" className='w-[33px]' alt="Looker_logo" />
                   <Link href="/services/CRO"
                     class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Conversion Rate Optimization</Link>
                 </div>
@@ -394,14 +394,14 @@ const header = () => {
                 <div class="flex items-center py-3 gap-2">
                   <img src="https://storage.googleapis.com/website-bucket-uploads/static/Solutions_Data-Science.logo.png"
                     alt="Data-Science_logo" />
-                  <Link href="#"
+                  <Link href="/services/data-science"
                     class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Data
                     Science Solution & Automation</Link>
                 </div>
                 <div class="flex items-center py-3 gap-2">
-                  <img className='w-[23px]' src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_Data_Attribution.png"
+                  <img className='w-[33px]' src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_Data_Attribution.png"
                     alt="Data-Science_logo" />
-                  <Link href="#"
+                  <Link href="/services/customer-segmentation"
                     class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Custom Data Attribution Model</Link>
                 </div>
               </ul>
