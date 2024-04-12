@@ -135,7 +135,7 @@ const datascience = () => {
                         <div className='flex items-center justify-center'>
                             <h2 className='text-maintext lg:text-[28px] text-2xl font-semibold not-italic text-center'>Empowering Businesses with Data: AnalyticsLiv's Comprehensive Suite</h2>
                         </div>
-                        <div className='flex flex-col lg:flex-row justify-between items-center pt-10'>
+                        <div className='flex flex-col lg:flex-row justify-between items-center'>
                             <div className='lg:w-3/5'>
                                 <Image
                                     src="/Data_Science_Mid_Img.png"
@@ -612,7 +612,7 @@ const datascience = () => {
                 </div>
 
             </section >
-            <section className='insight relative overflow-hidden font-gilroy'>
+            <section className='powerup bg-[#282833] insight relative overflow-hidden font-gilroy'>
                 <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 z-20">
                     <div>
                         <h3 className='text-[28px] font-semibold text-white leading-[1.5em] font-gilroy mb-2'>The INSIGHT Methodology: Your Roadmap to Data-Driven Success</h3>
@@ -928,8 +928,8 @@ const datascience = () => {
                                     <div><h3 className='text-[#ffffff] text-[30px] leading-8 md:mb-[20px] mb-6 font-gilroy font-semibold'>Contact us</h3></div>
                                     <div>
                                         <div className='text-[#ffffff] text-base leading-8 md:mb-[15px] mb-6 font-gilroy2 font-medium'>
-                                            <p className='text-[22px] mb-3'> Unlock the power of Display & Video 360 </p>
-                                            Schedule a free consultation with our experts and discover <br /> how we can elevate your campaigns
+                                            <p className='text-[22px] mb-3'>Unlock the power of Data Science & Solution</p>
+                                            Schedule a free consultation with our experts and discover <br /> how we can elevate your business
                                         </div>
                                     </div>
                                 </div>
