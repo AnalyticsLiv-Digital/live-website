@@ -147,7 +147,7 @@ const index = () => {
                     "coverphoto": formValues.coverphoto,
                     "thumbnail": formValues.thumbnail,
                     "document_id": formValues.document_id,
-                    "active":formValues.active,
+                    "active":"true",
                     "category":formValues.category,
                     "sequence" :formValues.sequence
         }),
