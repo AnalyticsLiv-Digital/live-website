@@ -6,10 +6,11 @@ import Link from 'next/link';
 import { Transition } from "@headlessui/react";
 import Head from 'next/head';
 import Script from 'next/script';
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
+import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 const header = () => {
-  const [header, setHeader] = useState(80);
+  const [header, setHeader] = useState(75);
   const [isWebResources, setIsWebResources] = useState(false);
   const [isWebServices, setIsSWebervices] = useState(false);
   const [isResources, setIsResources] = useState(false);
@@ -26,7 +27,7 @@ const header = () => {
       if ((totalScroll > 130)) {
         setHeader(60);
       } else if ((totalScroll < 100)) {
-        setHeader(80);
+        setHeader(75);
       }
 
 
@@ -59,29 +60,39 @@ const header = () => {
 
           <Link className="logo" href="/"><img alt="logo" aria-label="logo" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="h-10 lg:mx-4 cursor-pointer" /></Link>
           <nav className="lg:flex text-center">
-            <ul className="lg:flex text-base font-normal text-left lg:text-center z-[-1] lg:z-auto lg:mr-4 lg:w-auto lg:space-x-6 items-center  uppercase tracking-wide cursor-pointer">
-              <li className="relative flex items-center gap-2 hover:border-b-4 hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2" onMouseEnter={() => setIsSWebervices(true)} onMouseLeave={() => setIsSWebervices(false)}>
+          <ul className="lg:flex text-[14px] font-Gilroy-SemiBold font-semibold text-txt text-left lg:text-center z-[-1] lg:z-auto lg:mr-4 lg:w-auto items-center  uppercase tracking-wide cursor-pointer">
+              <li className="relative flex items-center gap-[5px] hover:border-b-4 hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2" onMouseEnter={() => setIsSWebervices(true)} onMouseLeave={() => setIsSWebervices(false)}>
                 <Link className="header-links" href="/services">What We Do</Link>
-                <span><img src="/Down_Arrow_solution.png" alt="" className='w-[15px] h-[15px]'/></span>
-                
+                <span>
+                  {isWebServices ? (
+                    <FaChevronUp className="w-4 h-4" />
+                  ) : (
+                    <FaChevronDown className="w-4 h-4" />
+                  )}
+                </span>
               </li>
-              <li className="hover:border-b-4 flex items-center gap-2 hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2" onMouseEnter={() => setIsWebResources(true)} onMouseLeave={() => setIsWebResources(false)}>
+              <li className="hover:border-b-4 lg:ml-[19px] flex items-center gap-[5px] hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2" onMouseEnter={() => setIsWebResources(true)} onMouseLeave={() => setIsWebResources(false)}>
                 <a href=""> Resources </a>
                 {isWebResources && <motion.div initial={{ y: 10, opacity: 0 }} animate={{ y: -5, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} onMouseEnter={() => setIsWebResources(true)} onMouseLeave={() => setIsWebResources(false)} id="submenu2" className="subheader absolute w-56 text-sm flex flex-col lg:-ml-20 lg:mt-2 divide-y bg-gray-100 text-cyan-900 items-center align-middle font-semibold">
                   <Link href='/blogs'><div className="py-2 w-56 hover:bg-cyan-500">Blogs</div></Link>
                   <Link href='/case-studies'><div className="py-2 w-56 hover:bg-cyan-500">Case Studies</div></Link>
                   {/*<Link  href='/webinars'><div className="py-2 w-56 hover:bg-cyan-500">Webinars</div></Link>*/}
                 </motion.div>}
-                <span><img src="/Down_Arrow_solution.png" alt="" className='w-[15px] h-[15px]'/></span>
+                <span>
+                  {isWebResources ? (
+                  <FaChevronUp className="w-4 h-4" />
+                ) : (
+                  <FaChevronDown className="w-4 h-4" />
+                )}</span>
               </li>
-              <Link className="header-links" href="/about-us"><li className="hover:border-b-4 hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2">
+              <Link className="header-links" href="/about-us"><li className="hover:border-b-4 lg:ml-[19px] hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2">
                 Who We Are
               </li>
               </Link>
-              <Link className="header-links" href="/contact"><li className="hover:border-b-4 hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2">
+              <Link className="header-links" href="/contact"><li className="hover:border-b-4 lg:ml-[19px] hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2">
                 Contact Us
               </li></Link>
-              <Link className="header-links" href="/careers"><li className="hover:border-b-4 hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2 text-rose-700 animate-pulse hover:animate-none">
+              <Link className="header-links" href="/careers"><li className="hover:border-b-4 lg:ml-[19px] hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2 text-rose-700 animate-pulse hover:animate-none">
                 We Are Hiring
               </li></Link>
             </ul>
@@ -208,6 +219,11 @@ const header = () => {
                           class="text-menuheading font-poppins text-base font-normal leading-normal">Looker
                           BI Platform</Link>
                       </div>
+                      <div class="flex items-center py-1 gap-2">
+                        <img src="/cro_logo.png" className='w-[33px]' alt="Looker_logo" />
+                        <Link href="/services/CRO"
+                          class="text-menuheading font-poppins text-base font-normal leading-normal">Conversion Rate Optimization</Link>
+                      </div>
                     </motion.div>}
                     <div onClick={() => { setSubmenu("3") }} ><div className="py-2 w-56 ">Solutions</div></div>
                     {submenu == "3" && <motion.div onClick={() => { setIsOpen(!isOpen); setIsServices(false); }} initial={{ y: 10, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} className='transition ease-out duration-200 px-4 '>
@@ -220,14 +236,14 @@ const header = () => {
                       <div class="flex items-center py-1 gap-2">
                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/Solutions_Data-Science.logo.png"
                           alt="Data-Science_logo" />
-                        <Link href="#"
+                        <Link href="/services/data-science"
                           class="text-menuheading font-poppins text-base font-normal leading-normal">Data
                           Science Solution & Automation</Link>
                       </div>
                       <div class="flex items-center py-1 gap-2">
                         <img className='w-[35px]' src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_Data_Attribution.png"
                           alt="Data-Science_logo" />
-                        <Link href="#"
+                        <Link href="/services/customer-segmentation"
                           class="text-menuheading font-poppins text-base font-normal leading-normal">Custom Data Attribution Model</Link>
                       </div>
                     </motion.div>}
@@ -312,18 +328,18 @@ const header = () => {
                     class="text-menuheading font-poppins text-[13px] font-normal leading-normal">eCommerce Marketing</Link>
                 </div>
                 <div class="flex items-center py-3 gap-2">
-                  <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-lead.png" alt="paid_logo" />
+                  <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-lead.png" className='w-[33px]' alt="paid_logo" />
                   <Link href="/services/lead-generation"
                     class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Lead generation</Link>
                 </div>
                 <div class="flex items-center py-3 gap-2">
-                  <img className='w-[35px]' src="https://storage.googleapis.com/website-bucket-uploads/static/SEM.png" alt="paid_logo" />
+                  <img className='w-[33px]' src="https://storage.googleapis.com/website-bucket-uploads/static/SEM.png" alt="paid_logo" />
                   <Link href="/services/programatic-advertising"
                     class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Search engine marketing</Link>
                 </div>
                 <div class="flex items-center py-3 gap-2
                                     ">
-                  <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-mobile.png" alt="display_logo" />
+                  <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-mobile.png" className='w-[33px]' alt="display_logo" />
                   <Link href="/services/app-marketing"
                     class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Mobile app marketing</Link>
                 </div>
@@ -355,6 +371,11 @@ const header = () => {
                     class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Looker
                     BI Platform</Link>
                 </div>
+                <div class="flex items-center py-3 gap-2">
+                  <img src="/cro_logo.png" className='w-[33px]' alt="Looker_logo" />
+                  <Link href="/services/CRO"
+                    class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Conversion Rate Optimization</Link>
+                </div>
               </ul>
               <ul
                 class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b lg:border-b-0 pb-6 pt-6 lg:pt-3">
@@ -373,14 +394,14 @@ const header = () => {
                 <div class="flex items-center py-3 gap-2">
                   <img src="https://storage.googleapis.com/website-bucket-uploads/static/Solutions_Data-Science.logo.png"
                     alt="Data-Science_logo" />
-                  <Link href="#"
+                  <Link href="/services/data-science"
                     class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Data
                     Science Solution & Automation</Link>
                 </div>
                 <div class="flex items-center py-3 gap-2">
-                  <img className='w-[23px]' src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_Data_Attribution.png"
+                  <img className='w-[33px]' src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_Data_Attribution.png"
                     alt="Data-Science_logo" />
-                  <Link href="#"
+                  <Link href="/services/customer-segmentation"
                     class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Custom Data Attribution Model</Link>
                 </div>
               </ul>

@@ -663,7 +663,7 @@ const service_A = () => {
                                 </div>
                                 <div className='second group 2xl:h-[299px] xl:h-[329px] lg:h-[290px] home-blog max-[1024px]:w-full max-[640px]:mt-[20px] rounded border border-solid border-[#DBDBDB] hover:border-[#979797] hover:shadow-serviceoffer p-[25px] text-center relative'>
                                     <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                                    <a href="/case-studies/ua-to-ga4-migration-for-a-website" className='lg:flex gap-5'>
+                                    <a href="/case-studies/55-percent-increase-in-avg-session-duration" className='lg:flex gap-5'>
                                         <Image
                                             src="/casestudy3.png"
                                             width={300}
