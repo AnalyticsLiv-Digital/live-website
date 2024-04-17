@@ -5,6 +5,9 @@ import Aos from 'aos';
 import 'aos/dist/aos.css'
 import Marquee from "react-fast-marquee";
 import * as Scroll from 'react-scroll';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Home = () => {
     const { Element: ScrollElement } = Scroll;
@@ -21,6 +24,18 @@ const Home = () => {
     useEffect(() => {
         Aos.init({ duration: 2000 });
     }, [])
+    var settings = {
+        dots: true,
+        infinite: true,
+        speed: 2000,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        nextArrow: false,
+        prevArrow: false,
+        autoplay: true,
+        autoplaySpeed: 6000,
+        pauseOnHover: true
+    };
 
     const Trusteddata = {
         brand: [
@@ -36,26 +51,72 @@ const Home = () => {
     return (
         <>
             <section className='homepage flex items-center justify-center overflow-hidden font-gilroy'>
-                <div className='bg-[#ecf9ff] h-[90vh] w-full'>
+                <div className='bg-[#ecf9ff] min-h-[90vh] w-full'>
                     <div className='relative h-full overflow-hidden'>
 
                         {/* Back-Ground design  */}
-                        <div className='absolute top-28 right-0 w-80 h-80 flex justify-end'>
+                        <div className='absolute lg:hidden top-28 right-0 w-80 h-80 flex justify-end'>
                             < img className="bgd w-52 h-80 rounded-full blur-2xl opacity-[0.5]" />
                         </div>
                         {/*  */}
 
                         <div className='flex flex-col items-center justify-center gap-12 px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16 h-full'>
-                            <div className='vb pb-5'>
-                                <h1 className='text-maintext text-[26px] md:text-[40px] text-center font-medium leading-[1.3em] md:leading-[1.5em] not-italic mt-[30px] md:pb-5'> <span className='md:text-[27px] text-[24px] md:font-normal font-light'> Redefining Possibilities: Empowering Brands through </span> <br /> <b> Strategic Media, Analytics & Cloud Solutions</b> </h1>
-                                <p className='text-[#000] md:text-[18px] text-base font-medium leading-[1.5em] text-center md:pb-5 pb-[30px]'>Data Analytics and Marketing Solutions helps businesses in gaining digital maturity <br /> through optimized utilization of data</p>
-                                <div className='flex flex-wrap justify-around mb-3'>
-                                    
-                                        <button onClick={scrolling1} className='butn'>
-                                            Talk to our Experts
-                                        </button>
-                                    
-                                </div>
+                        <div className='vb pb-5 w-full'>
+                                <Slider {...settings}>
+                                    <div>
+                                        <div className='flex lg:flex-nowrap flex-wrap items-center gap-6  mt-10'>
+                                            <div className='lg:w-1/2 w-full'>
+                                                <div className=''>
+                                                    <h1 className='text-maintext text-[24px] text-center font-semibold leading-[32px] not-italic mt-[30px] md:pb-5'>Redefining Possibilities, Empowering Brands</h1>
+                                                    <p className='text-[#000] md:text-[18px] text-base font-medium leading-[1.5em] text-center md:pb-5 pb-[30px]'>Data Analytics and Marketing Solutions helps businesses in gaining digital maturity <br /> through optimized utilization of data</p>
+                                                    <div className='flex flex-wrap justify-around mb-3'>
+
+                                                        <button onClick={scrolling1} className='butn'>
+                                                            Talk to our Experts
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className='lg:w-1/2 w-full mx-auto flex items-center justify-center'>
+                                                <img src="/Home_Page_Main_Img_1_Updated.png" alt="" className='w-[650px]' />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div className='flex lg:flex-nowrap flex-wrap items-center gap-6'>
+                                            <div className='lg:w-1/2 w-full mx-auto flex items-center justify-center'>
+                                                <img src="/Home_Page_Main_Img_2.png" alt=""  className='w-[450px]'/>
+                                            </div>
+                                            <div className='lg:w-1/2 w-full'>
+                                                <h1 className='text-maintext text-[24px] text-center font-semibold leading-[32px] not-italic mt-[30px] md:pb-5'>See Beyond the Click: Strategic Media, Analytics & Cloud Solutions for Measurable Success</h1>
+                                                <p className='text-[#000] md:text-[18px] text-base font-medium leading-[1.5em] text-center md:pb-5 pb-[30px]'>Our strategic Media, Analytics & Cloud Solutions go beyond basic clicks, transforming website data into actionable insights that drive measurable success through optimized campaigns and data-driven decisions</p>
+                                                <div className='flex flex-wrap justify-around mb-3'>
+
+                                                    <button onClick={scrolling1} className='butn'>
+                                                        know More
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div className='flex lg:flex-nowrap flex-wrap items-center gap-6'>
+                                            <div className='lg:w-1/2 w-full'>
+                                                <h1 className='text-maintext text-[24px] text-center font-semibold leading-[32px] not-italic mt-[30px] md:pb-5'>Optimize, Analyze, Dominate: Media & Analytics Solutions to Power Your Digital Transformation</h1>
+                                                <p className='text-[#000] md:text-[18px] text-base font-medium leading-[1.5em] text-center md:pb-5 pb-[30px]'>Fuel your digital transformation with our Media & Analytics Solutions</p>
+                                                <div className='flex flex-wrap justify-around mb-3'>
+
+                                                    <button onClick={scrolling1} className='butn'>
+                                                        Schedule A Free Consultation
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div className='lg:w-1/2 w-full mx-auto flex items-center justify-center'>
+                                                <img src="/Home_Page_Main_Img_3.png" alt=""  className='w-[450px]'/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Slider>
                             </div>
                             {/*  */}
 
