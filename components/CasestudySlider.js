@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaLongArrowAltRight } from "react-icons/fa";
-import { FaCheck } from "react-icons/fa";
+//import { FaCheck } from "react-icons/fa";
 
 const CasestudySlider = ({casestudy}) => {
   return (
