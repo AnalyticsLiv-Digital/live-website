@@ -22,7 +22,7 @@ const privacypolicy = () => {
             </div>
             
         </div>
-        <div className="p-10 pt-0 font-gilroy">
+        <div className="p-10 pt-0 text-base font-normal leading-7 text-[#243238]">
             <div className="text-[#243238] text-base leading-[24px] font-normal mb-[15px]"> <strong> Privacy Policy for Analyticsliv Digital LLP </strong></div>
 
             <p>At AnalyticsLiv Digital LLP, accessible from AnalyticsLiv Digital LLP, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by AnalyticsLiv Digital LLP and how we use it.</p>
