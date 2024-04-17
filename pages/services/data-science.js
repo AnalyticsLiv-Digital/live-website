@@ -85,6 +85,11 @@ const datascience = () => {
 
     return (
         <>
+            <Head>
+                <title>AnalyticsLiv - Analytics Data-Science</title>
+                <meta name="description" content="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads" />
+                <link rel="canonical" href="https://www.analyticsliv.com/services/data-science"></link>
+            </Head>
             <section className='dtshome w-full relative font-gilroy overflow-hidden'>
                 <div className='h-full'>
                     <div className="relative px-4 md:px-12 pt-8 md:pt-[10px] pb-8 md:pb-16 h-full z-20">

@@ -384,6 +384,12 @@ iframe {
   will-change: filter;
 }
 
+.vb .slick-prev,
+.vb .slick-next {
+    display: none !important;
+}
+
+
 /* Homepage testimonials-css */
 
 .main-title-testimonial {
