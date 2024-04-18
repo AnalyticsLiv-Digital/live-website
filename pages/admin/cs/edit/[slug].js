@@ -9,11 +9,12 @@ import { useRouter } from 'next/navigation'
 import GoogleButton from 'react-google-button'
 
 
-export default function Home(a) {
-   
+export default function Home(casestudydata) {
+    console.log(casestudydata);
 
-
-    const intitalContent = { "title": "<span class='text-[#0092f4]'>10%</span> Text", "file": "", "slug": "", "coverimage": "", "active:": "true", "sequence": "", "open": "", "categories": ["GA4","DV360"], "id": "", "background": "Text", "kpis": [{ "value": "NUMBER", "text": "TEXT" }, { "value": "NUMBER", "text": "TEXT" }, { "value": "NUMBER", "text": "TEXT" }, { "value": "", "text": "" }], "challenge": { "title": "TEXT", "points": [{ "heading": "Heading1", "point": "Point1" }, { "heading": "Heading2", "point": "Point2" }, { "heading": "", "point": "" }, { "heading": "", "point": "" }] }, "approach": { "title": "Title", "points": [{ "heading": "Heading1", "point": "Point" }, { "heading": "Heading3", "point": "Point3" }, { "heading": "heading", "point": "point" }, { "heading": "", "point": "" }] }, "results": { "title": "Title", "points": [{ "heading": "Heading1", "point": "point1" }, { "heading": "Heading2", "point": "Point2" }, { "heading": "", "point": "" }, { "heading": "", "point": "" }] } };
+    
+    const intitalContent = casestudydata.casestudydata.data[0];
+    const intitalContentn = { "title": "<span class='text-[#0092f4]'>19%</span> Lower Cost Per Acquisition: <br /> A Case Study in DV360 Ad Optimization", "file": "", "slug": "", "coverimage": "", "active:": "true", "sequence": "", "open": "", "categories": "", "id": "", "background": "The client is an automotive manufacturer that produces cars, vans, and SUVs. The clients vehicles are sold in New Zealand through a network of authorised dealerships. In New Zealand, the client offers a range of vehicles and is responsible for marketing, sales, and after-sales service of the brand's products.", "kpis": [{ "value": "18%", "text": "Improvement in conversion rate for existing customer payment journeys" }, { "value": "100%", "text": "Improvement in overall conversion happening online" }, { "value": "9x", "text": "Decrease in frauds" }, { "value": "", "text": "" }], "challenge": { "title": "Client struggled to convert ad viewers into car buyers despite running ads. Analysis revealed two key issues", "points": [{ "heading": "Ineffective Creative Sizes", "point": "Certain creatives weren't driving conversions despite budget allocation" }, { "heading": "Low-Quality Creatives", "point": "Blurry or low-quality visuals in some ads were hindering user experience" }, { "heading": "", "point": "" }, { "heading": "", "point": "" }] }, "approach": { "title": "Our data-driven approach leveraged DV360 to optimise ad performance", "points": [{ "heading": "Creative Size Analysis", "point": "We identified the most effective ad sizes (e.g., 300x250, 300x600) for the \"Fuel Your Drive\" campaign." }, { "heading": "Budget Optimization", "point": "Budget was shifted towards well-performing formats, minimizing spending on underperforming ones." }, { "heading": "High-Quality Creatives", "point": "We collaborated with the client to replace low-quality visuals with clear, visually appealing elements." }, { "heading": "", "point": "" }] }, "results": { "title": "", "points": [{ "heading": "Increased Conversions", "point": "Effective cost per acquisition (CPA) dropped by 19% compared to the previous month, indicating a significant improvement in conversion rates." }, { "heading": "Enhanced User Experience", "point": "High-quality creatives provided a more engaging user experience, leading to better ad reception." }, { "heading": "", "point": "" }, { "heading": "", "point": "" }] } };
     const [contentobj, setContentObj] = useState(intitalContent);
     const [contentForm, setIscontentform] = useState(null);
 
@@ -135,7 +136,7 @@ export default function Home(a) {
         setContentObj({ ...contentobj, ["file"]: e.target.value });
     };
 
-    const handlecoverimageChange= (e) => {       
+    const handlecoverimageChange = (e) => {       
         setContentObj({ ...contentobj, ["coverimage"]: e.target.value });
     };
 
@@ -320,19 +321,19 @@ export default function Home(a) {
                 body: formData,
             }).then((data) => {/*console.log(data.json)*/ });
 
-            setContentObj({ ...contentobj, coverimage: 'https://storage.googleapis.com/website-bucket-uploads/cs/' + new_filename });
+            setContentObj({ ...formValues, coverimage: 'https://storage.googleapis.com/website-bucket-uploads/cs/' + new_filename });
 
             if (upload) {
                 console.log('Uploaded successfully!');
-                setContentObj({ ...contentobj, coverimage: 'https://storage.googleapis.com/website-bucket-uploads/cs/' + new_filename });
+                setContentObj({ ...formValues, coverimage: 'https://storage.googleapis.com/website-bucket-uploads/cs/' + new_filename });
 
             } else {
-                
-                setContentObj({ ...contentobj, coverimage: 'https://storage.googleapis.com/website-bucket-uploads/cs/' + new_filename });
+                console.log(upload);
+                setContentObj({ ...formValues, coverimage: 'https://storage.googleapis.com/website-bucket-uploads/cs/' + new_filename });
 
             }
 
-            
+            console.log(formValues)
         } else {
             alert('file size should be less than 10MB');
             document.getElementById('coverimage_file').value = '';
@@ -368,19 +369,19 @@ export default function Home(a) {
                 body: formData,
             }).then((data) => {/*console.log(data.json)*/ });
 
-            setContentObj({ ...contentobj, file: 'https://storage.googleapis.com/website-bucket-uploads/cs/' + new_filename });
+            setContentObj({ ...formValues, file: 'https://storage.googleapis.com/website-bucket-uploads/cs/' + new_filename });
 
             if (upload) {
                 console.log('Uploaded successfully!');
-                setContentObj({ ...contentobj, file: 'https://storage.googleapis.com/website-bucket-uploads/cs/' + new_filename });
+                setContentObj({ ...formValues, file: 'https://storage.googleapis.com/website-bucket-uploads/cs/' + new_filename });
 
             } else {
-                
-                setContentObj({ ...contentobj, file: 'https://storage.googleapis.com/website-bucket-uploads/cs/' + new_filename });
+                console.log(upload);
+                setContentObj({ ...formValues, file: 'https://storage.googleapis.com/website-bucket-uploads/cs/' + new_filename });
 
             }
 
-           
+            console.log(formValues)
         } else {
             alert('file size should be less than 10MB');
             document.getElementById('casestudy_file').value = '';
@@ -397,7 +398,7 @@ export default function Home(a) {
         console.log(contentobj)
 
         
-        fetch('/api/admin/newcasestudy/new', {
+        fetch('/api/admin/newcasestudy/update', {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',
@@ -410,7 +411,7 @@ export default function Home(a) {
             .then((response) => response.json())
             .then((data) => {
                 console.log('Success:', data);
-                alert('case study uploaded')
+                alert('casestudy updated');
             })
             .catch((error) => {
                 console.error('Error:', error);
@@ -486,10 +487,10 @@ export default function Home(a) {
                                     Casestudy Upload - <input type="file" id="casestudy_file" onChange={uploadCaseStudy} accept=".pdf, .jpg, .jpeg, .docx" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent  border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder="No file" /><br />
                                     Coverimage URL- <input required className="px-2.5 pb-2.5 pt-5 w-1/2 text-sm text-gray-900 bg-transparent  border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" type="text" name="coverimage" value={contentobj.coverimage} onChange={handlecoverimageChange} /><br />
                                     Coverimage Upload - <input type="file" id="coverimage_file" onChange={uploadPhoto} accept=".pdf, .jpg, .jpeg, .docx" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent  border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder="No file" /><br />
-                                    Categories - <input required className="px-2.5 pb-2.5 pt-5 w-1/2 text-sm text-gray-900 bg-transparent  border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" type="text" name="sequence" value={contentobj.categories} onChange={handledecategoriesChange} /><br />
+                                    Categories - <input required className="px-2.5 pb-2.5 pt-5 w-1/2 text-sm text-gray-900 bg-transparent  border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" type="text" name="sequence" value={contentobj.categories.toString()} onChange={handledecategoriesChange} /><br />
                                     Sequence - <input required className="px-2.5 pb-2.5 pt-5 w-1/2 text-sm text-gray-900 bg-transparent  border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" type="text" name="sequence" value={contentobj.sequence} onChange={handlesequenceChange} /><br />
-                                    Active - <select required className="px-2.5 pb-2.5 pt-5 w-1/2 text-sm text-gray-900 bg-transparent  border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" type="text" name="active" value={contentobj.active} onChange={handledeactiveChange} ><option >Select</option><option value="true">Yes</option><option value="false">No</option> </select><br />
-                                    Open Download - <select required className="px-2.5 pb-2.5 pt-5 w-1/2 text-sm text-gray-900 bg-transparent  border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" type="text" name="active" value={contentobj.open} onChange={handleopenChange} ><option >Select</option><option value="true">Yes</option><option value="false">No</option> </select><br />
+                                    Active - <select required className="px-2.5 pb-2.5 pt-5 w-1/2 text-sm text-gray-900 bg-transparent  border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" type="text" name="active" value={contentobj.active} onChange={handledeactiveChange} ><option value="true">Yes</option><option value="false">No</option> </select><br />
+                                    Open Download - <select required className="px-2.5 pb-2.5 pt-5 w-1/2 text-sm text-gray-900 bg-transparent  border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" type="text" name="active" value={contentobj.open} onChange={handleopenChange} ><option value="true">Yes</option><option value="false">No</option> </select><br />
 
                                 </div>
 
@@ -771,7 +772,7 @@ export default function Home(a) {
             <section className='flex items-center'>
                 <button className="tracking-wider text-[15px] my-4 px-8 py-2 m-auto border border-solid border-[#ffffff] bg-[#dda8f0] text-[#011627] rounded-[12px] hover:border hover:border-cyan-400 hover:shadow-md hover:shadow-cyan-400 transition-shadow delay-150" onClick={() => setIscontentform("details")}>Add details</button>
                 
-                <button className="tracking-wider text-[15px] my-4 px-8 py-2 m-auto border border-solid border-[#ffffff] bg-[#dda8f0] text-[#011627] rounded-[12px] hover:border hover:border-cyan-400 hover:shadow-md hover:shadow-cyan-400 transition-shadow delay-150" onClick={submit}>Submit</button>
+                <button className="tracking-wider text-[15px] my-4 px-8 py-2 m-auto border border-solid border-[#ffffff] bg-[#dda8f0] text-[#011627] rounded-[12px] hover:border hover:border-cyan-400 hover:shadow-md hover:shadow-cyan-400 transition-shadow delay-150" onClick={submit}>Update</button>
             </section>
 
             <section onClick={() => setIscontentform("title")} className="castdynewbnner bg-[#000] lg:min-h-[400px] font-gilroy relative overflow-hidden">
@@ -906,8 +907,7 @@ export default function Home(a) {
                                                     <div className="">
 
                                                         <div className="text-center">
-                                                            {contentobj.file && <a target="_blank" href={contentobj.file}><button className="tracking-wider text-[15px] my-4 px-8 py-2 m-auto border border-solid border-[#ffffff] bg-[#BAF63A] text-[#011627] rounded-[12px] hover:border hover:border-cyan-400 hover:shadow-md hover:shadow-cyan-400 transition-shadow delay-150">Download CaseStudy</button></a>}
-                                                            
+                                                        {contentobj.file && <a target="_blank" href={contentobj.file}><button className="tracking-wider text-[15px] my-4 px-8 py-2 m-auto border border-solid border-[#ffffff] bg-[#BAF63A] text-[#011627] rounded-[12px] hover:border hover:border-cyan-400 hover:shadow-md hover:shadow-cyan-400 transition-shadow delay-150">Download CaseStudy</button></a>}
                                                         </div>
                                                     </div>
 
@@ -931,3 +931,16 @@ export default function Home(a) {
     )
 }
 
+
+export async function getServerSideProps(context) {
+    // Fetch data from external API
+
+    const res = await fetch(`${process.env.domain}/api/admin/newcasestudy/edit?slug=${context.params.slug}`)
+    const casestudydata = await res.json()
+    console.log(casestudydata);
+
+
+
+    // Pass data to the page via props
+    return { props: { casestudydata } }
+}

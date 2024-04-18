@@ -5,7 +5,7 @@ import Newcasestudy from "../../../../models/Newcasestudy";
 
 
 const handler = async (req, res) => {
-    let data = await Newcasestudy.find().sort({ sequence: -1 });
+    let data = await Newcasestudy.find({slug:req.query.slug}).sort({ sequence: -1 });
     res.status(200).json({ data });
 }
 
