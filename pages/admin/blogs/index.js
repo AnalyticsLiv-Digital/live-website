@@ -2,16 +2,21 @@ import React from 'react'
 import {useSession, signIn , signOut} from "next-auth/react"
 import { useRouter } from 'next/navigation'
 import { useState,useEffect } from 'react'
+import GoogleButton from 'react-google-button'
 
 const index = ({blogDat}) => {
-  const { data: session } = useSession()
-  const [loginstate, setLoginstate] = useState(session?true:false);
+  
   
 
   
     const blogsData = blogDat.blog;
     console.log(blogsData);
-  return (
+    const { data: session } = useSession()
+  const [loginstate, setLoginstate] = useState(session?true:false);
+ 
+
+if (session) {
+return (
     <>
     <h1 className='text-center font-bold text-4xl py-4'>Blogs</h1>
     <h2 className='font-semibold text-2xl md:pl-6 pl-2 py-4'><a href="/admin/blogs/create">Create a New Blog</a></h2>
@@ -55,7 +60,13 @@ const index = ({blogDat}) => {
           ))}
           </table>
     </>
+  )}
+  return (
+    <>
+      <GoogleButton onClick={() => signIn()}>Sign in</GoogleButton>
+    </>
   )
+
 }
 
 

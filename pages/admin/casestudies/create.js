@@ -1,5 +1,8 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
+import {useSession, signIn , signOut} from "next-auth/react"
+import { useRouter } from 'next/navigation'
+import GoogleButton from 'react-google-button'
 
 const index = () => {
    
@@ -162,7 +165,11 @@ const index = () => {
 
     };
 
+    const { data: session } = useSession()
+  const [loginstate, setLoginstate] = useState(session?true:false);
+ 
 
+if (session) {
 
   return (
     <div>
@@ -195,6 +202,11 @@ const index = () => {
             <button className="tracking-wider my-4 px-8 py-2 m-auto bg-slate-900 text-white rounded hover:border hover:border-cyan-400 hover:shadow-md hover:shadow-cyan-400 transition-shadow delay-150">Submit</button>
         </form>
     </div>
+  )}
+  return (
+    <>
+      <GoogleButton onClick={() => signIn()}>Sign in</GoogleButton>
+    </>
   )
 }
 
