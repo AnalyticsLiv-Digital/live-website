@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa6";
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import Leaders from '../../components/dv360/Leaders';
 
 const service_A = () => {
 
@@ -543,36 +544,7 @@ const service_A = () => {
                 </div>
             </section>
 
-            <section className=' relative prograchoose overflow-hidden'>
-                <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 z-20">
-                    <div>
-                        <h3 className='text-[28px] font-gilroy font-semibold text-[#18265b] leading-[1.5em]'>Why Choose AnalyticsLiv for DV360?</h3>
-                    </div>
-                    <div className=' py-7 grid lg:grid-cols-3 md:grid-cols-2 gap-10'>
-                        <div className='fs border-[3px] border-[#0000] border-solid hover:border-t-[#0371ff] shadow-mediadv360 rounded-b-[15px] p-5'>
-                            <div>
-                                <img src="/Data-Driven Approach blue.png" alt="" className='h-16 w-16' />
-                                <h6 className='text-base text-txt font-gilroy font-semibold mt-3 mb-5 leading-[27px]'>Data-Driven Approach</h6>
-                            </div>
-                            <p className='text-[13px] font-gilroy2 font-medium leading-[32px]'>We don't believe in guesswork. We leverage data to inform every step of the campaign process, from audience targeting to creative optimization and performance measurement.</p>
-                        </div>
-                        <div className='sd border-[3px] border-[#0000] border-solid hover:border-t-[#0371ff] shadow-mediadv360 rounded-b-[15px] p-5'>
-                            <div>
-                                <img src="/Transparency You Can Trust blue.png" alt="" className='h-16 w-16' />
-                                <h6 className='text-base text-txt font-gilroy font-semibold mt-3 mb-5 leading-[27px]'>Transparency You Can Trust</h6>
-                            </div>
-                            <p className='text-[13px] font-gilroy2 font-medium leading-[32px]'>We prioritize clear communication and provide you with real-time insights into campaign performance and budget allocation. Regular reports keep you informed and empowered to make data-driven decisions.</p>
-                        </div>
-                        <div className='trd border-[3px] border-[#0000] border-solid hover:border-t-[#0371ff] shadow-mediadv360 rounded-b-[15px] p-5'>
-                            <div>
-                                <img src="/Performance at the Forefront blue.png" alt="" className='h-16 w-16' />
-                                <h6 className='text-base text-txt font-gilroy font-semibold mt-3 mb-5 leading-[27px]'>Performance at the Forefront</h6>
-                            </div>
-                            <p className='text-[13px] font-gilroy2 font-medium leading-[32px]'>Our focus is on exceeding your expectations. We are committed to delivering measurable results and maximizing your return on investment (ROI).</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <Leaders headingFontSize="28px"/>
 
             <section className='programeasurement relative font-gilroy overflow-hidden'>
                 <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 z-20">

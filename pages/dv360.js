@@ -210,7 +210,7 @@ const page = () => {
      <Targeting/>
      <Businessfacing/>
      <ScrollElement id="expertise" name="expertise" ></ScrollElement>
-     <Leaders/>
+     <Leaders headingFontSize="32px"/>
      <ScrollElement id="case-studies" name="case-studies" ></ScrollElement>
      <Casestudy/>
      <Contact/>
