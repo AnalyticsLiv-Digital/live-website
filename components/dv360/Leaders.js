@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from 'next/image';
 
-const Leaders = () => {
+const Leaders = ({ headingFontSize }) => {
     var settings = {
         dots: true,
         infinite: true,
@@ -63,7 +63,7 @@ const Leaders = () => {
         <>
             <section className='leaders bg-dvbackgrnd'>
                 <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
-                    <h2 className='text-[#000] text-[32px] font-semibold leading-normal text-center'>Why we’re Leaders in Programmatic Advertising</h2>
+                    <h2 className='text-[#000] font-semibold leading-normal text-center' style={{ fontSize: headingFontSize }}>Why we’re Leaders in Programmatic Advertising</h2>
                     <p className='text-[#000] text-[18px] font-normal leading-normal text-center pt-7'>We Provide a Complete Programmatic Campaign Management services which include Media Planning, Campaign Setup, Creative Management, Strategy, Troubleshooting, Optimisation, Recommendation & Reporting.</p>
                     <div className='pt-10 gap-5'>
                         <Slider {...settings}>
