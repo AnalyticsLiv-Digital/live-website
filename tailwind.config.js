@@ -13,6 +13,7 @@ module.exports = {
       fontFamily: {
         'gilroy': ['Gilroy-Bold' , 'sans-serif'],
         'gilroy2': ['Gilroy-Medium' , 'sans-serif'],
+        'work-sans': ['Work Sans', 'sans-serif'],
       },
       boxShadow: {
         btnshadow: '1px 1px 23px 2px rgba(255, 251, 251, 0.25)',
@@ -28,6 +29,8 @@ module.exports = {
         mediadv360: '0 .5rem 1rem rgba(0,0,0,.15)',
         programatic: '0 .5rem 1rem rgba(0,0,0,1)',
         programeasure: '0 .5rem 1rem #2020205c',
+        filtershadow: '0 2px 20px 1px rgba(0,0,0,.11)',
+        allshadow: '0 .5rem 1rem #2020200a',
       },
       colors: {
         btn: '#4285F4',

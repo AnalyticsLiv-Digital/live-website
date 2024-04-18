@@ -8,6 +8,7 @@ import * as Scroll from 'react-scroll';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { FaCheck } from "react-icons/fa";
 
 const Home = () => {
     const { Element: ScrollElement } = Scroll;
