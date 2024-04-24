@@ -65,7 +65,7 @@ const Home = () => {
                             <div className='vb pb-5 w-full'>
                                 <Slider {...settings}>
                                     <div>
-                                        <div className='flex lg:flex-nowrap flex-wrap items-center gap-10 lg:mt-[80px]'>
+                                        <div className='flex lg:flex-nowrap flex-wrap items-center gap-10 mt-[80px]'>
                                             <div className='lg:w-[60%] w-full'>
                                                 <div className='sm:w-[550px] w-full max-[1023px]:m-auto lg:mr-auto'>
                                                     <h2 className='text-maintext text-[19px] text-center font-semibold leading-[32px] not-italic'>Redefining Possibilities, Empowering Brands</h2>

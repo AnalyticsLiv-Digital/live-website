@@ -10,6 +10,7 @@ import { ScaleLoader } from 'react-spinners'
 import Link from 'next/link';
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/bootstrap.css";
+import { FaLocationDot } from "react-icons/fa6";
 
 
 
@@ -154,7 +155,7 @@ const contact = () => {
 
                 <div className="relative pt-12 ">
                     <h1 className=" text-center tracking-wide text-white uppercase text-2xl mb-8">Contact Us</h1>
-                    <div className="relative overflow-hidden lg:w-4/5 lg:p-8 pt-2 rounded-lg mx-2 lg:mx-auto bg-white">
+                    <div className="relative overflow-hidden lg:w-4/5 lg:p-8 p-2 pt-2 rounded-lg mx-2 lg:mx-auto bg-white">
                         <div className="absolute rounded-full w-40 h-40 bg-gradient-to-b from-rose-500 to-transparent blur -right-10 top-0"></div>
                         <div className="hidden absolute rounded-full w-40 h-40 bg-gradient-to-r from-cyan-500 to-transparent blur left-1/2 -bottom-10"></div>
                         <div className="relative mx-2 lg:flex">
@@ -165,17 +166,34 @@ const contact = () => {
                                     <svg xmlns="http://www.w3.org/2000/svg" className="inline w-6" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                                         <path fill="currentColor" d="M4 20q-.825 0-1.412-.587Q2 18.825 2 18V6q0-.825.588-1.412Q3.175 4 4 4h16q.825 0 1.413.588Q22 5.175 22 6v12q0 .825-.587 1.413Q20.825 20 20 20Zm8-7L4 8v10h16V8Zm0-2l8-5H4ZM4 8V6v12Z"></path>
                                     </svg>
-                                    <span><a href="mailto:support@analyticsliv.com">support@analyticsliv.com</a></span>
+                                    <span>
+                                        <p>For Business Enquiries</p>
+                                        <a href="mailto:sales@analyticsliv.com">sales@analyticsliv.com</a>
+                                    </span>
+                                </div>
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="inline w-6" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                        <path fill="currentColor" d="M4 20q-.825 0-1.412-.587Q2 18.825 2 18V6q0-.825.588-1.412Q3.175 4 4 4h16q.825 0 1.413.588Q22 5.175 22 6v12q0 .825-.587 1.413Q20.825 20 20 20Zm8-7L4 8v10h16V8Zm0-2l8-5H4ZM4 8V6v12Z"></path>
+                                    </svg>
+                                    <span>
+                                        <p>For Job Enquiries</p>
+                                        <a href="mailto:hr@analyticsliv.com">hr@analyticsliv.com</a>
+                                    </span>
+                                </div>
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="inline w-6" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                        <path fill="currentColor" d="M4 20q-.825 0-1.412-.587Q2 18.825 2 18V6q0-.825.588-1.412Q3.175 4 4 4h16q.825 0 1.413.588Q22 5.175 22 6v12q0 .825-.587 1.413Q20.825 20 20 20Zm8-7L4 8v10h16V8Zm0-2l8-5H4ZM4 8V6v12Z"></path>
+                                    </svg>
+                                    <span>
+                                        <p>For Other Support</p>
+                                        <a href="mailto:support@analyticsliv.com">support@analyticsliv.com</a>
+                                    </span>
                                 </div>
                                 <div>
                                     <svg xmlns="http://www.w3.org/2000/svg" className="inline w-6" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                                         <path fill="currentColor" d="M19.95 21q-3.225 0-6.287-1.425q-3.063-1.425-5.425-3.8q-2.363-2.375-3.8-5.438Q3 7.275 3 4.05v-.525Q3 3.25 3.05 3H8.9l.925 5.025l-2.85 2.875q1.05 1.8 2.638 3.375Q11.2 15.85 13.1 17l2.9-2.9l5 1v5.85q-.25.025-.525.038Q20.2 21 19.95 21Z"></path>
                                     </svg>
                                     <span><a href="tel:+918320576622">+91 83205 76622</a></span>
-                                </div>
-                                <div>
-                               <span className="inline w-6"><img src="/address-28-16.png" ></img></span>
-                                    <span>503, 31Five, Corporate Road, Prahaladnagar, S.G. Highway, Ahmedabad</span>
                                 </div>
                                 <div className="social-contact space-x-2 pl-4">
                                 <Link site="facebook" href="https://m.facebook.com/100070503960704/"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" className="w-8 inline mx-1 fill-current hover:fill-[#1877f2]">
@@ -289,6 +307,30 @@ const contact = () => {
                         <div className='w-full h-[200px]'>
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.660556214622!2d72.4981082753132!3d22.9995064791899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x613f5a1e7cb48aa3%3A0xaef382143b118f7!2sAnalyticsLiv!5e0!3m2!1sen!2sin!4v1704214142520!5m2!1sen!2sin" className='w-full h-full z-100'></iframe>
                         </div>
+
+                        <div className='mt-[30px] flex items-center justify-center px-4 bg-[#0f172a] text-[#ffffff] rounded-lg'>
+                            <div className='grid lg:grid-cols-3 sm:grid-cols-2 gap-5 my-5 w-full'>
+                                <div className=''>
+                                    <div>
+                                        <span className="inline w-6"><img src="/address-28-16.png" ></img></span>
+                                        <p className='mt-1'>503, 31Five, Corporate Road, <br /> Prahaladnagar, S.G. Highway,<br /> Ahmedabad</p>
+                                    </div>
+                                </div>
+                                <div className=''>
+                                    <div>
+                                        <span className="inline w-6"><img src="/address-28-16.png" ></img></span>
+                                        <p className='mt-1'>3104 E Camelback Rd ,Suite #7406, <br /> Phoenix, AZ 85016,<br /> USA</p>
+                                    </div>
+                                </div>
+                                <div className=''>
+                                    <div>
+                                        <span className="inline w-6"><img src="/address-28-16.png" ></img></span>
+                                        <p className='mt-1'>Via Natale Prampolini, <br /> 15 - 00132, Roma,<br /> Italy</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </section>

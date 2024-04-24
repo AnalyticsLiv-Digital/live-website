@@ -38,19 +38,24 @@ const Footer = () => {
                                                     </div>
                                                     <div className='ml-0 flex items-center mb-4'>
                                                         <IoIosMail className='w-[20px] h-[20px] mr-[7px]' />
-                                                        <span className='text-[13px] font-normal leading-5'><a href="mailto:support@analyticsliv.com" className=''>support@analyticsliv.com</a></span>
+                                                        <div className='text-[13px] font-normal leading-5'>
+                                                            <p>For Business Enquiries</p>
+                                                            <a href="mailto:sales@analyticsliv.com" className=''>sales@analyticsliv.com</a>
+                                                        </div>
                                                     </div>
                                                     <div className='ml-0 flex items-center mb-4'>
-                                                        <FaLocationDot className='w-[20px] h-[20px] mr-[7px]' />
-                                                        <span className='text-[13px] font-normal leading-5'><a href="https://maps.app.goo.gl/uhJUZFbZZTAL8qr57" className=''>503, 31FIVE, Corporate Rd, Makarba, <br /> Ahmedabad, Gujarat 380015</a></span>
+                                                        <IoIosMail className='w-[20px] h-[20px] mr-[7px]' />
+                                                        <div className='text-[13px] font-normal leading-5'>
+                                                            <p>For Job Enquiries</p>
+                                                            <a href="mailto:hr@analyticsliv.com" className=''>hr@analyticsliv.com</a>
+                                                        </div>
                                                     </div>
                                                     <div className='ml-0 flex items-center mb-4'>
-                                                        <FaLocationDot className='w-[20px] h-[20px] mr-[7px]' />
-                                                        <span className='text-[13px] font-normal leading-5'><a href="https://maps.app.goo.gl/hGrtt44ZuX7ZrEH99" className=''>3104 E Camelback Rd ,Suite #7406, <br /> Phoenix, AZ 85016, USA</a></span>
-                                                    </div>
-                                                    <div className='ml-0 flex items-center mb-4'>
-                                                        <FaLocationDot className='w-[20px] h-[20px] mr-[7px]' />
-                                                        <span className='text-[13px] font-normal leading-5'><a href="https://maps.app.goo.gl/UKxCEvJCHZq9dzcZ8" className=''>Via Natale Prampolini, <br /> 15 - 00132, Roma, Italy</a></span>
+                                                        <IoIosMail className='w-[20px] h-[20px] mr-[7px]' />
+                                                        <div className='text-[13px] font-normal leading-5'>
+                                                            <p>For Other Support</p>
+                                                            <a href="mailto:support@analyticsliv.com" className=''>support@analyticsliv.com</a>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
