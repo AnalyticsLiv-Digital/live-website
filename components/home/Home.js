@@ -67,7 +67,7 @@ const Home = () => {
                                     <div>
                                         <div className='flex lg:flex-nowrap flex-wrap items-center gap-10 lg:mt-[80px]'>
                                             <div className='lg:w-[60%] w-full'>
-                                                <div className='f w-[550px] m-auto'>
+                                                <div className='sm:w-[550px] w-full max-[1023px]:m-auto lg:mr-auto'>
                                                     <h2 className='text-maintext text-[19px] text-center font-semibold leading-[32px] not-italic'>Redefining Possibilities, Empowering Brands</h2>
                                                     <h1 className='text-maintext text-[24px] text-center font-semibold leading-[39px] mt-3 not-italic pb-5'>Strategic Media, Analytics & Cloud Solutions</h1>
                                                     <p className='text-[#000] md:text-[18px] text-base font-medium leading-[32px] text-center md:pb-5 pb-[30px]'>Data Analytics and Marketing Solutions helps businesses in gaining digital maturity through optimized utilization of data</p>
