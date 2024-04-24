@@ -32,29 +32,36 @@ const Footer = () => {
                                             <p className='text-[15px] font-medium leading-[1.3em] mb-4 uppercase'>Connect with us</p>
                                             <div className='flex items-center justify-start'>
                                                 <div>
-                                                    <div className='ml-0 flex items-center mb-4'>
-                                                        <FaPhoneVolume className='w-[20px] h-[20px] mr-[7px]' />
-                                                        <span className='text-[13px] font-normal leading-5'><a href="tel:+918320576622">+91 83205 76622</a></span>
-                                                    </div>
-                                                    <div className='ml-0 flex items-center mb-4'>
-                                                        <IoIosMail className='w-[20px] h-[20px] mr-[7px]' />
-                                                        <div className='text-[13px] font-normal leading-5'>
-                                                            <p>For Business Enquiries</p>
-                                                            <a href="mailto:sales@analyticsliv.com" className=''>sales@analyticsliv.com</a>
+                                                    <div className='mb-4'>
+                                                        <p className='text-[13px] font-normal leading-5'>For Business Enquiries</p>
+                                                        <div className='ml-0 flex items-start mb-[3px]'>
+                                                            <IoIosMail className='w-[21px] h-[22px] mr-[7px]' />
+                                                            <div className='text-[13px] font-normal leading-5'>
+                                                                <a href="mailto:sales@analyticsliv.com" className=''>sales@analyticsliv.com</a>
+                                                            </div>
+                                                        </div>
+                                                        <div className='ml-0 flex items-center '>
+                                                            <FaPhoneVolume className='w-[18px] h-[18px] mr-[7px]' />
+                                                            <span className='text-[13px] font-normal leading-5'><a href="tel:+918320576622">+91 83205 76622</a></span>
+
                                                         </div>
                                                     </div>
-                                                    <div className='ml-0 flex items-center mb-4'>
-                                                        <IoIosMail className='w-[20px] h-[20px] mr-[7px]' />
-                                                        <div className='text-[13px] font-normal leading-5'>
-                                                            <p>For Job Enquiries</p>
-                                                            <a href="mailto:hr@analyticsliv.com" className=''>hr@analyticsliv.com</a>
+                                                    <div className='ml-0 mb-4'>
+                                                        <p className='text-[13px] font-normal leading-5'>For Job Enquiries</p>
+                                                        <div className=' flex items-start '>
+                                                            <IoIosMail className='w-[21px] h-[22px] mr-[7px]' />
+                                                            <div className='text-[13px] font-normal leading-5'>
+                                                                <a href="mailto:hr@analyticsliv.com" className=''>hr@analyticsliv.com</a>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                    <div className='ml-0 flex items-center mb-4'>
-                                                        <IoIosMail className='w-[20px] h-[20px] mr-[7px]' />
-                                                        <div className='text-[13px] font-normal leading-5'>
-                                                            <p>For Other Support</p>
-                                                            <a href="mailto:support@analyticsliv.com" className=''>support@analyticsliv.com</a>
+                                                    <div className='ml-0 mb-4'>
+                                                        <p className='text-[13px] font-normal leading-5'>For Other Support</p>
+                                                        <div className='flex items-start'>
+                                                            <IoIosMail className='w-[21px] h-[22px] mr-[7px]' />
+                                                            <div className='text-[13px] font-normal leading-5'>
+                                                                <a href="mailto:support@analyticsliv.com" className=''>support@analyticsliv.com</a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>

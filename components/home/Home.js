@@ -89,17 +89,17 @@ const Home = () => {
                                                 <img src="/Home_Page_Main_Img_2.png" alt="" className='w-[450px]' />
                                             </div>
                                             <div className='lg:w-1/2 w-full'>
-                                                <h1 className='text-maintext text-[24px] text-center font-semibold leading-[32px] not-italic md:pb-5'>See Beyond the Click: Strategic Media, Analytics & Cloud Solutions for Measurable Success</h1>{/* <p className='text-[#000] md:text-[18px] text-base font-medium leading-[1.5em] text-center md:pb-5 pb-[30px]'>Our strategic Media, Analytics & Cloud Solutions go beyond basic clicks, transforming website data into actionable insights that drive measurable success through optimized campaigns and data-driven decisions</p> */}
+                                                <h1 className='text-maintext text-[24px] text-center font-semibold leading-[32px] not-italic md:pb-5 mb-[10px]'>See Beyond the Click: Strategic Media, Analytics & Cloud Solutions for Measurable Success</h1>{/* <p className='text-[#000] md:text-[18px] text-base font-medium leading-[1.5em] text-center md:pb-5 pb-[30px]'>Our strategic Media, Analytics & Cloud Solutions go beyond basic clicks, transforming website data into actionable insights that drive measurable success through optimized campaigns and data-driven decisions</p> */}
                                                 <div className='ml-5 pb-4'>
                                                     <li className='flex items-start gap-1 p-[10px] pb-[5px] pl-0 pt-0 text-[#000]'>
                                                         <span className='text-[#de668a] mt-[5px]'><FaCheck /></span>
-                                                        <p className='text-[17px] font-medium leading-[1.7em] font-gilroy2'>
+                                                        <p className='text-base font-medium leading-[32px] font-gilroy2'>
                                                             Actionable Insights: Turn website data into strategic media planning for maximized ROI.
                                                         </p>
                                                     </li>
                                                     <li className='flex items-start gap-1 p-[10px] pb-[5px] pl-0 text-[#000]'>
                                                         <span className='text-[#de668a] mt-[5px]'><FaCheck /></span>
-                                                        <p className='text-[17px] font-medium leading-[1.7em] font-gilroy2'>
+                                                        <p className='text-base font-medium leading-[32px] font-gilroy2'>
                                                             Data-Driven Decisions: Optimize campaigns and measure every touchpoint for clear results.
                                                         </p>
                                                     </li>
@@ -118,17 +118,17 @@ const Home = () => {
                                                 <img src="/Home_Page_Main_Img_3.png" alt="" className='w-[450px]' />
                                             </div>
                                             <div className='lg:w-1/2 w-full'>
-                                                <h1 className='text-maintext text-[24px] text-center font-semibold leading-[32px] not-italic mb-2'>Optimize, Analyze, Dominate: Media & Analytics Solutions to Power Your Digital Transformation</h1>{/* <p className='text-[#000] md:text-[18px] text-base font-medium leading-[1.5em] text-center md:pb-5 pb-[30px]'>Fuel your digital transformation with our Media & Analytics Solutions</p> */}
+                                                <h1 className='text-maintext text-[24px] text-center font-semibold leading-[32px] not-italic mb-[10px]'>Optimize, Analyze, Dominate: Media & Analytics Solutions to Power Your Digital Transformation</h1>{/* <p className='text-[#000] md:text-[18px] text-base font-medium leading-[1.5em] text-center md:pb-5 pb-[30px]'>Fuel your digital transformation with our Media & Analytics Solutions</p> */}
                                                 <div className='ml-8 pb-4'>
                                                     <li className='flex items-start gap-1 p-[10px] pb-[5px] pl-0 pt-0 text-[#000]'>
                                                         <span className='text-[#de668a] mt-[5px]'><FaCheck /></span>
-                                                        <p className='text-[17px] font-medium leading-[1.7em] font-gilroy2'>
+                                                        <p className='text-base font-medium leading-[32px] font-gilroy2'>
                                                             Streamline Workflows: Unify data and automate tasks for a frictionless experience.
                                                         </p>
                                                     </li>
                                                     <li className='flex items-start gap-1 p-[10px] pb-[5px] pl-0 text-[#000]'>
                                                         <span className='text-[#de668a] mt-[5px]'><FaCheck /></span>
-                                                        <p className='text-[17px] font-medium leading-[1.7em] font-gilroy2'>
+                                                        <p className='text-base font-medium leading-[32px] font-gilroy2'>
                                                             Actionable Strategies: Develop data-driven media plans to fuel business growth.
                                                         </p>
                                                     </li>
