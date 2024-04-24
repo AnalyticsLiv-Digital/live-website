@@ -29,7 +29,7 @@ const Footer = () => {
                                 <div className='left-footer md:w-2/5 w-full pb-7'>
                                     <div className='text-left'>
                                         <div className='relative text-white'>
-                                        <p className='text-[15px] font-medium leading-[1.3em] mb-4 uppercase'>Connect with us</p>
+                                            <p className='text-[15px] font-medium leading-[1.3em] mb-4 uppercase'>Connect with us</p>
                                             <div className='flex items-center justify-start'>
                                                 <div>
                                                     <div className='ml-0 flex items-center mb-4'>
@@ -43,6 +43,14 @@ const Footer = () => {
                                                     <div className='ml-0 flex items-center mb-4'>
                                                         <FaLocationDot className='w-[20px] h-[20px] mr-[7px]' />
                                                         <span className='text-[13px] font-normal leading-5'><a href="https://maps.app.goo.gl/uhJUZFbZZTAL8qr57" className=''>503, 31FIVE, Corporate Rd, Makarba, <br /> Ahmedabad, Gujarat 380015</a></span>
+                                                    </div>
+                                                    <div className='ml-0 flex items-center mb-4'>
+                                                        <FaLocationDot className='w-[20px] h-[20px] mr-[7px]' />
+                                                        <span className='text-[13px] font-normal leading-5'><a href="https://maps.app.goo.gl/hGrtt44ZuX7ZrEH99" className=''>3104 E Camelback Rd ,Suite #7406, <br /> Phoenix, AZ 85016, USA</a></span>
+                                                    </div>
+                                                    <div className='ml-0 flex items-center mb-4'>
+                                                        <FaLocationDot className='w-[20px] h-[20px] mr-[7px]' />
+                                                        <span className='text-[13px] font-normal leading-5'><a href="https://maps.app.goo.gl/UKxCEvJCHZq9dzcZ8" className=''>Via Natale Prampolini, <br /> 15 - 00132, Roma, Italy</a></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -115,7 +123,7 @@ const Footer = () => {
                             </div>
 
                             <div className='flex items-center md:justify-start justify-center'>
-                                <div className='text-[14px] font-normal text-white'>© Created by Analytics Liv Digital LLP, All rights Reserved.</div>
+                                <div className='text-[14px] font-normal text-white'>© Created by Analytics Liv Digital LLP, In Collaboration With Collabro LLC, All rights reserved.</div>
                             </div>
 
                         </div>
