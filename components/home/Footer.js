@@ -135,7 +135,7 @@ const Footer = () => {
                             </div>
 
                             <div className='flex items-center md:justify-start justify-center'>
-                                <div className='text-[14px] font-normal text-white'>© Created by Analytics Liv Digital LLP, In Collaboration With Collabro LLC, All rights reserved.</div>
+                                <div className='text-[14px] font-normal text-white'>© Created by Analytics Liv Digital LLP, In Collaboration With Collabo LLC, All rights reserved.</div>
                             </div>
 
                         </div>
