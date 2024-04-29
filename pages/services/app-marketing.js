@@ -9,7 +9,7 @@ const app_marketing = () => {
 <Head>
       <title>AnalyticsLiv - App Marketing</title>
       <meta name="description" content="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads"/>
-      <link rel="canonical" href="https://www.analyticsliv.com/services/app-marketing"></link>
+      <link rel="canonical" href="https://analyticsliv.com/services/app-marketing"></link>
     </Head>
     <section>
         <div className="relative md:px-24 px-4">

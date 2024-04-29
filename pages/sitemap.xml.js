@@ -11,6 +11,9 @@ function generateSiteMap(posts) {
        <loc>https://analyticsliv.com/services/</loc>
      </url>
      <url>
+     <loc>https://analyticsliv.com/services/web-app-measurement</loc>
+     </url>
+     <url>
        <loc>https://analyticsliv.com/services/app-marketing</loc>
      </url>
      <url>
@@ -31,6 +34,15 @@ function generateSiteMap(posts) {
      </url>
      <url>
        <loc>https://analyticsliv.com/services/looker-bi-platform</loc>
+     </url>
+     <url>
+       <loc>https://analyticsliv.com/services/CRO</loc>
+     </url>
+     <url>
+       <loc>https://analyticsliv.com/services/data-science</loc>
+     </url>
+     <url>
+       <loc>https://analyticsliv.com/services/customer-segmentation</loc>
      </url>
      <url>
        <loc>https://analyticsliv.com/services/training</loc>

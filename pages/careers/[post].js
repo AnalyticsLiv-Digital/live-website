@@ -213,7 +213,7 @@ const post = ({jobData}) => {
 
 var meta_desc = "Join as " +jobData.job[0].title+ " in Analyticliv, a diverse analytics and marketing agency committed to data-driven growth using first-party data.";
 
-var url = "https://www.analyticsliv.com/careers/"+jobData.job[0].id;
+var url = "https://analyticsliv.com/careers/"+jobData.job[0].id;
 
   return (
     <>

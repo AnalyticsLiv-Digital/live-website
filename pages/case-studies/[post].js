@@ -122,7 +122,7 @@ var cd = casestudyDat.data[0];
         return errors;
     };
 
-    var url = "https://www.analyticsliv.com/case-studies/"+cd.slug;
+    var url = "https://analyticsliv.com/case-studies/"+cd.slug;
 
   return (<>
   <Head>
