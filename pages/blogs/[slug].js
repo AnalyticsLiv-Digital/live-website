@@ -70,7 +70,7 @@ const index = ({ blogDat, similarBlogs }) => {
 
 
 
-    var url = "https://www.analyticsliv.com/blogs/"+blogData.slug;
+    var url = "https://analyticsliv.com/blogs/"+blogData.slug;
 
     return (<>
         <Head>
