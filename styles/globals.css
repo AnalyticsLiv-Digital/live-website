@@ -1143,3 +1143,64 @@ iframe {
 #hubspot-messages-iframe-container{
   display: none;
 }
+
+.innerfuel ul::before {
+  content: '';
+  position: absolute;
+  top: 12%;
+  right: 49%;
+  height: 120%;
+  border-left: 1px solid #007bb6;
+}
+.innerfuel ul:nth-child(4)::before {
+  top: 0;
+}
+.innerfuel ul::after {
+  content: '';
+  position: absolute;
+  top: 19px;
+  right: 47%;
+  height: 50px;
+  width: 50px;
+  background-color: #007bb6;
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.innerfuel ul:nth-child(1):after {
+  content: '1';
+}
+.innerfuel ul:nth-child(2):after {
+  content: '2';
+}
+.innerfuel ul:nth-child(3):after {
+  content: '3';
+}
+.innerfuel ul:nth-child(4):after {
+  content: '4';
+}
+.innerfuel ul:nth-child(5):after {
+  content: '5';
+}
+.innerfuel ul:nth-child(6):after {
+  content: '6';
+}
+.innerfuel ul:nth-child(7):after {
+  content: '7';
+}
+
+@media only screen and (max-width: 768px) {
+  .innerfuel ul::before {
+    display: none;
+  }
+}
+.popup {
+  height: calc(100% - 0px);
+}
+.pwb{
+  box-shadow: 0px 4px 20px -5px rgba(8,52,82,.12), 0px 20px 30px rgba(8,52,82,.08);
+}

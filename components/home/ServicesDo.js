@@ -7,7 +7,7 @@ import Image from 'next/image';
 const Marketing = () => {
     
     return (
-        <section className='servicedo bg-[#ecf9ff] relative overflow-hidden font-gilroy'>
+        <section className='servicedo relative overflow-hidden font-gilroy'>
 
             {/* Back-Ground design  */}
             <div className='absolute top-1/2 right-0 w-80 h-80 flex justify-end'>

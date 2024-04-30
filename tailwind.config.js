@@ -14,6 +14,7 @@ module.exports = {
         'gilroy': ['Gilroy-Bold' , 'sans-serif'],
         'gilroy2': ['Gilroy-Medium' , 'sans-serif'],
         'work-sans': ['Work Sans', 'sans-serif'],
+        rbt: ['Roboto', 'sans-serif'],
       },
       boxShadow: {
         btnshadow: '1px 1px 23px 2px rgba(255, 251, 251, 0.25)',

@@ -134,7 +134,7 @@ const Serversidetracking = () => {
                                 {/* <p className="text-base font-normal leading-[28px] mb-[10px]">
                                     Move Beyond Unsafe Browser Tracking and Unreliable Third-Party Cookies. Our Server-side Tracking Solution Provides Access to The Data You Need While Ensuring Full Compliance. With Major Platforms Phasing Out Cookie Support.
                                 </p> */}
-                                <div className='flex max-[425px]:flex-wrap flex-nowrap items-center gap-5'>
+                                <div className='flex items-center lg:justify-start justify-center gap-5'>
                                     <Link href="/contact?id=programatic-advertising">
                                         <button className="bg-[#30486a] text-white font-gilroy hover:bg-white border border-solid hover:border-[#30486ae3] hover:text-[#30486ae3] text-base font-normal tracking-wider rounded-xl py-3 px-6 mt-2 uppercase">future-proof your <br /> analytics today</button>
                                     </Link>
@@ -312,111 +312,6 @@ const Serversidetracking = () => {
                     </div>
                 </div>
             </section>
-            {/*  */}
-            {/* <section className='sstchoose powerup relative overflow-hidden'>
-                <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 z-20">
-                    <div>
-                        <h3 className='text-[26px] font-semibold text-white leading-[1.5em] font-gilroy'>Why Choose AnalyticsLiv for Server-Side Tracking?</h3>
-                    </div>
-                    <p className='text-[18px] font-gilroy text-[#fff] leading-[1.7em] my-5'>At AnalyticsLiv, we're experts in unlocking the power of server-side tracking. <br /> We offer:</p>
-                    <div className='lg:flex items-center justify-start mt-10'>
-                        <div className='lg:w-[40%] w-full flex items-center justify-center'>
-                            <img src="/4M_Images_Transparent.png" alt="" className='lg:h-auto md:h-[400px]' />
-                        </div>
-                        <div className='grid md:grid-cols-4 items-start lg:justify-start gap-7  w-full'>
-                            <div className={`fs4m pwb flex items-start gap-5 w-full max-[350px]:w-[285px] bg-[#0000001f] p-[25px] pt-6 border border-[#131314] hover:shadow-mediadv360 rounded-[10px] ${isFs4mVisible ? 'xl:h-[180px] lg:h-[200px]' : 'h-[100px]'}`}>
-                                <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full' onClick={toggleFs4mVisibility}>
-                                        <div className={`flex items-center justify-between gap-5 text-[#ffffff] ${isFs4mVisible ? 'mb-4' : 'mb-0'}`}>
-                                            <div className='flex items-center justify-start'>
-                                                <div className='inbox relative mr-[13px]'>
-                                                    <img src="/Market.png" alt="" className='h-12 lg:w-[60px] w-12' />
-                                                </div>
-                                                <h2 className='text-[15px] font-medium text-[#ffffff] leading-normal'>Expertise & Experience</h2>
-                                            </div>
-                                            <div className='clk'>
-                                                {isFs4mVisible ? <FaChevronUp className='w-5 h-10' /> : <FaChevronDown className='w-5 h-10' />}
-                                            </div>
-                                        </div>
-                                        {isFs4mVisible && (
-                                            <p className='text-[13px] font-medium text-[#ffffff] leading-[1.7em]'>
-                                                Our data analysts understand the intricacies of server-side implementation and optimization.
-                                            </p>
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={`sec4m pwb flex items-start gap-5 w-full max-[350px]:w-[285px] bg-[#0000001f] p-[25px] pt-6 border border-[#131314] hover:shadow-mediadv360 rounded-[10px] ${isSec4mVisible ? 'xl:h-[180px] lg:h-[200px]' : 'h-[100px]'}`}>
-                                <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full' onClick={toggleSec4mVisibility}>
-                                        <div className={`flex items-center justify-between gap-5 text-[#ffffff] ${isSec4mVisible ? 'mb-4' : 'mb-0'}`}>
-                                            <div className='flex items-center justify-start'>
-                                                <div className='inbox relative mr-[13px]'>
-                                                    <img src="/Message.png" alt="" className='h-12 w-12' />
-                                                </div>
-                                                <h2 className='text-[15px] font-medium text-[#ffffff] leading-normal'>Customizable Solutions</h2>
-                                            </div>
-                                            <div className='clk'>
-                                                {isSec4mVisible ? <FaChevronUp className='w-5 h-10' /> : <FaChevronDown className='w-5 h-10' />}
-                                            </div>
-                                        </div>
-                                        {isSec4mVisible && (
-                                            <div>
-                                                <p className='text-[13px] font-medium text-[#ffffff] leading-[1.7em]'>We tailor server-side tracking solutions to your specific business needs and goals.</p>
-                                            </div>
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={`thr4m pwb flex items-start gap-5 w-full max-[350px]:w-[285px] bg-[#0000001f] p-[25px] pt-6 border border-[#131314] hover:shadow-mediadv360 rounded-[10px] ${isThr4mVisible ? 'xl:h-[188px] lg:h-[205px]' : 'h-[100px]'}`}>
-                                <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full' onClick={() => toggleThr4mVisibility()}>
-                                        <div className={`flex items-center justify-between gap-5 text-[#ffffff] ${isThr4mVisible ? 'mb-4' : 'mb-0'}`}>
-                                            <div className='flex items-center justify-start'>
-                                                <div className='inbox relative mr-[13px]'>
-                                                    <img src="/Media.png" alt="" className='h-12 w-12' />
-                                                </div>
-                                                <h2 className='text-[15px] font-medium text-[#ffffff] leading-normal'>End-to-End Support</h2>
-                                            </div>
-                                            <div className='clk'>
-                                                {isThr4mVisible ? <FaChevronUp className='w-5 h-10' /> : <FaChevronDown className='w-5 h-10' />}
-                                            </div>
-                                        </div>
-                                        {isThr4mVisible && (
-                                            <div>
-                                             <p className='text-[13px] font-medium text-[#ffffff] leading-[1.7em]'>We guide you through every step, from implementation to ongoing data analysis and reporting.</p>
-                                            </div>
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={`fur4m pwb flex items-start gap-5 w-full max-[350px]:w-[285px] bg-[#0000001f] p-[25px] pt-6 border border-[#131314] hover:shadow-mediadv360 rounded-[10px] ${isFur4mVisible ? 'xl:h-[188px] lg:h-[205px]' : 'h-[100px]'}`}>
-                                <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full' onClick={() => toggleFur4mVisibility()}>
-                                        <div className={`flex items-center justify-between gap-5 text-[#ffffff] ${isFur4mVisible ? 'mb-4' : 'mb-0'}`}>
-                                            <div className='flex items-center justify-start'>
-                                                <div className='inbox relative mr-[13px]'>
-                                                    <img src="/Measurment.png" alt="" className='h-12 xl:w-[65px] lg:w-[100px] w-[70px]' />
-                                                </div>
-                                                <h2 className='text-[15px] font-medium text-[#ffffff] leading-normal'>Data Security & Compliance</h2>
-                                            </div>
-                                            <div className='clk'>
-                                                {isFur4mVisible ? <FaChevronUp className='w-5 h-10' /> : <FaChevronDown className='w-5 h-10' />}
-                                            </div>
-                                        </div>
-                                        {isFur4mVisible && (
-                                            <div>
-                                                <p className='text-[13px] font-medium text-[#ffffff] leading-[1.7em]'>We prioritize data security and ensure compliance with relevant data privacy regulations.</p>
-                                            </div>
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section> */}
-            {/*  */}
 
             <section className='sstframewrk font-gilroy'>
                 <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
@@ -532,7 +427,7 @@ const Serversidetracking = () => {
                                 />
                             </div>
                             <div className='lg:w-2/5 grid gap-4'>
-                                <div className="first group bg-[#0000001f] border hover:shadow-none shadow-serviceoffer border-solid border-[#13131400] rounded-[20px] p-5">
+                                <div className="first group border hover:shadow-none shadow-serviceoffer border-solid border-[#13131400] rounded-[20px] p-5">
                                     <div className="flex items-start justify-start gap-4 pb-4">
                                         <div className='rounded-full bg-[#EAF0FF] w-10 h-10 flex items-center justify-center'>
                                             <Image
@@ -548,7 +443,7 @@ const Serversidetracking = () => {
                                     </div>
                                     <p className='md:text-[15px] text-[14px] font-light text-[#fff] leading-[1.7em]'>We transform raw data into actionable insights with clear visualizations for informed decision-making.</p>
                                 </div>
-                                <div className="second group bg-[#0000001f] border hover:shadow-none shadow-serviceoffer border-solid border-[#13131400] rounded-[20px] p-5">
+                                <div className="second group border hover:shadow-none shadow-serviceoffer border-solid border-[#13131400] rounded-[20px] p-5">
                                     <div className="flex items-start justify-start gap-4 pb-4">
                                         <div className='rounded-full bg-[#EAF0FF] w-10 h-10 flex items-center justify-center'>
                                             <Image
@@ -564,7 +459,7 @@ const Serversidetracking = () => {
                                     </div>
                                     <p className='md:text-[15px] text-[14px] font-light text-[#fff] leading-[1.7em]'>We help you understand which marketing channels contribute most to conversions.</p>
                                 </div>
-                                <div className="third group bg-[#0000001f] border hover:shadow-none shadow-serviceoffer border-solid border-[#13131400] rounded-[20px] p-5">
+                                <div className="third group border hover:shadow-none shadow-serviceoffer border-solid border-[#13131400] rounded-[20px] p-5">
                                     <div className="flex items-start justify-start gap-4 pb-4">
                                         <div className='rounded-full bg-[#EAF0FF] w-10 h-10 flex items-center justify-center'>
                                             <Image

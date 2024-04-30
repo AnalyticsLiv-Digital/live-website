@@ -52,7 +52,7 @@ const Home = () => {
     return (
         <>
             <section className='homepage flex items-center justify-center overflow-hidden font-gilroy'>
-                <div className='bg-[#ecf9ff] min-h-[90vh] w-full'>
+                <div className='min-h-[90vh] w-full'>
                     <div className='relative h-full overflow-hidden'>
 
                         {/* Back-Ground design  */}

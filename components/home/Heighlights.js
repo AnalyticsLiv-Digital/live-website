@@ -6,7 +6,7 @@ import ScrollTrigger from 'react-scroll-trigger';
 const Heighlights = () => {
     const [counterOn, setCounterOn] = useState(true);
     return (
-        <section className='heighlights bg-[#ecf9ff] font-gilroy'>
+        <section className='heighlights font-gilroy'>
             <div className='px-4 md:px-20 py-9'>
                 <div className='grid md:grid-cols-4 grid-cols-1 items-center justify-between text-center gap-4 md:gap-2'>
                     <div>
