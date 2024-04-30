@@ -7,8 +7,8 @@ import { Transition } from "@headlessui/react";
 import Head from 'next/head';
 import Script from 'next/script';
 import { motion } from "framer-motion";
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
-import { IoChevronDown,IoChevronUp } from "react-icons/io5";
+// import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { IoChevronDown, IoChevronUp } from "react-icons/io5";
 
 const header = () => {
   const [header, setHeader] = useState(75);
@@ -105,7 +105,7 @@ const header = () => {
                 Contact Us
               </li></Link>
               <Link className="header-links" href="/engagement"><li className="hover:border-b-4 hidden lg:ml-[19px] hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2">
-              Engagement 
+                Engagement
               </li></Link>
               <Link className="header-links" href="/careers"><li className="hover:border-b-4 lg:ml-[19px] hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2 text-rose-700 animate-pulse hover:animate-none">
                 We Are Hiring
@@ -190,6 +190,12 @@ const header = () => {
                           class="text-menuheading font-rbt text-base font-normal leading-normal">Programmatic Media DV360</Link>
                       </div>
                       <div class="flex items-center py-1 gap-2">
+                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/SEM.png" alt="paid_logo" className="w-[23px]" />
+
+                        <Link href="/services/sem"
+                          class="text-menuheading font-rbt text-base font-normal leading-normal">Search engine marketing</Link>
+                      </div>
+                      <div class="flex items-center py-1 gap-2">
                         <img className='w-[23px]' src="https://storage.googleapis.com/website-bucket-uploads/static/SEM.png" alt="paid_logo" />
                         <Link href="/services/ecommerce-marketing"
                           class="text-menuheading font-rbt text-base font-normal leading-normal">eCommerce Marketing</Link>
@@ -199,12 +205,7 @@ const header = () => {
                         <Link href="/services/lead-generation"
                           class="text-menuheading font-rbt text-base font-normal leading-normal">Lead generation</Link>
                       </div>
-                      <div class="flex items-center py-1 gap-2">
-                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/SEM.png" alt="paid_logo" className="w-[23px]" />
-
-                        <Link href="/services/sem"
-                          class="text-menuheading font-rbt text-base font-normal leading-normal">Search engine marketing</Link>
-                      </div>
+                      
                       <div class="flex items-center py-1 gap-2
                                     ">
                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-search.png" alt="display_logo" />
@@ -344,6 +345,11 @@ const header = () => {
                     class="text-menuheading font-rbt text-[13px] font-normal leading-normal">Programmatic Media DV360</Link>
                 </div>
                 <div class="flex items-center py-3 gap-2">
+                  <img className='w-[33px]' src="https://storage.googleapis.com/website-bucket-uploads/static/SEM.png" alt="paid_logo" />
+                  <Link href="/services/sem"
+                    class="text-menuheading font-rbt text-[13px] font-normal leading-normal">Search engine marketing</Link>
+                </div>
+                <div class="flex items-center py-3 gap-2">
                   <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-E-commerce.png" alt="paid_logo" />
                   <Link href="/services/ecommerce-marketing"
                     class="text-menuheading font-rbt text-[13px] font-normal leading-normal">eCommerce Marketing</Link>
@@ -352,11 +358,6 @@ const header = () => {
                   <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-lead.png" className='w-[33px]' alt="paid_logo" />
                   <Link href="/services/lead-generation"
                     class="text-menuheading font-rbt text-[13px] font-normal leading-normal">Lead generation</Link>
-                </div>
-                <div class="flex items-center py-3 gap-2">
-                  <img className='w-[33px]' src="https://storage.googleapis.com/website-bucket-uploads/static/SEM.png" alt="paid_logo" />
-                  <Link href="/services/sem"
-                    class="text-menuheading font-rbt text-[13px] font-normal leading-normal">Search engine marketing</Link>
                 </div>
                 <div class="flex items-center py-3 gap-2
                                     ">
@@ -397,14 +398,14 @@ const header = () => {
                   <Link href="/services/data-reporting-analysis"
                     class="text-menuheading font-rbt text-[13px] font-normal leading-normal">Reporting & Dashboarding</Link>
                 </div>
-{/*                 
+                {/*                 
                 <div class="flex items-center py-3 gap-2">
                   <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytics_Looker.logo.png" alt="Looker_logo" />
                   <Link href="/services/looker-bi-platform"
                     class="text-menuheading font-rbt text-[13px] font-normal leading-normal">Looker
                     BI Platform</Link>
                 </div> */}
-                
+
               </ul>
               <ul
                 class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b lg:border-b-0 pb-6 pt-6 lg:pt-3">

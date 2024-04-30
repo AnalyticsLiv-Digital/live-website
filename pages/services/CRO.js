@@ -234,7 +234,7 @@ const cro = () => {
                                             <div className={`flex items-center justify-between ${isFstVisible ? 'mb-2' : 'mb-0'}`}>
                                                 <div className=' flex items-start gap-1 font-semibold'>
                                                     <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
-                                                    <p>Website Analytics :</p></div>
+                                                    <p>Website Analytics</p></div>
                                                 <div className='clk'>
                                                     {isFstVisible ? <FaChevronUp className='w-4 h-4' /> : <FaChevronDown className='w-4 h-4' />}
                                                 </div>
@@ -246,7 +246,7 @@ const cro = () => {
                                             <div className={`flex items-center justify-between ${isScnVisible ? 'mb-2' : 'mb-0'}`}>
                                                 <div className=' flex items-start gap-1 font-semibold'>
                                                     <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
-                                                    <p>Heatmaps & Session Recordings :</p></div>
+                                                    <p>Heatmaps & Session Recordings</p></div>
                                                 <div className='clk'>
                                                     {isScnVisible ? <FaChevronUp className='w-4 h-4' /> : <FaChevronDown className='w-4 h-4' />}
                                                 </div>
@@ -269,7 +269,7 @@ const cro = () => {
                                             <div className={`flex items-center justify-between ${isThdVisible ? 'mb-2' : 'mb-0'}`}>
                                                 <div className=' flex items-start gap-1 font-semibold'>
                                                     <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
-                                                    <p>Website Usability :</p></div>
+                                                    <p>Website Usability</p></div>
                                                     <div>
                                                         {isThdVisible ? <FaChevronUp /> : <FaChevronDown />}
                                                     </div>
@@ -282,7 +282,7 @@ const cro = () => {
                                             <div className={`flex items-center justify-between ${isFrVisible ? 'mb-2' : 'mb-0'}`}>
                                                 <div className=' flex items-start gap-1 font-semibold'>
                                                     <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
-                                                    <p>Value Proposition :</p></div>
+                                                    <p>Value Proposition</p></div>
                                                     <div>
                                                         {isFrVisible ? <FaChevronUp /> : <FaChevronDown />}
                                                     </div>
@@ -295,7 +295,7 @@ const cro = () => {
                                             <div className={`flex items-center justify-between ${isFvVisible ? 'mb-2' : 'mb-0'}`}>
                                                 <div className=' flex items-start gap-1 font-semibold'>
                                                     <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
-                                                    <p>Call to Actions (CTAs) :</p></div>
+                                                    <p>Call to Actions (CTAs)</p></div>
                                                     <div>
                                                         {isFvVisible ? <FaChevronUp /> : <FaChevronDown />}
                                                     </div>
@@ -308,7 +308,7 @@ const cro = () => {
                                             <div className={`flex items-center justify-between ${isSxVisible ? 'mb-2' : 'mb-0'}`}>
                                                 <div className=' flex items-start gap-1 font-semibold'>
                                                     <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
-                                                    <p>Mobile Responsiveness :</p></div>
+                                                    <p>Mobile Responsiveness</p></div>
                                                     <div>
                                                         {isSxVisible ? <FaChevronUp /> : <FaChevronDown />}
                                                     </div>
