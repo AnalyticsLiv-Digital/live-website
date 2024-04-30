@@ -7,7 +7,7 @@ import { Transition } from "@headlessui/react";
 import Head from 'next/head';
 import Script from 'next/script';
 import { motion } from "framer-motion";
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+// import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { IoChevronDown,IoChevronUp } from "react-icons/io5";
 
 const header = () => {
