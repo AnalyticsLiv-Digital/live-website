@@ -228,7 +228,7 @@ const sem = () => {
                                             />
                                         </div>
                                         <h2 className='text-[#000] text-base font-semibold leading-normal mb-4'>Keyword Research & Strategy</h2>
-                                        <p className='text-[#000] text-xs font-normal pt-11 text-start leading-[26px]'> We identify high-volume, relevant keywords that drive targeted traffic.</p>
+                                        <p className='text-[#000] text-xs font-normal pt-5 text-start leading-[26px]'> We identify high-volume, relevant keywords that drive targeted traffic.</p>
                                     </div>
                                 </div>
                             </div>
@@ -244,7 +244,7 @@ const sem = () => {
                                             />
                                         </div>
                                         <h2 className='text-[#000] text-base font-semibold leading-normal mb-4'>Campaign Setup & Management</h2>
-                                        <p className='text-[#000] text-xs font-normal pt-11 text-start leading-[26px]'>We create and manage effective PPC (Pay-Per-Click) campaigns across major search engines like Google Ads and Bing Ads.</p>
+                                        <p className='text-[#000] text-xs font-normal pt-5 text-start leading-[26px]'>We create and manage effective PPC (Pay-Per-Click) campaigns across major search engines like Google Ads and Bing Ads.</p>
                                     </div>
                                 </div>
                             </div>
@@ -260,7 +260,7 @@ const sem = () => {
                                             />
                                         </div>
                                         <h2 className='text-[#000] text-base font-semibold leading-normal mb-4'>Ad Copywriting & Optimization</h2>
-                                        <p className='text-[#000] text-xs font-normal pt-11 text-start leading-[26px]'>We craft compelling ad copy that resonates with your target audience and encourages clicks.</p>
+                                        <p className='text-[#000] text-xs font-normal pt-5 text-start leading-[26px]'>We craft compelling ad copy that resonates with your target audience and encourages clicks.</p>
                                     </div>
                                 </div>
                             </div>
@@ -276,7 +276,7 @@ const sem = () => {
                                             />
                                         </div>
                                         <h2 className='text-[#000] text-base font-semibold leading-normal mb-4'>Landing Page Optimization</h2>
-                                        <p className='text-[#000] text-xs font-normal pt-11 text-start leading-[26px]'>We ensure your landing pages convert clicks into leads or sales.</p>
+                                        <p className='text-[#000] text-xs font-normal pt-5 text-start leading-[26px]'>We ensure your landing pages convert clicks into leads or sales.</p>
                                     </div>
                                 </div>
                             </div>
@@ -292,7 +292,7 @@ const sem = () => {
                                             />
                                         </div>
                                         <h2 className='text-[#000] text-base font-semibold leading-normal mb-4'>Conversion Tracking & Analysis</h2>
-                                        <p className='text-[#000] text-xs font-normal pt-11 text-start leading-[26px]'>We meticulously track conversions and analyze data to optimize campaigns for better results.</p>
+                                        <p className='text-[#000] text-xs font-normal pt-5 text-start leading-[26px]'>We meticulously track conversions and analyze data to optimize campaigns for better results.</p>
                                     </div>
                                 </div>
                             </div>
@@ -308,7 +308,7 @@ const sem = () => {
                                             />
                                         </div>
                                         <h2 className='text-[#000] text-base font-semibold leading-normal mb-4'>Competitor Analysis</h2>
-                                        <p className='text-[#000] text-xs font-normal pt-11 text-start leading-[26px]'>We stay ahead of the competition by analyzing their strategies and identifying opportunities for improvement.</p>
+                                        <p className='text-[#000] text-xs font-normal pt-5 text-start leading-[26px]'>We stay ahead of the competition by analyzing their strategies and identifying opportunities for improvement.</p>
                                     </div>
                                 </div>
                             </div>
@@ -324,7 +324,7 @@ const sem = () => {
                                             />
                                         </div>
                                         <h2 className='text-[#000] text-base font-semibold leading-normal mb-4'>Remarketing & Retargeting</h2>
-                                        <p className='text-[#000] text-xs font-normal pt-11 text-start leading-[26px]'>We capture the attention of website visitors who haven't converted yet, bringing them back with targeted ads.</p>
+                                        <p className='text-[#000] text-xs font-normal pt-5 text-start leading-[26px]'>We capture the attention of website visitors who haven't converted yet, bringing them back with targeted ads.</p>
                                     </div>
                                 </div>
                             </div>
