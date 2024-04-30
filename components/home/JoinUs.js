@@ -139,7 +139,7 @@ const JoinUs = () => {
         <>
          
     
-            <section className="bg-[#ecf9ff] font-gilroy" id='joinus'>
+            <section className="font-gilroy" id='joinus'>
                 <div className="relative overflow-hidden px-4 md:pt-4 pb-8 md:pb-16">
                     <div className="relative mx-2 lg:flex">
                         <div className="relative bg-[#f5f5f5] md:h-screen overflow-hidden lg:w-[40%] rounded-lg space-y-9 px-4 pb-20 align-middle text-white">

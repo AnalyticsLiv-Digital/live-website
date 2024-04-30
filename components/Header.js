@@ -8,6 +8,7 @@ import Head from 'next/head';
 import Script from 'next/script';
 import { motion } from "framer-motion";
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { IoChevronDown,IoChevronUp } from "react-icons/io5";
 
 const header = () => {
   const [header, setHeader] = useState(75);
@@ -17,6 +18,7 @@ const header = () => {
   const [isServices, setIsServices] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [submenu, setSubmenu] = useState("0");
+
 
   useEffect(() => {
 
@@ -51,39 +53,49 @@ const header = () => {
         <meta http-equiv="cache-control" content="no-cache" />
         <meta http-equiv="Pragma" content="no-cache" />
         <meta http-equiv="Expires" content="-1" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+        />
       </Head>
 
 
-      <header className="sticky min-w-full top-0 z-50 shadow-md bg-white font-gilroy">
+      <header className="sticky min-w-full top-0 z-50 bg-white font-rbt">
+
+        <div className='hidden md:inline'>
+          <span className="text-right flex items-center justify-end pt-[14px]">
+            <img alt="marketing-partner" aria-label="marketing-partner" src="https://storage.googleapis.com/website-bucket-uploads/static/gmp.svg" />
+          </span>
+        </div>
 
         <div style={{ height: header }} className="navbar hidden lg:flex py-2 h-auto flex-wrap px-4 lg:flex-row items-center justify-between">
 
           <Link className="logo" href="/"><img alt="logo" aria-label="logo" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="h-10 lg:mx-4 cursor-pointer" /></Link>
           <nav className="lg:flex text-center">
-          <ul className="lg:flex text-[14px] font-Gilroy-SemiBold font-semibold text-txt text-left lg:text-center z-[-1] lg:z-auto lg:mr-4 lg:w-auto items-center  uppercase tracking-wide cursor-pointer">
+            <ul className="lg:flex text-[14px] font-rbt font-normal text-txt text-left lg:text-center z-[-1] lg:z-auto lg:mr-4 lg:w-auto items-center  uppercase tracking-wide cursor-pointer">
               <li className="relative flex items-center gap-[5px] hover:border-b-4 hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2" onMouseEnter={() => setIsSWebervices(true)} onMouseLeave={() => setIsSWebervices(false)}>
                 <Link className="header-links" href="/services">What We Do</Link>
-                <span>
+                <span className='mb-1'>
                   {isWebServices ? (
-                    <FaChevronUp className="w-4 h-4" />
+                    <IoChevronUp className="w-4 h-4" />
                   ) : (
-                    <FaChevronDown className="w-4 h-4" />
+                    <IoChevronDown className="w-4 h-4" />
                   )}
                 </span>
               </li>
               <li className="hover:border-b-4 lg:ml-[19px] flex items-center gap-[5px] hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2" onMouseEnter={() => setIsWebResources(true)} onMouseLeave={() => setIsWebResources(false)}>
                 <a href=""> Resources </a>
-                {isWebResources && <motion.div initial={{ y: 10, opacity: 0 }} animate={{ y: -5, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} onMouseEnter={() => setIsWebResources(true)} onMouseLeave={() => setIsWebResources(false)} id="submenu2" className="subheader absolute w-56 text-sm flex flex-col lg:-ml-20 lg:mt-2 divide-y bg-gray-100 text-cyan-900 items-center align-middle font-semibold">
+                {isWebResources && <motion.div initial={{ y: 5, opacity: 0 }} animate={{ y: 30, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} onMouseEnter={() => setIsWebResources(true)} onMouseLeave={() => setIsWebResources(false)} id="submenu2" className="subheader absolute w-56 text-sm flex flex-col lg:-ml-20 lg:mt-2 divide-y bg-gray-100 text-cyan-900 items-center align-middle font-semibold">
                   <Link href='/blogs'><div className="py-2 w-56 hover:bg-cyan-500">Blogs</div></Link>
                   <Link href='/case-studies'><div className="py-2 w-56 hover:bg-cyan-500">Case Studies</div></Link>
                   {/*<Link  href='/webinars'><div className="py-2 w-56 hover:bg-cyan-500">Webinars</div></Link>*/}
                 </motion.div>}
-                <span>
+                <span className='mb-1'>
                   {isWebResources ? (
-                  <FaChevronUp className="w-4 h-4" />
-                ) : (
-                  <FaChevronDown className="w-4 h-4" />
-                )}</span>
+                    <IoChevronUp className="w-4 h-4" />
+                  ) : (
+                    <IoChevronDown className="w-4 h-4" />
+                  )}</span>
               </li>
               <Link className="header-links" href="/about-us"><li className="hover:border-b-4 lg:ml-[19px] hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2">
                 Who We Are
@@ -92,13 +104,16 @@ const header = () => {
               <Link className="header-links" href="/contact"><li className="hover:border-b-4 lg:ml-[19px] hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2">
                 Contact Us
               </li></Link>
+              <Link className="header-links" href="/engagement"><li className="hover:border-b-4 hidden lg:ml-[19px] hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2">
+              Engagement 
+              </li></Link>
               <Link className="header-links" href="/careers"><li className="hover:border-b-4 lg:ml-[19px] hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2 text-rose-700 animate-pulse hover:animate-none">
                 We Are Hiring
               </li></Link>
             </ul>
-            <span className="hidden md:inline px-4">
+            {/* <span className="hidden md:inline px-4">
               <img alt="marketing-partner" aria-label="marketing-partner" src="https://storage.googleapis.com/website-bucket-uploads/static/gmp.svg" />
-            </span>
+            </span> */}
 
           </nav>
         </div>
@@ -161,10 +176,10 @@ const header = () => {
             <div className="bg-white lg:hidden absolute w-full" id="mobile-menu">
               <div className="px-4 pt-2 pb-3 space-y-1 sm:px-3">
                 <p
-                  className=" text-slate-900 block px-3 py-2 rounded-md text-base font-normal"
+                  className=" text-slate-900 block px-3 py-2 rounded-md font-rbt text-[15px] font-normal"
                 >
                   <div onClick={() => { setIsServices(!isServices); setIsResources(false); }} >What We Do</div>
-                  {isServices ? (<motion.div initial={{ y: 10, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} className='transition ease-out duration-200 px-4 text-cyan-400 text-base font-medium divide-y-2'>
+                  {isServices ? (<motion.div initial={{ y: 10, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} className='transition font-rbt ease-out duration-200 px-4 text-cyan-400 text-base font-medium divide-y-2'>
 
                     <div onClick={() => { setSubmenu("1") }} ><div className="py-2 w-56 ">Media Services</div></div>
                     {submenu == "1" && <motion.div onClick={() => { setIsOpen(!isOpen); setIsServices(false); }} initial={{ y: 10, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} className='transition ease-out duration-200 px-4 '>
@@ -172,57 +187,63 @@ const header = () => {
                       <div class="flex items-center py-1 gap-2">
                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-paid.png" alt="paid_logo" />
                         <Link href="/services/programatic-advertising"
-                          class="text-menuheading font-poppins text-base font-normal leading-normal">Programmatic Media DV360</Link>
+                          class="text-menuheading font-rbt text-base font-normal leading-normal">Programmatic Media DV360</Link>
                       </div>
                       <div class="flex items-center py-1 gap-2">
                         <img className='w-[23px]' src="https://storage.googleapis.com/website-bucket-uploads/static/SEM.png" alt="paid_logo" />
                         <Link href="/services/ecommerce-marketing"
-                          class="text-menuheading font-poppins text-base font-normal leading-normal">eCommerce Marketing</Link>
+                          class="text-menuheading font-rbt text-base font-normal leading-normal">eCommerce Marketing</Link>
                       </div>
                       <div class="flex items-center py-1 gap-2">
                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-lead.png" alt="paid_logo" />
                         <Link href="/services/lead-generation"
-                          class="text-menuheading font-poppins text-base font-normal leading-normal">Lead generation</Link>
+                          class="text-menuheading font-rbt text-base font-normal leading-normal">Lead generation</Link>
                       </div>
                       <div class="flex items-center py-1 gap-2">
                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/SEM.png" alt="paid_logo" className="w-[23px]" />
 
-                        <Link href="/services/programatic-advertising"
-                          class="text-menuheading font-poppins text-base font-normal leading-normal">Search engine marketing</Link>
+                        <Link href="/services/sem"
+                          class="text-menuheading font-rbt text-base font-normal leading-normal">Search engine marketing</Link>
                       </div>
                       <div class="flex items-center py-1 gap-2
                                     ">
                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-search.png" alt="display_logo" />
                         <Link href="/services/app-marketing"
-                          class="text-menuheading font-poppins text-base font-normal leading-normal">Mobile app marketing</Link>
+                          class="text-menuheading font-rbt text-base font-normal leading-normal">Mobile app marketing</Link>
                       </div>
                     </motion.div>}
                     <div onClick={() => { setSubmenu("2") }} ><div className="py-2 w-56 ">Analytics Services</div></div>
                     {submenu == "2" && <motion.div onClick={() => { setIsOpen(!isOpen); setIsServices(false); }} initial={{ y: 10, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} className='transition ease-out duration-200 px-4 '>
-                      
+
                       <div class="flex items-center py-1 gap-2">
                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytics_webapp_logo.png" alt="webapp_logo" />
                         <Link href="/services/web-app-measurement"
-                          class="text-menuheading font-poppins text-base font-normal leading-normal">Web
+                          class="text-menuheading font-rbt text-base font-normal leading-normal">Web
                           and App measurement</Link>
                       </div>
                       <div class="flex items-center py-1 gap-2">
                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytis_data-reporting.logo.png"
                           alt="data-reporting_logo" />
                         <Link href="/services/data-reporting-analysis"
-                          class="text-menuheading font-poppins text-base font-normal leading-normal">Data
+                          class="text-menuheading font-rbt text-base font-normal leading-normal">Data
                           Reporting & Analysis</Link>
+                      </div>
+                      <div class="flex items-center py-1 gap-2">
+                        <img src="/sst.png"
+                          alt="data-reporting_logo" className='w-[30px] h-[30px]' />
+                        <Link href="/services/server-side-tracking"
+                          class="text-menuheading font-rbt text-base font-normal leading-normal">Server-Side Tracking</Link>
                       </div>
                       <div class="flex items-center py-1 gap-2">
                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytics_Looker.logo.png" alt="Looker_logo" />
                         <Link href="/services/looker-bi-platform"
-                          class="text-menuheading font-poppins text-base font-normal leading-normal">Looker
+                          class="text-menuheading font-rbt text-base font-normal leading-normal">Looker
                           BI Platform</Link>
                       </div>
                       <div class="flex items-center py-1 gap-2">
                         <img src="/cro_logo.png" className='w-[33px]' alt="Looker_logo" />
                         <Link href="/services/CRO"
-                          class="text-menuheading font-poppins text-base font-normal leading-normal">Conversion Rate Optimization</Link>
+                          class="text-menuheading font-rbt text-base font-normal leading-normal">Conversion Rate Optimization</Link>
                       </div>
                     </motion.div>}
                     <div onClick={() => { setSubmenu("3") }} ><div className="py-2 w-56 ">Solutions</div></div>
@@ -230,21 +251,21 @@ const header = () => {
                       <div class="flex items-center py-1 gap-2">
                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_GDRP.logo.png" alt="GDRP_logo" />
                         <Link href="#"
-                          class="text-menuheading font-poppins text-base font-normal leading-normal">GDPR
+                          class="text-menuheading font-rbt text-base font-normal leading-normal">GDPR
                           Compliance</Link>
                       </div>
                       <div class="flex items-center py-1 gap-2">
                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/Solutions_Data-Science.logo.png"
                           alt="Data-Science_logo" />
                         <Link href="/services/data-science"
-                          class="text-menuheading font-poppins text-base font-normal leading-normal">Data
+                          class="text-menuheading font-rbt text-base font-normal leading-normal">Data
                           Science Solution & Automation</Link>
                       </div>
                       <div class="flex items-center py-1 gap-2">
                         <img className='w-[35px]' src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_Data_Attribution.png"
                           alt="Data-Science_logo" />
                         <Link href="/services/customer-segmentation"
-                          class="text-menuheading font-poppins text-base font-normal leading-normal">Custom Data Attribution Model</Link>
+                          class="text-menuheading font-rbt text-base font-normal leading-normal">Custom Data Attribution Model</Link>
                       </div>
                     </motion.div>}
                     <div onClick={() => { setSubmenu("4") }} ><div className="py-2 w-56 ">Training & Consultation</div></div>
@@ -254,14 +275,14 @@ const header = () => {
                         <img className='w-[23px]' src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_Training-Details.logo.png"
                           alt="Training-Details_logo" />
                         <Link href="/services/training"
-                          class="text-menuheading font-poppins text-base font-normal leading-normal">Schedule a One-Hour Consultation</Link>
+                          class="text-menuheading font-rbt text-base font-normal leading-normal">Schedule a One-Hour Consultation</Link>
                       </div>
                       <div class="flex items-center py-1 gap-2
                                     ">
                         <img className='w-[23px]' src="https://storage.googleapis.com/website-bucket-uploads/static/training_Schedule.png"
                           alt="Training-Details_logo" />
                         <Link href="/services/training"
-                          class="text-menuheading font-poppins text-base font-normal leading-normal">Training
+                          class="text-menuheading font-rbt text-base font-normal leading-normal">Training
                           Details</Link>
                       </div>
                     </motion.div>}
@@ -304,7 +325,7 @@ const header = () => {
             </div>
           )}
         </Transition>
-        {isWebServices && <motion.div initial={{ y: 10, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} onMouseEnter={() => setIsSWebervices(true)} onMouseLeave={() => setIsSWebervices(false)} onClick={() => setIsSWebervices(false)} className="subheader absolute w-full text-sm flex flex-col z-100 divide-y bg-gray-100 text-cyan-900 items-center align-middle font-semibold">
+        {isWebServices && <motion.div initial={{ y: 10, opacity: 0 }} animate={{ y: 45, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} onMouseEnter={() => setIsSWebervices(true)} onMouseLeave={() => setIsSWebervices(false)} onClick={() => setIsSWebervices(false)} className="subheader absolute w-full text-sm flex flex-col z-100 divide-y bg-gray-100 text-cyan-900 items-center align-middle font-semibold">
 
           <div
             class="p-6 mega-menu mb-16 sm:mb-0 shadow-xl bg-white left-0 absolute text-left w-full transition-all duration-150 ease-linear">
@@ -314,34 +335,34 @@ const header = () => {
                 class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b lg:border-b-0 pb-6 pt-6 lg:pt-3">
                 <div class="flex items-center">
 
-                  <h3 class="text-menuheading font-poppins text-[16px] font-semibold">Media Services</h3>
+                  <h3 class="text-menuheading font-rbt text-[15px] font-medium">Media Services</h3>
                 </div> <br />
 
                 <div class="flex items-center py-3 gap-2">
                   <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-paid.png" alt="paid_logo" />
                   <Link href="/services/programatic-advertising"
-                    class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Programmatic Media DV360</Link>
+                    class="text-menuheading font-rbt text-[13px] font-normal leading-normal">Programmatic Media DV360</Link>
                 </div>
                 <div class="flex items-center py-3 gap-2">
                   <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-E-commerce.png" alt="paid_logo" />
                   <Link href="/services/ecommerce-marketing"
-                    class="text-menuheading font-poppins text-[13px] font-normal leading-normal">eCommerce Marketing</Link>
+                    class="text-menuheading font-rbt text-[13px] font-normal leading-normal">eCommerce Marketing</Link>
                 </div>
                 <div class="flex items-center py-3 gap-2">
                   <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-lead.png" className='w-[33px]' alt="paid_logo" />
                   <Link href="/services/lead-generation"
-                    class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Lead generation</Link>
+                    class="text-menuheading font-rbt text-[13px] font-normal leading-normal">Lead generation</Link>
                 </div>
                 <div class="flex items-center py-3 gap-2">
                   <img className='w-[33px]' src="https://storage.googleapis.com/website-bucket-uploads/static/SEM.png" alt="paid_logo" />
-                  <Link href="/services/programatic-advertising"
-                    class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Search engine marketing</Link>
+                  <Link href="/services/sem"
+                    class="text-menuheading font-rbt text-[13px] font-normal leading-normal">Search engine marketing</Link>
                 </div>
                 <div class="flex items-center py-3 gap-2
                                     ">
                   <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-mobile.png" className='w-[33px]' alt="display_logo" />
                   <Link href="/services/app-marketing"
-                    class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Mobile app marketing</Link>
+                    class="text-menuheading font-rbt text-[13px] font-normal leading-normal">Mobile app marketing</Link>
                 </div>
 
               </ul>
@@ -349,66 +370,74 @@ const header = () => {
                 class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b lg:border-b-0 pb-6 pt-6 lg:pt-3">
                 <div class="flex items-center">
 
-                  <h3 class="text-menuheading font-poppins text-[16px] font-semibold">Analytics Services</h3>
+                  <h3 class="text-menuheading font-rbt text-[15px] font-medium">Analytics Services</h3>
                 </div> <br />
 
                 <div class="flex items-center py-3 gap-2">
                   <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytics_webapp_logo.png" alt="webapp_logo" />
                   <Link href="/services/web-app-measurement"
-                    class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Web
+                    class="text-menuheading font-rbt text-[13px] font-normal leading-normal">Web
                     and App measurement</Link>
                 </div>
                 <div class="flex items-center py-3 gap-2">
-                  <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytis_data-reporting.logo.png"
-                    alt="data-reporting_logo" />
-                  <Link href="/services/data-reporting-analysis"
-                    class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Data
-                    Reporting & Analysis</Link>
-                </div>
-                <div class="flex items-center py-3 gap-2">
-                  <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytics_Looker.logo.png" alt="Looker_logo" />
-                  <Link href="/services/looker-bi-platform"
-                    class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Looker
-                    BI Platform</Link>
+                  <img src="/sst.png"
+                    alt="server_side_logo" className='w-[30px] h-[30px]' />
+                  <Link href="/services/server-side-tracking"
+                    class="text-menuheading font-rbt text-[13px] font-normal leading-normal">Server-Side Tracking</Link>
                 </div>
                 <div class="flex items-center py-3 gap-2">
                   <img src="/cro_logo.png" className='w-[33px]' alt="Looker_logo" />
                   <Link href="/services/CRO"
-                    class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Conversion Rate Optimization</Link>
+                    class="text-menuheading font-rbt text-[13px] font-normal leading-normal">Conversion Rate Optimization</Link>
                 </div>
+
+                <div class="flex items-center py-3 gap-2">
+                  <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytis_data-reporting.logo.png"
+                    alt="data-reporting_logo" />
+                  <Link href="/services/data-reporting-analysis"
+                    class="text-menuheading font-rbt text-[13px] font-normal leading-normal">Reporting & Dashboarding</Link>
+                </div>
+{/*                 
+                <div class="flex items-center py-3 gap-2">
+                  <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytics_Looker.logo.png" alt="Looker_logo" />
+                  <Link href="/services/looker-bi-platform"
+                    class="text-menuheading font-rbt text-[13px] font-normal leading-normal">Looker
+                    BI Platform</Link>
+                </div> */}
+                
               </ul>
               <ul
                 class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b lg:border-b-0 pb-6 pt-6 lg:pt-3">
                 <div class="flex items-center">
 
-                  <h3 class="text-menuheading font-poppins text-[16px] font-semibold">Solutions</h3>
+                  <h3 class="text-menuheading font-rbt text-[15px] font-medium">Solutions</h3>
                 </div> <br />
 
 
                 <div class="flex items-center py-3 gap-2">
                   <img src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_GDRP.logo.png" alt="GDRP_logo" />
                   <Link href="#"
-                    class="text-menuheading font-poppins text-[13px] font-normal leading-normal">GDPR
+                    class="text-menuheading font-rbt text-[13px] font-normal leading-normal">GDPR
                     Compliance</Link>
                 </div>
                 <div class="flex items-center py-3 gap-2">
                   <img src="https://storage.googleapis.com/website-bucket-uploads/static/Solutions_Data-Science.logo.png"
                     alt="Data-Science_logo" />
                   <Link href="/services/data-science"
-                    class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Data
+                    class="text-menuheading font-rbt text-[13px] font-normal leading-normal">Data
                     Science Solution & Automation</Link>
                 </div>
                 <div class="flex items-center py-3 gap-2">
                   <img className='w-[33px]' src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_Data_Attribution.png"
                     alt="Data-Science_logo" />
                   <Link href="/services/customer-segmentation"
-                    class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Custom Data Attribution Model</Link>
+                    class="text-menuheading font-rbt text-[13px] font-normal leading-normal">Custom Data Attribution Model</Link>
                 </div>
               </ul>
               <ul
                 class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b lg:border-b-0 pb-6 pt-6 lg:pt-3">
                 <div class="flex items-center">
-                  <h3 class="text-menuheading font-poppins text-[16px] font-semibold">Training &
+                  <h3 class="text-menuheading font-rbt text-[15px] font-medium">Training &
                     Consultation</h3>
                 </div> <br />
                 <div class="flex items-center py-3 gap-2
@@ -416,14 +445,14 @@ const header = () => {
                   <img className='w-[35px]' src="https://storage.googleapis.com/website-bucket-uploads/static/training_Schedule.png"
                     alt="Training-Details_logo" />
                   <Link href="/services/training"
-                    class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Schedule a One-Hour Consultation</Link>
+                    class="text-menuheading font-rbt text-[13px] font-normal leading-normal">Schedule a One-Hour Consultation</Link>
                 </div>
                 <div class="flex items-center py-3 gap-2
                                     ">
                   <img src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_Training-Details.logo.png"
                     alt="Training-Details_logo" />
                   <Link href="/services/training"
-                    class="text-menuheading font-poppins text-[13px] font-normal leading-normal">Training
+                    class="text-menuheading font-rbt text-[13px] font-normal leading-normal">Training
                     Details</Link>
                 </div>
               </ul>

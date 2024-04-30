@@ -22,39 +22,31 @@ const cro = () => {
         ]
     };
 
-    // // // // // FUEL SECTION // // // // // // // // // //   
-    const [isFs4mVisible, setIsFs4mVisible] = useState(false);
-    const [isSec4mVisible, setIsSec4mVisible] = useState(false);
-    const [isThr4mVisible, setIsThr4mVisible] = useState(false);
-    const [isFur4mVisible, setIsFur4mVisible] = useState(false);
+    const [isFstVisible, setIsFstVisible] = useState(false);
+    const [isScnVisible, setIsScnVisible] = useState(false);
+    const [isThdVisible, setIsThdVisible] = useState(false);
+    const [isFrVisible, setIsFrVisible] = useState(false);
+    const [isFvVisible, setIsFvVisible] = useState(false);
+    const [isSxVisible, setIsSxVisible] = useState(false);
 
-    const toggleFs4mVisibility = () => {
-        setIsFs4mVisible(prevState => !prevState);
-        if (isSec4mVisible) setIsSec4mVisible(true);
-        if (isThr4mVisible) setIsThr4mVisible(true);
-        if (isFur4mVisible) setIsFur4mVisible(true);
+    const toggleFstVisibility = () => {
+        setIsFstVisible(prevState => !prevState);
     };
-
-    const toggleSec4mVisibility = () => {
-        setIsSec4mVisible(prevState => !prevState);
-        if (isFs4mVisible) setIsFs4mVisible(true);
-        if (isThr4mVisible) setIsThr4mVisible(true);
-        if (isFur4mVisible) setIsFur4mVisible(true);
-    };
-
-    const toggleThr4mVisibility = () => {
-        setIsThr4mVisible(prevState => !prevState);
-        if (isFs4mVisible) setIsFs4mVisible(true);
-        if (isSec4mVisible) setIsSec4mVisible(true);
-        if (isFur4mVisible) setIsFur4mVisible(true);
-    };
-
-    const toggleFur4mVisibility = () => {
-        setIsFur4mVisible(prevState => !prevState);
-        if (isFs4mVisible) setIsFs4mVisible(true);
-        if (isSec4mVisible) setIsSec4mVisible(true);
-        if (isThr4mVisible) setIsThr4mVisible(true);
-    };
+    const toggleScnVisibility = () => {
+        setIsScnVisible(prevState => !prevState);
+    }
+    const toggelThdVisibility = () => {
+        setIsThdVisible(prevState => !prevState);
+    }
+    const toggelFrVisibility = () => {
+        setIsFrVisible(prevState => !prevState);
+    }
+    const toggelFvVisibility = () => {
+        setIsFvVisible(prevState => !prevState);
+    }
+    const toggelSxVisibility = () => {
+        setIsSxVisible(prevState => !prevState);
+    }
 
     // // // // // FAQ SECTION // // // // // // // // // //   
     const [isFaqfstVisible, setIsFaqfstVisible] = useState(false);
@@ -161,13 +153,13 @@ const cro = () => {
                                 <h3 className='text-[#1D2124] text-[18px] font-semibold font-Gilroy-SemiBold mb-[20px]'>Revenue Acceleration</h3>
                                 <ul className='text-[#646464] text-[15px] font-medium font-gilroy2 leading-6 ml-[15px] mb-5'>
                                     <li className='mb-2 flex items-start gap-1'>
-                                        <span className='text-[#15c474] mt-[5px]'><FaCheck /></span>
+                                        <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
                                         <p>Laser-focused user journeys engineered for conversions</p></li>
                                     <li className='mb-2 flex items-start gap-1'>
-                                        <span className='text-[#15c474] mt-[5px]'><FaCheck /></span>
+                                        <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
                                         <p>Data-backed tactics to maximize value from every visitor</p></li>
                                     <li className='mb-2 flex items-start gap-1'>
-                                        <span className='text-[#15c474] mt-[5px]'><FaCheck /></span>
+                                        <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
                                         <p>Skyrocket your sales and leave competitors in the dust</p></li>
                                 </ul>
                             </div>
@@ -178,13 +170,13 @@ const cro = () => {
                                 <h3 className='text-[#1D2124] text-[18px] font-semibold font-Gilroy-SemiBold mb-[20px]'>Friction-Free User Experiences</h3>
                                 <ul className='text-[#646464] text-[15px] font-medium font-gilroy2 leading-6 ml-[15px] mb-5'>
                                     <li className='mb-2 flex items-start gap-1'>
-                                        <span className='text-[#15c474] mt-[5px]'><FaCheck /></span>
+                                        <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
                                         <p>Deeply understand your audience's motivations and pain points</p></li>
                                     <li className='mb-2 flex items-start gap-1'>
-                                        <span className='text-[#15c474] mt-[5px]'><FaCheck /></span>
+                                        <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
                                         <p>Seamless, personalized experiences that delight and convert</p></li>
                                     <li className='mb-2 flex items-start gap-1'>
-                                        <span className='text-[#15c474] mt-[5px]'><FaCheck /></span>
+                                        <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
                                         <p>Build unbreakable customer loyalty and advocacy</p></li>
                                 </ul>
                             </div>
@@ -195,13 +187,13 @@ const cro = () => {
                                 <h3 className='text-[#1D2124] text-[18px] font-semibold font-Gilroy-SemiBold mb-[20px]'>Relentless Testing and Optimization</h3>
                                 <ul className='text-[#646464] text-[15px] font-medium font-gilroy2 leading-6 ml-[15px] mb-5'>
                                     <li className='mb-2 flex items-start gap-1'>
-                                        <span className='text-[#15c474] mt-[5px]'><FaCheck /></span>
+                                        <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
                                         <p>Continuous experimentation with A/B tests and multivariate campaigns</p></li>
                                     <li className='mb-2 flex items-start gap-1'>
-                                        <span className='text-[#15c474] mt-[5px]'><FaCheck /></span>
+                                        <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
                                         <p>Harness advanced tools like Heat Maps, Session Recordings, and more</p></li>
                                     <li className='mb-2 flex items-start gap-1'>
-                                        <span className='text-[#15c474] mt-[5px]'><FaCheck /></span>
+                                        <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
                                         <p>Stay ahead of evolving customer needs and industry trends</p></li>
                                 </ul>
                             </div>
@@ -209,109 +201,186 @@ const cro = () => {
                     </div>
                 </div>
             </section>
-            <section className='approach relative overflow-hidden'>
+            <section className='fuel relative overflow-hidden'>
                 <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 z-20">
                     <div>
-                        <h3 className='text-[28px] font-semibold text-white leading-[1.5em] font-Gilroy-SemiBold mb-2'>Our Proven FUEL Methodology for Explosive Growth</h3>
+                        <h3 className='text-[28px] font-semibold text-black leading-[1.5em] font-rbt text-center mb-4'>Our Proven FUEL Methodology for Explosive Growth</h3>
                     </div>
-                    <p className='text-[20px] font-semibold text-white leading-[1.5em] font-Gilroy-SemiBold'>We've refined a battle-tested process to propel your online success</p>
-                    <div className='md:flex items-center justify-start mt-10'>
-                        <div className='flex md:w-[60%] w-full'>
-                            <div className='flex flex-col items-start lg:justify-start justify-center gap-[10px] w-full'>
-                                <div className={`fs4m flex items-start gap-5 w-full max-[350px]:w-[285px] powerbox2 p-[15px] border border-[#13131400] hover:shadow-mediadv360 h-auto rounded-[10px] ${isFs4mVisible ? 'bg-white' : 'bg-[#0000001f]'}`}>
-                                    <div className='flex items-center justify-between w-full'>
-                                        <div className='cursor-pointer w-full' onClick={toggleFs4mVisibility}>
-                                            <div className={`flex items-center w-full justify-between gap-5 text-${isFs4mVisible ? 'black' : 'white'}`}>
-                                                <div className='flex items-center justify-start'>
-                                                    <h2 className='text-[18px] font-semibold leading-normal font-Gilroy-SemiBold'>Find</h2>
-                                                </div>
+                    <p className='text-[18px] font-medium text-black leading-[1.5em] font-rbt text-center mb-4'>We've refined a battle-tested process to propel your online success</p>
+                    <div className='mb-[35px] md:w-[90%] m-auto'>
+                        <div className='innerfuel mt-10'>
+                            <ul className='fs relative mb-[55px] pt-[70px] flex items-center md:flex-row flex-col'>
+                                <li className='relative text-start md:pr-10 text-[#243238] sm:w-1/2 w-full md:order-1 order-2'>
+                                    <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[20px] leading-8 font-semibold'>Define Your Goals and Objectives</h4>
+                                    <div className='text-[#646464] text-[15px] font-medium font-gilroy2 leading-6 mb-5'>
+                                        <div className='mb-2 flex items-start gap-1'>
+                                            <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
+                                            <p>Start by clearly defining the specific goals you want to achieve through CRO efforts. This could be increasing signups for free trials, generating leads through contact forms, or boosting sales of specific services.</p></div>
+                                        <div className='mb-2 flex items-start gap-1'>
+                                            <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
+                                            <p>Define success metrics for each goal. These might include conversion rate, number of leads generated, or average order value.</p></div>
+                                    </div>
+                                </li>
+                                <li className='relative md:pl-9 sm:w-1/2 w-full md:order-2 order-1 flex items-center md:justify-end justify-center'>
+                                    <img src="/CRO_Page_FLOW_IMG_1_Find.png" alt="" className='h-auto w-[350px]' />
+                                </li>
+                            </ul>
+                            <ul className='sc relative mb-[55px] pt-[70px] flex items-center md:flex-row-reverse flex-col'>
+                                <li className='relative text-start md:pl-10 text-[#243238] sm:w-1/2 w-full md:order-1 order-2'>
+                                    <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[20px] leading-8 font-semibold'>Understand Your Users</h4>
+                                    <p className='text-[#646464] text-[18px] font-medium font-gilroy2 leading-6 mb-[10px]'>Conduct user research to understand your target audience's needs, pain points, and behavior on your website. Here are some methods:</p>
+                                    <div className='text-[#646464] text-[15px] font-medium font-gilroy2 leading-6 mb-5'>
+                                        <div className='cursor-pointer w-[90%] border border-solid border-[#30486a21] p-3 mb-[10px] rounded-[10px]' onClick={toggleFstVisibility}>
+                                            <div className={`flex items-center justify-between ${isFstVisible ? 'mb-2' : 'mb-0'}`}>
+                                                <div className=' flex items-start gap-1 font-semibold'>
+                                                    <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
+                                                    <p>Website Analytics :</p></div>
                                                 <div className='clk'>
-                                                    {isFs4mVisible ? <FaChevronUp className='w-4 h-4' /> : <FaChevronDown className='w-4 h-4' />}
+                                                    {isFstVisible ? <FaChevronUp className='w-4 h-4' /> : <FaChevronDown className='w-4 h-4' />}
                                                 </div>
                                             </div>
-                                            {isFs4mVisible && (
-                                                <li className='mb-2 flex items-start gap-1 p-[10px] pl-0'>
-                                                    <span className='text-[#de668a] mt-[3px]'><FaCheck /></span>
-                                                    <p className='text-[15px] font-medium leading-[1.7em] font-gilroy2'>
-                                                        Uncover insights and opportunities through in-depth data analysis.
-                                                    </p>
-                                                </li>
-                                            )}
+                                            {isFstVisible && <div className='ml-3'>
+                                                <p>Utilize tools like Google Analytics to analyze user behavior, such as traffic sources, page visits, time on site, and click-through rates.</p></div>}
                                         </div>
-                                    </div>
-                                </div>
-                                <div className={`sec4m flex items-start gap-5 w-full max-[350px]:w-[285px] powerbox2 p-[15px] border border-[#13131400] hover:shadow-mediadv360 h-auto rounded-[10px] ${isSec4mVisible ? 'bg-white' : 'bg-[#0000001f]'}`}>
-                                    <div className='flex items-center justify-between w-full'>
-                                        <div className='cursor-pointer w-full' onClick={toggleSec4mVisibility}>
-                                            <div className={`flex items-center justify-between gap-5 text-${isSec4mVisible ? 'black' : 'white'}`}>
-                                                <div className='flex items-center justify-start'>
-                                                    <h2 className='text-[18px] font-semibold leading-normal font-Gilroy-SemiBold'>Unify</h2>
-                                                </div>
+                                        <div className='cursor-pointer w-[90%] border border-solid border-[#30486a21] p-2 mb-[10px] rounded-[10px]' onClick={toggleScnVisibility}>
+                                            <div className={`flex items-center justify-between ${isScnVisible ? 'mb-2' : 'mb-0'}`}>
+                                                <div className=' flex items-start gap-1 font-semibold'>
+                                                    <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
+                                                    <p>Heatmaps & Session Recordings :</p></div>
                                                 <div className='clk'>
-                                                    {isSec4mVisible ? <FaChevronUp className='w-4 h-4' /> : <FaChevronDown className='w-4 h-4' />}
+                                                    {isScnVisible ? <FaChevronUp className='w-4 h-4' /> : <FaChevronDown className='w-4 h-4' />}
                                                 </div>
                                             </div>
-                                            {isSec4mVisible && (
-                                                <li className='mb-2 flex items-start gap-1 p-[10px] pl-0'>
-                                                    <span className='text-[#de668a] mt-[3px]'><FaCheck /></span>
-                                                    <p className='text-[15px] font-medium leading-[1.7em] font-gilroy2'>Align your digital ecosystem for cohesive, optimized user journeys.</p>
-                                                </li>
-                                            )}
+                                            {isScnVisible && <div className='mb-2 ml-3'>
+                                                <p>Track user interactions with your website to see where they click, scroll, and abandon conversions.</p></div>}
                                         </div>
                                     </div>
-                                </div>
-                                <div className={`thr4m flex items-start gap-5 w-full max-[350px]:w-[285px] powerbox2 p-[15px] border border-[#13131400] hover:shadow-mediadv360 h-auto rounded-[10px] ${isThr4mVisible ? 'bg-white' : 'bg-[#0000001f]'}`}>
-                                    <div className='flex items-center justify-between w-full'>
-                                        <div className='cursor-pointer w-full' onClick={() => toggleThr4mVisibility()}>
-                                            <div className={`flex items-center justify-between gap-5 text-${isThr4mVisible ? 'black' : 'white'}`}>
-                                                <div className='flex items-center justify-start'>
-                                                    <h2 className='text-[18px] font-semibold leading-normal font-Gilroy-SemiBold'>Explode</h2>
-                                                </div>
-                                                <div className='clk'>
-                                                    {isThr4mVisible ? <FaChevronUp className='w-4 h-4' /> : <FaChevronDown className='w-4 h-4' />}
-                                                </div>
+                                </li>
+                                <li className='relative md:pr-9 sm:w-1/2 w-full md:order-2 order-1 flex items-center md:justify-start justify-center'>
+                                    <img src="/CRO_Page_FLOW_IMG_2_Unify.png" alt="" className='h-auto w-[350px]' />
+                                </li>
+                            </ul>
+                            <ul className='thr relative mb-[55px] pt-[70px] flex items-center md:flex-row flex-col'>
+                                <li className='relative text-start md:pr-10 text-[#243238] sm:w-1/2 w-full md:order-1 order-2'>
+                                    <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[20px] leading-8 font-semibold'>Conduct a CRO Audit</h4>
+                                    <p className='text-[#646464] text-[18px] font-medium font-gilroy2 leading-6 mb-[10px]'>Evaluate your website's current performance from a conversion optimization perspective. Identify elements that might be hindering user experience or hindering conversions. Consider these aspects</p>
+                                    <div className='text-[#646464] text-[15px] font-medium font-gilroy2 leading-6 mb-5'>
+                                        <div className='cursor-pointer w-[90%] border border-solid border-[#30486a21] p-3 mb-[10px] rounded-[10px]' onClick={toggelThdVisibility}>
+                                            <div className={`flex items-center justify-between ${isThdVisible ? 'mb-2' : 'mb-0'}`}>
+                                                <div className=' flex items-start gap-1 font-semibold'>
+                                                    <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
+                                                    <p>Website Usability :</p></div>
+                                                    <div>
+                                                        {isThdVisible ? <FaChevronUp /> : <FaChevronDown />}
+                                                    </div>
                                             </div>
-                                            {isThr4mVisible && (
-                                                <li className='mb-2 flex items-start gap-1 p-[10px] pl-0'>
-                                                    <span className='text-[#de668a] mt-[3px]'><FaCheck /></span>
-                                                    <p className='text-[15px] font-medium leading-[1.7em] font-gilroy2'>Deploy data-backed campaigns to ignite conversions and crush goals.</p>
-                                                </li>
-                                            )}
+                                            {isThdVisible && 
+                                            <div className='mb-2 ml-3'>
+                                                <p>Is your website easy to navigate? Can users find the information they need quickly?</p></div> }
                                         </div>
-                                    </div>
-                                </div>
-                                <div className={`fur4m flex items-start gap-5 w-full max-[350px]:w-[285px] powerbox2 p-[15px] border border-[#13131400] hover:shadow-mediadv360 h-auto rounded-[10px] ${isFur4mVisible ? 'bg-white' : 'bg-[#0000001f]'}`}>
-                                    <div className='flex items-center justify-between w-full'>
-                                        <div className='cursor-pointer w-full' onClick={() => toggleFur4mVisibility()}>
-                                            <div className={`flex items-center justify-between gap-5 text-${isFur4mVisible ? 'black' : 'white'}`}>
-                                                <div className='flex items-center justify-start'>
-                                                    <h2 className='text-[18px] font-semibold leading-normal font-Gilroy-SemiBold'>Leverage</h2>
-                                                </div>
-                                                <div className='clk'>
-                                                    {isFur4mVisible ? <FaChevronUp className='w-4 h-4' /> : <FaChevronDown className='w-4 h-4' />}
-                                                </div>
+                                        <div className='cursor-pointer w-[90%] border border-solid border-[#30486a21] p-3 mb-[10px] rounded-[10px]' onClick={toggelFrVisibility}>
+                                            <div className={`flex items-center justify-between ${isFrVisible ? 'mb-2' : 'mb-0'}`}>
+                                                <div className=' flex items-start gap-1 font-semibold'>
+                                                    <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
+                                                    <p>Value Proposition :</p></div>
+                                                    <div>
+                                                        {isFrVisible ? <FaChevronUp /> : <FaChevronDown />}
+                                                    </div>
                                             </div>
-                                            {isFur4mVisible && (
-                                                <div className='mb-2 p-[10px] pl-0'>
-                                                    <li className=' flex items-start gap-1 '>
-                                                        <span className='text-[#de668a] mt-[3px]'><FaCheck /></span>
-                                                        <p className='text-[15px] font-medium leading-[1.7em] font-gilroy2'>Continuously refine strategies based on performance insights.
-                                                        </p>
-                                                    </li>
-                                                    <li className='flex items-start gap-1'>
-                                                        <span className='text-[#de668a] mt-[3px]'><FaCheck /></span>
-                                                        <p className='text-[15px] font-medium leading-[1.7em] font-gilroy2'>With our scientific CRO solutions and the FUEL methodology, you'll experience game-changing results within just 90 days, leaving your competitors scrambling to catch up.
-                                                        </p>
-                                                    </li>
-                                                </div>
-                                            )}
+                                            {isFrVisible && 
+                                            <div className='mb-2 ml-3'>
+                                                <p>Are you clearly communicating the value proposition of your services?</p></div> }
+                                        </div>
+                                        <div className='cursor-pointer w-[90%] border border-solid border-[#30486a21] p-3 mb-[10px] rounded-[10px]' onClick={toggelFvVisibility}>
+                                            <div className={`flex items-center justify-between ${isFvVisible ? 'mb-2' : 'mb-0'}`}>
+                                                <div className=' flex items-start gap-1 font-semibold'>
+                                                    <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
+                                                    <p>Call to Actions (CTAs) :</p></div>
+                                                    <div>
+                                                        {isFvVisible ? <FaChevronUp /> : <FaChevronDown />}
+                                                    </div>
+                                            </div>
+                                            {isFvVisible && 
+                                            <div className='mb-2 ml-3'>
+                                                <p>Are your CTAs clear, compelling, and strategically positioned?</p></div> }
+                                        </div>
+                                        <div className='cursor-pointer w-[90%] border border-solid border-[#30486a21] p-3 mb-[10px] rounded-[10px]' onClick={toggelSxVisibility}>
+                                            <div className={`flex items-center justify-between ${isSxVisible ? 'mb-2' : 'mb-0'}`}>
+                                                <div className=' flex items-start gap-1 font-semibold'>
+                                                    <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
+                                                    <p>Mobile Responsiveness :</p></div>
+                                                    <div>
+                                                        {isSxVisible ? <FaChevronUp /> : <FaChevronDown />}
+                                                    </div>
+                                            </div>
+                                            {isSxVisible && 
+                                            <div className='mb-2 ml-3'>
+                                                <p>Does your website provide a seamless experience on all devices, including mobile phones and tablets?</p></div> }
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='md:w-[40%] w-full flex items-center justify-center md:mt-0 mt-4'>
-                            <img src="/CRO_Page_Sub_Img.png" alt="" className='md:h-auto h-[400px]' />
+                                </li>
+                                <li className='relative md:pl-9 sm:w-1/2 w-full md:order-2 order-1 flex items-center md:justify-end justify-center'>
+                                    <img src="/CRO_Page_FLOW_IMG_1_Find.png" alt="" className='h-auto w-[350px]' />
+                                </li>
+                            </ul>
+                            <ul className='fr relative mb-[55px] pt-[70px] flex items-center md:flex-row-reverse flex-col'>
+                                <li className='relative text-start md:pl-10 text-[#243238] sm:w-1/2 w-full md:order-1 order-2'>
+                                    <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[20px] leading-8 font-semibold'>Prioritize Opportunities for Improvement</h4>
+                                    <div className='text-[#646464] text-[15px] font-medium font-gilroy2 leading-6 mb-5'>
+                                        <div className='mb-2 flex items-start gap-1'>
+                                            <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
+                                            <p>Based on your user research and CRO audit findings, prioritize areas with the highest potential for improvement. Consider factors like impact on conversion rate, ease of implementation, and resource availability.</p></div>
+                                    </div>
+                                </li>
+                                <li className='relative md:pl-9 sm:w-1/2 w-full md:order-2 order-1 flex items-center md:justify-start justify-center'>
+                                    <img src="/CRO_Page_FLOW_IMG_1_Find.png" alt="" className='h-auto w-[350px]' />
+                                </li>
+                            </ul>
+                            <ul className='fv relative mb-[55px] pt-[70px] flex items-center md:flex-row flex-col'>
+                                <li className='relative text-start md:pr-10 text-[#243238] sm:w-1/2 w-full md:order-1 order-2'>
+                                    <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[20px] leading-8 font-semibold'>Develop Hypotheses for Testing</h4>
+                                    <div className='text-[#646464] text-[15px] font-medium font-gilroy2 leading-6 mb-5'>
+                                        <div className='mb-2 flex items-start gap-1'>
+                                            <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
+                                            <p>Formulate clear hypotheses about how specific changes to your website will impact conversion rates. These hypotheses should be based on user research and data insights.</p></div>
+                                    </div>
+                                </li>
+                                <li className='relative md:pl-9 sm:w-1/2 w-full md:order-2 order-1 flex items-center md:justify-end justify-center'>
+                                    <img src="/CRO_Page_FLOW_IMG_1_Find.png" alt="" className='h-auto w-[350px]' />
+                                </li>
+                            </ul>
+                            <ul className='six relative mb-[55px] pt-[70px] flex items-center md:flex-row-reverse flex-col'>
+                                <li className='relative text-start md:pl-10 text-[#243238] sm:w-1/2 w-full md:order-1 order-2'>
+                                    <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[20px] leading-8 font-semibold'>A/B Testing & Data Analysis</h4>
+                                    <div className='text-[#646464] text-[15px] font-medium font-gilroy2 leading-6 mb-5'>
+                                        <div className='mb-2 flex items-start gap-1'>
+                                            <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
+                                            <p>Implement A/B testing to compare different versions of your website elements and see which ones perform better. A/B testing allows you to test different hypotheses and gather data on which variations drive higher conversions.</p></div>
+                                        <div className='mb-2 flex items-start gap-1'>
+                                            <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
+                                            <p>Track key metrics and analyze the results of your A/B tests to determine the most effective variations.</p></div>
+                                    </div>
+                                </li>
+                                <li className='relative md:pl-9 sm:w-1/2 w-full md:order-2 order-1 flex items-center md:justify-start justify-center'>
+                                    <img src="/CRO_Page_FLOW_IMG_1_Find.png" alt="" className='h-auto w-[350px]' />
+                                </li>
+                            </ul>
+                            <ul className='six relative mb-[55px] pt-[70px] flex items-center md:flex-row flex-col'>
+                                <li className='relative text-start md:pr-10 text-[#243238] sm:w-1/2 w-full md:order-1 order-2'>
+                                    <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[20px] leading-8 font-semibold'>Iteration & Optimization</h4>
+                                    <div className='text-[#646464] text-[15px] font-medium font-gilroy2 leading-6 mb-5'>
+                                        <div className='mb-2 flex items-start gap-1'>
+                                            <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
+                                            <p>Based on test results, implement the winning variations on your website.</p></div>
+                                        <div className='mb-2 flex items-start gap-1'>
+                                            <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
+                                            <p>This is an iterative process. Continue to monitor performance, conduct new user research, and form new hypotheses for testing to continuously optimize your website for conversions.</p></div>
+                                    </div>
+                                </li>
+                                <li className='relative md:pl-9 sm:w-1/2 w-full md:order-2 order-1 flex items-center md:justify-end justify-center'>
+                                    <img src="/CRO_Page_FLOW_IMG_1_Find.png" alt="" className='h-auto w-[350px]' />
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
