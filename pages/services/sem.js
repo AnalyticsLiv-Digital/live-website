@@ -119,7 +119,7 @@ const sem = () => {
                     <div className="relative px-4 md:px-12 pt-8 pb-8 h-full z-20">
                         <div className="z-10 flex lg:flex-nowrap items-center flex-wrap justify-between gap-7 pb-8">
                             <div className="w-full lg:w-1/2 lg:order-1 order-2">
-                                <h1 className="lg:text-[41px] text-[26px] lg:leading-[62px] leading-[32px] font-gilroy font-normal text-[#006EF5] mb-4">
+                                <h1 className="lg:text-[41px] text-[32px] lg:leading-[62px] leading-[32px] font-gilroy font-normal text-[#006EF5] mb-4">
                                     Drive Qualified Traffic & Leads with Powerful SEM Strategies at AnalyticsLiv
                                 </h1>
                                 {/* <h2 className="font-gilroy text-[20px] leading-[30px] font-normal text-[#152e55] mb-5">Cookieless, Compliant Data with Server-Side Tracking</h2> */}
@@ -159,7 +159,7 @@ const sem = () => {
             <section className='sstwhy relative wepappour overflow-hidden'>
                 <div className="relative px-4 md:px-12 pt-8 pb-8 z-20">
                     <div className=' mb-9 text-center'>
-                        <h3 className='text-[28px] text-center font-gilroy font-semibold text-[#18265b] leading-[1.5em] tracking-wide inline-block lg:shadow-sem px-2'>Why Choose SEM for Your Business?</h3>
+                        <h3 className='text-[32px] text-center font-gilroy font-semibold text-[#18265b] leading-[1.5em] tracking-wide inline-block lg:shadow-sem px-2'>Why Choose SEM for Your Business?</h3>
                     </div>
                     <div className=''>
                         <div className='w-full py-7 grid xl:grid-cols-5 lg:grid-cols-3 sm:grid-cols-2 gap-5'>
@@ -167,41 +167,41 @@ const sem = () => {
                                 <div>
                                     <div className='flex items-center justify-center'>
                                         <img src="/targetreach.png" alt="target_reach_logo" className='h-[70px] w-[70px]' /></div>
-                                    <h6 className='text-[20px] text-txt font-gilroy font-semibold mt-3 mb-5 leading-[1.4em]'>Targeted Reach</h6>
+                                    <h6 className='text-txt pt-4 xl:mb-12 mb-8 font-gilroy text-base font-semibold leading-normal'>Targeted Reach</h6>
                                 </div>
-                                <p className='font-gilroy font-normal leading-[1.65em] text-[17px] text-[#000]'>Reach potential customers actively searching for products or services like yours.</p>
+                                <p className='font-gilroy font-normal leading-[26px] text-xs text-[#000]'>Reach potential customers actively searching for products or services like yours.</p>
                             </div>
                             <div className='scnd text-center border border-solid border-[#00000012] rounded-xl p-5'>
                                 <div>
                                     <div className='flex items-center justify-center'>
                                         <img src="/sem_incr.png" alt="increased_visibility_logo" className='h-[70px] w-[70px]' /></div>
-                                    <h6 className='text-[20px] text-txt font-gilroy font-semibold mt-3 mb-5 leading-[1.4em]'>Increased Visibility</h6>
+                                    <h6 className='text-txt pt-4 xl:mb-12 mb-8 font-gilroy text-base font-semibold leading-normal'>Increased Visibility</h6>
                                 </div>
-                                <p className='font-gilroy font-normal leading-[1.65em] text-[17px] text-[#000]'>Secure prominent placements on search engine results pages (SERPs).</p>
+                                <p className='font-gilroy font-normal leading-[26px] text-xs text-[#000]'>Secure prominent placements on search engine results pages (SERPs).</p>
                             </div>
                             <div className='thrd text-center border border-solid border-[#00000012] rounded-xl p-5'>
                                 <div>
                                     <div className='flex items-center justify-center'>
                                         <img src="/sem2.png" alt="measurment_logo" className='h-[70px] w-[70px]' /></div>
-                                    <h6 className='text-[20px] text-txt font-gilroy font-semibold mt-3 mb-5 leading-[1.4em]'>Measurable Results</h6>
+                                    <h6 className='text-txt pt-4 xl:mb-12 mb-8 font-gilroy text-base font-semibold leading-normal'>Measurable Results</h6>
                                 </div>
-                                <p className='font-gilroy font-normal leading-[1.65em] text-[17px] text-[#000]'>Track campaign performance and optimize strategies for maximum ROI.</p>
+                                <p className='font-gilroy font-normal leading-[26px] text-xs text-[#000]'>Track campaign performance and optimize strategies for maximum ROI.</p>
                             </div>
                             <div className='fr text-center border border-solid border-[#00000012] rounded-xl p-5'>
                                 <div>
                                     <div className='flex items-center justify-center'>
                                         <img src="/sem_improve.png" alt="sem_improve_logo" className='h-[70px] w-[70px]' /></div>
-                                    <h6 className='text-[20px] text-txt font-gilroy font-semibold mt-3 mb-5 leading-[1.4em]'>Improved Brand Awareness</h6>
+                                    <h6 className='text-txt pt-4 mb-8 font-gilroy text-base font-semibold leading-normal'>Improved Brand Awareness</h6>
                                 </div>
-                                <p className='font-gilroy font-normal leading-[1.65em] text-[17px] text-[#000]'>Increase brand recognition and establish your expertise in your industry.</p>
+                                <p className='font-gilroy font-normal leading-[26px] text-xs text-[#000]'>Increase brand recognition and establish your expertise in your industry.</p>
                             </div>
                             <div className='five text-center border border-solid border-[#00000012] rounded-xl p-5'>
                                 <div>
                                     <div className='flex items-center justify-center'>
                                         <img src="/sem_lead.png" alt="lead_logo" className='h-[70px] w-[70px]' /></div>
-                                    <h6 className='text-[20px] text-txt font-gilroy font-semibold mt-3 mb-5 leading-[1.4em]'>Cost-Effective Lead Generation</h6>
+                                    <h6 className='text-txt pt-4 mb-8 font-gilroy text-base font-semibold leading-normal'>Cost-Effective Lead Generation</h6>
                                 </div>
-                                <p className='font-gilroy font-normal leading-[1.65em] text-[17px] text-[#000]'>Generate qualified leads at a competitive cost compared to other marketing channels.</p>
+                                <p className='font-gilroy font-normal leading-[26px] text-xs text-[#000]'>Generate qualified leads at a competitive cost compared to other marketing channels.</p>
                             </div>
                         </div>
                     </div>
@@ -211,9 +211,9 @@ const sem = () => {
             <section className='csworkflo font-gilroy'>
                 <div className='relative px-4 md:px-12 pt-8 pb-8 z-20'>
                     <div className='flex items-center justify-center mb-5'>
-                        <h2 className='text-[28px] text-center font-gilroy font-semibold text-[#18265b] leading-normal tracking-wide'>SEM Process & Strategy</h2>
+                        <h2 className='text-[32px] text-center font-gilroy font-semibold text-[#18265b] leading-normal tracking-wide'>SEM Process & Strategy</h2>
                     </div>
-                    <p className='text-[#000] text-[18px] font-normal leading-normal uppercase text-center'>In today's Digital landscape, ranking high on search engines is crucial for attracting new customers and driving business growth. At AnalyticsLiv, we offer comprehensive Search Engine Marketing (SEM) services designed to put your brand at the forefront of relevant online searches</p>
+                    <p className='text-[#000] text-[18px] font-normal leading-normal capitalize text-center'>In today's Digital landscape, ranking high on search engines is crucial for attracting new customers and driving business growth. At AnalyticsLiv, we offer comprehensive Search Engine Marketing (SEM) services designed to put your brand at the forefront of relevant online searches</p>
                     <div className='py-10'>
                         <Slider {...settings}>
                             <div aria-hidden="true" className="">
@@ -227,8 +227,8 @@ const sem = () => {
                                                 alt="Picture of the author"
                                             />
                                         </div>
-                                        <h2 className='text-[#000] text-base font-semibold leading-normal mb-4'>Keyword Research & Strategy</h2>
-                                        <p className='text-[#000] text-xs font-normal pt-5 text-start leading-[26px]'> We identify high-volume, relevant keywords that drive targeted traffic.</p>
+                                        <h2 className='text-[#000] text-base font-semibold leading-normal'>Keyword Research & Strategy</h2>
+                                        <p className='text-[#000] text-xs font-normal pt-6 text-start leading-[26px]'> We identify high-volume, relevant keywords that drive targeted traffic.</p>
                                     </div>
                                 </div>
                             </div>
@@ -243,8 +243,8 @@ const sem = () => {
                                                 alt="Picture of the author"
                                             />
                                         </div>
-                                        <h2 className='text-[#000] text-base font-semibold leading-normal mb-4'>Campaign Setup & Management</h2>
-                                        <p className='text-[#000] text-xs font-normal pt-5 text-start leading-[26px]'>We create and manage effective PPC (Pay-Per-Click) campaigns across major search engines like Google Ads and Bing Ads.</p>
+                                        <h2 className='text-[#000] text-base font-semibold leading-normal'>Campaign Setup & Management</h2>
+                                        <p className='text-[#000] text-xs font-normal pt-6 text-start leading-[26px]'>We create and manage effective PPC (Pay-Per-Click) campaigns across major search engines like Google Ads and Bing Ads.</p>
                                     </div>
                                 </div>
                             </div>
@@ -259,8 +259,8 @@ const sem = () => {
                                                 alt="Picture of the author"
                                             />
                                         </div>
-                                        <h2 className='text-[#000] text-base font-semibold leading-normal mb-4'>Ad Copywriting & Optimization</h2>
-                                        <p className='text-[#000] text-xs font-normal pt-5 text-start leading-[26px]'>We craft compelling ad copy that resonates with your target audience and encourages clicks.</p>
+                                        <h2 className='text-[#000] text-base font-semibold leading-normal'>Ad Copywriting & Optimization</h2>
+                                        <p className='text-[#000] text-xs font-normal pt-6 text-start leading-[26px]'>We craft compelling ad copy that resonates with your target audience and encourages clicks.</p>
                                     </div>
                                 </div>
                             </div>
@@ -275,8 +275,8 @@ const sem = () => {
                                                 alt="Picture of the author"
                                             />
                                         </div>
-                                        <h2 className='text-[#000] text-base font-semibold leading-normal mb-4'>Landing Page Optimization</h2>
-                                        <p className='text-[#000] text-xs font-normal pt-5 text-start leading-[26px]'>We ensure your landing pages convert clicks into leads or sales.</p>
+                                        <h2 className='text-[#000] text-base font-semibold leading-normal'>Landing Page Optimization</h2>
+                                        <p className='text-[#000] text-xs font-normal pt-6 text-start leading-[26px]'>We ensure your landing pages convert clicks into leads or sales.</p>
                                     </div>
                                 </div>
                             </div>
@@ -291,8 +291,8 @@ const sem = () => {
                                                 alt="Picture of the author"
                                             />
                                         </div>
-                                        <h2 className='text-[#000] text-base font-semibold leading-normal mb-4'>Conversion Tracking & Analysis</h2>
-                                        <p className='text-[#000] text-xs font-normal pt-5 text-start leading-[26px]'>We meticulously track conversions and analyze data to optimize campaigns for better results.</p>
+                                        <h2 className='text-[#000] text-base font-semibold leading-normal'>Conversion Tracking & Analysis</h2>
+                                        <p className='text-[#000] text-xs font-normal pt-6 text-start leading-[26px]'>We meticulously track conversions and analyze data to optimize campaigns for better results.</p>
                                     </div>
                                 </div>
                             </div>
@@ -307,8 +307,8 @@ const sem = () => {
                                                 alt="Picture of the author"
                                             />
                                         </div>
-                                        <h2 className='text-[#000] text-base font-semibold leading-normal mb-4'>Competitor Analysis</h2>
-                                        <p className='text-[#000] text-xs font-normal pt-5 text-start leading-[26px]'>We stay ahead of the competition by analyzing their strategies and identifying opportunities for improvement.</p>
+                                        <h2 className='text-[#000] text-base font-semibold leading-normal'>Competitor Analysis</h2>
+                                        <p className='text-[#000] text-xs font-normal pt-6 text-start leading-[26px]'>We stay ahead of the competition by analyzing their strategies and identifying opportunities for improvement.</p>
                                     </div>
                                 </div>
                             </div>
@@ -323,8 +323,8 @@ const sem = () => {
                                                 alt="Picture of the author"
                                             />
                                         </div>
-                                        <h2 className='text-[#000] text-base font-semibold leading-normal mb-4'>Remarketing & Retargeting</h2>
-                                        <p className='text-[#000] text-xs font-normal pt-5 text-start leading-[26px]'>We capture the attention of website visitors who haven't converted yet, bringing them back with targeted ads.</p>
+                                        <h2 className='text-[#000] text-base font-semibold leading-normal'>Remarketing & Retargeting</h2>
+                                        <p className='text-[#000] text-xs font-normal pt-6 text-start leading-[26px]'>We capture the attention of website visitors who haven't converted yet, bringing them back with targeted ads.</p>
                                     </div>
                                 </div>
                             </div>
@@ -352,8 +352,8 @@ const sem = () => {
 
                                         />
                                     </div>
-                                    <h2 className='xl:text-[18px] lg:text-base text-[18px] mb-4 font-medium text-[#efefef] leading-normal'>Data-Driven Approach</h2>
-                                    <p className='text-[14px] font-medium text-[#878787] leading-[1.7em]'>We leverage data insights to optimize your campaigns for maximum effectiveness.</p>
+                                    <h2 className='text-base font-gilroy mb-6 font-semibold text-[#efefef] leading-normal'>Data-Driven Approach</h2>
+                                    <p className='text-xs font-semibold text-[#878787] leading-[26px]'>We leverage data insights to optimize your campaigns for maximum effectiveness.</p>
 
                                 </div>
                             </div>
@@ -369,8 +369,8 @@ const sem = () => {
 
                                         />
                                     </div>
-                                    <h2 className='xl:text-[18px] lg:text-base text-[18px] mb-4 font-medium text-[#efefef] leading-normal'>Transparent Reporting</h2>
-                                    <p className='text-[14px] font-medium text-[#878787] leading-[1.7em]'>We provide regular reports with key metrics and actionable recommendations.</p>
+                                    <h2 className='text-base font-gilroy mb-6 font-semibold text-[#efefef] leading-normal'>Transparent Reporting</h2>
+                                    <p className='text-xs font-semibold text-[#878787] leading-[26px]'>We provide regular reports with key metrics and actionable recommendations.</p>
 
                                 </div>
                             </div>
@@ -386,8 +386,8 @@ const sem = () => {
 
                                         />
                                     </div>
-                                    <h2 className='xl:text-[18px] lg:text-base text-[18px] mb-4 font-medium text-[#efefef] leading-normal'>Experienced Team</h2>
-                                    <p className='text-[14px] font-medium text-[#878787] leading-[1.7em]'>Our team of certified SEM specialists has a proven track record of success.</p>
+                                    <h2 className='text-base font-gilroy mb-6 font-semibold text-[#efefef] leading-normal'>Experienced Team</h2>
+                                    <p className='text-xs font-semibold text-[#878787] leading-[26px]'>Our team of certified SEM specialists has a proven track record of success.</p>
                                 </div>
                             </div>
                             <div class="powerbox flex items-start justify-center md:w-[95%] w-[280px] m-auto mb-5  xl:h-[210px] lg:h-[240px] h-[240px] p-[10px] pt-6 border border-[#333] rounded-[10px]">
@@ -402,8 +402,8 @@ const sem = () => {
 
                                         />
                                     </div>
-                                    <h2 className='xl:text-[18px] lg:text-base text-[18px] mb-4 font-medium text-[#efefef] leading-normal'>Focus on ROI</h2>
-                                    <p className='text-[14px] font-medium text-[#878787] leading-[1.7em]'>We prioritize delivering measurable results that contribute to your business goals.</p>
+                                    <h2 className='text-base font-gilroy mb-6 font-semibold text-[#efefef] leading-normal'>Focus on ROI</h2>
+                                    <p className='text-xs font-semibold text-[#878787] leading-[26px]'>We prioritize delivering measurable results that contribute to your business goals.</p>
                                 </div>
                             </div>
                         </div>
@@ -445,7 +445,7 @@ const sem = () => {
             <section className='sstfaq relative overflow-hidden font-gilroy'>
                 <div className="relative px-4 md:px-12 pt-8 pb-8 z-20">
                     <div>
-                        <h3 className='text-[28px] font-semibold text-[#000000] leading-[1.5em] font-gilroy mb-2'>FAQ's</h3>
+                        <h3 className='text-[32px] font-semibold text-[#000000] leading-[1.5em] font-gilroy mb-2'>FAQ's</h3>
                     </div>
                     <div className='md:flex items-center justify-start mt-6'>
                         <div className='items-start lg:justify-start justify-center gap-7 w-full'>

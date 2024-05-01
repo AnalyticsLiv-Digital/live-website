@@ -7,8 +7,9 @@ import { FaYoutube } from "react-icons/fa"
 import { FaInstagramSquare } from "react-icons/fa"
 import { FaPhoneVolume } from "react-icons/fa6"
 import { IoIosMail } from "react-icons/io"
-import { FaLocationDot } from "react-icons/fa6";
+// import { FaLocationDot } from "react-icons/fa6";
 import Link from 'next/link'
+import { FaSquareXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
     const backgroundImageUrl = 'url("/src/assets/MAP.png")';
@@ -69,6 +70,7 @@ const Footer = () => {
                                         </div>
                                         <div className='social flex items-center justify-start lg:pl-0 -mr-[5px] text-white'>
                                             <a href="https://m.facebook.com/100070503960704/"><FaSquareFacebook className='w-[20px] h-[20px] mt-4 mr-2' /></a>
+                                            <a href="https://twitter.com/AnalyticsLiv"><FaSquareXTwitter className='w-[20px] h-[20px] mt-4 mx-2' /></a>
                                             <a href="https://in.linkedin.com/company/analytics-liv-digital/"><FaLinkedin className='w-[20px] h-[20px] mt-4 mx-2' /></a>
                                             <a href="https://www.youtube.com/channel/UCSU9utLB2PDe4VcXiI5kMFw"><FaYoutube className='w-[20px] h-[20px] mt-4 mx-2' /></a>
                                             <a href="https://www.instagram.com/analyticsliv_digital/"><FaInstagramSquare className='w-[20px] h-[20px] mt-4 mx-2' /></a>

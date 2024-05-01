@@ -113,7 +113,7 @@ const customersegmentation = () => {
                     <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 h-full z-20">
                         <div className="z-10 flex lg:flex-nowrap items-center flex-wrap justify-between gap-7 pb-8">
                             <div className="space-y-4 w-full lg:w-1/2 lg:order-1 order-2">
-                                <h1 className="2xl:text-[33px] lg:text-[28px] text-[27px] leading-[1.7em] font-['Poppins'] font-semibold text-maintext pt-4">
+                                <h1 className="text-[32px] leading-[1.7em] font-gilroy font-semibold text-maintext pt-4">
                                     Unleash the Power of Your Audience: Customer Segmentation with AnalyticsLiv
                                 </h1>
                                 <div className='flex max-[425px]:flex-wrap flex-nowrap items-center gap-5'>
@@ -159,11 +159,11 @@ const customersegmentation = () => {
                 <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
                     <div>
                         <div className='text-start'>
-                            <h2 className='text-maintext lg:text-[28px] text-2xl font-semibold not-italic text-left block mb-2'>Why Customer Segmentation Matters</h2>
-                            <p className='text-[15px] font-medium not-italic text-left block mb-2'>Imagine trying to sell the same product to everyone who walks into your store. It wouldn't be very effective, right? The same goes for online marketing.</p>
+                            <h2 className='text-maintext text-[32px] font-semibold font-gilroy leading-normal text-left block mb-2'>Why Customer Segmentation Matters</h2>
+                            <p className='text-base font-medium font-gilroy leading-normal text-left block mb-2'>Imagine trying to sell the same product to everyone who walks into your store. It wouldn't be very effective, right? The same goes for online marketing.</p>
                         </div>
                         <div>
-                            <p className='text-[17px] font-medium not-italic text-left block mb-2'>
+                            <p className='text-[18px] font-medium font-gilroy leading-normal text-left block mb-2'>
                                 Customer segmentation allows you to group your audience into distinct categories based on shared characteristics. This helps you:
                             </p>
                         </div>
@@ -180,9 +180,9 @@ const customersegmentation = () => {
                                             className='transform translate-x-[-20px] transition-transform duration-300 ease-linear group-hover:translate-x-0'
                                         />
                                     </div>
-                                    <h6 className='text-[17px] font-normal text-[#000] leading-normal'>Personalize your marketing messages</h6>
+                                    <h6 className='text-[#000] text-base font-semibold leading-normal font-gilroy'>Personalize your marketing messages</h6>
                                 </div>
-                                <p className='md:text-[15px] text-[14px] font-light text-[#000] leading-[1.7em]'>Speak directly to each segment's needs and interests, leading to higher engagement and conversions.</p>
+                                <p className='text-[#000] text-xs font-normal leading-[22px] pt-5 text-start'>Speak directly to each segment's needs and interests, leading to higher engagement and conversions.</p>
                             </div>
                             <div className="second group bg-white border shadow-serviceoffer border-solid border-[#FDFDFD] rounded-[10px] p-5">
                                 <div className="flex flex-col items-start justify-start gap-4 pb-4">
@@ -196,9 +196,9 @@ const customersegmentation = () => {
                                             className='transform translate-x-[-20px] transition-transform duration-300 ease-linear group-hover:translate-x-0'
                                         />
                                     </div>
-                                    <h6 className='text-[17px] font-normal text-[#000] leading-normal'>Optimize your marketing spend</h6>
+                                    <h6 className='text-[#000] text-base font-semibold leading-normal font-gilroy'>Optimize your marketing spend</h6>
                                 </div>
-                                <p className='md:text-[15px] text-[14px] font-light text-[#000] leading-[1.7em]'>Allocate resources towards campaigns that resonate most with each segment.</p>
+                                <p className='text-[#000] text-xs font-normal leading-[22px] pt-5 text-start'>Allocate resources towards campaigns that resonate most with each segment.</p>
                             </div>
                             <div className="third group bg-white border shadow-serviceoffer border-solid border-[#FDFDFD] rounded-[10px] p-5">
                                 <div className="flex flex-col items-start justify-start gap-4 pb-4">
@@ -212,9 +212,9 @@ const customersegmentation = () => {
                                             className='transform translate-x-[-20px] transition-transform duration-300 ease-linear group-hover:translate-x-0'
                                         />
                                     </div>
-                                    <h6 className='text-[17px] font-normal text-[#000] leading-normal'>Develop targeted product offerings</h6>
+                                    <h6 className='text-[#000] text-base font-semibold leading-normal font-gilroy'>Develop targeted product offerings</h6>
                                 </div>
-                                <p className='md:text-[15px] text-[14px] font-light text-[#000] leading-[1.7em]'>Tailor your products or services to better suit specific customer segments.</p>
+                                <p className='text-[#000] text-xs font-normal leading-[22px] pt-5 text-start'>Tailor your products or services to better suit specific customer segments.</p>
                             </div>
                         </div>
                     </div>
@@ -225,9 +225,9 @@ const customersegmentation = () => {
                 <div className='relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 z-20'>
                     <div>
                         <div className='flex items-center justify-start'>
-                            <h2 className='text-[#ffffff] lg:text-[28px] leading-[1.5em] text-[20px] font-semibold text-center mb-2'>How AnalyticsLiv Does Customer Segmentation</h2>
+                            <h2 className='text-[#ffffff] text-[32px] font-semibold font-gilroy leading-normal text-center mb-2'>How AnalyticsLiv Does Customer Segmentation</h2>
                         </div>
-                        <p className='text-[#ffffff] leading-[1.5em] text-[16px] font-medium mt-5'>At AnalyticsLiv, we leverage advanced data analytics techniques to uncover hidden patterns within your customer data. Our process involves</p>
+                        <p className='text-[#ffffff] leading-[1.5em] text-[18px] font-normal mt-5'>At AnalyticsLiv, we leverage advanced data analytics techniques to uncover hidden patterns within your customer data. Our process involves</p>
                         <div class="flex flex-wrap items-center justify-center pt-[50px]">
                             <div className='lg:w-1/2 w-full'>
                                 <div className='grid lg:grid-cols-1 sm:grid-cols-2 lg:gap-3 gap-7'>
@@ -242,9 +242,9 @@ const customersegmentation = () => {
                                                     priority={true}
 
                                                 />
-                                                <h2 className='text-[18px] mb-2 font-medium text-[#efefef] leading-normal'>User Input</h2>
+                                                <h2 className='text-[#efefef] text-base font-semibold leading-normal font-gilroy'>User Input</h2>
                                             </div>
-                                            <p className='text-[14px] font-medium text-[#878787] leading-[1.7em]'>The input from the user would typically be a csv file or an excel sheet. This module is responsible for validation, storage, and security of the data that will be provided as an input by the users.</p>
+                                            <p className='text-[#878787] text-[13px] font-normal leading-[22px]'>The input from the user would typically be a csv file or an excel sheet. This module is responsible for validation, storage, and security of the data that will be provided as an input by the users.</p>
                                         </div>
                                     </div>
                                     <div class="flex items-start cswebbox  p-[10px] pt-6 border border-[#333] rounded-[10px]">
@@ -258,9 +258,9 @@ const customersegmentation = () => {
                                                     priority={true}
 
                                                 />
-                                                <h2 className='text-[18px] mb-2 font-medium text-[#efefef] leading-normal'>Data Preparation</h2>
+                                                <h2 className='text-[#efefef] text-base font-semibold leading-normal font-gilroy'>Data Preparation</h2>
                                             </div>
-                                            <p className='text-[14px] font-medium text-[#878787] leading-[1.7em]'>The data uploaded by the users cannot be readily used for segmentation. Based on the attributes required for segmentation, the raw data needs to be converted into analysis-specific data. The functionality of this module is to facilitate data preparation</p>
+                                            <p className='text-[#878787] text-[13px] font-normal leading-[22px]'>The data uploaded by the users cannot be readily used for segmentation. Based on the attributes required for segmentation, the raw data needs to be converted into analysis-specific data. The functionality of this module is to facilitate data preparation</p>
 
                                         </div>
                                     </div>
@@ -277,9 +277,9 @@ const customersegmentation = () => {
                                                     priority={true}
 
                                                 />
-                                                <h2 className='text-[18px] mb-2 font-medium text-[#efefef] leading-normal'>Clustering Algorithm</h2>
+                                                <h2 className='text-[#efefef] text-base font-semibold leading-normal font-gilroy'>Clustering Algorithm</h2>
                                             </div>
-                                            <p className='text-[14px] font-medium text-[#878787] leading-[1.7em]'>This module will contain the implementation of the chosen clustering algorithm. Connection between this module and the ones that precede and follow should be robust and flexible, as this module will undergo a lot of changes due to algorithm tweaking.</p>
+                                            <p className='text-[#878787] text-[13px] font-normal leading-[22px]'>This module will contain the implementation of the chosen clustering algorithm. Connection between this module and the ones that precede and follow should be robust and flexible, as this module will undergo a lot of changes due to algorithm tweaking.</p>
 
                                         </div>
                                     </div>
@@ -294,9 +294,9 @@ const customersegmentation = () => {
                                                     priority={true}
 
                                                 />
-                                                <h2 className='text-[18px] mb-2 font-medium text-[#efefef] leading-normal'>Insights & Reporting</h2>
+                                                <h2 className='text-[#efefef] text-base font-semibold leading-normal font-gilroy'>Insights & Reporting</h2>
                                             </div>
-                                            <p className='text-[14px] font-medium text-[#878787] leading-[1.7em]'>We provide clear reports outlining customer segments, their characteristics, and actionable insights for targeted marketing strategies.</p>
+                                            <p className='text-[#878787] text-[13px] font-normal leading-[22px]'>We provide clear reports outlining customer segments, their characteristics, and actionable insights for targeted marketing strategies.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -313,13 +313,13 @@ const customersegmentation = () => {
             <section className='csworkflo font-gilroy'>
                 <div className='relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 z-20'>
                     <div className='flex items-center justify-start'>
-                        <h2 className='text-txt lg:text-[28px] leading-[1.5em] text-[20px] font-semibold text-center mb-2'>Our Customer Segmentation Workflow</h2>
+                        <h2 className='text-txt leading-[1.5em] text-[32px] font-semibold text-center mb-2'>Our Customer Segmentation Workflow</h2>
                     </div>
-                    <p className='text-txt leading-[1.5em] text-[16px] font-medium mb-5'>Here's a simplified view of our customer segmentation workflow</p>
+                    <p className='text-txt leading-[1.5em] text-[18px] font-normal mb-5'>Here's a simplified view of our customer segmentation workflow</p>
                     <div className='py-10'>
                         <Slider {...settings}>
                             <div aria-hidden="true" className="">
-                                <div className='cs1 min-[600px]:w-[90%] w-[300px] xl:h-[215px] min-[601px]:h-[255px] h-[260px] m-auto text-center rounded-[10px] border border-solid border-[#E2E2E2] bg-[#fff] hover:shadow-serviceoffer p-4'>
+                                <div className='cs1 min-[600px]:w-[90%] w-[300px] xl:h-[260px] min-[601px]:h-[280px] h-[260px] m-auto text-center rounded-[10px] border border-solid border-[#E2E2E2] bg-[#fff] hover:shadow-serviceoffer p-4'>
                                     <div className='ursor-pointer p-5'>
                                         <div className='inbox relative pb-4 flex items-center justify-center'>
                                             <Image
@@ -329,13 +329,13 @@ const customersegmentation = () => {
                                                 alt="Picture of the author"
                                             />
                                         </div>
-                                        <h2 className='text-[18px] mb-2 font-medium text-[#000000] leading-normal'>Project Kickoff</h2>
-                                        <p className='text-[14px] font-medium text-[#000000] leading-[1.7em]'>We discuss your business goals and target audience.</p>
+                                        <h2 className='text-[#000] text-base font-semibold leading-normal pt-6 font-gilroy'>Project Kickoff</h2>
+                                        <p className='text-[#000] text-xs font-normal leading-[22px] font-gilroy pt-5'>We discuss your business goals and target audience.</p>
                                     </div>
                                 </div>
                             </div>
                             <div aria-hidden="true" className="">
-                                <div className='cs2 min-[600px]:w-[90%] w-[300px] xl:h-[215px] min-[601px]:h-[255px] h-[260px] m-auto text-center rounded-[10px] border border-solid border-[#E2E2E2] bg-[#fff] hover:shadow-serviceoffer p-4'>
+                                <div className='cs2 min-[600px]:w-[90%] w-[300px] xl:h-[260px] min-[601px]:h-[280px] h-[260px] m-auto text-center rounded-[10px] border border-solid border-[#E2E2E2] bg-[#fff] hover:shadow-serviceoffer p-4'>
                                     <div className='ursor-pointer p-5'>
                                         <div className='inbox relative pb-4 flex items-center justify-center'>
                                             <Image
@@ -345,13 +345,13 @@ const customersegmentation = () => {
                                                 alt="Picture of the author"
                                             />
                                         </div>
-                                        <h2 className='text-[18px] mb-2 font-medium text-[#000000] leading-normal'>Data Acquisition</h2>
-                                        <p className='text-[14px] font-medium text-[#000000] leading-[1.7em]'>We help you identify and collect relevant customer data sources.</p>
+                                        <h2 className='text-[#000] text-base font-semibold leading-normal pt-6 font-gilroy'>Data Acquisition</h2>
+                                        <p className='text-[#000] text-xs font-normal leading-[22px] font-gilroy pt-5'>We help you identify and collect relevant customer data sources.</p>
                                     </div>
                                 </div>
                             </div>
                             <div aria-hidden="true" className="">
-                                <div className='cs3 min-[600px]:w-[90%] w-[300px] xl:h-[215px] min-[601px]:h-[255px] h-[260px] m-auto text-center rounded-[10px] border border-solid border-[#E2E2E2] bg-[#fff] hover:shadow-serviceoffer p-4'>
+                                <div className='cs3 min-[600px]:w-[90%] w-[300px] xl:h-[260px] min-[601px]:h-[280px] h-[260px] m-auto text-center rounded-[10px] border border-solid border-[#E2E2E2] bg-[#fff] hover:shadow-serviceoffer p-4'>
                                     <div className='ursor-pointer p-5'>
                                         <div className='inbox relative pb-4 flex items-center justify-center'>
                                             <Image
@@ -361,13 +361,13 @@ const customersegmentation = () => {
                                                 alt="Picture of the author"
                                             />
                                         </div>
-                                        <h2 className='text-[18px] mb-2 font-medium text-[#000000] leading-normal'>Data Exploration & Analysis</h2>
-                                        <p className='text-[14px] font-medium text-[#000000] leading-[1.7em]'>Our data analysts delve into your data to uncover segmentation opportunities.</p>
+                                        <h2 className='text-[#000] text-base font-semibold leading-normal pt-6 font-gilroy'>Data Exploration & Analysis</h2>
+                                        <p className='text-[#000] text-xs font-normal leading-[22px] font-gilroy pt-5'>Our data analysts delve into your data to uncover segmentation opportunities.</p>
                                     </div>
                                 </div>
                             </div>
                             <div aria-hidden="true" className="">
-                                <div className='cs4 min-[600px]:w-[90%] w-[300px] xl:h-[215px] min-[601px]:h-[255px] h-[260px] m-auto text-center rounded-[10px] border border-solid border-[#E2E2E2] bg-[#fff] hover:shadow-serviceoffer p-4'>
+                                <div className='cs4 min-[600px]:w-[90%] w-[300px] xl:h-[260px] min-[601px]:h-[280px] h-[260px] m-auto text-center rounded-[10px] border border-solid border-[#E2E2E2] bg-[#fff] hover:shadow-serviceoffer p-4'>
                                     <div className='ursor-pointer p-5'>
                                         <div className='inbox relative pb-4 flex items-center justify-center'>
                                             <Image
@@ -377,13 +377,13 @@ const customersegmentation = () => {
                                                 alt="Picture of the author"
                                             />
                                         </div>
-                                        <h2 className='text-[18px] mb-2 font-medium text-[#000000] leading-normal'>Customer Segment Creation</h2>
-                                        <p className='text-[14px] font-medium text-[#000000] leading-[1.7em]'>We define distinct customer segments based on shared characteristics.</p>
+                                        <h2 className='text-[#000] text-base font-semibold leading-normal pt-6 font-gilroy'>Customer Segment Creation</h2>
+                                        <p className='text-[#000] text-xs font-normal leading-[22px] font-gilroy pt-5'>We define distinct customer segments based on shared characteristics.</p>
                                     </div>
                                 </div>
                             </div>
                             <div aria-hidden="true" className="">
-                                <div className='cs5 min-[600px]:w-[90%] w-[300px] xl:h-[215px] min-[601px]:h-[255px] h-[260px] m-auto text-center rounded-[10px] border border-solid border-[#E2E2E2] bg-[#fff] hover:shadow-serviceoffer p-4'>
+                                <div className='cs5 min-[600px]:w-[90%] w-[300px] xl:h-[260px] min-[601px]:h-[280px] h-[260px] m-auto text-center rounded-[10px] border border-solid border-[#E2E2E2] bg-[#fff] hover:shadow-serviceoffer p-4'>
                                     <div className='ursor-pointer p-5'>
                                         <div className='inbox relative pb-4 flex items-center justify-center'>
                                             <Image
@@ -393,13 +393,13 @@ const customersegmentation = () => {
                                                 alt="Picture of the author"
                                             />
                                         </div>
-                                        <h2 className='text-[18px] mb-2 font-medium text-[#000000] leading-normal'>Insights & Recommendations</h2>
-                                        <p className='text-[14px] font-medium text-[#000000] leading-[1.7em]'>We deliver a comprehensive report with actionable insights for each segment.</p>
+                                        <h2 className='text-[#000] text-base font-semibold leading-normal pt-6 font-gilroy'>Insights & Recommendations</h2>
+                                        <p className='text-[#000] text-xs font-normal leading-[22px] font-gilroy pt-5'>We deliver a comprehensive report with actionable insights for each segment.</p>
                                     </div>
                                 </div>
                             </div>
                             <div aria-hidden="true" className="">
-                                <div className='cs6 min-[600px]:w-[90%] w-[300px] xl:h-[215px] min-[601px]:h-[255px] h-[260px] m-auto text-center rounded-[10px] border border-solid border-[#E2E2E2] bg-[#fff] hover:shadow-serviceoffer p-4'>
+                                <div className='cs6 min-[600px]:w-[90%] w-[300px] xl:h-[260px] min-[601px]:h-[280px] h-[260px] m-auto text-center rounded-[10px] border border-solid border-[#E2E2E2] bg-[#fff] hover:shadow-serviceoffer p-4'>
                                     <div className='ursor-pointer p-5'>
                                         <div className='inbox relative pb-4 flex items-center justify-center'>
                                             <Image
@@ -409,8 +409,8 @@ const customersegmentation = () => {
                                                 alt="Picture of the author"
                                             />
                                         </div>
-                                        <h2 className='text-[18px] mb-2 font-medium text-[#000000] leading-normal'>Ongoing Support</h2>
-                                        <p className='text-[14px] font-medium text-[#000000] leading-[1.7em]'>We offer ongoing guidance on implementing segmentation strategies for your marketing efforts.</p>
+                                        <h2 className='text-[#000] text-base font-semibold leading-normal pt-6 font-gilroy'>Ongoing Support</h2>
+                                        <p className='text-[#000] text-xs font-normal leading-[22px] font-gilroy pt-5'>We offer ongoing guidance on implementing segmentation strategies for your marketing efforts.</p>
                                     </div>
                                 </div>
                             </div>
@@ -418,10 +418,10 @@ const customersegmentation = () => {
                     </div>
                 </div>
             </section>
-            <section className='cscasestudy progracasestudy relative font-gilroy overflow-hidden font-gilroy'>
+            <section className='cscasestudy progracasestudy relative overflow-hidden font-gilroy'>
                 <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16 relative z-20'>
                     <div className='flex items-center justify-center pb-5'>
-                        <h2 className='text-[28px] font-semibold text-[#18265b] leading-[27px] text-center tracking-widest'>Check out our latest Case Studies</h2>
+                        <h2 className='text-[32px] font-semibold text-[#18265b] leading-[27px] text-center tracking-widest'>Check out our latest Case Studies</h2>
                     </div>
                     <div className='text-center lg:flex items-start justify-between gap-[30px]'>
                         <div className='lg:w-[66%]'>
@@ -559,7 +559,7 @@ const customersegmentation = () => {
             <section className='csfaq crofaq relative overflow-hidden font-gilroy'>
                 <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 z-20">
                     <div>
-                        <h3 className='text-[28px] font-semibold text-[#000000] leading-[1.5em] font-gilroy mb-2'>FAQ's</h3>
+                        <h3 className='text-[32px] font-semibold text-[#000000] leading-[1.5em] font-gilroy mb-2'>FAQ's</h3>
                     </div>
                     <div className='md:flex items-center justify-start mt-10'>
                         <div className='items-start lg:justify-start justify-center gap-7 w-full'>

@@ -100,10 +100,10 @@ const cro = () => {
                     <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 h-full z-20">
                         <div className="z-10 flex lg:flex-nowrap items-center flex-wrap justify-between gap-7 pb-8">
                             <div className="w-full lg:w-1/2 lg:order-1 order-2">
-                                <h1 className="2xl:text-[33px] lg:text-[28px] leading-[1.7em] font-['Poppins'] font-semibold text-maintext pt-4 mb-[10px]">
+                                <h1 className="lg:text-[41px] text-[32px] lg:leading-[62px] leading-[32px] text-maintext pt-4 mb-[10px]">
                                     Ignite Your Online Growth with Conversion Focused Analytics
                                 </h1>
-                                <h2 className="font-Gilroy-SemiBold text-[20px] leading-[1.7em] font-medium text-maintext mb-5">Unlock Explosive Revenue with Scientific CRO Strategies</h2>
+                                <h2 className="font-Gilroy-SemiBold text-[20px] leading-[30px] font-normal text-maintext mb-5">Unlock Explosive Revenue with Scientific CRO Strategies</h2>
                                 {/* <p className="text-base font-normal leading-[28px] font-[Poppins] mb-[10px]">
                                     At Analyticsliv.com, we believe in the power of data-driven insights to supercharge your online success. Our scientific approach to Conversion Rate Optimization (CRO) is designed to ignite explosive growth, turning your website into a revenue-generating powerhouse.
                                 </p> */}
@@ -142,16 +142,16 @@ const cro = () => {
             <section className='crosolutions overflow-hidden'>
                 <div className='relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16'>
                     <div>
-                        <div className='flex items-center justify-start pb-7'>
-                            <h3 className='text-[#302E53] font-gilroy text-[28px] font-semibold leading-[1.5em] not-italic pb-5'>With our cutting-edge CRO solutions, you'll experience</h3>
+                        <div className='flex items-center justify-center pb-7'>
+                            <h3 className='text-[#302E53] font-gilroy text-[32px] text-center font-semibold leading-[1.5em] not-italic pb-5'>With our cutting-edge CRO solutions, you'll experience</h3>
                         </div>
                         <div className='grid lg:grid-cols-3 md:grid-cols-2 items-start justify-center gap-10'>
                             <div className='bg-[#20dc8617] xl:h-[340px] lg:h-[410px] md:h-[335px] rounded-[10px] py-6 px-4 hover:shadow-programeasure'>
                                 <div className='w-full'></div>
                                 <div className='mb-5 w-[50px] h-[50px]'><img src="/Ad_Format.png" alt="" /></div>
                                 <div className='w-full'></div>
-                                <h3 className='text-[#1D2124] text-[18px] font-semibold font-Gilroy-SemiBold mb-[20px]'>Revenue Acceleration</h3>
-                                <ul className='text-[#646464] text-[15px] font-medium font-gilroy2 leading-6 ml-[15px] mb-5'>
+                                <h3 className='text-[#1D2124] text-base leading-normal font-semibold font-Gilroy-SemiBold mb-[20px]'>Revenue Acceleration</h3>
+                                <ul className='text-[#646464] text-[13px] font-normal font-gilroy2 leading-[22px] ml-[15px] mb-5'>
                                     <li className='mb-2 flex items-start gap-1'>
                                         <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
                                         <p>Laser-focused user journeys engineered for conversions</p></li>
@@ -167,8 +167,8 @@ const cro = () => {
                                 <div className='w-full'></div>
                                 <div className='mb-5 w-[50px] h-[50px]'><img src="/Ad_Format.png" alt="" /></div>
                                 <div className='w-full'></div>
-                                <h3 className='text-[#1D2124] text-[18px] font-semibold font-Gilroy-SemiBold mb-[20px]'>Friction-Free User Experiences</h3>
-                                <ul className='text-[#646464] text-[15px] font-medium font-gilroy2 leading-6 ml-[15px] mb-5'>
+                                <h3 className='text-[#1D2124] text-base leading-normal font-semibold font-Gilroy-SemiBold mb-[20px]'>Friction-Free User Experiences</h3>
+                                <ul className='text-[#646464] text-[13px] font-normal font-gilroy2 leading-[22px] ml-[15px] mb-5'>
                                     <li className='mb-2 flex items-start gap-1'>
                                         <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
                                         <p>Deeply understand your audience's motivations and pain points</p></li>
@@ -184,8 +184,8 @@ const cro = () => {
                                 <div className='w-full'></div>
                                 <div className='mb-5 w-[50px] h-[50px]'><img src="/Ad_Format.png" alt="" /></div>
                                 <div className='w-full'></div>
-                                <h3 className='text-[#1D2124] text-[18px] font-semibold font-Gilroy-SemiBold mb-[20px]'>Relentless Testing and Optimization</h3>
-                                <ul className='text-[#646464] text-[15px] font-medium font-gilroy2 leading-6 ml-[15px] mb-5'>
+                                <h3 className='text-[#1D2124] text-base leading-normal font-semibold font-Gilroy-SemiBold mb-[20px]'>Relentless Testing and Optimization</h3>
+                                <ul className='text-[#646464] text-[13px] font-normal font-gilroy2 leading-[22px] ml-[15px] mb-5'>
                                     <li className='mb-2 flex items-start gap-1'>
                                         <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
                                         <p>Continuous experimentation with A/B tests and multivariate campaigns</p></li>
@@ -204,15 +204,15 @@ const cro = () => {
             <section className='fuel relative overflow-hidden'>
                 <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 z-20">
                     <div>
-                        <h3 className='text-[28px] font-semibold text-black leading-[1.5em] font-rbt text-center mb-4'>Our Proven FUEL Methodology for Explosive Growth</h3>
+                        <h3 className='text-[32px] font-semibold text-black leading-[1.5em] font-rbt text-center mb-4'>Our Proven CRO Methodology</h3>
                     </div>
                     <p className='text-[18px] font-medium text-black leading-[1.5em] font-rbt text-center mb-4'>We've refined a battle-tested process to propel your online success</p>
                     <div className='mb-[35px] md:w-[90%] m-auto'>
                         <div className='innerfuel mt-10'>
                             <ul className='fs relative mb-[55px] pt-[70px] flex items-center md:flex-row flex-col'>
                                 <li className='relative text-start md:pr-10 text-[#243238] sm:w-1/2 w-full md:order-1 order-2'>
-                                    <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[20px] leading-8 font-semibold'>Define Your Goals and Objectives</h4>
-                                    <div className='text-[#646464] text-[15px] font-medium font-gilroy2 leading-6 mb-5'>
+                                    <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[17px] leading-8 font-semibold'>Define Your Goals and Objectives</h4>
+                                    <div className='text-[#646464] text-[14px] font-normal font-gilroy2 leading-6 mb-5'>
                                         <div className='mb-2 flex items-start gap-1'>
                                             <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
                                             <p>Start by clearly defining the specific goals you want to achieve through CRO efforts. This could be increasing signups for free trials, generating leads through contact forms, or boosting sales of specific services.</p></div>
@@ -222,14 +222,14 @@ const cro = () => {
                                     </div>
                                 </li>
                                 <li className='relative md:pl-9 sm:w-1/2 w-full md:order-2 order-1 flex items-center md:justify-end justify-center'>
-                                    <img src="/CRO_Page_FLOW_IMG_1_Find.png" alt="" className='h-auto w-[350px]' />
+                                    <img src="/Fuel_Process_Step_1.png" alt="" className='h-auto w-[350px]' />
                                 </li>
                             </ul>
                             <ul className='sc relative mb-[55px] pt-[70px] flex items-center md:flex-row-reverse flex-col'>
                                 <li className='relative text-start md:pl-10 text-[#243238] sm:w-1/2 w-full md:order-1 order-2'>
-                                    <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[20px] leading-8 font-semibold'>Understand Your Users</h4>
-                                    <p className='text-[#646464] text-[18px] font-medium font-gilroy2 leading-6 mb-[10px]'>Conduct user research to understand your target audience's needs, pain points, and behavior on your website. Here are some methods:</p>
-                                    <div className='text-[#646464] text-[15px] font-medium font-gilroy2 leading-6 mb-5'>
+                                    <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[17px] leading-8 font-semibold'>Understand Your Users</h4>
+                                    <p className='text-[#646464] text-base font-medium font-gilroy2 leading-6 mb-[10px]'>Conduct user research to understand your target audience's needs, pain points, and behavior on your website. Here are some methods:</p>
+                                    <div className='text-[#646464] text-[14px] font-normal font-gilroy2 leading-6 mb-5'>
                                         <div className='cursor-pointer w-[90%] border border-solid border-[#30486a21] p-3 mb-[10px] rounded-[10px]' onClick={toggleFstVisibility}>
                                             <div className={`flex items-center justify-between ${isFstVisible ? 'mb-2' : 'mb-0'}`}>
                                                 <div className=' flex items-start gap-1 font-semibold'>
@@ -257,14 +257,14 @@ const cro = () => {
                                     </div>
                                 </li>
                                 <li className='relative md:pr-9 sm:w-1/2 w-full md:order-2 order-1 flex items-center md:justify-start justify-center'>
-                                    <img src="/CRO_Page_FLOW_IMG_2_Unify.png" alt="" className='h-auto w-[350px]' />
+                                    <img src="/Fuel_Process_Step_2.png" alt="" className='h-auto w-[350px]' />
                                 </li>
                             </ul>
                             <ul className='thr relative mb-[55px] pt-[70px] flex items-center md:flex-row flex-col'>
                                 <li className='relative text-start md:pr-10 text-[#243238] sm:w-1/2 w-full md:order-1 order-2'>
-                                    <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[20px] leading-8 font-semibold'>Conduct a CRO Audit</h4>
-                                    <p className='text-[#646464] text-[18px] font-medium font-gilroy2 leading-6 mb-[10px]'>Evaluate your website's current performance from a conversion optimization perspective. Identify elements that might be hindering user experience or hindering conversions. Consider these aspects</p>
-                                    <div className='text-[#646464] text-[15px] font-medium font-gilroy2 leading-6 mb-5'>
+                                    <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[17px] leading-8 font-semibold'>Conduct a CRO Audit</h4>
+                                    <p className='text-[#646464] text-base font-medium font-gilroy2 leading-6 mb-[10px]'>Evaluate your website's current performance from a conversion optimization perspective. Identify elements that might be hindering user experience or hindering conversions. Consider these aspects</p>
+                                    <div className='text-[#646464] text-[14px] font-normal font-gilroy2 leading-6 mb-5'>
                                         <div className='cursor-pointer w-[90%] border border-solid border-[#30486a21] p-3 mb-[10px] rounded-[10px]' onClick={toggelThdVisibility}>
                                             <div className={`flex items-center justify-between ${isThdVisible ? 'mb-2' : 'mb-0'}`}>
                                                 <div className=' flex items-start gap-1 font-semibold'>
@@ -320,39 +320,39 @@ const cro = () => {
                                     </div>
                                 </li>
                                 <li className='relative md:pl-9 sm:w-1/2 w-full md:order-2 order-1 flex items-center md:justify-end justify-center'>
-                                    <img src="/CRO_Page_FLOW_IMG_1_Find.png" alt="" className='h-auto w-[350px]' />
+                                    <img src="/Fuel_Process_Step_3.png" alt="" className='h-auto w-[350px]' />
                                 </li>
                             </ul>
                             <ul className='fr relative mb-[55px] pt-[70px] flex items-center md:flex-row-reverse flex-col'>
                                 <li className='relative text-start md:pl-10 text-[#243238] sm:w-1/2 w-full md:order-1 order-2'>
-                                    <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[20px] leading-8 font-semibold'>Prioritize Opportunities for Improvement</h4>
-                                    <div className='text-[#646464] text-[15px] font-medium font-gilroy2 leading-6 mb-5'>
+                                    <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[17px] leading-8 font-semibold'>Prioritize Opportunities for Improvement</h4>
+                                    <div className='text-[#646464] text-[14px] font-normal font-gilroy2 leading-6 mb-5'>
                                         <div className='mb-2 flex items-start gap-1'>
                                             <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
                                             <p>Based on your user research and CRO audit findings, prioritize areas with the highest potential for improvement. Consider factors like impact on conversion rate, ease of implementation, and resource availability.</p></div>
                                     </div>
                                 </li>
                                 <li className='relative md:pl-9 sm:w-1/2 w-full md:order-2 order-1 flex items-center md:justify-start justify-center'>
-                                    <img src="/CRO_Page_FLOW_IMG_1_Find.png" alt="" className='h-auto w-[350px]' />
+                                    <img src="/Fuel_Process_Step_4.png" alt="" className='h-auto w-[350px]' />
                                 </li>
                             </ul>
                             <ul className='fv relative mb-[55px] pt-[70px] flex items-center md:flex-row flex-col'>
                                 <li className='relative text-start md:pr-10 text-[#243238] sm:w-1/2 w-full md:order-1 order-2'>
-                                    <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[20px] leading-8 font-semibold'>Develop Hypotheses for Testing</h4>
-                                    <div className='text-[#646464] text-[15px] font-medium font-gilroy2 leading-6 mb-5'>
+                                    <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[17px] leading-8 font-semibold'>Develop Hypotheses for Testing</h4>
+                                    <div className='text-[#646464] text-[14px] font-normal font-gilroy2 leading-6 mb-5'>
                                         <div className='mb-2 flex items-start gap-1'>
                                             <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
                                             <p>Formulate clear hypotheses about how specific changes to your website will impact conversion rates. These hypotheses should be based on user research and data insights.</p></div>
                                     </div>
                                 </li>
                                 <li className='relative md:pl-9 sm:w-1/2 w-full md:order-2 order-1 flex items-center md:justify-end justify-center'>
-                                    <img src="/CRO_Page_FLOW_IMG_1_Find.png" alt="" className='h-auto w-[350px]' />
+                                    <img src="/Fuel_Process_Step_5.png" alt="" className='h-auto w-[350px]' />
                                 </li>
                             </ul>
                             <ul className='six relative mb-[55px] pt-[70px] flex items-center md:flex-row-reverse flex-col'>
                                 <li className='relative text-start md:pl-10 text-[#243238] sm:w-1/2 w-full md:order-1 order-2'>
-                                    <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[20px] leading-8 font-semibold'>A/B Testing & Data Analysis</h4>
-                                    <div className='text-[#646464] text-[15px] font-medium font-gilroy2 leading-6 mb-5'>
+                                    <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[17px] leading-8 font-semibold'>A/B Testing & Data Analysis</h4>
+                                    <div className='text-[#646464] text-[14px] font-normal font-gilroy2 leading-6 mb-5'>
                                         <div className='mb-2 flex items-start gap-1'>
                                             <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
                                             <p>Implement A/B testing to compare different versions of your website elements and see which ones perform better. A/B testing allows you to test different hypotheses and gather data on which variations drive higher conversions.</p></div>
@@ -362,13 +362,13 @@ const cro = () => {
                                     </div>
                                 </li>
                                 <li className='relative md:pl-9 sm:w-1/2 w-full md:order-2 order-1 flex items-center md:justify-start justify-center'>
-                                    <img src="/CRO_Page_FLOW_IMG_1_Find.png" alt="" className='h-auto w-[350px]' />
+                                    <img src="/Fuel_Process_Step_6.png" alt="" className='h-auto w-[350px]' />
                                 </li>
                             </ul>
-                            <ul className='six relative mb-[55px] pt-[70px] flex items-center md:flex-row flex-col'>
+                            <ul className='seven relative mb-[55px] pt-[70px] flex items-center md:flex-row flex-col'>
                                 <li className='relative text-start md:pr-10 text-[#243238] sm:w-1/2 w-full md:order-1 order-2'>
-                                    <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[20px] leading-8 font-semibold'>Iteration & Optimization</h4>
-                                    <div className='text-[#646464] text-[15px] font-medium font-gilroy2 leading-6 mb-5'>
+                                    <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[17px] leading-8 font-semibold'>Iteration & Optimization</h4>
+                                    <div className='text-[#646464] text-[14px] font-normal font-gilroy2 leading-6 mb-5'>
                                         <div className='mb-2 flex items-start gap-1'>
                                             <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
                                             <p>Based on test results, implement the winning variations on your website.</p></div>
@@ -378,7 +378,7 @@ const cro = () => {
                                     </div>
                                 </li>
                                 <li className='relative md:pl-9 sm:w-1/2 w-full md:order-2 order-1 flex items-center md:justify-end justify-center'>
-                                    <img src="/CRO_Page_FLOW_IMG_1_Find.png" alt="" className='h-auto w-[350px]' />
+                                    <img src="/Fuel_Process_Step_7.png" alt="" className='h-auto w-[350px]' />
                                 </li>
                             </ul>
                         </div>
@@ -388,7 +388,7 @@ const cro = () => {
             <section className='progracasestudy relative font-gilroy overflow-hidden'>
                 <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16 relative z-20'>
                     <div className='flex items-center justify-center pb-5'>
-                        <h2 className='text-[28px] font-semibold text-[#18265b] leading-[27px] text-center tracking-widest'>Check out our latest Case Studies</h2>
+                        <h2 className='text-[32px] font-semibold text-[#18265b] leading-[27px] text-center tracking-widest'>Check out our latest Case Studies</h2>
                     </div>
                     <div className='text-center lg:flex items-start justify-between gap-[30px]'>
                         <div className='lg:w-[66%]'>
@@ -526,7 +526,7 @@ const cro = () => {
             <section className='crofaq relative overflow-hidden'>
                 <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 z-20">
                     <div>
-                        <h3 className='text-[28px] font-semibold text-[#000000] leading-[1.5em] font-gilroy mb-2'>FAQ's</h3>
+                        <h3 className='text-[32px] font-semibold text-[#000000] leading-[1.5em] font-gilroy mb-2'>FAQ's</h3>
                     </div>
                     <div className='md:flex items-center justify-start mt-10'>
                         <div className='items-start lg:justify-start justify-center gap-7 w-full'>
