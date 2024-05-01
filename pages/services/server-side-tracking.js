@@ -127,7 +127,7 @@ const Serversidetracking = () => {
                     <div className="relative px-4 md:px-12 pt-8 md:pt-[10px] pb-8 md:pb-16 h-full z-20">
                         <div className="z-10 flex lg:flex-nowrap items-center flex-wrap justify-between gap-7 pb-8">
                             <div className="w-full lg:w-1/2 lg:order-1 order-2 lg:mt-8">
-                                <h1 className="lg:text-[41px] text-[26px] lg:leading-[62px] leading-[32px] font-gilroy font-normal text-[#006EF5] mb-4">
+                                <h1 className="lg:text-[41px] text-[32px] lg:leading-[62px] leading-[32px] font-gilroy font-normal text-[#006EF5] mb-4">
                                     The Future of Performance Marketing: Server-Side Tracking
                                 </h1>
                                 <h2 className="font-gilroy text-[20px] leading-[30px] font-normal text-[#152e55] mb-5">Cookieless, Compliant Data with Server-Side Tracking</h2>
@@ -167,7 +167,7 @@ const Serversidetracking = () => {
             <section className='sstwhy relative wepappour overflow-hidden'>
                 <div className="relative px-4 md:px-12 pt-8 pb-8 md:pb-16 z-20">
                     <div>
-                        <h3 className='text-[26px] font-gilroy font-semibold text-[#18265b] leading-[1.5em]'>Why Server-Side Tracking Matters</h3>
+                        <h3 className='text-[32px] font-gilroy font-semibold text-[#18265b] leading-[1.5em]'>Why Server-Side Tracking Matters</h3>
                     </div>
                     <div className=''>
                         <h2 className='text-[19px] font-gilroy text-[#000] leading-[1.7em] my-5'>Traditional, client-side tracking relies on code placed on your website to collect user data. While convenient, it has limitations. Browser ad blockers can hinder data collection, and privacy regulations restrict how cookies can be used.</h2>
@@ -176,30 +176,30 @@ const Serversidetracking = () => {
                             <div className='fs border-[3px] border-[#00000014] border-solid hover:border-t-[#30486a] shadow-webappourexper rounded-b-[15px] p-5'>
                                 <div>
                                     <img src="/Data-Driven Approach blue.png" alt="" className='h-16 w-16' />
-                                    <h6 className='text-[15px] text-txt font-gilroy font-semibold mt-3 mb-5 leading-[27px]'>Enhanced Data Accuracy</h6>
+                                    <h6 className='text-base text-txt font-gilroy font-semibold mt-4 mb-6 leading-[27px]'>Enhanced Data Accuracy</h6>
                                 </div>
-                                <p className='text-[13px] font-gilroy2 font-medium leading-[32px]'>Overcome browser limitations and ad blockers to capture a more complete picture of user behavior.</p>
+                                <p className='text-xs font-gilroy2 font-normal leading-[22px]'>Overcome browser limitations and ad blockers to capture a more complete picture of user behavior.</p>
                             </div>
                             <div className='sd border-[3px] border-[#00000014] border-solid hover:border-t-[#30486a] shadow-webappourexper rounded-b-[15px] p-5'>
                                 <div>
                                     <img src="/Transparency You Can Trust blue.png" alt="" className='h-16 w-16' />
-                                    <h6 className='text-[15px] text-txt font-gilroy font-semibold mt-3 mb-5 leading-[27px]'>Improved Privacy Compliance</h6>
+                                    <h6 className='text-base text-txt font-gilroy font-semibold mt-4 mb-6 leading-[27px]'>Improved Privacy Compliance</h6>
                                 </div>
-                                <p className='text-[13px] font-gilroy2 font-medium leading-[32px]'>Mitigate privacy concerns by giving you more control over data collection and storage.</p>
+                                <p className='text-xs font-gilroy2 font-normal leading-[22px]'>Mitigate privacy concerns by giving you more control over data collection and storage.</p>
                             </div>
                             <div className='trd border-[3px] border-[#00000014] border-solid hover:border-t-[#30486a] shadow-webappourexper rounded-b-[15px] p-5'>
                                 <div>
                                     <img src="/Performance at the Forefront blue.png" alt="" className='h-16 w-16' />
-                                    <h6 className='text-[15px] text-txt font-gilroy font-semibold mt-3 mb-5 leading-[27px]'>Flexibility & Security</h6>
+                                    <h6 className='text-base text-txt font-gilroy font-semibold mt-4 mb-6 leading-[27px]'>Flexibility & Security</h6>
                                 </div>
-                                <p className='text-[13px] font-gilroy2 font-medium leading-[32px]'>Leverage server-side processing for complex data manipulation and analysis, ensuring data security.</p>
+                                <p className='text-xs font-gilroy2 font-normal leading-[22px]'>Leverage server-side processing for complex data manipulation and analysis, ensuring data security.</p>
                             </div>
                             <div className='trd border-[3px] border-[#00000014] border-solid hover:border-t-[#30486a] shadow-webappourexper rounded-b-[15px] p-5'>
                                 <div>
                                     <img src="/Custom_Analytics_Solution.png" alt="" className='h-16 w-16' />
-                                    <h6 className='text-[15px] text-txt font-gilroy font-semibold mt-3 mb-5 leading-[27px]'>Deeper User Insights</h6>
+                                    <h6 className='text-base text-txt font-gilroy font-semibold mt-4 mb-6 leading-[27px]'>Deeper User Insights</h6>
                                 </div>
-                                <p className='text-[13px] font-gilroy2 font-medium leading-[32px]'>Gain a more holistic understanding of user journeys by combining server-side data with traditional web analytics.</p>
+                                <p className='text-xs font-gilroy2 font-normal leading-[22px]'>Gain a more holistic understanding of user journeys by combining server-side data with traditional web analytics.</p>
                             </div>
                         </div>
                     </div>
@@ -209,7 +209,7 @@ const Serversidetracking = () => {
             <section className='sstchoose powerup relative overflow-hidden'>
                 <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 z-20">
                     <div>
-                        <h3 className='text-[26px] font-semibold text-white leading-[1.5em] font-gilroy'>Why Choose AnalyticsLiv for Server-Side Tracking?</h3>
+                        <h3 className='text-[32px] font-gilroy font-semibold text-[#fff] leading-[1.5em]'>Why Choose AnalyticsLiv for Server-Side Tracking?</h3>
                     </div>
                     <p className='text-[18px] font-gilroy text-[#fff] leading-[1.7em] my-5'>At AnalyticsLiv, we're experts in unlocking the power of server-side tracking. <br /> We offer:</p>
                     <div className='lg:flex items-center justify-start lg:mt-10'>
@@ -223,19 +223,19 @@ const Serversidetracking = () => {
                             <div className={`fs4m pwb flex items-start gap-5 w-full max-[350px]:w-[285px] bg-[#0000001f] p-[25px] pt-6 border border-[#131314] hover:shadow-mediadv360 rounded-[10px] ${isFs4mVisible ? 'xl:h-[180px] lg:h-[200px]' : 'h-[100px]'}`}>
                                 <div className='flex items-center justify-between w-full'>
                                     <div className='cursor-pointer w-full' onClick={toggleFs4mVisibility}>
-                                        <div className={`flex items-center justify-between gap-5 text-[#ffffff] ${isFs4mVisible ? 'mb-4' : 'mb-0'}`}>
+                                        <div className={`flex items-center justify-between gap-5 text-[#ffffff] ${isFs4mVisible ? 'mb-6' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <div className='inbox relative mr-[13px]'>
                                                     <img src="/Market.png" alt="" className='h-12 lg:w-[60px] w-12' />
                                                 </div>
-                                                <h2 className='text-[15px] font-medium text-[#ffffff] leading-normal'>Expertise & Experience</h2>
+                                                <h2 className='text-base font-semibold font-gilroy text-[#ffffff] leading-normal'>Expertise & Experience</h2>
                                             </div>
                                             <div className='clk'>
                                                 {isFs4mVisible ? <FaChevronUp className='w-5 h-10' /> : <FaChevronDown className='w-5 h-10' />}
                                             </div>
                                         </div>
                                         {isFs4mVisible && (
-                                            <p className='text-[13px] font-medium text-[#ffffff] leading-[1.7em]'>
+                                            <p className='text-xs font-medium text-[#ffffff] font-gilroy leading-[22px]'>
                                                 Our data analysts understand the intricacies of server-side implementation and optimization.
                                             </p>
                                         )}
@@ -245,12 +245,12 @@ const Serversidetracking = () => {
                             <div className={`sec4m pwb flex items-start gap-5 w-full max-[350px]:w-[285px] bg-[#0000001f] p-[25px] pt-6 border border-[#131314] hover:shadow-mediadv360 rounded-[10px] ${isSec4mVisible ? 'xl:h-[180px] lg:h-[200px]' : 'h-[100px]'}`}>
                                 <div className='flex items-center justify-between w-full'>
                                     <div className='cursor-pointer w-full' onClick={toggleSec4mVisibility}>
-                                        <div className={`flex items-center justify-between gap-5 text-[#ffffff] ${isSec4mVisible ? 'mb-4' : 'mb-0'}`}>
+                                        <div className={`flex items-center justify-between gap-5 text-[#ffffff] ${isSec4mVisible ? 'mb-6' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <div className='inbox relative mr-[13px]'>
                                                     <img src="/Message.png" alt="" className='h-12 w-12' />
                                                 </div>
-                                                <h2 className='text-[15px] font-medium text-[#ffffff] leading-normal'>Customizable Solutions</h2>
+                                                <h2 className='text-base font-semibold font-gilroy text-[#ffffff] leading-normal'>Customizable Solutions</h2>
                                             </div>
                                             <div className='clk'>
                                                 {isSec4mVisible ? <FaChevronUp className='w-5 h-10' /> : <FaChevronDown className='w-5 h-10' />}
@@ -258,7 +258,7 @@ const Serversidetracking = () => {
                                         </div>
                                         {isSec4mVisible && (
                                             <div>
-                                                <p className='text-[13px] font-medium text-[#ffffff] leading-[1.7em]'>We tailor server-side tracking solutions to your specific business needs and goals.</p>
+                                                <p className='text-xs font-medium text-[#ffffff] font-gilroy leading-[22px]'>We tailor server-side tracking solutions to your specific business needs and goals.</p>
                                             </div>
                                         )}
                                     </div>
@@ -267,12 +267,12 @@ const Serversidetracking = () => {
                             <div className={`thr4m pwb flex items-start gap-5 w-full max-[350px]:w-[285px] bg-[#0000001f] p-[25px] pt-6 border border-[#131314] hover:shadow-mediadv360 rounded-[10px] ${isThr4mVisible ? 'xl:h-[188px] lg:h-[205px]' : 'h-[100px]'}`}>
                                 <div className='flex items-center justify-between w-full'>
                                     <div className='cursor-pointer w-full' onClick={() => toggleThr4mVisibility()}>
-                                        <div className={`flex items-center justify-between gap-5 text-[#ffffff] ${isThr4mVisible ? 'mb-4' : 'mb-0'}`}>
+                                        <div className={`flex items-center justify-between gap-5 text-[#ffffff] ${isThr4mVisible ? 'mb-6' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <div className='inbox relative mr-[13px]'>
                                                     <img src="/Media.png" alt="" className='h-12 w-12' />
                                                 </div>
-                                                <h2 className='text-[15px] font-medium text-[#ffffff] leading-normal'>End-to-End Support</h2>
+                                                <h2 className='text-base font-semibold text-[#ffffff] font-gilroy leading-normal'>End-to-End Support</h2>
                                             </div>
                                             <div className='clk'>
                                                 {isThr4mVisible ? <FaChevronUp className='w-5 h-10' /> : <FaChevronDown className='w-5 h-10' />}
@@ -280,7 +280,7 @@ const Serversidetracking = () => {
                                         </div>
                                         {isThr4mVisible && (
                                             <div>
-                                                <p className='text-[13px] font-medium text-[#ffffff] leading-[1.7em]'>We guide you through every step, from implementation to ongoing data analysis and reporting.</p>
+                                                <p className='text-xs font-medium text-[#ffffff] font-gilroy leading-[22px]'>We guide you through every step, from implementation to ongoing data analysis and reporting.</p>
                                             </div>
                                         )}
                                     </div>
@@ -289,12 +289,12 @@ const Serversidetracking = () => {
                             <div className={`fur4m pwb flex items-start gap-5 w-full max-[350px]:w-[285px] bg-[#0000001f] p-[25px] pt-6 border border-[#131314] hover:shadow-mediadv360 rounded-[10px] ${isFur4mVisible ? 'xl:h-[188px] lg:h-[205px]' : 'h-[100px]'}`}>
                                 <div className='flex items-center justify-between w-full'>
                                     <div className='cursor-pointer w-full' onClick={() => toggleFur4mVisibility()}>
-                                        <div className={`flex items-center justify-between gap-5 text-[#ffffff] ${isFur4mVisible ? 'mb-4' : 'mb-0'}`}>
+                                        <div className={`flex items-center justify-between gap-5 text-[#ffffff] ${isFur4mVisible ? 'mb-6' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <div className='inbox relative mr-[13px]'>
                                                     <img src="/Measurment.png" alt="" className='h-12 xl:w-[65px] lg:w-[100px] w-[50px]' />
                                                 </div>
-                                                <h2 className='text-[15px] font-medium text-[#ffffff] leading-normal'>Data Security & Compliance</h2>
+                                                <h2 className='text-base font-semibold text-[#ffffff] font-gilroy leading-normal'>Data Security & Compliance</h2>
                                             </div>
                                             <div className='clk'>
                                                 {isFur4mVisible ? <FaChevronUp className='w-5 h-10' /> : <FaChevronDown className='w-5 h-10' />}
@@ -302,7 +302,7 @@ const Serversidetracking = () => {
                                         </div>
                                         {isFur4mVisible && (
                                             <div>
-                                                <p className='text-[13px] font-medium text-[#ffffff] leading-[1.7em]'>We prioritize data security and ensure compliance with relevant data privacy regulations.</p>
+                                                <p className='text-xs font-medium text-[#ffffff] font-gilroy leading-[22px]'>We prioritize data security and ensure compliance with relevant data privacy regulations.</p>
                                             </div>
                                         )}
                                     </div>
@@ -315,7 +315,7 @@ const Serversidetracking = () => {
 
             <section className='sstframewrk font-gilroy'>
                 <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
-                    <h2 className='text-[26px] font-semibold text-[#18265b] leading-[1.5em] font-gilroy'>Our Framework for Implementing Server-Side Tracking</h2>
+                    <h2 className='text-[32px] font-semibold text-[#18265b] leading-[1.5em] font-gilroy'>Our Framework for Implementing Server-Side Tracking</h2>
                     <p className='text-[18px] font-gilroy text-[#000] leading-[1.7em] my-5'>We follow a structured framework to ensure a seamless server-side tracking implementation:</p>
                     <div className='pt-10 gap-5'>
                         <Slider {...settings}>
@@ -329,8 +329,8 @@ const Serversidetracking = () => {
                                             alt="Picture of Media_planing"
                                         />
                                     </div>
-                                    <h6 className='text-[#000] text-base font-semibold leading-normal pt-6'>Define Goals & Objectives</h6>
-                                    <p className='text-[#000] text-[13px] font-medium pt-11 text-start leading-[26px]'>Identify your key tracking objectives (e.g., user behavior analysis, conversion rate optimization).</p>
+                                    <h6 className='text-[#000] text-base font-gilroy font-semibold leading-normal pt-6'>Define Goals & Objectives</h6>
+                                    <p className='text-[#000] text-xs font-gilroy font-medium pt-11 text-start leading-[22px]'>Identify your key tracking objectives (e.g., user behavior analysis, conversion rate optimization).</p>
                                 </div>
                             </div>
                             <div aria-hidden="true" className="m-auto text-center">
@@ -343,8 +343,8 @@ const Serversidetracking = () => {
                                             alt="Picture of Media_planing"
                                         />
                                     </div>
-                                    <h6 className='text-[#000] text-base font-semibold leading-normal pt-6'>Data Source Mapping</h6>
-                                    <p className='text-[#000] text-[13px] font-medium pt-11 text-start leading-[26px]'>Determine the data points you want to collect and identify their sources (e.g., website interactions, user attributes).</p>
+                                    <h6 className='text-[#000] text-base font-gilroy font-semibold leading-normal pt-6'>Data Source Mapping</h6>
+                                    <p className='text-[#000] text-xs font-gilroy font-medium pt-11 text-start leading-[22px]'>Determine the data points you want to collect and identify their sources (e.g., website interactions, user attributes).</p>
                                 </div>
                             </div>
                             <div aria-hidden="true" className="m-auto text-center">
@@ -357,8 +357,8 @@ const Serversidetracking = () => {
                                             alt="Picture of Media_planing"
                                         />
                                     </div>
-                                    <h6 className='text-[#000] text-base font-semibold leading-normal pt-6'>Server-Side Integration</h6>
-                                    <p className='text-[#000] text-[13px] font-medium pt-11 text-start leading-[26px]'>Our team seamlessly integrates server-side tracking code with your website architecture.</p>
+                                    <h6 className='text-[#000] text-base font-gilroy font-semibold leading-normal pt-6'>Server-Side Integration</h6>
+                                    <p className='text-[#000] text-xs font-gilroy font-medium pt-11 text-start leading-[22px]'>Our team seamlessly integrates server-side tracking code with your website architecture.</p>
                                 </div>
                             </div>
                             <div aria-hidden="true" className="m-auto text-center">
@@ -371,8 +371,8 @@ const Serversidetracking = () => {
                                             alt="Picture of Media_planing"
                                         />
                                     </div>
-                                    <h6 className='text-[#000] text-base font-semibold leading-normal pt-6'>Data Collection & Validation</h6>
-                                    <p className='text-[#000] text-[13px] font-medium pt-11 text-start leading-[26px]'>We establish secure data collection processes and validate data integrity.</p>
+                                    <h6 className='text-[#000] text-base font-gilroy font-semibold leading-normal pt-6'>Data Collection & Validation</h6>
+                                    <p className='text-[#000] text-xs font-gilroy font-medium pt-11 text-start leading-[22px]'>We establish secure data collection processes and validate data integrity.</p>
                                 </div>
                             </div>
                             <div aria-hidden="true" className="m-auto text-center">
@@ -385,8 +385,8 @@ const Serversidetracking = () => {
                                             alt="Picture of Media_planing"
                                         />
                                     </div>
-                                    <h6 className='text-[#000] text-base font-semibold leading-normal pt-6'>Integration with Analytics Platforms</h6>
-                                    <p className='text-[#000] text-[13px] font-medium pt-11 text-start leading-[26px]'>We connect your server-side tracking data with your preferred analytics platforms.</p>
+                                    <h6 className='text-[#000] text-base font-gilroy font-semibold leading-normal pt-6'>Integration with Analytics Platforms</h6>
+                                    <p className='text-[#000] text-xs font-gilroy font-medium pt-11 text-start leading-[22px]'>We connect your server-side tracking data with your preferred analytics platforms.</p>
                                 </div>
                             </div>
                             <div aria-hidden="true" className="m-auto text-center">
@@ -399,8 +399,8 @@ const Serversidetracking = () => {
                                             alt="Picture of Media_planing"
                                         />
                                     </div>
-                                    <h6 className='text-[#000] text-base font-semibold leading-normal pt-6'>Reporting & Optimization</h6>
-                                    <p className='text-[#000] text-[13px] font-medium pt-11 text-start leading-[26px]'>We provide comprehensive reports and insights to help you understand user behavior and optimize your marketing efforts.</p>
+                                    <h6 className='text-[#000] text-base font-gilroy font-semibold leading-normal pt-6'>Reporting & Optimization</h6>
+                                    <p className='text-[#000] text-xs font-gilroy font-medium pt-11 text-start leading-[22px]'>We provide comprehensive reports and insights to help you understand user behavior and optimize your marketing efforts.</p>
                                 </div>
                             </div>
                         </Slider>
@@ -412,9 +412,9 @@ const Serversidetracking = () => {
                 <div className='relative z-20 px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
                     <div>
                         <div className='text-start'>
-                            <h2 className='text-[28px] font-gilroy font-semibold text-[#18265b] leading-[1.5em] tracking-wide text-left block'>Additional Services</h2>
+                            <h2 className='text-[32px] font-gilroy font-semibold text-[#fff] leading-[1.5em] tracking-wide text-left block'>Additional Services</h2>
                         </div>
-                        <p className='text-[#000] text-[18px] font-normal leading-normal text-center pt-7 my-5'>In addition to server-side tracking implementation, AnalyticsLiv offers a range of complementary services:</p>
+                        <p className='text-[#fff] text-[18px] font-normal leading-normal text-center pt-7 my-5'>In addition to server-side tracking implementation, AnalyticsLiv offers a range of complementary services:</p>
                         <div className='flex flex-col lg:flex-row gap-5 lg:gap-0 justify-between items-center pt-8'>
                         <div className='lg:w-3/5'>
                                 <Image
@@ -439,9 +439,9 @@ const Serversidetracking = () => {
                                                 className=''
                                             />
                                         </div>
-                                        <h6 className='text-[20px] font-normal text-[#fff] leading-normal'>Data Analytics & Visualization</h6>
+                                        <h6 className='text-base font-semibold text-[#fff] leading-normal'>Data Analytics & Visualization</h6>
                                     </div>
-                                    <p className='md:text-[15px] text-[14px] font-light text-[#fff] leading-[1.7em]'>We transform raw data into actionable insights with clear visualizations for informed decision-making.</p>
+                                    <p className='text-xs font-normal text-[#fff] leading-[22px]'>We transform raw data into actionable insights with clear visualizations for informed decision-making.</p>
                                 </div>
                                 <div className="second group border hover:shadow-none shadow-serviceoffer border-solid border-[#13131400] rounded-[20px] p-5">
                                     <div className="flex items-start justify-start gap-4 pb-4">
@@ -455,9 +455,9 @@ const Serversidetracking = () => {
                                                 className=''
                                             />
                                         </div>
-                                        <h6 className='text-[20px] font-normal text-[#fff] leading-normal'>Marketing Attribution Modeling</h6>
+                                        <h6 className='text-base font-semibold text-[#fff] leading-normal'>Marketing Attribution Modeling</h6>
                                     </div>
-                                    <p className='md:text-[15px] text-[14px] font-light text-[#fff] leading-[1.7em]'>We help you understand which marketing channels contribute most to conversions.</p>
+                                    <p className='text-xs font-normal text-[#fff] leading-[22px]'>We help you understand which marketing channels contribute most to conversions.</p>
                                 </div>
                                 <div className="third group border hover:shadow-none shadow-serviceoffer border-solid border-[#13131400] rounded-[20px] p-5">
                                     <div className="flex items-start justify-start gap-4 pb-4">
@@ -471,9 +471,9 @@ const Serversidetracking = () => {
                                                 className=''
                                             />
                                         </div>
-                                        <h6 className='text-[20px] font-normal text-[#fff] leading-normal'>Marketing Campaign Optimization</h6>
+                                        <h6 className='text-base font-semibold text-[#fff] leading-normal'>Marketing Campaign Optimization</h6>
                                     </div>
-                                    <p className='md:text-[15px] text-[14px] font-light text-[#fff] leading-[1.7em]'>We leverage data insights to optimize your marketing campaigns for maximum return on investment (ROI).</p>
+                                    <p className='text-xs font-normal text-[#fff] leading-[22px]'>We leverage data insights to optimize your marketing campaigns for maximum return on investment (ROI).</p>
                                 </div>
                             </div>
                         </div>
@@ -516,7 +516,7 @@ const Serversidetracking = () => {
             <section className='sstfaq relative overflow-hidden font-gilroy'>
                 <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 z-20">
                     <div>
-                        <h3 className='text-[28px] font-semibold text-[#000000] leading-[1.5em] font-gilroy mb-2'>FAQ's</h3>
+                        <h3 className='text-[32px] font-semibold text-[#000000] leading-[1.5em] font-gilroy mb-2'>FAQ's</h3>
                     </div>
                     <div className='md:flex items-center justify-start mt-10'>
                         <div className='items-start lg:justify-start justify-center gap-7 w-full'>

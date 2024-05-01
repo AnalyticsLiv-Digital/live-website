@@ -83,11 +83,11 @@ const header = () => {
                   )}
                 </span>
               </li>
-              <li className="hover:border-b-4 lg:ml-[19px] flex items-center gap-[5px] hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2" onMouseEnter={() => setIsWebResources(true)} onMouseLeave={() => setIsWebResources(false)}>
-                <a href=""> Resources </a>
-                {isWebResources && <motion.div initial={{ y: 5, opacity: 0 }} animate={{ y: 30, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} onMouseEnter={() => setIsWebResources(true)} onMouseLeave={() => setIsWebResources(false)} id="submenu2" className="subheader absolute w-56 text-sm flex flex-col lg:-ml-20 lg:mt-2 divide-y bg-gray-100 text-cyan-900 items-center align-middle font-semibold">
-                  <Link href='/blogs'><div className="py-2 w-56 hover:bg-cyan-500">Blogs</div></Link>
-                  <Link href='/case-studies'><div className="py-2 w-56 hover:bg-cyan-500">Case Studies</div></Link>
+              <li className="hover:border-b-4 lg:ml-[19px] flex items-center gap-[5px] hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2" >
+                <a href="" onMouseEnter={() => setIsWebResources(true)} onMouseLeave={() => setIsWebResources(false)}> Resources </a>
+                {isWebResources && <motion.div initial={{ y: 10, opacity: 0 }} animate={{ y: 33, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} onMouseEnter={() => setIsWebResources(true)} onMouseLeave={() => setIsWebResources(false)} id="submenu2" className="subheader absolute w-56 text-sm flex flex-col lg:-ml-20 lg:mt-2 divide-y bg-gray-100 text-cyan-900 items-center align-middle font-semibold">
+                  <Link href='/blogs'><div className="py-2 w-56 hover:border-b border-[#000]">Blogs</div></Link>
+                  <Link href='/case-studies'><div className="py-2 w-56 hover:border-b border-[#000]">Case Studies</div></Link>
                   {/*<Link  href='/webinars'><div className="py-2 w-56 hover:bg-cyan-500">Webinars</div></Link>*/}
                 </motion.div>}
                 <span className='mb-1'>
@@ -104,7 +104,7 @@ const header = () => {
               <Link className="header-links" href="/contact"><li className="hover:border-b-4 lg:ml-[19px] hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2">
                 Contact Us
               </li></Link>
-              <Link className="header-links" href="/engagement"><li className="hover:border-b-4 hidden lg:ml-[19px] hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2">
+              <Link className="header-links" href="/engagement"><li className="hover:border-b-4 lg:ml-[19px] hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2">
                 Engagement
               </li></Link>
               <Link className="header-links" href="/careers"><li className="hover:border-b-4 lg:ml-[19px] hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2 text-rose-700 animate-pulse hover:animate-none">
