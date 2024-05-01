@@ -290,7 +290,7 @@ const contact = () => {
                                         <p className="text-red-600 text-sm">{formErrors.purpose}</p>
                                     </div>
                                     <div className="w-full">
-                                        <textarea className="pl-2 mt-4 mx-auto resize-none lg:h-28 text-sm w-full  text-gray-700 bg-transparent border-0 border-b-2 border-slate-500  focus:outline-none focus:ring-0 focus:border-cyan-500 outline-none" id="requirements" name="requirements" placeholder="Requirements" value={formValues.requirements} onChange={handleChange}></textarea>
+                                        <textarea className="pl-2 mt-4 mx-auto resize-y text-sm w-full  text-gray-700 bg-transparent border-0 border-b-2 border-slate-500  focus:outline-none focus:ring-0 focus:border-cyan-500 outline-none" id="requirements" name="requirements" placeholder="Requirements" value={formValues.requirements} onChange={handleChange}></textarea>
                                         <p className="text-red-600 text-sm">{formErrors.requirements}</p>
 
                                     </div>
