@@ -188,7 +188,7 @@ const engagement = () => {
                                                     </ul>
                                                 </div>
                                                 <div className='lg:absolute xl:bottom-[30px] lg:bottom-[30px] pr-5'>
-                                                    <h6 className='p-[10px] bg-[#d3eeff4f] rounded-[10px] text-[15px] mb-[10px] leading-8 text-[#404040] font-medium inline-block'>
+                                                    <h6 className='p-[10px] bg-[#20dc864f] rounded-[10px] text-[15px] mb-[10px] leading-8 text-[#404040] font-medium inline-block'>
                                                         <img src="/engagemnet_idea_icon.png" alt="" className='h-10 w-10' />
                                                         <p>Example: Implementing Google Analytics 4 with enhanced eCommerce within 1-3 months.</p>
                                                     </h6>
