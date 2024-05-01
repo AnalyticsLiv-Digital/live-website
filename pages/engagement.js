@@ -188,7 +188,7 @@ const engagement = () => {
                                                     </ul>
                                                 </div>
                                                 <div className='lg:absolute xl:bottom-[30px] lg:bottom-[30px] pr-5'>
-                                                    <h6 className='p-[10px] bg-[#20dc864f] rounded-[10px] text-[15px] mb-[10px] leading-8 text-[#404040] font-medium inline-block'>
+                                                    <h6 className='p-[10px] bg-[#d3eeff4f] rounded-[10px] text-[15px] mb-[10px] leading-8 text-[#404040] font-medium inline-block'>
                                                         <img src="/engagemnet_idea_icon.png" alt="" className='h-10 w-10' />
                                                         <p>Example: Implementing Google Analytics 4 with enhanced eCommerce within 1-3 months.</p>
                                                     </h6>
@@ -232,7 +232,7 @@ const engagement = () => {
                                                 <div className='lg:absolute xl:bottom-[30px] lg:bottom-[30px] pr-5'>
                                                     <h6 className='p-[10px] bg-[#20dc864f] rounded-[10px] text-[15px] mb-[10px] leading-8 text-[#404040] font-medium inline-block'>
                                                         <img src="/engagemnet_idea1.png" alt="" className='h-10 w-10' />
-                                                        <p>Example: Programmatic ad campaign management to promote car launches across quarters.</p>
+                                                        <p>Example: Programmatic ad campaign management to promote brands.</p>
                                                     </h6>
                                                     <div className='mt-4'>
                                                         <Link href="/contact" className='py-[10px] px-[30px] mb-4 text-base font-medium capitalize hover:border hover:border-solid hover:border-[#34cf8f] bg-[#34cf8f] hover:bg-[#fff] hover:text-[#34cf8f] rounded leading-6 text-[#fff] text-center'>I have a project</Link>
@@ -416,7 +416,7 @@ const engagement = () => {
                                             <p className="text-red-600 text-sm">{formErrors.purpose}</p>
                                         </div>
                                         <div className="w-full">
-                                            <textarea className="pl-2 mt-4 mx-auto resize-none lg:h-28 text-sm w-full  text-gray-700 bg-transparent border-0 border-b-2 border-slate-500  focus:outline-none focus:ring-0 focus:border-cyan-500 outline-none" id="requirements" name="requirements" placeholder="Requirements" value={formValues.requirements} onChange={handleChange}></textarea>
+                                            <textarea className="pl-2 mt-4 mx-auto resize-y text-sm w-full  text-gray-700 bg-transparent border-0 border-b-2 border-slate-500  focus:outline-none focus:ring-0 focus:border-cyan-500 outline-none" id="requirements" name="requirements" placeholder="Requirements" value={formValues.requirements} onChange={handleChange}></textarea>
                                             <p className="text-red-600 text-sm">{formErrors.requirements}</p>
 
                                         </div>

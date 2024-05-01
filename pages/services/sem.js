@@ -166,7 +166,7 @@ const sem = () => {
                             <div className='fs text-center border border-solid border-[#00000012] rounded-xl p-5'>
                                 <div>
                                     <div className='flex items-center justify-center'>
-                                        <img src="/targetreach.png" alt="target_reach_logo" className='h-[70px] w-[70px]' /></div>
+                                        <img src="/targetreach.png" alt="target_reach_logo" className='h-[60px] w-[60px]' /></div>
                                     <h6 className='text-txt pt-4 xl:mb-12 mb-8 font-gilroy text-base font-semibold leading-normal'>Targeted Reach</h6>
                                 </div>
                                 <p className='font-gilroy font-normal leading-[26px] text-xs text-[#000]'>Reach potential customers actively searching for products or services like yours.</p>
@@ -174,7 +174,7 @@ const sem = () => {
                             <div className='scnd text-center border border-solid border-[#00000012] rounded-xl p-5'>
                                 <div>
                                     <div className='flex items-center justify-center'>
-                                        <img src="/sem_incr.png" alt="increased_visibility_logo" className='h-[70px] w-[70px]' /></div>
+                                        <img src="/sem_incr.png" alt="increased_visibility_logo" className='h-[60px] w-[60px]' /></div>
                                     <h6 className='text-txt pt-4 xl:mb-12 mb-8 font-gilroy text-base font-semibold leading-normal'>Increased Visibility</h6>
                                 </div>
                                 <p className='font-gilroy font-normal leading-[26px] text-xs text-[#000]'>Secure prominent placements on search engine results pages (SERPs).</p>
@@ -182,7 +182,7 @@ const sem = () => {
                             <div className='thrd text-center border border-solid border-[#00000012] rounded-xl p-5'>
                                 <div>
                                     <div className='flex items-center justify-center'>
-                                        <img src="/sem2.png" alt="measurment_logo" className='h-[70px] w-[70px]' /></div>
+                                        <img src="/sem2.png" alt="measurment_logo" className='h-[60px] w-[60px]' /></div>
                                     <h6 className='text-txt pt-4 xl:mb-12 mb-8 font-gilroy text-base font-semibold leading-normal'>Measurable Results</h6>
                                 </div>
                                 <p className='font-gilroy font-normal leading-[26px] text-xs text-[#000]'>Track campaign performance and optimize strategies for maximum ROI.</p>
@@ -190,7 +190,7 @@ const sem = () => {
                             <div className='fr text-center border border-solid border-[#00000012] rounded-xl p-5'>
                                 <div>
                                     <div className='flex items-center justify-center'>
-                                        <img src="/sem_improve.png" alt="sem_improve_logo" className='h-[70px] w-[70px]' /></div>
+                                        <img src="/sem_improve.png" alt="sem_improve_logo" className='h-[60px] w-[60px]' /></div>
                                     <h6 className='text-txt pt-4 mb-8 font-gilroy text-base font-semibold leading-normal'>Improved Brand Awareness</h6>
                                 </div>
                                 <p className='font-gilroy font-normal leading-[26px] text-xs text-[#000]'>Increase brand recognition and establish your expertise in your industry.</p>
@@ -198,7 +198,7 @@ const sem = () => {
                             <div className='five text-center border border-solid border-[#00000012] rounded-xl p-5'>
                                 <div>
                                     <div className='flex items-center justify-center'>
-                                        <img src="/sem_lead.png" alt="lead_logo" className='h-[70px] w-[70px]' /></div>
+                                        <img src="/sem_lead.png" alt="lead_logo" className='h-[60px] w-[60px]' /></div>
                                     <h6 className='text-txt pt-4 mb-8 font-gilroy text-base font-semibold leading-normal'>Cost-Effective Lead Generation</h6>
                                 </div>
                                 <p className='font-gilroy font-normal leading-[26px] text-xs text-[#000]'>Generate qualified leads at a competitive cost compared to other marketing channels.</p>
@@ -429,7 +429,7 @@ const sem = () => {
                         </div>
                         <div className='md:w-[33%] w-full'>
                             <div className='p-[10px] pl-0'>
-                                <div className='w-full flex'>
+                                <div className='w-full flex justify-end'>
                                     <div className='flex items-center md:justify-end justify-center'>
                                         <Link href="/contact?id=programatic-advertising">
                                             <button className="border border-solid border-[#ffffff] bg-[#ffffff] text-[#de668a] text-base font-normal tracking-wider rounded-xl py-3 px-6">Let's Connect</button>

@@ -73,7 +73,7 @@ const header = () => {
           <Link className="logo" href="/"><img alt="logo" aria-label="logo" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="h-10 lg:mx-4 cursor-pointer" /></Link>
           <nav className="lg:flex text-center">
             <ul className="lg:flex text-[14px] font-rbt font-normal text-txt text-left lg:text-center z-[-1] lg:z-auto lg:mr-4 lg:w-auto items-center  uppercase tracking-wide cursor-pointer">
-              <li className="relative flex items-center gap-[5px] hover:border-b-4 hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2" onMouseEnter={() => setIsSWebervices(true)} onMouseLeave={() => setIsSWebervices(false)}>
+              <li className="relative flex items-center gap-[5px] hover:border-b-4 hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2" onMouseEnter={() => {setIsSWebervices(true)}} onMouseLeave={() => setIsSWebervices(false)}>
                 <Link className="header-links" href="/services">What We Do</Link>
                 <span className='mb-1'>
                   {isWebServices ? (
@@ -83,9 +83,9 @@ const header = () => {
                   )}
                 </span>
               </li>
-              <li className="hover:border-b-4 lg:ml-[19px] flex items-center gap-[5px] hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2" >
-                <a href="" onMouseEnter={() => setIsWebResources(true)} onMouseLeave={() => setIsWebResources(false)}> Resources </a>
-                {isWebResources && <motion.div initial={{ y: 10, opacity: 0 }} animate={{ y: 33, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} onMouseEnter={() => setIsWebResources(true)} onMouseLeave={() => setIsWebResources(false)} id="submenu2" className="subheader absolute w-56 text-sm flex flex-col lg:-ml-20 lg:mt-2 divide-y bg-gray-100 text-cyan-900 items-center align-middle font-semibold">
+              <li className="hover:border-b-4 lg:ml-[19px] flex items-center gap-[5px] hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2" onMouseEnter={() => setIsWebResources(true)} onMouseLeave={() => setIsWebResources(false)}>
+                <a href="" > Resources </a>
+                {isWebResources && <motion.div initial={{ y: 10, opacity: 0 }} animate={{ y: 40, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} id="submenu2" className="subheader absolute w-56 text-sm flex flex-col lg:-ml-20 lg:mt-2 divide-y bg-gray-100 text-cyan-900 items-center align-middle font-semibold">
                   <Link href='/blogs'><div className="py-2 w-56 hover:border-b border-[#000]">Blogs</div></Link>
                   <Link href='/case-studies'><div className="py-2 w-56 hover:border-b border-[#000]">Case Studies</div></Link>
                   {/*<Link  href='/webinars'><div className="py-2 w-56 hover:bg-cyan-500">Webinars</div></Link>*/}
@@ -326,7 +326,7 @@ const header = () => {
             </div>
           )}
         </Transition>
-        {isWebServices && <motion.div initial={{ y: 10, opacity: 0 }} animate={{ y: 45, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} onMouseEnter={() => setIsSWebervices(true)} onMouseLeave={() => setIsSWebervices(false)} onClick={() => setIsSWebervices(false)} className="subheader absolute w-full text-sm flex flex-col z-100 divide-y bg-gray-100 text-cyan-900 items-center align-middle font-semibold">
+        {isWebServices && <motion.div initial={{ y: 10, opacity: 0 }} animate={{ y: 50, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} onMouseEnter={() => setIsSWebervices(true)} onMouseLeave={() => setIsSWebervices(false)} onClick={() => setIsSWebervices(false)} className="subheader absolute w-full text-sm flex flex-col z-100 divide-y bg-gray-100 text-cyan-900 items-center align-middle font-semibold">
 
           <div
             class="p-6 mega-menu mb-16 sm:mb-0 shadow-xl bg-white left-0 absolute text-left w-full transition-all duration-150 ease-linear">
