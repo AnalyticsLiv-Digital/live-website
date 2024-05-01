@@ -119,7 +119,7 @@ const sem = () => {
                     <div className="relative px-4 md:px-12 pt-8 pb-8 h-full z-20">
                         <div className="z-10 flex lg:flex-nowrap items-center flex-wrap justify-between gap-7 pb-8">
                             <div className="w-full lg:w-1/2 lg:order-1 order-2">
-                                <h1 className="lg:text-[41px] text-[32px] lg:leading-[62px] leading-[32px] font-gilroy font-normal text-[#006EF5] mb-4">
+                                <h1 className="lg:text-[41px] text-[32px] lg:leading-[62px] leading-normal font-gilroy font-normal text-[#006EF5] mb-4">
                                     Drive Qualified Traffic & Leads with Powerful SEM Strategies at AnalyticsLiv
                                 </h1>
                                 {/* <h2 className="font-gilroy text-[20px] leading-[30px] font-normal text-[#152e55] mb-5">Cookieless, Compliant Data with Server-Side Tracking</h2> */}
@@ -353,7 +353,7 @@ const sem = () => {
                                         />
                                     </div>
                                     <h2 className='text-base font-gilroy mb-6 font-semibold text-[#efefef] leading-normal'>Data-Driven Approach</h2>
-                                    <p className='text-xs font-semibold text-[#878787] leading-[26px]'>We leverage data insights to optimize your campaigns for maximum effectiveness.</p>
+                                    <p className='text-xs font-semibold font-gilroy text-[#878787] leading-[26px]'>We leverage data insights to optimize your campaigns for maximum effectiveness.</p>
 
                                 </div>
                             </div>
@@ -370,7 +370,7 @@ const sem = () => {
                                         />
                                     </div>
                                     <h2 className='text-base font-gilroy mb-6 font-semibold text-[#efefef] leading-normal'>Transparent Reporting</h2>
-                                    <p className='text-xs font-semibold text-[#878787] leading-[26px]'>We provide regular reports with key metrics and actionable recommendations.</p>
+                                    <p className='text-xs font-semibold font-gilroy text-[#878787] leading-[26px]'>We provide regular reports with key metrics and actionable recommendations.</p>
 
                                 </div>
                             </div>
@@ -387,7 +387,7 @@ const sem = () => {
                                         />
                                     </div>
                                     <h2 className='text-base font-gilroy mb-6 font-semibold text-[#efefef] leading-normal'>Experienced Team</h2>
-                                    <p className='text-xs font-semibold text-[#878787] leading-[26px]'>Our team of certified SEM specialists has a proven track record of success.</p>
+                                    <p className='text-xs font-semibold font-gilroy text-[#878787] leading-[26px]'>Our team of certified SEM specialists has a proven track record of success.</p>
                                 </div>
                             </div>
                             <div class="powerbox flex items-start justify-center md:w-[95%] w-[280px] m-auto mb-5  xl:h-[210px] lg:h-[240px] h-[240px] p-[10px] pt-6 border border-[#333] rounded-[10px]">
@@ -403,7 +403,7 @@ const sem = () => {
                                         />
                                     </div>
                                     <h2 className='text-base font-gilroy mb-6 font-semibold text-[#efefef] leading-normal'>Focus on ROI</h2>
-                                    <p className='text-xs font-semibold text-[#878787] leading-[26px]'>We prioritize delivering measurable results that contribute to your business goals.</p>
+                                    <p className='text-xs font-semibold font-gilroy text-[#878787] leading-[26px]'>We prioritize delivering measurable results that contribute to your business goals.</p>
                                 </div>
                             </div>
                         </div>
@@ -429,7 +429,7 @@ const sem = () => {
                         </div>
                         <div className='md:w-[33%] w-full'>
                             <div className='p-[10px] pl-0'>
-                                <div className='w-full flex justify-end'>
+                                <div className='w-full flex lg:justify-end justify-center'>
                                     <div className='flex items-center md:justify-end justify-center'>
                                         <Link href="/contact?id=programatic-advertising">
                                             <button className="border border-solid border-[#ffffff] bg-[#ffffff] text-[#de668a] text-base font-normal tracking-wider rounded-xl py-3 px-6">Let's Connect</button>
