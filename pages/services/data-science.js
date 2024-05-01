@@ -95,14 +95,14 @@ const datascience = () => {
                     <div className="relative px-4 md:px-12 pt-8 md:pt-[10px] pb-8 md:pb-16 h-full z-20">
                         <div className="z-10 flex lg:flex-nowrap items-center flex-wrap justify-between gap-7 pb-8">
                             <div className="w-full lg:w-1/2 lg:order-1 order-2">
-                                <h1 className="text-[22px] leading-[1.7em] font-gilroy font-semibold text-maintext mb-[10px]">
+                                <h1 className="text-[32px] leading-[1.7em] font-gilroy font-semibold text-maintext mb-[10px]">
                                     Data-Driven Solutions for Smarter Business Growth
                                 </h1>
-                                <h2 className="font-gilroy text-[20px] font-gilroy leading-[1.7em] font-medium text-maintext mb-5">Harness the Power of Advanced Analytics to Gain a Competitive Edge</h2>
+                                <h2 className="font-gilroy text-[20px] leading-[1.7em] font-medium text-maintext mb-5">Harness the Power of Advanced Analytics to Gain a Competitive Edge</h2>
                                 {/* <p className="text-base font-normal leading-[28px] font-gilroy mb-[10px]">
                                     In today's data-rich business environment, leveraging advanced analytics and data science is crucial for staying ahead of the competition. At Analyticsliv, we empower organizations to transform raw data into actionable insights, driving strategic decision-making and measurable business growth. Our comprehensive suite of Data Science and Solutions is designed to help you unlock the full potential of your data, optimize processes, and achieve unparalleled success.
                                 </p> */}
-                                <div className='flex max-[425px]:flex-wrap flex-nowrap items-center gap-5'>
+                                <div className='flex max-[425px]:flex-wrap flex-nowrap items-center lg:justify-start justify-center gap-5'>
                                     <Link href="/contact?id=programatic-advertising">
                                         <button className="bg-[#30486ae3] text-white w-[208px] hover:bg-white border border-solid hover:border-[#30486ae3] hover:text-[#30486ae3] text-base font-normal tracking-wider rounded-xl py-3 px-6 mt-6">REQUEST A DEMO</button>
                                     </Link>
@@ -942,7 +942,7 @@ const datascience = () => {
                         </div>
                         <div className='md:w-[33%] w-full'>
                             <div className='p-[10px] pl-0'>
-                                <div className='w-full flex'>
+                                <div className='w-full flex justify-center'>
                                     <div className='flex items-center md:justify-end justify-center'>
                                         <Link href="/contact?id=programatic-advertising">
                                             <button className="border border-solid border-[#ffffff] bg-[#ffffff] text-[#de668a] text-base font-normal tracking-wider rounded-xl py-3 px-6">Let's Connect</button>

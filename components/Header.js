@@ -223,29 +223,24 @@ const header = () => {
                           and App measurement</Link>
                       </div>
                       <div class="flex items-center py-1 gap-2">
-                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytis_data-reporting.logo.png"
-                          alt="data-reporting_logo" />
-                        <Link href="/services/data-reporting-analysis"
-                          class="text-menuheading font-rbt text-base font-normal leading-normal">Data
-                          Reporting & Analysis</Link>
-                      </div>
-                      <div class="flex items-center py-1 gap-2">
                         <img src="/sst.png"
                           alt="data-reporting_logo" className='w-[30px] h-[30px]' />
                         <Link href="/services/server-side-tracking"
                           class="text-menuheading font-rbt text-base font-normal leading-normal">Server-Side Tracking</Link>
                       </div>
                       <div class="flex items-center py-1 gap-2">
-                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytics_Looker.logo.png" alt="Looker_logo" />
-                        <Link href="/services/looker-bi-platform"
-                          class="text-menuheading font-rbt text-base font-normal leading-normal">Looker
-                          BI Platform</Link>
-                      </div>
-                      <div class="flex items-center py-1 gap-2">
                         <img src="/cro_logo.png" className='w-[33px]' alt="Looker_logo" />
                         <Link href="/services/CRO"
                           class="text-menuheading font-rbt text-base font-normal leading-normal">Conversion Rate Optimization</Link>
                       </div>
+
+                      <div class="flex items-center py-1 gap-2">
+                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytis_data-reporting.logo.png"
+                          alt="data-reporting_logo" />
+                        <Link href="/services/data-reporting-analysis"
+                          class="text-menuheading font-rbt text-base font-normal leading-normal">Reporting Dashboarding</Link>
+                      </div>
+
                     </motion.div>}
                     <div onClick={() => { setSubmenu("3") }} ><div className="py-2 w-56 ">Solutions</div></div>
                     {submenu == "3" && <motion.div onClick={() => { setIsOpen(!isOpen); setIsServices(false); }} initial={{ y: 10, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} className='transition ease-out duration-200 px-4 '>

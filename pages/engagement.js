@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link'
 import React from 'react'
+import Head from 'next/head';
 import { FaAngleRight } from "react-icons/fa";
 import { useState, useEffect } from 'react'
 import Image from 'next/image';
@@ -125,6 +126,11 @@ const engagement = () => {
     };
     return (
         <>
+            <Head>
+                <title>AnalyticsLiv - Analytics Engagement-Service</title>
+                <meta name="description" content="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads" />
+                <link rel="canonical" href="https://www.analyticsliv.com/engagement"></link>
+            </Head>
             <section className="engagement page_title pb-[15px] text-homepagebtn bg-white">
                 <div className='relative px-2 md:px-6 pt-4 md:pt-5 pb-4 md:pb-8 z-20'>
                     <div className="breadcrumbs relative text-xs leading-6 mb-[6px]">
@@ -159,7 +165,7 @@ const engagement = () => {
                                 </div>
                                 <div className='pt-10 gap-10 grid lg:grid-cols-2 items-start justify-center'>
                                     <div className='engagement1 flex items-center justify-center font-gilroy'>
-                                        <div className=' border border-solid border-[#E2E2E2] rounded-[10px] p-5 xl:h-[525px] xl:w-full lg:w-[440px] max-[499px]:w-[100%] w-[500px] lg:h-[550px] relative'>
+                                        <div className=' border border-solid border-[#E2E2E2] rounded-[10px] p-5 xl:h-[495px] xl:w-full lg:w-[440px] max-[499px]:w-[100%] w-[500px] lg:h-[515px] relative'>
                                             <div className='flex items-center justify-between pb-3 border-b border-solid border-[#455a6475]'>
                                                 <h6 className='text-[#000] text-[18px] font-semibold leading-normal'>Project-Based Engagement</h6>
                                                 <Image
@@ -188,20 +194,20 @@ const engagement = () => {
                                                     </ul>
                                                 </div>
                                                 <div className='lg:absolute xl:bottom-[30px] lg:bottom-[30px] pr-5'>
-                                                    <h6 className='p-[10px] bg-[#20dc864f] rounded-[10px] text-[15px] mb-[10px] leading-8 text-[#404040] font-medium inline-block'>
+                                                    <h6 className='p-[10px] bg-[#20dc864f] rounded-[10px] text-[15px] mb-[10px] leading-normal text-[#404040] font-medium inline-block'>
                                                         <img src="/engagemnet_idea_icon.png" alt="" className='h-10 w-10' />
                                                         <p>Example: Implementing Google Analytics 4 with enhanced eCommerce within 1-3 months.</p>
                                                     </h6>
 
                                                     <div className='mt-4'>
-                                                        <Link href="/contact" className='py-[10px] px-[30px] mb-4 text-base font-medium capitalize hover:border hover:border-solid hover:border-[#34cf8f] bg-[#34cf8f] hover:bg-[#fff] hover:text-[#34cf8f] rounded leading-6 text-[#fff] text-center'>I have a project</Link>
+                                                        <Link href="/contact" className='py-[10px] px-[30px] mb-4 text-base font-medium capitalize hover:border hover:border-solid hover:border-txt bg-txt hover:bg-[#fff] hover:text-txt rounded leading-6 text-[#fff] text-center'>I have a project</Link>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div className='engagement2 flex items-center justify-center font-gilroy'>
-                                        <div className=' border border-solid border-[#E2E2E2] rounded-[10px] p-5 xl:h-[525px] xl:w-full lg:w-[440px] max-[499px]:w-[100%] w-[500px] lg:h-[550px] relative'>
+                                        <div className=' border border-solid border-[#E2E2E2] rounded-[10px] p-5 xl:h-[495px] xl:w-full lg:w-[440px] max-[499px]:w-[100%] w-[500px] lg:h-[515px] relative'>
                                             <div className='flex items-center justify-between pb-3 border-b border-solid border-[#455a6475]'>
                                                 <h6 className='text-[#000] text-[18px] font-semibold leading-normal'>Monthly Retainer</h6>
                                                 <Image
@@ -230,12 +236,12 @@ const engagement = () => {
                                                     </ul>
                                                 </div>
                                                 <div className='lg:absolute xl:bottom-[30px] lg:bottom-[30px] pr-5'>
-                                                    <h6 className='p-[10px] bg-[#20dc864f] rounded-[10px] text-[15px] mb-[10px] leading-8 text-[#404040] font-medium inline-block'>
+                                                    <h6 className='p-[10px] bg-[#20dc864f] rounded-[10px] text-[15px] mb-[10px] leading-normal text-[#404040] font-medium inline-block'>
                                                         <img src="/engagemnet_idea1.png" alt="" className='h-10 w-10' />
                                                         <p>Example: Programmatic ad campaign management to promote brands.</p>
                                                     </h6>
                                                     <div className='mt-4'>
-                                                        <Link href="/contact" className='py-[10px] px-[30px] mb-4 text-base font-medium capitalize hover:border hover:border-solid hover:border-[#34cf8f] bg-[#34cf8f] hover:bg-[#fff] hover:text-[#34cf8f] rounded leading-6 text-[#fff] text-center'>I have a project</Link>
+                                                        <Link href="/contact" className='py-[10px] px-[30px] mb-4 text-base font-medium capitalize hover:border hover:border-solid hover:border-txt bg-txt hover:bg-[#fff] hover:text-txt rounded leading-6 text-[#fff] text-center'>I have a project</Link>
                                                     </div>
                                                 </div>
 
@@ -243,7 +249,7 @@ const engagement = () => {
                                         </div>
                                     </div>
                                     <div className='engagement3 flex items-center justify-center'>
-                                        <div className=' border border-solid border-[#E2E2E2] rounded-[10px] p-5 xl:h-[525px] xl:w-full lg:w-[440px] max-[499px]:w-[100%] w-[500px] lg:h-[555px] relative'>
+                                        <div className=' border border-solid border-[#E2E2E2] rounded-[10px] p-5 xl:h-[510px] xl:w-full lg:w-[440px] max-[499px]:w-[100%] w-[500px] lg:h-[540px] relative'>
                                             <div className='flex items-center justify-between pb-3 border-b border-solid border-[#455a6475]'>
                                                 <h6 className='text-[#000] text-[18px] font-semibold leading-normal'>Dedicated Resource</h6>
                                                 <Image
@@ -271,12 +277,12 @@ const engagement = () => {
                                                         </li>
                                                     </ul>
                                                     <div className='lg:absolute xl:bottom-[30px] lg:bottom-[30px] pr-5'>
-                                                        <h6 className='p-[10px] bg-[#20dc864f] rounded-[10px] text-[15px] mb-[10px] leading-8 text-[#404040] font-medium inline-block'>
+                                                        <h6 className='p-[10px] bg-[#20dc864f] rounded-[10px] text-[15px] mb-[10px] leading-normal text-[#404040] font-medium inline-block'>
                                                             <img src="/engagemnet_idea1.png" alt="" className='h-10 w-10' />
                                                             <p>Example: Weekly/Monthly BigQuery reporting to the team for real-time predictive modelling.</p>
                                                         </h6>
                                                         <div className='mt-4'>
-                                                            <Link href="/contact" className='py-[10px] px-[30px] mb-4 text-base font-medium capitalize hover:border hover:border-solid hover:border-[#34cf8f] bg-[#34cf8f] hover:bg-[#fff] hover:text-[#34cf8f] rounded leading-6 text-[#fff] text-center'>I have a project</Link>
+                                                            <Link href="/contact" className='py-[10px] px-[30px] mb-4 text-base font-medium capitalize hover:border hover:border-solid hover:border-txt bg-txt hover:bg-[#fff] hover:text-txt rounded leading-6 text-[#fff] text-center'>I have a project</Link>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -284,7 +290,7 @@ const engagement = () => {
                                         </div>
                                     </div>
                                     <div className='engagement4 flex items-center justify-center'>
-                                        <div className=' border border-solid border-[#E2E2E2] rounded-[10px] p-5 xl:h-[525px] xl:w-full lg:w-[440px] max-[499px]:w-[100%] w-[500px] lg:h-[555px] relative'>
+                                        <div className=' border border-solid border-[#E2E2E2] rounded-[10px] p-5 xl:h-[510px] xl:w-full lg:w-[440px] max-[499px]:w-[100%] w-[500px] lg:h-[540px] relative'>
                                             <div className='flex items-center justify-between pb-3 border-b border-solid border-[#455a6475]'>
                                                 <h6 className='text-[#000] text-[18px] font-semibold leading-normal'>Custom Model</h6>
                                                 <Image
@@ -314,7 +320,7 @@ const engagement = () => {
                                                     <h4 className='text-[15px] text-[#404040] font-medium pt-[5px] mb-4 leading-[29px]'>If you need a tailor-made engagement model.</h4>
                                                 </div>
                                                 <div className='mt-4 lg:absolute xl:bottom-[30px] lg:bottom-[35px]'>
-                                                    <Link href="/contact" className='py-[10px] px-[30px] mb-4 text-base font-medium capitalize hover:border hover:border-solid hover:border-[#34cf8f] bg-[#34cf8f] hover:bg-[#fff] hover:text-[#34cf8f] rounded leading-6 text-[#fff] text-center'>Schedule A Call</Link>
+                                                    <Link href="/contact" className='py-[10px] px-[30px] mb-4 text-base font-medium capitalize hover:border hover:border-solid hover:border-txt bg-txt hover:bg-[#fff] hover:text-txt rounded leading-6 text-[#fff] text-center'>Schedule A Call</Link>
                                                 </div>
                                             </div>
                                         </div>
@@ -514,7 +520,7 @@ const engagement = () => {
                         </div>
                         <div className='md:w-[33%] w-full'>
                             <div className='p-[10px] pl-0'>
-                                <div className='w-full flex justify-end'>
+                                <div className='w-full flex lg:justify-end justify-center'>
                                     <div className='flex items-center md:justify-end justify-center mr-[25px] mt-[35px]'>
                                         <Link href="/contact?id=programatic-advertising">
                                             <button className="border border-solid border-[#ffffff] bg-[#ffffff] text-[#de668a] text-base font-normal tracking-wider rounded-xl py-3 px-6">Let's Connect</button>

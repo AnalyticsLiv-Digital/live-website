@@ -100,14 +100,14 @@ const cro = () => {
                     <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 h-full z-20">
                         <div className="z-10 flex lg:flex-nowrap items-center flex-wrap justify-between gap-7 pb-8">
                             <div className="w-full lg:w-1/2 lg:order-1 order-2">
-                                <h1 className="lg:text-[41px] text-[32px] lg:leading-[62px] leading-[32px] text-maintext pt-4 mb-[10px]">
+                                <h1 className="lg:text-[41px] text-[32px] lg:leading-[62px] leading-normal text-maintext pt-4 mb-5">
                                     Ignite Your Online Growth with Conversion Focused Analytics
                                 </h1>
-                                <h2 className="font-Gilroy-SemiBold text-[20px] leading-[30px] font-normal text-maintext mb-5">Unlock Explosive Revenue with Scientific CRO Strategies</h2>
+                                <h2 className="font-Gilroy-SemiBold text-[20px] leading-normal font-normal text-maintext mb-5">Unlock Explosive Revenue with Scientific CRO Strategies</h2>
                                 {/* <p className="text-base font-normal leading-[28px] font-[Poppins] mb-[10px]">
                                     At Analyticsliv.com, we believe in the power of data-driven insights to supercharge your online success. Our scientific approach to Conversion Rate Optimization (CRO) is designed to ignite explosive growth, turning your website into a revenue-generating powerhouse.
                                 </p> */}
-                                <div className='flex max-[425px]:flex-wrap flex-nowrap items-center gap-5'>
+                                <div className='flex max-[425px]:flex-wrap flex-nowrap items-center lg:justify-start justify-center gap-5'>
                                     <Link href="/contact?id=programatic-advertising">
                                         <button className="bg-[#30486ae3] text-white w-[208px] hover:bg-white border border-solid hover:border-[#30486ae3] hover:text-[#30486ae3] text-base font-normal tracking-wider rounded-xl py-3 px-6 mt-6">REQUEST A DEMO</button>
                                     </Link>
@@ -511,7 +511,7 @@ const cro = () => {
                         </div>
                         <div className='md:w-[33%] w-full'>
                             <div className='p-[10px] pl-0'>
-                                <div className='w-full flex'>
+                                <div className='w-full flex lg:justify-end justify-center'>
                                     <div className='flex items-center md:justify-end justify-center'>
                                         <Link href="/contact?id=programatic-advertising">
                                             <button className="border border-solid border-[#ffffff] bg-[#ffffff] text-[#de668a] text-base font-normal tracking-wider rounded-xl py-3 px-6">Let's Connect</button>

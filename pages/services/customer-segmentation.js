@@ -116,7 +116,7 @@ const customersegmentation = () => {
                                 <h1 className="text-[32px] leading-[1.7em] font-gilroy font-semibold text-maintext pt-4">
                                     Unleash the Power of Your Audience: Customer Segmentation with AnalyticsLiv
                                 </h1>
-                                <div className='flex max-[425px]:flex-wrap flex-nowrap items-center gap-5'>
+                                <div className='flex max-[425px]:flex-wrap flex-nowrap items-center lg:justify-start justify-center gap-5'>
                                     <Link href="/contact?id=programatic-advertising">
                                         <button className="bg-[#30486ae3] text-white w-[208px] hover:bg-white border border-solid hover:border-[#30486ae3] hover:text-[#30486ae3] text-base font-normal tracking-wider rounded-xl py-3 px-6 mt-6">REQUEST A DEMO</button>
                                     </Link>
