@@ -62,18 +62,24 @@ const header = () => {
 
       <header className="sticky min-w-full top-0 z-50 bg-white font-rbt">
 
-        <div className='hidden md:inline'>
-          <span className="text-right flex items-center justify-end pt-[14px]">
-            <img alt="marketing-partner" aria-label="marketing-partner" src="https://storage.googleapis.com/website-bucket-uploads/static/gmp.svg" />
-          </span>
+      <div className='hidden lg:inline'>
+        <div className='flex items-start justify-between pt-5 py-[17px] px-5'>
+          <Link className="logo" href="/"><img alt="logo" aria-label="logo" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="h-10 lg:mx-4 cursor-pointer" /></Link>
+
+          <div className='hidden md:inline'>
+            <span className="text-right flex items-center justify-end">
+              <img alt="marketing-partner" aria-label="marketing-partner" src="https://storage.googleapis.com/website-bucket-uploads/static/gmp.svg" />
+            </span>
+          </div>
+        </div>
         </div>
 
-        <div style={{ height: header }} className="navbar hidden lg:flex py-2 h-auto flex-wrap px-4 lg:flex-row items-center justify-between">
+        <div style={{ height: header }} className="navbar hidden lg:flex py-2 h-auto flex-wrap px-4 lg:flex-row items-center justify-end">
 
-          <Link className="logo" href="/"><img alt="logo" aria-label="logo" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="h-10 lg:mx-4 cursor-pointer" /></Link>
+          {/* <Link className="logo" href="/"><img alt="logo" aria-label="logo" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="h-10 lg:mx-4 cursor-pointer" /></Link> */}
           <nav className="lg:flex text-center">
-            <ul className="lg:flex text-[14px] font-rbt font-normal text-txt text-left lg:text-center z-[-1] lg:z-auto lg:mr-4 lg:w-auto items-center  uppercase tracking-wide cursor-pointer">
-              <li className="relative flex items-center gap-[5px] hover:border-b-4 hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2" onMouseEnter={() => {setIsSWebervices(true)}} onMouseLeave={() => setIsSWebervices(false)}>
+            <ul className="lg:flex text-[14px] font-rbt font-medium text-txt text-left lg:text-center z-[-1] lg:z-auto lg:mr-4 lg:w-auto items-center  uppercase tracking-wide cursor-pointer">
+              <li className="relative flex items-center gap-[5px] hover:border-b-4 hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2" onMouseEnter={() => { setIsSWebervices(true) }} onMouseLeave={() => setIsSWebervices(false)}>
                 <Link className="header-links" href="/services">What We Do</Link>
                 <span className='mb-1'>
                   {isWebServices ? (
@@ -205,7 +211,7 @@ const header = () => {
                         <Link href="/services/lead-generation"
                           class="text-menuheading font-rbt text-base font-normal leading-normal">Lead generation</Link>
                       </div>
-                      
+
                       <div class="flex items-center py-1 gap-2
                                     ">
                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-search.png" alt="display_logo" />
