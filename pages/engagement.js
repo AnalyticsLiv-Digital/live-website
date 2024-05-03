@@ -131,36 +131,39 @@ const engagement = () => {
                 <meta name="description" content="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads" />
                 <link rel="canonical" href="https://www.analyticsliv.com/engagement"></link>
             </Head>
-            <section className="engagement page_title pb-[15px] text-homepagebtn bg-white">
-                <div className='relative px-2 md:px-6 pt-4 md:pt-5 pb-4 md:pb-8 z-20'>
-                    <div className="breadcrumbs relative text-xs leading-6 mb-[6px]">
-                        <div className='flex items-center'>
-                            <span className='mr-3 inline-block'>
-                                <Link href="/">Home</Link>
-                            </span>
-                            <span className='mr-3 inline-block'><FaAngleRight /></span>
-                            <span className='inline-block'>Engagement</span>
+            <section className="engagement page_title pb-[15px]">
+                <div className='h-full'>
+                    <div className="relative px-4 md:px-12 pt-8 md:pt-[10px] pb-8 md:pb-16 h-full z-20">
+                        <div className="z-10 flex lg:flex-nowrap items-center flex-wrap justify-between gap-7 pb-8">
+                            <div className=" w-full lg:w-1/2 flex items-center lg:justify-start justify-center order-1">
+                                <img src="/Engagement_Main_IMG_Updated.png" alt="" className='h-[400px]' />
+                            </div>
+                            <div className="w-full lg:w-1/2 order-2 lg:mt-8">
+                                <div className='en'>
+                                    <h1 className="lg:text-[39px] text-center text-[32px] lg:leading-[62px] leading-normal font-gilroy font-normal text-[#006EF5] mb-4">
+                                        Empowering Your Growth AnalyticsLiv Engagement Models
+                                    </h1>
+                                    <div className='flex items-center justify-center gap-5'>
+                                        <Link href="/contact?id=programatic-advertising">
+                                            <button className="bg-[#30486a] text-white font-gilroy hover:bg-white border border-solid hover:border-[#30486ae3] hover:text-[#30486ae3] text-base font-normal tracking-wider rounded-xl py-3 px-6 mt-2 uppercase">Contact Us</button>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='text-center'>
+                            <p className='text-[18px] leading-[30px] font-normal text-[#000]'>At AnalyticsLiv, we understand that every business has unique data analytics needs. That's why we offer a variety of engagement models to ensure a perfect fit for your specific requirements and budget. Choose the model that best aligns with your project scope, ongoing needs, and desired level of collaboration</p>
                         </div>
                     </div>
                 </div>
             </section>
-            <section>
+            <section className='empreferred'>
                 <div className='relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 z-20'>
-                    <div className='w-full px-4'>
-                        <div className='ea1 text-center'>
-                            <h1 className='text-[32px] font-semibold font-rbt leading-8 text-txt mb-[22px] pb-6'>Empowering Your Growth: AnalyticsLiv Engagement Models</h1>
-                            <p className='text-[18px] leading-[30px] font-normal'>At AnalyticsLiv, we understand that every business has unique data analytics needs. That's why we offer a variety of engagement models to ensure a perfect fit for your specific requirements and budget. Choose the model that best aligns with your project scope, ongoing needs, and desired level of collaboration</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section className='engagement'>
-                <div className='relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 z-20 border-t border-solid border-[#969696]'>
                     <div>
                         <div className='w-full m-auto'>
                             <div className='w-full px-4'>
                                 <div className='ea1 text-center'>
-                                    <h1 className='text-[32px] font-semibold font-rbt leading-8 text-txt mb-[22px] pb-6'>Choose Your Preferred Engagement Model</h1>
+                                    <h1 className='text-[32px] font-normal font-rbt leading-normal text-[#006EF5] mb-[22px] pb-6'>Choose Your Preferred Engagement Model</h1>
                                     <p className='text-[18px] leading-[30px] font-normal'>Each business problem demands a different solution. To help you address them, we have four distinct engagement models.</p>
                                 </div>
                                 <div className='pt-10 gap-10 grid lg:grid-cols-2 items-start justify-center'>
@@ -332,12 +335,12 @@ const engagement = () => {
                 </div>
             </section>
             <section className='engagement'>
-                <div className='relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 z-20 border-t border-solid border-[#969696]'>
+                <div className='relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 z-20'>
                     <div>
                         <div className='w-full m-auto'>
                             <div className='w-full px-4'>
                                 <div className='ea1 text-center'>
-                                    <h1 className='text-[32px] font-semibold font-rbt leading-8 text-txt pb-6'>Choosing the Right Model</h1>
+                                    <h1 className='text-[32px] font-normal font-rbt leading-normal text-[#006EF5] pb-6'>Choosing the Right Model</h1>
                                     <p className='text-base leading-[30px] font-normal mb-4'>Not sure which engagement model is best for you? </p>
                                     <p className='text-[18px] leading-[30px] font-normal'>Don't worry! Contact AnalyticsLiv today for a free consultation. Our team will discuss your business goals and data analytics requirements to recommend the most suitable model to help you achieve your desired outcomes.</p>
                                 </div>
@@ -345,7 +348,7 @@ const engagement = () => {
                                 <div className="relative lg:w-[60%] m-auto rounded-lg p-4 mt-6 font-regular">
 
                                     <div className="pb-5 md:w-[90%] mx-auto">
-                                        <h3 className="text-left text-[20px] font-semibold text-homepagebtn leading-[30px]">Fill the form to get in touch with us</h3>
+                                        <h3 className="text-[20px] font-semibold text-center text-homepagebtn leading-[30px]">Fill the form to get in touch with us</h3>
                                     </div>
 
                                     {formSubmit && <div className='relative text-slate-700 p-4 space-y-4 h-full'>
@@ -422,7 +425,7 @@ const engagement = () => {
                                             <p className="text-red-600 text-sm">{formErrors.purpose}</p>
                                         </div>
                                         <div className="w-full">
-                                            <textarea className="pl-2 mt-4 mx-auto resize-y text-sm w-full  text-gray-700 bg-transparent border-0 border-b-2 border-slate-500  focus:outline-none focus:ring-0 focus:border-cyan-500 outline-none" id="requirements" name="requirements" placeholder="Requirements" value={formValues.requirements} onChange={handleChange}></textarea>
+                                            <textarea className="pl-2 mt-4 mx-auto resize-y text-sm w-full overflow-hidden text-gray-700 bg-transparent border-0 border-b-2 border-slate-500  focus:outline-none focus:ring-0 focus:border-cyan-500 outline-none" id="requirements" name="requirements" placeholder="Requirements" value={formValues.requirements} onChange={handleChange}></textarea>
                                             <p className="text-red-600 text-sm">{formErrors.requirements}</p>
 
                                         </div>
@@ -454,7 +457,7 @@ const engagement = () => {
                 <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
                     <div>
                         <div className='text-center'>
-                            <h2 className='text-txt text-[32px] font-semibold font-gilroy leading-normal text-center block mb-2'>Benefits of Partnering with AnalyticsLiv</h2>
+                            <h2 className='text-[#006EF5] text-[32px] font-normal font-gilroy leading-normal text-center block mb-2'>Benefits of Partnering with AnalyticsLiv</h2>
                             <p className='text-base font-medium font-gilroy leading-[30px] text-center block mb-5'>Regardless of the engagement model you choose, you'll benefit from our core strengths</p>
                         </div>
                         <div>
