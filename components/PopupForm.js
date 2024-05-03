@@ -223,3 +223,159 @@ className="m-auto align-middle"
 }
 
 export default PopupForm
+
+//   //  //  //  //  //  //  //  //  New PopupForm  //  //  //  //  //  //  //  //  // // // //
+
+// import React, { useState, useRef, useEffect } from 'react';
+// import Link from 'next/link';
+// import { FaWhatsapp } from "react-icons/fa";
+// import { LiaLongArrowAltRightSolid } from "react-icons/lia";
+
+// const PopUp = ({ isOpen, onClose }) => {
+//     const popUpRef = useRef(null);
+
+//     const handleClickOutside = (event) => {
+//         if (popUpRef.current && !popUpRef.current.contains(event.target)) {
+//             onClose();
+//         }
+//     };
+
+//     useEffect(() => {
+//         document.addEventListener('mousedown', handleClickOutside);
+
+//         return () => {
+//             document.removeEventListener('mousedown', handleClickOutside);
+//         };
+//     }, []);
+
+//     const whatsappLink = 'https://wa.me/+918320576622?text=Hello%20there!';
+
+//     if (!isOpen) {
+//         return null;
+//     }
+
+//     return (
+//         <div className="popup fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-50 md:py-5 py-4 md:px-7 px-4">
+//             <div className="bg-white rounded-lg p-6 relative " ref={popUpRef}>
+//                 <button onClick={onClose} className="absolute top-2 right-2 text-gray-500 hover:text-black">
+//                     X
+//                 </button>
+//                 <div className='w-full inline-block font-rbt'>
+//                     <div><img alt="logo" aria-label="logo" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="h-10 lg:mr-4 m-2 cursor-pointer" /></div>
+//                     <div className='popupmid w-full inline-block mb-5 pb-5 border-b border-solid border-[#d6d6d6]'>
+//                         <ul className='flex md:flex-nowrap flex-wrap gap-7 mt-5'>
+//                             <li className='md:w-1/2 w-full'>
+//                                 <div>
+//                                     <form>
+//                                         <div><h2 className='text-[20px] leading-7 font-semibold text-[#1e1e1e] mb-[10px]'>Happy to help you today</h2></div>
+//                                         <div className="mb-4">
+//                                             <input
+//                                                 type="text"
+//                                                 id="name"
+//                                                 className="border rounded px-3 py-2 w-full text-xs"
+//                                                 placeholder="Enter your name"
+//                                             />
+//                                         </div>
+//                                         <div className="mb-4">
+//                                             <input
+//                                                 type="email"
+//                                                 id="email"
+//                                                 className="border rounded px-3 py-2 w-full text-xs"
+//                                                 placeholder="Enter your email"
+//                                             />
+//                                         </div>
+//                                         <div className='form-group otherField relative mb-[10px] w-full'>
+//                                             <p>
+//                                                 <label className='text-xs leading-3 font-semibold text-[#000]'>Business Vertical of Interest</label>
+//                                                 <div className='mainchekbox'>
+//                                                     <span className='checkboxlist bg-transparen'>
+//                                                         <span className='inline-block relative w-1/2 text-xs font-medium'>
+//                                                             <label className='flex items-start gap-1'>
+//                                                                 <input type="checkbox" value='Media' />
+//                                                                 <span>Media</span>
+//                                                             </label>
+//                                                         </span>
+//                                                     </span>
+//                                                     <span className='checkboxlist bg-transparent'>
+//                                                         <span className='inline-block relative w-1/2 text-xs font-medium'>
+//                                                             <label className='flex items-start gap-1'>
+//                                                                 <input type="checkbox" value='Analytics' />
+//                                                                 <span>Analytics</span>
+//                                                             </label>
+//                                                         </span>
+//                                                     </span>
+//                                                     <span className='checkboxlist bg-transparent'>
+//                                                         <span className='inline-block relative w-1/2 text-xs font-medium'>
+//                                                             <label className='flex items-start gap-1'>
+//                                                                 <input type="checkbox" value='data-science' />
+//                                                                 <span>Data Science</span>
+//                                                             </label>
+//                                                         </span>
+//                                                     </span>
+//                                                     <span className='checkboxlist bg-transparent'>
+//                                                         <span className='inline-block relative w-1/2 text-xs font-medium'>
+//                                                             <label className='flex items-start gap-1'>
+//                                                                 <input type="checkbox" value='cm' />
+//                                                                 <span>Conversion Marketing</span>
+//                                                             </label>
+//                                                         </span>
+//                                                     </span>
+//                                                     <span className='checkboxlist bg-transparent'>
+//                                                         <span className='inline-block relative w-1/2 text-xs font-medium'>
+//                                                             <label className='flex items-start gap-1'>
+//                                                                 <input type="checkbox" value='sst' />
+//                                                                 <span>Server Side Tracking</span>
+//                                                             </label>
+//                                                         </span>
+//                                                     </span>
+//                                                     <span className='checkboxlist bg-transparent'>
+//                                                         <span className='inline-block relative w-1/2 text-xs font-medium'>
+//                                                             <label className='flex items-start gap-1'>
+//                                                                 <input type="checkbox" value='others' />
+//                                                                 <span>Others</span>
+//                                                             </label>
+//                                                         </span>
+//                                                     </span>
+//                                                 </div>
+//                                             </p>
+//                                         </div>
+//                                         <div className="relative mb-[10px] w-full">
+//                                             <p className='mb-[10px]'>
+//                                                 <span><input type="text" name="help-text" id="" placeholder='How can we help you?' className='inline-block w-full h-[42px] py-[10px] px-[15px] bg-[#F2F2F2] text-xs text-[#9D9D9D] rounded' /></span>
+//                                             </p>
+//                                         </div>
+//                                         <button
+//                                             type="submit"
+//                                             className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+//                                         >
+//                                             Submit
+//                                         </button>
+//                                     </form>
+//                                 </div>
+//                             </li>
+//                             <li className='md:w-1/2 w-full'>
+//                                 <div className='greenBox relative inline-block bg-[#e1f2e5] p-5 rounded'>
+//                                     <p className='text-[#1e1e1e] text-xs font-semibold leading-[14px]'>For faster response, send us a message on WhatsApp</p>
+//                                     <p className='text-[#1e1e1e] text-xs font-semibold leading-[14px]'>
+//                                         <Link href={whatsappLink} className='w-[75%] mt-[10px] flex justify-between bg-[#34a853] rounded p-4 text-xs leading-[14px] font-semibold text-[#fff]'>Message on WhatsApp <FaWhatsapp /></Link>
+//                                     </p>
+//                                 </div>
+//                                 <div className='hidden md:flex dfg'>
+//                                     <img src="/popup.png" className='w-[300px] h-[300px]' alt="" />
+//                                 </div>
+//                             </li>
+//                         </ul>
+//                     </div>
+//                     <div className='hidden'>
+//                         <div className='popupFtr w-full hidden md:flex md:flex-nowrap flex-wrap items-center justify-between gap-7'>
+//                             <Link href='/contact' className='resultBtn w-full flex items-center justify-between gap-2 bg-[#ffd5d3] border border-solid border-[#eb3223] rounded-lg p-5 text-xs leading-[14px] font-semibold text-[#1e1e1e]'> Try our free DIY GA4 Audit & get your results in minutes <LiaLongArrowAltRightSolid /></Link>
+//                             <Link href='/services/CRO' className='resultBtn w-full flex items-center justify-between gap-2 bg-[#fff1cc] border border-solid border-[#ffba00] rounded-lg p-5 text-xs leading-[14px] font-semibold text-[#1e1e1e]'>  Get Conversion Rate Optimization Recommendations  <LiaLongArrowAltRightSolid /></Link>
+//                         </div>
+//                     </div>
+//                 </div>
+//             </div>
+//         </div>
+//     );
+// };
+
+// export default PopUp
