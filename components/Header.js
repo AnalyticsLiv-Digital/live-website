@@ -318,6 +318,13 @@ const header = () => {
                 </Link>
 
                 <Link onClick={() => setIsOpen(!isOpen)}
+                  href="/engagement"
+                  className="text-slate-900 block px-3 py-2 rounded-md text-base font-normal"
+                >
+                  Engagement
+                </Link>
+
+                <Link onClick={() => setIsOpen(!isOpen)}
                   href="/careers"
                   className="text-slate-900 block px-3 py-2 rounded-md text-base font-normal"
                 >

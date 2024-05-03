@@ -133,7 +133,7 @@ const engagement = () => {
             </Head>
             <section className="engagement page_title pb-[15px]">
                 <div className='h-full'>
-                    <div className="relative px-4 md:px-12 pt-8 md:pt-[10px] pb-8 md:pb-16 h-full z-20">
+                    <div className="relative px-4 md:px-12 max-[500px]:pt-0 pt-8 md:pt-[10px] pb-8 md:pb-16 h-full z-20">
                         <div className="z-10 flex lg:flex-nowrap items-center flex-wrap justify-between gap-7 pb-8">
                             <div className=" w-full lg:w-1/2 flex items-center lg:justify-start justify-center order-1">
                                 <img src="/Engagement_Main_IMG_Updated.png" alt="" className='h-[400px]' />
