@@ -122,7 +122,7 @@ const Home = () => {
               </div>
               <div className="relative md:flex md:justify-between">
                   <div className="space-y-4 md:w-3/4">
-                      <h2 className="py-4 text-xl font-semibold text-sky-600">Is your Brand ready to </h2>
+                      <h2 className="py-4 text-xl font-semibold text-sky-600">Run Brand Marketing & Performance Campaigns Programmatically</h2>
                       <ul>
                           <li><img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png'/>
                               Enhance Reach by 10x
@@ -131,10 +131,16 @@ const Home = () => {
                               Buy Placements on Premium Websites and Apps
                           </li>
                           <li><img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png'/>
-                              Turn Engagements into Experiences
+                              Turn Engagements into Experiences With Rich Media Creatives
                           </li>
                           <li><img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png'/>
-                              Get 10x traffic in just few Hours
+                              Reserve placements on YouTube & Other Video Channels
+                          </li>
+                          <li><img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png'/>
+                              Define Custom Bid Strategy To Reach Your KPIs
+                          </li>
+                          <li><img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png'/>
+                              Drive Action Throgh Enhanced Conversion In Floodlight
                           </li>
                       </ul>
                       <div className="mx-8"><img alt="brand image" src="https://storage.googleapis.com/website-bucket-uploads/static/Brand_IMG.png"/></div>
