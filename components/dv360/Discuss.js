@@ -20,8 +20,8 @@ const Discuss = () => {
                         <h5 className='text-[#fff] text-[23px] font-semibold leading-normal'>Unlock Success with Programmatic Advertising Excellence. <br />
                             Transform Your Campaigns Today!
                         </h5>
-                        <div className='flex items-center justify-between gap-4 border border-solid border-[#fff] p-5 rounded-[10px] text-[#fff] text-base font-bold leading-normal hover:bg-[#fff] hover:text-homepagebtn'>
-                            <button onClick={scrolling}>Discuss Your Project</button>
+                        <div onClick={scrolling} className='flex items-center justify-between cursor-pointer gap-4 border border-solid border-[#fff] p-5 rounded-[10px] text-[#fff] text-base font-bold leading-normal hover:bg-[#fff] hover:text-homepagebtn'>
+                            <button >Discuss Your Project</button>
                             <FaArrowRightLong />
                         </div>
                     </div>

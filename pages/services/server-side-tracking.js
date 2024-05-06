@@ -43,10 +43,6 @@ const Serversidetracking = () => {
         setIsFur4mVisible(prevState => !prevState);
     };
     var settings = {
-        className: "center",
-        centerMode: true,
-        infinite: true,
-        centerPadding: "60px",
         dots: true,
         infinite: true,
         speed: 1000,
