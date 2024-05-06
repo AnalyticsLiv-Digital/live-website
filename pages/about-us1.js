@@ -5,14 +5,52 @@ import Head from 'next/head';
 import { useState, useEffect } from 'react'
 import { FaRegPlayCircle } from 'react-icons/fa';
 import Marquee from "react-fast-marquee";
-import Image from 'next/image';
 import CountUp from 'react-countup';
 import ScrollTrigger from 'react-scroll-trigger';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const aboutus1 = () => {
     const [isPlaying, setIsPlaying] = useState(false);
     const [counterOn, setCounterOn] = useState(true);
     const [activetab, setActivetab] = useState("1");
+
+    var settings = {
+        dots: false,
+        pauseOnHover: true,
+        arrows: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        initialSlide: 0,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    };
 
     const playVideo = () => {
         if (!isPlaying) {
@@ -28,7 +66,7 @@ const aboutus1 = () => {
             </Head>
             <section className='abouthome w-full relative font-gilroy overflow-hidden'>
                 <div className='h-full'>
-                    <div className="relative px-4 md:px-12 pt-8 md:pt-20 pb-8 md:pb-20 h-full z-20">
+                    <div className="relative px-4 md:px-20 pt-8 md:pt-20 pb-8 md:pb-20 h-full z-20">
                         <h1 className='aboutus text-[#03588c] font-semibold'>About AnalyticsLiv <br />
                             <span className='text-[#000] mt-4 inline-block'>Delivering Web Mobile & Cloud Innovation to <br /> Entrepreneurs, Startups & Businesses.</span>
                         </h1>
@@ -36,14 +74,14 @@ const aboutus1 = () => {
                 </div>
             </section>
             <section className='aboutembed font-gilroy'>
-                <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
+                <div className='px-4 md:px-20 pt-8 pb-8 md:pb-16'>
                     <div className="flex items-center md:flex-nowrap flex-wrap justify-center gap-10">
                         <div className="relative lg:w-1/2 w-full" key="image">
                             {!isPlaying && (
                                 <div className="relative w-full h-full overflow-hidden rounded-3xl">
                                     <img src="Testimonial.png" className="" alt="Video Placeholder" />
                                     <div className="absolute inset-0 flex items-center justify-center cursor-pointer" onClick={playVideo}>
-                                        <FaRegPlayCircle className="text-white w-20 h-20" />
+                                        <FaRegPlayCircle className="text-white w-16 h-20" />
                                     </div>
                                 </div>
                             )}
@@ -264,6 +302,90 @@ const aboutus1 = () => {
                             <p className={`${activetab == 4 && 'block'} ${activetab != 4 && 'hidden'} bg-slate-900 text-yellow-200 mt-[10px]`}>Trip</p>
                             <p className={`${activetab == 5 && 'block'} ${activetab != 5 && 'hidden'} bg-slate-900 text-yellow-200 mt-[10px]`}>Celebrations</p>
                         </div>
+                    </div>
+                </div>
+            </section>
+            <section className='aboutteam font-gilroy'>
+                <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
+                    <div className='mb-5'>
+                        <h3 className='text-[36px] text-[#2c2c2c] font-semibold leading-[1.4] pb-[10px]'>Brands We Work With</h3>
+                        <p className='text-[22px] text-[#666666] font-medium leading-[1.4] pb-[10px]'>Not only SMEs & startups, but many Fortune 500 brands also trusted us as Technical Partner</p>
+                    </div>
+                    <div className="slider-container mt-10 pb-5">
+                        <Slider {...settings}>
+                            <div className='text-center'>
+                                <div className='flex items-center justify-center'>
+                                    <img src="/ThoughtSpot_logo.png" alt="" className='h-[50px]' />
+                                </div>
+                            </div>
+                            <div className='text-center'>
+                                <div className='flex items-center justify-center'>
+                                    <img src="/Brizo_logo.png" alt="" className='h-[50px]' />
+                                </div>
+                            </div>
+                            <div className='text-center'>
+                                <div className='flex items-center justify-center'>
+                                    <img src="/bluecrew.png" alt="" className='h-[50px]' />
+                                </div>
+                            </div>
+                            <div className='text-center'>
+                                <div className='flex items-center justify-center'>
+                                    <img src="/edanz_logo.png" alt="" className='h-[50px]' />
+                                </div>
+                            </div>
+                            <div className='text-center'>
+                                <div className='flex items-center justify-center'>
+                                    <img src="/shoebacca.png" alt="" className='h-[50px]' />
+                                </div>
+                            </div>
+                            <div className='text-center'>
+                                <div className='flex items-center justify-center'>
+                                    <img src="/wholesalesockdeals.png" alt="" className='h-[50px]' />
+                                </div>
+                            </div>
+                        </Slider>
+                    </div>
+                </div>
+            </section>
+            <section className='aboutteam font-gilroy'>
+                <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
+                    <div className='mb-5'>
+                        <h3 className='text-[36px] text-[#2c2c2c] font-semibold leading-[1.4] pb-[10px]'>Employees Speak</h3>
+                        <p className='text-[22px] text-[#666666] font-medium leading-[1.4] pb-[10px]'>Face To Face With AddWeb Solution Team Members And Their Experiences</p>
+                    </div>
+                    <div className="slider-container mt-10 pb-5">
+                        <Slider {...settings}>
+                            <div className='text-center'>
+                                <div className='flex items-center justify-center'>
+                                    1
+                                </div>
+                            </div>
+                            <div className='text-center'>
+                                <div className='flex items-center justify-center'>
+                                    2
+                                </div>
+                            </div>
+                            <div className='text-center'>
+                                <div className='flex items-center justify-center'>
+                                    3
+                                </div>
+                            </div>
+                            <div className='text-center'>
+                                <div className='flex items-center justify-center'>
+                                    4
+                                </div>
+                            </div>
+                            <div className='text-center'>
+                                <div className='flex items-center justify-center'>
+                                    5
+                                </div>
+                            </div>
+                            <div className='text-center'>
+                                <div className='flex items-center justify-center'>
+                                    6
+                                </div>
+                            </div>
+                        </Slider>
                     </div>
                 </div>
             </section>

@@ -11,7 +11,7 @@ const PowerUp = () => {
 
             <div className='px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 relative z-20'>
                 <div>
-                    <div className='flex items-center justify-center'>
+                    <div className='flex items-center justify-center py-5'>
                         <h2 className='text-[#ffffffe8] lg:text-[28px] text-2xl font-semibold not-italic text-center'>HOW WE POWER UP YOUR BRAND</h2>
                     </div>
                     <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 pt-[50px]">

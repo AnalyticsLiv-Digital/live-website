@@ -414,7 +414,7 @@ export default function dv360({brandsdata}) {
     </div>
   </section>
 
-  <section>
+  {/* <section>
  
      <div className="bg-white py-4">
       <h2 className="text-center font-bold text-xl">Thanks For Choosing AnalytiscLiv</h2>
@@ -431,7 +431,7 @@ export default function dv360({brandsdata}) {
                      </Marquee>
        </div>
      </div>
-  </section>
+  </section> */}
 
  <section>
  <ScrollElement
@@ -673,14 +673,14 @@ export default function dv360({brandsdata}) {
 
 
 
-export async function getServerSideProps(context) {
+// export async function getServerSideProps(context) {
     // Fetch data from external API
   
-    const res = await fetch(`${process.env.domain}/api/ga4brands`)
-    const brandsdata = await res.json()
+    // const res = await fetch(`${process.env.domain}/api/ga4brands`)
+    // const brandsdata = await res.json()
 
  
   //console.log(brandsdata);
     // Pass data to the page via props
-    return { props: { brandsdata} }
-  }
+    // return { props: { brandsdata} }
+  // }

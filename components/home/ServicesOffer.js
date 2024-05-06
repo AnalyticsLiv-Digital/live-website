@@ -25,7 +25,7 @@ const ServicesOffer = () => {
                     <div className='text-start'>
                         <h2 className='text-maintext lg:text-[28px] text-2xl font-semibold not-italic text-left block'>Services We Offer</h2>
                     </div>
-                    <div className='grid md:grid-cols-2 items-center gap-10 pt-8'>
+                    <div className='grid md:grid-cols-2 items-center gap-10 pt-[50px]'>
                         <div className='first flex justify-center'>
                             <div className='relative group rounded-[10px] border border-solid border-[#EFEFEF] hover:shadow-serviceoffer p-5 lg:h-[500px] md:h-[585px] w-[335px] md:w-[284px] lg:w-[430px]'>
                                 <div className="flex items-start justify-start gap-4 pb-6">

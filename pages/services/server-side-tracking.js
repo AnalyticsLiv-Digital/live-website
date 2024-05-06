@@ -43,6 +43,10 @@ const Serversidetracking = () => {
         setIsFur4mVisible(prevState => !prevState);
     };
     var settings = {
+        className: "center",
+        centerMode: true,
+        infinite: true,
+        centerPadding: "60px",
         dots: true,
         infinite: true,
         speed: 1000,
@@ -414,9 +418,9 @@ const Serversidetracking = () => {
                         <div className='text-start'>
                             <h2 className='text-[32px] font-gilroy font-semibold text-[#fff] leading-[1.5em] tracking-wide text-left block'>Additional Services</h2>
                         </div>
-                        <p className='text-[#fff] text-[18px] font-normal leading-normal text-center pt-7 my-5'>In addition to server-side tracking implementation, AnalyticsLiv offers a range of complementary services:</p>
+                        <p className='text-[#fff] text-[18px] font-normal leading-normal pt-7 my-5'>In addition to server-side tracking implementation, AnalyticsLiv offers a range of complementary services:</p>
                         <div className='flex flex-col lg:flex-row gap-5 lg:gap-0 justify-between items-center pt-8'>
-                        <div className='lg:w-3/5'>
+                            <div className='lg:w-3/5'>
                                 <Image
                                     src="/Data_Science_Mid_Img.png"
                                     width={500}
