@@ -124,32 +124,32 @@ const Home = () => {
                     <div className="space-y-4 md:w-3/4">
                         <h2 className="py-4 text-xl font-semibold text-sky-600">Run Brand Marketing & Performance Campaigns Programmatically</h2>
                         <ul>
-                            <li className='flex items-start gap-2 mb-2'>
+                            <li className='flex items-start mb-2'>
                                 <img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png' />
                                 <span>  Enhance Reach by 10x
                                 </span>
                             </li>
-                            <li className='flex items-start gap-2 mb-2'>
+                            <li className='flex items-start mb-2'>
                                 <img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png' />
                                 <span>  Buy Placements on Premium Websites and Apps
                                 </span>
                             </li>
-                            <li className='flex items-start gap-2 mb-2'>
+                            <li className='flex items-start mb-2'>
                                 <img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png' />
                                 <span>  Turn Engagements into Experiences With Rich Media Creatives
                                 </span>
                             </li>
-                            <li className='flex items-start gap-2 mb-2'>
+                            <li className='flex items-start mb-2'>
                                 <img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png' />
                                 <span>  Reserve placements on YouTube & Other Video Channels
                                 </span>
                             </li>
-                            <li className='flex items-start gap-2 mb-2'>
+                            <li className='flex items-start mb-2'>
                                 <img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png' />
                                 <span>  Define Custom Bid Strategy To Reach Your KPIs
                                 </span>
                             </li>
-                            <li className='flex items-start gap-2 mb-2'>
+                            <li className='flex items-start mb-2'>
                                 <img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png' />
                                 <span>  Drive Action Throgh Enhanced Conversion In Floodlight
                                 </span>
@@ -165,7 +165,7 @@ const Home = () => {
                                 name="contact-form"
                             ></ScrollElement>
                             {!formSubmit && <div className="block">
-                                <h2 className="text-sky-900">We Understand Its difficult to get DV360 Account and control the outcome</h2>
+                                <h2 className="text-sky-900 md:p-0 p-[10px]">We Understand Its difficult to get DV360 Account and control the outcome</h2>
                                 <h2 className="font-semibold text-2xl p-4 border-dashed border-b-2 border-sky-200">Let us help you !!</h2>
                                 <ScrollElement id="top" name="top" ></ScrollElement>
                                 <form className="px-4 md:pt-4 pb-2 space-y-4 text-gray-600" onSubmit={handleSubmit}>

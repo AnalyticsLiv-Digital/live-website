@@ -12,8 +12,8 @@ const Casestudies = () => {
         <>
             <section className='casestudy font-gilroy'>
                 <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
-                    <div className='flex items-center justify-center pb-5'>
-                        <h2 className='text-maintext lg:text-[26px] text-[19px] font-semibold not-italic text-center tracking-widest'>Check out our latest Case Studies</h2>
+                    <div className='flex items-center pb-5'>
+                        <h2 className='text-maintext lg:text-[26px] text-[19px] font-semibold not-italic text-left tracking-widest'>Check out our latest Case Studies</h2>
                     </div>
                     <div className='text-center lg:flex items-start justify-between gap-[30px]'>
             
