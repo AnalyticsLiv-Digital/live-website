@@ -61,8 +61,8 @@ const Businessfacing = () => {
                             <p className='text-[#fff] text-xs font-medium pt-4 pb-8'>At Analytics Liv, we're experts at sidestepping marketing pitfalls. <br />
                                 Say GOODBYE to Frustration, and HELLO to Success</p>
                             <div className='w-[250px]'>
-                                <div className='flex items-center justify-between gap-4 border border-solid border-[#fff] p-5 rounded-[10px] text-[#fff] text-[21px] font-bold leading-normal hover:bg-[#fff] hover:text-homepagebtn'>
-                                    <button onClick={scrolling}>Get in Touch</button>
+                                <div onClick={scrolling} className='flex items-center justify-between cursor-pointer gap-4 border border-solid border-[#fff] p-5 rounded-[10px] text-[#fff] text-[21px] font-bold leading-normal hover:bg-[#fff] hover:text-homepagebtn'>
+                                    <button >Get in Touch</button>
                                     <FaArrowRightLong />
                                 </div>
                             </div>
