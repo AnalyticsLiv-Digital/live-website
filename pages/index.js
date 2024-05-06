@@ -1,6 +1,5 @@
 import Blogs from '../components/home/Blog'
 import Casestudies from '../components/home/Casestudies'
-import Heighlights from '../components/home/Heighlights'
 import Home from '../components/home/Home'
 import Marketing from '../components/home/Marketing'
 import PowerUp from '../components/home/PowerUp'
@@ -30,10 +29,9 @@ const page = () => {
             <StructuredData data={stuctureData} />
      <Home/>
      <Embed/>
-     <Heighlights/>
      <Marketing/>
-     <ServicesDo/>
      <ServicesOffer/>
+     <ServicesDo/>
      <PowerUp/>
      <Testimonial/>
      <Casestudies/>

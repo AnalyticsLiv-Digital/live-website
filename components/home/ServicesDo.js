@@ -20,85 +20,54 @@ const Marketing = () => {
                         <div className='text-start'>
                             <h2 className='text-maintext lg:text-[28px] text-2xl font-semibold not-italic text-left block'>Why Choose AnalyticsLiv</h2>
                         </div>
-                        <div className='flex flex-col lg:flex-row gap-5 lg:gap-0 justify-between items-center pt-8'>
-                            <div className='lg:w-3/5 '>
-                                <div className='relative sm:w-[500px] w-[292px] sm:h-[500px] h-[290px]'>
-                                    <Image
-                                        src="/Service_img.png"
-                                        width={500}
-                                        height={500}
-                                        alt="Picture of Google Marketing Platform Partner"
-                                        priority={true}
-                                        className='lg:h-auto'
-                                    />
-                                    <Image
-                                        src="/promote-unscreen.gif"
-                                        width={50}
-                                        height={50}
-                                        alt="Picture of Google Marketing Platform Partner"
-                                        priority={true}
-                                        className='absolute bg-white sm:top-[126px] top-[69px] sm:right-[9px] right-[2px] max-[639px]:w-9 max-[639px]:h-9'
-                                    />
-                                    <Image
-                                        src="/bar-chart-unscreen.gif"
-                                        width={50}
-                                        height={50}
-                                        alt="Picture of Google Marketing Platform Partner"
-                                        priority={true}
-                                        className='absolute bg-white sm:top-[78px] top-10 sm:left-[35%] left-[101px] max-[639px]:w-9 max-[639px]:h-9'
-                                    />
+                        <div className=' grid xl:grid-cols-3 md:grid-cols-2 gap-8 pt-[50px]'>
+                            <div className="first group bg-white shadow-serviceoffer border border-solid border-[#FDFDFD] rounded-[10px] p-5">
+                                <div className="flex items-center justify-start gap-4">
+                                    <div className='rounded-full bg-[#EAF0FF] w-10 h-10 flex items-center justify-center'>
+                                        <Image
+                                            src="/service_need 1.svg"
+                                            width={30}
+                                            height={30}
+                                            alt="Picture of the author"
+                                            priority={true}
+                                            className='transform translate-x-[-20px] transition-transform duration-300 ease-linear group-hover:translate-x-0'
+                                        />
+                                    </div>
+                                    <h6 className='text-[#000] text-[18px] font-semibold leading-normal font-gilroy'>Expertise</h6>
                                 </div>
+                                <p className='text-[#000] text-[14px] font-normal leading-[26px] pt-5 text-start'>Our certified team of experts consists of seasoned campaign management, data scientists, and analytics experts who bring a wealth of experience to the table.</p>
                             </div>
-                            <div className='lg:w-2/5 grid gap-4'>
-                                <div className="first group bg-white hover:shadow-serviceoffer border border-solid border-[#FDFDFD] rounded-[20px] p-5">
-                                    <div className="flex items-start justify-start gap-4 pb-4">
-                                        <div className='rounded-full bg-[#EAF0FF] w-10 h-10 flex items-center justify-center'>
-                                            <Image
-                                                src="/service_need 1.svg"
-                                                width={30}
-                                                height={30}
-                                                alt="Picture of the author"
-                                                priority={true}
-                                                className='transform translate-x-[-20px] transition-transform duration-300 ease-linear group-hover:translate-x-0'
-                                            />
-                                        </div>
-                                        <h6 className='text-[20px] font-normal text-[#000] leading-normal'>Expertise</h6>
+                            <div className="second group bg-white border shadow-serviceoffer border-solid border-[#FDFDFD] rounded-[10px] p-5">
+                                <div className="flex items-center justify-start gap-4">
+                                    <div className='rounded-full bg-[#EAF0FF] w-10 h-10 flex items-center justify-center'>
+                                        <Image
+                                            src="/service_need 2.svg"
+                                            width={30}
+                                            height={30}
+                                            alt="Picture of the author"
+                                            priority={true}
+                                            className='transform translate-x-[-20px] transition-transform duration-300 ease-linear group-hover:translate-x-0'
+                                        />
                                     </div>
-                                    <p className='md:text-[15px] text-[14px] font-light text-[#000] leading-[1.7em]'>Our certified team of experts consists of seasoned campaign management, data scientists, and analytics experts who bring a wealth of experience to the table.</p>
+                                    <h6 className='text-[#000] text-[18px] font-semibold leading-normal font-gilroy'>Innovation</h6>
                                 </div>
-                                <div className="second group bg-white border hover:shadow-serviceoffer border-solid border-[#FDFDFD] rounded-[20px] p-5">
-                                    <div className="flex items-start justify-start gap-4 pb-4">
-                                        <div className='rounded-full bg-[#EAF0FF] w-10 h-10 flex items-center justify-center'>
-                                            <Image
-                                                src="/service_need 2.svg"
-                                                width={30}
-                                                height={30}
-                                                alt="Picture of the author"
-                                                priority={true}
-                                                className='transform translate-x-[-20px] transition-transform duration-300 ease-linear group-hover:translate-x-0'
-                                            />
-                                        </div>
-                                        <h6 className='text-[20px] font-normal text-[#000] leading-normal'>Innovation</h6>
+                                <p className='text-[#000] text-[14px] font-normal leading-[26px] pt-5 text-start'>Stay ahead in the rapidly evolving world of analytics with our commitment to innovative solutions like RFM Analysis, Custom Attribution, and staying abreast of the latest technologies.</p>
+                            </div>
+                            <div className="third group bg-white border shadow-serviceoffer border-solid border-[#FDFDFD] rounded-[10px] p-5">
+                                <div className="flex items-center justify-start gap-4">
+                                    <div className='rounded-full bg-[#EAF0FF] w-10 h-10 flex items-center justify-center'>
+                                        <Image
+                                            src="/service_need 3.svg"
+                                            width={30}
+                                            height={30}
+                                            alt="Picture of the author"
+                                            priority={true}
+                                            className='transform translate-x-[-20px] transition-transform duration-300 ease-linear group-hover:translate-x-0'
+                                        />
                                     </div>
-                                    <p className='md:text-[15px] text-[14px] font-light text-[#000] leading-[1.7em]'>Stay ahead in the rapidly evolving world of analytics with our commitment to innovative solutions like RFM Analysis, Custom Attribution, and staying abreast of the latest technologies.</p>
+                                    <h6 className='text-[#000] text-[18px] font-semibold leading-normal font-gilroy'>Client-Centric Approach</h6>
                                 </div>
-                                <div className="third group bg-white border hover:shadow-serviceoffer border-solid border-[#FDFDFD] rounded-[20px] p-5">
-                                    <div className="flex items-start justify-start gap-4 pb-4">
-                                        <div className='rounded-full bg-[#EAF0FF] w-10 h-10 flex items-center justify-center'>
-                                            <Image
-                                                src="/service_need 3.svg"
-                                                width={30}
-                                                height={30}
-                                                alt="Picture of the author"
-                                                priority={true}
-                                                className='transform translate-x-[-20px] transition-transform duration-300 ease-linear group-hover:translate-x-0'
-                                            />
-                                        </div>
-                                        <h6 className='text-[20px] font-normal text-[#000] leading-normal'>Client-Centric Approach</h6>
-                                    </div>
-                                    <p className='md:text-[15px] text-[14px] font-light text-[#000] leading-[1.7em]'>We prioritize understanding your unique business challenges, ensuring that our solutions align seamlessly with your business
-                                        goals.</p>
-                                </div>
+                                <p className='text-[#000] text-[14px] font-normal leading-[26px] pt-5 text-start'>We prioritize understanding your unique business challenges, ensuring that our solutions align seamlessly with your business goals.</p>
                             </div>
                         </div>
                     </div>
