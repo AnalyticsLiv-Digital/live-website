@@ -231,7 +231,7 @@ const aboutus1 = () => {
                 <div className="relative px-4 md:px-12 pt-8 md:pt-20 pb-8 md:pb-20 h-full z-20">
                     <div className='py-5'>
                         <h3 className='text-[36px] text-[#2c2c2c] font-semibold leading-[1.4] pb-3'>Life at AnalyticsLiv</h3>
-                        <p className='text-[20px] mt-5 text-[#666666] font-semibold leading-[1.4] pb-3'>We code, laugh, eat, & we enjoy together and make AddWeb a great workplace.</p>
+                        <p className='text-[20px] mt-5 text-[#666666] font-semibold leading-[1.4] pb-3'>We code, laugh, eat, & we enjoy together and make AnalyticsLiv a great workplace.</p>
                     </div>
                     <div>
                         <div className='grid md:grid-cols-5 gap-5'>
@@ -351,7 +351,7 @@ const aboutus1 = () => {
                 <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
                     <div className='mb-5'>
                         <h3 className='text-[36px] text-[#2c2c2c] font-semibold leading-[1.4] pb-[10px]'>Employees Speak</h3>
-                        <p className='text-[22px] text-[#666666] font-medium leading-[1.4] pb-[10px]'>Face To Face With AddWeb Solution Team Members And Their Experiences</p>
+                        <p className='text-[22px] text-[#666666] font-medium leading-[1.4] pb-[10px]'>Face To Face With AnalyticsLiv Solution Team Members And Their Experiences</p>
                     </div>
                     <div className="slider-container mt-10 pb-5">
                         <Slider {...settings}>
