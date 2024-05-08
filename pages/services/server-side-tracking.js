@@ -122,7 +122,7 @@ const Serversidetracking = () => {
                 <link rel="canonical" href="https://www.analyticsliv.com/services/server-side-tracking"></link>
             </Head>
 
-            <div className='max-w-screen-2xl mx-auto'>
+        
                 <section className='ssthome w-full relative font-gilroy overflow-hidden'>
                     <div className='h-full'>
                         <div className="relative px-4 md:px-12 pt-8 md:pt-[10px] pb-8 md:pb-16 h-full z-20">
@@ -415,7 +415,7 @@ const Serversidetracking = () => {
                             <div className='text-start'>
                                 <h2 className='text-[32px] font-gilroy font-semibold text-[#fff] leading-[1.5em] tracking-wide text-left block'>Additional Services</h2>
                             </div>
-                            <p className='text-[#fff] text-[18px] font-normal leading-normal pt-7 my-5'>In addition to server-side tracking implementation, AnalyticsLiv offers a range of complementary services:</p>
+                            <p className='text-[#fff] text-[18px] font-normal leading-normal pt-7 my-5'>In Addition to server-side tracking implementation, AnalyticsLiv offers a range of complementary services:</p>
                             <div className='flex flex-col lg:flex-row gap-5 lg:gap-0 justify-between items-center pt-8'>
                                 <div className='lg:w-3/5'>
                                     <Image
@@ -601,7 +601,7 @@ const Serversidetracking = () => {
                         </div>
                     </div>
                 </section>
-            </div>
+            
 
         </>
     )
