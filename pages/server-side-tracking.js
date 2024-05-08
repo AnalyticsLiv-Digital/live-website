@@ -18,60 +18,60 @@ const ServerSideTracking = () => {
 
     const { Element: ScrollElement } = Scroll;
 
-    const scrolling = () =>{
+    const scrolling = () => {
         {
-          Scroll.scroller.scrollTo("form", {
-            duration: 500,
-            smooth: true,
-            offset: -100,
-          });
+            Scroll.scroller.scrollTo("form", {
+                duration: 500,
+                smooth: true,
+                offset: -100,
+            });
         }
-    
-      }
 
-  const scrolling1 = () =>{
-    {
-      Scroll.scroller.scrollTo("testimonials", {
-        duration: 500,
-        smooth: true,
-        offset: -100,
-      });
     }
 
-  }
+    const scrolling1 = () => {
+        {
+            Scroll.scroller.scrollTo("testimonials", {
+                duration: 500,
+                smooth: true,
+                offset: -100,
+            });
+        }
 
-  const scrolling2 = () =>{
-    {
-      Scroll.scroller.scrollTo("why-us", {
-        duration: 500,
-        smooth: true,
-        offset: -100,
-      });
     }
 
-  }
+    const scrolling2 = () => {
+        {
+            Scroll.scroller.scrollTo("why-us", {
+                duration: 500,
+                smooth: true,
+                offset: -100,
+            });
+        }
 
-  const scrolling4 = () =>{
-    {
-      Scroll.scroller.scrollTo("faqs", {
-        duration: 500,
-        smooth: true,
-        offset: -100,
-      });
     }
 
-  }
+    const scrolling4 = () => {
+        {
+            Scroll.scroller.scrollTo("faqs", {
+                duration: 500,
+                smooth: true,
+                offset: -100,
+            });
+        }
 
-  const scrolling3 = () =>{
-    {
-      Scroll.scroller.scrollTo("additional-services", {
-        duration: 500,
-        smooth: true,
-        offset: -100,
-      });
     }
 
-  }
+    const scrolling3 = () => {
+        {
+            Scroll.scroller.scrollTo("additional-services", {
+                duration: 500,
+                smooth: true,
+                offset: -100,
+            });
+        }
+
+    }
     // // // // Form // / // //
     const initialValues = { fullName: '', email: '', contact: '', message: '', website: '' };
     const [formValues, setFormValues] = useState(initialValues);
@@ -272,133 +272,134 @@ const ServerSideTracking = () => {
     return (
         <>
             <Head>
-        <link rel="icon" href="https://storage.googleapis.com/website-bucket-uploads/static/favicon.png" type="image/icon type"></link>
-                <meta name="description" content="AnalyticsLiv Digital is one of the leading Web and App analytics agency. We help our customers embrace Google Products to improve their customer experiences."/>
+                <link rel="icon" href="https://storage.googleapis.com/website-bucket-uploads/static/favicon.png" type="image/icon type"></link>
+                <meta name="description" content="AnalyticsLiv Digital is one of the leading Web and App analytics agency. We help our customers embrace Google Products to improve their customer experiences." />
                 <title>GTM Server Side - AnalyticsLiv</title>
-                
+
             </Head>
-   <header className="sticky min-w-full top-0 z-50 shadow-md bg-white">
-    <div className="navbar hidden lg:flex py-2 h-auto flex-wrap px-4 lg:flex-row items-center justify-between">
-        <a className="">
-          <img alt="analyticsliv-logo" className="h-8 lg:ml-4 w-auto cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png"/>
-        </a>
-        <nav className="lg:flex text-center">
-          <ul className="lg:flex text-base font-semibold text-left lg:text-center z-[-1] lg:z-auto lg:mr-4 lg:w-auto lg:space-x-6 items-center tracking-wide cursor-pointer">
-            <li onClick={scrolling1} className="hover:text-amber-500">Testimonials</li>
-            <li onClick={scrolling2} className="hover:text-amber-500">Why us</li>
-            <li onClick={scrolling3} className="hover:text-amber-500">Additional Services</li>
-            <li onClick={scrolling4} className="hover:text-amber-500">FAQs</li>
-    
-          </ul>
-          <a href="tel:7979634379">
-          <button className="cta px-5 py-2 bg-sky-300 rounded-2xl mx-2 text-base font-semibold cursor-pointer hover:bg-sky-400">CALL US</button>
-          </a>
-          <span className="hidden md:inline px-4">
-            <img alt="analyticsliv-gmp-partner" className="h-10 w-auto"   src="https://storage.googleapis.com/website-bucket-uploads/static/gmp.svg" />
-          </span>
-        </nav>
-    </div>
+            <header className="sticky min-w-full top-0 z-50 shadow-md bg-white">
+                <div className="navbar hidden lg:flex py-2 h-auto flex-wrap px-4 lg:flex-row items-center justify-between">
+                    <a className="">
+                        <img alt="analyticsliv-logo" className="h-8 lg:ml-4 w-auto cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" />
+                    </a>
+                    <nav className="lg:flex text-center">
+                        <ul className="lg:flex text-base font-semibold text-left lg:text-center z-[-1] lg:z-auto lg:mr-4 lg:w-auto lg:space-x-6 items-center tracking-wide cursor-pointer">
+                            <li onClick={scrolling1} className="hover:text-amber-500">Testimonials</li>
+                            <li onClick={scrolling2} className="hover:text-amber-500">Why us</li>
+                            <li onClick={scrolling3} className="hover:text-amber-500">Additional Services</li>
+                            <li onClick={scrolling4} className="hover:text-amber-500">FAQs</li>
+
+                        </ul>
+                        <a href="tel:7979634379">
+                            <button className="cta px-5 py-2 bg-sky-300 rounded-2xl mx-2 text-base font-semibold cursor-pointer hover:bg-sky-400">CALL US</button>
+                        </a>
+                        <span className="hidden md:inline px-4">
+                            <img alt="analyticsliv-gmp-partner" className="h-10 w-auto" src="https://storage.googleapis.com/website-bucket-uploads/static/gmp.svg" />
+                        </span>
+                    </nav>
+                </div>
 
 
-    <div className="relative  flex lg:hidden p-2">
-  <Link href="#"><img onClick={() => setIsOpen(false)} src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="relative h-10 md:mx-4 cursor-pointer"/></Link>
-  <a className="ml-4" href="tel:7979634379">
-          <button className="cta px-5 py-2 bg-sky-300 rounded-2xl mx-2 text-base font-semibold cursor-pointer hover:bg-sky-400">CALL US</button>
-          </a>
-              <button
-                onClick={() => {setIsOpen(!isOpen);}}
-                type="button"
-                className=" absolute inline-flex right-2 items-center justify-center p-2 rounded-md text-gray-400 hover:text-slate-900  focus:outline-none "
-                aria-controls="mobile-menu"
-                aria-expanded="false"
-              >
-                <span className="sr-only">Open main menu</span>
-                {!isOpen ? (
-                  <svg
-                    className="block h-6 w-6"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M4 6h16M4 12h16M4 18h16"
-                    />
-                  </svg>
-                ) : (
-                  <svg
-                    className="block h-6 w-6"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
-                )}
-              </button>
-            </div>
-            <Transition
-          show={isOpen}
-          enter="transition ease-out duration-100 transform"
-          enterFrom="opacity-0 scale-95"
-          enterTo="opacity-100 scale-100"
-          leave="transition ease-in duration-75 transform"
-          leaveFrom="opacity-100 scale-100"
-          leaveTo="opacity-0 scale-95"
-        >
-          {() => (
-            <div className="bg-white lg:hidden absolute w-full"  id="mobile-menu">
-              <div className="px-4 pt-2 pb-3 space-y-1 sm:px-3">
-                <p onClick={() => {setIsOpen(!isOpen); scrolling1();}}
-                  className=" text-slate-900 block px-3 py-2 rounded-md text-base font-medium"
+                <div className="relative  flex lg:hidden p-2">
+                    <Link href="#"><img onClick={() => setIsOpen(false)} src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="relative h-10 md:mx-4 cursor-pointer" /></Link>
+                    <a className="ml-4" href="tel:7979634379">
+                        <button className="cta px-5 py-2 bg-sky-300 rounded-2xl mx-2 text-base font-semibold cursor-pointer hover:bg-sky-400">CALL US</button>
+                    </a>
+                    <button
+                        onClick={() => { setIsOpen(!isOpen); }}
+                        type="button"
+                        className=" absolute inline-flex right-2 items-center justify-center p-2 rounded-md text-gray-400 hover:text-slate-900  focus:outline-none "
+                        aria-controls="mobile-menu"
+                        aria-expanded="false"
+                    >
+                        <span className="sr-only">Open main menu</span>
+                        {!isOpen ? (
+                            <svg
+                                className="block h-6 w-6"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M4 6h16M4 12h16M4 18h16"
+                                />
+                            </svg>
+                        ) : (
+                            <svg
+                                className="block h-6 w-6"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M6 18L18 6M6 6l12 12"
+                                />
+                            </svg>
+                        )}
+                    </button>
+                </div>
+                <Transition
+                    show={isOpen}
+                    enter="transition ease-out duration-100 transform"
+                    enterFrom="opacity-0 scale-95"
+                    enterTo="opacity-100 scale-100"
+                    leave="transition ease-in duration-75 transform"
+                    leaveFrom="opacity-100 scale-100"
+                    leaveTo="opacity-0 scale-95"
                 >
-                 <div>Testimonials</div>
-                  
-                </p>
+                    {() => (
+                        <div className="bg-white lg:hidden absolute w-full" id="mobile-menu">
+                            <div className="px-4 pt-2 pb-3 space-y-1 sm:px-3">
+                                <p onClick={() => { setIsOpen(!isOpen); scrolling1(); }}
+                                    className=" text-slate-900 block px-3 py-2 rounded-md text-base font-medium"
+                                >
+                                    <div>Testimonials</div>
 
-                <p onClick={() => {setIsOpen(!isOpen); scrolling2();}}
-                  href="#"
-                  className="text-slate-900 block px-3 py-2 rounded-md text-base font-medium"
-                >
-                  <div >Why us</div>
-                  
-                </p>
+                                </p>
 
-                <p onClick={() => {setIsOpen(!isOpen); scrolling3();}}
-                 
-                  className="text-slate-900 block px-3 py-2 rounded-md text-base font-medium"
-                >
-                  <div >Additional Services</div>
-                </p>
+                                <p onClick={() => { setIsOpen(!isOpen); scrolling2(); }}
+                                    href="#"
+                                    className="text-slate-900 block px-3 py-2 rounded-md text-base font-medium"
+                                >
+                                    <div >Why us</div>
 
-                <p onClick={() => {setIsOpen(!isOpen); scrolling4();}}
-    
-                  className="text-slate-900 block px-3 py-2 rounded-md text-base font-medium"
-                >
-                  <div >FAQs</div>
-                </p>
+                                </p>
+
+                                <p onClick={() => { setIsOpen(!isOpen); scrolling3(); }}
+
+                                    className="text-slate-900 block px-3 py-2 rounded-md text-base font-medium"
+                                >
+                                    <div >Additional Services</div>
+                                </p>
+
+                                <p onClick={() => { setIsOpen(!isOpen); scrolling4(); }}
+
+                                    className="text-slate-900 block px-3 py-2 rounded-md text-base font-medium"
+                                >
+                                    <div >FAQs</div>
+                                </p>
 
 
-              </div>
-            </div>
-          )}
-        </Transition>
-        <ScrollProgress color="red" showSpinner={false}/>
-  </header> 
+                            </div>
+                        </div>
+                    )}
+                </Transition>
+                <ScrollProgress color="red" showSpinner={false} />
+            </header>
 
-            <div className='max-w-screen-2xl mx-auto'>
-                <section className='ssthome w-full relative font-gilroy overflow-hidden' id='serverside '>
+
+            <section className='ssthome w-full relative font-gilroy overflow-hidden' id='serverside '>
+                <div className='max-w-screen-2xl mx-auto'>
                     <div className='h-full'>
                         <div className="relative px-4 md:px-12 pt-8 md:pt-[10px] pb-8 md:pb-16 h-full z-20">
 
@@ -415,14 +416,14 @@ const ServerSideTracking = () => {
                                     Move Beyond Unsafe Browser Tracking and Unreliable Third-Party Cookies. Our Server-side Tracking Solution Provides Access to The Data You Need While Ensuring Full Compliance. With Major Platforms Phasing Out Cookie Support.
                                 </p> */}
                                     <div className='flex items-center lg:justify-start justify-center gap-5'>
-                                        
-                                            <button onClick={scrolling} className="cursor-pointer bg-sky-500 hover:bg-sky-600 transition duration-200 delay-75 font-semibold text-white shadow-md shadow-gray-600 rounded-xl py-3 px-6 mt-2 uppercase">future-proof your <br /> analytics today</button>
-                                       
+
+                                        <button onClick={scrolling} className="cursor-pointer bg-sky-500 hover:bg-sky-600 transition duration-200 delay-75 font-semibold text-white shadow-md shadow-gray-600 rounded-xl py-3 px-6 mt-2 uppercase">future-proof your <br /> analytics today</button>
+
                                     </div>
                                 </div>
                                 {/*  */}
-                                <div className='w-full lg:w-1/2 flex items-center lg:justify-end justify-center order-2'>
-                                    <div className="relative flex md:justify-end justify-center my-4 md:my-0">
+                                <div className='w-full lg:w-1/2 flex items-center lg:justify-end justify-center order-2 relative md:my-0'>
+                                    {/* <div className="relative flex md:justify-end justify-center my-4 md:my-0"> */}
                                         <div className="absolute rounded-full bg-sky-100 w-56 h-56 left-0 -top-10 z-0 blur-xl"></div>
                                         <div className="z-10 text-center bg-gray-50 py-8 md:p-8 md:w-3/4 rounded-xl shadow-xl shadow-gray-400">
                                             <ScrollElement
@@ -430,7 +431,7 @@ const ServerSideTracking = () => {
                                                 name="contact-form"
                                             ></ScrollElement>
                                             {!formSubmit && <div className="block">
-                                                <h2 className="text-sky-900 md:p-0 p-[10px]">We Understand the importance of Server Side Tracking</h2>
+                                                <h2 className="text-sky-900 md:p-0 p-[10px]">We understand the importance of Server-Side Tracking</h2>
                                                 <h2 className="font-semibold text-2xl p-4 border-dashed border-b-2 border-sky-200">Let us help you !!</h2>
                                                 <ScrollElement id="form" name="form" ></ScrollElement>
 
@@ -469,14 +470,14 @@ const ServerSideTracking = () => {
                                             </div>}
 
                                         </div>
-                                    </div>
+                                    {/* </div> */}
                                 </div>
                                 {/*  */}
                             </div>
 
                             <div className=''>
                                 <div>
-                                <ScrollElement id="testimonials" name="testimonials"></ScrollElement>
+                                    <ScrollElement id="testimonials" name="testimonials"></ScrollElement>
                                     <h2 className='text-center font-bold font-gilroy text-base text-maintext leading-[24px]'>Trusted by Organisations Worldwide</h2>
                                 </div>
                                 <div className='w-[90%] m-auto'>
@@ -493,9 +494,11 @@ const ServerSideTracking = () => {
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <section className='sstwhy relative wepappour overflow-hidden'>
+            <section className='sstwhy relative wepappour overflow-hidden'>
+                <div className='max-w-screen-2xl mx-auto'>
                     <div className="relative px-4 md:px-12 pt-8 pb-8 md:pb-16 z-20">
                         <div>
                             <h3 className='text-[32px] font-gilroy font-semibold text-[#18265b] leading-[1.5em]'>Why Server-Side Tracking Matters</h3>
@@ -535,15 +538,17 @@ const ServerSideTracking = () => {
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <section className='sstchoose powerup relative overflow-hidden'>
+            <section className='sstchoose powerup relative overflow-hidden'>
+                <div className='max-w-screen-2xl mx-auto'>
                     <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 z-20">
                         <div>
-                        <ScrollElement id="why-us" name="why-us" ></ScrollElement>
+                            <ScrollElement id="why-us" name="why-us" ></ScrollElement>
                             <h3 className='text-[32px] font-gilroy font-semibold text-[#fff] leading-[1.5em]'>Why Choose AnalyticsLiv for Server-Side Tracking?</h3>
                         </div>
-                        <p className='text-[18px] font-gilroy text-[#fff] leading-[1.7em] my-5'>At AnalyticsLiv, we're experts in unlocking the power of server-side tracking. <br /> We offer:</p>
+                        <p className='text-[18px] font-gilroy text-[#fff] leading-[1.7em] my-5'>At AnalyticsLiv, we're experts in unlocking the power of server-side tracking. <br /> We offer </p>
                         <div className='lg:flex items-center justify-start lg:mt-10'>
                             {/* <div className='lg:w-[40%] w-full flex items-center justify-center'>
                             <img src="/Server_Side_tracking_sub_img.png" alt="" className='lg:h-auto md:h-[400px]' />
@@ -558,7 +563,7 @@ const ServerSideTracking = () => {
                                             <div className={`flex items-center justify-between gap-5 text-[#ffffff] ${isFs4mVisible ? 'mb-6' : 'mb-0'}`}>
                                                 <div className='flex items-center justify-start'>
                                                     <div className='inbox relative mr-[13px]'>
-                                                        <img src="/Market.png" alt="" className='h-12 lg:w-[60px] w-12' />
+                                                        <img src="/Market.png" alt="" className='h-12 w-12' />
                                                     </div>
                                                     <h2 className='text-base font-semibold font-gilroy text-[#ffffff] leading-normal'>Expertise & Experience</h2>
                                                 </div>
@@ -643,9 +648,11 @@ const ServerSideTracking = () => {
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <section className='sstframewrk font-gilroy'>
+            <section className='sstframewrk font-gilroy'>
+                <div className='max-w-screen-2xl mx-auto'>
                     <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
                         <h2 className='text-[32px] font-semibold text-[#18265b] leading-[1.5em] font-gilroy'>Our Framework for Implementing Server-Side Tracking</h2>
                         <p className='text-[18px] font-gilroy text-[#000] leading-[1.7em] my-5'>We follow a structured framework to ensure a seamless server-side tracking implementation:</p>
@@ -738,16 +745,18 @@ const ServerSideTracking = () => {
                             </Slider>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <section className='sstservice approach relative overflow-hidden font-gilroy'>
+            <section className='sstservice approach relative overflow-hidden font-gilroy'>
+                <div className='max-w-screen-2xl mx-auto'>
                     <div className='relative z-20 px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
                         <div>
-                        <ScrollElement id="additional-services" name="additional-services" ></ScrollElement>
+                            <ScrollElement id="additional-services" name="additional-services" ></ScrollElement>
                             <div className='text-start'>
                                 <h2 className='text-[32px] font-gilroy font-semibold text-[#fff] leading-[1.5em] tracking-wide text-left block'>Additional Services</h2>
                             </div>
-                            <p className='text-[#fff] text-[18px] font-normal leading-normal pt-7 my-5'>In addition to server-side tracking implementation, AnalyticsLiv offers a range of complementary services:</p>
+                            <p className='text-[#fff] text-[18px] font-normal leading-normal pt-7 my-5'>In Addition to server-side tracking implementation, AnalyticsLiv offers a range of complementary services:</p>
                             <div className='flex flex-col lg:flex-row gap-5 lg:gap-0 justify-between items-center pt-8'>
                                 <div className='lg:w-3/5'>
                                     <Image
@@ -812,10 +821,11 @@ const ServerSideTracking = () => {
                             </div>
                         </div>
                     </div>
+                </div>
+            </section>
 
-                </section>
-
-                <section className='sstcont progracont relative overflow-hidden font-gilroy'>
+            <section className='sstcont progracont relative overflow-hidden font-gilroy'>
+                <div className='max-w-screen-2xl mx-auto'>
                     <div className='relative px-4 md:px-12 pt-8 pb-8 z-20'>
                         <div className='flex md:flex-nowrap flex-wrap items-center mx-auto'>
                             <div className='md:w-[66%] w-full'>
@@ -844,12 +854,14 @@ const ServerSideTracking = () => {
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <section className='sstfaq relative overflow-hidden font-gilroy'>
+            <section className='sstfaq relative overflow-hidden font-gilroy'>
+                <div className='max-w-screen-2xl mx-auto'>
                     <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 z-20">
                         <div>
-                        <ScrollElement id="faqs" name="faqs" ></ScrollElement>
+                            <ScrollElement id="faqs" name="faqs" ></ScrollElement>
                             <h3 className='text-[32px] font-semibold text-[#000000] leading-[1.5em] font-gilroy mb-2'>FAQ's</h3>
                         </div>
                         <div className='md:flex items-center justify-start mt-10'>
@@ -933,17 +945,12 @@ const ServerSideTracking = () => {
                             </div>
                         </div>
                     </div>
-                </section>
-            </div>
+                </div>
+            </section>
+
 
         </>
     )
 }
 
 export default ServerSideTracking
-
-
-// // // // // // // Server-Side Main Img // // // // // // // //
-{/* <div className=" w-full lg:w-1/2 flex items-center lg:justify-end justify-center lg:order-2 order-1">
-                                    <img src="/Server_Side_tracking_Page_Main_Img.png" alt="" className='h-[400px]' />
-                                </div> */}
