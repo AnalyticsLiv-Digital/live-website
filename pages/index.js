@@ -37,7 +37,7 @@ const page = () => {
      <Casestudies/>
      <Blogs/>
      <JoinUs/>
-     <PopupForm/>
+    
     </>
   )
 }
