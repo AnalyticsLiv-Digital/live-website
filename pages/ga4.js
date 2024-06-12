@@ -409,6 +409,7 @@ export default function ga4({ brandsdata }) {
                     </button>
 
                   </div>
+
                 </form>
               </div>}
 
@@ -417,6 +418,14 @@ export default function ga4({ brandsdata }) {
                 <h2 className="font-semibold text-2xl p-4 md:p-8 border-dashed border-b-2 border-sky-200">We will get back to you shortly !!</h2>
                 <img alt="thank you" src="https://storage.googleapis.com/website-bucket-uploads/static/Na_Dec_46.jpg" />
               </div>}
+              <a
+                href="https://docs.google.com/spreadsheets/d/1a3W4-dojm1F3T7v_mfqd_-kfQXq42q-zM2JHHAH2QbM/export?format=xlsx"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-xs text-blue-600 hover:text-blue-600 underline"
+              >
+                View Sample GA4 Audit
+              </a>
 
             </div>
           </div>
@@ -556,8 +565,8 @@ export default function ga4({ brandsdata }) {
 
 
 
-        <Testimonial/>
-        
+        <Testimonial />
+
         {/* <section className="review-slider">
           <ScrollElement
             id="testimonial"
