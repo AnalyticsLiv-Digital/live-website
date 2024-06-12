@@ -5,12 +5,11 @@ import * as Scroll from 'react-scroll';
 import { ScaleLoader } from 'react-spinners';
 import Marquee from "react-fast-marquee";
 import StructuredData from '../components/StructuredData';
-import Carousel from "react-multi-carousel";
+import Testimonial from '../components/home/Testimonial'
 import "react-multi-carousel/lib/styles.css";
 import Link from 'next/link';
 import ScrollProgress from '../components/ScrollProgress'
 import { Transition } from "@headlessui/react";
-import Iframe from 'react-iframe'
 
 const { Element: ScrollElement } = Scroll;
 
@@ -198,16 +197,16 @@ export default function ga4({ brandsdata }) {
 
 
   return (
-    <><Head>
-      <link rel="icon" href="https://storage.googleapis.com/website-bucket-uploads/static/favicon.png" type="image/icon type"></link>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Poppins"
-        rel="stylesheet"
-      />
-      <meta name="description" content="AnalyticsLiv Digital is one of the leading Web and App analytics agency. We help our customers embrace Google Products to improve their customer experiences." />
-      <title>Google Analytics 4 - AnalyticsLiv</title>
-
-    </Head>
+    <>
+      <Head>
+        <link rel="icon" href="https://storage.googleapis.com/website-bucket-uploads/static/favicon.png" type="image/icon type"></link>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins"
+          rel="stylesheet"
+        />
+        <meta name="description" content="AnalyticsLiv Digital is one of the leading Web and App analytics agency. We help our customers embrace Google Products to improve their customer experiences." />
+        <title>Google Analytics 4 - AnalyticsLiv</title>
+      </Head>
       <StructuredData data={stuctureData} />
       {showWaiting && <div className="fixed z-50 flex backdrop-blur top-0 left-0 right-0 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full"><ScaleLoader
         color="#271d90"
@@ -345,8 +344,8 @@ export default function ga4({ brandsdata }) {
         <section>
           <div className="flex items-center justify-between mt-4 md:px-20 pl-4">
             <div className="flex items-center m-2 md:float-none"><img alt="GA4 logo" src="https://storage.googleapis.com/website-bucket-uploads/static/Ga4_logo.png" />
-              <h1 className="  md:text-5xl text-2xl font-bold ml-4">Google Analytics 4</h1></div>
-
+              <h1 className="  md:text-5xl text-2xl font-bold ml-4">Google Analytics 4</h1>
+            </div>
           </div>
 
           <div className="relative md:flex items-center md:px-20 pl-4">
@@ -557,8 +556,9 @@ export default function ga4({ brandsdata }) {
 
 
 
-
-        <section className="review-slider">
+        <Testimonial/>
+        
+        {/* <section className="review-slider">
           <ScrollElement
             id="testimonial"
             name="testimonial"
@@ -609,7 +609,7 @@ export default function ga4({ brandsdata }) {
 
 
 
-        </section>
+        </section> */}
 
         {/* <section>
           <ScrollElement
