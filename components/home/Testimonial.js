@@ -77,18 +77,18 @@ const Testimonial = () => {
     return (
         <>
             <section className='testimonials bg-no-repeat bg-cover bg-blend-multiply bg-[#282833] font-gilroy'>
-                <div className='relative px-4 pt-8 md:pt-11 pb-8 md:pb-16 overflow-hidden'>
+                <div className='relative px-4 overflow-hidden'>
                     <div className='testimonial-component-wrapper flex flex-wrap lg:flex-nowrap justify-between'>
                         <div className='left-testimonial-item lg:w-[22.4%] w-full'>
-                            <div className='main-title-testimonial lg:w-[39%] w-auto lg:h-full h-auto lg:min-h-[1px] min-h-[344px] lg:p-16 lg:pl-5 py-5 px-10 lg:mx-0 -mx-5 flex lg:absolute static top-0 left-0'>
+                            <div className='main-title-testimonial lg:w-[24%] w-auto lg:h-full h-auto lg:min-h-[1px] min-h-[344px] lg:p-16 lg:pl-5 py-5 px-10 lg:mx-0 -mx-5 flex lg:absolute static top-0 left-0'>
                                 <div className='w-full lg:max-w-sm max-w-none'>
-                                    <h2 className='text-white lg:text-[28px] text-2xl leading-[55px] text-start font-semibold not-italic pb-8 md:pb-12'>Let's See What Our Clients Have To Say</h2>
+                                    <h2 className='text-white lg:text-[27px] text-2xl leading-[35px] text-start font-semibold not-italic pb-8 md:pb-12'>Let's See What Our Clients Have To Say</h2>
                                 </div>
                             </div>
                         </div>
                         <div className='right-testimonial-item w-full lg:max-w-5xl max-w-none'>
                             <div className='testimonial-item-wrapper relative lg:px-16 -mx-6 -px-10'>
-                                <div className='collection-list-wrapper lg:pt-20 pt-0 lg:pb-16 pb-10 lg:-mt-0 -mt-[88px] xl:w-full lg:w-[87%] lg:ml-auto'>
+                                <div className='collection-list-wrapper lg:pt-10 pt-0 pb-8 lg:-mt-0 -mt-[88px] xl:w-full lg:w-[87%] lg:ml-auto'>
                                     <Slider {...settings}>
                                         <div aria-hidden="true" className="testimonial1 text-center">
                                             <div className='max-[767px]:w-[330px] m-auto p-5 rounded-[10px]'>
@@ -132,7 +132,7 @@ const Testimonial = () => {
                                             </div>
                                         </div>
                                         <div aria-hidden="true" className="testimonial4 text-center">
-                                        <div className='max-[767px]:w-[330px] m-auto p-5 rounded-[10px]'>
+                                            <div className='max-[767px]:w-[330px] m-auto p-5 rounded-[10px]'>
                                                 <div className='quote p-5 md:h-[340px] h-[410px] relative'>
                                                     <div style={{ backgroundImage: 'url(/quote-white1.png)' }} className='bg-no-repeat bg-cover absolute xl:w-[131%] lg:w-[118%] w-[128%] xl:h-[148%] lg:h-[166%] h-[164%] xl:-top-[122px] lg:-top-[88px] md:-top-[82px] -top-[90px] md:-left-[73px] -left-[91px] opacity-[.1]'>
                                                     </div>
