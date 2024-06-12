@@ -362,8 +362,13 @@ export default function ga4({ brandsdata }) {
                   Spend Marketing Budgets more wisely</li>
               </ul>
               <img alt="img new" className="" src="https://storage.googleapis.com/website-bucket-uploads/static/IMG_New.png" />
-              <div style={{ width: '100%', display: 'flex', justifyContent: 'center', marginTop: '-39px', marginBottom: '31px' }}>
-                <button onClick={scrolling} className="cta schedule-button bg-amber-500 hover:bg-amber-600 transition-all delay-100 p-4 rounded-xl shadow-md shadow-gray-400 hover:shadow-gray-600 text-white font-semibold">Signup for free audit</button>
+              <div className="w-full flex justify-center mt-[-39px] mb-[31px] lg:hidden">
+                <button
+                  onClick={scrolling}
+                  className="cta schedule-button bg-amber-500 hover:bg-amber-600 transition-all delay-100 p-4 rounded-xl shadow-md shadow-gray-400 hover:shadow-gray-600 text-white font-semibold"
+                >
+                  Signup for free audit
+                </button>
               </div>
             </div>
             <div className="text-center bg-sky-50 p-4 md:p-8 md:w-3/5 rounded-xl shadow-xl">
@@ -558,7 +563,7 @@ export default function ga4({ brandsdata }) {
             id="testimonial"
             name="testimonial"
           ></ScrollElement>
-          <div className="relative h-full" style={{ backgroundImage: 'url(https://storage.googleapis.com/website-bucket-uploads/static/Working_woman.png)'}} >
+          <div className="relative h-full" style={{ backgroundImage: 'url(https://storage.googleapis.com/website-bucket-uploads/static/Working_woman.png)' }} >
             <h2 className="font-bold text-4xl py-8 md:py-12 text-center">Let's See What Our Clients Have To Say</h2>
             <div className="relative z-10 md:w-1/3 mx-4 md:mx-auto mt-4 bg-sky-100/90  px-8 pt-4 pb-0">
               <div className="relative w-20 rounded-full bg-white p-4 -top-12 mx-28 md:mx-auto shadow-md shadow-gray-400">
