@@ -419,7 +419,7 @@ export default function ga4({ brandsdata }) {
                 <img alt="thank you" src="https://storage.googleapis.com/website-bucket-uploads/static/Na_Dec_46.jpg" />
               </div>}
               <a
-                href="https://docs.google.com/spreadsheets/d/1a3W4-dojm1F3T7v_mfqd_-kfQXq42q-zM2JHHAH2QbM/export?format=xlsx"
+                href="https://docs.google.com/spreadsheets/d/1a3W4-dojm1F3T7v_mfqd_-kfQXq42q-zM2JHHAH2QbM"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="text-xs text-blue-600 hover:text-blue-600 underline"
