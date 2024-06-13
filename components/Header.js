@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 import { IoChevronDown, IoChevronUp } from "react-icons/io5";
 
 const header = () => {
-  const [header, setHeader] = useState(50);
+  const [header, setHeader] = useState(75);
   const [isWebResources, setIsWebResources] = useState(false);
   const [isWebServices, setIsSWebervices] = useState(false);
   const [isResources, setIsResources] = useState(false);
@@ -27,9 +27,9 @@ const header = () => {
       const totalScroll = document.documentElement.scrollTop;
 
       if ((totalScroll > 130)) {
-        setHeader(40);
-      } else if ((totalScroll < 100)) {
         setHeader(60);
+      } else if ((totalScroll < 100)) {
+        setHeader(75);
       }
 
 
@@ -62,64 +62,66 @@ const header = () => {
 
       <header className="sticky min-w-full top-0 z-50 bg-white font-rbt">
 
-        <div className='hidden lg:inline'>
-          <div className='flex items-center justify-between pt-5 px-5'>
-            <Link className="logo" href="/"><img alt="logo" aria-label="logo" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="h-10 lg:mx-4 cursor-pointer" /></Link>
-            <div style={{ height: header }} className="navbar hidden lg:flex py-2 h-auto flex-wrap px-4 lg:flex-row items-center justify-end">
+      <div className='hidden lg:inline'>
+        <div className='flex items-start justify-between pt-5 py-[17px] px-5'>
+          <Link className="logo" href="/"><img alt="logo" aria-label="logo" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="h-10 lg:mx-4 cursor-pointer" /></Link>
 
-              {/* <Link className="logo" href="/"><img alt="logo" aria-label="logo" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="h-10 lg:mx-4 cursor-pointer" /></Link> */}
-              <nav className="lg:flex text-center">
-                <ul className="lg:flex text-[14px] font-rbt font-medium text-txt text-left lg:text-center z-[-1] lg:z-auto lg:mr-4 lg:w-auto items-center  uppercase tracking-wide cursor-pointer">
-                  <li className="relative flex items-center gap-[5px] hover:border-b-4 hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2" onMouseEnter={() => { setIsSWebervices(true) }} onMouseLeave={() => setIsSWebervices(false)}>
-                    <Link className="header-links" href="/services">What We Do</Link>
-                    <span className='mb-1'>
-                      {isWebServices ? (
-                        <IoChevronUp className="w-4 h-4" />
-                      ) : (
-                        <IoChevronDown className="w-4 h-4" />
-                      )}
-                    </span>
-                  </li>
-                  <li className="hover:border-b-4 lg:ml-[19px] flex items-center gap-[5px] hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2" onMouseEnter={() => setIsWebResources(true)} onMouseLeave={() => setIsWebResources(false)}>
-                    <a href="" > Resources </a>
-                    {isWebResources && <motion.div initial={{ y: 10, opacity: 0 }} animate={{ y: 60, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 30 }} id="submenu2" className="subheader absolute w-56 text-sm flex flex-col lg:-ml-20 lg:mt-2 divide-y bg-gray-100 text-cyan-900 items-center align-middle font-semibold">
-                      <Link href='/blogs'><div className="py-2 w-56 hover:border-b border-[#000]">Blogs</div></Link>
-                      <Link href='/case-studies'><div className="py-2 w-56 hover:border-b border-[#000]">Case Studies</div></Link>
-                      {/*<Link  href='/webinars'><div className="py-2 w-56 hover:bg-cyan-500">Webinars</div></Link>*/}
-                    </motion.div>}
-                    <span className='mb-1'>
-                      {isWebResources ? (
-                        <IoChevronUp className="w-4 h-4" />
-                      ) : (
-                        <IoChevronDown className="w-4 h-4" />
-                      )}</span>
-                  </li>
-                  <Link className="header-links" href="/about-us"><li className="hover:border-b-4 lg:ml-[19px] hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2">
-                    Who We Are
-                  </li>
-                  </Link>
-                  <Link className="header-links" href="/contact"><li className="hover:border-b-4 lg:ml-[19px] hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2">
-                    Contact Us
-                  </li></Link>
-                  <Link className="header-links" href="/engagement"><li className="hover:border-b-4 lg:ml-[19px] hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2">
-                    Engagement
-                  </li></Link>
-                  <Link className="header-links" href="/careers"><li className="hover:border-b-4 lg:ml-[19px] hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2 text-rose-700 animate-pulse hover:animate-none">
-                    We Are Hiring
-                  </li></Link>
-                </ul>
-                {/* <span className="hidden md:inline px-4">
+          <div className='hidden md:inline'>
+            <span className="text-right flex items-center justify-end">
+              <img alt="marketing-partner" aria-label="marketing-partner" src="https://storage.googleapis.com/website-bucket-uploads/static/gmp.svg" />
+            </span>
+          </div>
+        </div>
+        </div>
+
+        <div style={{ height: header }} className="navbar hidden lg:flex py-2 h-auto flex-wrap px-4 lg:flex-row items-center justify-end">
+
+          {/* <Link className="logo" href="/"><img alt="logo" aria-label="logo" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="h-10 lg:mx-4 cursor-pointer" /></Link> */}
+          <nav className="lg:flex text-center">
+            <ul className="lg:flex text-[14px] font-rbt font-medium text-txt text-left lg:text-center z-[-1] lg:z-auto lg:mr-4 lg:w-auto items-center  uppercase tracking-wide cursor-pointer">
+              <li className="relative flex items-center gap-[5px] hover:border-b-4 hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2" onMouseEnter={() => { setIsSWebervices(true) }} onMouseLeave={() => setIsSWebervices(false)}>
+                <Link className="header-links" href="/services">What We Do</Link>
+                <span className='mb-1'>
+                  {isWebServices ? (
+                    <IoChevronUp className="w-4 h-4" />
+                  ) : (
+                    <IoChevronDown className="w-4 h-4" />
+                  )}
+                </span>
+              </li>
+              <li className="hover:border-b-4 lg:ml-[19px] flex items-center gap-[5px] hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2" onMouseEnter={() => setIsWebResources(true)} onMouseLeave={() => setIsWebResources(false)}>
+                <a href="" > Resources </a>
+                {isWebResources && <motion.div initial={{ y: 10, opacity: 0 }} animate={{ y: 60, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 30 }} id="submenu2" className="subheader absolute w-56 text-sm flex flex-col lg:-ml-20 lg:mt-2 divide-y bg-gray-100 text-cyan-900 items-center align-middle font-semibold">
+                  <Link href='/blogs'><div className="py-2 w-56 hover:border-b border-[#000]">Blogs</div></Link>
+                  <Link href='/case-studies'><div className="py-2 w-56 hover:border-b border-[#000]">Case Studies</div></Link>
+                  {/*<Link  href='/webinars'><div className="py-2 w-56 hover:bg-cyan-500">Webinars</div></Link>*/}
+                </motion.div>}
+                <span className='mb-1'>
+                  {isWebResources ? (
+                    <IoChevronUp className="w-4 h-4" />
+                  ) : (
+                    <IoChevronDown className="w-4 h-4" />
+                  )}</span>
+              </li>
+              <Link className="header-links" href="/about-us"><li className="hover:border-b-4 lg:ml-[19px] hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2">
+                Who We Are
+              </li>
+              </Link>
+              <Link className="header-links" href="/contact"><li className="hover:border-b-4 lg:ml-[19px] hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2">
+                Contact Us
+              </li></Link>
+              <Link className="header-links" href="/engagement"><li className="hover:border-b-4 lg:ml-[19px] hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2">
+                Engagement
+              </li></Link>
+              <Link className="header-links" href="/careers"><li className="hover:border-b-4 lg:ml-[19px] hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2 text-rose-700 animate-pulse hover:animate-none">
+                We Are Hiring
+              </li></Link>
+            </ul>
+            {/* <span className="hidden md:inline px-4">
               <img alt="marketing-partner" aria-label="marketing-partner" src="https://storage.googleapis.com/website-bucket-uploads/static/gmp.svg" />
             </span> */}
 
-              </nav>
-            </div>
-            <div className='hidden md:inline'>
-              <span className="text-right flex items-center justify-end">
-                <img alt="marketing-partner" aria-label="marketing-partner" src="https://storage.googleapis.com/website-bucket-uploads/static/gmp.svg" />
-              </span>
-            </div>
-          </div>
+          </nav>
         </div>
 
         <div className="relative  flex lg:hidden p-2">
