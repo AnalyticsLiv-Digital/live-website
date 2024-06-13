@@ -514,37 +514,21 @@ export default function ga4({ brandsdata }) {
           </div>
         </section>
 
-        {/* <section className="flex flex-col md:flex-row items-center w-full mt-16 relative">
-          <div className="md:absolute bg-white z-10 left-0 w-full md:w-2/3 lg:w-1/2 h-auto md:h-4/5 p-6 md:p-10 rounded-tl-none rounded-tr-xl rounded-bl-none rounded-br-xl shadow-lg">
-            <p className="text-3xl md:text-4xl lg:text-5xl font-medium leading-snug text-left">
-              Get captivating customer insights and Analysis.
-            </p>
-            <p className="text-base md:text-lg leading-relaxed mt-4">
-              By partnering with AnalyticsLiv, a Google Analytics Partner, you gain access to expert guidance and the latest tools to harness the power of GA4. Let's turn your data into a competitive advantage!
-            </p>
-            <button className="mt-6 py-3 px-6 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded transition-all duration-700 ease-in-out">
-              Get started today <i className="fa-solid fa-circle-play"></i>
-            </button>
-          </div>
-          <div className="w-full md:w-1/2 lg:w-2/3">
-            <img src="/ga4-second.png" alt="" className="w-full h-full object-cover transform scale-x-[-1]" />
-          </div>
-        </section> */}
-
         <section>
-          <div className="flex flex-col md:flex-row items-center w-full mt-16 relative">
-            <div className="bg-white z-10 left-0 w-full md:w-2/3 lg:w-1/2 h-auto md:h-4/5 p-6 md:p-10 rounded-br-[82px] shadow-lg">
-              <p className="text-3xl md:text-4xl lg:text-5xl font-medium leading-snug text-left text-blue-600">
+          <div className="flex flex-col md:flex-row items-center w-full mt-5 relative h-screen">
+            <div className=" absolute	bg-white z-10 left-0 w-full md:w-2/3 lg:w-1/2 h-auto md:h-3/5 p-6 md:p-6 rounded-3xl shadow-lg pl-8">
+              <p className="text-xl md:text-4xl font-semibold leading-snug text-left text-blue-400 mb-1">
                 Get captivating customer insights and Analysis.
               </p>
+
               <p className="text-base md:text-lg leading-relaxed mt-4 text-gray-700">
                 By partnering with AnalyticsLiv, a Google Analytics Partner, you gain access to expert guidance and the latest tools to harness the power of GA4. Let's turn your data into a competitive advantage!
               </p>
               <button className="mt-6 py-3 px-6 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded transition-all duration-700 ease-in-out">
-                Get started today <i className="fa-solid fa-circle-play"></i>
+                Get started today
               </button>
             </div>
-            <div className="w-full md:w-1/2 lg:w-2/3">
+            <div className="absolute w-full md:w-1/2 lg:w-2/3 right-0 h-5/6">
               <img src="/ga4-second.png" alt="Customer Insights and Analysis" className="w-full h-full object-cover transform scale-x-[-1]" />
             </div>
           </div>
