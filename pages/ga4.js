@@ -341,7 +341,7 @@ export default function ga4({ brandsdata }) {
           <ScrollProgress color="red" showSpinner={false} />
         </header>
 
-        <section>
+        {/* <section>
           <div className="flex items-center justify-between mt-4 md:px-20 pl-4">
             <div className="flex items-center m-2 md:float-none"><img alt="GA4 logo" src="https://storage.googleapis.com/website-bucket-uploads/static/Ga4_logo.png" />
               <h1 className="  md:text-5xl text-2xl font-bold ml-4">Google Analytics 4</h1>
@@ -398,7 +398,7 @@ export default function ga4({ brandsdata }) {
                     <span className="text-xs text-red-600 float-left">{formErrors.message}</span>
                   </div>
                   <div>
-                    {/* <button className="cta bg-amber-500 hover:bg-amber-600 font-semibold text-white px-8 py-2 rounded-xl shadow-md shadow-gray-400 hover:shadow-gray-600 transition-transform delay-100">SIGN UP </button> */}
+                    <button className="cta bg-amber-500 hover:bg-amber-600 font-semibold text-white px-8 py-2 rounded-xl shadow-md shadow-gray-400 hover:shadow-gray-600 transition-transform delay-100">SIGN UP </button>
                     <button
                       className="cta font-semibold text-white px-8 py-2 rounded-xl shadow-md shadow-gray-400 hover:shadow-gray-600 transition-transform delay-100"
                       style={{ backgroundColor: '#1A73E8' }}
@@ -429,10 +429,93 @@ export default function ga4({ brandsdata }) {
 
             </div>
           </div>
-        </section>
+        </section> */}
+
+        
 
         <section>
+          <div className="main bg-cover bg-center relative text-white" style={{ backgroundImage: "url('/ga4-head.png')", height: "105vh" }}>
+            <div className="relative md:flex items-center md:px-10 md:py-10">
+              <div className="pt-6 md:w-3/4 z-10 text-white">
+              <h2 className="font-poppins text-3xl md:text-5xl font-semibold leading-tight text-left">SMART . FAST . ACCURATE</h2>
+                <p className="font-poppins text-lg leading-7 mt-4 w-full md:w-1/2">
+                  Unleash the full potential of Data with AnalyticsLiv, a certified Google Analytics Partner.
+                </p>
+                <div className="w-full flex mt-6">
+                  <button
+                    onClick={scrolling}
+                    className="bg-blue-500 hover:bg-blue-600 transition-all delay-100 p-4 rounded-xl shadow-md hover:shadow-gray-600 text-white font-semibold"
+                  >
+                    Sign up for a Free Audit
+                  </button>
+                </div>
+              </div>
 
+              <div className="text-center bg-sky-50 p-4 md:p-8 md:w-1/2 rounded-xl shadow-xl mt-8 md:mt-0">
+
+                {!formSubmit && <div className="block">
+                  <h2 className="font-poppins text-lg font-medium leading-7 text-center text-sky-900">
+                    We Understand setting up GA4 can be complex sometimes.
+                  </h2>
+
+                  <h2 className="font-semibold text-2xl border-dashed border-b-2 border-sky-200 text-black">Let us help you !!</h2>
+                  <ScrollElement
+                    id="contact-form"
+                    name="contact-form"
+                  ></ScrollElement>
+                  <form className="px-8 pt-6 pb-2 space-y-2" onSubmit={handleSubmit}>
+                    <div>
+                      <input type="text" placeholder="FULL NAME*" className="bg-sky-50 border-b-2 w-full px-4 py-2 focus:outline-none focus:border-2 focus:border-sky-200" id="fullName" name="fullName" value={formValues.fullName} onChange={handleChange} />
+                      <span className="text-xs text-red-600 float-left">{formErrors.fullName}</span>
+                    </div>
+
+                    <div>
+                      <input type="email" placeholder="EMAIL*" className="bg-sky-50 border-b-2 w-full px-4 py-2 focus:outline-none focus:border-2 focus:border-sky-200" id="email" name="email" value={formValues.email} onChange={handleChange} />
+                      <span className="text-xs text-red-600 float-left">{formErrors.email}</span>
+                    </div>
+                    <div>
+                      <input type="tel" placeholder="CONTACT NO." className="bg-sky-50 border-b-2 w-full px-4 py-2 focus:outline-none focus:border-2 focus:border-sky-200" id="contact" name="contact" value={formValues.contact} onChange={handleChange} />
+
+                    </div>
+                    <div>
+                      <textarea placeholder="TYPE MESSAGE*" className="bg-sky-50 border-b-2 w-full px-4 py-2 focus:outline-none focus:border-2 focus:border-sky-200" id="message" name="message" value={formValues.message} onChange={handleChange}></textarea>
+                      <span className="text-xs text-red-600 float-left">{formErrors.message}</span>
+                    </div>
+                    <div>
+                      <button
+                        className="cta font-semibold text-white px-8 py-2 rounded-xl shadow-md shadow-gray-400 hover:shadow-gray-600 transition-transform delay-100"
+                        style={{ backgroundColor: '#1A73E8' }}
+                        onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#1558B5'}
+                        onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#1A73E8'}
+                      >
+                        SIGN UP
+                      </button>
+                    </div>
+
+                  </form>
+                </div>}
+
+                {formSubmit && <div>
+                  <h2 className="md:text-xl text-sky-900">Thank you for showing interest with us!</h2>
+                  <h2 className="font-semibold text-2xl p-4 md:p-8 border-dashed border-b-2 border-sky-200">We will get back to you shortly !!</h2>
+                  <img alt="thank you" src="https://storage.googleapis.com/website-bucket-uploads/static/Na_Dec_46.jpg" />
+                </div>}
+                <a
+                  href="https://docs.google.com/spreadsheets/d/1a3W4-dojm1F3T7v_mfqd_-kfQXq42q-zM2JHHAH2QbM"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-blue-600 hover:text-blue-600 underline"
+                >
+                  View Sample GA4 Audit
+                </a>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <section>
           <div className="bg-white py-4">
             <h2 className="text-center font-bold text-xl">200+ Clients served for GA4</h2>
             <div className="brandsimages flex space-x-8 justify-center py-4 px-4 mt-4">
@@ -520,6 +603,7 @@ export default function ga4({ brandsdata }) {
           </div>
 
         </section>
+
         <ScrollElement
           id="case-studies"
           name="case-studies"
@@ -564,114 +648,17 @@ export default function ga4({ brandsdata }) {
         </section>
 
 
-
-        <Testimonial />
-
-        {/* <section className="review-slider">
+        <section>
           <ScrollElement
             id="testimonial"
             name="testimonial"
           ></ScrollElement>
-          <div className="relative h-full" style={{ backgroundImage: 'url(https://storage.googleapis.com/website-bucket-uploads/static/Working_woman.png)' }} >
-            <h2 className="font-bold text-4xl py-8 md:py-12 text-center">Let's See What Our Clients Have To Say</h2>
-            <div className="relative z-10 md:w-1/3 mx-4 md:mx-auto mt-4 bg-sky-100/90  px-8 pt-4 pb-0">
-              <div className="relative w-20 rounded-full bg-white p-4 -top-12 mx-28 md:mx-auto shadow-md shadow-gray-400">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-12" viewBox="0 0 24 24">
-                  <path fill="CornflowerBlue" d="M6.5 10c-.223 0-.437.034-.65.065c.069-.232.14-.468.254-.68c.114-.308.292-.575.469-.844c.148-.291.409-.488.601-.737c.201-.242.475-.403.692-.604c.213-.21.492-.315.714-.463c.232-.133.434-.28.65-.35l.539-.222l.474-.197l-.485-1.938l-.597.144c-.191.048-.424.104-.689.171c-.271.05-.56.187-.882.312c-.318.142-.686.238-1.028.466c-.344.218-.741.4-1.091.692c-.339.301-.748.562-1.05.945c-.33.358-.656.734-.909 1.162c-.293.408-.492.856-.702 1.299c-.19.443-.343.896-.468 1.336c-.237.882-.343 1.72-.384 2.437c-.034.718-.014 1.315.028 1.747c.015.204.043.402.063.539l.025.168l.026-.006A4.5 4.5 0 1 0 6.5 10zm11 0c-.223 0-.437.034-.65.065c.069-.232.14-.468.254-.68c.114-.308.292-.575.469-.844c.148-.291.409-.488.601-.737c.201-.242.475-.403.692-.604c.213-.21.492-.315.714-.463c.232-.133.434-.28.65-.35l.539-.222l.474-.197l-.485-1.938l-.597.144c-.191.048-.424.104-.689.171c-.271.05-.56.187-.882.312c-.317.143-.686.238-1.028.467c-.344.218-.741.4-1.091.692c-.339.301-.748.562-1.05.944c-.33.358-.656.734-.909 1.162c-.293.408-.492.856-.702 1.299c-.19.443-.343.896-.468 1.336c-.237.882-.343 1.72-.384 2.437c-.034.718-.014 1.315.028 1.747c.015.204.043.402.063.539l.025.168l.026-.006A4.5 4.5 0 1 0 17.5 10z" />
-                </svg>
-              </div>
-              <Carousel className="pb-4" ssr={true} showDots={true} responsive={responsive} infinite={true} autoPlay autoPlaySpeed={4000} transitionDuration={500} removeArrowOnDeviceType={["tablet", "mobile"]}>
-
-
-                <div>
-
-                  <div className="relative flex items-center my-4 w-full justify-center space-x-4 text-center">
-                    <img alt="client avatar" src="https://storage.googleapis.com/website-bucket-uploads/static/Character_1.png" className="" />
-                    <h2 className="font-bold text-3xl">Ebenezer Ferreira</h2>
-                  </div>
-                  <p className=" mx-auto">"AnalyticsLiv has been FUTEK web analytics partner for almost 3 years now. They supported us with GTM implementation, GA to GA4 migration, Looker studio dashboard creations and Google cloud storage implementation. They respond to our request in a timely manner and make their best efforts to resolve the web analytics issues. We are happy with the support provided by AnalyticsLiv"</p>
-                </div>
-
-                <div>
-
-                  <div className="relative flex items-center my-4 w-full justify-center space-x-4 text-center">
-                    <img alt="client avatar" src="https://storage.googleapis.com/website-bucket-uploads/static/Character_1.png" className="" />
-                    <h2 className="font-bold text-3xl">Bobby Bruno</h2>
-                  </div>
-                  <p className=" mx-auto">"AnalyticsLiv team was an excellent asset to our businesses' switch from Universal Analytics to GA4. They had excellent communication throughout the project, giving me feedback, updates and ideas as the project went on. I would be happy to recommend the AnalyticsLiv team for analytics and tag manager work, and look forward to working with them in the future. Thank you!"</p>
-                </div>
-
-                <div>
-                  <div className="relative flex items-center my-4 w-full justify-center space-x-4 text-center">
-                    <img alt="client avatar" src="https://storage.googleapis.com/website-bucket-uploads/static/Character_1.png" className="" />
-                    <h2 className="font-bold text-3xl">Charles Lundy</h2>
-                  </div>
-                  <p className=" mx-auto">"The AnalyticsLiv team estimated the job length accurately and then carried out the work exactly as briefed, to time and budget. We had one brief hiccup in the conversion tracking code but that was swiftly fixed once identified. Would definitely consider using it again and for more advanced reporting functionality in future"</p>
-                </div>
-
-
-
-              </Carousel>
-            </div>
-            <div className="relative md:w-1/3 z-0 bg-sky-100/90 h-52 rounded-b-full mx-4 md:mx-auto pb-0"></div>
-          </div>
-
-
-
-        </section> */}
-
-        {/* <section>
-          <ScrollElement
-            id="data-visualisation"
-            name="data-visualisation"
-          ></ScrollElement>
-          <h2 className="font-bold text-4xl py-4 md:pb-8 text-center">Data Visualizations Using Google Analytics 4</h2>
-          <Carousel className="h-100" ssr={true} showDots={true} responsive={responsive} infinite={true} autoPlay autoPlaySpeed={4000} transitionDuration={500} removeArrowOnDeviceType={["tablet", "mobile"]}>
-
-            <div className='md:w-2/3 mx-4 md:mx-auto h-auto'>
-              <img alt="dashboard image" className='mx-auto' style={{ height: '440px' }} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_1_Small.png'></img>
-            </div>
-
-            <div className='md:w-2/3 mx-4 md:mx-auto h-auto'>
-              <img alt="dashboard image" className='mx-auto' style={{ height: '440px' }} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_2_Small.png'></img>
-            </div>
-
-            <div className='md:w-2/3 mx-4 md:mx-auto h-auto'>
-              <img alt="dashboard image" className='mx-auto' style={{ height: '440px' }} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_3_Small.png'></img>
-            </div>
-
-            <div className='md:w-2/3 mx-4 md:mx-auto h-auto'>
-              <img alt="dashboard image" className='mx-auto' style={{ height: '440px' }} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_4_Small.png'></img>
-            </div>
-
-            <div className='md:w-2/3 mx-4 md:mx-auto'>
-              <img alt="dashboard image" className='mx-auto' style={{ height: '440px' }} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_5_Small.png'></img>
-            </div>
-
-            <div className='md:w-2/3 mx-4 md:mx-auto h-auto'>
-              <img alt="dashboard image" className='mx-auto' style={{ height: '440px' }} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_6_Small.png'></img>
-            </div>
-
-            <div className='md:w-2/3 mx-4 md:mx-auto h-auto'>
-              <img alt="dashboard image" className='mx-auto' style={{ height: '440px' }} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_7_Small.png'></img>
-            </div>
-
-            <div className='md:w-2/3 mx-4 md:mx-auto h-auto'>
-              <img alt="dashboard image" className='mx-auto' style={{ height: '440px' }} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_8_small.png'></img>
-            </div>
-
-            <div className='md:w-2/3 mx-4 md:mx-auto h-auto'>
-              <img alt="dashboard image" className='mx-auto' style={{ height: '440px' }} src='https://storage.googleapis.com/website-bucket-uploads/static/dashboard_images/image_9_Small.png'></img>
-            </div>
-
-
-          </Carousel>
-        </section> */}
+          <Testimonial />
+        </section>
         <div className='md:flex justify-center md:space-x-20 items-center px-2 md:px-16 bg-sky-300 py-2 text-center'>
           <h2 className='text-left mb-2'>Customize Your Data Visualization with GA4</h2>
           <button onClick={scrolling} className="cta px-5 py-2 bg-sky-400 rounded-2xl mx-2 text-sm font-semibold cursor-pointer hover:bg-sky-500">CONTACT US</button>
         </div>
-
       </div>
 
     </>
