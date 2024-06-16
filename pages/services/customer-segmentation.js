@@ -110,7 +110,7 @@ const customersegmentation = () => {
             </Head>
             <section className='cshome w-full relative font-gilroy overflow-hidden'>
                 <div className='h-full'>
-                    <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 h-full z-20">
+                    <div className="relative px-4 md:px-12 pt-8 pb-8 h-full z-20 md:py-0">
                         <div className="z-10 flex lg:flex-nowrap items-center flex-wrap justify-between gap-7 pb-8">
                             <div className="space-y-4 w-full lg:w-1/2 lg:order-1 order-2">
                                 <h1 className="text-[32px] leading-[1.7em] font-gilroy font-semibold text-maintext pt-4">
@@ -133,7 +133,7 @@ const customersegmentation = () => {
                             <div>
                                 <h2 className='text-center font-bold text-base text-maintext leading-[24px]'>Trusted by Organisations Worldwide</h2>
                             </div>
-                            <div className='w-[90%] m-auto'>
+                            <div className='w-[90%] m-auto md:w-full'>
                                 <Marquee gradient={false} pauseOnHover="true">
                                     <div className='flex space-x-8 justify-center py-4 px-4 mt-4'>
                                         {Trusteddata.brand.map((brand, index) => (
@@ -156,7 +156,7 @@ const customersegmentation = () => {
                 </div>
                 {/*  */}
 
-                <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
+                <div className='px-4 md:px-20 pt-8 pb-8'>
                     <div>
                         <div className='text-start'>
                             <h2 className='text-maintext text-[32px] font-semibold font-gilroy leading-normal text-left block mb-2'>Why Customer Segmentation Matters</h2>
@@ -227,7 +227,7 @@ const customersegmentation = () => {
                         <div className='flex items-center justify-start'>
                             <h2 className='text-[#ffffff] text-[32px] font-semibold font-gilroy leading-normal text-center mb-2'>How AnalyticsLiv Does Customer Segmentation</h2>
                         </div>
-                        <p className='text-[#ffffff] leading-[1.5em] text-[18px] font-normal mt-5'>At AnalyticsLiv, we leverage advanced data analytics techniques to uncover hidden patterns within your customer data. Our process involves</p>
+                        <p className='text-[#ffffff] leading-[1.5em] text-[18px] font-normal mt-5 md:mt-0'>At AnalyticsLiv, we leverage advanced data analytics techniques to uncover hidden patterns within your customer data. Our process involves</p>
                         <div class="flex flex-wrap items-center justify-center pt-[50px]">
                             <div className='lg:w-1/2 w-full'>
                                 <div className='grid lg:grid-cols-1 sm:grid-cols-2 lg:gap-3 gap-7'>
@@ -311,12 +311,12 @@ const customersegmentation = () => {
                 </div>
             </section>
             <section className='csworkflo font-gilroy'>
-                <div className='relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 z-20'>
+                <div className='relative px-4 md:px-12 pt-8 pb-8 z-20'>
                     <div className='flex items-center justify-start'>
                         <h2 className='text-txt leading-[1.5em] text-[32px] font-semibold text-center mb-2'>Our Customer Segmentation Workflow</h2>
                     </div>
                     <p className='text-txt leading-[1.5em] text-[18px] font-normal mb-5'>Here's a simplified view of our customer segmentation workflow</p>
-                    <div className='py-10'>
+                    <div className='py-10 md:py-4'>
                         <Slider {...settings}>
                             <div aria-hidden="true" className="">
                                 <div className='cs1 min-[600px]:w-[90%] w-[300px] xl:h-[260px] min-[601px]:h-[280px] h-[260px] m-auto text-center rounded-[10px] border border-solid border-[#E2E2E2] bg-[#fff] hover:shadow-serviceoffer p-4'>
@@ -534,7 +534,7 @@ const customersegmentation = () => {
                                 <div>
                                     <div><h3 className='text-[#ffffff] text-[30px] leading-8 md:mb-[20px] mb-6 font-gilroy font-semibold'>Contact us</h3></div>
                                     <div>
-                                        <div className='text-[#ffffff] text-base leading-8 md:mb-[15px] mb-6 font-gilroy2 font-medium'>
+                                        <div className='text-[#ffffff] text-base leading-8 mb-6 font-gilroy2 font-medium md:mb-0'>
                                             <p className='text-[22px] mb-3'>Ready to Unlock the power of Customer Segmentation</p>
                                             Schedule a free consultation with our experts and discover <br /> how we can elevate your business
                                         </div>
@@ -557,11 +557,11 @@ const customersegmentation = () => {
                 </div>
             </section>
             <section className='csfaq crofaq relative overflow-hidden font-gilroy'>
-                <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 z-20">
+                <div className="relative px-4 md:px-12 pt-8 pb-8 z-20">
                     <div>
                         <h3 className='text-[32px] font-semibold text-[#000000] leading-[1.5em] font-gilroy mb-2'>FAQ's</h3>
                     </div>
-                    <div className='md:flex items-center justify-start mt-10'>
+                    <div className='md:flex items-center justify-start mt-10 md:mt-0'>
                         <div className='items-start lg:justify-start justify-center gap-7 w-full'>
                             <div className={`faqfst flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
