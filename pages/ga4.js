@@ -534,6 +534,164 @@ export default function ga4({ brandsdata }) {
           </div>
         </section>
 
+        <section>
+          <div className="mx-4 sm:mx-auto max-w-7xl">
+            <div className="mid3 text-2xl text-blue-500 font-semibold text-center py-4">
+              <p>Google Analytics - The support system of every marketing team, how it helps ?</p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 px-6 pb-8">
+              <div className="event1 bg-blue-100 shadow-md rounded-md p-4">
+                <div className="flex items-center pb-4">
+                  <div className="bg-blue-500 rounded-full w-14 h-14 overflow-hidden">
+                    <img src="/logo22.jpg" alt="" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="even1 ml-4">
+                    <p>Data Foundation & Automation :</p>
+                  </div>
+                </div>
+                <div className="evevent2b">
+                  <p>Establish a robust GA4 implementation, ensuring accurate data collection with built-in automation.</p>
+                </div>
+              </div>
+
+              <div className="event1 bg-blue-100 shadow-md rounded-md p-4">
+                <div className="flex items-center pb-4">
+                  <div className="bg-blue-500 rounded-full w-14 h-14 overflow-hidden">
+                    <img src="/location.jpg" alt="" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="even1 ml-4">
+                    <p>Customer Journey Mapping :</p>
+                  </div>
+                </div>
+                <div className="evevent2b">
+                  <p>GA4's advanced capabilities to map customer journey across touchpoints, revealing valuable insights into user behaviour.</p>
+                </div>
+              </div>
+
+              <div className="event1 bg-blue-100 shadow-md rounded-md p-4">
+                <div className="flex items-center pb-4">
+                  <div className="bg-blue-500 rounded-full w-14 h-14 overflow-hidden">
+                    <img src="/search.jpg" alt="" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="even1 ml-4">
+                    <p>Actionable Insights and Machine Learning :</p>
+                  </div>
+                </div>
+                <div className="evevent2b">
+                  <p>Leverage Google's machine learning to uncover hidden trends, predict future customer actions</p>
+                </div>
+              </div>
+
+              <div className="event1 bg-blue-100 shadow-md rounded-md p-4">
+                <div className="flex items-center pb-4">
+                  <div className="bg-blue-500 rounded-full w-14 h-14 overflow-hidden">
+                    <img src="/garph.jpg" alt="" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="even1 ml-4">
+                    <p>Seamless Integration & Reporting :</p>
+                  </div>
+                </div>
+                <div className="evevent2b">
+                  <p>Integrate GA4 with your existing marketing ecosystem, enabling 360° view across platforms and generate actionable reports</p>
+                </div>
+              </div>
+
+            </div>
+            <div className='flex justify-center w-full'>
+              <div className="event1 bg-blue-100 shadow-md rounded-md p-4 w-full md:w-3/5">
+                <div className="event1a flex items-center pb-4">
+                  <div className="bg-blue-500 rounded-full w-14 h-14 overflow-hidden">
+                    <img src="/hand.jpg" alt="" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="even1 ml-4">
+                    <p>Expert Guidance & Support :</p>
+                  </div>
+                </div>
+                <div className="evee">
+                  <p>Our team of Google Analytics certified consultants provide ongoing support and guidance to ensure you get the most out of GA4.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <section>
+          <div className="flex flex-col p-8">
+            <div className="mid3 text-2xl text-blue-500 font-semibold text-center py-4">
+              <p>Don't just collect data, make it work for you!</p>
+            </div>
+            <div className='w-full flex flex-col justify-center items-center md:flex-row'>
+              <div className="flex flex-col items-center sm:items-start h-full w-1/2">
+                <div className="flex items-center justify-center">
+                  <img className="w-2/3" src="/laptop.png" alt="" />
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-8 w-1/2">
+                <div className="space-y-8">
+                  <div className="flex flex-col items-start gap-8">
+                    <div className="flex items-center gap-8">
+                      <div className="bg-blue-500 rounded-full w-14 h-14 overflow-hidden">
+                        <img src="/logo22.jpg" alt="" className="w-full h-full object-cover" />
+                      </div>
+                      <div className="ml-4">
+                        <p className="font-semibold">Reduced Reporting Time :</p>
+                      </div>
+                    </div>
+                    <div className="mt-4 sm:mt-0">
+                      <p>Spend less time gathering data and more time making strategic decisions. (Example: Short testimonial about reduced reporting time can be included here)</p>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col items-start gap-8">
+                    <div className="flex items-center gap-8">
+                      <div className="w-20 p-4 rounded-full border border-white">
+                        <img src="bulb.jpg" alt="" className="w-full h-full object-cover" />
+                      </div>
+                      <div className="ml-4">
+                        <p className="font-semibold">Cross-Platform Insights :</p>
+                      </div>
+                    </div>
+                    <div className="mt-4 sm:mt-0">
+                      <p>Gain a holistic view of customer behavior across websites and apps.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col items-start gap-8">
+                    <div className="flex items-center gap-8">
+                      <div className="w-20 p-4 rounded-full border border-white">
+                        <img src="speaket.jpg" alt="" className="w-full h-full object-cover" />
+                      </div>
+                      <div className="ml-4">
+                        <p className="font-semibold">Improved Marketing ROI :</p>
+                      </div>
+                    </div>
+                    <div className="mt-4 sm:mt-0">
+                      <p>Optimize campaigns based on actionable insights and data-driven strategies.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col items-start gap-8">
+                    <div className="flex items-center gap-8">
+                      <div className="w-20 p-4 rounded-full border border-white">
+                        <img src="graph.jpg" alt="" className="w-full h-full object-cover" />
+                      </div>
+                      <div className="ml-4">
+                        <p className="font-semibold">Predictive Analytics :</p>
+                      </div>
+                    </div>
+                    <div className="mt-4 sm:mt-0">
+                      <p>Anticipate future customer actions and personalize experiences for better engagement.</p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <section>
           <div className="bg-white py-4">
