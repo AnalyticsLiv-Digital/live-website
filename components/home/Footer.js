@@ -18,12 +18,12 @@ const Footer = () => {
         <section className='homeftr relative overflow-hidden font-gilroy'>
             <div className='inrhomeftr relative'>
 
-                <div className='px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 relative z-20'>
+                <div className='px-4 md:px-12 pt-8 md:pt-4 pb-4 relative z-20'>
                     <footer className="bg-cover bg-opacity-60 f">
                         <div className='relative opacity-100'>
                             <div className='text-end flex items-center justify-start my-4 pb-5'>
                                 <a href="/" className='inline-block'>
-                                    <img src="AnalyticsLiv 3.png" alt="" className='w-[130px]' />
+                                    <img src="/AnalyticsLiv 3.png" alt="" className='w-[130px]' />
                                 </a>
                             </div>
                             <div className='flex flex-wrap items-start justify-between pb-7'>
@@ -136,7 +136,7 @@ const Footer = () => {
                                 <div className='bg-[#fdfdfd] w-full h-0.5 my-2'></div>
                             </div>
 
-                            <div className='flex items-center md:justify-start justify-center'>
+                            <div className='flex items-center justify-center'>
                                 <div className='text-[14px] font-normal text-white'>© Created by Analytics Liv Digital LLP, In Collaboration With Collabo LLC, All rights reserved.</div>
                             </div>
 
