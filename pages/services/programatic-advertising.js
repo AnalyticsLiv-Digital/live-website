@@ -76,8 +76,8 @@ const service_A = () => {
 
             <section className='prograhome w-full relative font-gilroy overflow-hidden'>
                 <div className='h-full'>
-                    <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 h-full z-20">
-                        <div className="z-10 flex lg:flex-nowrap items-center flex-wrap justify-between gap-7 pb-8">
+                    <div className="relative px-4 md:px-12 pt-8 md:pt-0 pb-8 h-full z-20 md:pb-0">
+                        <div className="z-10 flex lg:flex-nowrap items-center flex-wrap justify-between gap-7 pb-8 md:pb-0">
                             <div className="space-y-4 w-full lg:w-1/2 lg:order-1 order-2">
                                 <h1 className="2xl:text-[33px] lg:text-[28px] text-[27px] leading-[1.7em] font-['Poppins'] font-semibold text-maintext pt-4">
                                     DV360: Programmatic Media Buying Redefined with AnalyticsLiv
@@ -105,7 +105,7 @@ const service_A = () => {
                             <div>
                                 <h2 className='text-center font-bold text-base text-maintext leading-[24px]'>Trusted by Organisations Worldwide</h2>
                             </div>
-                            <div className='w-[90%] m-auto'>
+                            <div className='w-[90%] md:w-full m-auto'>
                                 <Marquee gradient={false} pauseOnHover="true">
                                     <div className='flex space-x-8 justify-center py-4 px-4 mt-4'>
                                         {Trusteddata.brand.map((brand, index) => (
@@ -122,9 +122,9 @@ const service_A = () => {
             </section>
 
             <section className='whydv360 overflow-hidden'>
-                <div className='relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16'>
+                <div className='relative px-4 md:px-12 pt-8 md:pt-5 pb-8 md:pb-16'>
                     <div>
-                        <div className='flex items-center justify-start pb-7'>
+                        <div className='flex items-center justify-start pb-7 md:pb-0'>
                             <h3 className='text-[#302E53] font-gilroy text-[28px] font-semibold leading-[1.5em] not-italic pb-5'>Why DV360?</h3>
                         </div>
                         <div className='grid lg:grid-cols-3 md:grid-cols-2 items-start justify-center gap-10'>
@@ -237,12 +237,12 @@ const service_A = () => {
             </section>
 
             <section className='approach relative overflow-hidden'>
-                <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 z-20">
+                <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-0 z-20">
                     <div>
                         <h3 className='text-[28px] font-semibold text-white leading-[1.5em] font-gilroy'>AnalyticsLiv 4M Approach  for DV360</h3>
                     </div>
-                    <div className='lg:flex items-center justify-start mt-10'>
-                        <div className='lg:w-[40%] w-full flex items-center justify-center'>
+                    <div className='lg:flex items-center justify-start mt-10 md:mt-0'>
+                        <div className='lg:w-[35%] w-full flex items-center justify-center'>
                             <img src="/4M_Images_Transparent.png" alt="" className='lg:h-auto md:h-[400px]' />
                         </div>
                         <div className='grid md:grid-cols-2 items-start lg:justify-start gap-7 lg:w-[60%] w-full'>
@@ -344,8 +344,8 @@ const service_A = () => {
 
             <section className='bg-[#282833] homeftr relative overflow-hidden font-gilroy'>
                 <div className='inrhomeftr relative'>
-                    <div className='relative z-20 px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
-                        <div className='flex items-center justify-start pb-7'>
+                    <div className='relative z-20 px-4 md:px-20 pt-8 md:pt-6 pb-8 md:pb-0'>
+                        <div className='flex items-center justify-start pb-7 md:pb-0'>
                             <h3 className='text-[#efefef] text-[28px] font-semibold leading-[1.5em] not-italic pb-5'>Our Comprehensive DV360 Services:</h3>
                         </div>
 
@@ -547,7 +547,7 @@ const service_A = () => {
             <Leaders headingFontSize="28px"/>
 
             <section className='programeasurement relative font-gilroy overflow-hidden'>
-                <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 z-20">
+                <div className="relative px-4 md:px-12 pt-8 md:pt-0 pb-8 md:pb-3 z-20">
                     <div className='flex md:flex-nowrap flex-wrap items-center md:justify-between justify-center gap-5'>
                         <div className='lg:w-1/2 md:w-[35%] w-[70%] md:mt-10'>
                             <div className='flex items-center justify-center lg:mt-0'>
@@ -569,7 +569,7 @@ const service_A = () => {
             </section>
 
             <section className='progracont relative overflow-hidden'>
-                <div className='relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 z-20'>
+                <div className='relative px-4 md:px-12 pt-8 pb-8 z-20'>
                     <div className='flex md:flex-nowrap flex-wrap items-center mx-auto'>
                         <div className='md:w-[66%] w-full'>
                             <div>
