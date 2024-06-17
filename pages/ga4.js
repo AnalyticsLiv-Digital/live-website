@@ -634,7 +634,7 @@ export default function ga4({ brandsdata }) {
                   <div className="flex flex-col items-start gap-8">
                     <div className="flex items-center gap-8">
                       <div className="bg-blue-500 rounded-full w-14 h-14 overflow-hidden">
-                        <img src="/logo22.jpg" alt="" className="w-full h-full object-cover" />
+                        <img src="/clock.png" alt="" className="w-full h-full object-cover" />
                       </div>
                       <div className="ml-4">
                         <p className="font-semibold">Reduced Reporting Time :</p>
@@ -647,8 +647,8 @@ export default function ga4({ brandsdata }) {
 
                   <div className="flex flex-col items-start gap-8">
                     <div className="flex items-center gap-8">
-                      <div className="w-20 p-4 rounded-full border border-white">
-                        <img src="bulb.jpg" alt="" className="w-full h-full object-cover" />
+                      <div className="bg-blue-500 rounded-full w-14 h-14 overflow-hidden">
+                        <img src="/idea.png" alt="" className="w-full h-full object-cover" />
                       </div>
                       <div className="ml-4">
                         <p className="font-semibold">Cross-Platform Insights :</p>
@@ -661,8 +661,8 @@ export default function ga4({ brandsdata }) {
 
                   <div className="flex flex-col items-start gap-8">
                     <div className="flex items-center gap-8">
-                      <div className="w-20 p-4 rounded-full border border-white">
-                        <img src="speaket.jpg" alt="" className="w-full h-full object-cover" />
+                      <div className="bg-blue-500 rounded-full w-14 h-14 overflow-hidden">
+                        <img src="/speaket.png" alt="" className="w-full h-full object-cover" />
                       </div>
                       <div className="ml-4">
                         <p className="font-semibold">Improved Marketing ROI :</p>
@@ -675,8 +675,8 @@ export default function ga4({ brandsdata }) {
 
                   <div className="flex flex-col items-start gap-8">
                     <div className="flex items-center gap-8">
-                      <div className="w-20 p-4 rounded-full border border-white">
-                        <img src="graph.jpg" alt="" className="w-full h-full object-cover" />
+                      <div className="bg-blue-500 rounded-full w-14 h-14 overflow-hidden">
+                        <img src="/graph.png" alt="" className="w-full h-full object-cover" />
                       </div>
                       <div className="ml-4">
                         <p className="font-semibold">Predictive Analytics :</p>
@@ -777,6 +777,74 @@ export default function ga4({ brandsdata }) {
               </ul>
               <button onClick={scrolling} className="cta schedule-button bg-sky-400 hover:bg-sky-500 text-white p-4 rounded-xl shadow-md shadow-gray-400 hover:shadow-gray-600 transition-all delay-100 font-semibold">Schedule Free Consultation</button>
 
+            </div>
+          </div>
+
+        </section>
+
+        <section>
+          <div className="max-2xl:min-h-screen pb-10">
+            <div>
+              <p className="font-bold max-md:px-3 md:font-semibold text-xl md:text-2xl lg:text-2xl lg:px-10 text-center text-blue-400">
+                Explore the full range of GA4 functionalities we can help you implement:
+              </p>
+            </div>
+
+            <div className="md:mt-10 2xl:pl-[730px] lg:px-10 max-2xl:min-h-screen overflow-hidden max-lg:flex max-lg:flex-col">
+              <div className="float-left lg:pt-96 xl:pt-72 m-auto lg:pr-20 lg:pl-10 max-sm:py-10">
+                <img src="/Ga4.png" alt="logo" />
+              </div>
+
+              <div className="max-md:px-5 md:ml-16 max-sm:flex max-sm:flex-col max-sm:items-center">
+                <div className="flex flex-col items-center md:flex md:flex-row sm:py-5 lg:transform lg:-translate-x-32">
+                  <p className="rounded-full bg-blue-50 p-3 md:p-8 lg:p-10 max-sm:w-max md:absolute md:z-10 text-lg font-extrabold sm:text-2xl lg:mt-5 text-blue-400">
+                    1
+                  </p>
+                  <span className="bg-blue-50 py-2 relative z-0 px-3 md:px-24 lg:px-32 xl:px-48 lg:ml-2 border border-transparent rounded-3xl md:mt-3 lg:mt-7">
+                    Built-in Automation for streamlined workflows.
+                  </span>
+                </div>
+                <div className="flex flex-col items-center md:flex md:flex-row py-8 lg:py-5 lg:transform lg:-translate-x-10">
+                  <p className="rounded-full bg-blue-50 p-3 md:p-8 lg:p-10 max-sm:w-max max-sm:h-max md:absolute md:z-10 text-lg font-extrabold sm:text-2xl lg:mt-5 text-blue-400">
+                    2
+                  </p>
+                  <span className="bg-blue-50 py-2 relative z-0 px-3 md:px-24 xl:px-48 lg:ml-2 border border-transparent rounded-3xl md:mt-3 lg:mt-7">
+                    Intuitive and Flexible Reporting for deeper analysis.
+                  </span>
+                </div>
+                <div className="flex flex-col items-center md:flex md:flex-row py-5 lg:py-7 lg:transform lg:translate-x-7">
+                  <p className="rounded-full bg-blue-50 p-3 md:p-8 lg:p-10 max-sm:w-max max-sm:h-max md:absolute md:z-10 text-lg font-extrabold sm:text-2xl lg:mt-5 text-blue-400">
+                    3
+                  </p>
+                  <span className="bg-blue-50 py-2 relative z-0 px-3 md:px-24 xl:px-48 lg:ml-2 border border-transparent rounded-3xl md:mt-3 lg:mt-7">
+                    Cross-Platform Attribution for accurate campaign measurement.
+                  </span>
+                </div>
+                <div className="flex flex-col items-center md:flex md:flex-row py-7 lg:transform lg:translate-x-7">
+                  <p className="rounded-full bg-blue-50 p-3 md:p-8 lg:p-10 max-sm:w-max max-sm:h-max md:absolute md:z-10 text-lg font-extrabold sm:text-2xl lg:mt-5 text-blue-400">
+                    4
+                  </p>
+                  <span className="bg-blue-50 py-2 relative z-0 px-3 md:px-24 xl:px-56 lg:ml-2 border border-transparent rounded-3xl md:mt-3 lg:mt-7">
+                    Explorations for custom data analysis.
+                  </span>
+                </div>
+                <div className="flex flex-col items-center md:flex md:flex-row py-5 lg:transform xl:-translate-x-10">
+                  <p className="rounded-full bg-blue-50 p-3 md:p-8 lg:p-10 max-sm:w-max max-sm:h-max md:absolute md:z-10 text-lg font-extrabold sm:text-2xl lg:mt-5 text-blue-400">
+                    5
+                  </p>
+                  <span className="bg-blue-50 py-2 relative z-0 px-3 md:px-24 xl:px-44 lg:ml-2 border border-transparent rounded-3xl md:mt-3 lg:mt-7">
+                    Easy Data Collection & Management with integrated tools.
+                  </span>
+                </div>
+                <div className="flex flex-col items-center md:flex md:flex-row py-8 lg:transform lg:translate-x-28 xl:translate-x-36">
+                  <p className="rounded-full bg-blue-50 p-3 md:p-8 lg:p-10 max-sm:w-max max-sm:h-max md:absolute md:z-10 text-lg font-extrabold sm:text-2xl lg:mt-5 text-blue-400">
+                    6
+                  </p>
+                  <span className="bg-blue-50 py-2 relative z-0 px-3 md:px-24 xl:px-40 lg:ml-2 border border-transparent rounded-3xl md:mt-3 lg:mt-7">
+                    Seamless Integration with existing marketing platforms.
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
 
