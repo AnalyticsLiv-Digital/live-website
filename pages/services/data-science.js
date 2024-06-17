@@ -92,7 +92,7 @@ const datascience = () => {
             </Head>
             <section className='dtshome w-full relative font-gilroy overflow-hidden'>
                 <div className='h-full'>
-                    <div className="relative px-4 md:px-12 pt-8 md:pt-[10px] pb-8 md:pb-16 h-full z-20">
+                    <div className="relative px-4 md:px-12 pt-8 md:pt-[10px] pb-8 md:pb-0 h-full z-20">
                         <div className="z-10 flex lg:flex-nowrap items-center flex-wrap justify-between gap-7 pb-8">
                             <div className="w-full lg:w-1/2 lg:order-1 order-2">
                                 <h1 className="text-[32px] leading-[1.7em] font-gilroy font-semibold text-maintext mb-[10px]">
@@ -119,7 +119,7 @@ const datascience = () => {
                             <div>
                                 <h2 className='text-center font-bold font-gilroy text-base text-maintext leading-[24px]'>Trusted by Organisations Worldwide</h2>
                             </div>
-                            <div className='w-[90%] m-auto'>
+                            <div className='w-[90%] m-auto md:w-full'>
                                 <Marquee gradient={false} pauseOnHover="true">
                                     <div className='flex space-x-8 justify-center py-4 px-4 mt-[10px]'>
                                         {Trusteddata.brand.map((brand, index) => (
@@ -135,7 +135,7 @@ const datascience = () => {
                 </div>
             </section>
             <section className='dtsabout font-gilroy'>
-                <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
+                <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-0'>
                     <div>
                         <div className='flex items-center justify-center'>
                             <h2 className='text-maintext lg:text-[28px] text-2xl font-semibold not-italic text-center'>Empowering Businesses with Data: AnalyticsLiv's Comprehensive Suite</h2>
@@ -173,7 +173,7 @@ const datascience = () => {
                 </div>
                 {/*  */}
 
-                <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
+                <div className='px-4 md:px-20 pt-8 pb-8 md:py-6'>
                     <div>
                         <div className='text-start'>
                             <h2 className='text-maintext lg:text-[28px] text-2xl font-gilroy font-semibold not-italic text-left block'>Our Solutions</h2>
@@ -618,7 +618,7 @@ const datascience = () => {
 
             </section >
             <section className='powerup bg-[#282833] insight relative overflow-hidden font-gilroy'>
-                <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 z-20">
+                <div className="relative px-4 md:px-12 pt-8 pb-8 z-20">
                     <div>
                         <h3 className='text-[28px] font-semibold text-white leading-[1.5em] font-gilroy mb-2'>The INSIGHT Methodology: Your Roadmap to Data-Driven Success</h3>
                     </div>
@@ -782,7 +782,7 @@ const datascience = () => {
                 </div>
             </section>
             <section className='dtwhychoos relative prograchoose overflow-hidden font-gilroy'>
-                <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 z-20">
+                <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-0 z-20">
                     <div>
                         <h3 className='text-[28px] font-gilroy font-semibold text-[#18265b] leading-[1.5em]'>Why Choose Analyticsliv?</h3>
                     </div>
@@ -932,7 +932,7 @@ const datascience = () => {
                                 <div>
                                     <div><h3 className='text-[#ffffff] text-[30px] leading-8 md:mb-[20px] mb-6 font-gilroy font-semibold'>Contact us</h3></div>
                                     <div>
-                                        <div className='text-[#ffffff] text-base leading-8 md:mb-[15px] mb-6 font-gilroy2 font-medium'>
+                                        <div className='text-[#ffffff] text-base leading-8 font-gilroy2 font-medium'>
                                             <p className='text-[22px] mb-3'>Unlock the power of Data Science & Solution</p>
                                             Schedule a free consultation with our experts and discover <br /> how we can elevate your business
                                         </div>
@@ -955,11 +955,11 @@ const datascience = () => {
                 </div>
             </section>
             <section className='dtsfaq crofaq relative overflow-hidden font-gilroy'>
-                <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 z-20">
+                <div className="relative px-4 md:px-12 pt-8 pb-8 z-20">
                     <div>
                         <h3 className='text-[28px] font-semibold text-[#000000] leading-[1.5em] font-gilroy mb-2'>FAQ's</h3>
                     </div>
-                    <div className='md:flex items-center justify-start mt-10'>
+                    <div className='md:flex items-center justify-start mt-10 md:mt-0'>
                         <div className='items-start lg:justify-start justify-center gap-7 w-full'>
                             <div className={`faqfst flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>

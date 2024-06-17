@@ -88,7 +88,7 @@ const Testimonial = () => {
                         </div>
                         <div className='right-testimonial-item w-full lg:max-w-5xl max-w-none'>
                             <div className='testimonial-item-wrapper relative lg:px-16 -mx-6 -px-10'>
-                                <div className='collection-list-wrapper lg:pt-10 pt-0 pb-8 lg:-mt-0 -mt-[88px] xl:w-full lg:w-[87%] lg:ml-auto'>
+                                <div className='collection-list-wrapper lg:pt-10 pt-0 lg:-mt-0 -mt-[88px] xl:w-full lg:w-[87%] lg:ml-auto'>
                                     <Slider {...settings}>
                                         <div aria-hidden="true" className="testimonial1 text-center">
                                             <div className='max-[767px]:w-[330px] m-auto p-5 rounded-[10px]'>

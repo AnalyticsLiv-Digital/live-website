@@ -116,7 +116,7 @@ const sem = () => {
 
             <section className='ssthome w-full relative font-gilroy overflow-hidden'>
                 <div className='h-full'>
-                    <div className="relative px-4 md:px-12 pt-8 pb-8 h-full z-20">
+                    <div className="relative px-4 md:px-12 pt-8 pb-8 h-full z-20 md:pb-0 md:pt-0">
                         <div className="z-10 flex lg:flex-nowrap items-center flex-wrap justify-between gap-7 pb-8">
                             <div className="w-full lg:w-1/2 lg:order-1 order-2">
                                 <h1 className="lg:text-[41px] text-[32px] lg:leading-[62px] leading-normal font-gilroy font-normal text-[#006EF5] mb-4">
@@ -140,7 +140,7 @@ const sem = () => {
                             <div>
                                 <h2 className='text-center font-bold font-gilroy text-base text-maintext leading-[24px]'>Trusted by Organisations Worldwide</h2>
                             </div>
-                            <div className='w-[90%] m-auto'>
+                            <div className='w-[90%] m-auto md:w-full'>
                                 <Marquee gradient={false} pauseOnHover="true">
                                     <div className='flex space-x-8 justify-center py-4 px-4 mt-[10px]'>
                                         {Trusteddata.brand.map((brand, index) => (
@@ -157,8 +157,8 @@ const sem = () => {
             </section>
 
             <section className='sstwhy relative wepappour overflow-hidden'>
-                <div className="relative px-4 md:px-12 pt-8 pb-8 z-20">
-                    <div className=' mb-9 text-center'>
+                <div className="relative px-4 md:px-12 pt-8 pb-8 z-20 md:pt-4 md:pb-4">
+                    <div className=' mb-9 text-center md:mb-0'>
                         <h3 className='text-[32px] text-center font-gilroy font-semibold text-[#18265b] leading-[1.5em] tracking-wide inline-block lg:shadow-sem px-2'>Why Choose SEM for Your Business?</h3>
                     </div>
                     <div className=''>
@@ -209,7 +209,7 @@ const sem = () => {
             </section>
 
             <section className='csworkflo font-gilroy'>
-                <div className='relative px-4 md:px-12 pt-8 pb-8 z-20'>
+                <div className='relative px-4 md:px-12 pt-8 pb-8 z-20 md:pt-0'>
                     <div className='flex items-center justify-center mb-5'>
                         <h2 className='text-[32px] text-center font-gilroy font-semibold text-[#18265b] leading-normal tracking-wide'>SEM Process & Strategy</h2>
                     </div>
@@ -339,7 +339,7 @@ const sem = () => {
                         <div className='flex items-center justify-center'>
                             <h2 className='text-[28px] text-center font-gilroy font-semibold text-[#fff] leading-[1.5em] tracking-wide'>The AnalyticsLiv SEM Advantage</h2>
                         </div>
-                        <div class="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-5 pt-[50px]">
+                        <div class="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-5 pt-[50px] md:pt-[25px]">
                             <div class="powerbox flex items-start justify-center md:w-[95%] w-[280px] m-auto mb-5 xl:h-[210px] lg:h-[240px] h-[240px] p-[10px] pt-6 border border-[#333] rounded-[10px]">
                                 <div className='cursor-pointer'>
                                     <div className='inbox relative pb-4'>

@@ -63,7 +63,7 @@ const header = () => {
       <header className="sticky min-w-full top-0 z-50 bg-white font-rbt">
 
       <div className='hidden lg:inline'>
-        <div className='flex items-start justify-between pt-5 py-[17px] px-5'>
+        <div className='flex items-start justify-between pt-5 px-5'>
           <Link className="logo" href="/"><img alt="logo" aria-label="logo" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="h-10 lg:mx-4 cursor-pointer" /></Link>
 
           <div className='hidden md:inline'>
