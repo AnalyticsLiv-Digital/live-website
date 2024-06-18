@@ -97,7 +97,7 @@ const cro = () => {
             </Head>
             <section className='crohome w-full relative font-gilroy overflow-hidden'>
                 <div className='h-full'>
-                    <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 h-full z-20">
+                    <div className="relative px-4 md:px-12 pt-8 pb-8 h-full z-20 md:py-0">
                         <div className="z-10 flex lg:flex-nowrap items-center flex-wrap justify-between gap-7 pb-8">
                             <div className="w-full lg:w-1/2 lg:order-1 order-2">
                                 <h1 className="lg:text-[41px] text-[32px] lg:leading-[62px] leading-normal text-maintext pt-4 mb-5">
@@ -124,7 +124,7 @@ const cro = () => {
                             <div>
                                 <h2 className='text-center font-bold text-base text-maintext leading-[24px]'>Trusted by Organisations Worldwide</h2>
                             </div>
-                            <div className='w-[90%] m-auto'>
+                            <div className='w-[90%] m-auto md:w-full'>
                                 <Marquee gradient={false} pauseOnHover="true">
                                     <div className='flex space-x-8 justify-center py-4 px-4 mt-4'>
                                         {Trusteddata.brand.map((brand, index) => (
@@ -140,9 +140,9 @@ const cro = () => {
                 </div>
             </section>
             <section className='crosolutions overflow-hidden'>
-                <div className='relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16'>
+                <div className='relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-0 '>
                     <div>
-                        <div className='flex items-center justify-center pb-7'>
+                        <div className='flex items-center justify-center pb-7 md:pb-0'>
                             <h3 className='text-[#302E53] font-gilroy text-[32px] text-center font-semibold leading-[1.5em] not-italic pb-5'>With our cutting-edge CRO solutions, you'll experience</h3>
                         </div>
                         <div className='grid lg:grid-cols-3 md:grid-cols-2 items-start justify-center gap-10'>
@@ -202,14 +202,14 @@ const cro = () => {
                 </div>
             </section>
             <section className='fuel relative overflow-hidden'>
-                <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 z-20">
+                <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-0 z-20">
                     <div>
-                        <h3 className='text-[32px] font-semibold text-black leading-[1.5em] font-rbt text-center mb-4'>Our Proven CRO Methodology</h3>
+                        <h3 className='text-[32px] font-semibold text-black leading-[1.5em] font-rbt text-center'>Our Proven CRO Methodology</h3>
                     </div>
                     <p className='text-[18px] font-medium text-black leading-[1.5em] font-rbt text-center mb-4'>We've refined a battle-tested process to propel your online success</p>
-                    <div className='mb-[35px] md:w-[90%] m-auto'>
+                    <div className='mb-[35px] md:w-[90%] m-auto md:mb-0'>
                         <div className='innerfuel mt-10'>
-                            <ul className='fs relative mb-[55px] pt-[70px] flex items-center md:flex-row flex-col'>
+                            <ul className='fs relative mb-[15px] pt-[20px] flex items-center md:flex-row flex-col'>
                                 <li className='relative text-start md:pr-10 text-[#243238] sm:w-1/2 w-full md:order-1 order-2'>
                                     <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[17px] leading-8 font-semibold'>Define Your Goals and Objectives</h4>
                                     <div className='text-[#646464] text-[14px] font-normal font-gilroy2 leading-6 mb-5'>
@@ -225,7 +225,7 @@ const cro = () => {
                                     <img src="/Fuel_Process_Step_1.png" alt="" className='h-auto w-[350px]' />
                                 </li>
                             </ul>
-                            <ul className='sc relative mb-[55px] pt-[70px] flex items-center md:flex-row-reverse flex-col'>
+                            <ul className='sc relative mb-[15px] pt-[20px] flex items-center md:flex-row-reverse flex-col'>
                                 <li className='relative text-start md:pl-10 text-[#243238] sm:w-1/2 w-full md:order-1 order-2'>
                                     <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[17px] leading-8 font-semibold'>Understand Your Users</h4>
                                     <p className='text-[#646464] text-base font-medium font-gilroy2 leading-6 mb-[10px]'>Conduct user research to understand your target audience's needs, pain points, and behavior on your website. Here are some methods:</p>
@@ -260,7 +260,7 @@ const cro = () => {
                                     <img src="/Fuel_Process_Step_2.png" alt="" className='h-auto w-[350px]' />
                                 </li>
                             </ul>
-                            <ul className='thr relative mb-[55px] pt-[70px] flex items-center md:flex-row flex-col'>
+                            <ul className='thr relative mb-[15px] pt-[20px] flex items-center md:flex-row flex-col'>
                                 <li className='relative text-start md:pr-10 text-[#243238] sm:w-1/2 w-full md:order-1 order-2'>
                                     <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[17px] leading-8 font-semibold'>Conduct a CRO Audit</h4>
                                     <p className='text-[#646464] text-base font-medium font-gilroy2 leading-6 mb-[10px]'>Evaluate your website's current performance from a conversion optimization perspective. Identify elements that might be hindering user experience or hindering conversions. Consider these aspects</p>
@@ -270,52 +270,52 @@ const cro = () => {
                                                 <div className=' flex items-start gap-1 font-semibold'>
                                                     <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
                                                     <p>Website Usability</p></div>
-                                                    <div>
-                                                        {isThdVisible ? <FaChevronUp /> : <FaChevronDown />}
-                                                    </div>
+                                                <div>
+                                                    {isThdVisible ? <FaChevronUp /> : <FaChevronDown />}
+                                                </div>
                                             </div>
-                                            {isThdVisible && 
-                                            <div className='mb-2 ml-3'>
-                                                <p>Is your website easy to navigate? Can users find the information they need quickly?</p></div> }
+                                            {isThdVisible &&
+                                                <div className='mb-2 ml-3'>
+                                                    <p>Is your website easy to navigate? Can users find the information they need quickly?</p></div>}
                                         </div>
                                         <div className='cursor-pointer w-[90%] border border-solid border-[#30486a21] p-3 mb-[10px] rounded-[10px]' onClick={toggelFrVisibility}>
                                             <div className={`flex items-center justify-between ${isFrVisible ? 'mb-2' : 'mb-0'}`}>
                                                 <div className=' flex items-start gap-1 font-semibold'>
                                                     <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
                                                     <p>Value Proposition</p></div>
-                                                    <div>
-                                                        {isFrVisible ? <FaChevronUp /> : <FaChevronDown />}
-                                                    </div>
+                                                <div>
+                                                    {isFrVisible ? <FaChevronUp /> : <FaChevronDown />}
+                                                </div>
                                             </div>
-                                            {isFrVisible && 
-                                            <div className='mb-2 ml-3'>
-                                                <p>Are you clearly communicating the value proposition of your services?</p></div> }
+                                            {isFrVisible &&
+                                                <div className='mb-2 ml-3'>
+                                                    <p>Are you clearly communicating the value proposition of your services?</p></div>}
                                         </div>
                                         <div className='cursor-pointer w-[90%] border border-solid border-[#30486a21] p-3 mb-[10px] rounded-[10px]' onClick={toggelFvVisibility}>
                                             <div className={`flex items-center justify-between ${isFvVisible ? 'mb-2' : 'mb-0'}`}>
                                                 <div className=' flex items-start gap-1 font-semibold'>
                                                     <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
                                                     <p>Call to Actions (CTAs)</p></div>
-                                                    <div>
-                                                        {isFvVisible ? <FaChevronUp /> : <FaChevronDown />}
-                                                    </div>
+                                                <div>
+                                                    {isFvVisible ? <FaChevronUp /> : <FaChevronDown />}
+                                                </div>
                                             </div>
-                                            {isFvVisible && 
-                                            <div className='mb-2 ml-3'>
-                                                <p>Are your CTAs clear, compelling, and strategically positioned?</p></div> }
+                                            {isFvVisible &&
+                                                <div className='mb-2 ml-3'>
+                                                    <p>Are your CTAs clear, compelling, and strategically positioned?</p></div>}
                                         </div>
                                         <div className='cursor-pointer w-[90%] border border-solid border-[#30486a21] p-3 mb-[10px] rounded-[10px]' onClick={toggelSxVisibility}>
                                             <div className={`flex items-center justify-between ${isSxVisible ? 'mb-2' : 'mb-0'}`}>
                                                 <div className=' flex items-start gap-1 font-semibold'>
                                                     <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
                                                     <p>Mobile Responsiveness</p></div>
-                                                    <div>
-                                                        {isSxVisible ? <FaChevronUp /> : <FaChevronDown />}
-                                                    </div>
+                                                <div>
+                                                    {isSxVisible ? <FaChevronUp /> : <FaChevronDown />}
+                                                </div>
                                             </div>
-                                            {isSxVisible && 
-                                            <div className='mb-2 ml-3'>
-                                                <p>Does your website provide a seamless experience on all devices, including mobile phones and tablets?</p></div> }
+                                            {isSxVisible &&
+                                                <div className='mb-2 ml-3'>
+                                                    <p>Does your website provide a seamless experience on all devices, including mobile phones and tablets?</p></div>}
                                         </div>
                                     </div>
                                 </li>
@@ -323,7 +323,7 @@ const cro = () => {
                                     <img src="/Fuel_Process_Step_3.png" alt="" className='h-auto w-[350px]' />
                                 </li>
                             </ul>
-                            <ul className='fr relative mb-[55px] pt-[70px] flex items-center md:flex-row-reverse flex-col'>
+                            <ul className='fr relative mb-[15px] pt-[20px] flex items-center md:flex-row-reverse flex-col'>
                                 <li className='relative text-start md:pl-10 text-[#243238] sm:w-1/2 w-full md:order-1 order-2'>
                                     <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[17px] leading-8 font-semibold'>Prioritize Opportunities for Improvement</h4>
                                     <div className='text-[#646464] text-[14px] font-normal font-gilroy2 leading-6 mb-5'>
@@ -336,7 +336,7 @@ const cro = () => {
                                     <img src="/Fuel_Process_Step_4.png" alt="" className='h-auto w-[350px]' />
                                 </li>
                             </ul>
-                            <ul className='fv relative mb-[55px] pt-[70px] flex items-center md:flex-row flex-col'>
+                            <ul className='fv relative mb-[15px] pt-[20px] flex items-center md:flex-row flex-col'>
                                 <li className='relative text-start md:pr-10 text-[#243238] sm:w-1/2 w-full md:order-1 order-2'>
                                     <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[17px] leading-8 font-semibold'>Develop Hypotheses for Testing</h4>
                                     <div className='text-[#646464] text-[14px] font-normal font-gilroy2 leading-6 mb-5'>
@@ -349,7 +349,7 @@ const cro = () => {
                                     <img src="/Fuel_Process_Step_5.png" alt="" className='h-auto w-[350px]' />
                                 </li>
                             </ul>
-                            <ul className='six relative mb-[55px] pt-[70px] flex items-center md:flex-row-reverse flex-col'>
+                            <ul className='six relative mb-[15px] pt-[20px] flex items-center md:flex-row-reverse flex-col'>
                                 <li className='relative text-start md:pl-10 text-[#243238] sm:w-1/2 w-full md:order-1 order-2'>
                                     <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[17px] leading-8 font-semibold'>A/B Testing & Data Analysis</h4>
                                     <div className='text-[#646464] text-[14px] font-normal font-gilroy2 leading-6 mb-5'>
@@ -365,7 +365,7 @@ const cro = () => {
                                     <img src="/Fuel_Process_Step_6.png" alt="" className='h-auto w-[350px]' />
                                 </li>
                             </ul>
-                            <ul className='seven relative mb-[55px] pt-[70px] flex items-center md:flex-row flex-col'>
+                            <ul className='seven relative pt-[20px] flex items-center md:flex-row flex-col'>
                                 <li className='relative text-start md:pr-10 text-[#243238] sm:w-1/2 w-full md:order-1 order-2'>
                                     <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[17px] leading-8 font-semibold'>Iteration & Optimization</h4>
                                     <div className='text-[#646464] text-[14px] font-normal font-gilroy2 leading-6 mb-5'>
@@ -501,7 +501,7 @@ const cro = () => {
                                 <div>
                                     <div><h3 className='text-[#ffffff] text-[30px] leading-8 md:mb-[20px] mb-6 font-gilroy font-semibold'>Contact us</h3></div>
                                     <div>
-                                        <div className='text-[#ffffff] text-base leading-8 md:mb-[15px] mb-6 font-gilroy2 font-medium'>
+                                        <div className='text-[#ffffff] text-base leading-8 font-gilroy2 font-medium'>
                                             <p className='text-[22px] mb-3'>Unlock the power of CRO</p>
                                             Schedule a free consultation with our experts and discover <br /> how we can elevate your business
                                         </div>
@@ -524,11 +524,11 @@ const cro = () => {
                 </div>
             </section>
             <section className='crofaq relative overflow-hidden'>
-                <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 z-20">
+                <div className="relative px-4 md:px-12 pt-8 pb-8 md:py-8 z-20">
                     <div>
                         <h3 className='text-[32px] font-semibold text-[#000000] leading-[1.5em] font-gilroy mb-2'>FAQ's</h3>
                     </div>
-                    <div className='md:flex items-center justify-start mt-10'>
+                    <div className='md:flex items-center justify-start mt-10 md:mt-0'>
                         <div className='items-start lg:justify-start justify-center gap-7 w-full'>
                             <div className={`faqfst flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>

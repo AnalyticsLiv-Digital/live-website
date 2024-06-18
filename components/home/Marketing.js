@@ -9,9 +9,9 @@ const Marketing = () => {
                 <div className='relative z-20 px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
                     <div>
                         <div className='text-start'>
-                            <h2 className='lg:text-[28px] text-2xl font-gilroy font-semibold text-[#fff] leading-[1.5em] tracking-wide text-left block'>GOOGLE MARKETING PLATFORM PARTNER</h2>
+                            <h2 className='text-2xl font-gilroy font-semibold text-[#fff] leading-[1.5em] tracking-wide text-left block'>GOOGLE MARKETING PLATFORM PARTNER</h2>
                         </div>
-                        <div className='flex flex-col lg:flex-row gap-5 lg:gap-0 justify-between items-center pt-[50px]'>
+                        <div className='flex flex-col lg:flex-row gap-5 lg:gap-0 justify-between items-center pt-[0px]'>
                             <div className='lg:w-3/5'>
                                 <Image
                                     src="/Server_Side_additional_img.png"

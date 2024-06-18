@@ -19,8 +19,8 @@ const webapp = () => {
 
             <section className='webapphome w-full relative font-gilroy overflow-hidden'>
                 <div className='h-full'>
-                    <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 h-full z-20">
-                        <div className="z-10 flex lg:flex-nowrap items-center flex-wrap justify-between gap-7 pb-8">
+                    <div className="relative px-4 md:px-12 pt-8 md:pt-0 pb-8 md:pb-0 h-full z-20">
+                        <div className="z-10 flex lg:flex-nowrap items-center flex-wrap justify-between gap-7 pb-8 md:pb-0">
                             <div className="space-y-4 w-full lg:w-1/2 lg:order-1 order-2 lg:mb-7">
                                 <h1 className="2xl:text-[33px] lg:text-[29px] text-[27px] leading-[1.5em] font-gilory font-semibold text-maintext pt-4">
                                     AnalyticsLiv : Unlock Powerful Insights with App & Web Analytics
@@ -46,7 +46,7 @@ const webapp = () => {
             </section>
 
             <section className=' relative wepappour overflow-hidden'>
-                <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 z-20">
+                <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-0 z-20">
                     <div>
                         <h3 className='text-[28px] font-gilroy font-semibold text-[#18265b] leading-[1.5em]'>Our Expertise</h3>
                     </div>
@@ -217,9 +217,9 @@ const webapp = () => {
 
             <section className='bg-[#282833] webomphen relative overflow-hidden font-gilroy'>
                 <div className='inrwebomphen relative'>
-                    <div className='relative z-20 px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
-                        <div className='flex items-center justify-start pb-7'>
-                            <h3 className='text-[#efefef] text-[28px] font-semibold leading-[1.5em] not-italic pb-5'>Our Approach</h3>
+                    <div className='relative z-20 px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-0'>
+                        <div className='flex items-center justify-start pb-7 md:pb-0'>
+                            <h3 className='text-[#efefef] text-[28px] font-semibold leading-[1.5em] not-italic pb-5 md:pb-0'>Our Approach</h3>
                         </div>
 
                         <div className='lg:flex lg:flex-nowrap flex-wrap items-center hidden webbox rounded-xl'>

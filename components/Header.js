@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 import { IoChevronDown, IoChevronUp } from "react-icons/io5";
 
 const header = () => {
-  const [header, setHeader] = useState(75);
+  const [header, setHeader] = useState(50);
   const [isWebResources, setIsWebResources] = useState(false);
   const [isWebServices, setIsSWebervices] = useState(false);
   const [isResources, setIsResources] = useState(false);
@@ -27,9 +27,9 @@ const header = () => {
       const totalScroll = document.documentElement.scrollTop;
 
       if ((totalScroll > 130)) {
-        setHeader(60);
+        setHeader(40);
       } else if ((totalScroll < 100)) {
-        setHeader(75);
+        setHeader(60);
       }
 
 
@@ -63,7 +63,7 @@ const header = () => {
       <header className="sticky min-w-full top-0 z-50 bg-white font-rbt">
 
       <div className='hidden lg:inline'>
-        <div className='flex items-start justify-between pt-5 py-[17px] px-5'>
+        <div className='flex items-start justify-between pt-5 px-5'>
           <Link className="logo" href="/"><img alt="logo" aria-label="logo" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="h-10 lg:mx-4 cursor-pointer" /></Link>
 
           <div className='hidden md:inline'>

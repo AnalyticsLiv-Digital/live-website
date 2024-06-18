@@ -224,7 +224,7 @@ export default function dv360({brandsdata}) {
             <li onClick={scrolling4} className="hover:text-amber-500">Testimonial</li>
     
           </ul>
-          <a href="tel:7979634379">
+          <a href="tel:8320576622">
           <button className="cta px-5 py-2 bg-sky-300 rounded-2xl mx-2 text-base font-semibold cursor-pointer hover:bg-sky-400">CALL US</button>
           </a>
           <span className="hidden md:inline px-4">
@@ -236,7 +236,7 @@ export default function dv360({brandsdata}) {
 
     <div className="relative  flex lg:hidden p-2">
   <Link href="#"><img onClick={() => setIsOpen(false)} src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="relative h-10 md:mx-4 cursor-pointer"/></Link>
-  <a className="ml-4" href="tel:7979634379">
+  <a className="ml-4" href="tel:8320576622">
           <button className="cta px-5 py-2 bg-sky-300 rounded-2xl mx-2 text-base font-semibold cursor-pointer hover:bg-sky-400">CALL US</button>
           </a>
               <button
