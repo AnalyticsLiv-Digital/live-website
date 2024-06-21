@@ -565,6 +565,10 @@ export default function ga4({ brandsdata }) {
 
 
 
+        <ScrollElement
+            id="testimonial"
+            name="testimonial"
+          ></ScrollElement>
         <Testimonial />
 
         {/* <section className="review-slider">
