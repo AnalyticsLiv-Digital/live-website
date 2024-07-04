@@ -9,6 +9,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaCheck } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const Home = () => {
     const { Element: ScrollElement } = Scroll;
@@ -25,17 +26,35 @@ const Home = () => {
     useEffect(() => {
         Aos.init({ duration: 2000 });
     }, [])
+    const NextArrow = (props) => {
+        const { onClick } = props;
+        return (
+            <div className="absolute top-1/2 right-[-35px] transform -translate-y-1/2 z-10 cursor-pointer" onClick={onClick}>
+                <FaArrowRight size={20} />
+            </div>
+        );
+    };
+
+    const PrevArrow = (props) => {
+        const { onClick } = props;
+        return (
+            <div className="absolute top-1/2 left-[-35px] transform -translate-y-1/2 z-10 cursor-pointer" onClick={onClick}>
+                <FaArrowLeft size={20} />
+            </div>
+        );
+    };
+
     var settings = {
         dots: true,
         infinite: true,
         speed: 2000,
         slidesToShow: 1,
         slidesToScroll: 1,
-        nextArrow: false,
-        prevArrow: false,
+        nextArrow: <NextArrow />,
+        prevArrow: <PrevArrow />,
         autoplay: true,
         autoplaySpeed: 6000,
-        pauseOnHover: true
+        pauseOnHover: true,
     };
 
     const Trusteddata = {
@@ -48,9 +67,8 @@ const Home = () => {
             { logo: "/wholesalesockdeals.png", alt: "WholesaleSockDeals" }
         ]
     };
-
     return (
-        <>
+        <>    
             <section className='homepage flex items-center justify-center overflow-hidden font-gilroy'>
                 <div className='min-h-[90vh] w-full'>
                     <div className='relative h-full overflow-hidden'>
@@ -61,9 +79,38 @@ const Home = () => {
                         </div>
                         {/*  */}
 
-                        <div className='flex flex-col items-center justify-center gap-12 px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16 h-full'>
+                        <div className='flex flex-col items-center justify-center gap-12 px-4 md:px-20  pb-8  h-full'>
                             <div className='vb pb-5 w-full'>
                                 <Slider {...settings}>
+                                    <div>
+                                        <div className='flex lg:flex-nowrap flex-wrap items-center gap-10'>
+                                            <div className='lg:w-1/2 w-full mx-auto flex items-center lg:justify-between justify-center'>
+                                                <img src="/Home_Page_Main_Img_2.png" alt="" className='w-[450px]' />
+                                            </div>
+                                            <div className='lg:w-1/2 w-full'>
+                                                <h1 className='text-maintext text-[24px] text-center font-semibold leading-[32px] not-italic md:pb-5 mb-[10px]'>See Beyond the Click: Strategic Media, Analytics & Cloud Solutions for Measurable Success</h1>{/* <p className='text-[#000] md:text-[18px] text-base font-medium leading-[1.5em] text-center md:pb-5 pb-[30px]'>Our strategic Media, Analytics & Cloud Solutions go beyond basic clicks, transforming website data into actionable insights that drive measurable success through optimized campaigns and data-driven decisions</p> */}
+                                                <div className='ml-5 pb-4'>
+                                                    <li className='flex items-start gap-1 p-[10px] pb-[5px] pl-0 pt-0 text-[#000]'>
+                                                        <span className='text-[#de668a] mt-[5px]'><FaCheck /></span>
+                                                        <p className=' text-base font-medium leading-[25px] font-gilroy2'>
+                                                            Actionable Insights: Turn website data into strategic media planning for maximized ROI.
+                                                        </p>
+                                                    </li>
+                                                    <li className='flex items-center gap-1 p-[10px] pb-[5px] pl-0 text-[#000]'>
+                                                        <span className='text-[#de668a] mt-[5px]'><FaCheck /></span>
+                                                        <p className='text-base font-medium leading-[25px] font-gilroy2'>
+                                                            Data-Driven Decisions: Optimize campaigns and measure every touchpoint for clear results.
+                                                        </p>
+                                                    </li>
+                                                </div>
+                                                <div className='flex flex-wrap justify-around mt-7 mb-3'>
+                                                    <button onClick={scrolling1} className='butn'>
+                                                        know More
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div>
                                         <div className='flex lg:flex-nowrap flex-wrap items-center gap-10 mt-[80px]'>
                                             <div className='lg:w-[60%] w-full'>
@@ -83,35 +130,7 @@ const Home = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div>
-                                        <div className='flex lg:flex-nowrap flex-wrap items-center lg:justify-between justify-center gap-6'>
-                                            <div className='lg:w-1/2 w-full mx-auto flex items-center lg:justify-between justify-center'>
-                                                <img src="/Home_Page_Main_Img_2.png" alt="" className='w-[450px]' />
-                                            </div>
-                                            <div className='lg:w-1/2 w-full'>
-                                                <h1 className='text-maintext text-[24px] text-center font-semibold leading-[32px] not-italic md:pb-5 mb-[10px]'>See Beyond the Click: Strategic Media, Analytics & Cloud Solutions for Measurable Success</h1>{/* <p className='text-[#000] md:text-[18px] text-base font-medium leading-[1.5em] text-center md:pb-5 pb-[30px]'>Our strategic Media, Analytics & Cloud Solutions go beyond basic clicks, transforming website data into actionable insights that drive measurable success through optimized campaigns and data-driven decisions</p> */}
-                                                <div className='ml-5 pb-4'>
-                                                    <li className='flex items-start gap-1 p-[10px] pb-[5px] pl-0 pt-0 text-[#000]'>
-                                                        <span className='text-[#de668a] mt-[5px]'><FaCheck /></span>
-                                                        <p className='text-base font-medium leading-[32px] font-gilroy2'>
-                                                            Actionable Insights: Turn website data into strategic media planning for maximized ROI.
-                                                        </p>
-                                                    </li>
-                                                    <li className='flex items-start gap-1 p-[10px] pb-[5px] pl-0 text-[#000]'>
-                                                        <span className='text-[#de668a] mt-[5px]'><FaCheck /></span>
-                                                        <p className='text-base font-medium leading-[32px] font-gilroy2'>
-                                                            Data-Driven Decisions: Optimize campaigns and measure every touchpoint for clear results.
-                                                        </p>
-                                                    </li>
-                                                </div>
-                                                <div className='flex flex-wrap justify-around mt-7 mb-3'>
-                                                    <button onClick={scrolling1} className='butn'>
-                                                        know More
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+
                                     <div>
                                         <div className='flex lg:flex-nowrap flex-wrap items-center lg:justify-between justify-center gap-6'>
                                             <div className='lg:w-1/2 w-full mx-auto flex items-center lg:justify-between justify-center'>
@@ -123,7 +142,7 @@ const Home = () => {
                                                     <li className='flex items-start gap-1 p-[10px] pb-[5px] pl-0 pt-0 text-[#000]'>
                                                         <span className='text-[#de668a] mt-[5px]'><FaCheck /></span>
                                                         <p className='text-base font-medium leading-[32px] font-gilroy2'>
-                                                            Streamline Workflows: Unify data and automate tasks for a frictionless experience.
+                                                              Streamline Workflows: Unify data and automate tasks for a frictionless experience.
                                                         </p>
                                                     </li>
                                                     <li className='flex items-start gap-1 p-[10px] pb-[5px] pl-0 text-[#000]'>
@@ -144,7 +163,7 @@ const Home = () => {
                                 </Slider>
                             </div>
                             {/*  */}
-
+                            
                             <div className=''>
                                 <div>
                                     <h2 className='text-center font-bold text-base text-maintext leading-[24px]'>Trusted by Organisations Worldwide</h2>
@@ -163,14 +182,14 @@ const Home = () => {
                                 </div>
                             </div>
 
-                            {/*  */}
-                        </div>
+{/*  */}
+</div>
 
-                    </div>
-                </div>
-            </section>
-        </>
-    )
+</div>
+</div>
+</section>
+</>
+)
 }
 
 export default Home

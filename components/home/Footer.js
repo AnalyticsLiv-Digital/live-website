@@ -30,11 +30,11 @@ const Footer = () => {
                                 <div className='left-footer md:w-2/5 w-full pb-7'>
                                     <div className='text-left'>
                                         <div className='relative text-white'>
-                                            <p className='text-[15px] font-medium leading-[1.3em] mb-4 uppercase'>Connect with us</p>
+                                            <p className='text-[15px] font-medium leading-[1.3em] mb-4 uppercase text-white'>Connect with us</p>
                                             <div className='flex items-center justify-start'>
                                                 <div>
                                                     <div className='mb-4'>
-                                                        <p className='text-[13px] font-normal leading-5'>For Business Enquiries</p>
+                                                        <p className='text-[13px] font-normal leading-5 text-white'>For Business Enquiries</p>
                                                         <div className='ml-0 flex items-start mb-[3px]'>
                                                             <IoIosMail className='w-[21px] h-[22px] mr-[7px]' />
                                                             <div className='text-[13px] font-normal leading-5'>
@@ -48,7 +48,7 @@ const Footer = () => {
                                                         </div>
                                                     </div>
                                                     <div className='ml-0 mb-4'>
-                                                        <p className='text-[13px] font-normal leading-5'>For Job Enquiries</p>
+                                                        <p className='text-[13px] font-normal leading-5 text-white'>For Job Enquiries</p>
                                                         <div className=' flex items-start '>
                                                             <IoIosMail className='w-[21px] h-[22px] mr-[7px]' />
                                                             <div className='text-[13px] font-normal leading-5'>
@@ -57,7 +57,7 @@ const Footer = () => {
                                                         </div>
                                                     </div>
                                                     <div className='ml-0 mb-4'>
-                                                        <p className='text-[13px] font-normal leading-5'>For Other Support</p>
+                                                        <p className='text-[13px] font-normal leading-5 text-white'>For Other Support</p>
                                                         <div className='flex items-start'>
                                                             <IoIosMail className='w-[21px] h-[22px] mr-[7px]' />
                                                             <div className='text-[13px] font-normal leading-5'>

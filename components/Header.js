@@ -61,7 +61,7 @@ const header = () => {
 
 
       <header className="sticky min-w-full top-0 z-50 bg-white font-rbt">
-
+{/* <div> sm:w-1/3*/}
       <div className='hidden lg:inline'>
         <div className='flex items-start justify-between pt-5 px-5'>
           <Link className="logo" href="/"><img alt="logo" aria-label="logo" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="h-10 lg:mx-4 cursor-pointer" /></Link>
@@ -91,7 +91,7 @@ const header = () => {
               </li>
               <li className="hover:border-b-4 lg:ml-[19px] flex items-center gap-[5px] hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2" onMouseEnter={() => setIsWebResources(true)} onMouseLeave={() => setIsWebResources(false)}>
                 <a href="" > Resources </a>
-                {isWebResources && <motion.div initial={{ y: 10, opacity: 0 }} animate={{ y: 60, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 30 }} id="submenu2" className="subheader absolute w-56 text-sm flex flex-col lg:-ml-20 lg:mt-2 divide-y bg-gray-100 text-cyan-900 items-center align-middle font-semibold">
+                {isWebResources && <motion.div initial={{ y: 10, opacity: 0 }} animate={{ y: 55, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 30 }} id="submenu2" className="subheader absolute w-56 text-sm flex flex-col lg:-ml-20 lg:mt-2 divide-y bg-gray-100 text-cyan-900 items-center align-middle font-semibold">
                   <Link href='/blogs'><div className="py-2 w-56 hover:border-b border-[#000]">Blogs</div></Link>
                   <Link href='/case-studies'><div className="py-2 w-56 hover:border-b border-[#000]">Case Studies</div></Link>
                   {/*<Link  href='/webinars'><div className="py-2 w-56 hover:bg-cyan-500">Webinars</div></Link>*/}
@@ -123,6 +123,7 @@ const header = () => {
 
           </nav>
         </div>
+        {/* </div> */}
 
         <div className="relative  flex lg:hidden p-2">
           <Link href="/"><img onClick={() => setIsOpen(false)} src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="relative h-10 md:mx-4 cursor-pointer" /></Link>
@@ -334,11 +335,11 @@ const header = () => {
             </div>
           )}
         </Transition>
-        {isWebServices && <motion.div initial={{ y: 10, opacity: 0 }} animate={{ y: 70, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 30 }} onMouseEnter={() => setIsSWebervices(true)} onMouseLeave={() => setIsSWebervices(false)} onClick={() => setIsSWebervices(false)} className="subheader absolute w-full text-sm flex flex-col z-100 divide-y bg-gray-100 text-cyan-900 items-center align-middle font-semibold">
+        {isWebServices && <motion.div initial={{ y: 10, opacity: 0 }} animate={{ y: 60, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 30 }} onMouseEnter={() => setIsSWebervices(true)} onMouseLeave={() => setIsSWebervices(false)} onClick={() => setIsSWebervices(false)} className="subheader absolute w-full text-sm flex flex-col z-100 divide-y bg-gray-100 text-cyan-900 items-center align-middle font-semibold">
 
           <div
             class="p-6 mega-menu mb-16 sm:mb-0 shadow-xl bg-white left-0 absolute text-left w-full transition-all duration-150 ease-linear">
-            <div class="container mx-auto w-full flex flex-wrap justify-between mx-2">
+            <div class="container w-full flex flex-wrap justify-between mx-2">
 
               <ul
                 class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b lg:border-b-0 pb-6 pt-6 lg:pt-3">
