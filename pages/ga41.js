@@ -434,17 +434,17 @@ export default function ga4({ brandsdata }) {
 
 
         <section>
-          <div className="main bg-cover bg-center relative text-white" style={{ backgroundImage: "url('/ga4-head.png')", height: "105vh" }}>
-            <div className="relative md:flex items-center md:px-10 md:py-10">
-              <div className="pt-6 md:w-3/4 z-10 text-white">
-                <h2 className="font-poppins text-3xl md:text-5xl font-semibold leading-tight text-left">SMART . FAST . ACCURATE</h2>
-                <p className="font-poppins text-lg leading-7 mt-4 w-full md:w-1/2">
+          <div className="main bg-cover md:flex md:items-center 2xl:justify-between bg-center relative text-white h-[96dvh]" style={{ backgroundImage: "url('/ga4-head.png')" }}>
+            <div className="relative md:flex items-center md:px-5 lg:px-16 md:py-10">
+              <div className="pt-6 md:w-3/4 z-10 text-white flex flex-col max-sm:pl-3 ">
+                <h2 className="font-poppins text-3xl lg:text-6xl font-semibold leading-tight text-left">SMART . FAST . ACCURATE</h2>
+                <p className="font-poppins text-lg lg:text-3xl leading-7 mt-4 w-full md:w-1/2 md:py-9">
                   Unleash the full potential of Data with AnalyticsLiv, a certified Google Analytics Partner.
                 </p>
                 <div className="w-full flex mt-6">
                   <button
                     onClick={scrolling}
-                    className="bg-blue-500 hover:bg-blue-600 transition-all delay-100 p-4 rounded-xl shadow-md hover:shadow-gray-600 text-white font-semibold"
+                    className="bg-blue-500 hover:bg-blue-600 transition-all delay-100 max-sm:p-2 p-4 rounded-xl shadow-md hover:shadow-gray-600 text-white sm:font-semibold"
                   >
                     Sign up for a Free Audit
                   </button>
@@ -517,11 +517,11 @@ export default function ga4({ brandsdata }) {
         <section>
           <div className="flex flex-col md:flex-row items-center w-full mt-5 relative h-screen">
             <div className="flex flex-col justify-center sm:absolute	bg-white z-10 left-0 w-full md:w-2/3 lg:w-1/2 h-auto md:h-3/5 p-6 md:p-6 sm:rounded-3xl shadow-lg pl-8">
-              <p className="text-xl md:text-4xl font-semibold leading-snug text-left text-blue-400 mb-1">
+              <p className="text-xl md:text-4xl xl:text-6xl 2xl:text-8xl font-semibold leading-loose text-left text-[#5EB8F9] mb-1">
                 Get captivating customer insights and Analysis.
               </p>
 
-              <p className="text-base md:text-lg leading-relaxed mt-4 text-gray-700">
+              <p className="text-base md:text-lg 2xl:text-3xl leading-relaxed mt-4 text-gray-700">
                 By partnering with AnalyticsLiv, a Google Analytics Partner, you gain access to expert guidance and the latest tools to harness the power of GA4. Let's turn your data into a competitive advantage!
               </p>
               <button className="mt-6 py-3 px-6 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded transition-all duration-700 ease-in-out w-max">
@@ -536,17 +536,17 @@ export default function ga4({ brandsdata }) {
 
         <section>
           <div className="mx-4 sm:mx-auto max-w-7xl">
-            <div className="mid3 text-2xl text-blue-500 font-semibold text-center py-4">
+            <div className="mid3 text-2xl text-[#5EB8F9] md:text-4xl font-semibold text-center py-4">
               <p>Google Analytics - The support system of every marketing team, how it helps ?</p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 px-6 pb-8">
-              <div className="event1 bg-blue-100 shadow-md rounded-md p-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-[3%] sm:px-6 pb-8">
+              <div className="event1 bg-[#EFF8FF] shadow-md rounded-md p-2 sm:p-4">
                 <div className="flex items-center pb-4">
-                  <div className="bg-blue-500 rounded-full w-14 h-14 overflow-hidden">
-                    <img src="/logo22.jpg" alt="" className="w-full h-full object-cover" />
+                  <div className="bg-blue-500 rounded-full max-[360px]:w-[70px] w-14 h-14 overflow-hidden">
+                    <img src="/logo22.jpg" alt="" className="object-cover p-1" />
                   </div>
-                  <div className="even1 ml-4">
+                  <div className="even1 ml-4 font-bold">
                     <p>Data Foundation & Automation :</p>
                   </div>
                 </div>
@@ -555,12 +555,12 @@ export default function ga4({ brandsdata }) {
                 </div>
               </div>
 
-              <div className="event1 bg-blue-100 shadow-md rounded-md p-4">
+              <div className="event1 bg-[#EFF8FF] shadow-md rounded-md  p-2 sm:p-4">
                 <div className="flex items-center pb-4">
-                  <div className="bg-blue-500 rounded-full w-14 h-14 overflow-hidden">
-                    <img src="/location.jpg" alt="" className="w-full h-full object-cover" />
+                  <div className="bg-blue-500 rounded-full max-[360px]:w-[60px] w-14 h-14 overflow-hidden">
+                    <img src="/location.jpg" alt="" className="object-cover p-1" />
                   </div>
-                  <div className="even1 ml-4">
+                  <div className="even1 ml-4  font-bold">
                     <p>Customer Journey Mapping :</p>
                   </div>
                 </div>
@@ -569,12 +569,13 @@ export default function ga4({ brandsdata }) {
                 </div>
               </div>
 
-              <div className="event1 bg-blue-100 shadow-md rounded-md p-4">
+              <div className="event1 bg-[#EFF8FF] shadow-md rounded-md  p-2 sm:p-4">
                 <div className="flex items-center pb-4">
-                  <div className="bg-blue-500 rounded-full w-14 h-14 overflow-hidden">
-                    <img src="/search.jpg" alt="" className="w-full h-full object-cover" />
+                  <div className="bg-blue-500 rounded-full max-[360px]:w-[90px] max-md:w-[66px] max-lg:w-[75px] w-14 h-14 overflow-hidden">
+                    <img src="/search.jpg" alt="" className="object-cover p-1 sm:p-2 max-[350px]:pt-2 max-[350px]:px-1" />
+                    {/* max-lg:pt-2 max-lg:px-1 */}
                   </div>
-                  <div className="even1 ml-4">
+                  <div className="even1 ml-4  font-bold">
                     <p>Actionable Insights and Machine Learning :</p>
                   </div>
                 </div>
@@ -583,12 +584,12 @@ export default function ga4({ brandsdata }) {
                 </div>
               </div>
 
-              <div className="event1 bg-blue-100 shadow-md rounded-md p-4">
+              <div className="event1 bg-[#EFF8FF] shadow-md rounded-md  p-2 sm:p-4">
                 <div className="flex items-center pb-4">
-                  <div className="bg-blue-500 rounded-full w-14 h-14 overflow-hidden">
-                    <img src="/garph.jpg" alt="" className="w-full h-full object-cover" />
+                  <div className="bg-blue-500 rounded-full max-[360px]:w-[65px] w-14 h-14 overflow-hidden">
+                    <img src="/graph.jpg" alt="" className="object-cover p-2 max-[350px]:pt-2 max-[350px]:p-1" />
                   </div>
-                  <div className="even1 ml-4">
+                  <div className="even1 ml-4  font-bold">
                     <p>Seamless Integration & Reporting :</p>
                   </div>
                 </div>
@@ -599,12 +600,12 @@ export default function ga4({ brandsdata }) {
 
             </div>
             <div className='flex justify-center w-full'>
-              <div className="event1 bg-blue-100 shadow-md rounded-md p-4 w-full md:w-3/5">
+              <div className="event1 bg-[#EFF8FF] shadow-md rounded-md  p-2 sm:p-4 w-full md:w-1/2">
                 <div className="event1a flex items-center pb-4">
                   <div className="bg-blue-500 rounded-full w-14 h-14 overflow-hidden">
-                    <img src="/hand.jpg" alt="" className="w-full h-full object-cover" />
+                    <img src="/hand.jpg" alt="" className="object-cover p-1" />
                   </div>
-                  <div className="even1 ml-4">
+                  <div className="even1 ml-4  font-bold">
                     <p>Expert Guidance & Support :</p>
                   </div>
                 </div>
@@ -618,71 +619,71 @@ export default function ga4({ brandsdata }) {
 
 
         <section>
-          <div className="flex flex-col p-8">
-            <div className="mid3 text-2xl text-blue-500 font-semibold text-center py-4">
+          <div className="flex flex-col p-4 sm:p-8">
+            <div className="mid3 text-2xl lg:text-4xl text-[#5EB8F9] font-semibold text-center py-4 md:py-12 ">
               <p>Don't just collect data, make it work for you!</p>
             </div>
-            <div className='w-full flex flex-col justify-center items-center md:flex-row'>
-              <div className="flex flex-col items-center sm:items-start h-full w-1/2">
+            <div className='w-full flex flex-col justify-center items-center md:flex-row max-sm:py-3'>
+              <div className="flex flex-col items-center sm:items-start h-full w-4/5 sm:w-1/2">
                 <div className="flex items-center justify-center">
-                  <img className="w-2/3" src="/laptop.png" alt="" />
+                  <img className="sm:w-2/3" src="/laptop.png" alt="" />
                 </div>
               </div>
 
-              <div className="flex flex-col gap-8 w-1/2">
-                <div className="space-y-8">
-                  <div className="flex flex-col items-start gap-8">
-                    <div className="flex items-center gap-8">
-                      <div className="bg-blue-500 rounded-full w-14 h-14 overflow-hidden">
-                        <img src="/clock.png" alt="" className="w-full h-full object-cover" />
+              <div className="flex flex-col gap-8 sm:w-1/2 max-sm:pt-6">
+                <div className="space-y-9 ">
+                  <div className="flex flex-col items-start gap-4">
+                    <div className="flex items-center gap-2">
+                      <div className="bg-[#5EB8F9] rounded-full w-14  h-14 overflow-hidden">
+                        <img src="/clock.png" alt="" className="w-full h-full object-cover p-2 sm:p-2" />
                       </div>
-                      <div className="ml-4">
-                        <p className="font-semibold">Reduced Reporting Time :</p>
+                      <div className="ml-2">
+                        <p className="font-semibold text-xl">Reduced Reporting Time :</p>
                       </div>
                     </div>
-                    <div className="mt-4 sm:mt-0">
+                    <div className="sm:mt-0">
                       <p>Spend less time gathering data and more time making strategic decisions. (Example: Short testimonial about reduced reporting time can be included here)</p>
                     </div>
                   </div>
 
-                  <div className="flex flex-col items-start gap-8">
-                    <div className="flex items-center gap-8">
-                      <div className="bg-blue-500 rounded-full w-14 h-14 overflow-hidden">
-                        <img src="/idea.png" alt="" className="w-full h-full object-cover" />
+                  <div className="flex flex-col items-start gap-4">
+                    <div className="flex items-center gap-2">
+                      <div className="bg-[#5EB8F9] rounded-full w-14  h-14 overflow-hidden">
+                        <img src="/idea.png" alt="" className="w-full h-full object-cover p-1 sm:p-2" />
                       </div>
-                      <div className="ml-4">
-                        <p className="font-semibold">Cross-Platform Insights :</p>
+                      <div className="ml-2">
+                        <p className="font-semibold text-xl">Cross-Platform Insights :</p>
                       </div>
                     </div>
-                    <div className="mt-4 sm:mt-0">
+                    <div className="sm:mt-0">
                       <p>Gain a holistic view of customer behavior across websites and apps.</p>
                     </div>
                   </div>
 
-                  <div className="flex flex-col items-start gap-8">
-                    <div className="flex items-center gap-8">
-                      <div className="bg-blue-500 rounded-full w-14 h-14 overflow-hidden">
-                        <img src="/speaket.png" alt="" className="w-full h-full object-cover" />
+                  <div className="flex flex-col items-start gap-4">
+                    <div className="flex items-center gap-2">
+                      <div className="bg-[#5EB8F9] rounded-full w-14  h-14 overflow-hidden">
+                        <img src="/speaket.png" alt="" className="w-full h-full object-cover p-1 sm:p-2" />
                       </div>
-                      <div className="ml-4">
-                        <p className="font-semibold">Improved Marketing ROI :</p>
+                      <div className="ml-2">
+                        <p className="font-semibold text-xl">Improved Marketing ROI :</p>
                       </div>
                     </div>
-                    <div className="mt-4 sm:mt-0">
+                    <div className="sm:mt-0">
                       <p>Optimize campaigns based on actionable insights and data-driven strategies.</p>
                     </div>
                   </div>
 
-                  <div className="flex flex-col items-start gap-8">
-                    <div className="flex items-center gap-8">
-                      <div className="bg-blue-500 rounded-full w-14 h-14 overflow-hidden">
-                        <img src="/graph.png" alt="" className="w-full h-full object-cover" />
+                  <div className="flex flex-col items-start gap-4">
+                    <div className="flex items-center gap-2">
+                      <div className="bg-[#5EB8F9] rounded-full w-14 h-14 overflow-hidden">
+                        <img src="/graph.png" alt="" className="w-full h-full object-cover p-1 sm:p-2" />
                       </div>
-                      <div className="ml-4">
-                        <p className="font-semibold">Predictive Analytics :</p>
+                      <div className="ml-2">
+                        <p className="font-semibold text-xl">Predictive Analytics :</p>
                       </div>
                     </div>
-                    <div className="mt-4 sm:mt-0">
+                    <div className="sm:mt-0">
                       <p>Anticipate future customer actions and personalize experiences for better engagement.</p>
                     </div>
                   </div>
@@ -693,7 +694,7 @@ export default function ga4({ brandsdata }) {
           </div>
         </section>
 
-        <section>
+        {/* <section>
           <div className="bg-white py-4">
             <h2 className="text-center font-bold text-xl">200+ Clients served for GA4</h2>
             <div className="brandsimages flex space-x-8 justify-center py-4 px-4 mt-4">
@@ -709,9 +710,9 @@ export default function ga4({ brandsdata }) {
               </Marquee>
             </div>
           </div>
-        </section>
+        </section> */}
 
-        <section>
+        {/* <section>
           <ScrollElement
             id="expertise"
             name="expertise"
@@ -739,9 +740,9 @@ export default function ga4({ brandsdata }) {
               <img alt="graph" src="https://storage.googleapis.com/website-bucket-uploads/static/graph.png" />
             </div>
           </div>
-        </section>
+        </section> */}
 
-        <section>
+        {/* <section>
           <ScrollElement
             id="services"
             name="services"
@@ -780,77 +781,108 @@ export default function ga4({ brandsdata }) {
             </div>
           </div>
 
-        </section>
+        </section> */}
+
+
+{/* {} */}
+
+
 
         <section>
-          <div className="max-2xl:min-h-screen pb-10">
+          <div className="max-2xl:min-h-screen mt-[5%] flex flex-col items-center pb-10 overflow-hidden">
             <div>
-              <p className="font-bold max-md:px-3 md:font-semibold text-xl md:text-2xl lg:text-2xl lg:px-10 text-center text-blue-400">
+              <p className="font-bold max-md:px-3 md:font-semibold text-xl md:text-2xl lg:text-4xl lg:px-10 text-center text-[#5EB8F9]">
                 Explore the full range of GA4 functionalities we can help you implement:
               </p>
             </div>
-
-            <div className="md:mt-10 2xl:pl-[730px] lg:px-10 max-2xl:min-h-screen overflow-hidden max-lg:flex max-lg:flex-col">
-              <div className="float-left lg:pt-96 xl:pt-72 m-auto lg:pr-20 lg:pl-10 max-sm:py-10">
+            {/* 2xl:pl-[400px] */}
+            <div className="md:mt-10 lg:px-10 min-h-screen max-lg:flex max-lg:flex-col overflow-hidden items-center justify-center xl:pl-[150px] lg:relative w-[100vw]">
+              <div className="float-left  m-auto  lg:pl-10 max-sm:py-10 lg:absolute top-[33%]">
                 <img src="/Ga4.png" alt="logo" />
               </div>
 
-              <div className="max-md:px-5 md:ml-16 max-sm:flex max-sm:flex-col max-sm:items-center">
-                <div className="flex flex-col items-center md:flex md:flex-row sm:py-5 lg:transform lg:-translate-x-32">
-                  <p className="rounded-full bg-blue-50 p-3 md:p-8 lg:p-10 max-sm:w-max md:absolute md:z-10 text-lg font-extrabold sm:text-2xl lg:mt-5 text-blue-400">
+              {/* <div className="max-md:px-5 md:ml-16 max-sm:flex max-sm:flex-col max-sm:items-center"> */}
+                <div className=" max-sm:px-2 items-center flex flex-row sm:py-5 lg:absolute float-left top-[3%] left-[20%]">
+                  <p className=" max-sm:hidden rounded-full bg-blue-50 max-md:px-7 max-md:py-5 md:p-8 lg:p-10 md:px-12 lg:px-12 lg:py-8 max-sm:w-max md:absolute md:z-10 text-lg font-extrabold sm:text-3xl lg:mt-5 text-[#5EB8F9]">
                     1
                   </p>
-                  <span className="bg-blue-50 py-2 relative z-0 px-3 md:px-24 lg:px-32 xl:px-48 lg:ml-2 border border-transparent rounded-3xl md:mt-3 lg:mt-7">
+                  {/*  xl:px-48 */}
+                  <span className=" max-sm:text-center bg-blue-50 py-2 relative z-0 px-2 md:px-28 max-lg:min-w-[90dvw] lg:w-[60dvw] lg:px-28 lg:ml-2 border border-transparent rounded-3xl md:mt-3 lg:mt-7">
                     Built-in Automation for streamlined workflows.
                   </span>
                 </div>
-                <div className="flex flex-col items-center md:flex md:flex-row py-8 lg:py-5 lg:transform lg:-translate-x-10">
-                  <p className="rounded-full bg-blue-50 p-3 md:p-8 lg:p-10 max-sm:w-max max-sm:h-max md:absolute md:z-10 text-lg font-extrabold sm:text-2xl lg:mt-5 text-blue-400">
+                <div className="max-sm:px-2 items-center flex flex-row py-8 lg:py-8 lg:absolute float-left top-[16%] left-[28%]">
+                  <p className="max-sm:hidden rounded-full bg-blue-50 max-md:px-7 max-md:py-5 md:p-8 lg:p-10 md:px-[44px]  lg:py-8 max-sm:w-max md:absolute md:z-10 text-lg font-extrabold sm:text-3xl lg:mt-5 text-[#5EB8F9]">
                     2
                   </p>
-                  <span className="bg-blue-50 py-2 relative z-0 px-3 md:px-24 xl:px-48 lg:ml-2 border border-transparent rounded-3xl md:mt-3 lg:mt-7">
+                  <span className="max-sm:text-center bg-blue-50 py-2 relative z-0 px-1 max-lg:min-w-[90dvw] lg:w-[60dvw] lg:ml-2 md:px-28 lg:px-28 border border-transparent rounded-3xl md:mt-3 lg:mt-7">
                     Intuitive and Flexible Reporting for deeper analysis.
                   </span>
                 </div>
-                <div className="flex flex-col items-center md:flex md:flex-row py-5 lg:py-7 lg:transform lg:translate-x-7">
-                  <p className="rounded-full bg-blue-50 p-3 md:p-8 lg:p-10 max-sm:w-max max-sm:h-max md:absolute md:z-10 text-lg font-extrabold sm:text-2xl lg:mt-5 text-blue-400">
+                {/* md:px-24 xl:px-48 */}
+{/* md:px-24 xl:px-48 */}
+                <div className="max-sm:px-2 items-center flex flex-row py-5 lg:py-4 lg:absolute float-left top-[32%] left-[34%]">
+                  <p className="max-sm:hidden rounded-full bg-blue-50 max-md:px-7 max-md:py-5 md:p-8 lg:p-10 md:px-[44px] lg:py-8 max-sm:w-max md:absolute md:z-10 text-lg font-extrabold sm:text-3xl lg:mt-5 text-[#5EB8F9]">
                     3
                   </p>
-                  <span className="bg-blue-50 py-2 relative z-0 px-3 md:px-24 xl:px-48 lg:ml-2 border border-transparent rounded-3xl md:mt-3 lg:mt-7">
+                  {/* md:px-24 */}
+                  <span className="max-sm:text-center bg-blue-50 py-2 relative z-0 px-1 md:px-28 lg:pl-28 md:pr-0  max-lg:min-w-[90dvw]  lg:w-[60dvw]  lg:ml-2 border border-transparent rounded-3xl md:mt-3 lg:mt-7">
                     Cross-Platform Attribution for accurate campaign measurement.
                   </span>
                 </div>
-                <div className="flex flex-col items-center md:flex md:flex-row py-7 lg:transform lg:translate-x-7">
-                  <p className="rounded-full bg-blue-50 p-3 md:p-8 lg:p-10 max-sm:w-max max-sm:h-max md:absolute md:z-10 text-lg font-extrabold sm:text-2xl lg:mt-5 text-blue-400">
+                <div className="max-sm:px-2 items-center flex flex-row py-8 lg:absolute float-left top-[45%] left-[34%]">
+                  <p className="max-sm:hidden rounded-full bg-blue-50 max-md:px-7 max-md:py-5 md:p-8 lg:p-10 md:px-[44px] lg:py-8 max-sm:w-max md:absolute md:z-10 text-lg font-extrabold sm:text-3xl lg:mt-5 text-[#5EB8F9]">
                     4
                   </p>
-                  <span className="bg-blue-50 py-2 relative z-0 px-3 md:px-24 xl:px-56 lg:ml-2 border border-transparent rounded-3xl md:mt-3 lg:mt-7">
+                  {/* md:px-24 xl:px-56  md:px-24*/}
+                  <span className="max-sm:text-center bg-blue-50 py-2 relative z-0 px-1 md:px-28 lg:pl-28 md:pr-0  max-lg:min-w-[90dvw]  lg:w-[60dvw] lg:ml-2 border border-transparent rounded-3xl md:mt-3 lg:mt-7">
                     Explorations for custom data analysis.
                   </span>
                 </div>
-                <div className="flex flex-col items-center md:flex md:flex-row py-5 lg:transform xl:-translate-x-10">
-                  <p className="rounded-full bg-blue-50 p-3 md:p-8 lg:p-10 max-sm:w-max max-sm:h-max md:absolute md:z-10 text-lg font-extrabold sm:text-2xl lg:mt-5 text-blue-400">
+                <div className="flex-nowrap max-sm:px-2 items-center flex flex-row py-5 lg:absolute float-left top-[60%] left-[28%]">
+                  <p className="max-sm:hidden rounded-full bg-blue-50 max-md:px-7 max-md:py-5 md:p-8 lg:p-10 md:px-[44px] lg:py-8 max-sm:w-max md:absolute md:z-10 text-lg font-extrabold sm:text-3xl lg:mt-5 text-[#5EB8F9]">
                     5
                   </p>
-                  <span className="bg-blue-50 py-2 relative z-0 px-3 md:px-24 xl:px-44 lg:ml-2 border border-transparent rounded-3xl md:mt-3 lg:mt-7">
+                  {/*  xl:px-44 */}
+                  <span className="max-sm:text-center bg-blue-50 py-2 max-sm:px-2 relative z-0 px-1 md:px-28 lg:pl-28 md:pr-0  max-lg:min-w-[90dvw]  lg:w-[60dvw] lg:ml-2 border border-transparent rounded-3xl md:mt-3 lg:mt-7">
                     Easy Data Collection & Management with integrated tools.
                   </span>
                 </div>
-                <div className="flex flex-col items-center md:flex md:flex-row py-8 lg:transform lg:translate-x-28 xl:translate-x-36">
-                  <p className="rounded-full bg-blue-50 p-3 md:p-8 lg:p-10 max-sm:w-max max-sm:h-max md:absolute md:z-10 text-lg font-extrabold sm:text-2xl lg:mt-5 text-blue-400">
+                <div className="max-sm:px-2 items-center flex flex-row py-10 lg:py-12 lg:absolute float-left top-[71%] left-[20%]">
+                  <p className="max-sm:hidden rounded-full bg-blue-50 max-md:px-7 max-md:py-5 md:p-8 lg:p-10 md:px-[44px] lg:py-8 max-sm:w-max md:absolute md:z-10 text-lg font-extrabold sm:text-3xl lg:mt-5 text-[#5EB8F9]">
                     6
                   </p>
-                  <span className="bg-blue-50 py-2 relative z-0 px-3 md:px-24 xl:px-40 lg:ml-2 border border-transparent rounded-3xl md:mt-3 lg:mt-7">
+                  {/*  xl:px-40 */}
+                  <span className="max-sm:text-center bg-blue-50 py-2 relative z-0 px-1 md:px-28 lg:pl-28 md:pr-0  max-lg:min-w-[90dvw]  lg:w-[60dvw] lg:ml-2 border border-transparent rounded-3xl md:mt-3 lg:mt-7">
                     Seamless Integration with existing marketing platforms.
                   </span>
                 </div>
-              </div>
+              {/* </div> */}
             </div>
           </div>
 
         </section>
 
-        <ScrollElement
+
+        <section className='bg-[#656565] pt-[3%] overflow-hidden w-full text-center max-[350px]:h-[32dvh] max-[400px]:h-[38dvh] max-[425px]:h-[35dvh] max-sm:overflow-hidden'>
+          <div className='flex relative'>
+            <div className='lg:pl-[10%] max-sm:overflow-hidden '>
+              <img src='/boy_IMG.png' alt='Boy image' className='max-sm:h-[50%] max-sm:float-left max-[380px]:mt-[30%] max-[425px]:mt-[20%]' />
+            </div>
+            <div className='absolute left-[35%] xl:left-[29%]'>
+              <div className=' max-[400px]:text-[18px] text-2xl md:text-2xl xl:text-4xl font-semibold text-white pt-[5%] lg:pt-[7%] xl:pt-[5%]'>Take Control of your Campaigns & 
+              Grow Programmatically</div>
+              <button
+                    onClick={scrolling}
+                    className="mt-4 md:mt-5 xl:mt-10 py-2 sm:py-3 px-3 sm:px-6 bg-blue-500 hover:bg-blue-600 text-white font-semibold max-sm:text-[12px]  rounded transition-all duration-700 ease-in-out w-max"
+                  >
+                    Get Access to DV360
+               </button> 
+            </div>
+          </div>
+        </section>
+
+        {/* <ScrollElement
           id="case-studies"
           name="case-studies"
         ></ScrollElement>
@@ -904,7 +936,7 @@ export default function ga4({ brandsdata }) {
         <div className='md:flex justify-center md:space-x-20 items-center px-2 md:px-16 bg-sky-300 py-2 text-center'>
           <h2 className='text-left mb-2'>Customize Your Data Visualization with GA4</h2>
           <button onClick={scrolling} className="cta px-5 py-2 bg-sky-400 rounded-2xl mx-2 text-sm font-semibold cursor-pointer hover:bg-sky-500">CONTACT US</button>
-        </div>
+        </div> */}
       </div>
 
     </>

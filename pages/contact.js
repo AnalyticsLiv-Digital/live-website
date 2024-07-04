@@ -317,7 +317,7 @@ const contact = () => {
                                 <div className=''>
                                     <div>
                                         <span className="inline w-6"><img src="/address-28-16.png" ></img></span>
-                                        <p className='mt-1'>503, 31Five, Corporate Road, <br /> Prahaladnagar, S.G. Highway, <br />Ahmedabad 380015, Gujrat,<br /> India</p>
+                                        <p className='mt-1'>503, 31Five, Corporate Road, <br /> Prahaladnagar, S.G. Highway, <br />Ahmedabad 380015, Gujarat,<br /> India</p>
                                     </div>
                                 </div>
                                 <div className=''>
