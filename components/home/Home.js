@@ -68,7 +68,7 @@ const Home = () => {
         ]
     };
     return (
-        <>    
+        <>
             <section className='homepage flex items-center justify-center overflow-hidden font-gilroy'>
                 <div className='min-h-[90vh] w-full'>
                     <div className='relative h-full overflow-hidden'>
@@ -97,7 +97,7 @@ const Home = () => {
                                                         </p>
                                                     </li>
                                                     <li className='flex items-center gap-1 p-[10px] pb-[5px] pl-0 text-[#000]'>
-                                                        <span className='text-[#de668a] mt-[5px]'><FaCheck /></span>
+                                                        <span className='text-[#de668a] mt-[-20px]'><FaCheck /></span>
                                                         <p className='text-base font-medium leading-[25px] font-gilroy2'>
                                                             Data-Driven Decisions: Optimize campaigns and measure every touchpoint for clear results.
                                                         </p>
@@ -142,7 +142,7 @@ const Home = () => {
                                                     <li className='flex items-start gap-1 p-[10px] pb-[5px] pl-0 pt-0 text-[#000]'>
                                                         <span className='text-[#de668a] mt-[5px]'><FaCheck /></span>
                                                         <p className='text-base font-medium leading-[32px] font-gilroy2'>
-                                                              Streamline Workflows: Unify data and automate tasks for a frictionless experience.
+                                                            Streamline Workflows: Unify data and automate tasks for a frictionless experience.
                                                         </p>
                                                     </li>
                                                     <li className='flex items-start gap-1 p-[10px] pb-[5px] pl-0 text-[#000]'>
@@ -163,12 +163,12 @@ const Home = () => {
                                 </Slider>
                             </div>
                             {/*  */}
-                            
+
                             <div className=''>
                                 <div>
                                     <h2 className='text-center font-bold text-base text-maintext leading-[24px]'>Trusted by Organisations Worldwide</h2>
                                 </div>
-                                <div className='w-[90%] m-auto'>
+                                <div className='w-[100%] m-auto'>
                                     <Marquee gradient={false} pauseOnHover="true">
                                         <div className='flex space-x-8 justify-center py-4 px-4 mt-4'>
                                             {Trusteddata.brand.map((brand, index) => (
@@ -182,14 +182,14 @@ const Home = () => {
                                 </div>
                             </div>
 
-{/*  */}
-</div>
+                            {/*  */}
+                        </div>
 
-</div>
-</div>
-</section>
-</>
-)
+                    </div>
+                </div>
+            </section>
+        </>
+    )
 }
 
 export default Home

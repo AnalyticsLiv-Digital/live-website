@@ -159,7 +159,7 @@ const contact = () => {
                         <div className="absolute rounded-full w-40 h-40 bg-gradient-to-b from-rose-500 to-transparent blur -right-10 top-0"></div>
                         <div className="hidden absolute rounded-full w-40 h-40 bg-gradient-to-r from-cyan-500 to-transparent blur left-1/2 -bottom-10"></div>
                         <div className="relative mx-2 lg:flex">
-                            <div data-aos="fade-up" data-aos-once="true" className="relative md:h-screen overflow-hidden min-[1100px]:w-1/3 lg:w-[38%] rounded-lg bg-slate-900 space-y-9 px-4 pt-12 pb-20 align-middle text-white">
+                            <div data-aos="fade-up" data-aos-once="true" className="relative overflow-hidden min-[1100px]:w-1/3 lg:w-[38%] rounded-lg bg-slate-900 space-y-9 px-4 pt-16 pb-16 align-middle text-white">
                                 <h2 className="font-semibold uppercase tracking-wider">Contact Information</h2>
                                 <h2 className="uppercase">Make an appointment for first consultation.</h2>
                                 <div>
@@ -225,7 +225,7 @@ const contact = () => {
                                     <div className='absolute bottom-0 right-2 rounded-full w-20 h-20 bg-emerald-600 opacity-70 animate-bounce hover:animate-none duration-300 delay-75'></div>
                                 </div>}
 
-                                {!formSubmit && <form className="space-y-2 md:space-y-6  md:w-4/5 mx-auto" onSubmit={handleSubmit}>
+                                {!formSubmit && <form className="space-y-2 md:space-y-6  md:w-4/5 mx-auto lg:my-12" onSubmit={handleSubmit}>
                                     <div className="relative w-full md:flex justify-between md:space-x-8">
                                         <div className="relative md:w-1/2">
                                             <input type="text" id="firstname" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent  border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " name="firstName" value={formValues.firstName} onChange={handleChange} />

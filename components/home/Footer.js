@@ -132,8 +132,8 @@ const Footer = () => {
 
                             </div>
 
-                            <div className='pb-6'>
-                                <div className='bg-[#fdfdfd] w-full h-0.5 my-2'></div>
+                            <div className='pb-4'>
+                                <div className='bg-[#fdfdfd] w-full h-0.5'></div>
                             </div>
 
                             <div className='flex items-center justify-center'>

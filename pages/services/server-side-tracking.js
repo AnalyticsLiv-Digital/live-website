@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from 'next/image';
 import { motion } from "framer-motion";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const Serversidetracking = () => {
 
@@ -42,6 +43,25 @@ const Serversidetracking = () => {
     const toggleFur4mVisibility = () => {
         setIsFur4mVisible(prevState => !prevState);
     };
+
+    const NextArrow = (props) => {
+        const { onClick } = props;
+        return (
+            <div className="absolute top-1/2 right-[-35px] transform -translate-y-1/2 z-10 cursor-pointer" onClick={onClick}>
+                <FaArrowRight size={20} />
+            </div>
+        );
+    };
+
+    const PrevArrow = (props) => {
+        const { onClick } = props;
+        return (
+            <div className="absolute top-1/2 left-[-35px] transform -translate-y-1/2 z-10 cursor-pointer" onClick={onClick}>
+                <FaArrowLeft size={20} />
+            </div>
+        );
+    };
+
     var settings = {
         dots: true,
         infinite: true,
@@ -49,6 +69,8 @@ const Serversidetracking = () => {
         slidesToShow: 3,
         slidesToScroll: 1,
         initialSlide: 0,
+        nextArrow: <NextArrow />,
+        prevArrow: <PrevArrow />,
         autoplay: true,
         autoplaySpeed: 3000,
         responsive: [
@@ -126,7 +148,7 @@ const Serversidetracking = () => {
             <section className='ssthome w-full relative font-gilroy overflow-hidden'>
                 <div className='h-full'>
                     <div className="relative px-4 md:px-12 pt-8 md:pt-[10px] pb-8 md:pb-0 h-full z-20">
-                        <div className="z-10 flex lg:flex-nowrap items-center flex-wrap justify-between gap-7 pb-8">
+                        <div className="z-10 flex lg:flex-nowrap items-center flex-wrap justify-between gap-7 max-xl:pb-8 max-sm:pt-1 py-6">
                             <div className="w-full lg:w-1/2 lg:order-1 order-2 lg:mt-8">
                                 <h1 className="lg:text-[41px] text-[32px] lg:leading-[62px] leading-normal font-gilroy font-normal text-[#006EF5] mb-4">
                                     The Future of Performance Marketing: Server-Side Tracking
@@ -147,7 +169,7 @@ const Serversidetracking = () => {
                         </div>
                         <div className=''>
                             <div>
-                                <h2 className='text-center font-bold font-gilroy text-base text-maintext leading-[24px]'>Trusted by Organisations Worldwide</h2>
+                                <h2 className='text-center font-bold font-gilroy text-base text-maintext leading-[24px] xl:py-5'>Trusted by Organisations Worldwide</h2>
                             </div>
                             <div className='w-[90%] m-auto md:w-full'>
                                 <Marquee gradient={false} pauseOnHover="true">
@@ -173,7 +195,7 @@ const Serversidetracking = () => {
                     <div className=''>
                         <h2 className='text-[19px] font-gilroy text-[#000] leading-[1.7em] my-5'>Traditional, client-side tracking relies on code placed on your website to collect user data. While convenient, it has limitations. Browser ad blockers can hinder data collection, and privacy regulations restrict how cookies can be used.</h2>
                         <p className='text-[18px] font-gilroy text-[#000] leading-[1.7em]'>Server-side tracking offers a robust alternative. Data is collected and processed on your server before being sent to analytics platforms.</p>
-                        <div className='w-full py-7 grid lg:grid-cols-4 md:grid-cols-2 gap-10 md:py-4'>
+                        <div className='w-full mx-2 py-7 grid lg:grid-cols-4 md:grid-cols-2 gap-10 md:py-4'>
                             <div className='fs border-[3px] border-[#00000014] border-solid hover:border-t-[#30486a] shadow-webappourexper rounded-b-[15px] p-5'>
                                 <div>
                                     <img src="/Data-Driven Approach blue.png" alt="" className='h-16 w-16' />

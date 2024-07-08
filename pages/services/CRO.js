@@ -139,8 +139,8 @@ const cro = () => {
                     </div>
                 </div>
             </section>
-            <section className='crosolutions overflow-hidden'>
-                <div className='relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-0 '>
+            <section className='crosolutions'>
+                <div className='relative px-4 md:px-12 pt-8 md:pt-11 pb-10 md:pb-0 '>
                     <div>
                         <div className='flex items-center justify-center pb-7 md:pb-0'>
                             <h3 className='text-[#302E53] font-gilroy text-[32px] text-center font-semibold leading-[1.5em] not-italic pb-5'>With our cutting-edge CRO solutions, you'll experience</h3>
