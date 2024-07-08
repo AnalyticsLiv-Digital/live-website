@@ -145,7 +145,7 @@ const engagement = () => {
                                     </h1>
                                     <div className='flex items-center justify-center gap-5'>
                                         <Link href="/contact?id=programatic-advertising">
-                                            <button className="bg-[#30486a] text-white font-gilroy hover:bg-white border border-solid hover:border-[#30486ae3] hover:text-[#30486ae3] text-base font-normal tracking-wider rounded-xl py-3 px-6 mt-2 uppercase">Contact Us</button>
+                                            <button className="butn mt-2 uppercase">Contact Us</button>
                                         </Link>
                                     </div>
                                 </div>

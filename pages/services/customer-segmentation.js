@@ -118,10 +118,10 @@ const customersegmentation = () => {
                                 </h1>
                                 <div className='flex max-[425px]:flex-wrap flex-nowrap items-center lg:justify-start justify-center gap-5'>
                                     <Link href="/contact?id=programatic-advertising">
-                                        <button className="bg-[#30486ae3] text-white w-[208px] hover:bg-white border border-solid hover:border-[#30486ae3] hover:text-[#30486ae3] text-base font-normal tracking-wider rounded-xl py-3 px-6 mt-6">REQUEST A DEMO</button>
+                                        <button className="butn px-6 mt-6">REQUEST A DEMO</button>
                                     </Link>
                                     <Link href="/contact?id=programatic-advertising">
-                                        <button className="bg-[#30486ae3] text-white w-[208px] hover:bg-white border border-solid hover:border-[#30486ae3] hover:text-[#30486ae3] text-base font-normal tracking-wider rounded-xl py-3 px-6 max-[425px]:mt-0 mt-6">CONTACT US</button>
+                                        <button className="butn px-6 max-[425px]:mt-0 mt-6">CONTACT US</button>
                                     </Link>
                                 </div>
                             </div>
@@ -528,8 +528,8 @@ const customersegmentation = () => {
             </section>
             <section className='dtscont progracont relative overflow-hidden font-gilroy'>
                 <div className='relative px-4 md:px-12 pt-8 pb-8 z-20'>
-                    <div className='flex md:flex-nowrap flex-wrap items-center mx-auto'>
-                        <div className='md:w-[66%] w-full'>
+                    <div className='w-full flex md:flex-nowrap flex-wrap items-center justify-between '>
+                        <div className=''>
                             <div>
                                 <div>
                                     <div><h3 className='text-[#ffffff] text-[30px] leading-8 md:mb-[20px] mb-6 font-gilroy font-semibold'>Contact us</h3></div>
@@ -542,7 +542,7 @@ const customersegmentation = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='md:w-[33%] w-full'>
+                        <div className=''>
                             <div className='p-[10px] pl-0'>
                                 <div className='w-full flex'>
                                     <div className='flex items-center md:justify-end justify-center'>

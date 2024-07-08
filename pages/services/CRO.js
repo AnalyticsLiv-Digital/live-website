@@ -109,10 +109,10 @@ const cro = () => {
                                 </p> */}
                                 <div className='flex max-[425px]:flex-wrap flex-nowrap items-center lg:justify-start justify-center gap-5'>
                                     <Link href="/contact?id=programatic-advertising">
-                                        <button className="bg-[#30486ae3] text-white w-[208px] hover:bg-white border border-solid hover:border-[#30486ae3] hover:text-[#30486ae3] text-base font-normal tracking-wider rounded-xl py-3 px-6 mt-6">REQUEST A DEMO</button>
+                                        <button className="butn mt-6">REQUEST A DEMO</button>
                                     </Link>
                                     <Link href="/contact?id=programatic-advertising">
-                                        <button className="bg-[#30486ae3] text-white w-[208px] hover:bg-white border border-solid hover:border-[#30486ae3] hover:text-[#30486ae3] text-base font-normal tracking-wider rounded-xl py-3 px-6 max-[425px]:mt-0 mt-6">CONTACT US</button>
+                                        <button className="butn max-[425px]:mt-0 mt-6">CONTACT US</button>
                                     </Link>
                                 </div>
                             </div>
@@ -139,8 +139,8 @@ const cro = () => {
                     </div>
                 </div>
             </section>
-            <section className='crosolutions overflow-hidden'>
-                <div className='relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-0 '>
+            <section className='crosolutions'>
+                <div className='relative px-4 md:px-12 pt-8 md:pt-11 pb-10 md:pb-0 '>
                     <div>
                         <div className='flex items-center justify-center pb-7 md:pb-0'>
                             <h3 className='text-[#302E53] font-gilroy text-[32px] text-center font-semibold leading-[1.5em] not-italic pb-5'>With our cutting-edge CRO solutions, you'll experience</h3>

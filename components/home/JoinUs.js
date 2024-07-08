@@ -137,20 +137,20 @@ const JoinUs = () => {
 
     return (
         <>
-         
-    
+
+
             <section className="font-gilroy" id='joinus'>
-                <div className="relative overflow-hidden px-4 md:pt-4 pb-8 md:pb-16">
+                <div className="relative overflow-hidden px-4 pb-8 md:pb-16">
                     <div className="relative mx-2 lg:flex">
-                        <div className="relative bg-[#f5f5f5] md:h-screen overflow-hidden lg:w-[40%] rounded-lg space-y-9 px-4 pb-20 align-middle text-white">
-                            <div className="inline-widget bg-[#fff]">
-                                <div className="mb-4 py-5">
-                                <div className="mb-2 flex items-center justify-center">
+                        <div className="relative bg-[#f5f5f5] md:h-screen lg:w-[40%] rounded-lg space-y-9 px-4 pb-20 align-middle text-white">
+                            <div className="inline-widget overflow-hidden bg-[#fff]">
+                                <div className="pb-4">
+                                    <div className="flex justify-center">
                                         <img src="/AnalyticsLiv 2.png" alt="" className="max-w-[200px] max-h-[100px]" />
                                     </div>
                                     <div className="flex items-center justify-center">
                                         <div>
-                                            <p className="text-sm font-semibold text-homepagebtn leading-[30px]">Book A Slot for Media & Analytics Consultancy</p>
+                                            <p className="text-sm font-semibold text-homepagebtn leading-[5px]">Book A Slot for Media & Analytics Consultancy</p>
                                         </div>
                                     </div>
 
@@ -158,18 +158,21 @@ const JoinUs = () => {
                                 <InlineWidget url="https://calendly.com/analyticsliv/30min" />
                             </div>
                         </div>
+
+                        <ScrollElement id="footer" name="footer" ></ScrollElement>
+
                         <div className="relative lg:w-[60%] rounded-lg p-4 font-regular">
-                        
+
                             <div className="pb-5 md:w-[90%] mx-auto">
                                 <h3 className="text-left text-[20px] font-semibold text-homepagebtn leading-[30px]">Fill the form to get in touch with us</h3>
                             </div>
-                            
+
                             {formSubmit && <div className='relative text-slate-700 p-4 space-y-4 h-full'>
                                 <h1 className='align-middle font-medium text-4xl'>Thank You for your interest.</h1>
                                 <h2 className='align-middle text-xl'>We will get back to you soon.</h2>
                                 <div className='absolute bottom-0 right-2 rounded-full w-20 h-20 bg-emerald-600 opacity-70 animate-bounce hover:animate-none duration-300 delay-75'></div>
                             </div>}
-                            <ScrollElement id="footer" name="footer" ></ScrollElement>
+                            {/* <ScrollElement id="footer" name="footer" ></ScrollElement> */}
                             {!formSubmit && <form className="space-y-2 md:space-y-6  md:w-[90%] mx-auto" onSubmit={handleSubmit}>
                                 <div className="relative w-full md:flex justify-between md:space-x-8">
                                     <div className="relative md:w-1/2">
