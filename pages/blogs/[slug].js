@@ -19,18 +19,18 @@ const index = ({ blogDat, similarBlogs }) => {
         console.log(blogData)
         AOS.init();
 
-        if(screen.width < 800){
+        if (screen.width < 800) {
             var imgs = document.querySelectorAll('.blog-cont img').length;
-           
-            for(var i=0; i<parseInt(imgs); i++){
-                
-        document.querySelectorAll('.blog-cont img')[i].style.width="100%";
-        document.querySelectorAll('.blog-cont img')[i].style.height="auto";
-        document.querySelectorAll('.blog-cont img')[i].closest('span').style.width="100%";
-        document.querySelectorAll('.blog-cont img')[i].closest('span').style.height="auto";
+
+            for (var i = 0; i < parseInt(imgs); i++) {
+
+                document.querySelectorAll('.blog-cont img')[i].style.width = "100%";
+                document.querySelectorAll('.blog-cont img')[i].style.height = "auto";
+                document.querySelectorAll('.blog-cont img')[i].closest('span').style.width = "100%";
+                document.querySelectorAll('.blog-cont img')[i].closest('span').style.height = "auto";
             }
-        
-    }
+
+        }
 
 
 
@@ -39,10 +39,10 @@ const index = ({ blogDat, similarBlogs }) => {
     useEffect(() => {
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
-            'event' : 'blog-page',
+            'event': 'blog-page',
             'author': blogData.author,
-            'title' : blogData.title,
-            'publish_date' : blogData.date
+            'title': blogData.title,
+            'publish_date': blogData.date
         })
 
     }, []);
@@ -70,7 +70,7 @@ const index = ({ blogDat, similarBlogs }) => {
 
 
 
-    var url = "https://analyticsliv.com/blogs/"+blogData.slug;
+    var url = "https://analyticsliv.com/blogs/" + blogData.slug;
 
     return (<>
         <Head>
@@ -81,7 +81,7 @@ const index = ({ blogDat, similarBlogs }) => {
         <ScrollProgress />
 
         <div>
-            <section className="relative lg:bg-gray-100 md:pt-12">
+            <section className="relative lg:bg-gray-100 md:pt-12 overflow-scroll">
 
 
 
