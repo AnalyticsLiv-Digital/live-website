@@ -20,7 +20,7 @@ const BlogCard = ({ blog }) => {
                     <div className="lg:absolute 
                     w-full h-10 bg-gradient-to-t from-gray-300 to-transparent 
                     bottom-0 left-0 text-center pt-2 cursor-pointer 
-                    font-medium text-gray-800 hover:text-cyan-500 flex justify-center border-t-2">
+                    font-medium text-gray-800 hover:text-homepagebtn flex justify-center border-t-2">
                         Read More <span className='p-1'> <FaArrowRight /> </span>
                     </div>
                 </div>

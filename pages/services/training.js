@@ -21,7 +21,7 @@ const training = () => {
                         </h2> <br /> <br />
                         <div class="flex justify-center">
                             <Link href="/contact?id=training"> <button
-                                class="trainingbtn cursor-pointer w-60 bg-trainingheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold">Get
+                                class="butn">Get
                                 the Curriculum <br /> and Estimate</button></Link>
                         </div>
                     </div> <br />
@@ -63,7 +63,7 @@ const training = () => {
                                                     align with your industry, business goals, and team's current skill level.
                                                 </p> <br />
                                                 <Link href="/contact?id=training"> <button
-                                                    class="trainingbtn cursor-pointer w-44 bg-trainingheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold">Explore
+                                                    class="butn">Explore
                                                     Now</button></Link>
                                             </div>
                                         </div>
@@ -85,7 +85,7 @@ const training = () => {
                                                     courses, depending on your team's preferences and availability.
                                                 </p> <br />
                                                 <Link href="/contact?id=training"> <button
-                                                    class="trainingbtn cursor-pointer w-44 bg-trainingheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold">Explore
+                                                    class="butn">Explore
                                                     Now</button></Link>
                                             </div>
                                         </div>
@@ -119,7 +119,7 @@ const training = () => {
                                                     account setup, tracking implementation, and reporting.
                                                 </p> <br />
                                                 <Link href="/contact?id=training"> <button
-                                                    class="trainingbtn cursor-pointer w-44 bg-trainingheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold">Explore
+                                                    class="butn">Explore
                                                     Now</button></Link>
                                             </div>
                                         </div>
@@ -140,7 +140,7 @@ const training = () => {
                                                     team's expertise with advanced topics such as data analysis, conversion
                                                     optimization, and e-commerce tracking.</p> <br /> <br />
                                                 <Link href="/contact?id=training"> <button
-                                                    class="trainingbtn cursor-pointer w-44 bg-trainingheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold">Explore
+                                                    class="butn">Explore
                                                     Now</button></Link>
                                             </div>
                                         </div>
@@ -162,7 +162,7 @@ const training = () => {
                                                     can immediately apply what they learn to improve your company's online
                                                     presence.</p> <br />
                                                 <Link href="/contact?id=training"> <button
-                                                    class="trainingbtn cursor-pointer w-44 bg-trainingheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold">Explore
+                                                    class="butn">Explore
                                                     Now</button></Link>
                                             </div>
                                         </div>
@@ -195,7 +195,7 @@ const training = () => {
                                                     promote practical skill development.
                                                 </p> <br />
                                                 <Link href="/contact?id=training"> <button
-                                                    class="trainingbtn cursor-pointer w-44 bg-trainingheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold">Explore
+                                                    class="butn">Explore
                                                     Now</button></Link>
                                             </div>
                                         </div>
@@ -217,7 +217,7 @@ const training = () => {
                                                     organizations have leveraged Google Analytics to achieve their objectives.
                                                 </p> <br />
                                                 <Link href="/contact?id=training"> <button
-                                                    class="trainingbtn cursor-pointer w-44 bg-trainingheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold">Explore
+                                                    class="butn">Explore
                                                     Now</button></Link>
                                             </div>
                                         </div>
@@ -248,7 +248,7 @@ const training = () => {
                                                 are passionate about sharing their knowledge and expertise with your team.</p>
                                             <br />
                                             <Link href="/contact?id=training"> <button
-                                                class="trainingbtn cursor-pointer w-44 bg-trainingheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold">Explore
+                                                class="butn">Explore
                                                 Now</button></Link>
                                         </div>
                                     </div>

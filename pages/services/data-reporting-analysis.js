@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Head from 'next/head';
 import Link from "next/link";
@@ -71,7 +71,7 @@ export default class AutoPlay extends Component {
                                     others
                                 </p> <br />
                                 <Link href="/contact?id=data-reporting"><button
-                                    class=" bg-analyticsheading btn cursor-pointer hover:bg-sky-800 transition duration-200 delay-75 rounded-[5px] shadow-lg text-white text-lg font-semibold py-[15px] px-[50px] hover:scale-110">Get
+                                    class="butn">Get
                                     in Touch</button></Link>
                             </div>
                             <div class="right flex lg:justify-end">
@@ -230,8 +230,7 @@ export default class AutoPlay extends Component {
                                     </a>
                                     <p class="mb-8 text-[#202020] text-base leading-none font-medium">We provide comprehensive data
                                         insights across various time periods to track trends and identify patterns.</p>
-                                    <Link href="/contact?id=data-reporting"><button
-                                        class=" bg-analyticsheading btn cursor-pointer hover:bg-sky-800 transition duration-200 delay-75 py-[15px] px-[50px] rounded-[5px] shadow-lg text-white text-lg font-semibold">Explore
+                                    <Link href="/contact?id=data-reporting"><button className="butn">Explore
                                         Now</button></Link>
                                 </div>
                             </div>
@@ -249,7 +248,7 @@ export default class AutoPlay extends Component {
                                     <p class="mb-8 text-[#202020] text-base leading-none font-medium">We optimize your marketing
                                         campaigns based on data-driven insights, maximizing their effectiveness and ROI.</p>
                                     <Link href="/contact?id=data-reporting"><button
-                                        class="btn cursor-pointer bg-analyticsheading hover:bg-sky-800 transition duration-200 delay-75 py-[15px] px-[50px] rounded-[5px] shadow-lg text-white text-lg font-semibold">Explore
+                                        class="butn">Explore
                                         Now</button></Link>
                                 </div>
                             </div>
@@ -267,7 +266,7 @@ export default class AutoPlay extends Component {
                                     <p class="mb-8 text-[#202020] text-base leading-none font-medium">We conduct A/B tests to evaluate
                                         different strategies and optimize your website or app for better performance.</p>
                                     <Link href="/contact?id=data-reporting"><button
-                                        class="btn cursor-pointer bg-analyticsheading hover:bg-sky-800 transition duration-200 delay-75 py-[15px] px-[50px] rounded-[5px] shadow-lg text-white text-lg font-semibold">Explore
+                                        class="butn">Explore
                                         Now</button></Link>
                                 </div>
                             </div>
@@ -286,7 +285,7 @@ export default class AutoPlay extends Component {
                                         into distinct groups based on shared characteristics, enabling targeted marketing campaigns
                                         and personalized customer experiences.</p>
                                     <Link href="/contact?id=data-reporting"><button
-                                        class="btn cursor-pointer bg-analyticsheading hover:bg-sky-800 transition duration-200 delay-75 py-[15px] px-[50px] rounded-[5px] shadow-lg text-white text-lg font-semibold">Explore
+                                        class="butn">Explore
                                         Now</button></Link>
                                 </div>
                             </div>
@@ -303,7 +302,7 @@ export default class AutoPlay extends Component {
                                     </a>
                                     <p class="mb-5 text-[#202020] text-base leading-none font-medium">We leverage advanced predictive modeling to forecast future trends and anticipate customer behavior, allowing you to make proactive decisions.</p>
                                     <Link href="/contact?id=data-reporting"><button
-                                        class="btn cursor-pointer bg-analyticsheading hover:bg-sky-800 transition duration-200 delay-75 py-[15px] px-[50px] rounded-[5px] shadow-lg text-white text-lg font-semibold">Explore
+                                        class="butn">Explore
                                         Now</button></Link>
                                 </div>
                             </div>

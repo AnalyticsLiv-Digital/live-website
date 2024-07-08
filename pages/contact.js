@@ -298,7 +298,8 @@ const contact = () => {
 
                                     </div>
                                     <div className="text-center">
-                                        <button className="tracking-wider my-4 px-8 py-2 m-auto bg-slate-900 text-white rounded hover:border hover:border-cyan-400 hover:shadow-md hover:shadow-cyan-400 transition-shadow delay-150">Submit</button>
+                                        <button className="tracking-wider my-4 px-8 py-2 m-auto bg-[#0f172a] text-white rounded-lg 
+                                        hover:border hover:border-[#0f172a] hover:bg-white hover:text-[#0f172a] hover:shadow-md duration-300">Submit</button>
                                     </div>
                                 </form>}
 

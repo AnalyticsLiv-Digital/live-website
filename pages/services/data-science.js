@@ -104,10 +104,10 @@ const datascience = () => {
                                 </p> */}
                                 <div className='flex max-[425px]:flex-wrap flex-nowrap items-center lg:justify-start justify-center gap-5'>
                                     <Link href="/contact?id=programatic-advertising">
-                                        <button className="bg-[#30486ae3] text-white w-[208px] hover:bg-white border border-solid hover:border-[#30486ae3] hover:text-[#30486ae3] text-base font-normal tracking-wider rounded-xl py-3 px-6 mt-6">REQUEST A DEMO</button>
+                                        <button className="butn mt-6">REQUEST A DEMO</button>
                                     </Link>
                                     <Link href="/contact?id=programatic-advertising">
-                                        <button className="bg-[#30486ae3] text-white w-[208px] hover:bg-white border border-solid hover:border-[#30486ae3] hover:text-[#30486ae3] text-base font-normal tracking-wider rounded-xl py-3 px-6 max-[425px]:mt-0 mt-6">CONTACT US</button>
+                                        <button className="butn max-[425px]:mt-0 mt-6">CONTACT US</button>
                                     </Link>
                                 </div>
                             </div>

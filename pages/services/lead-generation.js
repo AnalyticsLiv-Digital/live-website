@@ -32,7 +32,7 @@ const lead_generation = () => {
                         growth.
                     </p>
                     <Link href="/contact?id=lead-gen">
-                    <button className="bg-purple-900 text-white font-bold tracking-wider rounded-xl py-3 px-6 mt-6">LET'S WORK TOGETHER <img className="inline ml-2 hover:animate-pulse" src="https://storage.googleapis.com/website-bucket-uploads/static/marketing/arrow_1.png"/></button>
+                    <button className="butn mt-6">LET'S WORK TOGETHER <img className="inline ml-2 hover:animate-pulse" src="https://storage.googleapis.com/website-bucket-uploads/static/marketing/arrow_1.png"/></button>
                     </Link>
                  </div>
                  
