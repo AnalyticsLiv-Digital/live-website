@@ -35,8 +35,8 @@ const Footer = () => {
                                                 <div>
                                                     <div className='mb-4'>
                                                         <div className='text-[13px] font-semibold leading-5 text-white'>For Business Enquiries</div>
-                                                        <div className='max-[374px]:flex-wrap max-sm:flex max-[374px]:gap-2 max-[400px]:gap-5 max-sm:gap-12 max-sm:w-[90dvw] py-2'>
-                                                            <div className='ml-0 flex items-start [375px]:mb-[3px] max-[374px]:gap-2'>
+                                                        <div className='max-[381px]:flex-wrap max-sm:flex max-[381px]:gap-2 max-[400px]:gap-5 max-sm:gap-12 max-sm:w-[90dvw] py-2'>
+                                                            <div className='ml-0 flex items-start [381px]:mb-[3px] max-[381px]:gap-2'>
                                                                 <IoIosMail className='w-[21px] h-[22px] sm:mr-[7px]' />
                                                                 <div className='text-[13px] font-normal leading-5'>
                                                                     <a href="mailto:sales@analyticsliv.com" className='text-[#efefef]'>sales@analyticsliv.com</a>
@@ -48,7 +48,7 @@ const Footer = () => {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div className=' max-sm:flex max-[374px]:flex-wrap max-[374px]:gap-0 max-[400px]:gap-9 max-sm:gap-16'>
+                                                    <div className=' max-sm:flex max-[374px]:flex-wrap max-[374px]:gap-2 max-[381px]:gap-5 max-[400px]:gap-9 max-sm:gap-16'>
                                                         <div className='ml-0 mb-4'>
                                                             <p className='text-[13px] font-semibold leading-5 text-white'>For Job Enquiries</p>
                                                             <div className=' flex items-start  max-sm:py-1'>

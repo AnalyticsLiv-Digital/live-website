@@ -83,11 +83,8 @@ const Home = () => {
                             <div className='vb pb-5 w-full'>
                                 <Slider {...settings}>
                                     <div>
-                                        <div className='flex lg:flex-nowrap flex-wrap items-center gap-10'>
-                                            <div className='lg:w-1/2 w-full mx-auto flex items-center lg:justify-between justify-center'>
-                                                <img src="/Home_Page_Main_Img_2.png" alt="" className='w-[450px]' />
-                                            </div>
-                                            <div className='lg:w-1/2 w-full'>
+                                        <div className='flex lg:flex-nowrap flex-wrap justify-between items-center gap-10'>
+                                            <div className='lg:w-[60%] w-full'>
                                                 <h1 className='text-maintext text-[24px] text-center font-semibold leading-[32px] not-italic md:pb-5 mb-[10px]'>See Beyond the Click: Strategic Media, Analytics & Cloud Solutions for Measurable Success</h1>{/* <p className='text-[#000] md:text-[18px] text-base font-medium leading-[1.5em] text-center md:pb-5 pb-[30px]'>Our strategic Media, Analytics & Cloud Solutions go beyond basic clicks, transforming website data into actionable insights that drive measurable success through optimized campaigns and data-driven decisions</p> */}
                                                 <div className='ml-5 pb-4'>
                                                     <li className='flex items-start gap-1 p-[10px] pb-[5px] pl-0 pt-0 text-[#000]'>
@@ -108,6 +105,9 @@ const Home = () => {
                                                         know More
                                                     </button>
                                                 </div>
+                                            </div>
+                                            <div className='lg:w-[40%] w-full flex items-center  justify-center'>
+                                                <img src="/Home_Page_Main_Img_2.png" alt="" className='w-[450px]' />
                                             </div>
                                         </div>
                                     </div>
@@ -133,10 +133,7 @@ const Home = () => {
 
                                     <div>
                                         <div className='flex lg:flex-nowrap flex-wrap items-center lg:justify-between justify-center gap-6'>
-                                            <div className='lg:w-1/2 w-full mx-auto flex items-center lg:justify-between justify-center'>
-                                                <img src="/Home_Page_Main_Img_3.png" alt="" className='w-[450px]' />
-                                            </div>
-                                            <div className='lg:w-1/2 w-full'>
+                                            <div className='lg:w-[60%] w-full'>
                                                 <h1 className='text-maintext text-[24px] text-center font-semibold leading-[32px] not-italic mb-[10px]'>Optimize, Analyze, Dominate: Media & Analytics Solutions to Power Your Digital Transformation</h1>{/* <p className='text-[#000] md:text-[18px] text-base font-medium leading-[1.5em] text-center md:pb-5 pb-[30px]'>Fuel your digital transformation with our Media & Analytics Solutions</p> */}
                                                 <div className='ml-8 pb-4'>
                                                     <li className='flex items-start gap-1 p-[10px] pb-[5px] pl-0 pt-0 text-[#000]'>
@@ -157,6 +154,9 @@ const Home = () => {
                                                         Schedule A Free Consultation
                                                     </button>
                                                 </div>
+                                            </div>
+                                            <div className='lg:w-[40%] w-full mx-auto flex items-center  justify-center'>
+                                                <img src="/Home_Page_Main_Img_3.png" alt="" className='w-[450px]' />
                                             </div>
                                         </div>
                                     </div>
