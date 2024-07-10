@@ -368,7 +368,7 @@ const cro = () => {
                             <ul className='seven relative pt-[20px] flex items-center md:flex-row flex-col'>
                                 <li className='relative text-start md:pr-10 text-[#243238] sm:w-1/2 w-full md:order-1 order-2'>
                                     <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[17px] leading-8 font-semibold'>Iteration & Optimization</h4>
-                                    <div className='text-[#646464] text-[14px] font-normal font-gilroy2 leading-6 mb-5'>
+                                    <div className='text-[#646464] text-[14px] font-normal font-gilroy2 leading-6 mb-0 md:mb-3'>
                                         <div className='mb-2 flex items-start gap-1'>
                                             <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
                                             <p>Based on test results, implement the winning variations on your website.</p></div>
@@ -386,7 +386,7 @@ const cro = () => {
                 </div>
             </section>
             <section className='progracasestudy relative font-gilroy overflow-hidden'>
-                <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16 relative z-20'>
+                <div className='px-4 md:px-20 pt-0 sm:pt-6 md:pt-11 pb-8 md:pb-16 relative z-20'>
                     <div className='flex items-center justify-center pb-5'>
                         <h2 className='text-[32px] font-semibold text-[#18265b] leading-[27px] text-center tracking-widest'>Check out our latest Case Studies</h2>
                     </div>

@@ -182,7 +182,8 @@ const aboutus = () => {
 
                 <div data-aos="fade-down" data-aos-once="true" className="py-8 lg:px-16">
                     <h2 className="relative text-slate-800 uppercase tracking-wider text-center lg:text-left lg:inset-x-12 lg:text-3xl font-semibold">Solutions Offered</h2>
-                    <div className="lg:flex px-8 justify-center uppercase">
+                    <div className="flex max-lg:flex-col max-lg:items-center sm:px-8 justify-center uppercase">
+
                         <ul className="space-y-2 px-8 pt-2 lg:pt-10 lg:w-1/2">
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" className="w-8 mr-2 inline fill-amber-400" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">

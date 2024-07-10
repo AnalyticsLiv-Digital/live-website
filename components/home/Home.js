@@ -23,6 +23,16 @@ const Home = () => {
         }
 
     }
+    const scrolling2 = () => {
+        {
+            Scroll.scroller.scrollTo("consultation", {
+                duration: 500,
+                smooth: true,
+                offset: -100,
+            });
+        }
+
+    }
     useEffect(() => {
         Aos.init({ duration: 2000 });
     }, [])
@@ -70,8 +80,8 @@ const Home = () => {
     return (
         <>
             <section className='homepage flex items-center justify-center overflow-hidden font-gilroy'>
-                <div className='min-h-[90vh] w-full'>
-                    <div className='relative h-full overflow-hidden'>
+                <div className='xl:min-h-[90vh] w-full'>
+                    <div className='relative xl:h-fit overflow-hidden'>
 
                         {/* Back-Ground design  */}
                         <div className='absolute lg:hidden top-28 right-0 w-80 h-80 flex justify-end'>
@@ -119,7 +129,7 @@ const Home = () => {
                                                     <h1 className='text-maintext text-[24px] text-center font-semibold leading-[39px] mt-3 not-italic pb-5'>Strategic Media, Analytics & Cloud Solutions</h1>
                                                     <p className='text-[#000] md:text-[18px] text-base font-medium leading-[32px] text-center md:pb-5 pb-[30px]'>Data Analytics and Marketing Solutions helps businesses in gaining digital maturity through optimized utilization of data</p>
                                                     <div className='flex flex-wrap justify-around'>
-                                                        <button onClick={scrolling1} className='butn mb-0'>
+                                                        <button onClick={scrolling2} className='butn mb-0'>
                                                             Talk to our Experts
                                                         </button>
                                                     </div>
@@ -150,7 +160,7 @@ const Home = () => {
                                                     </li>
                                                 </div>
                                                 <div className='flex flex-wrap justify-around mt-7 mb-3'>
-                                                    <button onClick={scrolling1} className='butn'>
+                                                    <button onClick={scrolling2} className='butn'>
                                                         Schedule A Free Consultation
                                                     </button>
                                                 </div>
@@ -168,11 +178,11 @@ const Home = () => {
                                 <div>
                                     <h2 className='text-center font-bold text-base text-maintext leading-[24px]'>Trusted by Organisations Worldwide</h2>
                                 </div>
-                                <div className='w-[100%] m-auto'>
-                                    <Marquee gradient={false} pauseOnHover="true">
+                                <div className=' max-sm:w-[90dvw] max-lg:w-[90dvw] w-[100%] m-auto'>
+                                    <Marquee gradient={false} puseOnHover="true">
                                         <div className='flex space-x-8 justify-center py-4 px-4 mt-4'>
                                             {Trusteddata.brand.map((brand, index) => (
-                                                <div key={index}>
+                                                <div key={index} className=''>
                                                     <img src={brand.logo} alt={brand.alt} className='h-[50px] mx-5' />
                                                 </div>
                                             ))}

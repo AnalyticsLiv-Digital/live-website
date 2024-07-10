@@ -15,7 +15,7 @@ const Marketing = () => {
             </div>
             {/*  */}
 
-            <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
+            <div className='px-4 md:px-20 pt-4 pb-8 md:pb-16'>
                 <div>
                     <div className='text-start'>
                         <h2 className='text-maintext lg:text-[28px] text-2xl font-semibold not-italic text-center  block'>Why Choose AnalyticsLiv</h2>
