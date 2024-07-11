@@ -335,7 +335,7 @@ const engagement = () => {
                 </div>
             </section>
             <section className='engagement'>
-                <div className='relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 z-20'>
+                <div className='relative px-4 md:px-12 pt-3 md:pt-0 pb-0 z-20'>
                     <div>
                         <div className='w-full m-auto'>
                             <div className='w-full px-4'>

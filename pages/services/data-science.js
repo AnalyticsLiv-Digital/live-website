@@ -775,7 +775,7 @@ const datascience = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='md:w-[40%] w-full flex items-center justify-center md:mt-0 mt-4'>
+                        <div className='md:w-[40%] max-sm:pl-[3%] w-full flex items-center justify-center md:mt-0 mt-4'>
                             <img src="/Data_Science_Sub_Img_Updated.png" alt="" className='md:h-auto h-[400px]' />
                         </div>
                     </div>

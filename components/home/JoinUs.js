@@ -145,12 +145,15 @@ const JoinUs = () => {
                         <div className="relative bg-[#f5f5f5] md:h-screen lg:w-[40%] rounded-lg space-y-9 px-4 pb-20 align-middle text-white">
                             <div className="inline-widget overflow-hidden bg-[#fff]">
                                 <div className="pb-4">
+
+                                    <ScrollElement id="consultation" name="consultation" ></ScrollElement>
+
                                     <div className="flex justify-center">
                                         <img src="/AnalyticsLiv 2.png" alt="" className="max-w-[200px] max-h-[100px]" />
                                     </div>
                                     <div className="flex items-center justify-center">
                                         <div>
-                                            <p className="text-sm font-semibold text-homepagebtn leading-[5px]">Book A Slot for Media & Analytics Consultancy</p>
+                                            <p className="text-sm font-semibold text-homepagebtn leading-[18px] sm:leading-[5px]">Book A Slot for Media & Analytics Consultancy</p>
                                         </div>
                                     </div>
 
