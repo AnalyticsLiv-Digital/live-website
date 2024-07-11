@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const BlogSchema = new mongoose.Schema({
+    id : {type:String},
     coverphoto: {type: String, required: true},
     title: {type: String, required: true},
     content:{type: String},
