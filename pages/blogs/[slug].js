@@ -8,31 +8,49 @@ import { useState, useEffect } from 'react'
 import { Router, useRouter } from 'next/router';
 import { ScaleLoader } from 'react-spinners'
 import SimilarPost from '../../components/SimilarPost'
+import RecommendedBlogs from '../../components/recommendedBlog';
+// import recommendedBlogs from '../api/recommendedBlogs';
 
-const index = ({ blogDat, similarBlogs }) => {
+const index = ({ blogDat, similarBlogs, recommendedBlogs }) => {
     const blogData = blogDat.blog[0];
     const similarBlogsdata = similarBlogs.blog;
+    const [recommendedBlogsdata, setrecommendedBlogsdata] = useState(null);
+    // const recommendedBlogsdata = recommendedBlogs.blog;
+
+    const mainFnc = async () => {
+        const res2 = await fetch(`/api/recommendedBlogs?user=974145224.1691387819.&blog_id=1&blog_title=abcdefg`)
+        const recommendedBlogs = await res2.json();
+        return recommendedBlogs
+    }
 
     const [formFixed, setFormFixed] = useState(false);
 
     useEffect(() => {
-        console.log(blogData)
-        AOS.init();
 
-        if (screen.width < 800) {
-            var imgs = document.querySelectorAll('.blog-cont img').length;
+        (async () => {
+            // console.log("object")
+            const recommendedBlogsVal = await mainFnc()
+            setrecommendedBlogsdata(recommendedBlogsVal);
+            // const recommendedBlogsdata = recommendedBlogs.blog;
+            console.log("recomend recommend", recommendedBlogsVal)
 
-            for (var i = 0; i < parseInt(imgs); i++) {
+            console.log("blog data blog", blogData)
+            AOS.init();
 
-                document.querySelectorAll('.blog-cont img')[i].style.width = "100%";
-                document.querySelectorAll('.blog-cont img')[i].style.height = "auto";
-                document.querySelectorAll('.blog-cont img')[i].closest('span').style.width = "100%";
-                document.querySelectorAll('.blog-cont img')[i].closest('span').style.height = "auto";
+            if (screen.width < 800) {
+                var imgs = document.querySelectorAll('.blog-cont img').length;
+
+                for (var i = 0; i < parseInt(imgs); i++) {
+
+                    document.querySelectorAll('.blog-cont img')[i].style.width = "100%";
+                    document.querySelectorAll('.blog-cont img')[i].style.height = "auto";
+                    document.querySelectorAll('.blog-cont img')[i].closest('span').style.width = "100%";
+                    document.querySelectorAll('.blog-cont img')[i].closest('span').style.height = "auto";
+                }
+
             }
-
-        }
-
-
+        })
+            ()
 
     }, []);
 
@@ -174,6 +192,9 @@ const index = ({ blogDat, similarBlogs }) => {
                     </div>
                 </div>
 
+                <div className='lg:flex w-full lg:w-11/12 space-y-2 lg:space-y-0 mx-auto bg-white'>
+                    <RecommendedBlogs recommendedBlogsdata={recommendedBlogsdata} />
+                </div>
             </section>
 
         </div></>

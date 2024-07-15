@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import ScrollProgress from '../../components/ScrollProgress'
 import Head from 'next/head';
 import BlogCard from '../../components/BlogCard';
@@ -9,29 +9,29 @@ import { ScaleLoader } from 'react-spinners'
 import { useRouter } from 'next/router'
 
 
-const index = ({blogDat,search}) => {
+const index = ({ blogDat, search }) => {
     const router = useRouter()
-  const {slug} = router.query;
-  
-  console.log(slug);
+    const { slug } = router.query;
+
+    console.log(slug);
     const blogData = blogDat.blog;
-    
+
     const [blogsData, setBlogsData] = useState(blogData);
- 
- 
+
+
     useEffect(() => {
-        
+
         AOS.init();
     }, []);
     return (
         <><Head>
             <title>AnalyticsLiv - Blogs</title>
- 
+
         </Head>
-        <ScrollProgress/>
+            <ScrollProgress />
 
             <div>
-                
+
                 <div className="relative lg:mb-32">
                     <div className="">
                         <div className="absolute right-0 bg-slate-900 w-4/5 lg:w-4/5 lg:h-80 h-full rounded-bl-full"></div>
@@ -52,7 +52,7 @@ const index = ({blogDat,search}) => {
                 <section className="">
                     <div className="text-center bg-cyan-50 md:bg-white pt-7 lg:pt-16 z-2">
                         <h1 className="text-center mb-4 text-lg font-medium tracking-wide text-cyan-800 text-lg">Search results for <b>{search}</b></h1>
-                        
+
                     </div>
                 </section>
 
@@ -85,13 +85,13 @@ const index = ({blogDat,search}) => {
 
                         </div>
 
-                        <div className='bg-cover py-8 lg:py-16 bg-scroll' style={{backgroundImage: `url("https://img.freepik.com/free-vector/white-abstract-background_23-2148810113.jpg?t=st=1671082381~exp=1671082981~hmac=659665427411ee225ef245d30444c4a2513e113dcfebb8e1dabf685749e40e1e")`}} >
+                        <div className='bg-cover py-8 lg:py-16 bg-scroll' style={{ backgroundImage: `url("https://img.freepik.com/free-vector/white-abstract-background_23-2148810113.jpg?t=st=1671082381~exp=1671082981~hmac=659665427411ee225ef245d30444c4a2513e113dcfebb8e1dabf685749e40e1e")` }} >
                             <div className="mx-8 lg:mx-24 grid grid-rows-1 lg:grid-cols-3 gap-6 lg:gap-10 ">
-                                
-                                {blogsData && blogsData.map((blog,key) => (
-            <BlogCard key={key} blog={blog}/>
-          ))}
-                             
+
+                                {blogsData && blogsData.map((blog, key) => (
+                                    <BlogCard key={key} blog={blog} />
+                                ))}
+
                             </div>
 
                         </div>
@@ -99,18 +99,13 @@ const index = ({blogDat,search}) => {
 
                     <nav className="absolute w-full bottom-0 m-auto inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
                         <div className="m-auto py-4">
+                        </div>
+                    </nav>
+                </section>
 
-        
-
-          
-
-</div>
-      </nav>
-                    </section>
-            
-    </div >
-    </>
-  )
+            </div >
+        </>
+    )
 }
 
 export async function getServerSideProps(context) {
@@ -120,7 +115,7 @@ export async function getServerSideProps(context) {
     const blogDat = await res.json()
     const search = context.query.s;
     // Pass data to the page via props
-    return { props: { blogDat,search} }
-  }
+    return { props: { blogDat, search } }
+}
 
 export default index

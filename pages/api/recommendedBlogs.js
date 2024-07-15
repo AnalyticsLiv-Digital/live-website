@@ -34,7 +34,7 @@ const handler = async (req, res) => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ ids: [1,2,3] }),
+            body: JSON.stringify({ ids: recommendedIds }),
         });
 
         if (!blogsResponse.ok) {

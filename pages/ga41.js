@@ -517,11 +517,11 @@ export default function ga4({ brandsdata }) {
         <section>
           <div className="flex flex-col md:flex-row items-center w-full mt-5 relative h-screen">
             <div className="flex flex-col justify-center sm:absolute	bg-white z-10 left-0 w-full md:w-2/3 lg:w-1/2 h-auto md:h-3/5 p-6 md:p-6 sm:rounded-3xl shadow-lg pl-8">
-              <p className="text-xl md:text-4xl xl:text-6xl 2xl:text-8xl font-semibold leading-loose text-left text-[#5EB8F9] mb-1">
+              <p className="text-xl md:text-4xl xl:text-6xl font-semibold leading-loose text-left text-[#5EB8F9] mb-1">
                 Get captivating customer insights and Analysis.
               </p>
 
-              <p className="text-base md:text-lg 2xl:text-3xl leading-relaxed mt-4 text-gray-700">
+              <p className="text-base md:text-lg leading-relaxed mt-4 text-gray-700">
                 By partnering with AnalyticsLiv, a Google Analytics Partner, you gain access to expert guidance and the latest tools to harness the power of GA4. Let's turn your data into a competitive advantage!
               </p>
               <button className="mt-6 py-3 px-6 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded transition-all duration-700 ease-in-out w-max">

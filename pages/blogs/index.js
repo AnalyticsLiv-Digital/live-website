@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import ScrollProgress from '../../components/ScrollProgress'
 import Head from 'next/head';
 import BlogCard from '../../components/BlogCard';
@@ -8,28 +8,28 @@ import Link from 'next/link';
 import { ScaleLoader } from 'react-spinners'
 
 
-const index = ({blogDat,count}) => {
+const index = ({ blogDat, count }) => {
     const blogData = blogDat.blog;
-    
+
     const [blogsData, setBlogsData] = useState(blogData);
 
     var rows = [], i = 0, len = count.pages;
     while (++i <= len) rows.push(i);
- 
+
     useEffect(() => {
-    
+
         AOS.init();
     }, []);
     return (
         <><Head>
             <title>AnalyticsLiv - Blogs</title>
-            <meta name="description" content="Google Marketing Platform Partner - Blogs on GA4, DV360, Google Ads"/>
+            <meta name="description" content="Google Marketing Platform Partner - Blogs on GA4, DV360, Google Ads" />
             <link rel="canonical" href="https://www.analyticsliv.com/blogs"></link>
         </Head>
-        <ScrollProgress/>
+            <ScrollProgress />
 
             <div>
-                
+
                 <div className="relative lg:mb-32">
                     <div className="">
                         <div className="absolute right-0 bg-slate-900 w-4/5 lg:w-4/5 lg:h-80 h-full rounded-bl-full"></div>
@@ -47,57 +47,46 @@ const index = ({blogDat,count}) => {
 
                 </div>
 
-              
-
                 <section className='relative'>
-                
+
                     <div className="relative lg:flex flex-row  w-full">
 
-                   <div className='bg-cover py-5 lg:pt-8 pb-20 bg-scroll' style={{backgroundImage: `url("https://img.freepik.com/free-vector/white-abstract-background_23-2148810113.jpg?t=st=1671082381~exp=1671082981~hmac=659665427411ee225ef245d30444c4a2513e113dcfebb8e1dabf685749e40e1e")`}} >
-                      
-                        <div className="text-center pb-8 z-2">
-                       <form method="get" action="/blogs/search">
-                       <input name="s" type="search" placeholder="Search" className="bg-stone-100 w-3/5 lg:w-2/5 rounded-l-full border border-cyan-500 py-2 pl-9 focus:outline-none focus:caret-gray-400" />
-                       <input type="submit" value="Search" id="Search" className="bg-cyan-500 text-white rounded-r-full border border-cyan-500 py-2 px-4 -ml-2 focus:outline-none" />
-                       </form>
-                   </div>
+                        <div className='bg-cover py-5 lg:pt-8 pb-20 bg-scroll' style={{ backgroundImage: `url("https://img.freepik.com/free-vector/white-abstract-background_23-2148810113.jpg?t=st=1671082381~exp=1671082981~hmac=659665427411ee225ef245d30444c4a2513e113dcfebb8e1dabf685749e40e1e")` }} >
 
+                            <div className="text-center pb-8 z-2">
+                                <form method="get" action="/blogs/search">
+                                    <input name="s" type="search" placeholder="Search" className="bg-stone-100 w-3/5 lg:w-2/5 rounded-l-full border border-cyan-500 py-2 pl-9 focus:outline-none focus:caret-gray-400" />
+                                    <input type="submit" value="Search" id="Search" className="bg-cyan-500 text-white rounded-r-full border border-cyan-500 py-2 px-4 -ml-2 focus:outline-none" />
+                                </form>
+                            </div>
 
                             <div className="mx-8 lg:mx-24 grid grid-rows-1 lg:grid-cols-3 gap-6 lg:gap-10 ">
-                                
-                                {blogsData && blogsData.map((blog,key) => (
-            <BlogCard key={key} blog={blog}/>
-          ))}
-                             
+
+                                {blogsData && blogsData.map((blog, key) => (
+                                    <BlogCard key={key} blog={blog} />
+                                ))}
+
                             </div>
 
                         </div>
                     </div>
-                    
+
                     <nav className="absolute w-full bottom-0 m-auto inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
                         <div className="m-auto py-4">
 
-        
-        
-       
+                            {rows && rows.map((pages, key) => (
+                                key > 0 ? <a href={"/blogs/pages/" + (key + 1)} className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">{key + 1}</a> : <span aria-current="page" className="relative z-10 inline-flex items-center bg-indigo-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">1</span>
+                            ))}
 
-        {rows && rows.map((pages,key) => (
-            key > 0 ? <a href={"/blogs/pages/"+(key+1)} className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">{key+1}</a> : <span aria-current="page" className="relative z-10 inline-flex items-center bg-indigo-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">1</span>
-             
-           
-          ))}
+                        </div>
+                    </nav>
+                </section>
 
-          
 
-</div>
-      </nav>
-                    </section>
 
-                   
-            
-    </div >
-    </>
-  )
+            </div >
+        </>
+    )
 }
 
 export async function getServerSideProps(context) {
@@ -108,9 +97,9 @@ export async function getServerSideProps(context) {
 
     const res1 = await fetch(`${process.env.domain}/api/blogtotal`)
     const count = await res1.json()
-  
+
     // Pass data to the page via props
     return { props: { blogDat, count } }
-  }
+}
 
 export default index
