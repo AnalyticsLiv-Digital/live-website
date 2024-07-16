@@ -9,16 +9,15 @@ import { Router, useRouter } from 'next/router';
 import { ScaleLoader } from 'react-spinners'
 import SimilarPost from '../../components/SimilarPost'
 import RecommendedBlogs from '../../components/recommendedBlog';
-// import recommendedBlogs from '../api/recommendedBlogs';
 
 const index = ({ blogDat, similarBlogs, recommendedBlogs }) => {
     const blogData = blogDat.blog[0];
     const similarBlogsdata = similarBlogs.blog;
     const [recommendedBlogsdata, setrecommendedBlogsdata] = useState(null);
-    // const recommendedBlogsdata = recommendedBlogs.blog;
+    const [userId, setUserId] = useState(null);
 
     const mainFnc = async () => {
-        const res2 = await fetch(`/api/recommendedBlogs?user=974145224.1691387819.&blog_id=1&blog_title=abcdefg`)
+        const res2 = await fetch(`/api/recommendedBlogs?user=${userId}.&blog_id=${blogData?.id}&blog_title=${blogData?.title}`)
         const recommendedBlogs = await res2.json();
         return recommendedBlogs
     }
@@ -33,7 +32,6 @@ const index = ({ blogDat, similarBlogs, recommendedBlogs }) => {
             setrecommendedBlogsdata(recommendedBlogsVal);
             // const recommendedBlogsdata = recommendedBlogs.blog;
             console.log("recomend recommend", recommendedBlogsVal)
-
             console.log("blog data blog", blogData)
             AOS.init();
 
@@ -49,10 +47,28 @@ const index = ({ blogDat, similarBlogs, recommendedBlogs }) => {
                 }
 
             }
-        })
-            ()
+        })();
 
-    }, []);
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+        const gaCookie = getCookie('_ga');
+        if (gaCookie) {
+            // Extract the user ID part from the _ga cookie value
+            const userId = gaCookie.split('.').slice(2).join('.');
+            setUserId(userId); // Set the userId state
+            console.log('User ID:', userId);
+            // setBlogId("nlog id id",blogData._id);
+            console.log('Blog ID:', blogData?.id);
+            // setBlogTitle("title tile",blogData.title);
+            console.log('title:', blogData?.title);
+        } else {
+            console.log('_ga cookie not found');
+        }
+    }, [blogData]);
+
 
     useEffect(() => {
         window.dataLayer = window.dataLayer || [];
@@ -180,21 +196,16 @@ const index = ({ blogDat, similarBlogs, recommendedBlogs }) => {
 
                             <h3 className="w-full text-slate-700 pt-2 px-3 font-bold tracking-wider">Similar Posts</h3>
 
-
                             {similarBlogsdata && similarBlogsdata.map((blog, key) => (
                                 <SimilarPost blog={blog} key={key} />
 
                             ))}
 
-
-
                         </div>
                     </div>
                 </div>
 
-                <div className='lg:flex w-full lg:w-11/12 space-y-2 lg:space-y-0 mx-auto bg-white'>
-                    <RecommendedBlogs recommendedBlogsdata={recommendedBlogsdata} />
-                </div>
+                <RecommendedBlogs recommendedBlogsdata={recommendedBlogsdata} />
             </section>
 
         </div></>
@@ -209,8 +220,6 @@ export async function getServerSideProps(context) {
 
     const res1 = await fetch(`${process.env.domain}/api/similarblogs?slug=${context.params.slug}`)
     const similarBlogs = await res1.json()
-
-
 
     // Pass data to the page via props
     return { props: { blogDat, similarBlogs } }
