@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react'
 import { Router, useRouter } from 'next/router';
 import { ScaleLoader } from 'react-spinners'
 import SimilarPost from '../../components/SimilarPost'
-import RecommendedBlogs from '../../components/recommendedBlog';
+import RecommendedBlogs from '../../components/RecommendedBlog';
 
 const index = ({ blogDat, similarBlogs }) => {
     const blogData = blogDat.blog[0];
