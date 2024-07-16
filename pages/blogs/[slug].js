@@ -10,64 +10,59 @@ import { ScaleLoader } from 'react-spinners'
 import SimilarPost from '../../components/SimilarPost'
 import RecommendedBlogs from '../../components/recommendedBlog';
 
-const index = ({ blogDat, similarBlogs, recommendedBlogs }) => {
+const index = ({ blogDat, similarBlogs }) => {
     const blogData = blogDat.blog[0];
     const similarBlogsdata = similarBlogs.blog;
     const [recommendedBlogsdata, setrecommendedBlogsdata] = useState(null);
     const [userId, setUserId] = useState(null);
 
-    const mainFnc = async () => {
-        const res2 = await fetch(`/api/recommendedBlogs?user=${userId}.&blog_id=${blogData?.id}&blog_title=${blogData?.title}`)
-        const recommendedBlogs = await res2.json();
-        return recommendedBlogs
-    }
-
     const [formFixed, setFormFixed] = useState(false);
 
-    useEffect(() => {
+    const mainFnc = async () => {
+        if (!userId) return null; 
+        const res2 = await fetch(`/api/recommendedBlogs?user=${userId}&blog_id=${blogData?.id}&blog_title=${blogData?.title}`);
+        const recommendedBlogs = await res2.json();
+        return recommendedBlogs;
+    };
 
+    useEffect(() => {
         (async () => {
-            // console.log("object")
-            const recommendedBlogsVal = await mainFnc()
-            setrecommendedBlogsdata(recommendedBlogsVal);
-            // const recommendedBlogsdata = recommendedBlogs.blog;
-            console.log("recomend recommend", recommendedBlogsVal)
-            console.log("blog data blog", blogData)
+            if (userId) {
+                const recommendedBlogsVal = await mainFnc();
+                setrecommendedBlogsdata(recommendedBlogsVal);
+            }
+
             AOS.init();
 
             if (screen.width < 800) {
-                var imgs = document.querySelectorAll('.blog-cont img').length;
+                const imgs = document.querySelectorAll('.blog-cont img');
 
-                for (var i = 0; i < parseInt(imgs); i++) {
-
-                    document.querySelectorAll('.blog-cont img')[i].style.width = "100%";
-                    document.querySelectorAll('.blog-cont img')[i].style.height = "auto";
-                    document.querySelectorAll('.blog-cont img')[i].closest('span').style.width = "100%";
-                    document.querySelectorAll('.blog-cont img')[i].closest('span').style.height = "auto";
-                }
-
+                imgs.forEach(img => {
+                    img.style.width = "100%";
+                    img.style.height = "auto";
+                    const span = img.closest('span');
+                    if (span) {
+                        span.style.width = "100%";
+                        span.style.height = "auto";
+                    }
+                });
             }
         })();
 
-        function getCookie(name) {
+        const getCookie = (name) => {
             const value = `; ${document.cookie}`;
             const parts = value.split(`; ${name}=`);
             if (parts.length === 2) return parts.pop().split(';').shift();
-        }
+        };
+
         const gaCookie = getCookie('_ga');
         if (gaCookie) {
-            // Extract the user ID part from the _ga cookie value
             const userId = gaCookie.split('.').slice(2).join('.');
-            setUserId(userId); // Set the userId state
-            console.log('User ID:', userId);
-            // setBlogId("nlog id id",blogData._id);
-            console.log('Blog ID:', blogData?.id);
-            // setBlogTitle("title tile",blogData.title);
-            console.log('title:', blogData?.title);
+            setUserId(userId);
         } else {
             console.log('_ga cookie not found');
         }
-    }, [blogData]);
+    }, [blogData, userId]);
 
 
     useEffect(() => {
@@ -205,7 +200,7 @@ const index = ({ blogDat, similarBlogs, recommendedBlogs }) => {
                     </div>
                 </div>
 
-                <RecommendedBlogs recommendedBlogsdata={recommendedBlogsdata} />
+                {recommendedBlogsdata?.length > 0 ? <RecommendedBlogs recommendedBlogsdata={recommendedBlogsdata} /> : <></>}
             </section>
 
         </div></>
