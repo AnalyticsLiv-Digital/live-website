@@ -32,7 +32,6 @@
     "next": "^13.0.6",
     "next-auth": "^4.24.5",
     "next-connect": "^0.13.0",
-    "next-transpile-modules": "^10.0.1",
     "nextjs-progressbar": "^0.0.16",
     "node-fetch": "^3.3.2",
     "nodemailer": "^6.8.0",
