@@ -1,81 +1,49 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import Ga4contact from "../../models/Ga4contact";
 import connectDb from "../../middleware/mongoose";
-var nodemailer = require('nodemailer');
+import { sendEmail } from "../../utils/sendMail";
 
 const handler = async (req, res) => {
-    if (req.method == 'POST') {
+  if (req.method == 'POST') {
 
-      fetch('https://script.google.com/a/macros/analyticsliv.com/s/AKfycbzK9zVbEjRBYOQL48eu8aieCPbb1bvWmDLY2GJXrKVnmi7hHLYzrdEYyqGd3zrCiYYT/exec?fullname='+req.body.fullName+'&email='+req.body.email+'&contact='+req.body.contact+'&message='+req.body.message);
-        let b = new Ga4contact({
-            fullName: req.body.fullName,
-            email: req.body.email,
-            contact: req.body.contact,
-            message: req.body.message
-            
-        });
-        await b.save();
-        var transporter = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-              user: "support@analyticsliv.com",
-              pass: "vroutkaoqlrkicab"
-            }
-          });
-          
-    
+    fetch('https://script.google.com/a/macros/analyticsliv.com/s/AKfycbzK9zVbEjRBYOQL48eu8aieCPbb1bvWmDLY2GJXrKVnmi7hHLYzrdEYyqGd3zrCiYYT/exec?fullname=' + req.body.fullName + '&email=' + req.body.email + '&contact=' + req.body.contact + '&message=' + req.body.message);
+    let b = new Ga4contact({
+      fullName: req.body.fullName,
+      email: req.body.email,
+      contact: req.body.contact,
+      message: req.body.message
 
-          var mailOptions1 = {
-            from: "support@analyticsliv.com",
-            to: ["ashwani.singh@analyticsliv.com","sales@analyticsliv.com","anshul.d@analyticsliv.com","anuj@analyticsliv.com","nitya@analyticsliv.com","rajvi@analyticsliv.com","ansuya@analyticsliv.com","chirag.rathod@analyticsliv.com","esha.chhaparwal@analyticsliv.com"],
-            subject: 'New GA4 Enquiry!!',
-            html: `Enquiry Submitted by <br> Full Name - ${req.body.fullName}  <br> Email- ${req.body.email} <br> Contact - ${req.body.contact} <br> Message - ${req.body.message} `
-          };
-          
-          transporter.sendMail(mailOptions1, function(error, info){
-            if (error) {
-              console.log(error);
-            } else {
-              console.log('Email sent: ' + info.response);
-            }
-          });
+    });
+    await b.save();
 
-          var transporter2 = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-              user: "sales@analyticsliv.com",
-              pass: "smhiklcbjjcgcguc"
-            }
-          });
-          
-    
-  
-          var mailOptions2 = {
-            from: "sales@analyticsliv.com",
-            to: [req.body.email, "anuj@analyticsliv.com"],
-            subject: 'Analyticsliv - Thankyou for contacting us.',
-            html: `Hi ${req.body.fullName},<br>
+    var internalMailOptions = {
+      from: "support@analyticsliv.com",
+      to: ["ashwani.singh@analyticsliv.com", "sales@analyticsliv.com", "anshul.d@analyticsliv.com", "anuj@analyticsliv.com", "nitya@analyticsliv.com", "rajvi@analyticsliv.com", "ansuya@analyticsliv.com", "chirag.rathod@analyticsliv.com", "esha.chhaparwal@analyticsliv.com"],
+      subject: 'New GA4 Enquiry!!',
+      html: `Enquiry Submitted by <br> Full Name - ${req.body.fullName}  <br> Email- ${req.body.email} <br> Contact - ${req.body.contact} <br> Message - ${req.body.message} `
+    };
+
+    var userMailOptions = {
+      from: "sales@analyticsliv.com",
+      to: [req.body.email, "anuj@analyticsliv.com"],
+      subject: 'Analyticsliv - Thankyou for contacting us.',
+      html: `Hi ${req.body.fullName},<br>
             Thank you for reaching out to AnalyticsLiv, one of the fastest growing Google Marketing Platform Partner in India. Our Services have empowered more than 500 businesses to use first party data for analysis and marketing purposes, making businesses independent of third party data intelligence.<br>
             
             We will study the details you have shared and will get back to you with a response to help your business. Meanwhile, you can have a look through our services on <a href="https://analyticsliv.com">www.analyticsliv.com </a> or for any quick chat, contact us at: <br>
             Mobile: <a href="tel:+918320576622">+91 83205 76622</a> <br>
             Email: <a href="mailto:support@analyticsliv.com" class="">support@analyticsliv.com</a>`
-          };
-          
-          transporter2.sendMail(mailOptions2, function(error, info){
-            if (error) {
-              console.log(error);
-            } else {
-              console.log('Email sent: ' + info.response);
-            }
-          });
-  
+    };
 
-    } else {
-        res.status(400).json({ error: "Bad Request" });
-    }
-    let contact = await Ga4contact.find();
-    res.status(200).json({ contact });
+
+    await sendEmail(internalMailOptions.to, internalMailOptions.subject, internalMailOptions.html, internalMailOptions?.from);
+    await sendEmail(userMailOptions.to, userMailOptions.subject, userMailOptions.html, userMailOptions?.from);
+
+  } else {
+    res.status(400).json({ error: "Bad Request" });
+  }
+  let contact = await Ga4contact.find();
+  res.status(200).json({ contact });
 }
 
 
