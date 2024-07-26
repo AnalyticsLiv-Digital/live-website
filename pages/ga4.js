@@ -398,7 +398,7 @@ export default function ga4({ brandsdata }) {
                     <span className="text-xs text-red-600 float-left">{formErrors.message}</span>
                   </div>
                   <div>
-                    <button className="cta bg-amber-500 hover:bg-amber-600 font-semibold text-white px-8 py-2 rounded-xl shadow-md shadow-gray-400 hover:shadow-gray-600 transition-transform delay-100">SIGN UP </button>
+                    {/* <button className="cta bg-amber-500 hover:bg-amber-600 font-semibold text-white px-8 py-2 rounded-xl shadow-md shadow-gray-400 hover:shadow-gray-600 transition-transform delay-100">SIGN UP </button> */}
                     <button
                       className="cta font-semibold text-white px-8 py-2 rounded-xl shadow-md shadow-gray-400 hover:shadow-gray-600 transition-transform delay-100"
                       style={{ backgroundColor: '#1A73E8' }}
