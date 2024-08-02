@@ -6,25 +6,29 @@ import connectDb from "../../../../middleware/mongoose";
 
 const handler = async (req, res) => {
     if (req.method == 'POST') {
-        const response = await fetch('https://script.google.com/macros/s/AKfycbxidlMSRADTNk4kjam5Lf58cESQwxrntzlvO_kvcxx2dmSxdbD2NjxAbecDTyrFJNPs_w/exec?'+req.body.document_id);
-      const blogcontent = await response.text();
+        const response = await fetch('https://script.google.com/macros/s/AKfycbxidlMSRADTNk4kjam5Lf58cESQwxrntzlvO_kvcxx2dmSxdbD2NjxAbecDTyrFJNPs_w/exec?' + req.body.document_id);
+        const blogcontent = await response.text();
 
-            let b = new Blog({
-                title : req.body.title,
-                description : req.body.description,
-                slug : req.body.slug,
-                coverphoto : req.body.coverphoto,
-                thumbnail : req.body.coverphoto,
-                document_id : req.body.document_id,
-                author : req.body.author,
-                duration : req.body.duration,
-                date : req.body.date,
-                active : req.body.active,
-                content : blogcontent,
-                sequence : req.body.sequence
+        const latestBlog = await Blog.findOne().sort({ _id: -1 }).exec();
+        const newId = latestBlog ? Number(latestBlog.id) + 1 : 1;
+
+        let b = new Blog({
+            id: newId?.toString(),
+            title: req.body.title,
+            description: req.body.description,
+            slug: req.body.slug,
+            coverphoto: req.body.coverphoto,
+            thumbnail: req.body.coverphoto,
+            document_id: req.body.document_id,
+            author: req.body.author,
+            duration: req.body.duration,
+            date: req.body.date,
+            active: req.body.active,
+            content: blogcontent,
+            sequence: req.body.sequence
         });
         await b.save();
-       
+
 
     } else {
         res.status(400).json({ error: "Bad Request" });
