@@ -18,7 +18,7 @@ const handler = async (req, res) => {
     await b.save();
     var internalMailOptions = {
       from: "support@analyticsliv.com",
-      to: ["ashwani.singh@analyticsliv.com", "sales@analyticsliv.com", "anshul.d@analyticsliv.com", "anuj@analyticsliv.com", "nitya@analyticsliv.com", "chirag.rathod@analyticsliv.com", "esha.chhaparwal@analyticsliv.com", "rajvi@analyticsliv.com"],
+      to: ["sales@analyticsliv.com", "anshul.d@analyticsliv.com", "anuj@analyticsliv.com", "nitya@analyticsliv.com", "rajvi@analyticsliv.com"],
       subject: 'New Ecommerce Enquiry!!',
       html: `Enquiry Submitted by <br> Full Name - ${req.body.fullName}  <br> Email- ${req.body.email} <br> Contact - ${req.body.contact} <br> Message - ${req.body.message} <br> Website - ${req.body.website} `
     };
