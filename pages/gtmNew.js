@@ -429,8 +429,8 @@ export default function gtmNew({ brandsdata }) {
                                 <li onClick={scrolling3} className="hover:text-[#0D8CA4]">Solutions</li>
                                 <li onClick={scrolling4} className="hover:text-[#0D8CA4]">Resources</li>
                             </ul>
-                            <a href="tel:8320576622" className='lg:w[10%] '>
-                                <button className="gtmbutn2 cta px-5 py-3 border rounded-[5px] w-[100%] flex flex-nowrap gap-1 max-lg:mx-2 max-sm:ml-3 text-sm font-semibold cursor-pointer">
+                            <a href="tel:8320576622" className='lg:mx-1'>
+                                <button className="gtmbutn2 lg:w-[180px] cta px-4 py-3 border rounded-[5px] w-[100%] flex flex-nowrap gap-1 max-lg:mx-2 max-sm:ml-3 text-sm font-semibold cursor-pointer">
                                     <img src='/phone%202.png' alt='tele' />+91 83205 76622</button>
                             </a>
                             <span className="hidden md:inline px-4 lg:w[10%]">
@@ -443,7 +443,7 @@ export default function gtmNew({ brandsdata }) {
                     <div className="relative flex items-center justify-between lg:hidden p-2">
                         <Link href="/"><img onClick={() => setIsOpen(false)} src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="relative left-0 h-8 md:mx-4 cursor-pointer" /></Link>
                         <a className="mr-12" href="tel:8320576622">
-                            <button className="cta px-2.5 py-1.5 flex mx-2 rounded-[5px] text-white bg-[#0D8CA4] text-xs font-semibold cursor-pointer hover:bg-sky-400">
+                            <button className="cta px-2.5 py-1.5 flex mx-2 w-[140px] rounded-[5px] text-white bg-[#0D8CA4] text-xs font-semibold cursor-pointer hover:bg-sky-400">
                                 <img src='/phone%202.png' alt='tele' className='h-4 pr-1' />+91 83205 76622
                             </button>
                         </a>
@@ -529,8 +529,8 @@ export default function gtmNew({ brandsdata }) {
                     </Transition>
                     <ScrollProgress color="red" showSpinner={false} />
                 </header>
-                <section className='h-[45dvh] md:h-[40dvh] lg:h-[96dvh] xl:h-[93dvh] md:px-10 xl:px-20 max-md:px-4 max-xl:flex-wrap-reverse flex justify-around overflow-hidden' style={{
-                    backgroundImage: 'url(/rectangle.png)',
+                <section className='h-[45dvh] md:h-[40dvh] lg:h-[100dvh] xl:h-[100dvh] md:px-10 xl:px-20 max-md:px-4 max-xl:flex-wrap-reverse flex justify-around overflow-hidden' style={{
+                    backgroundImage: 'url(/Rectangle.png)',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat',
@@ -573,7 +573,7 @@ export default function gtmNew({ brandsdata }) {
 
 
 
-                <section className='max-xl:flex-wrap-reverse flex max-xl:justify-center lg:pl-10 mb-16'>
+                <section className='max-xl:flex-wrap-reverse flex max-xl:justify-center lg:pl-10 mb-10 lg:mb-2'>
                     <div className='block xl:w-[55%] pt-12 lg:pb-12'>
                         <div className='text-xl md:text-2xl font-semibold text-[#246096] max-lg:text-center text-start lg:pl-10 max-sm:px-1.5'>Integrating GTM as your Tag Management System:</div>
 
@@ -611,12 +611,13 @@ export default function gtmNew({ brandsdata }) {
 
                     </div>
 
-                    {formSubmit ? <div className='xl:absolute max-md:mx-4 z-10 h-[480px] md:h-[70dvh] md:my-10 right-[10%] max-md:mt-8 md:top-[70%] xl:w-[30%] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] text-center flex flex-col justify-around items-center px-3 md:px-7 py-2 md:py-5 bg-white'>
+                    {formSubmit ? <div className='xl:absolute max-md:mx-4 z-10 h-[480px] md:h-[580x] md:my-10 right-[10%] max-md:mt-8 md:top-[70%] xl:w-[30%] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] text-center flex flex-col justify-around items-center px-3 md:px-7 py-2 md:py-5 bg-white'>
                         <h2 className="md:text-xl text-sky-900">Thank you for showing interest with us!</h2>
                         <h2 className="font-semibold text-2xl p-4 md:p-8 border-dashed border-b-2 border-sky-200">We will get back to you shortly !!</h2>
                         <img alt="Thankyou" className="w-64 mx-auto" src="https://storage.googleapis.com/website-bucket-uploads/static/Na_Dec_46.jpg" />
                     </div> :
-                        <div className='xl:absolute max-md:mx-4 z-10 h-[480px] md:h-[70dvh] md:my-10 right-[10%] max-md:mt-4 md:top-[70%] xl:w-[30%] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] text-center flex flex-col justify-around items-center px-3 md:px-7 py-2 md:py-5 bg-white'>
+                        <div className='xl:absolute max-md:mx-4 overflow-auto z-10 h-[480px] md:h-[580px] 2xl:h-[650px] md:my-10 right-[10%] max-md:mt-4 md:top-[70%] xl:w-[30%] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] 
+                        text-center flex flex-col justify-around items-center px-3 md:px-4 py-2 md:py-5 bg-white'>
 
                             <div className='text-2xl md:text-[28px] font-semibold text-[#246096]'>We are here to Help you</div>
 
@@ -952,7 +953,7 @@ export default function gtmNew({ brandsdata }) {
             <button className="cta px-3 py-2 border rounded-[5px] text-white bg-[#0D8CA4] flex gap-2 mx-2 text-xs md:text-sm font-semibold cursor-pointer hover:bg-sky-400">
                 Contact Us Now</button>
             </section> */}
-                <section id="sticky-section" className={`bg-[#e9ecec] max-md:py-3 md:py-5 max-md:gap-0 flex items-center justify-between px-5 md:px-5 lg:px-28 xl:px-56 ${isSticky ? 'sticky' : ''}`}>
+                <section id="sticky-section" className={`bg-[#bfc2c2] max-md:py-3 md:py-5 max-md:gap-0 flex items-center justify-between lg:justify-center lg:gap-16 xl:gap-16 px-5 md:px-5 lg:px-24 xl:px-56 ${isSticky ? 'sticky' : ''}`}>
                     <div className='text-[12px] max-sm:w-[60%] md:text-xl font-semibold'>Want to Optimize your GTM and Improve site performance ?</div>
                     <button className="gtmbutn2 max-sm:w-[35%] py-2 border rounded-[5px]  sm:px-3 text-[11px] md:text-sm font-semibold cursor-pointer" onClick={scrolling1}>
                         {/* <img src='/phone%202.png' alt='tele' /> */}
