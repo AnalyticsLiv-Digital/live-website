@@ -90,7 +90,7 @@ const Home = () => {
                         {/*  */}
 
                         <div className='flex flex-col items-center justify-center gap-12 px-4 md:px-20  pb-8  h-full'>
-                            <div className='vb pb-5 w-full'>
+                            <div className='vb pb-5 w-full carousel-custom'>
                                 <Slider {...settings}>
                                     <div>
                                         <div className='flex lg:flex-nowrap flex-wrap justify-between items-center gap-10'>
