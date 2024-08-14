@@ -530,7 +530,7 @@ export default function gtmNew({ brandsdata }) {
                     <ScrollProgress color="red" showSpinner={false} />
                 </header>
                 <section className='h-[45dvh] md:h-[40dvh] lg:h-[96dvh] xl:h-[93dvh] md:px-10 xl:px-20 max-md:px-4 max-xl:flex-wrap-reverse flex justify-around overflow-hidden' style={{
-                    backgroundImage: 'url(/rectangle.png)',
+                    backgroundImage: 'url(/Rectangle.png)',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat',
