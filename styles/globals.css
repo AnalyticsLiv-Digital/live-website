@@ -85,7 +85,7 @@ input[type=number] {
 }
 
 .brandsimages img {
-  height: 50px;
+  height: 45px;
   /* filter: url(filters.svg#grayscale); Firefox 3.5+ */
   /* filter: gray; /* IE5+ */
   /* -webkit-filter: brightness(0) invert(1); /* Webkit Nightlies & Chrome Canary */
@@ -208,6 +208,145 @@ input[type=number] {
   position: absolute;
   top: 0;
 } */
+
+/* GTM NEW PAGE CSS */
+#sticky-section {
+  position: relative; /* Start as relative */
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+#sticky-section.sticky {
+  position:sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(0);
+}
+
+.gtmbutn {
+  @apply relative overflow-hidden z-10 bg-white text-[#0D8CA4] hover:text-white cursor-pointer inline px-[40px] mb-3 transition-all duration-500 ease-linear shadow-foter rounded-md py-3 text-base font-medium
+}
+.gtmbutn::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 101%;
+  right: 0px;
+  top: 0;
+  left: 0px;
+  transform: translateY(-85px);
+  background: rgb(244, 239, 239);
+  transition: all 0.3s linear;
+}
+
+.gtmbutn:hover::before {
+  background: #0D8CA4;
+  color: white;
+  transform: translate(0);
+  transition: all 0.3s linear;
+  z-index: -1;
+}
+
+.gtmbutn1 {
+@apply relative overflow-hidden z-10 bg-[#0D8CA4] text-white hover:text-[#0D8CA4] cursor-pointer inline px-[40px] mb-3 transition-all duration-500 ease-linear shadow-foter rounded-md py-2.5 text-base font-medium
+}
+.gtmbutn1::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 101%;
+  right: 0px;
+  top: 0;
+  left: 0px;
+  transform: translateY(-85px);
+  background: rgb(244, 239, 239);
+  transition: all 0.3s linear;
+}
+
+.gtmbutn1:hover::before {
+  background: white;
+  color: #0D8CA4;
+  transform: translate(0);
+  transition: all 0.3s linear;
+  z-index: -1;
+}
+
+.gtmbutn2 {
+  @apply relative overflow-hidden z-10 bg-[#0D8CA4] text-white cursor-pointer transition-all duration-500 ease-linear shadow-foter py-2
+}
+.gtmbutn2::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  right: 0px;
+  top: 0;
+  left: 0px;
+  transform: translateY(-85px);
+  background: #0D8CA4;
+  transition: all 0.3s linear;
+}
+
+.gtmbutn2:hover::before {
+  background: #38bdf8;
+  /* color: #0d8ca4; */
+  transform: translate(0);
+  transition: all 0.3s linear;
+  z-index: -1;
+}
+
+
+.slick-slide {
+  padding: 0 10px; /* Adjust as needed for spacing */
+  height: 230px; /* Fixed height */
+  width: 380px;  /* Fixed width */
+  padding: 10px;
+}
+.slick-list {
+  margin: 0 -10px; /* Negative margin to offset padding */
+}
+
+/* Custom styling for the dots within the specific carousel */
+.carousel-custom .slick-dots {
+  bottom: -40px; /* Adjust the position of the dots */
+}
+
+.carousel-custom .slick-dots li {
+  margin: 0 5px; /* Spacing between dots */
+}
+
+.carousel-custom .slick-dots li button:before {
+  font-size: 14px; /* Increase the size of the dots */
+  color: #ccc; /* Default color of dots */
+  opacity: 1; /* Ensure the dots are visible */
+}
+
+.carousel-custom .slick-dots li.slick-active button:before {
+  color: #333; /* Color of the active dot */
+  opacity: 1; /* Ensure the active dot is fully visible */
+}
+
+.carousel-custom .slick-dots li button {
+  width: 10px; /* Adjust width of the dots */
+  height: 10px; /* Adjust height of the dots */
+}
+
+.carousel-custom .slick-dots li button:before {
+  content: ''; /* Remove the default text content */
+  display: block;
+  width: 50%;
+  height: 50%;
+  border-radius: 50%; /* Make the dots rounded */
+  background-color: #ccc; /* Default background color of the dots */
+  transition: background-color 0.3s ease; /* Smooth transition for color change */
+}
+
+.carousel-custom .slick-dots li.slick-active button:before {
+  background-color: #333; /* Background color of the active dot */
+}
+
+
 /* Homepage btn-css */
 .butn {
   @apply relative overflow-hidden z-10 bg-homepagebtn text-[#fff] border border-homepagebtn cursor-pointer text-[15px] font-medium not-italic inline rounded-[14px] py-[15px] px-[40px] mb-3 transition-all duration-300 ease-linear hover:text-homepagebtn shadow-foter
