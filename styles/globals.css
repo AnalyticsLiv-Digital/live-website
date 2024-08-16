@@ -297,6 +297,30 @@ input[type=number] {
 }
 
 
+.gtmbutn3 {
+  @apply relative overflow-hidden z-10 bg-white text-[#0D8CA4] hover:text-white cursor-pointer transition-all duration-500 ease-linear shadow-foter py-2
+}
+.gtmbutn3::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  right: 0px;
+  top: 0;
+  left: 0px;
+  transform: translateY(-85px);
+  background: #0D8CA4;
+  transition: all 0.3s linear;
+}
+
+.gtmbutn3:hover::before {
+  /* background: #1a744a; */
+  background: #107777;
+  transform: translate(0);
+  transition: all 0.3s linear;
+  z-index: -1;
+}
+
 .slick-slide {
   padding: 0 10px; /* Adjust as needed for spacing */
   height: 230px; /* Fixed height */
