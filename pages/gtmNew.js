@@ -611,12 +611,12 @@ export default function gtmNew({ brandsdata }) {
 
                     </div>
 
-                    {formSubmit ? <div className='xl:absolute max-md:mx-4 z-10 h-[480px] md:h-[580x] md:my-10 right-[10%] max-md:mt-8 md:top-[80%] xl:w-[30%] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] text-center flex flex-col justify-around items-center px-3 md:px-7 py-2 md:py-5 bg-white'>
+                    {formSubmit ? <div className='xl:absolute max-md:mx-4 z-10 h-[480px] md:h-[460x] 2xl:h-[550px] md:my-10 right-[10%] max-md:mt-8 md:top-[80%] xl:w-[30%] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] text-center flex flex-col justify-around items-center px-3 md:px-7 py-2 md:py-5 bg-white'>
                         <h2 className="md:text-xl text-sky-900">Thank you for showing interest with us!</h2>
                         <h2 className="font-semibold text-2xl p-4 md:p-8 border-dashed border-b-2 border-sky-200">We will get back to you shortly !!</h2>
                         <img alt="Thankyou" className="w-64 mx-auto" src="https://storage.googleapis.com/website-bucket-uploads/static/Na_Dec_46.jpg" />
                     </div> :
-                        <div className='xl:absolute max-md:mx-4 overflow-auto z-10 h-[480px] md:h-[580px] 2xl:h-[650px] md:my-10 right-[10%] max-md:mt-4 md:top-[70vh] xl:w-[30%] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] 
+                        <div className='xl:absolute max-md:mx-4 overflow-auto z-10 h-[480px] md:h-[460px] 2xl:h-[550px] md:my-10 right-[10%] max-md:mt-4 md:top-[70vh] xl:w-[30%] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] 
                         text-center flex flex-col justify-around items-center px-3 md:px-4 py-2 md:py-5 bg-white'>
 
                             <div className='text-2xl md:text-[28px] font-semibold text-[#246096]'>We are here to Help you</div>
