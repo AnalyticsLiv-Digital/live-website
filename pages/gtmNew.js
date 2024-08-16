@@ -399,6 +399,13 @@ export default function gtmNew({ brandsdata }) {
             offset: -100,
         });
     }
+    const scrolling6 = () => {
+        scroller.scrollTo("gtmForm1", {
+            duration: 500,
+            smooth: true,
+            offset: -100,
+        });
+    }
 
 
     return (
@@ -443,7 +450,7 @@ export default function gtmNew({ brandsdata }) {
                     <div className="relative flex items-center justify-between lg:hidden p-2">
                         <Link href="/"><img onClick={() => setIsOpen(false)} src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="relative left-0 h-8 md:mx-4 cursor-pointer" /></Link>
                         <a className="mr-12" href="tel:8320576622">
-                            <button className="cta px-2.5 py-1.5 flex mx-2 w-[140px] rounded-[5px] text-white bg-[#0D8CA4] text-xs font-semibold cursor-pointer hover:bg-sky-400">
+                            <button className="cta px-1 py-1.5 flex mx-2 w-[132px] rounded-[5px] text-white bg-[#0D8CA4] text-xs font-semibold cursor-pointer hover:bg-sky-400">
                                 <img src='/phone%202.png' alt='tele' className='h-4 pr-1' />+91 83205 76622
                             </button>
                         </a>
@@ -529,7 +536,7 @@ export default function gtmNew({ brandsdata }) {
                     </Transition>
                     <ScrollProgress color="red" showSpinner={false} />
                 </header>
-                <section className='h-[45dvh] md:h-[40dvh] lg:h-[100dvh] xl:h-[100dvh] md:px-10 xl:px-20 max-md:px-4 max-xl:flex-wrap-reverse flex justify-around overflow-hidden' style={{
+                <section className='md:px-10 xl:px-20 max-md:px-4 max-xl:flex-wrap-reverse flex justify-around overflow-hidden' style={{
                     backgroundImage: 'url(/Rectangle.png)',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
@@ -559,17 +566,23 @@ export default function gtmNew({ brandsdata }) {
                             {/* left-[-90%] bottom-[-13%] md:bottom-[-17%] */}
                         </div>
                     </div>
-                    <div className='xl:w-[40%] max-md:items-center max-xl:text-center lg:pl-12 mt-7 xl:h-[60%] pt-7 text-white flex flex-col max-md:gap-6 gap-4 lg:gap-10'>
+                    <div className='xl:w-[40%] max-md:items-center max-xl:text-center lg:pl-12 mt-7 xl:h-[50%]  text-white flex flex-col max-md:gap-6 gap-4 lg:gap-[2vh]'>
                         <div className='text-2xl md:text-3xl xl:text-4xl font-semibold lg:leading-[50px]'>Optimize Your Website
                             and Mobile Apps Data with Google Tag Manager </div>
-                        <div className='text-sm lg:text-base font-normal xl:leading-[23px]'>As a certified Google Tag Manager partner, we specialize in comprehensive tag management services. We help streamline your tracking and analytics setup, ensuring efficient and accurate data collection.</div>
-                        <a href='https://calendly.com/analyticsliv/30min?month=2024-08' target='_'><button style={{ boxShadow: '3px 3px 7px rgba(0, 0, 0, 0.3)' }}
+                        <div className='text-sm lg:text-base font-normal xl:leading-[23px] max-sm:pb-5'>As a certified Google Tag Manager partner, we specialize in comprehensive tag management services. We help streamline your tracking and analytics setup, ensuring efficient and accurate data collection.</div>
+                        <a href='https://calendly.com/analyticsliv/30min?month=2024-08' className='max-sm:hidden' target='_'><button style={{ boxShadow: '3px 3px 7px rgba(0, 0, 0, 0.3)' }}
                             className='gtmbutn gtmform '>
                             Let’s Get in Touch
                         </button></a>
                     </div>
+                    <div className='lg:hidden items-center w-full justify-between flex px-0'>
+                        <img src="/GTM_Certified_Partner (3).png" className='h-14 w-40 pt-2' alt="GTM Certified Partner" />
+                        <span className="">
+                            <img alt="gmp partner" className="h-14 w-40" src="https://storage.googleapis.com/website-bucket-uploads/static/gmp.svg" />
+                        </span>
+                    </div>
                 </section>
-                <img src="/GTM_Certified_Partner (3).png" className='relative flex mx-auto max-md:h-16 lg:h-20 lg:w-56 max-lg:mt-3 lg:hidden' alt="GTM Certified Partner" />
+                <img src="/GTM_Certified_Partner (3).png" className='hidden relative mx-auto max-md:h-16 lg:h-20 lg:w-56 max-lg:mt-3 lg:hidden' alt="GTM Certified Partner" />
 
 
 
@@ -611,12 +624,12 @@ export default function gtmNew({ brandsdata }) {
 
                     </div>
 
-                    {formSubmit ? <div className='xl:absolute max-md:mx-4 z-10 h-[480px] md:h-[580x] md:my-10 right-[10%] max-md:mt-8 md:top-[70%] xl:w-[30%] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] text-center flex flex-col justify-around items-center px-3 md:px-7 py-2 md:py-5 bg-white'>
+                    {formSubmit ? <div className='gtmForm1 xl:absolute max-md:mx-4 overflow-auto z-10 h-[480px] md:h-[500px] 2xl:h-[550px] md:my-10 right-[10%] max-md:mt-4 md:top-[70vh] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] text-center flex flex-col justify-around items-center px-3 md:px-7 py-2 md:py-5 bg-white'>
                         <h2 className="md:text-xl text-sky-900">Thank you for showing interest with us!</h2>
                         <h2 className="font-semibold text-2xl p-4 md:p-8 border-dashed border-b-2 border-sky-200">We will get back to you shortly !!</h2>
                         <img alt="Thankyou" className="w-64 mx-auto" src="https://storage.googleapis.com/website-bucket-uploads/static/Na_Dec_46.jpg" />
                     </div> :
-                        <div className='xl:absolute max-md:mx-4 overflow-auto z-10 h-[480px] md:h-[580px] 2xl:h-[650px] md:my-10 right-[10%] max-md:mt-4 md:top-[70%] xl:w-[30%] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] 
+                        <div className='gtmForm1 xl:absolute max-md:mx-4 overflow-auto z-10 h-[480px] md:h-[500px] 2xl:h-[550px] md:my-10 right-[10%] max-md:mt-4 md:top-[70vh] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] 
                         text-center flex flex-col justify-around items-center px-3 md:px-4 py-2 md:py-5 bg-white'>
 
                             <div className='text-2xl md:text-[28px] font-semibold text-[#246096]'>We are here to Help you</div>
@@ -646,7 +659,7 @@ export default function gtmNew({ brandsdata }) {
                         </div>}
                 </section>
 
-                <section className='services text-center pb-12 max-md:hidden'>
+                <section className='services mt-5 text-center pb-12 max-md:hidden'>
                     <div className='text-[34px] font-bold text-[#152F2E] pb-8 xl:font-extrabold'>
                         {/* Our Services */}
                         <span className='inline-block relative'>
@@ -779,14 +792,23 @@ export default function gtmNew({ brandsdata }) {
 
                 </section>
                 <div className='mx-auto flex justify-center md:pt-3'>
-                    <a
+                    <a className=' max-xl:hidden'
                         // href='https://calendly.com/analyticsliv/30min?month=2024-08'
                         onClick={scrolling1}
                         target='_'><button style={{ boxShadow: '3px 3px 7px rgba(0, 0, 0, 0.3)' }}
                             className='gtmbutn1'>
                             Let’s Get in Touch
 
-                        </button></a></div>
+                        </button></a>
+                    <a className='xl:hidden'
+                        // href='https://calendly.com/analyticsliv/30min?month=2024-08'
+                        onClick={scrolling6}
+                        target='_'><button style={{ boxShadow: '3px 3px 7px rgba(0, 0, 0, 0.3)' }}
+                            className='gtmbutn1'>
+                            Let’s Get in Touch
+
+                        </button></a>
+                </div>
 
                 <section>
                     <div className='bg-[#E8FBFB] py-10 mt-10 flex flex-col gap-8 items-center justify-around'>
@@ -955,9 +977,9 @@ export default function gtmNew({ brandsdata }) {
             </section> */}
                 <section id="sticky-section" className={`bg-[#bfc2c2] max-md:py-3 md:py-5 max-md:gap-0 flex items-center justify-between lg:justify-center lg:gap-16 xl:gap-16 px-5 md:px-5 lg:px-24 xl:px-56 ${isSticky ? 'sticky' : ''}`}>
                     <div className='text-[12px] max-sm:w-[60%] md:text-xl font-semibold'>Want to Optimize your GTM and Improve site performance ?</div>
-                    <button className="gtmbutn2 max-sm:w-[35%] py-2 border rounded-[5px]  sm:px-3 text-[11px] md:text-sm font-semibold cursor-pointer" onClick={scrolling1}>
+                    <a href='https://calendly.com/analyticsliv/30min?month=2024-08' target='_blank' className='max-sm:w-[110px] gtmbutn2  py-2 border rounded-[5px] px-2 sm:px-3 text-[11px] md:text-sm font-semibold cursor-pointer'>
                         {/* <img src='/phone%202.png' alt='tele' /> */}
-                        Contact Us Now</button>
+                        Contact Us Now</a>
                 </section>
 
             </div>
