@@ -566,7 +566,7 @@ export default function gtmNew({ brandsdata }) {
                             {/* left-[-90%] bottom-[-13%] md:bottom-[-17%] */}
                         </div>
                     </div>
-                    <div className='xl:w-[40%] max-md:items-center max-xl:text-center lg:pl-12 mt-7 xl:h-[50%]  text-white flex flex-col max-md:gap-6 gap-4 lg:gap-[2vh]'>
+                    <div className='xl:w-[50%] max-md:items-center max-xl:text-center lg:pl-12 mt-7 xl:h-[50%] 2xl:pt-[10vh]  text-white flex flex-col max-md:gap-6 gap-4 lg:gap-[2vh]'>
                         <div className='text-2xl md:text-3xl xl:text-4xl font-semibold lg:leading-[50px]'>Optimize Your Website
                             and Mobile Apps Data with Google Tag Manager </div>
                         <div className='text-sm lg:text-base font-normal xl:leading-[23px] max-sm:pb-5'>As a certified Google Tag Manager partner, we specialize in comprehensive tag management services. We help streamline your tracking and analytics setup, ensuring efficient and accurate data collection.</div>
@@ -630,7 +630,7 @@ export default function gtmNew({ brandsdata }) {
                         <img alt="Thankyou" className="w-64 mx-auto" src="https://storage.googleapis.com/website-bucket-uploads/static/Na_Dec_46.jpg" />
                     </div> :
                         <div className='gtmForm1 xl:absolute max-md:mx-4 overflow-auto z-10 h-[480px] md:h-[500px] 2xl:h-[550px] md:my-10 right-[10%] max-md:mt-4 md:top-[70vh] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] 
-                        text-center flex flex-col justify-around items-center px-3 md:px-4 py-2 md:py-5 bg-white'>
+                        text-center flex flex-col justify-around items-center px-3 md:px-4 py-2 md:py-3 bg-white'>
 
                             <div className='text-2xl md:text-[28px] font-semibold text-[#246096]'>We are here to Help you</div>
 
@@ -975,9 +975,9 @@ export default function gtmNew({ brandsdata }) {
             <button className="cta px-3 py-2 border rounded-[5px] text-white bg-[#0D8CA4] flex gap-2 mx-2 text-xs md:text-sm font-semibold cursor-pointer hover:bg-sky-400">
                 Contact Us Now</button>
             </section> */}
-                <section id="sticky-section" className={`bg-[#bfc2c2] max-md:py-3 md:py-5 max-md:gap-0 flex items-center justify-between lg:justify-center lg:gap-16 xl:gap-16 px-5 md:px-5 lg:px-24 xl:px-56 ${isSticky ? 'sticky' : ''}`}>
-                    <div className='text-[12px] max-sm:w-[60%] md:text-xl font-semibold'>Want to Optimize your GTM and Improve site performance ?</div>
-                    <a href='https://calendly.com/analyticsliv/30min?month=2024-08' target='_blank' className='max-sm:w-[110px] gtmbutn2  py-2 border rounded-[5px] px-2 sm:px-3 text-[11px] md:text-sm font-semibold cursor-pointer'>
+                <section id="sticky-section" className={`bg-[#3e8a99] max-md:py-3 md:py-5 max-md:gap-0 flex items-center justify-between lg:justify-center lg:gap-16 xl:gap-16 px-3.5 md:px-5 lg:px-24 xl:px-56 ${isSticky ? 'sticky' : ''}`}>
+                    <div className='text-[12px] max-sm:w-[60%] md:text-xl font-semibold text-white'>Want to Optimize your GTM and Improve site performance ?</div>
+                    <a href='https://calendly.com/analyticsliv/30min?month=2024-08' target='_blank' className='max-sm:w-[107px] gtmbutn3  py-2 border rounded-[5px] px-2 sm:px-3 text-[11px] md:text-sm font-semibold cursor-pointer'>
                         {/* <img src='/phone%202.png' alt='tele' /> */}
                         Contact Us Now</a>
                 </section>
