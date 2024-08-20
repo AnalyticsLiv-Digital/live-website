@@ -578,7 +578,7 @@ export default function gtmNew({ brandsdata }) {
                     <div className='lg:hidden items-center w-full justify-between flex px-0'>
                         <img src="/GTM_Certified_Partner (3).png" className='h-14 w-40 pt-2' alt="GTM Certified Partner" />
                         <span className="">
-                            <img alt="gmp partner" className="h-14 w-40" src="https://storage.googleapis.com/website-bucket-uploads/static/gmp.svg" />
+                            <img alt="gmp partner" className="h-14 mb-[5px] w-42" src="/Google_Partner_Logo_White_Colour_Mix.png" />
                         </span>
                     </div>
                 </section>
