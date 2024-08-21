@@ -570,10 +570,11 @@ export default function gtmNew({ brandsdata }) {
                         <div className='text-2xl md:text-3xl xl:text-4xl font-semibold lg:leading-[50px]'>Optimize Your Website
                             and Mobile Apps Data with Google Tag Manager </div>
                         <div className='text-sm lg:text-base font-normal xl:leading-[23px] max-sm:pb-5'>As a certified Google Tag Manager partner, we specialize in comprehensive tag management services. We help streamline your tracking and analytics setup, ensuring efficient and accurate data collection.</div>
-                        <a href='https://calendly.com/analyticsliv/30min?month=2024-08' className='max-sm:hidden' target='_'><button style={{ boxShadow: '3px 3px 7px rgba(0, 0, 0, 0.3)' }}
-                            className='gtmbutn gtmform '>
-                            Let’s Get in Touch
-                        </button></a>
+                        <a onClick={scrolling6}
+                            className='max-sm:hidden' target='_'><button style={{ boxShadow: '3px 3px 7px rgba(0, 0, 0, 0.3)' }}
+                                className='gtmbutn gtmform '>
+                                Let’s Get in Touch
+                            </button></a>
                     </div>
                     <div className='lg:hidden items-center w-full justify-between flex px-0'>
                         <img src="/GTM_Certified_Partner (3).png" className='h-14 w-40 pt-2' alt="GTM Certified Partner" />
@@ -794,7 +795,7 @@ export default function gtmNew({ brandsdata }) {
                 <div className='mx-auto flex justify-center md:pt-3'>
                     <a className=' max-xl:hidden'
                         // href='https://calendly.com/analyticsliv/30min?month=2024-08'
-                        onClick={scrolling1}
+                        onClick={scrolling6}
                         target='_'><button style={{ boxShadow: '3px 3px 7px rgba(0, 0, 0, 0.3)' }}
                             className='gtmbutn1'>
                             Let’s Get in Touch
@@ -977,7 +978,8 @@ export default function gtmNew({ brandsdata }) {
             </section> */}
                 <section id="sticky-section" className={`bg-[#3e8a99] max-md:py-3 md:py-5 max-md:gap-0 flex items-center justify-between lg:justify-center lg:gap-16 xl:gap-16 px-3.5 md:px-5 lg:px-24 xl:px-56 ${isSticky ? 'sticky' : ''}`}>
                     <div className='text-[12px] max-sm:w-[60%] md:text-xl font-semibold text-white'>Want to Optimize your GTM and Improve site performance ?</div>
-                    <a href='https://calendly.com/analyticsliv/30min?month=2024-08' target='_blank' className='max-sm:w-[107px] gtmbutn3  py-2 border rounded-[5px] px-2 sm:px-3 text-[11px] md:text-sm font-semibold cursor-pointer'>
+                    <a onClick={scrolling6}
+                        target='_blank' className='max-sm:w-[107px] gtmbutn3  py-2 border rounded-[5px] px-2 sm:px-3 text-[11px] md:text-sm font-semibold cursor-pointer'>
                         {/* <img src='/phone%202.png' alt='tele' /> */}
                         Contact Us Now</a>
                 </section>
