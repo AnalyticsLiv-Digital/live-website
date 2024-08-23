@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useTransition } from 'react'
 import { Link } from 'react-scroll';
 import { useState } from 'react';
 import { Transition } from '@headlessui/react';
@@ -25,6 +25,27 @@ export default function gtmNew({ brandsdata }) {
     const [selectedContent, setSelectedContent] = useState(null);
     const [isSticky, setIsSticky] = useState(false);
     const [showMore, setShowMore] = useState(false);
+    const [imgSrc, setImgSrc] = useState('/phone%202.png'); // default image
+
+    const handleMouseEnter = () => {
+        setTimeout(() => {
+            setImgSrc('/phone (3).png');
+        }, 200);
+    };
+
+    const handleMouseLeave = () => {
+        setImgSrc('/phone%202.png'); // revert to the default image when not hovering
+    };
+
+    const handleTouchStart = () => {
+        // setTimeout(() => {
+        setImgSrc('/phone (3).png');
+        // }, 200);
+    };
+
+    const handleTouchEnd = () => {
+        setImgSrc('/phone%202.png'); // revert to the default image when not hovering
+    };
 
     const toggleShowMore = () => {
         setShowMore(prevShowMore => !prevShowMore);
@@ -35,9 +56,7 @@ export default function gtmNew({ brandsdata }) {
         setFormValues({ ...formValues, [name]: value });
         // console.log(formValues);
         // console.log(formValues); // Add this line to check if the state updates correctly
-
     };
-
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -437,8 +456,10 @@ export default function gtmNew({ brandsdata }) {
                                 <li onClick={scrolling4} className="hover:text-[#0D8CA4]">Resources</li>
                             </ul>
                             <a href="tel:8320576622" className='lg:mx-1'>
-                                <button className="gtmbutn2 lg:w-[180px] cta px-4 py-3 border rounded-[5px] w-[100%] flex flex-nowrap gap-1 max-lg:mx-2 max-sm:ml-3 text-sm font-semibold cursor-pointer">
-                                    <img src='/phone%202.png' alt='tele' />+91 83205 76622</button>
+                                <button className="gtmbutn4 lg:w-[180px] cta px-4 py-3 border rounded-[5px] w-[100%] flex flex-nowrap gap-1 
+                                max-lg:mx-2 max-sm:ml-3 text-sm font-semibold cursor-pointer"                onMouseEnter={handleMouseEnter}
+                                    onMouseLeave={handleMouseLeave}>
+                                    <img src={imgSrc} alt='tele' className='h-5 duration-[0]' />+91 83205 76622</button>
                             </a>
                             <span className="hidden md:inline px-4 lg:w[10%]">
                                 <img alt="gmp partner" className="h-10 w-auto" src="https://storage.googleapis.com/website-bucket-uploads/static/gmp.svg" />
@@ -450,8 +471,10 @@ export default function gtmNew({ brandsdata }) {
                     <div className="relative flex items-center justify-between lg:hidden p-2">
                         <Link href="/"><img onClick={() => setIsOpen(false)} src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="relative left-0 h-8 md:mx-4 cursor-pointer" /></Link>
                         <a className="mr-12" href="tel:8320576622">
-                            <button className="cta px-1 py-1.5 flex mx-2 w-[132px] rounded-[5px] text-white bg-[#0D8CA4] text-xs font-semibold cursor-pointer hover:bg-sky-400">
-                                <img src='/phone%202.png' alt='tele' className='h-4 pr-1' />+91 83205 76622
+                            <button className="cta px-1 py-1.5 flex mx-2 w-[132px] rounded-[5px] text-white bg-[#0D8CA4] text-xs font-semibold 
+                            cursor-pointer hover:bg-white hover:text-[#0D8CA4]" onMouseEnter={handleTouchStart}
+                                onMouseLeave={handleTouchEnd}>
+                                <img src={imgSrc} alt='tele' className='h-4 pr-1 duration-75' />+91 83205 76622
                             </button>
                         </a>
                         <button
@@ -551,20 +574,17 @@ export default function gtmNew({ brandsdata }) {
                         ></div>
                         {/* White circular background */}
                         <div
-                            className="absolute max-lg:hidden bottom-[-30%] left-[-60%] xl:left-[-20%] h-[217px] w-[217px] sm:h-[418px] sm:w-[418px] md:h-[55dvh] md:w-[55dvh] 
-                            xl:h-[98vh] xl:w-[100dvh] bg-white rounded-full z-0"
+                            className="absolute max-lg:hidden bottom-[-160px] left-[-60%] xl:left-[-200px] h-[217px] w-[217px] sm:h-[418px] sm:w-[418px] md:h-[85dvh] md:w-[85dvh] 
+                            xl:h-[650px] xl:w-[670px] 2xl:h-[98vh] 2xl:w-[100dvh] bg-white rounded-full z-0"
                             style={{
                                 boxShadow: '0px 0px 20px rgba(0, 0, 0, 0.1)',
                             }}
                         ></div>
-                        {/* <div className='max-xl:flex'>
-                            <img src='/Hero_img_Left.png' className='relative max-xl:left-[-40%]' alt='main' />
-                            <img src="/GTM_Certified_Partner (3).png" className='relative left-[-90%] bottom-[-13%] md:bottom-[-17%] h-16 w-80 md:h-20 md:w-56 lg:hidden' alt="GTM Certified Partner" />
-                        </div> */}
+
                         <div className='max-xl:flex'>
                             <img src='/Hero_img_Left.png' className='relative max-lg:hidden max-xl:left-[-40%]' alt='main' />
-                            {/* left-[-90%] bottom-[-13%] md:bottom-[-17%] */}
                         </div>
+
                     </div>
                     <div className='xl:w-[50%] max-md:items-center max-xl:text-center lg:pl-12 mt-7 xl:h-[50%] 2xl:pt-[10vh]  text-white flex flex-col max-md:gap-6 gap-4 lg:gap-[2vh]'>
                         <div className='text-2xl md:text-3xl xl:text-4xl font-semibold lg:leading-[50px]'>Optimize Your Website
@@ -625,12 +645,12 @@ export default function gtmNew({ brandsdata }) {
 
                     </div>
 
-                    {formSubmit ? <div className='gtmForm1 xl:absolute max-md:mx-4 overflow-auto z-10 h-[480px] md:h-[500px] 2xl:h-[550px] md:my-10 right-[10%] max-md:mt-4 md:top-[70vh] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] text-center flex flex-col justify-around items-center px-3 md:px-7 py-2 md:py-5 bg-white'>
+                    {formSubmit ? <div className='gtmForm1 xl:absolute max-md:mx-4 overflow-auto z-10 h-[480px] md:h-[500px] 2xl:h-[550px] md:my-10 right-[10%] max-md:mt-4 md:top-[450px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] text-center flex flex-col justify-around items-center px-3 md:px-7 py-2 md:py-5 bg-white'>
                         <h2 className="md:text-xl text-sky-900">Thank you for showing interest with us!</h2>
                         <h2 className="font-semibold text-2xl p-4 md:p-8 border-dashed border-b-2 border-sky-200">We will get back to you shortly !!</h2>
                         <img alt="Thankyou" className="w-64 mx-auto" src="https://storage.googleapis.com/website-bucket-uploads/static/Na_Dec_46.jpg" />
                     </div> :
-                        <div className='gtmForm1 xl:absolute max-md:mx-4 overflow-auto z-10 h-[480px] md:h-[500px] 2xl:h-[550px] md:my-10 right-[10%] max-md:mt-4 md:top-[70vh] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] 
+                        <div className='gtmForm1 xl:absolute max-md:mx-4 overflow-auto z-10 h-[480px] md:h-[500px] 2xl:h-[550px] md:my-10 right-[10%] max-md:mt-4 md:top-[450px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] 
                         text-center flex flex-col justify-around items-center px-3 md:px-4 py-2 md:py-3 bg-white'>
 
                             <div className='text-2xl md:text-[28px] font-semibold text-[#246096]'>We are here to Help you</div>
@@ -653,7 +673,7 @@ export default function gtmNew({ brandsdata }) {
 
                                 <textarea placeholder='Type Your Message' rows="3" className='px-3 py-2 text-sm border border-[#246096] rounded-md' style={{ boxShadow: '3px 3px 8px rgba(0, 0, 0, 0.3)' }} id="message" name="message" value={formValues.message} onChange={handleChange} />
 
-                                <button className='gtmbutn2 border border-[#FFFFFF] rounded-md shadow-[2px_2px_3px_1px_rgba(0,0,0,0.25)] py-2 font-medium'>Submit</button>
+                                <button className='gtmbutn4 hover:border-black hover:border-[1px] border border-[#FFFFFF] rounded-md shadow-[2px_2px_3px_1px_rgba(0,0,0,0.25)] py-2 font-medium'>Submit</button>
 
                             </form>
 
@@ -741,18 +761,6 @@ export default function gtmNew({ brandsdata }) {
                 <section className="solutions py-10 lg:py-16">
                     <div>
                         <div className="text-2xl md:text-3xl xl:text-[34px] font-bold xl:font-extrabold text-center">
-                            {/* Custom Solutions
-                            <span
-                                className='block bg-gradient-to-r from-[#59C3EC] to-[#297AB6]'
-                                style={{
-                                    width: '50px',
-                                    height: '5px',
-                                    borderRadius: '10px',
-                                    bottom: '-10px', // Adjust this value as needed
-                                    left: '50%',
-                                    transform: 'translateX(-50%)',
-                                }}
-                            ></span> */}
                             <span className='inline-block relative'>
                                 Custom&nbsp;
                                 <span
@@ -970,16 +978,12 @@ export default function gtmNew({ brandsdata }) {
                         </button>
                     </div>
                 </section>
-
-                {/* <section id="sticky-section" className={`bg-[#e9ecec] max-md:py-3 md:py-5 max-md:text-center max-md:gap-2 flex max-md:flex-col items-center md:justify-between px-3 md:px-5 lg:px-28 ${isSticky ? 'sticky' : ''}`}>
-            <div className='text-sm md:text-xl font-semibold'>Want to Optimize your GTM & Improve site performance ?</div>
-            <button className="cta px-3 py-2 border rounded-[5px] text-white bg-[#0D8CA4] flex gap-2 mx-2 text-xs md:text-sm font-semibold cursor-pointer hover:bg-sky-400">
-                Contact Us Now</button>
-            </section> */}
-                <section id="sticky-section" className={`bg-[#3e8a99] max-md:py-3 md:py-5 max-md:gap-0 flex items-center justify-between lg:justify-center lg:gap-16 xl:gap-16 px-3.5 md:px-5 lg:px-24 xl:px-56 ${isSticky ? 'sticky' : ''}`}>
+                <section id="sticky-section" className={`bg-red-500 max-md:py-3 md:py-5 max-md:gap-0 flex items-center justify-between lg:justify-center 
+                    lg:gap-16 xl:gap-16 px-3.5 md:px-5 lg:px-24 xl:px-56  transform transition-all duration-1000 ease-in-out ${isSticky ? 'sticky translate-y-0  transform transition-all duration-1000 ease-out' : 'transform transition-all duration-1000 ease-in-out translate-y-10'}`}>
                     <div className='text-[12px] max-sm:w-[60%] md:text-xl font-semibold text-white'>Want to Optimize your GTM and Improve site performance ?</div>
                     <a onClick={scrolling6}
-                        target='_blank' className='max-sm:w-[107px] gtmbutn3  py-2 border rounded-[5px] px-2 sm:px-3 text-[11px] md:text-sm font-semibold cursor-pointer'>
+                        target='_blank' className='max-sm:w-[107px] bg-white text-red-400 cursor-pointer shadow-foter 
+                        py-2 border rounded-[5px] px-2 sm:px-3 text-[11px] md:text-sm font-semibold hover:text-[14.1px]'>
                         {/* <img src='/phone%202.png' alt='tele' /> */}
                         Contact Us Now</a>
                 </section>
