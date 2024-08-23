@@ -321,6 +321,40 @@ input[type=number] {
   z-index: -1;
 }
 
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.blinking {
+  animation: blink 1s linear infinite;
+}
+
+
+.gtmbutn4 {
+  @apply relative overflow-hidden z-10 bg-[#0D8CA4] text-white hover:text-[#0D8CA4] cursor-pointer transition-all duration-500 ease-linear shadow-foter py-2
+}
+.gtmbutn4::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  right: 0px;
+  top: 0;
+  left: 0px;
+  transform: translateY(-85px);
+  background: #0D8CA4;
+  transition: all 0.3s linear;
+}
+
+.gtmbutn4:hover::before {
+  background: white;
+  color: #0d8ca4;
+  transform: translate(0);
+  transition: all 0.3s linear;
+  z-index: -1;
+}
+
 .slick-slide {
   padding: 0 10px; /* Adjust as needed for spacing */
   height: 230px; /* Fixed height */
