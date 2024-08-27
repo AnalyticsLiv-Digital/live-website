@@ -1,63 +1,75 @@
+import React from "react";
+import GoogleButton from "react-google-button";
+import { useSession, signIn, signOut } from "next-auth/react";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import Navbar from "./Navbar";
 
-import React from 'react'
-import GoogleButton from 'react-google-button'
-import {useSession, signIn , signOut} from "next-auth/react"
-import { useEffect,useState } from 'react'
-import { useRouter } from 'next/navigation'
-
-
-const index = ({data}) => {
-
-  const { data: session } = useSession()
-  const [loginstate, setLoginstate] = useState(session?true:false);
+const index = ({ data }) => {
+  const { data: session } = useSession();
+  const [loginState, setLoginState] = useState(!!session);
   const router = useRouter();
 
   if (session) {
     return (
-      <><div className='w-1/3 mx-auto mt-36 flex flex-wrap text-center gap-24 justify-center pb-4'>
-         <a href="/admin/blogs"><div className='space-y-4'>
-          <h1 className='font-semibold text-2xl'>Blogs</h1>
-          <h2 className='font-bold text-5xl text-gray-500'>{data.blog}</h2>
+      <>
+        {" "}
+        <Navbar />
+        <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full">
+            <DashboardCard
+              href="/admin/blogs"
+              title="Blogs"
+              count={data.blog}
+            />
+            <DashboardCard
+              href="/admin/casestudies"
+              title="Case Studies"
+              count={data.casestudy}
+            />
+            <DashboardCard
+              href="/admin/jobs"
+              title="Jobs/Applications"
+              count={`${data.job}/${data.jobapplications}`}
+            />
+            <DashboardCard
+              href="/admin/leads"
+              title="Leads"
+              count={data.leads}
+            />
           </div>
-          </a>
-        <a href="/admin/casestudies">
-        <div className='space-y-4'>
-          <h1 className='font-semibold text-2xl'>Casestudy</h1>
-          <h2 className='font-bold text-5xl text-gray-500'>{data.casestudy}</h2>
-          </div>
-          </a>
-        <a href="/admin/jobs">
-        <div className='space-y-4'>
-          <h1 className='font-semibold text-2xl'>Jobs/Applications</h1>
-          <h2 className='font-bold text-5xl text-gray-500'>{data.job}/{data.jobapplications}</h2>
-          </div>
-          </a>
-        <a href="/admin/leads">
-        <div className='space-y-4'>
-          <h1 className='font-semibold text-2xl'>Leads</h1>
-          <h2 className='font-bold text-5xl text-gray-500'>{data.leads}</h2>
-          </div>
-          </a>
-          </div>
+          <button
+            onClick={() => signOut()}
+            className="mt-8 bg-red-500 text-white font-bold py-2 px-4 rounded hover:bg-red-600 transition duration-300"
+          >
+            Sign out
+          </button>
+        </div>
       </>
-    )
+    );
   }
+
   return (
-    <>
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <GoogleButton onClick={() => signIn()} />
+    </div>
+  );
+};
 
-      <GoogleButton onClick={() => signIn()}>Sign in</GoogleButton>
-    </>
-  )
-
-}
+const DashboardCard = ({ href, title, count }) => (
+  <a
+    href={href}
+    className="bg-white shadow-md rounded-lg p-6 text-center transform hover:scale-105 transition duration-300"
+  >
+    <h1 className="text-xl font-semibold text-gray-800">{title}</h1>
+    <h2 className="text-4xl font-bold text-gray-500 mt-2">{count}</h2>
+  </a>
+);
 
 export async function getServerSideProps(context) {
-  // Fetch data from external API
-
-  const res = await fetch(`${process.env.domain}/api/admin/total`)
-  const data = await res.json()
-
-  // Pass data to the page via props
-  return { props: { data } }
+  const res = await fetch(`${process.env.domain}/api/admin/total`);
+  const data = await res.json();
+  return { props: { data } };
 }
+
 export default index

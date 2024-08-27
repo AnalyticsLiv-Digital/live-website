@@ -1,10 +1,12 @@
 import React from 'react'
+import Navbar from '../Navbar';
 
 const index = ({jobs}) => {
     const job = jobs.job;
     console.log(job);
   return (
     <>
+    <Navbar />
     <h1 className='text-center font-bold text-4xl py-4'>Jobs</h1>
     <h2 className='font-semibold text-2xl md:pl-6 pl-2 py-4'><a href="/admin/jobs/create">Create a New Job Listing</a></h2>
     <table><tr className='text-center font-semibold'>
