@@ -653,7 +653,7 @@ export default function gtmNew({ brandsdata }) {
                         <div className='gtmForm1 xl:absolute max-md:mx-4 overflow-auto z-10 h-[480px] md:h-[500px] 2xl:h-[550px] md:my-10 right-[10%] max-md:mt-4 md:top-[450px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] 
                         text-center flex flex-col justify-around items-center px-3 md:px-4 py-2 md:py-3 bg-white'>
 
-                            <div className='text-2xl md:text-[28px] font-semibold text-[#246096]'>We are here to Help you</div>
+                            <h1 className='text-2xl md:text-[28px] font-semibold text-[#246096]'>We are here to Help you</h1>
 
                             <div className='text-sm font-normal leading-4 text-[#0D8CA4]'>For better understanding of centralized and optimized your tag management system</div>
 
