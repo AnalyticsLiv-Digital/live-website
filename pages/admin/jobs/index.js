@@ -23,7 +23,7 @@ const Index = ({ jobs }) => {
           <div className="overflow-x-auto">
             <table className="min-w-full bg-gray-800 shadow-md rounded-lg overflow-hidden">
               <thead className="bg-gray-700 text-gray-200">
-                <tr className="text-center font-semibold">
+                <tr className="text-center text-xl font-semibold h-[70px]">
                   <th className="py-3 px-4">Job Title</th>
                   <th className="py-3 px-4">Edit</th>
                   <th className="py-3 px-4">Status</th>
@@ -50,7 +50,7 @@ const Index = ({ jobs }) => {
                         {job.active ? "Active" : "Inactive"}
                       </td>
                       <td className="py-4 px-6">
-                        <a href={`/careers/${job.id}`} className="text-gray-400 hover:underline">
+                        <a href={`/careers/${job.id}`} target='_blank' className="text-gray-400 hover:underline">
                           Preview
                         </a>
                       </td>

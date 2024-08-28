@@ -16,11 +16,11 @@ const index = ({ data }) => {
         <div className="bg-gray-100 h-[100dvh] overflow-hidden">
           <Navbar />
 
-          <div className=" flex flex-col gap-12 items-center justify-evenly">
+          <div className=" flex flex-col max-md:gap-6 gap-12 items-center justify-evenly">
             <h1 className="text-center font-extrabold text-4xl pt-14 pb-10 text-gray-800">
               Dashboard
             </h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 max-md:gap-4 gap-8 max-w-4xl max-md:px-4 w-full">
               <DashboardCard
                 href="/admin/blogs"
                 title="Blogs"

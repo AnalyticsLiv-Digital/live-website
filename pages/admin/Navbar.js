@@ -18,7 +18,7 @@ const Navbar = () => {
   return (
     <nav className="bg-gray-800 text-white py-4">
       <div className="container mx-auto flex justify-center items-center">
-        <ul className="flex space-x-10">
+        <ul className="flex max-md:w-[60%] max-md:flex-wrap max-md:space-y-2 md:space-x-10">
           {navLinks.map(({ href, label }) => (
             <li key={href}>
               <a
