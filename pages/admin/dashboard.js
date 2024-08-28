@@ -71,7 +71,7 @@ const DashboardCard = ({ href, title, count, imgUrl }) => (
     className="bg-white shadow-md rounded-lg p-6 text-center transform hover:scale-105 transition duration-300"
   >
     <div className="flex justify-center items-center">
-      <img src={imgUrl} alt={title} className="w-10 h-10 mr-3" />
+      <img src={imgUrl} alt={title} className="w-9 h-9 mr-3" />
       <h1 className="text-2xl font-semibold text-gray-800">{title}</h1>
     </div>
     <h2 className="text-4xl font-bold text-gray-500 mt-2">{count}</h2>
