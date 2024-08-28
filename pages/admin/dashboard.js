@@ -8,7 +8,13 @@ import Navbar from "./Navbar";
 const index = ({ data }) => {
   const { data: session } = useSession();
   const [loginState, setLoginState] = useState(!!session);
-  const router = useRouter();
+
+  const imgUrl = [
+    "/blogs.png",
+    "/casestudy.png",
+    "/job.png",
+    "/leads.png"
+  ];
 
   if (session) {
     return (
@@ -16,7 +22,7 @@ const index = ({ data }) => {
         <div className="bg-gray-100 h-[100dvh] overflow-hidden">
           <Navbar />
 
-          <div className=" flex flex-col max-md:gap-6 gap-12 items-center justify-evenly">
+          <div className="flex flex-col max-md:gap-6 gap-12 items-center justify-evenly">
             <h1 className="text-center font-extrabold text-4xl pt-14 pb-10 text-gray-800">
               Dashboard
             </h1>
@@ -25,29 +31,27 @@ const index = ({ data }) => {
                 href="/admin/blogs"
                 title="Blogs"
                 count={data.blog}
+                imgUrl={imgUrl[0]}
               />
               <DashboardCard
                 href="/admin/casestudies"
                 title="Case Studies"
                 count={data.casestudy}
+                imgUrl={imgUrl[1]}
               />
               <DashboardCard
                 href="/admin/jobs"
                 title="Jobs/Applications"
                 count={`${data.job}/${data.jobapplications}`}
+                imgUrl={imgUrl[2]}
               />
               <DashboardCard
                 href="/admin/leads"
                 title="Leads"
                 count={data.leads}
+                imgUrl={imgUrl[3]}
               />
             </div>
-            {/* <button
-            onClick={() => signOut()}
-            className="mt-8 bg-red-500 text-white font-bold py-2 px-4 rounded hover:bg-red-600 transition duration-300"
-          >
-            Sign out
-          </button> */}
           </div>
         </div>
       </>
@@ -61,12 +65,15 @@ const index = ({ data }) => {
   );
 };
 
-const DashboardCard = ({ href, title, count }) => (
+const DashboardCard = ({ href, title, count, imgUrl }) => (
   <a
     href={href}
     className="bg-white shadow-md rounded-lg p-6 text-center transform hover:scale-105 transition duration-300"
   >
-    <h1 className="text-xl font-semibold text-gray-800">{title}</h1>
+    <div className="flex justify-center items-center">
+      <img src={imgUrl} alt={title} className="w-10 h-10 mr-3" />
+      <h1 className="text-2xl font-semibold text-gray-800">{title}</h1>
+    </div>
     <h2 className="text-4xl font-bold text-gray-500 mt-2">{count}</h2>
   </a>
 );
@@ -77,4 +84,4 @@ export async function getServerSideProps(context) {
   return { props: { data } };
 }
 
-export default index
+export default index;
