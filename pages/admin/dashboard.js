@@ -13,37 +13,42 @@ const index = ({ data }) => {
   if (session) {
     return (
       <>
-        {" "}
-        <Navbar />
-        <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full">
-            <DashboardCard
-              href="/admin/blogs"
-              title="Blogs"
-              count={data.blog}
-            />
-            <DashboardCard
-              href="/admin/casestudies"
-              title="Case Studies"
-              count={data.casestudy}
-            />
-            <DashboardCard
-              href="/admin/jobs"
-              title="Jobs/Applications"
-              count={`${data.job}/${data.jobapplications}`}
-            />
-            <DashboardCard
-              href="/admin/leads"
-              title="Leads"
-              count={data.leads}
-            />
-          </div>
-          <button
+        <div className="bg-gray-100 h-[100dvh] overflow-hidden">
+          <Navbar />
+
+          <div className=" flex flex-col gap-12 items-center justify-evenly">
+            <h1 className="text-center font-extrabold text-4xl pt-14 pb-10 text-gray-800">
+              Dashboard
+            </h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full">
+              <DashboardCard
+                href="/admin/blogs"
+                title="Blogs"
+                count={data.blog}
+              />
+              <DashboardCard
+                href="/admin/casestudies"
+                title="Case Studies"
+                count={data.casestudy}
+              />
+              <DashboardCard
+                href="/admin/jobs"
+                title="Jobs/Applications"
+                count={`${data.job}/${data.jobapplications}`}
+              />
+              <DashboardCard
+                href="/admin/leads"
+                title="Leads"
+                count={data.leads}
+              />
+            </div>
+            {/* <button
             onClick={() => signOut()}
             className="mt-8 bg-red-500 text-white font-bold py-2 px-4 rounded hover:bg-red-600 transition duration-300"
           >
             Sign out
-          </button>
+          </button> */}
+          </div>
         </div>
       </>
     );
