@@ -208,7 +208,20 @@ const index = () => {
             </div>
             <div>
               <label className="block text-base font-semibold mb-2 text-gray-200">
-                Slug -{" "}
+                Author -
+              </label>
+              <input
+                required
+                className="w-full px-2 py-1 text-sm text-gray-200 bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500"
+                type="text"
+                name="author"
+                value={formValues.author}
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <label className="block text-base font-semibold mb-2 text-gray-200">
+                Slug -
               </label>
               <input
                 required
@@ -222,7 +235,7 @@ const index = () => {
             <div className="flex justify-between">
               <div className="w-[45%]">
                 <label className="block text-base font-semibold mb-2 text-gray-200">
-                  Reading Time -{" "}
+                  Reading Time -
                 </label>
 
                 <input
@@ -236,7 +249,7 @@ const index = () => {
               </div>
               <div className="w-[45%]">
                 <label className="block text-base font-semibold mb-2 text-gray-200">
-                  Publish Date -{" "}
+                  Publish Date -
                 </label>
                 <input
                   required
@@ -245,12 +258,12 @@ const index = () => {
                   name="date"
                   value={formValues.date}
                   onChange={handleChange}
-                />{" "}
+                />
               </div>
             </div>
             <div>
               <label className="block text-base font-semibold mb-2 text-gray-200">
-                Description -{" "}
+                Description -
               </label>
 
               <input
@@ -264,7 +277,7 @@ const index = () => {
             </div>
             <div>
               <label className="block text-base font-semibold mb-2 text-gray-200">
-                Coverimage URL-{" "}
+                Coverimage URL-
               </label>
 
               <input
@@ -278,7 +291,7 @@ const index = () => {
             </div>
             <div>
               <label className="block text-base font-semibold mb-2 text-gray-200">
-                Coverimage Upload -{" "}
+                Coverimage Upload -
               </label>
 
               <input
@@ -293,7 +306,7 @@ const index = () => {
             </div>
             <div>
               <label className="block text-base font-semibold mb-2 text-gray-200">
-                Document ID -{" "}
+                Document ID -
               </label>
 
               <input
@@ -307,7 +320,7 @@ const index = () => {
             </div>
             <div>
               <label className="block text-base font-semibold mb-2 text-gray-200">
-                Sequence -{" "}
+                Sequence -
               </label>
 
               <input
@@ -321,7 +334,7 @@ const index = () => {
             </div>
             <div>
               <label className="block text-base font-semibold mb-2 text-gray-200">
-                Active -{" "}
+                Active -
               </label>
 
               <select
@@ -333,7 +346,7 @@ const index = () => {
                 onChange={handleChange}
               >
                 <option value="true">Yes</option>
-                <option value="false">No</option>{" "}
+                <option value="false">No</option>
               </select>
             </div>
             <div className="flex justify-between items-center mt-6">
