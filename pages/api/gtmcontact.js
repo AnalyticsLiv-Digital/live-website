@@ -19,7 +19,7 @@ const handler = async (req, res) => {
 
     var internalMailOptions = {
       from: "support@analyticsliv.com",
-      to: [ "sales@analyticsliv.com", "anshul.d@analyticsliv.com", "anuj@analyticsliv.com", "nitya@analyticsliv.com", "rajvi@analyticsliv.com", "ansuya@analyticsliv.com"],
+      to: [ "sales@analyticsliv.com", "anshul.d@analyticsliv.com", "anuj@analyticsliv.com", "nitya@analyticsliv.com", "rajvi@analyticsliv.com", "ansuya@analyticsliv.com","aditya.trivedi@analyticsliv.com","tanu.singh@analyticsliv.com"],
       subject: 'New GTM Enquiry!!',
       html: `Enquiry Submitted by <br> Full Name - ${req.body.fullName}  <br> Email- ${req.body.email} <br> Contact - ${req.body.contact} <br> Message - ${req.body.message} <br> Website - ${req.body.website} `
     };
