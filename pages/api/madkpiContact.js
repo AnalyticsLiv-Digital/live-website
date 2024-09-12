@@ -2,8 +2,16 @@
 import MadKpi from "../../models/MadkpiContact"; // Assuming your model is named 'MadKpi'
 import connectDb from "../../middleware/mongoose";
 import { sendEmail } from "../../utils/sendMail";
+import NextCors from 'nextjs-cors';
 
 const handler = async (req, res) => {
+    await NextCors(req, res, {
+        // Options for CORS
+        methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+        origin: '*', // Replace * with the specific domain you want to allow
+        optionsSuccessStatus: 200, // For legacy browser support
+    });
+
     if (req.method === 'POST') {
         try {
             const bodyData = req.body;
