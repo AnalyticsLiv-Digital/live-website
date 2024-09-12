@@ -32,8 +32,8 @@ const handler = async (req, res) => {
             // Internal mail options
             const internalMailOptions = {
                 from: "support@analyticsliv.com",
-                to: ["sales@analyticsliv.com", "atul.verma@analyticsliv.com"],
-                // to: ["sales@analyticsliv.com", "anshul.d@analyticsliv.com", "anuj@analyticsliv.com", "nitya@analyticsliv.com", "rajvi@analyticsliv.com"],
+                // to: ["sales@analyticsliv.com", "atul.verma@analyticsliv.com"],
+                to: ["sales@analyticsliv.com", "anshul.d@analyticsliv.com", "anuj@analyticsliv.com", "nitya@analyticsliv.com", "rajvi@analyticsliv.com"],
                 subject: 'New MadKPI Enquiry!!',
                 html: `Enquiry Submitted by <br> Full Name - ${bodyData.fullName}  <br> Email- ${bodyData.email} <br> Contact - ${bodyData.contact} <br> Message - ${bodyData.message} <br>`
             };
