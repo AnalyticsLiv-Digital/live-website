@@ -248,7 +248,7 @@ const header = () => {
                           class="text-menuheading font-rbt text-base font-normal leading-normal">Reporting Dashboarding</Link>
                       </div>
                       <div class="flex items-center py-1 gap-2">
-                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytis_data-reporting.logo.png"
+                        <img src="/GTM_header1.png" className='h-8 w-8'
                           alt="data-reporting_logo" />
                         <Link href="/gtm"
                           class="text-menuheading font-rbt text-base font-normal leading-normal">Google Tag Manager Tagging</Link>
@@ -414,7 +414,7 @@ const header = () => {
                     class="text-menuheading font-rbt text-[13px] font-normal leading-normal">Reporting & Dashboarding</Link>
                 </div>
                 <div class="flex items-center py-3 gap-2">
-                  <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytis_data-reporting.logo.png"
+                  <img src="/GTM_header1.png" className='h-8 w-8'
                     alt="data-reporting_logo" />
                   <Link href="/gtm"
                     class="text-menuheading font-rbt text-[13px] font-normal leading-normal">Google Tag Manager Tagging</Link>
