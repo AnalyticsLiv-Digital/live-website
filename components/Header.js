@@ -247,12 +247,12 @@ const header = () => {
                         <Link href="/services/data-reporting-analysis"
                           class="text-menuheading font-rbt text-base font-normal leading-normal">Reporting Dashboarding</Link>
                       </div>
-                      <div class="flex items-center py-1 gap-2">
+                      {/* <div class="flex items-center py-1 gap-2">
                         <img src="/GTM_header1.png" className='h-8 w-8'
                           alt="data-reporting_logo" />
                         <Link href="/services/google-tag-manager"
                           class="text-menuheading font-rbt text-base font-normal leading-normal">Google Tag Manager Tagging</Link>
-                      </div>
+                      </div> */}
 
                     </motion.div>}
                     <div onClick={() => { setSubmenu("3") }} ><div className="py-2 w-56 ">Solutions</div></div>
@@ -274,7 +274,7 @@ const header = () => {
                         <img className='w-[35px]' src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_Data_Attribution.png"
                           alt="Data-Science_logo" />
                         <Link href="/services/customer-segmentation"
-                          class="text-menuheading font-rbt text-base font-normal leading-normal">Custom Data Attribution Model</Link>
+                          class="text-menuheading font-rbt text-base font-normal leading-normal">Customer Segmentation </Link>
                       </div>
                     </motion.div>}
                     <div onClick={() => { setSubmenu("4") }} ><div className="py-2 w-56 ">Training & Consultation</div></div>
@@ -413,12 +413,12 @@ const header = () => {
                   <Link href="/services/data-reporting-analysis"
                     class="text-menuheading font-rbt text-[13px] font-normal leading-normal">Reporting & Dashboarding</Link>
                 </div>
-                <div class="flex items-center py-3 gap-2">
+                {/* <div class="flex items-center py-3 gap-2">
                   <img src="/GTM_header1.png" className='h-8 w-8'
                     alt="data-reporting_logo" />
                   <Link href="/services/google-tag-manager"
                     class="text-menuheading font-rbt text-[13px] font-normal leading-normal">Google Tag Manager Tagging</Link>
-                </div>
+                </div> */}
                 {/*                 
                 <div class="flex items-center py-3 gap-2">
                   <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytics_Looker.logo.png" alt="Looker_logo" />
@@ -453,7 +453,7 @@ const header = () => {
                   <img className='w-[33px]' src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_Data_Attribution.png"
                     alt="Data-Science_logo" />
                   <Link href="/services/customer-segmentation"
-                    class="text-menuheading font-rbt text-[13px] font-normal leading-normal">Custom Data Attribution Model</Link>
+                    class="text-menuheading font-rbt text-[13px] font-normal leading-normal">Customer Segmentation</Link>
                 </div>
               </ul>
               <ul

@@ -107,7 +107,7 @@ const ServicesOffer = () => {
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="/services/app-marketing" className='flex items-start gap-2'>
+                                        <a href="/services/sem" className='flex items-start gap-2'>
                                             <Image
                                                 src="/check.svg"
                                                 width={30}
@@ -150,7 +150,7 @@ const ServicesOffer = () => {
                                 </div>
                                 <ul className='grid gap-4 pb-[75px]'>
                                     <li>
-                                        <a href="/services/analytics?id=web-app-measurement" className='flex items-start gap-2'>
+                                        <a href="/services/web-app-measurement" className='flex items-start gap-2'>
                                             <Image
                                                 src="/check.svg"
                                                 width={30}
@@ -214,7 +214,7 @@ const ServicesOffer = () => {
                                         </a>
                                     </li>
                                 </ul>
-                                <a href="/services/analytics?id=audit-and-health-check" className='absolute bottom-[3%]  right-[20%] lg:right-[28%] md:right-[15%]'>
+                                <a href="/services/analytics" className='absolute bottom-[3%]  right-[20%] lg:right-[28%] md:right-[15%]'>
                                     <div className='flex w-[200px] m-auto items-center p-3 justify-evenly border border-solid text-center border-homepagebtn cursor-pointer rounded-[10px] group-hover:bg-homepagebtn'>
                                         <div className='flex items-center justify-center gap-[5px]'>
                                             <button className='font-medium text-homepagebtn group-hover:text-white'>Explore Now</button>
@@ -257,7 +257,7 @@ const ServicesOffer = () => {
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="/services/data-reporting-analysis" className='flex items-start gap-2'>
+                                        <a href="/services/data-science" className='flex items-start gap-2'>
                                             <Image
                                                 src="/check.svg"
                                                 width={30}
@@ -273,7 +273,7 @@ const ServicesOffer = () => {
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="/services/data-reporting-analysis" className='flex items-start gap-2'>
+                                        <a href="/services/customer-segmentation" className='flex items-start gap-2'>
                                             <Image
                                                 src="/check.svg"
                                                 width={30}
@@ -283,7 +283,7 @@ const ServicesOffer = () => {
                                                 className='w-[18px] h-[18px] mt-1'
                                             />
                                             <div>
-                                                <h6 className='text-[#000] text-base font-medium leading-normal'>Custom Data Attribution Model</h6>
+                                                <h6 className='text-[#000] text-base font-medium leading-normal'>Customer Segmentation</h6>
                                                 <p className='text-[#000] text-xs font-normal leading-normal'>Instead of instead of relying on standard attribution, avail visitors' custom attribution journey and pinpoint their initial or supporting sources which drive conversions and engagement</p>
                                             </div>
                                         </a>
