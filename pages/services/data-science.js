@@ -103,10 +103,10 @@ const datascience = () => {
                                     In today's data-rich business environment, leveraging advanced analytics and data science is crucial for staying ahead of the competition. At Analyticsliv, we empower organizations to transform raw data into actionable insights, driving strategic decision-making and measurable business growth. Our comprehensive suite of Data Science and Solutions is designed to help you unlock the full potential of your data, optimize processes, and achieve unparalleled success.
                                 </p> */}
                                 <div className='flex max-[425px]:flex-wrap flex-nowrap items-center lg:justify-start justify-center gap-5'>
-                                    <Link href="/contact?id=programatic-advertising">
+                                    <Link href="/contact?id=data-science">
                                         <button className="butn mt-6">REQUEST A DEMO</button>
                                     </Link>
-                                    <Link href="/contact?id=programatic-advertising">
+                                    <Link href="/contact?id=data-science">
                                         <button className="butn max-[425px]:mt-0 mt-6">CONTACT US</button>
                                     </Link>
                                 </div>
@@ -944,7 +944,7 @@ const datascience = () => {
                             <div className='p-[10px] pl-0'>
                                 <div className='w-full flex justify-center'>
                                     <div className='flex items-center md:justify-end justify-center'>
-                                        <Link href="/contact?id=programatic-advertising">
+                                        <Link href="/contact?id=data-science">
                                             <button className="border border-solid border-[#ffffff] bg-[#ffffff] text-[#de668a] text-base font-normal tracking-wider rounded-xl py-3 px-6">Let's Connect</button>
                                         </Link>
                                     </div>

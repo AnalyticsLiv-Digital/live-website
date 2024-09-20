@@ -61,17 +61,17 @@ const header = () => {
 
 
       <header className="sticky min-w-full top-0 z-50 bg-white font-rbt">
-{/* <div> sm:w-1/3*/}
-      <div className='hidden lg:inline'>
-        <div className='flex items-start justify-between pt-5 px-5'>
-          <Link className="logo" href="/"><img alt="logo" aria-label="logo" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="h-10 lg:mx-4 cursor-pointer" /></Link>
+        {/* <div> sm:w-1/3*/}
+        <div className='hidden lg:inline'>
+          <div className='flex items-start justify-between pt-5 px-5'>
+            <Link className="logo" href="/"><img alt="logo" aria-label="logo" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="h-10 lg:mx-4 cursor-pointer" /></Link>
 
-          <div className='hidden md:inline'>
-            <span className="text-right flex items-center justify-end">
-              <img alt="marketing-partner" aria-label="marketing-partner" src="https://storage.googleapis.com/website-bucket-uploads/static/gmp.svg" />
-            </span>
+            <div className='hidden md:inline'>
+              <span className="text-right flex items-center justify-end">
+                <img alt="marketing-partner" aria-label="marketing-partner" src="https://storage.googleapis.com/website-bucket-uploads/static/gmp.svg" />
+              </span>
+            </div>
           </div>
-        </div>
         </div>
 
         <div style={{ height: header }} className="navbar hidden lg:flex py-2 h-auto flex-wrap px-4 lg:flex-row items-center justify-end">
@@ -220,7 +220,7 @@ const header = () => {
                           class="text-menuheading font-rbt text-base font-normal leading-normal">Mobile app marketing</Link>
                       </div>
                     </motion.div>}
-                    <div onClick={() => { setSubmenu("2") }} ><div className="py-2 w-56 ">Analytics Services</div></div>
+                    <div onClick={() => { setSubmenu("2") }} ><div className="py-2 w-56 ">Analytics & tagging services</div></div>
                     {submenu == "2" && <motion.div onClick={() => { setIsOpen(!isOpen); setIsServices(false); }} initial={{ y: 10, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} className='transition ease-out duration-200 px-4 '>
 
                       <div class="flex items-center py-1 gap-2">
@@ -247,6 +247,12 @@ const header = () => {
                         <Link href="/services/data-reporting-analysis"
                           class="text-menuheading font-rbt text-base font-normal leading-normal">Reporting Dashboarding</Link>
                       </div>
+                      {/* <div class="flex items-center py-1 gap-2">
+                        <img src="/GTM_header1.png" className='h-8 w-8'
+                          alt="data-reporting_logo" />
+                        <Link href="/services/google-tag-manager"
+                          class="text-menuheading font-rbt text-base font-normal leading-normal">Google Tag Manager Tagging</Link>
+                      </div> */}
 
                     </motion.div>}
                     <div onClick={() => { setSubmenu("3") }} ><div className="py-2 w-56 ">Solutions</div></div>
@@ -268,7 +274,7 @@ const header = () => {
                         <img className='w-[35px]' src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_Data_Attribution.png"
                           alt="Data-Science_logo" />
                         <Link href="/services/customer-segmentation"
-                          class="text-menuheading font-rbt text-base font-normal leading-normal">Custom Data Attribution Model</Link>
+                          class="text-menuheading font-rbt text-base font-normal leading-normal">Customer Segmentation </Link>
                       </div>
                     </motion.div>}
                     <div onClick={() => { setSubmenu("4") }} ><div className="py-2 w-56 ">Training & Consultation</div></div>
@@ -380,7 +386,7 @@ const header = () => {
                 class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b lg:border-b-0 pb-6 pt-6 lg:pt-3">
                 <div class="flex items-center">
 
-                  <h3 class="text-menuheading font-rbt text-[15px] font-medium">Analytics Services</h3>
+                  <h3 class="text-menuheading font-rbt text-[15px] font-medium">Analytics & Tagging Services</h3>
                 </div> <br />
 
                 <div class="flex items-center py-3 gap-2">
@@ -407,6 +413,12 @@ const header = () => {
                   <Link href="/services/data-reporting-analysis"
                     class="text-menuheading font-rbt text-[13px] font-normal leading-normal">Reporting & Dashboarding</Link>
                 </div>
+                {/* <div class="flex items-center py-3 gap-2">
+                  <img src="/GTM_header1.png" className='h-8 w-8'
+                    alt="data-reporting_logo" />
+                  <Link href="/services/google-tag-manager"
+                    class="text-menuheading font-rbt text-[13px] font-normal leading-normal">Google Tag Manager Tagging</Link>
+                </div> */}
                 {/*                 
                 <div class="flex items-center py-3 gap-2">
                   <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytics_Looker.logo.png" alt="Looker_logo" />
@@ -441,7 +453,7 @@ const header = () => {
                   <img className='w-[33px]' src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_Data_Attribution.png"
                     alt="Data-Science_logo" />
                   <Link href="/services/customer-segmentation"
-                    class="text-menuheading font-rbt text-[13px] font-normal leading-normal">Custom Data Attribution Model</Link>
+                    class="text-menuheading font-rbt text-[13px] font-normal leading-normal">Customer Segmentation</Link>
                 </div>
               </ul>
               <ul
