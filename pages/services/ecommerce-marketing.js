@@ -149,7 +149,7 @@ const ecommerce_marketing = () => {
                   <div
                     onClick={() => setActivetab("6")}
                     className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                      activetab === "4" ? "border-t-[#0092f4ab]" : ""
+                      activetab === "6" ? "border-t-[#0092f4ab]" : ""
                     }`}
                   >
                     <div>
@@ -164,7 +164,7 @@ const ecommerce_marketing = () => {
                   <div
                     onClick={() => setActivetab("7")}
                     className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                      activetab === "4" ? "border-t-[#0092f4ab]" : ""
+                      activetab === "7" ? "border-t-[#0092f4ab]" : ""
                     }`}
                   >
                     <div>
@@ -179,7 +179,7 @@ const ecommerce_marketing = () => {
                   <div
                     onClick={() => setActivetab("8")}
                     className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                      activetab === "4" ? "border-t-[#0092f4ab]" : ""
+                      activetab === "8" ? "border-t-[#0092f4ab]" : ""
                     }`}
                   >
                     <div>
