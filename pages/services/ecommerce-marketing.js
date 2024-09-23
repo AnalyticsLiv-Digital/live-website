@@ -45,10 +45,10 @@ const ecommerce_marketing = () => {
               <Link href="/contact?id=ecommerce-marketing">
                 <button className="butn mt-6">
                   LET'S WORK TOGETHER{" "}
-                  <img
+                  {/* <img
                     className="inline ml-2 hover:animate-pulse"
                     src="https://storage.googleapis.com/website-bucket-uploads/static/marketing/arrow_1.png"
-                  />
+                  /> */}
                 </button>
               </Link>
             </div>
@@ -925,7 +925,7 @@ const ecommerce_marketing = () => {
         </div>
       </section> */}
 
-      <section>
+      {/* <section>
         <div className="flex md:justify-between items-center py-4 md:py-0 px-4 md:px-28">
           <div className="absolute md:relative w-3/4 md:w-1/2 opacity-50 ">
             <img src="https://storage.googleapis.com/website-bucket-uploads/static/marketing/7.png" />
@@ -938,7 +938,7 @@ const ecommerce_marketing = () => {
             heights!
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };
