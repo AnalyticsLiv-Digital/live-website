@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Head from "next/head";
+import Image from "next/image";
 
 const app_marketing = () => {
   const [activetab, setActivetab] = useState("1");
@@ -749,7 +750,7 @@ const app_marketing = () => {
         </div>
       </section>
 
-      <section>
+      {/* <section>
         <div className="flex md:justify-between items-center py-4 px-4 md:px-28">
           <div className="absolute md:relative w-3/4 md:w-1/2 opacity-50 ">
             <img src="https://storage.googleapis.com/website-bucket-uploads/static/marketing/7.png" />
@@ -762,12 +763,173 @@ const app_marketing = () => {
             heights!
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };
 
 export default app_marketing;
+
+{
+  /* <div className="px-4 md:px-20 pt-4 pb-8 md:pb-16">
+        <div>
+          <div className="text-start">
+            <h2 className="text-maintext lg:text-[28px] text-2xl font-semibold not-italic text-center  block">
+              Why Choose Us
+            </h2>
+          </div>
+          <div className=" grid xl:grid-cols-3 md:grid-cols-2 gap-8 pt-[50px]">
+            <div className="first group bg-white shadow-serviceoffer border border-solid border-[#FDFDFD] rounded-[10px] p-5">
+              <div className="flex items-center justify-start gap-4">
+                <div className="rounded-full bg-[#EAF0FF] w-10 h-10 flex items-center justify-center">
+                  <Image
+                    src="/service_need 1.svg"
+                    width={30}
+                    height={30}
+                    alt="Picture of the author"
+                    priority={true}
+                    className="transform translate-x-[-20px] transition-transform duration-300 ease-linear group-hover:translate-x-0"
+                  />
+                </div>
+                <h6 className="text-[#000] text-[18px] font-semibold leading-normal font-gilroy">
+                  Performance Max Expertise:
+                </h6>
+              </div>
+              <p className="text-[#000] text-[14px] font-normal leading-[26px] pt-5 text-start">
+                As pioneers in Performance Max campaigns, we have extensive
+                experience leveraging this game-changing ad product. Our team
+                has successfully implemented Performance Max campaigns for
+                ecommerce businesses across various industries, delivering
+                tangible results and driving online sales.
+              </p>
+            </div>
+            <div className="second group bg-white border shadow-serviceoffer border-solid border-[#FDFDFD] rounded-[10px] p-5">
+              <div className="flex items-center justify-start gap-4">
+                <div className="rounded-full bg-[#EAF0FF] w-10 h-10 flex items-center justify-center">
+                  <Image
+                    src="/service_need 2.svg"
+                    width={30}
+                    height={30}
+                    alt="Picture of the author"
+                    priority={true}
+                    className="transform translate-x-[-20px] transition-transform duration-300 ease-linear group-hover:translate-x-0"
+                  />
+                </div>
+                <h6 className="text-[#000] text-[18px] font-semibold leading-normal font-gilroy">
+                  Dedicated Digital Marketing Experts:
+                </h6>
+              </div>
+              <p className="text-[#000] text-[14px] font-normal leading-[26px] pt-5 text-start">
+                Our dedicated team of digital marketing experts brings a wealth
+                of knowledge and experience to every project. We stay up-to-date
+                with the latest industry trends and best practices, ensuring
+                that your campaigns are optimized for success and aligned with
+                your business objectives.
+              </p>
+            </div>
+            <div className="third group bg-white border shadow-serviceoffer border-solid border-[#FDFDFD] rounded-[10px] p-5">
+              <div className="flex items-center justify-start gap-4">
+                <div className="rounded-full bg-[#EAF0FF] w-10 h-10 flex items-center justify-center">
+                  <Image
+                    src="/service_need 3.svg"
+                    width={30}
+                    height={30}
+                    alt="Picture of the author"
+                    priority={true}
+                    className="transform translate-x-[-20px] transition-transform duration-300 ease-linear group-hover:translate-x-0"
+                  />
+                </div>
+                <h6 className="text-[#000] text-[18px] font-semibold leading-normal font-gilroy">
+                  Proven Track Record:
+                </h6>
+              </div>
+              <p className="text-[#000] text-[14px] font-normal leading-[26px] pt-5 text-start">
+                We have a track record of delivering exceptional outcomes for
+                ecommerce businesses. Our results- driven approach, combined
+                with our deep understanding of the ecommerce landscape, allows
+                us to create customized strategies tailored to your goals,
+                target audience, and budget
+              </p>
+            </div>
+            <div className="first group bg-white shadow-serviceoffer border border-solid border-[#FDFDFD] rounded-[10px] p-5">
+              <div className="flex items-center justify-start gap-4">
+                <div className="rounded-full bg-[#EAF0FF] w-10 h-10 flex items-center justify-center">
+                  <Image
+                    src="/service_need 1.svg"
+                    width={30}
+                    height={30}
+                    alt="Picture of the author"
+                    priority={true}
+                    className="transform translate-x-[-20px] transition-transform duration-300 ease-linear group-hover:translate-x-0"
+                  />
+                </div>
+                <h6 className="text-[#000] text-[18px] font-semibold leading-normal font-gilroy">
+                  Data-Driven Decision Making:
+                </h6>
+              </div>
+              <p className="text-[#000] text-[14px] font-normal leading-[26px] pt-5 text-start">
+                Our data-driven approach underpins every decision we make. By
+                leveraging detailed reporting and analytics, we gain valuable
+                insights into campaign performance, user behavior, and market
+                trends. This enables us to refine strategies optimize-campaigns,
+                and identify new opportunities for growth
+              </p>
+            </div>
+            <div className="second group bg-white border shadow-serviceoffer border-solid border-[#FDFDFD] rounded-[10px] p-5">
+              <div className="flex items-center justify-start gap-4">
+                <div className="rounded-full bg-[#EAF0FF] w-10 h-10 flex items-center justify-center">
+                  <Image
+                    src="/service_need 2.svg"
+                    width={30}
+                    height={30}
+                    alt="Picture of the author"
+                    priority={true}
+                    className="transform translate-x-[-20px] transition-transform duration-300 ease-linear group-hover:translate-x-0"
+                  />
+                </div>
+                <h6 className="text-[#000] text-[18px] font-semibold leading-normal font-gilroy">
+                  Continuous Campaign Optimization:
+                </h6>
+              </div>
+              <p className="text-[#000] text-[14px] font-normal leading-[26px] pt-5 text-start">
+                We are committed to driving maximum ROI and long- term growth
+                for your ecommerce business. Through continuous campaign
+                optimization, we fine-tune targeting, adjust bidding strategies,
+                and leverage emerging trends in ecommerce marketing. Our goal is
+                to keep your brand at the forefront of your target audience's
+                minds, resulting in increased traffic, conversions, and online
+                sales
+              </p>
+            </div>
+            <div className="third group bg-white border shadow-serviceoffer border-solid border-[#FDFDFD] rounded-[10px] p-5">
+              <div className="flex items-center justify-start gap-4">
+                <div className="rounded-full bg-[#EAF0FF] w-10 h-10 flex items-center justify-center">
+                  <Image
+                    src="/service_need 3.svg"
+                    width={30}
+                    height={30}
+                    alt="Picture of the author"
+                    priority={true}
+                    className="transform translate-x-[-20px] transition-transform duration-300 ease-linear group-hover:translate-x-0"
+                  />
+                </div>
+                <h6 className="text-[#000] text-[18px] font-semibold leading-normal font-gilroy">
+                  Unlock the Full Potential of Your Ecommerce Business:
+                </h6>
+              </div>
+              <p className="text-[#000] text-[14px] font-normal leading-[26px] pt-5 text-start">
+                Ready to take your ecommerce business to new heights? Our
+                Ecommerce Marketing services, powered by Performance Max, Google
+                Ads, and Facebook Ads, will help you drive targeted traffic,
+                increase conversions, and boost online sales. Contact us today
+                to discuss how we can accelerate your ecommerce success and
+                unlock the full potential of your online store.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div> */
+}
 
 {
   /* <section>
