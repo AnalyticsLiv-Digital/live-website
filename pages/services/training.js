@@ -353,7 +353,7 @@ const training = () => {
         id="training-calendly"
         name="training-calendly"
       ></ScrollElement>
-      <div className="relative h-[100dvh] lg:h-[100dvh] mb-36 lg:mb-28 bg-[#f5f5f5] rounded-lg space-y-9 px-4 pb-20 align-middle text-white">
+      <div className="relative h-[100dvh] 2xl:h-[80dvh] mb-36 lg:mb-28 xl:mb-40 bg-[#f5f5f5] rounded-lg space-y-9 px-4 pb-20 align-middle text-white">
         <div className="inline-widget bg-[#fff]">
           <div className="pb-4">
             <div className="flex justify-center">
