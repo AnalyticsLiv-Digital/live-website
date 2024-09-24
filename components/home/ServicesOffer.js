@@ -27,7 +27,7 @@ const ServicesOffer = () => {
                     </div>
                     <div className='grid md:grid-cols-2 items-center gap-10 pt-[50px]'>
                         <div className='first flex justify-center'>
-                            <div className='relative group rounded-[10px] border border-solid border-[#EFEFEF] hover:shadow-serviceoffer p-5 lg:h-[500px] md:h-[585px] w-[335px] md:w-[284px] lg:w-[430px]'>
+                            <div className='relative group rounded-[10px] border border-solid border-[#EFEFEF] hover:shadow-serviceoffer p-5 lg:h-[410px] md:h-[495px] w-[335px] md:w-[284px] lg:w-[430px]'>
                                 <div className="flex items-start justify-start gap-4 pb-6">
                                     <div className='rounded-full bg-[#EAF0FF] w-10 h-10 flex items-center justify-center'>
                                         <Image
@@ -41,7 +41,7 @@ const ServicesOffer = () => {
                                     </div>
                                     <h6 className='text-[20px] font-semibold text-[#000] leading-normal'>Marketing Services</h6>
                                 </div>
-                                <ul className='grid gap-4 pb-[75px]'>
+                                <ul className='grid gap-4  '>
                                     <li className=''>
                                         <a href="/services/programatic-advertising" className='flex items-start gap-2'>
                                             <Image
@@ -123,18 +123,18 @@ const ServicesOffer = () => {
                                         </a>
                                     </li>
                                 </ul>
-                                <a href="/services" className='absolute bottom-[3%] right-[20%] lg:right-[28%] md:right-[15%]'>
+                                {/* <a href="/services" className='absolute bottom-[3%] right-[20%] lg:right-[28%] md:right-[15%]'>
                                     <div className='flex w-[200px] m-auto items-center p-3 justify-evenly border border-solid text-center border-homepagebtn cursor-pointer rounded-[10px] group-hover:bg-homepagebtn'>
                                         <div className='flex items-center justify-center gap-[5px]'>
                                             <button className='font-medium text-homepagebtn group-hover:text-white'>Explore Now</button>
                                             <span className='text-homepagebtn group-hover:text-white mt-[2px]'><FaLongArrowAltRight /></span>
                                         </div>
                                     </div>
-                                </a>
+                                </a> */}
                             </div>
                         </div>
                         <div className='second flex justify-center'>
-                            <div className='relative group rounded-[10px] border border-solid border-[#EFEFEF] hover:shadow-serviceoffer p-5 lg:h-[500px] md:h-[585px] w-[335px] md:w-[284px] lg:w-[430px]'>
+                            <div className='relative group rounded-[10px] border border-solid border-[#EFEFEF] hover:shadow-serviceoffer p-5 lg:h-[410px] md:h-[495px] w-[335px] md:w-[284px] lg:w-[430px]'>
                                 <div className="flex items-start justify-start gap-4 pb-6">
                                     <div className='rounded-full bg-[#EAF0FF] w-10 h-10 flex items-center justify-center'>
                                         <Image
@@ -148,7 +148,7 @@ const ServicesOffer = () => {
                                     </div>
                                     <h6 className='text-[20px] font-semibold text-[#000] leading-normal'>Analytics Services</h6>
                                 </div>
-                                <ul className='grid gap-4 pb-[75px]'>
+                                <ul className='grid gap-4  '>
                                     <li>
                                         <a href="/services/web-app-measurement" className='flex items-start gap-2'>
                                             <Image
@@ -214,18 +214,18 @@ const ServicesOffer = () => {
                                         </a>
                                     </li>
                                 </ul>
-                                <a href="/services/analytics" className='absolute bottom-[3%]  right-[20%] lg:right-[28%] md:right-[15%]'>
+                                {/* <a href="/services/analytics" className='absolute bottom-[3%]  right-[20%] lg:right-[28%] md:right-[15%]'>
                                     <div className='flex w-[200px] m-auto items-center p-3 justify-evenly border border-solid text-center border-homepagebtn cursor-pointer rounded-[10px] group-hover:bg-homepagebtn'>
                                         <div className='flex items-center justify-center gap-[5px]'>
                                             <button className='font-medium text-homepagebtn group-hover:text-white'>Explore Now</button>
                                             <span className='text-homepagebtn group-hover:text-white mt-[2px]'><FaLongArrowAltRight /></span>
                                         </div>
                                     </div>
-                                </a>
+                                </a> */}
                             </div>
                         </div>
                         <div className='third flex justify-center'>
-                            <div className='relative group rounded-[10px] border border-solid border-[#EFEFEF] hover:shadow-serviceoffer p-5 lg:h-[415px] md:h-[585px] w-[335px] md:w-[284px] lg:w-[430px]'>
+                            <div className='relative group rounded-[10px] border border-solid border-[#EFEFEF] hover:shadow-serviceoffer p-5 lg:h-[325px] md:h-[495px] w-[335px] md:w-[284px] lg:w-[430px]'>
                                 <div className="flex items-start justify-start gap-4 pb-6">
                                     <div className='rounded-full bg-[#EAF0FF] w-10 h-10 flex items-center justify-center'>
                                         <Image
@@ -239,7 +239,7 @@ const ServicesOffer = () => {
                                     </div>
                                     <h6 className='text-[20px] font-semibold text-[#000] leading-normal'>Solutions</h6>
                                 </div>
-                                <ul className='grid gap-4 pb-[75px]'>
+                                <ul className='grid gap-4  '>
                                     <li>
                                         <a href="/services/data-reporting-analysis" className='flex items-start gap-2'>
                                             <Image
@@ -289,18 +289,18 @@ const ServicesOffer = () => {
                                         </a>
                                     </li>
                                 </ul>
-                                <a href="/services/data-reporting-analysis" className='absolute bottom-[3%]  right-[20%] lg:right-[28%] md:right-[15%]'>
+                                {/* <a href="/services/data-reporting-analysis" className='absolute bottom-[3%]  right-[20%] lg:right-[28%] md:right-[15%]'>
                                     <div className='flex w-[200px] m-auto items-center p-3 justify-evenly border border-solid text-center border-homepagebtn cursor-pointer rounded-[10px] group-hover:bg-homepagebtn'>
                                         <div className='flex items-center justify-center gap-[5px]'>
                                             <button className='font-medium text-homepagebtn group-hover:text-white'>Explore Now</button>
                                             <span className='text-homepagebtn group-hover:text-white mt-[2px]'><FaLongArrowAltRight /></span>
                                         </div>
                                     </div>
-                                </a>
+                                </a> */}
                             </div>
                         </div>
                         <div className='fourth flex justify-center'>
-                            <div className='relative group rounded-[10px] border border-solid border-[#EFEFEF] hover:shadow-serviceoffer p-5 lg:h-[415px] md:h-[585px] w-[335px] md:w-[284px] lg:w-[430px]'>
+                            <div className='relative group rounded-[10px] border border-solid border-[#EFEFEF] hover:shadow-serviceoffer p-5 lg:h-[325px] md:h-[495px] w-[335px] md:w-[284px] lg:w-[430px]'>
                                 <div className="flex items-start justify-start gap-4 pb-6">
                                     <div className='rounded-full bg-[#EAF0FF] w-10 h-10 flex items-center justify-center'>
                                         <Image
@@ -314,7 +314,7 @@ const ServicesOffer = () => {
                                     </div>
                                     <h6 className='text-[20px] font-semibold text-[#000] leading-normal'>Training and Consultation</h6>
                                 </div>
-                                <ul className='grid gap-4 pb-[75px]'>
+                                <ul className='grid gap-4  '>
                                     <li>
                                         <a href="/services/training" className='flex items-start gap-2'>
                                             <Image
@@ -348,14 +348,14 @@ const ServicesOffer = () => {
                                         </a>
                                     </li>
                                 </ul>
-                                <a href="/services/training" className='absolute bottom-[3%]  right-[20%] lg:right-[28%] md:right-[15%]'>
+                                {/* <a href="/services/training" className='absolute bottom-[3%]  right-[20%] lg:right-[28%] md:right-[15%]'>
                                     <div className='flex w-[200px] m-auto items-center p-3 justify-evenly border border-solid text-center border-homepagebtn cursor-pointer rounded-[10px] group-hover:bg-homepagebtn'>
                                         <div className='flex items-center justify-center gap-[5px]'>
                                             <button className='font-medium text-homepagebtn group-hover:text-white'>Explore Now</button>
                                             <span className='text-homepagebtn group-hover:text-white mt-[2px]'><FaLongArrowAltRight /></span>
                                         </div>
                                     </div>
-                                </a>
+                                </a> */}
                             </div>
                         </div>
                     </div>

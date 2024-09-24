@@ -89,9 +89,9 @@ const service_A = () => {
                                     Are you ready to move beyond traditional media buying and embrace the efficiency and effectiveness of programmatic advertising?  AnalyticsLiv's DV360 service empowers you to do just that.
                                 </p>
                                 <div className='flex max-[425px]:flex-wrap flex-nowrap items-center gap-5'>
-                                    <Link href="/contact?id=programatic-advertising">
+                                    {/* <Link href="/contact?id=programatic-advertising">
                                         <button className="butn max-[425px]:mt-0 mt-6">REQUEST A DEMO</button>
-                                    </Link>
+                                    </Link> */}
                                     <Link href="/contact?id=programatic-advertising">
                                         <button className="butn max-[425px]:mt-0 mt-6">CONTACT US</button>
                                     </Link>
