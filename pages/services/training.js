@@ -34,36 +34,37 @@ const training = () => {
         ></link>
       </Head>
       <section>
-        <div class="md:mt-4 px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16">
-          <div class="max-sm:text-center text-left">
-            <h2 class="text-trainingheading  text-[30px] md:text-[40px] font-bold inline leading-normal">
-              <span class="relative after:absolute after:left-0 after:bottom-[-5px] after:bg-[#07A9F9] after:h-[9px] after:w-20 after:rounded-[5px]">
-                Dive
-              </span>{" "}
-              into the Analytics Universe with Our Tailored Training for
-              Corporates and Developers – Your Journey Begins Here
-            </h2>{" "}
-            <br /> <br />
-            <div class="flex justify-center">
-              <Link href="/contact?id=training">
-                {" "}
-                <button class="butn">
-                  Get the Curriculum <br /> and Estimate
-                </button>
-              </Link>
+        <div class="md:mt-4 px-4 md:px-20 pt-8 md:pt-11 lg:flex justify-around lg:items-center">
+          <div class="inner-banner lg:w-1/2 text-center flex flex-col justify-center">
+            <div class="px-4 md:px-16 pt-4 flex flex-col justify-center">
+              <div class="2xl:text-[33px] lg:text-[28px] text-[27px] font-['Poppins'] font-semibold text-maintext">
+                {/* text-trainingheading  text-[30px] md:text-[40px] font-bold inline leading-normal */}
+                <span class="relative after:absolute after:left-0 after:bottom-[-5px] after:bg-[#07A9F9] after:h-[9px] after:w-20 after:rounded-[5px]">
+                  Dive </span> into the Analytics Universe with Our Tailored Training for
+                Corporates and Developers – Your Journey Begins Here
+              </div>
+              <div class="flex justify-center">
+                <Link href="/contact?id=training">
+                  <button class="butn mt-8">
+                    Get the Curriculum and Estimate
+                  </button>
+                </Link>
+              </div>
             </div>
-          </div>{" "}
-          <br />
+          </div>
+          <div className='w-1/2 max-lg:hidden'>
+            <img src='/training-banner.jpg' className='w-full h-full' alt='gtm' />
+          </div>
         </div>
       </section>
 
       <section>
         <div class="md:mt-4 px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16">
-          <div class="text-left">
+          {/* <div class="text-left">
             <h2 class="text-black text-3xl font-semibold leading-normal">
               Customized Corporate Training
             </h2>
-          </div>{" "}
+          </div> */}
           <br /> <br />
           <div>
             <ul>
@@ -79,7 +80,7 @@ const training = () => {
                   <h3 class="text-trainingheading text-3xl font-semibold leading-normal">
                     Customized Corporate Training
                   </h3>
-                </div>{" "}
+                </div>
                 <br /> <br />
                 <div class="grid lg:grid-cols-2 justify-center gap-10">
                   <div class="flex items-center justify-center">
@@ -94,15 +95,15 @@ const training = () => {
                         <h5 class="text-trainingheading text-[25px] leading-none font-semibold mt-1.5 mb-10">
                           Tailored to Your Needs
                         </h5>
-                        <p class="sm:mb-8 text-[#202020] text-base leading-none font-medium">
+                        <p class="sm:mb-8 text-[#202020] font-['Poppins'] text-base leading-none font-medium">
                           We believe that one size does not fit all. Our
                           training programs are customized to align with your
                           industry, business goals, and team's current skill
                           level.
-                        </p>{" "}
+                        </p>
                         <br />
                         <Link href="/contact?id=training">
-                          {" "}
+                          
                           <button class="butn">Explore Now</button>
                         </Link>
                       </div>
@@ -121,21 +122,21 @@ const training = () => {
                         <h5 class="text-trainingheading text-[25px] leading-none font-semibold mt-1.5 mb-10">
                           Flexible Delivery
                         </h5>
-                        <p class="mb-4 sm:mb-8 text-[#202020] text-base leading-none font-medium">
+                        <p class="mb-4 sm:mb-8 text-[#202020] font-['Poppins'] text-base leading-none font-medium">
                           Choose from in-person training sessions, live virtual
                           classes, or self-paced online courses, depending on
                           your team's preferences and availability.
-                        </p>{" "}
+                        </p>
                         <br />
                         <Link href="/contact?id=training">
-                          {" "}
+                          
                           <button class="butn">Explore Now</button>
                         </Link>
                       </div>
                     </div>
                   </div>
                 </div>
-              </li>{" "}
+              </li>
               <br />
               <li class="pb-5">
                 <div class="flex">
@@ -149,7 +150,7 @@ const training = () => {
                   <h3 class="text-trainingheading text-3xl font-semibold leading-normal">
                     Comprehensive Curriculum
                   </h3>
-                </div>{" "}
+                </div>
                 <br /> <br />
                 <div class="grid lg:grid-cols-3 justify-center gap-10">
                   <div class="flex content-between justify-center">
@@ -164,14 +165,14 @@ const training = () => {
                         <h5 class="text-trainingheading text-[25px] leading-none font-semibold mt-1.5 mb-10">
                           Google Analytics Fundamentals
                         </h5>
-                        <p class="mb-4 text-[#202020] text-base leading-none font-medium">
+                        <p class="mb-4 text-[#202020] font-['Poppins'] text-base leading-none font-medium">
                           Lay the foundation with comprehensive training on
                           Google Analytics basics, including account setup,
                           tracking implementation, and reporting.
-                        </p>{" "}
+                        </p>
                         <br />
                         <Link href="/contact?id=training">
-                          {" "}
+                          
                           <button class="butn">Explore Now</button>
                         </Link>
                       </div>
@@ -190,14 +191,14 @@ const training = () => {
                         <h5 class="text-trainingheading text-[25px] leading-none font-semibold mt-1.5 mb-10">
                           Advanced Techniques
                         </h5>
-                        <p class="mb-4 text-[#202020] text-base leading-none font-medium">
+                        <p class="mb-4 text-[#202020] font-['Poppins'] text-base leading-none font-medium">
                           Elevate your team's expertise with advanced topics
                           such as data analysis, conversion optimization, and
                           e-commerce tracking.
-                        </p>{" "}
+                        </p>
                         <br /> <br />
                         <Link href="/contact?id=training">
-                          {" "}
+                          
                           <button class="butn">Explore Now</button>
                         </Link>
                       </div>
@@ -216,22 +217,22 @@ const training = () => {
                         <h5 class="text-trainingheading text-[25px] leading-none font-semibold mt-1.5 mb-10">
                           Practical Applications
                         </h5>
-                        <p class="mb-4 text-[#202020] text-base leading-none font-medium">
+                        <p class="mb-4 text-[#202020] font-['Poppins'] text-base leading-none font-medium">
                           Our training goes beyond theory. We focus on
                           real-world applications, ensuring your team can
                           immediately apply what they learn to improve your
                           company's online presence.
-                        </p>{" "}
+                        </p>
                         <br />
                         <Link href="/contact?id=training">
-                          {" "}
+                          
                           <button class="butn">Explore Now</button>
                         </Link>
                       </div>
                     </div>
                   </div>
                 </div>
-              </li>{" "}
+              </li>
               <br />
               <li class="pb-5">
                 <div class="flex">
@@ -245,7 +246,7 @@ const training = () => {
                   <h3 class="text-trainingheading text-3xl font-semibold leading-normal">
                     Hands-On Learning
                   </h3>
-                </div>{" "}
+                </div>
                 <br /> <br />
                 <div class="grid lg:grid-cols-2 justify-center gap-10">
                   <div class="flex items-center justify-center">
@@ -260,14 +261,14 @@ const training = () => {
                         <h5 class="text-trainingheading text-[25px] leading-none font-semibold mt-1.5 mb-10">
                           Interactive Workshops
                         </h5>
-                        <p class="mb-8 text-[#202020] text-base leading-none font-medium">
+                        <p class="mb-8 text-[#202020] font-['Poppins'] text-base leading-none font-medium">
                           Engage your team with hands-on workshops and exercises
                           that reinforce learning and promote practical skill
                           development.
-                        </p>{" "}
+                        </p>
                         <br />
                         <Link href="/contact?id=training">
-                          {" "}
+                          
                           <button class="butn">Explore Now</button>
                         </Link>
                       </div>
@@ -286,21 +287,21 @@ const training = () => {
                         <h5 class="text-trainingheading text-[25px] leading-none font-semibold mt-1.5 mb-10">
                           Case Studies
                         </h5>
-                        <p class="mb-8 text-[#202020] text-base leading-none font-medium">
+                        <p class="mb-8 text-[#202020] font-['Poppins'] text-base leading-none font-medium">
                           Explore real case studies and success stories to gain
                           insights into how other organizations have leveraged
                           Google Analytics to achieve their objectives.
-                        </p>{" "}
+                        </p>
                         <br />
                         <Link href="/contact?id=training">
-                          {" "}
+                          
                           <button class="butn">Explore Now</button>
                         </Link>
                       </div>
                     </div>
                   </div>
                 </div>
-              </li>{" "}
+              </li>
               <br />
               <li class="pb-5">
                 <div class="flex">
@@ -314,7 +315,7 @@ const training = () => {
                   <h3 class="text-trainingheading text-3xl font-semibold leading-normal">
                     Certified Instructors
                   </h3>
-                </div>{" "}
+                </div>
                 <br /> <br />
                 <div class="flex items-center justify-center">
                   <div class="max-w-sm h-[430px] lg:h-[420px] z-10 text-center flex bg-trainingsection rounded-md">
@@ -330,7 +331,7 @@ const training = () => {
                         Expert Trainers
                       </h5>
 
-                      <p class="mb-8 text-[#202020] text-base leading-none font-medium">
+                      <p class="mb-8 text-[#202020] font-['Poppins'] text-base leading-none font-medium">
                         Our trainers are Google Analytics certified experts with
                         years of experience in the field. They are passionate
                         about sharing their knowledge and expertise with your
@@ -338,7 +339,7 @@ const training = () => {
                       </p>
                       <br />
                       <Link href="/contact?id=training">
-                        {" "}
+                        
                         <button class="butn">Explore Now</button>
                       </Link>
                     </div>
