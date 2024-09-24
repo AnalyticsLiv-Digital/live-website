@@ -38,9 +38,7 @@ const training = () => {
           <div class="inner-banner lg:w-1/2 text-center flex flex-col justify-center">
             <div class="px-4 md:px-16 pt-4 flex flex-col justify-center">
               <div class="2xl:text-[33px] lg:text-[28px] text-[27px] font-['Poppins'] font-semibold text-maintext">
-                {/* text-trainingheading  text-[30px] md:text-[40px] font-bold inline leading-normal */}
-                <span class="relative after:absolute after:left-0 after:bottom-[-5px] after:bg-[#07A9F9] after:h-[9px] after:w-20 after:rounded-[5px]">
-                  Dive </span> into the Analytics Universe with Our Tailored Training for
+                Dive into the Analytics Universe with Our Tailored Training for
                 Corporates and Developers – Your Journey Begins Here
               </div>
               <div class="flex justify-center">
@@ -103,7 +101,7 @@ const training = () => {
                         </p>
                         <br />
                         <Link href="/contact?id=training">
-                          
+
                           <button class="butn">Explore Now</button>
                         </Link>
                       </div>
@@ -129,7 +127,7 @@ const training = () => {
                         </p>
                         <br />
                         <Link href="/contact?id=training">
-                          
+
                           <button class="butn">Explore Now</button>
                         </Link>
                       </div>
@@ -172,7 +170,7 @@ const training = () => {
                         </p>
                         <br />
                         <Link href="/contact?id=training">
-                          
+
                           <button class="butn">Explore Now</button>
                         </Link>
                       </div>
@@ -198,7 +196,7 @@ const training = () => {
                         </p>
                         <br /> <br />
                         <Link href="/contact?id=training">
-                          
+
                           <button class="butn">Explore Now</button>
                         </Link>
                       </div>
@@ -225,7 +223,7 @@ const training = () => {
                         </p>
                         <br />
                         <Link href="/contact?id=training">
-                          
+
                           <button class="butn">Explore Now</button>
                         </Link>
                       </div>
@@ -268,7 +266,7 @@ const training = () => {
                         </p>
                         <br />
                         <Link href="/contact?id=training">
-                          
+
                           <button class="butn">Explore Now</button>
                         </Link>
                       </div>
@@ -294,7 +292,7 @@ const training = () => {
                         </p>
                         <br />
                         <Link href="/contact?id=training">
-                          
+
                           <button class="butn">Explore Now</button>
                         </Link>
                       </div>
@@ -339,7 +337,7 @@ const training = () => {
                       </p>
                       <br />
                       <Link href="/contact?id=training">
-                        
+
                         <button class="butn">Explore Now</button>
                       </Link>
                     </div>

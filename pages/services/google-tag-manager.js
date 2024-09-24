@@ -200,9 +200,9 @@ const google_tag_manager = () => {
                                 Strategy
                                 with Expert Analytics and Tag Management Solutions. From Google Analytics Audits and Setup to
                                 Advanced Custom Event Tracking, We AnalyticsLiv Power Your Data-Driven Success!</p>
-                            <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/sparkler (1) 1.png" class="absolute bottom-[-25%] min-[1440px]:bottom-[-60%]"
+                            {/* <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/sparkler (1) 1.png" class="absolute bottom-[-25%] min-[1440px]:bottom-[-60%]"
                                 alt="shape" />
-                            <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/sparkler 1.png" class="absolute right-[0] top-[-35%]" alt="shape" />
+                                <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/sparkler 1.png" class="absolute right-[0] top-[-35%]" alt="shape" /> */}
                         </div>
                         <div>
                             <Link href="/contact?id=google-tag-manager">
@@ -236,20 +236,7 @@ const google_tag_manager = () => {
             <section className="py-10 lg:py-16">
                 <div>
                     <div className="text-2xl md:text-3xl xl:text-[34px] font-bold xl:font-extrabold text-center">
-                        <span className='inline-block relative'>
-                            Custom&nbsp;
-                            <span
-                                className=' block w-[80px] xl:w-[112px] bg-gradient-to-r from-[#59C3EC] to-[#297AB6]'
-                                style={{
-                                    // width: '102px',
-                                    height: '5px',
-                                    borderRadius: '10px',
-                                    top: 'calc(100% )', // Adjust this value as needed
-                                    left: '0', // Position relative to the parent span
-                                }}
-                            ></span>
-                        </span>
-                        Solutions
+                        Custom Solutions
                     </div>
 
                 </div>
@@ -279,22 +266,7 @@ const google_tag_manager = () => {
             <section className='resources'>
                 <div>
                     <div className="text-2xl md:text-3xl font-bold text-center pt-12 xl:font-extrabold xl:text-[34px]">
-
-                        {/* Success Stories */}
-                        <span className='inline-block relative'>
-                            Success&nbsp;
-                            <span
-                                className='absolute underline-width-mobile block w-[90px] xl:w-[127px] bg-gradient-to-r from-[#59C3EC] to-[#297AB6]'
-                                style={{
-                                    // width: '117px',
-                                    height: '5px',
-                                    borderRadius: '10px',
-                                    top: 'calc(100% )', // Adjust this value as needed
-                                    left: '0', // Position relative to the parent span
-                                }}
-                            ></span>
-                        </span>
-                        Stories
+                        Success Stories
                     </div>
                 </div>
                 <div className="grid lg:grid-cols-3 w-full justify-center justify-items-center items-center gap-4 p-8 md:p-12">
