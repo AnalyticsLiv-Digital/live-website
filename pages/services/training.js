@@ -51,7 +51,7 @@ const training = () => {
             </div>
           </div>
           <div className='w-1/2 max-lg:hidden'>
-            <img src='/training-banner.jpg' className='w-full h-full' alt='gtm' />
+            <img src='/Training_Page-banner.png' className='w-full h-full' alt='gtm' />
           </div>
         </div>
       </section>
