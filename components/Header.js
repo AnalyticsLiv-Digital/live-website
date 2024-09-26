@@ -423,12 +423,12 @@ const header = () => {
                               Reporting Dashboarding
                             </Link>
                           </div>
-                          <div class="flex items-center py-1 gap-2">
-                        <img src="/GTM_header1.png" className='h-8 w-8'
-                          alt="data-reporting_logo" />
-                        <Link href="/services/google-tag-manager"
-                          class="text-menuheading font-rbt text-base font-normal leading-normal">Google Tag Manager Tagging</Link>
-                      </div>
+                          <div class="flex items-center py-1 gap-1">
+                            <img src="/GTM_Gradiant_Logo_for_Header.png" className='h-9 w-9'
+                              alt="data-reporting_logo" />
+                            <Link href="/services/google-tag-manager"
+                              class="text-menuheading font-rbt text-base font-normal leading-normal">Google Tag Manager Tagging</Link>
+                          </div>
                         </motion.div>
                       )}
                       <div
@@ -781,12 +781,12 @@ const header = () => {
                       Reporting & Dashboarding
                     </Link>
                   </div>
-                  <div class="flex items-center py-3 gap-2">
-                  <img src="/GTM_header1.png" className='h-8 w-8'
-                    alt="data-reporting_logo" />
-                  <Link href="/services/google-tag-manager"
-                    class="text-menuheading font-rbt text-[13px] font-normal leading-normal">Google Tag Manager Tagging</Link>
-                </div>
+                  <div class="flex items-center py-3 gap-[5px]">
+                    <img src="/GTM_Gradiant_Logo_for_Header.png" className='h-9 w-9'
+                      alt="data-reporting_logo" />
+                    <Link href="/services/google-tag-manager"
+                      class="text-menuheading font-rbt text-[13px] font-normal leading-normal">Google Tag Manager Tagging</Link>
+                  </div>
                   {/*                 
                 <div class="flex items-center py-3 gap-2">
                   <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytics_Looker.logo.png" alt="Looker_logo" />
