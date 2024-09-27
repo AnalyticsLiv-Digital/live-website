@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '@fontsource/lato';
 import { scroller } from 'react-scroll';
 
 const CookieConsent = () => {
 
-    const initialValues = { fullName: '', email: '', contact: '', message: '', website: '' };
+    const initialValues = { fullName: '', email: '', contact: '', company: '' };
     const [formSubmit, setFormSubmit] = useState(false);
     const [formValues, setFormValues] = useState(initialValues);
+    const [formErrors, setFormErrors] = useState({});
+    const [isSubmit, setIsSubmit] = useState(false);
 
     const scrolling1 = () => {
         scroller.scrollTo("webinarForm", {
@@ -26,9 +28,59 @@ const CookieConsent = () => {
         e.preventDefault();
         setFormErrors(validate(formValues));
         setIsSubmit(true);
-        // console.log("formValues", formValues)
     };
 
+
+    useEffect(() => {
+        if (Object.keys(formErrors).length === 0 && isSubmit) {
+            setShowWaiting(true);
+            dataLayer.push({
+                event: 'gtm_submission'
+            });
+            fetch('/api/gtmcontact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'mode': 'no-cors'
+                },
+                body: JSON.stringify({
+                    "fullName": formValues.fullName,
+                    "email": formValues.email,
+                    "contact": formValues.contact,
+                    "company": formValues.company,
+                }),
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    setFormSubmit(true);
+                    setShowWaiting(false);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+
+        }
+    }, [formErrors]);
+
+    const validate = (values) => {
+        const errors = {};
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+        if (!values.fullName) {
+            errors.fullName = "Name is required!";
+        }
+
+        if (!values.website) {
+            errors.website = "Website is required!";
+        }
+
+        if (!values.email) {
+            errors.email = "Email is required!";
+        } else if (!regex.test(values.email)) {
+            errors.email = "This is not a valid email format!";
+        }
+
+        return errors;
+    };
 
     return (
         <main className='font-lato'>
@@ -103,8 +155,6 @@ const CookieConsent = () => {
 
                             <input type='text' placeholder='Your company*' style={{ boxShadow: '3px 3px 8px rgba(0, 0, 0, 0.3)' }}
                                 className='px-3 py-2 text-sm border border-[#3C292A] rounded-md' id="company" name="company" value={formValues.company} required onChange={handleChange} />
-
-                            {/* <textarea placeholder='Type Your Message' rows="3" className='px-3 py-2 text-sm border border-[#3C292A] rounded-md' style={{ boxShadow: '3px 3px 8px rgba(0, 0, 0, 0.3)' }} id="message" name="message" value={formValues.message} onChange={handleChange} /> */}
 
                             <button className='gtmbutn4 bg-gradient-to-l from-[#EB5442] to-[#ED7754] hover:border-black hover:border-[1px] hover:text-[#EB5442] border border-[#FFFFFF] rounded-md shadow-[2px_2px_3px_1px_rgba(0,0,0,0.25)] py-2 text-sm font-extrabold'>REGISTER NOW</button>
 
