@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '@fontsource/lato';
 import { scroller } from 'react-scroll';
 
-const CookieWebinar = () => {
+const CookieConsent = () => {
 
     const initialValues = { fullName: '', email: '', contact: '', message: '', website: '' };
     const [formSubmit, setFormSubmit] = useState(false);
@@ -231,10 +231,10 @@ const CookieWebinar = () => {
             </section>
 
             <footer className='bg-white py-2'>
-                <div className='text-lg text-center font-medium'>Copyright @ 2024 AnalyticsLiv</div>
+                <div className='text-sm md:text-base 2xltext-lg text-center font-medium'>Copyright @ 2024 AnalyticsLiv</div>
             </footer>
         </main>
     );
 };
 
-export default CookieWebinar;
+export default CookieConsent;
