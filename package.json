@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource/lato": "^5.1.0",
     "@google-cloud/storage": "^6.8.0",
     "@headlessui/react": "^1.7.5",
     "@leecheuk/react-google-login": "^5.4.1",
