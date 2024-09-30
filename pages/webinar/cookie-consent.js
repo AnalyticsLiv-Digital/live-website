@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '@fontsource/lato';
-// import { scroller } from 'react-scroll';
+import { scroller } from 'react-scroll';
 import { ScaleLoader } from 'react-spinners';
 
 const CookieConsent = () => {
