@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '@fontsource/lato';
-import { scroller } from 'react-scroll';
+// import { scroller } from 'react-scroll';
+import { ScaleLoader } from 'react-spinners';
 
 const CookieConsent = () => {
 
@@ -8,6 +9,7 @@ const CookieConsent = () => {
     const [formSubmit, setFormSubmit] = useState(false);
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
+    const [showWaiting, setShowWaiting] = useState(false);
     const [isSubmit, setIsSubmit] = useState(false);
 
     const scrolling1 = () => {
@@ -34,10 +36,10 @@ const CookieConsent = () => {
     useEffect(() => {
         if (Object.keys(formErrors).length === 0 && isSubmit) {
             setShowWaiting(true);
-            dataLayer.push({
-                event: 'gtm_submission'
-            });
-            fetch('/api/gtmcontact', {
+            // dataLayer.push({
+            //     event: 'gtm_submission'
+            // });
+            fetch('/api/webinar/cookieContact', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -69,8 +71,8 @@ const CookieConsent = () => {
             errors.fullName = "Name is required!";
         }
 
-        if (!values.website) {
-            errors.website = "Website is required!";
+        if (!values.company) {
+            errors.company = "Company name is required!";
         }
 
         if (!values.email) {
@@ -86,11 +88,13 @@ const CookieConsent = () => {
         <main className='font-lato'>
             <div className='bg-[#2E2C37]'>
                 <div className="flex justify-between px-2 md:px-16 pt-5 ">
-                    <img
-                        src="/AnalyticsLiv Logo.png"
-                        alt="analyticsliv-logo"
-                        className="max-sm:h-12 max-md:h-16 max-sm:w-[45%] max-md:w-[30%] bg-white rounded-full px-4"
-                    />
+                    <a href='https://analyticsliv.com/' target='blank'>
+                        <img
+                            src="/AnalyticsLiv Logo.png"
+                            alt="analyticsliv-logo"
+                            className="max-sm:h-12 max-md:h-16 max-sm:w-[45%] max-md:w-[30%] bg-white rounded-full px-4"
+                        />
+                    </a>
                     <img
                         src="/Google_Marketing_Plateform_Certified_Logo 1.png"
                         alt="google-partner"
@@ -129,38 +133,44 @@ const CookieConsent = () => {
                 </div>
             </div>
             <section className='flex justify-end max-lg:flex-col'>
-                {formSubmit ? <div className='webinarForm lg:absolute max-md:mx-4 overflow-auto z-10 h-[400px] md:h-[450px] 2xl:h-[450px] md:my-10 lg:left-[8%] xl:left-[11%] 2xl:left-[13%] max-md:mt-4 md:top-[460px] xl:top-[400px] 2xl:top-[550px] lg:w-[350px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)]
+                {showWaiting ? <div className="fixed flex backdrop-blur top-0 left-0 right-0 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full"><ScaleLoader
+                    color="#271d90"
+                    loading
+                    size={100}
+                    className="m-auto align-middle"
+                /></div> :
+                    formSubmit ? <div className='webinarForm lg:absolute max-md:mx-4 overflow-auto z-10 h-[400px] md:h-[450px] 2xl:h-[450px] md:my-10 lg:left-[8%] xl:left-[11%] 2xl:left-[13%] max-md:mt-4 md:top-[460px] xl:top-[400px] 2xl:top-[550px] lg:w-[350px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)]
                  text-center flex flex-col justify-around items-center px-3 md:px-4 py-2 md:py-5 bg-white'>
-                    <h2 className="md:text-xl text-[#3C292A]">Thank you for showing interest with us!</h2>
-                    <h2 className="font-extrabold text-3xl p-4 md:p-8 border-dashed border-b-2 border-sky-200">We will get back to you shortly !!</h2>
-                    <img alt="Thankyou" className="w-64 mx-auto" src="https://storage.googleapis.com/website-bucket-uploads/static/Na_Dec_46.jpg" />
-                </div> :
-                    <div className='webinarForm lg:absolute max-md:mx-4 max-lg:mx-28 overflow-auto z-10 h-[400px] md:h-[450px] 2xl:h-[450px] md:my-10 lg:left-[8%] xl:left-[11%] 2xl:left-[13%] max-md:mt-4 md:top-[460px] xl:top-[400px] 2xl:top-[550px] lg:w-[350px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] 
+                        <h2 className="md:text-xl text-[#3C292A]">Thank you for showing interest with us!</h2>
+                        <h2 className="font-extrabold text-3xl p-4 md:p-8 border-dashed border-b-2 border-sky-200">We will get back to you shortly !!</h2>
+                        <img alt="Thankyou" className="w-64 mx-auto" src="https://storage.googleapis.com/website-bucket-uploads/static/Na_Dec_46.jpg" />
+                    </div> :
+                        <div className='webinarForm lg:absolute max-md:mx-4 max-lg:mx-28 overflow-auto z-10 h-[400px] md:h-[450px] 2xl:h-[450px] md:my-10 lg:left-[8%] xl:left-[11%] 2xl:left-[13%] max-md:mt-4 md:top-[460px] xl:top-[400px] 2xl:top-[550px] lg:w-[350px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] 
                 text-center flex flex-col justify-around items-center px-3 md:px-4 py-2 md:py-3 bg-white'>
 
-                        <h1 className='font-extrabold text-3xl md:text-[28px] text-[#3C292A]'>On Demand Webinar</h1>
+                            <h1 className='font-extrabold text-3xl md:text-[28px] text-[#3C292A]'>On Demand Webinar</h1>
 
-                        <div className='text-sm font-normal leading-4 text-[#3C292A]'>Register Now to optimize your data strategy while staying compliant with evolving privacy regulations.</div>
+                            <div className='text-sm font-normal leading-4 text-[#3C292A]'>Register Now to optimize your data strategy while staying compliant with evolving privacy regulations.</div>
 
-                        <form className='flex flex-col gap-3.5 md:gap-5 w-[90%] md:w-[80%]' onSubmit={handleSubmit}>
+                            <form className='flex flex-col gap-3.5 md:gap-5 w-[90%] md:w-[80%]' onSubmit={handleSubmit}>
 
-                            <input type='text' placeholder='Name*' style={{ boxShadow: '3px 3px 8px rgba(0, 0, 0, 0.3)' }}
-                                className='px-3 py-2 text-sm border border-[#3C292A] rounded-md' id="fullName" name="fullName" value={formValues.fullName} required onChange={handleChange} />
+                                <input type='text' placeholder='Name*' style={{ boxShadow: '3px 3px 8px rgba(0, 0, 0, 0.3)' }}
+                                    className='px-3 py-2 text-sm border border-[#3C292A] rounded-md' id="fullName" name="fullName" value={formValues.fullName} required onChange={handleChange} />
 
-                            <input type='email' placeholder='Email*' style={{ boxShadow: '3px 3px 8px rgba(0, 0, 0, 0.3)' }}
-                                className='px-3 py-2 text-sm border border-[#3C292A] rounded-md' id="email" name="email" value={formValues.email} required onChange={handleChange} />
+                                <input type='email' placeholder='Email*' style={{ boxShadow: '3px 3px 8px rgba(0, 0, 0, 0.3)' }}
+                                    className='px-3 py-2 text-sm border border-[#3C292A] rounded-md' id="email" name="email" value={formValues.email} required onChange={handleChange} />
 
-                            <input type='number' placeholder='Contact No' style={{ boxShadow: '3px 3px 8px rgba(0, 0, 0, 0.3)' }}
-                                className='px-3 py-2 text-sm border border-[#3C292A] rounded-md' id="contact" name="contact" value={formValues.contact} onChange={handleChange} />
+                                <input type='number' placeholder='Contact No' style={{ boxShadow: '3px 3px 8px rgba(0, 0, 0, 0.3)' }}
+                                    className='px-3 py-2 text-sm border border-[#3C292A] rounded-md' id="contact" name="contact" value={formValues.contact} onChange={handleChange} />
 
-                            <input type='text' placeholder='Your company*' style={{ boxShadow: '3px 3px 8px rgba(0, 0, 0, 0.3)' }}
-                                className='px-3 py-2 text-sm border border-[#3C292A] rounded-md' id="company" name="company" value={formValues.company} required onChange={handleChange} />
+                                <input type='text' placeholder='Your company*' style={{ boxShadow: '3px 3px 8px rgba(0, 0, 0, 0.3)' }}
+                                    className='px-3 py-2 text-sm border border-[#3C292A] rounded-md' id="company" name="company" value={formValues.company} required onChange={handleChange} />
 
-                            <button className='gtmbutn4 bg-gradient-to-l from-[#EB5442] to-[#ED7754] hover:border-black hover:border-[1px] hover:text-[#EB5442] border border-[#FFFFFF] rounded-md shadow-[2px_2px_3px_1px_rgba(0,0,0,0.25)] py-2 text-sm font-extrabold'>REGISTER NOW</button>
+                                <button className='gtmbutn4 bg-gradient-to-l from-[#EB5442] to-[#ED7754] hover:border-black hover:border-[1px] hover:text-[#EB5442] border border-[#FFFFFF] rounded-md shadow-[2px_2px_3px_1px_rgba(0,0,0,0.25)] py-2 text-sm font-extrabold'>REGISTER NOW</button>
 
-                        </form>
+                            </form>
 
-                    </div>}
+                        </div>}
                 <div className='max-lg:px-5 lg:pr-[0px] xl:pr-[30px] 2xl:pr-[10dvw] pt-10 lg:pt-20 flex max-lg:flex-col items-center gap-2 2xl:gap-5'>
                     <img src='/Point_Icon.png' alt='point-img' className='max-sm:h-8 max-sm:w-9' />
                     <div className='max-md:text-center'>Whether you're in marketing, web management, or data analytics, this webinar will <br className='max-md:hidden'></br>simplify the process of managing consent for you.</div></div>
