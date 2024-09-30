@@ -211,7 +211,7 @@ const google_tag_manager = () => {
                         </div>
                     </div>
                     <div className=' w-1/2 max-lg:hidden'>
-                        <img src='/gtm-banner.png' className='w-full h-full' alt='gtm' />
+                        <img src='/GTM_banner-new.png' className='w-full h-full' alt='gtm' />
                     </div>
                 </div>
             </section>
@@ -402,17 +402,17 @@ const google_tag_manager = () => {
 
 export default google_tag_manager
 
-export async function getServerSideProps(context) {
-    // Fetch data from external API
+// export async function getServerSideProps(context) {
+//     // Fetch data from external API
 
-    const res = await fetch(`${process.env.domain}/api/ga4brands`)
-    const brandsdata = await res.json()
+//     const res = await fetch(`${process.env.domain}/api/ga4brands`)
+//     const brandsdata = await res.json()
 
 
-    //console.log(brandsdata);
-    // Pass data to the page via props
-    return { props: { brandsdata } }
-}
+//     //console.log(brandsdata);
+//     // Pass data to the page via props
+//     return { props: { brandsdata } }
+// }
 
 
 

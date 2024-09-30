@@ -14,6 +14,7 @@ module.exports = {
         'gilroy': ['Gilroy-Bold' , 'sans-serif'],
         'gilroy2': ['Gilroy-Medium' , 'sans-serif'],
         'work-sans': ['Work Sans', 'sans-serif'],
+        lato: ['Lato', 'sans-serif'],
         rbt: ['Roboto', 'sans-serif'],
       },
       boxShadow: {
@@ -32,6 +33,7 @@ module.exports = {
         programeasure: '0 .5rem 1rem #2020205c',
         filtershadow: '0 2px 20px 1px rgba(0,0,0,.11)',
         allshadow: '0 .5rem 1rem #2020200a',
+        cookiePageShadow: '0px 1px 4px 0px #00000040',
       },
       colors: {
         btn: '#4285F4',
