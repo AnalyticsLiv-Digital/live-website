@@ -16,19 +16,19 @@ const handler = async (req, res) => {
     });
     await b.save();
 
-    var internalMailOptions = {
-      from: "support@analyticsliv.com",
-      to:"atulverma@analyticsliv.com",
-    //   to: [ "sales@analyticsliv.com", "anshul.d@analyticsliv.com", "anuj@analyticsliv.com", "nitya@analyticsliv.com", "rajvi@analyticsliv.com", "ansuya@analyticsliv.com","aditya.trivedi@analyticsliv.com","tanu.singh@analyticsliv.com"],
-      subject: 'New Registartion for Cookie-consent webinar.',
-      html: `Enquiry Submitted by <br> Full Name - ${req.body.fullName}  <br> Email- ${req.body.email} <br> Contact - ${req.body.contact} <br> Message - ${req.body.message} <br> Website - ${req.body.company} `
-    };
+      var internalMailOptions = {
+          from: "support@analyticsliv.com",
+          //   to:"atulverma@analyticsliv.com",
+          to: ["sales@analyticsliv.com" ,"anshul.d@analyticsliv.com", "anuj@analyticsliv.com", "nitya@analyticsliv.com", "rajvi@analyticsliv.com", "abhishek.tiwari@analyticsliv.com", "shubhangi@analyticsliv.com"],
+          subject: 'New Registartion for Cookie-consent webinar.',
+          html: `Enquiry Submitted by <br> Full Name - ${req.body.fullName}  <br> Email- ${req.body.email} <br> Contact - ${req.body.contact} <br> Message - ${req.body.message} <br> Website - ${req.body.company} `
+      };
 
 
     var userMailOptions = {
       from: "sales@analyticsliv.com",
         to: [req.body.email],
-        subject: 'Analyticsliv - Thankyou for contacting us.',
+        subject: 'Analyticsliv - Thankyou for registering.',
         html: `Hi ${req.body.fullName},<br>
                 Thank you for registering for our webinar on Cookie Consent hosted by AnalyticsLiv, a leading Google Marketing Platform Partner in India. We are excited to have you join us as we explore best practices and strategies to
                  manage cookie consent and ensure compliance with privacy regulations.<br>
