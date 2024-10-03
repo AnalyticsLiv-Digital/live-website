@@ -210,19 +210,6 @@ input[type=number] {
   top: 0;
 } */
 
-.cookiebutn {
-  @apply  bg-white bg-gradient-to-r from-[#0057E9] to-[#00AFD8] bg-clip-text text-transparent hover:bg-[#0D8CA4] hover:text-white cursor-pointer inline px-[40px] transition-all duration-500 ease-linear shadow-foter rounded-md py-2 text-base font-medium
-}
-
-.gradient-text {
-  background: linear-gradient(90deg, #3D155E 0%, #DE668A 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent; /* Optional, to ensure no color shows through */
-}
-
-
 /* GTM NEW PAGE CSS */
 #sticky-section {
   position: relative; /* Start as relative */

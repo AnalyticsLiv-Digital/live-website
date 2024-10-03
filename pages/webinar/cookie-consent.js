@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import '@fontsource/lato';
-import { scroller } from 'react-scroll';
+import React, { useEffect, useState } from "react";
+import "@fontsource/lato";
+import { scroller } from "react-scroll";
+import { ScaleLoader } from "react-spinners";
 import Marquee from "react-fast-marquee";
 
 export default function CookieConsent({ brandsdata }) {
-
   const initialValues = { fullName: "", email: "", contact: "", company: "" };
-    const [formSubmit, setFormSubmit] = useState(false);
-    const [formValues, setFormValues] = useState(initialValues);
-    const [formErrors, setFormErrors] = useState({});
-    const [isSubmit, setIsSubmit] = useState(false);
-    const [isSticky, setIsSticky] = useState(false);
+  const [formSubmit, setFormSubmit] = useState(false);
+  const [formValues, setFormValues] = useState(initialValues);
+  const [formErrors, setFormErrors] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
+  const [showWaiting, setShowWaiting] = useState(false);
 
   const scrolling1 = () => {
     scroller.scrollTo("webinarForm", {
@@ -32,36 +33,35 @@ export default function CookieConsent({ brandsdata }) {
     setIsSubmit(true);
   };
 
-    useEffect(() => {
-        if (Object.keys(formErrors).length === 0 && isSubmit) {
-            setShowWaiting(true);
-            dataLayer.push({
-                event: 'gtm_submission'
-            });
-            fetch('/api/gtmcontact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'mode': 'no-cors'
-                },
-                body: JSON.stringify({
-                    "fullName": formValues.fullName,
-                    "email": formValues.email,
-                    "contact": formValues.contact,
-                    "company": formValues.company,
-                }),
-            })
-                .then((response) => response.json())
-                .then((data) => {
-                    setFormSubmit(true);
-                    setShowWaiting(false);
-                })
-                .catch((error) => {
-                    console.error('Error:', error);
-                });
-
-        }
-    }, [formErrors]);
+  useEffect(() => {
+    if (Object.keys(formErrors).length === 0 && isSubmit) {
+      setShowWaiting(true);
+      // dataLayer.push({
+      //     event: 'gtm_submission'
+      // });
+      fetch("/api/webinar/cookieContact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          mode: "no-cors",
+        },
+        body: JSON.stringify({
+          fullName: formValues.fullName,
+          email: formValues.email,
+          contact: formValues.contact,
+          company: formValues.company,
+        }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          setFormSubmit(true);
+          setShowWaiting(false);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    }
+  }, [formErrors]);
 
   const validate = (values) => {
     const errors = {};
@@ -71,7 +71,7 @@ export default function CookieConsent({ brandsdata }) {
     }
 
     if (!values.company) {
-      errors.company = "company is required!";
+      errors.company = "Company name is required!";
     }
 
     if (!values.email) {
@@ -104,141 +104,150 @@ export default function CookieConsent({ brandsdata }) {
     };
   }, []);
 
-    return (
-      <main className="font-lato">
-        <div className="bg-[#2E2C37]">
-          <div className="flex justify-between max-sm:gap-2 px-2 md:px-16 pt-5 ">
-            <img
-              src="/AnalyticsLiv Logo.png"
-              alt="analyticsliv-logo"
-              className="max-sm:h-11 max-md:h-16 max-sm:w-[140px] max-md:w-[30%] bg-white rounded-full px-4"
-            />
-            <img
-              src="/Google_Marketing_Plateform_Certified_Logo 1.png"
-              alt="google-partner"
-              className="max-sm:h-11 max-md:h-16 max-sm:w-[140px] max-md:w-[30%] "
-            />
-          </div>
-          <div
-            className=" 2xl:h-[750px] max-lg:h-[400px] max-md:h-[250px] max-2xl:h-[525px]"
-            style={{
-              backgroundImage: "url(/vectormain.png)",
-              backgroundSize: "contain",
-              backgroundPosition: "bottom right",
-              backgroundRepeat: "no-repeat",
-            }}
-          >
-            <div className="flex-grow flex justify-between items-center relative max-sm:px-2 sm:pr-5 2xl:px-10">
-              <div className="text-left max-md:pt-5 flex-1 sm:pl-[5dvw] md:pl-[10dvw] xl:pl-[17dvw] 2xl:pl-[11dvw]">
+  return (
+    <main className="font-lato">
+      <div className="bg-[#2E2C37]">
+        <div className="flex justify-between max-sm:gap-2 px-2 md:px-16 pt-5 ">
+          <img
+            src="/AnalyticsLiv Logo.png"
+            alt="analyticsliv-logo"
+            className="max-sm:h-11 max-md:h-16 max-sm:w-[140px] max-md:w-[30%] bg-white rounded-full px-4"
+          />
+          <img
+            src="/Google_Marketing_Plateform_Certified_Logo 1.png"
+            alt="google-partner"
+            className="max-sm:h-11 max-md:h-16 max-sm:w-[140px] max-md:w-[30%] "
+          />
+        </div>
+        <div
+          className=" 2xl:h-[750px] max-lg:h-[400px] max-md:h-[250px] max-2xl:h-[525px]"
+          style={{
+            backgroundImage: "url(/vectormain.png)",
+            backgroundSize: "contain",
+            backgroundPosition: "bottom right",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <div className="flex-grow flex justify-between items-center relative max-sm:px-2 sm:pr-5 2xl:px-10">
+            <div className="text-left max-md:pt-5 flex-1 sm:pl-[5dvw] md:pl-[10dvw] xl:pl-[17dvw] 2xl:pl-[11dvw]">
               <div className="text-2xl md:text-3xl 2xl:text-4xl font-black text-white mb-6 font-lato max-md:text-center">
                 Google Basic Consent vs. Advanced Consent - Optimising Your Data
                 Strategy
               </div>
-                <div className="text-base text-white mb-8 font-lato max-md:text-center">
-                  Watch the recorded session with Shubhangi and Abhishek from
-                  AnalyticsLiv Digital, as they break down Google Consent Mode.
-                </div>
+              <div className="text-base text-white mb-8 font-lato max-md:text-center">
+                Watch the recorded session with Shubhangi and Abhishek from
+                AnalyticsLiv Digital, as they break down Google Consent Mode.
               </div>
+            </div>
 
-              <div className="flex-none">
-                <img
-                  src="/IMG.png"
-                  alt="main-img"
-                  className="2xl:h-[750px] max-2xl:h-[525px] max-lg:h-[400px] max-md:h-[250px] max-sm:hidden"
-                />
-              </div>
+            <div className="flex-none">
+              <img
+                src="/IMG.png"
+                alt="main-img"
+                className="2xl:h-[750px] max-2xl:h-[525px] max-lg:h-[400px] max-md:h-[250px] max-sm:hidden"
+              />
             </div>
           </div>
         </div>
-        <section className="flex justify-end max-lg:flex-col">
-          {formSubmit ? (
-            <div
-              className="webinarForm lg:absolute max-md:mx-4 overflow-auto z-10 h-[400px] md:h-[475px] 2xl:h-[550px] md:my-10 lg:left-[8%] xl:left-[17%] 2xl:left-[13%] max-md:mt-4 md:top-[460px] xl:top-[400px] 2xl:top-[550px] lg:w-[350px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)]
-                 text-center flex flex-col justify-around items-center px-3 md:px-4 py-2 md:py-5 bg-white"
+      </div>
+      <section className="flex justify-end max-lg:flex-col">
+        {showWaiting ? (
+          <div className="fixed flex backdrop-blur top-0 left-0 right-0 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
+            <ScaleLoader
+              color="#271d90"
+              loading
+              size={100}
+              className="m-auto align-middle"
+            />
+          </div>
+        ) : formSubmit ? (
+          <div
+            className="webinarForm lg:absolute max-md:mx-4 overflow-auto z-10 h-[400px] md:h-[475px] 2xl:h-[550px] md:my-10 lg:left-[8%] xl:left-[17%] 2xl:left-[13%] max-md:mt-4 md:top-[460px] xl:top-[400px] 2xl:top-[550px] lg:w-[350px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)]
+                   text-center flex flex-col justify-around items-center px-3 md:px-4 py-2 md:py-5 bg-white"
+          >
+            <h2 className="md:text-xl text-[#3C292A]">
+              Thank you for showing interest with us!
+            </h2>
+            <h2 className="font-extrabold text-3xl p-4 md:p-8 border-dashed border-b-2 border-sky-200">
+              We will get back to you shortly !!
+            </h2>
+            <img
+              alt="Thankyou"
+              className="w-64 mx-auto"
+              src="https://storage.googleapis.com/website-bucket-uploads/static/Na_Dec_46.jpg"
+            />
+          </div>
+        ) : (
+          <div
+            className="webinarForm lg:absolute max-md:mx-4 max-lg:mx-28 overflow-auto z-10 h-[400px] md:h-[475px] 2xl:h-[550px] md:my-10 lg:left-[8%] xl:left-[17%] 2xl:left-[13%] max-md:mt-4 md:top-[460px] xl:top-[400px] 2xl:top-[550px] lg:w-[350px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] 
+                  text-center flex flex-col justify-around items-center px-3 md:px-4 xl:px-7 py-2 md:py-3 bg-white"
+          >
+            <h1 className="font-extrabold text-3xl md:text-[28px] text-[#3C292A]">
+              On Demand Webinar
+            </h1>
+
+            <div className="text-sm font-normal leading-4 text-[#3C292A]">
+              Register Now to optimize your data strategy while staying
+              compliant with evolving privacy regulations.
+            </div>
+
+            <form
+              className="flex flex-col gap-3.5 md:gap-6 2xl:gap-8 w-[90%] md:w-[90%]"
+              onSubmit={handleSubmit}
             >
-              <h2 className="md:text-xl text-[#3C292A]">
-                Thank you for showing interest with us!
-              </h2>
-              <h2 className="font-extrabold text-3xl p-4 md:p-8 border-dashed border-b-2 border-sky-200">
-                We will get back to you shortly !!
-              </h2>
-              <img
-                alt="Thankyou"
-                className="w-64 mx-auto"
-                src="https://storage.googleapis.com/website-bucket-uploads/static/Na_Dec_46.jpg"
+              <input
+                type="text"
+                placeholder="Name*"
+                style={{ boxShadow: "3px 3px 8px rgba(0, 0, 0, 0.3)" }}
+                className="px-3 py-2 text-sm border border-[#3C292A] rounded-md"
+                id="fullName"
+                name="fullName"
+                value={formValues.fullName}
+                required
+                onChange={handleChange}
               />
-            </div>
-          ) : (
-            <div
-              className="webinarForm lg:absolute max-md:mx-4 max-lg:mx-28 overflow-auto z-10 h-[400px] md:h-[475px] 2xl:h-[550px] md:my-10 lg:left-[8%] xl:left-[17%] 2xl:left-[13%] max-md:mt-4 md:top-[460px] xl:top-[400px] 2xl:top-[550px] lg:w-[350px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] 
-                text-center flex flex-col justify-around items-center px-3 md:px-4 xl:px-7 py-2 md:py-3 bg-white"
-            >
-              <h1 className="font-extrabold text-3xl md:text-[28px] text-[#3C292A]">
-                On Demand Webinar
-              </h1>
 
-              <div className="text-sm font-normal leading-4 text-[#3C292A]">
-                Register Now to optimize your data strategy while staying
-                compliant with evolving privacy regulations.
-              </div>
+              <input
+                type="email"
+                placeholder="Email*"
+                style={{ boxShadow: "3px 3px 8px rgba(0, 0, 0, 0.3)" }}
+                className="px-3 py-2 text-sm border border-[#3C292A] rounded-md"
+                id="email"
+                name="email"
+                value={formValues.email}
+                required
+                onChange={handleChange}
+              />
 
-              <form
-                className="flex flex-col gap-3.5 md:gap-6 2xl:gap-8 w-[90%] md:w-[90%]"
-                onSubmit={handleSubmit}
-              >
-                <input
-                  type="text"
-                  placeholder="Name*"
-                  style={{ boxShadow: "3px 3px 8px rgba(0, 0, 0, 0.3)" }}
-                  className="px-3 py-2 text-sm border border-[#3C292A] rounded-md"
-                  id="fullName"
-                  name="fullName"
-                  value={formValues.fullName}
-                  required
-                  onChange={handleChange}
-                />
+              <input
+                type="number"
+                placeholder="Contact No"
+                style={{ boxShadow: "3px 3px 8px rgba(0, 0, 0, 0.3)" }}
+                className="px-3 py-2 text-sm border border-[#3C292A] rounded-md"
+                id="contact"
+                name="contact"
+                value={formValues.contact}
+                onChange={handleChange}
+              />
 
-                <input
-                  type="email"
-                  placeholder="Email*"
-                  style={{ boxShadow: "3px 3px 8px rgba(0, 0, 0, 0.3)" }}
-                  className="px-3 py-2 text-sm border border-[#3C292A] rounded-md"
-                  id="email"
-                  name="email"
-                  value={formValues.email}
-                  required
-                  onChange={handleChange}
-                />
+              <input
+                type="text"
+                placeholder="Your company*"
+                style={{ boxShadow: "3px 3px 8px rgba(0, 0, 0, 0.3)" }}
+                className="px-3 py-2 text-sm border border-[#3C292A] rounded-md"
+                id="company"
+                name="company"
+                value={formValues.company}
+                required
+                onChange={handleChange}
+              />
 
-                <input
-                  type="number"
-                  placeholder="Contact No"
-                  style={{ boxShadow: "3px 3px 8px rgba(0, 0, 0, 0.3)" }}
-                  className="px-3 py-2 text-sm border border-[#3C292A] rounded-md"
-                  id="contact"
-                  name="contact"
-                  value={formValues.contact}
-                  onChange={handleChange}
-                />
-
-                <input
-                  type="text"
-                  placeholder="Your company*"
-                  style={{ boxShadow: "3px 3px 8px rgba(0, 0, 0, 0.3)" }}
-                  className="px-3 py-2 text-sm border border-[#3C292A] rounded-md"
-                  id="company"
-                  name="company"
-                  value={formValues.company}
-                  required
-                  onChange={handleChange}
-                />
-
-                <button className="gtmbutn4 bg-gradient-to-l from-[#EB5442] to-[#ED7754] hover:border-black hover:border-[1px] hover:text-[#EB5442] border border-[#FFFFFF] rounded-md shadow-[2px_2px_3px_1px_rgba(0,0,0,0.25)] py-2 text-sm font-extrabold">
-                  REGISTER NOW
-                </button>
-              </form>
-            </div>
-          )}
+              <button className="gtmbutn4 bg-gradient-to-l from-[#EB5442] to-[#ED7754] hover:border-black hover:border-[1px] hover:text-[#EB5442] border border-[#FFFFFF] rounded-md shadow-[2px_2px_3px_1px_rgba(0,0,0,0.25)] py-2 text-sm font-extrabold">
+                REGISTER NOW
+              </button>
+            </form>
+          </div>
+        )}
         <div className="w-full lg:w-[55%] xl:w-[47%] 2xl:w-[55%] pt-12 sm:pt-5 lg:pb-10">
           <div className="text-[35px] font-bold text-[#3C292A] pb-2 xl:pb-6 xl:font-extrabold text-center">
             <span className="inline-block relative">
@@ -415,53 +424,53 @@ export default function CookieConsent({ brandsdata }) {
         </section>
       </section>
 
-        <section
-          id="sticky-section"
-          className={`bg-gradient-to-l from-[#EB5442] to-[#ED7754] max-md:py-3 md:py-5 max-md:gap-0 flex items-center justify-between lg:justify-center 
-                    lg:gap-16 xl:gap-16 px-3.5 md:px-5 lg:px-8 xl:px-16 2xl:px-56  transform transition-all duration-1000 ease-in-out ${
-                      isSticky
-                        ? "sticky translate-y-0  transform transition-all duration-1000 ease-out"
-                        : "transform transition-all duration-1000 ease-in-out translate-y-10"
-                    }`}
-        >
+      <section
+        id="sticky-section"
+        className={`bg-gradient-to-l from-[#EB5442] to-[#ED7754] max-md:py-3 md:py-5 max-md:gap-0 flex items-center justify-between lg:justify-center 
+                      lg:gap-16 xl:gap-16 px-3.5 md:px-5 lg:px-8 xl:px-16 2xl:px-56  transform transition-all duration-1000 ease-in-out ${
+                        isSticky
+                          ? "sticky translate-y-0  transform transition-all duration-1000 ease-out"
+                          : "transform transition-all duration-1000 ease-in-out translate-y-10"
+                      }`}
+      >
         <div className="text-[12px] max-sm:w-[60%] max-lg:w-[77%] md:text-xl font-semibold text-white">
           Are you looking for the right partner to implement Cookie consent for
           your business?
         </div>
-          <a
-            onClick={scrolling1}
-            target="_blank"
-            className="max-sm:w-[107px] bg-white text-[#ED7754] cursor-pointer shadow-foter 
-                        py-2 border rounded-[5px] px-2 sm:px-3 text-[11px] md:text-sm font-semibold sm:hover:text-[14.1px]"
-          >
-            Contact Us Now
-          </a>
-        </section>
-        <div className="bg-[#E8FBFB] py-5 flex flex-col gap-3 px-4 lg:px-20">
-          <h2 className="text-center font-bold text-base lg:text-3xl xl:font-extrabold">
-            Trusted by Organisations Worldwide
-          </h2>
-          <div className="brandsimages flex space-x-8 justify-center py-4 px-4 mt-4">
-            <Marquee gradient={false} pauseOnHover="true">
-              {brandsdata?.brand.map((brands, key) => (
-                <div key={key}>
-                  <img src={brands.logo} alt={brands.brands} />
-                </div>
-              ))}
-            </Marquee>
-          </div>
+        <a
+          onClick={scrolling1}
+          target="_blank"
+          className="max-sm:w-[107px] bg-white text-[#ED7754] cursor-pointer shadow-foter 
+                          py-2 border rounded-[5px] px-2 sm:px-3 text-[11px] md:text-sm font-semibold sm:hover:text-[14.1px]"
+        >
+          Contact Us Now
+        </a>
+      </section>
+      <div className="bg-[#E8FBFB] py-5 flex flex-col gap-3 px-4 lg:px-20">
+        <h2 className="text-center font-bold text-base lg:text-3xl xl:font-extrabold">
+          Trusted by Organisations Worldwide
+        </h2>
+        <div className="brandsimages flex space-x-8 justify-center py-4 px-4 mt-4">
+          <Marquee gradient={false} pauseOnHover="true">
+            {brandsdata?.brand.map((brands, key) => (
+              <div key={key}>
+                <img src={brands.logo} alt={brands.brands} />
+              </div>
+            ))}
+          </Marquee>
         </div>
+      </div>
 
-        <section className="bg-[#2E2C37] w-full h-full flex justify-center py-2 px-2 md:px-4 md:py-4 lg:py-8 lg:px-10">
-          <img
-            onClick={scrolling1}
-            src="/Webinar_Landing_Page_Banner_1 (1).png"
-            alt="footer-banner"
-            className="w-full cursor-pointer"
-          />
-        </section>
-      </main>
-    );
+      <section className="bg-[#2E2C37] w-full h-full flex justify-center py-2 px-2 md:px-4 md:py-4 lg:py-8 lg:px-10">
+        <img
+          onClick={scrolling1}
+          src="/Webinar_Landing_Page_Banner_1 (1).png"
+          alt="footer-banner"
+          className="w-full cursor-pointer"
+        />
+      </section>
+    </main>
+  );
 }
 
 export async function getServerSideProps(context) {
@@ -473,10 +482,4 @@ export async function getServerSideProps(context) {
   //console.log(brandsdata);
   // Pass data to the page via props
   return { props: { brandsdata } };
-}
-
-{
-  /* <footer className='bg-white py-2'>
-                <div className='text-sm md:text-base 2xltext-lg text-center font-medium'>Copyright @ 2024 AnalyticsLiv</div>
-            </footer> */
 }
