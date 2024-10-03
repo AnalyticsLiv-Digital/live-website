@@ -239,7 +239,7 @@ export default function CookieConsent({ brandsdata }) {
               </form>
             </div>
           )}
-        <div className="w-full lg:w-[60%] xl:w-[55%] pt-12 sm:pt-5 lg:pb-10">
+        <div className="w-full lg:w-[55%] xl:w-[47%] 2xl:w-[55%] pt-12 sm:pt-5 lg:pb-10">
           <div className="text-[35px] font-bold text-[#3C292A] pb-2 xl:pb-6 xl:font-extrabold text-center">
             <span className="inline-block relative">
               Meet&nbsp;
