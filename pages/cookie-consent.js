@@ -178,7 +178,9 @@ const cookieLanding = ({ brandsdata }) => {
             ensuring GDPR compliance.
           </div>
           <div className="flex max-md:flex-col max-md:mx-5 justify-center lg:justify-start gap-4 lg:gap-8">
-            <button className="butn">Watch Our Webinar</button>
+            <a href="/webinar/cookie-consent" target="_blank"  className="butn text-center">
+             Watch Our Webinar
+            </a>
             <button className="butn">Let’s Get in Touch</button>
           </div>
         </div>
@@ -428,9 +430,9 @@ const cookieLanding = ({ brandsdata }) => {
             Are you looking for the right partner to implement Cookie consent
             for your business?
           </div>
-          <button className="max-sm:w-[220px] max-xl:w-[270px] text-white text-xs md:text-base lg:text-lg font-semibold border border-white rounded-[5px] px-1 md:px-4 py-2">
-            Contact Us Now
-          </button>
+          <a href="/contact?id=cookie-consent" target="_blank" className="text-center max-sm:w-[220px] max-xl:w-[270px] text-white text-xs md:text-base lg:text-lg font-semibold border border-white rounded-[5px] px-1 md:px-4 py-2">
+              Contact Us Now
+          </a>
         </div>
       </section>
 
@@ -504,7 +506,9 @@ const cookieLanding = ({ brandsdata }) => {
             </div>
           </div>
           <div className=" flex justify-center">
-            <button className="butn max-md:mt-10">Talk to our Expert</button>
+            <a href="/contact?id=cookie-consent" target="_blank" className="butn max-md:mt- text-center">
+              Talk to our Expert
+            </a>
           </div>
         </div>
       </section>
