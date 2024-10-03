@@ -155,11 +155,17 @@ export default function CookieConsent({ brandsdata }) {
                 </div>
             </div>
             <section className="flex justify-end max-lg:flex-col">
-                {formSubmit ? (
-                    <div
-                        className="webinarForm lg:absolute max-md:mx-4 overflow-auto z-10 h-[400px] md:h-[475px] 2xl:h-[550px] md:my-10 lg:left-[8%] xl:left-[17%] 2xl:left-[13%] max-md:mt-4 md:top-[460px] xl:top-[400px] 2xl:top-[550px] lg:w-[350px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)]
+                {showWaiting ? <div className="fixed flex backdrop-blur top-0 left-0 right-0 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full"><ScaleLoader
+                    color="#271d90"
+                    loading
+                    size={100}
+                    className="m-auto align-middle"
+                /></div> :
+                    formSubmit ? (
+                        <div
+                            className="webinarForm lg:absolute max-md:mx-4 overflow-auto z-10 h-[400px] md:h-[475px] 2xl:h-[550px] md:my-10 lg:left-[8%] xl:left-[17%] 2xl:left-[13%] max-md:mt-4 md:top-[460px] xl:top-[400px] 2xl:top-[550px] lg:w-[350px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)]
                    text-center flex flex-col justify-around items-center px-3 md:px-4 py-2 md:py-5 bg-white"
-                    >
+                        >
                         <h2 className="md:text-xl text-[#3C292A]">
                             Thank you for showing interest with us!
                         </h2>

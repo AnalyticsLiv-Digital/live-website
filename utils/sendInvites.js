@@ -13,7 +13,7 @@ oAuth2Client.setCredentials({
 
 const calendar = google.calendar({ version: 'v3', auth: oAuth2Client });
 
-const addAttendeeToEvent = async (email, fullName, eventId , userMessage= 'Thanks testing of invite custom messege,,,,....') => {
+const addAttendeeToEvent = async (email, fullName, eventId) => {
     try {
 
 
@@ -42,7 +42,7 @@ const addAttendeeToEvent = async (email, fullName, eventId , userMessage= 'Thank
             eventId: eventId,
         });
 
-        console.log("iugfdfghjk/",event.data)
+        console.log("iugfdfghjk/", event.data)
 
         if (!event.data.attendees) {
             event.data.attendees = []; // Initialize as an empty array if not defined
@@ -53,11 +53,11 @@ const addAttendeeToEvent = async (email, fullName, eventId , userMessage= 'Thank
             displayName: fullName,
         });
 
-        if (userMessage) {
-            event.data.description = event.data.description
-                ? `${event.data.description}\n\nCustom Message for ${fullName}: ${userMessage}`
-                : `Custom Message for ${fullName}: ${userMessage}`;
-        }
+        // if (userMessage) {
+        //     event.data.description = event.data.description
+        //         ? `${event.data.description}\n\nCustom Message for ${fullName}: ${userMessage}`
+        //         : `Custom Message for ${fullName}: ${userMessage}`;
+        // }
 
         const updatedEvent = await calendar.events.patch({
             calendarId: 'primary',
@@ -66,30 +66,11 @@ const addAttendeeToEvent = async (email, fullName, eventId , userMessage= 'Thank
             sendUpdates: 'all',
         });
 
-        console.log("sucessfully send the invite....",updatedEvent.data)
         return updatedEvent.data;
-
-        return null;
     } catch (error) {
         console.error(`Error adding attendee: ${error.message}`);
         throw error;
     }
 };
 
-module.exports = {addAttendeeToEvent}
-
-
-
-// // Test function
-// (async () => {
-//     try {
-//         const result = await addAttendeeToEvent(
-//             'atul.verma@analyticsliv.com',
-//             'Atul',
-//             '0tv5eokl6k817am5ab5rov6pfr'
-//         );
-//         console.log(result);
-//     } catch (err) {
-//         console.error(err);
-//     }
-// })();
+module.exports = { addAttendeeToEvent };
