@@ -16,7 +16,7 @@ const handler = async (req, res) => {
         company: req.body.company
 
       });
-      // await b.save();
+      await b.save();
 
       var internalMailOptions = {
         from: "support@analyticsliv.com",
