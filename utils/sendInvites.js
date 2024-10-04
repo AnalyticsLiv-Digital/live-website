@@ -13,9 +13,9 @@ oAuth2Client.setCredentials({
 
 const calendar = google.calendar({ version: 'v3', auth: oAuth2Client });
 
-const addAttendeeToEvent = async (email, fullName, eventId) => {
+const addAttendeeToEvent = async (email, fullName) => {
     try {
-
+        const eventId = process.env.EVENT_ID;
 
         // const response = await calendar.events.list({
         //     calendarId: 'primary', // or your specific calendar ID
@@ -41,8 +41,6 @@ const addAttendeeToEvent = async (email, fullName, eventId) => {
             calendarId: 'primary',
             eventId: eventId,
         });
-
-        console.log("iugfdfghjk/", event.data)
 
         if (!event.data.attendees) {
             event.data.attendees = []; // Initialize as an empty array if not defined

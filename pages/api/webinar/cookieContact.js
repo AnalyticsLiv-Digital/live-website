@@ -5,8 +5,6 @@ import { addAttendeeToEvent } from "../../../utils/sendInvites";
 
 const handler = async (req, res) => {
   try {
-    // need to create a monogo queerry which fetch event id from mongodb....
-    const eventId = "dfghjklkjhgfghjkl"
     if (req.method == 'POST') {
 
       // fetch('https://script.google.com/macros/s/AKfycbzzDNTOkygX5WJA9vcnns-fEF6L4VIKy3qE2kcBpMF7J-Rf39Ee-ilPMkiFhAv7I2EN/exec?fullname=' + req.body.fullName + '&email=' + req.body.email + '&contact=' + req.body.contact + '&message=' + req.body.message + '&company=' + req.body.company);
@@ -18,7 +16,7 @@ const handler = async (req, res) => {
         company: req.body.company
 
       });
-      // await b.save();
+      await b.save();
 
       var internalMailOptions = {
         from: "support@analyticsliv.com",
@@ -42,9 +40,12 @@ const handler = async (req, res) => {
                 Email: <a href="mailto:support@analyticsliv.com">support@analyticsliv.com</a><br>`
       };
 
-      await sendEmail(internalMailOptions.to, internalMailOptions.subject, internalMailOptions.html, internalMailOptions?.from);
-      await sendEmail(userMailOptions.to, userMailOptions.subject, userMailOptions.html, userMailOptions?.from);
-      await addAttendeeToEvent(req.body.email, req.body.fullName, eventId);
+      await Promise.all([
+        sendEmail(internalMailOptions.to, internalMailOptions.subject, internalMailOptions.html, internalMailOptions?.from),
+        sendEmail(userMailOptions.to, userMailOptions.subject, userMailOptions.html, userMailOptions?.from),
+        addAttendeeToEvent(req.body.email, req.body.fullName)
+      ]);
+      
 
     } else {
       res.status(400).json({ error: "Bad Request" });
