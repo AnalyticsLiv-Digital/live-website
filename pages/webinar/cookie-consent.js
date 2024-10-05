@@ -3,6 +3,10 @@ import "@fontsource/lato";
 import { scroller } from "react-scroll";
 import { ScaleLoader } from "react-spinners";
 import Marquee from "react-fast-marquee";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { FaArrowLeft, FaArrowRight, FaLongArrowAltRight } from "react-icons/fa";
 
 export default function CookieConsent({ brandsdata }) {
   const initialValues = { fullName: "", email: "", contact: "", company: "" };
@@ -13,6 +17,93 @@ export default function CookieConsent({ brandsdata }) {
   const [isSticky, setIsSticky] = useState(false);
   const [showWaiting, setShowWaiting] = useState(false);
 
+  const NextArrow = (props) => {
+    const { onClick } = props;
+    return (
+      <div
+        className="absolute top-1/2 right-[-12px] md:right-[-20px] lg:right-[-40px] transform -translate-y-1/2 z-10 cursor-pointer"
+        onClick={onClick}
+      >
+        <FaArrowRight size={20} />
+      </div>
+    );
+  };
+
+  const PrevArrow = (props) => {
+    const { onClick } = props;
+    return (
+      <div
+        className="absolute top-1/2 left-[-12px] md:left-[-20px] lg:left-[-40px] transform -translate-y-1/2 z-10 cursor-pointer"
+        onClick={onClick}
+      >
+        <FaArrowLeft size={20} />
+      </div>
+    );
+  };
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 1500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    initialSlide: 0,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    responsive: [
+      {
+        breakpoint: 1150,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          speed: 1000,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 988,
+        settings: {
+          dots: false,
+          speed: 1000,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          dots: false,
+          speed: 1000,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          dots: false,
+          speed: 1000,
+          // nextArrow: false,
+          // prevArrow: false,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
   const scrolling1 = () => {
     scroller.scrollTo("webinarForm", {
       duration: 500,
@@ -120,7 +211,7 @@ export default function CookieConsent({ brandsdata }) {
           />
         </div>
         <div
-          className=" 2xl:h-[750px] max-lg:h-[400px] max-md:h-[250px] max-2xl:h-[525px]"
+          className=" 2xl:h-[750px] xl:h-[560px] max-sm:h-[450px] max-md:h-[350px] max-lg:h-[400px] max-xl:h-[525px] mt-5"
           style={{
             backgroundImage: "url(/vectormain.png)",
             backgroundSize: "contain",
@@ -129,14 +220,53 @@ export default function CookieConsent({ brandsdata }) {
           }}
         >
           <div className="flex-grow flex justify-between items-center relative max-sm:px-2 sm:pr-5 2xl:px-10">
-            <div className="text-left max-md:pt-5 flex-1 sm:pl-[5dvw] md:pl-[10dvw] xl:pl-[17dvw] 2xl:pl-[11dvw]">
-              <div className="text-2xl md:text-3xl 2xl:text-4xl font-black text-white mb-6 font-lato max-md:text-center">
+            <div className="text-left max-md:pt-5 flex-1 sm:pl-[5dvw] md:px-[4dvw] lg:px-0 lg:pl-[13dvw] xl:pl-[17dvw] 2xl:pt-0 xl:pt-[100px] 2xl:pl-[11dvw]">
+              <div className="text-2xl md:text-3xl 2xl:text-4xl md:pt-4 lg:pt-14 xl:pt-5 2xl:pt-48 font-black text-white mb-6 max-sm:mb-5 font-lato max-lg:text-center">
+                Join <span className="flashing-text">WEBINAR</span> for,
+                <br></br>
                 Google Basic Consent vs. Advanced Consent - Optimising Your Data
                 Strategy
               </div>
-              <div className="text-base text-white mb-8 font-lato max-md:text-center">
-                Watch the recorded session with Shubhangi and Abhishek from
-                AnalyticsLiv Digital, as they break down Google Consent Mode.
+              <div className="text-base text-white mb-12 sm:mb-8 xl:mb-5 font-lato max-lg:text-center">
+                You should Join this insightful webinar, Whether you're in
+                marketing, web management, or data analytics, this webinar will
+                simplify the process of managing consent for you.
+              </div>
+              <div className="flex justify-center lg:justify-start lg:gap-16 max-md:justify-evenly items-center gap-0 sm:gap-5 md:gap-12">
+                <div className="flex flex-col items-center justify-center">
+                  <img
+                    src="/calendar (5).png"
+                    alt="calender"
+                    className=" w-[65px] h-[65px] max-lg:w-[35px] max-lg:h-[35px] lg:w-[55px] lg:h-[55px]"
+                  />
+                  <div className="text-white text-xs sm:text-base font-extrabold pt-1.5 sm:pt-3 text-center">
+                    15th Oct
+                  </div>
+                </div>
+                <div>
+                  <div className="flex flex-col items-center justify-center">
+                    <img
+                      src="/clock (3) 2.png"
+                      alt="clock"
+                      className="w-[65px] h-[65px] max-lg:w-[35px] max-lg:h-[35px] lg:w-[55px] lg:h-[55px]"
+                    />
+                    <div className="text-white text-xs sm:text-base font-extrabold pt-1.5 sm:pt-3">
+                      9:00 PM IST{" "}
+                      <span className="max-sm:hidden">
+                        / 11:30 AM EST / 8:30 AM PST
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="flex justify-center lg:justify-start">
+                <button
+                  onClick={scrolling1}
+                  className="cookiebutton py-2 px-4 text-xs font-semibold md:px-5 md:py-3 lg:py-2.5 lg:px-6 xl:py-2 lg:text-sm lg:font-semibold 2xl:py-3 2xl:px-8 xl:text-lg xl:font-bold 
+                  border border-[#FFFFFF] rounded-md shadow-[2px_2px_3px_1px_rgba(0,0,0,0.25)] mt-6 md:mt-8 lg:mt-6 xl:mt-10"
+                >
+                  RESERVE YOUR SPOT
+                </button>
               </div>
             </div>
 
@@ -144,13 +274,13 @@ export default function CookieConsent({ brandsdata }) {
               <img
                 src="/IMG.png"
                 alt="main-img"
-                className="2xl:h-[750px] max-2xl:h-[525px] max-lg:h-[400px] max-md:h-[250px] max-sm:hidden"
+                className="2xl:h-[750px] max-2xl:h-[560px] max-xl:h-[525px] max-lg:h-[438px] max-md:h-[250px] max-lg:hidden"
               />
             </div>
           </div>
         </div>
       </div>
-      <section className="flex justify-end max-lg:flex-col">
+      <section className="flex justify-center lg:justify-evenly max-lg:flex-col xl:gap-36 xl:px-28">
         {showWaiting ? (
           <div className="fixed flex backdrop-blur top-0 left-0 right-0 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
             <ScaleLoader
@@ -162,8 +292,9 @@ export default function CookieConsent({ brandsdata }) {
           </div>
         ) : formSubmit ? (
           <div
-            className="webinarForm lg:absolute max-md:mx-4 overflow-auto z-10 h-[400px] md:h-[475px] 2xl:h-[550px] md:my-10 lg:left-[8%] xl:left-[17%] 2xl:left-[13%] max-md:mt-4 md:top-[460px] xl:top-[400px] 2xl:top-[550px] lg:w-[350px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)]
-                   text-center flex flex-col justify-around items-center px-3 md:px-4 py-2 md:py-5 bg-white"
+            className="webinarForm max-md:mx-4 max-lg:mx-28 overflow-auto z-10 h-[400px] md:h-[475px] lg:h-[500px] xl:h-[530px] 2xl:h-[550px] 
+            md:my-10 max-md:mt-4 xl:top-[400px] 2xl:top-[550px] lg:w-[350px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] 
+            shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] text-center flex flex-col justify-around items-center px-3 md:px-4 py-2 md:py-5 bg-white"
           >
             <h2 className="md:text-xl text-[#3C292A]">
               Thank you for showing interest with us!
@@ -179,8 +310,9 @@ export default function CookieConsent({ brandsdata }) {
           </div>
         ) : (
           <div
-            className="webinarForm lg:absolute max-md:mx-4 max-lg:mx-28 overflow-auto z-10 h-[400px] md:h-[475px] 2xl:h-[550px] md:my-10 lg:left-[8%] xl:left-[17%] 2xl:left-[13%] max-md:mt-4 md:top-[460px] xl:top-[400px] 2xl:top-[550px] lg:w-[350px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] 
-                  text-center flex flex-col justify-around items-center px-3 md:px-4 xl:px-7 py-2 md:py-3 bg-white"
+            className="webinarForm max-md:mx-4 max-lg:mx-28 overflow-auto z-10 h-[400px] md:h-[475px] lg:h-[500px] xl:h-[530px] 2xl:h-[550px] 
+            md:my-10 max-md:mt-4 xl:top-[400px] 2xl:top-[550px] lg:w-[350px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] 
+            shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] text-center flex flex-col justify-around items-center px-3 md:px-4 xl:px-7 py-2 md:py-3 bg-white"
           >
             <h1 className="font-extrabold text-3xl md:text-[28px] text-[#3C292A]">
               On Demand Webinar
@@ -192,7 +324,7 @@ export default function CookieConsent({ brandsdata }) {
             </div>
 
             <form
-              className="flex flex-col gap-3.5 md:gap-6 2xl:gap-8 w-[90%] md:w-[90%]"
+              className="flex flex-col gap-3.5 md:gap-6 lg:gap-8 2xl:gap-8 w-[90%] md:w-[90%]"
               onSubmit={handleSubmit}
             >
               <input
@@ -248,8 +380,8 @@ export default function CookieConsent({ brandsdata }) {
             </form>
           </div>
         )}
-        <div className="w-full lg:w-[55%] xl:w-[47%] 2xl:w-[55%] pt-12 sm:pt-5 lg:pb-10">
-          <div className="text-[35px] font-bold text-[#3C292A] pb-2 xl:pb-6 xl:font-extrabold text-center">
+        <div className="w-full lg:w-[50%] xl:w-[50%] 2xl:w-[55%] pt-12 sm:pt-5 lg:pb-10">
+          <div className="text-[35px] font-bold text-[#3C292A] pb-2 lg:pb-4 xl:pb-8 xl:font-extrabold text-center ">
             <span className="inline-block relative">
               Meet&nbsp;
               <span
@@ -265,7 +397,55 @@ export default function CookieConsent({ brandsdata }) {
             </span>
             Our Presenters
           </div>
-          <div className=" flex max-sm:flex-col max-sm:gap-14 items-center justify-around xl:justify-around">
+
+          {/* mobile view */}
+
+          <div className="pb-8 pt-8 md:hidden max-sm:pb-2 w-[90%] mx-auto relative carousel-custom">
+            <Slider {...settings}>
+              <div className="flex flex-col w-[200px] justify-center items-center">
+                <img
+                  src="/Shubhangi_Webinar_Profile_Pic_New.png"
+                  alt=""
+                  className="pb-3 mx-auto"
+                />
+                <div className="text-base font-black text-center text-[#3C292A] pb-2">
+                  Shubhangi Chauhan
+                </div>
+                <div className="text-sm font-normal text-center">
+                  Account Manager
+                </div>
+              </div>
+              <div className="flex flex-col w-[200px] justify-center items-center">
+                <img
+                  src="/Abhishek_Webinar_Profile_Pic_New (1).png"
+                  alt=""
+                  className="pb-3 mx-auto"
+                />
+                <div className="text-base font-black text-center text-[#3C292A] pb-2">
+                  Abhishek Tiwari
+                </div>
+                <div className="text-sm font-normal text-center">
+                  CSM & GA4 Expert
+                </div>
+              </div>
+              <div className="flex flex-col w-[200px] justify-center items-center">
+                <img
+                  src="/Anshul_Webinar_Profile_Pic_New.png"
+                  alt=""
+                  className="pb-3 mx-auto"
+                />
+                <div className="text-base font-black text-center text-[#3C292A] pb-2">
+                  Anshul Dhurandhar
+                </div>
+                <div className="text-sm font-normal text-center">
+                  GTM Expert
+                </div>
+              </div>
+            </Slider>
+          </div>
+
+          {/* desktop view */}
+          <div className="max-md:hidden lg:border-b lg:border-b-[#BBBBBB] lg:pb-5 xl:pb-10 2xl:pb-14 flex max-sm:flex-col max-sm:gap-14 items-center justify-around xl::justify-between">
             <div className="flex flex-col">
               <img
                 src="/Shubhangi_Webinar_Profile_Pic_New.png"
@@ -304,11 +484,30 @@ export default function CookieConsent({ brandsdata }) {
               <div className="text-sm font-normal text-center">GTM Expert</div>
             </div>
           </div>
+          <div className="flex justify-center max-md:pb-10">
+            <div className="shadow-cookiePageShadow w-[330px] sm:w-[350px] lg:w-[450px] lg:py-3 rounded-3xl mt-[40px]">
+              <div className="flex justify-evenly py-5">
+                <div className="flex flex-col justify-center items-center">
+                  <img className="pb-2" src="/Duration.png" alt="time" />
+                  <div className="text-xl font-bold">Duration</div>
+                  <div className="text-sm font-normal text-center ">1 Hour</div>
+                </div>
+                <div className="flex flex-col justify-center items-center">
+                  <img
+                    className="pb-2"
+                    src="/reduce-cost (2) 1.png"
+                    alt="time"
+                  />
+                  <div className="text-xl font-bold">Cost</div>
+                  <div className="text-sm font-normal text-center ">Free</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
-
       <section className="flex max-xl:flex-col bg-[#F5FDFF] md:pt-7 xl:pt-0 md:mt-16 xl:mt-0">
-        <section className="xl:w-[50%]">
+        <section className="w-full xl:px-20">
           <div className="text-2xl md:text-[35px] font-bold text-[#3C292A] pt-16 pb-16 xl:font-extrabold text-center">
             <span className="inline-block relative">
               In this&nbsp;
@@ -326,7 +525,7 @@ export default function CookieConsent({ brandsdata }) {
             </span>
             webinar, you'll learn :
           </div>
-          <div className="grid lg:grid-cols-2 max-md:gap-8 lg:gap-16 max-sm:grid-cols-1 justify-around md:px-10 2xl:px-24 pb-8 xl:pb-20">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 max-md:gap-8 md:gap-16 max-sm:grid-cols-1 justify-around md:px-10 2xl:px-24 pb-8 xl:pb-20">
             <div className="flex flex-col items-center max-md:gap-4 md:gap-10">
               <img src="/image 1 1.png" className=" h-32 w-32" alt="privacy" />
               <div className="text-sm font-medium text-center">
@@ -359,71 +558,8 @@ export default function CookieConsent({ brandsdata }) {
             </div>
           </div>
         </section>
-        <section className="xl:w-[50%] flex flex-col justify-center items-center">
-          <div>
-            <div className="text-[35px] max-lg:mt-14 max-xl:mt-12 font-bold text-[#3C292A] pb-2 xl:pb-8 xl:font-extrabold text-center">
-              <span className="inline-block relative">
-                Timing&nbsp;
-                <span
-                  className="absolute block bg-gradient-to-r from-[#59C3EC] to-[#297AB6]"
-                  style={{
-                    width: "90px",
-                    height: "5px",
-                    borderRadius: "10px",
-                    top: "calc(100% )",
-                    left: "0",
-                  }}
-                ></span>
-              </span>
-            </div>
-            <div className="shadow-cookiePageShadow w-[330px] sm:w-[350px] rounded-3xl mt-[40px]">
-              <div className="border-b-[#D3D3D3] border-b flex justify-center gap-7 py-3">
-                <img src="/Time.png" alt="time" />
-                <div className="flex flex-col">
-                  <div className="text-lg font-bold text-left">
-                    Tuesday, Oct 15th
-                  </div>
-                  <div className="text-sm font-normal text-left">9 PM IST</div>
-                </div>
-              </div>
-              <div className="flex justify-evenly py-5">
-                <div className="text-sm font-normal text-center">
-                  <img className="pb-2" src="/Duration.png" alt="time" />1 Hour
-                </div>
-                <div className="text-sm font-normal text-center">
-                  <img
-                    className="pb-2"
-                    src="/reduce-cost (2) 1.png"
-                    alt="time"
-                  />
-                  Free
-                </div>
-              </div>
-              <div className="flex justify-center pb-5">
-                <button
-                  onClick={scrolling1}
-                  className="gtmbutn4 bg-gradient-to-l from-[#EB5442] to-[#ED7754] hover:border-black hover:text-[#EB5442] hover:border-[1px] border border-[#FFFFFF] rounded-md shadow-[2px_2px_3px_1px_rgba(0,0,0,0.25)] py-2 text-xs px-4 font-extrabold"
-                >
-                  RESERVE YOUR SPOT
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className=" pt-10 max-xl:pb-8 max-md:px-3 lg:pt-20 flex max-lg:flex-col items-center gap-2 2xl:gap-5">
-            <img
-              src="/Point_Icon.png"
-              alt="point-img"
-              className="max-sm:h-8 max-sm:w-9"
-            />
-            <div className="max-md:text-center">
-              Whether you're in marketing, web management, or data analytics,
-              this webinar will <br className="max-md:hidden"></br>simplify the
-              process of managing consent for you.
-            </div>
-          </div>
-        </section>
       </section>
-
+      x
       <section
         id="sticky-section"
         className={`bg-gradient-to-l from-[#EB5442] to-[#ED7754] max-md:py-3 md:py-5 max-md:gap-0 flex items-center justify-between lg:justify-center 
@@ -460,7 +596,6 @@ export default function CookieConsent({ brandsdata }) {
           </Marquee>
         </div>
       </div>
-
       <section className="bg-[#2E2C37] w-full h-full flex justify-center py-2 px-2 md:px-4 md:py-4 lg:py-8 lg:px-10">
         <img
           onClick={scrolling1}
@@ -482,4 +617,57 @@ export async function getServerSideProps(context) {
   //console.log(brandsdata);
   // Pass data to the page via props
   return { props: { brandsdata } };
+}
+
+{
+  /* <div className=" pt-10 max-xl:pb-8 max-md:px-3 lg:pt-20 flex max-lg:flex-col items-center gap-2 2xl:gap-5">
+            <img
+              src="/Point_Icon.png"
+              alt="point-img"
+              className="max-sm:h-8 max-sm:w-9"
+            />
+            <div className="max-md:text-center">
+              Whether you're in marketing, web management, or data analytics,
+              this webinar will <br className="max-md:hidden"></br>simplify the
+              process of managing consent for you.
+            </div>
+          </div> */
+}
+
+{
+  /* <div className="flex justify-center pb-5">
+                <button
+                  onClick={scrolling1}
+                  className="gtmbutn4 bg-gradient-to-l from-[#EB5442] to-[#ED7754] hover:border-black hover:text-[#EB5442] hover:border-[1px] border border-[#FFFFFF] rounded-md shadow-[2px_2px_3px_1px_rgba(0,0,0,0.25)] py-2 text-xs px-4 font-extrabold"
+                >
+                  RESERVE YOUR SPOT
+                </button>
+              </div> */
+}
+
+{
+  /* <div className=" pt-10 max-xl:pb-8 max-md:px-3 lg:pt-20 flex max-lg:flex-col items-center gap-2 2xl:gap-5">
+            <img
+              src="/Point_Icon.png"
+              alt="point-img"
+              className="max-sm:h-8 max-sm:w-9"
+            />
+            <div className="max-md:text-center">
+              Whether you're in marketing, web management, or data analytics,
+              this webinar will simplify the
+              process of managing consent for you.
+            </div>
+          </div> */
+}
+
+{
+  /* <div className="border-b-[#D3D3D3] border-b flex justify-center gap-7 py-3">
+                <img src="/Time.png" alt="time" />
+                <div className="flex flex-col">
+                  <div className="text-lg font-bold text-left">
+                    Tuesday, Oct 15th
+                  </div>
+                  <div className="text-sm font-normal text-left">9 PM IST</div>
+                </div>
+              </div> */
 }

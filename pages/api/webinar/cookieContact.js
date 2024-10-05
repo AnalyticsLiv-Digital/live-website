@@ -2,6 +2,7 @@ import CookieContact from "../../../models/CookieContact";
 import connectDb from "../../../middleware/mongoose";
 import { sendEmail } from "../../../utils/sendMail";
 import { addAttendeeToEvent } from "../../../utils/sendInvites";
+import { generateEmailTemplate } from "../../../utils/webinalTemplate";
 
 const handler = async (req, res) => {
   try {
@@ -26,24 +27,24 @@ const handler = async (req, res) => {
         html: `Enquiry Submitted by <br> Full Name - ${req.body.fullName}  <br> Email- ${req.body.email} <br> Contact - ${req.body.contact} <br> Message - ${req.body.message} <br> Website - ${req.body.company} `
       };
 
-
       var userMailOptions = {
         from: "sales@analyticsliv.com",
         to: [req.body.email],
-        subject: 'Analyticsliv - Thankyou for registering.',
-        html: `Hi ${req.body.fullName},<br>
-                Thank you for registering for our webinar on Cookie Consent hosted by AnalyticsLiv, a leading Google Marketing Platform Partner in India. We are excited to have you join us as we explore best practices and strategies to
-                 manage cookie consent and ensure compliance with privacy regulations.<br>
+        subject: 'You are Registered for Our Exclusive Webinar: Google Basic vs. Advanced Consen',
+        html: generateEmailTemplate(req.body.fullName, 'dfghjkghjdfghjkl.com')
+        // `Hi ${req.body.fullName},<br>
+        //         Thank you for registering for our webinar on Cookie Consent hosted by AnalyticsLiv, a leading Google Marketing Platform Partner in India. We are excited to have you join us as we explore best practices and strategies to
+        //          manage cookie consent and ensure compliance with privacy regulations.<br>
 
-                We will send you more details about the webinar shortly. Meanwhile, feel free to browse through our services at <a href="https://analyticsliv.com">www.analyticsliv.com</a>. If you have any questions, don't hesitate to reach out to us:<br>
-                Mobile: <a href="tel:+918320576622">+91 83205 76622</a> <br>
-                Email: <a href="mailto:support@analyticsliv.com">support@analyticsliv.com</a><br>`
+        //         We will send you more details about the webinar shortly. Meanwhile, feel free to browse through our services at <a href="https://analyticsliv.com">www.analyticsliv.com</a>. If you have any questions, don't hesitate to reach out to us:<br>
+        //         Mobile: <a href="tel:+918320576622">+91 83205 76622</a> <br>
+        //         Email: <a href="mailto:support@analyticsliv.com">support@analyticsliv.com</a><br>`
       };
 
       await Promise.all([
         sendEmail(internalMailOptions.to, internalMailOptions.subject, internalMailOptions.html, internalMailOptions?.from),
         sendEmail(userMailOptions.to, userMailOptions.subject, userMailOptions.html, userMailOptions?.from),
-        addAttendeeToEvent(req.body.email, req.body.fullName)
+        // addAttendeeToEvent(req.body.email, req.body.fullName)
       ]);
       
 
