@@ -259,7 +259,7 @@ export default function CookieConsent({ brandsdata }) {
                   </div>
                 </div>
               </div>
-              <div className="flex justify-center lg:justify-start">
+              <div className="flex justify-center lg:justify-start pb-4">
                 <button
                   onClick={scrolling1}
                   className="cookiebutton py-2 px-4 text-xs font-semibold md:px-5 md:py-3 lg:py-2.5 lg:px-6 xl:py-2 lg:text-sm lg:font-semibold 2xl:py-3 2xl:px-8 xl:text-lg xl:font-bold 
@@ -551,7 +551,7 @@ export default function CookieConsent({ brandsdata }) {
             </div>
             <div className="flex flex-col items-center max-md:gap-4 md:gap-10">
               <img src="/image 4 1.png" className=" h-32 w-32" alt="settings" />
-              <div className="text-base font-medium text-center">
+              <div className="text-sm font-medium text-center">
                 Insights on tools like Cookiebot<br></br> and OneTrust for
                 effective <br></br>consent management.
               </div>
