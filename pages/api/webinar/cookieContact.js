@@ -31,7 +31,7 @@ const handler = async (req, res) => {
         from: "sales@analyticsliv.com",
         to: [req.body.email],
         subject: 'You are Registered for Our Exclusive Webinar: Google Basic vs. Advanced Consen',
-        html: generateEmailTemplate(req.body.fullName, 'dfghjkghjdfghjkl.com')
+        html: generateEmailTemplate(req.body.fullName)
         // `Hi ${req.body.fullName},<br>
         //         Thank you for registering for our webinar on Cookie Consent hosted by AnalyticsLiv, a leading Google Marketing Platform Partner in India. We are excited to have you join us as we explore best practices and strategies to
         //          manage cookie consent and ensure compliance with privacy regulations.<br>

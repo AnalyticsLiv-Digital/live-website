@@ -1,4 +1,4 @@
-function generateEmailTemplate(firstName, webinarLink) {
+function generateEmailTemplate(firstName) {
     return `
       <!DOCTYPE html>
         <html lang="en">
@@ -90,7 +90,7 @@ function generateEmailTemplate(firstName, webinarLink) {
                 <div class="email-body">
                     <!-- <h2>Google Basic vs. Advanced Consent</h2> -->
                     <p>Hi ${firstName},</p>
-                    <p>Welcome to the AnalyticsLiv community! Thank you for registering for our exclusive webinar, <strong>"Google Basic Consent vs. Advanced Consent: Optimising Your Data Strategy"</strong> on <strong>October 15th at 9:00 PM IST</strong>.</p>
+                    <p>Welcome to the AnalyticsLiv community! <br><br> Thank you for registering for our exclusive webinar, <strong>Google Basic Consent vs. Advanced Consent: Optimising Your Data Strategy</strong> on <strong>October 15th at 9:00 PM IST</strong>.</p>
                     
                     <h3>What to Expect from This Webinar:</h3>
                     <ul>
@@ -103,7 +103,7 @@ function generateEmailTemplate(firstName, webinarLink) {
                     <p><strong>📅 Date:</strong> October 15th, 2024</p>
                     <p><strong>🕘 Time:</strong> 9:00 PM IST</p>
                     <p><strong>⏳ Duration:</strong> 60 minutes</p>
-                    <p><strong>🔗 Join Link:</strong> <a href=${webinarLink} class="btn">Join the Webinar</a></p>
+                    <p><strong>🔗 Join Link:</strong> <a href="https://zoom.us/j/98577778111" class="btn">Join the Webinar</a></p>
                     
                     <p>Don't forget to mark your calendar! A reminder will be sent with your access link closer to the event.</p>
                     
@@ -120,9 +120,11 @@ function generateEmailTemplate(firstName, webinarLink) {
                 <div class="email-footer">
                     <p><a href="https://www.analyticsliv.com/">Visit Our Website</a></p>
                     <div class="social-links">
-                        <a href="[Social Link 1]"><img src="https://storage.googleapis.com/email-template-image/facebook_logo.png" alt="Facebook"></a>
-                        <a href="https://www.linkedin.com/company/analytics-liv/posts/?feedView=all"><img src="https://storage.googleapis.com/email-template-image/linkdin_logo.png" alt="LinkedIn"></a>
+                        <a href="https://m.facebook.com/100070503960704"><img src="https://storage.googleapis.com/email-template-image/facebook_logo.png" alt="Facebook"></a>
+                        <a href="https://in.linkedin.com/company/analytics-liv-digital/"><img src="https://storage.googleapis.com/email-template-image/linkdin_logo.png" alt="LinkedIn"></a>
                         <a href="https://x.com/AnalyticsLiv"><img src="https://storage.googleapis.com/email-template-image/twiter_logo.png" alt="Twitter"></a>
+                        <a href="https://www.youtube.com/channel/UCSU9utLB2PDe4VcXiI5kMFw"><img src="https://storage.googleapis.com/email-template-image/youtube_Icon.png" alt="YouTube"></a>
+                        <a href="https://www.instagram.com/analyticsliv_digital/"><img src="https://storage.googleapis.com/email-template-image/insta_icon.png" alt="Instagram"></a>
                     </div>
                     <p>&copy; 2024 AnalyticsLiv | All rights reserved.</p>
                 </div>
