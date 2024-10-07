@@ -291,23 +291,23 @@ export default function CookieConsent({ brandsdata }) {
             />
           </div>
         ) : formSubmit ? (
-          <div
-            className="webinarForm max-md:mx-4 max-lg:mx-28 overflow-auto z-10 h-[400px] md:h-[475px] lg:h-[500px] xl:h-[530px] 2xl:h-[550px] 
-            md:my-10 max-md:mt-4 xl:top-[400px] 2xl:top-[550px] lg:w-[350px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] 
-            shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] text-center flex flex-col justify-around items-center px-3 md:px-4 py-2 md:py-5 bg-white"
-          >
-            <h2 className="md:text-xl text-[#3C292A]">
-              Thank you for showing interest with us!
-            </h2>
-            <h2 className="font-extrabold text-3xl p-4 md:p-8 border-dashed border-b-2 border-sky-200">
-              We will get back to you shortly !!
-            </h2>
-            <img
-              alt="Thankyou"
-              className="w-64 mx-auto"
-              src="https://storage.googleapis.com/website-bucket-uploads/static/Na_Dec_46.jpg"
-            />
-          </div>
+            <div
+              className="webinarForm max-md:mx-4 max-lg:mx-28 overflow-auto z-10 h-[400px] md:h-[475px] lg:h-[500px] xl:h-[530px] 2xl:h-[550px] 
+                  md:my-10 max-md:mt-4 xl:top-[400px] 2xl:top-[550px] lg:w-[350px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] 
+                  shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] text-center flex flex-col justify-around items-center px-3 md:px-4 py-2 md:py-5 bg-white"
+            >
+              <h2 className="md:text-xl text-[#3C292A]">
+                Thank you for registering for our exclusive webinar!
+              </h2>
+              <p className="md:text-lg text-[#3C292A]">
+                A confirmation email has been sent to your registered email address with all the webinar details. Please check your inbox for further information.
+              </p>
+              <img
+                alt="Webinar"
+                className="w-64 mx-auto"
+                src="https://storage.googleapis.com/website-bucket-uploads/static/Na_Dec_46.jpg"
+              />
+            </div>
         ) : (
           <div
             className="webinarForm max-md:mx-4 max-lg:mx-28 overflow-auto z-10 h-[400px] md:h-[475px] lg:h-[500px] xl:h-[530px] 2xl:h-[550px] 
