@@ -559,15 +559,13 @@ export default function CookieConsent({ brandsdata }) {
           </div>
         </section>
       </section>
-      x
       <section
         id="sticky-section"
         className={`bg-gradient-to-l from-[#EB5442] to-[#ED7754] max-md:py-3 md:py-5 max-md:gap-0 flex items-center justify-between lg:justify-center 
-                      lg:gap-16 xl:gap-16 px-3.5 md:px-5 lg:px-8 xl:px-16 2xl:px-56  transform transition-all duration-1000 ease-in-out ${
-                        isSticky
-                          ? "sticky translate-y-0  transform transition-all duration-1000 ease-out"
-                          : "transform transition-all duration-1000 ease-in-out translate-y-10"
-                      }`}
+                      lg:gap-16 xl:gap-16 px-3.5 md:px-5 lg:px-8 xl:px-16 2xl:px-56  transform transition-all duration-1000 ease-in-out ${isSticky
+            ? "sticky translate-y-0  transform transition-all duration-1000 ease-out"
+            : "transform transition-all duration-1000 ease-in-out translate-y-10"
+          }`}
       >
         <div className="text-[12px] max-sm:w-[60%] max-lg:w-[77%] md:text-xl font-semibold text-white">
           Are you looking for the right partner to implement Cookie consent for
@@ -576,7 +574,7 @@ export default function CookieConsent({ brandsdata }) {
         <a
           onClick={scrolling1}
           target="_blank"
-          className="max-sm:w-[107px] bg-white text-[#ED7754] cursor-pointer shadow-foter 
+          className="cookiebutton max-sm:w-[107px] bg-white text-[#ED7754] cursor-pointer shadow-foter 
                           py-2 border rounded-[5px] px-2 sm:px-3 text-[11px] md:text-sm font-semibold sm:hover:text-[14.1px]"
         >
           Contact Us Now
