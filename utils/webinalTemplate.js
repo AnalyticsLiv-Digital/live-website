@@ -120,9 +120,11 @@ function generateEmailTemplate(firstName, webinarLink) {
                 <div class="email-footer">
                     <p><a href="https://www.analyticsliv.com/">Visit Our Website</a></p>
                     <div class="social-links">
-                        <a href="[Social Link 1]"><img src="https://storage.googleapis.com/email-template-image/facebook_logo.png" alt="Facebook"></a>
-                        <a href="https://www.linkedin.com/company/analytics-liv/posts/?feedView=all"><img src="https://storage.googleapis.com/email-template-image/linkdin_logo.png" alt="LinkedIn"></a>
+                        <a href="https://m.facebook.com/100070503960704"><img src="https://storage.googleapis.com/email-template-image/facebook_logo.png" alt="Facebook"></a>
+                        <a href="https://in.linkedin.com/company/analytics-liv-digital/"><img src="https://storage.googleapis.com/email-template-image/linkdin_logo.png" alt="LinkedIn"></a>
                         <a href="https://x.com/AnalyticsLiv"><img src="https://storage.googleapis.com/email-template-image/twiter_logo.png" alt="Twitter"></a>
+                        <a href="https://www.youtube.com/channel/UCSU9utLB2PDe4VcXiI5kMFw"><img src="https://storage.googleapis.com/email-template-image/youtube_Icon.png" alt="YouTube"></a>
+                        <a href="https://www.instagram.com/analyticsliv_digital/"><img src="https://storage.googleapis.com/email-template-image/insta_icon.png" alt="Instagram"></a>
                     </div>
                     <p>&copy; 2024 AnalyticsLiv | All rights reserved.</p>
                 </div>
