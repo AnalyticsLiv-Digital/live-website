@@ -1,4 +1,4 @@
-function generateEmailTemplate(firstName, webinarLink) {
+function generateEmailTemplate(firstName) {
     return `
       <!DOCTYPE html>
         <html lang="en">
@@ -90,7 +90,7 @@ function generateEmailTemplate(firstName, webinarLink) {
                 <div class="email-body">
                     <!-- <h2>Google Basic vs. Advanced Consent</h2> -->
                     <p>Hi ${firstName},</p>
-                    <p>Welcome to the AnalyticsLiv community! Thank you for registering for our exclusive webinar, <strong>"Google Basic Consent vs. Advanced Consent: Optimising Your Data Strategy"</strong> on <strong>October 15th at 9:00 PM IST</strong>.</p>
+                    <p>Welcome to the AnalyticsLiv community! <br><br> Thank you for registering for our exclusive webinar, <strong>Google Basic Consent vs. Advanced Consent: Optimising Your Data Strategy</strong> on <strong>October 15th at 9:00 PM IST</strong>.</p>
                     
                     <h3>What to Expect from This Webinar:</h3>
                     <ul>
@@ -103,7 +103,7 @@ function generateEmailTemplate(firstName, webinarLink) {
                     <p><strong>📅 Date:</strong> October 15th, 2024</p>
                     <p><strong>🕘 Time:</strong> 9:00 PM IST</p>
                     <p><strong>⏳ Duration:</strong> 60 minutes</p>
-                    <p><strong>🔗 Join Link:</strong> <a href=${webinarLink} class="btn">Join the Webinar</a></p>
+                    <p><strong>🔗 Join Link:</strong> <a href="https://zoom.us/j/98577778111" class="btn">Join the Webinar</a></p>
                     
                     <p>Don't forget to mark your calendar! A reminder will be sent with your access link closer to the event.</p>
                     
