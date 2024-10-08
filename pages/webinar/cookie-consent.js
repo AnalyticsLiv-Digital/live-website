@@ -16,7 +16,7 @@ export default function CookieConsent({ brandsdata }) {
   const [isSubmit, setIsSubmit] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const [showWaiting, setShowWaiting] = useState(false);
-
+  
   const NextArrow = (props) => {
     const { onClick } = props;
     return (
@@ -115,7 +115,6 @@ export default function CookieConsent({ brandsdata }) {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
-    // console.log(formValues);
   };
 
   const handleSubmit = (e) => {
@@ -159,6 +158,14 @@ export default function CookieConsent({ brandsdata }) {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     if (!values.fullName) {
       errors.fullName = "Name is required!";
+    }
+
+    const mobile = /^\+?(\d{1,3})[-.\s]?(\d{5,14})$/;
+
+    if (!values.contact) {
+      errors.contact = "Contact is required!";
+    } else if (!mobile.test(values.contact)) {
+      errors.contact = "This is not a valid phone number!";
     }
 
     if (!values.company) {
@@ -353,26 +360,28 @@ export default function CookieConsent({ brandsdata }) {
 
               <input
                 type="number"
-                placeholder="Contact No"
+                placeholder="Contact No*"
                 style={{ boxShadow: "3px 3px 8px rgba(0, 0, 0, 0.3)" }}
                 className="px-3 py-2 text-sm border border-[#3C292A] rounded-md"
                 id="contact"
                 name="contact"
+                required
                 value={formValues.contact}
                 onChange={handleChange}
-              />
+              /> 
+
 
               <input
                 type="text"
-                placeholder="Your company*"
+                placeholder="Your company"
                 style={{ boxShadow: "3px 3px 8px rgba(0, 0, 0, 0.3)" }}
                 className="px-3 py-2 text-sm border border-[#3C292A] rounded-md"
                 id="company"
                 name="company"
                 value={formValues.company}
-                required
                 onChange={handleChange}
               />
+              <p className="text-red-600 text-sm">{formErrors.contact}</p>
 
               <button className="gtmbutn4 bg-gradient-to-l from-[#EB5442] to-[#ED7754] hover:border-black hover:border-[1px] hover:text-[#EB5442] border border-[#FFFFFF] rounded-md shadow-[2px_2px_3px_1px_rgba(0,0,0,0.25)] py-2 text-sm font-extrabold">
                 REGISTER NOW
@@ -577,7 +586,8 @@ export default function CookieConsent({ brandsdata }) {
           onClick={scrolling1}
           target="_blank"
           className="max-sm:w-[107px] bg-white text-[#ED7754] cursor-pointer shadow-foter 
-                          py-2 border rounded-[5px] px-2 sm:px-3 text-[11px] md:text-sm font-semibold sm:hover:text-[14.1px]"
+                        text-center py-2 border rounded-[5px] px-2 sm:px-3 text-[11px] xl:text-base md:text-sm font-semibold
+                          cookiebutton hover:border-white hover:border-[1px] hover:text-white border-[#FFFFFF] text-sm"
         >
           Contact Us Now
         </a>
