@@ -266,7 +266,7 @@ export default function CookieConsent({ brandsdata }) {
                   </div>
                 </div>
               </div>
-              <div className="flex justify-center lg:justify-start">
+              <div className="flex justify-center lg:justify-start pb-4">
                 <button
                   onClick={scrolling1}
                   className="cookiebutton py-2 px-4 text-xs font-semibold md:px-5 md:py-3 lg:py-2.5 lg:px-6 xl:py-2 lg:text-sm lg:font-semibold 2xl:py-3 2xl:px-8 xl:text-lg xl:font-bold 
@@ -298,23 +298,23 @@ export default function CookieConsent({ brandsdata }) {
             />
           </div>
         ) : formSubmit ? (
-          <div
-            className="webinarForm max-md:mx-4 max-lg:mx-28 overflow-auto z-10 h-[400px] md:h-[475px] lg:h-[500px] xl:h-[530px] 2xl:h-[550px] 
-            md:my-10 max-md:mt-4 xl:top-[400px] 2xl:top-[550px] lg:w-[350px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] 
-            shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] text-center flex flex-col justify-around items-center px-3 md:px-4 py-2 md:py-5 bg-white"
-          >
-            <h2 className="md:text-xl text-[#3C292A]">
-              Thank you for showing interest with us!
-            </h2>
-            <h2 className="font-extrabold text-3xl p-4 md:p-8 border-dashed border-b-2 border-sky-200">
-              We will get back to you shortly !!
-            </h2>
-            <img
-              alt="Thankyou"
-              className="w-64 mx-auto"
-              src="https://storage.googleapis.com/website-bucket-uploads/static/Na_Dec_46.jpg"
-            />
-          </div>
+            <div
+              className="webinarForm max-md:mx-4 max-lg:mx-28 overflow-auto z-10 h-[400px] md:h-[475px] lg:h-[500px] xl:h-[530px] 2xl:h-[550px] 
+                  md:my-10 max-md:mt-4 xl:top-[400px] 2xl:top-[550px] lg:w-[350px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] 
+                  shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] text-center flex flex-col justify-around items-center px-3 md:px-4 py-2 md:py-5 bg-white"
+            >
+              <h2 className="md:text-xl text-[#3C292A]">
+                Thank you for registering for our exclusive webinar!
+              </h2>
+              <p className="md:text-lg text-[#3C292A]">
+                A confirmation email has been sent to your registered email address with all the webinar details. Please check your inbox for further information.
+              </p>
+              <img
+                alt="Webinar"
+                className="w-64 mx-auto"
+                src="https://storage.googleapis.com/website-bucket-uploads/static/Na_Dec_46.jpg"
+              />
+            </div>
         ) : (
           <div
             className="webinarForm max-md:mx-4 max-lg:mx-28 overflow-auto z-10 h-[400px] md:h-[475px] lg:h-[500px] xl:h-[530px] 2xl:h-[550px] 
@@ -560,7 +560,7 @@ export default function CookieConsent({ brandsdata }) {
             </div>
             <div className="flex flex-col items-center max-md:gap-4 md:gap-10">
               <img src="/image 4 1.png" className=" h-32 w-32" alt="settings" />
-              <div className="text-base font-medium text-center">
+              <div className="text-sm font-medium text-center">
                 Insights on tools like Cookiebot<br></br> and OneTrust for
                 effective <br></br>consent management.
               </div>
@@ -568,15 +568,13 @@ export default function CookieConsent({ brandsdata }) {
           </div>
         </section>
       </section>
-      x
       <section
         id="sticky-section"
         className={`bg-gradient-to-l from-[#EB5442] to-[#ED7754] max-md:py-3 md:py-5 max-md:gap-0 flex items-center justify-between lg:justify-center 
-                      lg:gap-16 xl:gap-16 px-3.5 md:px-5 lg:px-8 xl:px-16 2xl:px-56  transform transition-all duration-1000 ease-in-out ${
-                        isSticky
-                          ? "sticky translate-y-0  transform transition-all duration-1000 ease-out"
-                          : "transform transition-all duration-1000 ease-in-out translate-y-10"
-                      }`}
+                      lg:gap-16 xl:gap-16 px-3.5 md:px-5 lg:px-8 xl:px-16 2xl:px-56  transform transition-all duration-1000 ease-in-out ${isSticky
+            ? "sticky translate-y-0  transform transition-all duration-1000 ease-out"
+            : "transform transition-all duration-1000 ease-in-out translate-y-10"
+          }`}
       >
         <div className="text-[12px] max-sm:w-[60%] max-lg:w-[77%] md:text-xl font-semibold text-white">
           Are you looking for the right partner to implement Cookie consent for
