@@ -424,10 +424,17 @@ const header = () => {
                             </Link>
                           </div>
                           <div class="flex items-center py-1 gap-1">
-                            <img src="/GTM_Gradiant_Logo_for_Header.png" className='h-9 w-9'
-                              alt="data-reporting_logo" />
-                            <Link href="/services/google-tag-manager"
-                              class="text-menuheading font-rbt text-base font-normal leading-normal">Google Tag Manager Tagging</Link>
+                            <img
+                              src="/GTM_Gradiant_Logo_for_Header.png"
+                              className="h-9 w-9"
+                              alt="data-reporting_logo"
+                            />
+                            <Link
+                              href="/services/google-tag-manager"
+                              class="text-menuheading font-rbt text-base font-normal leading-normal"
+                            >
+                              Google Tag Manager Tagging
+                            </Link>
                           </div>
                         </motion.div>
                       )}
@@ -459,7 +466,7 @@ const header = () => {
                               alt="GDRP_logo"
                             />
                             <Link
-                              href="#"
+                              href="/services/gdpr-compliance"
                               class="text-menuheading font-rbt text-base font-normal leading-normal"
                             >
                               GDPR Compliance
@@ -782,10 +789,17 @@ const header = () => {
                     </Link>
                   </div>
                   <div class="flex items-center py-3 gap-[5px]">
-                    <img src="/GTM_Gradiant_Logo_for_Header.png" className='h-9 w-9'
-                      alt="data-reporting_logo" />
-                    <Link href="/services/google-tag-manager"
-                      class="text-menuheading font-rbt text-[13px] font-normal leading-normal">Google Tag Manager Tagging</Link>
+                    <img
+                      src="/GTM_Gradiant_Logo_for_Header.png"
+                      className="h-9 w-9"
+                      alt="data-reporting_logo"
+                    />
+                    <Link
+                      href="/services/google-tag-manager"
+                      class="text-menuheading font-rbt text-[13px] font-normal leading-normal"
+                    >
+                      Google Tag Manager Tagging
+                    </Link>
                   </div>
                   {/*                 
                 <div class="flex items-center py-3 gap-2">
@@ -808,7 +822,7 @@ const header = () => {
                       alt="GDRP_logo"
                     />
                     <Link
-                      href="#"
+                      href="/services/gdpr-compliance"
                       class="text-menuheading font-rbt text-[13px] font-normal leading-normal"
                     >
                       GDPR Compliance
