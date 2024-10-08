@@ -103,7 +103,7 @@ function generateEmailTemplate(firstName) {
                     <p><strong>📅 Date:</strong> October 15th, 2024</p>
                     <p><strong>🕘 Time:</strong> 9:00 PM IST</p>
                     <p><strong>⏳ Duration:</strong> 60 minutes</p>
-                    <p><strong>🔗 Join Link:</strong> <a href="https://zoom.us/j/98577778111" class="btn">Join the Webinar</a></p>
+                    <p><strong>🔗 Join Link:</strong> <a href="https://zoom.us/j/98577778111" class="btn" style="font-weight: bold; color: white;">Join the Webinar</a></p>
                     
                     <p>Don't forget to mark your calendar! A reminder will be sent with your access link closer to the event.</p>
                     
