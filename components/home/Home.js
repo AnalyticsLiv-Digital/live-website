@@ -83,11 +83,6 @@ const Home = () => {
   };
   return (
     <>
-      <div className="flex justify-center item-center px-4 md:px-20 my-5 xl:my-0 xl:mt-5 w-full">
-        <a href="/webinar/cookie-consent">
-          <img src="/Web Banner for Website.png" alt="web banner" />
-        </a>
-      </div>
       <section className="homepage flex items-center justify-center overflow-hidden font-gilroy">
         <div className="xl:min-h-[90vh] w-full">
           <div className="relative xl:h-fit overflow-hidden">
