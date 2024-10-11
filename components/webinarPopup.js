@@ -1,24 +1,17 @@
 import React, { useEffect, useState } from "react";
 
-const WebinarPopup = () => {
+const WebinarPopup = ({ onClose, onRegister, onClick }) => {
   const initialValues = { fullName: "", email: "", contact: "", company: "" };
   const [formSubmit, setFormSubmit] = useState(false);
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
-  const [showWaiting, setShowWaiting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
   };
 
-  const closePopup = (e) => {
-    e.preventDefault();
-    // setFormErrors(validate(formValues));
-    // setIsSubmit(true);
-    console.log("popup close object");
-  };
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
@@ -27,10 +20,6 @@ const WebinarPopup = () => {
 
   useEffect(() => {
     if (Object.keys(formErrors).length === 0 && isSubmit) {
-      setShowWaiting(true);
-      // dataLayer.push({
-      //     event: 'gtm_submission'
-      // });
       fetch("/api/webinar/cookieContact", {
         method: "POST",
         headers: {
@@ -38,16 +27,16 @@ const WebinarPopup = () => {
           mode: "no-cors",
         },
         body: JSON.stringify({
-          fullName: formValues.fullName,
-          email: formValues.email,
-          contact: formValues.contact,
-          company: formValues.company,
+          fullName: formValues?.fullName,
+          email: formValues?.email,
+          contact: formValues?.contact,
+          company: formValues?.company,
         }),
       })
         .then((response) => response.json())
         .then((data) => {
+          onRegister();
           setFormSubmit(true);
-          setShowWaiting(false);
         })
         .catch((error) => {
           console.error("Error:", error);
@@ -70,10 +59,6 @@ const WebinarPopup = () => {
       errors.contact = "This is not a valid phone number!";
     }
 
-    if (!values.company) {
-      errors.company = "Company name is required!";
-    }
-
     if (!values.email) {
       errors.email = "Email is required!";
     } else if (!regex.test(values.email)) {
@@ -84,10 +69,10 @@ const WebinarPopup = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row justify-center gap-2 md:gap-5 lg:gap-10 items-center my-8 mx-8 font-lato">
+    <div className="flex flex-col md:flex-row justify-center gap-2 md:gap-5 lg:gap-10 items-center font-lato fixed inset-0 bg-white p-5 md:p-8 rounded-lg shadow-lg overflow-y-auto max-w-[95%] md:max-w-[70%] lg:max-w-[65%] mx-auto my-auto top-0 bottom-0 left-0 right-0 z-50 max-h-[90%]">
       <div className="max-md:w-full max-lg:w-[50%]">
         <div className="text-2xl sm:text-2xl md:text-[25px] lg:text-[30px] font-bold text-[#3C292A] pt-6 pb-5 xl:font-black text-center md:text-left">
-          Join&nbsp;&nbsp;
+          Join&nbsp; &nbsp;
           <span className="inline-block relative">
             <span className="bg-gradient-to-r from-[#04BEF8] to-[#00990F] bg-clip-text text-transparent">
               WEBINAR&nbsp;&nbsp;
@@ -169,7 +154,7 @@ const WebinarPopup = () => {
             className="px-3 py-1.5 md:py-2 text-sm border border-[#3C292A] rounded-md"
             id="fullName"
             name="fullName"
-            value={formValues.fullName}
+            value={formValues?.fullName}
             required
             onChange={handleChange}
           />
@@ -181,7 +166,7 @@ const WebinarPopup = () => {
             className="px-3 py-1.5 md:py-2 text-sm border border-[#3C292A] rounded-md"
             id="email"
             name="email"
-            value={formValues.email}
+            value={formValues?.email}
             required
             onChange={handleChange}
           />
@@ -194,7 +179,7 @@ const WebinarPopup = () => {
             id="contact"
             name="contact"
             required
-            value={formValues.contact}
+            value={formValues?.contact}
             onChange={handleChange}
           />
 
@@ -207,24 +192,24 @@ const WebinarPopup = () => {
 
         <div className="text-sm font-normal pt-1 lg:pt-4">
           Check more detail&nbsp;
-          <a className="text-[#2252FF]" href="/webinar/cookie-consent">
+          <a className="text-[#2252FF]" onClick={onClick} style={{ cursor: 'pointer' }}>
             here
           </a>
         </div>
       </div>
-      <div className="relative max-md:w-full max-lg::w-[50%]">
-        <img
-          src="/close_icon.png"
-          alt="cross-img"
-          className="max-md:hidden absolute right-5 top-5 bg-white rounded-full p-0.5 cursor-pointer"
-          onClick={closePopup}
-        />
+      <div className="relative max-md:w-full max-lg:w-[50%]">
         <img
           src="/webinar-right.png"
           alt="webinar-img"
-          className="max-md:hidden md:h-[500px] lg:h-[530px] xl:h-[530px] md:w-[380px] lg:w-[390px] xl:w-[380px]"
+          className="hidden max-md:hidden md:block md:h-[500px] lg:h-[530px] xl:h-[530px] md:w-[380px] lg:w-[390px] xl:w-[380px]"
         />
       </div>
+      <img
+        src="/close_icon.png"
+        alt="cross-img"
+        className="absolute top-5 right-5 bg-white rounded-full p-0.5 cursor-pointer z-50"
+        onClick={onClose}
+      />
     </div>
   );
 };
