@@ -37,6 +37,9 @@ const WebinarPopup = ({ onClose, onRegister, onClick }) => {
         .then((data) => {
           onRegister();
           setFormSubmit(true);
+          dataLayer.push({
+            event: 'cookieWebinarRegistered',
+          });
         })
         .catch((error) => {
           console.error("Error:", error);
