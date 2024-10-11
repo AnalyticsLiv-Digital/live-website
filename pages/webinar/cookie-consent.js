@@ -7,7 +7,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaArrowLeft, FaArrowRight, FaLongArrowAltRight } from "react-icons/fa";
-// import WebinarPopup from "../../components/webinarPopup";
 
 export default function CookieConsent({ brandsdata }) {
   const initialValues = { fullName: "", email: "", contact: "", company: "" };
@@ -205,7 +204,6 @@ export default function CookieConsent({ brandsdata }) {
 
   return (
     <main className="font-lato">
-      {/* <WebinarPopup /> */}
       <div className="bg-[#2E2C37]">
         <div className="flex justify-between max-sm:gap-2 px-2 md:px-16 pt-5 ">
           <img
