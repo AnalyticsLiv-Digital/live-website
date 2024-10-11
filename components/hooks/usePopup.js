@@ -12,6 +12,9 @@ const useWebinarPopup = () => {
         if (!hasRegistered && (!hasClosed || (currentTime - hasClosed > 86400000))) {
             const timer = setTimeout(() => {
                 setShowPopup(true);
+                dataLayer.push({
+                    event: 'popupImpression',
+                });
             }, 10000); // 10 seconds delay
 
             return () => clearTimeout(timer); // Clean up the timer
@@ -21,6 +24,9 @@ const useWebinarPopup = () => {
     const closePopup = () => {
         setShowPopup(false);
         localStorage.setItem('webinarPopupClosed', Date.now());
+        dataLayer.push({
+            event: 'popupClosed',
+        });
     };
 
     const registerUser = () => {

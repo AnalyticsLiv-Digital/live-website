@@ -146,6 +146,9 @@ export default function CookieConsent({ brandsdata }) {
         .then((data) => {
           setFormSubmit(true);
           setShowWaiting(false);
+          dataLayer.push({
+            event: 'cookieWebinarRegistered',
+          });
         })
         .catch((error) => {
           console.error("Error:", error);
