@@ -57,9 +57,9 @@ function MyApp({ Component, pageProps: { session, ...pageProps }, }) {
             <Footer />
 
           </>}</>}
-          {showPopup && (
+          {/* {showPopup && (
               <WebinarPopup onClose={closePopup} onRegister={registerUser} onClick ={clickHere} />
-            )}
+            )} */}
     </SessionProvider>
   </>
 }
