@@ -36,7 +36,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps }, }) {
     <SessionProvider session={session}>
       <Script
         id="customfitpreinit"
-        strategy="afterInteractive" // This ensures the script loads after the page is interactive
+        strategy="beforeInteractive" // This ensures the script loads after the page is interactive
         dangerouslySetInnerHTML={{
           __html: `!function(e,t,i,s){var n=t.getElementById("customfitpreinit");if(n){n.insertAdjacentHTML("beforebegin",'<style type="text/css">.customfit-invisible-preinit-block{visibility:hidden !important; opacity:0 !important}</style>');var r=document.querySelector("html");r.classList.add("customfit-invisible-preinit-block"),setTimeout(function(){r.classList.remove("customfit-invisible-preinit-block")},5e3);var c=t.getElementsByTagName("script")[0],o=t.createElement("script");o.id="customfitinit",o.setAttribute("crossorigin","*"),o.async=!0,o.src="https://sdk.customfit.ai/3dea8570-8ba1-11ef-be42-6746678c203d/cf-js-sdk-min.js",o.type="text/javascript",c.parentNode.insertBefore(o,c),o.onerror=function(){var e=t.getElementById("customfit-invisible-preinit-block");e&&e.parentNode.removeChild(e)}}}(window,document);`,
         }}
