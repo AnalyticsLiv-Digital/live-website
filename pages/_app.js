@@ -11,6 +11,7 @@ import { SessionProvider } from "next-auth/react"
 import Footer from '../components/home/Footer'
 import WebinarPopup from '../components/webinarPopup';
 import useWebinarPopup from '../components/hooks/usePopup'
+import { loadCustomFitScript } from '../utils/customScript';
 
 
 function MyApp({ Component, pageProps: { session, ...pageProps }, }) {
@@ -20,6 +21,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps }, }) {
     if (!router.pathname.includes("admin")) {
       TagManager.initialize({ gtmId: 'GTM-NLH25K8' });
     }
+    loadCustomFitScript();
 
   }, []);
 
