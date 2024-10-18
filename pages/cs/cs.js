@@ -44,6 +44,7 @@ export default function Home() {
             dataLayer.push({
                 event: 'contact_submission'
             });
+            localStorage.setItem('contactFormSubmitted', 'true');
             fetch('/api/contact', {
                 method: 'POST', // or 'PUT'
                 headers: {
