@@ -9,13 +9,16 @@ import Router, { useRouter } from 'next/router'
 import { HashLoader } from 'react-spinners'
 import { SessionProvider } from "next-auth/react"
 import Footer from '../components/home/Footer'
-import WebinarPopup from '../components/webinarPopup';
-import useWebinarPopup from '../components/hooks/usePopup'
+// import WebinarPopup from '../components/webinarPopup';
+// import useWebinarPopup from '../components/hooks/usePopup'
+import ContactPopup from '../components/ContactPopup';
+import useContactPopup from '../components/hooks/useContactPopup';
 import Script from "next/script";
 
 
 function MyApp({ Component, pageProps: { session, ...pageProps }, }) {
-  const { showPopup, closePopup, registerUser, clickHere } = useWebinarPopup();
+  // const { showPopup, closePopup, registerUser, clickHere } = useWebinarPopup();
+  const { showPopup, closePopup, registerUser } = useContactPopup();
   const [showLoader, setShowloader] = useState(false);
   useEffect(() => {
     if (!router.pathname.includes("admin")) {
@@ -65,9 +68,9 @@ function MyApp({ Component, pageProps: { session, ...pageProps }, }) {
             <Footer />
 
           </>}</>}
-      {/* {showPopup && (
-              <WebinarPopup onClose={closePopup} onRegister={registerUser} onClick ={clickHere} />
-            )} */}
+          {showPopup && (
+              <ContactPopup onClose={closePopup} onRegister={registerUser} />
+            )}
     </SessionProvider>
   </>
 }
