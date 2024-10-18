@@ -1,49 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-const WebPopup = ({ onClose, onRegister, onClick }) => {
-    const initialValues = { fullName: "", email: "", contact: "", company: "", message: "" };
-    const [formSubmit, setFormSubmit] = useState(false);
+const ContactPopup = ({ onClose, onRegister }) => {
+    const initialValues = { fullName: "", email: "", contact: "", message: "" };
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
-
-    const [timeLeft, setTimeLeft] = useState({
-        hours: "00",
-        minutes: "00",
-        seconds: "00",
-    });
-
-    useEffect(() => {
-        const calculateTimeLeft = () => {
-            const now = new Date();
-            let targetTime = new Date("2024-10-15T21:00:00");
-
-            const difference = targetTime - now;
-
-            if (difference > 0) {
-                const hours = Math.floor(difference / (1000 * 60 * 60));
-                const minutes = Math.floor((difference / 1000 / 60) % 60);
-                const seconds = Math.floor((difference / 1000) % 60);
-                setTimeLeft({
-                    hours: hours.toString().padStart(2, "0"),
-                    minutes: minutes.toString().padStart(2, "0"),
-                    seconds: seconds.toString().padStart(2, "0"),
-                });
-            } else {
-                setTimeLeft({
-                    hours: "00",
-                    minutes: "00",
-                    seconds: "00",
-                });
-            }
-        };
-
-        // Update the timer every second
-        const timer = setInterval(calculateTimeLeft, 1000);
-
-        // Cleanup the interval on component unmount
-        return () => clearInterval(timer);
-    }, []);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -58,7 +19,7 @@ const WebPopup = ({ onClose, onRegister, onClick }) => {
 
     useEffect(() => {
         if (Object.keys(formErrors).length === 0 && isSubmit) {
-            fetch("/api/webinar/cookieContact", {
+            fetch("/api/popupContact", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -68,16 +29,14 @@ const WebPopup = ({ onClose, onRegister, onClick }) => {
                     fullName: formValues?.fullName,
                     email: formValues?.email,
                     contact: formValues?.contact,
-                    company: formValues?.company,
                     message: formValues?.message,
                 }),
             })
                 .then((response) => response.json())
                 .then((data) => {
                     onRegister();
-                    setFormSubmit(true);
                     dataLayer.push({
-                        event: "cookieWebinarRegistered",
+                        event: "contactFormSubmitted",
                     });
                 })
                 .catch((error) => {
@@ -210,4 +169,4 @@ const WebPopup = ({ onClose, onRegister, onClick }) => {
     );
 };
 
-export default WebPopup;
+export default ContactPopup;
