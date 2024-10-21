@@ -18,6 +18,7 @@ import Script from "next/script";
 
 function MyApp({ Component, pageProps: { session, ...pageProps }, }) {
   // const { showPopup, closePopup, registerUser, clickHere } = useWebinarPopup();
+  
   const { showPopup, closePopup, registerUser } = useContactPopup();
   const [showLoader, setShowloader] = useState(false);
   useEffect(() => {
