@@ -116,15 +116,15 @@ const header = () => {
                     animate={{ y: 53, opacity: 1 }}
                     transition={{ type: "spring", stiffness: 260, damping: 30 }}
                     id="submenu2"
-                    className="subheader absolute w-56 text-sm flex flex-col lg:-ml-20 lg:mt-2 divide-y bg-gray-100 text-cyan-900 items-center align-middle font-semibold"
+                    className="subheader blogs-cs text-transform-none absolute w-56 text-sm flex flex-col lg:-ml-20 lg:mt-2 bg-white shadow-xl text-cyan-900 items-center align-middle font-semibold"
                   >
                     <Link href="/blogs">
-                      <div className="py-2 w-56 hover:border-b border-[#000]">
+                      <div className="py-2 text-transform-none text-menuheading font-rbt text-base font-normal leading-normal">
                         Blogs
                       </div>
                     </Link>
                     <Link href="/case-studies">
-                      <div className="py-2 w-56 hover:border-b border-[#000]">
+                      <div className="py-2 text-transform-none text-menuheading font-rbt text-base font-normal leading-normal">
                         Case Studies
                       </div>
                     </Link>
