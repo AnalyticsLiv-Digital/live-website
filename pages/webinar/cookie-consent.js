@@ -7,8 +7,11 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaArrowLeft, FaArrowRight, FaLongArrowAltRight } from "react-icons/fa";
+import useContactPopup from "../../components/hooks/useContactPopup";
+import ContactPopup from "../../components/ContactPopup";
 
 export default function CookieConsent({ brandsdata }) {
+  const { showPopup, closePopup, registerUser } = useContactPopup();
   const initialValues = { fullName: "", email: "", contact: "", company: "" };
   const [formSubmit, setFormSubmit] = useState(false);
   const [formValues, setFormValues] = useState(initialValues);
@@ -615,6 +618,9 @@ export default function CookieConsent({ brandsdata }) {
           className="w-full cursor-pointer"
         />
       </section>
+      {showPopup && (
+              <ContactPopup onClose={closePopup} onRegister={registerUser} />
+            )}
     </main>
   );
 }
