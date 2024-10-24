@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaArrowLeft, FaArrowRight, FaLongArrowAltRight } from "react-icons/fa";
 import useContactPopup from "../../components/hooks/useContactPopup";
-import ContactPopup from "../../components/ContactPopup";
+// import ContactPopup from "../../components/ContactPopup";
 
 export default function CookieConsent({ brandsdata }) {
   const { showPopup, closePopup, registerUser } = useContactPopup();
@@ -618,9 +618,9 @@ export default function CookieConsent({ brandsdata }) {
           className="w-full cursor-pointer"
         />
       </section>
-      {showPopup && (
+      {/* {showPopup && (
               <ContactPopup onClose={closePopup} onRegister={registerUser} />
-            )}
+            )} */}
     </main>
   );
 }
