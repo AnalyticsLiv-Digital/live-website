@@ -71,7 +71,7 @@ export default function ContactPopup  ({ onClose, onRegister })  {
 
     return (
         <div className="flex flex-col md:flex-row gap-2 items-center font-lato fixed inset-0 bg-white 
-    p-5 md:p-5 xl:p-0 rounded-lg shadow-lg md:overflow-y-auto lg:overflow-y-hidden max-md:max-w-[95%] max-lg:max-w-[95%] lg:w-full max-lg:mx-auto max-lg:my-auto top-0 bottom-0 
+     max-md:p-5 rounded-lg shadow-lg md:overflow-y-auto lg:overflow-y-hidden max-md:max-w-[95%] lg:w-full max-lg:mx-auto max-lg:my-auto top-0 bottom-0 
     left-0 right-0 z-50 max-h-fit lg:max-h-screen">
             <img src="/pngwing.com - 2024-10-16T154233.410 1.png" alt="waves" className="absolute left-[-120px] h-full z-10" />
             <div className="max-md:w-full max-lg:w-[50%] lg:w-[50%] flex flex-col md:px-4 xl:px-8 2xl:px-6 items-center justify-center z-20">
@@ -151,7 +151,7 @@ export default function ContactPopup  ({ onClose, onRegister })  {
                     className="hidden max-md:hidden md:block  "
                 />
             </div> */}
-            <div className="relative max-md:w-full max-lg:w-[50%] lg:w-[50%] lg:h-auto z-20">
+            <div className="relative max-md:w-full lg:h-full max-lg:w-[50%] lg:w-[60%] xl:w-[50%] z-20">
                 <img
                     src="/25084 1.png"
                     alt="webinar-img"
