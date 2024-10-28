@@ -7,6 +7,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaArrowLeft, FaArrowRight, FaLongArrowAltRight } from "react-icons/fa";
+import NewPopup from "../../components/newPopup";
+import useContactPopup from "../../components/hooks/useContactPopup";
 
 export default function CookieConsent({ brandsdata }) {
   const initialValues = { fullName: "", email: "", contact: "", company: "" };
@@ -16,7 +18,8 @@ export default function CookieConsent({ brandsdata }) {
   const [isSubmit, setIsSubmit] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const [showWaiting, setShowWaiting] = useState(false);
-  
+  const { showPopup, closePopup, registerUser } = useContactPopup();
+
   const NextArrow = (props) => {
     const { onClick } = props;
     return (
@@ -207,6 +210,10 @@ export default function CookieConsent({ brandsdata }) {
 
   return (
     <main className="font-lato">
+      {showPopup && (
+        <NewPopup onClose={closePopup} onRegister={registerUser} />
+      )}
+
       <div className="bg-[#2E2C37]">
         <div className="flex justify-between max-sm:gap-2 px-2 md:px-16 pt-5 ">
           <img
@@ -301,23 +308,23 @@ export default function CookieConsent({ brandsdata }) {
             />
           </div>
         ) : formSubmit ? (
-            <div
-              className="webinarForm max-md:mx-4 max-lg:mx-28 overflow-auto z-10 h-[400px] md:h-[475px] lg:h-[500px] xl:h-[530px] 2xl:h-[550px] 
+          <div
+            className="webinarForm max-md:mx-4 max-lg:mx-28 overflow-auto z-10 h-[400px] md:h-[475px] lg:h-[500px] xl:h-[530px] 2xl:h-[550px] 
                   md:my-10 max-md:mt-4 xl:top-[400px] 2xl:top-[550px] lg:w-[350px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] 
                   shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] text-center flex flex-col justify-around items-center px-3 md:px-4 py-2 md:py-5 bg-white"
-            >
-              <h2 className="md:text-xl text-[#3C292A]">
-                Thank you for registering for our exclusive webinar!
-              </h2>
-              <p className="md:text-lg text-[#3C292A]">
-                A confirmation email has been sent to your registered email address with all the webinar details. Please check your inbox for further information.
-              </p>
-              <img
-                alt="Webinar"
-                className="w-64 mx-auto"
-                src="https://storage.googleapis.com/website-bucket-uploads/static/Na_Dec_46.jpg"
-              />
-            </div>
+          >
+            <h2 className="md:text-xl text-[#3C292A]">
+              Thank you for registering for our exclusive webinar!
+            </h2>
+            <p className="md:text-lg text-[#3C292A]">
+              A confirmation email has been sent to your registered email address with all the webinar details. Please check your inbox for further information.
+            </p>
+            <img
+              alt="Webinar"
+              className="w-64 mx-auto"
+              src="https://storage.googleapis.com/website-bucket-uploads/static/Na_Dec_46.jpg"
+            />
+          </div>
         ) : (
           <div
             className="webinarForm max-md:mx-4 max-lg:mx-28 overflow-auto z-10 h-[400px] md:h-[475px] lg:h-[500px] xl:h-[530px] 2xl:h-[550px] 
@@ -371,7 +378,7 @@ export default function CookieConsent({ brandsdata }) {
                 required
                 value={formValues.contact}
                 onChange={handleChange}
-              /> 
+              />
 
 
               <input
