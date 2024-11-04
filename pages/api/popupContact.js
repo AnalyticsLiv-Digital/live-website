@@ -2,7 +2,6 @@ import PopupContact from "../../models/PopupContact";
 import connectDb from "../../middleware/mongoose";
 import { sendEmail } from "../../utils/sendMail";
 
-
 const handler = async (req, res) => {
     if (req.method === 'POST') {
         try {
