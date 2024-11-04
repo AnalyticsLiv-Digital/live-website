@@ -341,7 +341,7 @@ export default function ga4({ brandsdata }) {
           <ScrollProgress color="red" showSpinner={false} />
         </header>
 
-        {/* <section>
+        <section>
           <div className="flex items-center justify-between mt-4 md:px-20 pl-4">
             <div className="flex items-center m-2 md:float-none"><img alt="GA4 logo" src="https://storage.googleapis.com/website-bucket-uploads/static/Ga4_logo.png" />
               <h1 className="  md:text-5xl text-2xl font-bold ml-4">Google Analytics 4</h1>
@@ -398,7 +398,7 @@ export default function ga4({ brandsdata }) {
                     <span className="text-xs text-red-600 float-left">{formErrors.message}</span>
                   </div>
                   <div>
-                    <button className="cta bg-amber-500 hover:bg-amber-600 font-semibold text-white px-8 py-2 rounded-xl shadow-md shadow-gray-400 hover:shadow-gray-600 transition-transform delay-100">SIGN UP </button>
+                    {/* <button className="cta bg-amber-500 hover:bg-amber-600 font-semibold text-white px-8 py-2 rounded-xl shadow-md shadow-gray-400 hover:shadow-gray-600 transition-transform delay-100">SIGN UP </button> */}
                     <button
                       className="cta font-semibold text-white px-8 py-2 rounded-xl shadow-md shadow-gray-400 hover:shadow-gray-600 transition-transform delay-100"
                       style={{ backgroundColor: '#1A73E8' }}
@@ -429,11 +429,11 @@ export default function ga4({ brandsdata }) {
 
             </div>
           </div>
-        </section> */}
+        </section>
 
 
 
-        <section>
+        {/* <section>
           <div className="main bg-cover bg-center relative text-white" style={{ backgroundImage: "url('/ga4-head.png')", height: "105vh" }}>
             <div className="relative md:flex items-center md:px-10 md:py-10">
               <div className="pt-6 md:w-3/4 z-10 text-white">
@@ -512,11 +512,11 @@ export default function ga4({ brandsdata }) {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
-        <section>
+        {/* <section>
           <div className="flex flex-col md:flex-row items-center w-full mt-5 relative h-screen">
-            <div className=" absolute	bg-white z-10 left-0 w-full md:w-2/3 lg:w-1/2 h-auto md:h-3/5 p-6 md:p-6 rounded-3xl shadow-lg pl-8">
+            <div className="flex flex-col justify-center sm:absolute	bg-white z-10 left-0 w-full md:w-2/3 lg:w-1/2 h-auto md:h-3/5 p-6 md:p-6 sm:rounded-3xl shadow-lg pl-8">
               <p className="text-xl md:text-4xl font-semibold leading-snug text-left text-blue-400 mb-1">
                 Get captivating customer insights and Analysis.
               </p>
@@ -524,17 +524,17 @@ export default function ga4({ brandsdata }) {
               <p className="text-base md:text-lg leading-relaxed mt-4 text-gray-700">
                 By partnering with AnalyticsLiv, a Google Analytics Partner, you gain access to expert guidance and the latest tools to harness the power of GA4. Let's turn your data into a competitive advantage!
               </p>
-              <button className="mt-6 py-3 px-6 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded transition-all duration-700 ease-in-out">
+              <button className="mt-6 py-3 px-6 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded transition-all duration-700 ease-in-out w-max">
                 Get started today
               </button>
             </div>
-            <div className="absolute w-full md:w-1/2 lg:w-2/3 right-0 h-5/6">
+            <div className="sm:absolute w-full md:w-1/2 lg:w-2/3 right-0 h-5/6 max-sm:h-1/2">
               <img src="/ga4-second.png" alt="Customer Insights and Analysis" className="w-full h-full object-cover transform scale-x-[-1]" />
             </div>
           </div>
-        </section>
+        </section> */}
 
-        <section>
+        {/* <section>
           <div className="mx-4 sm:mx-auto max-w-7xl">
             <div className="mid3 text-2xl text-blue-500 font-semibold text-center py-4">
               <p>Google Analytics - The support system of every marketing team, how it helps ?</p>
@@ -614,10 +614,10 @@ export default function ga4({ brandsdata }) {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
 
-        <section>
+        {/* <section>
           <div className="flex flex-col p-8">
             <div className="mid3 text-2xl text-blue-500 font-semibold text-center py-4">
               <p>Don't just collect data, make it work for you!</p>
@@ -691,7 +691,7 @@ export default function ga4({ brandsdata }) {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         <section>
           <div className="bg-white py-4">
@@ -782,7 +782,7 @@ export default function ga4({ brandsdata }) {
 
         </section>
 
-        <section>
+        {/* <section>
           <div className="max-2xl:min-h-screen pb-10">
             <div>
               <p className="font-bold max-md:px-3 md:font-semibold text-xl md:text-2xl lg:text-2xl lg:px-10 text-center text-blue-400">
@@ -848,7 +848,7 @@ export default function ga4({ brandsdata }) {
             </div>
           </div>
 
-        </section>
+        </section> */}
 
         <ScrollElement
           id="case-studies"

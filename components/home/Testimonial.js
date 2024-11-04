@@ -80,9 +80,9 @@ const Testimonial = () => {
                 <div className='relative px-4 overflow-hidden'>
                     <div className='testimonial-component-wrapper flex flex-wrap lg:flex-nowrap justify-between'>
                         <div className='left-testimonial-item lg:w-[22.4%] w-full'>
-                            <div className='main-title-testimonial lg:w-[24%] w-auto lg:h-full h-auto lg:min-h-[1px] min-h-[344px] lg:p-16 lg:pl-5 py-5 px-10 lg:mx-0 -mx-5 flex lg:absolute static top-0 left-0'>
+                            <div className='main-title-testimonial lg:w-[14%] xl:w-[23%] w-auto lg:h-full h-auto lg:min-h-[1px] min-h-[244px] lg:p-16 lg:pl-5 py-5 px-10 lg:mx-0 -mx-5 flex lg:absolute static top-0 left-0'>
                                 <div className='w-full lg:max-w-sm max-w-none'>
-                                    <h2 className='text-white lg:text-[27px] text-2xl leading-[35px] text-start font-semibold not-italic pb-8 md:pb-12'>Let's See What Our Clients Have To Say</h2>
+                                    <h2 className='text-white  text-2xl md:text-4xl lg:text-[27px] xl:text-6xl leading-[35px] text-start font-semibold not-italic pb-8 md:pb-12'>Let's See What Our Clients Have To Say</h2>
                                 </div>
                             </div>
                         </div>
@@ -119,7 +119,10 @@ const Testimonial = () => {
                                                     <div className='bgshape'>
                                                         <img src="/quote.png" alt="" className=' rotate-180 w-[50px] h-[50px]' />
                                                     </div>
-                                                    <p className='quote-testimonial text-[#fff] text-[13px] text-left font-normal leading-[26px] p-[15px]'>"The AnalyticsLiv team estimated the job length accurately and then carried out the work exactly as briefed, to time and budget. We had one brief hiccup in the conversion tracking code but that was swiftly fixed once identified. Would definitely consider using it again and for more advanced reporting functionality in future"</p>
+                                                    <p className='quote-testimonial text-[#fff] text-[13px] text-left font-normal leading-[26px] p-[15px]'>
+                                                        "The AnalyticsLiv team estimated the job length accurately and then carried out the work exactly as briefed,
+                                                        to time and budget. We had one brief hiccup in the conversion tracking code but that was swiftly fixed once identified.
+                                                        Would definitely consider using it again and for more advanced reporting functionality in future"</p>
                                                 </div>
                                                 <div className='flex items-center justify-start gap-2 py-4 xl:mt-[25px] lg:mt-[60px] md:mt-[105px] mt-[80px]'>
                                                     <img src="/profile1.png" alt="" className='w-24 h-24' />

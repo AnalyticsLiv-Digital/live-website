@@ -8,41 +8,70 @@ import { useState, useEffect } from 'react'
 import { Router, useRouter } from 'next/router';
 import { ScaleLoader } from 'react-spinners'
 import SimilarPost from '../../components/SimilarPost'
+import RecommendedBlogs from '../../components/RecommendedBlog';
 
 const index = ({ blogDat, similarBlogs }) => {
     const blogData = blogDat.blog[0];
     const similarBlogsdata = similarBlogs.blog;
+    const [recommendedBlogsdata, setrecommendedBlogsdata] = useState(null);
+    const [userId, setUserId] = useState(null);
 
     const [formFixed, setFormFixed] = useState(false);
 
+    const mainFnc = async () => {
+        if (!userId) return null; 
+        const res2 = await fetch(`/api/recommendedBlogs?user=${userId}&blog_id=${blogData?.id}&blog_title=${blogData?.title}`);
+        const recommendedBlogs = await res2.json();
+        return recommendedBlogs;
+    };
+
     useEffect(() => {
-        console.log(blogData)
-        AOS.init();
-
-        if(screen.width < 800){
-            var imgs = document.querySelectorAll('.blog-cont img').length;
-           
-            for(var i=0; i<parseInt(imgs); i++){
-                
-        document.querySelectorAll('.blog-cont img')[i].style.width="100%";
-        document.querySelectorAll('.blog-cont img')[i].style.height="auto";
-        document.querySelectorAll('.blog-cont img')[i].closest('span').style.width="100%";
-        document.querySelectorAll('.blog-cont img')[i].closest('span').style.height="auto";
+        (async () => {
+            if (userId) {
+                const recommendedBlogsVal = await mainFnc();
+                setrecommendedBlogsdata(recommendedBlogsVal);
             }
-        
-    }
 
+            AOS.init();
 
+            if (screen.width < 800) {
+                const imgs = document.querySelectorAll('.blog-cont img');
 
-    }, []);
+                imgs.forEach(img => {
+                    img.style.width = "100%";
+                    img.style.height = "auto";
+                    const span = img.closest('span');
+                    if (span) {
+                        span.style.width = "100%";
+                        span.style.height = "auto";
+                    }
+                });
+            }
+        })();
+
+        const getCookie = (name) => {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        };
+
+        const gaCookie = getCookie('_ga');
+        if (gaCookie) {
+            const userId = gaCookie.split('.').slice(2).join('.');
+            setUserId(userId);
+        } else {
+            console.log('_ga cookie not found');
+        }
+    }, [blogData, userId]);
+
 
     useEffect(() => {
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
-            'event' : 'blog-page',
+            'event': 'blog-page',
             'author': blogData.author,
-            'title' : blogData.title,
-            'publish_date' : blogData.date
+            'title': blogData.title,
+            'publish_date': blogData.date
         })
 
     }, []);
@@ -70,7 +99,7 @@ const index = ({ blogDat, similarBlogs }) => {
 
 
 
-    var url = "https://analyticsliv.com/blogs/"+blogData.slug;
+    var url = "https://analyticsliv.com/blogs/" + blogData.slug;
 
     return (<>
         <Head>
@@ -81,7 +110,7 @@ const index = ({ blogDat, similarBlogs }) => {
         <ScrollProgress />
 
         <div>
-            <section className="relative lg:bg-gray-100 md:pt-12">
+            <section className="relative lg:bg-gray-100 md:pt-12 overflow-scroll">
 
 
 
@@ -162,18 +191,16 @@ const index = ({ blogDat, similarBlogs }) => {
 
                             <h3 className="w-full text-slate-700 pt-2 px-3 font-bold tracking-wider">Similar Posts</h3>
 
-
                             {similarBlogsdata && similarBlogsdata.map((blog, key) => (
                                 <SimilarPost blog={blog} key={key} />
 
                             ))}
 
-
-
                         </div>
                     </div>
                 </div>
 
+                {recommendedBlogsdata?.length > 0 ? <RecommendedBlogs recommendedBlogsdata={recommendedBlogsdata} /> : <></>}
             </section>
 
         </div></>
@@ -188,8 +215,6 @@ export async function getServerSideProps(context) {
 
     const res1 = await fetch(`${process.env.domain}/api/similarblogs?slug=${context.params.slug}`)
     const similarBlogs = await res1.json()
-
-
 
     // Pass data to the page via props
     return { props: { blogDat, similarBlogs } }

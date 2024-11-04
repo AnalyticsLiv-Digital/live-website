@@ -93,8 +93,8 @@ const datascience = () => {
             <section className='dtshome w-full relative font-gilroy overflow-hidden'>
                 <div className='h-full'>
                     <div className="relative px-4 md:px-12 pt-8 md:pt-[10px] pb-8 md:pb-0 h-full z-20">
-                        <div className="z-10 flex lg:flex-nowrap items-center flex-wrap justify-between gap-7 pb-8">
-                            <div className="w-full lg:w-1/2 lg:order-1 order-2">
+                        <div className="z-10 flex lg:flex-nowrap items-center flex-wrap justify-between gap-7 py-0 lg:py-7">
+                            <div className="w-full lg:w-1/2 lg:order-1 order-2 h-full">
                                 <h1 className="text-[32px] leading-[1.7em] font-gilroy font-semibold text-maintext mb-[10px]">
                                     Data-Driven Solutions for Smarter Business Growth
                                 </h1>
@@ -103,11 +103,11 @@ const datascience = () => {
                                     In today's data-rich business environment, leveraging advanced analytics and data science is crucial for staying ahead of the competition. At Analyticsliv, we empower organizations to transform raw data into actionable insights, driving strategic decision-making and measurable business growth. Our comprehensive suite of Data Science and Solutions is designed to help you unlock the full potential of your data, optimize processes, and achieve unparalleled success.
                                 </p> */}
                                 <div className='flex max-[425px]:flex-wrap flex-nowrap items-center lg:justify-start justify-center gap-5'>
-                                    <Link href="/contact?id=programatic-advertising">
-                                        <button className="bg-[#30486ae3] text-white w-[208px] hover:bg-white border border-solid hover:border-[#30486ae3] hover:text-[#30486ae3] text-base font-normal tracking-wider rounded-xl py-3 px-6 mt-6">REQUEST A DEMO</button>
+                                    <Link href="/contact?id=data-science">
+                                        <button className="butn mt-6">REQUEST A DEMO</button>
                                     </Link>
-                                    <Link href="/contact?id=programatic-advertising">
-                                        <button className="bg-[#30486ae3] text-white w-[208px] hover:bg-white border border-solid hover:border-[#30486ae3] hover:text-[#30486ae3] text-base font-normal tracking-wider rounded-xl py-3 px-6 max-[425px]:mt-0 mt-6">CONTACT US</button>
+                                    <Link href="/contact?id=data-science">
+                                        <button className="butn max-[425px]:mt-0 mt-6">CONTACT US</button>
                                     </Link>
                                 </div>
                             </div>
@@ -117,14 +117,14 @@ const datascience = () => {
                         </div>
                         <div className=''>
                             <div>
-                                <h2 className='text-center font-bold font-gilroy text-base text-maintext leading-[24px]'>Trusted by Organisations Worldwide</h2>
+                                <h2 className='text-center font-bold font-gilroy text-base text-maintext max-sm:mt-6 max-lg:mt-3 pt-3 xl:py-5 leading-[24px]'>Trusted by Organisations Worldwide</h2>
                             </div>
                             <div className='w-[90%] m-auto md:w-full'>
                                 <Marquee gradient={false} pauseOnHover="true">
                                     <div className='flex space-x-8 justify-center py-4 px-4 mt-[10px]'>
                                         {Trusteddata.brand.map((brand, index) => (
                                             <div key={index}>
-                                                <img src={brand.logo} alt={brand.alt} className='h-[50px] mx-5' />
+                                                <img src={brand.logo} alt={brand.alt} className='h-[50px] mx-2 sm:mx-5' />
                                             </div>
                                         ))}
                                     </div>
@@ -775,7 +775,7 @@ const datascience = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='md:w-[40%] w-full flex items-center justify-center md:mt-0 mt-4'>
+                        <div className='md:w-[40%] max-sm:pl-[3%] w-full flex items-center justify-center md:mt-0 mt-4'>
                             <img src="/Data_Science_Sub_Img_Updated.png" alt="" className='md:h-auto h-[400px]' />
                         </div>
                     </div>
@@ -944,7 +944,7 @@ const datascience = () => {
                             <div className='p-[10px] pl-0'>
                                 <div className='w-full flex justify-center'>
                                     <div className='flex items-center md:justify-end justify-center'>
-                                        <Link href="/contact?id=programatic-advertising">
+                                        <Link href="/contact?id=data-science">
                                             <button className="border border-solid border-[#ffffff] bg-[#ffffff] text-[#de668a] text-base font-normal tracking-wider rounded-xl py-3 px-6">Let's Connect</button>
                                         </Link>
                                     </div>

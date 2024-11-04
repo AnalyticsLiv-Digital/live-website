@@ -74,7 +74,7 @@ const service_A = () => {
                 <link rel="canonical" href="https://www.analyticsliv.com/services/programatic-advertising"></link>
             </Head>
 
-            <section className='prograhome w-full relative font-gilroy overflow-hidden'>
+            <section className='prograhome w-full relative font-gilroy overflow-hidden md:pt-5'>
                 <div className='h-full'>
                     <div className="relative px-4 md:px-12 pt-8 md:pt-0 pb-8 h-full z-20 md:pb-0">
                         <div className="z-10 flex lg:flex-nowrap items-center flex-wrap justify-between gap-7 pb-8 md:pb-0">
@@ -89,11 +89,11 @@ const service_A = () => {
                                     Are you ready to move beyond traditional media buying and embrace the efficiency and effectiveness of programmatic advertising?  AnalyticsLiv's DV360 service empowers you to do just that.
                                 </p>
                                 <div className='flex max-[425px]:flex-wrap flex-nowrap items-center gap-5'>
+                                    {/* <Link href="/contact?id=programatic-advertising">
+                                        <button className="butn max-[425px]:mt-0 mt-6">REQUEST A DEMO</button>
+                                    </Link> */}
                                     <Link href="/contact?id=programatic-advertising">
-                                        <button className="bg-[#30486ae3] text-white w-[208px] hover:bg-white border border-solid hover:border-[#30486ae3] hover:text-[#30486ae3] text-base font-normal tracking-wider rounded-xl py-3 px-6 mt-6">REQUEST A DEMO</button>
-                                    </Link>
-                                    <Link href="/contact?id=programatic-advertising">
-                                        <button className="bg-[#30486ae3] text-white w-[208px] hover:bg-white border border-solid hover:border-[#30486ae3] hover:text-[#30486ae3] text-base font-normal tracking-wider rounded-xl py-3 px-6 max-[425px]:mt-0 mt-6">CONTACT US</button>
+                                        <button className="butn max-[425px]:mt-0 mt-6">CONTACT US</button>
                                     </Link>
                                 </div>
                             </div>
@@ -101,11 +101,11 @@ const service_A = () => {
                                 <img src="/Programmatic_Media_Main_Img_Without_Blur.png" alt="" className='lg:h-[470px] md:h-[400px]' />
                             </div>
                         </div>
-                        <div className=''>
+                        <div className='mt-5'>
                             <div>
                                 <h2 className='text-center font-bold text-base text-maintext leading-[24px]'>Trusted by Organisations Worldwide</h2>
                             </div>
-                            <div className='w-[90%] md:w-full m-auto'>
+                            <div className='max-sm:w-[95%] w-[90%] md:w-full m-auto'>
                                 <Marquee gradient={false} pauseOnHover="true">
                                     <div className='flex space-x-8 justify-center py-4 px-4 mt-4'>
                                         {Trusteddata.brand.map((brand, index) => (
@@ -344,35 +344,35 @@ const service_A = () => {
 
             <section className='bg-[#282833] homeftr relative overflow-hidden font-gilroy'>
                 <div className='inrhomeftr relative'>
-                    <div className='relative z-20 px-4 md:px-20 pt-8 md:pt-6 pb-8 md:pb-0'>
-                        <div className='flex items-center justify-start pb-7 md:pb-0'>
+                    <div className='relative z-20 px-4 md:px-20 pt-6 pb-4 md:pb-0'>
+                        <div className='flex items-center justify-start pb-0 md:pb-0'>
                             <h3 className='text-[#efefef] text-[28px] font-semibold leading-[1.5em] not-italic pb-5'>Our Comprehensive DV360 Services:</h3>
                         </div>
 
                         <div className='lg:flex lg:flex-nowrap flex-wrap items-center hidden powerbox rounded-xl'>
-                            <div className='text-black xl:w-[35%] lg:w-[35%] w-full mt-[11px]'>
+                            <div className='text-black xl:w-[35%] lg:w-[35%] w-full mt-[5px]'>
                                 <div className='p-8 pl-[25px] -mr-[30px] rounded-l-[10px] xl:w-[400px] xl:ml-auto'>
                                     <div onClick={() => setActivetab('1')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '1' ? 'border-t-[#0092f4ab]' : ''}`}>
                                         <div><img src="/Campaign Strategy and Setup white.png" alt="" className='h-10 w-10' /></div>
                                         <p >Campaign Strategy and Setup</p>
                                     </div>
-                                    <div onClick={() => setActivetab('2')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '2' ? 'border-t-[#0092f4ab]' : ''}`}>
+                                    <div onClick={() => setActivetab('2')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '2' ? 'border-t-[#0092f4ab]' : ''}`}>
                                         <div><img src="/Audience Targeting white.png" alt="" className='h-10 w-10' /></div>
                                         <p>Audience Targeting</p>
                                     </div>
-                                    <div onClick={() => setActivetab('3')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '3' ? 'border-t-[#0092f4ab]' : ''}`}>
+                                    <div onClick={() => setActivetab('3')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '3' ? 'border-t-[#0092f4ab]' : ''}`}>
                                         <div><img src="/Ad Format Optimization white.png" alt="" className='h-10 w-10' /></div>
                                         <p>Ad Format Optimization</p>
                                     </div>
-                                    <div onClick={() => setActivetab('4')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '4' ? 'border-t-[#0092f4ab]' : ''}`}>
+                                    <div onClick={() => setActivetab('4')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '4' ? 'border-t-[#0092f4ab]' : ''}`}>
                                         <div><img src="/Real-Time Bidding white.png" alt="" className='h-10 w-10' /></div>
                                         <p>Real-Time Bidding (RTB) Expertise</p>
                                     </div>
-                                    <div onClick={() => setActivetab('5')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '5' ? 'border-t-[#0092f4ab]' : ''}`}>
+                                    <div onClick={() => setActivetab('5')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '5' ? 'border-t-[#0092f4ab]' : ''}`}>
                                         <div><img src="/Continuous Campaign Management & Optimization white.png" alt="" className='h-10 w-[56px]' /></div>
                                         <p>Continuous Campaign Management & Optimization</p>
                                     </div>
-                                    <div onClick={() => setActivetab('6')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '6' ? 'border-t-[#0092f4ab]' : ''}`}>
+                                    <div onClick={() => setActivetab('6')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '6' ? 'border-t-[#0092f4ab]' : ''}`}>
                                         <div><img src="/In-Depth Reporting & Analytics white.png" alt="" className='h-10 w-10' /></div>
                                         <p>In-Depth Reporting & Analytics</p>
                                     </div>
@@ -560,7 +560,7 @@ const service_A = () => {
                             </div>
                             <div className='flex items-center justify-center'>
                                 <Link href="/contact?id=programatic-advertising">
-                                    <button className="bg-transparent border border-solid border-txt text-txt hover:bg-txt hover:text-[#ffffff] text-base font-normal tracking-wider rounded-xl py-3 px-6 mt-6">Know More</button>
+                                    <button className="butn mt-6">Know More</button>
                                 </Link>
                             </div>
                         </div>

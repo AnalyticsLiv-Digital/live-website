@@ -44,6 +44,7 @@ const engagement = () => {
             dataLayer.push({
                 event: 'contact_submission'
             });
+            localStorage.setItem('contactFormSubmitted', 'true');
             fetch('/api/contact', {
                 method: 'POST', // or 'PUT'
                 headers: {
@@ -145,7 +146,7 @@ const engagement = () => {
                                     </h1>
                                     <div className='flex items-center justify-center gap-5'>
                                         <Link href="/contact?id=programatic-advertising">
-                                            <button className="bg-[#30486a] text-white font-gilroy hover:bg-white border border-solid hover:border-[#30486ae3] hover:text-[#30486ae3] text-base font-normal tracking-wider rounded-xl py-3 px-6 mt-2 uppercase">Contact Us</button>
+                                            <button className="butn mt-2 uppercase">Contact Us</button>
                                         </Link>
                                     </div>
                                 </div>
@@ -335,7 +336,7 @@ const engagement = () => {
                 </div>
             </section>
             <section className='engagement'>
-                <div className='relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 z-20'>
+                <div className='relative px-4 md:px-12 pt-3 md:pt-0 pb-0 z-20'>
                     <div>
                         <div className='w-full m-auto'>
                             <div className='w-full px-4'>

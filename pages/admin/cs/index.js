@@ -3,6 +3,7 @@ import {useSession, signIn , signOut} from "next-auth/react"
 import { useRouter } from 'next/navigation'
 import { useState,useEffect } from 'react'
 import GoogleButton from 'react-google-button'
+import Navbar from '../Navbar'
 
 const index = ({casestudies}) => {
     const casestudy = casestudies.casestudy;
@@ -14,6 +15,7 @@ const index = ({casestudies}) => {
   if (session) {
   return (
     <>
+    <Navbar />
     <h1 className='text-center font-bold text-4xl py-4'>CaseStudy</h1>
     <h2 className='font-semibold text-2xl md:pl-6 pl-2 py-4'><a href="/admin/cs/create">Create a New Casestudy</a></h2>
     <table><tr className='text-center font-semibold'>

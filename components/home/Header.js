@@ -423,6 +423,11 @@ const header = () => {
             </div>
           </div>
         </motion.div>}
+        {/* <div className="flex justify-center item-center px-4 md:px-20 my-5 xl:my-0 xl:mt-5 w-full">
+          <a href="/webinar/cookie-consent">
+            <img src="/Web Banner for Website.png" alt="web banner" />
+          </a>
+        </div> */}
         {/*<NextNProgress color="red" showSpinner={false}/>*/}
       </header>
 

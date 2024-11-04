@@ -24,7 +24,9 @@ const JobCard = ({job}) => {
                 </div>
                 </div>
                 <div className="md:w-2/5 md:text-right">
-                    <Link href={`careers/${job.id}`}><button className="border-b-2 border-rose-400 px-4 py-2 text-gray-200 rounded bg-slate-800 hover:bg-cyan-500 hover:text-slate-800 hover:border-slate-600 tracking-wider">Apply Now</button></Link>
+                    {/* <Link href={`careers/${job.id}`}><button className="border-b-2 border-rose-400 px-4 py-2 text-gray-200 rounded bg-slate-800 hover:bg-cyan-500 hover:text-slate-800 hover:border-slate-600 tracking-wider">Apply Now</button></Link> */}
+                    <Link href={`careers/${job.id}`}><button className="butn tracking-wider">Apply Now</button></Link>
+
                 </div>
             </div>
         </div>

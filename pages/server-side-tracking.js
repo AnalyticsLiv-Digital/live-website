@@ -101,7 +101,7 @@ const ServerSideTracking = () => {
             // console.log(formValues);
             setShowWaiting(true);
             dataLayer.push({
-                event: 'dv360_submission'
+                event: 'gtmss_submission'
             });
             fetch('/api/gtmss', {
                 method: 'POST', // or 'PUT'
