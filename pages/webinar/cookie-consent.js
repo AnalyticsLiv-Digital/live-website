@@ -9,7 +9,6 @@ import "slick-carousel/slick/slick-theme.css";
 import { FaArrowLeft, FaArrowRight, FaLongArrowAltRight } from "react-icons/fa";
 import NewPopup from "../../components/newPopup";
 import useContactPopup from "../../components/hooks/useContactPopup";
-import useContactPopup from "../../components/hooks/useContactPopup";
 // import ContactPopup from "../../components/ContactPopup";
 
 export default function CookieConsent({ brandsdata }) {
@@ -212,9 +211,9 @@ export default function CookieConsent({ brandsdata }) {
 
   return (
     <main className="font-lato">
-      {showPopup && (
+      {/* {showPopup && (
         <NewPopup onClose={closePopup} onRegister={registerUser} />
-      )}
+      )} */}
 
       <div className="bg-[#2E2C37]">
         <div className="flex justify-between max-sm:gap-2 px-2 md:px-16 pt-5 ">
@@ -812,22 +811,22 @@ function createPopup(onClose, onRegister) {
 }
 
 // Functions to handle popup show/hide
-function useWebinarPopup() {
-  const popupShown = () => localStorage.getItem('webinarPopupClosed');
-  const registered = () => localStorage.getItem('webinarRegistered');
-  console.log("in usewebinarc", popupShown, registered)
+// function useWebinarPopup() {
+//   const popupShown = () => localStorage.getItem('webinarPopupClosed');
+//   const registered = () => localStorage.getItem('webinarRegistered');
+//   console.log("in usewebinarc", popupShown, registered)
 
-  if (!registered() && (!popupShown() || Date.now() - popupShown() > 86400000)) {
-    console.log("in usewebinarc if condition..", popupShown, registered)
-    setTimeout(() => {
-      createPopup(
-        () => localStorage.setItem('webinarPopupClosed', Date.now()),
-        () => localStorage.setItem('webinarRegistered', 'true')
-      );
-      window.dataLayer.push({ event: 'popupImpression' });
-    }, 5000); // Show popup after 10 seconds
-  }
-}
+//   if (!registered() && (!popupShown() || Date.now() - popupShown() > 86400000)) {
+//     console.log("in usewebinarc if condition..", popupShown, registered)
+//     setTimeout(() => {
+//       createPopup(
+//         () => localStorage.setItem('webinarPopupClosed', Date.now()),
+//         () => localStorage.setItem('webinarRegistered', 'true')
+//       );
+//       window.dataLayer.push({ event: 'popupImpression' });
+//     }, 5000); // Show popup after 10 seconds
+//   }
+// }
 
 // Initialize the popup on page load
-document.addEventListener('DOMContentLoaded', useWebinarPopup);
+// document.addEventListener('DOMContentLoaded', useWebinarPopup);
