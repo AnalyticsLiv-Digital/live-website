@@ -7,11 +7,11 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaArrowLeft, FaArrowRight, FaLongArrowAltRight } from "react-icons/fa";
+import NewPopup from "../../components/newPopup";
 import useContactPopup from "../../components/hooks/useContactPopup";
 // import ContactPopup from "../../components/ContactPopup";
 
 export default function CookieConsent({ brandsdata }) {
-  const { showPopup, closePopup, registerUser } = useContactPopup();
   const initialValues = { fullName: "", email: "", contact: "", company: "" };
   const [formSubmit, setFormSubmit] = useState(false);
   const [formValues, setFormValues] = useState(initialValues);
@@ -19,7 +19,8 @@ export default function CookieConsent({ brandsdata }) {
   const [isSubmit, setIsSubmit] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const [showWaiting, setShowWaiting] = useState(false);
-  
+  const { showPopup, closePopup, registerUser } = useContactPopup();
+
   const NextArrow = (props) => {
     const { onClick } = props;
     return (
@@ -210,6 +211,10 @@ export default function CookieConsent({ brandsdata }) {
 
   return (
     <main className="font-lato">
+      {/* {showPopup && (
+        <NewPopup onClose={closePopup} onRegister={registerUser} />
+      )} */}
+
       <div className="bg-[#2E2C37]">
         <div className="flex justify-between max-sm:gap-2 px-2 md:px-16 pt-5 ">
           <img
@@ -304,23 +309,23 @@ export default function CookieConsent({ brandsdata }) {
             />
           </div>
         ) : formSubmit ? (
-            <div
-              className="webinarForm max-md:mx-4 max-lg:mx-28 overflow-auto z-10 h-[400px] md:h-[475px] lg:h-[500px] xl:h-[530px] 2xl:h-[550px] 
+          <div
+            className="webinarForm max-md:mx-4 max-lg:mx-28 overflow-auto z-10 h-[400px] md:h-[475px] lg:h-[500px] xl:h-[530px] 2xl:h-[550px] 
                   md:my-10 max-md:mt-4 xl:top-[400px] 2xl:top-[550px] lg:w-[350px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] 
                   shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] text-center flex flex-col justify-around items-center px-3 md:px-4 py-2 md:py-5 bg-white"
-            >
-              <h2 className="md:text-xl text-[#3C292A]">
-                Thank you for registering for our exclusive webinar!
-              </h2>
-              <p className="md:text-lg text-[#3C292A]">
-                A confirmation email has been sent to your registered email address with all the webinar details. Please check your inbox for further information.
-              </p>
-              <img
-                alt="Webinar"
-                className="w-64 mx-auto"
-                src="https://storage.googleapis.com/website-bucket-uploads/static/Na_Dec_46.jpg"
-              />
-            </div>
+          >
+            <h2 className="md:text-xl text-[#3C292A]">
+              Thank you for registering for our exclusive webinar!
+            </h2>
+            <p className="md:text-lg text-[#3C292A]">
+              A confirmation email has been sent to your registered email address with all the webinar details. Please check your inbox for further information.
+            </p>
+            <img
+              alt="Webinar"
+              className="w-64 mx-auto"
+              src="https://storage.googleapis.com/website-bucket-uploads/static/Na_Dec_46.jpg"
+            />
+          </div>
         ) : (
           <div
             className="webinarForm max-md:mx-4 max-lg:mx-28 overflow-auto z-10 h-[400px] md:h-[475px] lg:h-[500px] xl:h-[530px] 2xl:h-[550px] 
@@ -374,7 +379,7 @@ export default function CookieConsent({ brandsdata }) {
                 required
                 value={formValues.contact}
                 onChange={handleChange}
-              /> 
+              />
 
 
               <input
@@ -688,3 +693,140 @@ export async function getServerSideProps(context) {
                 </div>
               </div> */
 }
+
+
+
+// Inline styles (replacing TailwindCSS styles)
+const popupStyles = `
+    position: fixed;
+    inset: 0;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 90%;
+    max-height: fit-content;
+    z-index: 1000;
+    overflow-y: auto;
+    margin: auto;
+`;
+
+const formStyles = `
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+`;
+
+function validate(values) {
+  const errors = {};
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+  const mobileRegex = /^\+?(\d{1,3})[-.\s]?(\d{5,14})$/;
+
+  if (!values.fullName) {
+    errors.fullName = "Name is required!";
+  }
+
+  if (!values.contact) {
+    errors.contact = "Contact is required!";
+  } else if (!mobileRegex.test(values.contact)) {
+    errors.contact = "This is not a valid phone number!";
+  }
+
+  if (!values.email) {
+    errors.email = "Email is required!";
+  } else if (!emailRegex.test(values.email)) {
+    errors.email = "This is not a valid email format!";
+  }
+
+  return errors;
+}
+
+function createPopup(onClose, onRegister) {
+  const popup = document.createElement('div');
+  popup.setAttribute('style', popupStyles);
+
+  popup.innerHTML = `
+        <img src="https://storage.googleapis.com/website-bucket-uploads/cross.png" alt="close" style="position: absolute; top: 10px; right: 10px; cursor: pointer;">
+        <div>
+            <h2>BOOST YOUR CONVERSIONS</h2>
+            <p>We offer expert Conversion Rate Optimization (CRO) services to maximize your website's potential.</p>
+            <form style="${formStyles}" id="contactForm">
+                <input type="text" name="fullName" placeholder="Name*" required>
+                <span class="error" style="color: red;"></span>
+                <input type="email" name="email" placeholder="Email*" required>
+                <span class="error" style="color: red;"></span>
+                <input type="text" name="contact" placeholder="Contact No*" required>
+                <span class="error" style="color: red;"></span>
+                <textarea name="message" placeholder="Message" rows="4"></textarea>
+                <button type="submit">Book Now!</button>
+            </form>
+        </div>
+    `;
+
+  document.body.appendChild(popup);
+
+  // Close button event listener
+  popup.querySelector('img[alt="close"]').addEventListener('click', () => {
+    onClose();
+    document.body.removeChild(popup);
+  });
+
+  // Form submission with validation
+  popup.querySelector('#contactForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = Object.fromEntries(new FormData(e.target).entries());
+    console.log("in contactForSubmission formData", formData)
+    const errors = validate(formData);
+    console.log("in contactForSubmission error", errors)
+
+    // Clear previous error messages
+    const errorElements = popup.querySelectorAll('.error');
+    errorElements.forEach(el => el.textContent = "");
+
+    // Display validation errors
+    if (Object.keys(errors).length > 0) {
+      if (errors.fullName) popup.querySelectorAll('.error')[0].textContent = errors.fullName;
+      if (errors.email) popup.querySelectorAll('.error')[1].textContent = errors.email;
+      if (errors.contact) popup.querySelectorAll('.error')[2].textContent = errors.contact;
+      return;
+    }
+    console.log("errro check api call finally ", Object.keys(errors).length)
+
+    // Send form data if validation passes
+    fetch('/api/popupContact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    })
+      .then(response => response.json())
+      .then(() => {
+        onRegister();
+        window.dataLayer.push({ event: 'contactFormSubmitted' });
+        document.body.removeChild(popup);
+      })
+      .catch(error => console.error('Error:', error));
+  });
+}
+
+// Functions to handle popup show/hide
+// function useWebinarPopup() {
+//   const popupShown = () => localStorage.getItem('webinarPopupClosed');
+//   const registered = () => localStorage.getItem('webinarRegistered');
+//   console.log("in usewebinarc", popupShown, registered)
+
+//   if (!registered() && (!popupShown() || Date.now() - popupShown() > 86400000)) {
+//     console.log("in usewebinarc if condition..", popupShown, registered)
+//     setTimeout(() => {
+//       createPopup(
+//         () => localStorage.setItem('webinarPopupClosed', Date.now()),
+//         () => localStorage.setItem('webinarRegistered', 'true')
+//       );
+//       window.dataLayer.push({ event: 'popupImpression' });
+//     }, 5000); // Show popup after 10 seconds
+//   }
+// }
+
+// Initialize the popup on page load
+// document.addEventListener('DOMContentLoaded', useWebinarPopup);
