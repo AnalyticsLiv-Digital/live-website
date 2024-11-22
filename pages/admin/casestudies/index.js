@@ -58,7 +58,7 @@ const Index = ({ casestudies }) => {
                         {casestudy.active ? "Active" : "Inactive"}
                       </td>
                       <td className="py-4 px-6">
-                        <a href={`/casestudies/${casestudy.slug}`} className="text-gray-400 hover:underline">
+                        <a href={`/case-studies/${casestudy.slug}`} className="text-gray-400 hover:underline">
                           Preview
                         </a>
                       </td>
