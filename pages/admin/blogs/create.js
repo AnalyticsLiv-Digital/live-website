@@ -28,6 +28,32 @@ const index = () => {
   const [isSubmit, setIsSubmit] = useState(false);
   console.log(formValues);
 
+
+  useEffect(() => {
+    const fetchSequence = async () => {
+      try {
+        const response = await fetch(`/api/admin/latestsequence`);
+        const sequenceData = await response.json();
+        console.log("data seq object", sequenceData)
+
+        const latestSequence = parseInt(sequenceData?.blog?.sequence) || 0; // Default to 0 if sequence is undefined or NaN
+        const incrementedSequence = latestSequence + 1;
+        console.log("latestSequence", latestSequence, "incrementedSequence", incrementedSequence)
+
+        setFormValues(prevValues => ({
+          ...prevValues,
+          sequence: String(incrementedSequence)
+
+        }));
+
+      } catch (error) {
+        console.error("Error fetching sequence:", error);
+      }
+    };
+
+    fetchSequence();
+  }, []);
+
   useEffect(() => {
     const today = new Date();
     const formattedToday = formatDate(today);
