@@ -5,9 +5,20 @@ import Navbar from "../Navbar";
 
 const index = ({ blogDat }) => {
   const blogsData = blogDat.blog;
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
 
   const [selectedDocId, setSelectedDocId] = useState(null);
+
+  if (status === 'loading') {
+    return (
+      <div className="flex flex-col min-h-screen justify-center items-center space-y-4">
+        <div className="flex items-center">
+          <div className="w-12 h-12 border-4 border-t-transparent border-blue-500 border-solid rounded-full animate-spin"></div>
+        </div>
+        <span className="text-lg font-semibold text-gray-700">Loading...</span>
+      </div>
+    );
+  }
 
   const handleDocIdClick = (docId) => {
     setSelectedDocId(docId);

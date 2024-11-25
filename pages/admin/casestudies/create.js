@@ -7,14 +7,37 @@ import GoogleButton from 'react-google-button'
 const index = () => {
 
   //console.log(blogData);
-  const initialValues = { open: 'true', coverimage: '', description: '', title: '', slug: '', author: '', filename: '', date: '', active: '', sequence: '', heading1: '', heading2: '', heading3: '', heading4: '', heading5: '', content1: '', content2: '', content3: '', content4: '', content5: '' };
+  const initialValues = { open: '', coverimage: '', description: '', title: '', slug: '', author: '', filename: '', date: '', active: 'false', sequence: '', heading1: '', heading2: '', heading3: '', heading4: '', heading5: '', content1: '', content2: '', content3: '', content4: '', content5: '' };
   const [formValues, setFormValues] = useState(initialValues);
+  const [formattedDate, setFormattedDate] = useState('');
   const [isSubmit, setIsSubmit] = useState(false);
   console.log(formValues);
   const router = useRouter();
 
+  useEffect(() => {
+    const today = new Date();
+    const formattedToday = formatDate(today);
+    setFormValues({ ...formValues, date: formattedToday });
+    setFormattedDate(formattedToday);
+  }, []);
 
+  const formatDate = (date) => {
+    const day = date.getDate();
+    const month = date.toLocaleString('default', { month: 'short' });
+    const year = date.getFullYear();
+    const suffix = getOrdinalSuffix(day);
+    return `${day}${suffix} ${month} ${year}`;
+  };
 
+  const getOrdinalSuffix = (day) => {
+    if (day > 3 && day < 21) return 'th';
+    switch (day % 10) {
+      case 1: return 'st';
+      case 2: return 'nd';
+      case 3: return 'rd';
+      default: return 'th';
+    }
+  };
   const uploadPhoto = async (e) => {
     const file = e.target.files[0];
     var file_size = e.target.files[0].size;
@@ -110,10 +133,20 @@ const index = () => {
 
   };
 
+  const handleDateChange = (e) => {
+    const selectedDate = new Date(e.target.value);
+    const formatted = formatDate(selectedDate);
+    setFormattedDate(formatted);
+    setFormValues({ ...formValues, date: formatted });
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
-    console.log(formValues);
+
+    if (name === 'date') {
+      setFormattedDate(formatDate(value));
+    }
   };
 
 
@@ -202,9 +235,28 @@ const index = () => {
               Slug - </label>
               <input required className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="slug" value={formValues.slug} onChange={handleChange} /><br />
             </div>
-            <div><label className="block text-base font-semibold mb-1 text-gray-200">
-              Publish Date - </label>
-              <input className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="date" value={formValues.date} onChange={handleChange} /><br />
+            <div>
+              <label className="block text-base font-semibold mb-1 text-gray-200">Publish Date - </label>
+              <div className="flex items-center gap-4">
+                <input
+                  type="date"
+                  onChange={handleDateChange}
+                  className="absolute w-8 opacity-0"
+                />
+                <div className="flex items-center cursor-pointer" onClick={() => document.querySelector('input[type="date"]').showPicker()}>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-5 h-5 text-gray-300" viewBox="0 0 24 24">
+                    <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm-7-7h5v5h-5z" />
+                  </svg>
+                </div>
+                <input
+                  type="text"
+                  value={formattedDate}
+                  readOnly
+                  placeholder="Selected date"
+                  className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none"
+                />
+              </div>
+              {/* <input className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="date" value={formValues.date} onChange={handleChange} /><br /> */}
             </div>
             <div><label className="block text-base font-semibold mb-1 text-gray-200">
               Description - </label>
@@ -231,7 +283,7 @@ const index = () => {
               <input required className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="sequence" value={formValues.sequence} onChange={handleChange} /><br />
             </div>
             <label className="block text-base font-semibold mb-1 text-gray-200">Active - </label><select required className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="active" value={formValues.active} onChange={handleChange} ><option value="true">Yes</option><option value="false">No</option> </select><br />
-            <label className="block text-base font-semibold mb-1 text-gray-200">Open Download - </label><select required className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="active" value={formValues.open} onChange={handleChange} ><option value="true">Yes</option><option value="false">No</option> </select><br />
+            <label className="block text-base font-semibold mb-1 text-gray-200">Open Download - </label><select required className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="open" value={formValues.open} onChange={handleChange} ><option value="true">Yes</option><option value="false">No</option> </select><br />
 
             <label className="block text-base font-semibold mb-1 text-gray-200">Content - </label>
             <input required placeholder='Heading 1' className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="heading1" value={formValues.heading1} onChange={handleChange} /><br />
