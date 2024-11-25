@@ -7,7 +7,8 @@ import connectDb from "../../../../middleware/mongoose";
 const handler = async (req, res) => {
     if (req.method == 'POST') {
         const response = await fetch('https://script.google.com/macros/s/AKfycbxidlMSRADTNk4kjam5Lf58cESQwxrntzlvO_kvcxx2dmSxdbD2NjxAbecDTyrFJNPs_w/exec?' + req.body.document_id);
-        const blogcontent = await response.text();
+        let blogcontent = await response.text();
+        blogcontent = blogcontent.replaceAll('https://www.google.com/url?q=','')
 
         const latestBlog = await Blog.findOne().sort({ _id: -1 }).exec();
         const newId = latestBlog ? Number(latestBlog.id) + 1 : 1;
