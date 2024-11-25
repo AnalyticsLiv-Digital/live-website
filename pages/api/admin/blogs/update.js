@@ -45,9 +45,9 @@ export default async function handler(req, res) {
     try {
       // Fetch data from an external API
       const response = await fetch('https://script.google.com/macros/s/AKfycbxidlMSRADTNk4kjam5Lf58cESQwxrntzlvO_kvcxx2dmSxdbD2NjxAbecDTyrFJNPs_w/exec?'+req.body.document_id);
-      const blogcontent = await response.text();
+      let blogcontent = await response.text();
+      blogcontent = blogcontent.replaceAll('https://www.google.com/url?q=','')
 
-      console.log(blogcontent);
       var title = req.body.title;
       var description = req.body.description;
       var slug = req.body.slug;

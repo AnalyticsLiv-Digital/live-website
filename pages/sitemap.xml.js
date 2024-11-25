@@ -54,15 +54,6 @@ function generateSiteMap(posts) {
        <loc>https://analyticsliv.com/case-studies/</loc>
      </url>
      <url>
-       <loc>https://analyticsliv.com/about-us/</loc>
-     </url>
-     <url>
-       <loc>https://analyticsliv.com/contact/</loc>
-     </url>
-     <url>
-       <loc>https://analyticsliv.com/careers/</loc>
-     </url>
-     <url>
        <loc>https://analyticsliv.com/ga4</loc>
      </url>
      <url>
