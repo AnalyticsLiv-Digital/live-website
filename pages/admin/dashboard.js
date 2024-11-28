@@ -28,7 +28,7 @@ const index = ({ data }) => {
   if (session) {
     return (
       <>
-        <div className="bg-gray-100 h-[100dvh] overflow-hidden">
+        <div className="bg-gray-100 h-[100dvh] md:overflow-hidden">
           <Navbar />
 
           <div className="flex flex-col max-md:gap-6 gap-12 items-center justify-evenly">

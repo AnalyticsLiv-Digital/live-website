@@ -191,6 +191,7 @@ const index = () => {
       .then((data) => {
         console.log('Success:', data);
         alert('data updated');
+        router.push("/admin/casestudies");
       })
       .catch((error) => {
         console.error('Error:', error);
