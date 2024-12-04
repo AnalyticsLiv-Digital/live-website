@@ -219,7 +219,7 @@ const Home = () => {
 
               <div className="">
                 <div>
-                  <h2 className="text-center font-bold text-base text-maintext leading-[24px]">
+                  <h2 className="text-center font-bold text-base lg:text-[28px] text-maintext leading-[24px]">
                     Trusted by Organisations Worldwide
                   </h2>
                 </div>

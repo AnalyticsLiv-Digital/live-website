@@ -102,8 +102,8 @@ const Footer = () => {
                                         <div className=''>
                                             <ul className='uppercase tracking-wider text-start max-sm:flex max-sm:flex-wrap max-sm:gap-3'>
                                                 <li className='py-1 md:pb-2 text-[13px] text-[#efefef] font-normal leading-5'> <Link href="/services/programatic-advertising">Advertising</Link> </li>
-                                                <li className='py-1 md:pb-2 text-[13px] text-[#efefef] font-normal leading-5'> <Link href="/services/analytics?id=audit-and-health-check">Analytics</Link> </li>
-                                                <li className='py-1 md:pb-2 text-[13px] text-[#efefef] font-normal leading-5'> <Link href="/services/analytics?id=audit-and-health-check#">Solutions</Link> </li>
+                                                <li className='py-1 md:pb-2 text-[13px] text-[#efefef] font-normal leading-5'> <Link href="/services/analytics">Analytics</Link> </li>
+                                                <li className='py-1 md:pb-2 text-[13px] text-[#efefef] font-normal leading-5'> <Link href="/services/analytics?id=audit-and-health-check">Solutions</Link> </li>
                                                 <li className='py-1 md:pb-2 text-[13px] text-[#efefef] font-normal leading-5'> <Link href="/services/training">Training</Link> </li>
                                             </ul>
                                         </div>
@@ -140,7 +140,13 @@ const Footer = () => {
                             </div>
 
                             <div className='flex items-center justify-center'>
-                                <div className='text-[14px] font-normal text-white'>© Created by Analytics Liv Digital LLP, In Collaboration With Collabo LLC, All rights reserved.</div>
+                                <div className='text-[14px] font-normal text-white'>© Created by Analytics Liv Digital LLP, In Collaboration With Collabo LLC, All rights reserved.
+                                    &nbsp;&nbsp;<Link href="/privacy-policy" className='text-blue-200'>Privacy Policy</Link>
+                                    &nbsp; | &nbsp;
+                                    <Link href="/terms-and-conditions" className='text-blue-200'>Terms & Conditions</Link>
+                                    {/* &nbsp; | &nbsp;
+                                    <Link href="/refund-policy" className='text-blue-200'>Refund Policy</Link> */}
+                                </div>
                             </div>
 
                         </div>
