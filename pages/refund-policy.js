@@ -23,152 +23,153 @@ const refundpolicy = () => {
 
         </div>
         <div className="p-10 pt-0 text-base font-normal leading-7 text-[#243238]">
-            <div className="text-[#243238] text-base leading-[24px] font-normal my-[15px]">
-                <strong>Returns</strong>
-            </div>
-
-            <p className="text-sm">
-                Our policy lasts 30 days. If 30 days have gone by since your purchase, unfortunately, we can’t offer you a refund or exchange.
+            <p>
+                Thank you for choosing AnalyticsLiv Digital as your trusted business partner!
+                This refund policy applies to all customers who have signed up and paid for our services. All payments made are non-refundable and non-transferable unless otherwise stated in this policy. We reserve the right to refuse a refund request if there is suspicion of payment fraud, unethical behavior, or violations of our Terms of Service.
             </p>
-
-            <p className="text-sm">
-                To be eligible for a return, your item must be unused and in the same condition that you received it. It must also be in the original packaging.
-            </p>
-
-            <p className="text-sm">
-                Several types of goods are exempt from being returned. Perishable goods such as:
-            </p>
-            <ul className="list-none pl-5">
-                <li className="relative pl-6">
-                    <span className="absolute left-0 top-0 text-2xl font-bold">•</span> Food
-                </li>
-                <li className="relative pl-6">
-                    <span className="absolute left-0 top-0 text-2xl font-bold">•</span> Flowers
-                </li>
-                <li className="relative pl-6">
-                    <span className="absolute left-0 top-0 text-2xl font-bold">•</span> Newspapers or magazines
-                </li>
-            </ul>
-            <p className="text-sm">
-                We also do not accept products that are intimate or sanitary goods, hazardous materials, or flammable liquids or gases.
-            </p>
-
-            <p className="text-sm">
-                Additional non-returnable items include:
-            </p>
-            <ul className="list-none pl-5">
-                <li className="relative pl-6">
-                    <span className="absolute left-0 top-0 text-2xl font-bold">•</span> Gift cards
-                </li>
-                <li className="relative pl-6">
-                    <span className="absolute left-0 top-0 text-2xl font-bold">•</span> Downloadable software products
-                </li>
-                <li className="relative pl-6">
-                    <span className="absolute left-0 top-0 text-2xl font-bold">•</span> Some health and personal care items
-                </li>
-            </ul>
-
-            <p className="text-sm">
-                To complete your return, we require a receipt or proof of purchase. Please do not send your purchase back to the manufacturer.
-            </p>
-
-            <p className="text-sm">
-                There are certain situations where only partial refunds are granted:
-            </p>
-            <ul className="list-none pl-5">
-                <li className="relative pl-6">
-                    <span className="absolute left-0 top-0 text-2xl font-bold">•</span> Book with obvious signs of use
-                </li>
-                <li className="relative pl-6">
-                    <span className="absolute left-0 top-0 text-2xl font-bold">•</span> CD, DVD, VHS tape, software, video game, cassette tape, or vinyl record that has been opened
-                </li>
-                <li className="relative pl-6">
-                    <span className="absolute left-0 top-0 text-2xl font-bold">•</span> Any item not in its original condition, is damaged, or missing parts for reasons not due to our error
-                </li>
-                <li className="relative pl-6">
-                    <span className="absolute left-0 top-0 text-2xl font-bold">•</span> Any item that is returned more than 30 days after delivery
-                </li>
-            </ul>
+            <div className='border-t border-t-gray-500 my-10'></div>
 
             <div className="text-[#243238] text-base leading-[24px] font-normal my-[15px]">
-                <strong>Refunds (if applicable)</strong>
+                <strong>Eligibility for Refunds and Transfers</strong>
             </div>
 
-            <p className="text-sm">
-                Once your return is received and inspected, we will send you an email to notify you that we have received your returned item. We will also notify you of the approval or rejection of your refund.
-            </p>
+            <p>Our refund policy is valid for 30 days from the date of service activation. After 30 days, unfortunately, we cannot offer refunds or exchanges. To be eligible for a refund, the following conditions must be met:</p>
 
-            <p className="text-sm">
-                If you are approved, then your refund will be processed, and a credit will automatically be applied to your credit card or original method of payment, within a certain amount of days.
-            </p>
+            <div className='ml-10'>
+                <ol>
+                    <li>
+                        <strong>1. Accurate Campaign Information:</strong>
+                        <ul>
+                            {/* <li class="flex items-start">
+                                <span class="w-2 h-2 bg-white border border-black rounded-full mr-2"></span>
+                                Advertisers must provide accurate information about their products or services when submitting campaigns for approval, including any suspension history on platforms or with other agencies.
+                            </li> */}
+                            <li className='ml-10'>Advertisers must provide accurate information about their products or services when submitting campaigns for approval, including any suspension history on platforms or with other agencies.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <ol>
+                    <li>
+                        <strong>2. Approval of Changes:</strong>
+                        <ul>
+                            <li className='ml-10'>Advertisers must inform AnalyticsLiv Digital of any changes to their product, service, advertising content, or creatives and obtain approval before launching their campaigns.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <ol>
+                    <li>
+                        <strong>3. Policy Violations</strong>
+                        <ul>
+                            <li className='ml-10'>If AnalyticsLiv Digital detects that advertisers use unapproved creatives, landing pages, or content that violates Google advertising policies, a $2,000 penalty will be retained, and the remaining balance (if any) will be refunded.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <ol>
+                    <li>
+                        <strong>4. Platform Compliance:</strong>
+                        <ul>
+                            <li className='ml-10'>Advertisers must not violate any terms or policies set by the advertising platform used for their campaigns.The details of the said activities have been detailed out based on the Google Support document <a href='https://support.google.com/adspolicy/answer/6008942?hl=en'>🔗
+                            </a> </li>
+                        </ul>
+                    </li>
+                </ol>
+                <ol>
+                    <li>
+                        <strong>5. Prepayment Requirements:</strong>
+                        <ul>
+                            <li className='ml-10'>All advertising budgets and associated fees must be deposited in full prior to launching campaigns.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <ol>
+                    <li>
+                        <strong>6. Payment History:</strong>
+                        <ul>
+                            <li className='ml-10'>Advertisers must have no prior history of payment disputes with AnalyticsLiv Digital.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div className='border-t border-t-gray-500 my-10'></div>
 
             <div className="text-[#243238] text-base leading-[24px] font-normal my-[15px]">
-                <strong>Late or Missing Refunds (if applicable)</strong>
+                <strong>Refund Amount</strong>
             </div>
 
-            <p className="text-sm">
-                If you haven’t received a refund yet, first check your bank account again.
+            <p>
+                The refund amount will consist of the remaining, unspent advertising budget. Refunds do not include:
             </p>
 
-            <p className="text-sm">
-                Then contact your credit card company; it may take some time before your refund is officially posted.
-            </p>
+            <div className='ml-10'>
+                <ul>
+                    <li className="relative pl-6">
+                        <span className="absolute left-0 top-0 text-2xl font-bold">•</span> Advertising credits or vouchers
+                    </li>
+                    <li className="relative pl-6">
+                        <span className="absolute left-0 top-0 text-2xl font-bold">•</span> Rental fees or agency fees
+                    </li>
+                    <li className="relative pl-6">
+                        <span className="absolute left-0 top-0 text-2xl font-bold">•</span> Taxes or any other incurred costs
+                    </li>
+                    {/* <li>Advertising credits or vouchers</li>
+                    <li>Rental fees or agency fees</li>
+                    <li>Taxes or any other incurred costs</li> */}
+                </ul>
+            </div>
+            <div className='border-t border-t-gray-500 my-10'></div>
 
-            <p className="text-sm">
-                Next, contact your bank. There is often some processing time before a refund is posted.
-            </p>
-
-            <p className="text-sm">
-                If you’ve done all of this and you still have not received your refund yet, please contact us at <a href="mailto:support@analyticsliv.com" className='text-blue-500'>support@analyticsliv.com</a> .
-            </p>
 
             <div className="text-[#243238] text-base leading-[24px] font-normal my-[15px]">
-                <strong>Sale Items (if applicable)</strong>
+                <strong>Payment Method</strong>
             </div>
 
-            <p className="text-sm">
-                Only regular priced items may be refunded, unfortunately, sale items cannot be refunded.
+            <p>
+                Refunds will only be issued to the original payment method used for the transaction. If the original payment method is no longer available, additional information may be required on a case-by-case basis. AnalyticsLiv Digital reserves the right to decline the refund if the advertiser fails to provide necessary information or meet the conditions outlined.
             </p>
+            <div className='border-t border-t-gray-500 my-10'></div>
+
 
             <div className="text-[#243238] text-base leading-[24px] font-normal my-[15px]">
-                <strong>Exchanges (if applicable)</strong>
+                <strong>Processing Time</strong>
             </div>
-
-            <p className="text-sm">
-                We only replace items if they are defective or damaged. If you need to exchange it for the same item, send us an email at <a href="mailto:support@analyticsliv.com" className='text-blue-500'>support@analyticsliv.com</a> and send your item to: 622 Manglam Electronic Market, Jaipur, Rajasthan, India 302001.
+            <p>
+                Refund processing times may vary depending on the payment method. Refunds will typically be processed within <strong>5-20 business days</strong>.
             </p>
+            <div className='border-t border-t-gray-500 my-10'></div>
+
 
             <div className="text-[#243238] text-base leading-[24px] font-normal my-[15px]">
-                <strong>Gifts</strong>
+                <strong>How to Request Refunds or Transfers</strong>
             </div>
 
-            <p className="text-sm">
-                If the item was marked as a gift when purchased and shipped directly to you, you’ll receive a gift credit for the value of your return. Once the returned item is received, a gift certificate will be mailed to you.
+            <p>
+                To request a refund or transfer, please contact your designated agent. If you are unable to reach your agent, please email us at <a href="mailto:support@analyticsliv.com" className='text-blue-500'>support@analyticsliv.com</a> with the following information:
             </p>
 
-            <p className="text-sm">
-                If the item wasn’t marked as a gift when purchased, or the gift giver had the order shipped to themselves to give to you later, we will send a refund to the gift giver and they will find out about your return.
-            </p>
+            <div className='ml-10'>
+                <ul>
+                    <li className="relative pl-6">
+                        <span className="absolute left-0 top-0 text-2xl font-bold">•</span> Full name
+                    </li>
+                    <li className="relative pl-6">
+                        <span className="absolute left-0 top-0 text-2xl font-bold">•</span> Campaign details
+                    </li>
+                    <li className="relative pl-6">
+                        <span className="absolute left-0 top-0 text-2xl font-bold">•</span> Reason for refund or transfer request
+                    </li>
+                </ul>
+            </div>
+            <p>Our team will review your request and respond within <strong>2-5 business days</strong>.</p>
+            <div className='border-t border-t-gray-500 my-10'></div>
+
 
             <div className="text-[#243238] text-base leading-[24px] font-normal my-[15px]">
-                <strong>Shipping</strong>
+                <strong>Policy Updates</strong>
             </div>
-
-            <p className="text-sm">
-                To return your product, you should mail your product to: 622 Manglam Electronic Market, Jaipur, Rajasthan, India 302001.
+            <p>
+                This refund policy is subject to change without prior notice. Please check this page regularly to stay informed of any updates.
             </p>
-
-            <p className="text-sm">
-                You will be responsible for paying for your own shipping costs for returning your item. Shipping costs are non-refundable. If you receive a refund, the cost of return shipping will be deducted from your refund.
-            </p>
-
-            <p className="text-sm">
-                Depending on where you live, the time it may take for your exchanged product to reach you, may vary.
-            </p>
-
-            <p className="text-sm">
-                If you are shipping an item over $75, you should consider using a trackable shipping service or purchasing shipping insurance. We don’t guarantee that we will receive your returned item.
-            </p>
+            <p>Thank you for trusting AnalyticsLiv Digital. We are committed to providing transparent and high-quality services to help your business succeed.</p>
         </div>
     </>
     )
