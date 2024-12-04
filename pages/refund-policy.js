@@ -119,7 +119,7 @@ const refundpolicy = () => {
             </p>
 
             <p className="text-sm">
-                If you’ve done all of this and you still have not received your refund yet, please contact us at <a href="mailto:someone@example.com" className='text-blue-500'>support@analyticsliv.com</a> .
+                If you’ve done all of this and you still have not received your refund yet, please contact us at <a href="mailto:support@analyticsliv.com" className='text-blue-500'>support@analyticsliv.com</a> .
             </p>
 
             <div className="text-[#243238] text-base leading-[24px] font-normal my-[15px]">
@@ -135,7 +135,7 @@ const refundpolicy = () => {
             </div>
 
             <p className="text-sm">
-                We only replace items if they are defective or damaged. If you need to exchange it for the same item, send us an email at <a href="mailto:someone@example.com" className='text-blue-500'>support@analyticsliv.com</a> and send your item to: 622 Manglam Electronic Market, Jaipur, Rajasthan, India 302001.
+                We only replace items if they are defective or damaged. If you need to exchange it for the same item, send us an email at <a href="mailto:support@analyticsliv.com" className='text-blue-500'>support@analyticsliv.com</a> and send your item to: 622 Manglam Electronic Market, Jaipur, Rajasthan, India 302001.
             </p>
 
             <div className="text-[#243238] text-base leading-[24px] font-normal my-[15px]">

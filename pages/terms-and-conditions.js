@@ -348,7 +348,7 @@ const termsAndConditions = () => {
             </div>
 
             <p className="text-sm">
-                Questions about the Terms of Service should be sent to us at <a href="mailto:someone@example.com" className='text-blue-500'>support@analyticsliv.com</a> .
+                Questions about the Terms of Service should be sent to us at <a href="mailto:support@analyticsliv.com" className='text-blue-500'>support@analyticsliv.com</a> .
             </p>
 
         </div>
