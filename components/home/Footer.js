@@ -144,8 +144,8 @@ const Footer = () => {
                                     &nbsp;&nbsp;<Link href="/privacy-policy" className='text-blue-200'>Privacy Policy</Link>
                                     &nbsp; | &nbsp;
                                     <Link href="/terms-and-conditions" className='text-blue-200'>Terms & Conditions</Link>
-                                    {/* &nbsp; | &nbsp;
-                                    <Link href="/refund-policy" className='text-blue-200'>Refund Policy</Link> */}
+                                    &nbsp; | &nbsp;
+                                    <Link href="/refund-policy" className='text-blue-200'>Refund Policy</Link>
                                 </div>
                             </div>
 
