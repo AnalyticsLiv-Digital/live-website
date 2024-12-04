@@ -35,7 +35,7 @@ const termsAndConditions = () => {
             <p className="text-sm">Any new features or tools which are added to the current store shall also be subject to the Terms of Service. You can review the most current version of the Terms of Service at any time on this page. We reserve the right to update, change or replace any part of these Terms of Service by posting updates and/or changes to our website. It is your responsibility to check this page periodically for changes. Your continued use of or access to the website following the posting of any changes constitutes acceptance of those changes.</p>
 
             <div className="text-[#243238] text-base leading-[24px] font-normal my-[15px]">
-                <strong>ONLINE STORE TERMS</strong>
+                <strong>Online Store Terms</strong>
             </div>
 
             <p className="text-sm">
@@ -55,7 +55,7 @@ const termsAndConditions = () => {
             </p>
 
             <div className="text-[#243238] text-base leading-[24px] font-normal my-[15px]">
-                <strong>GENERAL CONDITIONS</strong>
+                <strong>General Conditions</strong>
             </div>
 
             <p className="text-sm">
@@ -77,7 +77,7 @@ const termsAndConditions = () => {
                 The headings used in this agreement are included for convenience only and will not limit or otherwise affect these Terms.
             </p>
             <div className="text-[#243238] text-base leading-[24px] font-normal my-[15px]">
-                <strong>ACCURACY, COMPLETENESS AND TIMELINESS OF INFORMATION</strong>
+                <strong>Accuracy, Completeness And Timeliness Of Information</strong>
             </div>
 
             <p className="text-sm">
@@ -93,7 +93,7 @@ const termsAndConditions = () => {
             </p>
 
             <div className="text-[#243238] text-base leading-[24px] font-normal my-[15px]">
-                <strong>MODIFICATIONS TO THE SERVICE AND PRICES</strong>
+                <strong>Modifications To The Service And Prices</strong>
             </div>
 
             <p className="text-sm">
@@ -110,7 +110,7 @@ const termsAndConditions = () => {
 
 
             <div className="text-[#243238] text-base leading-[24px] font-normal my-[15px]">
-                <strong>PRODUCTS OR SERVICES</strong>
+                <strong>Products Or Services</strong>
             </div>
 
             <p className="text-sm">
@@ -137,7 +137,7 @@ const termsAndConditions = () => {
 
 
             <div className="text-[#243238] text-base leading-[24px] font-normal my-[15px]">
-                <strong>ACCURACY OF BILLING AND ACCOUNT INFORMATION</strong>
+                <strong>Accuracy Of Billing And Account Information</strong>
             </div>
 
             <p className="text-sm">
@@ -159,7 +159,7 @@ const termsAndConditions = () => {
             </p>
 
             <div className="text-[#243238] text-base leading-[24px] font-normal my-[15px]">
-                <strong>OPTIONAL TOOLS</strong>
+                <strong>Optional Tools</strong>
             </div>
 
             <p className="text-sm">
@@ -173,7 +173,7 @@ const termsAndConditions = () => {
             </p>
 
             <div className="text-[#243238] text-base leading-[24px] font-normal my-[15px]">
-                <strong>THIRD-PARTY LINKS</strong>
+                <strong>Third-Party Links</strong>
             </div>
 
             <p className="text-sm">
@@ -195,7 +195,7 @@ const termsAndConditions = () => {
             </p>
 
             <div className="text-[#243238] text-base leading-[24px] font-normal my-[15px]">
-                <strong>USER COMMENTS, FEEDBACK AND OTHER SUBMISSIONS</strong>
+                <strong>User Comments, Feedback And Other Submissions</strong>
             </div>
 
             <p className="text-sm">
@@ -224,7 +224,7 @@ const termsAndConditions = () => {
             </p>
 
             <div className="text-[#243238] text-base leading-[24px] font-normal my-[15px]">
-                <strong>PERSONAL INFORMATION</strong>
+                <strong>Personal Information</strong>
             </div>
 
             <p className="text-sm">
@@ -232,7 +232,7 @@ const termsAndConditions = () => {
             </p>
 
             <div className="text-[#243238] text-base leading-[24px] font-normal my-[15px]">
-                <strong>ERRORS, INACCURACIES AND OMISSIONS</strong>
+                <strong>Errors Inaccuracies And Omissions</strong>
             </div>
 
             <p className="text-sm">
@@ -244,7 +244,7 @@ const termsAndConditions = () => {
             </p>
 
             <div className="text-[#243238] text-base leading-[24px] font-normal my-[15px]">
-                <strong>PROHIBITED USES</strong>
+                <strong>Prohibited Uses</strong>
             </div>
 
             <p className="text-sm">
@@ -252,7 +252,7 @@ const termsAndConditions = () => {
             </p>
 
             <div className="text-[#243238] text-base leading-[24px] font-normal my-[15px]">
-                <strong>DISCLAIMER OF WARRANTIES; LIMITATION OF LIABILITY</strong>
+                <strong>Disclaimer Of Warranties; Limitation Of Liability</strong>
             </div>
 
             <p className="text-sm">
@@ -276,7 +276,7 @@ const termsAndConditions = () => {
             </p>
 
             <div className="text-[#243238] text-base leading-[24px] font-normal my-[15px]">
-                <strong>INDEMNIFICATION</strong>
+                <strong>Indemnification</strong>
             </div>
 
             <p className="text-sm">
@@ -284,7 +284,7 @@ const termsAndConditions = () => {
             </p>
 
             <div className="text-[#243238] text-base leading-[24px] font-normal my-[15px]">
-                <strong>SEVERABILITY</strong>
+                <strong>Severability</strong>
             </div>
 
             <p className="text-sm">
@@ -292,7 +292,7 @@ const termsAndConditions = () => {
             </p>
 
             <div className="text-[#243238] text-base leading-[24px] font-normal my-[15px]">
-                <strong>TERMINATION</strong>
+                <strong>Termination</strong>
             </div>
 
             <p className="text-sm">
@@ -308,7 +308,7 @@ const termsAndConditions = () => {
             </p>
 
             <div className="text-[#243238] text-base leading-[24px] font-normal my-[15px]">
-                <strong>ENTIRE AGREEMENT</strong>
+                <strong>Entire Agreement</strong>
             </div>
 
             <p className="text-sm">
@@ -324,7 +324,7 @@ const termsAndConditions = () => {
             </p>
 
             <div className="text-[#243238] text-base leading-[24px] font-normal my-[15px]">
-                <strong>GOVERNING LAW</strong>
+                <strong>Governing Law</strong>
             </div>
 
             <p className="text-sm">
@@ -332,7 +332,7 @@ const termsAndConditions = () => {
             </p>
 
             <div className="text-[#243238] text-base leading-[24px] font-normal my-[15px]">
-                <strong>CHANGES TO TERMS OF SERVICE</strong>
+                <strong>Changes To Terms Of Service</strong>
             </div>
 
             <p className="text-sm">
@@ -344,11 +344,11 @@ const termsAndConditions = () => {
             </p>
 
             <div className="text-[#243238] text-base leading-[24px] font-normal my-[15px]">
-                <strong>CONTACT INFORMATION</strong>
+                <strong>Contact Information</strong>
             </div>
 
             <p className="text-sm">
-                Questions about the Terms of Service should be sent to us at support@analyticsliv.com.
+                Questions about the Terms of Service should be sent to us at <a href="mailto:someone@example.com" className='text-blue-500'>support@analyticsliv.com</a> .
             </p>
 
         </div>
