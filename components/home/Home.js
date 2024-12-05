@@ -125,7 +125,7 @@ const Home = () => {
                         </div>
                         <div className="flex flex-wrap justify-around mt-7 mb-3">
                           <button onClick={scrolling1} className="butn">
-                            know More
+                            Know More
                           </button>
                         </div>
                       </div>
