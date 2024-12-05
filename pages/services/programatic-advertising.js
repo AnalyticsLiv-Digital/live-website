@@ -122,9 +122,9 @@ const service_A = () => {
             </section>
 
             <section className='whydv360 overflow-hidden'>
-                <div className='relative px-4 md:px-12 pt-8 md:pt-5 pb-8 md:pb-16'>
+                <div className='relative px-4 md:px-12 pt-8 md:pt-5 lg:pt-14 pb-8 md:pb-16'>
                     <div>
-                        <div className='flex items-center justify-start pb-7 md:pb-0'>
+                        <div className='flex items-center justify-center pb-7 md:pb-0'>
                             <h3 className='text-[#302E53] font-gilroy text-[28px] font-semibold leading-[1.5em] not-italic pb-5'>Why DV360?</h3>
                         </div>
                         <div className='grid lg:grid-cols-3 md:grid-cols-2 items-start justify-center gap-10'>
