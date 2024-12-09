@@ -113,8 +113,8 @@ const Footer = () => {
                                         <div className='text-[15px] text-[#ffffff] font-bold leading-[1.3em] max-sm:mb-2 sm:mb-4 max-sm:pb-1 uppercase max-sm:border-b max-sm:border-b-gray-500'>Company</div>
                                         <div className=''>
                                             <ul className='uppercase tracking-wider text-start max-sm:flex max-sm:flex-wrap max-sm:gap-3'>
-                                                <li className='py-1 md:pb-2 text-[13px] text-[#efefef] font-normal leading-5'> <Link href="/about-us">Vision</Link> </li>
-                                                <li className='py-1 md:pb-2 text-[13px] text-[#efefef] font-normal leading-5'> <Link href="/about-us">Mission</Link> </li>
+                                                <li className='py-1 md:pb-2 text-[13px] text-[#efefef] font-normal leading-5'> <Link href="/about-us?id=vision">Vision</Link> </li>
+                                                <li className='py-1 md:pb-2 text-[13px] text-[#efefef] font-normal leading-5'> <Link href="/about-us?id=mission">Mission</Link> </li>
                                                 <li className='py-1 md:pb-2 text-[13px] text-[#efefef] font-normal leading-5'> <Link href="/about-us">About Team</Link> </li>
                                             </ul>
                                         </div>
