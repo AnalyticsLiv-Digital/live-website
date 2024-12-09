@@ -103,7 +103,7 @@ const service_A = () => {
                         </div>
                         <div className='mt-5'>
                             <div>
-                                <h2 className='text-center font-bold text-base text-maintext leading-[24px]'>Trusted by Organisations Worldwide</h2>
+                                <h2 className='text-center font-bold text-base lg:text-[28px] text-maintext leading-[24px]'>Trusted by Organisations Worldwide</h2>
                             </div>
                             <div className='max-sm:w-[95%] w-[90%] md:w-full m-auto'>
                                 <Marquee gradient={false} pauseOnHover="true">

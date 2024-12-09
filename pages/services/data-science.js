@@ -117,7 +117,7 @@ const datascience = () => {
                         </div>
                         <div className=''>
                             <div>
-                                <h2 className='text-center font-bold font-gilroy text-base text-maintext max-sm:mt-6 max-lg:mt-3 pt-3 xl:py-5 leading-[24px]'>Trusted by Organisations Worldwide</h2>
+                                <h2 className='text-center font-bold font-gilroy text-base lg:text-[28px] text-maintext max-sm:mt-6 max-lg:mt-3 pt-3 xl:py-5 leading-[24px]'>Trusted by Organisations Worldwide</h2>
                             </div>
                             <div className='w-[90%] m-auto md:w-full'>
                                 <Marquee gradient={false} pauseOnHover="true">

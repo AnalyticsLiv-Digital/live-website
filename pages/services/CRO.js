@@ -120,9 +120,9 @@ const cro = () => {
                                 <img src="/CRO_Main_img_1.png" alt="" className='h-auto' />
                             </div>
                         </div>
-                        <div className=''>
+                        <div className='lg:pt-10'>
                             <div>
-                                <h2 className='text-center font-bold text-base text-maintext leading-[24px]'>Trusted by Organisations Worldwide</h2>
+                                <h2 className='text-center font-bold text-base lg:text-[28px] text-maintext leading-[24px]'>Trusted by Organisations Worldwide</h2>
                             </div>
                             <div className='w-[90%] m-auto md:w-full'>
                                 <Marquee gradient={false} pauseOnHover="true">
