@@ -169,7 +169,7 @@ const Serversidetracking = () => {
                         </div>
                         <div className=''>
                             <div>
-                                <h2 className='text-center font-bold font-gilroy text-base text-maintext leading-[24px] xl:py-5'>Trusted by Organisations Worldwide</h2>
+                                <h2 className='text-center font-bold font-gilroy text-base lg:text-[28px] text-maintext leading-[24px] xl:py-5'>Trusted by Organisations Worldwide</h2>
                             </div>
                             <div className='w-[90%] m-auto md:w-full'>
                                 <Marquee gradient={false} pauseOnHover="true">

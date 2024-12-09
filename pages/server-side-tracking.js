@@ -478,7 +478,7 @@ const ServerSideTracking = () => {
                             <div className=''>
                                 <div>
                                     <ScrollElement id="testimonials" name="testimonials"></ScrollElement>
-                                    <h2 className='text-center font-bold font-gilroy text-base text-maintext leading-[24px]'>Trusted by Organisations Worldwide</h2>
+                                    <h2 className='text-center font-bold font-gilroy text-base lg:text-[28px] text-maintext leading-[24px]'>Trusted by Organisations Worldwide</h2>
                                 </div>
                                 <div className='w-[90%] m-auto'>
                                     <Marquee gradient={false} pauseOnHover="true">

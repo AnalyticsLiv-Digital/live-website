@@ -13,7 +13,7 @@ const AnalyticsLiv = () => {
             <div className='px-4 md:px-20 pb-8 md:pb-16'>
                 <div className='w-[80%] m-auto'>
                     <div data-aos="fade-down" data-aos-once="true">
-                        <h2 className='text-center font-bold text-base text-maintext leading-[24px]'>Trusted by Organisations Worldwide</h2>
+                        <h2 className='text-center font-bold text-base lg:text-[28px] text-maintext leading-[24px]'>Trusted by Organisations Worldwide</h2>
                     </div>
                     <div data-aos="fade-left" data-aos-once="true">
                         <div className='brandsimages flex space-x-8 justify-center py-4 px-8 mt-8'>
