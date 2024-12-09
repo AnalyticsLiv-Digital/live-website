@@ -103,7 +103,7 @@ const Footer = () => {
                                             <ul className='uppercase tracking-wider text-start max-sm:flex max-sm:flex-wrap max-sm:gap-3'>
                                                 <li className='py-1 md:pb-2 text-[13px] text-[#efefef] font-normal leading-5'> <Link href="/services/programatic-advertising">Advertising</Link> </li>
                                                 <li className='py-1 md:pb-2 text-[13px] text-[#efefef] font-normal leading-5'> <Link href="/services/analytics">Analytics</Link> </li>
-                                                <li className='py-1 md:pb-2 text-[13px] text-[#efefef] font-normal leading-5'> <Link href="/services/analytics?id=audit-and-health-check">Solutions</Link> </li>
+                                                <li className='py-1 md:pb-2 text-[13px] text-[#efefef] font-normal leading-5'> <Link href="/services/data-science">Data Solutions</Link> </li>
                                                 <li className='py-1 md:pb-2 text-[13px] text-[#efefef] font-normal leading-5'> <Link href="/services/training">Training</Link> </li>
                                             </ul>
                                         </div>
