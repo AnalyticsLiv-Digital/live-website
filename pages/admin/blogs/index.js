@@ -62,7 +62,7 @@ const index = ({ blogDat }) => {
                 </thead>
                 <tbody className="text-center text-gray-300">
                   {blogsData &&
-                    blogsData.map((blog, key) => (
+                    blogsData?.map((blog, key) => (
                       <tr
                         key={key}
                         className="border-b border-gray-700 hover:bg-gray-700 transition-colors"
@@ -86,10 +86,10 @@ const index = ({ blogDat }) => {
                         </td>
                         <td className="py-4 px-6">{blog.date}</td>
                         <td
-                          className={`py-4 px-6 ${blog.active ? "text-green-500" : "text-red-500"
+                          className={`py-4 px-6 ${blog?.active == "true" ? "text-green-500" : "text-red-500"
                             }`}
                         >
-                          {blog.active ? "Active" : "Inactive"}
+                          {blog?.active == "true" ? "Active" : "Inactive"}
                         </td>
                         <td className="py-4 px-6">
                           <a
