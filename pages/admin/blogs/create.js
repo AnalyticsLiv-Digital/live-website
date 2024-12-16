@@ -26,6 +26,7 @@ const index = () => {
   const [formValues, setFormValues] = useState(initialValues);
   const [formattedDate, setFormattedDate] = useState('');
   const [isSubmit, setIsSubmit] = useState(false);
+  const [loading, setLoading] = useState(false);
   console.log(formValues);
 
 
@@ -174,6 +175,7 @@ const index = () => {
     e.preventDefault();
 
     setIsSubmit(true);
+    setLoading(true);
     alert("submitted");
     console.log("submit2");
     fetch("/api/admin/blogs/new", {
@@ -200,11 +202,13 @@ const index = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log("Success:", data);
+        setLoading(false);
         alert("data updated");
         router.push("/admin/blogs");
       })
       .catch((error) => {
         console.error("Error:", error);
+        setLoading(false);
         alert("error");
       });
   };
@@ -212,6 +216,7 @@ const index = () => {
   useEffect(() => {
     // console.log(formErrors);
     if (isSubmit) {
+      setLoading(true);
       console.log("submit2");
       fetch("/api/admin/blogs/create", {
         method: "POST", // or 'PUT'
@@ -237,10 +242,12 @@ const index = () => {
         .then((response) => response.json())
         .then((data) => {
           console.log("Success:", data);
+          setLoading(false);
           alert("data updated");
         })
         .catch((error) => {
           console.error("Error:", error);
+          setLoading(false);
           alert("error");
         });
     }
@@ -435,9 +442,27 @@ const index = () => {
             <div className="flex justify-between items-center mt-6">
               <button
                 type="submit"
-                className="px-6 py-2 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition-colors duration-300"
+                className={`px-6 py-2 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition-colors duration-300 ${loading ? "cursor-not-allowed" : ""}`}
+                disabled={loading}
               >
-                Submit
+                {loading ? (
+                  <span style={{ display: "flex", alignItems: "center" }}>
+                    <span
+                      style={{
+                        border: "2px solid #ffffff",
+                        borderTop: "2px solid #00bcd4",
+                        borderRadius: "50%",
+                        width: "12px",
+                        height: "12px",
+                        marginRight: "8px",
+                        animation: "spin 0.6s linear infinite",
+                      }}
+                    ></span>
+                    Loading...
+                  </span>
+                ) : (
+                  "Submit"
+                )}
               </button>
               <button
                 type="button"
