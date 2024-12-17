@@ -12,7 +12,8 @@ const Navbar = () => {
     { href: '/admin/blogs', label: 'Blogs' },
     { href: '/admin/casestudies', label: 'Case Studies' },
     { href: '/admin/jobs', label: 'Jobs/Applications' },
-    { href: '/admin/leads', label: 'Leads' }
+    { href: '/admin/leads', label: 'Leads' },
+    { href: '/admin/ytPlaylist', label: 'Yt Playlist' }
   ];
 
   return (
