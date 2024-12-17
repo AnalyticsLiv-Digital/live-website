@@ -60,6 +60,12 @@ const index = ({ data }) => {
                 count={data.leads}
                 imgUrl={imgUrl[3]}
               />
+              <DashboardCard
+                href="/admin/ytPlaylist"
+                title="Yt Playlist"
+                count={data.leads}
+                imgUrl={imgUrl[3]}
+              />
             </div>
           </div>
         </div>
