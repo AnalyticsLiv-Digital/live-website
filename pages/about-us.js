@@ -198,12 +198,11 @@ const aboutus = () => {
 
             <div className="hidden lg:block space-y-2">
               <img
-                src="https://storage.googleapis.com/website-bucket-uploads/static/datastudio.png"
-                className="mx-auto"
+                src="/Looker_Studio_Blue_Logo.png"
+                className="mx-auto h-20 w-14"
               />
               <h2 className="text-slate-700 text-center">
-                Data Studio
-                <br /> 360
+                Looker Studio
               </h2>
             </div>
 
@@ -240,6 +239,17 @@ const aboutus = () => {
 
             <div className="hidden lg:block space-y-2">
               <img
+                src="/firebase_logo.png"
+                className="mx-auto h-[70px] w-[56px]"
+              />
+              <h2 className="text-slate-700 text-center">
+                Firebase
+                <br />
+              </h2>
+            </div>
+
+            <div className="hidden lg:block space-y-2">
+              <img
                 src="https://storage.googleapis.com/website-bucket-uploads/static/Google ads.png"
                 className="h-2/3 mx-auto"
               />
@@ -269,13 +279,22 @@ const aboutus = () => {
                 <br /> Marketing
               </h2>
             </div>
+            <div className="space-y-2 hidden lg:block">
+              <img
+                src="/yt_logo.png"
+                className="mx-auto h-26 w-24"
+              />
+              <h2 className="text-slate-700 text-center">
+                Youtube Ads
+              </h2>
+            </div>
 
             <div className="space-y-2">
               <img
-                src="https://storage.googleapis.com/website-bucket-uploads/static/optimize.png"
-                className="mx-auto"
+                src="/meta.png"
+                className="mx-auto w-24 h-20"
               />
-              <h2 className="text-slate-700 text-center">Optimize 360</h2>
+              <h2 className="text-slate-700 text-center">Meta Ads</h2>
             </div>
 
             <div className="space-y-2">
@@ -308,12 +327,11 @@ const aboutus = () => {
           <div className="lg:hidden flex flex-row text-center justify-around">
             <div className="space-y-2">
               <img
-                src="https://storage.googleapis.com/website-bucket-uploads/static/datastudio.png"
-                className="mx-auto"
+                src="/Looker_Studio_Blue_Logo.png"
+                className="mx-auto h-24 w-16"
               />
               <h2 className="text-slate-700 text-center">
-                Data Studio
-                <br /> 360
+                Looker Studio
               </h2>
             </div>
             <div className="space-y-2">
@@ -324,6 +342,28 @@ const aboutus = () => {
               <h2 className="text-slate-700">
                 Google Campaign <br />
                 Manager
+              </h2>
+            </div>
+
+          </div>
+          <div className="lg:hidden flex flex-row text-center justify-around">
+            <div className="space-y-2 w-full lg:hidden">
+              <img
+                src="/yt_logo.png"
+                className="mx-auto h-26 w-24"
+              />
+              <h2 className="text-slate-700 text-center">
+                Youtube Ads
+              </h2>
+            </div>
+            <div className="space-y-2 w-full lg:hidden">
+              <img
+                src="/firebase_logo.png"
+                className="mx-auto h-[70px] w-[56px]"
+              />
+              <h2 className="text-slate-700 text-center">
+                Firebase
+                <br />
               </h2>
             </div>
           </div>
