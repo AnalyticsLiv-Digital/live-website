@@ -34,7 +34,7 @@ const aboutus = () => {
         />
         <link
           rel="canonical"
-          href="https://www.analyticsliv.com/about-us"
+          href="https://analyticsliv.com/about-us"
         ></link>
       </Head>
       <ScrollProgress />

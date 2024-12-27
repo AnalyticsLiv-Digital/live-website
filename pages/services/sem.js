@@ -111,7 +111,7 @@ const sem = () => {
             <Head>
                 <title>AnalyticsLiv - Search Engine Marketing</title>
                 <meta name="description" content="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads" />
-                <link rel="canonical" href="https://www.analyticsliv.com/services/sem"></link>
+                <link rel="canonical" href="https://analyticsliv.com/services/sem"></link>
             </Head>
 
             <section className='ssthome w-full relative font-gilroy overflow-hidden'>

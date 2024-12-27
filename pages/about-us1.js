@@ -62,7 +62,7 @@ const aboutus1 = () => {
             <Head>
                 <title>AnalyticsLiv - About us</title>
                 <meta name="description" content="Google Marketing Platform Partner - Our Journey" />
-                <link rel="canonical" href="https://www.analyticsliv.com/about-us"></link>
+                <link rel="canonical" href="https://analyticsliv.com/about-us"></link>
             </Head>
             <section className='abouthome w-full relative font-gilroy overflow-hidden'>
                 <div className='h-full'>

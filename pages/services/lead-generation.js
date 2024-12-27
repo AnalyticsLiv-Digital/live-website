@@ -15,7 +15,7 @@ const lead_generation = () => {
         />
         <link
           rel="canonical"
-          href="https://www.analyticsliv.com/services/lead-generation"
+          href="https://analyticsliv.com/services/lead-generation"
         ></link>
       </Head>
       <section>

@@ -24,7 +24,7 @@ const index = ({ blogDat, count }) => {
         <><Head>
             <title>AnalyticsLiv - Blogs</title>
             <meta name="description" content="Google Marketing Platform Partner - Blogs on GA4, DV360, Google Ads" />
-            <link rel="canonical" href="https://www.analyticsliv.com/blogs"></link>
+            <link rel="canonical" href="https://analyticsliv.com/blogs"></link>
         </Head>
             <ScrollProgress />
 
