@@ -108,7 +108,7 @@ export default function AutoPlay() {
         />
         <link
           rel="canonical"
-          href="https://www.analyticsliv.com/services/data-reporting-analysis"
+          href="https://analyticsliv.com/services/data-reporting-analysis"
         ></link>
       </Head>
       <section>

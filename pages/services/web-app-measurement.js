@@ -14,7 +14,7 @@ const webapp = () => {
             <Head>
                 <title>AnalyticsLiv - Analytics Services Offered</title>
                 <meta name="description" content="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads" />
-                <link rel="canonical" href="https://www.analyticsliv.com/services/analytics"></link>
+                <link rel="canonical" href="https://analyticsliv.com/services/analytics"></link>
             </Head>
 
             <section className='webapphome w-full relative font-gilroy overflow-hidden'>

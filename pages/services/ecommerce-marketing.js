@@ -16,7 +16,7 @@ const ecommerce_marketing = () => {
         />
         <link
           rel="canonical"
-          href="https://www.analyticsliv.com/services/ecommerce-marketing"
+          href="https://analyticsliv.com/services/ecommerce-marketing"
         ></link>
       </Head>
       <section>

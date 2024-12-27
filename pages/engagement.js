@@ -130,7 +130,7 @@ const engagement = () => {
             <Head>
                 <title>AnalyticsLiv - Analytics Engagement-Service</title>
                 <meta name="description" content="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads" />
-                <link rel="canonical" href="https://www.analyticsliv.com/engagement"></link>
+                <link rel="canonical" href="https://analyticsliv.com/engagement"></link>
             </Head>
             <section className="engagement page_title pb-[15px]">
                 <div className='h-full'>

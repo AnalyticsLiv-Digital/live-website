@@ -118,7 +118,7 @@ function generateEmailTemplate(firstName) {
                 
                 <!-- Footer -->
                 <div class="email-footer">
-                    <p><a href="https://www.analyticsliv.com/">Visit Our Website</a></p>
+                    <p><a href="https://analyticsliv.com/">Visit Our Website</a></p>
                     <div class="social-links">
                         <a href="https://m.facebook.com/100070503960704"><img src="https://storage.googleapis.com/email-template-image/facebook_logo.png" alt="Facebook"></a>
                         <a href="https://in.linkedin.com/company/analytics-liv-digital/"><img src="https://storage.googleapis.com/email-template-image/linkdin_logo.png" alt="LinkedIn"></a>
