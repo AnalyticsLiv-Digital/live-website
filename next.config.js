@@ -36,21 +36,6 @@ const nextConfig = {
             },
         ];
     },
-    async redirects() {
-        return [
-            {
-                source: '/:path*',
-                has: [
-                    {
-                        type: 'host',
-                        value: ':subdomain.analyticsliv.com', // Matches any subdomain
-                    },
-                ],
-                destination: 'https://analyticsliv.com/:path*', // Redirect to root domain
-                permanent: true, // 301 redirect
-            },
-        ];
-    },
 }
 
 
