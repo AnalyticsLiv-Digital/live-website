@@ -440,7 +440,7 @@ export default function gtmNew({ brandsdata }) {
                 />
                 <meta name="description" content="AnalyticsLiv Digital is one of the leading Web and App analytics agency. We help our customers embrace Google Products to improve their customer experiences." />
                 <title>Google Tag Manager - AnalyticsLiv</title>
-
+                <link rel="canonical" href="https://analyticsliv.com/gtm"></link>
             </Head>
             <div>
                 <header className="sticky min-w-full top-0 z-50 shadow-md bg-white">
