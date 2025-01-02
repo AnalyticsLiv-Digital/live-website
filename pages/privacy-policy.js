@@ -9,7 +9,7 @@ const privacypolicy = () => {
         <Head>
             <title>Google Marketing Platform Partner - Privacy Policy</title>
             <meta name="description" content="Google Marketing Platform Partner - Privacy Policy" />
-            <link rel="canonical" href="https://www.AnalyticsLiv Digital LLP/privacy-policy"></link>
+            <link rel="canonical" href="https://analyticsliv.com/privacy-policy"></link>
         </Head>
         <ScrollProgress />
         <div className="page_title bg-[#4b82f9] text-white mb-10 relative">

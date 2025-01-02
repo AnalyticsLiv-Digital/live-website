@@ -185,6 +185,11 @@ const google_tag_manager = () => {
 
     return (
         <>
+            <Head>
+                <title>AnalyticsLiv - Google Tag Manager</title>
+                <meta name="description" content="Experts in GTM -Google Tag Manager" />
+                <link rel="canonical" href="https://analyticsliv.com/services/google-tag-manager"></link>
+            </Head>
             <section class="banner relative h-full pt-10 pb-20"
             // style={{backgroundImage: 'url(https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/Shape-banner.png)', backgroundRepeat: 'no-repeat', 
             // backgroundSize: 'cover'}}

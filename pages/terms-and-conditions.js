@@ -9,7 +9,7 @@ const termsAndConditions = () => {
         <Head>
             <title>Google Marketing Platform Partner - Terms And Conditions</title>
             <meta name="description" content="Google Marketing Platform Partner - Terms And Conditions" />
-            <link rel="canonical" href="https://www.AnalyticsLiv Digital LLP/terms-and-conditions"></link>
+            <link rel="canonical" href="https://analyticsliv.com/terms-and-conditions"></link>
         </Head>
         <ScrollProgress />
         <div className="page_title bg-[#4b82f9] text-white mb-10 relative">

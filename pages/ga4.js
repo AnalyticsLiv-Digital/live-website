@@ -206,6 +206,7 @@ export default function ga4({ brandsdata }) {
         />
         <meta name="description" content="AnalyticsLiv Digital is one of the leading Web and App analytics agency. We help our customers embrace Google Products to improve their customer experiences." />
         <title>Google Analytics 4 - AnalyticsLiv</title>
+        <link rel="canonical" href="https://analyticsliv.com/ga4"></link>
       </Head>
       <StructuredData data={stuctureData} />
       {showWaiting && <div className="fixed z-50 flex backdrop-blur top-0 left-0 right-0 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full"><ScaleLoader

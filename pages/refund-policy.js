@@ -9,7 +9,7 @@ const refundpolicy = () => {
         <Head>
             <title>Google Marketing Platform Partner - Refund Policy</title>
             <meta name="description" content="Google Marketing Platform Partner - Refund Policy" />
-            <link rel="canonical" href="https://www.AnalyticsLiv Digital LLP/refund-policy"></link>
+            <link rel="canonical" href="https://analyticsliv.com/refund-policy"></link>
         </Head>
         <ScrollProgress />
         <div className="page_title bg-[#4b82f9] text-white mb-10 relative">
