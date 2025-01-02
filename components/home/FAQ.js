@@ -49,7 +49,7 @@ const FAQ = () => {
                 {content?.map((item, index) => (
                     <div
                         key={index}
-                        className={`rounded-2xl px-6 md:px-12 py-5 cursor-pointer ${activeIndex === index ? 'text-white bg-[#08A4F7]' : 'text-[#232A42]'
+                        className={`rounded-2xl px-4 md:px-12 py-4 md:py-5 cursor-pointer ${activeIndex === index ? 'text-white bg-[#08A4F7]' : 'text-[#232A42]'
                             }`}
                         style={{
                             boxShadow: activeIndex === index ? 'none' : '18px 15px 35px 0px #00000017',

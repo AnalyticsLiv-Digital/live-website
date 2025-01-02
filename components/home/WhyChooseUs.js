@@ -74,7 +74,7 @@ const WhyChooseUs = () => {
                     <div className="text-[#100F1B] text-3xl font-bold text-center md:text-start">
                         Why Choose AnalyticsLiv
                     </div>
-                    <div className="text-[#373642] max-md:text-center text-base font-normal pt-8">
+                    <div className="text-[#373642] max-md:text-center text-[13px] md:text-base font-normal pt-8">
                         Analytics Liv Digital (“AnalyticsLiv”) is a new-age marketing firm focused on delivering data-driven customer experiences.
                         Cutting through the noise of digital data fatigue to take cognizance of a brand’s first-party data is our prime focus. A website,
                         mobile app, PPC campaigns, or landing pages—whatever be your customer touchpoints, we will make it count.
