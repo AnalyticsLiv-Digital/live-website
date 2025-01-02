@@ -36,11 +36,10 @@ const FAQ = () => {
     ];
 
     return (
-        <section className="font-lato pt-4 px-4 md:px-10 xl:px-16">
+        <section className="font-lato pt-4 px-4 md:px-10 xl:px-16 pb-16">
             <div className="text-[#232A42] text-2xl md:text-3xl font-bold text-center">
                 Frequently Asked <span className="text-[#08A4F7]">Questions</span>
             </div>
-
             <div className="text-[#525252] py-10 px-4 md:px-20 text-sm md:text-base font-medium text-center">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus hendrerit suscipit egestas.
                 Nunc eget congue ante. Vivamus ut sapien et ex volutpat tincidunt eget at felis.

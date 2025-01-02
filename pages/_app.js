@@ -15,6 +15,7 @@ import ContactPopup from '../components/ContactPopup';
 import useContactPopup from '../components/hooks/useContactPopup';
 import Script from "next/script";
 import Navbar from '../components/navbar';
+import Footer1 from '../components/home/Footer1';
 
 
 function MyApp({ Component, pageProps: { session, ...pageProps }, }) {
@@ -68,7 +69,8 @@ function MyApp({ Component, pageProps: { session, ...pageProps }, }) {
           <>
 
             <Component {...pageProps} />
-            <Footer />
+            {/* <Footer /> */}
+            <Footer1 />
 
           </>}</>}
           {/* {showPopup && (
