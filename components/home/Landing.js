@@ -3,13 +3,13 @@ import React from 'react'
 const Landing = () => {
   return (
     <section className='font-lato px-3 pb-8'>
-      <div className='flex flex-col pt-10 md:pt-16 gap-4 md:gap-6 2xl:gap-10 justify-center text-center items-center text-[#0E1947]'>
+      <div className='flex flex-col pt-10 xl:max-w-[80%] mx-auto md:pt-16 gap-4 md:gap-6 2xl:gap-10 justify-center text-center items-center text-[#0E1947]'>
         <div className='text-base md:text-xl 2xl:text-3xl font-semibold leading-7 md:leading-7'>Redefining Possibilities, Empowering Brands</div>
         <div className='text-2xl md:text-4xl 2xl:text-5xl font-extrabold leading-7 md:leading-10'>Strategic Media, Analytics & Cloud Solutions</div>
         <div className='text-[15px] md:text-xl 2xl:text-2xl font-light leading-7 md:leading-7'>Data Analytics and Marketing Solutions helps businesses in gaining digital maturity through optimized utilization of data</div>
-        <div className='flex max-md:flex-col justify-center items-center max-md:mt-2 gap-2 md:gap-12'>
+        <div className='flex  justify-center items-center max-md:mt-2 gap-3 md:gap-12'>
           <button className='mainbutn'>Get Free Audit</button>
-          <button className='mainbutn-opposite max-md:px-12'>Talk to Sales</button>
+          <button className='mainbutn-opposite max-sm:px-6'>Talk to Sales</button>
         </div>
       </div>
     </section>
