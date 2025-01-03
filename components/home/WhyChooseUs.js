@@ -59,12 +59,21 @@ const WhyChooseUs = () => {
             {
                 breakpoint: 500,
                 settings: {
-                    initialSlide: 1,
+                    initialSlide: 0,
                     slidesToShow: 1,
                     slidesToScroll: 1,
                 },
             },
         ],
+    };
+
+    const settingsMobile = {
+        infinite: true,
+        initialSlide: 0,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: true,
     };
 
     const handleNext = () => sliderRef.current.slickNext();
@@ -83,7 +92,7 @@ const WhyChooseUs = () => {
                         mobile app, PPC campaigns, or landing pages—whatever be your customer touchpoints, we will make it count.
                     </div>
                 </div>
-                <div className="flex flex-col justify-center items-center gap-2 max-md:pt-5">
+                <div className="flex flex-col max-sm:hidden justify-center items-center gap-2 max-md:pt-5">
                     <div className="flex justify-center items-center gap-5">
                         <button
                             onClick={handlePrev}
@@ -101,8 +110,33 @@ const WhyChooseUs = () => {
                     <button className="mainbutn-opposite">Read More Here</button>
                 </div>
             </div>
-            <div className="sm:pl-5 xl:pl-16 py-8 carousel-custom overflow-hidden">
+            <div className="max-sm:hidden sm:pl-5 xl:pl-16 py-8 carousel-custom overflow-hidden">
                 <Slider ref={sliderRef} {...settings}>
+                    {cardsData?.map((card, index) => (
+                        <div key={index} className=" custom-padding-370 custom-padding-540 sm:px-4 flex justify-center">
+                            <div className="border rounded-3xl border-[#F2F2F2] mx-auto h-[280px] w-[320px] md:w-[440px] lg:w-[420px] 2xl:w-[480px]">
+                                <div className="h-[140px] text-[#373642] text-sm font-normal p-5 md:p-8">
+                                    {card.description}
+                                </div>
+                                <div className="h-[140px] bg-[#08A4F7] rounded-b-3xl">
+                                    <div className="flex items-center">
+                                        <div className="w-[30%] h-[100px] pl-2 md:pl-3 2xl:pl-8">
+                                            <img src="/white_bg.png" alt="white_bg" className="absolute max-md:h-24 max-md:w-24" />
+                                            <img src={card.image} alt={card.title} className="relative max-md:h-16 max-md:w-16 top-4 left-4" />
+                                        </div>
+                                        <div className="flex flex-col max-md:pl-10 h-[140px] items-start justify-center gap-1 text-white">
+                                            <div className="text-xl font-bold">{card.title}</div>
+                                            <div className="text-[#FFF4ED] text-base font-normal">{card.subtitle}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </Slider>
+            </div>
+            <div className="sm:hidden sm:pl-5 xl:pl-16 py-8 carousel-custom overflow-hidden">
+                <Slider {...settingsMobile}>
                     {cardsData?.map((card, index) => (
                         <div key={index} className=" custom-padding-370 custom-padding-540 sm:px-4 flex justify-center">
                             <div className="border rounded-3xl border-[#F2F2F2] mx-auto h-[280px] w-[320px] md:w-[440px] lg:w-[420px] 2xl:w-[480px]">
