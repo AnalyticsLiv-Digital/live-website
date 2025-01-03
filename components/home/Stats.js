@@ -70,7 +70,7 @@ const Stats = () => {
                                         frameBorder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                         allowFullScreen
-                                        className="w-full h-full"
+                                        className="w-full h-full rounded-3xl"
                                     ></iframe>
                                 ) : (
                                     <div
@@ -80,7 +80,7 @@ const Stats = () => {
                                         <img
                                             src={video.coverImage}
                                             alt={`Cover for video ${video.id}`}
-                                            className="w-full h-full"
+                                            className="w-full h-full rounded-3xl"
                                         />
                                         <div className="absolute inset-0 flex items-center justify-center">
                                             <FaYoutube className="text-[#08A4F7] text-6xl" />
