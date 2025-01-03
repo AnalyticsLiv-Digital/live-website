@@ -33,13 +33,13 @@ const Testimonials = () => {
     const settings = {
         dots: true,
         infinite: true,
-        speed: 1500,
+        speed: 1000,
         slidesToShow: 3,
         slidesToScroll: 1,
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
         autoplay: true,
-        autoplaySpeed: 5000,
+        autoplaySpeed: 3000,
         responsive: [
             {
                 breakpoint: 1150,
