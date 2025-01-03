@@ -56,12 +56,12 @@ const Stats = () => {
         <section className="font-lato pt-28 sm:pt-40 md:pt-52 2xl:pt-64 h-full">
             <div className="relative bg-[#30486A] h-[170px] sm:h-[200px] lg:h-[290px] 2xl:h-[350px] overflow-visible">
                 {/* Video Slider */}
-                <div className="absolute top-[-120px] sm:top-[-180px] md:top-[-220px] lg:top-[-250px] left-1/2 transform -translate-x-1/2 w-[90%] sm:w-[75%] md:w-[75%] xl:w-[60%] 2xl:w-[800px] carousel-custom">
+                <div className="absolute top-[-130px] sm:top-[-180px] md:top-[-220px] lg:top-[-250px] left-1/2 transform -translate-x-1/2 w-[100%] sm:w-[75%] md:w-[75%] xl:w-[60%] 2xl:w-[800px] carousel-custom">
                     <Slider {...settings}>
                         {videos.map((video) => (
                             <div
                                 key={video.id}
-                                className="relative video-container w-[100%] h-[220px] sm:h-[300px] md:h-[380px] lg:h-[450px] xl:h-[430px] 2xl:h-[480px] rounded-3xl"
+                                className="relative video-container w-[100%] h-[240px] sm:h-[300px] md:h-[380px] lg:h-[450px] xl:h-[430px] 2xl:h-[480px] rounded-3xl"
                             >
                                 {activeVideo === video.id ? (
                                     <iframe
@@ -80,7 +80,7 @@ const Stats = () => {
                                         <img
                                             src={video.coverImage}
                                             alt={`Cover for video ${video.id}`}
-                                            className="w-full h-full obj"
+                                            className="w-full h-full"
                                         />
                                         <div className="absolute inset-0 flex items-center justify-center">
                                             <FaYoutube className="text-[#08A4F7] text-6xl" />
@@ -88,7 +88,8 @@ const Stats = () => {
                                     </div>
                                 )}
                                 {/* Labels */}
-                                <div className={`absolute max-w-[125px] right-[-140px] opacity-80 bottom-[50px] lg:bottom-[90px] xl:bottom-[70px] 2xl:xl:bottom-[100px] transform -translate-y-1/2 text-center z-10`}>
+                                {/* <div className="max-sm:flex max-sm:pt-8 justify-center items-start gap-2"> */}
+                                <div className={`max-sm:hidden sm:absolute max-w-[125px] right-[-140px] opacity-90 bottom-[50px] lg:bottom-[90px] xl:bottom-[70px] 2xl:xl:bottom-[100px] transform -translate-y-1/2 text-center z-10`}>
                                     <div className="bg-white text-[#545567] font-light md:font-medium flex flex-col justify-center items-center text-[9px] md:text-sm px-4 py-2 rounded-lg shadow-md">
                                         <div>
                                             <img src={video.img1} alt={video.img1} className="bg-[#08A4F7]" />
@@ -96,16 +97,15 @@ const Stats = () => {
                                         {video.label1}
                                     </div>
                                 </div>
-                                {/* ${activeVideo ? 'hidden' : 'block'}
-                                ${activeVideo ? 'hidden' : 'block'} */}
-                                <div className={`absolute max-w-[165px] left-[-180px] bottom-[25px] lg:bottom-[70px] xl:bottom-[35px] opacity-80 transform -translate-y-1/2 text-center z-10`}>
+                                <div className={`max-sm:hidden sm:absolute max-w-[165px] left-[-180px] bottom-[25px] lg:bottom-[70px] xl:bottom-[35px] opacity-90 transform -translate-y-1/2 text-center z-10`}>
                                     <div className="bg-white text-[#545567] font-light md:font-medium text-start flex justify-center items-center gap-2 text-[9px] md:text-sm px-4 py-2 rounded-lg shadow-md">
                                         <div className="">
-                                            <img src={video.img2} alt={video.img2} className="bg-[#08A4F7] h-[20px] sm:h-[30px] w-[20px] sm:w-[45px]" />
+                                            <img src={video.img2} alt={video.img2} className="bg-[#08A4F7] h-[20px] sm:h-[30px] w-[20px] sm:w-[30px] md:w-[45px]" />
                                         </div>
                                         {video.label2}
                                     </div>
                                 </div>
+                                {/* </div> */}
                             </div>
                         ))}
                     </Slider>
@@ -113,7 +113,7 @@ const Stats = () => {
             </div>
 
             {/* Stats Section */}
-            <div className="bg-[#30486A] md:pt-16 lg:pt-0 pb-10">
+            <div className="bg-[#30486A] pt-7 sm:pt-8 md:pt-16 lg:pt-0 pb-10">
                 <div className="flex max-md:grid max-md:grid-cols-2 justify-evenly items-center text-white">
                     {[
                         { count: 200, label: "Satisfied Clients" },
