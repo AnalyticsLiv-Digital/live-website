@@ -31,17 +31,17 @@ const GoogleMarketing = () => {
                     </div>
                     <div className='text-white pt-9 sm:pt-12 lg:pt-24 xl:pt-20 2xl:pt-14 flex justify-around gap-5 lg:gap-16'>
                         <div className='w-[33%] text-center'>
-                            <div className='text-[10px] sm:text-base 2xl:text-xl font-bold max-md:leading-4'>Your Trusted Partner, Not Just an Agency</div>
-                            <div className='text-[9px] sm:text-xs 2xl:text-sm font-light pt-2 sm:pt-3 max-md:leading-4'>We go beyond basic services to become a reliable extension of your team.</div>
+                            <div className='text-[11px] sm:text-base 2xl:text-xl font-bold max-md:leading-4'>Your Trusted Partner, Not Just an Agency</div>
+                            <div className='text-[9px] sm:text-xs 2xl:text-sm font-extralight pt-2 sm:pt-3 max-md:leading-4'>We go beyond basic services to become a reliable extension of your team.</div>
                         </div>
                         <div className='w-[33%] text-center'>
-                            <div className='text-[10px] sm:text-base 2xl:text-xl font-bold max-md:leading-4'>Data-Driven Marketing Expertise</div>
-                            <div className='text-[9px] sm:text-xs 2xl:text-sm font-light pt-2 sm:pt-3 max-md:leading-4'>Our 8+ years of experience and deep understanding of digital marketing empower us
+                            <div className='text-[11px] sm:text-base 2xl:text-xl font-bold max-md:leading-4'>Data-Driven Marketing Expertise</div>
+                            <div className='text-[9px] sm:text-xs 2xl:text-sm font-extralight pt-2 sm:pt-3 max-md:leading-4'>Our 8+ years of experience and deep understanding of digital marketing empower us
                                 to create data-driven strategies that generate real results.</div>
                         </div>
                         <div className='w-[33%] text-center'>
-                            <div className='text-[10px] sm:text-base 2xl:text-xl font-bold max-md:leading-4'>Standing Out Through Insights</div>
-                            <div className='text-[9px] sm:text-xs 2xl:text-sm font-light pt-2 sm:pt-3 max-md:leading-4'>We leverage data analytics to craft unique marketing strategies that differentiate
+                            <div className='text-[11px] sm:text-base 2xl:text-xl font-bold max-md:leading-4'>Standing Out Through Insights</div>
+                            <div className='text-[9px] sm:text-xs 2xl:text-sm font-extralight pt-2 sm:pt-3 max-md:leading-4'>We leverage data analytics to craft unique marketing strategies that differentiate
                                 your business in the competitive landscape.</div>
                         </div>
                     </div>

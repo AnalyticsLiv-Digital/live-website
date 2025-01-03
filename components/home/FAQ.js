@@ -61,7 +61,7 @@ const FAQ = () => {
                                 <div className="text-[15px] sm:text-lg font-semibold">{item?.question}</div>
 
                                 {activeIndex === index && (
-                                    <div className="text-[13px] sm:text-base pt-3 font-medium w-[95%]">{item?.answer}</div>
+                                    <div className="text-[12px] sm:text-base pt-3 font-normal w-[95%]">{item?.answer}</div>
                                 )}
                             </div>
                             <img

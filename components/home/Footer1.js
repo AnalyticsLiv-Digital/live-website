@@ -149,7 +149,7 @@ const Footer1 = () => {
 
 
                                         </div>
-                                        <div className='flex items-center pt-16 pb-4 justify-center'>
+                                        <div className='flex items-center pt-5 md:pt-14 pb-4 justify-center'>
                                             <div className='bg-[#888888] h-0.5 w-full mr-2 sm:mr-10'></div>
                                             <div className='social flex items-center justify-center max-sm:justify-evenly lg:pl-0 -mr-[5px] text-white'>
                                                 <a title='Facebook' href="https://m.facebook.com/100070503960704/"><FaSquareFacebook className='w-[30px] h-[30px] opacity-[50%] mr-2 sm:mr-3.5' /></a>

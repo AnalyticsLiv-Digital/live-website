@@ -255,7 +255,7 @@ const Navbar = () => {
                                     </div>
                                     {isServices ? (
                                         <motion.div
-                                            initial={{ y: 10, opacity: 0 }}
+                                            initial={{ y: 8, opacity: 0 }}
                                             animate={{ y: 0, opacity: 1 }}
                                             transition={{
                                                 type: "spring",
