@@ -28,9 +28,10 @@ const WhyChooseUs = () => {
     ];
 
     const settings = {
-        infinite: true, // Prevent infinite looping for better control
-        slidesToShow: 2.5, // Show 2.5 cards at a time
-        slidesToScroll: 1.5, // Scroll one card at a time
+        infinite: true,
+        initialSlide: 0.5,
+        slidesToShow: 2.5,
+        slidesToScroll: 1.5,
         arrows: true,
         dots: true,
         responsive: [
@@ -50,13 +51,15 @@ const WhyChooseUs = () => {
             {
                 breakpoint: 768,
                 settings: {
+                    initialSlide: 0.5,
                     slidesToShow: 1.5,
-                    slidesToScroll: 1,
+                    slidesToScroll: 1.5,
                 },
             },
             {
                 breakpoint: 500,
                 settings: {
+                    initialSlide: 1,
                     slidesToShow: 1,
                     slidesToScroll: 1,
                 },
@@ -98,11 +101,11 @@ const WhyChooseUs = () => {
                     <button className="mainbutn-opposite">Read More Here</button>
                 </div>
             </div>
-            <div className="sm:pl-5 xl:pl-16 2xl:pl-[7%] py-8 carousel-custom overflow-hidden">
+            <div className="sm:pl-5 xl:pl-16 py-8 carousel-custom overflow-hidden">
                 <Slider ref={sliderRef} {...settings}>
                     {cardsData?.map((card, index) => (
                         <div key={index} className=" custom-padding-370 custom-padding-540 sm:px-4 flex justify-center">
-                            <div className="border rounded-3xl border-[#F2F2F2] h-[280px] w-[310px] md:w-[440px] lg:w-[420px] 2xl:w-[480px]">
+                            <div className="border rounded-3xl border-[#F2F2F2] mx-auto h-[280px] w-[320px] md:w-[440px] lg:w-[420px] 2xl:w-[480px]">
                                 <div className="h-[140px] text-[#373642] text-sm font-normal p-5 md:p-8">
                                     {card.description}
                                 </div>
