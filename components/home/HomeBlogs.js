@@ -13,7 +13,7 @@ const HomeBlogs = () => {
         <div className="absolute max-md:hidden 2xl:top-[-50px] left-[28%] lg:left-[37%] z-10 2xl:left-[35%] w-full">
           <img src="/arrow.png" alt="arrow" className="w-[40%] 2xl:w-[45%]" />
         </div>
-        <div>
+        <div className='max-md:hidden'>
           <button className="mainbutn max-md:mt-5">Read More Blogs</button>
         </div>
       </div>
@@ -135,6 +135,9 @@ const HomeBlogs = () => {
             </div>
           </div>
         </a>
+        <div className='md:hidden mx-auto'>
+          <button className="mainbutn max-md:mt-1">Read More Blogs</button>
+        </div>
       </div>
     </section>
   );
