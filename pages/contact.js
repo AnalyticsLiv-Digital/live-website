@@ -140,7 +140,7 @@ const contact = () => {
             <Head>
                 <title>AnalyticsLiv - Contact us</title>
                 <meta name="description" content="Google Marketing Platform Partner - Contact for Support" />
-                <link rel="canonical" href="https://www.analyticsliv.com/contact"></link>
+                <link rel="canonical" href="https://analyticsliv.com/contact"></link>
             </Head>
             <ScrollProgress />
             {showWaiting && <div className="fixed flex backdrop-blur top-0 left-0 right-0 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full"><ScaleLoader
