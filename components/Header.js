@@ -53,13 +53,6 @@ const header = () => {
           href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
         />
       </Head>
-      <div className="sticky top-0 z-40 bg-[#D9D9D9] h-[60px] text-[#0E1947] flex justify-center items-center px-2">
-        <div className="text-xs sm:text-base md:text-lg font-semibold text-center flex justify-center items-center">
-          Your Partner for Google Marketing Platform Success
-          <div className="flex justify-center items-center underline max-sm:w-[60%] pl-2 sm:pl-5 text-[#EE4312] text-xs sm:text-sm md:text-[15px] font-bold">Schedule a Call Now
-            <img src="/Ringer Volume.png" alt="Ringer Volume" className="pl-1" /></div>
-        </div>
-      </div>
       <header className="sticky min-w-full top-0 z-40 bg-white font-rbt">
         {/* <div> sm:w-1/3*/}
         <div className="hidden lg:inline">
