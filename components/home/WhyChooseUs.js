@@ -107,7 +107,7 @@ const WhyChooseUs = () => {
                             {">"}
                         </button>
                     </div>
-                    <button className="mainbutn-opposite">Read More Here</button>
+                    <a href='/services'><button className="mainbutn-opposite">Read More Here</button></a>
                 </div>
             </div>
             <div className="max-sm:hidden sm:pl-5 xl:pl-16 py-8 carousel-custom overflow-hidden">

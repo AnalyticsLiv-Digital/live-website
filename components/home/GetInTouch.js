@@ -114,7 +114,7 @@ const GetInTouch = () => {
         return errors;
     };
     return (
-        <section className="font-lato py-10 px-4 md:px-10 xl:px-16 bg-white">
+        <section id="get-in-touch" className="font-lato lg:pt-28 py-10 px-4 md:px-10 xl:px-16 bg-white">
 
             <div className="flex flex-col sm:flex-row items-center lg:items-center gap-3 md:gap-8">
                 <div className="max-sm:hidden relative max-w-full sm:max-w-[35%] lg:max-w-[45%]">
@@ -208,6 +208,7 @@ const GetInTouch = () => {
                                     <input
                                         required
                                         type="date"
+                                        value={formValues.date}
                                         className="w-full text-sm mt-1 px-5 py-2 border border-[#ECECEC] rounded-[5px] focus:outline-none focus:ring-2 focus:ring-[#08A4F7]"
                                     />
                                 </div>

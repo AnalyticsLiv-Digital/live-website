@@ -14,7 +14,7 @@ const HomeBlogs = () => {
           <img src="/arrow.png" alt="arrow" className="w-[40%] 2xl:w-[45%]" />
         </div>
         <div className='max-md:hidden'>
-          <button className="mainbutn max-md:mt-5">Read More Blogs</button>
+          <a href='/blogs' className=''><button className="mainbutn max-md:mt-5">Read More Blogs</button></a>
         </div>
       </div>
 
@@ -136,7 +136,7 @@ const HomeBlogs = () => {
           </div>
         </a>
         <div className='md:hidden mx-auto'>
-          <button className="mainbutn max-md:mt-1">Read More Blogs</button>
+          <a href='/blogs' className=''><button className="mainbutn max-md:mt-1">Read More Blogs</button></a>
         </div>
       </div>
     </section>

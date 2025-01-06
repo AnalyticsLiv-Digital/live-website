@@ -2,10 +2,10 @@ import React from 'react'
 
 const HomeCaseStudies = () => {
     return (
-        <section className="font-lato max-md:pb-7 md:pt-5 lg:pt-10 md:pb-7 lg:pb-14 px-4 md:px-16">
+        <section className="font-lato max-md:pb-7 md:pt-5 lg:pt-10 px-4 md:px-16">
             <div className="flex max-md:flex-col-reverse justify-between py-10 items-center overflow-hidden relative">
-                <div className='max-md:hidden'>
-                    <button className="mainbutn max-md:mt-5">Read More Case Studies</button>
+                <div className='max-md:hidden z-20'>
+                    <a href='/case-studies' className=''><button className="mainbutn max-md:mt-5">Read More Case Studies</button></a>
                 </div>
                 <div className="absolute max-md:hidden lg:top-[20%] md:top-[80px] 2xl:top-[-10px] left-[18%] lg:left-[8%] 2xl:left-[7%] z-10 w-full">
                     <img src="/Arrow (1).png" alt="arrow" className="w-[40%] 2xl:w-[45%]" />
@@ -133,7 +133,7 @@ const HomeCaseStudies = () => {
                     </div>
                 </a>
                 <div className='md:hidden mx-auto'>
-                    <button className="mainbutn max-md:mt-2">Read More Case Studies</button>
+                    <a href='/case-studies' className=''><button className="mainbutn max-md:mt-2">Read More Case Studies</button></a>
                 </div>
             </div>
         </section>
