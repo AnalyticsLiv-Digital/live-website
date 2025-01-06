@@ -275,7 +275,7 @@ const ServerSideTracking = () => {
                 <link rel="icon" href="https://storage.googleapis.com/website-bucket-uploads/static/favicon.png" type="image/icon type"></link>
                 <meta name="description" content="AnalyticsLiv Digital is one of the leading Web and App analytics agency. We help our customers embrace Google Products to improve their customer experiences." />
                 <title>GTM Server Side - AnalyticsLiv</title>
-
+                <link rel="canonical" href="https://analyticsliv.com/server-side-tracking"></link>
             </Head>
             <header className="sticky min-w-full top-0 z-50 shadow-md bg-white">
                 <div className="navbar hidden lg:flex py-2 h-auto flex-wrap px-4 lg:flex-row items-center justify-between">
@@ -478,7 +478,7 @@ const ServerSideTracking = () => {
                             <div className=''>
                                 <div>
                                     <ScrollElement id="testimonials" name="testimonials"></ScrollElement>
-                                    <h2 className='text-center font-bold font-gilroy text-base text-maintext leading-[24px]'>Trusted by Organisations Worldwide</h2>
+                                    <h2 className='text-center font-bold font-gilroy text-base lg:text-[28px] text-maintext leading-[24px]'>Trusted by Organisations Worldwide</h2>
                                 </div>
                                 <div className='w-[90%] m-auto'>
                                     <Marquee gradient={false} pauseOnHover="true">

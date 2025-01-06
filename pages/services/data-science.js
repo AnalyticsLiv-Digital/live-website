@@ -88,7 +88,7 @@ const datascience = () => {
             <Head>
                 <title>AnalyticsLiv - Analytics Data-Science</title>
                 <meta name="description" content="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads" />
-                <link rel="canonical" href="https://www.analyticsliv.com/services/data-science"></link>
+                <link rel="canonical" href="https://analyticsliv.com/services/data-science"></link>
             </Head>
             <section className='dtshome w-full relative font-gilroy overflow-hidden'>
                 <div className='h-full'>
@@ -117,7 +117,7 @@ const datascience = () => {
                         </div>
                         <div className=''>
                             <div>
-                                <h2 className='text-center font-bold font-gilroy text-base text-maintext max-sm:mt-6 max-lg:mt-3 pt-3 xl:py-5 leading-[24px]'>Trusted by Organisations Worldwide</h2>
+                                <h2 className='text-center font-bold font-gilroy text-base lg:text-[28px] text-maintext max-sm:mt-6 max-lg:mt-3 pt-3 xl:py-5 leading-[24px]'>Trusted by Organisations Worldwide</h2>
                             </div>
                             <div className='w-[90%] m-auto md:w-full'>
                                 <Marquee gradient={false} pauseOnHover="true">

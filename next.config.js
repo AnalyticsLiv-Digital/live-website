@@ -4,17 +4,17 @@ const nextConfig = {
     swcMinify: true,
     experiments: {
         topLevelAwait: true
-      },
+    },
     async headers() {
         return [
             {
                 // Sets security headers for all routes
                 source: '/(.*)',
                 headers: [
-                  {
-                    key: 'Strict-Transport-Security',
-                    value: 'max-age=31536000; includeSubDomains',
-                },
+                    {
+                        key: 'Strict-Transport-Security',
+                        value: 'max-age=31536000; includeSubDomains',
+                    },
                     {
                         key: 'Referrer-Policy',
                         value: 'strict-origin-when-cross-origin',
@@ -31,14 +31,13 @@ const nextConfig = {
                         key: 'Permissions-Policy',
                         value: 'geolocation=(self "https://analyticsliv.com"), microphone=()'
                     }
-  
+
                 ],
             },
         ];
     },
-  }
+}
 
-  
-  
-  module.exports = nextConfig
-  
+
+
+module.exports = nextConfig

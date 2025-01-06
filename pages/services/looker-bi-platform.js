@@ -56,7 +56,7 @@ export default class AutoPlay extends Component {
           />
           <link
             rel="canonical"
-            href="https://www.analyticsliv.com/services/looker-bi-platform"
+            href="https://analyticsliv.com/services/looker-bi-platform"
           ></link>
         </Head>
 

@@ -106,7 +106,7 @@ const customersegmentation = () => {
             <Head>
                 <title>AnalyticsLiv - Analytics Customer Segmentation</title>
                 <meta name="description" content="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads" />
-                <link rel="canonical" href="https://www.analyticsliv.com/services/customer-segmentation"></link>
+                <link rel="canonical" href="https://analyticsliv.com/services/customer-segmentation"></link>
             </Head>
             <section className='cshome w-full relative font-gilroy overflow-hidden'>
                 <div className='h-full'>
@@ -131,7 +131,7 @@ const customersegmentation = () => {
                         </div>
                         <div className=''>
                             <div>
-                                <h2 className='text-center font-bold text-base text-maintext leading-[24px]'>Trusted by Organisations Worldwide</h2>
+                                <h2 className='text-center font-bold text-base lg:text-[28px] text-maintext leading-[24px]'>Trusted by Organisations Worldwide</h2>
                             </div>
                             <div className='w-[90%] m-auto md:w-full'>
                                 <Marquee gradient={false} pauseOnHover="true">

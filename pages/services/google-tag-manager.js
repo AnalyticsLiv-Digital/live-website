@@ -185,6 +185,11 @@ const google_tag_manager = () => {
 
     return (
         <>
+            <Head>
+                <title>AnalyticsLiv - Google Tag Manager</title>
+                <meta name="description" content="Experts in GTM -Google Tag Manager" />
+                <link rel="canonical" href="https://analyticsliv.com/services/google-tag-manager"></link>
+            </Head>
             <section class="banner relative h-full pt-10 pb-20"
             // style={{backgroundImage: 'url(https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/Shape-banner.png)', backgroundRepeat: 'no-repeat', 
             // backgroundSize: 'cover'}}
@@ -218,7 +223,7 @@ const google_tag_manager = () => {
 
             <div className=' px-4 md:px-20'>
                 <div>
-                    <h2 className='text-center font-bold text-base text-maintext px-4 md:px-20 leading-[24px]'>Trusted by Organisations Worldwide</h2>
+                    <h2 className='text-center font-bold text-base lg:text-[28px] text-maintext px-4 md:px-20 leading-[24px]'>Trusted by Organisations Worldwide</h2>
                 </div>
                 <div className=' max-sm:w-[90dvw] max-lg:w-[90dvw] w-[100%] m-auto'>
                     <Marquee gradient={false} puseOnHover="true">

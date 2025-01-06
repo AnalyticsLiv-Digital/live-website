@@ -30,7 +30,7 @@ const training = () => {
         />
         <link
           rel="canonical"
-          href="https://www.analyticsliv.com/services/training"
+          href="https://analyticsliv.com/services/training"
         ></link>
       </Head>
       <section>
