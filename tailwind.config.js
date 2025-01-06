@@ -34,6 +34,7 @@ module.exports = {
         filtershadow: '0 2px 20px 1px rgba(0,0,0,.11)',
         allshadow: '0 .5rem 1rem #2020200a',
         cookiePageShadow: '0px 1px 4px 0px #00000040',
+        customShadow: '0px 3px 10px 0px rgba(0, 0, 0, 0.05)',
       },
       colors: {
         btn: '#4285F4',
