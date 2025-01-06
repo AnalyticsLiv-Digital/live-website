@@ -14,11 +14,11 @@ const privacypolicy = () => {
         <ScrollProgress />
         <div className="page_title bg-[#4b82f9] text-white mb-10 relative">
             <div className='p-10'>
-                <Link href="/" className="hover:text-gray-700">Home 
+                {/* <Link href="/" className="hover:text-gray-700">Home 
                 </Link>
                 <span> &gt;</span>
-                <span> Privacy Policy</span>
-                <h1 className='text-[38px] leading-[38px] font-bold mt-5'>Privacy Policy</h1>
+                <span> Privacy Policy</span> */}
+                <h1 className='text-[38px] leading-[38px] font-bold'>Privacy Policy</h1>
             </div>
             
         </div>

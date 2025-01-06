@@ -484,6 +484,68 @@ input[type=number] {
   /* Background color of the active dot */
 }
 
+/* new design buttons */
+
+.mainbutn {
+  @apply relative overflow-hidden z-10 bg-[#08A4F7] text-[#fff] border border-[#08A4F7] cursor-pointer text-base lg:text-lg font-bold not-italic inline rounded-[8px] py-[10px] px-5 sm:px-[40px] mb-3 transition-all duration-300 ease-linear hover:text-[#08A4F7] 
+}
+
+.mainbutn::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 101%;
+  right: 0px;
+  top: 0;
+  left: 0px;
+  transform: translateY(-85px);
+  background: rgb(244, 239, 239);
+  transition: all 0.3s linear;
+}
+
+.mainbutn:hover::before {
+  background: #fff;
+  transform: translate(0);
+  transition: all 0.3s linear;
+  z-index: -1;
+}
+
+.mainbutn-opposite {
+  @apply relative overflow-hidden z-10 bg-white text-[#08A4F7] border border-[#08A4F7] cursor-pointer text-base lg:text-lg font-bold not-italic inline rounded-[8px] py-[10px] px-5 sm:px-[40px] mb-3 transition-all duration-300 ease-linear hover:text-white 
+}
+
+.mainbutn-opposite::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 101%;
+  right: 0px;
+  top: 0;
+  left: 0px;
+  transform: translateY(85px);
+  background: rgb(244, 239, 239);
+  transition: all 0.3s linear;
+}
+
+.mainbutn-opposite:hover::before {
+  background: #08A4F7;
+  color: white;
+  transform: translate(0);
+  transition: all 0.3s linear;
+  z-index: -1;
+}
+
+/* Homepage get in touch form's contact no's input */
+.custom-phone-input-container .custom-phone-input {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.custom-phone-input-container .custom-phone-input:focus {
+  border: 2px solid #08A4F7 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
 
 /* Homepage btn-css */
 .butn {
@@ -1501,4 +1563,15 @@ iframe {
 .abtactive {
   background-color: cadetblue;
   color: white;
+}
+
+@media (max-width: 370px) {
+  .custom-padding-370 {
+    @apply px-2; /* Apply the padding you want for screens 370px or smaller */
+  }
+}
+@media (max-width: 540px) {
+  .custom-padding-540 {
+    @apply px-4; /* Apply the padding you want for screens 370px or smaller */
+  }
 }

@@ -125,7 +125,7 @@ const Home = () => {
                         </div>
                         <div className="flex flex-wrap justify-around mt-7 mb-3">
                           <button onClick={scrolling1} className="butn">
-                            know More
+                            Know More
                           </button>
                         </div>
                       </div>
@@ -219,7 +219,7 @@ const Home = () => {
 
               <div className="">
                 <div>
-                  <h2 className="text-center font-bold text-base text-maintext leading-[24px]">
+                  <h2 className="text-center font-bold text-base lg:text-[28px] text-maintext leading-[24px]">
                     Trusted by Organisations Worldwide
                   </h2>
                 </div>

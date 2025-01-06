@@ -14,6 +14,8 @@ import Footer from '../components/home/Footer'
 import ContactPopup from '../components/ContactPopup';
 import useContactPopup from '../components/hooks/useContactPopup';
 import Script from "next/script";
+import Navbar from '../components/navbar';
+import Footer1 from '../components/home/Footer1';
 
 
 function MyApp({ Component, pageProps: { session, ...pageProps }, }) {
@@ -56,7 +58,8 @@ function MyApp({ Component, pageProps: { session, ...pageProps }, }) {
         <script src="/antiflicker.js" />
         <meta name="google-site-verification" content="O18N4BhbU7y11EzEu_fOYfNHdp-fCahcKZUpriC3hyQ" />
       </Head>
-        <Header />
+        {/* <Header /> */}
+        <Navbar />
         {showLoader ? <div className='flex h-screen'><HashLoader
           color="#271d90"
           loading
@@ -66,7 +69,8 @@ function MyApp({ Component, pageProps: { session, ...pageProps }, }) {
           <>
 
             <Component {...pageProps} />
-            <Footer />
+            {/* <Footer /> */}
+            <Footer1 />
 
           </>}</>}
           {/* {showPopup && (

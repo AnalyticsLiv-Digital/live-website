@@ -5,7 +5,7 @@ import 'aos/dist/aos.css'
 import Image from 'next/image'
 
 const PowerUp = () => {
-    
+
     return (
         <section className='powerup overflow-hidden relative font-gilroy'>
 
@@ -16,7 +16,7 @@ const PowerUp = () => {
                     </div>
                     <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 pt-[50px]">
                         <div class="flex items-start justify-center md:w-full w-[300px] m-auto mb-5 powerbox xl:h-[260px] lg:h-[295px] h-[260px] md:h-[230px] p-[10px] pt-6 border border-[#333] rounded-[10px]">
-                            <div className='cursor-pointer'>
+                            <div className=''>
                                 <div className='inbox relative pb-4'>
                                     <Image
                                         src="/data-collection.png"
@@ -33,7 +33,7 @@ const PowerUp = () => {
                             </div>
                         </div>
                         <div class="flex items-start justify-center md:w-full w-[300px] m-auto mb-5 powerbox xl:h-[260px] lg:h-[295px] h-[260px] md:h-[230px] p-[10px] pt-6 border border-[#333] rounded-[10px]">
-                            <div className='cursor-pointer'>
+                            <div className=''>
                                 <div className='inbox relative pb-4'>
                                     <Image
                                         src="/report (3).png"
@@ -51,7 +51,7 @@ const PowerUp = () => {
                         </div>
                         <div class="flex items-start justify-center md:w-full w-[300px] m-auto mb-5 powerbox xl:h-[260px] lg:h-[295px] h-[260px] md:h-[230px] p-[10px] pt-6 border border-[#333] rounded-[10px]">
 
-                            <div className='cursor-pointer'>
+                            <div className=''>
 
                                 <div className='inbox relative pb-4'>
                                     <Image
@@ -70,7 +70,7 @@ const PowerUp = () => {
                         </div>
                         <div class="flex items-start justify-center md:w-full w-[300px] m-auto mb-5 powerbox xl:h-[260px] lg:h-[295px] h-[260px] md:h-[230px] p-[10px] pt-6 border border-[#333] rounded-[10px]">
 
-                            <div className='cursor-pointer'>
+                            <div className=''>
 
                                 <div className='inbox relative pb-4'>
                                     <Image

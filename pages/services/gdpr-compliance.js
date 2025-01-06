@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
+import Link from "next/link";
 
 const cookieLanding = ({ brandsdata }) => {
   const NextArrow = (props) => {
@@ -178,10 +179,12 @@ const cookieLanding = ({ brandsdata }) => {
             ensuring GDPR compliance.
           </div>
           <div className="flex max-md:flex-col max-md:mx-5 justify-center lg:justify-start gap-4 lg:gap-8">
-            <a href="/webinar/cookie-consent" target="_blank"  className="butn text-center">
+            {/* <a href="/webinar/cookie-consent" target="_blank"  className="butn text-center">
              Watch Our Webinar
-            </a>
-            <button className="butn">Let’s Get in Touch</button>
+            </a> */}
+            <Link href="/contact?id=gdrp-compliance">
+              <button className="butn">Let’s Get in Touch</button>
+            </Link>
           </div>
         </div>
         <div className="w-full lg:w-1/2 relative">
@@ -431,7 +434,7 @@ const cookieLanding = ({ brandsdata }) => {
             for your business?
           </div>
           <a href="/contact?id=cookie-consent" target="_blank" className="text-center max-sm:w-[220px] max-xl:w-[270px] text-white text-xs md:text-base lg:text-lg font-semibold border border-white rounded-[5px] px-1 md:px-4 py-2">
-              Contact Us Now
+            Contact Us Now
           </a>
         </div>
       </section>

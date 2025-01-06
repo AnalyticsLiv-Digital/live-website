@@ -53,8 +53,7 @@ const header = () => {
           href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
         />
       </Head>
-
-      <header className="sticky min-w-full top-0 z-50 bg-white font-rbt">
+      <header className="sticky min-w-full top-0 z-40 bg-white font-rbt">
         {/* <div> sm:w-1/3*/}
         <div className="hidden lg:inline">
           <div className="flex items-start justify-between pt-5 px-5">

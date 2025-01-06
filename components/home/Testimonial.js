@@ -6,11 +6,31 @@ import Image from 'next/image'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const Testimonial = () => {
     useEffect(() => {
         Aos.init({ duration: 2000 });
     }, [])
+
+    const NextArrow = ({ onClick }) => (
+        <div
+            className="absolute top-1/2 right-[15px] bg-white p-1 rounded-full transform -translate-y-1/2 z-10 cursor-pointer"
+            onClick={onClick}
+        >
+            <FaArrowRight size={20} />
+        </div>
+    );
+
+    const PrevArrow = ({ onClick }) => (
+        <div
+            className="absolute top-1/2 left-[15px] bg-white p-1 rounded-full transform -translate-y-1/2 z-10 cursor-pointer"
+            onClick={onClick}
+        >
+            <FaArrowLeft size={20} />
+        </div>
+    );
+
     var settings = {
         dots: true,
         infinite: true,
@@ -47,6 +67,8 @@ const Testimonial = () => {
                     slidesToShow: 2,
                     slidesToScroll: 1,
                     initialSlide: 2,
+                    nextArrow: <NextArrow />,
+                    prevArrow: <PrevArrow />,
                 },
             },
             {
@@ -55,6 +77,8 @@ const Testimonial = () => {
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     initialSlide: 2,
+                    nextArrow: <NextArrow />,
+                    prevArrow: <PrevArrow />,
                 },
             },
             {
@@ -63,6 +87,8 @@ const Testimonial = () => {
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     initialSlide: 2,
+                    nextArrow: <NextArrow />,
+                    prevArrow: <PrevArrow />,
                 },
             },
             {
@@ -70,6 +96,8 @@ const Testimonial = () => {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
+                    nextArrow: <NextArrow />,
+                    prevArrow: <PrevArrow />,
                 },
             },
         ],
