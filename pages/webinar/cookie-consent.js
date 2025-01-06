@@ -7,12 +7,12 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaArrowLeft, FaArrowRight, FaLongArrowAltRight } from "react-icons/fa";
+import NewPopup from "../../components/newPopup";
 import useContactPopup from "../../components/hooks/useContactPopup";
 import Head from "next/head";
 // import ContactPopup from "../../components/ContactPopup";
 
 export default function CookieConsent({ brandsdata }) {
-  const { showPopup, closePopup, registerUser } = useContactPopup();
   const initialValues = { fullName: "", email: "", contact: "", company: "" };
   const [formSubmit, setFormSubmit] = useState(false);
   const [formValues, setFormValues] = useState(initialValues);
@@ -20,7 +20,8 @@ export default function CookieConsent({ brandsdata }) {
   const [isSubmit, setIsSubmit] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const [showWaiting, setShowWaiting] = useState(false);
-  
+  const { showPopup, closePopup, registerUser } = useContactPopup();
+
   const NextArrow = (props) => {
     const { onClick } = props;
     return (
@@ -210,84 +211,77 @@ export default function CookieConsent({ brandsdata }) {
   }, []);
 
   return (
-    <>
-      <Head>
-        <title>AnalyticsLiv - Webinar</title>
-        <meta name="description" content="AnalyticsLiv - Webinar" />
-        <link rel="canonical" href="https://analyticsliv.com/webinar/cookie-consent"></link>
-      </Head>
-
-      <main className="font-lato">
-        {/* {showPopup && (
+    <main className="font-lato">
+      {/* {showPopup && (
         <NewPopup onClose={closePopup} onRegister={registerUser} />
       )} */}
 
-        <div className="bg-[#2E2C37]">
-          <div className="flex justify-between max-sm:gap-2 px-2 md:px-16 pt-5 ">
-            <img
-              src="/AnalyticsLiv Logo.png"
-              alt="analyticsliv-logo"
-              className="max-sm:h-11 max-md:h-16 max-sm:w-[140px] max-md:w-[30%] bg-white rounded-full px-4"
-            />
-            <img
-              src="/Google_Marketing_Plateform_Certified_Logo 1.png"
-              alt="google-partner"
-              className="max-sm:h-11 max-md:h-16 max-sm:w-[140px] max-md:w-[30%] "
-            />
-          </div>
-          <div
-            className=" 2xl:h-[750px] xl:h-[560px] max-sm:h-[450px] max-md:h-[350px] max-lg:h-[400px] max-xl:h-[525px] mt-5"
-            style={{
-              backgroundImage: "url(/vectormain.png)",
-              backgroundSize: "contain",
-              backgroundPosition: "bottom right",
-              backgroundRepeat: "no-repeat",
-            }}
-          >
-            <div className="flex-grow flex justify-between items-center relative max-sm:px-2 sm:pr-5 2xl:px-10">
-              <div className="text-left max-md:pt-5 flex-1 sm:pl-[5dvw] md:px-[4dvw] lg:px-0 lg:pl-[13dvw] xl:pl-[17dvw] 2xl:pt-0 xl:pt-[100px] 2xl:pl-[11dvw]">
-                <div className="text-2xl md:text-3xl 2xl:text-4xl md:pt-4 lg:pt-14 xl:pt-5 2xl:pt-48 font-black text-white mb-6 max-sm:mb-5 font-lato max-lg:text-center">
-                  Join <span className="flashing-text">WEBINAR</span> for,
-                  <br></br>
-                  Google Basic Consent vs. Advanced Consent - Optimising Your Data
-                  Strategy
+      <div className="bg-[#2E2C37]">
+        <div className="flex justify-between max-sm:gap-2 px-2 md:px-16 pt-5 ">
+          <img
+            src="/AnalyticsLiv Logo.png"
+            alt="analyticsliv-logo"
+            className="max-sm:h-11 max-md:h-16 max-sm:w-[140px] max-md:w-[30%] bg-white rounded-full px-4"
+          />
+          <img
+            src="/Google_Marketing_Plateform_Certified_Logo 1.png"
+            alt="google-partner"
+            className="max-sm:h-11 max-md:h-16 max-sm:w-[140px] max-md:w-[30%] "
+          />
+        </div>
+        <div
+          className=" 2xl:h-[750px] xl:h-[560px] max-sm:h-[450px] max-md:h-[350px] max-lg:h-[400px] max-xl:h-[525px] mt-5"
+          style={{
+            backgroundImage: "url(/vectormain.png)",
+            backgroundSize: "contain",
+            backgroundPosition: "bottom right",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <div className="flex-grow flex justify-between items-center relative max-sm:px-2 sm:pr-5 2xl:px-10">
+            <div className="text-left max-md:pt-5 flex-1 sm:pl-[5dvw] md:px-[4dvw] lg:px-0 lg:pl-[13dvw] xl:pl-[17dvw] 2xl:pt-0 xl:pt-[100px] 2xl:pl-[11dvw]">
+              <div className="text-2xl md:text-3xl 2xl:text-4xl md:pt-4 lg:pt-14 xl:pt-5 2xl:pt-48 font-black text-white mb-6 max-sm:mb-5 font-lato max-lg:text-center">
+                Join <span className="flashing-text">WEBINAR</span> for,
+                <br></br>
+                Google Basic Consent vs. Advanced Consent - Optimising Your Data
+                Strategy
+              </div>
+              <div className="text-base text-white mb-12 sm:mb-8 xl:mb-5 font-lato max-lg:text-center">
+                You should Join this insightful webinar, Whether you're in
+                marketing, web management, or data analytics, this webinar will
+                simplify the process of managing consent for you.
+              </div>
+              <div className="flex justify-center lg:justify-start lg:gap-16 max-md:justify-evenly items-center gap-0 sm:gap-5 md:gap-12">
+                <div className="flex flex-col items-center justify-center">
+                  <img
+                    src="/calendar (5).png"
+                    alt="calender"
+                    className=" w-[65px] h-[65px] max-lg:w-[35px] max-lg:h-[35px] lg:w-[55px] lg:h-[55px]"
+                  />
+                  <div className="text-white text-xs sm:text-base font-extrabold pt-1.5 sm:pt-3 text-center">
+                    15th Oct
+                  </div>
                 </div>
-                <div className="text-base text-white mb-12 sm:mb-8 xl:mb-5 font-lato max-lg:text-center">
-                  You should Join this insightful webinar, Whether you're in
-                  marketing, web management, or data analytics, this webinar will
-                  simplify the process of managing consent for you.
-                </div>
-                <div className="flex justify-center lg:justify-start lg:gap-16 max-md:justify-evenly items-center gap-0 sm:gap-5 md:gap-12">
+                <div>
                   <div className="flex flex-col items-center justify-center">
                     <img
-                      src="/calendar (5).png"
-                      alt="calender"
-                      className=" w-[65px] h-[65px] max-lg:w-[35px] max-lg:h-[35px] lg:w-[55px] lg:h-[55px]"
+                      src="/clock (3) 2.png"
+                      alt="clock"
+                      className="w-[65px] h-[65px] max-lg:w-[35px] max-lg:h-[35px] lg:w-[55px] lg:h-[55px]"
                     />
-                    <div className="text-white text-xs sm:text-base font-extrabold pt-1.5 sm:pt-3 text-center">
-                      15th Oct
-                    </div>
-                  </div>
-                  <div>
-                    <div className="flex flex-col items-center justify-center">
-                      <img
-                        src="/clock (3) 2.png"
-                        alt="clock"
-                        className="w-[65px] h-[65px] max-lg:w-[35px] max-lg:h-[35px] lg:w-[55px] lg:h-[55px]"
-                      />
-                      <div className="text-white text-xs sm:text-base font-extrabold pt-1.5 sm:pt-3">
-                        9:00 PM IST{" "}
-                        <span className="max-sm:hidden">
-                          / 11:30 AM EST / 8:30 AM PST
-                        </span>
-                      </div>
+                    <div className="text-white text-xs sm:text-base font-extrabold pt-1.5 sm:pt-3">
+                      9:00 PM IST{" "}
+                      <span className="max-sm:hidden">
+                        / 11:30 AM EST / 8:30 AM PST
+                      </span>
                     </div>
                   </div>
                 </div>
-                <div className="flex justify-center lg:justify-start pb-4">
-                  <button
-                    onClick={scrolling1}
-                    className="cookiebutton py-2 px-4 text-xs font-semibold md:px-5 md:py-3 lg:py-2.5 lg:px-6 xl:py-2 lg:text-sm lg:font-semibold 2xl:py-3 2xl:px-8 xl:text-lg xl:font-bold 
+              </div>
+              <div className="flex justify-center lg:justify-start pb-4">
+                <button
+                  onClick={scrolling1}
+                  className="cookiebutton py-2 px-4 text-xs font-semibold md:px-5 md:py-3 lg:py-2.5 lg:px-6 xl:py-2 lg:text-sm lg:font-semibold 2xl:py-3 2xl:px-8 xl:text-lg xl:font-bold 
                   border border-[#FFFFFF] rounded-md shadow-[2px_2px_3px_1px_rgba(0,0,0,0.25)] mt-6 md:mt-8 lg:mt-6 xl:mt-10"
                   >
                     RESERVE YOUR SPOT
@@ -295,47 +289,47 @@ export default function CookieConsent({ brandsdata }) {
                 </div>
               </div>
 
-              <div className="flex-none">
-                <img
-                  src="/IMG.png"
-                  alt="main-img"
-                  className="2xl:h-[750px] max-2xl:h-[560px] max-xl:h-[525px] max-lg:h-[438px] max-md:h-[250px] max-lg:hidden"
-                />
-              </div>
+            <div className="flex-none">
+              <img
+                src="/IMG.png"
+                alt="main-img"
+                className="2xl:h-[750px] max-2xl:h-[560px] max-xl:h-[525px] max-lg:h-[438px] max-md:h-[250px] max-lg:hidden"
+              />
             </div>
           </div>
         </div>
-        <section className="flex justify-center lg:justify-evenly max-lg:flex-col xl:gap-36 xl:px-28">
-          {showWaiting ? (
-            <div className="fixed flex backdrop-blur top-0 left-0 right-0 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
-              <ScaleLoader
-                color="#271d90"
-                loading
-                size={100}
-                className="m-auto align-middle"
-              />
-            </div>
-          ) : formSubmit ? (
-            <div
-              className="webinarForm max-md:mx-4 max-lg:mx-28 overflow-auto z-10 h-[400px] md:h-[475px] lg:h-[500px] xl:h-[530px] 2xl:h-[550px] 
+      </div>
+      <section className="flex justify-center lg:justify-evenly max-lg:flex-col xl:gap-36 xl:px-28">
+        {showWaiting ? (
+          <div className="fixed flex backdrop-blur top-0 left-0 right-0 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
+            <ScaleLoader
+              color="#271d90"
+              loading
+              size={100}
+              className="m-auto align-middle"
+            />
+          </div>
+        ) : formSubmit ? (
+          <div
+            className="webinarForm max-md:mx-4 max-lg:mx-28 overflow-auto z-10 h-[400px] md:h-[475px] lg:h-[500px] xl:h-[530px] 2xl:h-[550px] 
                   md:my-10 max-md:mt-4 xl:top-[400px] 2xl:top-[550px] lg:w-[350px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] 
                   shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] text-center flex flex-col justify-around items-center px-3 md:px-4 py-2 md:py-5 bg-white"
-            >
-              <h2 className="md:text-xl text-[#3C292A]">
-                Thank you for registering for our exclusive webinar!
-              </h2>
-              <p className="md:text-lg text-[#3C292A]">
-                A confirmation email has been sent to your registered email address with all the webinar details. Please check your inbox for further information.
-              </p>
-              <img
-                alt="Webinar"
-                className="w-64 mx-auto"
-                src="https://storage.googleapis.com/website-bucket-uploads/static/Na_Dec_46.jpg"
-              />
-            </div>
-          ) : (
-            <div
-              className="webinarForm max-md:mx-4 max-lg:mx-28 overflow-auto z-10 h-[400px] md:h-[475px] lg:h-[500px] xl:h-[530px] 2xl:h-[550px] 
+          >
+            <h2 className="md:text-xl text-[#3C292A]">
+              Thank you for registering for our exclusive webinar!
+            </h2>
+            <p className="md:text-lg text-[#3C292A]">
+              A confirmation email has been sent to your registered email address with all the webinar details. Please check your inbox for further information.
+            </p>
+            <img
+              alt="Webinar"
+              className="w-64 mx-auto"
+              src="https://storage.googleapis.com/website-bucket-uploads/static/Na_Dec_46.jpg"
+            />
+          </div>
+        ) : (
+          <div
+            className="webinarForm max-md:mx-4 max-lg:mx-28 overflow-auto z-10 h-[400px] md:h-[475px] lg:h-[500px] xl:h-[530px] 2xl:h-[550px] 
             md:my-10 max-md:mt-4 xl:top-[400px] 2xl:top-[550px] lg:w-[350px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] 
             shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] text-center flex flex-col justify-around items-center px-3 md:px-4 xl:px-7 py-2 md:py-3 bg-white"
             >
@@ -376,17 +370,17 @@ export default function CookieConsent({ brandsdata }) {
                   onChange={handleChange}
                 />
 
-                <input
-                  type="number"
-                  placeholder="Contact No*"
-                  style={{ boxShadow: "3px 3px 8px rgba(0, 0, 0, 0.3)" }}
-                  className="px-3 py-2 text-sm border border-[#3C292A] rounded-md"
-                  id="contact"
-                  name="contact"
-                  required
-                  value={formValues.contact}
-                  onChange={handleChange}
-                />
+              <input
+                type="number"
+                placeholder="Contact No*"
+                style={{ boxShadow: "3px 3px 8px rgba(0, 0, 0, 0.3)" }}
+                className="px-3 py-2 text-sm border border-[#3C292A] rounded-md"
+                id="contact"
+                name="contact"
+                required
+                value={formValues.contact}
+                onChange={handleChange}
+              />
 
 
                 <input
@@ -701,3 +695,140 @@ export async function getServerSideProps(context) {
                 </div>
               </div> */
 }
+
+
+
+// Inline styles (replacing TailwindCSS styles)
+const popupStyles = `
+    position: fixed;
+    inset: 0;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 90%;
+    max-height: fit-content;
+    z-index: 1000;
+    overflow-y: auto;
+    margin: auto;
+`;
+
+const formStyles = `
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+`;
+
+function validate(values) {
+  const errors = {};
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+  const mobileRegex = /^\+?(\d{1,3})[-.\s]?(\d{5,14})$/;
+
+  if (!values.fullName) {
+    errors.fullName = "Name is required!";
+  }
+
+  if (!values.contact) {
+    errors.contact = "Contact is required!";
+  } else if (!mobileRegex.test(values.contact)) {
+    errors.contact = "This is not a valid phone number!";
+  }
+
+  if (!values.email) {
+    errors.email = "Email is required!";
+  } else if (!emailRegex.test(values.email)) {
+    errors.email = "This is not a valid email format!";
+  }
+
+  return errors;
+}
+
+function createPopup(onClose, onRegister) {
+  const popup = document.createElement('div');
+  popup.setAttribute('style', popupStyles);
+
+  popup.innerHTML = `
+        <img src="https://storage.googleapis.com/website-bucket-uploads/cross.png" alt="close" style="position: absolute; top: 10px; right: 10px; cursor: pointer;">
+        <div>
+            <h2>BOOST YOUR CONVERSIONS</h2>
+            <p>We offer expert Conversion Rate Optimization (CRO) services to maximize your website's potential.</p>
+            <form style="${formStyles}" id="contactForm">
+                <input type="text" name="fullName" placeholder="Name*" required>
+                <span class="error" style="color: red;"></span>
+                <input type="email" name="email" placeholder="Email*" required>
+                <span class="error" style="color: red;"></span>
+                <input type="text" name="contact" placeholder="Contact No*" required>
+                <span class="error" style="color: red;"></span>
+                <textarea name="message" placeholder="Message" rows="4"></textarea>
+                <button type="submit">Book Now!</button>
+            </form>
+        </div>
+    `;
+
+  document.body.appendChild(popup);
+
+  // Close button event listener
+  popup.querySelector('img[alt="close"]').addEventListener('click', () => {
+    onClose();
+    document.body.removeChild(popup);
+  });
+
+  // Form submission with validation
+  popup.querySelector('#contactForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = Object.fromEntries(new FormData(e.target).entries());
+    console.log("in contactForSubmission formData", formData)
+    const errors = validate(formData);
+    console.log("in contactForSubmission error", errors)
+
+    // Clear previous error messages
+    const errorElements = popup.querySelectorAll('.error');
+    errorElements.forEach(el => el.textContent = "");
+
+    // Display validation errors
+    if (Object.keys(errors).length > 0) {
+      if (errors.fullName) popup.querySelectorAll('.error')[0].textContent = errors.fullName;
+      if (errors.email) popup.querySelectorAll('.error')[1].textContent = errors.email;
+      if (errors.contact) popup.querySelectorAll('.error')[2].textContent = errors.contact;
+      return;
+    }
+    console.log("errro check api call finally ", Object.keys(errors).length)
+
+    // Send form data if validation passes
+    fetch('/api/popupContact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    })
+      .then(response => response.json())
+      .then(() => {
+        onRegister();
+        window.dataLayer.push({ event: 'contactFormSubmitted' });
+        document.body.removeChild(popup);
+      })
+      .catch(error => console.error('Error:', error));
+  });
+}
+
+// Functions to handle popup show/hide
+// function useWebinarPopup() {
+//   const popupShown = () => localStorage.getItem('webinarPopupClosed');
+//   const registered = () => localStorage.getItem('webinarRegistered');
+//   console.log("in usewebinarc", popupShown, registered)
+
+//   if (!registered() && (!popupShown() || Date.now() - popupShown() > 86400000)) {
+//     console.log("in usewebinarc if condition..", popupShown, registered)
+//     setTimeout(() => {
+//       createPopup(
+//         () => localStorage.setItem('webinarPopupClosed', Date.now()),
+//         () => localStorage.setItem('webinarRegistered', 'true')
+//       );
+//       window.dataLayer.push({ event: 'popupImpression' });
+//     }, 5000); // Show popup after 10 seconds
+//   }
+// }
+
+// Initialize the popup on page load
+// document.addEventListener('DOMContentLoaded', useWebinarPopup);

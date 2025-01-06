@@ -74,11 +74,11 @@ const page = () => {
         <link rel="icon" href="https://storage.googleapis.com/website-bucket-uploads/static/favicon.png" type="image/icon type"></link>
         <meta name="description" content="AnalyticsLiv Digital is one of the leading Web and App analytics agency. We help our customers embrace Google Products to improve their customer experiences." />
         <title>DV360 - AnalyticsLiv</title>
-        <link rel="canonical" href="https://analyticsliv.com/dv360"></link>
+
       </Head>
       <header className="sticky min-w-full top-0 z-50 shadow-md bg-white">
         <div className="navbar hidden lg:flex py-2 h-auto flex-wrap px-4 lg:flex-row items-center justify-between">
-          <a className="">
+          <a href='https://analyticsliv.com/' target='_blank' className="">
             <img alt="analyticsliv-logo" className="h-8 lg:ml-4 w-auto cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" />
           </a>
           <nav className="lg:flex text-center">
@@ -92,15 +92,15 @@ const page = () => {
             <a href="tel:8320576622">
               <button className="cta px-5 py-2 bg-sky-300 rounded-2xl mx-2 text-base font-semibold cursor-pointer hover:bg-sky-400">CALL US</button>
             </a>
-            <span className="hidden md:inline px-4">
+            <a href='https://enterprisemarketingportal.google/auth/find-a-partner/analyticslivdigitalllp-in?a=42968127' className="hidden md:inline px-4">
               <img alt="analyticsliv-gmp-partner" className="h-10 w-auto" src="https://storage.googleapis.com/website-bucket-uploads/static/gmp.svg" />
-            </span>
+            </a>
           </nav>
         </div>
 
 
         <div className="relative  flex lg:hidden p-2">
-          <Link href="#"><img onClick={() => setIsOpen(false)} src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="relative h-10 md:mx-4 cursor-pointer" /></Link>
+          <Link href="https://analyticsliv.com/" target='_blank'><img onClick={() => setIsOpen(false)} src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="relative h-10 md:mx-4 cursor-pointer" /></Link>
           <a className="ml-4" href="tel:8320576622">
             <button className="cta px-5 py-2 bg-sky-300 rounded-2xl mx-2 text-base font-semibold cursor-pointer hover:bg-sky-400">CALL US</button>
           </a>

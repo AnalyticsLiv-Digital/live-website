@@ -1,16 +1,22 @@
-import React from 'react'
-import { useSession, signIn, signOut } from "next-auth/react"
-import { useRouter } from 'next/navigation'
-import { useState, useEffect } from 'react'
-import GoogleButton from 'react-google-button'
-import Navbar from '../Navbar'
+import React from 'react';
+import { useSession, signIn } from "next-auth/react";
+import GoogleButton from 'react-google-button';
+import Navbar from '../Navbar';
 
 const Index = ({ casestudies }) => {
+  const { data: session, status } = useSession();
   const casestudy = casestudies.casestudy;
-  console.log(casestudy);
-  const { data: session } = useSession()
-  const [loginstate, setLoginstate] = useState(session ? true : false);
 
+  if (status === 'loading') {
+    return (
+      <div className="flex flex-col min-h-screen justify-center items-center space-y-4">
+        <div className="flex items-center">
+          <div className="w-12 h-12 border-4 border-t-transparent border-blue-500 border-solid rounded-full animate-spin"></div>
+        </div>
+        <span className="text-lg font-semibold text-gray-700">Loading...</span>
+      </div>
+    );
+  }
 
   if (session) {
     return (
@@ -58,7 +64,7 @@ const Index = ({ casestudies }) => {
                         {casestudy.active ? "Active" : "Inactive"}
                       </td>
                       <td className="py-4 px-6">
-                        <a href={`/casestudies/${casestudy.slug}`} className="text-gray-400 hover:underline">
+                        <a href={`/case-studies/${casestudy.slug}`} className="text-gray-400 hover:underline">
                           Preview
                         </a>
                       </td>
@@ -79,9 +85,9 @@ const Index = ({ casestudies }) => {
   }
 
   return (
-    <>
+    <div className="min-h-screen flex items-center justify-center">
       <GoogleButton onClick={() => signIn()}>Sign in</GoogleButton>
-    </>
+    </div>
   );
 };
 
