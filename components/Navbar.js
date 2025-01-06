@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 // import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { IoChevronDown, IoChevronUp } from "react-icons/io5";
 
-const Navbar = () => {
+const navbar = () => {
     const [header, setHeader] = useState(50);
     const [isWebResources, setIsWebResources] = useState(false);
     const [isWebServices, setIsSWebervices] = useState(false);
@@ -57,7 +57,7 @@ const Navbar = () => {
                 <div className="text-xs max-sm:py-1.5 sm:text-base md:text-lg font-semibold text-center flex max-sm:flex-col max-sm:gap-1 justify-center items-center">
                     Your Partner for Google Marketing Platform Success
                     <a href="tel:+918320576622"><div className="flex justify-center items-center underline pl-2 sm:pl-5 text-[#EE4312] text-xs sm:text-sm md:text-[15px] font-bold">
-                        Schedule a Call Now 
+                        Schedule a Call Now
                         <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Ringer%20Volume.png" alt="Ringer Volume" className="pl-1" /></div></a>
                 </div>
             </div>
@@ -917,4 +917,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default navbar;
