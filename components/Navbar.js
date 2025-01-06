@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 // import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { IoChevronDown, IoChevronUp } from "react-icons/io5";
 
-const Navbar = () => {
+const navbar = () => {
     const [header, setHeader] = useState(50);
     const [isWebResources, setIsWebResources] = useState(false);
     const [isWebServices, setIsSWebervices] = useState(false);
@@ -917,4 +917,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default navbar;

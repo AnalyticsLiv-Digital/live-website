@@ -14,7 +14,7 @@ import Footer from '../components/home/Footer'
 import ContactPopup from '../components/ContactPopup';
 import useContactPopup from '../components/hooks/useContactPopup';
 import Script from "next/script";
-import Navbar from '../components/navbar';
+import Navbar from '../components/Navbar';
 import Footer1 from '../components/home/Footer1';
 
 
