@@ -283,11 +283,11 @@ export default function CookieConsent({ brandsdata }) {
                   onClick={scrolling1}
                   className="cookiebutton py-2 px-4 text-xs font-semibold md:px-5 md:py-3 lg:py-2.5 lg:px-6 xl:py-2 lg:text-sm lg:font-semibold 2xl:py-3 2xl:px-8 xl:text-lg xl:font-bold 
                   border border-[#FFFFFF] rounded-md shadow-[2px_2px_3px_1px_rgba(0,0,0,0.25)] mt-6 md:mt-8 lg:mt-6 xl:mt-10"
-                  >
-                    RESERVE YOUR SPOT
-                  </button>
-                </div>
+                >
+                  RESERVE YOUR SPOT
+                </button>
               </div>
+            </div>
 
             <div className="flex-none">
               <img
@@ -332,43 +332,43 @@ export default function CookieConsent({ brandsdata }) {
             className="webinarForm max-md:mx-4 max-lg:mx-28 overflow-auto z-10 h-[400px] md:h-[475px] lg:h-[500px] xl:h-[530px] 2xl:h-[550px] 
             md:my-10 max-md:mt-4 xl:top-[400px] 2xl:top-[550px] lg:w-[350px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] 
             shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] text-center flex flex-col justify-around items-center px-3 md:px-4 xl:px-7 py-2 md:py-3 bg-white"
+          >
+            <h1 className="font-extrabold text-3xl md:text-[28px] text-[#3C292A]">
+              On Demand Webinar
+            </h1>
+
+            <div className="text-sm font-normal leading-4 text-[#3C292A]">
+              Register Now to optimize your data strategy while staying
+              compliant with evolving privacy regulations.
+            </div>
+
+            <form
+              className="flex flex-col gap-3.5 md:gap-6 lg:gap-8 2xl:gap-8 w-[90%] md:w-[90%]"
+              onSubmit={handleSubmit}
             >
-              <h1 className="font-extrabold text-3xl md:text-[28px] text-[#3C292A]">
-                On Demand Webinar
-              </h1>
+              <input
+                type="text"
+                placeholder="Name*"
+                style={{ boxShadow: "3px 3px 8px rgba(0, 0, 0, 0.3)" }}
+                className="px-3 py-2 text-sm border border-[#3C292A] rounded-md"
+                id="fullName"
+                name="fullName"
+                value={formValues.fullName}
+                required
+                onChange={handleChange}
+              />
 
-              <div className="text-sm font-normal leading-4 text-[#3C292A]">
-                Register Now to optimize your data strategy while staying
-                compliant with evolving privacy regulations.
-              </div>
-
-              <form
-                className="flex flex-col gap-3.5 md:gap-6 lg:gap-8 2xl:gap-8 w-[90%] md:w-[90%]"
-                onSubmit={handleSubmit}
-              >
-                <input
-                  type="text"
-                  placeholder="Name*"
-                  style={{ boxShadow: "3px 3px 8px rgba(0, 0, 0, 0.3)" }}
-                  className="px-3 py-2 text-sm border border-[#3C292A] rounded-md"
-                  id="fullName"
-                  name="fullName"
-                  value={formValues.fullName}
-                  required
-                  onChange={handleChange}
-                />
-
-                <input
-                  type="email"
-                  placeholder="Email*"
-                  style={{ boxShadow: "3px 3px 8px rgba(0, 0, 0, 0.3)" }}
-                  className="px-3 py-2 text-sm border border-[#3C292A] rounded-md"
-                  id="email"
-                  name="email"
-                  value={formValues.email}
-                  required
-                  onChange={handleChange}
-                />
+              <input
+                type="email"
+                placeholder="Email*"
+                style={{ boxShadow: "3px 3px 8px rgba(0, 0, 0, 0.3)" }}
+                className="px-3 py-2 text-sm border border-[#3C292A] rounded-md"
+                id="email"
+                name="email"
+                value={formValues.email}
+                required
+                onChange={handleChange}
+              />
 
               <input
                 type="number"
@@ -383,95 +383,51 @@ export default function CookieConsent({ brandsdata }) {
               />
 
 
-                <input
-                  type="text"
-                  placeholder="Your company"
-                  style={{ boxShadow: "3px 3px 8px rgba(0, 0, 0, 0.3)" }}
-                  className="px-3 py-2 text-sm border border-[#3C292A] rounded-md"
-                  id="company"
-                  name="company"
-                  value={formValues.company}
-                  onChange={handleChange}
-                />
-                <p className="text-red-600 text-sm">{formErrors.contact}</p>
+              <input
+                type="text"
+                placeholder="Your company"
+                style={{ boxShadow: "3px 3px 8px rgba(0, 0, 0, 0.3)" }}
+                className="px-3 py-2 text-sm border border-[#3C292A] rounded-md"
+                id="company"
+                name="company"
+                value={formValues.company}
+                onChange={handleChange}
+              />
+              <p className="text-red-600 text-sm">{formErrors.contact}</p>
 
-                <button className="gtmbutn4 bg-gradient-to-l from-[#EB5442] to-[#ED7754] hover:border-black hover:border-[1px] hover:text-[#EB5442] border border-[#FFFFFF] rounded-md shadow-[2px_2px_3px_1px_rgba(0,0,0,0.25)] py-2 text-sm font-extrabold">
-                  REGISTER NOW
-                </button>
-              </form>
-            </div>
-          )}
-          <div className="w-full lg:w-[50%] xl:w-[50%] 2xl:w-[55%] pt-12 sm:pt-5 lg:pb-10">
-            <div className="text-[35px] font-bold text-[#3C292A] pb-2 lg:pb-4 xl:pb-8 xl:font-extrabold text-center ">
-              <span className="inline-block relative">
-                Meet&nbsp;
-                <span
-                  className="absolute block bg-gradient-to-r from-[#59C3EC] to-[#297AB6]"
-                  style={{
-                    width: "80px",
-                    height: "5px",
-                    borderRadius: "10px",
-                    top: "calc(100% )",
-                    left: "0",
-                  }}
-                ></span>
-              </span>
-              Our Presenters
-            </div>
+              <button className="gtmbutn4 bg-gradient-to-l from-[#EB5442] to-[#ED7754] hover:border-black hover:border-[1px] hover:text-[#EB5442] border border-[#FFFFFF] rounded-md shadow-[2px_2px_3px_1px_rgba(0,0,0,0.25)] py-2 text-sm font-extrabold">
+                REGISTER NOW
+              </button>
+            </form>
+          </div>
+        )}
+        <div className="w-full lg:w-[50%] xl:w-[50%] 2xl:w-[55%] pt-12 sm:pt-5 lg:pb-10">
+          <div className="text-[35px] font-bold text-[#3C292A] pb-2 lg:pb-4 xl:pb-8 xl:font-extrabold text-center ">
+            <span className="inline-block relative">
+              Meet&nbsp;
+              <span
+                className="absolute block bg-gradient-to-r from-[#59C3EC] to-[#297AB6]"
+                style={{
+                  width: "80px",
+                  height: "5px",
+                  borderRadius: "10px",
+                  top: "calc(100% )",
+                  left: "0",
+                }}
+              ></span>
+            </span>
+            Our Presenters
+          </div>
 
-            {/* mobile view */}
+          {/* mobile view */}
 
-            <div className="pb-8 pt-8 md:hidden max-sm:pb-2 w-[90%] mx-auto relative carousel-custom">
-              <Slider {...settings}>
-                <div className="flex flex-col w-[200px] justify-center items-center">
-                  <img
-                    src="/Shubhangi_Webinar_Profile_Pic_New.png"
-                    alt=""
-                    className="pb-3 mx-auto"
-                  />
-                  <div className="text-base font-black text-center text-[#3C292A] pb-2">
-                    Shubhangi Chauhan
-                  </div>
-                  <div className="text-sm font-normal text-center">
-                    Account Manager
-                  </div>
-                </div>
-                <div className="flex flex-col w-[200px] justify-center items-center">
-                  <img
-                    src="/Abhishek_Webinar_Profile_Pic_New (1).png"
-                    alt=""
-                    className="pb-3 mx-auto"
-                  />
-                  <div className="text-base font-black text-center text-[#3C292A] pb-2">
-                    Abhishek Tiwari
-                  </div>
-                  <div className="text-sm font-normal text-center">
-                    CSM & GA4 Expert
-                  </div>
-                </div>
-                <div className="flex flex-col w-[200px] justify-center items-center">
-                  <img
-                    src="/Anshul_Webinar_Profile_Pic_New.png"
-                    alt=""
-                    className="pb-3 mx-auto"
-                  />
-                  <div className="text-base font-black text-center text-[#3C292A] pb-2">
-                    Anshul Dhurandhar
-                  </div>
-                  <div className="text-sm font-normal text-center">
-                    GTM Expert
-                  </div>
-                </div>
-              </Slider>
-            </div>
-
-            {/* desktop view */}
-            <div className="max-md:hidden lg:border-b lg:border-b-[#BBBBBB] lg:pb-5 xl:pb-10 2xl:pb-14 flex max-sm:flex-col max-sm:gap-14 items-center justify-around xl::justify-between">
-              <div className="flex flex-col">
+          <div className="pb-8 pt-8 md:hidden max-sm:pb-2 w-[90%] mx-auto relative carousel-custom">
+            <Slider {...settings}>
+              <div className="flex flex-col w-[200px] justify-center items-center">
                 <img
                   src="/Shubhangi_Webinar_Profile_Pic_New.png"
                   alt=""
-                  className="pb-3"
+                  className="pb-3 mx-auto"
                 />
                 <div className="text-base font-black text-center text-[#3C292A] pb-2">
                   Shubhangi Chauhan
@@ -480,11 +436,11 @@ export default function CookieConsent({ brandsdata }) {
                   Account Manager
                 </div>
               </div>
-              <div className="flex flex-col">
+              <div className="flex flex-col w-[200px] justify-center items-center">
                 <img
                   src="/Abhishek_Webinar_Profile_Pic_New (1).png"
                   alt=""
-                  className="pb-3"
+                  className="pb-3 mx-auto"
                 />
                 <div className="text-base font-black text-center text-[#3C292A] pb-2">
                   Abhishek Tiwari
@@ -493,142 +449,185 @@ export default function CookieConsent({ brandsdata }) {
                   CSM & GA4 Expert
                 </div>
               </div>
-              <div className="flex flex-col">
+              <div className="flex flex-col w-[200px] justify-center items-center">
                 <img
                   src="/Anshul_Webinar_Profile_Pic_New.png"
                   alt=""
-                  className="pb-3"
+                  className="pb-3 mx-auto"
                 />
                 <div className="text-base font-black text-center text-[#3C292A] pb-2">
                   Anshul Dhurandhar
                 </div>
-                <div className="text-sm font-normal text-center">GTM Expert</div>
-              </div>
-            </div>
-            <div className="flex justify-center max-md:pb-10">
-              <div className="shadow-cookiePageShadow w-[330px] sm:w-[350px] lg:w-[450px] lg:py-3 rounded-3xl mt-[40px]">
-                <div className="flex justify-evenly py-5">
-                  <div className="flex flex-col justify-center items-center">
-                    <img className="pb-2" src="/Duration.png" alt="time" />
-                    <div className="text-xl font-bold">Duration</div>
-                    <div className="text-sm font-normal text-center ">1 Hour</div>
-                  </div>
-                  <div className="flex flex-col justify-center items-center">
-                    <img
-                      className="pb-2"
-                      src="/reduce-cost (2) 1.png"
-                      alt="time"
-                    />
-                    <div className="text-xl font-bold">Cost</div>
-                    <div className="text-sm font-normal text-center ">Free</div>
-                  </div>
+                <div className="text-sm font-normal text-center">
+                  GTM Expert
                 </div>
               </div>
+            </Slider>
+          </div>
+
+          {/* desktop view */}
+          <div className="max-md:hidden lg:border-b lg:border-b-[#BBBBBB] lg:pb-5 xl:pb-10 2xl:pb-14 flex max-sm:flex-col max-sm:gap-14 items-center justify-around xl::justify-between">
+            <div className="flex flex-col">
+              <img
+                src="/Shubhangi_Webinar_Profile_Pic_New.png"
+                alt=""
+                className="pb-3"
+              />
+              <div className="text-base font-black text-center text-[#3C292A] pb-2">
+                Shubhangi Chauhan
+              </div>
+              <div className="text-sm font-normal text-center">
+                Account Manager
+              </div>
+            </div>
+            <div className="flex flex-col">
+              <img
+                src="/Abhishek_Webinar_Profile_Pic_New (1).png"
+                alt=""
+                className="pb-3"
+              />
+              <div className="text-base font-black text-center text-[#3C292A] pb-2">
+                Abhishek Tiwari
+              </div>
+              <div className="text-sm font-normal text-center">
+                CSM & GA4 Expert
+              </div>
+            </div>
+            <div className="flex flex-col">
+              <img
+                src="/Anshul_Webinar_Profile_Pic_New.png"
+                alt=""
+                className="pb-3"
+              />
+              <div className="text-base font-black text-center text-[#3C292A] pb-2">
+                Anshul Dhurandhar
+              </div>
+              <div className="text-sm font-normal text-center">GTM Expert</div>
             </div>
           </div>
-        </section>
-        <section className="flex max-xl:flex-col bg-[#F5FDFF] md:pt-7 xl:pt-0 md:mt-16 xl:mt-0">
-          <section className="w-full xl:px-20">
-            <div className="text-2xl md:text-[35px] font-bold text-[#3C292A] pt-16 pb-16 xl:font-extrabold text-center">
-              <span className="inline-block relative">
-                In this&nbsp;
-                <span
-                  className="absolute block bg-gradient-to-r from-[#59C3EC] to-[#297AB6]"
-                  style={{
-                    width: "90px",
-                    marginTop: "8px",
-                    height: "5px",
-                    borderRadius: "10px",
-                    top: "calc(100% )",
-                    left: "0",
-                  }}
-                ></span>
-              </span>
-              webinar, you'll learn :
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 max-md:gap-8 md:gap-16 max-sm:grid-cols-1 justify-around md:px-10 2xl:px-24 pb-8 xl:pb-20">
-              <div className="flex flex-col items-center max-md:gap-4 md:gap-10">
-                <img src="/image 1 1.png" className=" h-32 w-32" alt="privacy" />
-                <div className="text-sm font-medium text-center">
-                  The fundamentals of consent <br></br>& its role in data privacy.
+          <div className="flex justify-center max-md:pb-10">
+            <div className="shadow-cookiePageShadow w-[330px] sm:w-[350px] lg:w-[450px] lg:py-3 rounded-3xl mt-[40px]">
+              <div className="flex justify-evenly py-5">
+                <div className="flex flex-col justify-center items-center">
+                  <img className="pb-2" src="/Duration.png" alt="time" />
+                  <div className="text-xl font-bold">Duration</div>
+                  <div className="text-sm font-normal text-center ">1 Hour</div>
                 </div>
-              </div>
-              <div className="flex flex-col items-center max-md:gap-4 md:gap-10">
-                <img src="/image 2 1.png" className=" h-32 w-32" alt="privacy" />
-                <div className="text-sm font-medium text-center">
-                  A comparison of Basic & <br></br>Advanced Consent Modes.
-                </div>
-              </div>
-              <div className="flex flex-col items-center max-md:gap-4 md:gap-10">
-                <img
-                  src="/image 3 1.png"
-                  className=" h-32 w-32"
-                  alt="online-privacy"
-                />
-                <div className="text-sm font-medium text-center">
-                  How to implement Google’s <br></br>Consent Mode for websites and
-                  <br></br> PPC campaigns.
-                </div>
-              </div>
-              <div className="flex flex-col items-center max-md:gap-4 md:gap-10">
-                <img src="/image 4 1.png" className=" h-32 w-32" alt="settings" />
-                <div className="text-sm font-medium text-center">
-                  Insights on tools like Cookiebot<br></br> and OneTrust for
-                  effective <br></br>consent management.
+                <div className="flex flex-col justify-center items-center">
+                  <img
+                    className="pb-2"
+                    src="/reduce-cost (2) 1.png"
+                    alt="time"
+                  />
+                  <div className="text-xl font-bold">Cost</div>
+                  <div className="text-sm font-normal text-center ">Free</div>
                 </div>
               </div>
             </div>
-          </section>
-        </section>
-        <section
-          id="sticky-section"
-          className={`bg-gradient-to-l from-[#EB5442] to-[#ED7754] max-md:py-3 md:py-5 max-md:gap-0 flex items-center justify-between lg:justify-center 
-                      lg:gap-16 xl:gap-16 px-3.5 md:px-5 lg:px-8 xl:px-16 2xl:px-56  transform transition-all duration-1000 ease-in-out ${isSticky
-              ? "sticky translate-y-0  transform transition-all duration-1000 ease-out"
-              : "transform transition-all duration-1000 ease-in-out translate-y-10"
-            }`}
-        >
-          <div className="text-[12px] max-sm:w-[60%] max-lg:w-[77%] md:text-xl font-semibold text-white">
-            Are you looking for the right partner to implement Cookie consent for
-            your business?
-          </div>
-          <a
-            onClick={scrolling1}
-            target="_blank"
-            className="max-sm:w-[107px] bg-white text-[#ED7754] cursor-pointer shadow-foter 
-                        text-center py-2 border rounded-[5px] px-2 sm:px-3 text-[11px] xl:text-base md:text-sm font-semibold
-                          cookiebutton hover:border-white hover:border-[1px] hover:text-white border-[#FFFFFF] text-sm"
-          >
-            Contact Us Now
-          </a>
-        </section>
-        <div className="bg-[#E8FBFB] py-5 flex flex-col gap-3 px-4 lg:px-20">
-          <h2 className="text-center font-bold text-base lg:text-3xl xl:font-extrabold">
-            Trusted by Organisations Worldwide
-          </h2>
-          <div className="brandsimages flex space-x-8 justify-center py-4 px-4 mt-4">
-            <Marquee gradient={false} pauseOnHover="true">
-              {brandsdata?.brand.map((brands, key) => (
-                <div key={key}>
-                  <img src={brands.logo} alt={brands.brands} />
-                </div>
-              ))}
-            </Marquee>
           </div>
         </div>
-        <section className="bg-[#2E2C37] w-full h-full flex justify-center py-2 px-2 md:px-4 md:py-4 lg:py-8 lg:px-10">
-          <img
-            onClick={scrolling1}
-            src="/Webinar_Landing_Page_Banner_1 (1).png"
-            alt="footer-banner"
-            className="w-full cursor-pointer"
-          />
+      </section>
+      <section className="flex max-xl:flex-col bg-[#F5FDFF] md:pt-7 xl:pt-0 md:mt-16 xl:mt-0">
+        <section className="w-full xl:px-20">
+          <div className="text-2xl md:text-[35px] font-bold text-[#3C292A] pt-16 pb-16 xl:font-extrabold text-center">
+            <span className="inline-block relative">
+              In this&nbsp;
+              <span
+                className="absolute block bg-gradient-to-r from-[#59C3EC] to-[#297AB6]"
+                style={{
+                  width: "90px",
+                  marginTop: "8px",
+                  height: "5px",
+                  borderRadius: "10px",
+                  top: "calc(100% )",
+                  left: "0",
+                }}
+              ></span>
+            </span>
+            webinar, you'll learn :
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 max-md:gap-8 md:gap-16 max-sm:grid-cols-1 justify-around md:px-10 2xl:px-24 pb-8 xl:pb-20">
+            <div className="flex flex-col items-center max-md:gap-4 md:gap-10">
+              <img src="/image 1 1.png" className=" h-32 w-32" alt="privacy" />
+              <div className="text-sm font-medium text-center">
+                The fundamentals of consent <br></br>& its role in data privacy.
+              </div>
+            </div>
+            <div className="flex flex-col items-center max-md:gap-4 md:gap-10">
+              <img src="/image 2 1.png" className=" h-32 w-32" alt="privacy" />
+              <div className="text-sm font-medium text-center">
+                A comparison of Basic & <br></br>Advanced Consent Modes.
+              </div>
+            </div>
+            <div className="flex flex-col items-center max-md:gap-4 md:gap-10">
+              <img
+                src="/image 3 1.png"
+                className=" h-32 w-32"
+                alt="online-privacy"
+              />
+              <div className="text-sm font-medium text-center">
+                How to implement Google’s <br></br>Consent Mode for websites and
+                <br></br> PPC campaigns.
+              </div>
+            </div>
+            <div className="flex flex-col items-center max-md:gap-4 md:gap-10">
+              <img src="/image 4 1.png" className=" h-32 w-32" alt="settings" />
+              <div className="text-sm font-medium text-center">
+                Insights on tools like Cookiebot<br></br> and OneTrust for
+                effective <br></br>consent management.
+              </div>
+            </div>
+          </div>
         </section>
-        {/* {showPopup && (
+      </section>
+      <section
+        id="sticky-section"
+        className={`bg-gradient-to-l from-[#EB5442] to-[#ED7754] max-md:py-3 md:py-5 max-md:gap-0 flex items-center justify-between lg:justify-center 
+                      lg:gap-16 xl:gap-16 px-3.5 md:px-5 lg:px-8 xl:px-16 2xl:px-56  transform transition-all duration-1000 ease-in-out ${isSticky
+            ? "sticky translate-y-0  transform transition-all duration-1000 ease-out"
+            : "transform transition-all duration-1000 ease-in-out translate-y-10"
+          }`}
+      >
+        <div className="text-[12px] max-sm:w-[60%] max-lg:w-[77%] md:text-xl font-semibold text-white">
+          Are you looking for the right partner to implement Cookie consent for
+          your business?
+        </div>
+        <a
+          onClick={scrolling1}
+          target="_blank"
+          className="max-sm:w-[107px] bg-white text-[#ED7754] cursor-pointer shadow-foter 
+                        text-center py-2 border rounded-[5px] px-2 sm:px-3 text-[11px] xl:text-base md:text-sm font-semibold
+                          cookiebutton hover:border-white hover:border-[1px] hover:text-white border-[#FFFFFF] text-sm"
+        >
+          Contact Us Now
+        </a>
+      </section>
+      <div className="bg-[#E8FBFB] py-5 flex flex-col gap-3 px-4 lg:px-20">
+        <h2 className="text-center font-bold text-base lg:text-3xl xl:font-extrabold">
+          Trusted by Organisations Worldwide
+        </h2>
+        <div className="brandsimages flex space-x-8 justify-center py-4 px-4 mt-4">
+          <Marquee gradient={false} pauseOnHover="true">
+            {brandsdata?.brand.map((brands, key) => (
+              <div key={key}>
+                <img src={brands.logo} alt={brands.brands} />
+              </div>
+            ))}
+          </Marquee>
+        </div>
+      </div>
+      <section className="bg-[#2E2C37] w-full h-full flex justify-center py-2 px-2 md:px-4 md:py-4 lg:py-8 lg:px-10">
+        <img
+          onClick={scrolling1}
+          src="/Webinar_Landing_Page_Banner_1 (1).png"
+          alt="footer-banner"
+          className="w-full cursor-pointer"
+        />
+      </section>
+      {/* {showPopup && (
               <ContactPopup onClose={closePopup} onRegister={registerUser} />
             )} */}
-      </main>
-    </>
+    </main>
   );
 }
 
