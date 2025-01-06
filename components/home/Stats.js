@@ -70,7 +70,7 @@ const Stats = () => {
                                         frameBorder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                         allowFullScreen
-                                        className="w-full h-full rounded-3xl"
+                                        className="w-full h-[90%] mt-8 rounded-3xl"
                                     ></iframe>
                                 ) : (
                                     <div
