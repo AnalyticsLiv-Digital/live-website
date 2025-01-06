@@ -56,8 +56,9 @@ const Navbar = () => {
             <div className="sticky top-0 z-40 bg-[#D9D9D9] h-[55px] text-[#0E1947] flex justify-center items-center px-2">
                 <div className="text-xs max-sm:py-1.5 sm:text-base md:text-lg font-semibold text-center flex max-sm:flex-col max-sm:gap-1 justify-center items-center">
                     Your Partner for Google Marketing Platform Success
-                    <div className="flex justify-center items-center underline pl-2 sm:pl-5 text-[#EE4312] text-xs sm:text-sm md:text-[15px] font-bold">Schedule a Call Now
-                        <img src="/Ringer Volume.png" alt="Ringer Volume" className="pl-1" /></div>
+                    <a href="tel:+918320576622"><div className="flex justify-center items-center underline pl-2 sm:pl-5 text-[#EE4312] text-xs sm:text-sm md:text-[15px] font-bold">
+                        Schedule a Call Now
+                        <img src="/Ringer Volume.png" alt="Ringer Volume" className="pl-1" /></div></a>
                 </div>
             </div>
             <header className="sticky min-w-full top-[55px] z-40 bg-white font-lato">
