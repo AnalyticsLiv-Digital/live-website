@@ -6,18 +6,9 @@ import { useRouter } from "next/navigation";
 import Navbar from "./Navbar";
 
 const index = ({ data }) => {
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
+  const [loginState, setLoginState] = useState(!!session);
 
-  if (status === 'loading') {
-    return (
-      <div className="flex flex-col min-h-screen justify-center items-center space-y-4">
-        <div className="flex items-center">
-          <div className="w-12 h-12 border-4 border-t-transparent border-blue-500 border-solid rounded-full animate-spin"></div>
-        </div>
-        <span className="text-lg font-semibold text-gray-700">Loading...</span>
-      </div>
-    );
-  }
   const imgUrl = [
     "/blogs.png",
     "/casestudy.png",

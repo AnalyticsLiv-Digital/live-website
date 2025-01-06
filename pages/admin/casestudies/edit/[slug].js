@@ -9,29 +9,11 @@ const index = (casestudy) => {
   //console.log(casestudy.casestudy.data[0]);
   const initialValues = { description: casestudydata.description, open: casestudydata.open, id: casestudydata.id, coverimage: casestudydata.coverimage, description: casestudydata.description, title: casestudydata.title, slug: casestudydata.slug, author: casestudydata.author, publishdate: casestudydata.publishdate, active: casestudydata.active, sequence: casestudydata.sequence, filename: casestudydata.filename, content1: casestudydata.content[0] ? casestudydata.content[0].description : undefined, heading1: casestudydata.content[0] ? casestudydata.content[0].heading : undefined, heading2: casestudydata.content[1] ? casestudydata.content[1].heading : undefined, content2: casestudydata.content[1] ? casestudydata.content[1].description : undefined, heading3: casestudydata.content[2] ? casestudydata.content[2].heading : undefined, content3: casestudydata.content[2] ? casestudydata.content[2].description : undefined, heading4: casestudydata.content[3] ? casestudydata.content[3].heading : undefined, content4: casestudydata.content[3] ? casestudydata.content[3].description : undefined, heading5: casestudydata.content[4] ? casestudydata.content[4].heading : undefined, content5: casestudydata.content[4] ? casestudydata.content[4].description : undefined };
   const [formValues, setFormValues] = useState(initialValues);
-  const [formattedDate, setFormattedDate] = useState(initialValues.date);
   const [isSubmit, setIsSubmit] = useState(false);
   const [loading, setLoading] = useState(false);
   console.log(formValues);
   const router = useRouter();
 
-  const formatDate = (date) => {
-    const day = date.getDate();
-    const month = date.toLocaleString('default', { month: 'short' });
-    const year = date.getFullYear();
-    const suffix = getOrdinalSuffix(day);
-    return `${day}${suffix} ${month} ${year}`;
-  };
-
-  const getOrdinalSuffix = (day) => {
-    if (day > 3 && day < 21) return 'th';
-    switch (day % 10) {
-      case 1: return 'st';
-      case 2: return 'nd';
-      case 3: return 'rd';
-      default: return 'th';
-    }
-  };
 
   const uploadToClient = async (event) => {
     var file_size = event.target.files[0].size;
@@ -147,19 +129,9 @@ const index = (casestudy) => {
 
   };
 
-  const handleDateChange = (e) => {
-    const selectedDate = new Date(e.target.value);
-    const formatted = formatDate(selectedDate);
-    setFormattedDate(formatted);
-    setFormValues({ ...formValues, date: formatted });
-  };
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
-    if (name === 'date') {
-      setFormattedDate(formatDate(value));
-    }
     console.log(formValues);
   };
 
