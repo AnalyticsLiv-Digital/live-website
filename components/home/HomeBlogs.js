@@ -11,7 +11,7 @@ const HomeBlogs = () => {
           </p>
         </div>
         <div className="absolute max-md:hidden 2xl:top-[-50px] left-[28%] lg:left-[37%] z-10 2xl:left-[35%] w-full">
-          <img src="/arrow.png" alt="arrow" className="w-[40%] 2xl:w-[45%]" />
+          <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Arrow.png" alt="arrow" className="w-[40%] 2xl:w-[45%]" />
         </div>
         <div className='max-md:hidden'>
           <a href='/blogs' className=''><button className="mainbutn max-md:mt-5">Read More Blogs</button></a>
@@ -23,7 +23,7 @@ const HomeBlogs = () => {
           <div className='flex flex-col justify-evenly h-full'>
             <div className="absolute w-[100px] text-center top-4 2xl:top-6 right-4 2xl:right-6 bg-[#A2EC4E99] text-white font-semibold px-3 py-1 rounded-tr-2xl 2xl:rounded-tr-[20px] rounded-bl-md text-sm">Marketing</div>
             <img
-              src="/Blog_thumbnail_image_29_Removal of Flight ASAP.png"
+              src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Blog_thumbnail_image_29_Removal%20of%20Flight%20ASAP.png"
               alt="Removal of Flight ASAP"
               className="rounded-md mb-4 w-full"
             />
@@ -62,7 +62,7 @@ const HomeBlogs = () => {
 
             <div className="absolute w-[100px] text-center top-4 2xl:top-6 right-4 2xl:right-6 bg-[#EC954E99] text-white font-semibold px-3 py-1 rounded-tr-[20px] 2xl:rounded-tr-3xl rounded-bl-md text-sm">Analytics</div>
             <img
-              src="/Blog_thumbnail_Google_Consent.png"
+              src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Blog_thumbnail_Google_Consent.png"
               alt="Google_Consent"
               className="rounded-md mb-4 w-full"
             />
@@ -102,7 +102,7 @@ const HomeBlogs = () => {
 
             <div className="absolute w-[100px] text-center top-4 2xl:top-6 right-4 2xl:right-6 bg-[#EC4EDC99] text-white font-semibold px-3 py-1 rounded-tr-[20px] 2xl:rounded-tr-3xl rounded-bl-md text-sm">CRO</div>
             <img
-              src="/Website_blog_42_CRO_TIPS_V2.png"
+              src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Website_blog_42_CRO_TIPS_V2.png"
               alt="CRO_TIPS_V2"
               className="rounded-md mb-4 w-full"
             />

@@ -97,7 +97,7 @@ const Testimonials = () => {
                     <Slider {...settings}>
 
                         <div className='w-[450px] h-[420px] 2xl:h-[400px] border border-[#E5E5E5] flex flex-col justify-around items-center gap-5 text-center py-6 px-6 rounded-3xl'>
-                            <img src='/bobby.png' alt='bobby' className='mx-auto pb-5' />
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/bobby.png' alt='bobby' className='mx-auto pb-5' />
                             <div className='text-[#808080] text-center text-xs md:text-sm font-normal pb-5'>“AnalyticsLiv team was an excellent asset to our businesses' switch
                                 from Universal Analytics to GA4. They had excellent communication throughout the project, giving me feedback, updates and ideas as
                                 the project went on. I would be happy to recommend the AnalyticsLiv team for analytics and tag manager work, and look forward to working
@@ -111,7 +111,7 @@ const Testimonials = () => {
                         </div>
 
                         <div className='w-[450px] h-[420px] 2xl:h-[400px] border border-[#E5E5E5] flex flex-col justify-around items-center gap-5 text-center py-6 px-6 2xl:px-12 rounded-3xl'>
-                            <img src='/charles.png' alt='charles' className='mx-auto pb-7 2xl:pb-5' />
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/charles.png' alt='charles' className='mx-auto pb-7 2xl:pb-5' />
                             <div className='text-[#808080] text-center text-xs md:text-sm font-normal pb-10'>"The AnalyticsLiv team estimated the job length accurately and then
                                 carried out the work exactly as briefed, to time and budget. We had one brief hiccup in the conversion tracking code but that was swiftly
                                 fixed once identified. Would definitely consider using it again and for more advanced reporting functionality in future"
@@ -124,7 +124,7 @@ const Testimonials = () => {
                         </div>
 
                         <div className='w-[450px] h-[420px] 2xl:h-[400px] border border-[#E5E5E5] flex flex-col justify-around items-center gap-5 text-center py-6 px-6 rounded-3xl'>
-                            <img src='/ebenezer.png' alt='ebenezer' className='mx-auto pb-5' />
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/ebenezer.png' alt='ebenezer' className='mx-auto pb-5' />
                             <div className='text-[#808080] text-center text-xs md:text-sm font-normal pb-5'>"AnalyticsLiv has been FUTEK web analytics partner for almost 3 years now.
                                 They supported us with GTM implementation, GA to GA4 migration, Looker studio dashboard creations and Google cloud storage implementation.
                                 They respond to our request in a timely manner and make their best efforts to resolve the web analytics issues. We are happy with the

@@ -20,7 +20,7 @@ import Footer1 from '../components/home/Footer1';
 
 function MyApp({ Component, pageProps: { session, ...pageProps }, }) {
   // const { showPopup, closePopup, registerUser, clickHere } = useWebinarPopup();
-  
+  const routerr = useRouter();
   const { showPopup, closePopup, registerUser } = useContactPopup();
   const [showLoader, setShowloader] = useState(false);
   useEffect(() => {
@@ -69,8 +69,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps }, }) {
           <>
 
             <Component {...pageProps} />
-            {/* <Footer /> */}
-            <Footer1 />
+            {routerr.pathname === '/home_trial' ? <Footer1 /> : <Footer />}
 
           </>}</>}
           {/* {showPopup && (

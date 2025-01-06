@@ -57,21 +57,21 @@ const Services = () => {
             subtitle: "ACCURATE * COMPREHENSIVE * STRUCTURED",
             bgColor: "#E7FBF9",
             items: ["Conversion Event Tracking", "User Journey Identifiers", "Cookie Consent Solutions", "Server Side Implementation"],
-            images: ["/GA4_Logo (1).png", "/GTM_Logo.png", "/Firebase_Logo (1).png"],
+            images: ["https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/GA4_Logo%20(1).png", "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/GTM_Logo.png", "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Firebase_Logo%20(1).png"],
         },
         {
             title: "Data Transformation",
             subtitle: "ACCURATE * COMPREHENSIVE * STRUCTURED",
             bgColor: "#FFF4E2",
             items: ["Analytics to Cloud Integration", "Data Pipeline Creation", "Data Standardization", "Server Side Implementation"],
-            images: ["/Looker_Studio_Logo.png", "/BQ_Logo.png"],
+            images: ["https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Looker_Studio_Logo.png", "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/BQ_Logo.png"],
         },
         {
             title: "Data Driven Marketing",
             subtitle: "ACCURATE * COMPREHENSIVE * STRUCTURED",
             bgColor: "#C8C4E9",
             items: ["Data Visualization", "PPC Campaign Management", "Programmatic Advertising (DV360)", "Conversion Rate Optimization (CRO)", "Data Modeling Solutions"],
-            images: ["/DV_Logo.png", "/Google_Ads_Logo.png", "/Meta_Ads_Logo.png"],
+            images: ["https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/DV_Logo.png", "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Google_Ads_Logo.png", "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Meta_Ads_Logo.png"],
         },
     ];
 
@@ -106,7 +106,7 @@ const Services = () => {
                                     <div key={idx} className="flex flex-col ">
                                         <div className="flex items-start gap-2 text-xs 2xl:text-sm font-normal">
                                             <img
-                                                src="/Check Mark.png"
+                                                src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Check%20Mark.png"
                                                 alt="Check Mark"
                                                 className="pt-0.5"
                                             />
@@ -142,7 +142,7 @@ const Services = () => {
                                         <div key={idx} className="flex flex-col ">
                                             <div className="flex items-start gap-2 text-xs 2xl:text-sm font-normal">
                                                 <img
-                                                    src="/Check Mark.png"
+                                                    src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Check%20Mark.png"
                                                     alt="Check Mark"
                                                     className="pt-0.5"
                                                 />

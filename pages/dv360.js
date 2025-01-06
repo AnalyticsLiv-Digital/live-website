@@ -74,7 +74,7 @@ const page = () => {
         <link rel="icon" href="https://storage.googleapis.com/website-bucket-uploads/static/favicon.png" type="image/icon type"></link>
         <meta name="description" content="AnalyticsLiv Digital is one of the leading Web and App analytics agency. We help our customers embrace Google Products to improve their customer experiences." />
         <title>DV360 - AnalyticsLiv</title>
-
+        <link rel="canonical" href="https://analyticsliv.com/dv360"></link>
       </Head>
       <header className="sticky min-w-full top-0 z-50 shadow-md bg-white">
         <div className="navbar hidden lg:flex py-2 h-auto flex-wrap px-4 lg:flex-row items-center justify-between">

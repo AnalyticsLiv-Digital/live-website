@@ -8,7 +8,7 @@ const HomeCaseStudies = () => {
                     <a href='/case-studies' className=''><button className="mainbutn max-md:mt-5">Read More Case Studies</button></a>
                 </div>
                 <div className="absolute max-md:hidden lg:top-[20%] md:top-[80px] 2xl:top-[-10px] left-[18%] lg:left-[8%] 2xl:left-[7%] z-10 w-full">
-                    <img src="/Arrow (1).png" alt="arrow" className="w-[40%] 2xl:w-[45%]" />
+                    <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Arrow%20(1).png" alt="arrow" className="w-[40%] 2xl:w-[45%]" />
                 </div>
                 <div className="flex flex-col md:w-[40%] lg:w-[50%] 2xl:w-[45%] gap-6 justify-center md:justify-start items-center md:items-start">
                     <h2 className="text-[#100F1B] text-2xl lg:text-3xl font-bold text-center md:text-left">Read Our Case Studies</h2>
@@ -22,7 +22,7 @@ const HomeCaseStudies = () => {
                     <div className='flex flex-col justify-evenly h-full'>
                         <div className="absolute w-[100px] text-center top-4 2xl:top-6 left-4 2xl:left-6 bg-[#A2EC4E99] text-white font-semibold px-3 py-1 rounded-tl-2xl 2xl:rounded-tl-[20px] rounded-br-md text-sm">Marketing</div>
                         <img
-                            src="/Case_study_10_Brand_Reach_Discovery_Campaign 1.png"
+                            src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Case_study_10_Brand_Reach_Discovery_Campaign%201.png"
                             alt="Brand_Reach_Discovery_Campaign"
                             className="rounded-md mb-4 w-full"
                         />
@@ -60,7 +60,7 @@ const HomeCaseStudies = () => {
 
                         <div className="absolute w-[100px] text-center top-4 2xl:top-6 left-4 2xl:left-6 bg-[#EC954E99] text-white font-semibold px-3 py-1 rounded-tl-[20px] 2xl:rounded-tl-3xl rounded-br-md text-sm">Analytics</div>
                         <img
-                            src="/shopify.png"
+                            src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/shopify.png"
                             alt="Gshopify"
                             className="rounded-md mb-4 w-full"
                         />
@@ -98,7 +98,7 @@ const HomeCaseStudies = () => {
 
                         <div className="absolute w-[100px] text-center top-4 2xl:top-6 left-4 2xl:left-6 bg-[#A2EC4E99] text-white font-semibold px-3 py-1 rounded-tl-2xl 2xl:rounded-tl-[20px] rounded-br-md text-sm">Marketing</div>
                         <img
-                            src="/increase_in_leadvolume.png"
+                            src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/increase_in_leadvolume.png"
                             alt="increase_in_leadvolume"
                             className="rounded-md mb-4 w-full"
                         />

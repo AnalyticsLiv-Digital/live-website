@@ -8,22 +8,22 @@ const GoogleMarketing = () => {
             </div>
             <div className='pt-16 flex justify-center'>
                 <div className='relative'>
-                    <img src='/Design.png' alt='Design' className='mx-auto w-full' />
+                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Design.png' alt='Design' className='mx-auto w-full' />
                     <div className='flex justify-around w-full absolute top-[-15px] sm:top-[-30px] 2xl:top-[-10px]'>
                         <div className='relative'>
-                            <img src='/Mask group (1).png' alt='Mask group (1)' className='max-sm:h-[70px] max-sm:w-[70px] max-lg:h-[150px] max-lg:w-[150px]' />
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Mask%20group%20(1).png' alt='Mask group (1)' className='max-sm:h-[70px] max-sm:w-[70px] max-lg:h-[150px] max-lg:w-[150px]' />
                             <div className='bg-[#CC3F25] font-bold text-white rounded-full px-2.5 sm:px-4 py-0.5 sm:py-2 absolute bottom-[-5px] sm:bottom-1 lg:bottom-6 right-[-5px] sm:right-2'>
                                 1
                             </div>
                         </div>
                         <div className='relative'>
-                            <img src='/Mask group (2).png' alt='Mask group (2)' className='max-sm:h-[70px] max-sm:w-[70px] max-lg:h-[150px] max-lg:w-[150px]' />
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Mask%20group%20(2).png' alt='Mask group (2)' className='max-sm:h-[70px] max-sm:w-[70px] max-lg:h-[150px] max-lg:w-[150px]' />
                             <div className='bg-[#CC3F25] font-bold text-white rounded-full px-2.5 sm:px-4 py-0.5 sm:py-2 absolute top-[-5px] sm:top-1 lg:top-6 right-[-5px] sm:right-2'>
                                 2
                             </div>
                         </div>
                         <div className='relative'>
-                            <img src='/Mask group (3).png' alt='Mask group (3)' className='max-sm:h-[70px] max-sm:w-[70px] max-lg:h-[150px] max-lg:w-[150px]' />
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Mask%20group%20(3).png' alt='Mask group (3)' className='max-sm:h-[70px] max-sm:w-[70px] max-lg:h-[150px] max-lg:w-[150px]' />
                             <div className='bg-[#CC3F25] font-bold text-white rounded-full px-2.5 sm:px-4 py-0.5 sm:py-2 absolute bottom-[-5px] sm:bottom-1 lg:bottom-6 right-[-5px] sm:right-2'>
                                 3
                             </div>

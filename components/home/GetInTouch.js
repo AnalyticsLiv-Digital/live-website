@@ -119,7 +119,7 @@ const GetInTouch = () => {
             <div className="flex flex-col sm:flex-row items-center lg:items-center gap-3 md:gap-8">
                 <div className="max-sm:hidden relative max-w-full sm:max-w-[35%] lg:max-w-[45%]">
                     <div className="absolute bottom-0 left-0 w-32 h-32 bg-white rounded-full shadow-md -z-10"></div>
-                    <img src="/contactus.png" alt="contact" className="z-10 relative" />
+                    <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/contactus.png" alt="contact" className="z-10 relative" />
                 </div>
 
                 <div className="w-full lg:w-[55%]">

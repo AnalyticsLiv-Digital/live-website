@@ -10,7 +10,7 @@ const PowerUpBrand = () => {
             justify-around items-start'>
                 <div className='w-[75%] lg:w-[25%]'>
                     <div className='flex flex-col justify-center items-center'>
-                        <img src='/01.png' alt='01' className='absolute' />
+                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/01.png' alt='01' className='absolute' />
                         <div className='text-3xl font-normal tracking-[6px] text-[#30486A] pt-14 z-10'>COLLECT</div>
                     </div>
                     <div className='pt-8 text-[#6C6C6C] text-base font-normal text-center'>
@@ -20,7 +20,7 @@ const PowerUpBrand = () => {
                 </div>
                 <div className='w-[75%] lg:w-[25%]'>
                     <div className='flex flex-col justify-center items-center'>
-                        <img src='/02.png' alt='02' className='absolute' />
+                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/02.png' alt='02' className='absolute' />
                         <div className='text-3xl font-normal tracking-[6px] text-[#30486A] pt-14 z-10'>REPORT</div>
                     </div>
                     <div className='pt-8 text-[#6C6C6C] text-base font-normal text-center'>
@@ -30,7 +30,7 @@ const PowerUpBrand = () => {
                 </div>
                 <div className='w-[75%] lg:w-[25%]'>
                     <div className='flex flex-col justify-center items-center'>
-                        <img src='/03.png' alt='03' className='absolute' />
+                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/03.png' alt='03' className='absolute' />
                         <div className='text-3xl font-normal tracking-[6px] text-[#30486A] pt-14 z-10'>ANALYZE</div>
                     </div>
                     <div className='pt-8 text-[#6C6C6C] text-base font-normal text-center'>
@@ -40,7 +40,7 @@ const PowerUpBrand = () => {
                 </div>
                 <div className='w-[75%] lg:w-[25%]'>
                     <div className='flex flex-col justify-center items-center'>
-                        <img src='/04.png' alt='04' className='absolute' />
+                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/04.png' alt='04' className='absolute' />
                         <div className='text-3xl font-normal tracking-[6px] text-[#30486A] pt-14 z-10'>ACTIVATE</div>
                     </div>
                     <div className='pt-8 text-[#6C6C6C] text-base font-normal text-center'>

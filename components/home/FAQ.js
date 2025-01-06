@@ -65,7 +65,7 @@ const FAQ = () => {
                                 )}
                             </div>
                             <img
-                                src={`${activeIndex === index ? '/Vector_up.png' : '/Vector_down.png'
+                                src={`${activeIndex === index ? 'https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector_up.png' : 'https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector_down.png'
                                     }`}
                                 alt={activeIndex === index ? 'Collapse' : 'Expand'}
                                 // onClick={() => handleToggle(index)}

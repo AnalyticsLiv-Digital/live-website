@@ -58,7 +58,7 @@ const Navbar = () => {
                     Your Partner for Google Marketing Platform Success
                     <a href="tel:+918320576622"><div className="flex justify-center items-center underline pl-2 sm:pl-5 text-[#EE4312] text-xs sm:text-sm md:text-[15px] font-bold">
                         Schedule a Call Now
-                        <img src="/Ringer Volume.png" alt="Ringer Volume" className="pl-1" /></div></a>
+                        <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Ringer%20Volume.png" alt="Ringer Volume" className="pl-1" /></div></a>
                 </div>
             </div>
             <header className="sticky min-w-full top-[55px] z-40 bg-white font-lato">

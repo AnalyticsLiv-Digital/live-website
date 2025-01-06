@@ -11,19 +11,19 @@ const WhyChooseUs = () => {
             title: 'Expertise',
             description: 'Our certified team of experts consists of seasoned campaign management, data scientists, and analytics experts who bring a wealth of experience to the table.',
             subtitle: 'Your Trusted Certified GMP Expert',
-            image: '/experience.png',
+            image: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/experience.png',
         },
         {
             title: 'Innovation',
             description: 'Stay ahead in the rapidly evolving world of analytics with our commitment to innovative solutions like RFM Analysis, Custom Attribution, and staying abreast of the latest technologies.',
             subtitle: 'Your Partner in Digital Transformation.',
-            image: '/creativity.png',
+            image: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/creativity.png',
         },
         {
             title: 'Client-Centric Approach',
             description: 'We prioritize understanding your unique business challenges, ensuring that our solutions align seamlessly with your business goals.',
             subtitle: 'Your Goals, Our Focus.',
-            image: '/follow.png',
+            image: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/follow.png',
         },
     ];
 
@@ -121,7 +121,7 @@ const WhyChooseUs = () => {
                                 <div className="h-[140px] bg-[#08A4F7] rounded-b-3xl">
                                     <div className="flex items-center">
                                         <div className="w-[30%] h-[100px] pl-2 md:pl-3 2xl:pl-8">
-                                            <img src="/white_bg.png" alt="white_bg" className="absolute max-md:h-24 max-md:w-24" />
+                                            <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/white_bg.png" alt="white_bg" className="absolute max-md:h-24 max-md:w-24" />
                                             <img src={card.image} alt={card.title} className="relative max-md:h-16 max-md:w-16 top-4 left-4" />
                                         </div>
                                         <div className="flex flex-col max-md:pl-10 h-[140px] items-start justify-center gap-1 text-white">
@@ -146,7 +146,7 @@ const WhyChooseUs = () => {
                                 <div className="h-[140px] bg-[#08A4F7] rounded-b-3xl">
                                     <div className="flex items-center">
                                         <div className="w-[30%] h-[100px] pl-2 md:pl-3 2xl:pl-8">
-                                            <img src="/white_bg.png" alt="white_bg" className="absolute max-md:h-24 max-md:w-24" />
+                                            <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/white_bg.png" alt="white_bg" className="absolute max-md:h-24 max-md:w-24" />
                                             <img src={card.image} alt={card.title} className="relative max-md:h-16 max-md:w-16 top-4 left-4" />
                                         </div>
                                         <div className="flex flex-col max-md:pl-10 h-[140px] items-start justify-center gap-1 text-white">
@@ -279,7 +279,7 @@ export default WhyChooseUs;
 //                                 <div className="h-[140px] bg-[#08A4F7] rounded-b-3xl">
 //                                     <div className="flex items-center">
 //                                         <div className="w-[30%] h-[100px] pl-2 md:pl-3 2xl:pl-8">
-//                                             <img src="/white_bg.png" alt="white_bg" className="absolute max-md:h-24 max-md:w-24" />
+//                                             <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/white_bg.png" alt="white_bg" className="absolute max-md:h-24 max-md:w-24" />
 //                                             <img src={card.image} alt={card.title} className="relative max-md:h-16 max-md:w-16 top-4 left-4" />
 //                                         </div>
 //                                         <div className="flex flex-col max-md:pl-8 h-[140px] items-start justify-center gap-1 text-white">
