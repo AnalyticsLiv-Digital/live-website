@@ -44,6 +44,3 @@ const handler = async (req, res) => {
 
 
 export default connectDb(handler);
-
-
-pages / api / casestudy.js
