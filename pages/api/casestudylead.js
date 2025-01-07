@@ -3,9 +3,18 @@ import Casestudylead from "../../models/Casestudylead";
 import Casestudy from "../../models/Casestudy";
 import connectDb from "../../middleware/mongoose";
 import { sendEmail } from "../../utils/sendMail";
+import { sendDataToGoogleSheet } from "../../utils/caseStudyLeadInShet";
 
 const handler = async (req, res) => {
   if (req.method == 'POST') {
+    // api to send lead in google sheet
+    const url = "https://script.google.com/macros/s/AKfycbxhG3yAOlfba9JRbr4eDdjBYFVfeOvP0j9Xznoc4CLH7J61OJdhc18uzh9cAdyfAo4hzw/exec";
+    sendDataToGoogleSheet(url, {
+      "name": req.body.fullName,
+      "email": req.body.email,
+      "company": req.body.company
+    })
+
     let data = await Casestudy.find({ id: req.body.id }, { filename: 1 });
     let b = new Casestudylead({
       fullName: req.body.fullName,
@@ -24,7 +33,7 @@ const handler = async (req, res) => {
 
     var internalMailOptions = {
       from: "support@analyticsliv.com",
-      to: [ "sales@analyticsliv.com", "anuj@analyticsliv.com", "nitya@analyticsliv.com", "anshul.d@analyticsliv.com", "rajvi@analyticsliv.com"],
+      to: ["sales@analyticsliv.com", "anuj@analyticsliv.com", "nitya@analyticsliv.com", "anshul.d@analyticsliv.com", "rajvi@analyticsliv.com"],
       subject: 'Casestudy Download',
       html: `Case study downloaded by <br> Name - ${req.body.fullName} <br> Email- ${req.body.email} <br> Casestudy - ${req.body.casestudy} <br> Company - ${req.body.company}`
     };
