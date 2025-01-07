@@ -95,6 +95,8 @@ const index = ({ casestudyDat }) => {
                 })
                 .catch((error) => {
                     console.error('Error:', error);
+                    setShowWaiting(false);
+                    alert('there is some issue , please try again !')
                 });
 
         }
@@ -106,10 +108,6 @@ const index = ({ casestudyDat }) => {
         const mobile = /^(?=.*\d).{8,}$/i;
         if (!values.fullName) {
             errors.fullName = "Fullname is required!";
-        }
-
-        if (!values.company) {
-            errors.company = "Company is required!";
         }
 
         if (!values.email) {
@@ -163,7 +161,7 @@ const index = ({ casestudyDat }) => {
 
                     </div>
 
-                    {!cd.open &&
+                    {cd.open &&
 
                         <div className={`${formFixed ? "sticky top-20" : "relative"} h-fit lg:w-1/2 bg-white px-10 py-4`}>
                             {formSubmit ? <div className='relative text-slate-700 p-4 space-y-4 h-full'>
@@ -177,14 +175,14 @@ const index = ({ casestudyDat }) => {
 
                                 <div className="relative">
                                     <input type="text" id="fullName" name="fullName" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent border-b border-slate-500 appearance-none focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " required value={formValues.fullName} onChange={handleChange} />
-                                    <label htmlFor="fullName" className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Full Name</label>
+                                    <label htmlFor="fullName" className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Full Name*</label>
                                     <p className="text-red-600 text-sm">{formErrors.fullName}</p>
                                 </div>
 
 
                                 <div className="relative">
-                                    <input type="email" id="email" name="email" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent  border-b border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " value={formValues.email} onChange={handleChange} />
-                                    <label htmlFor="email" className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">E-mail</label>
+                                    <input type="email" id="email" name="email" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent  border-b border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " required value={formValues.email} onChange={handleChange} />
+                                    <label htmlFor="email" className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">E-mail*</label>
                                     <p className="text-red-600 text-sm">{formErrors.email}</p>
                                 </div>
 
@@ -205,7 +203,7 @@ const index = ({ casestudyDat }) => {
                         </div>
                     }
 
-                    {cd.open &&
+                    {/* {cd.open &&
 
                         <div className="sticky top-20 h-fit lg:w-1/2 bg-white px-10 py-4">
                             <div className="text-center">
@@ -218,7 +216,7 @@ const index = ({ casestudyDat }) => {
                                 </a>
                             </div>
                         </div>
-                    }
+                    } */}
 
                 </div>
 
