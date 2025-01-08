@@ -22,7 +22,7 @@ const Footer1 = () => {
 
     return (
         <section className='relative font-lato'>
-            <div className='absolute left-[45%] sm:left-[48%] pb-[-60px] z-30 opacity-100 top-[-30px] border-[5px] border-[#2B2E3C] rounded-full'>
+            <div className='absolute left-[43%] sm:left-[48%] pb-[-60px] z-30 opacity-100 top-[-30px] border-[5px] border-[#2B2E3C] rounded-full'>
                 <button onClick={scrollToTop}
                     className="relative z-10 px-3 py-[17px] rounded-full bg-white text-[#08A4F7] border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline mb-3 transition-all duration-300 ease-linear"
                 >
