@@ -117,7 +117,7 @@ const cro = () => {
                                 </div>
                             </div>
                             <div className=" w-full lg:w-1/2 flex items-center lg:justify-end justify-center lg:order-2 order-1">
-                                <img src="/CRO_Main_img_1.png" alt="" className='h-auto' />
+                                <img src="/CRO_Main_img_1.png" alt="Conversion Rate Optimization Agency" className='h-auto' />
                             </div>
                         </div>
                         <div className='lg:pt-10'>
@@ -222,7 +222,7 @@ const cro = () => {
                                     </div>
                                 </li>
                                 <li className='relative md:pl-9 sm:w-1/2 w-full md:order-2 order-1 flex items-center md:justify-end justify-center'>
-                                    <img src="/Fuel_Process_Step_1.png" alt="" className='h-auto w-[350px]' />
+                                    <img src="/Fuel_Process_Step_1.png" alt="best ecommerce marketing agency" className='h-auto w-[350px]' />
                                 </li>
                             </ul>
                             <ul className='sc relative mb-[15px] pt-[20px] flex items-center md:flex-row-reverse flex-col'>
@@ -257,7 +257,7 @@ const cro = () => {
                                     </div>
                                 </li>
                                 <li className='relative md:pr-9 sm:w-1/2 w-full md:order-2 order-1 flex items-center md:justify-start justify-center'>
-                                    <img src="/Fuel_Process_Step_2.png" alt="" className='h-auto w-[350px]' />
+                                    <img src="/Fuel_Process_Step_2.png" alt="Audience segmentation" className='h-auto w-[350px]' />
                                 </li>
                             </ul>
                             <ul className='thr relative mb-[15px] pt-[20px] flex items-center md:flex-row flex-col'>
@@ -320,7 +320,7 @@ const cro = () => {
                                     </div>
                                 </li>
                                 <li className='relative md:pl-9 sm:w-1/2 w-full md:order-2 order-1 flex items-center md:justify-end justify-center'>
-                                    <img src="/Fuel_Process_Step_3.png" alt="" className='h-auto w-[350px]' />
+                                    <img src="/Fuel_Process_Step_3.png" alt="Google Ads expert" className='h-auto w-[350px]' />
                                 </li>
                             </ul>
                             <ul className='fr relative mb-[15px] pt-[20px] flex items-center md:flex-row-reverse flex-col'>
@@ -333,7 +333,7 @@ const cro = () => {
                                     </div>
                                 </li>
                                 <li className='relative md:pl-9 sm:w-1/2 w-full md:order-2 order-1 flex items-center md:justify-start justify-center'>
-                                    <img src="/Fuel_Process_Step_4.png" alt="" className='h-auto w-[350px]' />
+                                    <img src="/Fuel_Process_Step_4.png" alt="google ads management service" className='h-auto w-[350px]' />
                                 </li>
                             </ul>
                             <ul className='fv relative mb-[15px] pt-[20px] flex items-center md:flex-row flex-col'>
@@ -346,7 +346,7 @@ const cro = () => {
                                     </div>
                                 </li>
                                 <li className='relative md:pl-9 sm:w-1/2 w-full md:order-2 order-1 flex items-center md:justify-end justify-center'>
-                                    <img src="/Fuel_Process_Step_5.png" alt="" className='h-auto w-[350px]' />
+                                    <img src="/Fuel_Process_Step_5.png" alt="Lead Generation Experts" className='h-auto w-[350px]' />
                                 </li>
                             </ul>
                             <ul className='six relative mb-[15px] pt-[20px] flex items-center md:flex-row-reverse flex-col'>
@@ -362,7 +362,7 @@ const cro = () => {
                                     </div>
                                 </li>
                                 <li className='relative md:pl-9 sm:w-1/2 w-full md:order-2 order-1 flex items-center md:justify-start justify-center'>
-                                    <img src="/Fuel_Process_Step_6.png" alt="" className='h-auto w-[350px]' />
+                                    <img src="/Fuel_Process_Step_6.png" alt="mobile app marketing" className='h-auto w-[350px]' />
                                 </li>
                             </ul>
                             <ul className='seven relative pt-[20px] flex items-center md:flex-row flex-col'>
@@ -378,7 +378,7 @@ const cro = () => {
                                     </div>
                                 </li>
                                 <li className='relative md:pl-9 sm:w-1/2 w-full md:order-2 order-1 flex items-center md:justify-end justify-center'>
-                                    <img src="/Fuel_Process_Step_7.png" alt="" className='h-auto w-[350px]' />
+                                    <img src="/Fuel_Process_Step_7.png" alt="Conversion Rate Optimization Services" className='h-auto w-[350px]' />
                                 </li>
                             </ul>
                         </div>
@@ -401,7 +401,7 @@ const cro = () => {
                                             src="/casestudy1.png"
                                             width={300}
                                             height={300}
-                                            alt="Picture of the author"
+                                            alt="Google Analytics 4 Migration"
                                             priority={true}
                                             className='2xl:w-[40%] w-full m-auto 2xl:h-[247px] xl:h-[277px] lg:h-[227px] lg:object-scale-down'
                                         />
@@ -458,7 +458,7 @@ const cro = () => {
                                                 src="/casestd.png"
                                                 width={300}
                                                 height={300}
-                                                alt="Picture of the author"
+                                                alt="Skyrocket Your Campaign's CTR"
                                                 priority={true}
                                                 className='w-full m-auto 2xl:h-[210px] xl:h-[230px] h-[170px] object-scale-down'
                                             />
@@ -477,7 +477,7 @@ const cro = () => {
                                                 src="/casestd2.png"
                                                 width={300}
                                                 height={300}
-                                                alt="Picture of the author"
+                                                alt="Post Click Tracking with DV360"
                                                 priority={true}
                                                 className='w-full m-auto 2xl:h-[210px] xl:h-[230px] h-[170px] object-scale-down'
                                             />
