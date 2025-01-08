@@ -169,8 +169,8 @@ const cookieLanding = ({ brandsdata }) => {
   return (
     <>
       <Head>
-        <title>AnalyticsLiv - GDPR Compliance</title>
-        <meta name="description" content="GDPR Compliance" />
+        <title>Expert GDPR Compliance Services & Solutions | AnalyticsLiv</title>
+        <meta name="description" content="Protect your business with AnalyticsLiv’s expert GDPR compliance services. We offer customized solutions to ensure data privacy, reduce risks, and maintain full regulatory compliance." />
         <link rel="canonical" href="https://analyticsliv.com/services/gdpr-compliance"></link>
       </Head>
       <div className="">

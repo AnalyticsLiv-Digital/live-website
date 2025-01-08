@@ -186,8 +186,8 @@ const google_tag_manager = () => {
     return (
         <>
             <Head>
-                <title>AnalyticsLiv - Google Tag Manager</title>
-                <meta name="description" content="Experts in GTM -Google Tag Manager" />
+                <title>Expert Google Tag Manager Services | AnalyticsLiv</title>
+                <meta name="description" content="Track your data with Google Tag Manager from AnalyticsLiv. We specialize in data-driven attribution to optimize your marketing strategies and drive growth." />
                 <link rel="canonical" href="https://analyticsliv.com/services/google-tag-manager"></link>
             </Head>
             <section class="banner relative h-full pt-10 pb-20"

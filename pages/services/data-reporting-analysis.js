@@ -101,10 +101,10 @@ export default function AutoPlay() {
   return (
     <>
       <Head>
-        <title>AnalyticsLiv - Data Reporting and Analysis</title>
+        <title>Custom Looker Studio Dashboard | Data Analytics Visualization | AnalyticsLiv</title>
         <meta
           name="description"
-          content="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads"
+          content="Create a custom Looker Studio dashboard with AnalyticsLiv. We specialize in data analytics visualization to make informed decisions and accelerate growth."
         />
         <link
           rel="canonical"

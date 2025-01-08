@@ -8,7 +8,7 @@ const ContactSchema = new mongoose.Schema({
     role:{type: String},
     purpose:{type: String, required: true},
     requirments:{type: String, required: true},
-    company:{type: String, required: true},
+    company:{type: String },
     timestamp: { type: Date, default: Date.now}
 });
 mongoose.models = {};

@@ -9,10 +9,10 @@ const app_marketing = () => {
   return (
     <>
       <Head>
-        <title>AnalyticsLiv - App Marketing</title>
+        <title>Best Mobile App Marketing Services in India | AnalyticsLiv</title>
         <meta
           name="description"
-          content="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads"
+          content="Maximize your app's reach with AnalyticsLiv's top mobile app marketing services in India. Increase downloads, user engagement, and retention with proven strategies."
         />
         <link
           rel="canonical"

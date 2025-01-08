@@ -126,12 +126,12 @@ const Stats = () => {
                                 onEnter={() => setCounterOn(true)}
                                 onExit={() => setCounterOn(false)}
                             >
-                                <h1 className="text-4xl font-bold">
+                                <div className="text-4xl font-bold">
                                     {counterOn && (
                                         <CountUp start={0} end={stat.count} duration={2} delay={0} />
                                     )}
                                     +
-                                </h1>
+                                </div>
                                 <span className="text-base sm:text-lg">{stat.label}</span>
                             </ScrollTrigger>
                         </div>

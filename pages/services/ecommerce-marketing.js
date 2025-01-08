@@ -9,10 +9,10 @@ const ecommerce_marketing = () => {
   return (
     <>
       <Head>
-        <title>AnalyticsLiv - Ecommerce Marketing</title>
+        <title>Best Ecommerce Marketing Agency | AnalyticsLiv</title>
         <meta
           name="description"
-          content="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads"
+          content="Boost your online sales with AnalyticsLiv. We offer expert ecommerce marketing services and digital marketing strategies for ecommerce businesses to drive growth and maximize ROI."
         />
         <link
           rel="canonical"

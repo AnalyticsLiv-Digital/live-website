@@ -12,8 +12,8 @@ const webapp = () => {
     return (
         <>
             <Head>
-                <title>AnalyticsLiv - Analytics Services Offered</title>
-                <meta name="description" content="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads" />
+                <title>Expert Google Analytics 4 Consulting Services | AnalyticsLiv</title>
+                <meta name="description" content="Looking for a GA4 expert? AnalyticsLiv offers professional Google Analytics 4 consulting services to optimize tracking, improve performance and drive business growth." />
                 <link rel="canonical" href="https://analyticsliv.com/services/web-app-measurement"></link>
             </Head>
 
@@ -302,7 +302,7 @@ const webapp = () => {
                                     <p className='text-[#ffffff]'>This includes monitoring performance metrics, conducting periodic reviews, making adjustments as needed, and staying updated with emerging trends and technologies to keep your analytics strategy relevant and effective.</p>
                                     <div className=''>
                                         <Link href="/contact?id=programatic-advertising">
-                                        <button className="bg-[#ffffff] text-[#de668a] border border-solid hover:bg-[#de668a] hover:text-[#ffffff] text-base font-normal tracking-wider rounded-xl py-3 px-6 mt-6">Know More</button>
+                                            <button className="bg-[#ffffff] text-[#de668a] border border-solid hover:bg-[#de668a] hover:text-[#ffffff] text-base font-normal tracking-wider rounded-xl py-3 px-6 mt-6">Know More</button>
                                         </Link>
                                     </div>
                                 </div>
