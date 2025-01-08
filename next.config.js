@@ -5,6 +5,23 @@ const nextConfig = {
     experiments: {
         topLevelAwait: true
     },
+    
+    async redirects() {
+        return [
+            {
+                source: '/:path*', // Match all paths
+                has: [
+                    {
+                        type: 'host',
+                        value: '(www|.*)\\.analyticsliv\\.com', // Matches www or any subdomain
+                    },
+                ],
+                destination: 'https://analyticsliv.com/:path*', // Redirect to the main domain
+                permanent: true, // 301 Permanent Redirect
+            },
+        ];
+    },
+
     async headers() {
         return [
             {
