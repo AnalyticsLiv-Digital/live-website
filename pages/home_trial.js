@@ -34,11 +34,11 @@ const page = () => {
   return (
     <>
 
-      <Head>
+      {/* <Head>
         <meta name="description" content="Boost your business growth with data-driven solutions from a certified Google Marketing Platform (GMP) Partner and Google Cloud Partner in India. Expert web analytics agency delivering actionable insights and advanced marketing strategies." />
         <title>Google Marketing Platform Partner | Web Analytics Agency in India</title>
         <link rel="canonical" href="https://analyticsliv.com/"></link>
-      </Head>
+      </Head> */}
       <StructuredData data={stuctureData} />
       <Landing />
       <Stats />
