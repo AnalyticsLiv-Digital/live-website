@@ -53,19 +53,22 @@ const GetInTouch = () => {
                 event: 'contact_submission'
             });
             localStorage.setItem('contactFormSubmitted', 'true');
-            fetch('/api/contact5ter', {
+            fetch('/api/contact', {
                 method: 'POST', // or 'PUT'
                 headers: {
                     'Content-Type': 'application/json',
                     'mode': 'no-cors'
                 },
                 body: JSON.stringify({
-                    "fullName": formValues.fullName,
-                    "email": formValues.email,
-                    "contact": formValues.contactno,
-                    "date": formValues.date,
-                    "purpose": formValues.purpose,
-                    "requirments": formValues.requirements,
+                    // "fullName": formValues.fullName,
+                    "firstName": formValues?.fullName,
+                    "lastName": "",
+                    "email": formValues?.email,
+                    "contact": formValues?.contactno,
+                    "date": formValues?.date,
+                    "purpose": formValues?.purpose,
+                    "requirments": formValues?.requirements,
+                    "company": formValues.company
                 }),
             })
                 .then((response) => response.json())
