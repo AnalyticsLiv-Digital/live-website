@@ -280,7 +280,7 @@ const google_tag_manager = () => {
                         <span className='bg-[#5BF0B2] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
                         <a href="https://storage.googleapis.com/website-bucket-uploads/cs/5492gjsetdcghtc86683.pdf" target='_blank'>
                             <div>
-                                <img src="/casestudy1.png" alt="" className='w-[350px] h-[250px]  xl:h-[350px]' />
+                                <img src="/casestudy1.png" alt="Google Analytics 4 Migration" className='w-[350px] h-[250px]  xl:h-[350px]' />
                             </div>
                             <div className='flex flex-col gap-7'>
                                 <h3 className='text-base text-slate-900 font-semibold text-left pt-5'>Universal Analytics (GA3) to GA4 Migration for a Website</h3>
