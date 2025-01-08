@@ -48,7 +48,7 @@ const app_marketing = () => {
               </Link>
             </div>
             <div className="py-6 md:py-0">
-              <img src="https://storage.googleapis.com/website-bucket-uploads/static/marketing/amico.png" />
+              <img src="https://storage.googleapis.com/website-bucket-uploads/static/marketing/amico.png" alt="mobile app marketing services" />
             </div>
           </div>
         </div>

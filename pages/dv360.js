@@ -100,7 +100,7 @@ const page = () => {
 
 
         <div className="relative  flex lg:hidden p-2">
-          <Link href="https://analyticsliv.com/" target='_blank'><img onClick={() => setIsOpen(false)} src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="relative h-10 md:mx-4 cursor-pointer" /></Link>
+          <Link href="https://analyticsliv.com/" target='_blank'><img onClick={() => setIsOpen(false)} src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" alt='AnalyticsLiv Logo' className="relative h-10 md:mx-4 cursor-pointer" /></Link>
           <a className="ml-4" href="tel:8320576622">
             <button className="cta px-5 py-2 bg-sky-300 rounded-2xl mx-2 text-base font-semibold cursor-pointer hover:bg-sky-400">CALL US</button>
           </a>

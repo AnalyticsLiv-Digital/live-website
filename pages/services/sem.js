@@ -133,7 +133,7 @@ const sem = () => {
                                 </div>
                             </div>
                             <div className=" w-full lg:w-1/2 flex items-center lg:justify-end justify-center lg:order-2 order-1">
-                                <img src="/SEM_Main_IMG.png" alt="" className='h-[400px]' />
+                                <img src="/SEM_Main_IMG.png" alt="ppc management services" className='h-[400px]' />
                             </div>
                         </div>
                         <div className=''>

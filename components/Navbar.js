@@ -67,7 +67,7 @@ const navbar = () => {
                     <div className="flex shadow-customShadow items-center justify-between py-2 px-5">
                         <Link className="logo" href="/">
                             <img
-                                alt="logo"
+                                alt="AnalyticsLiv Logo"
                                 aria-label="logo"
                                 src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png"
                                 className="h-10 lg:mx-4 cursor-pointer"
@@ -181,6 +181,7 @@ const navbar = () => {
                             onClick={() => setIsOpen(false)}
                             src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png"
                             className="relative h-10 md:mx-4 cursor-pointer"
+                            alt="AnalyticsLiv Logo"
                         />
                     </Link>
                     <button

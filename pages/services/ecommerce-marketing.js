@@ -53,7 +53,7 @@ const ecommerce_marketing = () => {
               </Link>
             </div>
             <div className="py-6 md:py-0">
-              <img src="https://storage.googleapis.com/website-bucket-uploads/static/marketing/rafiki.png" />
+              <img src="https://storage.googleapis.com/website-bucket-uploads/static/marketing/rafiki.png" alt="digital marketing for ecommerce business" />
             </div>
           </div>
         </div>

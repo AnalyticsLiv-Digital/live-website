@@ -164,7 +164,7 @@ const Serversidetracking = () => {
                                 </div>
                             </div>
                             <div className=" w-full lg:w-1/2 flex items-center lg:justify-end justify-center lg:order-2 order-1">
-                                <img src="/Server_Side_tracking_Page_Main_Img.png" alt="" className='h-[400px]' />
+                                <img src="/Server_Side_tracking_Page_Main_Img.png" alt="server side analytics tracking" className='h-[400px]' />
                             </div>
                         </div>
                         <div className=''>
@@ -240,7 +240,7 @@ const Serversidetracking = () => {
                             <img src="/Server_Side_tracking_sub_img.png" alt="" className='lg:h-auto md:h-[400px]' />
                         </div> */}
                         <div className='lg:w-[35%] w-full flex items-center justify-center'>
-                            <img src="/Server_Side_tracking_sub_img_White_Circle.png" alt="" className='lg:h-auto md:h-[400px]' />
+                            <img src="/Server_Side_tracking_sub_img_White_Circle.png" alt="server side web analytics" className='lg:h-auto md:h-[400px]' />
                         </div>
                         <div className='grid md:grid-cols-2 items-start lg:justify-start gap-7 lg:w-[60%] w-full lg:mt-0 mt-5'>
                             <div className={`fs4m pwb flex items-start gap-5 w-full max-[350px]:w-[285px] bg-[#0000001f] p-[25px] pt-6 border border-[#131314] hover:shadow-mediadv360 rounded-[10px] ${isFs4mVisible ? 'xl:h-[180px] lg:h-[200px]' : 'h-[100px]'}`}>

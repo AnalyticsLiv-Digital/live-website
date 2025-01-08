@@ -136,7 +136,7 @@ export default function AutoPlay() {
             <div class="right flex lg:justify-end">
               <img
                 src="https://storage.googleapis.com/website-bucket-uploads/static/Data_Reporting_img.png"
-                alt="Data_Reporting_img"
+                alt="data analytics visualization"
               />
             </div>
           </div>

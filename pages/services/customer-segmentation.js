@@ -126,7 +126,7 @@ const customersegmentation = () => {
                                 </div>
                             </div>
                             <div className=" w-full lg:w-1/2 flex items-center lg:justify-end justify-center lg:order-2 order-1">
-                                <img src="/Customer_Segment_Main_Img_Croped.png" alt="" className='' />
+                                <img src="/Customer_Segment_Main_Img_Croped.png" alt="customer segmentation services" className='' />
                             </div>
                         </div>
                         <div className=''>
@@ -303,7 +303,7 @@ const customersegmentation = () => {
                             </div>
                             <div className='lg:w-1/2 w-full'>
                                 <div>
-                                    <img src="/Customer_Segment_Sub_Img.png" alt="" className='' />
+                                    <img src="/Customer_Segment_Sub_Img.png" alt="First Party Data" className='' />
                                 </div>
                             </div>
                         </div>
@@ -434,7 +434,7 @@ const customersegmentation = () => {
                                             src="/casestudy1.png"
                                             width={300}
                                             height={300}
-                                            alt="Picture of the author"
+                                            alt="Google Analytics 4 Migration"
                                             priority={true}
                                             className='2xl:w-[40%] w-full m-auto 2xl:h-[247px] xl:h-[277px] lg:h-[227px] lg:object-scale-down'
                                         />
@@ -491,7 +491,7 @@ const customersegmentation = () => {
                                                 src="/casestd.png"
                                                 width={300}
                                                 height={300}
-                                                alt="Picture of the author"
+                                                alt="Skyrocket Your Campaign's CTR"
                                                 priority={true}
                                                 className='w-full m-auto 2xl:h-[210px] xl:h-[230px] h-[170px] object-scale-down'
                                             />
@@ -510,7 +510,7 @@ const customersegmentation = () => {
                                                 src="/casestd2.png"
                                                 width={300}
                                                 height={300}
-                                                alt="Picture of the author"
+                                                alt="Post Click Tracking with DV360"
                                                 priority={true}
                                                 className='w-full m-auto 2xl:h-[210px] xl:h-[230px] h-[170px] object-scale-down'
                                             />

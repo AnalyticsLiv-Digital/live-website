@@ -38,7 +38,7 @@ const webapp = () => {
                                 </div>
                             </div>
                             <div className=" w-full lg:w-1/2 flex items-center lg:justify-end justify-center lg:order-2 order-1">
-                                <img src="/Web_App_Measurenment_Sub_IMG.png" alt="" className='lg:h-[470px] md:h-[400px]' />
+                                <img src="/Web_App_Measurenment_Sub_IMG.png" alt="GA4 Consultant" className='lg:h-[470px] md:h-[400px]' />
                             </div>
                         </div>
                     </div>
@@ -52,7 +52,7 @@ const webapp = () => {
                     </div>
                     <div className='flex flex-wrap lg:flex-nowrap items-center justify-center'>
                         <div className=" w-full lg:w-[40%] flex items-center lg:justify-start justify-center">
-                            <img src="/Web_App_Measurenment_Main_Img.png" alt="" className='lg:h-[470px] md:h-[400px]' />
+                            <img src="/Web_App_Measurenment_Main_Img.png" alt="google analytics 4 consulting services" className='lg:h-[470px] md:h-[400px]' />
                         </div>
                         <div className='w-full lg:w-[60%] py-7 grid lg:grid-cols-2 md:grid-cols-2 gap-10'>
                             <div className='fs border-[3px] border-[#0000] border-solid hover:border-t-[#d054cec7] shadow-webappourexper rounded-b-[15px] p-5'>

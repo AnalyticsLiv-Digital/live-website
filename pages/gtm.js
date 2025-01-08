@@ -446,7 +446,7 @@ export default function gtmNew({ brandsdata }) {
                 <header className="sticky min-w-full top-0 z-50 shadow-md bg-white">
                     <div className="navbar hidden h-[70px] lg:flex xl:items-center xl:justify-between py-2 flex-wrap px-4 xl:flex-row items-center justify-between xl:w-[100%]">
                         <a href="/" className="xl:w-[20%] lg:w-[18%] w-[15%]">
-                            <img alt="logo" className="h-12 w-48 xl:h-12 lg:ml-4 xl:w-52 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" />
+                            <img alt="AnalyticsLiv Logo" className="h-12 w-48 xl:h-12 lg:ml-4 xl:w-52 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" />
                         </a>
                         <nav className="lg:flex lg:justify-between w-[90%] lg:w-[70%] xl:w-[56%]">
                             <ul className="lg:flex lg:items-center lg:justify-around text-[17px] font-semibold text-left lg:text-center z-[-1] lg:z-auto lg:mr-2 lg:w-auto space-x-3 xl:space-x-8 items-center tracking-wide cursor-pointer">
@@ -469,7 +469,7 @@ export default function gtmNew({ brandsdata }) {
 
 
                     <div className="relative flex items-center justify-between lg:hidden p-2">
-                        <a href="/"><img onClick={() => setIsOpen(false)} src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="relative left-0 h-8 md:mx-4 cursor-pointer" /></a>
+                        <a href="/"><img onClick={() => setIsOpen(false)} src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" alt='AnalyticsLiv Logo' className="relative left-0 h-8 md:mx-4 cursor-pointer" /></a>
                         <a className="mr-12" href="tel:8320576622">
                             <button className="cta px-1 py-1.5 flex mx-2 w-[132px] rounded-[5px] text-white bg-[#0D8CA4] text-xs font-semibold 
                             cursor-pointer hover:bg-white hover:text-[#0D8CA4]" onMouseEnter={handleTouchStart}
