@@ -104,8 +104,8 @@ const customersegmentation = () => {
     return (
         <>
             <Head>
-                <title>AnalyticsLiv - Analytics Customer Segmentation</title>
-                <meta name="description" content="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads" />
+                <title>Customer Segmentation Services in India | AnalyticsLiv</title>
+                <meta name="description" content="Get expert customer segmentation services in India with AnalyticsLiv. Leverage audience segmentation and first-party data to optimize targeting and boost engagement." />
                 <link rel="canonical" href="https://analyticsliv.com/services/customer-segmentation"></link>
             </Head>
             <section className='cshome w-full relative font-gilroy overflow-hidden'>

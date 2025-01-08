@@ -139,8 +139,8 @@ const Serversidetracking = () => {
     return (
         <>
             <Head>
-                <title>AnalyticsLiv - Server-Side Tracking</title>
-                <meta name="description" content="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads" />
+                <title>Server-Side Analytics Tracking & Web Analytics Solutions | AnalyticsLiv</title>
+                <meta name="description" content="Get data accuracy with server-side web analytics from AnalyticsLiv. Our tracking solutions provide deeper insights, optimizing performance and driving business success." />
                 <link rel="canonical" href="https://analyticsliv.com/services/server-side-tracking"></link>
             </Head>
 

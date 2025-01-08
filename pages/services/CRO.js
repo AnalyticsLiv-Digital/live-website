@@ -91,8 +91,8 @@ const cro = () => {
     return (
         <>
             <Head>
-                <title>AnalyticsLiv - Analytics CRO</title>
-                <meta name="description" content="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads" />
+                <title>Expert Conversion Rate Optimization Services | AnalyticsLiv</title>
+                <meta name="description" content="Boost your conversions with AnalyticsLiv, a leading conversion rate optimization agency. Our expert services optimize your website to increase leads, sales, and ROI." />
                 <link rel="canonical" href="https://analyticsliv.com/services/CRO"></link>
             </Head>
             <section className='crohome w-full relative font-gilroy overflow-hidden'>

@@ -8,10 +8,10 @@ const lead_generation = () => {
   return (
     <>
       <Head>
-        <title>AnalyticsLiv - Lead Generation</title>
+        <title>Top Lead Generation Experts & Consultancy Services - AnalyticsLiv</title>
         <meta
           name="description"
-          content="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads"
+          content="Get top lead generation experts for your business. AnalyticsLiv lead generation consultancy offers customized strategies to attract high-quality leads and boost conversions."
         />
         <link
           rel="canonical"

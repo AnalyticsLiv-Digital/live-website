@@ -23,10 +23,10 @@ const training = () => {
   return (
     <>
       <Head>
-        <title>AnalyticsLiv - Training</title>
+        <title>Google Ads Training Services | AnalyticsLiv</title>
         <meta
           name="description"
-          content="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads"
+          content="Master Google Ads with expert training from AnalyticsLiv. Learn PPC strategies, campaign optimization, and boost your ROI with hands-on, results-driven guidance."
         />
         <link
           rel="canonical"
