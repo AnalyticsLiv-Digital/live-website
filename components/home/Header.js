@@ -57,7 +57,7 @@ const header = () => {
 
         <div style={{ height: header }} className="navbar hidden lg:flex py-2 h-auto flex-wrap px-4 lg:flex-row items-center justify-between">
 
-          <Link className="logo" href="/"><img alt="logo" aria-label="logo" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="h-10 lg:mx-4 cursor-pointer" /></Link>
+          <Link className="logo" href="/"><img alt="AnalyticsLiv Logo" aria-label="logo" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="h-10 lg:mx-4 cursor-pointer" /></Link>
           <nav className="lg:flex text-center">
             <ul className="lg:flex text-base font-normal text-left lg:text-center z-[-1] lg:z-auto lg:mr-4 lg:w-auto lg:space-x-6 items-center  uppercase tracking-wide cursor-pointer">
               <li className="relative flex items-center gap-2 hover:border-b-4 hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2" onMouseEnter={() => setIsSWebervices(true)} onMouseLeave={() => setIsSWebervices(false)}>
@@ -93,7 +93,7 @@ const header = () => {
         </div>
 
         <div className="relative  flex lg:hidden p-2">
-          <Link href="/"><img onClick={() => setIsOpen(false)} src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="relative h-10 md:mx-4 cursor-pointer" /></Link>
+          <Link href="/"><img onClick={() => setIsOpen(false)} src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" alt='AnalyticsLiv Logo' className="relative h-10 md:mx-4 cursor-pointer" /></Link>
           <button
             onClick={() => { setIsOpen(!isOpen); setIsServices(false); setIsResources(false); }}
             type="button"

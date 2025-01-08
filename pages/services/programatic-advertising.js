@@ -98,7 +98,7 @@ const service_A = () => {
                                 </div>
                             </div>
                             <div className=" w-full lg:w-1/2 flex items-center lg:justify-end justify-center lg:order-2 order-1">
-                                <img src="/Programmatic_Media_Main_Img_Without_Blur.png" alt="" className='lg:h-[470px] md:h-[400px]' />
+                                <img src="/Programmatic_Media_Main_Img_Without_Blur.png" alt="programmatic advertising agency" className='lg:h-[470px] md:h-[400px]' />
                             </div>
                         </div>
                         <div className='mt-5'>
@@ -551,7 +551,7 @@ const service_A = () => {
                     <div className='flex md:flex-nowrap flex-wrap items-center md:justify-between justify-center gap-5'>
                         <div className='lg:w-1/2 md:w-[35%] w-[70%] md:mt-10'>
                             <div className='flex items-center justify-center lg:mt-0'>
-                                <img src="/DV_Infographics_Transparent.png" alt="" className=' lg:h-[400px]' />
+                                <img src="/DV_Infographics_Transparent.png" alt="Dv360 account creation" className=' lg:h-[400px]' />
                             </div>
                         </div>
                         <div className='relative lg:w-1/2 md:w-[65%] w-full lg:mt-0 mt-10'>
@@ -615,7 +615,7 @@ const service_A = () => {
                                             src="/casestudy1.png"
                                             width={300}
                                             height={300}
-                                            alt="Picture of the author"
+                                            alt="Google Analytics 4 Migration"
                                             priority={true}
                                             className='2xl:w-[40%] w-full m-auto 2xl:h-[247px] xl:h-[277px] lg:h-[227px] lg:object-scale-down'
                                         />
@@ -691,7 +691,7 @@ const service_A = () => {
                                                 src="/casestd2.png"
                                                 width={300}
                                                 height={300}
-                                                alt="Picture of the author"
+                                                alt="Post Click Tracking with DV360"
                                                 priority={true}
                                                 className='w-full m-auto 2xl:h-[210px] xl:h-[230px] h-[170px] object-scale-down'
                                             />
