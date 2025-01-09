@@ -18,6 +18,7 @@ const BlogSchema = new mongoose.Schema({
         {type: String}
         
     ],
+    relatedTo:{type: String},
 });
 mongoose.models = {};
 export default mongoose.model("Blog", BlogSchema);

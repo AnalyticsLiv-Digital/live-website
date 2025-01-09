@@ -8,7 +8,7 @@ const uri = "mongodb+srv://anshuldhurandhar:Admin123@cluster0.b45r7wt.mongodb.ne
 const dbName = "blogsdb";
 const collectionName = "blogs";
 
-async function updateDatabaseItem(item,title,description,slug,coverphoto,thumbnail,document_id,author, duration,date, active,sequence) {
+async function updateDatabaseItem(item,title,description,slug,coverphoto,thumbnail,document_id,author, duration,date, active,sequence, relatedTo) {
    const client = new MongoClient(uri);
    try {
      await client.connect();
@@ -29,8 +29,8 @@ async function updateDatabaseItem(item,title,description,slug,coverphoto,thumbna
       'duration' : duration,
       'date' : date,
       'active' : active,
-      'sequence' : sequence
-   
+      'sequence' : sequence,
+      'relatedTo' : relatedTo
    } };
      const result = await collection.updateOne(filter, updateDoc);
  
@@ -59,8 +59,9 @@ export default async function handler(req, res) {
       var date = req.body.date;
       var active = req.body.active;
       var sequence = req.body.sequence;
+      var relatedTo = req.body.relatedTo;
       // Update the MongoDB database with this data
-      await updateDatabaseItem(blogcontent,title,description,slug,coverphoto,thumbnail,document_id,author, duration,date, active,sequence);
+      await updateDatabaseItem(blogcontent,title,description,slug,coverphoto,thumbnail,document_id,author, duration,date, active,sequence,relatedTo);
 
       res.status(200).json({ message: 'Database updated successfully!' });
     } catch (error) {

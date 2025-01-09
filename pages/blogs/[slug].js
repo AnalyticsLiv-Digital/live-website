@@ -9,14 +9,35 @@ import { Router, useRouter } from 'next/router';
 import { ScaleLoader } from 'react-spinners'
 import SimilarPost from '../../components/SimilarPost'
 import RecommendedBlogs from '../../components/RecommendedBlog';
+import BlogBanner from '../../components/BlogBanner';
 
 const index = ({ blogDat, similarBlogs }) => {
     const blogData = blogDat.blog[0];
     const similarBlogsdata = similarBlogs.blog;
     const [recommendedBlogsdata, setrecommendedBlogsdata] = useState(null);
     const [userId, setUserId] = useState(null);
-
+    const [isSticky, setIsSticky] = useState(false);
     const [formFixed, setFormFixed] = useState(false);
+
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollPosition = window.scrollY;
+            const windowHeight = window.innerHeight;
+            if (scrollPosition > windowHeight / 1.25) {
+                setIsSticky(true);
+            } else {
+                setIsSticky(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
 
     const mainFnc = async () => {
         if (!userId) return null; 
@@ -185,17 +206,22 @@ const index = ({ blogDat, similarBlogs }) => {
                         </div>
 
                     </div>
+                    <div className='flex flex-col lg:w-1/4'>
+                        <div className={`${formFixed ? "sticky top-10 lg:z-20" : "relative lg:z-20"} h-fit bg-white px-6 py-4`}>
+                            <div className="space-y-6">
 
-                    <div className={`${formFixed ? "sticky top-10" : "relative"} h-fit lg:w-1/4 bg-white px-6 py-4`}>
-                        <div className="space-y-6">
+                                <h3 className="w-full text-slate-700 pt-2 px-3 font-bold tracking-wider">Similar Posts</h3>
 
-                            <h3 className="w-full text-slate-700 pt-2 px-3 font-bold tracking-wider">Similar Posts</h3>
+                                {similarBlogsdata && similarBlogsdata.map((blog, key) => (
+                                    <SimilarPost blog={blog} key={key} />
+                                ))}
+                            </div>
+                        </div>
 
-                            {similarBlogsdata && similarBlogsdata.map((blog, key) => (
-                                <SimilarPost blog={blog} key={key} />
-
-                            ))}
-
+                        <div
+                            className={`lg:sticky-banner ${isSticky ? "lg:fixed mt-10 lg:mt-[-50px] lg:z-10" : "lg:z-10 mt-10 lg:mt-36"}`}
+                        >
+                            <BlogBanner relatedTo={blogData.relatedTo} />
                         </div>
                     </div>
                 </div>

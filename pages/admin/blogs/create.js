@@ -22,6 +22,7 @@ const index = () => {
     document_id: "",
     sequence: "",
     category: "",
+    relatedTo: "",
   };
   const [formValues, setFormValues] = useState(initialValues);
   const [formattedDate, setFormattedDate] = useState('');
@@ -196,6 +197,7 @@ const index = () => {
         document_id: formValues.document_id,
         active: formValues.active,
         category: formValues.category,
+        relatedTo: formValues.relatedTo,
         sequence: formValues.sequence,
       }),
     })
@@ -236,6 +238,7 @@ const index = () => {
           document_id: formValues.document_id,
           active: "true",
           category: formValues.category,
+          relatedTo: formValues.relatedTo,
           sequence: formValues.sequence,
         }),
       })
@@ -407,6 +410,25 @@ const index = () => {
                 value={formValues.document_id}
                 onChange={handleChange}
               />
+            </div>
+            <div>
+              <label className="block text-base font-semibold mb-2 text-gray-200">
+                Related To
+              </label>
+
+              <select
+                required
+                className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500"
+                type="text"
+                name="relatedTo"
+                value={formValues.relatedTo}
+                onChange={handleChange}
+              >
+                <option className="bg-slate-700" value="">Select a related type</option>
+                <option className="bg-slate-700" value="dv360">dv360</option>
+                <option className="bg-slate-700" value="ga4">ga4</option>
+                <option className="bg-slate-700" value="gtm">gtm</option>
+              </select>
             </div>
             <div>
               <label className="block text-base font-semibold mb-2 text-gray-200">
