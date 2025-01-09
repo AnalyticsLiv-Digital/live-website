@@ -381,7 +381,7 @@ const index = ({ blogDat }) => {
               <select
                 className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500"
                 name="relatedTo"
-                value={formValues.relatedTo || ""}
+                value={formValues?.relatedTo || ""}
                 onChange={handleChange}
               >
                 <option className="bg-slate-700" value="">

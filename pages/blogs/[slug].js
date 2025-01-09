@@ -40,7 +40,7 @@ const index = ({ blogDat, similarBlogs }) => {
 
 
     const mainFnc = async () => {
-        if (!userId) return null; 
+        if (!userId) return null;
         const res2 = await fetch(`/api/recommendedBlogs?user=${userId}&blog_id=${blogData?.id}&blog_title=${blogData?.title}`);
         const recommendedBlogs = await res2.json();
         return recommendedBlogs;
@@ -207,7 +207,7 @@ const index = ({ blogDat, similarBlogs }) => {
 
                     </div>
                     <div className='flex flex-col lg:w-1/4'>
-                        <div className={`${formFixed ? "sticky top-10 lg:z-20" : "relative lg:z-20"} h-fit bg-white px-6 py-4`}>
+                        <div className={`${formFixed ? "sticky top-10 lg:z-20" : "relative lg:z-20"} h-fit bg-white px-2 py-2 lg:ml-3`}>
                             <div className="space-y-6">
 
                                 <h3 className="w-full text-slate-700 pt-2 px-3 font-bold tracking-wider">Similar Posts</h3>
@@ -219,7 +219,7 @@ const index = ({ blogDat, similarBlogs }) => {
                         </div>
 
                         <div
-                            className={`lg:sticky-banner ${isSticky ? "lg:fixed mt-10 lg:mt-[-50px] lg:z-10" : "lg:z-10 mt-10 lg:mt-36"}`}
+                            className={`lg:sticky-banner bg-white px-2 py-2 lg:ml-3 ${isSticky ? "lg:fixed mt-10 lg:mt-[-50px] lg:z-10" : "lg:z-10 mt-10 lg:mt-36"}`}
                         >
                             <BlogBanner relatedTo={blogData.relatedTo} />
                         </div>
