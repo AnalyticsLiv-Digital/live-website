@@ -116,12 +116,12 @@ export default function AutoPlay() {
           <div></div>
           <div class="grid lg:grid-cols-2 gap-10">
             <div class="text-center sm:text-left flex flex-col justify-center">
-              <h2 class="text-analyticsheading text-[40px] font-bold inline leading-normal">
+              <h1 class="text-analyticsheading text-[40px] font-bold inline leading-normal">
                 <span class="relative after:absolute after:left-0 after:bottom-[-5px] after:bg-[#07A9F9] after:h-[9px] after:w-20 after:rounded-[5px]">
                   Data{" "}
                 </span>{" "}
                 Reporting & Analysis
-              </h2>{" "}
+              </h1>{" "}
               <br /> <br />
               <p class="text-black text-base font-medium">
                 At AnalyticsLiv, we're passionate about transforming your data
