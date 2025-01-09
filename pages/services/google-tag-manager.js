@@ -257,7 +257,7 @@ const google_tag_manager = () => {
                                     alt="check-up"
                                     className="h-10 w-10 md:h-12 md:w-12 mb-4 mx-auto"
                                 />
-                                <h1 className=" text-sm sm:text-[15px] font-semibold mb-2">{item.title}</h1>
+                                <h3 className=" text-sm sm:text-[15px] font-semibold mb-2">{item.title}</h3>
                                 <div className="text-xs font-normal text-[#152F2E]">
                                     {item.description}
                                 </div>

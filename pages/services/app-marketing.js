@@ -684,9 +684,9 @@ const app_marketing = () => {
           }}
         >
           <div className="absolute w-96 top-10 left-28">
-            <h1 className="font-bold text-7xl leading-[3.5rem] text-black text-opacity-40">
+            <h3 className="font-bold text-7xl leading-[3.5rem] text-black text-opacity-40">
               WHY CHOOSE US
-            </h1>
+            </h3>
           </div>
           <div className="relative mx-auto h-[690px] w-[597px]">
             <div className="relative float-right w-56 text-stone-600">

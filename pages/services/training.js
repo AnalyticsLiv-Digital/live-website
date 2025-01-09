@@ -75,9 +75,9 @@ const training = () => {
                       alt="arrow"
                     />
                   </div>
-                  <h3 class="text-trainingheading text-3xl font-semibold leading-normal">
+                  <h1 class="text-trainingheading text-3xl font-semibold leading-normal">
                     Customized Corporate Training
-                  </h3>
+                  </h1>
                 </div>
                 <br /> <br />
                 <div class="grid lg:grid-cols-2 justify-center gap-10">
