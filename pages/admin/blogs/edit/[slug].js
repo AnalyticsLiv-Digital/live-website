@@ -20,6 +20,7 @@ const index = ({ blogDat }) => {
     document_id: blogData.document_id,
     sequence: blogData.sequence,
     category: ["GA4"],
+    relatedTo: blogData.relatedTo,
   };
   const [formattedDate, setFormattedDate] = useState(initialValues.date);
   const [formValues, setFormValues] = useState(initialValues);
@@ -164,6 +165,7 @@ const index = ({ blogDat }) => {
         active: formValues.active,
         category: formValues.category,
         sequence: formValues.sequence,
+        relatedTo: formValues.relatedTo,
       }),
     })
       .then((response) => response.json())
@@ -204,6 +206,7 @@ const index = ({ blogDat }) => {
           active: formValues.active,
           category: formValues.category,
           sequence: formValues.sequence,
+          relatedTo: formValues.relatedTo,
         }),
       })
         .then((response) => response.json())
@@ -369,6 +372,25 @@ const index = ({ blogDat }) => {
                 value={formValues.document_id}
                 onChange={handleChange}
               />
+            </div>
+
+            <div>
+              <label className="block text-base font-semibold mb-2 text-gray-200">
+                Related To
+              </label>
+              <select
+                className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500"
+                name="relatedTo"
+                value={formValues?.relatedTo || ""}
+                onChange={handleChange}
+              >
+                <option className="bg-slate-700" value="">
+                  Select a related type
+                </option>
+                <option className="bg-slate-700" value="dv360">dv360</option>
+                <option className="bg-slate-700" value="ga4">ga4</option>
+                <option className="bg-slate-700" value="gtm">gtm</option>
+              </select>
             </div>
             <div>
             <label className="block text-base font-semibold mb-2 text-gray-200">

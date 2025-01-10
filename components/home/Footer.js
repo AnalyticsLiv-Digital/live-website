@@ -15,7 +15,7 @@ const Footer = () => {
     const backgroundImageUrl = 'url("/src/assets/MAP.png")';
 
     return (
-        <section className='homeftr relative overflow-hidden font-gilroy'>
+        <section className='homeftr relative overflow-hidden font-gilroy z-20'>
             <div className='inrhomeftr relative'>
 
                 <div className=' max-sm:px-2 px-4 md:px-12 pt-8 md:pt-4 pb-4 relative z-20'>
