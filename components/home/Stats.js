@@ -100,7 +100,7 @@ const Stats = () => {
                                 <div className={`max-sm:hidden sm:absolute max-w-[165px] left-[-180px] bottom-[25px] lg:bottom-[70px] xl:bottom-[35px] opacity-90 transform -translate-y-1/2 text-center z-10`}>
                                     <div className="bg-white text-[#545567] font-light md:font-medium text-start flex justify-center items-center gap-2 text-[9px] md:text-sm px-2.5 lg:px-3 py-2 lg:py-3 rounded-xl shadow-md">
                                         <div className="">
-                                            <img src={video.img2} alt={video.img2} className="bg-[#08A4F7] h-[20px] sm:h-[30px] w-[20px] sm:w-[30px] md:w-[50px] p-1 rounded-lg" />
+                                            <img src={video.img2} alt={video.img2} className="bg-[#08A4F7] h-[20px] sm:h-[30px] w-[20px] sm:w-[30px] md:w-[45px] p-1 rounded-lg" />
                                         </div>
                                         {video.label2}
                                     </div>
