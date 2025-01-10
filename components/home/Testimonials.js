@@ -88,7 +88,7 @@ const Testimonials = () => {
     };
 
     return (
-        <section className='font-lato pt-12 px-4 md:px-10 xl:px-8'>
+        <section className='pt-12 px-4 md:px-10 xl:px-8'>
             <div className='text-[#100F1B] text-2xl md:text-3xl font-bold text-center'>
                 What Our Clients Have To Say
             </div>

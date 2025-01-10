@@ -2,7 +2,7 @@ import React from 'react'
 
 const Collaborate = () => {
     return (
-        <section className='flex max-lg:flex-col overflow-hidden font-lato'>
+        <section className='flex max-lg:flex-col overflow-hidden'>
             <div className='lg:w-[40%] bg-[#30486A] flex flex-col justify-center items-start gap-7 max-lg:py-7 px-4 lg:px-20'>
                 <div className='text-3xl md:text-4xl font-bold text-white'>Let's Collaborate for Mutual Success</div>
                 <div className='text-lg font-normal text-[#E2DEDC]'>Your success story begins with a click, explore our consulting solutions for transformative results.</div>

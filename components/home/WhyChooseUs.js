@@ -80,7 +80,7 @@ const WhyChooseUs = () => {
     const handlePrev = () => sliderRef.current.slickPrev();
 
     return (
-        <section className="font-lato pt-14 pb-14 lg:pl-10 2xl:pl-[3%] max-md:overflow-hidden">
+        <section className="pt-14 pb-14 lg:pl-10 2xl:pl-[3%] max-md:overflow-hidden">
             <div className="flex max-md:flex-col items-center justify-around">
                 <div className="md:w-[60%] max-md:px-4 flex flex-col justify-start">
                     <div className="text-[#100F1B] text-3xl font-bold text-center md:text-start">
