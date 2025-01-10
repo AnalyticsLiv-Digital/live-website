@@ -219,7 +219,7 @@ const index = ({ blogDat, similarBlogs }) => {
                         </div>
 
                         <div
-                            className={`lg:sticky-banner bg-white px-2 py-2 lg:ml-3 ${isSticky ? "lg:fixed mt-10 lg:mt-[-50px] lg:z-10" : "lg:z-10 mt-10 lg:mt-36"}`}
+                            className={`${!blogData.relatedTo ? 'hidden' : 'block'} lg:sticky-banner bg-white px-2 py-2 lg:ml-3 ${isSticky ? "lg:fixed mt-10 lg:mt-[-50px] lg:z-10" : "lg:z-10 mt-10 lg:mt-36"}`}
                         >
                             <BlogBanner relatedTo={blogData.relatedTo} />
                         </div>
