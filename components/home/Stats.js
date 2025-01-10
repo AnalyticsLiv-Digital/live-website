@@ -90,17 +90,17 @@ const Stats = () => {
                                 {/* Labels */}
                                 {/* <div className="max-sm:flex max-sm:pt-8 justify-center items-start gap-2"> */}
                                 <div className={`max-sm:hidden sm:absolute max-w-[125px] right-[-140px] opacity-90 bottom-[50px] lg:bottom-[90px] xl:bottom-[70px] 2xl:xl:bottom-[100px] transform -translate-y-1/2 text-center z-10`}>
-                                    <div className="bg-white text-[#545567] font-light md:font-medium flex flex-col justify-center items-center text-[9px] md:text-sm px-4 py-2 rounded-lg shadow-md">
+                                    <div className="bg-white text-[#545567] font-light md:font-medium flex flex-col justify-center items-center text-[9px] md:text-sm px-2.5 lg:px-4 py-2.5 lg:py-4 rounded-xl shadow-md">
                                         <div>
-                                            <img src={video.img1} alt={video.img1} className="bg-[#08A4F7]" />
+                                            <img src={video.img1} alt={video.img1} className="bg-[#08A4F7] p-1 mb-1 rounded-lg" />
                                         </div>
                                         {video.label1}
                                     </div>
                                 </div>
                                 <div className={`max-sm:hidden sm:absolute max-w-[165px] left-[-180px] bottom-[25px] lg:bottom-[70px] xl:bottom-[35px] opacity-90 transform -translate-y-1/2 text-center z-10`}>
-                                    <div className="bg-white text-[#545567] font-light md:font-medium text-start flex justify-center items-center gap-2 text-[9px] md:text-sm px-4 py-2 rounded-lg shadow-md">
+                                    <div className="bg-white text-[#545567] font-light md:font-medium text-start flex justify-center items-center gap-2 text-[9px] md:text-sm px-2.5 lg:px-3 py-2 lg:py-3 rounded-xl shadow-md">
                                         <div className="">
-                                            <img src={video.img2} alt={video.img2} className="bg-[#08A4F7] h-[20px] sm:h-[30px] w-[20px] sm:w-[30px] md:w-[45px]" />
+                                            <img src={video.img2} alt={video.img2} className="bg-[#08A4F7] h-[20px] sm:h-[30px] w-[20px] sm:w-[30px] md:w-[45px] p-1 rounded-lg" />
                                         </div>
                                         {video.label2}
                                     </div>
