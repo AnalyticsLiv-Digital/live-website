@@ -2,13 +2,13 @@ import React from 'react'
 
 const PowerUpBrand = () => {
     return (
-        <section className='font-lato py-10 px-4 md:px-10 xl:px-16'>
+        <section className='py-10 px-4 md:px-10 xl:px-16'>
             <div className='text-[#100F1B] text-2xl md:text-3xl font-bold text-center'>
                 How We Power Up Your Brand
             </div>
             <div className='pt-16 flex max-lg:grid max-lg:grid-cols-2 max-md:grid-cols-1 max-lg:justify-items-center max-lg:gap-16 lg:gap-10 
             justify-around items-start'>
-                <div className='w-[75%] lg:w-[25%]'>
+                <div className='w-[75%] lg:w-[27%]'>
                     <div className='flex flex-col justify-center items-center'>
                         <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/01.png' alt='01' className='absolute' />
                         <div className='text-3xl font-normal tracking-[6px] text-[#30486A] pt-14 z-10'>COLLECT</div>

@@ -21,7 +21,7 @@ const Footer1 = () => {
     };
 
     return (
-        <section className='relative font-lato z-20'>
+        <section className='relative font-sans z-20'>
             <div className='absolute left-[43%] sm:left-[48%] pb-[-60px] z-30 opacity-100 top-[-30px] border-[5px] border-[#2B2E3C] rounded-full'>
                 <button onClick={scrollToTop}
                     className="relative z-10 px-3 py-[17px] rounded-full bg-white text-[#08A4F7] border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline mb-3 transition-all duration-300 ease-linear"
@@ -29,7 +29,7 @@ const Footer1 = () => {
                     <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector%20(4).png' alt='upwards_arrow' />
                 </button>
             </div>
-            <div className='overflow-hidden font-lato relative bg-[#2B2E3C]'>
+            <div className='overflow-hidden relative bg-[#2B2E3C]'>
                 <div className='relative pt-10'>
                     <div className=' max-sm:px-2 px-4 md:px-4 lg:px-12 pt-8 md:pt-4 pb-4 relative z-20'>
                         <footer className="bg-cover bg-opacity-60 f">
@@ -74,7 +74,7 @@ const Footer1 = () => {
 
                                         <div className="right-footer2 md:pb-7 h-full sm:pt-0">
                                             <div className="text-[21px] font-semibold text-white">Contact Us</div>
-                                            <div className="relative w-full max-w-[400px] pt-2.5 md:pt-7">
+                                            <div className="relative w-full max-sm:max-w-[250px] max-w-[400px] pt-2.5 md:pt-7">
                                                 <div className="flex items-center">
                                                     <input
                                                         type="email"

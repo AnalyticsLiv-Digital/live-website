@@ -53,7 +53,7 @@ const Stats = () => {
     };
 
     return (
-        <section className="font-lato pt-28 sm:pt-40 md:pt-52 2xl:pt-64 h-full">
+        <section className="pt-28 sm:pt-40 md:pt-52 2xl:pt-64 h-full">
             <div className="relative bg-[#30486A] h-[170px] sm:h-[200px] lg:h-[290px] 2xl:h-[350px] overflow-visible">
                 {/* Video Slider */}
                 <div className="absolute top-[-130px] sm:top-[-180px] md:top-[-220px] lg:top-[-250px] left-1/2 transform -translate-x-1/2 w-[100%] sm:w-[75%] md:w-[75%] xl:w-[60%] 2xl:w-[800px] carousel-custom">

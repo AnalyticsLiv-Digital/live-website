@@ -69,7 +69,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps }, }) {
           <>
 
             <Component {...pageProps} />
-            {routerr.pathname === '/home_trial' ? <Footer1 /> : <Footer />}
+            {routerr.pathname === '/home_trial' || '/home_trial1' ? <Footer1 /> : <Footer />}
 
           </>}</>}
           {/* {showPopup && (

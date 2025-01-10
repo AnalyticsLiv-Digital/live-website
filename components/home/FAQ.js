@@ -36,7 +36,7 @@ const FAQ = () => {
     ];
 
     return (
-        <section className="font-lato pt-4 px-4 md:px-10 xl:px-16 pb-16">
+        <section className="pt-4 px-4 md:px-10 xl:px-16 pb-16">
             <div className="text-[#232A42] text-2xl md:text-3xl font-bold text-center">
                 Frequently Asked <span className="text-[#08A4F7]">Questions</span>
             </div>

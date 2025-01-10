@@ -2,7 +2,7 @@ import React from 'react';
 
 const GoogleMarketing = () => {
     return (
-        <section className='font-lato bg-[#30486A] py-10 px-4 md:px-10 xl:px-16'>
+        <section className='bg-[#30486A] py-10 px-4 md:px-10 xl:px-16'>
             <div className='text-white max-sm:pb-5 text-xl md:text-3xl font-bold text-center'>
                 Google Marketing Platform Partner
             </div>

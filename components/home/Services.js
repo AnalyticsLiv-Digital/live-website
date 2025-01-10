@@ -39,7 +39,7 @@ const Services = () => {
     ];
 
     return (
-        <section className="font-lato pt-14 lg:mb-12 2xl:mb-5 px-4 md:px-8 lg:px-16 relative">
+        <section className="pt-14 lg:mb-12 2xl:mb-5 px-4 md:px-8 lg:px-16 relative">
             <div className="text-[#100F1B] text-3xl font-bold text-center">Services We Offer</div>
             <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center max-md:gap-7 pt-12 pb-6 relative">
                 {services.map((service, index) => (

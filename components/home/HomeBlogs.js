@@ -2,7 +2,7 @@ import React from 'react';
 
 const HomeBlogs = () => {
   return (
-    <section className="font-lato max-md:pb-7 md:pt-5 lg:pt-10 md:pb-7 lg:pb-14 px-4 md:px-16">
+    <section className="max-md:pb-7 md:pt-5 lg:pt-10 md:pb-7 lg:pb-14 px-4 md:px-16">
       <div className="flex max-md:flex-col justify-between py-10 items-center overflow-hidden relative">
         <div className="flex flex-col md:w-[40%] lg:w-[50%] 2xl:w-[45%] gap-6 justify-center md:justify-start items-center md:items-start">
           <h2 className="text-[#100F1B] text-2xl lg:text-3xl font-bold text-center md:text-left">Read Our Insightful Blogs</h2>
