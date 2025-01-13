@@ -51,7 +51,7 @@ const index = ({ blogDat, count }) => {
 
                     <div className="relative lg:flex flex-row  w-full">
 
-                        <div className='bg-cover py-5 lg:pt-8 pb-20 bg-scroll' style={{ backgroundImage: `url("https://img.freepik.com/free-vector/white-abstract-background_23-2148810113.jpg?t=st=1671082381~exp=1671082981~hmac=659665427411ee225ef245d30444c4a2513e113dcfebb8e1dabf685749e40e1e")` }} >
+                        <div className='bg-cover py-5 lg:pt-8 pb-36 bg-scroll' style={{ backgroundImage: `url("https://img.freepik.com/free-vector/white-abstract-background_23-2148810113.jpg?t=st=1671082381~exp=1671082981~hmac=659665427411ee225ef245d30444c4a2513e113dcfebb8e1dabf685749e40e1e")` }} >
 
                             <div className="text-center pb-8 z-2">
                                 <form method="get" action="/blogs/search">
@@ -71,7 +71,7 @@ const index = ({ blogDat, count }) => {
                         </div>
                     </div>
 
-                    <nav className="absolute w-full bottom-0 m-auto inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
+                    <nav className="absolute w-full bottom-10 m-auto inline-flex -space-x-px rounded-md " aria-label="Pagination">
                         <div className="m-auto py-4">
 
                             {rows && rows.map((pages, key) => (

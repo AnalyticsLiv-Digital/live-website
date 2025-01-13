@@ -19,7 +19,7 @@ const index = ({ casestudyDat }) => {
     <ScrollProgress />
     <div>
       <section>
-        <div className="bg-gray-50 py-8">
+        <div className="bg-gray-50 py-8 pb-20">
           <div className="text-center md:mx-auto mx-8 py-2 bg-white md:w-2/5">
             <h1 className="font-bold text-4xl uppercase tracking-wide">Case Study</h1>
           </div>
