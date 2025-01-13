@@ -506,7 +506,7 @@ const engagement = () => {
                 </div>
 
             </section>
-            <section className='progracont relative overflow-hidden'>
+            <section className='progracont relative overflow-hidden mb-14'>
                 <div className='relative px-4 md:px-12 pt-8 pb-8 z-20'>
                     <div className='flex md:flex-nowrap flex-wrap items-center mx-auto'>
                         <div className='md:w-[66%] w-full'>

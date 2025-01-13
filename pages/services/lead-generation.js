@@ -760,7 +760,7 @@ const lead_generation = () => {
       </section>
 
       <section>
-        <div className="flex md:justify-between items-center py-4 md:py-0 px-4 md:px-28">
+        <div className="flex md:justify-between items-center py-4 pb-14 md:py-0 md:pb-16 px-4 md:px-28">
           <div className="absolute w-3/4 md:relative md:w-1/2 opacity-50">
             <img src="https://storage.googleapis.com/website-bucket-uploads/static/marketing/7.png" />
           </div>

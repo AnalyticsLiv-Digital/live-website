@@ -230,7 +230,7 @@ const post = ({ jobData }) => {
                 className="m-auto align-middle"
             /></div>}
             <div className='overflow-hidden'>
-                <section className="relative bg-gray-100  md:pt-12">
+                <section className="relative bg-gray-100  md:pt-12 pb-12">
                     <svg xmlns="http://www.w3.org/2000/svg" className="absolute lg:w-48 w-32 -right-0 top-10 lg:top-8 lg:right-10 fill-orange-500 blur-md rotate-45" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15">
                         <path d="M7.932 1.248a.5.5 0 0 0-.864 0l-7 12A.5.5 0 0 0 .5 14h14a.5.5 0 0 0 .432-.752l-7-12Z" />
                     </svg>

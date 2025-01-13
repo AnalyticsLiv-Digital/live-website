@@ -33,7 +33,7 @@ const training = () => {
           href="https://analyticsliv.com/services/training"
         ></link>
       </Head>
-      <section>
+      <section className="pb-16">
         <div class="md:mt-4 px-4 md:px-20 pt-8 md:pt-11 lg:flex justify-around lg:items-center">
           <div class="inner-banner lg:w-1/2 text-center flex flex-col justify-center">
             <div class="px-4 md:px-16 pt-4 flex flex-col justify-center">
@@ -352,7 +352,7 @@ const training = () => {
         id="training-calendly"
         name="training-calendly"
       ></ScrollElement>
-      <div className="relative h-[100dvh] 2xl:h-[80dvh] mb-36 lg:mb-28 xl:mb-40 bg-[#f5f5f5] rounded-lg space-y-9 pb-20 align-middle text-white">
+      <div className="relative h-[100dvh] 2xl:h-[80dvh] mb-36 lg:mb-28 xl:mb-64 bg-[#f5f5f5] rounded-lg space-y-9 pb-28 align-middle text-white">
         <div className="inline-widget bg-[#fff]">
           <div className="pb-4">
             <div className="flex justify-center">
