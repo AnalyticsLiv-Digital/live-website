@@ -1,17 +1,10 @@
+// CoBotAvatar.js
 import React from "react";
-
-import BotAvatar from "./icons/bot.svg";
 
 const CoBotAvatar = () => {
   return (
-    <div className="react-chatbot-kit-chat-bot-avatar">
-      <div
-        className="react-chatbot-kit-chat-bot-avatar-container"
-        style={{ background: "none" }}
-      >
-        {/* <img alt="BotAvatar" src={BotAvatar} /> */}
-        <div className="bot-avatar">🤖</div>
-      </div>
+    <div className="rounded-full bg-blue-500 w-10 h-10 flex items-center justify-center text-white">
+      🤖
     </div>
   );
 };

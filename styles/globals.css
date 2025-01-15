@@ -390,6 +390,23 @@ input[type=number] {
   transition: all 0.3s linear;
 }
 
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #90cdf4 #f7fafc;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #90cdf4;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f7fafc;
+}
 .App {
   font-family: sans-serif;
   text-align: center;
@@ -512,6 +529,68 @@ input[type=number] {
   fill: #fff;
 }
 
+
+/* Container for the sticky input field and button */
+.react-chatbot-kit-chat-input-wrapper {
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: #f1f1f1;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 9999;
+}
+
+/* Styling the input field of chatbot */
+.react-chatbot-kit-chat-input {
+  width: 70%;
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  outline: none;
+  background-color: #fff;
+  color: #333;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.react-chatbot-kit-chat-input:focus {
+  border-color: #46a1d1;
+  background-color: #f0f9ff;
+}
+
+/* Styling the send button */
+.react-chatbot-kit-chat-btn-send {
+  padding: 12px 18px;
+  background-color: #46a1d1;
+  color: white;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.react-chatbot-kit-chat-btn-send::after {
+  content: "Send";
+  display: inline-block;
+  /* margin-left: 8px; */
+}
+
+.react-chatbot-kit-chat-btn-send:hover {
+  background-color: #034f63;
+  transform: scale(1.05);
+}
+
+.react-chatbot-kit-chat-btn-send:active {
+  transform: scale(0.98);
+}
 
 .cookiebutton:hover::before {
   background: linear-gradient(90deg, #ED7855 0%, #DE1604 100%);

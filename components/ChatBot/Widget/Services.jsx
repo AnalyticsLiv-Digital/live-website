@@ -14,16 +14,19 @@ const Services = ({ setState, actionProvider }) => {
   return (
     <div>
       <p>Select a service:</p>
-      {services.map((service, index) => (
-        <button
-          key={index}
-          onClick={() =>
-            actionProvider.handleOptionClick(service.name, service.widgetName)
-          }
-        >
-          {service.name}
-        </button>
-      ))}
+      <div className="flex flex-col justify-center items-center gap-3">
+        {services.map((service, index) => (
+          <button
+            key={index}
+            onClick={() =>
+              actionProvider.handleOptionClick(service.name, service.widgetName)
+            }
+            className="bg-sky-400 rounded-md border border-gray-500 hover:bg-sky-500 w-full text-center px-5 py-2"
+          >
+            {service.name}
+          </button>
+        ))}
+      </div>
     </div>
   );
 };
