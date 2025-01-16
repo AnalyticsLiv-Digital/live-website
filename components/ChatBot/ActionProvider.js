@@ -7,12 +7,12 @@ class ActionProvider {
 
   handleThanks = () => {
     const message = this.createChatBotMessage("You're welcome, and stay safe!", {
-      customStyles: {
-        text: "white",
-        backgroundColor: "#46a1d1",
-        color:"white",
-        padding: "10px",
-      },
+      // customStyles: {
+      //   text: "white",
+      //   backgroundColor: "#46a1d1",
+      //   color:"white",
+      //   padding: "10px",
+      // },
       withAvatar: true,
     });
 
@@ -55,12 +55,12 @@ class ActionProvider {
         loading: true,
         terminateLoading: true,
         delay: 1000,
-        customStyles: {
-          text: "white",
-          backgroundColor: "#46a1d1", // Sky blue background
-          padding: "10px",
-          color:"white",
-        },
+        // customStyles: {
+        //   text: "white",
+        //   backgroundColor: "#46a1d1", // Sky blue background
+        //   padding: "10px",
+        //   color:"white",
+        // },
         withAvatar: true,
       }
     );
@@ -74,12 +74,12 @@ class ActionProvider {
         loading: true,
         terminateLoading: true,
         withAvatar: true,
-        customStyles: {
-          text: "white",
-          backgroundColor: "#46a1d1", // Sky blue background
-          padding: "10px",
-          color:"white",
-        },
+        // customStyles: {
+        //   text: "white",
+        //   backgroundColor: "#46a1d1", // Sky blue background
+        //   padding: "10px",
+        //   color:"white",
+        // },
       }
     );
     this.addMessageToState(message, "phone");
@@ -96,12 +96,12 @@ class ActionProvider {
           this.createChatBotMessage(
             `Thank you! We received your email: ${email}`,
             {
-              customStyles: {
-                text: "white",
-                backgroundColor: "#46a1d1", // Sky blue background
-                padding: "10px",
-                color:"white",
-              },
+              // customStyles: {
+              //   text: "white",
+              //   backgroundColor: "#46a1d1", // Sky blue background
+              //   padding: "10px",
+              //   color:"white",
+              // },
               withAvatar: true,
             }
           ),
@@ -118,12 +118,12 @@ class ActionProvider {
           this.createChatBotMessage(
             "That doesn't seem like a valid email. Please try again.",
             {
-              customStyles: {
-                text: "white",
-                backgroundColor: "#46a1d1", // Sky blue background
-                padding: "10px",
-                color:"white",
-              },
+              // customStyles: {
+              //   text: "white",
+              //   backgroundColor: "#46a1d1", // Sky blue background
+              //   padding: "10px",
+              //   color:"white",
+              // },
               withAvatar: true,
             }
           ),
@@ -149,24 +149,24 @@ class ActionProvider {
           this.createChatBotMessage(
             `Thank you! We received your phone number: ${phone}`,
             {
-              customStyles: {
-                text: "white",
-                backgroundColor: "#46a1d1", // Sky blue background
-                padding: "10px",
-                color:"white",
-              },
+              // customStyles: {
+              //   text: "white",
+              //   backgroundColor: "#46a1d1", // Sky blue background
+              //   padding: "10px",
+              //   color:"white",
+              // },
               withAvatar: true,
             }
           ),
           this.createChatBotMessage(
             "You're all set! Let us know if you need further assistance.",
             {
-              customStyles: {
-                text: "white",
-                backgroundColor: "#46a1d1", // Sky blue background
-                padding: "10px",
-                color:"white",
-              },
+              // customStyles: {
+              //   text: "white",
+              //   backgroundColor: "#46a1d1", // Sky blue background
+              //   padding: "10px",
+              //   color:"white",
+              // },
               withAvatar: true,
             }
           ),
@@ -183,12 +183,12 @@ class ActionProvider {
           this.createChatBotMessage(
             "That doesn't seem like a valid phone number. Please try again.",
             {
-              customStyles: {
-                text: "white",
-                backgroundColor: "#46a1d1", // Sky blue background
-                padding: "10px",
-                color:"white",
-              },
+              // customStyles: {
+              //   text: "white",
+              //   backgroundColor: "#46a1d1", // Sky blue background
+              //   padding: "10px",
+              //   color:"white",
+              // },
               withAvatar: true,
             }
           ),

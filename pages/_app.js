@@ -16,7 +16,7 @@ import useContactPopup from '../components/hooks/useContactPopup';
 import Script from "next/script";
 import Navbar from '../components/Navbar';
 import Footer1 from '../components/home/Footer1';
-import ChatBot from '../components/chatBot';
+import ChatBot from '../components/ChatBot/ChatBot';
 
 
 function MyApp({ Component, pageProps: { session, ...pageProps }, }) {

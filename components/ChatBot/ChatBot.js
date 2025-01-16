@@ -2,16 +2,27 @@
 import React from "react";
 import { useState } from "react";
 import Chatbot from "react-chatbot-kit";
+import 'react-chatbot-kit/build/main.css';
 import config from "./chatbotConfig";
 import MessageParser from "./MessageParser";
 import ActionProvider from "./ActionProvider";
+// import "./chatStyle.css";
 
 export default function App() {
   const [showBot, setShowBot] = useState(false);
 
+  const saveMessages = (messages, HTMLString) => {
+    localStorage.setItem('chat_messages', JSON.stringify(messages));
+  };
+
+  const loadMessages = () => {
+    const messages = JSON.parse(localStorage.getItem('chat_messages'));
+    return messages;
+  };
+
+
   return (
     <div className="">
-      {/* <TypedReact /> */}
       {showBot && (
         <div
           className="m-10 px-2 flex flex-col w-[350px] fixed right-10 bottom-[55px] z-[9999] bg-white shadow-lg rounded-md overflow-y-auto custom-scrollbar"
@@ -21,6 +32,10 @@ export default function App() {
             config={config}
             messageParser={MessageParser}
             actionProvider={ActionProvider}
+            // messageHistory={loadMessages()}
+            // saveMessages={saveMessages}
+            runInitialMessagesWithHistory={true}
+            disableScrollToBottom={true}
           />
         </div>
       )}

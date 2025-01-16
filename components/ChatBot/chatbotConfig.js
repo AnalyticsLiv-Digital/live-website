@@ -1,4 +1,4 @@
-import { createChatBotMessage } from "react-chatbot-kit";
+import { addUserMessage, createChatBotMessage } from "react-chatbot-kit";
 import CoBotAvatar from "./CoBotAvatar";
 import Services from "./Widget/Services";
 import MediaServicesWidget from "./Widget/MediaServicesWidget";
@@ -10,72 +10,81 @@ const config = {
   botName: "AnalyticsBot",
   customStyles: {
     botMessageBox: {
-      backgroundColor: "#04668a",
-      color: "white",
-      text: "white",
+      backgroundColor: "#ced6de",
+      // color: "black",
+      text: "black",
       marginBottom: "10px", // Add space between each message
       borderRadius: "8px",
+      fontColour: "black",
+    },
+    userChatMessage: {
+      backgroundColor: "red",
     },
     chatButton: {
-      backgroundColor: "red",
-      color: "white",
+      // backgroundColor: "red",
+      // color: "white",
     },
   },
   initialMessages: [
     createChatBotMessage("Welcome to AnalyticsLiv!", {
       withAvatar: true,
       delay: 500,
-      customStyles: {
-        text: "white",
-        backgroundColor: "#04668a",
-        padding: "10px",
-        color: "white",
-        marginBottom: "10px",
-        borderRadius: "8px",
-      },
+      // customStyles: {
+      //   text: "white",
+      //   // backgroundColor: "#04668a",
+      //   padding: "10px",
+      //   color: "white",
+      //   marginBottom: "10px",
+      //   borderRadius: "8px",
+      // },
     }),
     createChatBotMessage(`We're thrilled to have you here!`, {
       withAvatar: false,
       delay: 1000,
-      customStyles: {
-        text: "white",
-        backgroundColor: "red",
-        color: "white",
-        padding: "10px",
-        marginBottom: "10px",
-        borderRadius: "8px",
-      },
+      // customStyles: {
+      //   text: "white",
+      //   // backgroundColor: "red",
+      //   color: "white",
+      //   padding: "10px",
+      //   marginBottom: "10px",
+      //   borderRadius: "8px",
+      // },
     }),
     createChatBotMessage(
       `At AnalyticsLiv, we specialize in data-driven marketing solutions, including programmatic media buying, web and app measurement, and custom data science tools.`,
       {
         withAvatar: false,
         delay: 2000,
-        customStyles: {
-          text: "white",
-          backgroundColor: "#04668a",
-          padding: "10px",
-          color: "white",
-          marginBottom: "10px",
-          borderRadius: "8px",
-        },
+        // customStyles: {
+        //   text: "white",
+        //   // backgroundColor: "#04668a",
+        //   padding: "10px",
+        //   color: "white",
+        //   marginBottom: "10px",
+        //   borderRadius: "8px",
+        // },
       }
     ),
     createChatBotMessage("How can we assist you today?", {
       delay: 3000,
       withAvatar: true,
       widget: "services",
-      customStyles: {
-        text: "white",
-        backgroundColor: "#04668a",
-        padding: "10px",
-        color: "white",
-        marginBottom: "10px",
-        borderRadius: "8px",
-      },
+      // customStyles: {
+      //   text: "white",
+      //   backgroundColor: "#04668a",
+      //   padding: "10px",
+      //   color: "white",
+      //   marginBottom: "10px",
+      //   borderRadius: "8px",
+      // },
     }),
   ],
-  state: {},
+  state: {
+    option:"",
+    subOption: "",
+    email : "",
+    mobileNumber : ""
+  },
   customComponents: {
     header: () => (
       <div className="sticky top-0 p-2 rounded-lg bg-gray-300 text-white text-center font-bold shadow-md">
@@ -83,27 +92,27 @@ const config = {
       </div>
     ),
     botAvatar: (props) => <CoBotAvatar {...props} />,
-    userAvatar: (props) => <UserAvatar {...props} />,
-    botMessageBox: (props) => (
-      <div className="flex items-center gap-3 mb-5">
-        <div className="flex-shrink-0">
-          <CoBotAvatar />
-        </div>
-        <div className="bg-blue-300 text-white rounded-lg p-4 max-w-[250px]">
-          {props.children}
-        </div>
-      </div>
-    ),
-    userMessageBox: (props) => (
-      <div className="flex items-center gap-3 justify-end mb-5">
-        <div className="bg-blue-600 text-white rounded-lg p-4 max-w-[250px]">
-          {props.children}
-        </div>
-        <div className="flex-shrink-0">
-          <UserAvatar />
-        </div>
-      </div>
-    ),
+    // userAvatar: (props) => <UserAvatar {...props} />,
+    // botMessageBox: (props) => (
+    //   <div className="flex items-center gap-3 mb-5">
+    //     <div className="flex-shrink-0">
+    //       <CoBotAvatar />
+    //     </div>
+    //     <div className="bg-blue-300 text-white rounded-lg p-4 max-w-[250px]">
+    //       {props.children}
+    //     </div>
+    //   </div>
+    // ),
+    // userMessageBox: (props) => (
+    //   <div className="flex items-center gap-3 justify-end mb-5">
+    //     <div className="bg-blue-600 text-white rounded-lg p-4 max-w-[250px]">
+    //       {props.children}
+    //     </div>
+    //     <div className="flex-shrink-0">
+    //       <UserAvatar />
+    //     </div>
+    //   </div>
+    // ),
   },
   widgets: [
     {
@@ -118,6 +127,7 @@ const config = {
           </div>
         </div>
       ),
+      mapStateToProps: ["option"],
     },
     {
       widgetName: "mediaServicesWidget",
