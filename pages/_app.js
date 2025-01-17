@@ -16,6 +16,7 @@ import useContactPopup from '../components/hooks/useContactPopup';
 import Script from "next/script";
 import Navbar from '../components/Navbar';
 import Footer1 from '../components/home/Footer1';
+import ChatBot from '../components/ChatBot/ChatBot';
 
 
 function MyApp({ Component, pageProps: { session, ...pageProps }, }) {
@@ -69,6 +70,12 @@ function MyApp({ Component, pageProps: { session, ...pageProps }, }) {
           <>
 
             <Component {...pageProps} />
+
+          {/* <div className='App'>
+            <ChatBot />
+          </div> */}
+
+
             {routerr.pathname === '/home_trial' || '/home_trial1' ? <Footer1 /> : <Footer />}
 
           </>}</>}

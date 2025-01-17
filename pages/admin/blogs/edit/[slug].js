@@ -388,8 +388,8 @@ const index = ({ blogDat }) => {
                   Select a related type
                 </option>
                 <option className="bg-slate-700" value="dv360">dv360</option>
-                <option className="bg-slate-700" value="ga4">ga4</option>
-                <option className="bg-slate-700" value="gtm">gtm</option>
+                {/* <option className="bg-slate-700" value="ga4">ga4</option>
+                <option className="bg-slate-700" value="gtm">gtm</option> */}
               </select>
             </div>
             <div>

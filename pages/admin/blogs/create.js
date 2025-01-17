@@ -417,7 +417,6 @@ const index = () => {
               </label>
 
               <select
-                required
                 className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500"
                 type="text"
                 name="relatedTo"
@@ -426,8 +425,8 @@ const index = () => {
               >
                 <option className="bg-slate-700" value="">Select a related type</option>
                 <option className="bg-slate-700" value="dv360">dv360</option>
-                <option className="bg-slate-700" value="ga4">ga4</option>
-                <option className="bg-slate-700" value="gtm">gtm</option>
+                {/* <option className="bg-slate-700" value="ga4">ga4</option>
+                <option className="bg-slate-700" value="gtm">gtm</option> */}
               </select>
             </div>
             <div>
