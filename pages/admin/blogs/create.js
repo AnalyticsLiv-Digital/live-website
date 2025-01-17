@@ -417,7 +417,6 @@ const index = () => {
               </label>
 
               <select
-                required
                 className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500"
                 type="text"
                 name="relatedTo"

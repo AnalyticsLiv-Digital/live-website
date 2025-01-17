@@ -74,6 +74,7 @@ class ActionProvider {
         loading: true,
         terminateLoading: true,
         withAvatar: true,
+        delay: 1000,
         // customStyles: {
         //   text: "white",
         //   backgroundColor: "#46a1d1", // Sky blue background
@@ -167,6 +168,7 @@ class ActionProvider {
               //   padding: "10px",
               //   color:"white",
               // },
+              delay: 1000,
               withAvatar: true,
             }
           ),

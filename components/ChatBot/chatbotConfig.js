@@ -8,23 +8,23 @@ import UserAvatar from "./UserAvatar";
 const config = {
   lang: "no",
   botName: "AnalyticsBot",
-  customStyles: {
-    botMessageBox: {
-      backgroundColor: "#ced6de",
-      // color: "black",
-      text: "black",
-      marginBottom: "10px", // Add space between each message
-      borderRadius: "8px",
-      fontColour: "black",
-    },
-    userChatMessage: {
-      backgroundColor: "red",
-    },
-    chatButton: {
-      // backgroundColor: "red",
-      // color: "white",
-    },
-  },
+  // customStyles: {
+  //   botMessageBox: {
+  //     backgroundColor: "#ced6de",
+  //     // color: "black",
+  //     text: "red",
+  //     marginBottom: "10px", // Add space between each message
+  //     borderRadius: "8px",
+  //     fontColour: "red",
+  //   },
+  //   userChatMessage: {
+  //     backgroundColor: "#3c005d",
+  //   },
+  //   chatButton: {
+  //     // backgroundColor: "red",
+  //     // color: "white",
+  //   },
+  // },
   initialMessages: [
     createChatBotMessage("Welcome to AnalyticsLiv!", {
       withAvatar: true,
@@ -87,12 +87,12 @@ const config = {
   },
   customComponents: {
     header: () => (
-      <div className="sticky top-0 p-2 rounded-lg bg-gray-300 text-white text-center font-bold shadow-md">
+      <div className="sticky top-0 z-30 p-2 rounded-lg bg-[#3c005d] text-white text-center font-bold shadow-md">
         🤖 You're with AnalyticsLiv Bot
       </div>
     ),
     botAvatar: (props) => <CoBotAvatar {...props} />,
-    // userAvatar: (props) => <UserAvatar {...props} />,
+    userAvatar: (props) => <UserAvatar {...props} />,
     // botMessageBox: (props) => (
     //   <div className="flex items-center gap-3 mb-5">
     //     <div className="flex-shrink-0">
@@ -118,42 +118,47 @@ const config = {
     {
       widgetName: "services",
       widgetFunc: (props) => (
-        <div className="flex items-center gap-3 mb-5">
-          <div className="flex-shrink-0">
-            <CoBotAvatar />
-          </div>
-          <div className="bg-blue-300 text-white rounded-lg p-4 max-w-[250px]">
-            <Services {...props} />
-          </div>
-        </div>
+        <Services {...props} />
+        // <div className="flex items-center gap-3 mb-5">
+        //   <div className="flex-shrink-0">
+        //     <CoBotAvatar />
+        //   </div>
+        //   <div className="bg-blue-300 text-white rounded-lg p-4 max-w-[250px]">
+        //     <Services {...props} />
+        //   </div>
+        // </div>
       ),
       mapStateToProps: ["option"],
     },
     {
       widgetName: "mediaServicesWidget",
       widgetFunc: (props) => (
-        <div className="flex items-center gap-3 mb-5">
-          <div className="flex-shrink-0">
-            <CoBotAvatar />
-          </div>
-          <div className="bg-blue-300 text-white rounded-lg p-4 max-w-[250px]">
-            <MediaServicesWidget {...props} />
-          </div>
-        </div>
+        <MediaServicesWidget {...props} />
+        // <div className="flex items-center gap-3 mb-5">
+        //   <div className="flex-shrink-0">
+        //     <CoBotAvatar />
+        //   </div>
+        //   <div className="bg-blue-300 text-white rounded-lg p-4 max-w-[250px]">
+        //     <MediaServicesWidget {...props} />
+        //   </div>
+        // </div>
       ),
+      mapStateToProps: ["option"],
     },
     {
       widgetName: "subOptions",
       widgetFunc: (props) => (
-        <div className="flex items-center gap-3 mb-5">
-          <div className="flex-shrink-0">
-            <CoBotAvatar />
-          </div>
-          <div className="bg-blue-300 text-white rounded-lg p-4 max-w-[250px]">
-            <SubOptions {...props} />
-          </div>
-        </div>
+        <SubOptions {...props} />
+        // <div className="flex items-center gap-3 mb-5">
+        //   <div className="flex-shrink-0">
+        //     <CoBotAvatar />
+        //   </div>
+        //   <div className="bg-blue-300 text-white rounded-lg p-4 max-w-[250px]">
+        //     <SubOptions {...props} />
+        //   </div>
+        // </div>
       ),
+      mapStateToProps: ["option"],
     },
     // {
     //   widgetName: "analyticsServicesWidget",

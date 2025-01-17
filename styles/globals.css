@@ -180,9 +180,10 @@ input[type=number] {
   top: 50px;
 }
 
-.blogs-cs{
+.blogs-cs {
   text-transform: none;
 }
+
 .trainingbtn {
   box-shadow: 5px 5px 4px 0px rgba(0, 0, 0, 0.25);
 }
@@ -407,10 +408,12 @@ input[type=number] {
 .custom-scrollbar::-webkit-scrollbar-track {
   background: #f7fafc;
 }
+
 .App {
   font-family: sans-serif;
   text-align: center;
 }
+
 .options {
   padding-bottom: 15px;
 }
@@ -454,9 +457,11 @@ input[type=number] {
   align-items: center;
   justify-content: center;
 }
+
 .column-left {
   text-align: right;
 }
+
 .column-right {
   text-align: left;
   padding: 8px;
@@ -471,10 +476,12 @@ input[type=number] {
   align-items: center;
   color: #fff;
 }
+
 .url-icon {
   width: 35px;
   margin-right: 10px;
 }
+
 .url-header {
   font-size: 0.9rem;
   font-weight: lighter;
@@ -510,9 +517,11 @@ input[type=number] {
   align-items: center;
   transition: transform 0.6s ease-in-out;
 }
+
 .app-chatbot-button:hover {
   transform: scale(1.1);
 }
+
 .app-chatbot-container {
   margin: 40px 0;
   display: flex;
@@ -524,14 +533,15 @@ input[type=number] {
   background-color: white;
   box-shadow: 5px 5px 13px rgba(91, 81, 81, 0.4);
   border-radius: 5px;
+  font-size: 12px;
 }
+
 .app-chatbot-button-icon {
   fill: #fff;
 }
 
-
 /* Container for the sticky input field and button */
-.react-chatbot-kit-chat-input-wrapper {
+/* .react-chatbot-kit-chat-input-wrapper {
   position: fixed;
   bottom: 10px;
   left: 0;
@@ -543,14 +553,16 @@ input[type=number] {
   align-items: center;
   justify-content: space-between;
   z-index: 9999;
-}
+  font-size: 12px;
+} */
 
 /* Styling the input field of chatbot */
 .react-chatbot-kit-chat-input {
-  width: 70%;
-  padding: 12px;
-  font-size: 14px;
-  border-radius: 30px;
+  /* width: 70%; */
+  /* padding: 12px; */
+  font-size: 12px;
+  margin-bottom: 100px;
+  /* border-radius: 30px; */
   border: 1px solid #ddd;
   outline: none;
   background-color: #fff;
@@ -565,7 +577,7 @@ input[type=number] {
 
 /* Styling the send button */
 .react-chatbot-kit-chat-btn-send {
-  padding: 12px 18px;
+  /* padding: 12px 18px;
   background-color: #46a1d1;
   color: white;
   border-radius: 30px;
@@ -574,23 +586,24 @@ input[type=number] {
   transition: background-color 0.3s ease, transform 0.3s ease;
   font-size: 10px;
   font-weight: bold;
-  text-align: center;
+  text-align: center; */
+  margin-bottom: 100px;
 }
 
 .react-chatbot-kit-chat-btn-send::after {
-  content: "Send";
-  display: inline-block;
+  /* content: "Send"; */
+  /* display: inline-block; */
   /* margin-left: 8px; */
 }
 
-.react-chatbot-kit-chat-btn-send:hover {
+/* .react-chatbot-kit-chat-btn-send:hover {
   background-color: #034f63;
   transform: scale(1.05);
 }
 
 .react-chatbot-kit-chat-btn-send:active {
   transform: scale(0.98);
-}
+} */
 
 .cookiebutton:hover::before {
   background: linear-gradient(90deg, #ED7855 0%, #DE1604 100%);
@@ -691,7 +704,7 @@ input[type=number] {
 /* new design buttons */
 
 .mainbutn {
-  @apply relative overflow-hidden z-10 bg-[#08A4F7] text-[#fff] border border-[#08A4F7] cursor-pointer text-base lg:text-lg font-bold not-italic inline rounded-[8px] py-[10px] px-5 sm:px-[40px] mb-3 transition-all duration-300 ease-linear hover:text-[#08A4F7] 
+  @apply relative overflow-hidden z-10 bg-[#08A4F7] text-[#fff] border border-[#08A4F7] cursor-pointer text-base lg:text-lg font-bold not-italic inline rounded-[8px] py-[10px] px-5 sm:px-[40px] mb-3 transition-all duration-300 ease-linear hover:text-[#08A4F7]
 }
 
 .mainbutn::before {
@@ -715,7 +728,7 @@ input[type=number] {
 }
 
 .mainbutn-opposite {
-  @apply relative overflow-hidden z-10 bg-white text-[#08A4F7] border border-[#08A4F7] cursor-pointer text-base lg:text-lg font-bold not-italic inline rounded-[8px] py-[10px] px-5 lg:px-[40px] mb-3 transition-all duration-300 ease-linear hover:text-white 
+  @apply relative overflow-hidden z-10 bg-white text-[#08A4F7] border border-[#08A4F7] cursor-pointer text-base lg:text-lg font-bold not-italic inline rounded-[8px] py-[10px] px-5 lg:px-[40px] mb-3 transition-all duration-300 ease-linear hover:text-white
 }
 
 .mainbutn-opposite::before {
@@ -1770,14 +1783,15 @@ iframe {
 }
 
 
-.react-chatbot-kit-chat-bot-message-container{
+.react-chatbot-kit-chat-bot-message-container {
   /* background-color: red; */
   display: flex;
   flex-direction: row;
-  padding: 10px;
+  padding: 0px;
+  font-size: 12px;
 }
 
-.react-chatbot-kit-chat-bot-avatar-container{
+.react-chatbot-kit-chat-bot-avatar-container {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -1787,21 +1801,88 @@ iframe {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 12px;
 }
 
-.react-chatbot-kit-chat-bot-message{
-  padding: 10px;
+.react-chatbot-kit-chat-bot-message {
+  padding: 7px 8px !important;
   border-radius: 10px;
-  font-size: small;
+  font-size: 12px !important;
+}
+
+.react-chatbot-kit-user-chat-message {
+  padding: 7px 8px !important;
+  border-radius: 10px;
+  font-size: 12px !important;
+  background-color: #3c005d !important;
+  color: whitesmoke !important;
+  width: 184.5px;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.react-chatbot-kit-user-chat-message-arrow {
+  color: #3c005d !important;
+  border-top: 8px solid transparent !important;
+  border-bottom: 8px solid transparent !important;
+  border-left: 8px solid #3c005d !important;
+  top: 7px !important;
+}
+
+.react-chatbot-kit-chat-message-container {
+  /* margin-top: 100px; */
+  max-height: 315px;
 }
 
 @media (max-width: 370px) {
   .custom-padding-370 {
-    @apply px-2; /* Apply the padding you want for screens 370px or smaller */
+    @apply px-2;
+    /* Apply the padding you want for screens 370px or smaller */
   }
 }
+
 @media (max-width: 540px) {
   .custom-padding-540 {
-    @apply px-4; /* Apply the padding you want for screens 370px or smaller */
+    @apply px-4;
+    /* Apply the padding you want for screens 370px or smaller */
+  }
+}
+
+@media (max-width: 1440px) {
+  .react-chatbot-kit-chat-bot-message {
+    padding: 4px 7px !important;
+    font-size: 10px !important;
+  }
+
+  .react-chatbot-kit-user-chat-message {
+    padding: 4px 7px !important;
+    font-size: 10px !important;
+  }
+
+  .react-chatbot-kit-chat-message-container {
+    /* margin-top: 140px; */
+    max-height: 340px;
+  }
+
+  .react-chatbot-kit-chat-input {
+    padding: 7px !important;
+    font-size: 10px !important;
+    /* border-radius: 30px; */
+    border: 1px solid #ddd;
+    outline: none;
+    background-color: #fff;
+    color: #333;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    margin-bottom: 130px;
+  }
+
+  .react-chatbot-kit-chat-btn-send {
+    margin-bottom: 130px;
+    font-size: 10px !important;
+  }
+
+  .react-chatbot-kit-user-chat-message-arrow {
+    top: 3px !important;
   }
 }

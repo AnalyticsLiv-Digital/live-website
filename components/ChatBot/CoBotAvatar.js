@@ -3,8 +3,8 @@ import React from "react";
 
 const CoBotAvatar = () => {
   return (
-    <div className="rounded-full bg-blue-500 w-10 h-10 flex items-center justify-center text-white">
-      🤖
+    <div className="rounded-full flex items-start pt-1.5 justify-start text-white">
+      <img src="/AnalyticsLiv Logo 2 1.png" alt="analyticsLiv" className="w-7" />
     </div>
   );
 };

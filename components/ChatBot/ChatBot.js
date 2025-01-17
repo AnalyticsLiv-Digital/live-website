@@ -25,8 +25,8 @@ export default function App() {
     <div className="">
       {showBot && (
         <div
-          className="m-10 px-2 flex flex-col w-[350px] fixed right-10 bottom-[55px] z-[9999] bg-white shadow-lg rounded-md overflow-y-auto custom-scrollbar"
-          style={{ maxHeight: "475px", minHeight: "400px" }}
+          className="max-md:my-8 md:m-8 flex flex-col max-h-[370px] 2xl:max-h-[400px] min-h-[250px] 2xl:min-h-[300px] fixed right-10 bottom-[55px] z-[9999] bg-white shadow-lg rounded-md overflow-y-hidden custom-scrollbar"
+          // style={{ maxHeight: "400px", minHeight: "300px" }}
         >
           <Chatbot
             config={config}
@@ -35,7 +35,7 @@ export default function App() {
             // messageHistory={loadMessages()}
             // saveMessages={saveMessages}
             runInitialMessagesWithHistory={true}
-            disableScrollToBottom={true}
+            // disableScrollToBottom={true}
           />
         </div>
       )}
@@ -52,31 +52,50 @@ export default function App() {
   );
 }
 
+
+
+
+
+
+
+
 // "use client";
 // import React from "react";
 // import { useState } from "react";
 // import Chatbot from "react-chatbot-kit";
+// import 'react-chatbot-kit/build/main.css';
 // import config from "./chatbotConfig";
 // import MessageParser from "./MessageParser";
 // import ActionProvider from "./ActionProvider";
-// // import TypedReact from "./TypedReact";
+// // import "./chatStyle.css";
 
 // export default function App() {
 //   const [showBot, setShowBot] = useState(false);
 
+//   const saveMessages = (messages, HTMLString) => {
+//     localStorage.setItem('chat_messages', JSON.stringify(messages));
+//   };
+
+//   const loadMessages = () => {
+//     const messages = JSON.parse(localStorage.getItem('chat_messages'));
+//     return messages;
+//   };
+
 //   return (
 //     <div className="">
-//       {/* <TypedReact /> */}
 //       {showBot && (
-//         // <div className="m-10 p-5 flex w-[350px] justify-center fixed right-10 bottom-[55px] z-[9999] bg-white shadow-lg rounded-md">
 //         <div
-//           className="m-10 flex flex-col w-[350px] fixed right-10 bottom-[55px] z-[9999] bg-white shadow-lg rounded-md overflow-y-auto custom-scrollbar"
-//           style={{ maxHeight: "475px", minHeight: "400px" }} // Adjust the height as needed
+//           className="m-8 flex flex-col fixed right-10 bottom-[55px] z-[9999] bg-white shadow-lg rounded-md overflow-y-auto custom-scrollbar"
+//           style={{ maxHeight: "500px", minHeight: "350px" }}
 //         >
 //           <Chatbot
 //             config={config}
 //             messageParser={MessageParser}
 //             actionProvider={ActionProvider}
+//             // messageHistory={loadMessages()}
+//             // saveMessages={saveMessages}
+//             runInitialMessagesWithHistory={true}
+//             disableScrollToBottom={true}
 //           />
 //         </div>
 //       )}
