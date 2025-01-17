@@ -140,7 +140,7 @@ const Serversidetracking = () => {
         <>
             <Head>
                 <title>Server-Side Analytics Tracking & Web Analytics Solutions | AnalyticsLiv</title>
-                <meta name="description" content="Get data accuracy with server-side web analytics from AnalyticsLiv. Our tracking solutions provide deeper insights, optimizing performance and driving business success." />
+                <meta name="description" content="Get data accuracy with server-side analytics tracking from AnalyticsLiv. Our tracking solutions provide deeper insights, optimizing performance and driving business success." />
                 <link rel="canonical" href="https://analyticsliv.com/services/server-side-tracking"></link>
             </Head>
 

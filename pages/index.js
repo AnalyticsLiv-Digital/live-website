@@ -22,8 +22,8 @@ const page = () => {
     <>
   
             <Head>
-                <meta name="description" content="Boost your business growth with data-driven solutions from a certified Google Marketing Platform (GMP) Partner and Google Cloud Partner in India. Expert web analytics agency delivering actionable insights and advanced marketing strategies."/>
-                <title>Google Marketing Platform Partner | Web Analytics Agency in India</title>
+                <meta name="description" content="Accelerate your business growth with certified GMP and Google Cloud Partner in India. Analytics Liv delivers expert data-driven solutions, actionable insights, and advanced marketing strategies."/>
+                <title>Google Cloud Partner in India | GMP Partner | AnalyticsLiv</title>
                 <link rel="canonical"href="https://analyticsliv.com/"></link>
             </Head>
             <StructuredData data={stuctureData} />
