@@ -1,46 +1,41 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import Casestudylead from "../../models/Casestudylead";
-import Casestudy from "../../models/Casestudy";
+import ChatBotLead from "../../models/ChatBotLead";
 import connectDb from "../../middleware/mongoose";
 import { sendEmail } from "../../utils/sendMail";
-import { sendDataToGoogleSheet } from "../../utils/caseStudyLeadInShet";
 
 const handler = async (req, res) => {
     if (req.method == 'POST') {
-        // api to send lead in google sheet
-        // const url = "https://script.google.com/macros/s/AKfycbxhG3yAOlfba9JRbr4eDdjBYFVfeOvP0j9Xznoc4CLH7J61OJdhc18uzh9cAdyfAo4hzw/exec";
-        // sendDataToGoogleSheet(url, {
-        //     "name": req.body.fullName,
-        //     "email": req.body.email,
-        //     "company": req.body.company
-        // })
-        console.log(req?.body);
+        console.log("In api achat response api",req?.body);
 
-        // let data = await Casestudy.find({ id: req.body.id }, { filename: 1 });
-        // let b = new Casestudylead({
-        //     fullName: req.body.fullName,
-        //     email: req.body.email,
-        //     casestudy: req.body.casestudy,
-        //     company: req.body.company
-        // });
-        // await b.save();
+        let b = new ChatBotLead({
+            option: req.body.option,
+            subOption: req.body.subOption,
+            phone: req.body.phone,
+            email: req.body.email
+        });
+        await b.save();
 
-        // var userMailOptions = {
-        //     from: "support@analyticsliv.com",
-        //     to: req.body.email,
-        //     subject: 'AnalyticsLiv - Download link for the case study',
-        //     html: `<html><head><style>#container{position:relative;width:100%;height:300px;display: flex;justify-content: center;}#bod{position:relative;width:500px;height: 300px;text-align:center;}</style></head><body><div id="container"><div id="bod"><img style="width:300;height:50;margin-top:30px; margin-bottom:10px;" src="https://storage.googleapis.com/website-bucket-uploads/logo.png"/><div id="title"><h3>Thankyou for showing interest on our Case Study!!</h3></div><div id="content">To download the Case Study on ${req.body.casestudy}, Please click <a href="${data[0].filename}">here</a>.</div></div></div></body></html>`
-        // };
+        var userMailOptions = {
+            from: "support@analyticsliv.com",
+            to: req.body.email,
+            subject: 'AnalyticsLiv - Thanks for contacting us!',
+            html: `Hi,<br>
+                Thank you for reaching out to AnalyticsLiv, one of the fastest growing Google Marketing Platform Partners in India. Our Services have empowered more than 500 businesses to use first-party data for analysis and marketing purposes, making businesses independent of third-party data intelligence.<br>
+                We will study the details you have shared and will get back to you with a response to help your business. Meanwhile, you can have a look through our services on <a href="https://analyticsliv.com">analyticsliv.com</a> or for any quick chat, contact us at: <br>
+                Mobile: <a href="tel:+918320576622">+91 83205 76622</a> <br>
+                Email: <a href="mailto:support@analyticsliv.com" class="">support@analyticsliv.com</a>`
+        };
 
-        // var internalMailOptions = {
-        //     from: "support@analyticsliv.com",
-        //     to: ["sales@analyticsliv.com", "anuj@analyticsliv.com", "nitya@analyticsliv.com", "anshul.d@analyticsliv.com", "rajvi@analyticsliv.com"],
-        //     subject: 'Casestudy Download',
-        //     html: `Case study downloaded by <br> Name - ${req.body.fullName} <br> Email- ${req.body.email} <br> Casestudy - ${req.body.casestudy} <br> Company - ${req.body.company}`
-        // };
+        var internalMailOptions = {
+            from: "support@analyticsliv.com",
+            to:["atulverma1520@gmail.com"],
+            // to: ["sales@analyticsliv.com", "anuj@analyticsliv.com", "nitya@analyticsliv.com", "anshul.d@analyticsliv.com", "rajvi@analyticsliv.com"],
+            subject: 'ChatBot lead',
+            html: `New chatbot lead by <br> Service - ${req.body?.option} <br> Sub Service -  ${req.body?.subOption} <br> Email- ${req.body?.email} <br> Contact - ${req.body?.phone}`
+        };
 
-        // await sendEmail(internalMailOptions.to, internalMailOptions.subject, internalMailOptions.html, internalMailOptions?.from);
-        // await sendEmail(userMailOptions.to, userMailOptions.subject, userMailOptions.html, userMailOptions?.from);
+        await sendEmail(internalMailOptions.to, internalMailOptions.subject, internalMailOptions.html, internalMailOptions?.from);
+        await sendEmail(userMailOptions.to, userMailOptions.subject, userMailOptions.html, userMailOptions?.from);
 
 
 
@@ -48,7 +43,7 @@ const handler = async (req, res) => {
         res.status(400).json({ error: "Bad Request" });
     }
 
-    // let casestudylead = await Casestudylead.find();
+    // let ChatBotLead = await ChatBotLead.find();
     res.status(200).json({ });
 }
 
