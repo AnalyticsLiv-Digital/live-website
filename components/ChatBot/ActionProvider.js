@@ -50,6 +50,7 @@ class ActionProvider {
       widget: "subOptions",
       loading: true,
       terminateLoading: true,
+      type: "user",
     });
 
     this.addMessageToState(message, { "option": service });
@@ -59,6 +60,7 @@ class ActionProvider {
     const message = this.createChatBotMessage(`${subOption}`, {
       loading: true,
       terminateLoading: true,
+      type: "user",
     });
 
     this.addMessageToState(message, { "subOption": subOption });
