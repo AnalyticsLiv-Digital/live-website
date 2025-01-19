@@ -28,54 +28,22 @@ const config = {
     createChatBotMessage("Welcome to AnalyticsLiv!", {
       withAvatar: true,
       delay: 500,
-      // customStyles: {
-      //   text: "white",
-      //   // backgroundColor: "#04668a",
-      //   padding: "10px",
-      //   color: "white",
-      //   marginBottom: "10px",
-      //   borderRadius: "8px",
-      // },
     }),
     createChatBotMessage(`We're thrilled to have you here!`, {
       withAvatar: false,
-      delay: 1000,
-      // customStyles: {
-      //   text: "white",
-      //   // backgroundColor: "red",
-      //   color: "white",
-      //   padding: "10px",
-      //   marginBottom: "10px",
-      //   borderRadius: "8px",
-      // },
+      delay: 1500,
     }),
     createChatBotMessage(
       `At AnalyticsLiv, we specialize in data-driven marketing solutions, including programmatic media buying, web and app measurement, and custom data science tools.`,
       {
         withAvatar: false,
-        delay: 2000,
-        // customStyles: {
-        //   text: "white",
-        //   // backgroundColor: "#04668a",
-        //   padding: "10px",
-        //   color: "white",
-        //   marginBottom: "10px",
-        //   borderRadius: "8px",
-        // },
+        delay: 2500,
       }
     ),
     createChatBotMessage("How can we assist you today?", {
-      delay: 3000,
+      delay: 3500,
       withAvatar: true,
       widget: "services",
-      // customStyles: {
-      //   text: "white",
-      //   backgroundColor: "#04668a",
-      //   padding: "10px",
-      //   color: "white",
-      //   marginBottom: "10px",
-      //   borderRadius: "8px",
-      // },
     }),
   ],
   state: {

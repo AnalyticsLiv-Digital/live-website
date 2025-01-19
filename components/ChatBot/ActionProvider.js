@@ -1,8 +1,9 @@
 class ActionProvider {
-  constructor(createChatBotMessage, setStateFunc, createClientMessage) {
+  constructor(createChatBotMessage, setStateFunc, createClientMessage, stateRef) {
     this.createChatBotMessage = createChatBotMessage;
     this.setState = setStateFunc;
     this.createClientMessage = createClientMessage;
+    this.state = stateRef;
   }
 
   handleThanks = () => {
@@ -12,6 +13,28 @@ class ActionProvider {
 
     this.addMessageToState(message);
   };
+
+  handleUnknown = () => {
+    const responses = [
+      "I'm sorry, I didn't understand that. Could you rephrase?",
+      "Hmm, I didn't quite catch that. Could you provide more details?",
+      "I'm not sure how to respond to that. Can you try again?",
+      "I might need some clarification on that. What do you mean?",
+      "Let me help you. Please type your response clearly.",
+    ];
+
+    // Choose a random response from the list
+    const randomResponse =
+      responses[Math.floor(Math.random() * responses.length)];
+
+      const message = this.createChatBotMessage(`${randomResponse}`, {
+        loading: true,
+        terminateLoading: true,
+      });
+
+    this.addMessageToState(message);
+  };
+
 
 
   addMessageToState = (message, statValueWithKey) => {
@@ -43,14 +66,14 @@ class ActionProvider {
   };
 
   handleAskForEmail() {
-    const message = this.createChatBotMessage("Could you please provide your email?",{
-        loading: true,
-        terminateLoading: true,
-        delay: 1000,
-        withAvatar: true,
-      }
+    const message = this.createChatBotMessage("Could you please provide your email?", {
+      loading: true,
+      terminateLoading: true,
+      delay: 1000,
+      withAvatar: true,
+    }
     );
-    this.addMessageToState(message, {"awaitingInput":"email"});
+    this.addMessageToState(message, { "awaitingInput": "email" });
   }
 
   handleAskForPhone() {
@@ -104,6 +127,7 @@ class ActionProvider {
       });
 
       this.addMessageToState(message, { "phone": phone, "awaitingInput": null });
+      this.callApiWithState(phone);
       this.addMessageToState(thanksMessge);
     } else {
       const message = this.createChatBotMessage("That doesn't seem like a valid phone number. Can you please provide a valid number.", {
@@ -118,6 +142,34 @@ class ActionProvider {
     const regex = /^[0-9]{10}$/;
     return regex.test(phone);
   }
+
+
+  callApiWithState = async (phone) => {
+    const { option, subOption, email } = this.state;
+    const stateData = { option, subOption, email, phone: phone };
+
+    try {
+      const apiEndpoint = "/api/chatBotresponse";
+
+      // Make a POST request with the state data
+      const response = await fetch(apiEndpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(stateData),
+      });
+
+      // Handle the response
+      if (!response.ok) {
+        throw new Error(`API request failed with status ${response.status}`);
+      }
+
+      const responseData = await response.json();
+    } catch (error) {
+      console.log("Errror when calling the api ...")
+    }
+  };
 }
 
 export default ActionProvider;
