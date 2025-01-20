@@ -71,15 +71,15 @@ function MyApp({ Component, pageProps: { session, ...pageProps }, }) {
 
             <Component {...pageProps} />
 
-          <div className='App'>
-            <ChatBot />
-          </div>
+            {routerr.pathname === '/home_trial' || routerr.pathname === '/home_trial1' ? <div className='App'>
+              <ChatBot />
+            </div> : null}
 
 
-            {routerr.pathname === '/home_trial' || '/home_trial1' ? <Footer1 /> : <Footer />}
+            <Footer1 />
 
           </>}</>}
-          {/* {showPopup && (
+      {/* {showPopup && (
               <ContactPopup onClose={closePopup} onRegister={registerUser} />
             )} */}
     </SessionProvider>
