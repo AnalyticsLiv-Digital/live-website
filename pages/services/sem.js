@@ -109,8 +109,8 @@ const sem = () => {
     return (
         <>
             <Head>
-                <title>PPC Management Services | Google Ads Expert | PPC Agency</title>
-                <meta name="description" content="Maximize ROI with expert Google Ads management service at Analytics Liv, a leading performance marketing agency. Our PPC management services drive results with data-driven strategies and proven success." />
+                <title>Performance Marketing Agency in India | AnalyticsLiv</title>
+                <meta name="description" content="Maximize ROI with expert Google Ads at Analytics Liv, a leading performance marketing agency. Our PPC management services drive results with data-driven strategies and proven success." />
                 <link rel="canonical" href="https://analyticsliv.com/services/sem"></link>
             </Head>
 

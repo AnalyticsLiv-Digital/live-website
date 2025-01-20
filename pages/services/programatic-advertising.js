@@ -69,8 +69,8 @@ const service_A = () => {
     return (
         <>
             <Head>
-                <title>DV360 Account Creation | Programmatic Advertising Agency | AnalyticsLiv</title>
-                <meta name="description" content="Get started with DV360 account creation at Analytics Liv, a programmatic advertising agency. Leverage advanced targeting and data insights to elevate your digital marketing campaigns." />
+                <title>Leading Programmatic Advertising Agency in India | AnalyticsLiv</title>
+                <meta name="description" content="Analytics Liv is a leading programmatic advertising agency in India, specializing in RTB programmatic advertising. We deliver data-driven solutions to optimize your digital campaigns and drive measurable results for your business." />
                 <link rel="canonical" href="https://analyticsliv.com/services/programatic-advertising"></link>
             </Head>
 

@@ -1,7 +1,7 @@
 import React from "react";
 
-const SubOptions = ({ selectedService, ...props }) => {
-  console.log("in suboptions -->>", props);
+const SubOptions = ({ actionProvider, ...props }) => {
+  console.log("props in Suboptions component ", props)
   const subOptionsMap = {
     "Media Services": [
       "Programmatic Media DV360",
@@ -28,13 +28,18 @@ const SubOptions = ({ selectedService, ...props }) => {
     ],
   };
 
-  const subOptions = subOptionsMap[selectedService] || [];
+  const subOptions = subOptionsMap[props?.option] || [];
 
   return (
-    <div>
-      <p>Sub-options for {selectedService}:</p>
-      {subOptions.map((option, index) => (
-        <button key={index}>{option}</button>
+    <div className="max-2xl:pb-2 max-xl:pb-5">
+      {subOptions?.map((option, index) => (
+        <button
+          key={index}
+          onClick={() => actionProvider.handleSubOptionClick(option, "email")}
+          className="bg-sky-400 text-gray-800 text-[10px] 2xl:text-xs rounded-md border border-gray-200 hover:bg-sky-500 w-full text-center px-2 py-0.5 2xl:py-1"
+          >
+          {option}
+        </button>
       ))}
     </div>
   );

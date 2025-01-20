@@ -71,9 +71,9 @@ function MyApp({ Component, pageProps: { session, ...pageProps }, }) {
 
             <Component {...pageProps} />
 
-          {/* <div className='App'>
+          <div className='App'>
             <ChatBot />
-          </div> */}
+          </div>
 
 
             {routerr.pathname === '/home_trial' || '/home_trial1' ? <Footer1 /> : <Footer />}
