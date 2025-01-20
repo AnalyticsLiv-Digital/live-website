@@ -10,6 +10,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { motion } from "framer-motion";
+import OgTags from '../../components/OgTags'
 
 const customersegmentation = () => {
 
@@ -103,11 +104,14 @@ const customersegmentation = () => {
 
     return (
         <>
-            <Head>
-                <title>Customer Segmentation Services in India | AnalyticsLiv</title>
-                <meta name="description" content="Get expert customer segmentation services in India with AnalyticsLiv. Leverage audience segmentation and first-party data to optimize targeting and boost engagement." />
-                <link rel="canonical" href="https://analyticsliv.com/services/customer-segmentation"></link>
-            </Head>
+            <OgTags
+                url="https://analyticsliv.com/services/customer-segmentation"
+                title="Customer Segmentation Services in India | AnalyticsLiv"
+                description="Get expert customer segmentation services in India with AnalyticsLiv. Leverage audience segmentation and first-party data to optimize targeting and boost engagement."
+                twitterTitle="Customer Segmentation Services in India | AnalyticsLiv"
+                twitterDescription="Get expert customer segmentation services in India with AnalyticsLiv. Leverage audience segmentation and first-party data to optimize targeting and boost engagement."
+            />
+
             <section className='cshome w-full relative font-gilroy overflow-hidden'>
                 <div className='h-full'>
                     <div className="relative px-4 md:px-12 pt-8 pb-8 h-full z-20 md:py-0">

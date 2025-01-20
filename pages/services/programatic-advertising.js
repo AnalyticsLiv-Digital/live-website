@@ -8,6 +8,7 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa6";
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import Leaders from '../../components/dv360/Leaders';
+import OgTags from '../../components/OgTags';
 
 const service_A = () => {
 
@@ -68,11 +69,14 @@ const service_A = () => {
 
     return (
         <>
-            <Head>
-                <title>Leading Programmatic Advertising Agency in India | AnalyticsLiv</title>
-                <meta name="description" content="Analytics Liv is a leading programmatic advertising agency in India, specializing in RTB programmatic advertising. We deliver data-driven solutions to optimize your digital campaigns and drive measurable results for your business." />
-                <link rel="canonical" href="https://analyticsliv.com/services/programatic-advertising"></link>
-            </Head>
+
+            <OgTags
+                url="https://analyticsliv.com/services/programatic-advertising"
+                title="Leading Programmatic Advertising Agency in India | AnalyticsLiv"
+                description="AnalyticsLiv is a leading programmatic advertising agency in India, specializing in RTB programmatic advertising. We deliver data-driven solutions to optimize your digital campaigns and drive measurable results for your business."
+                twitterTitle="Leading Programmatic Advertising Agency in India | AnalyticsLiv"
+                twitterDescription="Analytics Liv is a leading programmatic advertising agency in India, specializing in RTB programmatic advertising. We deliver data-driven solutions to optimize your digital campaigns and drive measurable results for your business."
+            />
 
             <section className='prograhome w-full relative font-gilroy overflow-hidden md:pt-5'>
                 <div className='h-full'>
@@ -544,7 +548,7 @@ const service_A = () => {
                 </div>
             </section>
 
-            <Leaders headingFontSize="28px"/>
+            <Leaders headingFontSize="28px" />
 
             <section className='programeasurement relative font-gilroy overflow-hidden'>
                 <div className="relative px-4 md:px-12 pt-8 md:pt-0 pb-8 md:pb-3 z-20">

@@ -4,6 +4,7 @@ import Head from "next/head";
 import { InlineWidget } from "react-calendly";
 import * as Scroll from "react-scroll";
 import { useRouter } from "next/router";
+import OgTags from "../../components/OgTags";
 
 const { Element: ScrollElement } = Scroll;
 
@@ -22,17 +23,13 @@ const training = () => {
   }, [query]);
   return (
     <>
-      <Head>
-        <title>Google Ads Training Services | AnalyticsLiv</title>
-        <meta
-          name="description"
-          content="Master Google Ads with expert training from AnalyticsLiv. Learn PPC strategies, campaign optimization, and boost your ROI with hands-on, results-driven guidance."
-        />
-        <link
-          rel="canonical"
-          href="https://analyticsliv.com/services/training"
-        ></link>
-      </Head>
+      <OgTags
+        url="https://analyticsliv.com/services/training"
+        title="Google Ads Training Services | AnalyticsLiv"
+        description="Master Google Ads with expert training from AnalyticsLiv. Learn PPC strategies, campaign optimization, and boost your ROI with hands-on, results-driven guidance."
+        twitterTitle="Google Ads Training Services | AnalyticsLiv"
+        twitterDescription="Master Google Ads with expert training from AnalyticsLiv. Learn PPC strategies, campaign optimization, and boost your ROI with hands-on, results-driven guidance."
+      />
       <section className="pb-16">
         <div class="md:mt-4 px-4 md:px-20 pt-8 md:pt-11 lg:flex justify-around lg:items-center">
           <div class="inner-banner lg:w-1/2 text-center flex flex-col justify-center">

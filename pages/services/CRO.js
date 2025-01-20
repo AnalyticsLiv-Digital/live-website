@@ -8,6 +8,7 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa6";
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { motion } from "framer-motion";
+import OgTags from '../../components/OgTags';
 
 const cro = () => {
 
@@ -90,11 +91,15 @@ const cro = () => {
 
     return (
         <>
-            <Head>
-                <title>Expert Conversion Rate Optimization Services | AnalyticsLiv</title>
-                <meta name="description" content="Boost your conversions with AnalyticsLiv, a leading conversion rate optimization agency. Our expert services optimize your website to increase leads, sales, and ROI." />
-                <link rel="canonical" href="https://analyticsliv.com/services/CRO"></link>
-            </Head>
+
+            <OgTags
+                url="https://analyticsliv.com/services/CRO"
+                title="Expert Conversion Rate Optimization Services | AnalyticsLiv"
+                description="Boost your conversions with AnalyticsLiv, a leading conversion rate optimization agency. Our expert services optimize your website to increase leads, sales, and ROI."
+                twitterTitle="Expert Conversion Rate Optimization Services | AnalyticsLiv"
+                twitterDescription="Boost your conversions with AnalyticsLiv, a leading conversion rate optimization agency. Our expert services optimize your website to increase leads, sales, and ROI."
+            />
+
             <section className='crohome w-full relative font-gilroy overflow-hidden'>
                 <div className='h-full'>
                     <div className="relative px-4 md:px-12 pt-8 pb-8 h-full z-20 md:py-0">

@@ -3,6 +3,7 @@ import React, { useState, useRef } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
 import Image from 'next/image';
+import OgTags from '../../components/OgTags';
 
 
 const webapp = () => {
@@ -11,11 +12,13 @@ const webapp = () => {
 
     return (
         <>
-            <Head>
-                <title>Expert Google Analytics 4 Consulting Services | AnalyticsLiv</title>
-                <meta name="description" content="Looking for a GA4 expert? AnalyticsLiv offers professional Google Analytics 4 consulting services to optimize tracking, improve performance and drive business growth." />
-                <link rel="canonical" href="https://analyticsliv.com/services/web-app-measurement"></link>
-            </Head>
+            <OgTags
+                url="https://analyticsliv.com/services/web-app-measurement"
+                title="Expert Google Analytics 4 Consulting Services | AnalyticsLiv"
+                description="Looking for a GA4 expert? AnalyticsLiv offers professional Google Analytics 4 consulting services to optimize tracking, improve performance and drive business growth."
+                twitterTitle="Expert Google Analytics 4 Consulting Services | AnalyticsLiv"
+                twitterDescription="Looking for a GA4 expert? AnalyticsLiv offers professional Google Analytics 4 consulting services to optimize tracking, improve performance and drive business growth."
+            />
 
             <section className='webapphome w-full relative font-gilroy overflow-hidden'>
                 <div className='h-full'>
