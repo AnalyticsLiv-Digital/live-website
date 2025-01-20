@@ -102,6 +102,7 @@ class ActionProvider {
     } else {
       const message = this.createChatBotMessage("That doesn't seem like a valid email, can you please provide a valid email.", {
         withAvatar: true,
+        delay: 1000,
       });
 
       this.addMessageToState(message);
@@ -121,10 +122,11 @@ class ActionProvider {
     if (this.validatePhone(phone)) {
       const message = this.createChatBotMessage(`Thank you! We received your phone number: ${phone}`, {
         withAvatar: true,
+        delay: 1000,
       });
 
       const thanksMessge = this.createChatBotMessage("You're all set! Let us know if you need further assistance.", {
-        delay: 1000,
+        delay: 2000,
         withAvatar: true,
       });
 

@@ -12,7 +12,7 @@ const Services = ({ setState, actionProvider }) => {
   ];
 
   return (
-    <div className="max-2xl:pb-5">
+    <div className="max-2xl:pb-2 max-xl:pb-5">
       {/* <p className="text-[10px] 2xl:text-sm font-medium">Select a service:</p> */}
       <div className="flex flex-col justify-center items-center gap-1">
         {services.map((service, index) => (

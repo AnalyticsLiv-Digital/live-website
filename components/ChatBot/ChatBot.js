@@ -25,7 +25,7 @@ export default function App() {
     <div className="">
       {showBot && (
         <div
-          className="max-md:my-8 md:m-8 flex flex-col max-h-[370px] 2xl:max-h-[400px] min-h-[250px] 2xl:min-h-[300px] fixed right-10 bottom-[55px] z-[9999] bg-white shadow-lg rounded-md overflow-y-hidden custom-scrollbar"
+          className="max-md:my-8 md:m-8 flex flex-col md:w-[370px] max-h-[380px] 2xl:max-h-[450px] min-h-[250px] 2xl:min-h-[300px] fixed right-10 bottom-[55px] z-[9999] bg-white shadow-lg rounded-md overflow-y-hidden custom-scrollbar"
           // style={{ maxHeight: "400px", minHeight: "300px" }}
         >
           <Chatbot

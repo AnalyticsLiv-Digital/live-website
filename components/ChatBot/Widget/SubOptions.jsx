@@ -31,7 +31,7 @@ const SubOptions = ({ actionProvider, ...props }) => {
   const subOptions = subOptionsMap[props?.option] || [];
 
   return (
-    <div>
+    <div className="max-2xl:pb-2 max-xl:pb-5">
       {subOptions?.map((option, index) => (
         <button
           key={index}
