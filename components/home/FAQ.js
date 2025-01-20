@@ -61,7 +61,7 @@ const FAQ = () => {
     ];
 
     return (
-        <section className="flex mb-14 md:mb-3 flex-col md:flex-row px-4 py-8 md:px-14 lg:px-16 md:py-12 gap-5 lg:gap-8">
+        <section className="flex mb-14 md:mb-3 flex-col md:flex-row px-4 py-8 md:px-14 lg:px-16 md:pb-12 xl:pt-5 gap-5 lg:gap-8">
             <div className="md:w-1/3 flex flex-col md:gap-7 justify-center">
                 <h3 className="text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-gray-800 leading-tight">
                     Frequently Asked <span className="text-[#08A4F7]">Questions</span>
@@ -77,7 +77,7 @@ const FAQ = () => {
                 {content?.map((item, index) => (
                     <div
                         key={index}
-                        className={`rounded-2xl px-4 md:px-12 py-4 md:py-5 cursor-pointer ${activeIndex === index ? 'text-white bg-[#08A4F7]' : 'text-[#232A42]'
+                        className={`rounded-2xl px-4 lg:px-12 py-4 lg:py-5 cursor-pointer ${activeIndex === index ? 'text-white bg-[#08A4F7]' : 'text-[#232A42]'
                             }`}
                         style={{
                             boxShadow: activeIndex === index ? 'none' : '18px 15px 35px 0px #00000017',
