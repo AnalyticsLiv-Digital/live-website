@@ -6,7 +6,7 @@ const Collaborate = () => {
             <div className='lg:w-[40%] bg-[#30486A] flex flex-col justify-center items-start gap-7 max-lg:py-7 px-4 lg:px-20'>
                 <div className='text-3xl md:text-4xl font-bold text-white'>Let's Collaborate for Mutual Success</div>
                 <div className='text-lg font-normal text-[#E2DEDC]'>Your success story begins with a click, explore our consulting solutions for transformative results.</div>
-                <button className='mainbutn'>Contact Us Now</button>
+                <a href='/contact'><button className='mainbutn'>Contact Us Now</button></a>
             </div>
             <div className='lg:w-[60%] min-h-[250px] sm:min-h-[350px] overflow-hidden 2xl:min-h-[430px] flex'>
                 <div className='w-full lg:w-[70%] relative'>
