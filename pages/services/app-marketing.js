@@ -2,23 +2,21 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
+import OgTags from "../../components/OgTags";
 
 const app_marketing = () => {
   const [activetab, setActivetab] = useState("1");
 
   return (
     <>
-      <Head>
-        <title>Best Mobile App Marketing Services in India | AnalyticsLiv</title>
-        <meta
-          name="description"
-          content="Maximize your app's reach with AnalyticsLiv's top mobile app marketing services in India. Increase downloads, user engagement, and retention with proven strategies."
-        />
-        <link
-          rel="canonical"
-          href="https://analyticsliv.com/services/app-marketing"
-        ></link>
-      </Head>
+      <OgTags
+        url="https://analyticsliv.com/services/app-marketing"
+        title="Best Mobile App Marketing Services in India | AnalyticsLiv"
+        description="Maximize your app's reach with AnalyticsLiv's top mobile app marketing services in India. Increase downloads, user engagement, and retention with proven strategies."
+        twitterTitle="Best Mobile App Marketing Services in India | AnalyticsLiv"
+        twitterDescription="Maximize your app's reach with AnalyticsLiv's top mobile app marketing services in India. Increase downloads, user engagement, and retention with proven strategies."
+      />
+
       <section>
         <div className="relative md:px-24 px-4">
           <div className="-z-10 absolute left-0">
@@ -68,9 +66,8 @@ const app_marketing = () => {
                 <div className="p-8 pl-[25px] -mr-[30px] rounded-l-[10px] xl:w-[400px] xl:ml-auto">
                   <div
                     onClick={() => setActivetab("1")}
-                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                      activetab === "1" ? "border-t-[#0092f4ab]" : ""
-                    }`}
+                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "1" ? "border-t-[#0092f4ab]" : ""
+                      }`}
                   >
                     <div>
                       <img
@@ -83,9 +80,8 @@ const app_marketing = () => {
                   </div>
                   <div
                     onClick={() => setActivetab("2")}
-                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                      activetab === "2" ? "border-t-[#0092f4ab]" : ""
-                    }`}
+                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "2" ? "border-t-[#0092f4ab]" : ""
+                      }`}
                   >
                     <div>
                       <img
@@ -98,9 +94,8 @@ const app_marketing = () => {
                   </div>
                   <div
                     onClick={() => setActivetab("3")}
-                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                      activetab === "3" ? "border-t-[#0092f4ab]" : ""
-                    }`}
+                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "3" ? "border-t-[#0092f4ab]" : ""
+                      }`}
                   >
                     <div>
                       <img
@@ -113,9 +108,8 @@ const app_marketing = () => {
                   </div>
                   <div
                     onClick={() => setActivetab("4")}
-                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                      activetab === "4" ? "border-t-[#0092f4ab]" : ""
-                    }`}
+                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "4" ? "border-t-[#0092f4ab]" : ""
+                      }`}
                   >
                     <div>
                       <img
@@ -128,9 +122,8 @@ const app_marketing = () => {
                   </div>
                   <div
                     onClick={() => setActivetab("5")}
-                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                      activetab === "5" ? "border-t-[#0092f4ab]" : ""
-                    }`}
+                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "5" ? "border-t-[#0092f4ab]" : ""
+                      }`}
                   >
                     <div>
                       <img
@@ -143,9 +136,8 @@ const app_marketing = () => {
                   </div>
                   <div
                     onClick={() => setActivetab("6")}
-                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                      activetab === "6" ? "border-t-[#0092f4ab]" : ""
-                    }`}
+                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "6" ? "border-t-[#0092f4ab]" : ""
+                      }`}
                   >
                     <div>
                       <img
@@ -158,9 +150,8 @@ const app_marketing = () => {
                   </div>
                   <div
                     onClick={() => setActivetab("7")}
-                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                      activetab === "7" ? "border-t-[#0092f4ab]" : ""
-                    }`}
+                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "7" ? "border-t-[#0092f4ab]" : ""
+                      }`}
                   >
                     <div>
                       <img
@@ -192,9 +183,8 @@ const app_marketing = () => {
               <div className="xl:w-[60%] lg:w-[65%] w-full h-[500px] flex items-start justify-center rounded-[15px] pt-5 mb-[65px]">
                 <div
                   id="tab1"
-                  className={`${activetab == 1 && "block"} ${
-                    activetab != 1 && "hidden"
-                  } relative py-[30px] px-[50px] text-base font-medium leading-8`}
+                  className={`${activetab == 1 && "block"} ${activetab != 1 && "hidden"
+                    } relative py-[30px] px-[50px] text-base font-medium leading-8`}
                 >
                   <div className="relative">
                     <p className="text-[#efefef] text-[20px] font-semibold mb-5">
@@ -220,9 +210,8 @@ const app_marketing = () => {
 
                 <div
                   id="tab2"
-                  className={`${activetab == 2 && "block"} ${
-                    activetab != 2 && "hidden"
-                  } relative py-[30px] px-[50px] text-base font-medium leading-8`}
+                  className={`${activetab == 2 && "block"} ${activetab != 2 && "hidden"
+                    } relative py-[30px] px-[50px] text-base font-medium leading-8`}
                 >
                   <div className="relative pl-1">
                     <p className="text-[#efefef] text-[20px] font-semibold mb-5">
@@ -248,9 +237,8 @@ const app_marketing = () => {
 
                 <div
                   id="tab3"
-                  className={`${activetab == 3 && "block"} ${
-                    activetab != 3 && "hidden"
-                  } relative py-[30px] px-[40px] text-base font-medium leading-8`}
+                  className={`${activetab == 3 && "block"} ${activetab != 3 && "hidden"
+                    } relative py-[30px] px-[40px] text-base font-medium leading-8`}
                 >
                   <div className="relative pl-1">
                     <p className="text-[#efefef] text-[20px] font-semibold mb-5">
@@ -275,9 +263,8 @@ const app_marketing = () => {
                 </div>
                 <div
                   id="tab4"
-                  className={`${activetab == 4 && "block"} ${
-                    activetab != 4 && "hidden"
-                  } relative py-[30px] px-[50px] text-base font-medium leading-8`}
+                  className={`${activetab == 4 && "block"} ${activetab != 4 && "hidden"
+                    } relative py-[30px] px-[50px] text-base font-medium leading-8`}
                 >
                   <p className="text-[#efefef] text-[20px] font-semibold mb-5">
                     Multi-Channel Advertising:
@@ -301,9 +288,8 @@ const app_marketing = () => {
 
                 <div
                   id="tab5"
-                  className={`${activetab == 5 && "block"} ${
-                    activetab != 5 && "hidden"
-                  } relative py-[30px] px-[50px] text-base font-medium leading-8`}
+                  className={`${activetab == 5 && "block"} ${activetab != 5 && "hidden"
+                    } relative py-[30px] px-[50px] text-base font-medium leading-8`}
                 >
                   <p className="text-[#efefef] text-[20px] font-semibold mb-5">
                     Campaign Optimization and Performance Tracking:
@@ -328,9 +314,8 @@ const app_marketing = () => {
 
                 <div
                   id="tab6"
-                  className={`${activetab == 6 && "block"} ${
-                    activetab != 6 && "hidden"
-                  } relative py-[30px] px-[50px] text-base font-medium leading-8`}
+                  className={`${activetab == 6 && "block"} ${activetab != 6 && "hidden"
+                    } relative py-[30px] px-[50px] text-base font-medium leading-8`}
                 >
                   <p className="text-[#efefef] text-[20px] font-semibold mb-5">
                     Remarketing and Retention Strategies:
@@ -353,9 +338,8 @@ const app_marketing = () => {
                 </div>
                 <div
                   id="tab7"
-                  className={`${activetab == 7 && "block"} ${
-                    activetab != 7 && "hidden"
-                  } relative py-[30px] px-[50px] text-base font-medium leading-8`}
+                  className={`${activetab == 7 && "block"} ${activetab != 7 && "hidden"
+                    } relative py-[30px] px-[50px] text-base font-medium leading-8`}
                 >
                   <p className="text-[#efefef] text-[20px] font-semibold mb-5">
                     Analytics and Insights:
@@ -383,9 +367,8 @@ const app_marketing = () => {
               <div className="panel_list webbox mb-4 rounded-b-[15px]">
                 <div
                   onClick={() => setActivetab("1")}
-                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                    activetab === "1" ? "border-t-[#0092f4ab]" : ""
-                  }`}
+                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "1" ? "border-t-[#0092f4ab]" : ""
+                    }`}
                 >
                   <div>
                     <img
@@ -398,11 +381,9 @@ const app_marketing = () => {
                 </div>
                 <div
                   id="tab1"
-                  className={`${
-                    activetab == 1 && "items-center justify-center"
-                  } ${
-                    activetab != 1 && "hidden"
-                  } relative p-5 pt-[10px] text-[13px] font-medium leading-8`}
+                  className={`${activetab == 1 && "items-center justify-center"
+                    } ${activetab != 1 && "hidden"
+                    } relative p-5 pt-[10px] text-[13px] font-medium leading-8`}
                 >
                   <p className="text-[#ffffff] mb-[10px]">
                     Our experienced team will work closely with you to
@@ -424,9 +405,8 @@ const app_marketing = () => {
               <div className="panel_list webbox mb-4 rounded-b-[15px]">
                 <div
                   onClick={() => setActivetab("2")}
-                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                    activetab === "2" ? "border-t-[#0092f4ab]" : ""
-                  }`}
+                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "2" ? "border-t-[#0092f4ab]" : ""
+                    }`}
                 >
                   <div>
                     <img
@@ -439,11 +419,9 @@ const app_marketing = () => {
                 </div>
                 <div
                   id="tab2"
-                  className={`${
-                    activetab == 2 && " items-center justify-center"
-                  } ${
-                    activetab != 2 && "hidden"
-                  } relative p-5 pt-[10px] text-[13px] font-medium leading-8`}
+                  className={`${activetab == 2 && " items-center justify-center"
+                    } ${activetab != 2 && "hidden"
+                    } relative p-5 pt-[10px] text-[13px] font-medium leading-8`}
                 >
                   <p className="text-[#ffffff]">
                     Leveraging the power of DV360 and Google Ads, we'll identify
@@ -465,9 +443,8 @@ const app_marketing = () => {
               <div className="panel_list webbox mb-4 rounded-b-[15px]">
                 <div
                   onClick={() => setActivetab("3")}
-                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                    activetab === "3" ? "border-t-[#0092f4ab]" : ""
-                  }`}
+                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "3" ? "border-t-[#0092f4ab]" : ""
+                    }`}
                 >
                   <div>
                     <img
@@ -480,11 +457,9 @@ const app_marketing = () => {
                 </div>
                 <div
                   id="tab3"
-                  className={`${
-                    activetab == 3 && "items-center justify-center"
-                  } ${
-                    activetab != 3 && "hidden"
-                  } relative p-5 pt-[10px] text-[13px] font-medium leading-8`}
+                  className={`${activetab == 3 && "items-center justify-center"
+                    } ${activetab != 3 && "hidden"
+                    } relative p-5 pt-[10px] text-[13px] font-medium leading-8`}
                 >
                   <p className="text-[#ffffff] mb-[10px]">
                     Our creative team will design visually stunning and
@@ -507,9 +482,8 @@ const app_marketing = () => {
               <div className="panel_list webbox mb-4 rounded-b-[15px]">
                 <div
                   onClick={() => setActivetab("4")}
-                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                    activetab === "4" ? "border-t-[#0092f4ab]" : ""
-                  }`}
+                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "4" ? "border-t-[#0092f4ab]" : ""
+                    }`}
                 >
                   <div>
                     <img
@@ -522,11 +496,9 @@ const app_marketing = () => {
                 </div>
                 <div
                   id="tab4"
-                  className={`${
-                    activetab == 4 && " items-center justify-center"
-                  } ${
-                    activetab != 4 && "hidden"
-                  } relative p-5 pt-[10px] text-[13px] font-medium leading-8`}
+                  className={`${activetab == 4 && " items-center justify-center"
+                    } ${activetab != 4 && "hidden"
+                    } relative p-5 pt-[10px] text-[13px] font-medium leading-8`}
                 >
                   <p className="text-[#ffffff]">
                     With DV360 and Google Ads, we'll implement a multi-channel
@@ -549,9 +521,8 @@ const app_marketing = () => {
               <div className="panel_list webbox mb-4 rounded-b-[15px]">
                 <div
                   onClick={() => setActivetab("5")}
-                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                    activetab === "5" ? "border-t-[#0092f4ab]" : ""
-                  }`}
+                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "5" ? "border-t-[#0092f4ab]" : ""
+                    }`}
                 >
                   <div>
                     <img
@@ -564,11 +535,9 @@ const app_marketing = () => {
                 </div>
                 <div
                   id="tab5"
-                  className={`${
-                    activetab == 5 && " items-center justify-center"
-                  } ${
-                    activetab != 5 && "hidden"
-                  } relative p-5 pt-[10px] font-gilroy2 text-[13px] font-medium leading-8`}
+                  className={`${activetab == 5 && " items-center justify-center"
+                    } ${activetab != 5 && "hidden"
+                    } relative p-5 pt-[10px] font-gilroy2 text-[13px] font-medium leading-8`}
                 >
                   <p className="text-[#ffffff] mb-[10px]">
                     Our team will continuously monitor and optimize your app
@@ -591,9 +560,8 @@ const app_marketing = () => {
               <div className="panel_list webbox mb-4 rounded-b-[15px]">
                 <div
                   onClick={() => setActivetab("6")}
-                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                    activetab === "6" ? "border-t-[#0092f4ab]" : ""
-                  }`}
+                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "6" ? "border-t-[#0092f4ab]" : ""
+                    }`}
                 >
                   <div>
                     <img
@@ -606,11 +574,9 @@ const app_marketing = () => {
                 </div>
                 <div
                   id="tab6"
-                  className={`${
-                    activetab == 6 && " items-center justify-center"
-                  } ${
-                    activetab != 6 && "hidden"
-                  } relative p-5 pt-[10px] font-gilroy2 text-[13px] font-medium leading-8`}
+                  className={`${activetab == 6 && " items-center justify-center"
+                    } ${activetab != 6 && "hidden"
+                    } relative p-5 pt-[10px] font-gilroy2 text-[13px] font-medium leading-8`}
                 >
                   <p className="text-[#ffffff] mb-[10px]">
                     We'll implement remarketing campaigns to re-engage users who
@@ -632,9 +598,8 @@ const app_marketing = () => {
               <div className="panel_list webbox mb-4 rounded-b-[15px]">
                 <div
                   onClick={() => setActivetab("7")}
-                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                    activetab === "7" ? "border-t-[#0092f4ab]" : ""
-                  }`}
+                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "7" ? "border-t-[#0092f4ab]" : ""
+                    }`}
                 >
                   <div>
                     <img
@@ -647,11 +612,9 @@ const app_marketing = () => {
                 </div>
                 <div
                   id="tab7"
-                  className={`${
-                    activetab == 7 && " items-center justify-center"
-                  } ${
-                    activetab != 7 && "hidden"
-                  } relative p-5 pt-[10px] font-gilroy2 text-[13px] font-medium leading-8`}
+                  className={`${activetab == 7 && " items-center justify-center"
+                    } ${activetab != 7 && "hidden"
+                    } relative p-5 pt-[10px] font-gilroy2 text-[13px] font-medium leading-8`}
                 >
                   <p className="text-[#ffffff] mb-[10px]">
                     Our team will utilize advanced analytics tools to provide

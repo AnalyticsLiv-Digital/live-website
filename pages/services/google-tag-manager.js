@@ -6,7 +6,8 @@ import Slider from 'react-slick';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-const google_tag_manager = () => {
+import OgTags from '../../components/OgTags';
+const google_tag_manager = ({brandsdata}) => {
     const [showMore, setShowMore] = useState(false);
     const toggleShowMore = () => {
         setShowMore(prevShowMore => !prevShowMore);
@@ -99,16 +100,7 @@ const google_tag_manager = () => {
             },
         ],
     };
-    const Trusteddata = {
-        brand: [
-            { logo: "/ThoughtSpot_logo.png", alt: "ThoughtSpot" },
-            { logo: "/Brizo_logo.png", alt: "Brizo" },
-            { logo: "/bluecrew.png", alt: "BlueCrew" },
-            { logo: "/edanz_logo.png", alt: "Edanz" },
-            { logo: "/shoebacca.png", alt: "Shoebacca" },
-            { logo: "/wholesalesockdeals.png", alt: "WholesaleSockDeals" }
-        ]
-    };
+
     const content = [
         {
             id: 1,
@@ -185,11 +177,14 @@ const google_tag_manager = () => {
 
     return (
         <>
-            <Head>
-                <title>Expert Google Tag Manager Services | AnalyticsLiv</title>
-                <meta name="description" content="Track your data with Google Tag Manager from AnalyticsLiv. We specialize in data-driven attribution to optimize your marketing strategies and drive growth." />
-                <link rel="canonical" href="https://analyticsliv.com/services/google-tag-manager"></link>
-            </Head>
+
+            <OgTags
+                url="https://analyticsliv.com/services/google-tag-manager"
+                title="Expert Google Tag Manager Services | AnalyticsLiv"
+                description="Track your data with Google Tag Manager from AnalyticsLiv. We specialize in data-driven attribution to optimize your marketing strategies and drive growth."
+                twitterTitle="GTM Services by Analytics Liv | Grow Your Business"
+                twitterDescription="Optimize your marketing with GTM. Analytics Liv provides expert consulting for accurate data tracking and strategy improvements."
+            />
             <section class="banner relative h-full pt-10 pb-20"
             // style={{backgroundImage: 'url(https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/Shape-banner.png)', backgroundRepeat: 'no-repeat', 
             // backgroundSize: 'cover'}}
@@ -228,7 +223,7 @@ const google_tag_manager = () => {
                 <div className=' max-sm:w-[90dvw] max-lg:w-[90dvw] w-[100%] m-auto'>
                     <Marquee gradient={false} puseOnHover="true">
                         <div className='flex space-x-8 justify-center py-4 px-4 mt-4'>
-                            {Trusteddata.brand.map((brand, index) => (
+                            {brandsdata.brand.map((brand, index) => (
                                 <div key={index} className=''>
                                     <img src={brand.logo} alt={brand.alt} className='h-[50px] mx-5' />
                                 </div>
@@ -407,17 +402,17 @@ const google_tag_manager = () => {
 
 export default google_tag_manager
 
-// export async function getServerSideProps(context) {
-//     // Fetch data from external API
+export async function getServerSideProps(context) {
+    // Fetch data from external API
 
-//     const res = await fetch(`${process.env.domain}/api/ga4brands`)
-//     const brandsdata = await res.json()
+    const res = await fetch(`${process.env.domain}/api/ga4brands`)
+    const brandsdata = await res.json()
 
 
-//     //console.log(brandsdata);
-//     // Pass data to the page via props
-//     return { props: { brandsdata } }
-// }
+    //console.log(brandsdata);
+    // Pass data to the page via props
+    return { props: { brandsdata } }
+}
 
 
 

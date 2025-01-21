@@ -10,6 +10,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Image from 'next/image';
 import { motion } from "framer-motion";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import OgTags from '../../components/OgTags';
 
 const Serversidetracking = () => {
 
@@ -138,12 +139,13 @@ const Serversidetracking = () => {
 
     return (
         <>
-            <Head>
-                <title>Server-Side Analytics Tracking & Web Analytics Solutions | AnalyticsLiv</title>
-                <meta name="description" content="Get data accuracy with server-side analytics tracking from AnalyticsLiv. Our tracking solutions provide deeper insights, optimizing performance and driving business success." />
-                <link rel="canonical" href="https://analyticsliv.com/services/server-side-tracking"></link>
-            </Head>
-
+            <OgTags
+                url="https://analyticsliv.com/services/server-side-tracking"
+                title="Server-Side Analytics Tracking & Web Analytics Solutions | AnalyticsLiv"
+                description="Get data accuracy with server-side analytics tracking from AnalyticsLiv. Our tracking solutions provide deeper insights, optimizing performance and driving business success."
+                twitterTitle="Server-Side Analytics Tracking & Web Analytics Solutions | AnalyticsLiv"
+                twitterDescription="Get data accuracy with server-side analytics tracking from AnalyticsLiv. Our tracking solutions provide deeper insights, optimizing performance and driving business success."
+            />
 
             <section className='ssthome w-full relative font-gilroy overflow-hidden'>
                 <div className='h-full'>

@@ -36,8 +36,9 @@ const SubOptions = ({ actionProvider, ...props }) => {
         <button
           key={index}
           onClick={() => actionProvider.handleSubOptionClick(option, "email")}
-          className="bg-sky-400 text-gray-800 text-[10px] 2xl:text-xs rounded-md border border-gray-200 hover:bg-sky-500 w-full text-center px-2 py-0.5 2xl:py-1"
-          >
+          className={`text-white text-[10px] 2xl:text-xs rounded-md border border-gray-200 text-center px-2 2xl:px-2 py-0.5 2xl:py-1 
+            ${props.state.subOption === option ? "bg-sky-500" : "bg-gray-500 hover:bg-sky-400"}`}
+        >
           {option}
         </button>
       ))}

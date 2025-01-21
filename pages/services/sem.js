@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { motion } from "framer-motion";
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import OgTags from '../../components/OgTags';
 
 const sem = () => {
 
@@ -108,11 +109,13 @@ const sem = () => {
 
     return (
         <>
-            <Head>
-                <title>Performance Marketing Agency in India | AnalyticsLiv</title>
-                <meta name="description" content="Maximize ROI with expert Google Ads at Analytics Liv, a leading performance marketing agency. Our PPC management services drive results with data-driven strategies and proven success." />
-                <link rel="canonical" href="https://analyticsliv.com/services/sem"></link>
-            </Head>
+            <OgTags
+                url="https://analyticsliv.com/services/sem"
+                title="Performance Marketing Agency in India | AnalyticsLiv"
+                description="Maximize ROI with expert Google Ads at AnalyticsLiv, a leading performance marketing agency. Our PPC management services drive results with data-driven strategies and proven success."
+                twitterTitle="Performance Marketing Agency in India | AnalyticsLiv"
+                twitterDescription="Maximize ROI with expert Google Ads at AnalyticsLiv, a leading performance marketing agency. Our PPC management services drive results with data-driven strategies and proven success."
+            />
 
             <section className='ssthome w-full relative font-gilroy overflow-hidden'>
                 <div className='h-full'>
@@ -462,7 +465,7 @@ const sem = () => {
                                         </div>
                                         {isFaqfstVisible && (
                                             <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} className='text-[14px] font-medium leading-[1.7em] pb-2'>
-                                               SEM encompasses both paid search advertising (PPC) and organic search engine optimization (SEO) efforts. SEO focuses on improving your website's ranking in organic search results, while SEM includes paid advertising campaigns to appear at the top of SERPs.
+                                                SEM encompasses both paid search advertising (PPC) and organic search engine optimization (SEO) efforts. SEO focuses on improving your website's ranking in organic search results, while SEM includes paid advertising campaigns to appear at the top of SERPs.
                                             </motion.div>
                                         )}
                                     </div>
@@ -500,7 +503,7 @@ const sem = () => {
                                         </div>
                                         {isFaqthrdVisible && (
                                             <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} className='text-[14px] font-medium leading-[1.7em] pb-2'>
-                                               While it's possible to manage your own SEM campaigns, it requires ongoing effort, expertise, and knowledge of best practices. Our experienced team can handle the complexities of SEM, freeing you to focus on running your business.
+                                                While it's possible to manage your own SEM campaigns, it requires ongoing effort, expertise, and knowledge of best practices. Our experienced team can handle the complexities of SEM, freeing you to focus on running your business.
                                             </motion.div>
                                         )}
                                     </div>
@@ -519,7 +522,7 @@ const sem = () => {
                                         </div>
                                         {isFaqfurVisible && (
                                             <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} className='text-[14px] font-medium leading-[1.7em] pb-2'>
-                                               The timeframe for seeing results from SEM can vary depending on your campaign goals and competitiveness. However, well-managed SEM campaigns can start generating leads within a few weeks.
+                                                The timeframe for seeing results from SEM can vary depending on your campaign goals and competitiveness. However, well-managed SEM campaigns can start generating leads within a few weeks.
                                             </motion.div>
                                         )}
                                     </div>
@@ -538,7 +541,7 @@ const sem = () => {
                                         </div>
                                         {isFaqfvVisible && (
                                             <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} className='text-[14px] font-medium leading-[1.7em] pb-2'>
-                                              We'll work closely with you to understand your business objectives and develop a targeted SEM strategy. We'll manage your campaigns, optimize them for performance, and provide regular reports with insights to track your progress.
+                                                We'll work closely with you to understand your business objectives and develop a targeted SEM strategy. We'll manage your campaigns, optimize them for performance, and provide regular reports with insights to track your progress.
                                             </motion.div>
                                         )}
                                     </div>

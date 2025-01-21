@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
+import OgTags from "../../components/OgTags";
 
 const cookieLanding = ({ brandsdata }) => {
   const NextArrow = (props) => {
@@ -169,11 +170,15 @@ const cookieLanding = ({ brandsdata }) => {
 
   return (
     <>
-      <Head>
-        <title>Expert GDPR Compliance Services & Solutions | AnalyticsLiv</title>
-        <meta name="description" content="Protect your business with AnalyticsLiv’s expert GDPR compliance services. We offer customized solutions to ensure data privacy, reduce risks, and maintain full regulatory compliance." />
-        <link rel="canonical" href="https://analyticsliv.com/services/gdpr-compliance"></link>
-      </Head>
+
+      <OgTags
+        url="https://analyticsliv.com/services/gdpr-compliance"
+        title="Expert GDPR Compliance Services & Solutions | AnalyticsLiv"
+        description="Protect your business with AnalyticsLiv’s expert GDPR compliance services. We offer customized solutions to ensure data privacy, reduce risks, and maintain full regulatory compliance."
+        twitterTitle="Expert GDPR Compliance Services & Solutions | AnalyticsLiv"
+        twitterDescription="Protect your business with AnalyticsLiv’s expert GDPR compliance services. We offer customized solutions to ensure data privacy, reduce risks, and maintain full regulatory compliance."
+      />
+
       <div className="">
         <section className="flex max-lg:flex-wrap-reverse lg:px-10 xl:px-28 w-full justify-between gap-12 2xl:gap-16 py-6 lg:py-16 2xl:py-24">
           <div className="w-full lg:w-1/2 max-sm:px-4 max-md:mt-[25dvh] max-lg:mt-[35dvh]">

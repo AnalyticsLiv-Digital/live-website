@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Head from "next/head";
 import Link from "next/link";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import OgTags from "../../components/OgTags";
 
 export default function AutoPlay() {
   const [activetab, setActivetab] = useState("1");
@@ -100,17 +101,14 @@ export default function AutoPlay() {
 
   return (
     <>
-      <Head>
-        <title>Get Insights with Expert Data Analytics Visualization at AnalyticsLiv</title>
-        <meta
-          name="description"
-          content="Discover insights with expert data analytics visualization at Analytics Liv. We turn complex data into clear, actionable visuals to drive smarter decisions and growth."
-        />
-        <link
-          rel="canonical"
-          href="https://analyticsliv.com/services/data-reporting-analysis"
-        ></link>
-      </Head>
+      <OgTags
+        url="https://analyticsliv.com/services/data-reporting-analysis"
+        title="Get Insights with Expert Data Analytics Visualization at AnalyticsLiv"
+        description="Discover insights with expert data analytics visualization at AnalyticsLiv. We turn complex data into clear, actionable visuals to drive smarter decisions and growth."
+        twitterTitle="Get Insights with Expert Data Analytics Visualization at AnalyticsLiv"
+        twitterDescription="Discover insights with expert data analytics visualization at AnalyticsLiv. We turn complex data into clear, actionable visuals to drive smarter decisions and growth."
+      />
+
       <section>
         <div class="md:mt-4 px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-4">
           <div></div>
@@ -314,9 +312,8 @@ export default function AutoPlay() {
                 <div className="p-8 pl-[25px] -mr-[30px] rounded-l-[10px] xl:w-[400px] xl:ml-auto">
                   <div
                     onClick={() => setActivetab("1")}
-                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                      activetab === "1" ? "border-t-[#0092f4ab]" : ""
-                    }`}
+                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "1" ? "border-t-[#0092f4ab]" : ""
+                      }`}
                   >
                     <div>
                       <img
@@ -329,9 +326,8 @@ export default function AutoPlay() {
                   </div>
                   <div
                     onClick={() => setActivetab("2")}
-                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                      activetab === "2" ? "border-t-[#0092f4ab]" : ""
-                    }`}
+                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "2" ? "border-t-[#0092f4ab]" : ""
+                      }`}
                   >
                     <div>
                       <img
@@ -344,9 +340,8 @@ export default function AutoPlay() {
                   </div>
                   <div
                     onClick={() => setActivetab("3")}
-                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                      activetab === "3" ? "border-t-[#0092f4ab]" : ""
-                    }`}
+                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "3" ? "border-t-[#0092f4ab]" : ""
+                      }`}
                   >
                     <div>
                       <img
@@ -359,9 +354,8 @@ export default function AutoPlay() {
                   </div>
                   <div
                     onClick={() => setActivetab("4")}
-                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                      activetab === "4" ? "border-t-[#0092f4ab]" : ""
-                    }`}
+                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "4" ? "border-t-[#0092f4ab]" : ""
+                      }`}
                   >
                     <div>
                       <img
@@ -374,9 +368,8 @@ export default function AutoPlay() {
                   </div>
                   <div
                     onClick={() => setActivetab("5")}
-                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                      activetab === "5" ? "border-t-[#0092f4ab]" : ""
-                    }`}
+                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "5" ? "border-t-[#0092f4ab]" : ""
+                      }`}
                   >
                     <div>
                       <img
@@ -393,9 +386,8 @@ export default function AutoPlay() {
               <div className="xl:w-[60%] lg:w-[65%] w-full h-[500px] flex items-start justify-center rounded-[15px] pt-5 mb-[65px]">
                 <div
                   id="tab1"
-                  className={`${activetab == 1 && "block"} ${
-                    activetab != 1 && "hidden"
-                  } relative py-[30px] px-[50px] text-base font-medium leading-8`}
+                  className={`${activetab == 1 && "block"} ${activetab != 1 && "hidden"
+                    } relative py-[30px] px-[50px] text-base font-medium leading-8`}
                 >
                   <div className="relative">
                     <p className="text-[#efefef] text-[20px] font-semibold mb-5">
@@ -417,9 +409,8 @@ export default function AutoPlay() {
 
                 <div
                   id="tab2"
-                  className={`${activetab == 2 && "block"} ${
-                    activetab != 2 && "hidden"
-                  } relative py-[30px] px-[50px] text-base font-medium leading-8`}
+                  className={`${activetab == 2 && "block"} ${activetab != 2 && "hidden"
+                    } relative py-[30px] px-[50px] text-base font-medium leading-8`}
                 >
                   <div className="relative pl-1">
                     <p className="text-[#efefef] text-[20px] font-semibold mb-5">
@@ -441,9 +432,8 @@ export default function AutoPlay() {
 
                 <div
                   id="tab3"
-                  className={`${activetab == 3 && "block"} ${
-                    activetab != 3 && "hidden"
-                  } relative py-[30px] px-[40px] text-base font-medium leading-8`}
+                  className={`${activetab == 3 && "block"} ${activetab != 3 && "hidden"
+                    } relative py-[30px] px-[40px] text-base font-medium leading-8`}
                 >
                   <div className="relative pl-1">
                     <p className="text-[#efefef] text-[20px] font-semibold mb-5">
@@ -464,9 +454,8 @@ export default function AutoPlay() {
                 </div>
                 <div
                   id="tab4"
-                  className={`${activetab == 4 && "block"} ${
-                    activetab != 4 && "hidden"
-                  } relative py-[30px] px-[50px] text-base font-medium leading-8`}
+                  className={`${activetab == 4 && "block"} ${activetab != 4 && "hidden"
+                    } relative py-[30px] px-[50px] text-base font-medium leading-8`}
                 >
                   <p className="text-[#efefef] text-[20px] font-semibold mb-5">
                     Customer Segmentation
@@ -487,9 +476,8 @@ export default function AutoPlay() {
 
                 <div
                   id="tab5"
-                  className={`${activetab == 5 && "block"} ${
-                    activetab != 5 && "hidden"
-                  } relative py-[30px] px-[50px] text-base font-medium leading-8`}
+                  className={`${activetab == 5 && "block"} ${activetab != 5 && "hidden"
+                    } relative py-[30px] px-[50px] text-base font-medium leading-8`}
                 >
                   <p className="text-[#efefef] text-[20px] font-semibold mb-5">
                     Forecasting and Predictive Analytics
@@ -514,9 +502,8 @@ export default function AutoPlay() {
               <div className="panel_list webbox mb-4 rounded-b-[15px]">
                 <div
                   onClick={() => setActivetab("1")}
-                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                    activetab === "1" ? "border-t-[#0092f4ab]" : ""
-                  }`}
+                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "1" ? "border-t-[#0092f4ab]" : ""
+                    }`}
                 >
                   <div>
                     <img
@@ -529,11 +516,9 @@ export default function AutoPlay() {
                 </div>
                 <div
                   id="tab1"
-                  className={`${
-                    activetab == 1 && "items-center justify-center"
-                  } ${
-                    activetab != 1 && "hidden"
-                  } relative p-5 pt-[10px] text-[13px] font-medium leading-8`}
+                  className={`${activetab == 1 && "items-center justify-center"
+                    } ${activetab != 1 && "hidden"
+                    } relative p-5 pt-[10px] text-[13px] font-medium leading-8`}
                 >
                   <p className="text-[#ffffff] mb-[10px]">
                     We conduct A/B tests to evaluate different strategies and
@@ -552,9 +537,8 @@ export default function AutoPlay() {
               <div className="panel_list webbox mb-4 rounded-b-[15px]">
                 <div
                   onClick={() => setActivetab("2")}
-                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                    activetab === "2" ? "border-t-[#0092f4ab]" : ""
-                  }`}
+                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "2" ? "border-t-[#0092f4ab]" : ""
+                    }`}
                 >
                   <div>
                     <img
@@ -567,11 +551,9 @@ export default function AutoPlay() {
                 </div>
                 <div
                   id="tab2"
-                  className={`${
-                    activetab == 2 && " items-center justify-center"
-                  } ${
-                    activetab != 2 && "hidden"
-                  } relative p-5 pt-[10px] text-[13px] font-medium leading-8`}
+                  className={`${activetab == 2 && " items-center justify-center"
+                    } ${activetab != 2 && "hidden"
+                    } relative p-5 pt-[10px] text-[13px] font-medium leading-8`}
                 >
                   <p className="text-[#ffffff]">
                     We optimize your marketing campaigns based on data-driven
@@ -590,9 +572,8 @@ export default function AutoPlay() {
               <div className="panel_list webbox mb-4 rounded-b-[15px]">
                 <div
                   onClick={() => setActivetab("3")}
-                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                    activetab === "3" ? "border-t-[#0092f4ab]" : ""
-                  }`}
+                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "3" ? "border-t-[#0092f4ab]" : ""
+                    }`}
                 >
                   <div>
                     <img
@@ -605,11 +586,9 @@ export default function AutoPlay() {
                 </div>
                 <div
                   id="tab3"
-                  className={`${
-                    activetab == 3 && "items-center justify-center"
-                  } ${
-                    activetab != 3 && "hidden"
-                  } relative p-5 pt-[10px] text-[13px] font-medium leading-8`}
+                  className={`${activetab == 3 && "items-center justify-center"
+                    } ${activetab != 3 && "hidden"
+                    } relative p-5 pt-[10px] text-[13px] font-medium leading-8`}
                 >
                   <p className="text-[#ffffff] mb-[10px]">
                     We conduct A/B tests to evaluate different strategies and
@@ -628,9 +607,8 @@ export default function AutoPlay() {
               <div className="panel_list webbox mb-4 rounded-b-[15px]">
                 <div
                   onClick={() => setActivetab("4")}
-                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                    activetab === "4" ? "border-t-[#0092f4ab]" : ""
-                  }`}
+                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "4" ? "border-t-[#0092f4ab]" : ""
+                    }`}
                 >
                   <div>
                     <img
@@ -643,11 +621,9 @@ export default function AutoPlay() {
                 </div>
                 <div
                   id="tab4"
-                  className={`${
-                    activetab == 4 && " items-center justify-center"
-                  } ${
-                    activetab != 4 && "hidden"
-                  } relative p-5 pt-[10px] text-[13px] font-medium leading-8`}
+                  className={`${activetab == 4 && " items-center justify-center"
+                    } ${activetab != 4 && "hidden"
+                    } relative p-5 pt-[10px] text-[13px] font-medium leading-8`}
                 >
                   <p className="text-[#ffffff]">
                     We segment your customer base into distinct groups based on
@@ -667,9 +643,8 @@ export default function AutoPlay() {
               <div className="panel_list webbox mb-4 rounded-b-[15px]">
                 <div
                   onClick={() => setActivetab("5")}
-                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                    activetab === "5" ? "border-t-[#0092f4ab]" : ""
-                  }`}
+                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "5" ? "border-t-[#0092f4ab]" : ""
+                    }`}
                 >
                   <div>
                     <img
@@ -682,11 +657,9 @@ export default function AutoPlay() {
                 </div>
                 <div
                   id="tab5"
-                  className={`${
-                    activetab == 5 && " items-center justify-center"
-                  } ${
-                    activetab != 5 && "hidden"
-                  } relative p-5 pt-[10px] font-gilroy2 text-[13px] font-medium leading-8`}
+                  className={`${activetab == 5 && " items-center justify-center"
+                    } ${activetab != 5 && "hidden"
+                    } relative p-5 pt-[10px] font-gilroy2 text-[13px] font-medium leading-8`}
                 >
                   <p className="text-[#ffffff] mb-[10px]">
                     We leverage advanced predictive modeling to forecast future
