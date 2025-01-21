@@ -23,7 +23,7 @@ const handler = async (req, res) => {
       const internalMailOptions = {
         to: ["sales@analyticsliv.com", "anuj@analyticsliv.com", "nitya@analyticsliv.com", "rajvi@analyticsliv.com", "anshul.d@analyticsliv.com"],
         subject: 'New Enquiry!!',
-        html: `Enquiry Submitted by <br> Name - ${req.body?.firstName} ${req.body?.lastName} <br> Email- ${req.body?.email} <br> Contact - ${req.body?.contact} <br> Company - ${req.body?.company} <br> Role- ${req.body?.role} <br> Purpose - ${req.body?.purpose} <br> Requirements -${req.body?.requirments}`
+        html: `Enquiry Submitted by <br> Name - ${req.body?.firstName} ${req.body?.lastName} <br> Email- ${req.body?.email} <br> Contact - ${req.body?.contact} <br> Company - ${req.body?.company || ""} <br> Role- ${req.body?.role || ""} <br> Purpose - ${req.body?.purpose} <br> Requirements -${req.body?.requirments}`
       };
 
       const userMailOptions = {
