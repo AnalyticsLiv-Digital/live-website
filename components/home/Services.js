@@ -34,7 +34,7 @@ const Services = () => {
             image: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/prototype%201.png",
             items: ["MAdKPI", "Lead Scoring", "Product & Content Recommendation Engine", "RFM Analysis", "MMM Modeling"],
             images: ["https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/MAD_KPI_Logo%20(2).png", "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/DV_Logo.png", "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Google_Ads_Logo.png"],
-            redirect: "/services/data-science",
+            redirect: "/services/customer-segmentation",
         },
     ];
 
