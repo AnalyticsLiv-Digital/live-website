@@ -97,7 +97,7 @@ const FAQ = () => {
                                         }`}
                                     alt={activeIndex === index ? 'Collapse' : 'Expand'}
                                     // onClick={() => handleToggle(index)}
-                                    className="cursor-pointer max-sm:w-5"
+                                    className="cursor-pointer w-4"
                                 />
                             </div>
                         </div>
