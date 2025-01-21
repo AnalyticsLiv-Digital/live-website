@@ -80,7 +80,7 @@ const Stats = () => {
                                         <img
                                             src={video.coverImage}
                                             alt={`Cover for video ${video.id}`}
-                                            className="w-[90%] mt-5 mx-auto h-[90%] rounded-3xl shadow-xl"
+                                            className="w-[90%] mt-5 mx-auto h-[90%] rounded-3xl shadow-ytshadow"
                                         />
                                         <div className="absolute inset-0 flex items-center justify-center">
                                             <FaYoutube className="text-[#08A4F7] text-6xl" />
