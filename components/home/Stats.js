@@ -14,7 +14,7 @@ const Stats = () => {
         {
             id: 1,
             url: "https://www.youtube.com/embed/JFOc7x5ZgaA",
-            coverImage: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/ROAS_Improved.png",
+            coverImage: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Shoebacca%20thumbnail.png",
             label1: "Grow Your Busibess",
             label2: "Make Your Data Profitable",
             img1: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Increase.png",
@@ -22,8 +22,8 @@ const Stats = () => {
         },
         {
             id: 2,
-            url: "https://www.youtube.com/embed/JFOc7x5ZgaA",
-            coverImage: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/ROAS_Improved.png",
+            url: "https://www.youtube.com/embed/m0Oo0IL6gAQ",
+            coverImage: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Booby%20Bruno%20Thumbnail.png",
             label1: "Grow Your Busibess",
             label2: "Make Your Data Profitable",
             img1: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Increase.png",
@@ -31,8 +31,8 @@ const Stats = () => {
         },
         {
             id: 3,
-            url: "https://www.youtube.com/embed/JFOc7x5ZgaA",
-            coverImage: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/ROAS_Improved.png",
+            url: "https://www.youtube.com/embed/OrmmgwXDQyU",
+            coverImage: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Sevices%20Thumbnail.png",
             label1: "Grow Your Busibess",
             label2: "Make Your Data Profitable",
             img1: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Increase.png",
@@ -53,7 +53,7 @@ const Stats = () => {
     };
 
     return (
-        <section className="pt-28 sm:pt-40 md:pt-52 2xl:pt-64 h-full">
+        <section className="pt-28 sm:pt-40 md:pt-60 xl:pt-60 2xl:pt-64 h-full">
             <div className="relative bg-[#30486A] h-[170px] sm:h-[200px] lg:h-[290px] 2xl:h-[350px] overflow-visible">
                 {/* Video Slider */}
                 <div className="absolute top-[-130px] sm:top-[-180px] md:top-[-220px] lg:top-[-250px] left-1/2 transform -translate-x-1/2 w-[100%] sm:w-[75%] md:w-[75%] xl:w-[60%] 2xl:w-[800px] carousel-custom">
@@ -70,17 +70,17 @@ const Stats = () => {
                                         frameBorder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                         allowFullScreen
-                                        className="w-full h-[90%] mt-8 rounded-3xl"
+                                        className="w-[90%] h-[90%] mx-auto mt-8 rounded-3xl"
                                     ></iframe>
                                 ) : (
                                     <div
-                                        className="relative w-full h-full cursor-pointer"
+                                        className="relative w-[100%] h-[100%] cursor-pointer"
                                         onClick={() => setActiveVideo(video.id)}
                                     >
                                         <img
                                             src={video.coverImage}
                                             alt={`Cover for video ${video.id}`}
-                                            className="w-full h-full rounded-3xl"
+                                            className="w-[90%] mt-5 mx-auto h-[90%] rounded-3xl shadow-xl"
                                         />
                                         <div className="absolute inset-0 flex items-center justify-center">
                                             <FaYoutube className="text-[#08A4F7] text-6xl" />
