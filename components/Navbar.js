@@ -54,8 +54,8 @@ const navbar = () => {
             title: "Data Transformation",
             links: [
                 { href: "/services/data-science", label: "Cloud Migration & Engineering", imgSrc: "Analytics_webapp_logo.png" },
-                { href: "", label: "Custom Pipeline", imgSrc: "sst.png" },
-                { href: "", label: "Custom Dashboard", imgSrc: "cro_logo.png" },
+                { href: "/", label: "Custom Pipeline", imgSrc: "sst.png" },
+                { href: "/", label: "Custom Dashboard", imgSrc: "cro_logo.png" },
                 // { href: "/services/data-reporting-analysis", label: "Reporting & Dashboarding", imgSrc: "Analytis_data-reporting.logo.png" },
                 // { href: "/services/google-tag-manager", label: "Google Tag Manager Tagging", imgSrc: "GTM_Gradiant_Logo_for_Header.png" },
             ],
@@ -72,9 +72,9 @@ const navbar = () => {
         {
             title: "Product & Solutions",
             links: [
-                { label: "MAdKpi", href: "", imgSrc: "training_Schedule.png" },
-                { label: "MMM Modeling", href: "", imgSrc: "solutions_Training-Details.logo.png" },
-                { label: "Product & Content Recommendation", href: "", imgSrc: "solutions_Training-Details.logo.png" },
+                { label: "MAdKpi", href: "https://madkpi.com/", imgSrc: "training_Schedule.png" },
+                { label: "MMM Modeling", href: "/", imgSrc: "solutions_Training-Details.logo.png" },
+                { label: "Product & Content Recommendation", href: "/", imgSrc: "solutions_Training-Details.logo.png" },
                 { label: "RFM Analysis", href: "/services/customer-segmentation", imgSrc: "solutions_Training-Details.logo.png" },
             ],
         },
