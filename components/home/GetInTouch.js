@@ -60,7 +60,7 @@ const GetInTouch = () => {
                 event: 'contact_submission'
             });
             localStorage.setItem('contactFormSubmitted', 'true');
-            fetch('/api/contactsdsd', {
+            fetch('/api/contact', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
