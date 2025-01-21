@@ -61,71 +61,48 @@ const FAQ = () => {
     ];
 
     return (
-        <section className="flex mb-14 md:mb-3 flex-col md:flex-row px-4 py-8 md:px-14 lg:px-16 md:pb-12 xl:pt-5 gap-5 lg:gap-8">
-            <div className="md:w-1/3 flex flex-col md:gap-7 justify-center">
-                <h3 className="text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-gray-800 leading-tight">
-                    Frequently Asked <span className="text-[#08A4F7]">Questions</span>
+        <section className="flex mb-14 md:mb-3 flex-col md:flex-row px-4 py-5 md:py-8 md:px-14 lg:px-16 md:pb-12 xl:pt-5 gap-5 lg:gap-8">
+            <div className="md:w-1/3 flex flex-col md:gap-7 justify-center max-md:text-center sm:justify-start md:pt-7">
+                <h3 className="text-3xl max-md:flex max-sm:flex-col max-md:justify-center max-md:items-center max-md:gap-2.5 lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-gray-800">
+                    Frequently Asked <div className="text-[#08A4F7] lg:pt-3 xl:pt-4 2xl:pt-5">Questions</div>
                 </h3>
-                <p className="mt-4 max-md:mb-5 text-xl md:text-xl text-gray-600 leading-snug">
-                    Comprehensive FAQs to Elevate Your Marketing & Analytics Strategy.
+                <p className="mt-4 max-md:mb-5 text-base xl:text-lg text-gray-600 leading-snug">
+                    Discover key FAQs designed to simplify your marketing and analytics approach, helping you achieve better results with actionable guidance.
                 </p>
             </div>
 
             <div className="md:w-2/3 max-h-[400px] overflow-y-auto custom-scrollbar py-5 pr-3 lg:pr-5">
 
-            <div className="flex flex-col gap-5">
-                {content?.map((item, index) => (
-                    <div
-                        key={index}
-                        className={`rounded-2xl px-4 lg:px-12 py-4 lg:py-5 cursor-pointer ${activeIndex === index ? 'text-white bg-[#08A4F7]' : 'text-[#232A42]'
-                            }`}
-                        style={{
-                            boxShadow: activeIndex === index ? 'none' : '18px 15px 35px 0px #00000017',
-                        }}
-                        onClick={() => handleToggle(index)}
-                    >
-                        <div className="flex items-center justify-between gap-3">
-                            <div>
-                                <div className="text-[13px] sm:text-base font-semibold">{item?.question}</div>
-
-                                {activeIndex === index && (
-                                    <div className="text-[10px] sm:text-xs pt-3 font-normal w-[95%]">{item?.answer}</div>
-                                )}
-                            </div>
-                            <img
-                                src={`${activeIndex === index ? 'https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector_up.png' : 'https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector_down.png'
-                                    }`}
-                                alt={activeIndex === index ? 'Collapse' : 'Expand'}
-                                // onClick={() => handleToggle(index)}
-                                className="cursor-pointer max-sm:w-5"
-                            />
-                        </div>
-                    </div>
-                ))}
-            </div>
-
-                {/* <div className="flex flex-col gap-4">
-                    {content.map((item, index) => (
+                <div className="flex flex-col gap-5">
+                    {content?.map((item, index) => (
                         <div
                             key={index}
-                            className={`rounded-lg px-6 py-4 cursor-pointer ${activeIndex === index
-                                ? "bg-sky-500 text-white"
-                                : "bg-gray-100 text-gray-800"
+                            className={`rounded-2xl px-4 lg:px-12 py-4 lg:py-5 cursor-pointer ${activeIndex === index ? 'text-white bg-[#08A4F7]' : 'text-[#232A42]'
                                 }`}
+                            style={{
+                                boxShadow: activeIndex === index ? 'none' : '18px 15px 35px 0px #00000017',
+                            }}
                             onClick={() => handleToggle(index)}
                         >
-                            <div className="flex items-center justify-between">
-                                <h3 className="text-lg font-semibold">{item.question}</h3>
-                                <span className="text-xl">
-                                    {activeIndex === index ? "-" : "+"}
-                                </span>
+                            <div className="flex items-center justify-between gap-3">
+                                <div>
+                                    <div className="text-[13px] sm:text-base font-semibold">{item?.question}</div>
+
+                                    {activeIndex === index && (
+                                        <div className="text-[10px] sm:text-xs pt-3 font-normal w-[95%]">{item?.answer}</div>
+                                    )}
+                                </div>
+                                <img
+                                    src={`${activeIndex === index ? 'https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector_up.png' : 'https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector_down.png'
+                                        }`}
+                                    alt={activeIndex === index ? 'Collapse' : 'Expand'}
+                                    // onClick={() => handleToggle(index)}
+                                    className="cursor-pointer w-4"
+                                />
                             </div>
-                            {activeIndex === index && (
-                                <p className="mt-2 text-sm">{item.answer}</p>
-                            )}
                         </div>
                     ))}
-                </div> */}
+                </div>
             </div>
         </section>
     );
@@ -216,36 +193,36 @@ export default FAQ;
 //                 Comprehensive FAQs to Elevate Your Marketing & Analytics Strategy.
 //             </div>
 
-            // <div className="flex flex-col gap-5">
-            //     {content?.map((item, index) => (
-            //         <div
-            //             key={index}
-            //             className={`rounded-2xl px-4 md:px-12 py-4 md:py-5 cursor-pointer ${activeIndex === index ? 'text-white bg-[#08A4F7]' : 'text-[#232A42]'
-            //                 }`}
-            //             style={{
-            //                 boxShadow: activeIndex === index ? 'none' : '18px 15px 35px 0px #00000017',
-            //             }}
-            //             onClick={() => handleToggle(index)}
-            //         >
-            //             <div className="flex items-center justify-between gap-3">
-            //                 <div>
-            //                     <div className="text-[13px] sm:text-base font-semibold">{item?.question}</div>
+// <div className="flex flex-col gap-5">
+//     {content?.map((item, index) => (
+//         <div
+//             key={index}
+//             className={`rounded-2xl px-4 md:px-12 py-4 md:py-5 cursor-pointer ${activeIndex === index ? 'text-white bg-[#08A4F7]' : 'text-[#232A42]'
+//                 }`}
+//             style={{
+//                 boxShadow: activeIndex === index ? 'none' : '18px 15px 35px 0px #00000017',
+//             }}
+//             onClick={() => handleToggle(index)}
+//         >
+//             <div className="flex items-center justify-between gap-3">
+//                 <div>
+//                     <div className="text-[13px] sm:text-base font-semibold">{item?.question}</div>
 
-            //                     {activeIndex === index && (
-            //                         <div className="text-[10px] sm:text-xs pt-3 font-normal w-[95%]">{item?.answer}</div>
-            //                     )}
-            //                 </div>
-            //                 <img
-            //                     src={`${activeIndex === index ? 'https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector_up.png' : 'https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector_down.png'
-            //                         }`}
-            //                     alt={activeIndex === index ? 'Collapse' : 'Expand'}
-            //                     // onClick={() => handleToggle(index)}
-            //                     className="cursor-pointer max-sm:w-5"
-            //                 />
-            //             </div>
-            //         </div>
-            //     ))}
-            // </div>
+//                     {activeIndex === index && (
+//                         <div className="text-[10px] sm:text-xs pt-3 font-normal w-[95%]">{item?.answer}</div>
+//                     )}
+//                 </div>
+//                 <img
+//                     src={`${activeIndex === index ? 'https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector_up.png' : 'https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector_down.png'
+//                         }`}
+//                     alt={activeIndex === index ? 'Collapse' : 'Expand'}
+//                     // onClick={() => handleToggle(index)}
+//                     className="cursor-pointer max-sm:w-5"
+//                 />
+//             </div>
+//         </div>
+//     ))}
+// </div>
 //         </section>
 //     );
 // };
