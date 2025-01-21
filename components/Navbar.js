@@ -65,7 +65,7 @@ const navbar = () => {
             links: [
                 { label: "PPC campaign Management", href: "/services/sem", imgSrc: "solutions_GDRP.logo.png" },
                 { label: "Programmatic Advertising (DV360)", href: "/services/programatic-advertising", imgSrc: "Solutions_Data-Science.logo.png" },
-                { label: "CRO", href: "/services/CRO", imgSrc: "solutions_Data_Attribution.png" },
+                { label: "Conversion Rate Optimization (CRO)", href: "/services/CRO", imgSrc: "solutions_Data_Attribution.png" },
                 { label: "Data Insight & Reporting", href: "/services/data-reporting-analysis", imgSrc: "solutions_Data_Attribution.png" },
             ],
         },
@@ -296,7 +296,7 @@ const navbar = () => {
                             id="mobile-menu"
                         >
                             <div className="px-4 text-[#0E1947] pt-2 pb-3 space-y-1 sm:px-3">
-                                <p className=" text-[#0E1947] block px-3 py-2 rounded-md font-sans text-base font-normal">
+                                <p className=" text-[#0E1947] block px-2 py-2 rounded-md font-sans text-base font-normal">
                                     <div
                                         onClick={() => {
                                             setIsServices(!isServices);
@@ -314,14 +314,14 @@ const navbar = () => {
                                                 stiffness: 260,
                                                 damping: 20,
                                             }}
-                                            className="transition font-sans ease-out duration-200 px-4 text-cyan-400 text-base font-medium divide-y-2"
+                                            className="transition font-sans ease-out duration-200 px-2 text-cyan-400 text-base font-medium divide-y-2"
                                         >
                                             <div
                                                 onClick={() => {
                                                     setSubmenu("1");
                                                 }}
                                             >
-                                                <div className="py-2 w-56 ">Media Services</div>
+                                                <div className="py-2 w-56 ">Data Foundation</div>
                                             </div>
                                             {submenu == "1" && (
                                                 <motion.div
@@ -336,62 +336,43 @@ const navbar = () => {
                                                         stiffness: 260,
                                                         damping: 20,
                                                     }}
-                                                    className="transition ease-out duration-200 px-4 "
+                                                    className="transition ease-out duration-200 px-2"
                                                 >
-                                                    <div class="flex items-center py-1 gap-2">
-                                                        <img
-                                                            src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-paid.png"
-                                                            alt="paid_logo"
-                                                        />
+                                                    <div class="flex items-center py-1">
                                                         <Link
-                                                            href="/services/programatic-advertising"
-                                                            class="text-menuheading font-sans text-base font-normal leading-normal"
+                                                            href="/services/web-app-measurement"
+                                                            class="text-menuheading font-sans text-sm font-normal leading-normal"
                                                         >
-                                                            Programmatic Media DV360
+                                                            Account health and Opportunity
                                                         </Link>
                                                     </div>
-                                                    <div class="flex items-center py-1 gap-2">
-                                                        <img
-                                                            src="https://storage.googleapis.com/website-bucket-uploads/static/SEM.png"
-                                                            alt="paid_logo"
-                                                            className="w-[23px]"
-                                                        />
-
+                                                    <div class="flex items-center py-1">
                                                         <Link
-                                                            href="/services/sem"
-                                                            class="text-menuheading font-sans text-base font-normal leading-normal"
+                                                            href="/services/web-app-measurement"
+                                                            class="text-menuheading font-sans text-sm font-normal leading-normal"
                                                         >
-                                                            Search engine marketing
+                                                            GA4 Implementation & Optimization
                                                         </Link>
                                                     </div>
-                                                    <div class="flex items-center py-1 gap-2">
-                                                        <img
-                                                            className="w-[23px]"
-                                                            src="https://storage.googleapis.com/website-bucket-uploads/static/SEM.png"
-                                                            alt="paid_logo"
-                                                        />
+                                                    <div class="flex items-center py-1">
                                                         <Link
-                                                            href="/services/ecommerce-marketing"
-                                                            class="text-menuheading font-sans text-base font-normal leading-normal"
+                                                            href="/services/server-side-tracking"
+                                                            class="text-menuheading font-sans text-sm font-normal leading-normal"
                                                         >
-                                                            eCommerce Marketing
+                                                            Server Side Tracking
                                                         </Link>
                                                     </div>
-                                                    <div class="flex items-center py-1 gap-2">
-                                                        <img
-                                                            src="https://storage.googleapis.com/website-bucket-uploads/static/media-inner-lead.png"
-                                                            alt="paid_logo"
-                                                        />
+                                                    <div class="flex items-center py-1">
                                                         <Link
-                                                            href="/services/lead-generation"
-                                                            class="text-menuheading font-sans text-base font-normal leading-normal"
+                                                            href="/services/gdpr-compliance"
+                                                            class="text-menuheading font-sans text-sm font-normal leading-normal"
                                                         >
-                                                            Lead generation
+                                                            Cookie Consent Solution
                                                         </Link>
                                                     </div>
 
-                                                    <div
-                                                        class="flex items-center py-1 gap-2
+                                                    {/* <div
+                                                        class="flex items-center py-1
                                     "
                                                     >
                                                         <img
@@ -404,7 +385,7 @@ const navbar = () => {
                                                         >
                                                             Mobile app marketing
                                                         </Link>
-                                                    </div>
+                                                    </div> */}
                                                 </motion.div>
                                             )}
                                             <div
@@ -413,7 +394,7 @@ const navbar = () => {
                                                 }}
                                             >
                                                 <div className="py-2 w-56 ">
-                                                    Analytics & tagging services
+                                                    Data Transformation
                                                 </div>
                                             </div>
                                             {submenu == "2" && (
@@ -429,60 +410,42 @@ const navbar = () => {
                                                         stiffness: 260,
                                                         damping: 20,
                                                     }}
-                                                    className="transition ease-out duration-200 px-4 "
+                                                    className="transition ease-out duration-200 px-2"
                                                 >
-                                                    <div class="flex items-center py-1 gap-2">
-                                                        <img
-                                                            src="https://storage.googleapis.com/website-bucket-uploads/static/Analytics_webapp_logo.png"
-                                                            alt="webapp_logo"
-                                                        />
+                                                    <div class="flex items-center py-1">
                                                         <Link
-                                                            href="/services/web-app-measurement"
-                                                            class="text-menuheading font-sans text-base font-normal leading-normal"
+                                                            href="/services/data-science"
+                                                            class="text-menuheading font-sans text-sm font-normal leading-normal"
                                                         >
-                                                            Web and App measurement
+                                                            Cloud Migration & Engineering
                                                         </Link>
                                                     </div>
-                                                    <div class="flex items-center py-1 gap-2">
-                                                        <img
-                                                            src="/sst.png"
-                                                            alt="data-reporting_logo"
-                                                            className="w-[30px] h-[30px]"
-                                                        />
+                                                    <div class="flex items-center py-1">
                                                         <Link
-                                                            href="/services/server-side-tracking"
-                                                            class="text-menuheading font-sans text-base font-normal leading-normal"
+                                                            href="/"
+                                                            class="text-menuheading font-sans text-sm font-normal leading-normal"
                                                         >
-                                                            Server-Side Tracking
+                                                            Custom Pipeline
                                                         </Link>
                                                     </div>
-                                                    <div class="flex items-center py-1 gap-2">
-                                                        <img
-                                                            src="/cro_logo.png"
-                                                            className="w-[33px]"
-                                                            alt="Looker_logo"
-                                                        />
+                                                    <div class="flex items-center py-1">
                                                         <Link
-                                                            href="/services/CRO"
-                                                            class="text-menuheading font-sans text-base font-normal leading-normal"
+                                                            href="/"
+                                                            class="text-menuheading font-sans text-sm font-normal leading-normal"
                                                         >
-                                                            Conversion Rate Optimization
+                                                            Custom Dashboard
                                                         </Link>
                                                     </div>
 
-                                                    <div class="flex items-center py-1 gap-2">
-                                                        <img
-                                                            src="https://storage.googleapis.com/website-bucket-uploads/static/Analytis_data-reporting.logo.png"
-                                                            alt="data-reporting_logo"
-                                                        />
+                                                    {/* <div class="flex items-center py-1">
                                                         <Link
                                                             href="/services/data-reporting-analysis"
-                                                            class="text-menuheading font-sans text-base font-normal leading-normal"
+                                                            class="text-menuheading font-sans text-sm font-normal leading-normal"
                                                         >
                                                             Reporting Dashboarding
                                                         </Link>
                                                     </div>
-                                                    <div class="flex items-center py-1 gap-1">
+                                                    <div class="flex items-center py-1">
                                                         <img
                                                             src="/GTM_Gradiant_Logo_for_Header.png"
                                                             className="h-9 w-9"
@@ -490,11 +453,11 @@ const navbar = () => {
                                                         />
                                                         <Link
                                                             href="/services/google-tag-manager"
-                                                            class="text-menuheading font-sans text-base font-normal leading-normal"
+                                                            class="text-menuheading font-sans text-sm font-normal leading-normal"
                                                         >
                                                             Google Tag Manager Tagging
                                                         </Link>
-                                                    </div>
+                                                    </div> */}
                                                 </motion.div>
                                             )}
                                             <div
@@ -502,7 +465,7 @@ const navbar = () => {
                                                     setSubmenu("3");
                                                 }}
                                             >
-                                                <div className="py-2 w-56 ">Solutions</div>
+                                                <div className="py-2 w-56 ">Data Driven Marketing</div>
                                             </div>
                                             {submenu == "3" && (
                                                 <motion.div
@@ -517,43 +480,38 @@ const navbar = () => {
                                                         stiffness: 260,
                                                         damping: 20,
                                                     }}
-                                                    className="transition ease-out duration-200 px-4 "
+                                                    className="transition ease-out duration-200 px-2"
                                                 >
-                                                    <div class="flex items-center py-1 gap-2">
-                                                        <img
-                                                            src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_GDRP.logo.png"
-                                                            alt="GDRP_logo"
-                                                        />
+                                                    <div class="flex items-center py-1">
                                                         <Link
-                                                            href="/services/gdpr-compliance"
-                                                            class="text-menuheading font-sans text-base font-normal leading-normal"
+                                                            href="/services/sem"
+                                                            class="text-menuheading font-sans text-sm font-normal leading-normal"
                                                         >
-                                                            GDPR Compliance
+                                                            PPC campaign Management
                                                         </Link>
                                                     </div>
-                                                    <div class="flex items-center py-1 gap-2">
-                                                        <img
-                                                            src="https://storage.googleapis.com/website-bucket-uploads/static/Solutions_Data-Science.logo.png"
-                                                            alt="Data-Science_logo"
-                                                        />
+                                                    <div class="flex items-center py-1">
                                                         <Link
-                                                            href="/services/data-science"
-                                                            class="text-menuheading font-sans text-base font-normal leading-normal"
+                                                            href="/services/programatic-advertising"
+                                                            class="text-menuheading font-sans text-sm font-normal leading-normal"
                                                         >
-                                                            Data Science Solution & Automation
+                                                            Programmatic Advertising (DV360)
                                                         </Link>
                                                     </div>
-                                                    <div class="flex items-center py-1 gap-2">
-                                                        <img
-                                                            className="w-[35px]"
-                                                            src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_Data_Attribution.png"
-                                                            alt="Data-Science_logo"
-                                                        />
+                                                    <div class="flex items-center py-1">
                                                         <Link
-                                                            href="/services/customer-segmentation"
-                                                            class="text-menuheading font-sans text-base font-normal leading-normal"
+                                                            href="/services/CRO"
+                                                            class="text-menuheading font-sans text-sm font-normal leading-normal"
                                                         >
-                                                            Customer Segmentation{" "}
+                                                            Conversion Rate Optimization (CRO)
+                                                        </Link>
+                                                    </div>
+                                                    <div class="flex items-center py-1">
+                                                        <Link
+                                                            href="/services/data-reporting-analysis"
+                                                            class="text-menuheading font-sans text-sm font-normal leading-normal"
+                                                        >
+                                                            Data Insight & Reporting
                                                         </Link>
                                                     </div>
                                                 </motion.div>
@@ -564,7 +522,7 @@ const navbar = () => {
                                                 }}
                                             >
                                                 <div className="py-2 w-56 ">
-                                                    Training & Consultation
+                                                Product & Solutions
                                                 </div>
                                             </div>
                                             {submenu == "4" && (
@@ -580,38 +538,46 @@ const navbar = () => {
                                                         stiffness: 260,
                                                         damping: 20,
                                                     }}
-                                                    className="transition ease-out duration-200 px-4 "
+                                                    className="transition ease-out duration-200 px-2"
                                                 >
                                                     <div
-                                                        class="flex items-center py-1 gap-2
-                                "
+                                                        className="flex items-center py-1"
                                                     >
-                                                        <img
-                                                            className="w-[23px]"
-                                                            src="https://storage.googleapis.com/website-bucket-uploads/static/solutions_Training-Details.logo.png"
-                                                            alt="Training-Details_logo"
-                                                        />
                                                         <Link
-                                                            href="/services/training?id=training-calendly"
-                                                            class="text-menuheading font-sans text-base font-normal leading-normal"
+                                                            href="/"
+                                                            className="text-menuheading font-sans text-sm font-normal leading-normal"
                                                         >
-                                                            Schedule a One-Hour Consultation
+                                                            MAdKpi
                                                         </Link>
                                                     </div>
                                                     <div
-                                                        class="flex items-center py-1 gap-2
-                                    "
+                                                        className="flex items-center py-1"
                                                     >
-                                                        <img
-                                                            className="w-[23px]"
-                                                            src="https://storage.googleapis.com/website-bucket-uploads/static/training_Schedule.png"
-                                                            alt="Training-Details_logo"
-                                                        />
                                                         <Link
-                                                            href="/services/training"
-                                                            class="text-menuheading font-sans text-base font-normal leading-normal"
+                                                            href="/"
+                                                            className="text-menuheading font-sans text-sm font-normal leading-normal"
                                                         >
-                                                            Training Details
+                                                            MMM Modeling
+                                                        </Link>
+                                                    </div>
+                                                    <div
+                                                        className="flex items-center py-1"
+                                                    >
+                                                        <Link
+                                                            href="/"
+                                                            className="text-menuheading font-sans text-sm font-normal leading-normal"
+                                                        >
+                                                            Product & Content Recommendation
+                                                        </Link>
+                                                    </div>
+                                                    <div
+                                                        className="flex items-center py-1"
+                                                    >
+                                                        <Link
+                                                            href="/services/customer-segmentation"
+                                                            className="text-menuheading font-sans text-sm font-normal leading-normal"
+                                                        >
+                                                            RFM Analysis
                                                         </Link>
                                                     </div>
                                                 </motion.div>
