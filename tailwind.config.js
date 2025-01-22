@@ -4,15 +4,15 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
- 
+
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
       fontFamily: {
-        'gilroy': ['Gilroy-Bold' , 'sans-serif'],
-        'gilroy2': ['Gilroy-Medium' , 'sans-serif'],
+        'gilroy': ['Gilroy-Bold', 'sans-serif'],
+        'gilroy2': ['Gilroy-Medium', 'sans-serif'],
         'work-sans': ['Work Sans', 'sans-serif'],
         lato: ['Lato', 'sans-serif'],
         rbt: ['Roboto', 'sans-serif'],
@@ -37,7 +37,8 @@ module.exports = {
         cookiePageShadow: '0px 1px 4px 0px #00000040',
         customShadow: '0px 3px 10px 0px rgba(0, 0, 0, 0.05)',
         customBoth: '-40px 100px 70px 0px #7979790D, 40px 0px 70px 0px #7979790D',
-        ytshadow: '0px -6px 20px 2px #00000040'
+        ytshadow: '0px -6px 20px 2px #00000040',
+        teamShadow: '0px 4px 4px 0px #00000040'
       },
       colors: {
         btn: '#4285F4',
@@ -68,7 +69,10 @@ module.exports = {
         "homepagebtn": "#30486A",
         "homepagebg": "#F0F0F9",
         "ractangl": "rgba(194, 233, 245, 0.92)"
-    }
+      },
+      backgroundImage: {
+        'custom-linear': 'linear-gradient(97.32deg, #FF698D -3.47%, #FB3F6C 108.43%)',
+      },
     },
   },
   plugins: [],
