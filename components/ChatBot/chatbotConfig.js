@@ -50,7 +50,9 @@ const config = {
     option:"",
     subOption: "",
     email : "",
-    phone : ""
+    phone : "",
+    awaitingInput: "option",
+    requirement : ""
   },
   customComponents: {
     header: () => (

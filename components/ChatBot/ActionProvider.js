@@ -45,15 +45,25 @@ class ActionProvider {
     }));
   };
 
-  handleOptionClick = (service, widgetName) => {
-    const message = this.createChatBotMessage(`${service}`, {
-      widget: "subOptions",
-      loading: true,
-      terminateLoading: true,
-      type: "user",
-    });
+  handleOptionClick = (service) => {
+    if (service === "Others") {
+      const message = this.createChatBotMessage(`Please type your requirement in short.`, {
+        loading: true,
+        terminateLoading: true,
+      });
 
-    this.addMessageToState(message, { "option": service });
+      this.addMessageToState(message, { "option": service, awaitingInput: "otherService" });
+    }
+    else {
+      const message = this.createChatBotMessage(`${service}`, {
+        widget: "subOptions",
+        loading: true,
+        terminateLoading: true,
+        type: "user",
+      });
+
+      this.addMessageToState(message, { "option": service, awaitingInput: "subOption" });
+    }
   };
 
   handleSubOptionClick = (subOption, widgetName) => {
@@ -66,6 +76,18 @@ class ActionProvider {
     this.addMessageToState(message, { "subOption": subOption });
     this.handleAskForEmail();
   };
+
+  handleOtherService(requirement) {
+    const message = this.createChatBotMessage(`${requirement}`, {
+      loading: true,
+      terminateLoading: true,
+      type: "user",
+    });
+
+    this.addMessageToState({ requirement: requirement });
+    this.handleAskForEmail();
+  }
+
 
   handleAskForEmail() {
     const message = this.createChatBotMessage("Could you please provide your email?", {
@@ -106,8 +128,6 @@ class ActionProvider {
       });
 
       this.addMessageToState(message);
-
-      // this.handleAskForEmail();
     }
   }
 
@@ -149,8 +169,8 @@ class ActionProvider {
 
 
   callApiWithState = async (phone) => {
-    const { option, subOption, email } = this.state;
-    const stateData = { option, subOption, email, phone: phone };
+    const { option, subOption, email, requirement } = this.state;
+    const stateData = { option, subOption, email, phone: phone, requirement:requirement };
 
     try {
       const apiEndpoint = "/api/chatBotresponse";

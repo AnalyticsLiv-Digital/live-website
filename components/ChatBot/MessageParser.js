@@ -14,13 +14,23 @@ class MessageParser {
     }
 
     const { awaitingInput } = this.state;
+    console.log('awaitingInput',awaitingInput)
 
     // Handle specific awaiting input cases
     if (awaitingInput === "email") {
       this.actionProvider.handleEmailCollection(message);
     } else if (awaitingInput === "phone") {
       this.actionProvider.handlePhoneCollection(message);
-    } else {
+    } else if (awaitingInput === "otherService") {
+      this.actionProvider.handleOtherService(message);
+    }
+    else if (awaitingInput === "option") {
+
+    }
+    else if (awaitingInput === "subOption") {
+
+    }
+    else {
       this.actionProvider.handleUnknown();
     }
   }
