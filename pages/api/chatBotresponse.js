@@ -28,8 +28,8 @@ const handler = async (req, res) => {
 
         var internalMailOptions = {
             from: "support@analyticsliv.com",
-            to:["atulverma1520@gmail.com"],
-            // to: ["sales@analyticsliv.com", "anuj@analyticsliv.com", "nitya@analyticsliv.com", "rajvi@analyticsliv.com"],
+            // to:["atulverma1520@gmail.com","anuj@analyticsliv.com", "nitya@analyticsliv.com", "rajvi@analyticsliv.com"],
+            to: ["atulverma1520@gmail.com","sales@analyticsliv.com"],
             subject: 'ChatBot lead',
             html: `New chatbot lead by <br> Service - ${req.body?.option} <br> Sub Service -  ${req.body?.subOption || ""} <br> Email- ${req.body?.email} <br> Contact - ${req.body?.phone} <br> Requirement - ${req.body?.requirement || ""}`
         };
