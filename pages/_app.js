@@ -16,11 +16,13 @@ import useContactPopup from '../components/hooks/useContactPopup';
 import Script from "next/script";
 import Navbar from '../components/Navbar';
 import Footer1 from '../components/home/Footer1';
-import ChatBot from '../components/ChatBot/ChatBot';
+// import ChatBot from '../components/ChatBot/ChatBot';
+import dynamic from "next/dynamic";
 
 
 function MyApp({ Component, pageProps: { session, ...pageProps }, }) {
   // const { showPopup, closePopup, registerUser, clickHere } = useWebinarPopup();
+  const ChatBot = dynamic(() => import("../components/ChatBot/ChatBot"), { ssr: false });
   const routerr = useRouter();
   const { showPopup, closePopup, registerUser } = useContactPopup();
   const [showLoader, setShowloader] = useState(false);
@@ -72,10 +74,9 @@ function MyApp({ Component, pageProps: { session, ...pageProps }, }) {
 
             <Component {...pageProps} />
 
-            {routerr.pathname === '/home_trial1' ? <div className='App'>
+            <div className='App'>
               <ChatBot />
-            </div> : null}
-
+            </div>
 
             <Footer1 />
 

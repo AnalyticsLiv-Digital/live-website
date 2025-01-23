@@ -1,3 +1,5 @@
+import { services, subServices } from "../../utils/chatConfig";
+
 class MessageParser {
   constructor(actionProvider, state) {
     this.actionProvider = actionProvider;
@@ -6,7 +8,7 @@ class MessageParser {
 
   parse(message) {
     message = message.trim().toLowerCase();
-    console.log("message", message)
+    // console.log("message", message)
 
     if (!message || message === "") {
       console.log("Empty input ignored.");
@@ -20,7 +22,36 @@ class MessageParser {
       this.actionProvider.handleEmailCollection(message);
     } else if (awaitingInput === "phone") {
       this.actionProvider.handlePhoneCollection(message);
-    } else {
+    } else if (awaitingInput === "otherService") {
+      this.actionProvider.handleOtherService(message);
+    }
+    else if (awaitingInput === "option") {
+      const matchedService = services?.find((service) => {
+        if (service.name.toLowerCase().includes(message)) {
+          return true;
+        }
+      })
+      if (matchedService) {
+        this.actionProvider.handleOptionClick(matchedService.name);
+      } else {
+        this.actionProvider.actionProvider.handleUnknown();
+      }
+    }
+    else if (awaitingInput === "subOption") {
+      const matchedSubOption = subServices?.[this.state.option]?.find((subOption) => {
+        if (subOption.toLowerCase().includes(message)) {
+          return true;
+        }
+      })
+
+      if (matchedSubOption) {
+        this.actionProvider.handleSubOptionClick(matchedSubOption)
+      }
+      else {
+        this.actionProvider.handleUnknown();
+      }
+    }
+    else {
       this.actionProvider.handleUnknown();
     }
   }
