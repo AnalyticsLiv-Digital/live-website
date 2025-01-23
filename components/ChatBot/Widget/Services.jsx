@@ -1,14 +1,8 @@
 import React from "react";
+import { services } from "../../../utils/chatConfig";
 
 const Services = ({ actionProvider, ...props }) => {
-  const services = [
-    { name: "Media Services" },
-    { name: "Analytics & Tagging Services" },
-    { name: "Solutions" },
-    { name: "Training & Consultation" },
-    { name: "Others" }
-  ];
-
+  
   return (
     <div className="max-2xl:pb-2 max-xl:pb-5 pt-3">
       <div>

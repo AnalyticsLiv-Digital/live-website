@@ -41,7 +41,7 @@ class ActionProvider {
     this.setState((state) => ({
       ...state,
       ...statValueWithKey,
-      messages: [...state.messages, message],
+      messages: message ? [...state.messages, message] : [...state.messages],
     }));
   };
 
@@ -66,7 +66,7 @@ class ActionProvider {
     }
   };
 
-  handleSubOptionClick = (subOption, widgetName) => {
+  handleSubOptionClick = (subOption) => {
     const message = this.createChatBotMessage(`${subOption}`, {
       loading: true,
       terminateLoading: true,
@@ -84,7 +84,7 @@ class ActionProvider {
       type: "user",
     });
 
-    this.addMessageToState({ requirement: requirement });
+    this.addMessageToState(null,{ requirement: requirement });
     this.handleAskForEmail();
   }
 

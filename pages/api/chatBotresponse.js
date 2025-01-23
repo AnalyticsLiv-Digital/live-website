@@ -29,16 +29,16 @@ const handler = async (req, res) => {
         var internalMailOptions = {
             from: "support@analyticsliv.com",
             to:["atulverma1520@gmail.com"],
-            // to: ["sales@analyticsliv.com", "anuj@analyticsliv.com", "nitya@analyticsliv.com", "anshul.d@analyticsliv.com", "rajvi@analyticsliv.com"],
+            // to: ["sales@analyticsliv.com", "anuj@analyticsliv.com", "nitya@analyticsliv.com", "rajvi@analyticsliv.com"],
             subject: 'ChatBot lead',
-            html: `New chatbot lead by <br> Service - ${req.body?.option} <br> Sub Service -  ${req.body?.subOption} <br> Email- ${req.body?.email} <br> Contact - ${req.body?.phone}`
+            html: `New chatbot lead by <br> Service - ${req.body?.option} <br> Sub Service -  ${req.body?.subOption || ""} <br> Email- ${req.body?.email} <br> Contact - ${req.body?.phone} <br> Requirement - ${req.body?.requirement || ""}`
         };
 
         await sendEmail(internalMailOptions.to, internalMailOptions.subject, internalMailOptions.html, internalMailOptions?.from);
         await sendEmail(userMailOptions.to, userMailOptions.subject, userMailOptions.html, userMailOptions?.from);
 
 
-
+        res.status(200).json({ message: "Response record and notified succesfully." });
     } else {
         res.status(400).json({ error: "Bad Request" });
     }
