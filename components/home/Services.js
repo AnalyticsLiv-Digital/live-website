@@ -59,7 +59,7 @@ const Services = () => {
                                 <div className="flex flex-col gap-2.5">
                                     {service?.items.map((item, idx) => (
                                         <div key={idx} className="flex flex-col max-w-[150px] md:max-w-[160px] lg:max-w-[200px] xl:max-w-[250px] 2xl:max-w-[450px]">
-                                            <div className="flex items-start gap-1 sm:gap-2 text-[10px] lg:text-xs hover:cursor-default font-normal">
+                                            <div className="flex items-start gap-1 sm:gap-2 text-[10px] lg:text-xs xl:text-sm hover:cursor-default font-normal">
                                                 <img
                                                     src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Check%20Mark.png"
                                                     alt="Check Mark blue"

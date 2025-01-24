@@ -38,7 +38,9 @@ module.exports = {
         customShadow: '0px 3px 10px 0px rgba(0, 0, 0, 0.05)',
         customBoth: '-40px 100px 70px 0px #7979790D, 40px 0px 70px 0px #7979790D',
         ytshadow: '0px -6px 20px 2px #00000040',
-        teamShadow: '0px 4px 4px 0px #00000040'
+        teamShadow: '0px 4px 4px 0px #00000040',
+        cardShadow: '-1px 5px 10px -1px #00000040',
+        hoverCard: '-1px 0px 5px -1px #00000040, 0px 4px 4px 0px #00000040',
       },
       colors: {
         btn: '#4285F4',

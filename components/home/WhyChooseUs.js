@@ -138,7 +138,7 @@ const WhyChooseUs = () => {
             <div className="sm:hidden sm:pl-5 xl:pl-16 py-8 carousel-custom overflow-hidden">
                 <Slider {...settingsMobile}>
                     {cardsData?.map((card, index) => (
-                        <div key={index} className=" custom-padding-370 custom-padding-540 sm:px-4 flex justify-center">
+                        <div key={index} className="sm:px-4 flex justify-center">
                             <div className="border rounded-3xl border-[#F2F2F2] mx-auto h-[280px] w-[320px] md:w-[440px] lg:w-[420px] 2xl:w-[480px]">
                                 <div className="h-[140px] text-[#373642] text-sm font-normal p-5 md:p-8">
                                     {card.description}

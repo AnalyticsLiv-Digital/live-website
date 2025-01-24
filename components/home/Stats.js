@@ -5,6 +5,7 @@ import ScrollTrigger from "react-scroll-trigger";
 import { FaYoutube } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const Stats = () => {
     const [counterOn, setCounterOn] = useState(true);
@@ -40,6 +41,24 @@ const Stats = () => {
         },
     ];
 
+    const NextArrow = ({ onClick }) => (
+        <div
+            className="absolute top-1/3 text-white bg-sky-400 rounded-full p-0.5 sm:p-1.5 right-[2.5px] sm:right-[-30px] lg:right-[-75px] transform -translate-y-1/2 z-30 cursor-pointer"
+            onClick={onClick}
+        >
+            <FaArrowRight className='text-sm sm:text-base xl:text-sm' />
+        </div>
+    );
+
+    const PrevArrow = ({ onClick }) => (
+        <div
+            className="absolute top-1/3 text-white bg-sky-400 rounded-full p-0.5 sm:p-1.5 left-[2.5px] sm:left-[-30px] lg:left-[-75px] transform -translate-y-1/2 z-30 cursor-pointer"
+            onClick={onClick}
+        >
+            <FaArrowLeft className='text-sm sm:text-base xl:text-sm' />
+        </div>
+    );
+
     const settings = {
         dots: true,
         infinite: true,
@@ -48,8 +67,10 @@ const Stats = () => {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 3000,
-        arrows: false,
+        arrows: true,
         pauseOnHover: true,
+        nextArrow: <NextArrow />,
+        prevArrow: <PrevArrow />,
     };
 
     return (
@@ -69,7 +90,7 @@ const Stats = () => {
                                         frameBorder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                         allowFullScreen
-                                        className="w-[90%] h-[90%] mx-auto mt-8 rounded-3xl"
+                                        className="w-[90%] h-[80%] sm:h-[90%] mx-auto mt-8 rounded-3xl"
                                     ></iframe>
                                 ) : (
                                     <div
@@ -79,7 +100,7 @@ const Stats = () => {
                                         <img
                                             src={video.coverImage}
                                             alt={`Cover for video ${video.id}`}
-                                            className="w-[90%] mt-5 mx-auto h-[90%] rounded-3xl shadow-ytshadow"
+                                            className="w-[90%] mt-5 mx-auto h-[80%] sm:h-[90%] rounded-3xl shadow-ytshadow"
                                         />
                                         <div className="absolute inset-0 flex items-center justify-center">
                                             <FaYoutube className="text-[#08A4F7] text-6xl" />

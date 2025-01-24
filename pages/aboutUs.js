@@ -17,6 +17,7 @@ const AboutUs = () => {
             title: "Google Partner",
             subtitle: 'Certified Partners for DV360',
             description: "Achieved the Google Partner Status with listing in Partner Directory",
+            color: '#EF4931',
             logo: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/google%20partner%201.png",
         },
         {
@@ -24,28 +25,32 @@ const AboutUs = () => {
             title: "Google Marketing Platform Partner",
             subtitle: 'Certified Partners for DV360',
             description: "Certified Partners for DV360",
-            logo: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/google%20partner%201.png",
+            color: '#1E8E3E',
+            logo: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/dv360_log-removebg-preview%201.png",
         },
         {
             year: "2023",
             title: "Microsoft Ads Partner",
             subtitle: 'Certified Partners for DV360',
             description: "Microsoft Ads offers Partner Status",
-            logo: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/google%20partner%201.png",
+            color: '#174B24',
+            logo: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/image%2015.png",
         },
         {
             year: "2024",
             title: "Google Marketing Platform Partner",
             subtitle: 'Certified Partners for DV360',
             description: "Certified Partners for Google Analytics Platform",
-            logo: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/google%20partner%201.png",
+            color: '#F76B01',
+            logo: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/GA4_Logo%201.png",
         },
         {
             year: "2024",
             title: "Google Marketing Platform Partner",
             subtitle: 'Certified Partners for DV360',
             description: "Certified Partners for Google Tag Manager",
-            logo: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/google%20partner%201.png",
+            color: '#4086EC',
+            logo: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/GTM_FULL_LOGO%201.png",
         },
     ];
 
@@ -67,15 +72,6 @@ const AboutUs = () => {
         </div>
     );
 
-    const set1 = {
-        dots: false,
-        infinite: false,
-        speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        nextArrow: <NextArrow />,
-        prevArrow: <PrevArrow />,
-    };
     const settings = {
         dots: false,
         infinite: false,
@@ -173,42 +169,46 @@ const AboutUs = () => {
                 </div>
             </div>
 
-            <div className=' bg-[#F3FBFF]'>
+            <div className='bg-[#F3FBFF]'>
                 <div className="w-full max-w-[1100px] mx-auto px-4 md:px-7 lg:px-14 pt-10 pb-0">
                     <h2 className="text-center text-3xl font-bold mb-8">Timeline</h2>
                     <div className="relative h-[]">
-                        {/* Line connecting the years */}
+
                         <div className="absolute top-[57px] transform -translate-y-1/2 w-full border-t border-black z-0"></div>
 
                         <Slider {...settings} className="relative z-30">
-                            {timelineData.map((item, index) => (
+                            {timelineData?.map((item, index) => (
                                 <div
-                                    key={index}
+                                    key={item}
                                     className="relative flex flex-col items-center text-center px-4 h-[280px]"
                                     onMouseEnter={() => setHoveredYear(index)}
                                     onMouseLeave={() => setHoveredYear(null)}
                                 >
-                                    {/* Year */}
                                     <div className='flex flex-col justify-center items-center'>
                                         <div className="text-lg font-semibold mb-2">{item.year}</div>
 
-                                        {/* Dot */}
-                                        <div className={`w-3 h-3 rounded-full mt-1 mb-2 ${hoveredYear === index ? 'bg-[#EF4931]' : 'bg-black'}`}></div>
+                                        <div className={`w-3 h-3 rounded-full mt-1 mb-2`}
+                                            style={{
+                                                backgroundColor: hoveredYear === index ? item.color : 'black',
+                                            }}></div>
                                     </div>
 
-                                    {/* Title */}
-                                    <div className='pt-5'>
+                                    <div className={`${hoveredYear === index ? 'shadow-teamShadow' : 'shadow-none'} px-2 lg:px-8 py-4 flex flex-col items-center justify-around h-40 bg-white hover:shadow-customShadow`}>
                                         <div className="text-base font-semibold text-[#000000]">{item.title}</div>
-                                        <div className="text-sm font-normal text-[#000000] pt-2">{item.subtitle}</div>
+                                        <div className="text-sm font-normal text-[#000000] pt-2">{item.description}</div>
                                     </div>
 
-                                    {/* Hover Card */}
                                     {hoveredYear === index && (
-                                        <div className='absolute top-[60px] left-1/2 transform -translate-x-1/2 bg-white shadow-lg rounded-lg w-64 z-30'>
-                                            <div className="absolute left-[48%] -top-1 w-0 h-0 border-l-4 border-r-4 border-b-4 border-transparent border-b-[#EF4931]"></div>
-                                            <div className='bg-[#EF4931] h-2'></div>
-
-                                            <div className="p-4">
+                                        <div className='absolute top-[60px] h-52 shadow-cardShadow left-1/2 transform -translate-x-1/2 bg-white rounded-lg w-56 z-30'>
+                                            <div
+                                                className="absolute left-[48%] -top-1 w-0 h-0 border-l-4 border-r-4 border-b-4 border-transparent"
+                                                style={{
+                                                    borderBottomColor: item.color,
+                                                }}
+                                            ></div>
+                                            <div className='h-2'
+                                                style={{ backgroundColor: item?.color }}></div>
+                                            <div className="p-4 flex flex-col h-full justify-around items-center px-3 pt-3 pb-5">
                                                 <img
                                                     src={item?.logo}
                                                     alt={item.title}
@@ -236,82 +236,64 @@ const AboutUs = () => {
                 <div className='relative pt-8'>
                     <div className='relative'>
                         <img
-                            src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Road_Image_Full.png'
+                            src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Road_Image_Full%20(1).png'
                             alt='path to success'
                             className='mx-auto max-lg:w-[40%] max-xl:w-[35%]'
                         />
-                        <div className='group text-[10px] sm:text-base xl:text-xl font-bold text-right absolute top-[15%] left-[1%] sm:left-[12%] lg:left-[18%] xl:left-[17%] 2xl:left-[22%]'>
+                        <div className='group text-[9px] bg-[#F3FBFF] py-1 lg:py-2 px-1 md:px-2 lg:px-4 transition-all duration-75 hover:shadow-hoverCard  sm:text-xs md:text-sm  xl:text-xl font-bold text-right absolute top-[15%] left-[1%] sm:left-[12%] lg:left-[18%] xl:left-[17%] 2xl:left-[22%]'>
                             Understanding Your<br />Business
-                            <div className='absolute hidden group-hover:block text-center top-[10px] md:top-[-80px] w-40 xl:w-40 2xl:w-48 max-sm:left-[85%] lg:left-[-55%] transform -translate-x-1/2 bg-white shadow-lg rounded-lg z-30'>
-                                <div className="p-2 2xl:p-4">
-                                    <img
-                                        src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/google%20partner%201.png'
-                                        alt='google partner'
-                                        className="mx-auto mb-3"
-                                    />
-                                    <h3 className="text-sm 2xl:text-base font-bold mb-2">Google Partner</h3>
-                                    <p className="text-xs 2xl:text-sm font-normal text-gray-600">Achieved the Google Partner Status with listing in Partner Directory</p>
+                            <div className='absolute hidden group-hover:block text-center top-[10px] md:top-[-80px] w-40 xl:w-40 2xl:w-48 max-sm:left-[85%] lg:left-[-55%] transform -translate-x-1/2 bg-white shadow-hoverCard rounded-lg z-30'>
+                                <div className="p-2 2xl:p-2 pr-3">
+                                    <h3 className="text-sm 2xl:text-2xl font-bold mb-2">1.</h3>
+                                    <p className="text-[10px] leading-[14px] 2xl:text-[11px] font-normal text-gray-600">We begin by getting to know you and your organization inside out. Through in-depth discussions and analysis, we strive to fully grasp your vision, objectives, and challenges. This foundational knowledge allows us to align our efforts with your specific goals and create solutions that truly resonate with your business.
+                                    </p>
                                 </div>
                                 <div className='absolute right-0 top-0 h-full w-2 bg-[#EF4931]'></div>
                                 <div className="absolute right-[-3px] top-1/2 w-0 h-0 border-t-4 border-l-4 border-b-4 border-transparent border-l-[#EF4931]"></div>
                             </div>
                         </div>
 
-                        <div className='group text-[10px] sm:text-base xl:text-xl font-bold text-right absolute bottom-[11%] sm:bottom-[30%] sm:left-[6%] lg:left-[13%] xl:left-[10%] 2xl:left-[16%]'>
+                        <div className='group text-[9px] bg-[#F3FBFF] py-1 lg:py-2 px-1 md:px-2 lg:px-4 transition-all duration-75 hover:shadow-hoverCard sm:text-xs md:text-sm xl:text-xl font-bold text-right absolute bottom-[5%] sm:bottom-[30%] sm:left-[6%] lg:left-[13%] xl:left-[10%] 2xl:left-[16%]'>
                             Crafting & Executing <br />Strategies
 
-                            <div className='absolute hidden group-hover:block text-center max-md:top-[-100px] md:top-[-78px] w-40 xl:w-40 2xl:w-48 max-sm:left-[90%] lg:left-[-52%] xl:left-[-45%] 2xl:left-[-55%] transform -translate-x-1/2 bg-white shadow-lg rounded-lg z-30'>
-                                <div className="p-2 2xl:p-4">
-                                    <img
-                                        src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/google%20partner%201.png'
-                                        alt='google partner'
-                                        className="mx-auto mb-3"
-                                    />
-                                    <h3 className="text-sm 2xl:text-base font-bold mb-2">Google Partner</h3>
-                                    <p className="text-xs 2xl:text-sm font-normal text-gray-600">Achieved the Google Partner Status with listing in Partner Directory</p>
+                            <div className='absolute hidden group-hover:block text-center max-md:top-[-100px] md:top-[-78px] w-40 xl:w-40 2xl:w-48 max-sm:left-[90%] lg:left-[-48%] xl:left-[-40%] 2xl:left-[-55%] transform -translate-x-1/2 bg-white shadow-hoverCard rounded-lg z-30'>
+                                <div className="p-2 2xl:p-2 2xl:pr-3.5">
+                                    <h3 className="text-sm 2xl:text-2xl font-bold mb-2">3.</h3>
+                                    <p className="text-[10px] leading-[14px] 2xl:text-[11px] font-normal text-gray-600">With a strong understanding of your business and actionable data, we design creative and strategic marketing campaigns tailored to your needs. From engaging content creation to targeted advertising, every initiative is crafted to maximize impact and deliver measurable results.
+                                    </p>
                                 </div>
-                                <div className='absolute right-0 top-0 h-full w-2 bg-[#EF4931]'></div>
-                                <div className="absolute right-[-3px] top-1/2 w-0 h-0 border-t-4 border-l-4 border-b-4 border-transparent border-l-[#EF4931]"></div>
+                                <div className='absolute right-0 top-0 h-full w-2 bg-[#1E8E3E]'></div>
+                                <div className="absolute right-[-3px] top-1/2 w-0 h-0 border-t-4 border-l-4 border-b-4 border-transparent border-l-[#1E8E3E]"></div>
                             </div>
 
                         </div>
 
-                        <div className='group text-[10px] sm:text-base xl:text-xl font-bold text-left absolute top-[8%] right-[1%] sm:right-[13%] lg:right-[20%] xl:right-[15%] 2xl:right-[22%]'>
+                        <div className='group text-[9px] bg-[#F3FBFF] py-1 lg:py-2 px-1 md:px-2 lg:px-4 transition-all duration-75 hover:shadow-hoverCard sm:text-xs md:text-sm xl:text-xl font-bold text-left absolute top-[8%] right-[1%] sm:right-[13%] lg:right-[20%] xl:right-[15%] 2xl:right-[22%]'>
                             Harnessing the Power<br />of Data
 
-                            <div className='absolute hidden group-hover:block text-center top-[-80px] w-40 xl:w-40 2xl:w-48 right-[-50%] lg:right-[-155%] xl:right-[-125%] 2xl:right-[-145%] transform -translate-x-1/2 bg-white shadow-lg rounded-lg z-30'>
-                                <div className="p-2 2xl:p-4">
-                                    <img
-                                        src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/google%20partner%201.png'
-                                        alt='google partner'
-                                        className="mx-auto mb-3"
-                                    />
-                                    <h3 className="text-sm 2xl:text-base font-bold mb-2">Google Partner</h3>
-                                    <p className="text-xs 2xl:text-sm font-normal text-gray-600">Achieved the Google Partner Status with listing in Partner Directory</p>
+                            <div className='absolute hidden group-hover:block text-center top-[-80px] w-40 xl:w-40 2xl:w-48 right-[-50%] lg:right-[-140%] xl:right-[-115%] 2xl:right-[-145%] transform -translate-x-1/2 bg-white shadow-hoverCard rounded-lg z-30'>
+                                <div className="p-2 2xl:p-2 pl-3">
+                                    <h3 className="text-sm 2xl:text-2xl font-bold mb-2">2.</h3>
+                                    <p className="text-[10px] leading-[14px] 2xl:text-[11px] font-normal text-gray-600">Data is at the forefront of decision-making in today’s digital landscape. We leverage advanced analytics and tools to gather meaningful insights about your audience, industry trends, and market opportunities. These data-driven insights guide every step of our process, ensuring precision and effectiveness.</p>
                                 </div>
-                                <div className='absolute left-0 top-0 h-full w-2 bg-[#EF4931]'></div>
-                                <div className="absolute left-[-3px] top-1/2 w-0 h-0 border-t-4 border-r-4 border-b-4 border-transparent border-r-[#EF4931]"></div>
+                                <div className='absolute left-0 top-0 h-full w-2 bg-[#174B24]'></div>
+                                <div className="absolute left-[-3px] top-1/2 w-0 h-0 border-t-4 border-r-4 border-b-4 border-transparent border-r-[#174B24]"></div>
                             </div>
 
                         </div>
 
-                        <div className='group text-[10px] sm:text-base xl:text-xl font-bold text-left absolute bottom-[28%] sm:bottom-[40%] right-[1%] sm:right-[10%] lg:right-[18%] xl:right-[15%] 2xl:right-[18%]'>
+                        <div className='group text-[9px] bg-[#F3FBFF] py-1 lg:py-2 px-1 md:px-2 lg:px-4 transition-all duration-75 hover:shadow-hoverCard sm:text-xs md:text-sm xl:text-xl font-bold text-left absolute bottom-[28%] lg:bottom-[34%] xl:bottom-[40%] sm:bottom-[40%] right-[-3%] sm:right-[10%] lg:right-[16%] xl:right-[13%] 2xl:right-[18%]'>
                             Commitment to Continuous<br />Improvement
 
-                            <div className='absolute hidden group-hover:block text-center top-[-80px] w-40 xl:w-40 2xl:w-48 right-[-50%] lg:right-[-118%] xl:right-[-95%] 2xl:right-[-115%] transform -translate-x-1/2 bg-white shadow-lg rounded-lg z-30'>
-                                <div className="p-2 2xl:p-4">
-                                    <img
-                                        src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/google%20partner%201.png'
-                                        alt='google partner'
-                                        className="mx-auto mb-3"
-                                    />
-                                    <h3 className="text-sm 2xl:text-base font-bold mb-2">Google Partner</h3>
-                                    <p className="text-xs 2xl:text-sm font-normal text-gray-600">Achieved the Google Partner Status with listing in Partner Directory</p>
+                            <div className='absolute hidden group-hover:block text-center top-[-80px] w-40 xl:w-40 2xl:w-48 right-[-50%] lg:right-[-110%] xl:right-[-95%] 2xl:right-[-115%] transform -translate-x-1/2 bg-white shadow-hoverCard rounded-lg z-30'>
+                                <div className="p-2 2xl:p-2 pl-3">
+                                    <h3 className="text-sm 2xl:text-2xl font-bold mb-2">4.</h3>
+                                    <p className="text-[10px] leading-[14px] 2xl:text-[11px] font-normal text-gray-600">We believe that success is not a one-time event but an ongoing journey. That’s why we consistently monitor, analyze, and refine our strategies to ensure long-term growth and sustained success. By embracing a cycle of continuous improvement, we stay agile and adaptive in an ever-evolving marketplace.
+                                    </p>
                                 </div>
-                                <div className='absolute left-0 top-0 h-full w-2 bg-[#EF4931]'></div>
-                                <div className="absolute left-[-4px] top-1/2 w-0 h-0 border-t-4 border-r-4 border-b-4 border-transparent border-r-[#EF4931]"></div>
+                                <div className='absolute left-0 top-0 h-full w-2 bg-[#4086EC]'></div>
+                                <div className="absolute left-[-4px] top-1/2 w-0 h-0 border-t-4 border-r-4 border-b-4 border-transparent border-r-[#4086EC]"></div>
                             </div>
-
 
                         </div>
                     </div>
@@ -367,26 +349,26 @@ const AboutUs = () => {
                 </div>
                 <div className='absolute w-full px-2 md:px-7 xl:px-14  text-center'>
                     <div className='grid grid-cols-4 max-lg:grid-cols-2 max-sm:gap-3 justify-items-center '>
-                    <div className='flex flex-col justify-start items-center shadow-teamShadow w-[155px] sm:w-[250px] lg:w-[200px] xl:w-[250px] my-2 sm:my-6 max-sm:px-1.5 max-sm:py-3 sm:p-3 border border-[#D9D9D9] bg-white z-30'>
-                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Mask%20group%20(11).png' className='max-sm:w-24 lg:w-36 xl:w-48' alt='Ashwani Singh' />
-                        <div className='text-base sm:text-2xl lg:text-lg 2xl:text-2xl font-bold pt-5'>Ashwani Singh</div>
-                        <div className='text-xs sm:text-base lg:text-sm 2xl:text-base font-normal pt-2'>Marketing Manager</div>
-                    </div>
-                    <div className='flex flex-col justify-start items-center shadow-teamShadow w-[155px] sm:w-[250px] lg:w-[200px] xl:w-[250px] my-2 sm:my-6 max-sm:px-1.5 max-sm:py-3 sm:p-3 border border-[#D9D9D9] bg-white z-30'>
-                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Mask%20group%20(14).png' className='max-sm:w-24 lg:w-36 xl:w-48' alt='Aashana Pathak' />
-                        <div className='text-base sm:text-2xl lg:text-lg 2xl:text-2xl font-bold pt-5'>Aashana Pathak</div>
-                        <div className='text-xs sm:text-base lg:text-sm 2xl:text-base font-normal pt-2'>Manager<br></br>(Human Resource)</div>
-                    </div>
-                    <div className='flex flex-col justify-start items-center shadow-teamShadow w-[155px] sm:w-[250px] lg:w-[200px] xl:w-[250px] my-2 sm:my-6 max-sm:px-1.5 max-sm:py-3 sm:p-3 border border-[#D9D9D9] bg-white z-30'>
-                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Mask%20group%20(12).png' className='max-sm:w-24 lg:w-36 xl:w-48' alt='Yash Ponda' />
-                        <div className='text-base sm:text-2xl lg:text-lg 2xl:text-2xl font-bold pt-5'>Yash Ponda</div>
-                        <div className='text-xs sm:text-base lg:text-sm 2xl:text-base font-normal pt-2'>Associate UX Designer</div>
-                    </div>
-                    <div className='flex flex-col justify-start items-center shadow-teamShadow w-[155px] sm:w-[250px] lg:w-[200px] xl:w-[250px] my-2 sm:my-6 max-sm:px-1.5 max-sm:py-3 sm:p-3 border border-[#D9D9D9] bg-white z-30'>
-                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Mask%20group%20(13).png' className='max-sm:w-24 lg:w-36 xl:w-48' alt='Rajneesh Dhiman' />
-                        <div className='text-base sm:text-2xl lg:text-lg 2xl:text-2xl font-bold pt-5'>Rajneesh Dhiman</div>
-                        <div className='text-xs sm:text-base lg:text-sm 2xl:text-base font-normal pt-2'>Campaign Management Executive</div>
-                    </div>
+                        <div className='flex flex-col justify-start items-center shadow-teamShadow w-[155px] sm:w-[250px] lg:w-[200px] xl:w-[250px] my-2 sm:my-6 max-sm:px-1.5 max-sm:py-3 sm:p-3 border border-[#D9D9D9] bg-white z-30'>
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Mask%20group%20(11).png' className='max-sm:w-24 lg:w-36 xl:w-48' alt='Ashwani Singh' />
+                            <div className='text-base sm:text-2xl lg:text-lg 2xl:text-2xl font-bold pt-5'>Ashwani Singh</div>
+                            <div className='text-xs sm:text-base lg:text-sm 2xl:text-base font-normal pt-2'>Marketing Manager</div>
+                        </div>
+                        <div className='flex flex-col justify-start items-center shadow-teamShadow w-[155px] sm:w-[250px] lg:w-[200px] xl:w-[250px] my-2 sm:my-6 max-sm:px-1.5 max-sm:py-3 sm:p-3 border border-[#D9D9D9] bg-white z-30'>
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Mask%20group%20(14).png' className='max-sm:w-24 lg:w-36 xl:w-48' alt='Aashana Pathak' />
+                            <div className='text-base sm:text-2xl lg:text-lg 2xl:text-2xl font-bold pt-5'>Aashana Pathak</div>
+                            <div className='text-xs sm:text-base lg:text-sm 2xl:text-base font-normal pt-2'>Manager<br></br>(Human Resource)</div>
+                        </div>
+                        <div className='flex flex-col justify-start items-center shadow-teamShadow w-[155px] sm:w-[250px] lg:w-[200px] xl:w-[250px] my-2 sm:my-6 max-sm:px-1.5 max-sm:py-3 sm:p-3 border border-[#D9D9D9] bg-white z-30'>
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Mask%20group%20(12).png' className='max-sm:w-24 lg:w-36 xl:w-48' alt='Yash Ponda' />
+                            <div className='text-base sm:text-2xl lg:text-lg 2xl:text-2xl font-bold pt-5'>Yash Ponda</div>
+                            <div className='text-xs sm:text-base lg:text-sm 2xl:text-base font-normal pt-2'>Associate UX Designer</div>
+                        </div>
+                        <div className='flex flex-col justify-start items-center shadow-teamShadow w-[155px] sm:w-[250px] lg:w-[200px] xl:w-[250px] my-2 sm:my-6 max-sm:px-1.5 max-sm:py-3 sm:p-3 border border-[#D9D9D9] bg-white z-30'>
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Mask%20group%20(13).png' className='max-sm:w-24 lg:w-36 xl:w-48' alt='Rajneesh Dhiman' />
+                            <div className='text-base sm:text-2xl lg:text-lg 2xl:text-2xl font-bold pt-5'>Rajneesh Dhiman</div>
+                            <div className='text-xs sm:text-base lg:text-sm 2xl:text-base font-normal pt-2'>Campaign Management Executive</div>
+                        </div>
                     </div>
                 </div>
                 {/* </div>  left-[20%] sm:left-[25%] md:left-[30%] xl:left-[37%] */}
@@ -426,7 +408,7 @@ const AboutUs = () => {
                             <div className='text-[#CED1E5] text-base xl:text-xl font-normal'>Business Development Associates</div>
                         </div>
                     </div>
-                    <a href='/careers' target='_blank'><button className='bg-custom-linear text-white p-3 sm:p-5 border-2 border-white rounded-full hover:text-slate-200'>Check Openings</button></a>
+                    <a href='/careers'><button className='bg-custom-linear text-white p-3 sm:p-5 border-2 border-white rounded-full hover:text-slate-200'>Check Openings</button></a>
                 </div>
             </div>
 
