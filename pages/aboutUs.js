@@ -242,10 +242,10 @@ const AboutUs = () => {
                         />
                         <div className='group text-[9px] bg-[#F3FBFF] py-1 lg:py-2 px-1 md:px-2 lg:px-4 transition-all duration-75 hover:shadow-hoverCard  sm:text-xs md:text-sm  xl:text-xl font-bold text-right absolute top-[15%] left-[1%] sm:left-[12%] lg:left-[18%] xl:left-[17%] 2xl:left-[22%]'>
                             Understanding Your<br />Business
-                            <div className='absolute hidden group-hover:block text-center top-[10px] md:top-[-80px] w-40 xl:w-40 2xl:w-48 max-sm:left-[85%] lg:left-[-55%] transform -translate-x-1/2 bg-white shadow-hoverCard rounded-lg z-30'>
-                                <div className="p-2 2xl:p-2 pr-3">
-                                    <h3 className="text-sm 2xl:text-2xl font-bold mb-2">1.</h3>
-                                    <p className="text-[10px] leading-[14px] 2xl:text-[11px] font-normal text-gray-600">We begin by getting to know you and your organization inside out. Through in-depth discussions and analysis, we strive to fully grasp your vision, objectives, and challenges. This foundational knowledge allows us to align our efforts with your specific goals and create solutions that truly resonate with your business.
+                            <div className='absolute hidden group-hover:block text-center top-[10px] md:top-[-50px] w-40 xl:w-40 2xl:w-48 max-sm:left-[85%] lg:left-[-55%] xl:left-[-45%] transform -translate-x-1/2 bg-white shadow-hoverCard rounded-lg z-30'>
+                                <div className="p-2 2xl:p-4 lg:py-4 lg:px-5 2xl:pr-4 2xl:px-4">
+                                    {/* <h3 className="text-sm 2xl:text-2xl font-bold mb-2">1.</h3> */}
+                                    <p className="text-[10px] leading-[14px] xl:text-[12px] 2xl:text-[13px] font-normal text-gray-600 text-center">We dive deep into your vision, goals, and challenges through detailed discussions and analysis. This ensures our solutions align perfectly with your objectives.
                                     </p>
                                 </div>
                                 <div className='absolute right-0 top-0 h-full w-2 bg-[#EF4931]'></div>
@@ -256,10 +256,10 @@ const AboutUs = () => {
                         <div className='group text-[9px] bg-[#F3FBFF] py-1 lg:py-2 px-1 md:px-2 lg:px-4 transition-all duration-75 hover:shadow-hoverCard sm:text-xs md:text-sm xl:text-xl font-bold text-right absolute bottom-[5%] sm:bottom-[30%] sm:left-[6%] lg:left-[13%] xl:left-[10%] 2xl:left-[16%]'>
                             Crafting & Executing <br />Strategies
 
-                            <div className='absolute hidden group-hover:block text-center max-md:top-[-100px] md:top-[-78px] w-40 xl:w-40 2xl:w-48 max-sm:left-[90%] lg:left-[-48%] xl:left-[-40%] 2xl:left-[-55%] transform -translate-x-1/2 bg-white shadow-hoverCard rounded-lg z-30'>
-                                <div className="p-2 2xl:p-2 2xl:pr-3.5">
-                                    <h3 className="text-sm 2xl:text-2xl font-bold mb-2">3.</h3>
-                                    <p className="text-[10px] leading-[14px] 2xl:text-[11px] font-normal text-gray-600">With a strong understanding of your business and actionable data, we design creative and strategic marketing campaigns tailored to your needs. From engaging content creation to targeted advertising, every initiative is crafted to maximize impact and deliver measurable results.
+                            <div className='absolute hidden group-hover:block text-center max-md:top-[-50px] md:top-[-30px] w-40 xl:w-40 2xl:w-48 max-sm:left-[90%] lg:left-[-48%] xl:left-[-40%] 2xl:left-[-50%] transform -translate-x-1/2 bg-white shadow-hoverCard rounded-lg z-30'>
+                                <div className="p-2 2xl:p-4 lg:py-4 lg:px-5 2xl:pr-4 2xl:px-4">
+                                    {/* <h3 className="text-sm 2xl:text-2xl font-bold mb-2">3.</h3> */}
+                                    <p className="text-[10px] leading-[14px] xl:text-[12px] 2xl:text-[12px] font-normal text-gray-600 text-center">We create tailored marketing campaigns—from content to advertising—designed to maximize results and deliver measurable success.
                                     </p>
                                 </div>
                                 <div className='absolute right-0 top-0 h-full w-2 bg-[#1E8E3E]'></div>
@@ -271,10 +271,10 @@ const AboutUs = () => {
                         <div className='group text-[9px] bg-[#F3FBFF] py-1 lg:py-2 px-1 md:px-2 lg:px-4 transition-all duration-75 hover:shadow-hoverCard sm:text-xs md:text-sm xl:text-xl font-bold text-left absolute top-[8%] right-[1%] sm:right-[13%] lg:right-[20%] xl:right-[15%] 2xl:right-[22%]'>
                             Harnessing the Power<br />of Data
 
-                            <div className='absolute hidden group-hover:block text-center top-[-80px] w-40 xl:w-40 2xl:w-48 right-[-50%] lg:right-[-140%] xl:right-[-115%] 2xl:right-[-145%] transform -translate-x-1/2 bg-white shadow-hoverCard rounded-lg z-30'>
-                                <div className="p-2 2xl:p-2 pl-3">
-                                    <h3 className="text-sm 2xl:text-2xl font-bold mb-2">2.</h3>
-                                    <p className="text-[10px] leading-[14px] 2xl:text-[11px] font-normal text-gray-600">Data is at the forefront of decision-making in today’s digital landscape. We leverage advanced analytics and tools to gather meaningful insights about your audience, industry trends, and market opportunities. These data-driven insights guide every step of our process, ensuring precision and effectiveness.</p>
+                            <div className='absolute hidden group-hover:block text-center top-[-30px] sm:top-[-30px] lg:top-[-50px] w-40 xl:w-40 2xl:w-48 right-[-50%] sm:right-[-80%] lg:right-[-140%] xl:right-[-105%] 2xl:right-[-125%] transform -translate-x-1/2 bg-white shadow-hoverCard rounded-lg z-30'>
+                                <div className="p-2 2xl:p-4 lg:py-4 lg:px-5 2xl:pr-4 2xl:px-4">
+                                    {/* <h3 className="text-sm 2xl:text-2xl font-bold mb-2">2.</h3> */}
+                                    <p className="text-[10px] leading-[14px] xl:text-[12px] 2xl:text-[12px] font-normal text-gray-600 text-center">Using advanced analytics, we uncover actionable insights about your audience, industry trends, and market opportunities. Data drives every decision for precision and impact.</p>
                                 </div>
                                 <div className='absolute left-0 top-0 h-full w-2 bg-[#174B24]'></div>
                                 <div className="absolute left-[-3px] top-1/2 w-0 h-0 border-t-4 border-r-4 border-b-4 border-transparent border-r-[#174B24]"></div>
@@ -285,10 +285,10 @@ const AboutUs = () => {
                         <div className='group text-[9px] bg-[#F3FBFF] py-1 lg:py-2 px-1 md:px-2 lg:px-4 transition-all duration-75 hover:shadow-hoverCard sm:text-xs md:text-sm xl:text-xl font-bold text-left absolute bottom-[28%] lg:bottom-[34%] xl:bottom-[40%] sm:bottom-[40%] right-[-3%] sm:right-[10%] lg:right-[16%] xl:right-[13%] 2xl:right-[18%]'>
                             Commitment to Continuous<br />Improvement
 
-                            <div className='absolute hidden group-hover:block text-center top-[-80px] w-40 xl:w-40 2xl:w-48 right-[-50%] lg:right-[-110%] xl:right-[-95%] 2xl:right-[-115%] transform -translate-x-1/2 bg-white shadow-hoverCard rounded-lg z-30'>
-                                <div className="p-2 2xl:p-2 pl-3">
-                                    <h3 className="text-sm 2xl:text-2xl font-bold mb-2">4.</h3>
-                                    <p className="text-[10px] leading-[14px] 2xl:text-[11px] font-normal text-gray-600">We believe that success is not a one-time event but an ongoing journey. That’s why we consistently monitor, analyze, and refine our strategies to ensure long-term growth and sustained success. By embracing a cycle of continuous improvement, we stay agile and adaptive in an ever-evolving marketplace.
+                            <div className='absolute hidden group-hover:block text-center top-[-80px] sm:top-[-10px] lg:top-[-30px] w-40 xl:w-40 2xl:w-48 right-[-50%] lg:right-[-115%] xl:right-[-85%] 2xl:right-[-100%] transform -translate-x-1/2 bg-white shadow-hoverCard rounded-lg z-30'>
+                                <div className="p-2 2xl:p-4 lg:py-4 lg:px-5 2xl:pr-4 2xl:px-4">
+                                    {/* <h3 className="text-sm 2xl:text-2xl font-bold mb-2">4.</h3> */}
+                                    <p className="text-[10px] leading-[14px] xl:text-[12px] 2xl:text-[12px] font-normal text-gray-600 text-center">Success is an ongoing journey. We monitor, analyze, and refine strategies to ensure long-term growth, staying agile in a dynamic marketplace.
                                     </p>
                                 </div>
                                 <div className='absolute left-0 top-0 h-full w-2 bg-[#4086EC]'></div>
