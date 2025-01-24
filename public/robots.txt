@@ -3,6 +3,7 @@ User-agent: *
 Allow: /
 Disallow: /category/*
 Disallow: /contactl/*
+Disallow: /testing/*
 Disallow: /100-women-dating-profile-statements-to-attract/
 Disallow: /10-100-free-bingo-foxy-casino-uk-games-no-deposit-forced-2020/
 Disallow: /10-migliori-app-di-appuntamenti-attraverso-android-3/
