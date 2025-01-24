@@ -1,22 +1,19 @@
 import '../styles/globals.css'
-import Header from '../components/Header'
-//import { Footer } from '../components/Footer'
-import ScrollProgress from '../components/ScrollProgress'
 import Head from 'next/head'
 import TagManager from 'react-gtm-module';
 import { useEffect, useState } from 'react'
 import Router, { useRouter } from 'next/router'
 import { HashLoader } from 'react-spinners'
 import { SessionProvider } from "next-auth/react"
-import Footer from '../components/home/Footer'
 // import WebinarPopup from '../components/webinarPopup';
 // import useWebinarPopup from '../components/hooks/usePopup'
 import ContactPopup from '../components/ContactPopup';
 import useContactPopup from '../components/hooks/useContactPopup';
 import Script from "next/script";
 import Navbar from '../components/Navbar';
-import Footer1 from '../components/home/Footer1';
 import ChatBot from '../components/ChatBot/ChatBot';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 
 
 function MyApp({ Component, pageProps: { session, ...pageProps }, }) {
@@ -59,8 +56,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps }, }) {
         <script src="/antiflicker.js" />
         <meta name="google-site-verification" content="O18N4BhbU7y11EzEu_fOYfNHdp-fCahcKZUpriC3hyQ" />
       </Head>
-        {/* <Header /> */}
-        <Navbar />
+        {routerr.pathname === '/testing/old_home' ? <Header /> : <Navbar />}
 
         {showLoader ? <div className='flex h-screen'><HashLoader
           color="#271d90"
@@ -77,7 +73,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps }, }) {
             </div> : null}
 
 
-            <Footer1 />
+            <Footer />
 
           </>}</>}
       {/* {showPopup && (
