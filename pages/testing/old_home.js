@@ -21,13 +21,13 @@ const page = () => {
 
   return (
     <>
-      <OgTags
+      {/* <OgTags
         url="https://analyticsliv.com/"
         title="Google Cloud Partner in India | GMP Partner | Analytics Liv"
         description="Accelerate your business growth with certified GMP and Google Cloud Partner in India. Analytics Liv delivers expert data-driven solutions, actionable insights, and advanced marketing strategies."
         twitterTitle="Google Cloud Partner in India | GMP Partner | Analytics Liv"
         twitterDescription="Accelerate your business growth with certified GMP and Google Cloud Partner in India. Analytics Liv delivers expert data-driven solutions, actionable insights, and advanced marketing strategies."
-      />
+      /> */}
 
       <StructuredData data={stuctureData} />
       <Home />
