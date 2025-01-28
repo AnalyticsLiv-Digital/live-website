@@ -196,10 +196,10 @@ const google_tag_manager = ({brandsdata}) => {
                             <span class="2xl:text-[33px] lg:text-[28px] text-[27px] leading-[1.7em] font-['Poppins'] font-semibold text-maintext">Google Tag Manager</span>
                         </h1>
                         <div class="relative">
-                            <p class="text-lg font-normal leading-[28px] font-[Poppins]">Enhance Your Digital
+                            <h2 class="text-lg font-normal leading-[28px] font-[Poppins]">Enhance Your Digital
                                 Strategy
                                 with Expert Analytics and Tag Management Solutions. From Google Analytics Audits and Setup to
-                                Advanced Custom Event Tracking, We AnalyticsLiv Power Your Data-Driven Success!</p>
+                                Advanced Custom Event Tracking, We AnalyticsLiv Power Your Data-Driven Success!</h2>
                             {/* <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/sparkler (1) 1.png" class="absolute bottom-[-25%] min-[1440px]:bottom-[-60%]"
                                 alt="shape" />
                                 <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/sparkler 1.png" class="absolute right-[0] top-[-35%]" alt="shape" /> */}

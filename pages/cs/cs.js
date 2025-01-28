@@ -271,7 +271,7 @@ export default function Home() {
                                             <div className='relative'>
                                                 <div className='rounded-lg'>
                                                     {formSubmit && <div className='relative text-s[#ffffff] p-4 space-y-4 h-full'>
-                                                        <h1 className='align-middle font-medium text-4xl'>Thank You for your interest.</h1>
+                                                        <h2 className='align-middle font-medium text-4xl'>Thank You for your interest.</h2>
                                                         <h2 className='align-middle text-xl'>We will get back to you soon.</h2>
                                                         <div className='absolute bottom-0 right-2 rounded-full w-20 h-20 bg-emerald-600 opacity-70 animate-bounce hover:animate-none duration-300 delay-75'></div>
                                                     </div>}
