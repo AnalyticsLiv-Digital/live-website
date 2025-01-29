@@ -606,7 +606,7 @@ const service_A = () => {
                                     <a href="/case-studies/skyrocket-your-campaigns-ctr-with-a-95-percent-surge-in-14-days" className='grid gap-5'>
                                         <div className=''>
                                             <Image
-                                                src="/casestd.png"
+                                                src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestd.png"
                                                 width={300}
                                                 height={300}
                                                 alt="Picture of the author"
@@ -625,7 +625,7 @@ const service_A = () => {
                                     <a href="/case-studies/driving-campaigns-in-dv360-to-post-click-attribution-success-with-36-percent-reduction-in-cpi" className='grid gap-1'>
                                         <div className='grid gap-4'>
                                             <Image
-                                                src="/casestd2.png"
+                                                src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestd2.png"
                                                 width={300}
                                                 height={300}
                                                 alt="Picture of the author"
