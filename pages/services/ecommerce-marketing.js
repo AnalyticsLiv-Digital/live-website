@@ -104,8 +104,8 @@ const ecommerce_marketing = () => {
                   >
                     <div>
                       <img
-                        src="/Ad Format Optimization white.png"
-                        alt=""
+                        src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad%20Format%20Optimization%20white.png"
+                        alt="Targeted Audience Reach"
                         className="h-10 w-10"
                       />
                     </div>
@@ -160,8 +160,8 @@ const ecommerce_marketing = () => {
                   >
                     <div>
                       <img
-                        src="/Ad Format Optimization white.png"
-                        alt=""
+                        src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad%20Format%20Optimization%20white.png"
+                        alt="Remarketing and Dynamic Ads"
                         className="h-10 w-10"
                       />
                     </div>
@@ -483,8 +483,8 @@ const ecommerce_marketing = () => {
                 >
                   <div>
                     <img
-                      src="/Ad Format Optimization white.png"
-                      alt=""
+                      src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad%20Format%20Optimization%20white.png"
+                      alt="Targeted Audience Reach"
                       className="h-10 w-10"
                     />
                   </div>
@@ -640,8 +640,8 @@ const ecommerce_marketing = () => {
                 >
                   <div>
                     <img
-                      src="/Ad Format Optimization white.png"
-                      alt=""
+                      src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad%20Format%20Optimization%20white.png"
+                      alt="Remarketing and Dynamic Ads"
                       className="h-10 w-10"
                     />
                   </div>

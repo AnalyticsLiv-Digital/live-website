@@ -219,7 +219,7 @@ export default function CookieConsent({ brandsdata }) {
       <div className="bg-[#2E2C37]">
         <div className="flex justify-between max-sm:gap-2 px-2 md:px-16 pt-5 ">
           <img
-            src="/AnalyticsLiv Logo.png"
+            src="https://storage.googleapis.com/website-bucket-uploads/static/public/AnalyticsLiv%20Logo.png"
             alt="analyticsliv-logo"
             className="max-sm:h-11 max-md:h-16 max-sm:w-[140px] max-md:w-[30%] bg-white rounded-full px-4"
           />

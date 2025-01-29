@@ -345,8 +345,8 @@ export default function AutoPlay() {
                   >
                     <div>
                       <img
-                        src="/Ad Format Optimization white.png"
-                        alt=""
+                        src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad%20Format%20Optimization%20white.png"
+                        alt="A/B Testing"
                         className="h-10 w-10"
                       />
                     </div>
@@ -577,8 +577,8 @@ export default function AutoPlay() {
                 >
                   <div>
                     <img
-                      src="/Ad Format Optimization white.png"
-                      alt=""
+                      src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad%20Format%20Optimization%20white.png"
+                      alt="A/B Testing"
                       className="h-10 w-10"
                     />
                   </div>

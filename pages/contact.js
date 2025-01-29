@@ -318,19 +318,19 @@ const contact = () => {
                             <div className='grid lg:grid-cols-3 sm:grid-cols-2 gap-5 my-5 w-full'>
                                 <div className=''>
                                     <div>
-                                        <span className="inline w-6"><img src="/address-28-16.png" ></img></span>
+                                        <span className="inline w-6"><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/address-28-16.png" alt='address' ></img></span>
                                         <p className='mt-1'>503, 31Five, Corporate Road, <br /> Prahaladnagar, S.G. Highway, <br />Ahmedabad 380015, Gujarat,<br /> India</p>
                                     </div>
                                 </div>
                                 <div className=''>
                                     <div>
-                                        <span className="inline w-6"><img src="/address-28-16.png" ></img></span>
+                                        <span className="inline w-6"><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/address-28-16.png" alt='address' ></img></span>
                                         <p className='mt-1'>3104 E Camelback Rd ,Suite #7406, <br /> Phoenix, AZ 85016,<br /> USA</p>
                                     </div>
                                 </div>
                                 <div className=''>
                                     <div>
-                                        <span className="inline w-6"><img src="/address-28-16.png" ></img></span>
+                                        <span className="inline w-6"><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/address-28-16.png" alt='address' ></img></span>
                                         <p className='mt-1'>Via Natale Prampolini, <br /> 15 - 00132, Roma,<br /> Italy</p>
                                     </div>
                                 </div>

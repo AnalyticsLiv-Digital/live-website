@@ -134,7 +134,7 @@ const service_A = () => {
                         <div className='grid lg:grid-cols-3 md:grid-cols-2 items-start justify-center gap-10'>
                             <div className='bg-[#fff8fa] xl:h-[460px] lg:h-[600px] md:h-[516px] rounded-[10px] py-6 px-4 hover:shadow-programeasure'>
                                 <div className='w-full'></div>
-                                <div className='mb-5 w-[50px] h-[50px]'><img src="/Ad_Format.png" alt="" /></div>
+                                <div className='mb-5 w-[50px] h-[50px]'><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad_Format.png" alt="Unmatched Programmatic Capabilities" /></div>
                                 <div className='w-full'></div>
                                 <h3 className='text-[#1D2124] text-[18px] font-semibold font-gilroy mb-[20px]'>Unmatched Programmatic Capabilities</h3>
                                 <ul className='text-[#646464] text-[14px] font-medium font-gilroy2 leading-6 ml-[15px] mb-5'>
@@ -151,7 +151,7 @@ const service_A = () => {
                             </div>
                             <div className='bg-[#fff8fa] xl:h-[460px] lg:h-[600px] md:h-[516px] rounded-[10px] py-6 px-4 hover:shadow-programeasure'>
                                 <div className='w-full'></div>
-                                <div className='mb-5 w-[50px] h-[50px]'><img src="/Ad_Format.png" alt="" /></div>
+                                <div className='mb-5 w-[50px] h-[50px]'><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad_Format.png" alt="Advanced Targeting & Creative Options" /></div>
                                 <div className='w-full'></div>
                                 <h3 className='text-[#1D2124] text-[18px] font-semibold font-gilroy mb-[20px]'>Advanced Targeting & Creative Options</h3>
                                 <ul className='text-[#646464] text-[14px] font-medium font-gilroy2 leading-6 ml-[15px] mb-5'>
@@ -168,7 +168,7 @@ const service_A = () => {
                             </div>
                             <div className='bg-[#fff8fa] xl:h-[460px] lg:h-[600px] md:h-[593px] rounded-[10px] py-6 px-4 hover:shadow-programeasure'>
                                 <div className='w-full'></div>
-                                <div className='mb-5 w-[50px] h-[50px]'><img src="/Ad_Format.png" alt="" /></div>
+                                <div className='mb-5 w-[50px] h-[50px]'><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad_Format.png" alt="Data-Driven Optimization & Insights" /></div>
                                 <div className='w-full'></div>
                                 <h3 className='text-[#1D2124] text-[18px] font-semibold font-gilroy mb-[20px]'>Data-Driven Optimization & Insights</h3>
                                 <ul className='text-[#646464] text-[14px] font-medium font-gilroy2 leading-6 ml-[15px] mb-5'>
@@ -185,7 +185,7 @@ const service_A = () => {
                             </div>
                             <div className='bg-[#fff8fa] xl:h-[490px] lg:h-[630px] md:h-[593px] rounded-[10px] py-6 px-4 hover:shadow-programeasure'>
                                 <div className='w-full'></div>
-                                <div className='mb-5 w-[50px] h-[50px]'><img src="/Ad_Format.png" alt="" /></div>
+                                <div className='mb-5 w-[50px] h-[50px]'><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad_Format.png" alt="Unified Buying" /></div>
                                 <div className='w-full'></div>
                                 <h3 className='text-[#1D2124] text-[18px] font-semibold font-gilroy mb-[20px]'>Unified Buying</h3>
                                 <ul className='text-[#646464] text-[14px] font-medium font-gilroy2 leading-6 ml-[15px] mb-5'>
@@ -205,7 +205,7 @@ const service_A = () => {
                             </div>
                             <div className='bg-[#fff8fa] xl:h-[490px] lg:h-[630px] md:h-[593px] rounded-[10px] py-6 px-4 hover:shadow-programeasure'>
                                 <div className='w-full'></div>
-                                <div className='mb-5 w-[50px] h-[50px]'><img src="/Ad_Format.png" alt="" /></div>
+                                <div className='mb-5 w-[50px] h-[50px]'><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad_Format.png" alt="Advanced Bidding Strategies" /></div>
                                 <div className='w-full'></div>
                                 <h3 className='text-[#1D2124] text-[18px] font-semibold font-gilroy mb-[20px]'>Advanced Bidding Strategies</h3>
                                 <ul className='text-[#646464] text-[14px] font-medium font-gilroy2 leading-6 ml-[15px] mb-5'>
@@ -225,7 +225,7 @@ const service_A = () => {
                             </div>
                             <div className='bg-[#fff8fa] xl:h-[490px] lg:h-[630px] md:h-[593px] rounded-[10px] py-6 px-4 hover:shadow-programeasure'>
                                 <div className='w-full'>
-                                    <div className='mb-5 w-[50px] h-[50px]'><img src="/Ad_Format.png" alt="" /></div></div>
+                                    <div className='mb-5 w-[50px] h-[50px]'><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad_Format.png" alt="Custom Marketing" /></div></div>
                                 <div className='w-full'>
                                     <h3 className='text-[#1D2124] text-[18px] font-semibold font-gilroy mb-[20px]'>Custom Marketing</h3>
                                     <ul className='text-[#646464] text-[14px] font-medium font-gilroy2 leading-6 ml-[15px] mb-5'>
@@ -361,23 +361,23 @@ const service_A = () => {
                                         <p >Campaign Strategy and Setup</p>
                                     </div>
                                     <div onClick={() => setActivetab('2')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '2' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                        <div><img src="/Audience Targeting white.png" alt="" className='h-10 w-10' /></div>
+                                        <div><img src="/Audience Targeting white.png" alt="Audience Targeting" className='h-10 w-10' /></div>
                                         <p>Audience Targeting</p>
                                     </div>
                                     <div onClick={() => setActivetab('3')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '3' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                        <div><img src="/Ad Format Optimization white.png" alt="" className='h-10 w-10' /></div>
+                                        <div><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad%20Format%20Optimization%20white.png" alt="Ad Format Optimization" className='h-10 w-10' /></div>
                                         <p>Ad Format Optimization</p>
                                     </div>
                                     <div onClick={() => setActivetab('4')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '4' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                        <div><img src="/Real-Time Bidding white.png" alt="" className='h-10 w-10' /></div>
+                                        <div><img src="/Real-Time Bidding white.png" alt="Real-Time Bidding (RTB) Expertise" className='h-10 w-10' /></div>
                                         <p>Real-Time Bidding (RTB) Expertise</p>
                                     </div>
                                     <div onClick={() => setActivetab('5')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '5' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                        <div><img src="/Continuous Campaign Management & Optimization white.png" alt="" className='h-10 w-[56px]' /></div>
+                                        <div><img src="/Continuous Campaign Management & Optimization white.png" alt="Continuous Campaign Management & Optimization" className='h-10 w-[56px]' /></div>
                                         <p>Continuous Campaign Management & Optimization</p>
                                     </div>
                                     <div onClick={() => setActivetab('6')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '6' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                        <div><img src="/In-Depth Reporting & Analytics white.png" alt="" className='h-10 w-10' /></div>
+                                        <div><img src="/In-Depth Reporting & Analytics white.png" alt="In-Depth Reporting & Analytics" className='h-10 w-10' /></div>
                                         <p>In-Depth Reporting & Analytics</p>
                                     </div>
                                 </div>
@@ -484,7 +484,7 @@ const service_A = () => {
 
                             <div className="panel_list powerbox mb-4 rounded-b-[15px]">
                                 <div onClick={() => setActivetab('3')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '3' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                    <div><img src="/Ad Format Optimization white.png" alt="" className='h-10 w-10' /></div>
+                                    <div><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad%20Format%20Optimization%20white.png" alt="Ad Format Optimization" className='h-10 w-10' /></div>
                                     <p>Ad Format Optimization</p>
                                 </div>
                                 <div id="tab3" className={`${activetab == 3 && 'items-center justify-center'} ${activetab != 3 && 'hidden'} relative p-5 pt-[10px] text-[13px] font-medium leading-8`}>
@@ -499,7 +499,7 @@ const service_A = () => {
 
                             <div className="panel_list powerbox mb-4 rounded-b-[15px]">
                                 <div onClick={() => setActivetab('4')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '4' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                    <div><img src="/Real-Time Bidding white.png" alt="" className='h-10 w-10' /></div>
+                                    <div><img src="/Real-Time Bidding white.png" alt="Real-Time Bidding (RTB) Expertise" className='h-10 w-10' /></div>
                                     <p>Real-Time Bidding (RTB) Expertise</p>
                                 </div>
                                 <div id="tab4" className={`${activetab == 4 && ' items-center justify-center'} ${activetab != 4 && 'hidden'} relative p-5 pt-[10px] text-[13px] font-medium leading-8`}>
@@ -514,7 +514,7 @@ const service_A = () => {
 
                             <div className="panel_list powerbox mb-4 rounded-b-[15px]">
                                 <div onClick={() => setActivetab('5')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '5' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                    <div><img src="/Continuous Campaign Management & Optimization white.png" alt="" className='h-10 w-[56px]' /></div>
+                                    <div><img src="/Continuous Campaign Management & Optimization white.png" alt="Continuous Campaign Management & Optimization" className='h-10 w-[56px]' /></div>
                                     <p>Continuous Campaign Management & Optimization</p>
                                 </div>
                                 <div id="tab5" className={`${activetab == 5 && ' items-center justify-center'} ${activetab != 5 && 'hidden'} relative p-5 pt-[10px] text-[13px] font-medium leading-8`}>
@@ -529,7 +529,7 @@ const service_A = () => {
 
                             <div className="panel_list powerbox mb-4 rounded-b-[15px]">
                                 <div onClick={() => setActivetab('6')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '6' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                    <div><img src="/In-Depth Reporting & Analytics white.png" alt="" className='h-10 w-10' /></div>
+                                    <div><img src="/In-Depth Reporting & Analytics white.png" alt="In-Depth Reporting & Analytics" className='h-10 w-10' /></div>
                                     <p>In-Depth Reporting & Analytics</p>
                                 </div>
                                 <div id="tab6" className={`${activetab == 6 && ' items-center justify-center'} ${activetab != 6 && 'hidden'} relative p-5 pt-[10px] text-[13px] font-medium leading-8`}>

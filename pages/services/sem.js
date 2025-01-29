@@ -397,7 +397,7 @@ const sem = () => {
                                 <div className='cursor-pointer'>
                                     <div className='inbox relative pb-4'>
                                         <Image
-                                            src="/analyzing (1).png"
+                                            src="https://storage.googleapis.com/website-bucket-uploads/static/public/analyzing%20(1).png"
                                             width={30}
                                             height={30}
                                             alt="Picture of the author"

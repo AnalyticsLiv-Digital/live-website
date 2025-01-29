@@ -74,7 +74,7 @@ const NewPopup = ({ onClose, onRegister }) => {
                             p-0 px-4 xl:px-0 rounded-lg shadow-lg md:overflow-y-auto max-w-[95%] md:max-w-[90%] lg:max-w-[600px] 2xl:max-w-[540px] 
                             mx-auto my-auto top-0 bottom-0 left-0 right-0 max-h-fit lg:max-h-[600px] 2xl:max-h-[650px]">
                 <div className=" w-full flex pt-5 flex-col md:px-4 xl:px-8 2xl:px-6 items-center justify-center z-20">
-                    <img src="/AnalyticsLiv Logo 2 1.png" alt="logo" />
+                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/AnalyticsLiv%20Logo%202%201.png" alt="logo" />
                     <div className="text-sm pt-3 font-normal">
                         B&nbsp;O&nbsp;O&nbsp;S&nbsp;T&nbsp; &nbsp;&nbsp;Y&nbsp;O&nbsp;U&nbsp;R
                     </div>

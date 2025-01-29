@@ -153,7 +153,7 @@ const cro = () => {
                         <div className='grid lg:grid-cols-3 md:grid-cols-2 items-start justify-center gap-10'>
                             <div className='bg-[#20dc8617] xl:h-[340px] lg:h-[410px] md:h-[335px] rounded-[10px] py-6 px-4 hover:shadow-programeasure'>
                                 <div className='w-full'></div>
-                                <div className='mb-5 w-[50px] h-[50px]'><img src="/Ad_Format.png" alt="" /></div>
+                                <div className='mb-5 w-[50px] h-[50px]'><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad_Format.png" alt="Revenue Acceleration" /></div>
                                 <div className='w-full'></div>
                                 <h3 className='text-[#1D2124] text-base leading-normal font-semibold font-Gilroy-SemiBold mb-[20px]'>Revenue Acceleration</h3>
                                 <ul className='text-[#646464] text-[13px] font-normal font-gilroy2 leading-[22px] ml-[15px] mb-5'>
@@ -170,7 +170,7 @@ const cro = () => {
                             </div>
                             <div className='bg-[#20dc8617] xl:h-[340px] lg:h-[410px] md:h-[335px] rounded-[10px] py-6 px-4 hover:shadow-programeasure'>
                                 <div className='w-full'></div>
-                                <div className='mb-5 w-[50px] h-[50px]'><img src="/Ad_Format.png" alt="" /></div>
+                                <div className='mb-5 w-[50px] h-[50px]'><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad_Format.png" alt="Friction-Free User Experiences" /></div>
                                 <div className='w-full'></div>
                                 <h3 className='text-[#1D2124] text-base leading-normal font-semibold font-Gilroy-SemiBold mb-[20px]'>Friction-Free User Experiences</h3>
                                 <ul className='text-[#646464] text-[13px] font-normal font-gilroy2 leading-[22px] ml-[15px] mb-5'>
@@ -187,7 +187,7 @@ const cro = () => {
                             </div>
                             <div className='bg-[#20dc8617] xl:h-[340px] lg:h-[410px] md:h-[350px] rounded-[10px] py-6 px-4 hover:shadow-programeasure'>
                                 <div className='w-full'></div>
-                                <div className='mb-5 w-[50px] h-[50px]'><img src="/Ad_Format.png" alt="" /></div>
+                                <div className='mb-5 w-[50px] h-[50px]'><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad_Format.png" alt="Relentless Testing and Optimization" /></div>
                                 <div className='w-full'></div>
                                 <h3 className='text-[#1D2124] text-base leading-normal font-semibold font-Gilroy-SemiBold mb-[20px]'>Relentless Testing and Optimization</h3>
                                 <ul className='text-[#646464] text-[13px] font-normal font-gilroy2 leading-[22px] ml-[15px] mb-5'>

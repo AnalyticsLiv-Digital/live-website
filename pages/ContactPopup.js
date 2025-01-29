@@ -75,7 +75,7 @@ export default function ContactPopup  ({ onClose, onRegister })  {
     left-0 right-0 z-50 max-h-fit lg:max-h-screen">
             <img src="/pngwing.com - 2024-10-16T154233.410 1.png" alt="waves" className="absolute left-[-120px] h-full z-10" />
             <div className="max-md:w-full max-lg:w-[50%] lg:w-[50%] flex flex-col md:px-4 xl:px-8 2xl:px-6 items-center justify-center z-20">
-                <img src="/AnalyticsLiv Logo 2 1.png" alt="logo" />
+                <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/AnalyticsLiv%20Logo%202%201.png" alt="logo" />
                 <h1 className="text-sm pt-3 font-normal">
                     B&nbsp;O&nbsp;O&nbsp;S&nbsp;T&nbsp; &nbsp;&nbsp;Y&nbsp;O&nbsp;U&nbsp;R
                 </h1>

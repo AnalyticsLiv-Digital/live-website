@@ -168,10 +168,10 @@ const webapp = () => {
 
                                     <div className='inbox relative pb-4'>
                                         <Image
-                                            src="/analyzing (1).png"
+                                            src="https://storage.googleapis.com/website-bucket-uploads/static/public/analyzing%20(1).png"
                                             width={30}
                                             height={30}
-                                            alt="Picture of the author"
+                                            alt="Data-Driven Decision Making"
                                             priority={true}
 
                                         />
@@ -229,23 +229,23 @@ const webapp = () => {
                             <div className='text-black xl:w-[35%] lg:w-[35%] w-full mt-[11px]'>
                                 <div className='p-8 pl-[25px] -mr-[30px] rounded-l-[10px] xl:w-[400px] xl:ml-auto'>
                                     <div onClick={() => setActivetab('1')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '1' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                        <div><img src="/Campaign Strategy and Setup white.png" alt="" className='h-10 w-10' /></div>
+                                        <div><img src="/Campaign Strategy and Setup white.png" alt="Needs Assessment" className='h-10 w-10' /></div>
                                         <p >Needs Assessment</p>
                                     </div>
                                     <div onClick={() => setActivetab('2')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '2' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                        <div><img src="/Audience Targeting white.png" alt="" className='h-10 w-10' /></div>
+                                        <div><img src="/Audience Targeting white.png" alt="Data Collection & Analysis" className='h-10 w-10' /></div>
                                         <p>Data Collection & Analysis</p>
                                     </div>
                                     <div onClick={() => setActivetab('3')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '3' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                        <div><img src="/Ad Format Optimization white.png" alt="" className='h-10 w-10' /></div>
+                                        <div><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad%20Format%20Optimization%20white.png" alt="Reporting & Recommendations" className='h-10 w-10' /></div>
                                         <p>Reporting & Recommendations</p>
                                     </div>
                                     <div onClick={() => setActivetab('4')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '4' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                        <div><img src="/Real-Time Bidding white.png" alt="" className='h-10 w-10' /></div>
+                                        <div><img src="/Real-Time Bidding white.png" alt="Data-Driven Decisions" className='h-10 w-10' /></div>
                                         <p>Data-Driven Decisions</p>
                                     </div>
                                     <div onClick={() => setActivetab('5')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '5' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                        <div><img src="/Continuous Campaign Management & Optimization white.png" alt="" className='h-10 w-[56px]' /></div>
+                                        <div><img src="/Continuous Campaign Management & Optimization white.png" alt="Ongoing Support" className='h-10 w-[56px]' /></div>
                                         <p>Ongoing Support</p>
                                     </div>
                                 </div>
@@ -316,7 +316,7 @@ const webapp = () => {
                         <div className="flex flex-col justify-start max-w-md m-auto lg:hidden">
                             <div className="panel_list webbox mb-4 rounded-b-[15px]">
                                 <div onClick={() => setActivetab('1')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '1' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                    <div><img src="/Campaign Strategy and Setup white.png" alt="" className='h-10 w-10' /></div>
+                                    <div><img src="/Campaign Strategy and Setup white.png" alt="Needs Assessment" className='h-10 w-10' /></div>
                                     <p >Needs Assessment</p>
                                 </div>
                                 <div id="tab1" className={`${activetab == 1 && 'items-center justify-center'} ${activetab != 1 && 'hidden'} relative p-5 pt-[10px] text-[13px] font-medium leading-8`}>
@@ -332,7 +332,7 @@ const webapp = () => {
 
                             <div className="panel_list webbox mb-4 rounded-b-[15px]">
                                 <div onClick={() => setActivetab('2')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '2' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                    <div><img src="/Audience Targeting white.png" alt="" className='h-10 w-10' /></div>
+                                    <div><img src="/Audience Targeting white.png" alt="Data Collection & Analysis" className='h-10 w-10' /></div>
                                     <p>Data Collection & Analysis</p>
                                 </div>
                                 <div id="tab2" className={`${activetab == 2 && ' items-center justify-center'} ${activetab != 2 && 'hidden'} relative p-5 pt-[10px] text-[13px] font-medium leading-8`}>
@@ -347,7 +347,7 @@ const webapp = () => {
 
                             <div className="panel_list webbox mb-4 rounded-b-[15px]">
                                 <div onClick={() => setActivetab('3')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '3' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                    <div><img src="/Ad Format Optimization white.png" alt="" className='h-10 w-10' /></div>
+                                    <div><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad%20Format%20Optimization%20white.png" alt="Reporting & Recommendations" className='h-10 w-10' /></div>
                                     <p>Reporting & Recommendations</p>
                                 </div>
                                 <div id="tab3" className={`${activetab == 3 && 'items-center justify-center'} ${activetab != 3 && 'hidden'} relative p-5 pt-[10px] text-[13px] font-medium leading-8`}>
@@ -363,7 +363,7 @@ const webapp = () => {
 
                             <div className="panel_list webbox mb-4 rounded-b-[15px]">
                                 <div onClick={() => setActivetab('4')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '4' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                    <div><img src="/Real-Time Bidding white.png" alt="" className='h-10 w-10' /></div>
+                                    <div><img src="/Real-Time Bidding white.png" alt="Data-Driven Decisions" className='h-10 w-10' /></div>
                                     <p>Data-Driven Decisions</p>
                                 </div>
                                 <div id="tab4" className={`${activetab == 4 && ' items-center justify-center'} ${activetab != 4 && 'hidden'} relative p-5 pt-[10px] text-[13px] font-medium leading-8`}>
@@ -378,7 +378,7 @@ const webapp = () => {
 
                             <div className="panel_list webbox mb-4 rounded-b-[15px]">
                                 <div onClick={() => setActivetab('5')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '5' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                    <div><img src="/Continuous Campaign Management & Optimization white.png" alt="" className='h-10 w-[56px]' /></div>
+                                    <div><img src="/Continuous Campaign Management & Optimization white.png" alt="Ongoing Support" className='h-10 w-[56px]' /></div>
                                     <p>Ongoing Support</p>
                                 </div>
                                 <div id="tab5" className={`${activetab == 5 && ' items-center justify-center'} ${activetab != 5 && 'hidden'} relative p-5 pt-[10px] font-gilroy2 text-[13px] font-medium leading-8`}>

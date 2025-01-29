@@ -354,8 +354,8 @@ const training = () => {
           <div className="pb-4">
             <div className="flex justify-center">
               <img
-                src="/AnalyticsLiv 2.png"
-                alt=""
+                src="https://storage.googleapis.com/website-bucket-uploads/static/public/AnalyticsLiv%202.png"
+                alt="AnalyticsLiv"
                 className="max-w-[200px] max-h-[100px]"
               />
             </div>
