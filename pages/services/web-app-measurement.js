@@ -233,7 +233,7 @@ const webapp = () => {
                                         <p >Needs Assessment</p>
                                     </div>
                                     <div onClick={() => setActivetab('2')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '2' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                        <div><img src="/Audience Targeting white.png" alt="Data Collection & Analysis" className='h-10 w-10' /></div>
+                                        <div><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Audience%20Targeting%20white.png" alt="Data Collection & Analysis" className='h-10 w-10' /></div>
                                         <p>Data Collection & Analysis</p>
                                     </div>
                                     <div onClick={() => setActivetab('3')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '3' ? 'border-t-[#0092f4ab]' : ''}`}>
@@ -332,7 +332,7 @@ const webapp = () => {
 
                             <div className="panel_list webbox mb-4 rounded-b-[15px]">
                                 <div onClick={() => setActivetab('2')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '2' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                    <div><img src="/Audience Targeting white.png" alt="Data Collection & Analysis" className='h-10 w-10' /></div>
+                                    <div><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Audience%20Targeting%20white.png" alt="Data Collection & Analysis" className='h-10 w-10' /></div>
                                     <p>Data Collection & Analysis</p>
                                 </div>
                                 <div id="tab2" className={`${activetab == 2 && ' items-center justify-center'} ${activetab != 2 && 'hidden'} relative p-5 pt-[10px] text-[13px] font-medium leading-8`}>

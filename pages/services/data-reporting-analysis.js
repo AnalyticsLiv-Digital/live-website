@@ -331,8 +331,8 @@ export default function AutoPlay() {
                   >
                     <div>
                       <img
-                        src="/Audience Targeting white.png"
-                        alt=""
+                        src="https://storage.googleapis.com/website-bucket-uploads/static/public/Audience%20Targeting%20white.png"
+                        alt="Campaign Optimization"
                         className="h-10 w-10"
                       />
                     </div>
@@ -542,8 +542,8 @@ export default function AutoPlay() {
                 >
                   <div>
                     <img
-                      src="/Audience Targeting white.png"
-                      alt=""
+                      src="https://storage.googleapis.com/website-bucket-uploads/static/public/Audience%20Targeting%20white.png"
+                      alt="Campaign Optimization"
                       className="h-10 w-10"
                     />
                   </div>

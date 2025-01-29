@@ -85,8 +85,8 @@ const lead_generation = () => {
                   >
                     <div>
                       <img
-                        src="/Audience Targeting white.png"
-                        alt=""
+                        src="https://storage.googleapis.com/website-bucket-uploads/static/public/Audience%20Targeting%20white.png"
+                        alt="Audience Targeting"
                         className="h-10 w-10"
                       />
                     </div>
@@ -415,8 +415,8 @@ const lead_generation = () => {
                 >
                   <div>
                     <img
-                      src="/Audience Targeting white.png"
-                      alt=""
+                      src="https://storage.googleapis.com/website-bucket-uploads/static/public/Audience%20Targeting%20white.png"
+                      alt="Audience Targeting"
                       className="h-10 w-10"
                     />
                   </div>

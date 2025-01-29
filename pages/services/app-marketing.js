@@ -85,8 +85,8 @@ const app_marketing = () => {
                   >
                     <div>
                       <img
-                        src="/Audience Targeting white.png"
-                        alt=""
+                        src="https://storage.googleapis.com/website-bucket-uploads/static/public/Audience%20Targeting%20white.png"
+                        alt="Audience Targeting and Segmentation"
                         className="h-10 w-10"
                       />
                     </div>
@@ -410,8 +410,8 @@ const app_marketing = () => {
                 >
                   <div>
                     <img
-                      src="/Audience Targeting white.png"
-                      alt=""
+                      src="https://storage.googleapis.com/website-bucket-uploads/static/public/Audience%20Targeting%20white.png"
+                      alt="Audience Targeting and Segmentation"
                       className="h-10 w-10"
                     />
                   </div>
