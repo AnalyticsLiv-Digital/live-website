@@ -182,14 +182,14 @@ const cookieLanding = ({ brandsdata }) => {
       <div className="">
         <section className="flex max-lg:flex-wrap-reverse lg:px-10 xl:px-28 w-full justify-between gap-12 2xl:gap-16 py-6 lg:py-16 2xl:py-24">
           <div className="w-full lg:w-1/2 max-sm:px-4 max-md:mt-[25dvh] max-lg:mt-[35dvh]">
-            <div className="text-txt text-[30px] 2xl:text-[35px] font-semibold leading-10 text-center lg:text-left pb-8">
+            <h1 className="text-txt text-[30px] 2xl:text-[35px] font-semibold leading-10 text-center lg:text-left pb-8">
               Stay compliant and secure - Embrace Cookie Consent Mode
-            </div>
-            <div className="text-base font-normal text-center lg:text-left pb-8 lg:pb-16">
+            </h1>
+            <h2 className="text-base font-normal text-center lg:text-left pb-8 lg:pb-16">
               As a trusted Google Analytics partner, Analyticsliv helps businesses
               to meet privacy goals with effective Cookie Consent Mode strategies,
               ensuring GDPR compliance.
-            </div>
+            </h2>
             <div className="flex max-md:flex-col max-md:mx-5 justify-center lg:justify-start gap-4 lg:gap-8">
               {/* <a href="/webinar/cookie-consent" target="_blank"  className="butn text-center">
              Watch Our Webinar
@@ -328,9 +328,9 @@ const cookieLanding = ({ brandsdata }) => {
                 alt="privacy"
                 className="h-10 w-10 md:h-12 md:w-12"
               />
-              <h1 className="sm:text-[15px] font-semibold">
+              <h3 className="sm:text-[15px] font-semibold">
                 Cookie Consent Mode
-              </h1>
+              </h3>
               <div className="text-xs font-normal text-[#152F2E]">
                 Cookie Consent Mode in Google Analytics helps businesses align
                 data collection with user privacy preferences, ensuring compliance
@@ -343,9 +343,9 @@ const cookieLanding = ({ brandsdata }) => {
                 alt="Consent_Managemnt"
                 className="h-10 w-10 md:h-12 md:w-12"
               />
-              <h1 className="sm:text-[15px] font-semibold">
+              <h3 className="sm:text-[15px] font-semibold">
                 Optimizing Data Use with Consent Management
-              </h1>
+              </h3>
               <div className="text-xs font-normal text-[#152F2E]">
                 Effective consent management allows you to collect and use data
                 legally and ethically by securing clear user permissions.{" "}
@@ -357,9 +357,9 @@ const cookieLanding = ({ brandsdata }) => {
                 alt="web-privacy"
                 className="h-10 w-10 md:h-12 md:w-12"
               />
-              <h1 className="sm:text-[15px] font-semibold">
+              <h3 className="sm:text-[15px] font-semibold">
                 Preparing for Privacy-First Web Analytics
-              </h1>
+              </h3>
               <div className="text-xs font-normal text-[#152F2E]">
                 As privacy gains importance, adapt your analytics to focus on user
                 privacy by understanding new laws, using consent tools, and
@@ -427,9 +427,9 @@ const cookieLanding = ({ brandsdata }) => {
                     alt="check-up"
                     className="h-10 w-10 md:h-12 md:w-12 mb-4 mx-auto"
                   />
-                  <h1 className=" text-sm sm:text-[15px] font-semibold mb-2">
+                  <h3 className=" text-sm sm:text-[15px] font-semibold mb-2">
                     {item.title}
-                  </h1>
+                  </h3>
                   <div className="text-xs font-normal text-[#152F2E]">
                     {item.description}
                   </div>
@@ -616,9 +616,9 @@ const cookieLanding = ({ brandsdata }) => {
                   key={item.id}
                   className="h-[200px] w-[180px] py-10 rounded-[40px] border border-[#0057E9] px-5 flex flex-col justify-center items-center"
                 >
-                  <h1 className="text-[#152F2E] text-sm font-semibold pb-7 text-center">
+                  <h3 className="text-[#152F2E] text-sm font-semibold pb-7 text-center">
                     {item.title}
-                  </h1>
+                  </h3>
                   <div className="text-[#152F2E] text-xs font-normal text-center">
                     {item.description}
                   </div>

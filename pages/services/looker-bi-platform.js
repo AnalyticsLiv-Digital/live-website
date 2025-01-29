@@ -64,12 +64,12 @@ export default class AutoPlay extends Component {
           <div class="md:mt-4 px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16">
             <div class="grid lg:grid-cols-2 gap-10">
               <div class="text-left">
-                <h2 class="text-lookerheading text-[40px] font-bold inline">
+                <h1 class="text-lookerheading text-[40px] font-bold inline">
                   <span class="relative after:absolute after:left-0 after:bottom-[-5px] after:bg-[#07A9F9] after:h-[9px] after:w-20 after:rounded-[5px]">
                     Looker{" "}
                   </span>{" "}
                   BI Platform Services
-                </h2>
+                </h1>
                 <br /> <br />
                 <h3 class="text-lookerheading text-[30px] font-medium">
                   Tailored for Your Success

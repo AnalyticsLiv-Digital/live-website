@@ -587,8 +587,8 @@ export default function gtmNew({ brandsdata }) {
 
                     </div>
                     <div className='xl:w-[50%] max-md:items-center max-xl:text-center lg:pl-12 mt-7 xl:h-[50%] 2xl:pt-[10vh]  text-white flex flex-col max-md:gap-6 gap-4 lg:gap-[2vh]'>
-                        <div className='text-2xl md:text-3xl xl:text-4xl font-semibold lg:leading-[50px]'>Optimize Your Website
-                            and Mobile Apps Data with Google Tag Manager </div>
+                        <h1 className='text-2xl md:text-3xl xl:text-4xl font-semibold lg:leading-[50px]'>Optimize Your Website
+                            and Mobile Apps Data with Google Tag Manager </h1>
                         <div className='text-sm lg:text-base font-normal xl:leading-[23px] max-sm:pb-5'>As a certified Google Tag Manager partner, we specialize in comprehensive tag management services. We help streamline your tracking and analytics setup, ensuring efficient and accurate data collection.</div>
                         <a onClick={scrolling6}
                             className='max-sm:hidden' target='_'><button style={{ boxShadow: '3px 3px 7px rgba(0, 0, 0, 0.3)' }}
@@ -653,7 +653,7 @@ export default function gtmNew({ brandsdata }) {
                         <div className='gtmForm1 xl:absolute max-md:mx-4 overflow-auto z-10 h-[480px] md:h-[500px] 2xl:h-[550px] md:my-10 right-[10%] max-md:mt-4 md:top-[450px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] 
                         text-center flex flex-col justify-around items-center px-3 md:px-4 py-2 md:py-3 bg-white'>
 
-                            <h1 className='text-2xl md:text-[28px] font-semibold text-[#246096]'>We are here to Help you</h1>
+                            <h4 className='text-2xl md:text-[28px] font-semibold text-[#246096]'>We are here to Help you</h4>
 
                             <div className='text-sm font-normal leading-4 text-[#0D8CA4]'>For better understanding of centralized and optimized your tag management system</div>
 
@@ -704,7 +704,7 @@ export default function gtmNew({ brandsdata }) {
 
                                 {/* <div className='flex flex-col max-[340px]:w-[280px] w-[340px] h-[200px] md:w-[380px] md:h-[230px] border-[3px] rounded-[5px] border-[#EBEBEB] hover:border-[#b1afaf] hover:shadow-md justify-around items-center px-4 md:px-5 py-5 text-center' key={item.id}> */}
                                 <img src={item.path} alt='check-up' className='h-10 w-10 md:h-12 md:w-12' />
-                                <h1 className='sm:text-[15px] font-semibold'>{item.title}</h1>
+                                <h3 className='sm:text-[15px] font-semibold'>{item.title}</h3>
                                 <div className='text-xs font-normal text-[#152F2E]'>
                                     {item.description}
                                 </div>
@@ -735,7 +735,7 @@ export default function gtmNew({ brandsdata }) {
                                 <div className="text-center md:w-[20%] flex flex-col justify-center items-center h-[231px] w-[300px] flex-shrink-0 border border-[#EBEBEB] p-4 py-4  px-5 mr-4 gap-5"
                                     key={item.id}>
                                     <img src={item.path} alt='check-up' className='h-10 w-10 mx-auto md:h-12 md:w-12' />
-                                    <h1 className='text-sm sm:text-[15px] font-semibold py-2'>{item.title}</h1>
+                                    <h3 className='text-sm sm:text-[15px] font-semibold py-2'>{item.title}</h3>
                                     <div className='text-xs py-3 font-normal text-[#152F2E]'>
                                         {item.description}
                                     </div>
@@ -790,7 +790,7 @@ export default function gtmNew({ brandsdata }) {
                                         alt="check-up"
                                         className="h-10 w-10 md:h-12 md:w-12 mb-4 mx-auto"
                                     />
-                                    <h1 className=" text-sm sm:text-[15px] font-semibold mb-2">{item.title}</h1>
+                                    <h3 className=" text-sm sm:text-[15px] font-semibold mb-2">{item.title}</h3>
                                     <div className="text-xs font-normal text-[#152F2E]">
                                         {item.description}
                                     </div>

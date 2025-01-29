@@ -29,3 +29,30 @@ export const schema = () => {
         />
     )
 }
+
+
+export const generateBlogSchema = (blogData) => ({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://analyticsliv.com/blogs/${blogData?.slug}`,
+    },
+    "headline": blogData?.title,
+    "description": blogData?.description,
+    "image": blogData?.thumbnail,
+    "author": {
+      "@type": "Person",
+      "name": blogData?.author,
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AnalyticsLiv",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://storage.googleapis.com/website-bucket-uploads/static/logo.png",
+      },
+    },
+    "datePublished": blogData?.date,
+  });
+  

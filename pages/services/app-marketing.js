@@ -27,9 +27,9 @@ const app_marketing = () => {
               <h1 className="text-4xl md:text-6xl font-['Poppins'] font-bold text-gray-600 pt-4">
                 APP MARKETING
               </h1>
-              <h3 className="tracking-widest uppercase font-semibold text-xl text-stone-500">
+              <h2 className="tracking-widest uppercase font-semibold text-xl text-stone-500">
                 Boost Your App's Success with DV360 <br /> and Google Ads
-              </h3>
+              </h2>
               <p className="md:pt-6 text-gray-700 font-[Poppins]">
                 Are you looking to maximize the reach and success of your mobile
                 app? Our App Marketing Services can help you achieve just that!

@@ -76,14 +76,14 @@ export default function ContactPopup  ({ onClose, onRegister })  {
             <img src="/pngwing.com - 2024-10-16T154233.410 1.png" alt="waves" className="absolute left-[-120px] h-full z-10" />
             <div className="max-md:w-full max-lg:w-[50%] lg:w-[50%] flex flex-col md:px-4 xl:px-8 2xl:px-6 items-center justify-center z-20">
                 <img src="/AnalyticsLiv Logo 2 1.png" alt="logo" />
-                <div className="text-sm pt-3 font-normal">
+                <h1 className="text-sm pt-3 font-normal">
                     B&nbsp;O&nbsp;O&nbsp;S&nbsp;T&nbsp; &nbsp;&nbsp;Y&nbsp;O&nbsp;U&nbsp;R
-                </div>
+                </h1>
                 <div className="text-[#08A6F8] text-2xl sm:text-2xl md:text-[25px] lg:text-[25px] xl:text-4xl font-extrabold pb-2 pt-2 2xl:pt-5">CONVERSIONS</div>
                 <img src="/Rectangle 175.png" alt="linear" />
-                <div className=" text-sm md:text-base lg:text-base 2xl:text-[17px] pt-5 2xl:pt-6 font-normal text-center md:text-center">
+                <h2 className=" text-sm md:text-base lg:text-base 2xl:text-[17px] pt-5 2xl:pt-6 font-normal text-center md:text-center">
                     We offer expert Conversion Rate Optimization (CRO) services to maximize your website's potential.
-                </div>
+                </h2>
 
                 <form
                     className="flex flex-col gap-3 md:gap-3 2xl:gap-4 pt-3 2xl:pt-6 w-full"

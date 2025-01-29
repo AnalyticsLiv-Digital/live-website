@@ -86,12 +86,12 @@ const service_A = () => {
                                 <h1 className="2xl:text-[33px] lg:text-[28px] text-[27px] leading-[1.7em] font-['Poppins'] font-semibold text-maintext pt-4">
                                     DV360: Programmatic Media Buying Redefined with AnalyticsLiv
                                 </h1>
-                                <h3 className="text-[23px] text-[#333333] font-semibold leading-[33px]">
+                                <h2 className="text-[23px] text-[#333333] font-semibold leading-[33px]">
                                     Unleash the Power of Precision Targeting and Automated Bidding
-                                </h3>
-                                <p className="text-base font-normal leading-[28px] font-[Poppins]">
+                                </h2>
+                                <h3 className="text-base font-normal leading-[28px] font-[Poppins]">
                                     Are you ready to move beyond traditional media buying and embrace the efficiency and effectiveness of programmatic advertising?  AnalyticsLiv's DV360 service empowers you to do just that.
-                                </p>
+                                </h3>
                                 <div className='flex max-[425px]:flex-wrap flex-nowrap items-center gap-5'>
                                     {/* <Link href="/contact?id=programatic-advertising">
                                         <button className="butn max-[425px]:mt-0 mt-6">REQUEST A DEMO</button>
