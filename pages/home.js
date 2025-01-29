@@ -150,7 +150,7 @@ export default function Home({brandsdata,blogsdata}) {
                         </div>
 
                         <div data-aos="fade-right" data-aos-once="true" className="lg:w-1/2 w-4/5 m-auto">
-                            <h1 className="font-medium text-white text-3xl pt-2 pb-2 md:pt-8 md:pb-4 whitespace-pre leading-relaxed text-center md:text-left">What We Do?</h1>
+                            <h3 className="font-medium text-white text-3xl pt-2 pb-2 md:pt-8 md:pb-4 whitespace-pre leading-relaxed text-center md:text-left">What We Do?</h3>
                             <div className="bg-black w-100% h-0.5 rounded-full"></div>
                             <ul className="text-purple-100 leading-6 py-4 tracking-widest">
                                 <li className="my-2">Understand context, needs and expected outcomes</li>
@@ -175,7 +175,7 @@ export default function Home({brandsdata,blogsdata}) {
                             <img src="https://storage.googleapis.com/website-bucket-uploads/static/team.png" className="m-auto" />
                         </div>
                         <div data-aos="fade-left" data-aos-once="true" className="lg:w-1/2 w-4/5 m-auto">
-                            <h1 className="font-medium text-white text-3xl md:pt-8 md:pb-4 whitespace-pre m-auto leading-relaxed text-center md:text-left">Services we Offer</h1>
+                            <h3 className="font-medium text-white text-3xl md:pt-8 md:pb-4 whitespace-pre m-auto leading-relaxed text-center md:text-left">Services we Offer</h3>
                             <div className="bg-black w-100% h-0.5 rounded-full"></div>
                             <div className="lg:flex lg:space-x-10 py-2 md:py-4">
                                 <ul className="text-purple-200 tracking-widest ">
@@ -235,7 +235,7 @@ export default function Home({brandsdata,blogsdata}) {
                     <div data-aos="fade-up" data-aos-duration="1000" data-aos-once="true" className="relative md:pb-8 ">
                         <img className="absolute -top-28 right-0  bg-gradient-to-b from-blue-400 to-transparent w-96 h-96 rounded-full blur-2xl " />
                         <img className="absolute mt-24 bottom-0 left-0 bg-gradient-to-t from-red-800 to-transparent w-96 h-96 rounded-full blur-2xl " />
-                        <h1 className="text-sky-300 w-full h-auto font-semibold text-xl md:pt-6 text-center uppercase tracking-widest ">Hear from the clients !</h1>
+                        <h3 className="text-sky-300 w-full h-auto font-semibold text-xl md:pt-6 text-center uppercase tracking-widest ">Hear from the clients !</h3>
                         <div className="text-justify items-center lg:flex lg:justify-evenly py-8 lg:py-12">
 
                             <div className=" rounded relative pt-3 px-2 lg:pt-4 lg:px-4 pb-8 lg:backdrop-blur bg-gray-200 shadow-lg shadow-black  w-4/5 mx-auto lg:w-1/4 text-center ">
@@ -284,7 +284,7 @@ export default function Home({brandsdata,blogsdata}) {
                 
                 <section >
                     <div style={{ backgroundImage: `url("https://storage.googleapis.com/website-bucket-uploads/static/bg2.png")` }} className="bg-cover lg:bg-fixed">
-                        <h1 className="text-black w-full h-auto font-bold text-3xl pt-4 md:pt-12 text-center uppercase tracking-widest"><Link className="blog-link" href="/blogs">B L O G S</Link></h1>
+                        <h3 className="text-black w-full h-auto font-bold text-3xl pt-4 md:pt-12 text-center uppercase tracking-widest"><Link className="blog-link" href="/blogs">B L O G S</Link></h3>
                         <div data-aos="zoom-in" data-aos-once="true" className="text-center lg:flex justify-evenly p-8 md:p-12">
                             
                         {blogsdata && blogsdata.blog.map((blog,key) => (
@@ -303,7 +303,7 @@ export default function Home({brandsdata,blogsdata}) {
                             <div className="lg:w-2/3"><img src="https://storage.googleapis.com/website-bucket-uploads/static/help.png" /></div>
                             <div className="lg:w-1/3 align-middle rounded-lg bg-purple-200 text-center py-8 lg:py-0">
                                 <img src='https://storage.googleapis.com/website-bucket-uploads/static/support.png' className="mx-auto mt-2" />
-                                <h1 className="font-medium text-slate-700 text-2xl whitespace-pre lg:mt-6 mb-4 tracking-wider">Let Us Help!</h1>
+                                <h3 className="font-medium text-slate-700 text-2xl whitespace-pre lg:mt-6 mb-4 tracking-wider">Let Us Help!</h3>
 
                                 <Link className="request-a-quote" href="/contact">
                                     <button className="rounded-xl text-white bg-blue-400 hover:bg-blue-500 shadow-md shadow-slate-800 transition duration-200 delay-75 shadow-md text-white mt-1 w-1/2 lg:w-52 p-2 border border-slate-200">Request A Quote</button></Link>

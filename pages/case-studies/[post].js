@@ -142,7 +142,7 @@ const index = ({ casestudyDat }) => {
                 <svg xmlns="http://www.w3.org/2000/svg" className="absolute lg:w-48 w-32 bottom-0 fill-green-400 blur-md -rotate-12" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15">
                     <path d="M7.932 1.248a.5.5 0 0 0-.864 0l-7 12A.5.5 0 0 0 .5 14h14a.5.5 0 0 0 .432-.752l-7-12Z" />
                 </svg>
-                <h1 className="text-center text-4xl font-semibold uppercase mb-2">Case Study</h1>
+                <h2 className="text-center text-4xl font-semibold uppercase mb-2">Case Study</h2>
 
                 <div className="relative lg:flex w-full lg:w-5/6 space-y-4 lg:space-y-0 lg:space-x-4 mx-auto pt-4 pb-8 px-4">
                     <div className="p-4 lg:w-3/4 space-y-6 bg-white">
@@ -152,7 +152,7 @@ const index = ({ casestudyDat }) => {
 
                         {cd.content && cd.content.map((casestudy, key) => (
                             <div key={key}>
-                                <h2 className="inline uppercase font-semibold text-xl text-slate-800">{casestudy.heading}:</h2>
+                                <h3 className="inline uppercase font-semibold text-xl text-slate-800">{casestudy.heading}:</h3>
                                 <p className="px-8 mt-4 text-gray-600">
                                     {casestudy.description}
                                 </p>
@@ -165,12 +165,12 @@ const index = ({ casestudyDat }) => {
 
                         <div className={`${formFixed ? "sticky top-20" : "relative"} h-fit lg:w-1/2 bg-white px-10 py-4`}>
                             {formSubmit ? <div className='relative text-slate-700 p-4 space-y-4 h-full'>
-                                <h1 className='align-middle font-medium text-4xl'>Thank You for your interest.</h1>
+                                <h3 className='align-middle font-medium text-4xl'>Thank You for your interest.</h3>
                                 <h2 className='align-middle text-xl'>The download link for this case study has been sent to the email-id provided.</h2>
                                 <div><a href='#' className='text-blue-500 underline'>Click here</a> to go to Home Page</div>
                                 <div className='absolute bottom-0 right-2 rounded-full w-20 h-20 bg-emerald-600 opacity-70 animate-bounce hover:animate-none duration-300 delay-75'></div>
                             </div> : <form className="space-y-4 md:space-y-6">
-                                <h1 className="text-center text-xl">Enter your details to download the casestudy.</h1>
+                                <h3 className="text-center text-xl">Enter your details to download the casestudy.</h3>
                                 <div className="h-0.5 bg-cyan-600"></div>
 
                                 <div className="relative">

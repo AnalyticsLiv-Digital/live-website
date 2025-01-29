@@ -10,6 +10,7 @@ import { ScaleLoader } from 'react-spinners'
 import SimilarPost from '../../components/SimilarPost'
 import RecommendedBlogs from '../../components/RecommendedBlog';
 import BlogBanner from '../../components/BlogBanner';
+import { generateBlogSchema } from '../../utils/schema';
 
 const index = ({ blogDat, similarBlogs }) => {
     const blogData = blogDat.blog[0];
@@ -18,6 +19,7 @@ const index = ({ blogDat, similarBlogs }) => {
     const [userId, setUserId] = useState(null);
     const [isSticky, setIsSticky] = useState(false);
     const [formFixed, setFormFixed] = useState(false);
+    const blogSchema = generateBlogSchema(blogData);
 
 
     useEffect(() => {
@@ -127,6 +129,12 @@ const index = ({ blogDat, similarBlogs }) => {
             <meta name="description" content={blogData && blogData.description} />
             <title>{blogData && blogData.title}</title>
             <link rel="canonical" href={url}></link>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                __html: JSON.stringify(blogSchema),
+                }}
+            />
         </Head>
         <ScrollProgress />
 
