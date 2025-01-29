@@ -22,10 +22,10 @@ const page = () => {
     <>
       <OgTags
         url="https://analyticsliv.com/"
-        title="Google Cloud Partner in India | GMP Partner | Analytics Liv"
-        description="Accelerate your business growth with certified GMP and Google Cloud Partner in India. Analytics Liv delivers expert data-driven solutions, actionable insights, and advanced marketing strategies."
-        twitterTitle="Google Cloud Partner in India | GMP Partner | Analytics Liv"
-        twitterDescription="Accelerate your business growth with certified GMP and Google Cloud Partner in India. Analytics Liv delivers expert data-driven solutions, actionable insights, and advanced marketing strategies."
+        title="AnalyticsLiv | Google Marketing Platform Certified Partner"
+        description="Boost your business growth with data-driven solutions from a certified Google Marketing Platform (GMP) Partner. Expert web analytics agency delivering actionable insights and advanced marketing strategies."
+        twitterTitle="AnalyticsLiv | Google Marketing Platform Certified Partner"
+        twitterDescription="Boost your business growth with data-driven solutions from a certified Google Marketing Platform (GMP) Partner. Expert web analytics agency delivering actionable insights and advanced marketing strategies."
       />
       <StructuredData data={stuctureData} />
       <div className="font-sans">
