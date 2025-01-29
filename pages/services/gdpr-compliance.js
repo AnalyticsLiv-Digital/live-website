@@ -572,7 +572,7 @@ const cookieLanding = ({ brandsdata }) => {
               </div>
             </div>
             <div>
-              <img src="/Arrow 1.png" alt="-->" />
+              <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Arrow%201.png" alt="-->" />
             </div>
             <div className="h-[240px] w-[250px] rounded-[40px] border border-[#0057E9] px-2 flex flex-col justify-center items-center">
               <div className="text-[#152F2E] text-sm font-semibold pb-7 text-center">
@@ -584,7 +584,7 @@ const cookieLanding = ({ brandsdata }) => {
               </div>
             </div>
             <div>
-              <img src="/Arrow 1.png" alt="-->" />
+              <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Arrow%201.png" alt="-->" />
             </div>
             <div className="h-[240px] w-[250px] rounded-[40px] border border-[#0057E9] px-2 flex flex-col justify-center items-center">
               <div className="text-[#152F2E] text-sm font-semibold pb-7 text-center">
@@ -596,7 +596,7 @@ const cookieLanding = ({ brandsdata }) => {
               </div>
             </div>
             <div>
-              <img src="/Arrow 1.png" alt="-->" />
+              <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Arrow%201.png" alt="-->" />
             </div>
             <div className="h-[240px] w-[250px] rounded-[40px] border border-[#0057E9] px-2 flex flex-col justify-center items-center">
               <div className="text-[#152F2E] text-sm font-semibold pb-7 text-center">
