@@ -146,14 +146,14 @@ const ContactPopup = ({ onClose, onRegister }) => {
             </div>
             {/* <div className="relative max-md:w-full max-lg:w-[50%] lg:w-[50%] lg:h-auto">
                 <img
-                    src="/25084 1.png"
+                    src="https://storage.googleapis.com/website-bucket-uploads/static/public/25084%201.png"
                     alt="webinar-img"
                     className="hidden max-md:hidden md:block  "
                 />
             </div> */}
             <div className="relative max-md:w-full max-lg:w-[50%] lg:w-[50%] lg:h-auto z-20">
                 <img
-                    src="/25084 1.png"
+                    src="https://storage.googleapis.com/website-bucket-uploads/static/public/25084%201.png"
                     alt="webinar-img"
                     className="hidden max-md:hidden md:block w-full h-auto min-w-[100%] max-w-[100%] object-cover"
                 />

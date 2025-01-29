@@ -438,8 +438,8 @@ export default function CookieConsent({ brandsdata }) {
               </div>
               <div className="flex flex-col w-[200px] justify-center items-center">
                 <img
-                  src="/Abhishek_Webinar_Profile_Pic_New (1).png"
-                  alt=""
+                  src="https://storage.googleapis.com/website-bucket-uploads/static/public/Abhishek_Webinar_Profile_Pic_New%20(1).png"
+                  alt="Abhishek"
                   className="pb-3 mx-auto"
                 />
                 <div className="text-base font-black text-center text-[#3C292A] pb-2">
@@ -482,7 +482,7 @@ export default function CookieConsent({ brandsdata }) {
             </div>
             <div className="flex flex-col">
               <img
-                src="/Abhishek_Webinar_Profile_Pic_New (1).png"
+                src="/https://storage.googleapis.com/website-bucket-uploads/static/public/Abhishek_Webinar_Profile_Pic_New%20(1).png.png"
                 alt=""
                 className="pb-3"
               />

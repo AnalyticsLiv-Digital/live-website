@@ -211,7 +211,7 @@ const service_A = () => {
                     </div>
                     <div className='lg:flex items-center justify-between mt-10'>
                         <div className='lg:w-[45%] w-full flex items-center justify-center'>
-                            <img src="/4M_Images_Transparent.png" alt="" className='lg:h-auto md:h-[400px]' />
+                            <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/4M_Images_Transparent.png" alt="AnalyticsLiv 4M Approach  for DV360" className='lg:h-auto md:h-[400px]' />
                         </div>
                         <div className='grid md:grid-cols-2 gap-7 lg:w-[55%] w-full'>
                             <div class="flex items-start justify-center md:w-full w-[300px] xl:h-[363px] lg:h-[360px] md:h-[310px] powerbox2 bg-[#0000001f] m-auto mb-5 p-[10px] pt-6 border border-[#13131400] hover:shadow-mediadv360 rounded-[10px]">
