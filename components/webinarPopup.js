@@ -143,7 +143,7 @@ const WebinarPopup = ({ onClose, onRegister, onClick }) => {
           <div className="flex flex-col justify-center items-center">
             <div className="bg-white p-2 lg:p-3 flex justify-center items-center max-w-max rounded-full shadow-cookiePageShadow">
               <img
-                src="/calendar (7) 1.png"
+                src="https://storage.googleapis.com/website-bucket-uploads/static/public/calendar%20(7)%201.png"
                 alt="calendar"
                 className=" max-lg:w-4 max-lg:h-4"
               />

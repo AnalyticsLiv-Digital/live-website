@@ -35,10 +35,10 @@ const Blogs = () => {
                                             </div>
                                             <div className='flex items-center justify-between gap-1'>
                                                 <Image
-                                                    src="/calendar1.svg"
+                                                    src="https://storage.googleapis.com/website-bucket-uploads/static/public/calendar1.svg"
                                                     width={30}
                                                     height={30}
-                                                    alt="Picture of the author"
+                                                    alt="Calendar"
                                                     priority={true}					
                                                 />
                                                 <span className='text-[10px] font-normal'>February 15, 2024</span>
@@ -74,10 +74,10 @@ const Blogs = () => {
                                             </div>
                                             <div className='flex items-center justify-between gap-1'>
                                                 <Image
-                                                    src="/calendar1.svg"
+                                                    src="https://storage.googleapis.com/website-bucket-uploads/static/public/calendar1.svg"
                                                     width={30}
                                                     height={30}
-                                                    alt="Picture of the author"
+                                                    alt="Calendar"
                                                     priority={true}
                                                 />
                                                 <span className='text-[10px] font-normal'>February 7, 2024</span>

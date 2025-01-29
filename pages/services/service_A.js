@@ -272,7 +272,7 @@ const service_A = () => {
                             <div className='text-black xl:w-[35%] lg:w-[35%] w-full mt-[11px]'>
                                 <div className='p-8 pl-[25px] -mr-[30px] rounded-l-[10px] xl:w-[400px] xl:ml-auto'>
                                     <div onClick={() => setActivetab('1')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '1' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                        <div><img src="/Campaign Strategy and Setup white.png" alt="" className='h-10 w-10' /></div>
+                                        <div><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Campaign%20Strategy%20and%20Setup%20white.png" alt="Campaign Strategy and Planning" className='h-10 w-10' /></div>
                                         <p >Campaign Strategy and Setup</p>
                                     </div>
                                     <div onClick={() => setActivetab('2')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '2' ? 'border-t-[#0092f4ab]' : ''}`}>
@@ -363,7 +363,7 @@ const service_A = () => {
                         <div className="flex flex-col justify-start max-w-md m-auto lg:hidden">
                             <div className="panel_list powerbox mb-4 rounded-b-[15px]">
                                 <div onClick={() => setActivetab('1')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '1' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                    <div><img src="/Campaign Strategy and Setup white.png" alt="" className='h-10 w-10' /></div>
+                                    <div><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Campaign%20Strategy%20and%20Setup%20white.png" alt="Campaign Strategy and Planning" className='h-10 w-10' /></div>
                                     <p >Campaign Strategy and Setup</p>
                                 </div>
                                 <div id="tab1" className={`${activetab == 1 && 'items-center justify-center'} ${activetab != 1 && 'hidden'} relative p-5 pt-[10px] text-[13px] font-medium leading-8`}>

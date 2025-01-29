@@ -317,8 +317,8 @@ export default function AutoPlay() {
                   >
                     <div>
                       <img
-                        src="/Campaign Strategy and Setup white.png"
-                        alt=""
+                        src="https://storage.googleapis.com/website-bucket-uploads/static/public/Campaign%20Strategy%20and%20Setup%20white.png"
+                        alt="Campaign Strategy and Planning"
                         className="h-10 w-10"
                       />
                     </div>
@@ -507,8 +507,8 @@ export default function AutoPlay() {
                 >
                   <div>
                     <img
-                      src="/Campaign Strategy and Setup white.png"
-                      alt=""
+                      src="https://storage.googleapis.com/website-bucket-uploads/static/public/Campaign%20Strategy%20and%20Setup%20white.png"
+                      alt="Campaign Strategy and Planning"
                       className="h-10 w-10"
                     />
                   </div>

@@ -254,7 +254,7 @@ export default function CookieConsent({ brandsdata }) {
               <div className="flex justify-center lg:justify-start lg:gap-16 max-md:justify-evenly items-center gap-0 sm:gap-5 md:gap-12">
                 <div className="flex flex-col items-center justify-center">
                   <img
-                    src="/calendar (5).png"
+                    src="https://storage.googleapis.com/website-bucket-uploads/static/public/calendar%20(5).png"
                     alt="calender"
                     className=" w-[65px] h-[65px] max-lg:w-[35px] max-lg:h-[35px] lg:w-[55px] lg:h-[55px]"
                   />
