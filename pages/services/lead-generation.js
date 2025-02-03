@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Head from "next/head";
-import OgTags from "../../components/OgTags";
+import MetaSchemaOg from "../../components/MetaSchemaOg";
 
 const lead_generation = () => {
   const [activetab, setActivetab] = useState("1");
 
   return (
     <>
-      <OgTags
+      <MetaSchemaOg
         url="https://analyticsliv.com/services/lead-generation"
         title="Top Lead Generation Experts & Consultancy Services - AnalyticsLiv"
         description="Get top lead generation experts for your business. AnalyticsLiv lead generation consultancy offers customized strategies to attract high-quality leads and boost conversions."

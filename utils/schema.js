@@ -1,3 +1,51 @@
+export const schemaHome = () => {
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "http://schema.org",
+          "@type": "LocalBusiness",
+          "name": "AnalyticsLiv | Google Marketing Platform Certified Partner",
+          "image": "https://storage.googleapis.com/website-bucket-uploads/static/logo.png",
+          "@id": "",
+          "url": "https://analyticsliv.com/",
+          "telephone": "+91-8320576622",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "503, 31Five, Corporate Road, Prahaladnagar, S.G. Highway, Ahmedabad 380015, Gujarat, India",
+            "addressLocality": "Ahmedabad",
+            "postalCode": "380015",
+            "addressCountry": "IN"
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ],
+              "opens": "11:00 AM",
+              "closes": "7:00 PM"
+            }
+          ],
+          "sameAs": [
+            "https://m.facebook.com/100070503960704/",
+            "https://twitter.com/AnalyticsLiv",
+            "https://www.instagram.com/analyticsliv_digital/",
+            "https://www.youtube.com/channel/UCSU9utLB2PDe4VcXiI5kMFw",
+            "https://in.linkedin.com/company/analytics-liv-digital/"
+          ]
+        }),
+      }}
+    />
+  )
+}
+
+
 export const schema = () => {
   return (
     <script

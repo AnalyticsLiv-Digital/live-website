@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Head from "next/head";
 import Link from "next/link";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import OgTags from "../../components/OgTags";
+import MetaSchemaOg from "../../components/MetaSchemaOg";
 
 export default function AutoPlay() {
   const [activetab, setActivetab] = useState("1");
@@ -101,7 +101,7 @@ export default function AutoPlay() {
 
   return (
     <>
-      <OgTags
+      <MetaSchemaOg
         url="https://analyticsliv.com/services/data-reporting-analysis"
         title="Get Insights with Expert Data Analytics Visualization at AnalyticsLiv"
         description="Discover insights with expert data analytics visualization at AnalyticsLiv. We turn complex data into clear, actionable visuals to drive smarter decisions and growth."

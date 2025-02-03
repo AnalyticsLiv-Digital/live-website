@@ -10,7 +10,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { motion } from "framer-motion";
-import OgTags from '../../components/OgTags'
+import MetaSchemaOg from '../../components/MetaSchemaOg'
 
 const customersegmentation = () => {
 
@@ -104,7 +104,7 @@ const customersegmentation = () => {
 
     return (
         <>
-            <OgTags
+            <MetaSchemaOg
                 url="https://analyticsliv.com/services/customer-segmentation"
                 title="Customer Segmentation Services in India | AnalyticsLiv"
                 description="Get expert customer segmentation services in India with AnalyticsLiv. Leverage audience segmentation and first-party data to optimize targeting and boost engagement."

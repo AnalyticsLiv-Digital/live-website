@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
-import OgTags from "../../components/OgTags";
+import MetaSchemaOg from "../../components/MetaSchemaOg";
 
 const cookieLanding = ({ brandsdata }) => {
   const NextArrow = (props) => {
@@ -171,7 +171,7 @@ const cookieLanding = ({ brandsdata }) => {
   return (
     <>
 
-      <OgTags
+      <MetaSchemaOg
         url="https://analyticsliv.com/services/gdpr-compliance"
         title="Expert GDPR Compliance Services & Solutions | AnalyticsLiv"
         description="Protect your business with AnalyticsLiv’s expert GDPR compliance services. We offer customized solutions to ensure data privacy, reduce risks, and maintain full regulatory compliance."

@@ -8,7 +8,7 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa6";
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { motion } from "framer-motion";
-import OgTags from '../../components/OgTags';
+import MetaSchemaOg from '../../components/MetaSchemaOg';
 
 const cro = () => {
 
@@ -92,7 +92,7 @@ const cro = () => {
     return (
         <>
 
-            <OgTags
+            <MetaSchemaOg
                 url="https://analyticsliv.com/services/CRO"
                 title="Expert Conversion Rate Optimization Services | AnalyticsLiv"
                 description="Boost your conversions with AnalyticsLiv, a leading conversion rate optimization agency. Our expert services optimize your website to increase leads, sales, and ROI."

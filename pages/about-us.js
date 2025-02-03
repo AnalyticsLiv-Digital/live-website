@@ -9,7 +9,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import * as Scroll from "react-scroll";
 import { scroller } from "react-scroll"; // Import scroller for smooth scrolling
-import OgTags from '../components/OgTags';
+import MetaSchemaOg from '../components/MetaSchemaOg';
 
 const aboutus = () => {
   useEffect(() => {
@@ -133,7 +133,7 @@ const aboutus = () => {
 
   return (
     <>
-      <OgTags
+      <MetaSchemaOg
         url="https://analyticsliv.com/about-us"
         title="AnalyticsLiv - About us"
         description="Google Marketing Platform Partner - Our Journey"

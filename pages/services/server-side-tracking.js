@@ -10,7 +10,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Image from 'next/image';
 import { motion } from "framer-motion";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import OgTags from '../../components/OgTags';
+import MetaSchemaOg from '../../components/MetaSchemaOg';
 
 const Serversidetracking = () => {
 
@@ -139,7 +139,7 @@ const Serversidetracking = () => {
 
     return (
         <>
-            <OgTags
+            <MetaSchemaOg
                 url="https://analyticsliv.com/services/server-side-tracking"
                 title="Server-Side Analytics Tracking & Web Analytics Solutions | AnalyticsLiv"
                 description="Get data accuracy with server-side analytics tracking from AnalyticsLiv. Our tracking solutions provide deeper insights, optimizing performance and driving business success."

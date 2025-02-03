@@ -6,7 +6,7 @@ import Slider from 'react-slick';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import OgTags from '../../components/OgTags';
+import MetaSchemaOg from '../../components/MetaSchemaOg';
 const google_tag_manager = ({brandsdata}) => {
     const [showMore, setShowMore] = useState(false);
     const toggleShowMore = () => {
@@ -178,7 +178,7 @@ const google_tag_manager = ({brandsdata}) => {
     return (
         <>
 
-            <OgTags
+            <MetaSchemaOg
                 url="https://analyticsliv.com/services/google-tag-manager"
                 title="Expert Google Tag Manager Services | AnalyticsLiv"
                 description="Track your data with Google Tag Manager from AnalyticsLiv. We specialize in data-driven attribution to optimize your marketing strategies and drive growth."

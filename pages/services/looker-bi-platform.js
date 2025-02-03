@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Link from "next/link";
 import Head from "next/head";
+import MetaSchemaOg from "../../components/MetaSchemaOg";
 
 export default class AutoPlay extends Component {
   render() {
@@ -48,17 +49,13 @@ export default class AutoPlay extends Component {
 
     return (
       <>
-        <Head>
-          <title>AnalyticsLiv - Looker Studio, Power BI Service</title>
-          <meta
-            name="description"
-            content="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads"
-          />
-          <link
-            rel="canonical"
-            href="https://analyticsliv.com/services/looker-bi-platform"
-          ></link>
-        </Head>
+        <MetaSchemaOg
+          url="https://analyticsliv.com/services/looker-bi-platform"
+          title="AnalyticsLiv - Looker Studio, Power BI Service"
+          description="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads"
+          twitterTitle="AnalyticsLiv - Looker Studio, Power BI Service"
+          twitterDescription="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads"
+        />
 
         <section>
           <div class="md:mt-4 px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16">

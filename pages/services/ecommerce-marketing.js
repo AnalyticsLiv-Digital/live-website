@@ -3,13 +3,13 @@ import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
-import OgTags from "../../components/OgTags";
+import MetaSchemaOg from "../../components/MetaSchemaOg";
 
 const ecommerce_marketing = () => {
   const [activetab, setActivetab] = useState("1");
   return (
     <>
-      <OgTags
+      <MetaSchemaOg
         url="https://analyticsliv.com/services/ecommerce-marketing"
         title="Best Ecommerce Marketing Services in India | AnalyticsLiv"
         description="Boost your online sales with AnalyticsLiv. We offer expert ecommerce marketing services and digital marketing strategies for ecommerce businesses to drive growth and maximize ROI."

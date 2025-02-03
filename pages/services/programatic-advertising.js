@@ -8,7 +8,7 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa6";
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import Leaders from '../../components/dv360/Leaders';
-import OgTags from '../../components/OgTags';
+import MetaSchemaOg from '../../components/MetaSchemaOg';
 
 const service_A = () => {
 
@@ -70,7 +70,7 @@ const service_A = () => {
     return (
         <>
 
-            <OgTags
+            <MetaSchemaOg
                 url="https://analyticsliv.com/services/programatic-advertising"
                 title="Leading Programmatic Advertising Agency in India | AnalyticsLiv"
                 description="AnalyticsLiv is a leading programmatic advertising agency in India, specializing in RTB programmatic advertising. We deliver data-driven solutions to optimize your digital campaigns and drive measurable results for your business."
