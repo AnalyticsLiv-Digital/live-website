@@ -153,7 +153,7 @@ export default function Home() {
                         <div className='lg:w-[60%]'>
                             <div className='vb bg-[#ffffff] shadow-allshadow p-4 my-5'>
                                 <div className='text-center flex items-center justify-start gap-4 mb-5'>
-                                    <div className='bg-black rounded-[50%] flex items-center justify-center w-[65px] h-[65px]'><img src="/Background.png" alt="" className='w-10 h-10' /></div>
+                                    <div className='bg-black rounded-[50%] flex items-center justify-center w-[65px] h-[65px]'><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Background.png" alt="Background" className='w-10 h-10' /></div>
                                     <h3 className='text-[25px] font-gilroy font-semibold text-[#011627]'>Background</h3>
                                 </div>
                                 <p className='font-gilroy2'>The client is an automotive manufacturer that produces cars, vans, and SUVs. The clients vehicles are sold in New Zealand through a network of authorised dealerships. In New Zealand, the client offers a range of vehicles and is responsible for marketing, sales, and after-sales service of the brand's products.</p>
@@ -201,7 +201,7 @@ export default function Home() {
                             </div>
                             <div className='vb bg-[#ffffff] shadow-allshadow p-4 my-5'>
                                 <div className='flex items-center gap-4 mb-5'>
-                                    <div className='bg-black rounded-[50%] flex items-center justify-center w-[65px] h-[65px]'><img src="/approach.png" alt="" className='w-12 h-12' /></div>
+                                    <div className='bg-black rounded-[50%] flex items-center justify-center w-[65px] h-[65px]'><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/approach.png" alt="approach" className='w-12 h-12' /></div>
                                     <h3 className='text-[25px] font-semibold text-[#000]'>Approach</h3>
                                 </div>
                                 <p className='text-[16px] text-[#000] font-medium font-gilroy mr-1'>Our data-driven approach leveraged DV360 to optimise ad performance</p>

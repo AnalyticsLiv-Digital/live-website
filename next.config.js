@@ -5,7 +5,11 @@ const nextConfig = {
     experiments: {
         topLevelAwait: true
     },
-    
+
+    images: {
+        domains: ["storage.googleapis.com"], // Allow images from this domain
+    },
+
     async redirects() {
         return [
             {

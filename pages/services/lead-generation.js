@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Head from "next/head";
-import OgTags from "../../components/OgTags";
+import MetaSchemaOg from "../../components/MetaSchemaOg";
 
 const lead_generation = () => {
   const [activetab, setActivetab] = useState("1");
 
   return (
     <>
-      <OgTags
+      <MetaSchemaOg
         url="https://analyticsliv.com/services/lead-generation"
         title="Top Lead Generation Experts & Consultancy Services - AnalyticsLiv"
         description="Get top lead generation experts for your business. AnalyticsLiv lead generation consultancy offers customized strategies to attract high-quality leads and boost conversions."
@@ -71,8 +71,8 @@ const lead_generation = () => {
                   >
                     <div>
                       <img
-                        src="/Campaign Strategy and Setup white.png"
-                        alt=""
+                        src="https://storage.googleapis.com/website-bucket-uploads/static/public/Campaign%20Strategy%20and%20Setup%20white.png"
+                        alt="Campaign Strategy and Planning"
                         className="h-10 w-10"
                       />
                     </div>
@@ -85,8 +85,8 @@ const lead_generation = () => {
                   >
                     <div>
                       <img
-                        src="/Audience Targeting white.png"
-                        alt=""
+                        src="https://storage.googleapis.com/website-bucket-uploads/static/public/Audience%20Targeting%20white.png"
+                        alt="Audience Targeting"
                         className="h-10 w-10"
                       />
                     </div>
@@ -99,8 +99,8 @@ const lead_generation = () => {
                   >
                     <div>
                       <img
-                        src="/Ad Format Optimization white.png"
-                        alt=""
+                        src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad%20Format%20Optimization%20white.png"
+                        alt="Engaging Ad Campaigns"
                         className="h-10 w-10"
                       />
                     </div>
@@ -141,8 +141,8 @@ const lead_generation = () => {
                   >
                     <div>
                       <img
-                        src="/Campaign Strategy and Setup white.png"
-                        alt=""
+                        src="https://storage.googleapis.com/website-bucket-uploads/static/public/Campaign%20Strategy%20and%20Setup%20white.png"
+                        alt="Campaign Strategy and Planning"
                         className="h-10 w-10"
                       />
                     </div>
@@ -155,8 +155,8 @@ const lead_generation = () => {
                   >
                     <div>
                       <img
-                        src="/Ad Format Optimization white.png"
-                        alt=""
+                        src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad%20Format%20Optimization%20white.png"
+                        alt="Transparent Reporting and Insights"
                         className="h-10 w-10"
                       />
                     </div>
@@ -377,8 +377,8 @@ const lead_generation = () => {
                 >
                   <div>
                     <img
-                      src="/Campaign Strategy and Setup white.png"
-                      alt=""
+                      src="https://storage.googleapis.com/website-bucket-uploads/static/public/Campaign%20Strategy%20and%20Setup%20white.png"
+                      alt="Campaign Strategy and Planning"
                       className="h-10 w-10"
                     />
                   </div>
@@ -415,8 +415,8 @@ const lead_generation = () => {
                 >
                   <div>
                     <img
-                      src="/Audience Targeting white.png"
-                      alt=""
+                      src="https://storage.googleapis.com/website-bucket-uploads/static/public/Audience%20Targeting%20white.png"
+                      alt="Audience Targeting"
                       className="h-10 w-10"
                     />
                   </div>
@@ -454,8 +454,8 @@ const lead_generation = () => {
                 >
                   <div>
                     <img
-                      src="/Ad Format Optimization white.png"
-                      alt=""
+                      src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad%20Format%20Optimization%20white.png"
+                      alt="Engaging Ad Campaigns"
                       className="h-10 w-10"
                     />
                   </div>
@@ -573,8 +573,8 @@ const lead_generation = () => {
                 >
                   <div>
                     <img
-                      src="/Campaign Strategy and Setup white.png"
-                      alt=""
+                      src="https://storage.googleapis.com/website-bucket-uploads/static/public/Campaign%20Strategy%20and%20Setup%20white.png"
+                      alt="Campaign Strategy and Planning"
                       className="h-10 w-10"
                     />
                   </div>
@@ -612,8 +612,8 @@ const lead_generation = () => {
                 >
                   <div>
                     <img
-                      src="/Ad Format Optimization white.png"
-                      alt=""
+                      src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad%20Format%20Optimization%20white.png"
+                      alt="Transparent Reporting and Insights"
                       className="h-10 w-10"
                     />
                   </div>

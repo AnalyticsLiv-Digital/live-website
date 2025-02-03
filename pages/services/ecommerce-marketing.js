@@ -3,13 +3,13 @@ import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
-import OgTags from "../../components/OgTags";
+import MetaSchemaOg from "../../components/MetaSchemaOg";
 
 const ecommerce_marketing = () => {
   const [activetab, setActivetab] = useState("1");
   return (
     <>
-      <OgTags
+      <MetaSchemaOg
         url="https://analyticsliv.com/services/ecommerce-marketing"
         title="Best Ecommerce Marketing Services in India | AnalyticsLiv"
         description="Boost your online sales with AnalyticsLiv. We offer expert ecommerce marketing services and digital marketing strategies for ecommerce businesses to drive growth and maximize ROI."
@@ -76,8 +76,8 @@ const ecommerce_marketing = () => {
                   >
                     <div>
                       <img
-                        src="/Campaign Strategy and Setup white.png"
-                        alt=""
+                        src="https://storage.googleapis.com/website-bucket-uploads/static/public/Campaign%20Strategy%20and%20Setup%20white.png"
+                        alt="Campaign Strategy and Planning"
                         className="h-10 w-10"
                       />
                     </div>
@@ -90,8 +90,8 @@ const ecommerce_marketing = () => {
                   >
                     <div>
                       <img
-                        src="/Audience Targeting white.png"
-                        alt=""
+                        src="https://storage.googleapis.com/website-bucket-uploads/static/public/Audience%20Targeting%20white.png"
+                        alt="Performance Max Campaigns"
                         className="h-10 w-10"
                       />
                     </div>
@@ -104,8 +104,8 @@ const ecommerce_marketing = () => {
                   >
                     <div>
                       <img
-                        src="/Ad Format Optimization white.png"
-                        alt=""
+                        src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad%20Format%20Optimization%20white.png"
+                        alt="Targeted Audience Reach"
                         className="h-10 w-10"
                       />
                     </div>
@@ -146,8 +146,8 @@ const ecommerce_marketing = () => {
                   >
                     <div>
                       <img
-                        src="/Campaign Strategy and Setup white.png"
-                        alt=""
+                        src="https://storage.googleapis.com/website-bucket-uploads/static/public/Campaign%20Strategy%20and%20Setup%20white.png"
+                        alt="Campaign Strategy and Planning"
                         className="h-10 w-10"
                       />
                     </div>
@@ -160,8 +160,8 @@ const ecommerce_marketing = () => {
                   >
                     <div>
                       <img
-                        src="/Ad Format Optimization white.png"
-                        alt=""
+                        src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad%20Format%20Optimization%20white.png"
+                        alt="Remarketing and Dynamic Ads"
                         className="h-10 w-10"
                       />
                     </div>
@@ -405,8 +405,8 @@ const ecommerce_marketing = () => {
                 >
                   <div>
                     <img
-                      src="/Campaign Strategy and Setup white.png"
-                      alt=""
+                      src="https://storage.googleapis.com/website-bucket-uploads/static/public/Campaign%20Strategy%20and%20Setup%20white.png"
+                      alt="Campaign Strategy and Planning"
                       className="h-10 w-10"
                     />
                   </div>
@@ -444,8 +444,8 @@ const ecommerce_marketing = () => {
                 >
                   <div>
                     <img
-                      src="/Audience Targeting white.png"
-                      alt=""
+                      src="https://storage.googleapis.com/website-bucket-uploads/static/public/Audience%20Targeting%20white.png"
+                      alt="Performance Max Campaigns"
                       className="h-10 w-10"
                     />
                   </div>
@@ -483,8 +483,8 @@ const ecommerce_marketing = () => {
                 >
                   <div>
                     <img
-                      src="/Ad Format Optimization white.png"
-                      alt=""
+                      src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad%20Format%20Optimization%20white.png"
+                      alt="Targeted Audience Reach"
                       className="h-10 w-10"
                     />
                   </div>
@@ -601,8 +601,8 @@ const ecommerce_marketing = () => {
                 >
                   <div>
                     <img
-                      src="/Campaign Strategy and Setup white.png"
-                      alt=""
+                      src="https://storage.googleapis.com/website-bucket-uploads/static/public/Campaign%20Strategy%20and%20Setup%20white.png"
+                      alt="Campaign Strategy and Planning"
                       className="h-10 w-10"
                     />
                   </div>
@@ -640,8 +640,8 @@ const ecommerce_marketing = () => {
                 >
                   <div>
                     <img
-                      src="/Ad Format Optimization white.png"
-                      alt=""
+                      src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad%20Format%20Optimization%20white.png"
+                      alt="Remarketing and Dynamic Ads"
                       className="h-10 w-10"
                     />
                   </div>

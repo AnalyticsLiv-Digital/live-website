@@ -184,7 +184,7 @@ const Buypremium = () => {
                                 alt="Picture of the author"
                                 className='g max-[767px]:h-[235px] max-[767px]:w-[235px]'
                             />
-                            <img src="/Boy2.png" alt="" className='absolute md:-bottom-[60px] -bottom-[25px] max-[767px]:left-[13px] max-[767px]:w-[210px]' />
+                            <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Boy2.png" alt="dv360" className='absolute md:-bottom-[60px] -bottom-[25px] max-[767px]:left-[13px] max-[767px]:w-[210px]' />
         
                         </div>
                     </div>

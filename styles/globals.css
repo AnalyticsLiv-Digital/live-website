@@ -1510,7 +1510,7 @@ iframe {
 }
 
 .firstbg {
-  background-image: url(../public/BG\ 1.png);
+  background-image: url('https://storage.googleapis.com/website-bucket-uploads/static/public/BG%201.png');
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 20;
@@ -1675,7 +1675,7 @@ iframe {
   height: 101%;
   bottom: 0;
   opacity: .1;
-  background-image: url(../public/Case_study_bg_1.png);
+  background-image: url('https://storage.googleapis.com/website-bucket-uploads/static/public/Case_study_bg_1.png');
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
