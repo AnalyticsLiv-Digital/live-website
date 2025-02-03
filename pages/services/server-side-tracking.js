@@ -48,7 +48,7 @@ const Serversidetracking = () => {
     const NextArrow = (props) => {
         const { onClick } = props;
         return (
-            <div className="absolute top-1/2 right-[-35px] transform -translate-y-1/2 z-10 cursor-pointer" onClick={onClick}>
+            <div className="absolute top-1/2 right-[-12px] transform -translate-y-1/2 z-10 cursor-pointer" onClick={onClick}>
                 <FaArrowRight size={20} />
             </div>
         );
@@ -57,7 +57,7 @@ const Serversidetracking = () => {
     const PrevArrow = (props) => {
         const { onClick } = props;
         return (
-            <div className="absolute top-1/2 left-[-35px] transform -translate-y-1/2 z-10 cursor-pointer" onClick={onClick}>
+            <div className="absolute top-1/2 left-[-12px] transform -translate-y-1/2 z-10 cursor-pointer" onClick={onClick}>
                 <FaArrowLeft size={20} />
             </div>
         );
@@ -345,7 +345,7 @@ const Serversidetracking = () => {
                     <div className='pt-10 gap-5'>
                         <Slider {...settings}>
                             <div aria-hidden="true" className="m-auto text-center">
-                                <div className='service1 relative w-[329px] m-auto h-[286px] border border-solid border-[#E2E2E2] rounded-[10px] p-5 text-center'>
+                                <div className='service1 relative w-[280px] sm:w-[329px] m-auto h-[286px] border border-solid border-[#E2E2E2] rounded-[10px] p-5 text-center'>
                                     <div className='flex items-center justify-center'>
                                         <Image
                                             src="/leader1.svg"
@@ -355,11 +355,11 @@ const Serversidetracking = () => {
                                         />
                                     </div>
                                     <h6 className='text-[#000] text-base font-gilroy font-semibold leading-normal pt-6'>Define Goals & Objectives</h6>
-                                    <p className='text-[#000] text-xs font-gilroy font-medium pt-11 text-start leading-[22px]'>Identify your key tracking objectives (e.g., user behavior analysis, conversion rate optimization).</p>
+                                    <p className='text-[#000] text-xs font-gilroy font-medium pt-11 text-center leading-[22px]'>Identify your key tracking objectives (e.g., user behavior analysis, conversion rate optimization).</p>
                                 </div>
                             </div>
                             <div aria-hidden="true" className="m-auto text-center">
-                                <div className='service2 relative w-[329px] m-auto h-[286px] border border-solid border-[#E2E2E2] rounded-[10px] p-5 text-center'>
+                                <div className='service2 relative w-[280px] sm:w-[329px] m-auto h-[286px] border border-solid border-[#E2E2E2] rounded-[10px] p-5 text-center'>
                                     <div className='flex items-center justify-center'>
                                         <Image
                                             src="/leader2.svg"
@@ -369,11 +369,11 @@ const Serversidetracking = () => {
                                         />
                                     </div>
                                     <h6 className='text-[#000] text-base font-gilroy font-semibold leading-normal pt-6'>Data Source Mapping</h6>
-                                    <p className='text-[#000] text-xs font-gilroy font-medium pt-11 text-start leading-[22px]'>Determine the data points you want to collect and identify their sources (e.g., website interactions, user attributes).</p>
+                                    <p className='text-[#000] text-xs font-gilroy font-medium pt-11 text-center leading-[22px]'>Determine the data points you want to collect and identify their sources (e.g., website interactions, user attributes).</p>
                                 </div>
                             </div>
                             <div aria-hidden="true" className="m-auto text-center">
-                                <div className='service3 relative w-[329px] m-auto h-[286px] border border-solid border-[#E2E2E2] rounded-[10px] p-5 text-center'>
+                                <div className='service3 relative w-[280px] sm:w-[329px] m-auto h-[286px] border border-solid border-[#E2E2E2] rounded-[10px] p-5 text-center'>
                                     <div className='flex items-center justify-center'>
                                         <Image
                                             src="/leader3.svg"
@@ -383,11 +383,11 @@ const Serversidetracking = () => {
                                         />
                                     </div>
                                     <h6 className='text-[#000] text-base font-gilroy font-semibold leading-normal pt-6'>Server-Side Integration</h6>
-                                    <p className='text-[#000] text-xs font-gilroy font-medium pt-11 text-start leading-[22px]'>Our team seamlessly integrates server-side tracking code with your website architecture.</p>
+                                    <p className='text-[#000] text-xs font-gilroy font-medium pt-11 text-center leading-[22px]'>Our team seamlessly integrates server-side tracking code with your website architecture.</p>
                                 </div>
                             </div>
                             <div aria-hidden="true" className="m-auto text-center">
-                                <div className='service4 relative w-[329px] m-auto h-[286px] border border-solid border-[#E2E2E2] rounded-[10px] p-5 text-center'>
+                                <div className='service4 relative w-[280px] sm:w-[329px] m-auto h-[286px] border border-solid border-[#E2E2E2] rounded-[10px] p-5 text-center'>
                                     <div className='flex items-center justify-center'>
                                         <Image
                                             src="/leader4.svg"
@@ -397,11 +397,11 @@ const Serversidetracking = () => {
                                         />
                                     </div>
                                     <h6 className='text-[#000] text-base font-gilroy font-semibold leading-normal pt-6'>Data Collection & Validation</h6>
-                                    <p className='text-[#000] text-xs font-gilroy font-medium pt-11 text-start leading-[22px]'>We establish secure data collection processes and validate data integrity.</p>
+                                    <p className='text-[#000] text-xs font-gilroy font-medium pt-11 text-center leading-[22px]'>We establish secure data collection processes and validate data integrity.</p>
                                 </div>
                             </div>
                             <div aria-hidden="true" className="m-auto text-center">
-                                <div className='service5 relative w-[329px] m-auto h-[286px] border border-solid border-[#E2E2E2] rounded-[10px] p-5 text-center'>
+                                <div className='service5 relative w-[280px] sm:w-[329px] m-auto h-[286px] border border-solid border-[#E2E2E2] rounded-[10px] p-5 text-center'>
                                     <div className='flex items-center justify-center'>
                                         <Image
                                             src="/leader5.svg"
@@ -411,11 +411,11 @@ const Serversidetracking = () => {
                                         />
                                     </div>
                                     <h6 className='text-[#000] text-base font-gilroy font-semibold leading-normal pt-6'>Integration with Analytics Platforms</h6>
-                                    <p className='text-[#000] text-xs font-gilroy font-medium pt-11 text-start leading-[22px]'>We connect your server-side tracking data with your preferred analytics platforms.</p>
+                                    <p className='text-[#000] text-xs font-gilroy font-medium pt-11 text-center leading-[22px]'>We connect your server-side tracking data with your preferred analytics platforms.</p>
                                 </div>
                             </div>
                             <div aria-hidden="true" className="m-auto text-center">
-                                <div className='service6 relative w-[329px] m-auto h-[286px] border border-solid border-[#E2E2E2] rounded-[10px] p-5 text-center'>
+                                <div className='service6 relative w-[280px] sm:w-[329px] m-auto h-[286px] border border-solid border-[#E2E2E2] rounded-[10px] p-5 text-center'>
                                     <div className='flex items-center justify-center'>
                                         <Image
                                             src="/leader5.svg"
@@ -425,7 +425,7 @@ const Serversidetracking = () => {
                                         />
                                     </div>
                                     <h6 className='text-[#000] text-base font-gilroy font-semibold leading-normal pt-6'>Reporting & Optimization</h6>
-                                    <p className='text-[#000] text-xs font-gilroy font-medium pt-11 text-start leading-[22px]'>We provide comprehensive reports and insights to help you understand user behavior and optimize your marketing efforts.</p>
+                                    <p className='text-[#000] text-xs font-gilroy font-medium pt-11 text-center leading-[22px]'>We provide comprehensive reports and insights to help you understand user behavior and optimize your marketing efforts.</p>
                                 </div>
                             </div>
                         </Slider>
