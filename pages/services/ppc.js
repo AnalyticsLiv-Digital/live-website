@@ -1,3 +1,4 @@
+"use client"
 import React, { useRef, useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -139,11 +140,11 @@ const Ppc = () => {
     return (
         <>
             <MetaSchemaOg
-                url="https://analyticsliv.com/services/server-side-tracking"
-                title="Server-Side Analytics Tracking & Web Analytics Solutions | AnalyticsLiv"
-                description="Get data accuracy with server-side analytics tracking from AnalyticsLiv. Our tracking solutions provide deeper insights, optimizing performance and driving business success."
-                twitterTitle="Server-Side Analytics Tracking & Web Analytics Solutions | AnalyticsLiv"
-                twitterDescription="Get data accuracy with server-side analytics tracking from AnalyticsLiv. Our tracking solutions provide deeper insights, optimizing performance and driving business success."
+                url="https://analyticsliv.com/services/ppc"
+                title="Performance Marketing Agency in India | AnalyticsLiv"
+                description="Maximize ROI with expert Google Ads at AnalyticsLiv, a leading performance marketing agency. Our PPC management services drive results with data-driven strategies and proven success."
+                twitterTitle="Performance Marketing Agency in India | AnalyticsLiv"
+                twitterDescription="Maximize ROI with expert Google Ads at AnalyticsLiv, a leading performance marketing agency. Our PPC management services drive results with data-driven strategies and proven success."
             />
             <main className='font-sans py-10'>
 
@@ -182,7 +183,7 @@ const Ppc = () => {
                                 <a href='/contact'><button className='mainbutn'>Talk to our PPC Expert</button></a>
                                 <div onClick={() => handleCalendly()} className='group hover:cursor-pointer flex items-center gap-2'>
                                     <button className='text-xs 2xl:text-sm translate-x-1 group-hover:translate-x-0 transition-all duration-300 font-bold max-sm:w-full max-md:text-center'>Book a Call Today</button>
-                                    <div className="opacity-0 translate-x-8 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+                                    <div className="opacity-0 translate-x-2 sm:translate-x-8 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
                                         <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%201.svg' alt='arrow right' className='w-2' />
                                     </div>
                                 </div>
@@ -291,9 +292,9 @@ const Ppc = () => {
                 <section className="pt-14 pb-14 xl:pt-16 lg:pl-10 2xl:pl-[5%] max-md:overflow-hidden">
                     <div className="flex max-md:flex-col items-center justify-between px-[3%]">
                         <div className="md:w-[60%] max-md:px-4 flex flex-col justify-start">
-                            <div className="text-[#100F1B] text-xl md:text-3xl font-bold text-center md:text-start">
+                            <h2 className="text-[#100F1B] text-xl md:text-3xl font-bold text-center md:text-start">
                                 Performance Marketing Process & Strategy
-                            </div>
+                            </h2>
                             <div className="text-[#373642] max-md:text-center text-[13px] md:text-base font-normal pt-8">
                                 In today's Digital landscape, ranking high on search engines is crucial for attracting new customers and
                                 driving business growth. At AnalyticsLiv, we offer comprehensive Search Engine Marketing (SEM) services
@@ -372,7 +373,7 @@ const Ppc = () => {
                     </div>
                 </section>
 
-                <section className='bg-[#30486A] text-white mx-[3%] xl:mx-[5%] py-7 px-5 xl:px-7 2xl:p-12'>
+                <section className='bg-[#30486A] rounded-[5px] text-white mx-[3%] xl:mx-[5%] py-7 px-5 xl:px-7 2xl:p-12'>
                     <h2 className='text-lg md:text-2xl xl:text-3xl font-bold text-center pb-8 2xl:pb-12'>Advantage of PPC Advertising with AnaltyticsLiv</h2>
                     <div className='flex max-lg:grid max-lg:grid-cols-2 max-sm:grid-cols-1 max-lg:gap-6 items-center gap-2 xl:gap-5 2xl:gap-10'>
                         <div className='flex gap-3 xl:gap-3 2xl:gap-5 items-stretch lg:w-[25%]'>
@@ -416,7 +417,7 @@ const Ppc = () => {
 
                 <section className='flex max-lg:flex-col-reverse overflow-hidden pt-8 lg:pt-16'>
                     <div className='lg:w-[40%] bg-[#30486A] flex flex-col justify-center items-start gap-7 max-lg:py-7 px-4 lg:px-20'>
-                        <div className='text-2xl md:text-3xl 2xl:text-4xl font-bold text-white'>Excited to Get Started with our PPC Agency?</div>
+                        <h3 className='text-2xl md:text-3xl 2xl:text-4xl font-bold text-white'>Excited to Get Started with our PPC Agency?</h3>
                         <div className='text-base font-normal text-[#E2DEDC]'>Contact AnalyticsLiv, a Performance Marketing Agency for a Free Consultation.</div>
                         <a href='/contact'><button className='mainbutn'>Contact Us Now</button></a>
                     </div>
