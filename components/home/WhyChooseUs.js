@@ -96,15 +96,19 @@ const WhyChooseUs = () => {
                     <div className="flex justify-center items-center gap-5">
                         <button
                             onClick={handlePrev}
-                            className="relative overflow-hidden z-10 bg-white text-[#08A4F7] border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[8px] px-3 py-1 mb-3 transition-all duration-300 ease-linear hover:bg-[#08A4F7] hover:text-white"
+                            className="group relative overflow-hidden z-10 bg-white border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[8px] px-4 py-3 mb-3 transition-all duration-300 ease-linear hover:bg-[#08A4F7]"
                         >
-                            {"<"}
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector%20(1).svg' alt='left vector' className='w-3.5 h-3.5 group-hover:hidden block' />
+
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20right%20white.svg' alt='left vector' className='w-3.5 h-3.5 hidden group-hover:block' />
+
                         </button>
                         <button
                             onClick={handleNext}
-                            className="relative overflow-hidden z-10 bg-white text-[#08A4F7] border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[8px] px-3 py-1 mb-3 transition-all duration-300 ease-linear hover:bg-[#08A4F7] hover:text-white"
+                            className="group relative overflow-hidden z-10 bg-white border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[8px] px-4 py-3 mb-3 transition-all duration-300 ease-linear hover:bg-[#08A4F7]"
                         >
-                            {">"}
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector.svg' alt='right vector' className='w-3.5 h-3.5 group-hover:hidden block' />
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20left%20white.svg' alt='right vector' className='w-3.5 h-3.5 hidden group-hover:block' />
                         </button>
                     </div>
                     <a href='/services'><button className="mainbutn-opposite">Read More Here</button></a>
