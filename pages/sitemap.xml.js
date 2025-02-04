@@ -51,6 +51,9 @@ function generateSiteMap(posts) {
        <loc>https://analyticsliv.com/services/sem</loc>
      </url>
      <url>
+       <loc>https://analyticsliv.com/services/ppc</loc>
+     </url>
+     <url>
        <loc>https://analyticsliv.com/services/google-tag-manager</loc>
      </url>
      <url>
