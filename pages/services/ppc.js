@@ -1,3 +1,4 @@
+"use client"
 import React, { useRef, useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -139,11 +140,11 @@ const Ppc = () => {
     return (
         <>
             <MetaSchemaOg
-                url="https://analyticsliv.com/services/server-side-tracking"
-                title="Server-Side Analytics Tracking & Web Analytics Solutions | AnalyticsLiv"
-                description="Get data accuracy with server-side analytics tracking from AnalyticsLiv. Our tracking solutions provide deeper insights, optimizing performance and driving business success."
-                twitterTitle="Server-Side Analytics Tracking & Web Analytics Solutions | AnalyticsLiv"
-                twitterDescription="Get data accuracy with server-side analytics tracking from AnalyticsLiv. Our tracking solutions provide deeper insights, optimizing performance and driving business success."
+                url="https://analyticsliv.com/services/ppc"
+                title="Performance Marketing Agency in India | AnalyticsLiv"
+                description="Maximize ROI with expert Google Ads at AnalyticsLiv, a leading performance marketing agency. Our PPC management services drive results with data-driven strategies and proven success."
+                twitterTitle="Performance Marketing Agency in India | AnalyticsLiv"
+                twitterDescription="Maximize ROI with expert Google Ads at AnalyticsLiv, a leading performance marketing agency. Our PPC management services drive results with data-driven strategies and proven success."
             />
             <main className='font-sans py-10'>
 
