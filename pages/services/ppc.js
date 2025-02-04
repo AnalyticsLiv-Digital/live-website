@@ -79,7 +79,7 @@ const Ppc = () => {
 
     const settings = {
         infinite: true,
-        initialSlide: 0.5,
+        initialSlide: 0.560,
         slidesToShow: 2.5,
         slidesToScroll: 1.5,
         arrows: true,
@@ -182,7 +182,7 @@ const Ppc = () => {
                                 <a href='/contact'><button className='mainbutn'>Talk to our PPC Expert</button></a>
                                 <div onClick={() => handleCalendly()} className='group hover:cursor-pointer flex items-center gap-2'>
                                     <button className='text-xs 2xl:text-sm translate-x-1 group-hover:translate-x-0 transition-all duration-300 font-bold max-sm:w-full max-md:text-center'>Book a Call Today</button>
-                                    <div className="opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+                                    <div className="opacity-0 translate-x-8 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
                                         <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%201.svg' alt='arrow right' className='w-2' />
                                     </div>
                                 </div>
