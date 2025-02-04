@@ -79,7 +79,7 @@ const Ppc = () => {
 
     const settings = {
         infinite: true,
-        initialSlide: 0.560,
+        initialSlide: 0.5,
         slidesToShow: 2.5,
         slidesToScroll: 1.5,
         arrows: true,
