@@ -10,10 +10,10 @@ const Testimonials = () => {
         const { onClick } = props;
         return (
             <div
-                className="absolute text-white bg-sky-400 rounded-full p-0.5 sm:p-0.5 md:p-1 xl:p-1 top-1/2 right-[-14px] sm:right-[-20px] lg:right-[-20px] transform -translate-y-1/2 z-10 cursor-pointer"
+                className="absolute text-white shadow-arrowShadow rounded-full top-1/2 right-[-5px] sm:right-[-10px] lg:right-[-10px] transform -translate-y-1/2 z-10 cursor-pointer"
                 onClick={onClick}
             >
-                <FaArrowRight className='text-sm sm:text-base xl:text-sm' />
+            <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Right%20Arrow.png" alt="right arrow" className="w-7 md:w-10" />
             </div>
         );
     };
@@ -22,10 +22,10 @@ const Testimonials = () => {
         const { onClick } = props;
         return (
             <div
-                className="absolute text-white bg-sky-400 rounded-full p-0.5 sm:p-0.5 md:p-1 xl:p-1 top-1/2 left-[-14px] sm:left-[-20px] lg:left-[-20px] transform -translate-y-1/2 z-10 cursor-pointer"
+                className="absolute text-white shadow-arrowShadow rounded-full top-1/2 left-[-5px] sm:left-[-10px] lg:left-[-10px] transform -translate-y-1/2 z-10 cursor-pointer"
                 onClick={onClick}
             >
-                <FaArrowLeft className='text-sm sm:text-base xl:text-sm' />
+            <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Left%20Arrow.png" alt="left arrow" className="w-7 md:w-10" />
             </div>
         );
     };
