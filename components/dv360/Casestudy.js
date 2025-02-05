@@ -103,10 +103,10 @@ const Casestudy = () => {
                                 <a href="https://storage.googleapis.com/website-bucket-uploads/cs/6754gfhgjfhfh3437.pdf" target='_blank'>
                                     <div>
                                         <Image
-                                            src="/castdyinner10.png"
+                                            src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner10.png"
                                             width={300}
                                             height={300}
-                                            alt="Picture of the author"
+                                            alt="Impact of Creative Analysis in DV360"
                                             priority={true}
                                             className='w-full'
                                         />
@@ -128,10 +128,10 @@ const Casestudy = () => {
                                 <a href="https://storage.googleapis.com/website-bucket-uploads/cs/cbhnf98765koql.pdf" target='_blank'>
                                     <div>
                                         <Image
-                                            src="/castdyinner11.png"
+                                            src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner11.png"
                                             width={300}
                                             height={300}
-                                            alt="Picture of the author"
+                                            alt="A strategic guide to scaling the Ad Spend without affecting the ROAS"
                                             priority={true}
                                             className='w-full'
                                         />
@@ -186,10 +186,10 @@ const Casestudy = () => {
                                     <a href="https://storage.googleapis.com/website-bucket-uploads/cs/6754gfhgjfhfh3437.pdf" target='_blank'>
                                         <div>
                                             <Image
-                                                src="/castdyinner10.png"
+                                                src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner10.png"
                                                 width={300}
                                                 height={300}
-                                                alt="Picture of the author"
+                                                alt="Impact of Creative Analysis in DV360"
                                                 priority={true}
                                                 className='w-full'
                                             />
@@ -213,10 +213,10 @@ const Casestudy = () => {
                                     <a href="https://storage.googleapis.com/website-bucket-uploads/cs/cbhnf98765koql.pdf" target='_blank'>
                                         <div>
                                             <Image
-                                                src="/castdyinner11.png"
+                                                src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner11.png"
                                                 width={300}
                                                 height={300}
-                                                alt="Picture of the author"
+                                                alt="A strategic guide to scaling the Ad Spend without affecting the ROAS"
                                                 priority={true}
                                                 className='w-full'
                                             />
