@@ -136,7 +136,7 @@ const CasestudyMain = () => {
             <div className='flex lg:flex-nowrap flex-wrap lg:gap-[70px] gap-10'>
               <div className='lg:w-[40%] w-full'>
                 <div className='as'>
-                  <img src="/castdyinner1.png" alt="" className=''/>
+                  <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner1.png" alt="" className=''/>
                 </div>
               </div>
               <div className='lg:w-[60%] w-full'>
@@ -166,7 +166,7 @@ const CasestudyMain = () => {
                     <span className='text-[#34a353] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
                     <a href="https://storage.googleapis.com/website-bucket-uploads/cs/mnedfr45893kjswl.pdf" target='_blank'>
                       <div>
-                        <img src="/castdyinner2.png" alt="" className='w-auto h-auto' />
+                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner2.png" alt="" className='w-auto h-auto' />
                       </div>
                       <div className=''>
                         <h3 className='text-bas text-slate-900 font-gilroy font-semibold leading-[1.3em] text-left pt-4'>Skyrocket Your Campaign's CTR with a 95% Surge in 14 Days!</h3>
@@ -187,7 +187,7 @@ const CasestudyMain = () => {
                     <span className='text-[#34a353] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
                     <a href="https://storage.googleapis.com/website-bucket-uploads/cs/mnedfr45893kjswl.pdf" target='_blank'>
                       <div>
-                        <img src="/castdyinner3.png" alt="" className='w-auto h-auto' />
+                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner3.png" alt="" className='w-auto h-auto' />
                       </div>
                       <div className=''>
                         <h3 className='text-bas text-slate-900 font-gilroy font-semibold leading-[1.3em] text-left pt-4'>Driving the Campaigns in DV360 to Post Click Attribution Success with a 36% reduction in CPI</h3>
@@ -208,7 +208,7 @@ const CasestudyMain = () => {
                     <span className='text-[#34a353] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
                     <a href="https://storage.googleapis.com/website-bucket-uploads/cs/mnedfr45893kjswl.pdf" target='_blank'>
                       <div>
-                        <img src="/castdyinner4.png" alt="" className='w-auto h-auto' />
+                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner4.png" alt="" className='w-auto h-auto' />
                       </div>
                       <div className=''>
                         <h3 className='text-bas text-slate-900 font-gilroy font-semibold leading-[1.3em] text-left pt-4'>From Inefficiency to Precision: Learn How AnalyticsLiv Achieved a 78% CPC Reduction for a News Publisher Giant</h3>
@@ -229,7 +229,7 @@ const CasestudyMain = () => {
                     <span className='text-[#34a353] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
                     <a href="https://storage.googleapis.com/website-bucket-uploads/cs/mnedfr45893kjswl.pdf" target='_blank'>
                       <div>
-                        <img src="/castdyinner5.png" alt="" className='w-auto h-auto' />
+                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner5.png" alt="" className='w-auto h-auto' />
                       </div>
                       <div className=''>
                         <h3 className='text-bas text-slate-900 font-gilroy font-semibold leading-[1.3em] text-left pt-4'>55% Increase in Avg. Session Duration</h3>
@@ -250,7 +250,7 @@ const CasestudyMain = () => {
                     <span className='text-[#34a353] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
                     <a href="https://storage.googleapis.com/website-bucket-uploads/cs/mnedfr45893kjswl.pdf" target='_blank'>
                       <div>
-                        <img src="/castdyinner6.png" alt="" className='w-auto h-auto' />
+                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner6.png" alt="" className='w-auto h-auto' />
                       </div>
                       <div className=''>
                         <h3 className='text-bas text-slate-900 font-gilroy font-semibold leading-[1.3em] text-left pt-4'>Impact of Data First Approach in Marketing - ROAS Improvement from 2.4x to 7.8x</h3>
@@ -424,7 +424,7 @@ const CasestudyMain = () => {
                       <span className='text-[#34a353] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
                       <a href="https://storage.googleapis.com/website-bucket-uploads/cs/mnedfr45893kjswl.pdf" target='_blank'>
                         <div>
-                          <img src="/castdyinner1.png" alt="" className='w-[350px] h-auto' />
+                          <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner1.png" alt="" className='w-[350px] h-auto' />
                         </div>
                         <div className=''>
                           <h3 className='text-bas text-slate-900 font-gilroy font-semibold leading-[1.3em] text-left pt-4'>Optimizing Email Marketing with Custom Data Pipeline</h3>
@@ -443,7 +443,7 @@ const CasestudyMain = () => {
                       <span className='text-[#34a353] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
                       <a href="https://storage.googleapis.com/website-bucket-uploads/cs/mnedfr45893kjswl.pdf" target='_blank'>
                         <div>
-                          <img src="/castdyinner2.png" alt="" className='w-[350px] h-auto' />
+                          <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner2.png" alt="" className='w-[350px] h-auto' />
                         </div>
                         <div className=''>
                           <h3 className='text-bas text-slate-900 font-gilroy font-semibold leading-[1.3em] text-left pt-4'>Skyrocket Your Campaign's CTR with a 95% Surge in 14 Days!</h3>
@@ -462,7 +462,7 @@ const CasestudyMain = () => {
                       <span className='text-[#34a353] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
                       <a href="https://storage.googleapis.com/website-bucket-uploads/cs/mnedfr45893kjswl.pdf" target='_blank'>
                         <div>
-                          <img src="/castdyinner3.png" alt="" className='w-[350px] h-auto' />
+                          <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner3.png" alt="" className='w-[350px] h-auto' />
                         </div>
                         <div className=''>
                           <h3 className='text-bas text-slate-900 font-gilroy font-semibold leading-[1.3em] text-left pt-4'>Driving the Campaigns in DV360 to Post Click Attribution Success with a 36% reduction in CPI</h3>
@@ -481,7 +481,7 @@ const CasestudyMain = () => {
                       <span className='text-[#34a353] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
                       <a href="https://storage.googleapis.com/website-bucket-uploads/cs/mnedfr45893kjswl.pdf" target='_blank'>
                         <div>
-                          <img src="/castdyinner4.png" alt="" className='w-[350px] h-auto' />
+                          <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner4.png" alt="" className='w-[350px] h-auto' />
                         </div>
                         <div className=''>
                           <h3 className='text-bas text-slate-900 font-gilroy font-semibold leading-[1.3em] text-left pt-4'>From Inefficiency to Precision: Learn How AnalyticsLiv Achieved a 78% CPC Reduction for a News Publisher Giant</h3>
@@ -500,7 +500,7 @@ const CasestudyMain = () => {
                       <span className='text-[#34a353] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
                       <a href="https://storage.googleapis.com/website-bucket-uploads/cs/mnedfr45893kjswl.pdf" target='_blank'>
                         <div>
-                          <img src="/castdyinner5.png" alt="" className='w-[350px] h-auto' />
+                          <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner5.png" alt="" className='w-[350px] h-auto' />
                         </div>
                         <div className=''>
                           <h3 className='text-bas text-slate-900 font-gilroy font-semibold leading-[1.3em] text-left pt-4'>55% Increase in Avg. Session Duration</h3>
@@ -519,7 +519,7 @@ const CasestudyMain = () => {
                       <span className='text-[#34a353] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
                       <a href="https://storage.googleapis.com/website-bucket-uploads/cs/mnedfr45893kjswl.pdf" target='_blank'>
                         <div>
-                          <img src="/castdyinner6.png" alt="" className='w-[350px] h-auto' />
+                          <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner6.png" alt="" className='w-[350px] h-auto' />
                         </div>
                         <div className=''>
                           <h3 className='text-bas text-slate-900 font-gilroy font-semibold leading-[1.3em] text-left pt-4'>Impact of Data First Approach in Marketing - ROAS Improvement from 2.4x to 7.8x</h3>
@@ -538,7 +538,7 @@ const CasestudyMain = () => {
                       <span className='text-[#34a353] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
                       <a href="https://storage.googleapis.com/website-bucket-uploads/cs/mnedfr45893kjswl.pdf" target='_blank'>
                         <div>
-                          <img src="/castdyinner7.jpg" alt="" className='w-[350px] h-auto' />
+                          <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner7.jpg" alt="Maximising Revenue and User Insights" className='w-[350px] h-auto' />
                         </div>
                         <div className=''>
                           <h3 className='text-bas text-slate-900 font-gilroy font-semibold leading-[1.3em] text-left pt-4'>Maximising Revenue and User Insights using Firebase In App Purchases for Mobile Apps</h3>
@@ -557,7 +557,7 @@ const CasestudyMain = () => {
                       <span className='text-[#34a353] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
                       <a href="https://storage.googleapis.com/website-bucket-uploads/cs/mnedfr45893kjswl.pdf" target='_blank'>
                         <div>
-                          <img src="/castdyinner8.png" alt="" className='w-[350px] h-auto' />
+                          <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner8.png" alt="GA4 Migration" className='w-[350px] h-auto' />
                         </div>
                         <div className=''>
                           <h3 className='text-bas text-slate-900 font-gilroy font-semibold leading-[1.3em] text-left pt-4'>Universal Analytics (GA3) to GA4 Migration for a Website</h3>

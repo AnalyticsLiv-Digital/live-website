@@ -403,7 +403,7 @@ const cro = () => {
                                     <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
                                     <a href="/case-studies/ua-to-ga4-migration-for-a-website" className='lg:flex gap-5'>
                                         <Image
-                                            src="/casestudy1.png"
+                                            src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestudy1.png"
                                             width={300}
                                             height={300}
                                             alt="Google Analytics 4 Migration"
@@ -428,10 +428,10 @@ const cro = () => {
                                     <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
                                     <a href="/case-studies/55-percent-increase-in-avg-session-duration" className='lg:flex gap-5'>
                                         <Image
-                                            src="/casestudy3.png"
+                                            src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestudy3.png"
                                             width={300}
                                             height={300}
-                                            alt="Picture of the author"
+                                            alt="55% Increase in Avg. Session Duration"
                                             priority={true}
                                             className='2xl:w-[40%] w-full m-auto 2xl:h-[247px] xl:h-[277px] lg:h-[227px] lg:object-scale-down'
                                         />

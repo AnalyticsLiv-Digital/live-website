@@ -78,10 +78,10 @@ const Casestudy = () => {
                                 <a href="https://storage.googleapis.com/website-bucket-uploads/cs/gfrdf6794yyxp.pdf" target='_blank'>
                                     <div>
                                         <Image
-                                            src="/castdyinner3.png"
+                                            src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner3.png"
                                             width={300}
                                             height={300}
-                                            alt="Picture of the author"
+                                            alt="dv360"
                                             priority={true}
                                             className='w-full'
                                         />
@@ -159,10 +159,10 @@ const Casestudy = () => {
                                     <a href="https://storage.googleapis.com/website-bucket-uploads/cs/gfrdf6794yyxp.pdf" target='_blank'>
                                         <div>
                                             <Image
-                                                src="/castdyinner3.png"
+                                                src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner3.png"
                                                 width={300}
                                                 height={300}
-                                                alt="Picture of the author"
+                                                alt="dv360"
                                                 priority={true}
                                                 className='w-full'
                                             />
