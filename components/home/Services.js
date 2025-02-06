@@ -271,7 +271,7 @@ const Services = () => {
           ))}
         </div>
 
-        <div className="lg:hidden z-20 pt-3 md:pt-4 max-md:w-[85%] mx-auto relative carousel-custom">
+        <div className="lg:hidden z-20 pt-2 sm:pt-3 md:pt-4 max-md:w-[85%] mx-auto relative carousel-custom">
           <Slider ref={sliderRef} {...settings}>
             {services.map((service, index) => (
               <div
