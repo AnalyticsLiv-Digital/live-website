@@ -63,7 +63,7 @@ const Services = () => {
               key={index}
               className={`flex flex-col group transition duration-300 gap-5 w-[310px] sm:w-[350px] md:w-[350px] 
                 md:h-[280px] lg:w-[205px] xl:w-[280px] 2xl:w-[300px] min-h-[300px] xl:min-h-[326px] shadow-customShadow
-                px-4 xl:px-7 py-4 sm:py-5 rounded-3xl bg-white
+                px-4 xl:px-7 py-4 sm:py-5 rounded-3xl bg-white hover:shadow-arrowShadow
                `}
             >
               <div>
