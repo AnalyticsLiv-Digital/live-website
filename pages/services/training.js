@@ -4,7 +4,7 @@ import Head from "next/head";
 import { InlineWidget } from "react-calendly";
 import * as Scroll from "react-scroll";
 import { useRouter } from "next/router";
-import OgTags from "../../components/OgTags";
+import MetaSchemaOg from "../../components/MetaSchemaOg";
 
 const { Element: ScrollElement } = Scroll;
 
@@ -23,7 +23,7 @@ const training = () => {
   }, [query]);
   return (
     <>
-      <OgTags
+      <MetaSchemaOg
         url="https://analyticsliv.com/services/training"
         title="Google Ads Training Services | AnalyticsLiv"
         description="Master Google Ads with expert training from AnalyticsLiv. Learn PPC strategies, campaign optimization, and boost your ROI with hands-on, results-driven guidance."
@@ -354,8 +354,8 @@ const training = () => {
           <div className="pb-4">
             <div className="flex justify-center">
               <img
-                src="/AnalyticsLiv 2.png"
-                alt=""
+                src="https://storage.googleapis.com/website-bucket-uploads/static/public/AnalyticsLiv%202.png"
+                alt="AnalyticsLiv"
                 className="max-w-[200px] max-h-[100px]"
               />
             </div>

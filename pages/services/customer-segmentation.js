@@ -10,7 +10,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { motion } from "framer-motion";
-import OgTags from '../../components/OgTags'
+import MetaSchemaOg from '../../components/MetaSchemaOg'
 
 const customersegmentation = () => {
 
@@ -104,7 +104,7 @@ const customersegmentation = () => {
 
     return (
         <>
-            <OgTags
+            <MetaSchemaOg
                 url="https://analyticsliv.com/services/customer-segmentation"
                 title="Customer Segmentation Services in India | AnalyticsLiv"
                 description="Get expert customer segmentation services in India with AnalyticsLiv. Leverage audience segmentation and first-party data to optimize targeting and boost engagement."
@@ -274,7 +274,7 @@ const customersegmentation = () => {
 
                                             <div className='inbox relative pb-4 flex items-center gap-2'>
                                                 <Image
-                                                    src="/analyzing (1).png"
+                                                    src="https://storage.googleapis.com/website-bucket-uploads/static/public/analyzing%20(1).png"
                                                     width={30}
                                                     height={30}
                                                     alt="Picture of the author"
@@ -492,7 +492,7 @@ const customersegmentation = () => {
                                     <a href="/case-studies/skyrocket-your-campaigns-ctr-with-a-95-percent-surge-in-14-days" className='grid gap-5'>
                                         <div className=''>
                                             <Image
-                                                src="/casestd.png"
+                                                src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestd.png"
                                                 width={300}
                                                 height={300}
                                                 alt="Skyrocket Your Campaign's CTR"
@@ -511,7 +511,7 @@ const customersegmentation = () => {
                                     <a href="/case-studies/driving-campaigns-in-dv360-to-post-click-attribution-success-with-36-percent-reduction-in-cpi" className='grid gap-1'>
                                         <div className='grid gap-4'>
                                             <Image
-                                                src="/casestd2.png"
+                                                src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestd2.png"
                                                 width={300}
                                                 height={300}
                                                 alt="Post Click Tracking with DV360"

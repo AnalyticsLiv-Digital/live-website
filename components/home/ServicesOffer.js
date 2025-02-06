@@ -107,7 +107,7 @@ const ServicesOffer = () => {
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="/services/sem" className='flex items-start gap-2'>
+                                        <a href="/services/ppc" className='flex items-start gap-2'>
                                             <Image
                                                 src="/check.svg"
                                                 width={30}

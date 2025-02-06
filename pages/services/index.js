@@ -8,6 +8,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useState } from 'react';
 import Link from 'next/link';
+import MetaSchemaOg from '../../components/MetaSchemaOg';
 
 
 const { Element: ScrollElement } = Scroll;
@@ -40,12 +41,13 @@ const index= () => {
 
   return (
     <>
-    
-    <Head>
-      <title>AnalyticsLiv - Services Offered</title>
-      <meta name="description" content="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads"/>
-      <link rel="canonical" href="https://analyticsliv.com/services"></link>
-    </Head>
+          <MetaSchemaOg
+              url="https://analyticsliv.com/services"
+              title="AnalyticsLiv - Services Offered"
+              description="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads"
+              twitterTitle="AnalyticsLiv - Services Offered"
+              twitterDescription="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads"
+          />
     <ScrollProgress/>
 
     <section className="relative">

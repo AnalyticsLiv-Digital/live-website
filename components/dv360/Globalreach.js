@@ -19,7 +19,7 @@ const Globalreach = () => {
                                         className=''
                                     />
                                     <Image
-                                        src="/Boy.png"
+                                        src="https://storage.googleapis.com/website-bucket-uploads/static/public/Boy.png"
                                         width={500}
                                         height={500}
                                         alt="Picture of client"

@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Head from "next/head";
 import Link from "next/link";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import OgTags from "../../components/OgTags";
+import MetaSchemaOg from "../../components/MetaSchemaOg";
 
 export default function AutoPlay() {
   const [activetab, setActivetab] = useState("1");
@@ -101,7 +101,7 @@ export default function AutoPlay() {
 
   return (
     <>
-      <OgTags
+      <MetaSchemaOg
         url="https://analyticsliv.com/services/data-reporting-analysis"
         title="Get Insights with Expert Data Analytics Visualization at AnalyticsLiv"
         description="Discover insights with expert data analytics visualization at AnalyticsLiv. We turn complex data into clear, actionable visuals to drive smarter decisions and growth."
@@ -317,8 +317,8 @@ export default function AutoPlay() {
                   >
                     <div>
                       <img
-                        src="/Campaign Strategy and Setup white.png"
-                        alt=""
+                        src="https://storage.googleapis.com/website-bucket-uploads/static/public/Campaign%20Strategy%20and%20Setup%20white.png"
+                        alt="Campaign Strategy and Planning"
                         className="h-10 w-10"
                       />
                     </div>
@@ -331,8 +331,8 @@ export default function AutoPlay() {
                   >
                     <div>
                       <img
-                        src="/Audience Targeting white.png"
-                        alt=""
+                        src="https://storage.googleapis.com/website-bucket-uploads/static/public/Audience%20Targeting%20white.png"
+                        alt="Campaign Optimization"
                         className="h-10 w-10"
                       />
                     </div>
@@ -345,8 +345,8 @@ export default function AutoPlay() {
                   >
                     <div>
                       <img
-                        src="/Ad Format Optimization white.png"
-                        alt=""
+                        src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad%20Format%20Optimization%20white.png"
+                        alt="A/B Testing"
                         className="h-10 w-10"
                       />
                     </div>
@@ -507,8 +507,8 @@ export default function AutoPlay() {
                 >
                   <div>
                     <img
-                      src="/Campaign Strategy and Setup white.png"
-                      alt=""
+                      src="https://storage.googleapis.com/website-bucket-uploads/static/public/Campaign%20Strategy%20and%20Setup%20white.png"
+                      alt="Campaign Strategy and Planning"
                       className="h-10 w-10"
                     />
                   </div>
@@ -542,8 +542,8 @@ export default function AutoPlay() {
                 >
                   <div>
                     <img
-                      src="/Audience Targeting white.png"
-                      alt=""
+                      src="https://storage.googleapis.com/website-bucket-uploads/static/public/Audience%20Targeting%20white.png"
+                      alt="Campaign Optimization"
                       className="h-10 w-10"
                     />
                   </div>
@@ -577,8 +577,8 @@ export default function AutoPlay() {
                 >
                   <div>
                     <img
-                      src="/Ad Format Optimization white.png"
-                      alt=""
+                      src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad%20Format%20Optimization%20white.png"
+                      alt="A/B Testing"
                       className="h-10 w-10"
                     />
                   </div>

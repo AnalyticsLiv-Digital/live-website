@@ -13,7 +13,7 @@ import React from 'react'
 import Head from 'next/head'
 import Testimonial from '../../components/home/Testimonial'
 import { FaCheck } from "react-icons/fa";
-import OgTags from '../../components/OgTags'
+import MetaSchemaOg from '../../components/MetaSchemaOg'
 // import PopupForm from '../components/PopupForm'
 
 const page = () => {
@@ -21,7 +21,7 @@ const page = () => {
 
   return (
     <>
-      {/* <OgTags
+      {/* <MetaSchemaOg
         url="https://analyticsliv.com/"
         title="Google Cloud Partner in India | GMP Partner | Analytics Liv"
         description="Accelerate your business growth with certified GMP and Google Cloud Partner in India. Analytics Liv delivers expert data-driven solutions, actionable insights, and advanced marketing strategies."

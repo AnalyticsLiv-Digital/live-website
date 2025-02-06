@@ -813,7 +813,7 @@ const Header = () => {
                   </div>
                   {/*                 
                 <div class="flex items-center py-3 gap-2">
-                  <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytics_Looker.logo.png" alt="Looker_logo" />
+                  <img src="https://storage.googleapis.com/website-bucket-uploads/statichttps://storage.googleapis.com/website-bucket-uploads/static/public/Analytics_Looker.logo.png" alt="Looker_logo" />
                   <Link href="/services/looker-bi-platform"
                     class="text-menuheading font-lato text-[13px] font-normal leading-normal">Looker
                     BI Platform</Link>
@@ -1735,7 +1735,7 @@ export default Header;
 //                   </div>
 //                   {/*
 //                 <div class="flex items-center py-3 gap-2">
-//                   <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytics_Looker.logo.png" alt="Looker_logo" />
+//                   <img src="https://storage.googleapis.com/website-bucket-uploads/statichttps://storage.googleapis.com/website-bucket-uploads/static/public/Analytics_Looker.logo.png" alt="Looker_logo" />
 //                   <Link href="/services/looker-bi-platform"
 //                     class="text-menuheading font-rbt text-[13px] font-normal leading-normal">Looker
 //                     BI Platform</Link>

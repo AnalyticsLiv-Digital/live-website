@@ -22,7 +22,7 @@ const Blogs = () => {
                                 <div className='first relative group home-blog rounded border border-solid border-[#DBDBDB] hover:border-[#979797] hover:shadow-serviceoffer p-[25px] pb-[70px] text-center 2xl:h-[540px] lg:h-[495px]'>
                                     <a href="/blogs/ai-powered-google-analytics-4-insights">
                                         <Image
-                                            src="/blog1.png"
+                                            src="https://storage.googleapis.com/website-bucket-uploads/static/public/blog1.png"
                                             width={500}
                                             height={500}
                                             alt="Picture of the author"
@@ -35,10 +35,10 @@ const Blogs = () => {
                                             </div>
                                             <div className='flex items-center justify-between gap-1'>
                                                 <Image
-                                                    src="/calendar1.svg"
+                                                    src="https://storage.googleapis.com/website-bucket-uploads/static/public/calendar1.svg"
                                                     width={30}
                                                     height={30}
-                                                    alt="Picture of the author"
+                                                    alt="Calendar"
                                                     priority={true}					
                                                 />
                                                 <span className='text-[10px] font-normal'>February 15, 2024</span>
@@ -74,10 +74,10 @@ const Blogs = () => {
                                             </div>
                                             <div className='flex items-center justify-between gap-1'>
                                                 <Image
-                                                    src="/calendar1.svg"
+                                                    src="https://storage.googleapis.com/website-bucket-uploads/static/public/calendar1.svg"
                                                     width={30}
                                                     height={30}
-                                                    alt="Picture of the author"
+                                                    alt="Calendar"
                                                     priority={true}
                                                 />
                                                 <span className='text-[10px] font-normal'>February 7, 2024</span>
@@ -106,7 +106,7 @@ const Blogs = () => {
                                     <a href="/blogs/traversing-essentials-of-gdpr-cookie-consent" className='grid gap-1'>
                                         <div className='grid gap-4'>
                                             <Image
-                                                src="/blog3.png"
+                                                src="https://storage.googleapis.com/website-bucket-uploads/static/public/blog3.png"
                                                 width={500}
                                                 height={500}
                                                 alt="Picture of the author"
@@ -123,7 +123,7 @@ const Blogs = () => {
                                     <a href="/blogs/dv-360-ad-personalization-helpful-complex-privacy-breach" className='grid gap-1'>
                                         <div className='grid gap-4'>
                                             <Image
-                                                src="/blog.png"
+                                                src="https://storage.googleapis.com/website-bucket-uploads/static/public/blog.png"
                                                 width={500}
                                                 height={500}
                                                 alt="Picture of the author"

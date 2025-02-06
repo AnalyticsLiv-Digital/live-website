@@ -8,6 +8,7 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa6";
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { motion } from "framer-motion";
+import MetaSchemaOg from '../../components/MetaSchemaOg';
 
 
 const datascience = () => {
@@ -85,11 +86,13 @@ const datascience = () => {
 
     return (
         <>
-            <Head>
-                <title>AnalyticsLiv - Analytics Data-Science</title>
-                <meta name="description" content="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads" />
-                <link rel="canonical" href="https://analyticsliv.com/services/data-science"></link>
-            </Head>
+            <MetaSchemaOg
+                url="https://analyticsliv.com/services/data-science"
+                title="AnalyticsLiv - Analytics Data-Science"
+                description="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads"
+                twitterTitle="AnalyticsLiv - Analytics Data-Science"
+                twitterDescription="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads"
+            />
             <section className='dtshome w-full relative font-gilroy overflow-hidden'>
                 <div className='h-full'>
                     <div className="relative px-4 md:px-12 pt-8 md:pt-[10px] pb-8 md:pb-0 h-full z-20">
@@ -886,7 +889,7 @@ const datascience = () => {
                                     <a href="/case-studies/skyrocket-your-campaigns-ctr-with-a-95-percent-surge-in-14-days" className='grid gap-5'>
                                         <div className=''>
                                             <Image
-                                                src="/casestd.png"
+                                                src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestd.png"
                                                 width={300}
                                                 height={300}
                                                 alt="Picture of the author"
@@ -905,7 +908,7 @@ const datascience = () => {
                                     <a href="/case-studies/driving-campaigns-in-dv360-to-post-click-attribution-success-with-36-percent-reduction-in-cpi" className='grid gap-1'>
                                         <div className='grid gap-4'>
                                             <Image
-                                                src="/casestd2.png"
+                                                src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestd2.png"
                                                 width={300}
                                                 height={300}
                                                 alt="Picture of the author"

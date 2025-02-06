@@ -14,7 +14,6 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import dynamic from "next/dynamic";
-import { schema } from '../utils/schema';
 
 
 function MyApp({ Component, pageProps: { session, ...pageProps }, }) {
@@ -57,8 +56,6 @@ function MyApp({ Component, pageProps: { session, ...pageProps }, }) {
 
         <script src="/antiflicker.js" />
         <meta name="google-site-verification" content="O18N4BhbU7y11EzEu_fOYfNHdp-fCahcKZUpriC3hyQ" />
-        {/* organizational schema */}
-        {schema()}
       </Head>
         {routerr.pathname === '/testing/old_home' ? <Header /> : <Navbar />}
 

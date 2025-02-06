@@ -9,7 +9,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { motion } from "framer-motion";
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
-import OgTags from '../../components/OgTags';
+import MetaSchemaOg from '../../components/MetaSchemaOg';
 
 const sem = () => {
 
@@ -109,7 +109,7 @@ const sem = () => {
 
     return (
         <>
-            <OgTags
+            <MetaSchemaOg
                 url="https://analyticsliv.com/services/sem"
                 title="Performance Marketing Agency in India | AnalyticsLiv"
                 description="Maximize ROI with expert Google Ads at AnalyticsLiv, a leading performance marketing agency. Our PPC management services drive results with data-driven strategies and proven success."
@@ -397,7 +397,7 @@ const sem = () => {
                                 <div className='cursor-pointer'>
                                     <div className='inbox relative pb-4'>
                                         <Image
-                                            src="/analyzing (1).png"
+                                            src="https://storage.googleapis.com/website-bucket-uploads/static/public/analyzing%20(1).png"
                                             width={30}
                                             height={30}
                                             alt="Picture of the author"

@@ -48,6 +48,21 @@ function generateSiteMap(posts) {
        <loc>https://analyticsliv.com/services/training</loc>
      </url>
      <url>
+       <loc>https://analyticsliv.com/services/sem</loc>
+     </url>
+     <url>
+       <loc>https://analyticsliv.com/services/ppc</loc>
+     </url>
+     <url>
+       <loc>https://analyticsliv.com/services/google-tag-manager</loc>
+     </url>
+     <url>
+       <loc>https://analyticsliv.com/services/server-side-tracking</loc>
+     </url>
+     <url>
+       <loc>https://analyticsliv.com/services/gdpr-compliance</loc>
+     </url>
+     <url>
        <loc>https://analyticsliv.com/blogs/</loc>
      </url>
      <url>

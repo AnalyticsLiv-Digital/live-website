@@ -63,7 +63,7 @@ const navbar = () => {
         {
             title: "Data Driven Marketing",
             links: [
-                { label: "PPC campaign Management", href: "/services/sem", imgSrc: "solutions_GDRP.logo.png" },
+                { label: "PPC campaign Management", href: "/services/ppc", imgSrc: "solutions_GDRP.logo.png" },
                 { label: "Programmatic Advertising (DV360)", href: "/services/programatic-advertising", imgSrc: "Solutions_Data-Science.logo.png" },
                 { label: "Conversion Rate Optimization (CRO)", href: "/services/CRO", imgSrc: "solutions_Data_Attribution.png" },
                 { label: "Data Insight & Reporting", href: "/services/data-reporting-analysis", imgSrc: "solutions_Data_Attribution.png" },
@@ -484,7 +484,7 @@ const navbar = () => {
                                                 >
                                                     <div class="flex items-center py-1">
                                                         <Link
-                                                            href="/services/sem"
+                                                            href="/services/ppc"
                                                             class="text-menuheading font-sans text-sm font-normal leading-normal"
                                                         >
                                                             PPC campaign Management

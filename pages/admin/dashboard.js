@@ -19,7 +19,7 @@ const index = ({ data }) => {
     );
   }
   const imgUrl = [
-    "/blogs.png",
+    "https://storage.googleapis.com/website-bucket-uploads/static/public/blogs.png",
     "/casestudy.png",
     "/job.png",
     "/leads.png"

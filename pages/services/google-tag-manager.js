@@ -6,7 +6,7 @@ import Slider from 'react-slick';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import OgTags from '../../components/OgTags';
+import MetaSchemaOg from '../../components/MetaSchemaOg';
 const google_tag_manager = ({brandsdata}) => {
     const [showMore, setShowMore] = useState(false);
     const toggleShowMore = () => {
@@ -178,7 +178,7 @@ const google_tag_manager = ({brandsdata}) => {
     return (
         <>
 
-            <OgTags
+            <MetaSchemaOg
                 url="https://analyticsliv.com/services/google-tag-manager"
                 title="Expert Google Tag Manager Services | AnalyticsLiv"
                 description="Track your data with Google Tag Manager from AnalyticsLiv. We specialize in data-driven attribution to optimize your marketing strategies and drive growth."
@@ -284,8 +284,8 @@ const google_tag_manager = ({brandsdata}) => {
                                         <div className='flex w-[200px] m-auto items-center py-2.5 justify-center gap-1.5 border border-solid text-center border-maintext  cursor-pointer rounded-[10px] group-hover:bg-maintext  font-medium'>
                                             <button className='font-medium text-maintext  group-hover:text-white text-sm'>View</button>
                                             <span className='text-homepagebtn group-hover:text-white'>
-                                                <img src='/arrow-right (8).png' alt='arrow right' className='h-4 w-4 group-hover:hidden' />
-                                                <img src='/arrow-right (7).png' alt='arrow right hover' className='h-4 w-4 hidden group-hover:block' />
+                                                <img src='https://storage.googleapis.com/website-bucket-uploads/static/public/arrow-right%20(8).png' alt='arrow right' className='h-4 w-4 group-hover:hidden' />
+                                                <img src='https://storage.googleapis.com/website-bucket-uploads/static/public/arrow-right%20(7).png' alt='arrow right hover' className='h-4 w-4 hidden group-hover:block' />
                                             </span>
                                         </div>
                                     </div>
@@ -305,8 +305,8 @@ const google_tag_manager = ({brandsdata}) => {
                                     <div className='flex w-[200px] m-auto items-center py-2.5 justify-center gap-1.5 border border-solid text-center border-maintext  cursor-pointer rounded-[10px] group-hover:bg-maintext  font-medium'>
                                         <button className='font-medium text-maintext  group-hover:text-white text-sm'>View</button>
                                         <span className='text-homepagebtn group-hover:text-white'>
-                                            <img src='/arrow-right (8).png' alt='arrow right' className='h-4 w-4 group-hover:hidden' />
-                                            <img src='/arrow-right (7).png' alt='arrow right hover' className='h-4 w-4 hidden group-hover:block' />
+                                            <img src='https://storage.googleapis.com/website-bucket-uploads/static/public/arrow-right%20(8).png' alt='arrow right' className='h-4 w-4 group-hover:hidden' />
+                                            <img src='https://storage.googleapis.com/website-bucket-uploads/static/public/arrow-right%20(7).png' alt='arrow right hover' className='h-4 w-4 hidden group-hover:block' />
                                         </span>
                                     </div>
                                 </div>
@@ -328,8 +328,8 @@ const google_tag_manager = ({brandsdata}) => {
                                         <div className='flex w-[200px] m-auto items-center py-2.5 justify-center gap-1.5 border border-solid text-center border-maintext  cursor-pointer rounded-[10px] group-hover:bg-maintext  font-medium'>
                                             <button className='font-medium text-maintext  group-hover:text-white text-sm'>View</button>
                                             <span className='text-homepagebtn group-hover:text-white'>
-                                                <img src='/arrow-right (8).png' alt='arrow right' className='h-4 w-4 group-hover:hidden' />
-                                                <img src='/arrow-right (7).png' alt='arrow right hover' className='h-4 w-4 hidden group-hover:block' />
+                                                <img src='https://storage.googleapis.com/website-bucket-uploads/static/public/arrow-right%20(8).png' alt='arrow right' className='h-4 w-4 group-hover:hidden' />
+                                                <img src='https://storage.googleapis.com/website-bucket-uploads/static/public/arrow-right%20(7).png' alt='arrow right hover' className='h-4 w-4 hidden group-hover:block' />
                                             </span>
                                         </div>
                                     </div>
@@ -351,8 +351,8 @@ const google_tag_manager = ({brandsdata}) => {
                                             <div className='flex w-[200px] m-auto items-center py-2.5 justify-center gap-1.5 border border-solid text-center border-maintext  cursor-pointer rounded-[10px] group-hover:bg-maintext  font-medium'>
                                                 <button className='font-medium text-maintext  group-hover:text-white text-sm'>View</button>
                                                 <span className='text-homepagebtn group-hover:text-white'>
-                                                    <img src='/arrow-right (8).png' alt='arrow right' className='h-4 w-4 group-hover:hidden' />
-                                                    <img src='/arrow-right (7).png' alt='arrow right hover' className='h-4 w-4 hidden group-hover:block' />
+                                                    <img src='https://storage.googleapis.com/website-bucket-uploads/static/public/arrow-right%20(8).png' alt='arrow right' className='h-4 w-4 group-hover:hidden' />
+                                                    <img src='https://storage.googleapis.com/website-bucket-uploads/static/public/arrow-right%20(7).png' alt='arrow right hover' className='h-4 w-4 hidden group-hover:block' />
                                                 </span>
                                             </div>
                                         </div>
@@ -374,8 +374,8 @@ const google_tag_manager = ({brandsdata}) => {
                                                 <div className='flex w-[200px] m-auto items-center py-2.5 justify-center gap-1.5 border border-solid text-center border-maintext  cursor-pointer rounded-[10px] group-hover:bg-maintext  font-medium'>
                                                     <button className='font-medium text-maintext  group-hover:text-white text-sm'>View</button>
                                                     <span className='text-homepagebtn group-hover:text-white'>
-                                                        <img src='/arrow-right (8).png' alt='arrow right' className='h-4 w-4 group-hover:hidden' />
-                                                        <img src='/arrow-right (7).png' alt='arrow right hover' className='h-4 w-4 hidden group-hover:block' />
+                                                        <img src='https://storage.googleapis.com/website-bucket-uploads/static/public/arrow-right%20(8).png' alt='arrow right' className='h-4 w-4 group-hover:hidden' />
+                                                        <img src='https://storage.googleapis.com/website-bucket-uploads/static/public/arrow-right%20(7).png' alt='arrow right hover' className='h-4 w-4 hidden group-hover:block' />
                                                     </span>
                                                 </div>
                                             </div>

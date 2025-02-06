@@ -219,7 +219,7 @@ export default function CookieConsent({ brandsdata }) {
       <div className="bg-[#2E2C37]">
         <div className="flex justify-between max-sm:gap-2 px-2 md:px-16 pt-5 ">
           <img
-            src="/AnalyticsLiv Logo.png"
+            src="https://storage.googleapis.com/website-bucket-uploads/static/public/AnalyticsLiv%20Logo.png"
             alt="analyticsliv-logo"
             className="max-sm:h-11 max-md:h-16 max-sm:w-[140px] max-md:w-[30%] bg-white rounded-full px-4"
           />
@@ -254,7 +254,7 @@ export default function CookieConsent({ brandsdata }) {
               <div className="flex justify-center lg:justify-start lg:gap-16 max-md:justify-evenly items-center gap-0 sm:gap-5 md:gap-12">
                 <div className="flex flex-col items-center justify-center">
                   <img
-                    src="/calendar (5).png"
+                    src="https://storage.googleapis.com/website-bucket-uploads/static/public/calendar%20(5).png"
                     alt="calender"
                     className=" w-[65px] h-[65px] max-lg:w-[35px] max-lg:h-[35px] lg:w-[55px] lg:h-[55px]"
                   />
@@ -438,8 +438,8 @@ export default function CookieConsent({ brandsdata }) {
               </div>
               <div className="flex flex-col w-[200px] justify-center items-center">
                 <img
-                  src="/Abhishek_Webinar_Profile_Pic_New (1).png"
-                  alt=""
+                  src="https://storage.googleapis.com/website-bucket-uploads/static/public/Abhishek_Webinar_Profile_Pic_New%20(1).png"
+                  alt="Abhishek"
                   className="pb-3 mx-auto"
                 />
                 <div className="text-base font-black text-center text-[#3C292A] pb-2">
@@ -451,8 +451,8 @@ export default function CookieConsent({ brandsdata }) {
               </div>
               <div className="flex flex-col w-[200px] justify-center items-center">
                 <img
-                  src="/Anshul_Webinar_Profile_Pic_New.png"
-                  alt=""
+                  src="https://storage.googleapis.com/website-bucket-uploads/static/public/Anshul_Webinar_Profile_Pic_New.png"
+                  alt="Anshul_Webinar_Profile_Pic"
                   className="pb-3 mx-auto"
                 />
                 <div className="text-base font-black text-center text-[#3C292A] pb-2">
@@ -482,7 +482,7 @@ export default function CookieConsent({ brandsdata }) {
             </div>
             <div className="flex flex-col">
               <img
-                src="/Abhishek_Webinar_Profile_Pic_New (1).png"
+                src="/https://storage.googleapis.com/website-bucket-uploads/static/public/Abhishek_Webinar_Profile_Pic_New%20(1).png.png"
                 alt=""
                 className="pb-3"
               />
@@ -495,8 +495,8 @@ export default function CookieConsent({ brandsdata }) {
             </div>
             <div className="flex flex-col">
               <img
-                src="/Anshul_Webinar_Profile_Pic_New.png"
-                alt=""
+                src="https://storage.googleapis.com/website-bucket-uploads/static/public/Anshul_Webinar_Profile_Pic_New.png"
+                alt="Anshul_webinar_pic"
                 className="pb-3"
               />
               <div className="text-base font-black text-center text-[#3C292A] pb-2">

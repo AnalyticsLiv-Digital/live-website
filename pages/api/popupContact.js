@@ -5,7 +5,11 @@ import { sendEmail } from "../../utils/sendMail";
 
 const handler = async (req, res) => {
     if (req.method === 'POST') {
+
         try {
+            if (req.body?.email?.includes('test')) {
+                return res.status(200).json({ message: "Test found request successfull !" });
+            }
             //   fetch(`https://script.google.com/macros/s/AKfycbxS43B15oUP4-LaHnzA5KZ5ly7OgE59ZQpvujB1TRGDvt48JpHVa92OPlq9zPPQ7V7N4g/exec?firstName=${req.body.firstName}&lastName=${req.body.lastName}&email=${req.body.email}&contact=${req.body.contact}&role=${req.body.role}&purpose=${req.body.purpose}&requirements=${req.body.requirments}&company=${req.body.company}`);
             fetch('https://script.google.com/a/macros/analyticsliv.com/s/AKfycbyTZ8cSxnbJnAATesckEfLHiza2ovYoq2XgOC-WQrWob9tGwlE7hToRWR3ZrcEr6Xov/exec?fname=' + req.body?.fullName + '&email=' + req.body?.email + '&contact=' + req.body?.contact + '&company=' + req.body?.company + '&companyName=' + req.body?.companyName + '&websiteUrl' + req.body?.webUrl);
 
@@ -22,11 +26,11 @@ const handler = async (req, res) => {
             const internalMailOptions = {
                 to: ["sales@analyticsliv.com", "anuj@analyticsliv.com", "nitya@analyticsliv.com", "rajvi@analyticsliv.com", "anshul.d@analyticsliv.com"],
                 subject: 'New Enquiry!!',
-                html: `Enquiry Submitted by <br> Name - ${req.body?.fullName} <br> Email- ${req.body?.email} <br> Contact - ${req.body?.contact} <br> Message -${req.body?.message}`
+                html: `Enquiry Submitted by <br> Name - ${req.body?.fullName || ''} <br> Email- ${req.body?.email || ''} <br> Contact - ${req.body?.contact || ''} <br> Message -${req.body?.message || ''} <br> Company Name- ${req.body?.companyName || ''} <br> Website url- ${req.body?.webUrl || ''}`
             };
 
             const userMailOptions = {
-                to: [req.body.email, "anuj@analyticsliv.com"],
+                to: [req.body?.email],
                 subject: 'Analyticsliv - Thank you for contacting us.',
                 html: `Hi ${req.body.fullName},<br>
         Thank you for reaching out to AnalyticsLiv, one of the fastest growing Google Marketing Platform Partners in India. Our Services have empowered more than 500 businesses to use first-party data for analysis and marketing purposes, making businesses independent of third-party data intelligence.<br>

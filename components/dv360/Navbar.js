@@ -38,10 +38,10 @@ const Navbar = () => {
                     <div className='bg-white rounded-[40px] py-1 px-2'>
                         <a href='/' className='text-2xl font-semibold flex items-center space-x-3 w-52 h-12'>
                             <Image
-                                src="/analyticsLiv-logo.png"
+                                src="https://storage.googleapis.com/website-bucket-uploads/static/public/analyticsLiv-logo.png"
                                 width={500}
                                 height={500}
-                                alt="Picture of the author"
+                                alt="analyticsLiv-logo"
                                 priority={true}
                             />
                         </a>
@@ -80,10 +80,10 @@ const Navbar = () => {
                         <div className='bg-white rounded-[40px] py-1 px-2'>
                             <a href="/">
                                 <Image
-                                    src="/analyticsLiv-logo.png"
+                                    src="https://storage.googleapis.com/website-bucket-uploads/static/public/analyticsLiv-logo.png"
                                     width={200}
                                     height={200}
-                                    alt="Picture of the author"
+                                    alt="analyticsLiv-logo"
                                     className='inline-block h-10 md:mx-4 cursor-pointer'
                                 />
                             </a>

@@ -632,7 +632,7 @@ export default GetInTouch;
 //                                     <ScrollElement id="consultation" name="consultation" ></ScrollElement>
 
 //                                     <div className="flex justify-center">
-//                                         <img src="/AnalyticsLiv 2.png" alt="" className="max-w-[200px] max-h-[100px]" />
+//                                         <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/AnalyticsLiv%202.png" alt="AnalyticsLiv" className="max-w-[200px] max-h-[100px]" />
 //                                     </div>
 //                                     <div className="flex items-center justify-center">
 //                                         <div>

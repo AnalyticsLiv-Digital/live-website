@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
-import OgTags from "../../components/OgTags";
+import MetaSchemaOg from "../../components/MetaSchemaOg";
 
 const app_marketing = () => {
   const [activetab, setActivetab] = useState("1");
 
   return (
     <>
-      <OgTags
+      <MetaSchemaOg
         url="https://analyticsliv.com/services/app-marketing"
         title="Best Mobile App Marketing Services in India | AnalyticsLiv"
         description="Maximize your app's reach with AnalyticsLiv's top mobile app marketing services in India. Increase downloads, user engagement, and retention with proven strategies."
@@ -71,8 +71,8 @@ const app_marketing = () => {
                   >
                     <div>
                       <img
-                        src="/Campaign Strategy and Setup white.png"
-                        alt=""
+                        src="https://storage.googleapis.com/website-bucket-uploads/static/public/Campaign%20Strategy%20and%20Setup%20white.png"
+                        alt="Campaign Strategy and Planning"
                         className="h-10 w-10"
                       />
                     </div>
@@ -85,8 +85,8 @@ const app_marketing = () => {
                   >
                     <div>
                       <img
-                        src="/Audience Targeting white.png"
-                        alt=""
+                        src="https://storage.googleapis.com/website-bucket-uploads/static/public/Audience%20Targeting%20white.png"
+                        alt="Audience Targeting and Segmentation"
                         className="h-10 w-10"
                       />
                     </div>
@@ -99,8 +99,8 @@ const app_marketing = () => {
                   >
                     <div>
                       <img
-                        src="/Ad Format Optimization white.png"
-                        alt=""
+                        src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad%20Format%20Optimization%20white.png"
+                        alt="Ad Creatives"
                         className="h-10 w-10"
                       />
                     </div>
@@ -141,8 +141,8 @@ const app_marketing = () => {
                   >
                     <div>
                       <img
-                        src="/Campaign Strategy and Setup white.png"
-                        alt=""
+                        src="https://storage.googleapis.com/website-bucket-uploads/static/public/Campaign%20Strategy%20and%20Setup%20white.png"
+                        alt="Campaign Strategy and Planning"
                         className="h-10 w-10"
                       />
                     </div>
@@ -155,8 +155,8 @@ const app_marketing = () => {
                   >
                     <div>
                       <img
-                        src="/Ad Format Optimization white.png"
-                        alt=""
+                        src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad%20Format%20Optimization%20white.png"
+                        alt="Analytics and Insights"
                         className="h-10 w-10"
                       />
                     </div>
@@ -372,8 +372,8 @@ const app_marketing = () => {
                 >
                   <div>
                     <img
-                      src="/Campaign Strategy and Setup white.png"
-                      alt=""
+                      src="https://storage.googleapis.com/website-bucket-uploads/static/public/Campaign%20Strategy%20and%20Setup%20white.png"
+                      alt="Campaign Strategy and Planning"
                       className="h-10 w-10"
                     />
                   </div>
@@ -410,8 +410,8 @@ const app_marketing = () => {
                 >
                   <div>
                     <img
-                      src="/Audience Targeting white.png"
-                      alt=""
+                      src="https://storage.googleapis.com/website-bucket-uploads/static/public/Audience%20Targeting%20white.png"
+                      alt="Audience Targeting and Segmentation"
                       className="h-10 w-10"
                     />
                   </div>
@@ -448,8 +448,8 @@ const app_marketing = () => {
                 >
                   <div>
                     <img
-                      src="/Ad Format Optimization white.png"
-                      alt=""
+                      src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad%20Format%20Optimization%20white.png"
+                      alt="Compelling Ad Creatives"
                       className="h-10 w-10"
                     />
                   </div>
@@ -565,8 +565,8 @@ const app_marketing = () => {
                 >
                   <div>
                     <img
-                      src="/Campaign Strategy and Setup white.png"
-                      alt=""
+                      src="https://storage.googleapis.com/website-bucket-uploads/static/public/Campaign%20Strategy%20and%20Setup%20white.png"
+                      alt="Campaign Strategy and Planning"
                       className="h-10 w-10"
                     />
                   </div>
@@ -603,8 +603,8 @@ const app_marketing = () => {
                 >
                   <div>
                     <img
-                      src="/Ad Format Optimization white.png"
-                      alt=""
+                      src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad%20Format%20Optimization%20white.png"
+                      alt="Analytics and Insights"
                       className="h-10 w-10"
                     />
                   </div>
