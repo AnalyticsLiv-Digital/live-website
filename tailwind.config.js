@@ -41,6 +41,7 @@ module.exports = {
         teamShadow: '0px 4px 4px 0px #00000040',
         cardShadow: '-1px 5px 10px -1px #00000040',
         hoverCard: '-1px 0px 5px -1px #00000040, 0px 4px 4px 0px #00000040',
+        arrowShadow: '-1px 1px 4px 0px #00000040',
       },
       colors: {
         btn: '#4285F4',
@@ -74,6 +75,7 @@ module.exports = {
       },
       backgroundImage: {
         'custom-linear': 'linear-gradient(97.32deg, #FF698D -3.47%, #FB3F6C 108.43%)',
+        'header-linear': 'linear-gradient(97.32deg, #003366 -3.47%, #0F52BA 108.43%)',
       },
     },
   },
