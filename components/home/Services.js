@@ -1,52 +1,164 @@
-import React from "react";
+import React, { useRef } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const Services = () => {
+  const sliderRef = useRef(null);
 
-    const services = [
-        {
-            title: "Data Foundation",
-            bgColor: "#E7FBF9",
-            image: "https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Data%20Foundation.png",
-            items: ["Account Health & Opportunity", " GA4 Implementation & Optimization", "Server Side Tracking", "Cookie Consent Solution"],
-            images: ["https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/GA4_Logo%20(1).png", "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/GTM_Logo.png", "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Firebase_Logo%20(1).png"],
-            redirect: "/services/web-app-measurement",
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 1500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    responsive: [
+      {
+        breakpoint: 1150,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
         },
-        {
-            title: "Data Transformation",
-            bgColor: "#FFF4E2",
-            image: "https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Data%20Transformation.png",
-            items: ["Cloud Migration & Engineering", "Custom Pipeline Creation", "Custom Dashboarding"],
-            images: ["https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Looker_Studio_Logo.png", "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/BQ_Logo.png"],
-            redirect: "/services/data-science",
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          speed: 1000,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
         },
-        {
-            title: "Data Driven Marketing",
-            bgColor: "#C8C4E9",
-            image: "https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Data%20Driven%20Marketing.png",
-            items: ["PPC Campaign Management", "Programmatic Advertising (DV360)", "CRO-Consumer Journey, Mapping, Strategy, Desing", "Data Insight"],
-            images: ["https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/DV_Logo.png", "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Google_Ads_Logo.png", "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Meta_Ads_Logo.png"],
-            redirect: "/services/programatic-advertising",
+      },
+      {
+        breakpoint: 988,
+        settings: {
+          dots: false,
+          speed: 1000,
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          initialSlide: 2,
         },
-        {
-            title: "Product & Solutions",
-            bgColor: "#C8C4E9",
-            image: "https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Product%20and%20Solutions.png",
-            items: ["MAdKPI", "Lead Scoring", "Product and CRE (Content Recommendation Engine)", "RFM Analysis", "MMM Modeling"],
-            images: ["https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/MAD_KPI_Logo%20(2).png", "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/DV_Logo.png", "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Google_Ads_Logo.png"],
-            redirect: "/services/customer-segmentation",
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          dots: false,
+          speed: 1000,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 2,
         },
-    ];
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          dots: true,
+          speed: 1000,
+          // nextArrow: false,
+          // prevArrow: false,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
 
-    return (
-      <div className="pt-14 mb-12 xl:mb-20 2xl:mb-12 px-4 md:px-8 lg:px-16 relative">
-        <div className="text-[#100F1B] text-3xl font-bold text-center">
-          Services We Offer
-        </div>
-        <div className="relative">
-        <div className="flex flex-col justify-start md:w-[50%] gap-6 pt-12">
-          <div className="text-lg max-md:text-center md:text-3xl font-bold text-[#373642]">Checkout our Expert Services</div>
-          <div className="text-sm max-md:text-center md:text-base font-normal text-[#373642]">
+  const handleNext = () => sliderRef.current.slickNext();
+  const handlePrev = () => sliderRef.current.slickPrev();
+
+  const services = [
+    {
+      title: "Data Foundation",
+      bgColor: "#E7FBF9",
+      image:
+        "https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Data%20Foundation.png",
+      items: [
+        "Account Health & Opportunity",
+        " GA4 Implementation & Optimization",
+        "Server Side Tracking",
+        "Cookie Consent Solution",
+      ],
+      images: [
+        "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/GA4_Logo%20(1).png",
+        "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/GTM_Logo.png",
+        "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Firebase_Logo%20(1).png",
+      ],
+      redirect: "/services/web-app-measurement",
+    },
+    {
+      title: "Data Transformation",
+      bgColor: "#FFF4E2",
+      image:
+        "https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Data%20Transformation.png",
+      items: [
+        "Cloud Migration & Engineering",
+        "Custom Pipeline Creation",
+        "Custom Dashboarding",
+      ],
+      images: [
+        "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Looker_Studio_Logo.png",
+        "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/BQ_Logo.png",
+      ],
+      redirect: "/services/data-science",
+    },
+    {
+      title: "Data Driven Marketing",
+      bgColor: "#C8C4E9",
+      image:
+        "https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Data%20Driven%20Marketing.png",
+      items: [
+        "PPC Campaign Management",
+        "Programmatic Advertising (DV360)",
+        "CRO-Consumer Journey, Mapping, Strategy, Desing",
+        "Data Insight",
+      ],
+      images: [
+        "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/DV_Logo.png",
+        "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Google_Ads_Logo.png",
+        "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Meta_Ads_Logo.png",
+      ],
+      redirect: "/services/programatic-advertising",
+    },
+    {
+      title: "Product & Solutions",
+      bgColor: "#C8C4E9",
+      image:
+        "https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Product%20and%20Solutions.png",
+      items: [
+        "MAdKPI",
+        "Lead Scoring",
+        "Product and CRE (Content Recommendation Engine)",
+        "RFM Analysis",
+        "MMM Modeling",
+      ],
+      images: [
+        "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/MAD_KPI_Logo%20(2).png",
+        "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/DV_Logo.png",
+        "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Google_Ads_Logo.png",
+      ],
+      redirect: "/services/customer-segmentation",
+    },
+  ];
+
+  return (
+    <div className="pt-14 mb-12 xl:mb-20 2xl:mb-12 px-4 md:px-8 lg:px-16 relative">
+      <div className="text-[#100F1B] text-3xl font-bold text-center">
+        Services We Offer
+      </div>
+      <div className="relative">
+        <div className="flex flex-col justify-start w-[63%] md:w-[50%] gap-6 pt-12">
+          <div className="text-sm md:text-lg max-md:text-start lg:text-3xl font-bold text-[#373642]">
+            Checkout our Expert Services
+          </div>
+          <div className="max-md:hidden text-[9px] md:text-xs max-md:text-start lg:text-base font-normal text-[#373642]">
             Analytics Liv Digital (“AnalyticsLiv”) is a new age marketing firm
             focused on delivering data driven customer experiences. Cutting
             through the noise of digital data fatigue to take cognizance of a
@@ -54,10 +166,52 @@ const Services = () => {
             PPC campaigns or landing pages- whatever be your customer
             touchpoint(s), we will make it count.
           </div>
+          <div className="md:hidden text-[9px] md:text-xs max-md:text-start font-normal text-[#373642]">
+            Analytics Liv Digital (“AnalyticsLiv”) is a new age marketing firm
+            focused on delivering data driven customer experiences.
+          </div>
         </div>
-        <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/industrial-designers-working-together%201.svg" alt="services"
-        className="max-md:hidden md:absolute top-10 right-[5%] 2xl:right-[9%] z-10 max-xl:w-[40%]" />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 z-20 max-md:mx-7 justify-items-center 2xl:justify-items-start max-lg:gap-7 pt-12 pb-6 relative">
+        <img
+          src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/industrial-designers-working-together%201.svg"
+          alt="services"
+          className="absolute top-10 md:top-10 right-[0%] md:right-[5%] 2xl:right-[9%] z-10 max-md:w-[35%] max-xl:w-[40%]"
+        />
+        <div className="lg:hidden max-md:pt-5 absolute md:top-10 top-4 right-[0.5%] md:right-[6%] 2xl:right-[10%]">
+          <div className="flex justify-center items-center gap-1 md:gap-2 lg:gap-5">
+            <button
+              onClick={handlePrev}
+              className="group overflow-hidden z-10 bg-transparent border border-white hover:border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[4px] md:rounded-[8px] px-1 py-1 md:px-4 md:py-3 mt-3 transition-all duration-300 ease-linear hover:bg-white"
+            >
+              <img
+                src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector%20(1).svg"
+                alt="left vector"
+                className="w-2 h-2 md:w-3.5 md:h-3.5 hidden group-hover:block"
+              />
+              <img
+                src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20right%20white.svg"
+                alt="left vector"
+                className="w-2 h-2 md:w-3.5 md:h-3.5 group-hover:hidden block"
+              />
+            </button>
+            <button
+              onClick={handleNext}
+              className="group overflow-hidden z-10 bg-transparent border border-white hover:border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[4px] md:rounded-[8px] px-1 py-1 md:px-4 md:py-3 mt-3 transition-all duration-300 ease-linear hover:bg-white"
+            >
+              <img
+                src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector.svg"
+                alt="right vector"
+                className="w-2 h-2 md:w-3.5 md:h-3.5 hidden group-hover:block"
+              />
+              <img
+                src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20left%20white.svg"
+                alt="right vector"
+                className="w-2 h-2 md:w-3.5 md:h-3.5 group-hover:hidden block"
+              />
+            </button>
+          </div>
+        </div>
+
+        <div className="max-lg:hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 z-20 max-md:mx-7 justify-items-center 2xl:justify-items-start max-lg:gap-7 pt-12 pb-6 relative">
           {services.map((service, index) => (
             <div
               key={index}
@@ -68,7 +222,11 @@ const Services = () => {
             >
               <div>
                 <div className="flex flex-col justify-center items-center gap-5">
-                  <img src={service.image} alt={service.title} className="w-14" />
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-14"
+                  />
                   <h3 className="text-base xl:text-lg font-bold text-center">
                     {service.title}
                   </h3>
@@ -78,10 +236,7 @@ const Services = () => {
                 <div className="flex flex-col justify-start items-start gap-3">
                   <div className="flex flex-col gap-2.5">
                     {service?.items.map((item, idx) => (
-                      <div
-                        key={idx}
-                        className="flex flex-col"
-                      >
+                      <div key={idx} className="flex flex-col">
                         <div className="flex items-center md:items-start gap-1 sm:gap-2 text-[10px] xl:text-sm hover:cursor-default font-normal">
                           <img
                             src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Check%20Mark.png"
@@ -115,9 +270,54 @@ const Services = () => {
             </div>
           ))}
         </div>
+
+        <div className="lg:hidden z-20 pt-3 md:pt-4 max-md:w-[85%] mx-auto relative carousel-custom">
+          <Slider ref={sliderRef} {...settings}>
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className={`flex flex-col group transition duration-300 gap-5 mx-auto sm:w-[350px] md:w-[350px] 
+                md:h-[280px] lg:w-[205px] xl:w-[260px] 2xl:w-[300px] min-h-[290px] md:min-h-[300px] xl:min-h-[326px] shadow-customShadow
+                px-4 xl:px-7 py-4 sm:py-5 rounded-3xl bg-white hover:shadow-arrowShadow
+               `}
+              >
+                <div>
+                  <div className="flex flex-col justify-center items-center gap-5">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-14"
+                    />
+                    <h3 className="text-base xl:text-lg font-bold text-center">
+                      {service.title}
+                    </h3>
+                  </div>
+                </div>
+                <div className="flex justify-between items-center pt-5">
+                  <div className="flex flex-col justify-start items-start gap-3">
+                    <div className="flex flex-col gap-2.5">
+                      {service?.items.map((item, idx) => (
+                        <div key={idx} className="flex flex-col">
+                          <div className="flex items-center md:items-start gap-1 sm:gap-2 text-[10px] xl:text-sm hover:cursor-default font-normal">
+                            <img
+                              src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Check%20Mark.png"
+                              alt="Check Mark blue"
+                              className="pt-0.5"
+                            />
+                            {item}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </Slider>
         </div>
-        </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Services;
@@ -218,11 +418,6 @@ export default Services;
 // };
 
 // export default Services;
-
-
-
-
-
 
 // import React from "react";
 // import Slider from "react-slick";
