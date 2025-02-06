@@ -141,7 +141,7 @@ const Stats = () => {
                         { count: 30, label: "Certified Experts", src: "https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Certified%20Experts%20icon.png" },
                         { count: 10, label: "Solutions", src: "https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Solutions%20icon.png" },
                     ].map((stat, index) => (
-                        <div key={index} className="max-md:py-5 text-center flex items-center gap-1 sm:gap-3">
+                        <div key={index} className="max-lg:py-5 text-center flex items-center gap-1 sm:gap-3">
 
                             <img src={stat?.src} alt={stat?.label} className="w-14 md:w-16" />
 

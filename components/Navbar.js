@@ -680,19 +680,19 @@ const navbar = () => {
                         onMouseEnter={() => setIsSWebervices(true)}
                         onMouseLeave={() => { setIsSWebervices(false); setHoveredIndex(0) }}
                         onClick={() => setIsSWebervices(false)}
-                        className="subheader absolute w-full text-sm z-50 bg-gray-100 text-cyan-900 font-semibold"
+                        className="subheader absolute w-full text-sm z-50 bg-header-linear text-white font-semibold"
                     >
-                        <div className="container p-5 flex items-start mx-auto">
-                            <div className="w-1/3 ml-[10%]">
+                        <div className="container p-5 flex justify-evenly items-start mx-auto">
+                            <div className="w-1/3 ml-[4%]">
                                 {servicesData?.map((service, index) => (
                                     <div
                                         key={index}
-                                        className={`flex items-center justify-between py-4 transition-all duration-75 px-4 border-b border-gray-300 font-medium ${hoveredIndex === index ? "bg-gray-200 opacity-100 transition duration-100" : " opacity-70"
+                                        className={`flex items-center justify-between py-4 transition-all duration-75 px-4 border-b border-gray-300 font-medium ${hoveredIndex === index ? "opacity-100 transition duration-100" : " opacity-70"
                                             }`}
                                         onMouseEnter={() => setHoveredIndex(index)}
                                         onMouseLeave={() => setHoveredIndex(hoveredIndex)}
                                     >
-                                        <h3 className="text-menuheading font-sans text-[13px] xl:text-[14px]">
+                                        <h3 className="text-white font-sans text-[13px] xl:text-[14px]">
                                             {service?.title}
                                         </h3>
                                         {hoveredIndex === index && (
@@ -704,22 +704,22 @@ const navbar = () => {
                                 ))}
                             </div>
 
-                            <div className="w-[2px] h-[240px] ml-[8%] bg-gray-300"></div>
+                            <div className="w-[2px] h-[240px] ml-[6%] bg-gray-300"></div>
 
-                            <div className="w-1/4 relative px-4 py-4">
+                            <div className="w-2/3 ml-[5%] mr-[6%] flex px-4 py-4">
                                 {hoveredIndex !== null && (
                                     <motion.div
                                         initial={{ opacity: 0, y: -10 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                                        className="py-8 rounded-md fixed top-0 right-0 w-[40%] max-h-[500px] overflow-y-auto"
+                                        className="py-8 grid grid-cols-2 2xl:grid-cols-3 max-2xl:w-full justify-items-start gap-11 2xl:gap-12 rounded-md max-h-[500px]"
                                     >
                                         {servicesData[hoveredIndex]?.links?.map((link, linkIndex) => (
-                                            <div key={linkIndex} className="flex items-center gap-2 py-2">
+                                            <div key={linkIndex} className="">
                                                 {/* <img src={link?.imgSrc} alt={link?.label} className="w-6 h-6" /> */}
                                                 <Link
                                                     href={link?.href}
-                                                    className="text-[11px] xl:text-[13px] font-normal text-menuheading opacity-75 hover:opacity-100"
+                                                    className="text-[11px] xl:text-[13px] font-normal text-white opacity-70 hover:opacity-100"
                                                 >
                                                     {link?.label}
                                                 </Link>

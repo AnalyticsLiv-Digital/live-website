@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -7,29 +7,7 @@ import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 const HomeBlogs = () => {
 
-  const NextArrow = (props) => {
-    const { onClick } = props;
-    return (
-      <div
-        className="absolute text-white bg-sky-400 rounded-full p-0.5 sm:p-0.5 md:p-1 xl:p-1 top-1/2 right-[-15px] sm:right-[-20px] md:right-[-50px] lg:right-[-40px] transform -translate-y-1/2 z-10 cursor-pointer"
-        onClick={onClick}
-      >
-        <FaArrowRight className='text-sm sm:text-base xl:text-sm' />
-      </div>
-    );
-  };
-
-  const PrevArrow = (props) => {
-    const { onClick } = props;
-    return (
-      <div
-        className="absolute text-white bg-sky-400 rounded-full p-0.5 sm:p-0.5 md:p-1 xl:p-1 top-1/2 left-[-15px] sm:left-[-15px] md:left-[-50px] lg:left-[-40px] transform -translate-y-1/2 z-10 cursor-pointer"
-        onClick={onClick}
-      >
-        <FaArrowLeft className='text-sm sm:text-base xl:text-sm' />
-      </div>
-    );
-  };
+  const sliderRef = useRef(null);
 
   var settings = {
     dots: true,
@@ -38,8 +16,7 @@ const HomeBlogs = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     initialSlide: 0,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
+    arrows: false,
     autoplay: true,
     autoplaySpeed: 5000,
     responsive: [
@@ -96,7 +73,8 @@ const HomeBlogs = () => {
     ],
   };
 
-
+  const handleNext = () => sliderRef.current.slickNext();
+  const handlePrev = () => sliderRef.current.slickPrev();
 
   return (
     <section className="max-md:pb-7 md:pt-5 lg:pt-10 xl:pt-20 2xl:pt-20 md:pb-7 lg:pb-14 px-4 md:px-16">
@@ -110,14 +88,35 @@ const HomeBlogs = () => {
         <div className="absolute max-md:hidden 2xl:top-[-50px] left-[28%] lg:left-[37%] z-10 2xl:left-[35%] w-full">
           <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Arrow.png" alt="arrow" className="w-[40%] 2xl:w-[45%]" />
         </div>
-        <div className='max-md:hidden'>
+        {/* <div className='max-md:hidden'>
           <a href='/blogs' className=''><button className="mainbutn max-md:mt-5">Read More Blogs</button></a>
-        </div>
+        </div> */}
+        <div className="max-md:hidden flex flex-col max-sm:hidden justify-center items-center gap-2 max-md:pt-5">
+              <a href='/blogs'><button className="mainbutn-opposite">Read More Blogs</button></a>
+            <div className="flex justify-center items-center gap-5">
+                <button
+                    onClick={handlePrev}
+                    className="group relative overflow-hidden z-10 bg-white border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[8px] px-4 py-3 mt-3 transition-all duration-300 ease-linear hover:bg-[#08A4F7]"
+                >
+                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector%20(1).svg' alt='left vector' className='w-3.5 h-3.5 group-hover:hidden block' />
+
+                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20right%20white.svg' alt='left vector' className='w-3.5 h-3.5 hidden group-hover:block' />
+
+                    </button>
+                    <button
+                      onClick={handleNext}
+                      className="group relative overflow-hidden z-10 bg-white border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[8px] px-4 py-3 mt-3 transition-all duration-300 ease-linear hover:bg-[#08A4F7]"
+                    >
+                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector.svg' alt='right vector' className='w-3.5 h-3.5 group-hover:hidden block' />
+                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20left%20white.svg' alt='right vector' className='w-3.5 h-3.5 hidden group-hover:block' />
+                </button>
+              </div>
+          </div>
       </div>
 
       {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"> */}
       <div className="md:pt-8 w-full mx-auto relative carousel-custom">
-        <Slider {...settings}>
+        <Slider  ref={sliderRef} {...settings}>
           <a href='/blogs/google-dv360-removal-of-flight-asap-pacing-at-the-insertion-order-level' className="bg-white rounded-lg shadow-lg p-4 2xl:p-6 relative">
             <div className='flex flex-col justify-evenly h-full'>
               <div className="absolute w-[100px] text-center top-4 2xl:top-6 right-4 2xl:right-6 bg-[#A2EC4E99] text-white font-semibold px-3 py-1 rounded-tr-2xl 2xl:rounded-tr-[20px] rounded-bl-md text-sm">Marketing</div>
@@ -277,7 +276,25 @@ const HomeBlogs = () => {
         </Slider>
 
       </div>
-      <div className='md:hidden mx-auto flex justify-center mt-7'>
+      <div className='md:hidden mx-auto flex flex-col items-center justify-center mt-6'>
+      <div className="flex justify-center items-center gap-5">
+                <button
+                    onClick={handlePrev}
+                    className="group relative overflow-hidden z-10 bg-white border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[8px] px-4 py-3 mb-3 transition-all duration-300 ease-linear hover:bg-[#08A4F7]"
+                >
+                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector%20(1).svg' alt='left vector' className='w-3.5 h-3.5 group-hover:hidden block' />
+
+                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20right%20white.svg' alt='left vector' className='w-3.5 h-3.5 hidden group-hover:block' />
+
+                    </button>
+                    <button
+                      onClick={handleNext}
+                      className="group relative overflow-hidden z-10 bg-white border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[8px] px-4 py-3 mb-3 transition-all duration-300 ease-linear hover:bg-[#08A4F7]"
+                    >
+                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector.svg' alt='right vector' className='w-3.5 h-3.5 group-hover:hidden block' />
+                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20left%20white.svg' alt='right vector' className='w-3.5 h-3.5 hidden group-hover:block' />
+                </button>
+              </div>
         <a href='/blogs' className=''><button className="mainbutn max-md:mt-1">Read More Blogs</button></a>
       </div>
 
