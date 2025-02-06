@@ -354,19 +354,19 @@ export default function Home() {
                         <div className='flex md:flex-nowrap flex-wrap items-start justify-center gap-[30px]'>
                             <div className='md:w-[33.33%] w-full'>
                                 <a href="">
-                                    <img src="/castdyinner1.png" alt="" className='imgcstdy w-full' />
+                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner1.png" alt="" className='imgcstdy w-full' />
                                 </a>
                                 <h4 className='text-[18px] font-medium text-[#212529] my-[10px]'>Optimizing Email Marketing with Custom Data Pipeline</h4>
                             </div>
                             <div className='md:w-[33.33%] w-full'>
                                 <a href="">
-                                    <img src="/castdyinner2.png" alt="" className='imgcstdy w-full' />
+                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner2.png" alt="" className='imgcstdy w-full' />
                                 </a>
                                 <h4 className='text-[18px] font-medium text-[#212529] my-[10px]'>Skyrocket Your Campaign's CTR with a 95% Surge in 14 Days!</h4>
                             </div>
                             <div className='md:w-[33.33%] w-full'>
                                 <a href="">
-                                    <img src="/castdyinner3.png" alt="" className='imgcstdy w-full' />
+                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner3.png" alt="" className='imgcstdy w-full' />
                                 </a>
                                 <h4 className='text-[18px] font-medium text-[#212529] my-[10px]'>Driving the Campaigns in DV360 to Post Click Attribution Success with a 36% reduction in CPI</h4>
                             </div>

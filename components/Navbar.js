@@ -100,15 +100,15 @@ const navbar = () => {
                     href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
                 />
             </Head>
-            <div className="font-sans sticky top-0 z-40 bg-[#D9D9D9] h-[50px] text-[#0E1947] flex justify-center items-center px-2">
+            <div className="font-sans sticky top-0 z-40 bg-header-linear h-[55px] sm:h-[50px] text-white flex justify-center items-center px-2">
                 <div className="text-xs max-sm:py-1.5 sm:text-base md:text-base font-normal text-center flex max-sm:flex-col max-sm:gap-1 justify-center items-center">
                     Your Partner for Google Marketing Platform Success
-                    <a href="tel:+918320576622"><div className="flex justify-center items-center underline pl-2 sm:pl-5 text-[#EE4312] text-xs sm:text-sm md:text-[13px] font-bold">
+                    <a href="tel:+918320576622" className="ml-2 sm:ml-5 bg-white px-2 py-1 sm:px-3 sm:py-[5px] rounded-[5px]"><div className="flex justify-center items-center text-[#0E1947] text-[11px] sm:text-sm md:text-[13px] sm:hover:underline sm:hover:text-[13.2px] font-bold">
                         Schedule a Call Now
-                        <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Ringer%20Volume.png" alt="Ringer Volume" className="pl-1" /></div></a>
+                        <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/telephone%20(9).svg" alt="Ringer Volume" className="max-sm:w-3 max-sm:ml-1.5 sm:pl-2" /></div></a>
                 </div>
             </div>
-            <header className="sticky min-w-full top-[50px] z-40 bg-white font-sans">
+            <header className="sticky min-w-full top-[55px] sm:top-[50px] z-40 bg-white font-sans">
                 {/* <div> sm:w-1/3*/}
                 <div className="hidden lg:inline">
                     <div className="flex shadow-customShadow items-center justify-between py-2 px-5">
@@ -129,7 +129,7 @@ const navbar = () => {
                                 <nav className="lg:flex text-center">
                                     <ul className="lg:flex text-[10px] xl:text-[14px] font-sans font-semibold text-[#0E1947] text-left lg:text-center z-[-1] lg:z-auto lg:mr-4 lg:w-auto items-center tracking-wide cursor-pointer">
                                         <li
-                                            className="relative flex items-center gap-[5px] hover:border-b-4 hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2"
+                                            className="relative flex items-center gap-[5px] hover:border-b-2 hover:border-[#0E1947] duration-100 delay-75 ease-in-out py-2"
                                             onMouseEnter={() => {
                                                 setIsSWebervices(true);
                                             }}
@@ -143,14 +143,14 @@ const navbar = () => {
                                             </Link>
                                             <span className="">
                                                 {isWebServices ? (
-                                                    <IoChevronUp className="w-4 h-4" />
+                                                    <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Up%20Arrow%20Navbar.png" alt="up down" className="w-4" />
                                                 ) : (
-                                                    <IoChevronDown className="w-4 h-4" />
+                                                    <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Down%20Arrow.png" alt="arrow down" className="w-4" />
                                                 )}
                                             </span>
                                         </li>
                                         <li
-                                            className="hover:border-b-4 lg:ml-[19px] flex items-center gap-[5px] hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2"
+                                            className="lg:ml-[19px] flex items-center gap-[5px] hover:border-b-2 hover:border-[#0E1947] duration-100 delay-75 ease-in-out py-2"
                                             onMouseEnter={() => setIsWebResources(true)}
                                             onMouseLeave={() => setIsWebResources(false)}
                                         >
@@ -178,29 +178,29 @@ const navbar = () => {
                                             )}
                                             <span className="">
                                                 {isWebResources ? (
-                                                    <IoChevronUp className="w-4 h-4" />
+                                                    <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Up%20Arrow%20Navbar.png" alt="up down" className="w-4" />
                                                 ) : (
-                                                    <IoChevronDown className="w-4 h-4" />
+                                                    <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Down%20Arrow.png" alt="arrow down" className="w-4" />
                                                 )}
                                             </span>
                                         </li>
                                         <Link className="header-links" href="/about-us">
-                                            <li className="hover:border-b-4 lg:ml-[19px] hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2">
+                                            <li className="lg:ml-[19px] hover:border-b-2 hover:border-[#0E1947] duration-100 delay-75 ease-in-out py-2">
                                                 Who We Are
                                             </li>
                                         </Link>
                                         <Link className="header-links" href="/contact">
-                                            <li className="hover:border-b-4 lg:ml-[19px] hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2">
+                                            <li className="lg:ml-[19px] hover:border-b-2 hover:border-[#0E1947] duration-100 delay-75 ease-in-out py-2">
                                                 Contact Us
                                             </li>
                                         </Link>
                                         <Link className="header-links" href="/engagement">
-                                            <li className="hover:border-b-4 lg:ml-[19px] hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2">
+                                            <li className="lg:ml-[19px] hover:border-b-2 hover:border-[#0E1947] duration-100 delay-75 ease-in-out py-2">
                                                 Engagement
                                             </li>
                                         </Link>
                                         <Link className="header-links" href="/careers">
-                                            <li className="hover:border-b-4 lg:ml-[19px] hover:border-cyan-400 duration-300 delay-75 ease-in-out py-2">
+                                            <li className="lg:ml-[19px] hover:border-b-2 hover:border-[#0E1947] duration-100 delay-75 ease-in-out py-2">
                                                 Careers
                                             </li>
                                         </Link>
@@ -522,7 +522,7 @@ const navbar = () => {
                                                 }}
                                             >
                                                 <div className="py-2 w-56 ">
-                                                Product & Solutions
+                                                    Product & Solutions
                                                 </div>
                                             </div>
                                             {submenu == "4" && (

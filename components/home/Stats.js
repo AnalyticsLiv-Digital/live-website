@@ -43,19 +43,19 @@ const Stats = () => {
 
     const NextArrow = ({ onClick }) => (
         <div
-            className="absolute top-1/3 text-white bg-sky-400 rounded-full p-0.5 sm:p-1.5 right-[2.5px] sm:right-[-30px] lg:right-[-75px] transform -translate-y-1/2 z-30 cursor-pointer"
+            className="absolute bottom-[35%] lg:bottom-[38%] text-white shadow-arrowShadow rounded-full right-[13px] sm:right-[20px] lg:right-[28px] transform -translate-y-1/2 z-30 cursor-pointer"
             onClick={onClick}
         >
-            <FaArrowRight className='text-sm sm:text-base xl:text-sm' />
+            <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Right%20Arrow.png" alt="right arrow" className="w-7 md:w-10" />
         </div>
     );
 
     const PrevArrow = ({ onClick }) => (
         <div
-            className="absolute top-1/3 text-white bg-sky-400 rounded-full p-0.5 sm:p-1.5 left-[2.5px] sm:left-[-30px] lg:left-[-75px] transform -translate-y-1/2 z-30 cursor-pointer"
+            className="absolute bottom-[35%] lg:bottom-[38%] text-white shadow-arrowShadow rounded-full left-[13px] sm:left-[20px] lg:left-[28px] transform -translate-y-1/2 z-30 cursor-pointer"
             onClick={onClick}
         >
-            <FaArrowLeft className='text-sm sm:text-base xl:text-sm' />
+            <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Left%20Arrow.png" alt="left arrow" className="w-7 md:w-10" />
         </div>
     );
 
@@ -77,7 +77,7 @@ const Stats = () => {
         <section className="pt-28 sm:pt-40 md:pt-60 xl:pt-60 2xl:pt-64 h-full">
             <div className="relative bg-[#30486A] h-[170px] sm:h-[200px] lg:h-[290px] 2xl:h-[350px] overflow-visible">
                 {/* Video Slider */}
-                <div className="absolute top-[-130px] sm:top-[-180px] md:top-[-220px] lg:top-[-250px] left-1/2 transform -translate-x-1/2 w-[100%] sm:w-[75%] md:w-[75%] xl:w-[60%] 2xl:w-[800px] carousel-custom">
+                <div className="absolute top-[-130px] sm:top-[-180px] md:top-[-220px] lg:top-[-250px] xl:top-[-220px] 2xl:top-[-250px] left-1/2 transform -translate-x-1/2 w-[100%] sm:w-[75%] md:w-[75%] xl:w-[60%] 2xl:w-[800px] carousel-custom">
                     <Slider {...settings}>
                         {videos.map((video) => (
                             <div
@@ -109,7 +109,7 @@ const Stats = () => {
                                 )}
                                 {/* Labels */}
                                 {/* <div className="max-sm:flex max-sm:pt-8 justify-center items-start gap-2"> */}
-                                <div className={`max-sm:hidden sm:absolute max-w-[125px] right-[-140px] opacity-90 bottom-[50px] lg:bottom-[90px] xl:bottom-[70px] 2xl:xl:bottom-[100px] transform -translate-y-1/2 text-center z-10`}>
+                                <div className={`max-sm:hidden sm:absolute max-w-[125px] right-[-140px] opacity-90 bottom-[150px] lg:bottom-[180px] xl:bottom-[175px] 2xl:bottom-[200px] transform -translate-y-1/2 text-center z-10`}>
                                     <div className="bg-white text-[#545567] font-light md:font-medium flex flex-col justify-center items-center text-[9px] md:text-sm px-2.5 lg:px-4 py-2.5 lg:py-4 rounded-xl shadow-md">
                                         <div>
                                             <img src={video.img1} alt={video.img1} className="bg-[#08A4F7] p-1 mb-1 rounded-lg" />
@@ -133,26 +133,29 @@ const Stats = () => {
             </div>
 
             {/* Stats Section */}
-            <div className="bg-[#30486A] pt-7 sm:pt-8 md:pt-16 lg:pt-0 pb-10">
-                <div className="flex max-md:grid max-md:grid-cols-2 justify-evenly items-center text-white">
+            <div className="bg-[#30486A] max-md:px-4 pt-7 sm:pt-8 md:pt-16 lg:pt-0 pb-10">
+                <div className="flex max-sm:gap-3 max-lg:grid max-lg:grid-cols-2 max-lg:justify-items-center lg:justify-evenly items-center text-white">
                     {[
-                        { count: 200, label: "Satisfied Clients" },
-                        { count: 500, label: "Successful Projects" },
-                        { count: 30, label: "Certified Experts" },
-                        { count: 10, label: "Solutions" },
+                        { count: 200, label: "Satisfied Clients", src: "https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Satisfied%20Clients%20icon.png" },
+                        { count: 500, label: "Successful Projects", src: "https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Successful%20Projects%20icon.png" },
+                        { count: 30, label: "Certified Experts", src: "https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Certified%20Experts%20icon.png" },
+                        { count: 10, label: "Solutions", src: "https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Solutions%20icon.png" },
                     ].map((stat, index) => (
-                        <div key={index} className="max-md:py-5 text-center">
+                        <div key={index} className="max-md:py-5 text-center flex items-center gap-1 sm:gap-3">
+
+                            <img src={stat?.src} alt={stat?.label} className="w-14 md:w-16" />
+
                             <ScrollTrigger
                                 onEnter={() => setCounterOn(true)}
                                 onExit={() => setCounterOn(false)}
                             >
-                                <div className="text-4xl font-bold">
+                                <div className="text-2xl md:text-4xl font-bold">
                                     {counterOn && (
-                                        <CountUp start={0} end={stat.count} duration={2} delay={0} />
+                                        <CountUp start={0} end={stat?.count} duration={2} delay={0} />
                                     )}
                                     +
                                 </div>
-                                <span className="text-base sm:text-lg">{stat.label}</span>
+                                <span className="text-sm sm:text-lg">{stat?.label}</span>
                             </ScrollTrigger>
                         </div>
                     ))}
