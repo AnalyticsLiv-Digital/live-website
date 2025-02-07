@@ -161,15 +161,15 @@ const navbar = () => {
                                                     animate={{ y: -1, opacity: 1 }}
                                                     transition={{ type: "spring", stiffness: 260, damping: 30 }}
                                                     id="submenu2"
-                                                    className="subheader blogs-cs text-transform-none absolute w-56 text-sm flex flex-col lg:-ml-20 lg:mt-2 bg-white shadow-xl text-cyan-900 items-center align-middle font-semibold"
+                                                    className="subheader blogs-cs text-transform-none absolute w-56 text-sm flex flex-col lg:-ml-20 lg:mt-2 bg-header-linear shadow-xl items-center align-middle font-semibold"
                                                 >
-                                                    <Link href="/blogs">
-                                                        <div className="py-2 text-transform-none text-menuheading font-sans text-base font-normal leading-normal">
+                                                    <Link href="/blogs" className="border-b border-gray-300 w-full">
+                                                        <div className="py-2 text-transform-none text-white opacity-70 hover:opacity-100 font-sans text-base font-normal leading-normal">
                                                             Blogs
                                                         </div>
                                                     </Link>
-                                                    <Link href="/case-studies">
-                                                        <div className="py-2 text-transform-none text-menuheading font-sans text-base font-normal leading-normal">
+                                                    <Link href="/case-studies" className="w-full">
+                                                        <div className="py-2 text-transform-none text-white opacity-70 hover:opacity-100 font-sans text-base font-normal leading-normal">
                                                             Case Studies
                                                         </div>
                                                     </Link>
@@ -704,7 +704,7 @@ const navbar = () => {
                                 ))}
                             </div>
 
-                            <div className="w-[2px] h-[240px] ml-[6%] bg-gray-300"></div>
+                            <div className="w-[1px] h-[240px] ml-[6%] opacity-70 bg-gray-300"></div>
 
                             <div className="w-2/3 ml-[5%] mr-[6%] flex px-4 py-4">
                                 {hoveredIndex !== null && (
