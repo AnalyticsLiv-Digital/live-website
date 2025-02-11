@@ -81,7 +81,7 @@ const Services = () => {
       image:
         "https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Data%20Foundation.png",
       items: [
-        "Account Health & Opportunity",
+        "Account Health Audit",
         " GA4 Implementation & Optimization",
         "Server Side Tracking",
         "Cookie Consent Solution",
@@ -102,6 +102,7 @@ const Services = () => {
         "Cloud Migration & Engineering",
         "Custom Pipeline Creation",
         "Custom Dashboarding",
+        "Custom ML & AI Solutions",
       ],
       images: [
         "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Looker_Studio_Logo.png",
@@ -117,7 +118,7 @@ const Services = () => {
       items: [
         "PPC Campaign Management",
         "Programmatic Advertising (DV360)",
-        "CRO-Consumer Journey, Mapping, Strategy, Desing",
+        "CRO-Consumer Journey, Mapping, Strategy, Design",
         "Data Insight",
       ],
       images: [
@@ -135,7 +136,7 @@ const Services = () => {
       items: [
         "MAdKPI",
         "Lead Scoring",
-        "Product and CRE (Content Recommendation Engine)",
+        "CRE (Content Recommendation Engine)",
         "RFM Analysis",
         "MMM Modeling",
       ],
@@ -217,7 +218,7 @@ const Services = () => {
               key={index}
               className={`flex flex-col group transition duration-300 gap-5 w-[310px] sm:w-[350px] md:w-[350px] 
                 md:h-[280px] lg:w-[205px] xl:w-[260px] 2xl:w-[300px] min-h-[300px] xl:min-h-[326px] shadow-customShadow
-                px-4 xl:px-7 py-4 sm:py-5 rounded-3xl bg-white hover:shadow-arrowShadow
+                px-4 xl:px-7 py-4 sm:py-5 rounded-3xl bg-white hover:shadow-xl
                `}
             >
               <div>

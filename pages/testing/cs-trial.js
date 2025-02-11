@@ -90,7 +90,7 @@ const index = ({ casestudyDat }) => {
                             <div>Explore how data-driven strategies transform businesses! see how we help brands maximize performance, improve conversions, and drive success. </div>
                             <div>✅ Proven Success. Actionable Insights. Smarter Decisions.</div>
                         </div>
-                        <button className='mainbutn'>Contact Us Now</button>
+                        <a href='/contact'><button className='mainbutn'>Contact Us Now</button></a>
                     </div>
                     <div className='max-sm:hidden'>
                         <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Full_Image%20(1).svg' alt='Improved Conversion Rate' />
