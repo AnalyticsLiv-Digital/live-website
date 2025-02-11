@@ -100,7 +100,7 @@ const navbar = () => {
                     href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
                 />
             </Head>
-            <div className="font-sans sticky top-0 z-40 bg-header-linear h-[55px] sm:h-[50px] text-white flex justify-center items-center px-2">
+            <div className="font-sans sticky top-0 z-50 bg-header-linear h-[55px] sm:h-[50px] text-white flex justify-center items-center px-2">
                 <div className="text-xs max-sm:py-1.5 sm:text-base md:text-base font-normal text-center flex max-sm:flex-col max-sm:gap-1 justify-center items-center">
                     Your Partner for Google Marketing Platform Success
                     <a href="tel:+918320576622" className="ml-2 sm:ml-5 bg-white px-2 py-1 sm:px-3 sm:py-[5px] rounded-[5px]"><div className="flex justify-center items-center text-[#0E1947] text-[11px] sm:text-sm md:text-[13px] sm:hover:underline sm:hover:text-[13.2px] font-bold">
@@ -108,7 +108,7 @@ const navbar = () => {
                         <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/telephone%20(9).svg" alt="Ringer Volume" className="max-sm:w-3 max-sm:ml-1.5 sm:pl-2" /></div></a>
                 </div>
             </div>
-            <header className="sticky min-w-full top-[55px] sm:top-[50px] z-40 bg-white font-sans">
+            <header className="sticky min-w-full top-[55px] sm:top-[50px] z-50 bg-white font-sans">
                 {/* <div> sm:w-1/3*/}
                 <div className="hidden lg:inline">
                     <div className="flex shadow-customShadow items-center justify-between py-2 px-5">
