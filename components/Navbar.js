@@ -225,7 +225,7 @@ const navbar = () => {
 
                 {/* </div> */}
 
-                <div className="relative  flex lg:hidden p-2">
+                <div className="relative shadow-customShadow flex lg:hidden p-2">
                     <Link href="/">
                         <img
                             onClick={() => setIsOpen(false)}
