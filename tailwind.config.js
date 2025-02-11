@@ -35,7 +35,7 @@ module.exports = {
         filtershadow: '0 2px 20px 1px rgba(0,0,0,.11)',
         allshadow: '0 .5rem 1rem #2020200a',
         cookiePageShadow: '0px 1px 4px 0px #00000040',
-        customShadow: '0px 3px 10px 0px rgba(0, 0, 0, 0.05)',
+        customShadow: '0px 3px 10px 0px rgba(0, 0, 0, 0.15)',
         customBoth: '-40px 100px 70px 0px #7979790D, 40px 0px 70px 0px #7979790D',
         ytshadow: '0px -6px 20px 2px #00000040',
         teamShadow: '0px 4px 4px 0px #00000040',
