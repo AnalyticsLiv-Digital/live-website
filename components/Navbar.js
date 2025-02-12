@@ -296,7 +296,7 @@ const navbar = () => {
                             id="mobile-menu"
                         >
                             <div className="px-4 text-[#0E1947] pt-2 pb-3 space-y-1 sm:px-3">
-                                <p className=" text-[#0E1947] block px-2 py-2 rounded-md font-sans text-base font-normal">
+                                <p className=" text-[#0E1947] block px-3 py-2 rounded-md font-sans text-base font-normal">
                                     <div
                                         onClick={() => {
                                             setIsServices(!isServices);
