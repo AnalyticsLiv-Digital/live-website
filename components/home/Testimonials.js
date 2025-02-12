@@ -88,7 +88,7 @@ const Testimonials = () => {
     };
 
     return (
-        <section className='pt-12 px-4 md:px-10 xl:px-8'>
+        <section className='pt-12 px-4 md:px-10 xl:px-8 max-md:pb-8'>
             <div className='text-[#100F1B] text-2xl md:text-3xl font-bold text-center'>
                 What Our Clients Have To Say
             </div>
@@ -151,7 +151,7 @@ const Testimonials = () => {
                             </div>
                         </div>
 
-                        <div className='w-[450px] h-[450px] md:h-[430px] lg:h-[460px] 2xl:h-[420px] border border-[#E5E5E5] flex flex-col justify-around items-center gap-5 text-center py-6 px-6 md:px-3 rounded-3xl'>
+                        <div className='w-[450px] h-[450px] md:h-[430px] lg:h-[460px] 2xl:h-[420px] border border-[#E5E5E5] flex flex-col justify-around items-center gap-5 text-center py-6 px-[18px] md:px-3 rounded-3xl'>
                             <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Cassie_img.png' alt='Cassie Pekar' className='mx-auto pb-5' />
                             <div className='text-[#808080] text-center text-xs md:text-sm font-normal pb-5'>"Analytics Liv has proven to be a huge asset to our team when it comes to manage
                                 our PPC and digital marketing. Not only do they consistently deliver on our ROAS targets but they are excellent communicators and strategic partners.

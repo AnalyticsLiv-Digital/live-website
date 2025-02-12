@@ -23,6 +23,11 @@ const nextConfig = {
                 destination: 'https://analyticsliv.com/:path*', // Redirect to the main domain
                 permanent: true, // 301 Permanent Redirect
             },
+            {
+                source: '/services/sem',
+                destination: '/services/ppc',
+                permanent: true,
+            }
         ];
     },
 

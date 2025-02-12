@@ -77,7 +77,7 @@ const HomeBlogs = () => {
   const handlePrev = () => sliderRef.current.slickPrev();
 
   return (
-    <section className="max-md:pb-7 md:pt-5 lg:pt-10 xl:pt-20 2xl:pt-20 md:pb-7 lg:pb-14 px-4 md:px-16">
+    <section className="max-md:pb-3 md:pt-5 lg:pt-10 xl:pt-20 2xl:pt-20 md:pb-7 lg:pb-14 px-4 md:px-16">
       <div className="flex max-md:flex-col justify-between py-10 items-center overflow-hidden relative">
         <div className="flex flex-col md:w-[40%] lg:w-[50%] 2xl:w-[45%] gap-6 justify-center md:justify-start items-center md:items-start">
           <h2 className="text-[#100F1B] text-2xl lg:text-3xl font-bold text-center md:text-left">Read Our Insightful Blogs</h2>
@@ -92,31 +92,31 @@ const HomeBlogs = () => {
           <a href='/blogs' className=''><button className="mainbutn max-md:mt-5">Read More Blogs</button></a>
         </div> */}
         <div className="max-md:hidden flex flex-col max-sm:hidden justify-center items-center gap-2 max-md:pt-5">
-              <a href='/blogs'><button className="mainbutn-opposite">Read More Blogs</button></a>
-            <div className="flex justify-center items-center gap-5">
-                <button
-                    onClick={handlePrev}
-                    className="group relative overflow-hidden z-10 bg-white border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[8px] px-4 py-3 mt-3 transition-all duration-300 ease-linear hover:bg-[#08A4F7]"
-                >
-                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector%20(1).svg' alt='left vector' className='w-3.5 h-3.5 group-hover:hidden block' />
+          <a href='/blogs'><button className="mainbutn-opposite">Read More Blogs</button></a>
+          <div className="flex justify-center items-center gap-5">
+            <button
+              onClick={handlePrev}
+              className="group relative overflow-hidden z-10 bg-white border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[8px] px-4 py-3 mt-3 transition-all duration-300 ease-linear hover:bg-[#08A4F7]"
+            >
+              <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector%20(1).svg' alt='left vector' className='w-3.5 h-3.5 group-hover:hidden block' />
 
-                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20right%20white.svg' alt='left vector' className='w-3.5 h-3.5 hidden group-hover:block' />
+              <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20right%20white.svg' alt='left vector' className='w-3.5 h-3.5 hidden group-hover:block' />
 
-                    </button>
-                    <button
-                      onClick={handleNext}
-                      className="group relative overflow-hidden z-10 bg-white border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[8px] px-4 py-3 mt-3 transition-all duration-300 ease-linear hover:bg-[#08A4F7]"
-                    >
-                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector.svg' alt='right vector' className='w-3.5 h-3.5 group-hover:hidden block' />
-                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20left%20white.svg' alt='right vector' className='w-3.5 h-3.5 hidden group-hover:block' />
-                </button>
-              </div>
+            </button>
+            <button
+              onClick={handleNext}
+              className="group relative overflow-hidden z-10 bg-white border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[8px] px-4 py-3 mt-3 transition-all duration-300 ease-linear hover:bg-[#08A4F7]"
+            >
+              <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector.svg' alt='right vector' className='w-3.5 h-3.5 group-hover:hidden block' />
+              <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20left%20white.svg' alt='right vector' className='w-3.5 h-3.5 hidden group-hover:block' />
+            </button>
           </div>
+        </div>
       </div>
 
       {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"> */}
       <div className="md:pt-8 w-full mx-auto relative carousel-custom">
-        <Slider  ref={sliderRef} {...settings}>
+        <Slider ref={sliderRef} {...settings}>
           <a href='/blogs/google-dv360-removal-of-flight-asap-pacing-at-the-insertion-order-level' className="bg-white rounded-lg shadow-lg p-4 2xl:p-6 relative">
             <div className='flex flex-col justify-evenly h-full'>
               <div className="absolute w-[100px] text-center top-4 2xl:top-6 right-4 2xl:right-6 bg-[#A2EC4E99] text-white font-semibold px-3 py-1 rounded-tr-2xl 2xl:rounded-tr-[20px] rounded-bl-md text-sm">Marketing</div>
@@ -277,24 +277,24 @@ const HomeBlogs = () => {
 
       </div>
       <div className='md:hidden mx-auto flex flex-col items-center justify-center mt-6'>
-      <div className="flex justify-center items-center gap-5">
-                <button
-                    onClick={handlePrev}
-                    className="group relative overflow-hidden z-10 bg-white border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[8px] px-4 py-3 mb-3 transition-all duration-300 ease-linear hover:bg-[#08A4F7]"
-                >
-                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector%20(1).svg' alt='left vector' className='w-3.5 h-3.5 group-hover:hidden block' />
+        <div className="flex justify-center items-center gap-5">
+          <button
+            onClick={handlePrev}
+            className="group relative overflow-hidden z-10 bg-white border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[8px] px-4 py-3 mb-3 transition-all duration-300 ease-linear hover:bg-[#08A4F7]"
+          >
+            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector%20(1).svg' alt='left vector' className='w-3.5 h-3.5 group-hover:hidden block' />
 
-                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20right%20white.svg' alt='left vector' className='w-3.5 h-3.5 hidden group-hover:block' />
+            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20right%20white.svg' alt='left vector' className='w-3.5 h-3.5 hidden group-hover:block' />
 
-                    </button>
-                    <button
-                      onClick={handleNext}
-                      className="group relative overflow-hidden z-10 bg-white border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[8px] px-4 py-3 mb-3 transition-all duration-300 ease-linear hover:bg-[#08A4F7]"
-                    >
-                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector.svg' alt='right vector' className='w-3.5 h-3.5 group-hover:hidden block' />
-                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20left%20white.svg' alt='right vector' className='w-3.5 h-3.5 hidden group-hover:block' />
-                </button>
-              </div>
+          </button>
+          <button
+            onClick={handleNext}
+            className="group relative overflow-hidden z-10 bg-white border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[8px] px-4 py-3 mb-3 transition-all duration-300 ease-linear hover:bg-[#08A4F7]"
+          >
+            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector.svg' alt='right vector' className='w-3.5 h-3.5 group-hover:hidden block' />
+            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20left%20white.svg' alt='right vector' className='w-3.5 h-3.5 hidden group-hover:block' />
+          </button>
+        </div>
         <a href='/blogs' className=''><button className="mainbutn max-md:mt-1">Read More Blogs</button></a>
       </div>
 
