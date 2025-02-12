@@ -81,12 +81,12 @@ const Stats = () => {
                     <Slider {...settings}>
                         {videos.map((video) => (
                             <div
-                                key={video.id}
+                                key={video?.id}
                                 className="relative video-container w-[100%] h-[240px] sm:h-[300px] md:h-[380px] lg:h-[450px] xl:h-[430px] 2xl:h-[480px] rounded-3xl"
                             >
-                                {activeVideo === video.id ? (
+                                {activeVideo === video?.id ? (
                                     <iframe
-                                        src={`${video.url}?autoplay=1&mute=1&rel=0`}
+                                        src={`${video?.url}?autoplay=1&mute=1&rel=0`}
                                         frameBorder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                         allowFullScreen
@@ -95,11 +95,11 @@ const Stats = () => {
                                 ) : (
                                     <div
                                         className="relative w-[100%] h-[100%] lg:w-[85%] lg:h-[95%] mx-auto cursor-pointer"
-                                        onClick={() => setActiveVideo(video.id)}
+                                        onClick={() => setActiveVideo(video?.id)}
                                     >
                                         <img
-                                            src={video.coverImage}
-                                            alt={`Cover for video ${video.id}`}
+                                            src={video?.coverImage}
+                                            alt={`Cover for video ${video?.id}`}
                                             className="w-[90%] mt-5 mx-auto h-[80%] sm:h-[90%] rounded-3xl shadow-ytshadow"
                                         />
                                         <div className="absolute inset-0 flex items-center justify-center">
@@ -112,17 +112,17 @@ const Stats = () => {
                                 <div className={`max-sm:hidden sm:absolute max-w-[125px] right-[-150px] opacity-90 bottom-[150px] lg:bottom-[180px] xl:bottom-[175px] 2xl:bottom-[200px] transform -translate-y-1/2 text-center z-10`}>
                                     <div className="bg-white text-[#545567] font-light md:font-medium flex flex-col justify-center items-center text-[9px] md:text-sm px-2.5 lg:px-4 py-2.5 lg:py-4 rounded-xl shadow-md">
                                         <div>
-                                            <img src={video.img1} alt={video.img1} className="bg-[#08A4F7] p-1 mb-1 rounded-lg" />
+                                            <img src={video?.img1} alt={video?.img1} className="bg-[#08A4F7] p-1 mb-1 rounded-lg" />
                                         </div>
-                                        {video.label1}
+                                        {video?.label1}
                                     </div>
                                 </div>
                                 <div className={`max-sm:hidden sm:absolute max-w-[165px] left-[-180px] bottom-[25px] lg:bottom-[70px] xl:bottom-[35px] opacity-90 transform -translate-y-1/2 text-center z-10`}>
                                     <div className="bg-white text-[#545567] font-light md:font-medium text-start flex justify-center items-center gap-2 text-[9px] md:text-sm px-2.5 lg:px-3 py-2 lg:py-3 rounded-xl shadow-md">
                                         <div className="">
-                                            <img src={video.img2} alt={video.img2} className="bg-[#08A4F7] h-[20px] sm:h-[30px] w-[20px] sm:w-[30px] md:w-[45px] p-1 rounded-lg" />
+                                            <img src={video?.img2} alt={video?.img2} className="bg-[#08A4F7] h-[20px] sm:h-[30px] w-[20px] sm:w-[30px] md:w-[45px] p-1 rounded-lg" />
                                         </div>
-                                        {video.label2}
+                                        {video?.label2}
                                     </div>
                                 </div>
                                 {/* </div> */}
