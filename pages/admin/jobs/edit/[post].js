@@ -3,15 +3,12 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 
 const index = ({ jobData }) => {
-
-    //console.log(blogData);
     const initialValues = { id: jobData.job[0].id, our_description: jobData.job[0].our_description, job_short_description: jobData.job[0].job_short_description, title: jobData.job[0].title, brief: jobData.job[0].brief, location: jobData.job[0].location, experience: jobData.job[0].experience, notice_period: jobData.job[0].notice_period, postingdate: jobData.job[0].postingdate, active: jobData.job[0].active, heading1: jobData.job[0].details[0].heading, content1: jobData.job[0].details[0].points.join(';'), heading2: jobData.job[0].details[1] ? jobData.job[0].details[1].heading : undefined, content2: jobData.job[0].details[1] ? jobData.job[0].details[1].points.join(';') : undefined, heading3: jobData.job[0].details[2] ? jobData.job[0].details[2].heading : undefined, content3: jobData.job[0].details[2] ? jobData.job[0].details[2].points.join(';') : undefined, heading4: jobData.job[0].details[3] ? jobData.job[0].details[3].heading : undefined, content4: jobData.job[0].details[3] ? jobData.job[0].details[3].points.join(';') : undefined, heading5: jobData.job[0].details[4] ? jobData.job[0].details[4].heading : undefined, content5: jobData.job[0].details[4] ? jobData.job[0].details[4].points.join(';') : undefined };
     // ,content2:jobData.job[0].details[1].points.join(';'),content3:jobData.job[0].details[2].points.join(';'),content4:jobData.job[0].details[3].points.join(';'),content5:jobData.job[0].details[4].points.join(';')
     //,heading2:jobData.job[0].details[1].heading,heading3:jobData.job[0].details[2].heading,heading4:jobData.job[0].details[3].heading,heading5:jobData.job[0].details[4].heading
     const [formValues, setFormValues] = useState(initialValues);
     const [isSubmit, setIsSubmit] = useState(false);
     const [formattedDate, setFormattedDate] = useState(initialValues.postingdate);
-    console.log(formValues);
     const router = useRouter();
 
     const formatDate = (postingdate) => {
@@ -34,7 +31,6 @@ const index = ({ jobData }) => {
         if (name === 'postingdate') {
             setFormattedDate(formatDate(value));
         }
-        console.log(formValues);
     };
 
 
@@ -43,7 +39,6 @@ const index = ({ jobData }) => {
 
         setIsSubmit(true);
         alert('submitted');
-        console.log("submit2")
         fetch('/api/admin/job/update', {
             method: 'POST', // or 'PUT'
             headers: {
@@ -87,10 +82,8 @@ const index = ({ jobData }) => {
     };
 
     useEffect(() => {
-        // console.log(formErrors);
         if (isSubmit) {
 
-            console.log("submit2")
             fetch('/api/admin/job/update', {
                 method: 'POST', // or 'PUT'
                 headers: {
@@ -160,6 +153,7 @@ const index = ({ jobData }) => {
                         <div className="flex items-center gap-4">
                             <input
                                 type="date"
+                                name="postingdate"
                                 onChange={handleDateChange}
                                 className="absolute cursor-pointer w-1 opacity-0"
                             />
@@ -170,6 +164,7 @@ const index = ({ jobData }) => {
                             </div>
                             <input
                                 type="text"
+                                name="postingdate"
                                 required
                                 value={formattedDate}
                                 readOnly
@@ -223,7 +218,6 @@ export async function getServerSideProps(context) {
 
     const res = await fetch(`${process.env.domain}/api/jobdetails?id=${context.params.post}`)
     const jobData = await res.json()
-    //console.log(casestudyDat);
     // Pass data to the page via props
     return { props: { jobData } }
 }
