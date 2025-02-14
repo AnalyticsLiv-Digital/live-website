@@ -37,6 +37,7 @@ const Index = ({ applications }) => {
                       <td className="py-4 px-6">
                         <a
                           href={`https://storage.googleapis.com/website-bucket-uploads/${job.resume}`}
+                          target='_blank'
                           className="text-gray-400 hover:underline"
                         >
                           Resume
@@ -46,6 +47,7 @@ const Index = ({ applications }) => {
                         {job.linkedin && (
                           <a
                             href={`${job.linkedin}`}
+                            target='_blank'
                             className="text-gray-400 hover:underline"
                           >
                             LinkedIn
