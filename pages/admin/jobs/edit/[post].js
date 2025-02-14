@@ -8,7 +8,8 @@ const index = ({ jobData }) => {
     //,heading2:jobData.job[0].details[1].heading,heading3:jobData.job[0].details[2].heading,heading4:jobData.job[0].details[3].heading,heading5:jobData.job[0].details[4].heading
     const [formValues, setFormValues] = useState(initialValues);
     const [isSubmit, setIsSubmit] = useState(false);
-    const [formattedDate, setFormattedDate] = useState(initialValues.postingdate);
+    const [formattedDate, setFormattedDate] = useState(initialValues?.postingdate);
+    const [loading, setLoading] = useState(false);
     const router = useRouter();
 
     const formatDate = (postingdate) => {
@@ -38,6 +39,8 @@ const index = ({ jobData }) => {
         e.preventDefault();
 
         setIsSubmit(true);
+        setLoading(true);
+
         alert('submitted');
         fetch('/api/admin/job/update', {
             method: 'POST', // or 'PUT'
@@ -71,11 +74,13 @@ const index = ({ jobData }) => {
             .then((response) => response.json())
             .then((data) => {
                 console.log('Success:', data);
+                setLoading(false);
                 alert('data updated');
                 router.push("/admin/jobs");
             })
             .catch((error) => {
                 console.error('Error:', error);
+                setLoading(false);
                 alert('error');
             });
 
@@ -83,7 +88,7 @@ const index = ({ jobData }) => {
 
     useEffect(() => {
         if (isSubmit) {
-
+            setLoading(true);
             fetch('/api/admin/job/update', {
                 method: 'POST', // or 'PUT'
                 headers: {
@@ -116,10 +121,12 @@ const index = ({ jobData }) => {
                 .then((response) => response.json())
                 .then((data) => {
                     console.log('Success:', data);
+                    setLoading(false);
                     alert('data updated');
                 })
                 .catch((error) => {
                     console.error('Error:', error);
+                    setLoading(false);
                     alert('error');
                 });
 
@@ -190,11 +197,28 @@ const index = ({ jobData }) => {
                     <input placeholder='Heading 5' className="w-full px-2 py-1 text-sm text-gray-300 bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="heading5" value={formValues.heading5} onChange={handleChange} /><br />
                     <textarea placeholder="Content 5 Pointers separated by ;" className="w-full px-2 py-1 text-sm text-gray-300 bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="content5" value={formValues.content5} onChange={handleChange} />
                     <div className="flex justify-between items-center mt-6">
-                        <button
-                            type="submit"
-                            className="px-6 py-2 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition-colors duration-300"
+                        <button className={`px-6 py-2 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition-colors duration-300
+              ${loading ? "cursor-not-allowed" : ""}`}
+                            disabled={loading}
                         >
-                            Submit
+                            {loading ? (
+                                <span style={{ display: "flex", alignItems: "center" }}>
+                                    <span
+                                        style={{
+                                            border: "2px solid #ffffff",
+                                            borderTop: "2px solid #00bcd4",
+                                            borderRadius: "50%",
+                                            width: "12px",
+                                            height: "12px",
+                                            marginRight: "8px",
+                                            animation: "spin 0.6s linear infinite",
+                                        }}
+                                    ></span>
+                                    Loading...
+                                </span>
+                            ) : (
+                                "Submit"
+                            )}
                         </button>
                         <button
                             type="button"
