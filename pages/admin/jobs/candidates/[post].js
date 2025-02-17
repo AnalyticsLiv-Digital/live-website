@@ -16,7 +16,7 @@ const Index = ({ applications }) => {
       <div className="min-h-screen bg-white px-12">
         <div className="container mx-auto">
           <h1 className="text-center font-bold text-3xl py-8 text-gray-800">
-            Applications For {job[0].postName}
+            Applications For {job[0]?.postName}
           </h1>
           <div className="overflow-x-auto">
             <table className="min-w-full bg-gray-800 shadow-md rounded-lg overflow-hidden">
@@ -32,8 +32,8 @@ const Index = ({ applications }) => {
                 </tr>
               </thead>
               <tbody className="text-center text-gray-300">
-                {job &&
-                  job.map((job, key) => (
+                {job && job?.length  ?
+                  job?.map((job, key) => (
                     <tr
                       key={key}
                       className="border-b border-gray-700 hover:bg-gray-700 transition-colors"
@@ -96,7 +96,14 @@ const Index = ({ applications }) => {
                       </td>
                       <td className="py-4 px-6">{job.noticePeriod}</td>
                     </tr>
-                  ))}
+                  )) : 
+                  (
+                    <tr>
+                      <td colSpan="7" className="py-6 text-gray-400 text-lg">
+                        🚀 No applications received yet! Stay tuned for new job submissions.
+                      </td>
+                    </tr>
+                  )}
               </tbody>
             </table>
           </div>
