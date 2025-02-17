@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from '../Navbar';
 
 const Index = ({ jobs }) => {
-  const job = jobs.job;
+  const job = jobs?.job;
 
   return (
     <>

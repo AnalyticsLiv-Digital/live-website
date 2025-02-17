@@ -5,6 +5,7 @@ import connectDb from "../../middleware/mongoose";
 
 const handler = async (req, res) => {
     let job = await Job.find({});
+    job.reverse();
     res.status(200).json({ job });
 }
 
