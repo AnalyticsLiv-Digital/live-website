@@ -5,7 +5,6 @@ import { sendEmail } from "../../utils/sendMail";
 
 const handler = async (req, res) => {
     if (req.method == 'POST') {
-        console.log("In api achat response api", req?.body);
 
         let b = new ChatBotLead({
             option: req.body.option,
