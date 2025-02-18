@@ -141,10 +141,10 @@ const Serversidetracking = () => {
         <>
             <MetaSchemaOg
                 url="https://analyticsliv.com/services/server-side-tracking"
-                title="Server-Side Analytics Tracking & Web Analytics Solutions | AnalyticsLiv"
-                description="Get data accuracy with server-side analytics tracking from AnalyticsLiv. Our tracking solutions provide deeper insights, optimizing performance and driving business success."
-                twitterTitle="Server-Side Analytics Tracking & Web Analytics Solutions | AnalyticsLiv"
-                twitterDescription="Get data accuracy with server-side analytics tracking from AnalyticsLiv. Our tracking solutions provide deeper insights, optimizing performance and driving business success."
+                title="Server-Side Tracking & Web Analytics Solutions | AnalyticsLiv"
+                description="Get data accuracy with server-side tracking from AnalyticsLiv. Our tracking solutions provide deeper insights, optimizing performance and driving business success."
+                twitterTitle="Server-Side Tracking & Web Analytics Solutions | AnalyticsLiv"
+                twitterDescription="Get data accuracy with server-side tracking from AnalyticsLiv. Our tracking solutions provide deeper insights, optimizing performance and driving business success."
             />
 
             <section className='ssthome w-full relative font-gilroy overflow-hidden'>

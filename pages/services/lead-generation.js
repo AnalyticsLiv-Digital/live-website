@@ -10,10 +10,10 @@ const lead_generation = () => {
     <>
       <MetaSchemaOg
         url="https://analyticsliv.com/services/lead-generation"
-        title="Top Lead Generation Experts & Consultancy Services - AnalyticsLiv"
-        description="Get top lead generation experts for your business. AnalyticsLiv lead generation consultancy offers customized strategies to attract high-quality leads and boost conversions."
-        twitterTitle="Top Lead Generation Experts & Consultancy Services - AnalyticsLiv"
-        twitterDescription="Get top lead generation experts for your business. AnalyticsLiv lead generation consultancy offers customized strategies to attract high-quality leads and boost conversions."
+        title="Google Partner for Cost Effective Lead Generation | AnalyticsLiv"
+        description="Drive leads at cost effective rates, with proven and time tested methods in PPC campaigns. Lets improve cost of lead generation efficiently"
+        twitterTitle="Google Partner for Cost Effective Lead Generation | AnalyticsLiv"
+        twitterDescription="Drive leads at cost effective rates, with proven and time tested methods in PPC campaigns. Lets improve cost of lead generation efficiently"
       />
 
       <section>

@@ -103,9 +103,9 @@ export default function AutoPlay() {
     <>
       <MetaSchemaOg
         url="https://analyticsliv.com/services/data-reporting-analysis"
-        title="Get Insights with Expert Data Analytics Visualization at AnalyticsLiv"
+        title="Looker Studio for Data Analytics & Visualization | AnalyticsLiv"
         description="Discover insights with expert data analytics visualization at AnalyticsLiv. We turn complex data into clear, actionable visuals to drive smarter decisions and growth."
-        twitterTitle="Get Insights with Expert Data Analytics Visualization at AnalyticsLiv"
+        twitterTitle="Looker Studio for Data Analytics & Visualization | AnalyticsLiv"
         twitterDescription="Discover insights with expert data analytics visualization at AnalyticsLiv. We turn complex data into clear, actionable visuals to drive smarter decisions and growth."
       />
 

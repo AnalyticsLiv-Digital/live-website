@@ -25,10 +25,10 @@ const training = () => {
     <>
       <MetaSchemaOg
         url="https://analyticsliv.com/services/training"
-        title="Google Ads Training Services | AnalyticsLiv"
-        description="Master Google Ads with expert training from AnalyticsLiv. Learn PPC strategies, campaign optimization, and boost your ROI with hands-on, results-driven guidance."
-        twitterTitle="Google Ads Training Services | AnalyticsLiv"
-        twitterDescription="Master Google Ads with expert training from AnalyticsLiv. Learn PPC strategies, campaign optimization, and boost your ROI with hands-on, results-driven guidance."
+        title="GMP Certified Partner Training Program | AnalyticsLiv"
+        description="Master the Marketing and Analytics to drive PPC campaigns success, accurate attribution. Training on Google Ads, DV360, Google Analytics 4 and Meta Ads"
+        twitterTitle="GMP Certified Partner Training Program | AnalyticsLiv"
+        twitterDescription="Master the Marketing and Analytics to drive PPC campaigns success, accurate attribution. Training on Google Ads, DV360, Google Analytics 4 and Meta Ads"
       />
       <section className="pb-16">
         <div class="md:mt-4 px-4 md:px-20 pt-8 md:pt-11 lg:flex justify-around lg:items-center">

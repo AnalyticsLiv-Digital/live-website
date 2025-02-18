@@ -106,10 +106,10 @@ const customersegmentation = () => {
         <>
             <MetaSchemaOg
                 url="https://analyticsliv.com/services/customer-segmentation"
-                title="Customer Segmentation Services in India | AnalyticsLiv"
-                description="Get expert customer segmentation services in India with AnalyticsLiv. Leverage audience segmentation and first-party data to optimize targeting and boost engagement."
-                twitterTitle="Customer Segmentation Services in India | AnalyticsLiv"
-                twitterDescription="Get expert customer segmentation services in India with AnalyticsLiv. Leverage audience segmentation and first-party data to optimize targeting and boost engagement."
+                title="Audience Segmentation Services in India | AnalyticsLiv"
+                description="Drive growth with customer segmentation and content personalization for better conversion rate across Google and Meta Advertising"
+                twitterTitle="Audience Segmentation Services in India | AnalyticsLiv"
+                twitterDescription="Drive growth with customer segmentation and content personalization for better conversion rate across Google and Meta Advertising"
             />
 
             <section className='cshome w-full relative font-gilroy overflow-hidden'>
