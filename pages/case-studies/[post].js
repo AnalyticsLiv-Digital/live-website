@@ -124,6 +124,22 @@ const index = ({ casestudyDat }) => {
 
     var url = "https://analyticsliv.com/case-studies/" + cd.slug;
 
+    const scrollToDownload = () => {
+
+        const element = document.getElementById('download-cs');
+        if (element) {
+            const offset = 100;
+            const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+            const offsetPosition = elementPosition - offset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    };
+
+
     return (<>
         <Head>
             <title>AnalyticsLiv - Case Sudies</title>
@@ -136,8 +152,138 @@ const index = ({ casestudyDat }) => {
             size={100}
             className="m-auto align-middle"
         /></div>}
-        <div className=' overflow-hidden'>
-            <section className="relative bg-gray-100 pt-12">
+        <div className='overflow-hidden font-sans'>
+            <section className="relative">
+                <div className="relative w-full">
+                    <div className="">
+                        <div className='bg-header-linear lg:flex max-lg:flex-col justify-center 2xl:justify-evenly items-center py-10 px-[5%]'>
+
+                            <div className='lg:w-[55%] flex flex-col gap-8'>
+                                <h1 className="text-2xl lg:text-3xl xl:text-3xl 2xl:text-[35px] text-white font-bold">{cd?.title}</h1>
+                                <p className="text-xs md:text-[14px] text-white">{cd?.description}</p>
+                                <button onClick={scrollToDownload} className="bg-white px-4 w-max py-2 md:px-4 md:py-[5px] xl:px-5 xl:py-[7px] 2xl:px-7 2xl:py-[8px] rounded-[8px]
+                                text-[#0E1947] text-[11px] sm:text-sm md:text-base 2xl:text-lg sm:hover:underline md:hover:text-[16.2px] 2xl:hover:text-[18.2px] font-bold">
+                                    Download Case Study
+                                </button>
+                            </div>
+
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Frame.svg' alt={cd?.title}
+                                className='max-lg:hidden mt-7' />
+                        </div>
+                        {/* <img className="w-screen" src={cd?.coverimage} /> */}
+
+                        <div className='px-[5%] pt-8'>
+                            {cd?.content && cd?.content.map((casestudy, key) => (
+                                <div key={key} className='pt-4 2xl:pt-5 pb-3'>
+                                    <h3 className="inline font-semibold text-2xl lg:text-3xl xl:text-3xl 2xl:text-[35px] text-[#0E1947]">{casestudy?.heading}</h3>
+                                    <p className="mt-4 text-sm 2xl:text-base text-black">
+                                        {casestudy?.description}
+                                    </p>
+                                </div>
+                            ))}
+                            <div id='download-cs'></div>
+                        </div>
+                    </div>
+
+                    {cd?.open &&
+
+                        <div id='' className={`mx-[5%] p-4 lg:p-8 bg-header-linear py-4 md:flex items-center gap-12 mt-12 mb-12`}>
+                            <div className='text-white md:w-[50%] flex flex-col gap-10'>
+                                <div className="text-2xl lg:text-3xl xl:text-3xl 2xl:text-[35px] text-white font-bold">
+                                    Download the case study here!
+                                </div>
+                                <div>
+                                    You're close to scaling your business! This case study reveals how AnalyticsLiv empowers top
+                                    companies to expand their business successfully.
+                                </div>
+                                <div className='text-base font-normal'>
+                                    Let's Collaborate for Mutual Success!<a href='/contact' className='text-base font-bold ml-3 underline'>Contact Us Now</a>
+                                </div>
+                            </div>
+                            <div className='md:w-[40%] bg-white my-3 rounded-[5px]'>
+                                {formSubmit ? <div className='relative p-4 space-y-4 h-full'>
+                                    <h3 className='align-middle font-medium text-4xl text-[#0E1947]'>Thank You for your interest.</h3>
+                                    <h2 className='align-middle text-xl text-[#0E1947]'>The download link for this case study has been sent to the email-id provided.</h2>
+                                    <div><a href='#' className='text-blue-500 underline'>Click here</a> to go to Home Page</div>
+                                    <div className='absolute bottom-0 right-2 rounded-full w-20 h-20 bg-emerald-600 opacity-70 animate-bounce hover:animate-none duration-300 delay-75'></div>
+                                </div> : <form className="space-y-4 md:space-y-4 px-3 md:px-8 py-4 md:py-7">
+
+                                    <div className="relative">
+                                        <input type="text" id="fullName" name="fullName" className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent border border-[#ECECEC] rounded-[5px] appearance-none focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " required value={formValues.fullName} onChange={handleChange} />
+                                        <label htmlFor="fullName" className="absolute text-xs text-gray-500  duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Full Name*</label>
+                                        <p className="text-red-600 text-sm">{formErrors.fullName}</p>
+                                    </div>
+
+                                    <div className="relative">
+                                        <input type="email" id="email" name="email" className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent  border border-[#ECECEC] rounded-[5px] appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " required value={formValues.email} onChange={handleChange} />
+                                        <label htmlFor="email" className="absolute text-xs text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">E-mail*</label>
+                                        <p className="text-red-600 text-sm">{formErrors.email}</p>
+                                    </div>
+
+                                    <div className="relative">
+                                        <input type="text" id="company" name="company" className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent  border border-[#ECECEC] rounded-[5px] appearance-none focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " required value={formValues.company} onChange={handleChange} />
+                                        <label htmlFor="company" className="absolute text-xs text-gray-500  duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Company*</label>
+                                        <p className="text-red-600 text-sm">{formErrors.company}</p>
+                                    </div>
+
+                                    <div className="text-center">
+                                        {/* <div className="tracking-wider w-full mt-4 px-8 py-2 m-auto bg-sky-800 uppercase text-white rounded hover:border hover:border-cyan-400 hover:shadow-md hover:shadow-cyan-400 transition-shadow delay-150 cursor-pointer" onClick={handleSubmit}>Download
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="w-8 inline text-right" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                                <path fill="currentColor" d="M12 2C6.49 2 2 6.49 2 12s4.49 10 10 10s10-4.49 10-10S17.51 2 12 2zm-1 8V6h2v4h3l-4 4l-4-4h3zm6 7H7v-2h10v2z" />
+                                            </svg>
+                                        </div> */}
+                                        <button className='group mainbutn w-full rounded-[5px] flex justify-center items-center gap-3' onClick={handleSubmit}>
+                                            <div className='max-w-fit'>Get Free Audit</div>
+                                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/download_icon_white%201.png' alt='Download casestudy'
+                                                className='block group-hover:hidden' />
+                                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/download_icon_blue_cs.png' alt='Download casestudy'
+                                                className='hidden group-hover:block' />
+                                        </button>
+                                    </div>
+                                </form>}
+                            </div>
+                        </div>
+                    }
+
+
+                </div>
+
+            </section>
+
+        </div></>
+    )
+}
+
+export async function getServerSideProps(context) {
+    // Fetch data from external API
+
+    const res = await fetch(`${process.env.domain}/api/casestudy?slug=${context.params.post}`)
+    const casestudyDat = await res.json()
+    console.log(casestudyDat);
+    // Pass data to the page via props
+    return { props: { casestudyDat } }
+}
+
+export default index
+
+
+{/* {cd.open &&
+
+                        <div className="sticky top-20 h-fit lg:w-1/2 bg-white px-10 py-4">
+                            <div className="text-center">
+                                <a href={cd.filename} target="_blank">
+                                    <div className="tracking-wider w-full mt-4 px-8 py-2 m-auto bg-slate-800 uppercase text-white rounded hover:border hover:border-slate-800 hover:shadow-md hover:bg-white hover:text-slate-800 transition duration-150 cursor-pointer mr-16 flex justify-center items-center gap-2" onClick={dataLayerpush}>Download
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="w-8 inline text-right" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M12 2C6.49 2 2 6.49 2 12s4.49 10 10 10s10-4.49 10-10S17.51 2 12 2zm-1 8V6h2v4h3l-4 4l-4-4h3zm6 7H7v-2h10v2z" />
+                                        </svg>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    } */}
+
+
+{/* <section className="relative bg-gray-100 pt-12">
                 <svg xmlns="http://www.w3.org/2000/svg" className="absolute lg:w-48 w-32 -right-0 top-10 lg:top-8 lg:right-10 fill-orange-500 blur-md rotate-45" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15">
                     <path d="M7.932 1.248a.5.5 0 0 0-.864 0l-7 12A.5.5 0 0 0 .5 14h14a.5.5 0 0 0 .432-.752l-7-12Z" />
                 </svg>
@@ -205,7 +351,7 @@ const index = ({ casestudyDat }) => {
                         </div>
                     }
 
-                    {/* {cd.open &&
+                     {cd.open &&
 
                         <div className="sticky top-20 h-fit lg:w-1/2 bg-white px-10 py-4">
                             <div className="text-center">
@@ -218,23 +364,8 @@ const index = ({ casestudyDat }) => {
                                 </a>
                             </div>
                         </div>
-                    } */}
+                    } 
 
                 </div>
 
-            </section>
-        </div></>
-    )
-}
-
-export async function getServerSideProps(context) {
-    // Fetch data from external API
-
-    const res = await fetch(`${process.env.domain}/api/casestudy?slug=${context.params.post}`)
-    const casestudyDat = await res.json()
-    console.log(casestudyDat);
-    // Pass data to the page via props
-    return { props: { casestudyDat } }
-}
-
-export default index
+            </section> */}
