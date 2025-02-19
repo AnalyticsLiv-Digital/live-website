@@ -160,7 +160,7 @@ const index = ({ casestudyDat }) => {
 
                             <div className='lg:w-[55%] flex flex-col gap-8'>
                                 <h1 className="text-2xl lg:text-3xl xl:text-3xl 2xl:text-[35px] text-white font-bold">{cd?.title}</h1>
-                                <p className="text-xs md:text-[14px] text-white">{cd?.description}</p>
+                                <p className="text-xs md:text-[14px] text-white">{cd?.content?.[0]?.description}</p>
                                 <button onClick={scrollToDownload} className="bg-white px-4 w-max py-2 md:px-4 md:py-[5px] xl:px-5 xl:py-[7px] 2xl:px-7 2xl:py-[8px] rounded-[8px]
                                 text-[#0E1947] text-[11px] sm:text-sm md:text-base 2xl:text-lg sm:hover:underline md:hover:text-[16.2px] 2xl:hover:text-[18.2px] font-bold">
                                     Download Case Study
@@ -173,9 +173,11 @@ const index = ({ casestudyDat }) => {
                         {/* <img className="w-screen" src={cd?.coverimage} /> */}
 
                         <div className='px-[5%] pt-8'>
-                            {cd?.content && cd?.content.map((casestudy, key) => (
+                            {cd?.content?.slice(1).map((casestudy, key) => (
                                 <div key={key} className='pt-4 2xl:pt-5 pb-3'>
-                                    <h3 className="inline font-semibold text-2xl lg:text-3xl xl:text-3xl 2xl:text-[35px] text-[#0E1947]">{casestudy?.heading}</h3>
+                                    <h3 className="inline font-semibold text-2xl lg:text-3xl xl:text-3xl 2xl:text-[35px] text-[#0E1947]">
+                                        {casestudy?.heading}
+                                    </h3>
                                     <p className="mt-4 text-sm 2xl:text-base text-black">
                                         {casestudy?.description}
                                     </p>
@@ -196,8 +198,8 @@ const index = ({ casestudyDat }) => {
                                     You're close to scaling your business! This case study reveals how AnalyticsLiv empowers top
                                     companies to expand their business successfully.
                                 </div>
-                                <div className='text-base font-normal'>
-                                    Let's Collaborate for Mutual Success!<a href='/contact' className='text-base font-bold ml-3 underline'>Contact Us Now</a>
+                                <div className='text-sm sm:text-base font-normal'>
+                                    Let's Collaborate for Mutual Success! <br className='sm:hidden'></br> <a href='/contact' className='text-sm sm:text-base font-bold sm:ml-3 underline'>Contact Us Now</a>
                                 </div>
                             </div>
                             <div className='md:w-[40%] bg-white my-3 rounded-[5px]'>
