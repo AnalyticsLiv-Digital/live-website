@@ -141,10 +141,10 @@ const Ppc = () => {
         <>
             <MetaSchemaOg
                 url="https://analyticsliv.com/services/ppc"
-                title="Performance Marketing Agency in India | AnalyticsLiv"
-                description="Maximize ROI with expert Google Ads at AnalyticsLiv, a leading performance marketing agency. Our PPC management services drive results with data-driven strategies and proven success."
-                twitterTitle="Performance Marketing Agency in India | AnalyticsLiv"
-                twitterDescription="Maximize ROI with expert Google Ads at AnalyticsLiv, a leading performance marketing agency. Our PPC management services drive results with data-driven strategies and proven success."
+                title="PPC Marketing Agency | Google Partner | Meta Ads | AnalyticsLiv"
+                description="Drive your PPC campaigns for improvement on ROAS and CPA, with proven data driven strategies tested rigorously to enhance conversions"
+                twitterTitle="PPC Marketing Agency | Google Partner | Meta Ads | AnalyticsLiv"
+                twitterDescription="Drive your PPC campaigns for improvement on ROAS and CPA, with proven data driven strategies tested rigorously to enhance conversions"
             />
             <main className='font-sans py-10'>
 

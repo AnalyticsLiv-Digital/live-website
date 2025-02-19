@@ -11,10 +11,10 @@ const ecommerce_marketing = () => {
     <>
       <MetaSchemaOg
         url="https://analyticsliv.com/services/ecommerce-marketing"
-        title="Best Ecommerce Marketing Services in India | AnalyticsLiv"
-        description="Boost your online sales with AnalyticsLiv. We offer expert ecommerce marketing services and digital marketing strategies for ecommerce businesses to drive growth and maximize ROI."
-        twitterTitle="Best Ecommerce Marketing Services in India | AnalyticsLiv"
-        twitterDescription="Boost your online sales with AnalyticsLiv. We offer expert ecommerce marketing services and digital marketing strategies for ecommerce businesses to drive growth and maximize ROI."
+        title="Google Partner for Performance & ROAS | AnalyticsLiv"
+        description="Drive your PPC campaigns for improvement on ROAS, with proven data driven strategies tested rigorously to enhance conversions and drive the funnel based marketing"
+        twitterTitle="Google Partner for Performance & ROAS | AnalyticsLiv"
+        twitterDescription="Drive your PPC campaigns for improvement on ROAS, with proven data driven strategies tested rigorously to enhance conversions and drive the funnel based marketing"
       />
 
       <section>

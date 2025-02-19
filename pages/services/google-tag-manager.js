@@ -180,8 +180,8 @@ const google_tag_manager = ({brandsdata}) => {
 
             <MetaSchemaOg
                 url="https://analyticsliv.com/services/google-tag-manager"
-                title="Expert Google Tag Manager Services | AnalyticsLiv"
-                description="Track your data with Google Tag Manager from AnalyticsLiv. We specialize in data-driven attribution to optimize your marketing strategies and drive growth."
+                title="GMP Partner for Google Tag Manager Consulting | AnalyticsLiv"
+                description="GMP Partner for Google Tag Manager services, we specialize in custom tracking and solutions to optimize your reporting strategies and drive growth."
                 twitterTitle="GTM Services by Analytics Liv | Grow Your Business"
                 twitterDescription="Optimize your marketing with GTM. Analytics Liv provides expert consulting for accurate data tracking and strategy improvements."
             />
