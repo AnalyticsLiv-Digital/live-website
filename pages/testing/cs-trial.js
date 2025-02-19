@@ -196,7 +196,18 @@ const index = ({
                         <div className='bg-header-linear lg:flex max-lg:flex-col justify-center 2xl:justify-evenly items-center py-10 px-[5%]'>
 
                             <div className='lg:w-[55%] flex flex-col gap-8 lg:gap-10'>
-                                <h1 className="text-2xl lg:text-3xl xl:text-3xl 2xl:text-[35px] text-white font-bold">{cd?.title}</h1>
+                                {/* <h1 className="text-2xl lg:text-3xl xl:text-3xl 2xl:text-[35px] text-white font-bold">{cd?.title}</h1> */}
+                                <h1 className="text-2xl lg:text-3xl xl:text-3xl 2xl:text-[35px] text-white font-bold">
+                                    {cd?.title?.includes(":")
+                                        ? cd.title.replace(":", ":\n").split("\n").map((text, index) => (
+                                            <React.Fragment key={index}>
+                                                {text}
+                                                {index === 0 && <br className='max-sm:hidden' />}
+                                            </React.Fragment>
+                                        ))
+                                        : cd?.title}
+                                </h1>
+
                                 <p className="text-xs md:text-[14px] text-white">{cd?.content?.[0]?.description}</p>
                                 <button onClick={scrollToDownload} className="bg-white px-4 w-max py-2 md:px-4 md:py-[5px] xl:px-5 xl:py-[7px] 2xl:px-7 2xl:py-[8px] rounded-[8px]
                                 text-[#0E1947] text-[11px] sm:text-sm md:text-base 2xl:text-lg sm:hover:underline md:hover:text-[16.2px] 2xl:hover:text-[18.2px] font-bold">
@@ -285,6 +296,163 @@ const index = ({
                     }
 
 
+                </div>
+
+                <div>
+                    <h1 className="px-[5%] pb-11 md:pt-3 text-2xl lg:text-3xl xl:text-3xl 2xl:text-[35px] text-[#0E1947] font-bold">Related Case Studies</h1>
+
+                    <div className="px-[5%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-8 lg:gap-4 2xl:gap-7 pb-16">
+                        <a href='case-studies/elevate-the-brand-reach-with-discovery-campaigns' className="bg-white rounded-lg shadow-lg p-4 2xl:p-6 relative">
+                            <div className='flex flex-col justify-evenly h-full'>
+                                {/* <div className="absolute w-[100px] text-center top-4 2xl:top-6 left-4 2xl:left-6 bg-[#A2EC4E99] text-white font-semibold px-3 py-1 rounded-tl-2xl 2xl:rounded-tl-[20px] rounded-br-md text-sm">Marketing</div> */}
+                                <img
+                                    src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Case_study_10_Brand_Reach_Discovery_Campaign%201.png"
+                                    alt="Brand_Reach_Discovery_Campaign"
+                                    className="rounded-md mb-4 w-full"
+                                />
+                                <h3
+                                    className="text-lg font-semibold text-[#100F1B] mb-2 truncate"
+                                    style={{
+                                        whiteSpace: 'nowrap',
+                                        overflow: 'hidden',
+                                        textOverflow: 'ellipsis',
+                                    }}
+                                >
+                                    Elevate the brand reach with Discovery Campaigns 17% higher CTR compared to Pmax
+                                </h3>
+                                <p
+                                    className="text-sm text-[#373642] mb-4"
+                                    style={{
+                                        display: '-webkit-box',
+                                        WebkitBoxOrient: 'vertical',
+                                        overflow: 'hidden',
+                                        WebkitLineClamp: 3,
+                                    }}
+                                >
+                                    In the shopping season of black Friday and cyber Monday, our objective was to increase the reach of brand
+                                    and drive huge amount of relevant traffic to the website by expanding the audience size in top of the funnel
+                                    with the help of discovery campaigns
+                                </p>
+                                <div className="flex justify-between items-center text-sm text-[#0066cc]">
+                                    <span className="text-[#6B7280]">25th Nov 2024</span>
+                                    <button className="text-[#08A4F7] text-base font-medium hover:underline">Read Full</button>
+                                </div>
+                            </div>
+                        </a>
+                        <a href='/case-studies/ga4-enhanced-ecommerce-implementation-using-gtm-and-shopify-integration' className="bg-white rounded-lg shadow-lg p-4 2xl:p-6 relative">
+                            <div className='flex flex-col justify-evenly h-full'>
+
+                                {/* <div className="absolute w-[100px] text-center top-4 2xl:top-6 left-4 2xl:left-6 bg-[#EC954E99] text-white font-semibold px-3 py-1 rounded-tl-[20px] 2xl:rounded-tl-3xl rounded-br-md text-sm">Analytics</div> */}
+                                <img
+                                    src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/shopify.png"
+                                    alt="Gshopify"
+                                    className="rounded-md mb-4 w-full"
+                                />
+                                <h3
+                                    className="text-lg font-semibold text-[#100F1B] mb-2 truncate"
+                                    style={{
+                                        whiteSpace: 'nowrap',
+                                        overflow: 'hidden',
+                                        textOverflow: 'ellipsis',
+                                    }}
+                                >
+                                    GA4 Enhanced Ecommerce Implementation Using GTM and Shopify Integration
+                                </h3>
+                                <p
+                                    className="text-sm text-[#373642] mb-4"
+                                    style={{
+                                        display: '-webkit-box',
+                                        WebkitBoxOrient: 'vertical',
+                                        overflow: 'hidden',
+                                        WebkitLineClamp: 3,
+                                    }}
+                                >
+                                    A Shopify-powered e-commerce business in the East was facing challenges with Universal Analytics (UA) in
+                                    capturing purchase data reliably. The client was unable to track data for resale products put on the post-purchase
+                                    page and upsell products bought through third-party interfaces.
+                                </p>
+                                <div className="flex justify-between items-center text-sm text-[#0066cc]">
+                                    <span className="text-[#6B7280]">06th Aug 2024</span>
+                                    <button className="text-[#08A4F7] text-base font-medium hover:underline">Read Full</button>
+                                </div>
+                            </div>
+                        </a>
+                        <a href='/case-studies/180-percent-increase-in-lead-volume-and-60-percent-reduction-cpl' className="bg-white rounded-lg shadow-lg p-4 2xl:p-6 relative">
+                            <div className='flex flex-col justify-evenly h-full'>
+
+                                {/* <div className="absolute w-[100px] text-center top-4 2xl:top-6 left-4 2xl:left-6 bg-[#A2EC4E99] text-white font-semibold px-3 py-1 rounded-tl-2xl 2xl:rounded-tl-[20px] rounded-br-md text-sm">Marketing</div> */}
+                                <img
+                                    src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/increase_in_leadvolume.png"
+                                    alt="increase_in_leadvolume"
+                                    className="rounded-md mb-4 w-full"
+                                />
+                                <h3
+                                    className="text-lg font-semibold text-[#100F1B] mb-2 truncate"
+                                    style={{
+                                        whiteSpace: 'nowrap',
+                                        overflow: 'hidden',
+                                        textOverflow: 'ellipsis',
+                                    }}
+                                >
+                                    Maximizing Lead Generation: 180% Increase in Lead Volume and 60% Reduction in CPL
+                                </h3>
+                                <p
+                                    className="text-sm text-[#373642] mb-4"
+                                    style={{
+                                        display: '-webkit-box',
+                                        WebkitBoxOrient: 'vertical',
+                                        overflow: 'hidden',
+                                        WebkitLineClamp: 3,
+                                    }}
+                                >
+                                    We Sort It, a New Zealand-based cleaning and lawn care service provider, faced challenges with low lead volume
+                                    and high costs per lead. Through advanced audience targeting and leveraging Facebook's Advantage Detailed Targeting
+                                    feature, we achieved a 180% increase in lead volume and a 60% reduction in cost per lead. By aligning campaign strategies
+                                    with the client’s goals, we ensured improved performance, cost efficiency, and high-quality leads.
+                                </p>
+                                <div className="flex justify-between items-center text-sm text-[#0066cc]">
+                                    <span className="text-[#6B7280]">9th Aug 2024</span>
+                                    <button className="text-[#08A4F7] text-base font-medium hover:underline">Read Full</button>
+                                </div>
+                            </div>
+                        </a>
+                        <a href='/case-studies/driving-campaigns-in-dv360-to-post-click-attribution-success-with-36-percent-reduction-in-cpi' className="bg-white rounded-lg shadow-lg p-4 2xl:p-6 relative">
+                            <div className='flex flex-col justify-evenly h-full'>
+
+                                {/* <div className="absolute w-[100px] text-center top-4 2xl:top-6 left-4 2xl:left-6 bg-[#A2EC4E99] text-white font-semibold px-3 py-1 rounded-tl-2xl 2xl:rounded-tl-[20px] rounded-br-md text-sm">Marketing</div> */}
+                                <img
+                                    src="https://storage.googleapis.com/website-bucket-uploads/cs/Case_study_4_Post_Click_Tracking_1.png"
+                                    alt="increase_in_leadvolume"
+                                    className="rounded-md mb-4 w-full"
+                                />
+                                <h3
+                                    className="text-lg font-semibold text-[#100F1B] mb-2 truncate"
+                                    style={{
+                                        whiteSpace: 'nowrap',
+                                        overflow: 'hidden',
+                                        textOverflow: 'ellipsis',
+                                    }}
+                                >
+                                    Driving the Campaigns in DV360 to Post Click Attribution Success with a 36% reduction in CPI
+                                </h3>
+                                <p
+                                    className="text-sm text-[#373642] mb-4"
+                                    style={{
+                                        display: '-webkit-box',
+                                        WebkitBoxOrient: 'vertical',
+                                        overflow: 'hidden',
+                                        WebkitLineClamp: 3,
+                                    }}
+                                >
+                                    Implementing post-click conversions in DV360 attribution led to increased conversions, a 36% lower CPI, and a notable 38% boost in overall click-through rate, showcasing the effectiveness of our refined attribution model.
+                                </p>
+                                <div className="flex justify-between items-center text-sm text-[#0066cc]">
+                                    <span className="text-[#6B7280]">4th Sept 2024</span>
+                                    <button className="text-[#08A4F7] text-base font-medium hover:underline">Read Full</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
 
             </section>
