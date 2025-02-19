@@ -195,7 +195,7 @@ const index = ({
                     <div className="">
                         <div className='bg-header-linear lg:flex max-lg:flex-col justify-center 2xl:justify-evenly items-center py-10 px-[5%]'>
 
-                            <div className='lg:w-[55%] flex flex-col gap-8'>
+                            <div className='lg:w-[55%] flex flex-col gap-8 lg:gap-10'>
                                 <h1 className="text-2xl lg:text-3xl xl:text-3xl 2xl:text-[35px] text-white font-bold">{cd?.title}</h1>
                                 <p className="text-xs md:text-[14px] text-white">{cd?.content?.[0]?.description}</p>
                                 <button onClick={scrollToDownload} className="bg-white px-4 w-max py-2 md:px-4 md:py-[5px] xl:px-5 xl:py-[7px] 2xl:px-7 2xl:py-[8px] rounded-[8px]
