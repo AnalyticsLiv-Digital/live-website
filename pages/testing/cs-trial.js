@@ -193,7 +193,7 @@ const index = ({
             <section className="relative">
                 <div className="relative w-full">
                     <div className="">
-                        <div className='bg-header-linear lg:flex max-lg:flex-col justify-center 2xl:justify-evenly items-center py-10 px-[5%]'>
+                        <div className='bg-header-linear lg:flex max-lg:flex-col justify-center lg:justify-between items-center py-10 px-[5%]'>
 
                             <div className='lg:w-[55%] flex flex-col gap-8 lg:gap-10'>
                                 {/* <h1 className="text-2xl lg:text-3xl xl:text-3xl 2xl:text-[35px] text-white font-bold">{cd?.title}</h1> */}
@@ -214,14 +214,13 @@ const index = ({
                                     Download Case Study
                                 </button>
                             </div>
-
                             <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Frame.svg' alt={cd?.title}
-                                className='max-lg:hidden mt-7' />
+                                className='2xl:mr-[3%] mt-7 max-lg:hidden' />
                         </div>
                         {/* <img className="w-screen" src={cd?.coverimage} /> */}
 
                         <div className='px-[5%] pt-8'>
-                            {cd?.content?.slice(1).map((casestudy, key) => (
+                            {cd?.content?.slice(1).map((casestudy, key, slicedArray) => (
                                 <div key={key} className='pt-4 2xl:pt-5 pb-3'>
                                     <h3 className="inline font-semibold text-2xl lg:text-3xl xl:text-3xl 2xl:text-[35px] text-[#0E1947]">
                                         {casestudy?.heading}
@@ -229,6 +228,10 @@ const index = ({
                                     <p className="mt-4 text-sm 2xl:text-base text-black">
                                         {casestudy?.description}
                                     </p>
+
+                                    {key === slicedArray?.length - 2 && (
+                                        <img src='/Achievments.png' alt='achievements' className='w-full mt-8' />
+                                    )}
                                 </div>
                             ))}
                             <div id='download-cs'></div>
