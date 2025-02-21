@@ -229,7 +229,7 @@ const index = ({
                                         {casestudy?.description}
                                     </p>
 
-                                    {key === slicedArray.length - 2 && (
+                                    {key === slicedArray?.length - 2 && (
                                         <img src='/Achievments.png' alt='achievements' className='w-full mt-8' />
                                     )}
                                 </div>

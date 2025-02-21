@@ -31,7 +31,7 @@ const handler = async (req, res) => {
       to: [req.body.email, "aashana.pathak@analyticsliv.com"],
       subject: 'Analyticsliv - Thankyou for your application.',
       html: `Dear ${req.body.firstName},<br>
-            Thank you for your intrest in ${req.body.postName} role. We have successfully received your details and appreciate your interest in joining Analyticsliv.
+            Thank you for your interest in ${req.body.postName} role. We have successfully received your details and appreciate your interest in joining Analyticsliv.
             Our team will review your application, and if your profile matches our current openings, we will reach out to you for the next steps.<br><br>
             Best regards,`
     };
