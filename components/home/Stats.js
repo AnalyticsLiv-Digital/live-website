@@ -33,7 +33,7 @@ const Stats = () => {
         {
             id: 3,
             url: "https://www.youtube.com/embed/OrmmgwXDQyU",
-            coverImage: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Thumbnail_Service_Video_Home_page.png",
+            coverImage: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Thumbnail_Service_Video_Home_page_.png",
             label1: "Grow Your Business",
             label2: "Make Your Data Profitable",
             img1: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Increase.png",

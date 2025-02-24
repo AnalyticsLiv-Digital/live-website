@@ -28,12 +28,17 @@ const index = ({
             },
             {
                 "heading": "The Challenge",
-                "description": "We Sort It faced two key challenges: low overall lead volume, resulting in fewer qualified leads, and an unsustainable cost per lead that hindered profitability due to the business's low-cost service model.",
+                "description": "Client struggled to convert ad viewers into car buyers despite running ads. Analysis revealed two key issues:  **Ineffective Creative Sizes: Certain creatives weren't driving conversions despite budget allocation.  **Low-Quality Creatives: Blurry or low-quality visuals in some ads were hindering user experience.",
                 "_id": "67569d613effe018dd003dca"
             },
             {
                 "heading": "The Approach",
-                "description": "To tackle low lead volume and high costs, we analyzed account data and refined audience targeting strategies. By replacing limited region-based and interest-based targeting with Facebook’s Advantage Detailed Targeting, powered by machine learning, we expanded reach and improved performance.",
+                "description": "Our data-driven approach leveraged DV360 to optimise ad performance:  **Creative Size Analysis: We identified the most effective ad sizes (e.g., 300x250, 300x600) for the Fuel Your Drive campaign.  **Budget Optimization: Budget was shifted towards well-performing formats, minimizing spending on underperforming ones.  **High-Quality Creatives: We collaborated with the client to replace low-quality visuals with clear, visually appealing elements.",
+                "_id": "67569d613effe018dd003dcb"
+            },
+            {
+                "heading": "The Result",
+                "description": "**Increased Conversions: Effective cost per acquisition (CPA) dropped by 19% compared to the previous month, indicating a significant improvement in conversion rates.  **Enhanced User Experience: High-quality creatives provided a more engaging user experience, leading to better ad reception.",
                 "_id": "67569d613effe018dd003dcb"
             },
             {
@@ -46,6 +51,41 @@ const index = ({
         "open": true,
         "__v": 0
     }
+    // var cd1 = {
+    //     "_id": "67569d613effe018dd003dc8",
+    //     "id": "134246",
+    //     "slug": "180-percent-increase-in-lead-volume-and-60-percent-reduction-cpl",
+    //     "description": "We Sort It, a New Zealand-based cleaning and lawn care service provider, faced challenges with low lead volume and high costs per lead. Through advanced audience targeting and leveraging Facebook's Advantage Detailed Targeting feature, we achieved a 180% increase in lead volume and a 60% reduction in cost per lead. By aligning campaign strategies with the client’s goals, we ensured improved performance, cost efficiency, and high-quality leads.",
+    //     "title": "Maximizing Lead Generation: 180% Increase in Lead Volume and 60% Reduction in CPL",
+    //     "filename": "https://storage.googleapis.com/website-bucket-uploads/cs/1733729399146434.pdf",
+    //     "publishdate": "9th Dec 2024",
+    //     "coverimage": "https://storage.googleapis.com/website-bucket-uploads/cs/1733729425065265.png",
+    //     "content": [
+    //         {
+    //             "heading": "About The Business",
+    //             "description": "We Sort It, a New Zealand-based brand offering professional cleaning and lawn mowing services for both residential and commercial clients. The services include regular cleaning, deep cleaning, garden maintenance, lawn care, and more. With a focus on quality, reliability, and sustainability, they ensure your space remains clean, neat, and well-maintained",
+    //             "_id": "67569d613effe018dd003dc9"
+    //         },
+    //         {
+    //             "heading": "The Challenge",
+    //             "description": "We Sort It faced two key challenges: low overall lead volume, resulting in fewer qualified leads, and an unsustainable cost per lead that hindered profitability due to the business's low-cost service model.",
+    //             "_id": "67569d613effe018dd003dca"
+    //         },
+    //         {
+    //             "heading": "The Approach",
+    //             "description": "To tackle low lead volume and high costs, we analyzed account data and refined audience targeting strategies. By replacing limited region-based and interest-based targeting with Facebook’s Advantage Detailed Targeting, powered by machine learning, we expanded reach and improved performance.",
+    //             "_id": "67569d613effe018dd003dcb"
+    //         },
+    //         {
+    //             "heading": "The Conclusion",
+    //             "description": "This approach resulted in a 180% increase in lead volume and a 60% decrease in cost per lead, aligning results with the client’s business objectives.",
+    //             "_id": "67569d613effe018dd003dcc"
+    //         }
+    //     ],
+    //     "active": true,
+    //     "open": true,
+    //     "__v": 0
+    // }
     useEffect(() => {
         AOS.init();
         console.log(cd.open);
@@ -176,6 +216,38 @@ const index = ({
         }
     };
 
+    function formatDescription(description) {
+        return description.split('\n').flatMap((chunk, index) => {
+            let trimmedChunk = chunk.trim();
+
+            // Split content into sections by ** for proper bullet point handling
+            const sections = trimmedChunk.split(/(\*\*.*?:.*?)(?=\*\*|$)/g).filter(Boolean);
+
+            return sections.map((section, i) => {
+                const match = section.match(/\*\*(.*?)\:(.*)/);
+
+                if (match) {
+                    const boldText = match[1].trim();
+                    const remainingText = match[2].trim();
+
+                    return (
+                        <div key={`${index}-${i}`} className='flex items-start space-x-2 mt-2 lg:ml-10'>
+                            <div className='w-2 h-2 mt-2 bg-[#0E1947] rounded-full'></div>
+                            <p className='text-sm 2xl:text-base text-black'>
+                                <span className='font-semibold'>{boldText}</span>: {remainingText}
+                            </p>
+                        </div>
+                    );
+                }
+
+                // Render normal paragraphs for content outside ** blocks
+                return section.trim() ? (
+                    <p key={`${index}-${i}`} className='text-sm 2xl:text-base text-black'>{section.trim()}</p>
+                ) : null;
+            });
+        }).filter(Boolean); // Remove null entries
+    }
+
 
     return (<>
         <Head>
@@ -218,16 +290,15 @@ const index = ({
                                 className='2xl:mr-[3%] mt-7 max-lg:hidden' />
                         </div>
                         {/* <img className="w-screen" src={cd?.coverimage} /> */}
-
                         <div className='px-[5%] pt-8'>
                             {cd?.content?.slice(1).map((casestudy, key, slicedArray) => (
                                 <div key={key} className='pt-4 2xl:pt-5 pb-3'>
-                                    <h3 className="inline font-semibold text-2xl lg:text-3xl xl:text-3xl 2xl:text-[35px] text-[#0E1947]">
+                                    <h3 className='inline font-semibold text-2xl lg:text-3xl xl:text-3xl 2xl:text-[35px] text-[#0E1947]'>
                                         {casestudy?.heading}
                                     </h3>
-                                    <p className="mt-4 text-sm 2xl:text-base text-black">
-                                        {casestudy?.description}
-                                    </p>
+                                    <div className='mt-4'>
+                                        {formatDescription(casestudy?.description)}
+                                    </div>
 
                                     {key === slicedArray?.length - 2 && (
                                         <img src='/Achievments.png' alt='achievements' className='w-full mt-8' />
@@ -463,6 +534,25 @@ const index = ({
         </div></>
     )
 }
+
+
+{/* <div className='px-[5%] pt-8'>
+                            {cd?.content?.slice(1).map((casestudy, key, slicedArray) => (
+                                <div key={key} className='pt-4 2xl:pt-5 pb-3'>
+                                    <h3 className="inline font-semibold text-2xl lg:text-3xl xl:text-3xl 2xl:text-[35px] text-[#0E1947]">
+                                        {casestudy?.heading}
+                                    </h3>
+                                    <p className="mt-4 text-sm 2xl:text-base text-black">
+                                        {casestudy?.description}
+                                    </p>
+
+                                    {key === slicedArray?.length - 2 && (
+                                        <img src='/Achievments.png' alt='achievements' className='w-full mt-8' />
+                                    )}
+                                </div>
+                            ))}
+                            <div id='download-cs'></div>
+                        </div> */}
 
 // export async function getServerSideProps(context) {
 //     // Fetch data from external API
