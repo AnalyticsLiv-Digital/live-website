@@ -232,7 +232,7 @@ const index = ({
 
                     return (
                         <div key={`${index}-${i}`} className='flex items-start space-x-2 mt-2 lg:ml-10'>
-                            <div className='w-2 h-2 mt-2 bg-[#0E1947] rounded-full'></div>
+                            <div className='w-2 h-2 mt-1.5 2xl:mt-2 bg-[#0E1947] rounded-full'></div>
                             <p className='text-sm 2xl:text-base text-black'>
                                 <span className='font-semibold'>{boldText}</span>: {remainingText}
                             </p>
