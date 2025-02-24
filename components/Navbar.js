@@ -680,7 +680,7 @@ const navbar = () => {
                         onMouseEnter={() => setIsSWebervices(true)}
                         onMouseLeave={() => { setIsSWebervices(false); setHoveredIndex(0) }}
                         onClick={() => setIsSWebervices(false)}
-                        className="subheader absolute w-full text-sm z-50 bg-header-linear text-white font-semibold"
+                        className="subheader absolute w-full text-sm z-50 bg-header-linear shadow-xl text-white font-semibold"
                     >
                         <div className="container p-5 flex justify-evenly items-start mx-auto">
                             <div className="w-1/3 ml-[4%]">
