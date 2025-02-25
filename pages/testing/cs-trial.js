@@ -265,7 +265,7 @@ const index = ({
             size={100}
             className="m-auto align-middle"
         /></div>}
-        <div className='overflow-hidden'>
+        <div className='overflow-hidden font-sans'>
             <section className="relative">
                 <div className="relative w-full">
                     <div className="">
