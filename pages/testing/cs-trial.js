@@ -232,7 +232,7 @@ const index = ({
 
                     return (
                         <div key={`${index}-${i}`} className='flex items-start space-x-2 mt-2 lg:ml-10'>
-                            <div className='w-2 h-2 mt-2 bg-[#0E1947] rounded-full'></div>
+                            <div className='w-2 h-2 mt-1.5 2xl:mt-2 bg-[#0E1947] rounded-full'></div>
                             <p className='text-sm 2xl:text-base text-black'>
                                 <span className='font-semibold'>{boldText}</span>: {remainingText}
                             </p>
@@ -253,6 +253,10 @@ const index = ({
         <Head>
             <title>AnalyticsLiv - Case Sudies</title>
             <link rel="canonical" href={url}></link>
+            <link
+                rel="stylesheet"
+                href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap"
+            />
         </Head>
         <ScrollProgress />
         {showWaiting && <div className="fixed flex backdrop-blur top-0 left-0 right-0 z-40 w-full p-4 md:overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full"><ScaleLoader
@@ -261,7 +265,7 @@ const index = ({
             size={100}
             className="m-auto align-middle"
         /></div>}
-        <div className='overflow-hidden font-sans'>
+        <div className='overflow-hidden'>
             <section className="relative">
                 <div className="relative w-full">
                     <div className="">
@@ -330,7 +334,7 @@ const index = ({
                                     <h2 className='align-middle text-xl text-[#0E1947]'>The download link for this case study has been sent to the email-id provided.</h2>
                                     <div><a href='#' className='text-blue-500 underline'>Click here</a> to go to Home Page</div>
                                     <div className='absolute bottom-0 right-2 rounded-full w-20 h-20 bg-emerald-600 opacity-70 animate-bounce hover:animate-none duration-300 delay-75'></div>
-                                </div> : <form className="space-y-4 md:space-y-4 px-3 md:px-8 py-4 md:py-7">
+                                </div> : <form className="space-y-4 md:space-y-4 px-3 md:px-4 py-4 md:py-4">
 
                                     <div className="relative">
                                         <input type="text" id="fullName" name="fullName" className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent border border-[#ECECEC] rounded-[5px] appearance-none focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " required value={formValues.fullName} onChange={handleChange} />
@@ -357,7 +361,7 @@ const index = ({
                                             </svg>
                                         </div> */}
                                         <button className='group mainbutn w-full rounded-[5px] flex justify-center items-center gap-3' onClick={handleSubmit}>
-                                            <div className='max-w-fit'>Get Free Audit</div>
+                                            <div className='max-w-fit'>Get Case Study</div>
                                             <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/download_icon_white%201.png' alt='Download casestudy'
                                                 className='block group-hover:hidden' />
                                             <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/download_icon_blue_cs.png' alt='Download casestudy'
