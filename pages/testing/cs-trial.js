@@ -253,6 +253,10 @@ const index = ({
         <Head>
             <title>AnalyticsLiv - Case Sudies</title>
             <link rel="canonical" href={url}></link>
+            <link
+                rel="stylesheet"
+                href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap"
+            />
         </Head>
         <ScrollProgress />
         {showWaiting && <div className="fixed flex backdrop-blur top-0 left-0 right-0 z-40 w-full p-4 md:overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full"><ScaleLoader
@@ -261,7 +265,7 @@ const index = ({
             size={100}
             className="m-auto align-middle"
         /></div>}
-        <div className='overflow-hidden font-sans'>
+        <div className='overflow-hidden'>
             <section className="relative">
                 <div className="relative w-full">
                     <div className="">
