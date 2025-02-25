@@ -330,7 +330,7 @@ const index = ({
                                     <h2 className='align-middle text-xl text-[#0E1947]'>The download link for this case study has been sent to the email-id provided.</h2>
                                     <div><a href='#' className='text-blue-500 underline'>Click here</a> to go to Home Page</div>
                                     <div className='absolute bottom-0 right-2 rounded-full w-20 h-20 bg-emerald-600 opacity-70 animate-bounce hover:animate-none duration-300 delay-75'></div>
-                                </div> : <form className="space-y-4 md:space-y-4 px-3 md:px-8 py-4 md:py-7">
+                                </div> : <form className="space-y-4 md:space-y-4 px-3 md:px-4 py-4 md:py-4">
 
                                     <div className="relative">
                                         <input type="text" id="fullName" name="fullName" className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent border border-[#ECECEC] rounded-[5px] appearance-none focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " required value={formValues.fullName} onChange={handleChange} />
@@ -357,7 +357,7 @@ const index = ({
                                             </svg>
                                         </div> */}
                                         <button className='group mainbutn w-full rounded-[5px] flex justify-center items-center gap-3' onClick={handleSubmit}>
-                                            <div className='max-w-fit'>Get Free Audit</div>
+                                            <div className='max-w-fit'>Get Case Study</div>
                                             <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/download_icon_white%201.png' alt='Download casestudy'
                                                 className='block group-hover:hidden' />
                                             <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/download_icon_blue_cs.png' alt='Download casestudy'
