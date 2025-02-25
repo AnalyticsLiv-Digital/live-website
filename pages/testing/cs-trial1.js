@@ -16,34 +16,34 @@ const index = ({
         "id": "134246",
         "slug": "180-percent-increase-in-lead-volume-and-60-percent-reduction-cpl",
         "description": "We Sort It, a New Zealand-based cleaning and lawn care service provider, faced challenges with low lead volume and high costs per lead. Through advanced audience targeting and leveraging Facebook's Advantage Detailed Targeting feature, we achieved a 180% increase in lead volume and a 60% reduction in cost per lead. By aligning campaign strategies with the client’s goals, we ensured improved performance, cost efficiency, and high-quality leads.",
-        "title": "Maximizing Lead Generation: 180% Increase in Lead Volume and 60% Reduction in CPL",
+        "title": "How FlaxitUp cut Stockout Risks by 35% and Transformed Inventory Management with Automation",
         "filename": "https://storage.googleapis.com/website-bucket-uploads/cs/1733729399146434.pdf",
         "publishdate": "9th Dec 2024",
         "coverimage": "https://storage.googleapis.com/website-bucket-uploads/cs/1733729425065265.png",
         "content": [
             {
                 "heading": "About The Business",
-                "description": "We Sort It, a New Zealand-based brand offering professional cleaning and lawn mowing services for both residential and commercial clients. The services include regular cleaning, deep cleaning, garden maintenance, lawn care, and more. With a focus on quality, reliability, and sustainability, they ensure your space remains clean, neat, and well-maintained",
+                "description": "FlaxitUp is a thriving food chain with 10 outlets across Mumbai. Known for high-quality meals and a customer-centric approach, the company faced increasing operational challenges as it expanded. Their website , https://flaxitup.com/ , serves as a central hub for customer interaction and order placement.",
                 "_id": "67569d613effe018dd003dc9"
             },
             {
                 "heading": "The Challenge",
-                "description": "Client struggled to convert ad viewers into car buyers despite running ads. Analysis revealed two key issues:  **Ineffective Creative Sizes: Certain creatives weren't driving conversions despite budget allocation.  **Low-Quality Creatives: Blurry or low-quality visuals in some ads were hindering user experience.",
+                "description": "The client faced several operational bottlenecks:  **Fragmented Data Sources: Manual entries in Google Sheets, form submissions, and third-party platforms (Swiggy, Zomato) led to inefficiencies and data inconsistencies.  **Delayed & Unorganized Forecasting: Manual stock forecasting led to delays, with stockout risks increasing by 35%.  **Lack of Real-Time Alerts: Missed form deadlines and emergency orders often went unnoticed, leading to 20% higher operational inefficiencies.",
                 "_id": "67569d613effe018dd003dca"
             },
             {
                 "heading": "The Approach",
-                "description": "Our data-driven approach leveraged DV360 to optimise ad performance:  **Creative Size Analysis: We identified the most effective ad sizes (e.g., 300x250, 300x600) for the Fuel Your Drive campaign.  **Budget Optimization: Budget was shifted towards well-performing formats, minimizing spending on underperforming ones.  **High-Quality Creatives: We collaborated with the client to replace low-quality visuals with clear, visually appealing elements.",
+                "description": "To streamline operations and enhance data accuracy, we implemented an automated, data-driven system:  **Automated Data Integration: Integrated Petpooja for real-time stock updates, reducing manual intervention. With the help ofApp Script automated data collection, instantly feeding responses into BigQuery  **Advanced Forecasting System: Analyzed consumption trends for 150+ items, using past data to predict stock requirements with 90% accuracy  **Real-Time Alert & Notification System: Alerts 2 hours before form deadlines, reducing missed submissions by 40%.  **Performance Scoring & Incentive Automation: Deductions for missed deadlines, incomplete checklists, stale items, and customer complaints.",
                 "_id": "67569d613effe018dd003dcb"
             },
             {
                 "heading": "The Result",
-                "description": "**Increased Conversions: Effective cost per acquisition (CPA) dropped by 19% compared to the previous month, indicating a significant improvement in conversion rates.  **Enhanced User Experience: High-quality creatives provided a more engaging user experience, leading to better ad reception.",
+                "description": "**Operational Efficiency: Eliminated 90% of manual processes, allowing teams to focus on strategic initiatives.  **Enhanced Accuracy: Addressed stock forecasting errors, reducing discrepancies by 28%.  **Optimized Inventory Management: Improved stock forecasting, cutting wastage and ensuring availability.",
                 "_id": "67569d613effe018dd003dcb"
             },
             {
                 "heading": "The Conclusion",
-                "description": "This approach resulted in a 180% increase in lead volume and a 60% decrease in cost per lead, aligning results with the client’s business objectives.",
+                "description": "FlaxitUp’s automation journey showcases the power of integrating APIs, real-time data processing, and advanced forecasting tools. By tackling complex operational inefficiencies, we delivered a scalable, robust system that streamlined resource management and reinforced FlaxitUp’s commitment to operational excellence and customer satisfaction. This initiative has positioned them for sustained growth in the highly competitive food industry.",
                 "_id": "67569d613effe018dd003dcc"
             }
         ],
@@ -231,7 +231,7 @@ const index = ({
                     const remainingText = match[2].trim();
 
                     return (
-                        <div key={`${index}-${i}`} className='flex items-start space-x-2 mt-2 lg:ml-10'>
+                        <div key={`${index}-${i}`} className='flex items-start w-full space-x-2 mt-2 lg:ml-10'>
                             <div className='w-2 h-2 mt-1.5 2xl:mt-2 bg-[#0E1947] min-w-[8px] rounded-full'></div>
                             <p className='text-sm 2xl:text-base text-black'>
                                 <span className='font-semibold'>{boldText}</span>: {remainingText}
