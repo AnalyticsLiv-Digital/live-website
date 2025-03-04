@@ -42,7 +42,9 @@ module.exports = {
         cardShadow: '-1px 5px 10px -1px #00000040',
         hoverCard: '-1px 0px 5px -1px #00000040, 0px 4px 4px 0px #00000040',
         arrowShadow: '-1px 1px 4px 0px #00000040',
+        csFormShadow: '3px 3px 28px 0px #00000040',
       },
+
       colors: {
         btn: '#4285F4',
         h1: '#6D6D6D',
