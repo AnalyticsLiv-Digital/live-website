@@ -281,7 +281,7 @@ const index = (
         const formTop = form.getBoundingClientRect().top;
         const caseStudyTop = caseStudy.getBoundingClientRect().top;
 
-        if (formTop <= -110 && caseStudyTop > form.offsetHeight) {
+        if (formTop <= -130 && caseStudyTop > form.offsetHeight) {
           form.style.position = "fixed";
           form.style.top = "120px";
           form.style.right = "3%";
@@ -344,14 +344,15 @@ const index = (
                     products.
                   </p>
                   <div className="flex items-center justify-start gap-3 sm:gap-7">
-                    <button
+                    <div
                       // onClick={scrollToDownload}
                       className="bg-white px-2 sm:px-4 w-max py-2 md:px-4 md:py-[6.5px] xl:px-4 xl:py-[8px] 2xl:px-4 2xl:py-[8px] rounded-[5px]
                                 text-[#0E1947] text-[11px] sm:text-sm md:text-base 2xl:text-lg sm:hover:underline md:hover:text-[16.2px] 2xl:hover:text-[18.2px] font-bold"
                     >
                       <img src="/shoebacca.png" className="w-28" />
-                    </button>
-                    <button
+                    </div>
+                    <a href="https://www.youtube.com/watch?v=JFOc7x5ZgaA"
+                      target="_blank"
                       // onClick={scrollToDownload}
                       className="flex items-center justify-center gap-1 sm:gap-3 bg-white px-2 py-3 sm:px-4 w-max sm:py-2 md:px-4 md:py-[5px] xl:px-4 xl:py-[4px] 2xl:px-4 2xl:py-[7px] rounded-[5px]
                                 text-[#0E1947] text-[10px] sm:text-sm md:text-base 2xl:text-lg sm:hover:underline md:hover:text-[16.2px] 2xl:hover:text-[18.2px] font-bold"
@@ -361,7 +362,7 @@ const index = (
                         src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Cassie_img.png"
                         className="w-5 sm:w-8"
                       />
-                    </button>
+                    </a>
                   </div>
                 </div>
 
@@ -397,7 +398,7 @@ const index = (
               <div
                 id="formContainer"
                 ref={formRef}
-                className="absolute top-[370px] right-[3%] lg:w-[330px] xl:w-[400px] z-40 max-lg:hidden 2xl:w-[425px] bg-white shadow-csFormShadow my-3 rounded-[5px]"
+                className="absolute top-[370px] right-[3%] lg:w-[330px] xl:w-[400px] z-40 max-lg:hidden 2xl:w-[425px] bg-white shadow-csFormShadow rounded-[5px]"
               >
                 {formSubmit ? (
                   <div className="relative p-7 space-y-4 h-full">
@@ -418,7 +419,7 @@ const index = (
                   </div>
                 ) : (
                   <form className="space-y-4 md:space-y-4 px-3 md:px-4 py-4 md:py-4">
-                    <div className="text-xl 2xl:text-[23px] font-semibold text-center">
+                    <div className="text-lg leading-[20px] 2xl:text-[20px] text-[#0E1947] font-semibold text-center">
                       Enter your details to download the casestudy.
                     </div>
                     <div className="relative">
@@ -511,7 +512,7 @@ const index = (
               <div className="max-lg:px-[5%] lg:pl-[5%] lg:pr-[40%] xl:pr-[37%] pt-[30px]">
                 <div className="2xl:pt-5 pb-3">
                   <div>
-                    <h3 className="inline font-semibold text-2xl lg:text-3xl xl:text-3xl 2xl:text-[35px] text-[#0E1947]">
+                    <h3 className="inline font-semibold text-2xl lg:text-[25px] 2xl:text-[30px] text-[#0E1947]">
                       Challenge
                     </h3>
                     <div className="mt-[30px]">
@@ -528,8 +529,8 @@ const index = (
                       </div>
                       <div className="flex items-start w-full space-x-2 mt-5 lg:ml-10">
                         <div className="w-2 h-2 mt-1.5 2xl:mt-2 bg-[#0E1947] min-w-[8px] rounded-full"></div>
-                        <p className="text-sm 2xl:text-base text-black">
-                          <span className="font-semibold">
+                        <p className="text-sm 2xl:text-base text-[#5A5A5A]">
+                          <span className="font-medium text-black">
                             Low-Quality Creatives:
                           </span>{" "}
                           Blurry or low-quality visuals in some ads were
@@ -540,18 +541,18 @@ const index = (
                   </div>
 
                   <div className="mt-[30px]">
-                    <h3 className="inline font-semibold text-2xl lg:text-3xl xl:text-3xl 2xl:text-[35px] text-[#0E1947]">
+                    <h3 className="inline font-semibold text-2xl lg:text-[25px] 2xl:text-[30px] text-[#0E1947]">
                       Approach
                     </h3>
                     <div className="mt-[30px]">
-                      <div className="text-black text-sm 2xl:text-base font-normal">
+                      <div className="text-[#5A5A5A] text-sm 2xl:text-base font-normal">
                         Our data-driven approach leveraged DV360 to optimise ad
                         performance:
                       </div>
                       <div className="flex items-start w-full space-x-2 mt-5 lg:ml-10">
                         <div className="w-2 h-2 mt-1.5 2xl:mt-2 bg-[#0E1947] min-w-[8px] rounded-full"></div>
-                        <p className="text-sm 2xl:text-base text-black">
-                          <span className="font-semibold">
+                        <p className="text-sm 2xl:text-base text-[#5A5A5A]">
+                          <span className="font-medium text-black">
                             Creative Size Analysis:
                           </span>{" "}
                           We identified the most effective ad sizes (e.g.,
@@ -560,8 +561,8 @@ const index = (
                       </div>
                       <div className="flex items-start w-full space-x-2 mt-[10px] lg:ml-10">
                         <div className="w-2 h-2 mt-1.5 2xl:mt-2 bg-[#0E1947] min-w-[8px] rounded-full"></div>
-                        <p className="text-sm 2xl:text-base text-black">
-                          <span className="font-semibold">
+                        <p className="text-sm 2xl:text-base text-[#5A5A5A]">
+                          <span className="font-medium text-black">
                             Budget Optimization:
                           </span>{" "}
                           Budget was shifted towards well-performing formats,
@@ -570,8 +571,8 @@ const index = (
                       </div>
                       <div className="flex items-start w-full space-x-2 mt-[10px] lg:ml-10">
                         <div className="w-2 h-2 mt-1.5 2xl:mt-2 bg-[#0E1947] min-w-[8px] rounded-full"></div>
-                        <p className="text-sm 2xl:text-base text-black">
-                          <span className="font-semibold">
+                        <p className="text-sm 2xl:text-base text-[#5A5A5A]">
+                          <span className="font-medium text-black">
                             High-Quality Creatives:
                           </span>{" "}
                           We collaborated with the client to replace low-quality
@@ -582,14 +583,14 @@ const index = (
                   </div>
 
                   <div className="mt-[30px]">
-                    <h3 className="inline font-semibold text-2xl lg:text-3xl xl:text-3xl 2xl:text-[35px] text-[#0E1947]">
+                    <h3 className="inline font-semibold text-2xl lg:text-[25px] 2xl:text-[30px] text-[#0E1947]">
                       Results
                     </h3>
                     <div className="mt-[30px]">
                       <div className="flex items-start w-full space-x-2 mt-5 lg:ml-10">
                         <div className="w-2 h-2 mt-1.5 2xl:mt-2 bg-[#0E1947] min-w-[8px] rounded-full"></div>
-                        <p className="text-sm 2xl:text-base text-black">
-                          <span className="font-semibold">
+                        <p className="text-sm 2xl:text-base text-[#5A5A5A]">
+                          <span className="font-medium text-black">
                             Increased Conversions:
                           </span>{" "}
                           Effective cost per acquisition (CPA) dropped by 19%
@@ -599,8 +600,8 @@ const index = (
                       </div>
                       <div className="flex items-start w-full space-x-2 mt-[10px] lg:ml-10">
                         <div className="w-2 h-2 mt-1.5 2xl:mt-2 bg-[#0E1947] min-w-[8px] rounded-full"></div>
-                        <p className="text-sm 2xl:text-base text-black">
-                          <span className="font-semibold">
+                        <p className="text-sm 2xl:text-base text-[#5A5A5A]">
+                          <span className="font-medium text-black">
                             Enhanced User Experience:
                           </span>{" "}
                           High-quality creatives provided a more engaging user
@@ -617,11 +618,11 @@ const index = (
                   />
 
                   <div className="mt-[30px]">
-                    <h3 className="inline font-semibold text-2xl lg:text-3xl xl:text-3xl 2xl:text-[35px] text-[#0E1947]">
+                    <h3 className="inline font-semibold text-2xl lg:text-[25px] 2xl:text-[30px] text-[#0E1947]">
                       Conclusion
                     </h3>
                     <div id="caseStudySection"></div>
-                    <div className="text-black text-sm 2xl:text-base font-normal mt-[30px]">
+                    <div className="text-[#5A5A5A] text-sm 2xl:text-base font-normal mt-[30px]">
                       This case study demonstrates the power of data-driven
                       creative optimization in DV360. By analysing performance
                       and implementing strategic adjustments, we helped [Client
