@@ -367,7 +367,7 @@ const index = (
                 </div>
 
                 <div className="lg:w-[45%] max-lg:hidden mr-5 2xl:mr-10 flex flex-col items-end relative">
-                  <div className="bg-white flex flex-col justify-center items-start w-[160px] xl:w-[171px] h-[147px] z-20 absolute right-[265px] top-14 p-3">
+                  <div className="bg-white flex flex-col justify-center items-start w-[160px] xl:w-[171px] h-[147px] rounded-[5px] z-20 absolute right-[265px] top-14 p-3">
                     <div className="text-[#131126] text-2xl font-bold text-start">
                       19%
                     </div>
@@ -509,7 +509,7 @@ const index = (
                 )}
               </div>
 
-              <div className="max-lg:px-[5%] lg:pl-[5%] lg:pr-[40%] xl:pr-[37%] pt-[30px]">
+              <div className="max-lg:px-[5%] lg:pl-[5%] lg:pr-[40%] xl:pr-[38.5%] pt-[30px]">
                 <div className="2xl:pt-5 pb-3">
                   <div>
                     <h3 className="inline font-semibold text-2xl lg:text-[25px] 2xl:text-[30px] text-[#0E1947]">
