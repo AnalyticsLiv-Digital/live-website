@@ -281,7 +281,7 @@ const index = (
         const formTop = form.getBoundingClientRect().top;
         const caseStudyTop = caseStudy.getBoundingClientRect().top;
 
-        if (formTop <= 0 && caseStudyTop > form.offsetHeight) {
+        if (formTop <= -110 && caseStudyTop > form.offsetHeight) {
           form.style.position = "fixed";
           form.style.top = "120px";
           form.style.right = "3%";
