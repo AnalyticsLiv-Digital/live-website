@@ -270,7 +270,7 @@ const customPipeline = () => {
 
                 <section className='px-4 lg:px-[5%] md:pt-6 flex max-md:flex-col justify-center items-center gap-8 md:gap-5 lg:gap-24 2xl:gap-10'>
                     <div className='md:w-[50%] flex justify-center'>
-                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Choose_img_pipeline.png' alt='why choose us' className='' />
+                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Choose_img_Left%20(1).png' alt='why choose us' className='' />
                     </div>
                     <div className='md:w-[50%] flex flex-col gap-5'>
                         <h2 className='text-[#0E1947] text-lg xl:text-[27px] 2xl:text-3xl font-bold'>
