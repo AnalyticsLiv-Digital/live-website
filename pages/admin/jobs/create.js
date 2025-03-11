@@ -154,7 +154,7 @@ const index = () => {
     return (
         <div className="p-6 bg-gray-50">
             <div className="max-w-2xl mx-auto p-6 bg-slate-900 text-white rounded-lg shadow-lg">
-                <h2 className="text-2xl font-bold mb-6">Create New Blog</h2>
+                <h2 className="text-2xl font-bold mb-6">Create New Job</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
                         <label className="block text-base font-semibold mb-2 text-gray-200">
