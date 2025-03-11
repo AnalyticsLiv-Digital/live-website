@@ -161,6 +161,10 @@ const index = ({ casestudyDat }) => {
         <Head>
             <title>AnalyticsLiv - Case Sudies</title>
             <link rel="canonical" href={url}></link>
+            <link
+                rel="stylesheet"
+                href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap"
+            />
         </Head>
         <ScrollProgress />
         {showWaiting && <div className="fixed flex backdrop-blur top-0 left-0 right-0 z-40 w-full p-4 md:overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full"><ScaleLoader
@@ -251,11 +255,11 @@ const index = ({ casestudyDat }) => {
                             <div className="absolute bottom-0 right-2 rounded-full w-20 h-20 bg-emerald-600 opacity-70 animate-bounce hover:animate-none duration-300 delay-75"></div>
                         </div>
                     ) : (
-                        <form className="space-y-4 md:space-y-4 px-3 md:px-4 py-4 md:py-4">
+                        <form className="space-y-4 md:space-y-4 px-3 md:px-4 py-4 md:py-4 lg:py-[20px] lg:px-[30px] xl:py-[40px] xl:px-[40px]">
                             <div className="text-lg leading-[20px] 2xl:text-[20px] text-[#0E1947] font-semibold text-center">
                                 Enter your details to download the casestudy.
                             </div>
-                            <div className="relative">
+                            <div className="relative mx-auto">
                                 <input
                                     type="text"
                                     id="fullName"
@@ -277,7 +281,7 @@ const index = ({ casestudyDat }) => {
                                 </p>
                             </div>
 
-                            <div className="relative">
+                            <div className="relative mx-auto">
                                 <input
                                     type="email"
                                     id="email"
@@ -298,7 +302,7 @@ const index = ({ casestudyDat }) => {
                                 <p className="text-red-600 text-sm">{formErrors.email}</p>
                             </div>
 
-                            <div className="relative">
+                            <div className="relative mx-auto">
                                 <input
                                     type="text"
                                     id="company"
@@ -320,7 +324,7 @@ const index = ({ casestudyDat }) => {
                                 </p>
                             </div>
 
-                            <div className="text-center">
+                            <div className="text-center mx-auto">
                                 <button
                                     className="group mainbutn w-full rounded-[5px] flex justify-center items-center gap-3"
                                     onClick={handleSubmit}
