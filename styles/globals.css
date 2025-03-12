@@ -769,6 +769,16 @@ input[type=number] {
   box-shadow: none !important;
 }
 
+.custom-phone-input {
+  @apply h-[42px] 2xl:h-[51px];
+}
+
+.react-tel-input .selected-flag .flag {
+  position: absolute !important;
+  top: 55% !important;
+  margin-top: -12px !important;
+}
+
 /* Homepage btn-css */
 .butn {
   @apply relative overflow-hidden z-10 bg-homepagebtn text-[#fff] border border-homepagebtn cursor-pointer text-[15px] font-medium not-italic inline rounded-[14px] py-[15px] px-[40px] mb-3 transition-all duration-300 ease-linear hover:text-homepagebtn shadow-foter

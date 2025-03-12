@@ -43,6 +43,8 @@ module.exports = {
         hoverCard: '-1px 0px 5px -1px #00000040, 0px 4px 4px 0px #00000040',
         arrowShadow: '-1px 1px 4px 0px #00000040',
         csFormShadow: '3px 3px 28px 0px #00000040',
+        contactShadow: '6.02px 22.69px 117.29px 0px rgba(0, 0, 0, 0.25)',
+        mediaIcons: '3px 3px 7px 0px #00000040',
       },
 
       colors: {
