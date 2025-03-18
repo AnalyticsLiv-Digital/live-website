@@ -131,11 +131,13 @@ const contact = () => {
                         <div className='flex max-md:flex-col md:justify-between gap-10'>
                             <div className='md:w-[50%] flex flex-col justify-between'>
                                 <div className='text-xl 2xl:text-[26px] font-semibold text-center pt-2'>Trusted by clients, proven by top reviews</div>
-                                <div className='grid grid-cols-2 place-content-center max-md:place-content-between max-md:justify-items-start md:mx-auto'>
-                                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/clutch_review_4.9.svg' alt='clutch_review' className='pt-10 sm:pt-10 lg:pt-14 max-md:w-[100px] w-[125px] lg:w-[180px]' />
-                                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Trustpilot_mobile.svg' alt='Trustpilot review' className='pt-10 sm:pt-10 lg:pt-14 max-md:w-[100px] lg:w-[200px]' />
-                                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Google_Review.svg' alt='Google_Review' className='pt-10 lg:pt-14 max-md:w-[100px] max-lg:w-[125px]' />
-                                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Ambitiuon_Box_Review.svg' alt='Ambitiuon_Box_Review' className='pt-[48px] lg:pt-14 max-md:w-[200px] max-lg::w-[125px]' />
+                                <div className='grid grid-cols-2 place-content-center max-md:place-content-between max-md:justify-items-start md:mx-auto 2xl:gap-5'>
+                                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/clutch_review_4.9.svg' alt='clutch_review' className='pt-7 sm:pt-10 lg:pt-10 max-md:w-[100px] w-[125px] lg:w-[120px] 2xl:w-[160px]' />
+                                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Trustpilot_mobile.svg' alt='Trustpilot review' className='pt-7 sm:pt-10 lg:pt-9 max-md:w-[100px] lg:w-[140px] 2xl:w-[180px]' />
+                                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Google_Review.svg' alt='Google_Review' className='pt-7 lg:pt-10 max-md:w-[100px] max-lg:w-[125px] lg:w-[120px] 2xl:w-[145px]' />
+                                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Ambitiuon_Box_Review%20(1).svg' alt='Ambitiuon_Box_Review' className='pt-[30px] lg:pt-11 max-md:w-[200px] max-lg::w-[125px] lg:w-[180px] 2xl:w-[205px]' />
+                                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Sortlist_Box_Review.svg' alt='Sortlist Review' className='pt-[30px] lg:pt-10 max-md:w-[110px] max-lg:w-[125px] lg:w-[130px] 2xl:w-[155px]' />
+                                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/GoodFirms_Box_Review_new.svg' alt='GoodFirms Review' className='pt-[31px] lg:pt-10 max-md:w-[200px] max-lg::w-[125px] lg:w-[170px] 2xl:w-[195px]' />
                                 </div>
                                 <div className='w-full md:pt-10 lg:pt-16'>
                                     <div className='text-left'>
@@ -189,7 +191,7 @@ const contact = () => {
                                             </div>
                                         </div>
 
-                                        <div className='max-md:hidden flex items-center md:pt-10 justify-center'>
+                                        <div className='max-md:hidden flex items-center md:pt-6 justify-center'>
                                             <div className='w-full flex items-center justify-evenly max-sm:justify-evenly'>
                                                 <a title='Facebook' href="https://m.facebook.com/100070503960704/">
                                                     <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/facebook.svg' className='w-[47px] hover:shadow-mediaIcons rounded-full transition-all duration-100' alt='facebook' />
