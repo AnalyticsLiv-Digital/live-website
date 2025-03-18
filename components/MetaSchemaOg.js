@@ -9,6 +9,7 @@ const MetaSchemaOg = ({
     twitterTitle,
     twitterDescription,
     twitterImage,
+    extraHead,
 }) => {
     return (
         <Head>
@@ -30,15 +31,17 @@ const MetaSchemaOg = ({
             <meta name="twitter:description" content={twitterDescription || description}></meta>
             <meta name="twitter:image" content={twitterImage || image}></meta>
 
+            {extraHead != null && extraHead}
+
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
                     __html: JSON.stringify({
                         "@context": "https://schema.org",
                         "@type": "Organization",
-                        "name": {title},
-                        "alternateName": {title},
-                        "url": {url},
+                        "name": title,
+                        "alternateName": title,
+                        "url": url,
                         "logo": "https://storage.googleapis.com/website-bucket-uploads/static/logo.png",
                         "contactPoint": {
                             "@type": "ContactPoint",
