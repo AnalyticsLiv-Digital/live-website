@@ -1,30 +1,21 @@
 import React from 'react'
-import ScrollProgress from '../components/ScrollProgress'
-import Image from 'next/image';
-import Head from 'next/head'
+import ScrollProgress from '../components/ScrollProgress';
 import { useState, useEffect } from 'react'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import ReactFlagsSelect from "react-flags-select";
-import { ScaleLoader } from 'react-spinners'
-import Link from 'next/link';
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/bootstrap.css";
-import { FaLocationDot } from "react-icons/fa6";
-import { BsTwitterX } from "react-icons/bs";
 import MetaSchemaOg from '../components/MetaSchemaOg';
-
 
 const contact = () => {
     useEffect(() => {
         AOS.init();
     }, []);
-    const initialValues = { firstName: '', lastName: '', email: '', contactno: '', company: '', role: '', purpose: '', requirements: '' };
+    const initialValues = { firstName: '', lastName: '', email: '', contactno: '', company: '', purpose: '', requirements: '' };
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
     const [showWaiting, setShowWaiting] = useState(false);
-    const [selected, setSelected] = useState("");
     const [formSubmit, setFormSubmit] = useState(false);
 
     const handleChange = (e) => {
@@ -42,20 +33,17 @@ const contact = () => {
         e.preventDefault();
         setFormErrors(validate(formValues));
         setIsSubmit(true);
-
     };
 
     useEffect(() => {
-        // console.log(formErrors);
         if (Object.keys(formErrors).length === 0 && isSubmit) {
-            //console.log(formValues);
             setShowWaiting(true);
             dataLayer.push({
                 event: 'contact_submission'
             });
             localStorage.setItem('contactFormSubmitted', 'true');
             fetch('/api/contact', {
-                method: 'POST', // or 'PUT'
+                method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'mode': 'no-cors'
@@ -65,22 +53,20 @@ const contact = () => {
                     "lastName": formValues.lastName,
                     "email": formValues.email,
                     "contact": formValues.contactno,
-                    "role": formValues.role,
+                    "company": formValues.company,
                     "purpose": formValues.purpose,
                     "requirments": formValues.requirements,
-                    "company": formValues.company
                 }),
             })
                 .then((response) => response.json())
                 .then((data) => {
-                    // console.log('Success:', data);
                     setFormSubmit(true);
                     setShowWaiting(false);
                 })
                 .catch((error) => {
                     console.error('Error:', error);
+                    setShowWaiting(false);
                 });
-
         }
     }, [formErrors]);
 
@@ -89,36 +75,16 @@ const contact = () => {
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
         const mobile = /^(?=.*\d).{8,}$/i;
         if (!values.firstName) {
-            errors.firstName = "Firstname is required!";
-        }
-
-        if (!values.lastName) {
-            errors.lastName = "Lastname is required!";
-        }
-
-        if (!values.company) {
-            errors.company = "Company is required!";
-        }
-
-        /* if (!values.role) {
-             errors.role = "Role is required!";
-         }
-         */
-
-        if (!values.purpose) {
-            errors.purpose = "Lastname is required!";
+            errors.firstName = "Name is required!";
         }
 
         if (!values.requirements) {
             errors.requirements = "Requirement is required!";
         }
 
-
-
         if (!values.purpose) {
             errors.purpose = "Contact For is required!";
         }
-
 
         if (!values.email) {
             errors.email = "Email is required!";
@@ -126,15 +92,8 @@ const contact = () => {
             errors.email = "This is not a valid email format!";
         }
 
-        /*   if (!values.contactno) {
-               errors.contactno = "Contact is required!";
-           } else if (!mobile.test(values.contactno)) {
-               errors.contactno = "This is not a valid phone number!";
-           }
-       */
         return errors;
     };
-
 
     return (
         <>
@@ -144,202 +103,272 @@ const contact = () => {
                 description="Google Marketing Platform Partner - Contact for Support"
                 twitterTitle="AnalyticsLiv - Contact us"
                 twitterDescription="Google Marketing Platform Partner - Contact for Support"
+                extraHead={
+                    <link
+                        rel="stylesheet"
+                        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap"
+                    />
+                }
             />
             <ScrollProgress />
-            {showWaiting && <div className="fixed flex backdrop-blur top-0 left-0 right-0 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full"><ScaleLoader
-                color="#271d90"
-                loading
-                size={100}
-                className="m-auto align-middle"
-            /></div>}
-            <section className="relative pt-12 pb-12 bg-slate-900">
 
-                <div data-aos="zoom-in" data-aos-once="true" className=" absolute blur-sm lg:w-80 w-40 lg:h-80 h-40 rounded-full bg-gradient-to-b from-violet-500 via-slate-900 to-transparent top-10 lg:left-96 lg:ml-28 left-1/2 -ml-20"></div>
+            <section className="">
+                <div className="relative h-[370px] sm:h-[420px] lg:h-[460px] 2xl:h-[540px] bg-header-linear sm:px-[10%] 2xl:px-[5%] pt-[90px] sm:pt-24">
+                    <div className="absolute top-0 left-0 sm:px-[5%] lg:px-[10%] 2xl:px-[5%] w-full h-[350px] md:h-[400px]">
+                        <img
+                            src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Contact_Team_Image.svg"
+                            alt="AnalyticsLiv Contact"
+                            className="mx-auto mt-14 object-top max-sm:hidden"
+                        />
+                        <img
+                            src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Contact_Team_Mobile.svg"
+                            alt="AnalyticsLiv Contact"
+                            className="mx-auto w-full px-3 mt-10 object-top sm:hidden"
+                        />
+                    </div>
+                    <div className="relative z-10 flex flex-col items-center sm:pt-12">
+                        <h1 className="text-lg sm:text-[35px] 2xl:text-[40px] font-bold text-white">Contact our Support Team</h1>
+                        <p className="text-[8px] sm:text-sm 2xl:text-base font-normal text-white pt-2 sm:pt-4 md:pt-8">Questions, bug reports, feedback — we’re here for it all.</p>
+                    </div>
+                </div>
 
+                <div className='relative -mt-[160px]'>
+                    <div className="relative z-30 mx-auto w-[95%] lg:w-[1000px] 2xl:w-[1240px] bg-white rounded-[18px] md:rounded-[37px] shadow-contactShadow max-md:px-6 max-md:py-6 md:p-10 2xl:p-14">
+                        <div className='flex max-md:flex-col md:justify-between gap-10'>
+                            <div className='md:w-[50%] flex flex-col justify-between'>
+                                <div className='text-xl 2xl:text-[26px] font-semibold text-center pt-2'>Trusted by clients, proven by top reviews</div>
+                                <div className='grid grid-cols-2 place-content-center max-md:place-content-between max-md:justify-items-start md:mx-auto 2xl:gap-5'>
+                                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/clutch_review_4.9.svg' alt='clutch_review' className='pt-7 sm:pt-10 lg:pt-10 max-md:w-[100px] w-[125px] lg:w-[120px] 2xl:w-[160px]' />
+                                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Trustpilot_mobile.svg' alt='Trustpilot review' className='pt-7 sm:pt-10 lg:pt-9 max-md:w-[100px] lg:w-[140px] 2xl:w-[180px]' />
+                                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Google_Review.svg' alt='Google_Review' className='pt-7 lg:pt-10 max-md:w-[100px] max-lg:w-[125px] lg:w-[120px] 2xl:w-[145px]' />
+                                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Ambitiuon_Box_Review%20(1).svg' alt='Ambitiuon_Box_Review' className='pt-[30px] lg:pt-11 max-md:w-[200px] max-lg::w-[125px] lg:w-[180px] 2xl:w-[205px]' />
+                                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Sortlist_Box_Review.svg' alt='Sortlist Review' className='pt-[30px] lg:pt-10 max-md:w-[110px] max-lg:w-[125px] lg:w-[130px] 2xl:w-[155px]' />
+                                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/GoodFirms_Box_Review_new.svg' alt='GoodFirms Review' className='pt-[31px] lg:pt-10 max-md:w-[200px] max-lg::w-[125px] lg:w-[170px] 2xl:w-[195px]' />
+                                </div>
+                                <div className='w-full md:pt-10 lg:pt-16'>
+                                    <div className='text-left'>
+                                        <div className='relative max-md:hidden flex max-lg:flex-wrap max-lg:justify-around justify-between max-sm:flex-col text-black'>
+                                            <div className='mb-4'>
+                                                <div className='text-[10px] 2xl:text-xs 2xl:text-[14px] font-semibold leading-5 text-black'>For Business Enquiries</div>
+                                                <div className='max-[381px]:flex-wrap max-sm:flex max-[381px]:gap-2 max-[400px]:gap-5 max-sm:gap-12 max-sm:w-[90dvw] py-4 2xl:py-5'>
+                                                    <div className='ml-0 flex items-start [381px]:mb-[3px] max-[381px]:gap-2'>
+                                                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Vector%20(3).svg' className='w-[17px] 2xl:w-[21px] h-[18px] 2xl:h-[22px] sm:mr-[7px]' />
+                                                        <div className='text-[10px] 2xl:text-xs font-normal leading-5'>
+                                                            <a href="mailto:sales@analyticsliv.com" className='text-black text-[10px] 2xl:text-xs'>sales@analyticsliv.com</a>
+                                                        </div>
+                                                    </div>
+                                                    <div className='ml-0 msm:pt-2 flex items-center md:pt-1'>
+                                                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Viber.svg' className='w-[14px] 2xl:w-[18px] h-[14px] 2xl:h-[18px] mr-[7px] max-[374px]:ml-1' />
+                                                        <span className='text-[10px] 2xl:text-xs font-normal leading-5 text-black'><a href="tel:+918320576622">+91 83205 76622</a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
 
-                <div className="relative pt-12 ">
-                    <h1 className=" text-center tracking-wide text-white uppercase text-2xl mb-8">Contact Us</h1>
-                    <div className="relative overflow-hidden lg:w-4/5 lg:p-8 p-2 pt-2 rounded-lg mx-2 lg:mx-auto bg-white">
-                        <div className="absolute rounded-full w-40 h-40 bg-gradient-to-b from-rose-500 to-transparent blur -right-10 top-0"></div>
-                        <div className="hidden absolute rounded-full w-40 h-40 bg-gradient-to-r from-cyan-500 to-transparent blur left-1/2 -bottom-10"></div>
-                        <div className="relative mx-2 lg:flex">
-                            <div data-aos="fade-up" data-aos-once="true" className="relative overflow-hidden min-[1100px]:w-1/3 lg:w-[38%] rounded-lg bg-slate-900 space-y-9 px-4 pt-16 pb-16 align-middle text-white">
-                                <h2 className="font-semibold uppercase tracking-wider">Contact Information</h2>
-                                <h2 className="uppercase">Make an appointment for first consultation.</h2>
-                                <div>
-                                    <p>For Business Enquiries</p>
-                                    <div className='flex items-center'>
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="inline w-6 mr-[7px]" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                                            <path fill="currentColor" d="M4 20q-.825 0-1.412-.587Q2 18.825 2 18V6q0-.825.588-1.412Q3.175 4 4 4h16q.825 0 1.413.588Q22 5.175 22 6v12q0 .825-.587 1.413Q20.825 20 20 20Zm8-7L4 8v10h16V8Zm0-2l8-5H4ZM4 8V6v12Z"></path>
-                                        </svg>
-                                        <a href="mailto:sales@analyticsliv.com">sales@analyticsliv.com</a>
+                                            <div className='mb-4'>
+                                                <div className='text-[10px] 2xl:text-xs 2xl:text-[14px] font-semibold leading-5 text-black'>For Job Enquiries</div>
+                                                <div className='max-[381px]:flex-wrap max-sm:flex max-[381px]:gap-2 max-[400px]:gap-5 max-sm:gap-12 max-sm:w-[90dvw] py-4 2xl:py-5'>
+                                                    <div className='ml-0 flex items-start [381px]:mb-[3px] max-[381px]:gap-2'>
+                                                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Vector%20(3).svg' className='w-[17px] 2xl:w-[21px] h-[18px] 2xl:h-[22px] sm:mr-[7px]' />
+                                                        <div className='text-[10px] 2xl:text-xs font-normal leading-5'>
+                                                            <a href="mailto:hr@analyticsliv.com" className='text-black text-[10px] 2xl:text-xs'>hr@analyticsliv.com</a>
+                                                        </div>
+                                                    </div>
+                                                    <div className='ml-0 msm:pt-2 flex items-center md:pt-1'>
+                                                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Viber.svg' className='w-[14px] 2xl:w-[18px] h-[14px] 2xl:h-[18px] mr-[7px] max-[374px]:ml-1' />
+                                                        <span className='text-[10px] 2xl:text-xs font-normal leading-5 text-black'><a href="tel:+918320576622">+91 83205 76622</a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div className='mb-4'>
+                                                <div className='text-[10px] 2xl:text-xs 2xl:text-[14px] font-semibold leading-5 text-black'>For Other Support</div>
+                                                <div className='max-[381px]:flex-wrap max-sm:flex max-[381px]:gap-2 max-[400px]:gap-5 max-sm:gap-12 max-sm:w-[90dvw] py-4 2xl:py-5'>
+                                                    <div className='ml-0 flex items-start [381px]:mb-[3px] max-[381px]:gap-2'>
+                                                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Vector%20(3).svg' className='w-[17px] 2xl:w-[21px] h-[18px] 2xl:h-[22px] sm:mr-[7px]' />
+                                                        <div className='text-[10px] 2xl:text-xs font-normal leading-5'>
+                                                            <a href="mailto:support@analyticsliv.com" className='text-black text-[10px] 2xl:text-xs'>support@analyticsliv.com</a>
+                                                        </div>
+                                                    </div>
+                                                    <div className='ml-0 msm:pt-2 flex items-center md:pt-1'>
+                                                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Viber.svg' className='w-[14px] 2xl:w-[18px] h-[14px] 2xl:h-[18px] mr-[7px] max-[374px]:ml-1' />
+                                                        <span className='text-[10px] 2xl:text-xs font-normal leading-5 text-black'><a href="tel:+918320576622">+91 83205 76622</a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className='max-md:hidden flex items-center md:pt-6 justify-center'>
+                                            <div className='w-full flex items-center justify-evenly max-sm:justify-evenly'>
+                                                <a title='Facebook' href="https://m.facebook.com/100070503960704/">
+                                                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/facebook.svg' className='w-[47px] hover:shadow-mediaIcons rounded-full transition-all duration-100' alt='facebook' />
+                                                </a>
+                                                <a title='Twitter' href="https://twitter.com/AnalyticsLiv">
+                                                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/twitter.svg' className='w-[47px] hover:shadow-mediaIcons rounded-full transition-all duration-100' alt='twitter' />
+                                                </a>
+                                                <a title='Instagram' href="https://www.instagram.com/analyticsliv_digital/">
+                                                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/instagram.svg' className='w-[47px] hover:shadow-mediaIcons rounded-full transition-all duration-100' alt='instagram' />
+                                                </a>
+                                                <a title='Linkedin' href="https://in.linkedin.com/company/analytics-liv-digital/">
+                                                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/linkedin.svg' className='w-[47px] hover:shadow-mediaIcons rounded-full transition-all duration-100' alt='linkedin' />
+                                                </a>
+                                                <a title='Youtube' href="https://www.youtube.com/channel/UCSU9utLB2PDe4VcXiI5kMFw">
+                                                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/youtube.svg' className='w-[47px] hover:shadow-mediaIcons rounded-full transition-all duration-100' alt='youtube' />
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <div>
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="inline w-6 mr-[7px]" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                                                <path fill="currentColor" d="M19.95 21q-3.225 0-6.287-1.425q-3.063-1.425-5.425-3.8q-2.363-2.375-3.8-5.438Q3 7.275 3 4.05v-.525Q3 3.25 3.05 3H8.9l.925 5.025l-2.85 2.875q1.05 1.8 2.638 3.375Q11.2 15.85 13.1 17l2.9-2.9l5 1v5.85q-.25.025-.525.038Q20.2 21 19.95 21Z"></path>
-                                            </svg>
-                                            <a href="tel:+918320576622">+91 83205 76622</a></div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <p>For Job Enquiries</p>
-                                    <div className='flex items-center'>
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="inline w-6 mr-[7px]" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                                            <path fill="currentColor" d="M4 20q-.825 0-1.412-.587Q2 18.825 2 18V6q0-.825.588-1.412Q3.175 4 4 4h16q.825 0 1.413.588Q22 5.175 22 6v12q0 .825-.587 1.413Q20.825 20 20 20Zm8-7L4 8v10h16V8Zm0-2l8-5H4ZM4 8V6v12Z"></path>
-                                        </svg>
-                                        <a href="mailto:hr@analyticsliv.com">hr@analyticsliv.com</a>
-                                    </div>
-                                </div>
-                                <div>
-                                    <p>For Other Support</p>
-                                    <div className='flex items-center'>
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="inline w-6 mr-[7px]" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                                            <path fill="currentColor" d="M4 20q-.825 0-1.412-.587Q2 18.825 2 18V6q0-.825.588-1.412Q3.175 4 4 4h16q.825 0 1.413.588Q22 5.175 22 6v12q0 .825-.587 1.413Q20.825 20 20 20Zm8-7L4 8v10h16V8Zm0-2l8-5H4ZM4 8V6v12Z"></path>
-                                        </svg>
-                                        <a href="mailto:support@analyticsliv.com">support@analyticsliv.com</a>
-                                    </div>
-                                </div>
-                                <div className="social-contact space-x-2 pl-4 flex items-center">
-                                    <Link site="facebook" href="https://m.facebook.com/100070503960704/"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" className="w-8 inline mx-1 fill-current hover:fill-[#1877f2]">
-                                        <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z" />
-                                    </svg>
-                                    </Link>
-                                    <Link site="linkedin" href="https://in.linkedin.com/company/analytics-liv-digital"><svg xmlns="http://www.w3.org/2000/svg" className="w-8 inline fill-current hover:fill-[#0077b5]" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                                        <path d="M5 3c0 1.062-.71 1.976-2.001 1.976C1.784 4.976 1 4.114 1 3.052C1 1.962 1.76 1 3 1s1.976.91 2 2zM1 19V6h4v13H1zm6-8.556c0-1.545-.051-2.836-.102-3.951h3.594l.178 1.723h.076c.506-.811 1.746-2 3.822-2C17.1 6.216 19 7.911 19 11.558V19h-4v-6.861c0-1.594-.607-2.81-2-2.81c-1.062 0-1.594.86-1.873 1.569c-.102.254-.127.608-.127.963V19H7v-8.556z" />
-                                    </svg></Link>
-                                    <Link site="instagram" href="https://twitter.com/AnalyticsLiv" className='inline-flex'>
-                                        <span className='w-[26px] inline-block fill-current hover:text-[#000]'><BsTwitterX className='h-[23px] w-[23px]' /></span>
-                                    </Link>
-                                    <Link site="youtube" href="https://www.youtube.com/channel/UCSU9utLB2PDe4VcXiI5kMFw"><svg xmlns="http://www.w3.org/2000/svg" className="w-8 inline fill-current hover:fill-[#ff0000]" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                                        <path d="m10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9c.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83c-.25.9-.83 1.48-1.73 1.73c-.47.13-1.33.22-2.65.28c-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44c-.9-.25-1.48-.83-1.73-1.73c-.13-.47-.22-1.1-.28-1.9c-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83c.25-.9.83-1.48 1.73-1.73c.47-.13 1.33-.22 2.65-.28c1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44c.9.25 1.48.83 1.73 1.73Z" />
-                                    </svg></Link>
-                                    <Link site="instagram" href="https://www.instagram.com/analyticsliv_digital">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="w-8 inline fill-current hover:fill-[#c13584]" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                                            <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3Z" />
-                                        </svg>
-                                    </Link>
                                 </div>
                             </div>
-                            <div data-aos="fade-down" data-aos-once="true" className="relative min-[1100px]:w-2/3 lg:w-[62%] rounded-lg p-4 bg-white font-regular">
-                                {formSubmit && <div className='relative text-slate-700 p-4 space-y-4 h-full'>
-                                    <h1 className='align-middle font-medium text-4xl'>Thank You for your interest.</h1>
-                                    <h2 className='align-middle text-xl'>We will get back to you soon.</h2>
-                                    <div><a href='/' className='text-blue-500 underline'>Click here</a> to go to Home Page</div>
-                                    <div className='absolute bottom-0 right-2 rounded-full w-20 h-20 bg-emerald-600 opacity-70 animate-bounce hover:animate-none duration-300 delay-75'></div>
-                                </div>}
 
-                                {!formSubmit && <form className="space-y-2 md:space-y-6  md:w-4/5 mx-auto lg:my-12" onSubmit={handleSubmit}>
-                                    <div className="relative w-full md:flex justify-between md:space-x-8">
-                                        <div className="relative md:w-1/2">
-                                            <input type="text" id="firstname" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent  border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " name="firstName" value={formValues.firstName} onChange={handleChange} />
-                                            <label htmlFor="firstname" className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-4 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">First Name</label>
-                                            <p className="text-red-600 text-sm">{formErrors.firstName}</p>
-                                        </div>
-                                        <div className="relative md:w-1/2">
-                                            <input type="text" id="lastname" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent  border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " name="lastName" value={formValues.lastName} onChange={handleChange} />
-                                            <label htmlFor="lastname" className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-4 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Last Name</label>
-                                            <p className="text-red-600 text-sm">{formErrors.lastName}</p>
-                                        </div>
-                                    </div>
+                            {formSubmit && <div className='md:w-[45%] flex flex-col justify-between items-center gap-4 relative text-slate-700 p-4 space-y-4 h-full'>
+                                <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Thank_You_img.png' alt='analyticsLiv' />
+                                <h2 className='align-middle text-xl'>We will get back to you soon.</h2>
+                                <div><a href='/' className='text-blue-500 underline'>Click here</a> to go to Home Page</div>
+                            </div>}
 
-                                    <div className="relative w-full md:flex justify-between md:space-x-8">
-                                        <div className="relative md:w-1/2">
-                                            <input type="emaild" id="email" className="px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent  border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " name="email" value={formValues.email} onChange={handleChange} />
-                                            <label htmlFor="emaild" className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-4 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">E-mail</label>
-                                            <p className="text-red-600 text-sm">{formErrors.email}</p>
-                                        </div>
-                                        <div className="relative md:w-1/2">
-                                            <PhoneInput className="w-0 mt-4 md:mt-0 text-sm"
-                                                name="contactno" id="contactno" value={formValues.contactno} onChange={handleContactChange}
-                                                country={"in"}
-                                                preferredCountries={['in', 'us', 'au']}
-                                                enableSearch={true}
+                            {!formSubmit && <form className="md:w-[45%] flex flex-col justify-between gap-4" onSubmit={handleSubmit}>
+                                <div className='w-full'>
+                                    <div className='text-sm 2xl:text-lg font-semibold text-[#14183E] pb-1 2xl:pb-1.5'>Full Name*</div>
+                                    <input type="text" placeholder="Enter Your Full Name" className="text-sm 2xl:text-base px-5 py-2 2xl:py-3 border-[0.5px] border-[#08A4F7] rounded-md w-full focus:outline-none placeholder-[#747582] placeholder-opacity-75"
+                                        id="firstname" name="firstName" value={formValues?.firstName} onChange={handleChange} />
+                                    <p className="text-red-600 text-sm">{formErrors?.firstName}</p>
+                                </div>
 
-                                            />
-                                            <label htmlFor="tel" className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-4 origin-[0] left-2.5 peer-focus:text-blue-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Contact No</label>
+                                <div className='grid grid-cols-1 lg:grid-cols-2 gap-5'>
+                                    <div className='w-full'>
+                                        <div className='text-sm 2xl:text-lg font-semibold text-[#14183E] pb-1 lg:pb-[5px] lg:pt-1 2xl:pt-0 2xl:pb-1.5'>Email*</div>
+                                        <input type="email" placeholder="Enter Your Email" className="text-sm 2xl:text-base px-5 py-2 2xl:py-3 border-[0.5px] border-[#08A4F7] rounded-md w-full focus:outline-none placeholder-[#747582] placeholder-opacity-75"
+                                            name="email" value={formValues?.email} onChange={handleChange} />
+                                        <p className="text-red-600 text-sm">{formErrors?.email}</p>
 
-                                        </div>
-                                    </div>
-
-                                    <div className="w-full md:flex space-y-4 justify-around md:space-x-8">
-                                        <div className="relative md:w-1/2 ">
-                                            <input type="Cname" id="company" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent  border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " name="company" value={formValues.company} onChange={handleChange} />
-                                            <label htmlFor="Cname" className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-4 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Company Name</label>
-                                            <p className="text-red-600 text-sm">{formErrors.company}</p>
-                                        </div>
-                                        <div className='relative w-full md:w-1/2'>
-                                            <select className="pb-2.5 pl-2 min-w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-slate-500  focus:outline-none focus:ring-0 focus:border-cyan-500 outline-none" placeholder="Role in Comapany" id="role" name="role" value={formValues.role} onChange={handleChange}>
-                                                <option>Role in Company</option>
-                                                <option>Data Analyst</option>
-                                                <option>Management/Executive</option>
-                                                <option>Sales</option>
-                                                <option>Marketing</option>
-                                                <option>Ecommerce Manager</option>
-                                                <option>Other</option>
-                                            </select>
-                                            <p className="block text-red-600 text-sm">{formErrors.role}</p>
-                                        </div>
-
-
-                                    </div>
-                                    <div className="relative w-full ">
-                                        <select className="pb-4 pl-2 w-full  mt-4 text-sm text-gray-500 bg-transparent border-0 border-b-2 border-slate-500  focus:outline-none focus:ring-0 focus:border-cyan-500 outline-none" placeholder="Contact for" id="purpose" name="purpose" value={formValues.purpose} onChange={handleChange}>
-                                            <option>Contact For</option>
-                                            <option>Web Analytics Service</option>
-                                            <option>Display &amp; Video 360 Self Serve</option>
-                                            <option>Google Cloud Platform</option>
-                                            <option>Mobile App Analytics Service</option>
-                                            <option>Advanced Funnel Optimization</option>
-                                            <option>Training</option>
-                                            <option>Others</option>
-                                        </select>
-                                        <p className="text-red-600 text-sm">{formErrors.purpose}</p>
                                     </div>
                                     <div className="w-full">
-                                        <textarea className="pl-2 mt-4 mx-auto resize-y text-sm w-full  text-gray-700 bg-transparent border-0 border-b-2 border-slate-500  focus:outline-none focus:ring-0 focus:border-cyan-500 outline-none" id="requirements" name="requirements" placeholder="Requirements" value={formValues.requirements} onChange={handleChange}></textarea>
-                                        <p className="text-red-600 text-sm">{formErrors.requirements}</p>
-
+                                        <label className="text-sm 2xl:text-lg font-semibold text-[#14183E]">Contact No</label>
+                                        <PhoneInput
+                                            containerClass="custom-phone-input-container"
+                                            inputClass="custom-phone-input"
+                                            required
+                                            containerStyle={{
+                                                width: '100%',
+                                            }}
+                                            inputStyle={{
+                                                width: '100%',
+                                                marginTop: '5px',
+                                                border: '0.5px solid #08A4F7',
+                                                borderRadius: '5px',
+                                                fontSize: '14px',
+                                                paddingLeft: '60px',
+                                            }}
+                                            buttonStyle={{
+                                                border: 'none',
+                                                borderRadius: '8px 0 0 8px',
+                                            }}
+                                            name="contactno"
+                                            id="contactno"
+                                            value={formValues?.contactno}
+                                            onChange={handleContactChange}
+                                            country={"in"}
+                                            preferredCountries={['in', 'us', 'au']}
+                                            enableSearch={true}
+                                        />
                                     </div>
-                                    <div className="text-center">
-                                        <button className="tracking-wider my-4 px-8 py-2 m-auto bg-[#0f172a] text-white rounded-lg 
-                                        hover:border hover:border-[#0f172a] hover:bg-white hover:text-[#0f172a] hover:shadow-md duration-300">Submit</button>
-                                    </div>
-                                </form>}
+                                </div>
 
+                                <div>
+                                    <div className='text-sm 2xl:text-lg font-semibold text-[#14183E] pb-1 2xl:pb-1.5'>Company Name or Website</div>
+                                    <input type="text" placeholder="Enter Company Name or Website" className="text-sm 2xl:text-base px-5 py-2 2xl:py-3 border-[0.5px] border-[#08A4F7] rounded-md w-full focus:outline-none placeholder-[#747582] placeholder-opacity-75"
+                                        name="company" value={formValues?.company} onChange={handleChange} />
+                                    <p className="text-red-600 text-sm">{formErrors?.company}</p>
 
+                                </div>
 
+                                <div>
+                                    <div className='text-sm 2xl:text-lg font-semibold text-[#14183E] pb-1 2xl:pb-1.5'>Contact For*</div>
+                                    <select className="text-sm 2xl:text-base px-5 py-2 2xl:py-3 border-[0.5px] border-[#08A4F7] rounded-md w-full focus:outline-none placeholder-[#747582] placeholder-opacity-75"
+                                        id="purpose" name="purpose" value={formValues?.purpose} onChange={handleChange}>
+                                        <option>Contact For</option>
+                                        <option>Web Analytics Service</option>
+                                        <option>Display &amp; Video 360 Self Serve</option>
+                                        <option>Google Cloud Platform</option>
+                                        <option>Mobile App Analytics Service</option>
+                                        <option>Advanced Funnel Optimization</option>
+                                        <option>Training</option>
+                                        <option>Others</option>
+                                    </select>
+                                    <p className="text-red-600 text-sm">{formErrors?.purpose}</p>
 
+                                </div>
+
+                                <div className=''>
+                                    <div className='text-sm 2xl:text-lg font-semibold text-[#14183E] pb-1 2xl:pb-1.5'>Requirenments*</div>
+                                    <textarea placeholder="Write Message..." rows={2} className="text-sm 2xl:text-base px-5 py-2 border-[0.5px] border-[#08A4F7] rounded-md md:col-span-2 max-h-28 overflow-auto w-full focus:outline-none placeholder-[#747582] placeholder-opacity-75"
+                                        id="requirements" name="requirements" value={formValues?.requirements} onChange={handleChange}></textarea>
+
+                                    <p className="text-red-600 text-sm">{formErrors?.requirements}</p>
+
+                                    <div className='text-[#747582] text-[10px] 2xl:text-xs'>By submitting this form, you agreed to our <a href='/privacy-policy' target='_blank' className='underline'>privacy policy</a>. We promise we don’t spam.</div>
+                                </div>
+                                {showWaiting &&
+                                    <button type="submit" style={{ cursor: 'not-allowed' }} disabled className="group mainbutn cursor-not-allowed flex items-center justify-center gap-2">
+                                        <div className="flex items-center">
+                                            <div className="w-4 h-4 border-2 border-t-transparent group-hover:border-[#08A4F7] border-white rounded-full animate-spin"></div>
+                                            <span className="ml-2">Submitting</span>
+                                            <div className="flex ml-2 gap-1 pt-2">
+                                                <span className="dot h-1 w-1 group-hover:bg-[#08A4F7] bg-white rounded-full"></span>
+                                                <span className="dot h-1 w-1 group-hover:bg-[#08A4F7] bg-white rounded-full"></span>
+                                                <span className="dot h-1 w-1 group-hover:bg-[#08A4F7] bg-white animate-bounce rounded-full"></span>
+                                            </div>
+                                        </div>
+                                    </button>}
+                                {!showWaiting && <button type='submit' className="mainbutn">Submit</button>}
+                            </form>}
+
+                            <div className='md:hidden flex items-center md:pt-10 justify-center'>
+                                <div className='w-full flex items-center justify-evenly max-sm:justify-evenly'>
+                                    <a title='Facebook' href="https://m.facebook.com/100070503960704/">
+                                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/facebook.svg' className='w-[30px] hover:shadow-mediaIcons rounded-full transition-all duration-100' alt='facebook' />
+                                    </a>
+                                    <a title='Twitter' href="https://twitter.com/AnalyticsLiv">
+                                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/twitter.svg' className='w-[30px] hover:shadow-mediaIcons rounded-full transition-all duration-100' alt='twitter' />
+                                    </a>
+                                    <a title='Instagram' href="https://www.instagram.com/analyticsliv_digital/">
+                                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/instagram.svg' className='w-[30px] hover:shadow-mediaIcons rounded-full transition-all duration-100' alt='instagram' />
+                                    </a>
+                                    <a title='Linkedin' href="https://in.linkedin.com/company/analytics-liv-digital/">
+                                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/linkedin.svg' className='w-[30px] hover:shadow-mediaIcons rounded-full transition-all duration-100' alt='linkedin' />
+                                    </a>
+                                    <a title='Youtube' href="https://www.youtube.com/channel/UCSU9utLB2PDe4VcXiI5kMFw">
+                                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/youtube.svg' className='w-[30px] hover:shadow-mediaIcons rounded-full transition-all duration-100' alt='youtube' />
+                                    </a>
+                                </div>
                             </div>
                         </div>
 
+                    </div>
+
+                    <div className="absolute h-[375px] sm:h-[375px] md:h-[460px] 2xl:h-[540px] bottom-[-260px] sm:bottom-[-250px] md:bottom-[-300px] 2xl:bottom-[-370px] w-full z-10 bg-gradient-to-b from-[#003366] to-[#00509E] text-white pt-48 sm:pt-40 pb-10 flex justify-center items-end">
+                        <div className="h-full w-[95%] lg:w-[1000px] 2xl:w-[1240px] grid grid-cols-3 place-items-start justify-items-center text-center gap-3 sm:gap-10 md:pt-20 2xl:pt-28">
+                            <div className='flex flex-col items-center lg:w-[70%]'>
+                                <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/office_1.svg' alt='AnalyticsLiv Adress' className='pb-4 sm:pb-6 max-sm:w-[40px]' />
+                                <p className='pb-1 text-[10px] sm:text-sm 2xl:text-lg font-medium'>503, 31Five, Corporate Road, Prahaladnagar, S.G. Highway, Ahmedabad 380015, Gujarat, India</p>
+                            </div>
+                            <div className='flex flex-col items-center lg:w-[70%]'>
+                                <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/office_2.svg' alt='AnalyticsLiv Adress' className='pb-4 sm:pb-6 max-sm:w-[40px]' />
+                                <p className='pb-1 text-[10px] sm:text-sm 2xl:text-lg font-medium'>3104 E Camelback Rd ,Suite #7406, Phoenix, AZ 85016, USA</p>
+                            </div>
+                            <div className='flex flex-col items-center lg:w-[70%]'>
+                                <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/office_3.svg' alt='AnalyticsLiv Adress' className='pb-4 sm:pb-6 max-sm:w-[40px]' />
+                                <p className='pb-1 text-[10px] sm:text-sm 2xl:text-lg font-medium'>Via Natale Prampolini, 15 - 00132, Roma, Italy</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className='mt-[300px] md:mt-[350px] 2xl:mt-[420px] px-[5%] pb-14'>
+                    <div className='bg-header-linear p-[5%] rounded-[5px] sm:p-[2.5%]'>
                         <div className='w-full h-[200px]'>
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.660556214622!2d72.4981082753132!3d22.9995064791899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x613f5a1e7cb48aa3%3A0xaef382143b118f7!2sAnalyticsLiv!5e0!3m2!1sen!2sin!4v1704214142520!5m2!1sen!2sin" className='w-full h-full z-100'></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.660556214622!2d72.4981082753132!3d22.9995064791899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x613f5a1e7cb48aa3%3A0xaef382143b118f7!2sAnalyticsLiv!5e0!3m2!1sen!2sin!4v1704214142520!5m2!1sen!2sin" className='w-full h-full z-100 rounded-[5px]'></iframe>
                         </div>
-
-                        <div className='mt-[30px] flex items-center justify-center px-4 bg-[#0f172a] text-[#ffffff] rounded-lg'>
-                            <div className='grid lg:grid-cols-3 sm:grid-cols-2 gap-5 my-5 w-full'>
-                                <div className=''>
-                                    <div>
-                                        <span className="inline w-6"><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/address-28-16.png" alt='address' ></img></span>
-                                        <p className='mt-1'>503, 31Five, Corporate Road, <br /> Prahaladnagar, S.G. Highway, <br />Ahmedabad 380015, Gujarat,<br /> India</p>
-                                    </div>
-                                </div>
-                                <div className=''>
-                                    <div>
-                                        <span className="inline w-6"><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/address-28-16.png" alt='address' ></img></span>
-                                        <p className='mt-1'>3104 E Camelback Rd ,Suite #7406, <br /> Phoenix, AZ 85016,<br /> USA</p>
-                                    </div>
-                                </div>
-                                <div className=''>
-                                    <div>
-                                        <span className="inline w-6"><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/address-28-16.png" alt='address' ></img></span>
-                                        <p className='mt-1'>Via Natale Prampolini, <br /> 15 - 00132, Roma,<br /> Italy</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </section>
