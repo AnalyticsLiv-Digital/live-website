@@ -143,7 +143,7 @@ const aboutus = () => {
 
       <section className='font-sans pb-3'>
         <div className='flex px-4 md:px-7 lg:px-14 max-sm:flex-col max-sm:justify-center sm:justify-around md:justify-between 2xl:justify-between items-center py-5 xl:pt-8 2xl:pt-10 2xl:pr-[135px] 2xl:pl-24'>
-          <div className='flex flex-col max-md:items-center gap-3 md:gap-5 2xl:gap-7 sm:w-[50%] 2xl:w-[52%] max-sm:text-center'>
+          <div className='flex flex-col max-sm:items-center gap-3 md:gap-5 2xl:gap-7 sm:w-[50%] 2xl:w-[52%] max-sm:text-center'>
             <div className='text-lg xl:text-xl 2xl:text-2xl font-extrabold'>Welcome to AnalyticsLiv</div>
             <h1 className='text-[#0E1947] text-3xl xl:text-4xl 2xl:text-5xl font-extrabold'>Turning Data Into Growth</h1>
             <div className='text-xs xl:text-sm font-normal max-md:pt-2'>At AnalyticsLiv, we’re dedicated to revolutionizing how businesses leverage data. By integrating advanced analytics,
