@@ -5,10 +5,6 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import MetaSchemaOg from '../../components/MetaSchemaOg'
 import { InlineWidget } from 'react-calendly';
-import Head from 'next/head';
-
-//   https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Pipeline_Img.png
-
 
 const customPipeline = () => {
 
@@ -77,12 +73,12 @@ const customPipeline = () => {
         },
         {
             title: 'Design',
-            description: 'We architect a custom pipeline using APIs and Google Cloud Services.',
+            description: 'We architect a Custom Data Pipeline using APIs, ETL with Google Cloud Dataflow, and Google Cloud Platform Data Pipeline services.',
             image: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Design.svg',
         },
         {
             title: 'Development',
-            description: 'Our team builds and tests the pipeline to ensure seamless data flow.',
+            description: 'Our team builds and tests the pipeline to ensure seamless Data Integration Services.',
             image: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Development%20(2).svg',
         },
         {
@@ -183,12 +179,19 @@ const customPipeline = () => {
 
     return (
         <>
-            <Head>
-                <link
-                    rel="stylesheet"
-                    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap"
-                />
-            </Head>
+            <MetaSchemaOg
+                url="https://analyticsliv.com/services/custom-pipeline"
+                title="Data Pipeline Automation and Integration Services - AnalyticsLiv"
+                description="Build a custom data pipeline with AnalyticsLiv to automate processes, streamline data flow, and uncover real-time insights for smarter business decisions."
+                twitterTitle="Data Pipeline Automation and Integration Services - AnalyticsLiv"
+                twitterDescription="Build a custom data pipeline with AnalyticsLiv to automate processes, streamline data flow, and uncover real-time insights for smarter business decisions."
+                extraHead={
+                    <link
+                        rel="stylesheet"
+                        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap"
+                    />
+                }
+            />
 
             <main className='pb-10 pt-7'>
 
@@ -196,7 +199,7 @@ const customPipeline = () => {
                     <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-40 z-50 flex items-center justify-center p-4"
                         onClick={() => setShowCalendly(false)}>
                         <div className="relative bg-white rounded-lg shadow-lg sm:p-4 flex flex-col items-center justify-center 
-                max-w-[380px] w-[100%] sm:w-[90%] h-[80vh] sm:max-w-[400px] sm:h-[450px] lg:max-w-[450px] lg:h-[500px]">
+                        max-w-[380px] w-[100%] sm:w-[90%] h-[80vh] sm:max-w-[400px] sm:h-[450px] lg:max-w-[450px] lg:h-[500px]">
 
                             <button
                                 className="absolute top-1 left-1 text-gray-500 text-xs font-bold rounded-full w-8 h-8 flex items-center justify-center"
@@ -218,13 +221,16 @@ const customPipeline = () => {
                 <section className='flex max-md:flex-col justify-between max-lg:items-start items-center px-[5%]'>
                     <div className='md:w-[50%] xl:w-[48%] flex flex-col gap-7 md:gap-14 2xl:gap-16 justify-around items-center md:items-start'>
                         <div className='flex flex-col gap-5 md:gap-8 2xl:gap-10'>
-                            <h1 className='text-[#0E1947] text-lg sm:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold max-md:text-center'>Optimize Your Workflow with Scalable, Real-Time Data Pipelines</h1>
-                            <h2 className='text-xs 2xl:text-sm font-normal max-md:text-center'>
-                                In today’s data-driven world, businesses need seamless access to accurate,
-                                real-time data to make informed decisions. At AnalyticsLiv Digital, we specialize in building custom data pipelines that integrate data
-                                from multiple sources like GA4, Google Ads, DV360, Facebook, LinkedIn, Shopify, and more. Using APIs and Google Cloud Services,
-                                we create robust, real-time pipelines that dump data directly into BigQuery (BQ), empowering your team with actionable insights.
-                            </h2>
+                            <h1 className='text-[#0E1947] text-lg sm:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold max-md:text-center'>
+                                Custom Data Pipeline Solutions for Seamless Data Integration,
+                                Build Scalable, Real-Time Data Pipelines Tailored to Your Needs
+                            </h1>
+                            <h3 className='text-xs 2xl:text-sm font-normal max-md:text-center'>
+                                In today's fast-paced digital landscape, businesses need real-time, accurate data for informed decision-making.
+                                AnalyticsLiv Digital specializes in Custom Data Pipeline Solutions, offering Data Pipeline Automation,
+                                Cloud Data Pipeline Services, and Custom Cloud Data Pipeline Services to integrate data from sources like
+                                GA4, Google Ads, DV360, Facebook, LinkedIn, and Shopify. Leveraging Google Cloud Data Pipeline, Google Cloud Data Integration, and Google Cloud ETL Solutions, we build real-time, scalable pipelines that streamline data flow into BigQuery (BQ) for actionable insights.
+                            </h3>
                             <div className='flex justify-center md:justify-start items-center gap-3 md:gap-2 lg:gap-5'>
                                 <a href='/contact'><button className='mainbutn'>Request a Demo</button></a>
                                 <div onClick={() => handleCalendly()} className='group hover:cursor-pointer flex items-center gap-2'>
@@ -243,7 +249,7 @@ const customPipeline = () => {
                     </div>
 
                     <div className='md:w-[50%] xl:w-[48%] max-md:hidden flex justify-center'>
-                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Pipeline_img%20(1).png' alt='Custom Pipeline' />
+                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Pipeline_img%20(1).png' alt='Data Pipeline Automation' />
                     </div>
                 </section>
 
@@ -270,7 +276,7 @@ const customPipeline = () => {
 
                 <section className='px-4 lg:px-[5%] md:pt-6 flex max-md:flex-col justify-center items-center gap-8 md:gap-5 lg:gap-24 2xl:gap-10'>
                     <div className='md:w-[50%] flex justify-center'>
-                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Choose_img_Left%20(1).png' alt='why choose us' className='' />
+                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Choose_img_Left%20(1).png' alt='Cloud Data Pipeline Services' className='' />
                     </div>
                     <div className='md:w-[50%] flex flex-col gap-5'>
                         <h2 className='text-[#0E1947] text-lg xl:text-[27px] 2xl:text-3xl font-bold'>
@@ -284,10 +290,10 @@ const customPipeline = () => {
                                         className='max-xl:w-5 xl:min-w-[20px] xl:max-w-[20px] rounded-[5px]' />
                                 </div>
                                 <div className='flex flex-col items-start justify-between'>
-                                    <div className='text-[#0E1947] text-base font-bold'>Tailored to Your Needs</div>
-                                    <div className='text-xs font-normal'>Unlike generic connectors, our custom pipelines are designed specifically for your
-                                        business. Whether you need to migrate data, consolidate multiple sources, or enable real-time analytics, we build
-                                        solutions tailored to your unique needs.
+                                    <h3 className='text-[#0E1947] text-base font-bold'>Tailored to Your Needs</h3>
+                                    <div className='text-xs font-normal'>Unlike generic connectors, our Custom Data Pipeline Automation Services are
+                                        designed specifically for your business. Whether you need to migrate data, consolidate multiple sources, or
+                                        enable Real-Time ETL Pipeline analytics, we build solutions tailored to your unique needs.
                                     </div>
                                 </div>
                             </div>
@@ -297,9 +303,9 @@ const customPipeline = () => {
                                         className='max-xl:w-5 xl:min-w-[20px] xl:max-w-[20px] rounded-[5px]' />
                                 </div>
                                 <div className='flex flex-col items-start justify-between'>
-                                    <div className='text-[#0E1947] text-base font-bold'>Access to real-time data</div>
-                                    <div className='text-xs font-normal'>Say goodbye to delays. Our pipelines ensure real-time data ingestion so your team
-                                        can decide based on the most up-to-date information.
+                                    <h3 className='text-[#0E1947] text-base font-bold'>Access to real-time data</h3>
+                                    <div className='text-xs font-normal'>Say goodbye to delays. Our pipelines ensure real-time data ingestion, enabling
+                                        your team to make informed decisions based on the most up-to-date information.
                                     </div>
                                 </div>
                             </div>
@@ -309,8 +315,11 @@ const customPipeline = () => {
                                         className='max-xl:w-5 xl:min-w-[20px] xl:max-w-[20px] rounded-[5px]' />
                                 </div>
                                 <div className='flex flex-col items-start justify-between'>
-                                    <div className='text-[#0E1947] text-base font-bold'>Centralized data in BigQuery</div>
-                                    <div className='text-xs font-normal'>All your data is consolidated into Google BigQuery, a scalable and powerful data warehouse. This eliminates silos, simplifies analysis, and enables advanced analytics.</div>
+                                    <h3 className='text-[#0E1947] text-base font-bold'>Centralized data in BigQuery</h3>
+                                    <div className='text-xs font-normal'>All your data is consolidated into Google BigQuery, a scalable and powerful data
+                                        warehouse. This eliminates silos, simplifies analysis, and enables advanced analytics using ETL Process in Data
+                                        Warehousing.
+                                    </div>
                                 </div>
                             </div>
                             <div className='flex items-start gap-4'>
@@ -319,9 +328,10 @@ const customPipeline = () => {
                                         className='max-xl:w-5 xl:min-w-[20px] xl:max-w-[20px] rounded-[5px]' />
                                 </div>
                                 <div className='flex flex-col items-start justify-between'>
-                                    <div className='text-[#0E1947] text-base font-bold'>Cost-Effective with Google Cloud</div>
-                                    <div className='text-xs font-normal'>By leveraging Google Cloud services, we ensure profitability without compromising
-                                        performance. Pay only for what you use and scale as your business grows.</div>
+                                    <h3 className='text-[#0E1947] text-base font-bold'>Cost-Effective with Google Cloud</h3>
+                                    <div className='text-xs font-normal'>By leveraging Google Cloud ETL Solutions, we ensure cost-efficiency without
+                                        compromising performance. Pay only for what you use and scale as your business grows.
+                                    </div>
                                 </div>
                             </div>
                             <div className='flex items-start gap-4'>
@@ -330,9 +340,9 @@ const customPipeline = () => {
                                         className='max-xl:w-5 xl:min-w-[20px] xl:max-w-[20px] rounded-[5px]' />
                                 </div>
                                 <div className='flex flex-col items-start justify-between'>
-                                    <div className='text-[#0E1947] text-base font-bold'>Scalable integration</div>
+                                    <h3 className='text-[#0E1947] text-base font-bold'>Scalable integration</h3>
                                     <div className='text-xs font-normal'>Our pipelines are built to adapt. As your data sources or business needs evolve,
-                                        we ensure your pipeline evolves seamlessly.</div>
+                                        we ensure your ETL Pipeline evolves seamlessly with Automated ETL Pipeline solutions.</div>
                                 </div>
                             </div>
                         </div>
@@ -435,32 +445,28 @@ const customPipeline = () => {
                             <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/scalability%201.svg' alt='Scalability' />
                             <div className='text-[#100F1B] font-bold text-xl pt-3'>Scalability</div>
                             <div className='text-[#100F1B] font-normal text-base text-center pt-4'>
-                                Easily manage
-                                large volumes of data.
+                                Easily manage large volumes of data with Google Cloud Data
                             </div>
                         </div>
                         <div className='w-[100%] flex flex-col justify-center items-center'>
                             <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Security%20(2)%201.svg' alt='Security' />
                             <div className='text-[#100F1B] font-bold text-xl pt-3'>Security</div>
                             <div className='text-[#100F1B] font-normal text-base text-center pt-4'>
-                                Benefit from Google's
-                                robust security infrastructure.
+                                Benefit from Google's robust security infrastructure.
                             </div>
                         </div>
                         <div className='w-[100%] flex flex-col justify-center items-center'>
                             <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Cost-effective%201.svg' alt='Cost-effective' />
                             <div className='text-[#100F1B] font-bold text-xl pt-3'>Cost-effective</div>
                             <div className='text-[#100F1B] font-normal text-base text-center pt-4'>
-                                Pay-as-you-go pricing ensures that
-                                you only pay for what you use.
+                                Pay-as-you-go pricing ensures that you only pay for what you use.
                             </div>
                         </div>
                         <div className='w-[100%] flex flex-col justify-center items-center'>
                             <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/integration%20(2)%201.svg' alt='Integration' />
                             <div className='text-[#100F1B] font-bold text-xl pt-3'>Integration</div>
                             <div className='text-[#100F1B] font-normal text-base text-center pt-4'>
-                                Seamlessly connect to other Google Cloud tools like Data Studio,
-                                AI/ML services & more.
+                                Seamlessly connect to other Google Cloud ETL Solutions, ETL Process, Data Studio, AI/ML services, and more.
                             </div>
                         </div>
                     </div>
@@ -472,7 +478,7 @@ const customPipeline = () => {
                     <div className='flex max-lg:grid max-lg:grid-cols-2 max-sm:grid-cols-1 max-lg:gap-6 items-center gap-2 xl:gap-5 2xl:gap-10'>
                         <div className='flex gap-3 xl:gap-3 2xl:gap-5 items-center lg:w-[27%] 2xl:w-[25%]'>
                             <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/decision-making%20(2).svg' alt='Improved Decision-Making'
-                                className='bg-[#FAE0E1] rounded-[5px] px-5 min-w-[80px] min-h-[60px] max-h-[60px]' />
+                                className='bg-[#FAE0E1] rounded-[5px] px-3 py-1.5 min-w-[80px] min-h-[70px] lg:min-h-[80px] max-h-[70px] lg:max-h-[80px]' />
                             <div className='flex flex-col justify-between gap-3'>
                                 <div className='text-xs xl:text-[13px] 2xl:text-sm font-bold'>Improved Decision-Making</div>
                                 <div className='text-[10px] xl:text-[11px] 2xl:text-xs font-normal'>Access real-time data for faster, smarter decisions.</div>
@@ -481,7 +487,7 @@ const customPipeline = () => {
 
                         <div className='flex gap-3 xl:gap-3 2xl:gap-5 items-center lg:w-[25%] 2xl:w-[25%]'>
                             <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/reduce-cost%20(4).svg' alt='Reduced Costs'
-                                className='bg-[#F3DEB3] rounded-[5px] px-5 min-w-[80px] min-h-[60px] max-h-[60px]' />
+                                className='bg-[#F3DEB3] rounded-[5px] px-3 py-1.5 min-w-[80px] min-h-[70px] lg:min-h-[80px] max-h-[70px] lg:max-h-[80px]' />
                             <div className='flex flex-col justify-between gap-3'>
                                 <div className='text-xs xl:text-[13px] 2xl:text-sm font-bold'>Reduced Costs</div>
                                 <div className='text-[10px] xl:text-[11px] 2xl:text-xs font-normal'>Eliminate the need for multiple third-party connectors.</div>
@@ -490,33 +496,34 @@ const customPipeline = () => {
 
                         <div className='flex gap-3 xl:gap-3 2xl:gap-5 items-center lg:w-[25%]'>
                             <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Improved%20efficiency.svg' alt='Improved efficiency'
-                                className='bg-[#CBCFFA] rounded-[5px] px-5 min-w-[80px] min-h-[60px] max-h-[60px]' />
+                                className='bg-[#CBCFFA] rounded-[5px] px-3 py-1.5 min-w-[80px] min-h-[70px] lg:min-h-[80px] max-h-[70px] lg:max-h-[80px]' />
                             <div className='flex flex-col justify-between gap-3'>
                                 <div className='text-xs xl:text-[13px] 2xl:text-sm font-bold'>Improved efficiency</div>
-                                <div className='text-[10px] xl:text-[11px] 2xl:text-xs font-normal'>Automate data ingestion and reduce manual efforts.</div>
+                                <div className='text-[10px] xl:text-[11px] 2xl:text-xs font-normal'>Automate data ingestion and reduce manual efforts with Automated ETL Pipeline.</div>
                             </div>
                         </div>
 
                         <div className='flex gap-3 xl:gap-3 2xl:gap-5 items-center lg:w-[25%]'>
                             <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Scalable%20Solutions.svg' alt='Scalable Solutions'
-                                className='bg-[#D7FACB] rounded-[5px] px-5 min-w-[80px] min-h-[60px] max-h-[60px]' />
+                                className='bg-[#D7FACB] rounded-[5px] px-3 py-1.5 min-w-[80px] min-h-[70px] lg:min-h-[80px] max-h-[70px] lg:max-h-[80px]' />
                             <div className='flex flex-col justify-between gap-3'>
                                 <div className='text-xs xl:text-[13px] 2xl:text-sm font-bold'>Scalable Solutions</div>
-                                <div className='text-[10px] xl:text-[11px] 2xl:text-xs font-normal'>Expand your data infrastructure as your business grows.</div>
+                                <div className='text-[10px] xl:text-[11px] 2xl:text-xs font-normal'>Expand your ETL Process in Data Warehousing as your business grows.</div>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 <section className='flex max-lg:flex-col-reverse overflow-hidden pt-8 lg:pt-16'>
-                    <div className='lg:w-[40%] bg-[#30486A] flex flex-col justify-center items-start gap-7 max-lg:py-7 px-4 lg:px-20'>
-                        <h3 className='text-2xl md:text-3xl 2xl:text-4xl font-bold text-white'>Ready to transform your data strategy?</h3>
-                        <div className='text-base font-normal text-[#E2DEDC]'>Let us build a custom pipeline that fits your business needs. Contact us today to learn more!</div>
+                    <div className='lg:w-[40%] bg-[#30486A] flex flex-col justify-center items-start gap-7 max-lg:py-7 px-4 lg:px-8 xl:px-16 2xl:px-20'>
+                        <h2 className='text-[20px] md:text-[25px] 2xl:text-[30px] font-bold text-white'>Ready to transform your ETL Process and Data Pipeline Automation strategy? </h2>
+                        <div className='text-base font-normal text-[#E2DEDC]'>Let us create a Custom Cloud Data Pipeline and Real-Time ETL Pipeline that meets your business needs. Contact us today to learn more!
+                        </div>
                         <a href='/contact'><button className='mainbutn'>Contact Us Now</button></a>
                     </div>
                     <div className='lg:w-[60%] min-h-[250px] sm:min-h-[350px] overflow-hidden 2xl:min-h-[430px] flex'>
                         <div className='w-full lg:w-[70%] relative'>
-                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/people_collaborate.png' alt='people_collaborate' className='absolute sm:w-full sm:h-full' />
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/people_collaborate.png' alt='Custom Data Pipeline Solutions' className='absolute sm:w-full sm:h-full' />
                             <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Frame%2047.png' alt='Frame 47' className='absolute px-5 md:right-[50px] 2xl:right-[16%] pt-8' />
                             <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Rectangle%2026.png' alt='Rectangle 26' className='absolute right-0 top-16' />
                         </div>
@@ -528,9 +535,9 @@ const customPipeline = () => {
 
                 <section className="flex md:mb-3 flex-col md:flex-row px-4 py-7 md:py-14 md:px-8 lg:px-16 md:pb-5 xl:mb-10 xl:pt-14 gap-5 lg:gap-8">
                     <div className="md:w-1/3 flex flex-col md:gap-7 justify-center max-md:text-center sm:justify-start md:pt-7">
-                        <h3 className="text-3xl max-md:flex max-sm:flex-col max-md:justify-center max-md:items-center max-md:gap-2.5 lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-gray-800">
+                        <h2 className="text-3xl max-md:flex max-sm:flex-col max-md:justify-center max-md:items-center max-md:gap-2.5 lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-gray-800">
                             Frequently Asked <div className="text-[#08A4F7] lg:pt-3 xl:pt-4 2xl:pt-5">Questions</div>
-                        </h3>
+                        </h2>
                         <p className="mt-4 max-md:mb-5 text-base xl:text-lg text-gray-600 leading-snug">
                             Discover key FAQs designed to simplify your marketing and analytics approach, helping you achieve better results with actionable guidance.
                         </p>
@@ -551,7 +558,7 @@ const customPipeline = () => {
                                 >
                                     <div className="flex items-center justify-between gap-3">
                                         <div>
-                                            <div className="text-[13px] sm:text-base font-semibold">{item?.question}</div>
+                                            <h3 className="text-[13px] sm:text-base font-semibold">{item?.question}</h3>
 
                                             {activeIndex === index && (
                                                 <div className="text-[10px] sm:text-xs pt-3 font-normal w-[95%]">{item?.answer}</div>
