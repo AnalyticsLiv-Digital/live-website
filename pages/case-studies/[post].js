@@ -24,6 +24,21 @@ const index = ({ casestudyDat }) => {
 
     const formRef = useRef(null);
 
+    function replaceNewLineWithBr(caseSt) {
+        let a = caseSt?.description;
+
+        if (a.includes('\n')) {
+            const formattedText = a.split("\n").map((text, index) => {
+                return text;
+            });
+            
+            return formattedText;
+        }
+        else{
+            return [a];
+        }
+      }
+
     useEffect(() => {
         const handleScroll = () => {
             const form = formRef.current;
@@ -61,12 +76,6 @@ const index = ({ casestudyDat }) => {
         // console.log(formValues);
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setFormErrors(validate(formValues));
-        setIsSubmit(true);
-
-    };
 
     const dataLayerpush = () => {
         dataLayer.push({
@@ -74,8 +83,14 @@ const index = ({ casestudyDat }) => {
             eventCategory: cd.title,
             eventAction: 'download'
         });
-
     }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setFormErrors(validate(formValues));
+        setIsSubmit(true);
+        dataLayerpush()
+    };
 
     useEffect(() => {
 
@@ -353,7 +368,10 @@ const index = ({ casestudyDat }) => {
                                 {casestudy?.heading}
                             </h3>
                             <div className='mt-4'>
-                                {casestudy?.description}
+                                {replaceNewLineWithBr(casestudy)?.map((text) => {
+                                    return <p className='pt-2'>{text}</p>
+                                })
+                                }
                             </div>
 
                             {cd?.bannerImg && key === slicedArray?.length - 2 && (
