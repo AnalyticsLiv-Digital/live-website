@@ -26,6 +26,9 @@ function generateSiteMap(posts) {
        <loc>https://analyticsliv.com/services/programatic-advertising</loc>
      </url>
      <url>
+       <loc>https://analyticsliv.com/services/custom-pipeline</loc>
+     </url>
+     <url>
        <loc>https://analyticsliv.com/services/analytics</loc>
      </url>
      

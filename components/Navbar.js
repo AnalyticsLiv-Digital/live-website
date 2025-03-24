@@ -54,7 +54,7 @@ const navbar = () => {
             title: "Data Transformation",
             links: [
                 { href: "/services/data-science", label: "Cloud Migration & Engineering", imgSrc: "Analytics_webapp_logo.png" },
-                { href: "/", label: "Custom Pipeline", imgSrc: "sst.png" },
+                { href: "/services/custom-pipeline", label: "Custom Pipeline", imgSrc: "sst.png" },
                 { href: "/", label: "Custom Dashboard", imgSrc: "cro_logo.png" },
                 // { href: "/services/data-reporting-analysis", label: "Reporting & Dashboarding", imgSrc: "Analytis_data-reporting.logo.png" },
                 // { href: "/services/google-tag-manager", label: "Google Tag Manager Tagging", imgSrc: "GTM_Gradiant_Logo_for_Header.png" },
@@ -422,7 +422,7 @@ const navbar = () => {
                                                     </div>
                                                     <div class="flex items-center py-1">
                                                         <Link
-                                                            href="/"
+                                                            href="/services/custom-pipeline"
                                                             class="text-menuheading font-sans text-sm font-normal leading-normal"
                                                         >
                                                             Custom Pipeline
