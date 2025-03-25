@@ -24,6 +24,57 @@ const index = ({ casestudyDat }) => {
 
     const formRef = useRef(null);
 
+    function formatDescription(description) {
+        return description?.split(/(\*+)/g).reduce((acc, chunk, index, arr) => {
+            let trimmedChunk = chunk?.trim();
+            if (!trimmedChunk) return acc;
+
+            // Handle single '*' for paragraph breaks
+            if (/^\*(?!\*)/.test(trimmedChunk)) {
+                acc?.push(
+                    <p key={index} className='text-sm 2xl:text-base text-black mt-4'>
+                        {trimmedChunk?.replace(/^\*/, '')?.trim()}
+                    </p>
+                );
+                return acc;
+            }
+
+            // Check for multiple '*' for bullet points
+            if (/^\*{2,}/.test(trimmedChunk)) {
+                const nextChunk = arr[index + 1]?.trim() || '';
+                if (/^(.*?)\:(.*)/.test(nextChunk)) {
+                    const match = nextChunk?.match(/^(.*?)\:(.*)/);
+                    if (match) {
+                        const stars = trimmedChunk?.length; // Count number of stars
+                        const boldText = match[1]?.trim();
+                        const remainingText = match[2]?.trim();
+                        const indentation = Math?.min((stars - 2) * 30, 100); // Adjust indentation
+
+                        acc?.push(
+                            <div key={index} className='flex items-start space-x-2 mt-2' style={{ marginLeft: `${indentation}px` }}>
+                                <div className='w-2 h-2 mt-1.5 2xl:mt-2 bg-[#0E1947] min-w-[8px] rounded-full'></div>
+                                <p className='text-sm 2xl:text-base text-black'>
+                                    <span className='font-semibold'>{boldText}</span>: {remainingText}
+                                </p>
+                            </div>
+                        );
+
+                        // Skip the next chunk since it's already processed
+                        arr[index + 1] = '';
+                    }
+                }
+                return acc;
+            }
+
+            // Handle normal text (avoid duplicate rendering)
+            acc?.push(
+                <p key={index} className='text-sm 2xl:text-base text-black mt-4'>{trimmedChunk}</p>
+            );
+
+            return acc;
+        }, []);
+    }
+
     useEffect(() => {
         const handleScroll = () => {
             const form = formRef.current;
@@ -61,12 +112,6 @@ const index = ({ casestudyDat }) => {
         // console.log(formValues);
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setFormErrors(validate(formValues));
-        setIsSubmit(true);
-
-    };
 
     const dataLayerpush = () => {
         dataLayer.push({
@@ -74,8 +119,14 @@ const index = ({ casestudyDat }) => {
             eventCategory: cd.title,
             eventAction: 'download'
         });
-
     }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setFormErrors(validate(formValues));
+        setIsSubmit(true);
+        dataLayerpush()
+    };
 
     useEffect(() => {
 
@@ -193,44 +244,61 @@ const index = ({ casestudyDat }) => {
                             {cd?.content?.[0]?.description}
                         </p>
                         <div className="flex items-center justify-start gap-3 sm:gap-7">
-                            {cd?.clientLogo &&
+                            {cd?.clientLogo ?
                                 <div
-                                    // onClick={scrollToDownload}
-                                    className="bg-white px-2 sm:px-4 w-max py-2 md:px-4 md:py-[6.5px] xl:px-4 xl:py-[8px] 2xl:px-4 2xl:py-[8px] rounded-[5px]
-                                text-[#0E1947] text-[11px] sm:text-sm md:text-base 2xl:text-lg sm:hover:underline md:hover:text-[16.2px] 2xl:hover:text-[18.2px] font-bold"
+                                // onClick={scrollToDownload}
+                                //     className="bg-white px-2 sm:px-4 w-max py-2 md:px-4 md:py-[6.5px] xl:px-4 xl:py-[8px] 2xl:px-4 2xl:py-[8px] rounded-[5px]
+                                // text-[#0E1947] text-[11px] sm:text-sm md:text-base 2xl:text-lg sm:hover:underline md:hover:text-[16.2px] 2xl:hover:text-[18.2px] font-bold"
                                 >
-                                    <img src="/shoebacca.png" className="w-28" />
+                                    <img src={cd?.clientLogo} className="" alt='AnalyticsLiv blogs' />
+                                </div>
+                                : <div>
+
                                 </div>
                             }
-                            {cd?.clientTestimonial &&
-                                <a href="https://www.youtube.com/watch?v=JFOc7x5ZgaA"
+                            {/* // onClick={scrollToDownload}
+                                //     className="flex items-center justify-center gap-1 sm:gap-3 bg-white px-2 py-3 sm:px-4 w-max sm:py-2 md:px-4 md:py-[5px] xl:px-4 xl:py-[4px] 2xl:px-4 2xl:py-[7px] rounded-[5px]
+                                // text-[#0E1947] text-[10px] sm:text-sm md:text-base 2xl:text-lg sm:hover:underline md:hover:text-[16.2px] 2xl:hover:text-[18.2px] font-bold"
+                                     */}
+                            {cd?.clientTestimonial ?
+                                <a href={cd?.testimonialVedioUrl}
                                     target="_blank"
-                                    // onClick={scrollToDownload}
-                                    className="flex items-center justify-center gap-1 sm:gap-3 bg-white px-2 py-3 sm:px-4 w-max sm:py-2 md:px-4 md:py-[5px] xl:px-4 xl:py-[4px] 2xl:px-4 2xl:py-[7px] rounded-[5px]
-                                text-[#0E1947] text-[10px] sm:text-sm md:text-base 2xl:text-lg sm:hover:underline md:hover:text-[16.2px] 2xl:hover:text-[18.2px] font-bold"
                                 >
-                                    Watch Video Testimonial
                                     <img
-                                        src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Cassie_img.png"
-                                        className="w-5 sm:w-8"
+                                        src={cd?.clientTestimonial}
+                                        className=""
+                                        alt='AnalyticsLiv blogs'
                                     />
                                 </a>
+                                :
+                                <div></div>
                             }
                         </div>
                     </div>
 
-                    <div className="lg:w-[45%] max-lg:hidden mr-5 2xl:mr-10 flex flex-col items-end relative">
-                        <img
-                            src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/CaseStufy_Girl.png"
-                            alt={cd?.title}
-                            className="mt-7 z-30"
-                        />
-                        <img
-                            src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Ellipse%203563.png"
-                            alt="Casestudy"
-                            className="z-10 absolute top-[105px] right-[-7%]"
-                        />
-                    </div>
+                    {cd?.mainImage ?
+                        <div className="lg:w-[45%] max-lg:hidden mr-5 2xl:mr-10 flex flex-col items-end relative">
+                            <img
+                                src={cd?.mainImage}
+                                alt={cd?.title}
+                                className="mt-7 z-30"
+                            />
+                        </div>
+                        :
+                        <div className="lg:w-[45%] max-lg:hidden mr-5 2xl:mr-10 flex flex-col items-end relative">
+                            <img
+                                src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/CaseStufy_Girl.png"
+                                alt={cd?.title}
+                                className="mt-7 z-30"
+                            />
+                            <img
+                                src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Ellipse%203563.png"
+                                alt="Casestudy"
+                                className="z-10 absolute top-[105px] right-[-7%]"
+                            />
+                        </div>
+                    }
+
                 </div>
                 <div
                     id="formContainer"
@@ -353,12 +421,12 @@ const index = ({ casestudyDat }) => {
                                 {casestudy?.heading}
                             </h3>
                             <div className='mt-4'>
-                                {casestudy?.description}
+                                {formatDescription(casestudy?.description)}
                             </div>
 
-                            {cd?.bannerImg && key === slicedArray?.length - 2 && (
+                            {cd?.percentageBanner && key === slicedArray?.length - 2 && (
                                 <>
-                                    <img src='/Achievments.png' alt='achievements' className='w-full mt-8' />
+                                    <img src={cd?.percentageBanner} alt='achievements' className='w-full mt-8' />
                                 </>
                             )}
                         </div>

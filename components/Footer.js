@@ -123,7 +123,7 @@ const Footer = () => {
                                                     </div>
                                                     <div className='ml-0 msm:pt-2 flex items-center '>
                                                         <FaPhone className='opacity-[30%] w-[18px] h-[18px] mr-[7px] max-[374px]:ml-1' />
-                                                        <span className='text-[13px] font-normal leading-5 text-[#efefef]'><a href="tel:+918320576622">+91 83205 76622</a></span>
+                                                        <span className='text-[13px] font-normal leading-5 text-[#efefef]'><a href="tel:+919998835732">+91 99988 35732</a></span>
                                                     </div>
                                                 </div>
                                             </div>

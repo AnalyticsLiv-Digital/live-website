@@ -14,6 +14,11 @@ const CasestudySchema = new mongoose.Schema({
         description:{type: String}
     }],
     active:{type: Boolean, required: true, default: true},
+    percentageBanner:{type:String},
+    clientLogo:{type: String},
+    clientTestimonial:{type:String},
+    testimonialVedioUrl:{type:String},
+    mainImage:{type:String},
     open:{type: Boolean, required: true, default: true},
 });
 mongoose.models = {};

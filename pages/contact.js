@@ -175,7 +175,7 @@ const contact = () => {
                                                     </div>
                                                     <div className='ml-0 msm:pt-2 flex items-center md:pt-1'>
                                                         <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Viber.svg' className='w-[14px] 2xl:w-[18px] h-[14px] 2xl:h-[18px] mr-[7px] max-[374px]:ml-1' />
-                                                        <span className='text-[10px] 2xl:text-xs font-normal leading-5 text-black'><a href="tel:+918320576622">+91 83205 76622</a></span>
+                                                        <span className='text-[10px] 2xl:text-xs font-normal leading-5 text-black'><a href="tel:+919998835732">+91 99988 35732</a></span>
                                                     </div>
                                                 </div>
                                             </div>
