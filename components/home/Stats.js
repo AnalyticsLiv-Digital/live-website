@@ -6,6 +6,7 @@ import { FaYoutube } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import Image from 'next/image'
 
 const Stats = () => {
     const [counterOn, setCounterOn] = useState(true);
@@ -97,8 +98,10 @@ const Stats = () => {
                                         className="relative w-[100%] h-[100%] lg:w-[85%] lg:h-[95%] mx-auto cursor-pointer"
                                         onClick={() => setActiveVideo(video?.id)}
                                     >
-                                        <img
+                                        <Image
+                                        width={100}
                                             src={video?.coverImage}
+                                            height={100}
                                             alt={`Cover for video ${video?.id}`}
                                             className="w-[90%] mt-5 mx-auto h-[80%] sm:h-[90%] rounded-3xl shadow-ytshadow"
                                         />
