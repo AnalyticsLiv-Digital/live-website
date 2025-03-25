@@ -186,7 +186,12 @@ const index = () => {
         "content3": formValues.content3,
         "content4": formValues.content4,
         "content5": formValues.content5,
-        "open": formValues.open
+        "open": formValues.open,
+        'percentageBanner': formValues.percentageBanner,
+        "clientLogo": formValues.clientLogo,
+        "clientTestimonial" : formValues.clientTestimonial,
+        "testimonialVedioUrl" : formValues.testimonialVedioUrl,
+        "mainImage" : formValues.mainImage,
       }),
     })
       .then((response) => response.json())

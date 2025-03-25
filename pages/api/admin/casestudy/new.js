@@ -51,8 +51,13 @@ const handler = async (req, res) => {
                 active : req.body.active,
                 content : content,
                 sequence : req.body.sequence,
-                open:req.body.open
-        });
+                open: req.body.open,
+                percentageBanner: req.body.percentageBanner,
+                clientLogo: req.body.clientLogo,
+                clientTestimonial: req.body.clientTestimonial,
+                testimonialVedioUrl: req.body.testimonialVedioUrl,
+                mainImage: req.body.mainImage,
+            });
         await b.save();
        
 
