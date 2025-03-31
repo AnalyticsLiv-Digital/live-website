@@ -102,6 +102,8 @@ const Stats = () => {
                                             src={video?.coverImage}
                                             fill
                                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                            quality={70}
+                                            priority
                                             alt={`Cover for video ${video?.id}`}
                                             className="w-[90%] mt-5 mx-auto h-[80%] sm:h-[90%] rounded-3xl shadow-ytshadow"
                                         />
