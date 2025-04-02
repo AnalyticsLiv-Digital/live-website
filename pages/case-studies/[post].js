@@ -87,7 +87,7 @@ const index = ({ casestudyDat }) => {
                 const formTop = form.getBoundingClientRect().top;
                 const caseStudyTop = caseStudy.getBoundingClientRect().top;
 
-                if (formTop <= -130 && caseStudyTop > form.offsetHeight) {
+                if (formTop <= -80 && caseStudyTop > form.offsetHeight) {
                     form.style.position = "fixed";
                     form.style.top = "120px";
                     form.style.right = "3%";
@@ -97,7 +97,7 @@ const index = ({ casestudyDat }) => {
                         }px`;
                 } else {
                     form.style.position = "absolute";
-                    form.style.top = "370px";
+                    form.style.top = "320px";
                 }
             }
         };
@@ -226,7 +226,7 @@ const index = ({ casestudyDat }) => {
         /></div>}
         <div className=' overflow-hidden'>
             <section className="relative pb-12">
-                <div className="bg-header-linear relative lg:flex max-lg:flex-col justify-center lg:justify-between items-center px-[5%]">
+                <div className="bg-header-linear relative lg:flex max-lg:flex-col justify-center lg:justify-between items-center pl-[5%] lg:min-h-[400px]">
                     <div className="lg:w-[50%] xl:w-[55%] py-10 flex flex-col gap-8 lg:gap-10">
                         {/* <h1 className="text-2xl lg:text-3xl xl:text-3xl 2xl:text-[35px] text-white font-bold">{cd?.title}</h1> */}
                         <h1 className="text-2xl lg:text-2xl xl:text-3xl 2xl:text-[35px] text-white font-bold">
@@ -250,7 +250,7 @@ const index = ({ casestudyDat }) => {
                                 //     className="bg-white px-2 sm:px-4 w-max py-2 md:px-4 md:py-[6.5px] xl:px-4 xl:py-[8px] 2xl:px-4 2xl:py-[8px] rounded-[5px]
                                 // text-[#0E1947] text-[11px] sm:text-sm md:text-base 2xl:text-lg sm:hover:underline md:hover:text-[16.2px] 2xl:hover:text-[18.2px] font-bold"
                                 >
-                                    <img src={cd?.clientLogo} className="" alt='AnalyticsLiv blogs' />
+                                    <img src={cd?.clientLogo} className="max-sm:w-[80%]" alt='AnalyticsLiv blogs' />
                                 </div>
                                 : <div>
 
@@ -266,7 +266,7 @@ const index = ({ casestudyDat }) => {
                                 >
                                     <img
                                         src={cd?.clientTestimonial}
-                                        className=""
+                                        className="max-sm:w-[80%]"
                                         alt='AnalyticsLiv blogs'
                                     />
                                 </a>
@@ -277,24 +277,29 @@ const index = ({ casestudyDat }) => {
                     </div>
 
                     {cd?.mainImage ?
-                        <div className="lg:w-[45%] max-lg:hidden mr-5 2xl:mr-10 flex flex-col items-end relative">
+                        <div className="lg:w-[45%] mr-[5%] max-lg:hidden flex flex-col items-end relative">
                             <img
                                 src={cd?.mainImage}
                                 alt={cd?.title}
-                                className="mt-7 z-30"
-                            />
-                        </div>
-                        :
-                        <div className="lg:w-[45%] max-lg:hidden mr-5 2xl:mr-10 flex flex-col items-end relative">
-                            <img
-                                src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/CaseStufy_Girl.png"
-                                alt={cd?.title}
-                                className="mt-7 z-30"
+                                className="mt-7 z-30 mr-5 xl:mr-16"
                             />
                             <img
                                 src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Ellipse%203563.png"
                                 alt="Casestudy"
-                                className="z-10 absolute top-[105px] right-[-7%]"
+                                className="z-10 absolute top-[80px] xl:top-[85px] right-[-3%] xl:right-[2%]"
+                            />
+                        </div>
+                        :
+                        <div className="lg:w-[45%] mr-[5%] max-lg:hidden flex flex-col items-end relative">
+                            <img
+                                src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/CaseStufy_Girl.png"
+                                alt={cd?.title}
+                                className="mt-7 z-30 mr-5 xl:mr-16"
+                            />
+                            <img
+                                src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Ellipse%203563.png"
+                                alt="Casestudy"
+                                className="z-10 absolute top-[105px] right-[-3%] xl:right-[2%]"
                             />
                         </div>
                     }
@@ -303,7 +308,7 @@ const index = ({ casestudyDat }) => {
                 <div
                     id="formContainer"
                     ref={formRef}
-                    className="absolute top-[370px] right-[3%] lg:w-[330px] xl:w-[400px] z-40 max-lg:hidden 2xl:w-[425px] bg-white shadow-csFormShadow rounded-[5px]"
+                    className="absolute top-[320px] right-[3%] lg:w-[330px] xl:w-[400px] z-40 max-lg:hidden 2xl:w-[425px] bg-white shadow-csFormShadow rounded-[5px]"
                 >
                     {formSubmit ? (
                         <div className="relative p-7 space-y-4 h-full">
