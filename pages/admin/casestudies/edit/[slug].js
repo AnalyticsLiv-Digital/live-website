@@ -270,12 +270,12 @@ const index = (casestudy) => {
 
             <div><label className="block text-base font-semibold mb-1 text-gray-200">
               Client Testimonial Video URL- </label>
-              <input required className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="testimonialVedioUrl" value={formValues.testimonialVedioUrl} onChange={handleChange} /><br />
+              <input className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="testimonialVedioUrl" value={formValues.testimonialVedioUrl} onChange={handleChange} /><br />
             </div>
 
             <div><label className="block text-base font-semibold mb-1 text-gray-200">
               clientLogo URL- </label>
-              <input required className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="clientLogo" value={formValues.clientLogo} onChange={handleChange} /><br />
+              <input className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="clientLogo" value={formValues.clientLogo} onChange={handleChange} /><br />
             </div>
 
             <div><label className="block text-base font-semibold mb-1 text-gray-200">
@@ -287,7 +287,7 @@ const index = (casestudy) => {
 
             <div><label className="block text-base font-semibold mb-1 text-gray-200">
               clientTestimonial URL- </label>
-              <input required className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="clientTestimonial" value={formValues.clientTestimonial} onChange={handleChange} /><br />
+              <input className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="clientTestimonial" value={formValues.clientTestimonial} onChange={handleChange} /><br />
             </div>
 
             <div><label className="block text-base font-semibold mb-1 text-gray-200">
@@ -299,7 +299,7 @@ const index = (casestudy) => {
 
             <div><label className="block text-base font-semibold mb-1 text-gray-200">
               percentageBanner URL- </label>
-              <input required className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="percentageBanner" value={formValues.percentageBanner} onChange={handleChange} /><br />
+              <input className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="percentageBanner" value={formValues.percentageBanner} onChange={handleChange} /><br />
             </div>
             <div><label className="block text-base font-semibold mb-1 text-gray-200">
               percentageBanner Upload - </label>
