@@ -45,6 +45,10 @@ const index = ({ casestudyDat }) => {
                 const nextChunk = arr[index + 1]?.trim() || '';
                 const indentation = Math.min((stars - 2) * 30, 100); // Adjust indentation
 
+                let bulletStyle = "w-0 h-0 border-t-4 border-b-4 border-l-8 border-transparent border-l-[#0E1947]";
+                if (stars === 3) bulletStyle = 'rounded-full  bg-[#0E1947]'; // Square bullet (■)
+                if (stars === 4) bulletStyle = 'border border-[#0E1947] rounded-full'; // Empty round bullet (◯)
+
                 let boldText = '';
                 let remainingText = nextChunk;
 
@@ -57,9 +61,9 @@ const index = ({ casestudyDat }) => {
                     }
                 }
 
-                acc.push(
+                acc?.push(
                     <div key={index} className='flex items-start space-x-2 mt-2' style={{ marginLeft: `${indentation}px` }}>
-                        <div className='w-2 h-2 mt-1.5 2xl:mt-2 bg-[#0E1947] min-w-[8px] rounded-full'></div>
+                        <div className={`w-2 h-2 mt-1.5 2xl:mt-2 min-w-[8px] ${bulletStyle}`}></div>
                         <p className='text-sm 2xl:text-base text-black'>
                             {boldText ? <span className='font-semibold'>{boldText}</span> : null}
                             {boldText ? ': ' : ''}
@@ -81,7 +85,6 @@ const index = ({ casestudyDat }) => {
             return acc;
         }, []);
     }
-
 
     useEffect(() => {
         const handleScroll = () => {
