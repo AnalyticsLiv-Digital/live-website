@@ -204,7 +204,7 @@ const index = () => {
 
             <div><label className="block text-base font-semibold mb-1 text-gray-200">
               mainImage URL- </label>
-              <input required className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="mainImage" value={formValues.mainImage} onChange={handleChange} /><br />
+              <input className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="mainImage" value={formValues.mainImage} onChange={handleChange} /><br />
             </div>
             <div><label className="block text-base font-semibold mb-1 text-gray-200">
               mainImage Upload - </label>
