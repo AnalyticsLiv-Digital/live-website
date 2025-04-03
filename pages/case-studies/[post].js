@@ -39,34 +39,41 @@ const index = ({ casestudyDat }) => {
                 return acc;
             }
 
-            // Check for multiple '*' for bullet points
+            // Handle multiple '*' for bullet points
             if (/^\*{2,}/.test(trimmedChunk)) {
+                const stars = trimmedChunk?.length; // Count number of stars
                 const nextChunk = arr[index + 1]?.trim() || '';
-                if (/^(.*?)\:(.*)/.test(nextChunk)) {
-                    const match = nextChunk?.match(/^(.*?)\:(.*)/);
+                const indentation = Math.min((stars - 2) * 30, 100); // Adjust indentation
+
+                let boldText = '';
+                let remainingText = nextChunk;
+
+                // Check if there is a colon and split accordingly
+                if (nextChunk?.includes(':')) {
+                    const match = nextChunk?.match(/^(.*?):(.*)/);
                     if (match) {
-                        const stars = trimmedChunk?.length; // Count number of stars
-                        const boldText = match[1]?.trim();
-                        const remainingText = match[2]?.trim();
-                        const indentation = Math?.min((stars - 2) * 30, 100); // Adjust indentation
-
-                        acc?.push(
-                            <div key={index} className='flex items-start space-x-2 mt-2' style={{ marginLeft: `${indentation}px` }}>
-                                <div className='w-2 h-2 mt-1.5 2xl:mt-2 bg-[#0E1947] min-w-[8px] rounded-full'></div>
-                                <p className='text-sm 2xl:text-base text-black'>
-                                    <span className='font-semibold'>{boldText}</span>: {remainingText}
-                                </p>
-                            </div>
-                        );
-
-                        // Skip the next chunk since it's already processed
-                        arr[index + 1] = '';
+                        boldText = match[1]?.trim();
+                        remainingText = match[2]?.trim();
                     }
                 }
+
+                acc.push(
+                    <div key={index} className='flex items-start space-x-2 mt-2' style={{ marginLeft: `${indentation}px` }}>
+                        <div className='w-2 h-2 mt-1.5 2xl:mt-2 bg-[#0E1947] min-w-[8px] rounded-full'></div>
+                        <p className='text-sm 2xl:text-base text-black'>
+                            {boldText ? <span className='font-semibold'>{boldText}</span> : null}
+                            {boldText ? ': ' : ''}
+                            {remainingText}
+                        </p>
+                    </div>
+                );
+
+                // Skip the next chunk since it's already processed
+                arr[index + 1] = '';
                 return acc;
             }
 
-            // Handle normal text (avoid duplicate rendering)
+            // Handle normal text
             acc?.push(
                 <p key={index} className='text-sm 2xl:text-base text-black mt-4'>{trimmedChunk}</p>
             );
@@ -74,6 +81,7 @@ const index = ({ casestudyDat }) => {
             return acc;
         }, []);
     }
+
 
     useEffect(() => {
         const handleScroll = () => {
