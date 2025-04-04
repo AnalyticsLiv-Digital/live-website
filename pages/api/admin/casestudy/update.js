@@ -61,6 +61,11 @@ export default async function handler(req, res) {
       var publishdate = req?.body?.publishdate;
       var content = [];
       var active = req?.body?.active;
+      if (typeof active === "string") {
+        active = active.toLowerCase() === "true";
+      } else {
+        active = Boolean(active);
+      }
       var sequence = req?.body?.sequence;
       var opendownload = req?.body?.open;
       var percentageBanner = req?.body?.percentageBanner;
