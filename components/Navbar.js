@@ -161,7 +161,7 @@ const navbar = () => {
                                                     animate={{ y: -1, opacity: 1 }}
                                                     transition={{ type: "spring", stiffness: 260, damping: 30 }}
                                                     id="submenu2"
-                                                    className="subheader blogs-cs text-transform-none absolute w-56 text-sm flex flex-col lg:-ml-20 lg:mt-2 bg-header-linear shadow-xl items-center align-middle font-semibold"
+                                                    className="subheader blogs-cs text-transform-none absolute w-56 text-sm flex flex-col lg:-ml-20 xl:mt-1.5 bg-header-linear shadow-xl items-center align-middle font-semibold"
                                                 >
                                                     <Link href="/blogs" className="border-b border-gray-300 w-full">
                                                         <div className="py-2 text-transform-none text-white opacity-70 hover:opacity-100 font-sans text-base font-normal leading-normal">
@@ -680,7 +680,7 @@ const navbar = () => {
                         onMouseEnter={() => setIsSWebervices(true)}
                         onMouseLeave={() => { setIsSWebervices(false); setHoveredIndex(0) }}
                         onClick={() => setIsSWebervices(false)}
-                        className="subheader absolute w-full text-sm z-50 bg-header-linear shadow-xl text-white font-semibold"
+                        className="top-[45px] xl:top-[50px] absolute w-full text-sm z-50 bg-header-linear shadow-xl text-white font-semibold"
                     >
                         <div className="container p-5 flex justify-evenly items-start mx-auto">
                             <div className="w-1/3 ml-[4%]">
