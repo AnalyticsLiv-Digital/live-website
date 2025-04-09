@@ -8,7 +8,6 @@ import StructuredData from '../components/StructuredData';
 import Testimonial from '../components/home/Testimonial'
 import "react-multi-carousel/lib/styles.css";
 import Link from 'next/link';
-import ScrollProgress from '../components/ScrollProgress'
 import { Transition } from "@headlessui/react";
 
 const { Element: ScrollElement } = Scroll;
@@ -339,7 +338,6 @@ export default function ga4({ brandsdata }) {
               </div>
             )}
           </Transition>
-          <ScrollProgress color="red" showSpinner={false} />
         </header>
 
         {/* <section>

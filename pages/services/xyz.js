@@ -3,7 +3,6 @@ import Head from 'next/head';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import * as Scroll from 'react-scroll';
-import ScrollProgress from '../../components/ScrollProgress';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 

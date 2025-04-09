@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import ScrollProgress from '../../components/ScrollProgress'
 import Head from 'next/head';
 import BlogCard from '../../components/BlogCard';
 import AOS from 'aos';
@@ -26,7 +25,6 @@ const index = ({ blogDat, count }) => {
             <meta name="description" content="Google Marketing Platform Partner - Blogs on GA4, DV360, Google Ads" />
             <link rel="canonical" href="https://analyticsliv.com/blogs"></link>
         </Head>
-            <ScrollProgress />
 
             <div>
 

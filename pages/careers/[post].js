@@ -1,5 +1,4 @@
 import React from 'react'
-import ScrollProgress from '../../components/ScrollProgress'
 import AOS from 'aos';
 import { useState, useEffect } from 'react';
 import { Router, useRouter } from 'next/router';
@@ -222,7 +221,6 @@ const post = ({ jobData }) => {
                 <title>AnalyticsLiv Job - {jobData && jobData.job[0].title}</title>
                 <link rel="canonical" href={url}></link>
             </Head>
-            <ScrollProgress />
             {showWaiting && <div className="fixed flex backdrop-blur top-0 left-0 right-0 z-40 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full"><ScaleLoader
                 color="#271d90"
                 loading

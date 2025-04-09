@@ -27,7 +27,8 @@ const handler = async (req, res) => {
             active: req.body.active,
             content: blogcontent,
             sequence: req.body.sequence,
-            relatedTo: req.body.relatedTo
+            relatedTo: req.body.relatedTo,
+            youtube: req.body.youtube,
         });
         await b.save();
 

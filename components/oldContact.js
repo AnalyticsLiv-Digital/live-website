@@ -1,5 +1,4 @@
 import React from 'react'
-import ScrollProgress from './ScrollProgress'
 import Image from 'next/image';
 import Head from 'next/head'
 import { useState, useEffect } from 'react'
@@ -145,7 +144,6 @@ const oldContact = () => {
                 twitterTitle="AnalyticsLiv - Contact us"
                 twitterDescription="Google Marketing Platform Partner - Contact for Support"
             />
-            <ScrollProgress />
             {showWaiting && <div className="fixed flex backdrop-blur top-0 left-0 right-0 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full"><ScaleLoader
                 color="#271d90"
                 loading

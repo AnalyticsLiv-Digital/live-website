@@ -1,6 +1,5 @@
 'use client'
 import React from 'react'
-import ScrollProgress from '../components/ScrollProgress'
 import Head from 'next/head'
 import Link from 'next/link';
 
@@ -11,7 +10,6 @@ const privacypolicy = () => {
             <meta name="description" content="Google Marketing Platform Partner - Privacy Policy" />
             <link rel="canonical" href="https://analyticsliv.com/privacy-policy"></link>
         </Head>
-        <ScrollProgress />
         <div className="page_title bg-[#4b82f9] text-white mb-10 relative">
             <div className='p-10'>
                 {/* <Link href="/" className="hover:text-gray-700">Home 

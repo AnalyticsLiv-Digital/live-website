@@ -19,6 +19,7 @@ const BlogSchema = new mongoose.Schema({
         
     ],
     relatedTo:{type: String},
+    youtube:{type: String},
 });
 mongoose.models = {};
 export default mongoose.model("Blog", BlogSchema);

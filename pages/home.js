@@ -5,7 +5,6 @@ import Counter from '../components/Counter'
 import { useEffect } from 'react'
 import { motion } from 'framer-motion';
 import VisibilitySensor from 'react-visibility-sensor';
-import ScrollProgress from '../components/ScrollProgress';
 import StructuredData from '../components/StructuredData';
 import Link from 'next/link';
 import AOS from 'aos';
@@ -45,7 +44,6 @@ export default function Home({brandsdata,blogsdata}) {
 
     return (
         <>
-            <ScrollProgress />
             <Head>
                 <meta name="description" content="AnalyticsLiv Digital is one of the leading Web and App analytics agency. We help our customers embrace Google Products to improve their customer experiences."/>
                 <title>Leading Web and App Analytics Agency in India - AnalyticsLiv</title>

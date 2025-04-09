@@ -228,7 +228,7 @@ const Services = () => {
                     alt={service.title}
                     className="w-14"
                   />
-                  <h3 className="text-base xl:text-lg font-bold text-center">
+                  <h3 className="text-base 2xl:text-lg font-bold text-center">
                     {service.title}
                   </h3>
                 </div>
