@@ -12,7 +12,7 @@ import { IoChevronDown, IoChevronUp } from "react-icons/io5";
 import { GoChevronRight } from "react-icons/go";
 
 const navbar = () => {
-    const [header, setHeader] = useState(50);
+    const [isShadow, setIsShadow] = useState(false);
     const [isWebResources, setIsWebResources] = useState(false);
     const [isWebServices, setIsSWebervices] = useState(false);
     const [isResources, setIsResources] = useState(false);
@@ -26,10 +26,10 @@ const navbar = () => {
         let headerSize = () => {
             const totalScroll = document.documentElement.scrollTop;
 
-            if (totalScroll > 130) {
-                setHeader(40);
-            } else if (totalScroll < 100) {
-                setHeader(60);
+            if (totalScroll > 10) {
+                setIsShadow(true);
+            } else if (totalScroll < 10) {
+                setIsShadow(false);
             }
         };
 
@@ -97,10 +97,10 @@ const navbar = () => {
                 <meta http-equiv="Expires" content="-1" />
                 <link
                     rel="stylesheet"
-                    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+                    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap"
                 />
             </Head>
-            <div className="font-sans sticky top-0 z-50 bg-header-linear h-[55px] sm:h-[50px] text-white flex justify-center items-center px-2">
+            <div className=" sticky top-0 z-50 bg-header-linear h-[55px] sm:h-[50px] text-white flex justify-center items-center px-2">
                 <div className="text-xs max-sm:py-1.5 sm:text-base md:text-base font-normal text-center flex max-sm:flex-col max-sm:gap-1 justify-center items-center">
                     Your Partner for Google Marketing Platform Success
                     <a href="tel:+918320576622" className="ml-2 sm:ml-5 bg-white px-2 py-1 sm:px-3 sm:py-[5px] rounded-[5px]"><div className="flex justify-center items-center text-[#0E1947] text-[11px] sm:text-sm md:text-[13px] sm:hover:underline sm:hover:text-[13.2px] font-bold">
@@ -108,26 +108,25 @@ const navbar = () => {
                         <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/telephone%20(9).svg" alt="Ringer Volume" className="max-sm:w-3 max-sm:ml-1.5 sm:pl-2" /></div></a>
                 </div>
             </div>
-            <header className="sticky min-w-full top-[55px] sm:top-[50px] z-50 bg-white font-sans">
+            <header className="sticky min-w-full top-[55px] sm:top-[50px] z-50 bg-white ">
                 {/* <div> sm:w-1/3*/}
                 <div className="hidden lg:inline">
-                    <div className="flex shadow-customShadow items-center justify-between py-2 px-5">
+                    <div className={`flex ${isShadow ? "shadow-navShadow" : null} items-center justify-between py-0 px-5`}>
                         <Link className="logo" href="/">
                             <img
                                 alt="AnalyticsLiv Logo"
                                 aria-label="logo"
                                 src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png"
-                                className="h-10 lg:mx-4 cursor-pointer"
+                                className="h-8 2xl:h-10 lg:mx-4 cursor-pointer"
                             />
                         </Link>
-                        <div className="flex">
+                        <div className="flex items-center">
                             <div
-                                style={{ height: header }}
                                 className="navbar hidden lg:flex py-2 h-auto flex-wrap px-4 lg:flex-row items-center justify-end"
                             >
                                 {/* <Link className="logo" href="/"><img alt="logo" aria-label="logo" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="h-10 lg:mx-4 cursor-pointer" /></Link> */}
                                 <nav className="lg:flex text-center">
-                                    <ul className="lg:flex text-[10px] xl:text-[14px] font-sans font-semibold text-[#0E1947] text-left lg:text-center z-[-1] lg:z-auto lg:mr-4 lg:w-auto items-center tracking-wide cursor-pointer">
+                                    <ul className="lg:flex text-[10px] xl:text-[14px]  font-semibold text-[#0E1947] text-left lg:text-center z-[-1] lg:z-auto lg:mr-4 lg:w-auto items-center tracking-wide cursor-pointer">
                                         <li
                                             className="relative flex items-center gap-[5px] hover:border-b-2 hover:border-[#0E1947] duration-100 delay-75 ease-in-out py-2"
                                             onMouseEnter={() => {
@@ -161,15 +160,15 @@ const navbar = () => {
                                                     animate={{ y: -1, opacity: 1 }}
                                                     transition={{ type: "spring", stiffness: 260, damping: 30 }}
                                                     id="submenu2"
-                                                    className="subheader blogs-cs text-transform-none absolute w-56 text-sm flex flex-col lg:-ml-20 xl:mt-1.5 bg-header-linear shadow-xl items-center align-middle font-semibold"
+                                                    className="subheader blogs-cs text-transform-none absolute w-56 text-sm flex flex-col lg:-ml-20 mt-[-7px] xl:mt-[-2px] bg-header-linear shadow-xl items-center align-middle font-semibold"
                                                 >
                                                     <Link href="/blogs" className="border-b border-gray-300 w-full">
-                                                        <div className="py-2 text-transform-none text-white opacity-70 hover:opacity-100 font-sans text-base font-normal leading-normal">
+                                                        <div className="py-2 text-transform-none text-white opacity-70 hover:opacity-100 text-base font-normal leading-normal">
                                                             Blogs
                                                         </div>
                                                     </Link>
                                                     <Link href="/case-studies" className="w-full">
-                                                        <div className="py-2 text-transform-none text-white opacity-70 hover:opacity-100 font-sans text-base font-normal leading-normal">
+                                                        <div className="py-2 text-transform-none text-white opacity-70 hover:opacity-100 text-base font-normal leading-normal">
                                                             Case Studies
                                                         </div>
                                                     </Link>
@@ -210,12 +209,13 @@ const navbar = () => {
             </span> */}
                                 </nav>
                             </div>
-                            <div className="hidden md:flex items-start pt-1.5 justify-end">
+                            <div className="hidden md:flex items-start pt-0 justify-end">
                                 <span className="text-right flex items-start justify-end">
                                     <img
                                         alt="marketing-partner"
                                         aria-label="marketing-partner"
                                         src="https://storage.googleapis.com/website-bucket-uploads/static/gmp.svg"
+                                        className="w-[70%] xl:w-[80%] 2xl:w-[90%]"
                                     />
                                 </span>
                             </div>
@@ -225,7 +225,7 @@ const navbar = () => {
 
                 {/* </div> */}
 
-                <div className="relative shadow-customShadow flex lg:hidden p-2">
+                <div className={`relative ${isShadow ? "shadow-navShadow" : null} flex lg:hidden p-2`}>
                     <Link href="/">
                         <img
                             onClick={() => setIsOpen(false)}
@@ -296,7 +296,7 @@ const navbar = () => {
                             id="mobile-menu"
                         >
                             <div className="px-4 text-[#0E1947] pt-2 pb-3 space-y-1 sm:px-3">
-                                <p className=" text-[#0E1947] block px-3 py-2 rounded-md font-sans text-base font-normal">
+                                <p className=" text-[#0E1947] block px-3 py-2 rounded-md text-base font-normal">
                                     <div
                                         onClick={() => {
                                             setIsServices(!isServices);
@@ -314,7 +314,7 @@ const navbar = () => {
                                                 stiffness: 260,
                                                 damping: 20,
                                             }}
-                                            className="transition font-sans ease-out duration-200 px-2 text-cyan-400 text-base font-medium divide-y-2"
+                                            className="transition ease-out duration-200 px-2 text-cyan-400 text-base font-medium divide-y-2"
                                         >
                                             <div
                                                 onClick={() => {
@@ -341,7 +341,7 @@ const navbar = () => {
                                                     <div class="flex items-center py-1">
                                                         <Link
                                                             href="/services/web-app-measurement"
-                                                            class="text-menuheading font-sans text-sm font-normal leading-normal"
+                                                            class="text-menuheading text-sm font-normal leading-normal"
                                                         >
                                                             Account health and Opportunity
                                                         </Link>
@@ -349,7 +349,7 @@ const navbar = () => {
                                                     <div class="flex items-center py-1">
                                                         <Link
                                                             href="/services/web-app-measurement"
-                                                            class="text-menuheading font-sans text-sm font-normal leading-normal"
+                                                            class="text-menuheading text-sm font-normal leading-normal"
                                                         >
                                                             GA4 Implementation & Optimization
                                                         </Link>
@@ -357,7 +357,7 @@ const navbar = () => {
                                                     <div class="flex items-center py-1">
                                                         <Link
                                                             href="/services/server-side-tracking"
-                                                            class="text-menuheading font-sans text-sm font-normal leading-normal"
+                                                            class="text-menuheading text-sm font-normal leading-normal"
                                                         >
                                                             Server Side Tracking
                                                         </Link>
@@ -365,7 +365,7 @@ const navbar = () => {
                                                     <div class="flex items-center py-1">
                                                         <Link
                                                             href="/services/gdpr-compliance"
-                                                            class="text-menuheading font-sans text-sm font-normal leading-normal"
+                                                            class="text-menuheading text-sm font-normal leading-normal"
                                                         >
                                                             Cookie Consent Solution
                                                         </Link>
@@ -381,7 +381,7 @@ const navbar = () => {
                                                         />
                                                         <Link
                                                             href="/services/app-marketing"
-                                                            class="text-menuheading font-sans text-base font-normal leading-normal"
+                                                            class="text-menuheading text-base font-normal leading-normal"
                                                         >
                                                             Mobile app marketing
                                                         </Link>
@@ -415,7 +415,7 @@ const navbar = () => {
                                                     <div class="flex items-center py-1">
                                                         <Link
                                                             href="/services/data-science"
-                                                            class="text-menuheading font-sans text-sm font-normal leading-normal"
+                                                            class="text-menuheading text-sm font-normal leading-normal"
                                                         >
                                                             Cloud Migration & Engineering
                                                         </Link>
@@ -423,7 +423,7 @@ const navbar = () => {
                                                     <div class="flex items-center py-1">
                                                         <Link
                                                             href="/services/custom-pipeline"
-                                                            class="text-menuheading font-sans text-sm font-normal leading-normal"
+                                                            class="text-menuheading text-sm font-normal leading-normal"
                                                         >
                                                             Custom Pipeline
                                                         </Link>
@@ -431,7 +431,7 @@ const navbar = () => {
                                                     <div class="flex items-center py-1">
                                                         <Link
                                                             href="/"
-                                                            class="text-menuheading font-sans text-sm font-normal leading-normal"
+                                                            class="text-menuheading text-sm font-normal leading-normal"
                                                         >
                                                             Custom Dashboard
                                                         </Link>
@@ -440,7 +440,7 @@ const navbar = () => {
                                                     {/* <div class="flex items-center py-1">
                                                         <Link
                                                             href="/services/data-reporting-analysis"
-                                                            class="text-menuheading font-sans text-sm font-normal leading-normal"
+                                                            class="text-menuheading text-sm font-normal leading-normal"
                                                         >
                                                             Reporting Dashboarding
                                                         </Link>
@@ -453,7 +453,7 @@ const navbar = () => {
                                                         />
                                                         <Link
                                                             href="/services/google-tag-manager"
-                                                            class="text-menuheading font-sans text-sm font-normal leading-normal"
+                                                            class="text-menuheading text-sm font-normal leading-normal"
                                                         >
                                                             Google Tag Manager Tagging
                                                         </Link>
@@ -485,7 +485,7 @@ const navbar = () => {
                                                     <div class="flex items-center py-1">
                                                         <Link
                                                             href="/services/ppc"
-                                                            class="text-menuheading font-sans text-sm font-normal leading-normal"
+                                                            class="text-menuheading text-sm font-normal leading-normal"
                                                         >
                                                             PPC campaign Management
                                                         </Link>
@@ -493,7 +493,7 @@ const navbar = () => {
                                                     <div class="flex items-center py-1">
                                                         <Link
                                                             href="/services/programatic-advertising"
-                                                            class="text-menuheading font-sans text-sm font-normal leading-normal"
+                                                            class="text-menuheading text-sm font-normal leading-normal"
                                                         >
                                                             Programmatic Advertising (DV360)
                                                         </Link>
@@ -501,7 +501,7 @@ const navbar = () => {
                                                     <div class="flex items-center py-1">
                                                         <Link
                                                             href="/services/CRO"
-                                                            class="text-menuheading font-sans text-sm font-normal leading-normal"
+                                                            class="text-menuheading text-sm font-normal leading-normal"
                                                         >
                                                             Conversion Rate Optimization (CRO)
                                                         </Link>
@@ -509,7 +509,7 @@ const navbar = () => {
                                                     <div class="flex items-center py-1">
                                                         <Link
                                                             href="/services/data-reporting-analysis"
-                                                            class="text-menuheading font-sans text-sm font-normal leading-normal"
+                                                            class="text-menuheading text-sm font-normal leading-normal"
                                                         >
                                                             Data Insight & Reporting
                                                         </Link>
@@ -545,7 +545,7 @@ const navbar = () => {
                                                     >
                                                         <Link
                                                             href="/"
-                                                            className="text-menuheading font-sans text-sm font-normal leading-normal"
+                                                            className="text-menuheading text-sm font-normal leading-normal"
                                                         >
                                                             MAdKpi
                                                         </Link>
@@ -555,7 +555,7 @@ const navbar = () => {
                                                     >
                                                         <Link
                                                             href="/"
-                                                            className="text-menuheading font-sans text-sm font-normal leading-normal"
+                                                            className="text-menuheading text-sm font-normal leading-normal"
                                                         >
                                                             MMM Modeling
                                                         </Link>
@@ -565,7 +565,7 @@ const navbar = () => {
                                                     >
                                                         <Link
                                                             href="/"
-                                                            className="text-menuheading font-sans text-sm font-normal leading-normal"
+                                                            className="text-menuheading text-sm font-normal leading-normal"
                                                         >
                                                             Product & Content Recommendation
                                                         </Link>
@@ -575,7 +575,7 @@ const navbar = () => {
                                                     >
                                                         <Link
                                                             href="/services/customer-segmentation"
-                                                            className="text-menuheading font-sans text-sm font-normal leading-normal"
+                                                            className="text-menuheading text-sm font-normal leading-normal"
                                                         >
                                                             RFM Analysis
                                                         </Link>
@@ -680,7 +680,7 @@ const navbar = () => {
                         onMouseEnter={() => setIsSWebervices(true)}
                         onMouseLeave={() => { setIsSWebervices(false); setHoveredIndex(0) }}
                         onClick={() => setIsSWebervices(false)}
-                        className="top-[45px] xl:top-[50px] absolute w-full text-sm z-50 bg-header-linear shadow-xl text-white font-semibold"
+                        className="top-[37px] xl:top-[42px] absolute w-full text-sm z-50 bg-header-linear shadow-xl text-white font-semibold"
                     >
                         <div className="container p-5 flex justify-evenly items-start mx-auto">
                             <div className="w-1/3 ml-[4%]">
@@ -692,7 +692,7 @@ const navbar = () => {
                                         onMouseEnter={() => setHoveredIndex(index)}
                                         onMouseLeave={() => setHoveredIndex(hoveredIndex)}
                                     >
-                                        <h3 className="text-white font-sans text-[13px] xl:text-[14px]">
+                                        <h3 className="text-white text-[13px] xl:text-[14px]">
                                             {service?.title}
                                         </h3>
                                         {hoveredIndex === index && (
