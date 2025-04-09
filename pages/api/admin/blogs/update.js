@@ -8,45 +8,48 @@ const uri = "mongodb+srv://anshuldhurandhar:Admin123@cluster0.b45r7wt.mongodb.ne
 const dbName = "blogsdb";
 const collectionName = "blogs";
 
-async function updateDatabaseItem(item,title,description,slug,coverphoto,thumbnail,document_id,author, duration,date, active,sequence, relatedTo) {
-   const client = new MongoClient(uri);
-   try {
-     await client.connect();
-     const db = client.db(dbName);
-     const collection = db.collection(collectionName);
- 
-     // Update a single item in the database
-     // Replace 'itemIdentifier' with the appropriate field you're matching against
-     const filter = { slug: slug };
-     const updateDoc = { $set: {
-      'content':item,
-      'title' : title,
-      'description' : description,
-      'coverphoto' : coverphoto,
-      'thumbnail' : thumbnail,
-      'document_id' : document_id,
-      'author' : author,
-      'duration' : duration,
-      'date' : date,
-      'active' : active,
-      'sequence' : sequence,
-      'relatedTo' : relatedTo
-   } };
-     const result = await collection.updateOne(filter, updateDoc);
- 
-     return result;
-   } finally {
-     await client.close();
-   }
- }
+async function updateDatabaseItem(item, title, description, slug, coverphoto, thumbnail, document_id, author, duration, date, active, sequence, relatedTo, youtube) {
+  const client = new MongoClient(uri);
+  try {
+    await client.connect();
+    const db = client.db(dbName);
+    const collection = db.collection(collectionName);
+
+    // Update a single item in the database
+    // Replace 'itemIdentifier' with the appropriate field you're matching against
+    const filter = { slug: slug };
+    const updateDoc = {
+      $set: {
+        'content': item,
+        'title': title,
+        'description': description,
+        'coverphoto': coverphoto,
+        'thumbnail': thumbnail,
+        'document_id': document_id,
+        'author': author,
+        'duration': duration,
+        'date': date,
+        'active': active,
+        'sequence': sequence,
+        'relatedTo': relatedTo,
+        'youtube': youtube,
+      }
+    };
+    const result = await collection.updateOne(filter, updateDoc);
+
+    return result;
+  } finally {
+    await client.close();
+  }
+}
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     try {
       // Fetch data from an external API
-      const response = await fetch('https://script.google.com/macros/s/AKfycbxidlMSRADTNk4kjam5Lf58cESQwxrntzlvO_kvcxx2dmSxdbD2NjxAbecDTyrFJNPs_w/exec?'+req.body.document_id);
+      const response = await fetch('https://script.google.com/macros/s/AKfycbxidlMSRADTNk4kjam5Lf58cESQwxrntzlvO_kvcxx2dmSxdbD2NjxAbecDTyrFJNPs_w/exec?' + req.body.document_id);
       let blogcontent = await response.text();
-      blogcontent = blogcontent.replaceAll('https://www.google.com/url?q=','')
+      blogcontent = blogcontent.replaceAll('https://www.google.com/url?q=', '')
 
       var title = req.body.title;
       var description = req.body.description;
@@ -60,8 +63,9 @@ export default async function handler(req, res) {
       var active = req.body.active;
       var sequence = req.body.sequence;
       var relatedTo = req.body.relatedTo;
+      var youtube = req.body.youtube;
       // Update the MongoDB database with this data
-      await updateDatabaseItem(blogcontent,title,description,slug,coverphoto,thumbnail,document_id,author, duration,date, active,sequence,relatedTo);
+      await updateDatabaseItem(blogcontent, title, description, slug, coverphoto, thumbnail, document_id, author, duration, date, active, sequence, relatedTo, youtube);
 
       res.status(200).json({ message: 'Database updated successfully!' });
     } catch (error) {
