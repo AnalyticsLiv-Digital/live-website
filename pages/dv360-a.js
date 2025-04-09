@@ -9,7 +9,6 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Link from 'next/link';
 import { Transition } from "@headlessui/react";
-import ScrollProgress from '../components/ScrollProgress'
 
 
 const { Element: ScrollElement } = Scroll;
@@ -328,7 +327,6 @@ export default function dv360({brandsdata}) {
             </div>
           )}
         </Transition>
-        <ScrollProgress color="red" showSpinner={false}/>
   </header>
 
     

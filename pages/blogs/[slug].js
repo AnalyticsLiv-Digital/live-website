@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import React from 'react'
-import ScrollProgress from '../../components/ScrollProgress'
 import AOS from 'aos';
 import Link from 'next/link';
 import 'aos/dist/aos.css';
@@ -132,11 +131,10 @@ const index = ({ blogDat, similarBlogs }) => {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
-                __html: JSON.stringify(blogSchema),
+                    __html: JSON.stringify(blogSchema),
                 }}
             />
         </Head>
-        <ScrollProgress />
 
         <div>
             <section className="relative lg:bg-gray-100 md:pt-12 overflow-scroll">
@@ -227,9 +225,9 @@ const index = ({ blogDat, similarBlogs }) => {
                         </div>
 
                         <div
-                            className={`${!blogData.relatedTo ? 'hidden' : 'block'} lg:sticky-banner bg-white px-2 py-2 lg:ml-3 ${isSticky ? "lg:fixed mt-10 lg:mt-[-50px] lg:z-10" : "lg:z-10 mt-10 lg:mt-36"}`}
+                            className={`${!blogData.relatedTo && !blogData.youtube ? 'hidden' : 'block'} max-w-max lg:sticky-banner bg-white px-2 py-2 lg:ml-3 ${isSticky ? "lg:fixed mt-10 lg:mt-[-50px] lg:z-10" : "lg:z-10 mt-10 lg:mt-36"}`}
                         >
-                            <BlogBanner relatedTo={blogData.relatedTo} />
+                            <BlogBanner blogData={blogData} />
                         </div>
                     </div>
                 </div>

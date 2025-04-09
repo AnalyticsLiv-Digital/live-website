@@ -1,5 +1,4 @@
 import React from 'react'
-import ScrollProgress from '../components/ScrollProgress';
 import { useState, useEffect } from 'react'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -110,7 +109,6 @@ const contact = () => {
                     />
                 }
             />
-            <ScrollProgress />
 
             <section className="">
                 <div className="relative h-[370px] sm:h-[420px] lg:h-[460px] 2xl:h-[540px] bg-header-linear sm:px-[10%] 2xl:px-[5%] pt-[90px] sm:pt-24">

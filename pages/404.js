@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import ScrollProgress from '../components/ScrollProgress'
 import Head from 'next/head'
 import AOS from 'aos';
 import Link from 'next/link';

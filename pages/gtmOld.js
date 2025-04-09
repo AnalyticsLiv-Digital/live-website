@@ -8,7 +8,6 @@ import StructuredData from '../components/StructuredData';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Link from 'next/link';
-import ScrollProgress from '../components/ScrollProgress'
 import { Transition } from "@headlessui/react";
 import Iframe from 'react-iframe'
 
@@ -350,7 +349,6 @@ export default function gtm({brandsdata}) {
             </div>
           )}
         </Transition>
-        <ScrollProgress color="red" showSpinner={false}/>
   </header>
 
   <section className="banner relative h-full py-16">

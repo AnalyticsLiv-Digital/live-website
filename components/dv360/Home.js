@@ -3,7 +3,6 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import * as Scroll from 'react-scroll';
 import { ScaleLoader } from 'react-spinners';
-// import ScrollProgress from '../components/ScrollProgress'
 
 const Home = () => {
     const { Element: ScrollElement } = Scroll;

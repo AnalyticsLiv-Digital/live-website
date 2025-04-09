@@ -3,7 +3,6 @@ import Head from 'next/head';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import * as Scroll from 'react-scroll';
-import ScrollProgress from '../../components/ScrollProgress';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useState } from 'react';
@@ -48,7 +47,6 @@ const index= () => {
               twitterTitle="AnalyticsLiv - Services Offered"
               twitterDescription="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads"
           />
-    <ScrollProgress/>
 
     <section className="relative">
         <div className="md:mt-4 px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16 grid grid-cols-1 md:gap-12 lg:gap-20">

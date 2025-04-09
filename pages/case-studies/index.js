@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import ScrollProgress from '../../components/ScrollProgress'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Head from 'next/head';
@@ -79,7 +78,6 @@ const index = ({ casestudyDat }) => {
       <meta name="description" content="Google Marketing Platform Partner - Our Case Studies" />
       <link rel="canonical" href="https://analyticsliv.com/case-studies"></link>
     </Head>
-    <ScrollProgress />
     <div className='font-sans mb-16'>
       <section>
         <div className='bg-[#ECF8FF] max-sm:py-10 max-sm:pb-12 px-[3%] xl:px-[3%] flex justify-around h-full items-center relative mb-14'>
@@ -282,7 +280,6 @@ export default index
 
 
 // import React, { useState } from 'react'
-// import ScrollProgress from '../../components/ScrollProgress'
 // import AOS from 'aos';
 // import 'aos/dist/aos.css';
 // import Head from 'next/head';
@@ -299,7 +296,6 @@ export default index
 //       <meta name="description" content="Google Marketing Platform Partner - Our Case Studies" />
 //       <link rel="canonical" href="https://analyticsliv.com/case-studies"></link>
 //     </Head>
-//     <ScrollProgress />
 //     <div>
 //       <section>
 //         <div className="bg-gray-50 py-8 pb-20">

@@ -7,7 +7,6 @@ import ServicesDo from '../../components/home/ServicesDo'
 import JoinUs from '../../components/home/JoinUs'
 import ServicesOffer from '../../components/home/ServicesOffer'
 import Embed from '../../components/home/Embed'
-import ScrollProgress from '../../components/ScrollProgress';
 import StructuredData from '../../components/StructuredData';
 import React from 'react'
 import Head from 'next/head'

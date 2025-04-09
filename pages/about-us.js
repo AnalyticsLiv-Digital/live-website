@@ -3,7 +3,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import ScrollProgress from "../components/ScrollProgress";
 import Head from "next/head";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -456,7 +455,6 @@ export default aboutus
 
 
 // import React, { useEffect } from "react";
-// import ScrollProgress from "../components/ScrollProgress";
 // import Head from "next/head";
 // import AOS from "aos";
 // import "aos/dist/aos.css";
@@ -494,7 +492,6 @@ export default aboutus
 //           href="https://analyticsliv.com/about-us"
 //         ></link>
 //       </Head>
-//       <ScrollProgress />
 
 //       <section className="overflow-x-hidden">
 //         <div className="relative" data-aos="fade-down" data-aos-once="true">

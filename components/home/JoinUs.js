@@ -1,6 +1,5 @@
 'use client'
 import React from 'react'
-// import ScrollProgress from '../components/ScrollProgress'
 import Image from 'next/image';
 import Head from 'next/head'
 import { useState, useEffect } from 'react'
