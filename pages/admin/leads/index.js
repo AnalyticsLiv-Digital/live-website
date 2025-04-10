@@ -22,7 +22,7 @@ const Index = ({ data }) => {
         "/phone (3).png",
         "/ChatBot_1.gif",
         "/DV_Logo.svg",
-        "/ga4.png",
+        "/Ga4.png",
         "/GTM_Gradiant_Logo_for_Header.png",
         "/E-commerce.png",
         "/E-commerce.png"
