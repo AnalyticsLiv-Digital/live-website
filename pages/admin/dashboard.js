@@ -22,16 +22,17 @@ const index = ({ data }) => {
     "https://storage.googleapis.com/website-bucket-uploads/static/public/blogs.png",
     "/casestudy.png",
     "/job.png",
-    "/leads.png"
+    "/leads.png",
+    "https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/youtube.svg"
   ];
 
   if (session) {
     return (
       <>
-        <div className="bg-gray-100 h-[100dvh] md:overflow-hidden">
+        <div className="bg-gray-100 min-h-[100dvh]">
           <Navbar />
 
-          <div className="flex flex-col max-md:gap-6 gap-12 items-center justify-evenly">
+          <div className="flex flex-col max-md:gap-6 gap-12 items-center justify-evenly pb-10">
             <h1 className="text-center font-extrabold text-4xl pt-14 pb-10 text-gray-800">
               Dashboard
             </h1>
@@ -63,8 +64,8 @@ const index = ({ data }) => {
               <DashboardCard
                 href="/admin/ytPlaylist"
                 title="Yt Playlist"
-                count={data.leads}
-                imgUrl={imgUrl[3]}
+                count={data.ytplaylist}
+                imgUrl={imgUrl[4]}
               />
             </div>
           </div>

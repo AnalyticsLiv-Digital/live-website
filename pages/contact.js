@@ -298,7 +298,7 @@ const contact = () => {
                                 </div>
 
                                 <div className=''>
-                                    <div className='text-sm 2xl:text-lg font-semibold text-[#14183E] pb-1 2xl:pb-1.5'>Requirenments*</div>
+                                    <div className='text-sm 2xl:text-lg font-semibold text-[#14183E] pb-1 2xl:pb-1.5'>Requirements*</div>
                                     <textarea placeholder="Write Message..." rows={2} className="text-sm 2xl:text-base px-5 py-2 border-[0.5px] border-[#08A4F7] rounded-md md:col-span-2 max-h-28 overflow-auto w-full focus:outline-none placeholder-[#747582] placeholder-opacity-75"
                                         id="requirements" name="requirements" value={formValues?.requirements} onChange={handleChange}></textarea>
 

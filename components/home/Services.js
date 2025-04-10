@@ -173,7 +173,7 @@ const Services = () => {
           </div>
         </div>
         <img
-          src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/industrial-designers-working-together%201.svg"
+          src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Service_Main_Image.png"
           alt="services"
           className="absolute top-10 md:top-10 right-[0%] md:right-[5%] 2xl:right-[9%] z-10 max-md:w-[35%] max-xl:w-[40%]"
         />
