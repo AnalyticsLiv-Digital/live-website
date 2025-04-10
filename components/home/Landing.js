@@ -11,7 +11,7 @@ const Landing = () => {
 
   return (
     <section className='px-3 pb-8'>
-      <div className='flex flex-col pt-10 xl:max-w-[80%] mx-auto md:pt-16 gap-4 md:gap-6 2xl:gap-10 justify-center text-center items-center text-[#0E1947]'>
+      <div className='flex flex-col pt-10 xl:max-w-[80%] mx-auto md:pt-12 gap-4 md:gap-6 2xl:gap-10 justify-center text-center items-center text-[#0E1947]'>
         <div className='text-base md:text-xl 2xl:text-3xl font-semibold leading-7 md:leading-7'>Redefining Possibilities, Empowering Brands</div>
         <h1 className='text-2xl md:text-4xl 2xl:text-5xl font-extrabold leading-7 md:leading-10'>Strategic Media, Analytics & Cloud Solutions</h1>
         <h2 className='text-[15px] md:text-xl 2xl:text-2xl font-light leading-7 md:leading-7'>Data Analytics and Marketing Solutions helps businesses in gaining digital maturity through optimized utilization of data</h2>
