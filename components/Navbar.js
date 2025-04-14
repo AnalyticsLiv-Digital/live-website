@@ -2,13 +2,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-// import NextNProgress from 'nextjs-progressbar';
 import { Transition } from "@headlessui/react";
 import Head from "next/head";
-import Script from "next/script";
 import { motion } from "framer-motion";
-// import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
-import { IoChevronDown, IoChevronUp } from "react-icons/io5";
 import { GoChevronRight } from "react-icons/go";
 
 const navbar = () => {
@@ -19,8 +15,53 @@ const navbar = () => {
     const [isServices, setIsServices] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const [submenu, setSubmenu] = useState("0");
-    const [activeCategory, setActiveCategory] = useState(null);
     const [hoveredIndex, setHoveredIndex] = useState(0);
+    const [isSubmit, setIsSubmit] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+
+    let initialVal = { name: '', email: '', contact: '', url: '' }
+    const [formValues, setFormValues] = useState(initialVal);
+
+    const handleChange = (e) => {
+
+        e.preventDefault();
+        const { name, value } = e.target;
+
+        setFormValues({ ...formValues, [name]: value })
+
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsLoading(true);
+
+        await fetch("api/navbar/services", {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                "name": formValues?.name,
+                "email": formValues?.email,
+                "contact": formValues?.contact,
+                "url": formValues?.url,
+                "type": "services"
+            }),
+
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                setIsSubmit(true);
+                setIsLoading(false);
+                setFormValues(initialVal)
+            })
+            .catch((error) => console.log("Error:", error))
+
+        setIsSubmit(true);
+        setIsLoading(false);
+        setFormValues(initialVal)
+
+    }
 
     useEffect(() => {
         let headerSize = () => {
@@ -679,60 +720,101 @@ const navbar = () => {
                         transition={{ type: "spring", stiffness: 260, damping: 30 }}
                         onMouseEnter={() => setIsSWebervices(true)}
                         onMouseLeave={() => { setIsSWebervices(false); setHoveredIndex(0) }}
-                        onClick={() => setIsSWebervices(false)}
-                        className="top-[37px] xl:top-[42px] absolute w-full text-sm z-50 bg-header-linear shadow-xl text-white font-semibold"
+                        // onClick={() => setIsSWebervices(false)}
+                        className="top-[37px] xl:top-[42px] absolute w-full text-sm z-[9999] bg-header-linear shadow-xl text-white font-semibold"
                     >
-                        <div className="container p-5 flex justify-evenly items-start mx-auto">
-                            <div className="w-1/3 ml-[4%]">
-                                {servicesData?.map((service, index) => (
-                                    <div
-                                        key={index}
-                                        className={`flex items-center justify-between py-4 transition-all duration-75 px-4 border-b border-gray-300 font-medium ${hoveredIndex === index ? "opacity-100 transition duration-100" : " opacity-70"
-                                            }`}
-                                        onMouseEnter={() => setHoveredIndex(index)}
-                                        onMouseLeave={() => setHoveredIndex(hoveredIndex)}
-                                    >
-                                        <h3 className="text-white text-[13px] xl:text-[14px]">
-                                            {service?.title}
-                                        </h3>
-                                        {hoveredIndex === index && (
-                                            <div
-                                            ><GoChevronRight className="w-9" />
-                                            </div>
-                                        )}
-                                    </div>
-                                ))}
+                        <div className="flex">
+                            <div className="container w-[43%] pt-5 pb-5 flex justify-evenly items-center">
+                                <div className="w-[38%] ml-[0%]">
+                                    {servicesData?.map((service, index) => (
+                                        <div
+                                            key={index}
+                                            className={`flex items-center justify-between py-4 transition-all duration-75 px-4 border-b border-gray-300 font-medium ${hoveredIndex === index ? "opacity-100 transition duration-100" : " opacity-70"
+                                                }`}
+                                            onMouseEnter={() => setHoveredIndex(index)}
+                                            onMouseLeave={() => setHoveredIndex(hoveredIndex)}
+                                        >
+                                            <h3 className="text-white text-[10px] xl:text-[12px] 2xl:text-[14px]">
+                                                {service?.title}
+                                            </h3>
+                                            {hoveredIndex === index && (
+                                                <div
+                                                ><GoChevronRight className="w-9" />
+                                                </div>
+                                            )}
+                                        </div>
+                                    ))}
+                                </div>
+
+                                <div className="w-[1px] h-[240px] ml-[0%] opacity-70 bg-gray-300"></div>
+
+                                <div className="w-[35%] ml-[0%] flex py-4">
+                                    {hoveredIndex !== null && (
+                                        <motion.div
+                                            initial={{ opacity: 0, y: -10 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                                            className="py-8 grid grid-cols-1 2xl:grid-cols-1 max-2xl:w-full justify-items-start gap-5 2xl:gap-5 rounded-md max-h-[500px]"
+                                        >
+                                            {servicesData[hoveredIndex]?.links?.map((link, linkIndex) => (
+                                                <div key={linkIndex} className="">
+                                                    {/* <img src={link?.imgSrc} alt={link?.label} className="w-6 h-6" /> */}
+                                                    <Link
+                                                        href={link?.href}
+                                                        className="text-[10px] xl:text-[11px] 2xl:text-[13px] font-normal text-white opacity-70 hover:opacity-100"
+                                                    >
+                                                        {link?.label}
+                                                    </Link>
+                                                </div>
+                                            ))}
+                                        </motion.div>
+                                    )}
+                                </div>
+
                             </div>
+                            <div className="flex justify-center w-[57%] pt-7 gap-5">
+                                <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Resources_Girl_Img_2.png" alt="Analyticsliv Services"
+                                    className="" />
 
-                            <div className="w-[1px] h-[240px] ml-[6%] opacity-70 bg-gray-300"></div>
+                                <div className="bg-white p-4 2xl:p-5 rounded-[20px] text-center mb-7 w-[50%] 2xl:w-[50%]">
+                                    {
+                                        isSubmit ?
+                                            <>
+                                                <div className='flex flex-col justify-between items-center gap-4 relative text-slate-700'>
+                                                    <img
+                                                        src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Thank_You_img.png'
+                                                        alt='analyticsLiv'
+                                                        className="w-44" />
+                                                    <h2 className='align-middle text-xl pt-3'>We will get back to you soon.</h2>
+                                                </div>
+                                            </>
+                                            :
+                                            <>
+                                                <div className="text-base xl:text-lg font-extrabold text-black pb-1">Transform Your Campaigns Today!</div>
+                                                <div className="text-[10px] font-normal text-black pb-2.5 leading-[14px]">Run Brand Marketing & Performance Campaigns<br></br> Programmatically</div>
+                                                <form className="flex flex-col items-center gap-3 h-full w-full" onSubmit={handleSubmit}>
+                                                    <input autoComplete="off" required className="border border-[#DBDBDB] text-gray-600 placeholder-slate-300 font-normal focus:outline-none py-1.5 2xl:py-2 px-5 h-[28px] rounded-[30px] w-full text-[10px]" placeholder="Full Name*" type="text" name="name" value={formValues?.name} onChange={handleChange} />
+                                                    <div className="flex items-center gap-4 w-full text-[10px]">
+                                                        <input autoComplete="off" required className="border border-[#DBDBDB] text-gray-600 placeholder-slate-300 font-normal focus:outline-none py-1.5 2xl:py-2 px-5 h-[28px] rounded-[30px] w-full text-[10px]" placeholder="Email*" type="email" name="email" value={formValues?.email} onChange={handleChange} />
+                                                        <input autoComplete="off" className="border border-[#DBDBDB] text-gray-600 placeholder-slate-300 font-normal focus:outline-none py-1.5 2xl:py-2 px-5 h-[28px] rounded-[30px] w-full text-[10px]" placeholder="Mobile" type="number" name="contact" value={formValues?.contact} onChange={handleChange} />
+                                                    </div>
+                                                    <input autoComplete="off" required className="border border-[#DBDBDB] text-gray-600 placeholder-slate-300 font-normal focus:outline-none py-1.5 2xl:py-2 px-5 h-[28px] rounded-[30px] w-full text-[10px]" placeholder="Website url*" type="text" name="url" value={formValues?.url} onChange={handleChange} />
+                                                    {
+                                                        isLoading ?
+                                                            <button className="text-white text-xs font-semibold bg-btn-linear rounded-[30px] w-full py-2 2xl:py-2 mt-[3px]">Submitting...</button>
+                                                            : <button className="text-white text-xs font-semibold bg-btn-linear hover:bg-header-linear transition-all ease-linear duration-150 rounded-[30px] w-full py-2 2xl:py-2 mt-[3px]">Discuss Your Project</button>
+                                                    }
+                                                </form>
+                                            </>
+                                    }
+                                </div>
 
-                            <div className="w-2/3 ml-[5%] mr-[6%] flex px-4 py-4">
-                                {hoveredIndex !== null && (
-                                    <motion.div
-                                        initial={{ opacity: 0, y: -10 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                                        className="py-8 grid grid-cols-2 2xl:grid-cols-3 max-2xl:w-full justify-items-start gap-11 2xl:gap-12 rounded-md max-h-[500px]"
-                                    >
-                                        {servicesData[hoveredIndex]?.links?.map((link, linkIndex) => (
-                                            <div key={linkIndex} className="">
-                                                {/* <img src={link?.imgSrc} alt={link?.label} className="w-6 h-6" /> */}
-                                                <Link
-                                                    href={link?.href}
-                                                    className="text-[11px] xl:text-[13px] font-normal text-white opacity-70 hover:opacity-100"
-                                                >
-                                                    {link?.label}
-                                                </Link>
-                                            </div>
-                                        ))}
-                                    </motion.div>
-                                )}
+
                             </div>
                         </div>
                     </motion.div>
                 )}
 
-                {/*<NextNProgress color="red" showSpinner={false}/>*/}
             </header>
         </>
     );

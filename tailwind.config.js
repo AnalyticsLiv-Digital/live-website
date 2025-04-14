@@ -81,8 +81,10 @@ module.exports = {
       backgroundImage: {
         'custom-linear': 'linear-gradient(97.32deg, #FF698D -3.47%, #FB3F6C 108.43%)',
         'header-linear': 'linear-gradient(97.32deg, #003366 -3.47%, #0F52BA 108.43%)',
+        'btn-linear': 'linear-gradient(90deg, #188F3C 0%, #5AB974 100%)',
       },
     },
+
   },
   plugins: [],
 }
