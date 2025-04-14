@@ -56,7 +56,7 @@ const config = {
   },
   customComponents: {
     header: () => (
-      <div className="sticky top-0 z-30 p-2 rounded-lg bg-[#3c005d] text-white text-center font-bold shadow-md">
+      <div className="sticky top-0 z-30 p-2 rounded-[5px] bg-[#3c005d] text-white text-center font-bold shadow-md">
         🤖 You're with AnalyticsLiv Bot
       </div>
     ),
