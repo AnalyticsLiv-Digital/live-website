@@ -28,9 +28,9 @@ const handler = async (req, res) => {
 
             const userMailOptions = {
                 // to: [req.body.email, "anuj@analyticsliv.com"],
-                to: [req.body?.email, "pruthvirajsinh.rathod@analyticsliv.com", "atul.verma@analyticsliv.com"],
+                to: [req.body?.email, "atul.verma@analyticsliv.com"],
                 subject: 'Analyticsliv - Thank you for contacting us.',
-                html: `Hi ${req.body.firstName},<br>
+                html: `Hi ${req.body.name},<br>
         Thank you for reaching out to AnalyticsLiv, one of the fastest growing Google Marketing Platform Partners in India. Our Services have empowered more than 500 businesses to use first-party data for analysis and marketing purposes, making businesses independent of third-party data intelligence.<br>
         We will study the details you have shared and will get back to you with a response to help your business. Meanwhile, you can have a look through our services on <a href="https://analyticsliv.com">analyticsliv.com</a> or for any quick chat, contact us at: <br>
         Mobile: <a href="tel:+918320576622">+91 83205 76622</a> <br>
