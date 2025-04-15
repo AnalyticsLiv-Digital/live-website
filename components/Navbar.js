@@ -826,7 +826,7 @@ const navbar = () => {
 
                                                     {
                                                         isLoading ?
-                                                            <button className="text-white text-xs font-semibold bg-btn-linear rounded-[30px] w-full py-2 2xl:py-2 mt-[15px]">Submitting...</button>
+                                                            <button className="text-white text-xs font-semibold bg-btn-linear rounded-[30px] w-full py-2 2xl:py-2 mt-[15px] cursor-not-allowed" disabled>Submitting...</button>
                                                             : <button className="text-white text-xs font-semibold bg-btn-linear hover:text-gray-100 transition-all ease-linear duration-150 rounded-[30px] w-full py-2 2xl:py-2 mt-[15px]">Discuss Your Project</button>
                                                     }
 
