@@ -21,6 +21,7 @@ const navbar = () => {
 
     let initialVal = { name: '', email: '', contact: '', url: '' }
     const [formValues, setFormValues] = useState(initialVal);
+    const [formErrors, setFormErrors] = useState([]);
 
     const handleChange = (e) => {
 
@@ -34,6 +35,18 @@ const navbar = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsLoading(true);
+
+        const errors = [];
+
+        if (!formValues?.name?.trim()) errors?.push("Name");
+        if (!formValues?.email?.trim()) errors?.push("Email");
+        if (!formValues?.url?.trim()) errors?.push("Website URL");
+
+        if (errors?.length > 0) {
+            setFormErrors(errors);
+            setIsLoading(false);
+            return;
+        }
 
         await fetch("api/navbar/services", {
             method: 'POST',
@@ -54,10 +67,14 @@ const navbar = () => {
                 setIsSubmit(true);
                 setIsLoading(false);
                 setFormValues(initialVal)
+                setFormErrors([]);
             })
-            .catch((error) => console.log("Error:", error))
+            .catch((error) => {
+                console.log("Error:", error);
+                alert('There is some issue sending your data, Please try again later !')
+            })
 
-        setIsSubmit(true);
+        // setIsSubmit(true);
         setIsLoading(false);
         setFormValues(initialVal)
 
@@ -792,18 +809,27 @@ const navbar = () => {
                                             <>
                                                 <div className="text-base xl:text-lg font-extrabold text-black pb-1">Transform Your Campaigns Today!</div>
                                                 <div className="text-[10px] font-normal text-black pb-2.5 leading-[14px]">Run Brand Marketing & Performance Campaigns<br></br> Programmatically</div>
-                                                <form className="flex flex-col items-center gap-3 h-full w-full" onSubmit={handleSubmit}>
-                                                    <input autoComplete="off" required className="border border-[#DBDBDB] text-gray-600 placeholder-slate-300 font-normal focus:outline-none py-1.5 2xl:py-2 px-5 h-[28px] rounded-[30px] w-full text-[10px]" placeholder="Full Name*" type="text" name="name" value={formValues?.name} onChange={handleChange} />
-                                                    <div className="flex items-center gap-4 w-full text-[10px]">
-                                                        <input autoComplete="off" required className="border border-[#DBDBDB] text-gray-600 placeholder-slate-300 font-normal focus:outline-none py-1.5 2xl:py-2 px-5 h-[28px] rounded-[30px] w-full text-[10px]" placeholder="Email*" type="email" name="email" value={formValues?.email} onChange={handleChange} />
+                                                <form className="flex flex-col items-center h-full w-full" onSubmit={handleSubmit}>
+                                                    <input autoComplete="off" className="border border-[#DBDBDB] text-gray-600 placeholder-slate-300 font-normal focus:outline-none py-1.5 2xl:py-2 px-5 h-[28px] rounded-[30px] w-full text-[10px]" placeholder="Full Name*" type="text" name="name" value={formValues?.name} onChange={handleChange} />
+                                                    <div className="flex items-center gap-4 w-full text-[10px] mt-3">
+                                                        <input autoComplete="off" className="border border-[#DBDBDB] text-gray-600 placeholder-slate-300 font-normal focus:outline-none py-1.5 2xl:py-2 px-5 h-[28px] rounded-[30px] w-full text-[10px]" placeholder="Email*" type="email" name="email" value={formValues?.email} onChange={handleChange} />
                                                         <input autoComplete="off" className="border border-[#DBDBDB] text-gray-600 placeholder-slate-300 font-normal focus:outline-none py-1.5 2xl:py-2 px-5 h-[28px] rounded-[30px] w-full text-[10px]" placeholder="Mobile" type="number" name="contact" value={formValues?.contact} onChange={handleChange} />
                                                     </div>
-                                                    <input autoComplete="off" required className="border border-[#DBDBDB] text-gray-600 placeholder-slate-300 font-normal focus:outline-none py-1.5 2xl:py-2 px-5 h-[28px] rounded-[30px] w-full text-[10px]" placeholder="Website url*" type="text" name="url" value={formValues?.url} onChange={handleChange} />
+                                                    <input autoComplete="off" className="border border-[#DBDBDB] mt-3 text-gray-600 placeholder-slate-300 font-normal focus:outline-none py-1.5 2xl:py-2 px-5 h-[28px] rounded-[30px] w-full text-[10px]" placeholder="Website url*" type="text" name="url" value={formValues?.url} onChange={handleChange} />
+
+                                                    {
+                                                        formErrors?.length > 0 &&
+                                                        <p className="text-red-500 text-xs font-medium text-left w-full pl-2 pt-1">
+                                                            {formErrors?.join(", ")} {formErrors?.length === 1 ? "is" : "are"} required.
+                                                        </p>
+                                                    }
+
                                                     {
                                                         isLoading ?
-                                                            <button className="text-white text-xs font-semibold bg-btn-linear rounded-[30px] w-full py-2 2xl:py-2 mt-[3px]">Submitting...</button>
-                                                            : <button className="text-white text-xs font-semibold bg-btn-linear hover:text-gray-100 transition-all ease-linear duration-150 rounded-[30px] w-full py-2 2xl:py-2 mt-[3px]">Discuss Your Project</button>
+                                                            <button className="text-white text-xs font-semibold bg-btn-linear rounded-[30px] w-full py-2 2xl:py-2 mt-[15px]">Submitting...</button>
+                                                            : <button className="text-white text-xs font-semibold bg-btn-linear hover:text-gray-100 transition-all ease-linear duration-150 rounded-[30px] w-full py-2 2xl:py-2 mt-[15px]">Discuss Your Project</button>
                                                     }
+
                                                 </form>
                                             </>
                                     }
