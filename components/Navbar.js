@@ -790,7 +790,7 @@ const navbar = () => {
 
                             </div>
                             <div className="flex justify-center w-[57%] pt-7 gap-5">
-                                <div className="min-w-[200px]">
+                                <div className="min-w-[250px]">
                                     <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Resources_Girl_Img_2.png" alt="Analyticsliv Services"
                                         className="" />
                                 </div>
