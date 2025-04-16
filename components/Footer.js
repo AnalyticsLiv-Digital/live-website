@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import { FaPhone, FaSquareFacebook } from "react-icons/fa6"
 import { FaLinkedin } from "react-icons/fa"
@@ -12,6 +12,45 @@ import Link from 'next/link'
 import { FaSquareXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
+
+    const [email, setEmail] = useState('');
+    // const [error, setError] = useState('');
+    const [isSubmit, setIsSubmit] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+
+    const handleEmailChange = (e) => {
+        const value = e.target.value;
+        setEmail(value);
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsLoading(true);
+
+        // if (!email?.trim()) setError('Please enter Email address !')
+        await fetch("api/navbar/services", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "email": email,
+                "type": "footer"
+            })
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                setIsSubmit(true);
+                setIsLoading(false);
+                setEmail('')
+            })
+            .catch((error) => {
+                console.log("Error:", error);
+                alert('There is some issue sending your data, Please try again later !')
+            })
+
+        setIsLoading(false);
+    }
 
     const scrollToTop = () => {
         window.scrollTo({
@@ -76,17 +115,32 @@ const Footer = () => {
 
                                         <div className="right-footer2 md:pb-7 h-full sm:pt-0">
                                             <div className="text-[21px] font-semibold text-white">Contact Us</div>
-                                            <div className="relative w-full max-sm:max-w-[250px] max-w-[400px] pt-2.5 md:pt-7">
-                                                <div className="flex items-center">
-                                                    <input
-                                                        type="email"
-                                                        placeholder="Enter your email"
-                                                        className="flex-grow h-10 xl:h-10 pl-4 rounded-l-[8px] border border-gray-300 focus:outline-none"
-                                                    />
-                                                    <button className="h-10 xl:h-10 px-6 text-base font-medium bg-[#08A4F7] text-white rounded-r-[8px] transition">
-                                                        Submit
-                                                    </button>
-                                                </div>
+                                            <div className="relative w-full max-sm:max-w-[380px] max-w-[400px] pt-2.5 md:pt-7">
+
+                                                {isSubmit ?
+                                                    <div className='bg-gray-100 p-3 text-center sm:min-w-[300px] sm:max-w-[310px] rounded-[10px] text-gray-800 font-medium text-base'>
+                                                        <div>Thank You for Connecting !</div>
+                                                    </div>
+                                                    :
+
+                                                    <div className="flex items-center">
+                                                        <form onSubmit={handleSubmit}>
+                                                            <input
+                                                                required
+                                                                type="email"
+                                                                placeholder="Enter your email"
+                                                                value={email}
+                                                                onChange={handleEmailChange}
+                                                                className="flex-grow h-10 xl:h-10 pl-2 pr-1 sm:pl-4 rounded-l-[8px] border border-gray-300 focus:outline-none"
+                                                            />
+                                                            <button className={`h-10 xl:h-10 px-4 sm:px-6 text-base font-medium bg-[#08A4F7] text-white rounded-r-[8px] transition
+                                                                ${isLoading ? 'cursor-not-allowed' : ''}`} disabled={isLoading}>
+                                                                Submit
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                }
+                                                {/* {error && <>{error}</>} */}
                                             </div>
                                         </div>
                                     </div>
