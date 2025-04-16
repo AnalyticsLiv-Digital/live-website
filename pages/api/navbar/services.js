@@ -35,8 +35,10 @@ const handler = async (req, res) => {
         Email: <a href="mailto:support@analyticsliv.com" class="">support@analyticsliv.com</a>`
             };
 
-            await sendEmail(internalMailOptions.to, internalMailOptions.subject, internalMailOptions.html, 'support@analyticsliv.com');
-            await sendEmail(userMailOptions.to, userMailOptions.subject, userMailOptions.html, 'sales@analyticsliv.com');
+            if (req.body?.type !== 'footer') {
+                await sendEmail(internalMailOptions.to, internalMailOptions.subject, internalMailOptions.html, 'pruthvirajsinh.rathod@analyticsliv.com');
+                await sendEmail(userMailOptions.to, userMailOptions.subject, userMailOptions.html, 'pruthvirajsinh.rathod@analyticsliv.com');
+            }
 
             res.status(200).json({ message: "Emails sent successfully" });
         } catch (error) {

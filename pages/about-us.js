@@ -271,7 +271,7 @@ const aboutus = () => {
                 alt='path to success'
                 className='mx-auto max-lg:w-[40%] max-xl:w-[35%]'
               />
-              <div className='group text-[9px] bg-[#F3FBFF] py-1 lg:py-2 px-1 md:px-2 lg:px-4 transition-all duration-75 hover:shadow-hoverCard  sm:text-xs md:text-sm  xl:text-xl font-bold text-right absolute top-[15%] left-[1%] sm:left-[12%] lg:left-[18%] xl:left-[17%] 2xl:left-[22%]'>
+              <div className='group text-[9px] bg-[#F3FBFF] py-1 lg:py-2 px-1 md:px-2 lg:px-4 transition-all duration-75 hover:shadow-hoverCard  sm:text-xs md:text-sm  xl:text-xl font-bold text-right absolute top-[15%] left-[1%] sm:left-[12%] lg:left-[18%] xl:left-[15%] 2xl:left-[21%]'>
                 Understanding Your<br />Business
                 <div className='absolute hidden group-hover:block text-center top-[10px] md:top-[-50px] w-40 xl:w-40 2xl:w-48 max-sm:left-[85%] lg:left-[-55%] xl:left-[-45%] transform -translate-x-1/2 bg-white shadow-hoverCard rounded-lg z-30'>
                   <div className="p-2 2xl:p-4 lg:py-4 lg:px-5 2xl:pr-4 2xl:px-4">

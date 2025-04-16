@@ -790,8 +790,10 @@ const navbar = () => {
 
                             </div>
                             <div className="flex justify-center w-[57%] pt-7 gap-5">
-                                <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Resources_Girl_Img_2.png" alt="Analyticsliv Services"
-                                    className="" />
+                                <div className="min-w-[250px]">
+                                    <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Resources_Girl_Img_2.png" alt="Analyticsliv Services"
+                                        className="" />
+                                </div>
 
                                 <div className="bg-white p-4 2xl:p-5 rounded-[20px] text-center mb-7 w-[50%] 2xl:w-[50%]">
                                     {
