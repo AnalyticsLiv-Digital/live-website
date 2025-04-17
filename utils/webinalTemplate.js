@@ -82,33 +82,22 @@ function generateEmailTemplate(firstName) {
         <body>
             <div class="email-container">
                 <!-- Header -->
-                <div class="email-header">
-                    <h1>You're Registered for Our Exclusive Webinar</h1>
-                </div>
                 
                 <!-- Body -->
                 <div class="email-body">
                     <!-- <h2>Google Basic vs. Advanced Consent</h2> -->
                     <p>Hi ${firstName},</p>
-                    <p>Welcome to the AnalyticsLiv community! <br><br> Thank you for registering for our exclusive webinar, <strong>Google Basic Consent vs. Advanced Consent: Optimising Your Data Strategy</strong> on <strong>October 15th at 9:00 PM IST</strong>.</p>
+                    <p>Thank you for signing up to connect with AnalyticsLiv at IREC 2025!
+We’re excited to meet you and explore how data, technology, and strategy can take your brand to the next level.</p>
                     
-                    <h3>What to Expect from This Webinar:</h3>
-                    <ul>
-                        <li>Insights on the difference between Basic and Advanced Consent in Google’s ecosystem.</li>
-                        <li>Actionable strategies to optimize your data collection while staying compliant.</li>
-                        <li>Real-world examples of how businesses are leveraging Consent Mode to maintain data accuracy.</li>
-                    </ul>
                     
-                    <h3>Webinar Details:</h3>
-                    <p><strong>📅 Date:</strong> October 15th, 2024</p>
-                    <p><strong>🕘 Time:</strong> 9:00 PM IST</p>
-                    <p><strong>⏳ Duration:</strong> 60 minutes</p>
-                    <p><strong>🔗 Join Link:</strong> <a href="https://zoom.us/j/98577778111" class="btn" style="font-weight: bold; color: white;">Join the Webinar</a></p>
                     
-                    <p>Don't forget to mark your calendar! A reminder will be sent with your access link closer to the event.</p>
+                    
+                    <p>Until then, feel free to check out our services or drop us a line at <strong><a href="mailto:sales@analyticsliv.com">sales@analyticsliv.com</a></strong>
+Let’s unlock the future of retail, together.</p>
                     
                     <h3>Got Questions?</h3>
-                    <p>Reply to this email with any questions or topics you'd like covered, and we’ll address them in the webinar.</p>
+                    <p>Reply to this email with any questions or topics you'd like covered, and we’ll address them in the meeting.</p>
                     
                     <p>Looking forward to seeing you there!</p>
                     <p>Best regards,</p>
@@ -136,4 +125,4 @@ function generateEmailTemplate(firstName) {
 
 
 
-module.exports = {generateEmailTemplate};
+module.exports = { generateEmailTemplate };

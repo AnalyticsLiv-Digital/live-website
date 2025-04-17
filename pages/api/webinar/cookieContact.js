@@ -12,9 +12,8 @@ const handler = async (req, res) => {
       email: req.body.email,
       contact: req.body.contact,
       //   message: req.body.message,
-      company: req.body.company
-
-      
+      company: req.body.company,
+      type: req.body.type,
     });
     await b.save();
 
@@ -22,15 +21,15 @@ const handler = async (req, res) => {
       from: "support@analyticsliv.com",
       //   to:"atulverma@analyticsliv.com",
       to: ["sales@analyticsliv.com", "anshul.d@analyticsliv.com", "anuj@analyticsliv.com", "nitya@analyticsliv.com", "rajvi@analyticsliv.com", "abhishek.tiwari@analyticsliv.com", "shubhangi@analyticsliv.com"],
-      subject: 'New Registartion for Cookie-consent webinar.',
-      html: `Enquiry Submitted by <br> Full Name - ${req.body.fullName}  <br> Email- ${req.body.email} <br> Contact - ${req.body.contact} <br> Message - ${req.body.message} <br> Website - ${req.body.company} `
+      subject: 'New Registartion for Irec Summit.',
+      html: `Enquiry Submitted by <br> Full Name - ${req.body.fullName}  <br> Email- ${req.body.email} <br> Contact - ${req.body.contact} <br> Message - ${req.body.message} <br> Website - ${req.body.company} <br> Type - ${req.body.type} `
     };
 
 
     var userMailOptions = {
       from: "sales@analyticsliv.com",
       to: [req.body.email],
-      subject: 'Your Spot is Reserved! Join Us for the Google Consent Webinar – Basic vs. Advanced',
+      subject: '🙏 Thank You for Registering!',
       html: generateEmailTemplate(req.body.fullName)
     };
 
