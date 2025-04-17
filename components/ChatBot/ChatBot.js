@@ -10,6 +10,8 @@ import ActionProvider from "./ActionProvider";
 
 export default function App() {
   const [showBot, setShowBot] = useState(false);
+  const [showMsg, setShowMsg] = useState(false);
+  const [showCross, setShowCross] = useState(false);
 
   const saveMessages = (messages, HTMLString) => {
     localStorage.setItem('chat_messages', JSON.stringify(messages));
@@ -20,39 +22,42 @@ export default function App() {
     return messages;
   };
 
-  const AUTO_OPEN_DELAY = 6000;
-  const HIDE_DURATION = 60 * 60 * 1000;
-
   useEffect(() => {
-    const hideUntil = localStorage.getItem('chatbot_closed');
-    const now = Date.now();
-
-    if (!hideUntil || now > parseInt(hideUntil)) {
-      const timer = setTimeout(() => {
-        setShowBot(true);
-      }, AUTO_OPEN_DELAY);
-
-      return () => clearTimeout(timer);
-    }
-  }, []);
+    setTimeout(() => {
+      setShowMsg(true);
+    }, 5000);
+  }, [])
 
   const handleToggleBot = () => {
-    const willClose = showBot;
 
-    if (willClose) {
-      const hideUntil = Date.now() + HIDE_DURATION;
-      localStorage.setItem('chatbot_closed', hideUntil.toString());
-    }
-
-    setShowBot((prev) => !prev);
+    setShowBot((prev) => {
+      const newVal = !prev;
+      if (!newVal) {
+        sessionStorage.setItem("welcome_hidden", "true");
+        setShowMsg(false);
+      }
+      return newVal;
+    });
   };
+
+  const handleMsg = () => {
+    setShowMsg(false);
+    sessionStorage.setItem("welcome_hidden", "true");
+  }
+
+  const handleShowCross = () => {
+    setShowCross(true);
+  }
+
+  const handleHideCross = () => {
+    setShowCross(false);
+  }
 
   return (
     <div className="">
       {showBot && (
         <div
           className="max-md:my-8 md:m-8 flex flex-col md:w-[370px] max-h-[380px] 2xl:max-h-[450px] min-h-[250px] 2xl:min-h-[300px] fixed right-10 bottom-[55px] 2xl:bottom-[72px] z-40 bg-white shadow-lg rounded-md overflow-y-hidden custom-scrollbar"
-        // style={{ maxHeight: "400px", minHeight: "300px" }}
         >
           <Chatbot
             config={config}
@@ -65,15 +70,31 @@ export default function App() {
           />
         </div>
       )}
+
+      <div onMouseEnter={handleShowCross} onMouseLeave={handleHideCross} className="fixed bottom-[70px] 2xl:bottom-24 z-[100000] right-[75px] sm:right-24">
+
+        <p onClick={handleMsg} className={`transition-all duration-300 transform cursor-pointer z-[100001] bg-gray-600 text-white
+        ${showCross ? 'opacity-70' : 'lg:opacity-0 lg:pointer-events-none'} ${showBot ? 'hidden' : ''} ${!showMsg ? 'hidden' : ''}
+            fixed bottom-[115px] 2xl:bottom-[145px] right-[230px] sm:right-[252px] 2xl:right-[285px] border rounded-full text-[8px] 2xl:text-[10px] px-[5px] py-[2px]`}
+        >
+          ✖
+        </p>
+
+        <div onClick={handleToggleBot} className={`transition-all duration-300 transform text-black w-[165px] 2xl:w-[200px] text-left flex items-start justify-start gap-2 shadow-md text-[10px] 2xl:text-xs cursor-pointer border bg-white p-2 rounded-md 
+        ${showBot ? 'hidden' : ''} ${showMsg ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+          <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/AnalyticsLiv%20Logo%202%201.png" alt="Analyticsliv"
+            className="w-[15px] 2xl:w-5" />
+          <div>
+            <p className="pb-[5px] 2xl:pb-2 2xl:pt-0.5">Hi there !</p>
+            <p>Welcome to AnalyticsLiv !</p>
+          </div>
+        </div>
+      </div>
       <button
         className="app-chatbot-button right-5 md:right-10 h-16 2xl:h-20 w-16 2xl:w-20"
         onClick={handleToggleBot}
       >
         {showBot ? <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/ChatBot_Close_Btn.png" alt="chatbot" /> : <img src="/ChatBot_1.gif" alt="chatbot" />}
-        {/* <div>Albot</div>
-        <svg viewBox="0 0 640 512" className="app-chatbot-button-icon">
-          <path d="M192,408h64V360H192ZM576,192H544a95.99975,95.99975,0,0,0-96-96H344V24a24,24,0,0,0-48,0V96H192a95.99975,95.99975,0,0,0-96,96H64a47.99987,47.99987,0,0,0-48,48V368a47.99987,47.99987,0,0,0,48,48H96a95.99975,95.99975,0,0,0,96,96H448a95.99975,95.99975,0,0,0,96-96h32a47.99987,47.99987,0,0,0,48-48V240A47.99987,47.99987,0,0,0,576,192ZM96,368H64V240H96Zm400,48a48.14061,48.14061,0,0,1-48,48H192a48.14061,48.14061,0,0,1-48-48V192a47.99987,47.99987,0,0,1,48-48H448a47.99987,47.99987,0,0,1,48,48Zm80-48H544V240h32ZM240,208a48,48,0,1,0,48,48A47.99612,47.99612,0,0,0,240,208Zm160,0a48,48,0,1,0,48,48A47.99612,47.99612,0,0,0,400,208ZM384,408h64V360H384Zm-96,0h64V360H288Z"></path>
-        </svg> */}
       </button>
     </div>
   );
