@@ -6,12 +6,16 @@ import 'react-chatbot-kit/build/main.css';
 import config from "./chatbotConfig";
 import MessageParser from "./MessageParser";
 import ActionProvider from "./ActionProvider";
+import { usePathname } from "next/navigation";
 // import "./chatStyle.css";
 
 export default function App() {
   const [showBot, setShowBot] = useState(false);
   const [showMsg, setShowMsg] = useState(false);
   const [showCross, setShowCross] = useState(false);
+
+  const pathname = usePathname();
+  const isBlogSlugPage = pathname.startsWith("/blogs/");
 
   const saveMessages = (messages, HTMLString) => {
     localStorage.setItem('chat_messages', JSON.stringify(messages));
@@ -75,12 +79,14 @@ export default function App() {
 
         <p onClick={handleMsg} className={`transition-all duration-300 transform cursor-pointer z-[100001] bg-gray-600 text-white
         ${showCross ? 'opacity-70' : 'lg:opacity-0 lg:pointer-events-none'} ${showBot ? 'hidden' : ''} ${!showMsg ? 'hidden' : ''}
-            fixed bottom-[115px] 2xl:bottom-[145px] right-[230px] sm:right-[252px] 2xl:right-[285px] border rounded-full text-[8px] 2xl:text-[10px] px-[5px] py-[2px]`}
+            fixed border rounded-full text-[8px] 2xl:text-[10px] px-[5px] py-[2px]
+            ${isBlogSlugPage ? 'bottom-[125px] 2xl:bottom-[145px] right-[285px] sm:right-[305px] 2xl:right-[305px] ' : 'bottom-[115px] 2xl:bottom-[145px] right-[230px] sm:right-[252px] 2xl:right-[285px] '} 
+            `}
         >
           ✖
         </p>
 
-        <div onClick={handleToggleBot} className={`transition-all duration-300 transform text-black w-[165px] 2xl:w-[200px] text-left flex items-start justify-start gap-2 shadow-md text-[10px] 2xl:text-xs cursor-pointer border bg-white p-2 rounded-md 
+        <div onClick={handleToggleBot} className={`transition-all duration-300 transform text-black ${isBlogSlugPage ? 'w-[220px]' : 'w-[165px] 2xl:w-[200px]'}  text-left flex items-start justify-start gap-2 shadow-md text-[10px] 2xl:text-xs cursor-pointer border bg-white p-2 rounded-md 
         ${showBot ? 'hidden' : ''} ${showMsg ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
           <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/AnalyticsLiv%20Logo%202%201.png" alt="Analyticsliv"
             className="w-[15px] 2xl:w-5" />
