@@ -7,7 +7,7 @@ const TrustedByWorldwide = () => {
                 Trusted by Worldwide
             </div>
             <div className='pt-12 flex justify-center items-center'>
-                <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Client_Map_Updated.png' alt='Trusted By Worldwide' className='h-full w-full xl:w-[1000px] 2xl:w-[85%]' />
+                <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/AnalyticsLiv_Client_Map.png' alt='Trusted By Worldwide - Analyticsliv Clients' className='h-full w-full xl:w-[1000px] 2xl:w-[85%]' />
             </div>
         </section>
     )
