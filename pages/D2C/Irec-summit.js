@@ -217,8 +217,8 @@ export default function IrecSummit({ brandsdata }) {
         <NewPopup onClose={closePopup} onRegister={registerUser} />
       )} */}
 
-            <div className="bg-[#2E2C37]">
-                <div className="flex justify-between max-sm:gap-2 px-2 md:px-16 pt-5 ">
+            <div className="bg-[#2E2C37] sm:pt-4 md:pt-8">
+                {/* <div className="flex justify-between max-sm:gap-2 px-2 md:px-16 pt-5 ">
                     <img
                         src="https://storage.googleapis.com/website-bucket-uploads/static/public/AnalyticsLiv%20Logo.png"
                         alt="analyticsliv-logo"
@@ -229,9 +229,9 @@ export default function IrecSummit({ brandsdata }) {
                         alt="google-partner"
                         className="max-sm:h-11 max-md:h-16 max-sm:w-[140px] max-md:w-[30%] "
                     />
-                </div>
+                </div> */}
                 <div
-                    className=" 2xl:h-[750px] xl:h-[560px] max-sm:h-[250px] max-md:h-[350px] max-lg:h-[400px] max-sm:bg-none max-xl:h-[525px] mt-5"
+                    className=" 2xl:h-[750px] xl:h-[560px] max-sm:h-[250px] max-md:h-[200px] max-lg:h-[200px] max-sm:bg-none max-xl:h-[525px] mt-5"
                     style={{
                         backgroundImage: "url(/vectormain.png)",
                         backgroundSize: "contain",
@@ -520,7 +520,7 @@ export default function IrecSummit({ brandsdata }) {
                 </div>
             </section>
 
-            <section className='xl:pt-0 px-4 xl:px-16'>
+            <section className='xl:pt-0 px-4 xl:px-16 pb-8 md:pb-12'>
                 <div className='text-[#100F1B] text-3xl font-bold text-center'>
                     Brands on Board
                 </div>
