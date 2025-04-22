@@ -20,7 +20,10 @@ const index = ({ blogDat }) => {
     document_id: blogData.document_id,
     sequence: blogData.sequence,
     category: ["GA4"],
-    relatedTo: blogData.relatedTo,
+    // relatedTo: blogData.relatedTo,
+    relatedTo: Array.isArray(blogData.relatedTo)
+    ? blogData.relatedTo
+    : blogData.relatedTo?.split(",") || [],
     youtube: blogData.youtube,
   };
   const [formattedDate, setFormattedDate] = useState(initialValues.date);
@@ -130,14 +133,35 @@ const index = ({ blogDat }) => {
     setFormValues({ ...formValues, date: formatted });
   };
 
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormValues({ ...formValues, [name]: value });
+  //   if (name === 'date') {
+  //     setFormattedDate(formatDate(value));
+  //   }
+  //   console.log("inside change", formValues);
+  //   console.log(formValues);
+  // };
+
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormValues({ ...formValues, [name]: value });
-    if (name === 'date') {
-      setFormattedDate(formatDate(value));
+    const { name, value, type, checked } = e.target;
+  
+    if (type === 'checkbox' && name === 'relatedTo') {
+      let updatedRelatedTo = [...formValues.relatedTo];
+      if (checked) {
+        updatedRelatedTo.push(value);
+      } else {
+        updatedRelatedTo = updatedRelatedTo.filter(item => item !== value);
+      }
+      setFormValues({ ...formValues, relatedTo: updatedRelatedTo });
+    } else {
+      setFormValues({ ...formValues, [name]: value });
+      if (name === 'date') {
+        setFormattedDate(formatDate(value));
+      }
     }
+  
     console.log("inside change", formValues);
-    console.log(formValues);
   };
 
   const handleSubmit = (e) => {
@@ -377,7 +401,7 @@ const index = ({ blogDat }) => {
               />
             </div>
 
-            <div>
+            {/* <div>
               <label className="block text-base font-semibold mb-2 text-gray-200">
                 Related To
               </label>
@@ -391,11 +415,33 @@ const index = ({ blogDat }) => {
                   Select a related type
                 </option>
                 <option className="bg-slate-700" value="dv360">dv360</option>
+                <option className="bg-slate-700" value="ga4">ga4</option>
+                <option className="bg-slate-700" value="gtm">gtm</option>
                 <option className="bg-slate-700" value="firebase">firebase</option>
-                <option className="bg-slate-700" value="lookerstudio">looker studio</option>
               </select>
+            </div> */}
+
+            <div>
+              <label className="block text-base font-semibold mb-2 text-gray-200">
+                Related To
+              </label>
+
+              {["dv360", "ga4", "gtm", "firebase"].map(option => (
+                <div key={option} className="flex items-center mb-1">
+                  <input
+                    type="checkbox"
+                    name="relatedTo"
+                    value={option}
+                    checked={(formValues.relatedTo).includes(option)}
+                    onChange={handleChange}
+                    className="mr-2"
+                  />
+                  <label className="text-sm text-gray-200">{option}</label>
+                </div>
+              ))}
             </div>
 
+            
             <div>
               <label className="block text-base font-semibold mb-2 text-gray-200">
                 Youtube Video Link -
