@@ -778,6 +778,7 @@ const navbar = () => {
                                                     {/* <img src={link?.imgSrc} alt={link?.label} className="w-6 h-6" /> */}
                                                     <Link
                                                         href={link?.href}
+                                                        onClick={() => setIsSWebervices(false)}
                                                         className="text-[10px] xl:text-[11px] 2xl:text-[13px] font-normal text-white opacity-70 hover:opacity-100"
                                                     >
                                                         {link?.label}
