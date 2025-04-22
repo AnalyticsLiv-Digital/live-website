@@ -1,3 +1,52 @@
+import React from 'react';
+
+const BlogBanner = ({ blogData }) => {
+    const Banners = [
+        // { related: 'dv360', img: '/DV_Banner_1_265X300 (1).png', path: '/dv360' },
+        { related: 'dv360', img: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Blog_Banner_For_DV_1_V2_300x250.png', path: '/dv360' },
+        { related: 'firebase', img: '/DV_Banner_1.jpg', path: '/ga4' },
+        { related: 'lookerstudio', img: '/DV_Banner_1.jpg', path: '/gtm' }
+    ];
+
+    return (
+        <div>
+            {blogData?.relatedTo &&
+                <div id="dvbanner_1" className='p-4'>
+                    {Banners?.map((banner, id) =>
+                        banner?.related === blogData?.relatedTo ? (
+                            banner?.related === 'dv360' ? <a href={banner?.path} target='_blank'>
+                                <img key={id} src={banner?.img} alt={banner?.related} className='w-full' />
+                            </a> : null
+                        ) : null
+                    )}
+                </div>
+            }
+            {blogData?.youtube &&
+                <div className=''>
+                    <div id="lookerstudioBanner" className="lookerstudio-video-container" style={{ height: '200px' }}>
+                        <iframe
+                            width="100%"
+                            height="100%"
+                            src={blogData?.youtube}
+                            title={blogData?.youtube}
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        ></iframe>
+                    </div>
+                </div>
+            }
+        </div>
+    );
+};
+
+export default BlogBanner;
+
+
+
+
+
+
 // import React from 'react';
 
 // const BlogBanner = ({ blogData }) => {
@@ -65,52 +114,3 @@
 // };
 
 // export default BlogBanner;
-
-
-
-
-
-
-import React from 'react';
-
-const BlogBanner = ({ blogData }) => {
-    const Banners = [
-        // { related: 'dv360', img: '/DV_Banner_1_265X300 (1).png', path: '/dv360' },
-        { related: 'dv360', img: '/DV_Banner_1.jpg', path: '/dv360' },
-        { related: 'firebase', img: '/DV_Banner_1.jpg', path: '/ga4' },
-        { related: 'lookerstudio', img: '/DV_Banner_1.jpg', path: '/gtm' }
-    ];
-
-    return (
-        <div>
-            {blogData?.relatedTo &&
-                <div id="dvbanner_1" className='p-4'>
-                    {Banners?.map((banner, id) =>
-                        banner?.related === blogData?.relatedTo ? (
-                            banner?.related === 'dv360' ? <a href={banner?.path} target='_blank'>
-                                <img key={id} src={banner?.img} alt={banner?.related} />
-                            </a> : null
-                        ) : null
-                    )}
-                </div>
-            }
-            {blogData?.youtube &&
-                <div className=''>
-                    <div id="lookerstudioBanner" className="lookerstudio-video-container" style={{ height: '200px' }}>
-                        <iframe
-                            width="100%"
-                            height="100%"
-                            src={blogData?.youtube}
-                            title={blogData?.youtube}
-                            frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                        ></iframe>
-                    </div>
-                </div>
-            }
-        </div>
-    );
-};
-
-export default BlogBanner;
