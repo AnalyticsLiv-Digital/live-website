@@ -10,7 +10,25 @@ const MetaSchemaOg = ({
     twitterDescription,
     twitterImage,
     extraHead,
+    faqData = []
 }) => {
+
+    const faqSchema = faqData?.length
+        ? {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "@id": url,
+            "mainEntity": faqData?.map(({ question, answer }) => ({
+                "@type": "Question",
+                "name": question,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": answer,
+                },
+            })),
+        }
+        : null;
+
     return (
         <Head>
             <title>{title}</title>
@@ -60,6 +78,16 @@ const MetaSchemaOg = ({
                     }),
                 }}
             />
+
+            {faqSchema && (
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(faqSchema),
+                    }}
+                />
+            )}
+
         </Head>
     );
 };

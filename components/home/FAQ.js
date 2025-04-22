@@ -1,5 +1,60 @@
 import React, { useState } from 'react';
 
+
+export const content = [
+    {
+        question: "Why should I choose AnalyticsLiv for my analytics and marketing needs?",
+        answer:
+            "AnalyticsLiv combines technical expertise in analytics and data-driven marketing with a proven track record of delivering measurable results. Our customized solutions are designed to fit your specific business goals and drive ROI.",
+    },
+    {
+        question: "Can AnalyticsLiv handle both analytics and digital marketing services?",
+        answer:
+            "Yes, we offer end-to-end solutions. From advanced analytics implementations like GA4 to media services such as PPC management, programmatic advertising, and campaign optimization using tools like DV360, we ensure seamless integration and performance.",
+    },
+    {
+        question: "What industries do you specialize in?",
+        answer:
+            "We have extensive experience across multiple industries, including e-commerce, media, publishing, retail, and more. Our solutions are tailored to meet the unique needs of each sector.",
+    },
+    {
+        question: "How soon can we see results from your services?",
+        answer:
+            "The timeline depends on the service. For instance, GA4 implementation and dashboard setup can be completed within a few weeks, while marketing campaigns may show results within the first month of optimization. We’ll set realistic timelines during the consultation.",
+    },
+    {
+        question: "Do you provide case studies or examples of your work?",
+        answer:
+            "Absolutely! We’re happy to share relevant case studies and success stories that highlight how we’ve helped businesses like yours achieve measurable success.",
+    },
+    {
+        question: "Can you integrate with my existing tools and platforms?",
+        answer:
+            "Yes, we specialize in integrating analytics and marketing tools with your existing tech stack, whether it's CRM systems, e-commerce platforms, or ad platforms.",
+    },
+    {
+        question: "What is your process for setting up a PPC or programmatic campaign?",
+        answer:
+            "Our process includes: Understanding your business goals and target audience. Conducting thorough keyword and audience research. Setting up and managing campaigns on platforms like Google Ads and DV360.  Continuous monitoring and optimization for maximum ROI.",
+    },
+    {
+        question: "What kind of support does AnalyticsLiv provide after implementation?",
+        answer:
+            "We offer ongoing support, including performance tracking, troubleshooting, campaign optimizations, and periodic strategy reviews to ensure sustained success.",
+    },
+    {
+        question: "How do I schedule a demo or consultation?",
+        answer:
+            "Simply fill out the form on our website or contact us directly at [insert contact info]. Our team will get back to you within 24 hours to set up a call or meeting.",
+    },
+    {
+        question: "How does AnalyticsLiv measure success?",
+        answer:
+            "We measure success based on KPIs tailored to your business goals, such as revenue growth, cost-per-acquisition (CPA), return on ad spend (ROAS), and customer retention rates. Regular reporting ensures transparency and accountability.",
+    },
+];
+
+
 const FAQ = () => {
     const [activeIndex, setActiveIndex] = useState(0);
 
@@ -7,58 +62,6 @@ const FAQ = () => {
         setActiveIndex(activeIndex === index ? null : index);
     };
 
-    const content = [
-        {
-            question: "Why should I choose AnalyticsLiv for my analytics and marketing needs?",
-            answer:
-                "AnalyticsLiv combines technical expertise in analytics and data-driven marketing with a proven track record of delivering measurable results. Our customized solutions are designed to fit your specific business goals and drive ROI.",
-        },
-        {
-            question: "Can AnalyticsLiv handle both analytics and digital marketing services?",
-            answer:
-                "Yes, we offer end-to-end solutions. From advanced analytics implementations like GA4 to media services such as PPC management, programmatic advertising, and campaign optimization using tools like DV360, we ensure seamless integration and performance.",
-        },
-        {
-            question: "What industries do you specialize in?",
-            answer:
-                "We have extensive experience across multiple industries, including e-commerce, media, publishing, retail, and more. Our solutions are tailored to meet the unique needs of each sector.",
-        },
-        {
-            question: "How soon can we see results from your services?",
-            answer:
-                "The timeline depends on the service. For instance, GA4 implementation and dashboard setup can be completed within a few weeks, while marketing campaigns may show results within the first month of optimization. We’ll set realistic timelines during the consultation.",
-        },
-        {
-            question: "Do you provide case studies or examples of your work?",
-            answer:
-                "Absolutely! We’re happy to share relevant case studies and success stories that highlight how we’ve helped businesses like yours achieve measurable success.",
-        },
-        {
-            question: "Can you integrate with my existing tools and platforms?",
-            answer:
-                "Yes, we specialize in integrating analytics and marketing tools with your existing tech stack, whether it's CRM systems, e-commerce platforms, or ad platforms.",
-        },
-        {
-            question: "What is your process for setting up a PPC or programmatic campaign?",
-            answer:
-                "Our process includes: Understanding your business goals and target audience. Conducting thorough keyword and audience research. Setting up and managing campaigns on platforms like Google Ads and DV360.  Continuous monitoring and optimization for maximum ROI.",
-        },
-        {
-            question: "What kind of support does AnalyticsLiv provide after implementation?",
-            answer:
-                "We offer ongoing support, including performance tracking, troubleshooting, campaign optimizations, and periodic strategy reviews to ensure sustained success.",
-        },
-        {
-            question: "How do I schedule a demo or consultation?",
-            answer:
-                "Simply fill out the form on our website or contact us directly at [insert contact info]. Our team will get back to you within 24 hours to set up a call or meeting.",
-        },
-        {
-            question: "How does AnalyticsLiv measure success?",
-            answer:
-                "We measure success based on KPIs tailored to your business goals, such as revenue growth, cost-per-acquisition (CPA), return on ad spend (ROAS), and customer retention rates. Regular reporting ensures transparency and accountability.",
-        },
-    ];
 
     return (
         <section className="flex mb-14 md:mb-3 flex-col md:flex-row px-4 py-5 md:py-8 md:px-14 lg:px-16 md:pb-12 xl:pt-5 gap-5 lg:gap-8">
