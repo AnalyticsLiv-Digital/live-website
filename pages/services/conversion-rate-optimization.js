@@ -411,7 +411,7 @@ const conversionRateOptimization = () => {
 
 
             <section className='fuel relative overflow-hidden'>
-                <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-0 z-20">
+                <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-2 md:pb-0 z-20">
                     <div>
                         <h3 className='text-[32px] font-semibold text-black leading-[1.5em] font-rbt text-center'>Our Proven CRO Methodology</h3>
                     </div>
