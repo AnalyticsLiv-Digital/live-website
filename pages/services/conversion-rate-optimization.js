@@ -175,7 +175,7 @@ const conversionRateOptimization = () => {
         <>
 
             <MetaSchemaOg
-                url="https://analyticsliv.com/services/CRO"
+                url="https://analyticsliv.com/services/conversion-rate-optimization"
                 title="Expert Conversion Rate Optimization Services | AnalyticsLiv"
                 description="Boost your conversions with AnalyticsLiv, a leading conversion rate optimization agency. Our expert services optimize your website to increase leads, sales, and ROI."
                 twitterTitle="Expert Conversion Rate Optimization Services | AnalyticsLiv"
@@ -218,7 +218,7 @@ const conversionRateOptimization = () => {
                         <h1 className='text-[#0E1947] text-lg sm:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold max-md:text-center'>
                             Ignite Your Online Growth with Conversion Focused Analytics
                         </h1>
-                        <div className='text-[#0E1947] text-lg xl:text-2xl font-bold'>🔍 Optimize ➝ Convert ➝ Grow 🚀</div>
+                        <div className='text-[#0E1947] text-sm sm:text-lg xl:text-2xl font-bold max-sm:text-center'>🔍 Optimize ➝ Convert ➝ Grow 🚀</div>
                         <h3 className='text-xs 2xl:text-sm font-normal max-md:text-center'>
                             At AnalyticsLiv, we craft seamless, high-converting user journeys using data-backed strategies and relentless optimization. With heat maps, session recordings, and A/B testing, we ensure friction-free experiences that drive engagement & loyalty.
                         </h3>
@@ -411,7 +411,7 @@ const conversionRateOptimization = () => {
 
 
             <section className='fuel relative overflow-hidden'>
-                <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-0 z-20">
+                <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-2 md:pb-0 z-20">
                     <div>
                         <h3 className='text-[32px] font-semibold text-black leading-[1.5em] font-rbt text-center'>Our Proven CRO Methodology</h3>
                     </div>
