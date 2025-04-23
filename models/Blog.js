@@ -18,7 +18,7 @@ const BlogSchema = new mongoose.Schema({
         {type: String}
         
     ],
-    relatedTo:{type: String},
+    relatedTo:[{ type: String }],
     youtube:{type: String},
 });
 mongoose.models = {};

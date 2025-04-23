@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import React from 'react'
+import React, { useRef } from 'react'
 import AOS from 'aos';
 import Link from 'next/link';
 import 'aos/dist/aos.css';
@@ -16,26 +16,32 @@ const index = ({ blogDat, similarBlogs }) => {
     const similarBlogsdata = similarBlogs.blog;
     const [recommendedBlogsdata, setrecommendedBlogsdata] = useState(null);
     const [userId, setUserId] = useState(null);
-    const [isSticky, setIsSticky] = useState(false);
     const [formFixed, setFormFixed] = useState(false);
+    const [isStuck, setIsStuck] = useState(false);
+
     const blogSchema = generateBlogSchema(blogData);
 
+    const stickyRef = useRef(null);
 
     useEffect(() => {
-        const handleScroll = () => {
-            const scrollPosition = window.scrollY;
-            const windowHeight = window.innerHeight;
-            if (scrollPosition > windowHeight / 1.25) {
-                setIsSticky(true);
-            } else {
-                setIsSticky(false);
-            }
-        };
+        const sentinel = document.getElementById('start-sicky-here');
 
-        window.addEventListener('scroll', handleScroll);
+        if (!sentinel) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsStuck(!entry.isIntersecting);
+            },
+            {
+                rootMargin: '0px 0px 0px 0px',
+                threshold: 0,
+            }
+        );
+
+        observer.observe(sentinel);
 
         return () => {
-            window.removeEventListener('scroll', handleScroll);
+            observer.disconnect();
         };
     }, []);
 
@@ -110,16 +116,12 @@ const index = ({ blogDat, similarBlogs }) => {
                 setFormFixed(false);
             }
 
-
         }
 
         window.addEventListener("scroll", headerSize);
 
         return () => window.removeEventListener("scroll", headerSize);
     });
-
-
-
 
     var url = "https://analyticsliv.com/blogs/" + blogData.slug;
 
@@ -137,9 +139,7 @@ const index = ({ blogDat, similarBlogs }) => {
         </Head>
 
         <div>
-            <section className="relative lg:bg-gray-100 md:pt-12 overflow-scroll">
-
-
+            <section className="relative lg:bg-gray-100 md:pt-2 xl:pt-10 overflow-scroll">
 
                 <div className="relative lg:flex w-full lg:w-11/12 space-y-2 lg:space-y-0 mx-auto pt-4 pb-8 px-4">
                     <div className="p-1 lg:p-8 lg:w-3/4 space-y-6 bg-white">
@@ -178,8 +178,6 @@ const index = ({ blogDat, similarBlogs }) => {
                                     <span key={key} className="bg-gray-100 px-2 py-0.5 font-medium text-sm rounded text-gray-400">{category}</span>
                                 ))}
 
-
-
                             </div>
                             <div className='blog-share flex space-x-4'>
                                 <Link share="facebook" className="" href={`https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fanalyticsliv.com%2Fblogs%2F${blogData && blogData.slug}`}><svg xmlns="http://www.w3.org/2000/svg" className='w-4 fill-slate-800 hover:fill-blue-700' preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
@@ -214,7 +212,7 @@ const index = ({ blogDat, similarBlogs }) => {
                     </div>
                     <div className='flex flex-col lg:w-1/4'>
                         <div className={`${formFixed ? "sticky top-10 lg:z-20" : "relative lg:z-20"} h-fit bg-white px-2 py-2 lg:ml-3`}>
-                            <div className="space-y-6">
+                            <div className="space-y-3">
 
                                 <h3 className="w-full text-slate-700 pt-2 px-3 font-bold tracking-wider">Similar Posts</h3>
 
@@ -224,8 +222,10 @@ const index = ({ blogDat, similarBlogs }) => {
                             </div>
                         </div>
 
-                        <div
-                            className={`${!blogData.relatedTo && !blogData.youtube ? 'hidden' : 'block'} max-w-max lg:sticky-banner bg-white px-2 py-2 lg:ml-3 ${isSticky ? "lg:fixed mt-10 lg:mt-[-50px] lg:z-10" : "lg:z-10 mt-10 lg:mt-36"}`}
+                        <div id='start-sicky-here'></div>
+
+                        <div ref={stickyRef}
+                            className={`${!blogData.relatedTo && !blogData.youtube ? 'hidden' : 'block'} w-full lg:sticky-banner bg-white px-2 py-2 lg:ml-3 ${isStuck ? "lg:fixed mt-8 lg:mt-[-20px] xl:mt-[-30px] lg:z-10 lg:w-[22.5%] lg:mr-20" : "lg:z-10 mt-5 lg:mt-36 lg:w-full relative"}`}
                         >
                             <BlogBanner blogData={blogData} />
                         </div>

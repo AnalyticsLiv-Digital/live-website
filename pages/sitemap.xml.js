@@ -42,6 +42,9 @@ function generateSiteMap(posts) {
        <loc>https://analyticsliv.com/services/CRO</loc>
      </url>
      <url>
+       <loc>https://analyticsliv.com/services/conversion-rate-optimization</loc>
+     </url>
+     <url>
        <loc>https://analyticsliv.com/services/data-science</loc>
      </url>
      <url>
@@ -49,9 +52,6 @@ function generateSiteMap(posts) {
      </url>
      <url>
        <loc>https://analyticsliv.com/services/training</loc>
-     </url>
-     <url>
-       <loc>https://analyticsliv.com/services/sem</loc>
      </url>
      <url>
        <loc>https://analyticsliv.com/services/ppc</loc>

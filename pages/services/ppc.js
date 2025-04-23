@@ -145,8 +145,15 @@ const Ppc = () => {
                 description="Drive your PPC campaigns for improvement on ROAS and CPA, with proven data driven strategies tested rigorously to enhance conversions"
                 twitterTitle="PPC Marketing Agency | Google Partner | Meta Ads | AnalyticsLiv"
                 twitterDescription="Drive your PPC campaigns for improvement on ROAS and CPA, with proven data driven strategies tested rigorously to enhance conversions"
+                extraHead={
+                    <link
+                        rel="stylesheet"
+                        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap"
+                    />
+                }
+                faqData={content}
             />
-            <main className='font-sans py-10'>
+            <main className='py-10'>
 
                 {showCalendly && (
                     <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-40 z-50 flex items-center justify-center p-4"

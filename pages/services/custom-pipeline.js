@@ -191,6 +191,7 @@ const customPipeline = () => {
                         href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap"
                     />
                 }
+                faqData={content}
             />
 
             <main className='pb-10 pt-7'>
