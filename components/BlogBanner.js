@@ -17,7 +17,7 @@ const BlogBanner = ({ blogData }) => {
         <div>
 
             {relatedArray?.length > 0 && (
-                <div id="dvbanner_1" className="p-4 flex flex-col gap-4">
+                <div id="dvbanner_1" className="p-3 flex flex-col gap-4">
                     {Banners?.map((banner, id) =>
                         relatedArray.includes(banner?.related) ? (
                             <a key={id} href={banner?.path} target="_blank" rel="noopener noreferrer">
@@ -28,8 +28,8 @@ const BlogBanner = ({ blogData }) => {
                 </div>
             )}
 
-            {blogData?.youtube &&
-                <div className=''>
+            {blogData?.youtube && relatedArray?.length < 2 &&
+                <div className='p-3'>
                     <div id="lookerstudioBanner" className="lookerstudio-video-container" style={{ height: '200px' }}>
                         <iframe
                             width="100%"
