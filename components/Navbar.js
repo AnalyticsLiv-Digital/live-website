@@ -123,7 +123,7 @@ const navbar = () => {
             links: [
                 { label: "PPC campaign Management", href: "/services/ppc", imgSrc: "solutions_GDRP.logo.png" },
                 { label: "Programmatic Advertising (DV360)", href: "/services/programatic-advertising", imgSrc: "Solutions_Data-Science.logo.png" },
-                { label: "Conversion Rate Optimization (CRO)", href: "/services/CRO", imgSrc: "solutions_Data_Attribution.png" },
+                { label: "Conversion Rate Optimization (CRO)", href: "/services/conversion-rate-optimization", imgSrc: "solutions_Data_Attribution.png" },
                 { label: "Data Insight & Reporting", href: "/services/data-reporting-analysis", imgSrc: "solutions_Data_Attribution.png" },
             ],
         },
@@ -558,7 +558,7 @@ const navbar = () => {
                                                     </div>
                                                     <div class="flex items-center py-1">
                                                         <Link
-                                                            href="/services/CRO"
+                                                            href="/services/conversion-rate-optimization"
                                                             class="text-menuheading text-sm font-normal leading-normal"
                                                         >
                                                             Conversion Rate Optimization (CRO)
