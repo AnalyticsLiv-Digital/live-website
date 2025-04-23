@@ -19,7 +19,7 @@ const BlogBanner = ({ blogData }) => {
             {relatedArray?.length > 0 && (
                 <div id="dvbanner_1" className="p-3 flex flex-col gap-4">
                     {Banners?.map((banner, id) =>
-                        relatedArray.includes(banner?.related) ? (
+                        relatedArray?.includes(banner?.related) ? (
                             <a key={id} href={banner?.path} target="_blank" rel="noopener noreferrer">
                                 <img src={banner?.img} alt={banner?.related} className="w-full" />
                             </a>

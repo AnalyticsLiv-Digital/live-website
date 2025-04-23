@@ -133,25 +133,15 @@ const index = ({ blogDat }) => {
     setFormValues({ ...formValues, date: formatted });
   };
 
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setFormValues({ ...formValues, [name]: value });
-  //   if (name === 'date') {
-  //     setFormattedDate(formatDate(value));
-  //   }
-  //   console.log("inside change", formValues);
-  //   console.log(formValues);
-  // };
-
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
   
     if (type === 'checkbox' && name === 'relatedTo') {
-      let updatedRelatedTo = [...formValues.relatedTo];
+      let updatedRelatedTo = [...formValues?.relatedTo];
       if (checked) {
-        updatedRelatedTo.push(value);
+        updatedRelatedTo?.push(value);
       } else {
-        updatedRelatedTo = updatedRelatedTo.filter(item => item !== value);
+        updatedRelatedTo = updatedRelatedTo?.filter(item => item !== value);
       }
       setFormValues({ ...formValues, relatedTo: updatedRelatedTo });
     } else {
@@ -160,8 +150,6 @@ const index = ({ blogDat }) => {
         setFormattedDate(formatDate(value));
       }
     }
-  
-    console.log("inside change", formValues);
   };
 
   const handleSubmit = (e) => {
@@ -406,13 +394,13 @@ const index = ({ blogDat }) => {
                 Related To
               </label>
               <div className="flex gap-5 flex-wrap">
-              {["dv360", "ga4", "gtm", "firebase"].map(option => (
+              {["dv360", "ga4", "gtm", "firebase"]?.map(option => (
                 <div key={option} className="flex items-center mb-1">
                   <input
                     type="checkbox"
                     name="relatedTo"
                     value={option}
-                    checked={(formValues.relatedTo).includes(option)}
+                    checked={(formValues?.relatedTo)?.includes(option)}
                     onChange={handleChange}
                     className="mr-0.5"
                   />
