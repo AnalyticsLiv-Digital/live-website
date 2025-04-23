@@ -401,31 +401,11 @@ const index = ({ blogDat }) => {
               />
             </div>
 
-            {/* <div>
-              <label className="block text-base font-semibold mb-2 text-gray-200">
-                Related To
-              </label>
-              <select
-                className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500"
-                name="relatedTo"
-                value={formValues?.relatedTo || ""}
-                onChange={handleChange}
-              >
-                <option className="bg-slate-700" value="">
-                  Select a related type
-                </option>
-                <option className="bg-slate-700" value="dv360">dv360</option>
-                <option className="bg-slate-700" value="ga4">ga4</option>
-                <option className="bg-slate-700" value="gtm">gtm</option>
-                <option className="bg-slate-700" value="firebase">firebase</option>
-              </select>
-            </div> */}
-
             <div>
               <label className="block text-base font-semibold mb-2 text-gray-200">
                 Related To
               </label>
-
+              <div className="flex gap-5 flex-wrap">
               {["dv360", "ga4", "gtm", "firebase"].map(option => (
                 <div key={option} className="flex items-center mb-1">
                   <input
@@ -434,11 +414,12 @@ const index = ({ blogDat }) => {
                     value={option}
                     checked={(formValues.relatedTo).includes(option)}
                     onChange={handleChange}
-                    className="mr-2"
+                    className="mr-0.5"
                   />
                   <label className="text-sm text-gray-200">{option}</label>
                 </div>
               ))}
+              </div>
             </div>
 
             

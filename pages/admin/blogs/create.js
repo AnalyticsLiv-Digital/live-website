@@ -174,7 +174,7 @@ const index = () => {
   // };
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-  
+
     if (type === 'checkbox' && name === 'relatedTo') {
       let updatedRelatedTo = [...formValues.relatedTo];
       if (checked) {
@@ -189,7 +189,7 @@ const index = () => {
         setFormattedDate(formatDate(value));
       }
     }
-  
+
     console.log("inside change", formValues);
   };
 
@@ -434,46 +434,27 @@ const index = () => {
                 onChange={handleChange}
               />
             </div>
-            {/* <div>
-              <label className="block text-base font-semibold mb-2 text-gray-200">
-                Related To
-              </label>
-
-              <select
-                className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500"
-                type="text"
-                name="relatedTo"
-                value={formValues?.relatedTo}
-                onChange={handleChange}
-              >
-                <option className="bg-slate-700" value="">Select a related type</option>
-                <option className="bg-slate-700" value="dv360">dv360</option>
-                <option className="bg-slate-700" value="ga4">ga4</option>
-                <option className="bg-slate-700" value="gtm">gtm</option>
-                <option className="bg-slate-700" value="firebase">firebase</option>
-              </select>
-            </div> */}
 
             <div>
               <label className="block text-base font-semibold mb-2 text-gray-200">
                 Related To
               </label>
-
-              {["dv360", "ga4", "gtm", "firebase"].map(option => (
-                <div key={option} className="flex items-center mb-1">
-                  <input
-                    type="checkbox"
-                    name="relatedTo"
-                    value={option}
-                    checked={formValues.relatedTo.includes(option)}
-                    onChange={handleChange}
-                    className="mr-2"
-                  />
-                  <label className="text-sm text-gray-200">{option}</label>
-                </div>
-              ))}
+              <div className="flex gap-5 flex-wrap">
+                {["dv360", "ga4", "gtm", "firebase"].map(option => (
+                  <div key={option} className="flex items-center mb-1">
+                    <input
+                      type="checkbox"
+                      name="relatedTo"
+                      value={option}
+                      checked={formValues.relatedTo.includes(option)}
+                      onChange={handleChange}
+                      className="mr-0.5"
+                    />
+                    <label className="text-sm text-gray-200">{option}</label>
+                  </div>
+                ))}
+              </div>
             </div>
-
 
             <div>
               <label className="block text-base font-semibold mb-2 text-gray-200">
