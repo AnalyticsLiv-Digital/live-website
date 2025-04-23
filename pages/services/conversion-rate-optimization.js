@@ -1,13 +1,7 @@
 'use client'
 import React, { useState, useRef } from 'react'
-import Link from 'next/link'
-import Head from 'next/head'
-import Marquee from "react-fast-marquee";
-import Image from 'next/image';
-import { FaLongArrowAltRight } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa6";
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
-import { motion } from "framer-motion";
 import MetaSchemaOg from '../../components/MetaSchemaOg';
 import { InlineWidget } from 'react-calendly';
 import Slider from 'react-slick';
@@ -16,90 +10,19 @@ import 'slick-carousel/slick/slick-theme.css';
 
 const conversionRateOptimization = () => {
 
-    const Trusteddata = {
-        brand: [
-            { logo: "/ThoughtSpot_logo.png", alt: "ThoughtSpot" },
-            { logo: "/Brizo_logo.png", alt: "Brizo" },
-            { logo: "/bluecrew.png", alt: "BlueCrew" },
-            { logo: "/edanz_logo.png", alt: "Edanz" },
-            { logo: "/shoebacca.png", alt: "Shoebacca" },
-            { logo: "/wholesalesockdeals.png", alt: "WholesaleSockDeals" }
-        ]
-    };
-
-    const [isFstVisible, setIsFstVisible] = useState(false);
-    const [isScnVisible, setIsScnVisible] = useState(false);
-    const [isThdVisible, setIsThdVisible] = useState(false);
-    const [isFrVisible, setIsFrVisible] = useState(false);
-    const [isFvVisible, setIsFvVisible] = useState(false);
-    const [isSxVisible, setIsSxVisible] = useState(false);
     const [showCalendly, setShowCalendly] = useState(false);
     const [activeIndex, setActiveIndex] = useState(0);
+    const [activeDropdown, setActiveDropdown] = useState(null);
+
+    const toggleDropdown = (key) => {
+        setActiveDropdown((prev) => (prev === key ? null : key));
+    };
 
     const handleToggle = (index) => {
         setActiveIndex(activeIndex === index ? null : index);
     };
 
-    const toggleFstVisibility = () => {
-        setIsFstVisible(prevState => !prevState);
-    };
-    const toggleScnVisibility = () => {
-        setIsScnVisible(prevState => !prevState);
-    }
-    const toggelThdVisibility = () => {
-        setIsThdVisible(prevState => !prevState);
-    }
-    const toggelFrVisibility = () => {
-        setIsFrVisible(prevState => !prevState);
-    }
-    const toggelFvVisibility = () => {
-        setIsFvVisible(prevState => !prevState);
-    }
-    const toggelSxVisibility = () => {
-        setIsSxVisible(prevState => !prevState);
-    }
-
-    // // // // // FAQ SECTION // // // // // // // // // //   
-    const [isFaqfstVisible, setIsFaqfstVisible] = useState(false);
-    const [isFaqsecVisible, setIsFaqsecVisible] = useState(false);
-    const [isFaqthrdVisible, setIsFaqthrdVisible] = useState(false);
-    const [isFaqfurVisible, setIsFaqfurVisible] = useState(false);
-    const [isFaqfivVisible, setIsFaqfivVisible] = useState(false);
-    const [isFaqsixVisible, setIsFaqsixVisible] = useState(false);
-    const [isFaqsevVisible, setIsFaqsevVisible] = useState(false);
-    const [isFaqeighVisible, setIsFaqeighVisible] = useState(false);
-
-
     const sliderRef = useRef(null);
-
-
-
-    const toggleFaqfstVisibility = () => {
-        setIsFaqfstVisible(prevState => !prevState);
-    };
-    const toggleFaqsecVisibility = () => {
-        setIsFaqsecVisible(prevState => !prevState);
-    };
-    const toggleFaqthrdVisibility = () => {
-        setIsFaqthrdVisible(prevState => !prevState);
-    };
-    const toggleFaqfurVisibility = () => {
-        setIsFaqfurVisible(prevState => !prevState);
-    };
-    const toggleFaqfivVisibility = () => {
-        setIsFaqfivVisible(prevState => !prevState);
-    };
-    const toggleFaqsixVisibility = () => {
-        setIsFaqsixVisible(prevState => !prevState);
-    };
-    const toggleFaqsevVisibility = () => {
-        setIsFaqsevVisible(prevState => !prevState);
-    };
-    const toggleFaqeighVisibility = () => {
-        setIsFaqeighVisible(prevState => !prevState);
-    };
-
-    const [toggle1, setToggle1] = useState(true);
 
 
     const handleCalendly = () => {
@@ -312,7 +235,6 @@ const conversionRateOptimization = () => {
                     <div className='flex max-sm:flex-wrap max-md:justify-center justify-start w-full items-center gap-7 md:gap-10 xl:gap-16'>
                         <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/clutch_review.png' alt='clutch review analyticsliv' />
                         <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Sortlist_Review_4.8.png' alt='Sortlist review analyticsliv' />
-                        {/* <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/trustpilot_review.png' alt='trustpilot review analyticsliv' className='max-sm:hidden' /> */}
                         <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Trustpilot_mobile.svg' alt='trustpilot review analyticsliv' className='' />
                     </div>
                 </div>
@@ -517,28 +439,28 @@ const conversionRateOptimization = () => {
                                     <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[17px] leading-8 font-semibold'>Understand Your Users</h4>
                                     <p className='text-[#646464] text-base font-medium font-gilroy2 leading-6 mb-[10px]'>Conduct user research to understand your target audience's needs, pain points, and behavior on your website. Here are some methods:</p>
                                     <div className='text-[#646464] text-[14px] font-normal font-gilroy2 leading-6 mb-5'>
-                                        <div className='cursor-pointer w-[90%] border border-solid border-[#30486a21] p-3 mb-[10px] rounded-[10px]' onClick={toggleFstVisibility}>
-                                            <div className={`flex items-center justify-between ${isFstVisible ? 'mb-2' : 'mb-0'}`}>
+                                        <div className='cursor-pointer w-[90%] border border-solid border-[#30486a21] p-3 mb-[10px] rounded-[10px]' onClick={() => toggleDropdown('fst')}>
+                                            <div className={`flex items-center justify-between ${activeDropdown === 'fst' ? 'mb-2' : 'mb-0'}`}>
                                                 <div className=' flex items-start gap-1 font-semibold'>
                                                     <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
                                                     <p>Website Analytics</p></div>
                                                 <div className='clk'>
-                                                    {isFstVisible ? <FaChevronUp className='w-4 h-4' /> : <FaChevronDown className='w-4 h-4' />}
+                                                    {activeDropdown === 'fst' ? <FaChevronUp className='w-4 h-4' /> : <FaChevronDown className='w-4 h-4' />}
                                                 </div>
                                             </div>
-                                            {isFstVisible && <div className='ml-3'>
+                                            {activeDropdown === 'fst' && <div className='ml-3'>
                                                 <p>Utilize tools like Google Analytics to analyze user behavior, such as traffic sources, page visits, time on site, and click-through rates.</p></div>}
                                         </div>
-                                        <div className='cursor-pointer w-[90%] border border-solid border-[#30486a21] p-2 mb-[10px] rounded-[10px]' onClick={toggleScnVisibility}>
-                                            <div className={`flex items-center justify-between ${isScnVisible ? 'mb-2' : 'mb-0'}`}>
+                                        <div className='cursor-pointer w-[90%] border border-solid border-[#30486a21] p-2 mb-[10px] rounded-[10px]' onClick={() => toggleDropdown('scn')}>
+                                            <div className={`flex items-center justify-between ${activeDropdown === 'scn' ? 'mb-2' : 'mb-0'}`}>
                                                 <div className=' flex items-start gap-1 font-semibold'>
                                                     <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
                                                     <p>Heatmaps & Session Recordings</p></div>
                                                 <div className='clk'>
-                                                    {isScnVisible ? <FaChevronUp className='w-4 h-4' /> : <FaChevronDown className='w-4 h-4' />}
+                                                    {activeDropdown === 'scn' ? <FaChevronUp className='w-4 h-4' /> : <FaChevronDown className='w-4 h-4' />}
                                                 </div>
                                             </div>
-                                            {isScnVisible && <div className='mb-2 ml-3'>
+                                            {activeDropdown === 'scn' && <div className='mb-2 ml-3'>
                                                 <p>Track user interactions with your website to see where they click, scroll, and abandon conversions.</p></div>}
                                         </div>
                                     </div>
@@ -552,55 +474,55 @@ const conversionRateOptimization = () => {
                                     <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[17px] leading-8 font-semibold'>Conduct a CRO Audit</h4>
                                     <p className='text-[#646464] text-base font-medium font-gilroy2 leading-6 mb-[10px]'>Evaluate your website's current performance from a conversion optimization perspective. Identify elements that might be hindering user experience or hindering conversions. Consider these aspects</p>
                                     <div className='text-[#646464] text-[14px] font-normal font-gilroy2 leading-6 mb-5'>
-                                        <div className='cursor-pointer w-[90%] border border-solid border-[#30486a21] p-3 mb-[10px] rounded-[10px]' onClick={toggelThdVisibility}>
-                                            <div className={`flex items-center justify-between ${isThdVisible ? 'mb-2' : 'mb-0'}`}>
+                                        <div className='cursor-pointer w-[90%] border border-solid border-[#30486a21] p-3 mb-[10px] rounded-[10px]' onClick={() => toggleDropdown('thd')}>
+                                            <div className={`flex items-center justify-between ${activeDropdown === 'thd' ? 'mb-2' : 'mb-0'}`}>
                                                 <div className=' flex items-start gap-1 font-semibold'>
                                                     <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
                                                     <p>Website Usability</p></div>
                                                 <div>
-                                                    {isThdVisible ? <FaChevronUp /> : <FaChevronDown />}
+                                                    {activeDropdown === 'thd' ? <FaChevronUp /> : <FaChevronDown />}
                                                 </div>
                                             </div>
-                                            {isThdVisible &&
+                                            {activeDropdown === 'thd' &&
                                                 <div className='mb-2 ml-3'>
                                                     <p>Is your website easy to navigate? Can users find the information they need quickly?</p></div>}
                                         </div>
-                                        <div className='cursor-pointer w-[90%] border border-solid border-[#30486a21] p-3 mb-[10px] rounded-[10px]' onClick={toggelFrVisibility}>
-                                            <div className={`flex items-center justify-between ${isFrVisible ? 'mb-2' : 'mb-0'}`}>
+                                        <div className='cursor-pointer w-[90%] border border-solid border-[#30486a21] p-3 mb-[10px] rounded-[10px]' onClick={() => toggleDropdown('fr')}>
+                                            <div className={`flex items-center justify-between ${activeDropdown === 'fr' ? 'mb-2' : 'mb-0'}`}>
                                                 <div className=' flex items-start gap-1 font-semibold'>
                                                     <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
                                                     <p>Value Proposition</p></div>
                                                 <div>
-                                                    {isFrVisible ? <FaChevronUp /> : <FaChevronDown />}
+                                                    {activeDropdown === 'fr' ? <FaChevronUp /> : <FaChevronDown />}
                                                 </div>
                                             </div>
-                                            {isFrVisible &&
+                                            {activeDropdown === 'fr' &&
                                                 <div className='mb-2 ml-3'>
                                                     <p>Are you clearly communicating the value proposition of your services?</p></div>}
                                         </div>
-                                        <div className='cursor-pointer w-[90%] border border-solid border-[#30486a21] p-3 mb-[10px] rounded-[10px]' onClick={toggelFvVisibility}>
-                                            <div className={`flex items-center justify-between ${isFvVisible ? 'mb-2' : 'mb-0'}`}>
+                                        <div className='cursor-pointer w-[90%] border border-solid border-[#30486a21] p-3 mb-[10px] rounded-[10px]' onClick={() => toggleDropdown('fv')}>
+                                            <div className={`flex items-center justify-between ${activeDropdown === 'fv' ? 'mb-2' : 'mb-0'}`}>
                                                 <div className=' flex items-start gap-1 font-semibold'>
                                                     <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
                                                     <p>Call to Actions (CTAs)</p></div>
                                                 <div>
-                                                    {isFvVisible ? <FaChevronUp /> : <FaChevronDown />}
+                                                    {activeDropdown === 'fv' ? <FaChevronUp /> : <FaChevronDown />}
                                                 </div>
                                             </div>
-                                            {isFvVisible &&
+                                            {activeDropdown === 'fv' &&
                                                 <div className='mb-2 ml-3'>
                                                     <p>Are your CTAs clear, compelling, and strategically positioned?</p></div>}
                                         </div>
-                                        <div className='cursor-pointer w-[90%] border border-solid border-[#30486a21] p-3 mb-[10px] rounded-[10px]' onClick={toggelSxVisibility}>
-                                            <div className={`flex items-center justify-between ${isSxVisible ? 'mb-2' : 'mb-0'}`}>
+                                        <div className='cursor-pointer w-[90%] border border-solid border-[#30486a21] p-3 mb-[10px] rounded-[10px]' onClick={() => toggleDropdown('sx')}>
+                                            <div className={`flex items-center justify-between ${activeDropdown === 'sx' ? 'mb-2' : 'mb-0'}`}>
                                                 <div className=' flex items-start gap-1 font-semibold'>
                                                     <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
                                                     <p>Mobile Responsiveness</p></div>
                                                 <div>
-                                                    {isSxVisible ? <FaChevronUp /> : <FaChevronDown />}
+                                                    {activeDropdown === 'sx' ? <FaChevronUp /> : <FaChevronDown />}
                                                 </div>
                                             </div>
-                                            {isSxVisible &&
+                                            {activeDropdown === 'sx' &&
                                                 <div className='mb-2 ml-3'>
                                                     <p>Does your website provide a seamless experience on all devices, including mobile phones and tablets?</p></div>}
                                         </div>
