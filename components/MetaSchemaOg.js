@@ -29,6 +29,41 @@ const MetaSchemaOg = ({
         }
         : null;
 
+    const generateBreadcrumbSchema = (url) => {
+        const baseUrl = 'https://analyticsliv.com';
+        const path = url?.replace(baseUrl, '')?.split('/')?.filter(Boolean);
+
+        const itemListElement = [{
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: baseUrl
+        }];
+
+        path?.forEach((segment, index) => {
+            const name = segment
+                ?.replace(/-/g, ' ')
+                ?.replace(/\b\w/g, char => char.toUpperCase());
+
+            const item = `${baseUrl}/${path?.slice(0, index + 1)?.join('/')}`;
+
+            itemListElement?.push({
+                "@type": "ListItem",
+                position: index + 2,
+                name,
+                item
+            });
+        });
+
+        return {
+            "@context": "https://schema.org/",
+            "@type": "BreadcrumbList",
+            itemListElement
+        };
+    };
+
+    const breadcrumbSchema = generateBreadcrumbSchema(url);
+
     return (
         <Head>
             <title>{title}</title>
@@ -87,6 +122,14 @@ const MetaSchemaOg = ({
                     }}
                 />
             )}
+
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(breadcrumbSchema),
+                }}
+            />
+
 
         </Head>
     );
