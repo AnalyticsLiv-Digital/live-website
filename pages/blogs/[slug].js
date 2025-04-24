@@ -225,7 +225,7 @@ const index = ({ blogDat, similarBlogs }) => {
                         <div id='start-sicky-here'></div>
 
                         <div ref={stickyRef}
-                            className={`${!blogData.relatedTo && !blogData.youtube ? 'hidden' : 'block'} w-full lg:sticky-banner bg-white px-2 py-2 lg:ml-3 ${isStuck ? "lg:fixed mt-8 lg:mt-[-20px] xl:mt-[-30px] lg:z-10 lg:w-[22.5%] lg:mr-20" : "lg:z-10 mt-5 lg:mt-36 lg:w-full relative"}`}
+                            className={`${(blogData?.relatedTo == '' || !blogData?.relatedTo) && !blogData.youtube ? 'hidden' : 'block'} w-full lg:sticky-banner bg-white px-2 py-2 lg:ml-3 ${isStuck ? "lg:fixed mt-8 lg:mt-[-20px] xl:mt-[-30px] lg:z-10 lg:w-[22.5%] lg:mr-20" : "lg:z-10 mt-5 lg:mt-36 lg:w-full relative"}`}
                         >
                             <BlogBanner blogData={blogData} />
                         </div>
