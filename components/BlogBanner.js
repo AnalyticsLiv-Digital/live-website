@@ -6,6 +6,8 @@ const BlogBanner = ({ blogData }) => {
         { related: 'dv360', img: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Blog_Banner_For_DV_1_V2_300x250.png', path: '/dv360' },
         { related: 'ga4', img: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Blog_Banner_For_GA4_1_V1.png', path: '/ga4' },
         { related: 'gtm', img: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Blog_Banner_For_GTM_1_V1.png', path: '/gtm' },
+        { related: 'cro', img: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Blog_Banner_For_CRO_1_V1.png', path: '/gtm' },
+        { related: 'googleAds', img: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Blog_Banner_For_GTM_1_V1.png', path: '/gtm' },
         { related: 'firebase', img: '/DV_Banner_1.jpg', path: '/gtm' },
     ];
 
