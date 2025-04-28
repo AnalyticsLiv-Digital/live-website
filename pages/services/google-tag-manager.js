@@ -406,13 +406,13 @@ const google_tag_manager = () => {
                 </div>
             </section>
 
-            <section className='pt-16 pb-6 px-4 md:px-10 xl:px-16'>
+            <section className='pt-16 pb-6 px-4 md:px-10 xl:px-[5%]'>
                 <div className='text-[#100F1B] text-2xl md:text-3xl font-bold text-center lg:text-left'>
                     From Strategy to Insight: Our 5-Step Tracking Process
                 </div>
-                <div className='pt-8 sm:pt-12 flex max-lg:grid max-lg:grid-cols-2 max-sm:grid-cols-1 max-lg:justify-items-center max-sm:gap-10 max-lg:gap-16 lg:gap-10 
+                <div className='pt-8 sm:pt-12 flex max-lg:grid max-lg:grid-cols-2 max-sm:grid-cols-1 max-lg:justify-items-center max-sm:gap-10 max-lg:gap-16 lg:gap-8 
             justify-around items-start'>
-                    <div className='w-[75%] lg:w-[27%]'>
+                    <div className='w-[75%] lg:w-[20%]'>
                         <div className='flex flex-col justify-center items-center'>
                             <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/01.png' alt='01' className='absolute' />
                             <div className='text-2xl font-bold 2xl:text-3xl text-[#30486A] pt-[90px] z-10 text-center'>Discovery &<br></br> Planning</div>
