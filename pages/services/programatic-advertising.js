@@ -72,10 +72,10 @@ const service_A = () => {
 
             <MetaSchemaOg
                 url="https://analyticsliv.com/services/programatic-advertising"
-                title="GMP Partner for DV360 | Programmatic Advertising | AnalyticsLiv"
-                description="Enhance your Brand reach with RTB based programmatic advertising using one of the finaest DSPs in the world - DV360. Expand your reach with ease"
-                twitterTitle="GMP Partner for DV360 | Programmatic Advertising | AnalyticsLiv"
-                twitterDescription="Enhance your Brand reach with RTB based programmatic advertising using one of the finaest DSPs in the world - DV360. Expand your reach with ease"
+                title="Boost ROI with Programmatic Advertising Agency - AnalyticsLiv"
+                description="Reach the right audience at the right time. AnalyticsLiv is your go-to programmatic advertising agency for high-impact RTB programmatic advertising solutions."
+                twitterTitle="Boost ROI with Programmatic Advertising Agency - AnalyticsLiv"
+                twitterDescription="Reach the right audience at the right time. AnalyticsLiv is your go-to programmatic advertising agency for high-impact RTB programmatic advertising solutions."
             />
 
             <section className='prograhome w-full relative font-gilroy overflow-hidden md:pt-5'>

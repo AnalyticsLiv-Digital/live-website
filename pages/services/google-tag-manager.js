@@ -208,8 +208,8 @@ const google_tag_manager = () => {
 
             <MetaSchemaOg
                 url="https://analyticsliv.com/services/google-tag-manager"
-                title="GMP Partner for Google Tag Manager Consulting | AnalyticsLiv"
-                description="GMP Partner for Google Tag Manager services, we specialize in custom tracking and solutions to optimize your reporting strategies and drive growth."
+                title="Google Tag Manager for Data Driven Attribution | AnalyticsLiv"
+                description="Unlock powerful insights with AnalyticsLiv’s Google Tag Manager services. Implement data driven attribution to track conversions, optimize marketing campaigns, and boost ROI."
                 twitterTitle="GTM Services by Analytics Liv | Grow Your Business"
                 twitterDescription="Optimize your marketing with GTM. Analytics Liv provides expert consulting for accurate data tracking and strategy improvements."
                 extraHead={
@@ -527,7 +527,6 @@ const google_tag_manager = () => {
                     </div>
                 </div>
             </section>
-
 
         </>
     )
