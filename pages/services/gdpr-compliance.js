@@ -173,10 +173,10 @@ const cookieLanding = ({ brandsdata }) => {
 
       <MetaSchemaOg
         url="https://analyticsliv.com/services/gdpr-compliance"
-        title="Expert GDPR Compliance Services & Solutions | AnalyticsLiv"
-        description="Protect your business with AnalyticsLiv’s expert GDPR compliance services. We offer customized solutions to ensure data privacy, reduce risks, and maintain full regulatory compliance."
-        twitterTitle="Expert GDPR Compliance Services & Solutions | AnalyticsLiv"
-        twitterDescription="Protect your business with AnalyticsLiv’s expert GDPR compliance services. We offer customized solutions to ensure data privacy, reduce risks, and maintain full regulatory compliance."
+        title="Expert GDPR Compliance Services for Data Privacy & Security | AnalyticsLiv"
+        description="Protect your business with AnalyticsLiv’s GDPR compliance services. We ensure data privacy, reduce risks, and maintain full compliance."
+        twitterTitle="Expert GDPR Compliance Services for Data Privacy & Security | AnalyticsLiv"
+        twitterDescription="Protect your business with AnalyticsLiv’s GDPR compliance services. We ensure data privacy, reduce risks, and maintain full compliance."
       />
 
       <div className="">

@@ -11,10 +11,10 @@ const app_marketing = () => {
     <>
       <MetaSchemaOg
         url="https://analyticsliv.com/services/app-marketing"
-        title="Google Partner for App Marketing | AnalyticsLiv"
-        description="Maximize app installs and drive in-app action using performance campaigns across Google and Meta advertising platforms"
-        twitterTitle="Google Partner for App Marketing | AnalyticsLiv"
-        twitterDescription="Maximize app installs and drive in-app action using performance campaigns across Google and Meta advertising platforms"
+        title="Mobile App Marketing Services to Increase Engagement & ROI | AnalyticsLiv"
+        description="Leverage AnalyticsLiv’s mobile app marketing services to skyrocket your app’s visibility. We create campaigns that drive installs, improve retention, and enhance user engagement."
+        twitterTitle="Mobile App Marketing Services to Increase Engagement & ROI | AnalyticsLiv"
+        twitterDescription="Leverage AnalyticsLiv’s mobile app marketing services to skyrocket your app’s visibility. We create campaigns that drive installs, improve retention, and enhance user engagement."
       />
 
       <section>

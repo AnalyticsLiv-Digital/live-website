@@ -394,7 +394,7 @@ const index = ({ blogDat }) => {
                 Related To
               </label>
               <div className="flex gap-5 flex-wrap">
-              {["dv360", "ga4", "gtm", "firebase"]?.map(option => (
+              {["dv360", "ga4", "gtm", "cro", "googleAds","firebase"]?.map(option => (
                 <div key={option} className="flex items-center mb-1">
                   <input
                     type="checkbox"

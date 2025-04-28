@@ -30,9 +30,9 @@ const page = ({ ytPlaylistdata }) => {
       <MetaSchemaOg
         url="https://analyticsliv.com/"
         title="AnalyticsLiv | Google Marketing Platform (GMP) Certified Partner"
-        description="Data Influences every touchpoint. As GMP partner we help brands from acquisition to conversion and better retention using personalized data backed solutions"
+        description="Data Influences every touchpoint. As GMP partner we help brands from acquisition to conversion and better retention using personalized data driven solutions"
         twitterTitle="AnalyticsLiv | Google Marketing Platform (GMP) Certified Partner"
-        twitterDescription="Data Influences every touchpoint. As GMP partner we help brands from acquisition to conversion and better retention using personalized data backed solutions"
+        twitterDescription="Data Influences every touchpoint. As GMP partner we help brands from acquisition to conversion and better retention using personalized data driven solutions"
         extraHead={
           <link
             rel="stylesheet"

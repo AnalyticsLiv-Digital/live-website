@@ -14,10 +14,10 @@ const webapp = () => {
         <>
             <MetaSchemaOg
                 url="https://analyticsliv.com/services/web-app-measurement"
-                title="GMP Partner for Google Analytics 4 Consulting | AnalyticsLiv"
-                description="As a Google partner, AnalyticsLiv offers professional GA4 expert consulting services to optimize tracking, resolve attribution issues and data discrepancies"
-                twitterTitle="GMP Partner for Google Analytics 4 Consulting | AnalyticsLiv"
-                twitterDescription="As a Google partner, AnalyticsLiv offers professional GA4 expert consulting services to optimize tracking, resolve attribution issues and data discrepancies"
+                title="Google Analytics 4 Consulting Services for Web & App Success | AnalyticsLiv"
+                description="Get expert guidance with AnalyticsLiv’s Google Analytics 4 consulting services. We offer GA4 audits, seamless implementation, and actionable reporting to maximize your ROI."
+                twitterTitle="Google Analytics 4 Consulting Services for Web & App Success | AnalyticsLiv"
+                twitterDescription="Get expert guidance with AnalyticsLiv’s Google Analytics 4 consulting services. We offer GA4 audits, seamless implementation, and actionable reporting to maximize your ROI."
             />
 
             <section className='webapphome w-full relative font-gilroy overflow-hidden'>

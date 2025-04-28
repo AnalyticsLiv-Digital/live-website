@@ -105,7 +105,7 @@ const navbar = () => {
                 { href: "/services/web-app-measurement", label: "GA4 Implementation & Optimization", imgSrc: "SEM.png" },
                 { href: "/services/server-side-tracking", label: "Server Side Tracking", imgSrc: "media-inner-E-commerce.png" },
                 { href: "/services/gdpr-compliance", label: "Cookie Consent Solution", imgSrc: "media-inner-lead.png" },
-                // { href: "/services/app-marketing", label: "Mobile App Marketing", imgSrc: "media-inner-mobile.png" },
+                { href: "/services/google-tag-manager", label: "Google Tag Manager", imgSrc: "media-inner-mobile.png" },
             ],
         },
         {
@@ -184,9 +184,9 @@ const navbar = () => {
                             >
                                 {/* <Link className="logo" href="/"><img alt="logo" aria-label="logo" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="h-10 lg:mx-4 cursor-pointer" /></Link> */}
                                 <nav className="lg:flex text-center">
-                                    <ul className="lg:flex text-[10px] xl:text-[14px]  font-semibold text-[#0E1947] text-left lg:text-center z-[-1] lg:z-auto lg:mr-4 lg:w-auto items-center tracking-wide cursor-pointer">
+                                    <ul className="lg:flex text-[10px] xl:text-[14px]  font-semibold text-[#0E1947] text-left lg:text-center z-[-1] lg:z-auto lg:mr-4 lg:w-auto items-center tracking-wide">
                                         <li
-                                            className="relative flex items-center gap-[5px] hover:border-b-2 hover:border-[#0E1947] duration-100 delay-75 ease-in-out py-2"
+                                            className="relative flex items-center gap-[5px] hover:border-b-2 hover:border-[#0E1947] duration-100 delay-75 ease-in-out py-2 cursor-default"
                                             onMouseEnter={() => {
                                                 setIsSWebervices(true);
                                             }}
@@ -195,9 +195,9 @@ const navbar = () => {
                                                 setHoveredIndex(0);
                                             }}
                                         >
-                                            <Link className="header-links" href="/services">
+                                            <div className="cursor-default">
                                                 Services
-                                            </Link>
+                                            </div>
                                             <span className="">
                                                 {isWebServices ? (
                                                     <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Up%20Arrow%20Navbar.png" alt="up down" className="w-4" />
@@ -207,11 +207,11 @@ const navbar = () => {
                                             </span>
                                         </li>
                                         <li
-                                            className="lg:ml-[19px] flex items-center gap-[5px] hover:border-b-2 hover:border-[#0E1947] duration-100 delay-75 ease-in-out py-2"
+                                            className="lg:ml-[19px] flex items-center gap-[5px] hover:border-b-2 hover:border-[#0E1947] duration-100 delay-75 ease-in-out py-2 cursor-default"
                                             onMouseEnter={() => setIsWebResources(true)}
                                             onMouseLeave={() => setIsWebResources(false)}
                                         >
-                                            <a href=""> Resources </a>
+                                            <div className="cursor-default"> Resources </div>
                                             {isWebResources && (
                                                 <motion.div
                                                     initial={{ y: 1, opacity: 0 }}
@@ -426,6 +426,14 @@ const navbar = () => {
                                                             class="text-menuheading text-sm font-normal leading-normal"
                                                         >
                                                             Cookie Consent Solution
+                                                        </Link>
+                                                    </div>
+                                                    <div class="flex items-center py-1">
+                                                        <Link
+                                                            href="/services/google-tag-manager"
+                                                            class="text-menuheading text-sm font-normal leading-normal"
+                                                        >
+                                                            Google Tag Manager
                                                         </Link>
                                                     </div>
 

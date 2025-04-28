@@ -98,10 +98,10 @@ const contact = () => {
         <>
             <MetaSchemaOg
                 url="https://analyticsliv.com/contact"
-                title="AnalyticsLiv - Contact us"
-                description="Google Marketing Platform Partner - Contact for Support"
-                twitterTitle="AnalyticsLiv - Contact us"
-                twitterDescription="Google Marketing Platform Partner - Contact for Support"
+                title="Contact AnalyticsLiv | Data Analytics Consulting & Support | Get in Touch"
+                description="Reach the AnalyticsLiv team for expert data analytics solutions! Submit your inquiry via our contact form, phone, or email. Let’s connect to drive actionable insights for your business"
+                twitterTitle="Contact AnalyticsLiv | Data Analytics Consulting & Support | Get in Touch"
+                twitterDescription="Reach the AnalyticsLiv team for expert data analytics solutions! Submit your inquiry via our contact form, phone, or email. Let’s connect to drive actionable insights for your business"
                 extraHead={
                     <link
                         rel="stylesheet"
