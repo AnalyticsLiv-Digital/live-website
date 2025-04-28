@@ -105,7 +105,7 @@ const navbar = () => {
                 { href: "/services/web-app-measurement", label: "GA4 Implementation & Optimization", imgSrc: "SEM.png" },
                 { href: "/services/server-side-tracking", label: "Server Side Tracking", imgSrc: "media-inner-E-commerce.png" },
                 { href: "/services/gdpr-compliance", label: "Cookie Consent Solution", imgSrc: "media-inner-lead.png" },
-                // { href: "/services/app-marketing", label: "Mobile App Marketing", imgSrc: "media-inner-mobile.png" },
+                { href: "/services/google-tag-manager", label: "Google Tag Manager", imgSrc: "media-inner-mobile.png" },
             ],
         },
         {
@@ -426,6 +426,14 @@ const navbar = () => {
                                                             class="text-menuheading text-sm font-normal leading-normal"
                                                         >
                                                             Cookie Consent Solution
+                                                        </Link>
+                                                    </div>
+                                                    <div class="flex items-center py-1">
+                                                        <Link
+                                                            href="/services/google-tag-manager"
+                                                            class="text-menuheading text-sm font-normal leading-normal"
+                                                        >
+                                                            Google Tag Manager
                                                         </Link>
                                                     </div>
 
