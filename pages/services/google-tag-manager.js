@@ -245,7 +245,7 @@ const google_tag_manager = () => {
             )}
 
             <section className='flex max-md:flex-col justify-between max-lg:items-start items-center px-[5%] max-sm:pt-6 pt-8'>
-                <div className='md:w-[50%] xl:w-[45%] flex flex-col gap-7 md:gap-14 2xl:gap-16 justify-around items-center md:items-start'>
+                <div className='md:w-[50%] xl:w-[48%] flex flex-col gap-7 md:gap-14 2xl:gap-16 justify-around items-center md:items-start'>
                     <div className='flex flex-col gap-5 md:gap-8 2xl:gap-10'>
                         <h1 className='text-[#0E1947] text-lg sm:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold max-md:text-center'>
                             Unlock Powerful Insights with Google Tag Manager (GTM) –
@@ -274,11 +274,11 @@ const google_tag_manager = () => {
                 </div>
 
                 <div className='md:w-[50%] xl:w-[48%] max-md:hidden flex justify-center'>
-                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/GTM_Main_Img_Right.png' alt='Boost your sales with expert Conversion Rate Optimization (CRO) services' />
+                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/GTM_Main_Img_Right11.png' alt='Boost your sales with expert Conversion Rate Optimization (CRO) services' />
                 </div>
             </section>
 
-            <section className='px-4 md:px-[5%] pt-16 pb-6'>
+            <section className='px-4 md:px-[5%] pt-12 sm:pt-16 pb-6'>
                 <Brands />
             </section>
 
@@ -410,7 +410,7 @@ const google_tag_manager = () => {
                 <div className='text-[#100F1B] text-2xl md:text-3xl font-bold text-center lg:text-left'>
                     From Strategy to Insight: Our 5-Step Tracking Process
                 </div>
-                <div className='pt-12 flex max-lg:grid max-lg:grid-cols-2 max-sm:grid-cols-1 max-lg:justify-items-center max-sm:gap-10 max-lg:gap-16 lg:gap-10 
+                <div className='pt-8 sm:pt-12 flex max-lg:grid max-lg:grid-cols-2 max-sm:grid-cols-1 max-lg:justify-items-center max-sm:gap-10 max-lg:gap-16 lg:gap-10 
             justify-around items-start'>
                     <div className='w-[75%] lg:w-[27%]'>
                         <div className='flex flex-col justify-center items-center'>
