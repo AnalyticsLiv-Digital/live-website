@@ -1,25 +1,68 @@
-import React, { useState } from 'react'
-import Head from 'next/head';
-import Link from 'next/link';
-import Marquee from 'react-fast-marquee';
-import Slider from 'react-slick';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+'use client'
+import React, { useState, useRef } from 'react';
 import MetaSchemaOg from '../../components/MetaSchemaOg';
-const google_tag_manager = ({brandsdata}) => {
-    const [showMore, setShowMore] = useState(false);
-    const toggleShowMore = () => {
-        setShowMore(prevShowMore => !prevShowMore);
+import { InlineWidget } from 'react-calendly';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Brands from '../../components/brands';
+
+const google_tag_manager = () => {
+
+    const [showCalendly, setShowCalendly] = useState(false);
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    const handleToggle = (index) => {
+        setActiveIndex(activeIndex === index ? null : index);
     };
+
+    const sliderRef = useRef(null);
+
+    const handleCalendly = () => {
+        setShowCalendly(true);
+    }
+
+    const cardsData = [
+        {
+            title: 'SPA Tracking',
+            description: 'Tracking solutions to measure Single Page Application websites and measure users interactions like clicks, submissions, hover, view and other events in SPA websites.',
+            image: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/website%20(2)%201.png',
+        },
+        {
+            title: 'Conversion Events tracking',
+            description: 'Our specialists set up and configure Google Tag Manager to track key events requires for your business and measure conversion events to fulfill macro and micro goals',
+            image: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/conversion%20event%20tracking.png',
+        },
+        {
+            title: 'Server-side Tagging',
+            description: 'Google Tag Manager Server-side tracking offers enhanced security, inline with privacy compliance, boost website performance and get accurate data tracking in tag management system.',
+            image: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/server%20side%20tagging.png',
+        },
+        {
+            title: 'Marketing Pixels Tracking',
+            description: 'Pixel tracking allows you to effortlessly monitor user actions—like conversions across your website. By centralizing all tracking pixels in one place, GTM reduces code clutter and ensures more accurate data collection for marketers and analysts.',
+            image: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/user%20(11).png',
+        },
+        {
+            title: 'Conversion API Setup & Implementation',
+            description: "Conversion APIs (CAPI) setups for platforms like Meta or any other marketing tools that allows businesses to send data about customer interactions and conversions directly to the tool's servers.",
+            image: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/integration%20(3)%201.png',
+        },
+        {
+            title: 'Enhanced Ecommerce Tracking',
+            description: "For Ecommerce businesses, From product views to completed purchases, our enhanced ecommerce implementation capabilities foster the full customer journey, empowering you to refine your growth strategies.",
+            image: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/catalog%201.png',
+        },
+    ];
+
     const NextArrow = (props) => {
         const { onClick } = props;
         return (
             <div
-                className="absolute top-1/2 right-[-12px] md:right-[-20px] lg:right-[-40px] transform -translate-y-1/2 z-10 cursor-pointer"
+                className="absolute text-white shadow-arrowShadow rounded-full top-1/2 right-[5px] sm:right-[-10px] lg:right-[-10px] transform -translate-y-1/2 z-40 cursor-pointer"
                 onClick={onClick}
             >
-                <FaArrowRight size={20} />
+                <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Right%20Arrow.png" alt="right arrow" className="w-7 md:w-10" />
             </div>
         );
     };
@@ -28,72 +71,49 @@ const google_tag_manager = ({brandsdata}) => {
         const { onClick } = props;
         return (
             <div
-                className="absolute top-1/2 left-[-12px] md:left-[-20px] lg:left-[-40px] transform -translate-y-1/2 z-10 cursor-pointer"
+                className="absolute text-white shadow-arrowShadow rounded-full top-1/2 left-[5px] sm:left-[-10px] lg:left-[-10px] transform -translate-y-1/2 z-40 cursor-pointer"
                 onClick={onClick}
             >
-                <FaArrowLeft size={20} />
+                <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Left%20Arrow.png" alt="left arrow" className="w-7 md:w-10" />
             </div>
         );
     };
 
-    var settings = {
-        dots: true,
+    const settings = {
         infinite: true,
-        speed: 1500,
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        initialSlide: 0,
-        nextArrow: <NextArrow />,
-        prevArrow: <PrevArrow />,
-        autoplay: true,
-        autoplaySpeed: 5000,
+        initialSlide: 0.5,
+        slidesToShow: 2.5,
+        slidesToScroll: 1.5,
+        dots: true,
+        swipe: true,
+        touchMove: true,
+        draggable: true,
         responsive: [
             {
-                breakpoint: 1150,
+                breakpoint: 1184,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true,
                 },
             },
             {
                 breakpoint: 1024,
                 settings: {
-                    slidesToShow: 2,
-                    speed: 1000,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true,
+                    slidesToShow: 1.5,
+                    slidesToScroll: 1.5,
                 },
             },
             {
-                breakpoint: 988,
+                breakpoint: 768,
                 settings: {
-                    dots: false,
-                    speed: 1000,
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    initialSlide: 2,
+                    initialSlide: 0.5,
+                    slidesToShow: 1.5,
+                    slidesToScroll: 1.5,
                 },
             },
             {
-                breakpoint: 600,
+                breakpoint: 500,
                 settings: {
-                    dots: false,
-                    speed: 1000,
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    initialSlide: 2,
-                },
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    dots: false,
-                    speed: 1000,
-                    // nextArrow: false,
-                    // prevArrow: false,
+                    initialSlide: 0,
                     slidesToShow: 1,
                     slidesToScroll: 1,
                 },
@@ -101,81 +121,89 @@ const google_tag_manager = ({brandsdata}) => {
         ],
     };
 
+    const settingsMobile = {
+        infinite: true,
+        initialSlide: 0,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        nextArrow: <NextArrow />,
+        prevArrow: <PrevArrow />,
+        dots: true,
+    };
+    const handleNext = () => sliderRef.current.slickNext();
+    const handlePrev = () => sliderRef.current.slickPrev();
+
+
     const content = [
         {
-            id: 1,
-            path: '/check-up (7).png',
-            title: "Conversion API Setup & Implementation",
-            description: "Conversion APIs (CAPI) setups for Facebook or any other marketing tools that allows businesses to send data about customer interactions and conversions directly to tool's servers.",
+            question: "What is Google Tag Manager (GTM)?",
+            answer:
+                "Google Tag Manager is a free tool that allows you to manage and deploy marketing tags (snippets of code or tracking pixels) on your website or app without modifying the code directly.",
         },
         {
-            id: 2,
-            path: '/check-up (8).png',
-            title: "Offline And Online Data Integration",
-            description: "If you're interested in visualizing your offline data as reports and conducting more thorough analysis, importing your offline data into GA4 is a definite step.",
+            question: "How does GTM work?",
+            answer:
+                "GTM uses a JavaScript snippet that is added to your site’s code. Once the container is in place, you can use GTM’s web interface to add, update, or remove any tags, triggers, and variables.",
         },
         {
-            id: 3,
-            path: '/check-up (9).png',
-            title: "Form Field Analysis",
-            description: "Forms play a significant role in your business and collecting insights from user submissions is valuable, then form tracking becomes essential.",
+            question: "Can I use GTM with any website platform (e.g., WordPress, Shopify)?",
+            answer:
+                "Yes. GTM can be used on all the platforms. Many CMSs and e-commerce platforms have plugins or integrations to simplify GTM setup.",
         },
         {
-            id: 4,
-            path: '/check-up (10).png',
-            title: "Custom Campaign Attribution",
-            description: "This solution refers to the practice of creating and defining your own rules or models for assigning credit to various marketing channels or touchpoints in a customer's journey like First click, Last click, Last paid click, First Paid click.",
+            question: "Do I need to know coding to use GTM?",
+            answer:
+                "Not necessarily. GTM is designed to reduce the need for developer intervention, but basic HTML, JavaScript, or understanding of how websites work can be helpful.",
         },
         {
-            id: 5,
-            path: '/check-up (11).png',
-            title: "Facebook CAPI Implementation For Shopify",
-            description: "We have expertise in setting up Enhanced Ecommerce Tracking for Shopify for Facebook with custom approaches to capture maximum amount of ecommerce data and to improve the accuracy and enhancement of tracking",
+            question: "How do I install GTM on my website?",
+            answer:
+                "You need to paste the GTM container code in two places: In the <head> tag, Immediately after the opening <body> tag",
         },
         {
-            id: 6,
-            path: '/check-up (12).png',
-            title: "User ID Implementation",
-            description: "Fortunately, with the help of the user ID implementation solution, we can definitely unify our users and gain better insights. We can apply this solution to both the web and the app.",
+            question: "Can GTM replace Google Analytics?",
+            answer: " No, GTM doesn’t track data itself. It facilitates the deployment of tracking tools like Google Analytics."
         },
         {
-            id: 7,
-            path: '/check-up (13).png',
-            title: "Client ID Implementation",
-            description: "Google Analytics automatically tracks Client IDs & displays them in user exploration reports, BigQuery reports & more. However, if you want to analyse users alongside events, enhanced ecommerce data, custom Client ID implementation is the solution.",
-        }, {
-            id: 8,
-            path: '/check-up (14).png',
-            title: "App To Web View Stitching Solution",
-            description: "When an app includes a webview, Firebase may not be able to track events that occur within the webview. To address this, we must find a solution and the solution to handle this issue is the app to web view stitching.",
+            question: "What kind of things can I track with GTM?",
+            answer:
+                "You can track: Pageviews, Clicks (e.g., button clicks, outbound links), Form submissions, Scroll depth, Video interactions, Custom events",
         },
         {
-            id: 9,
-            path: '/check-up (15).png',
-            title: "Marketing Pixels Implementation",
-            description: "Pixel implementation typically refers to the process of embedding a tracking pixel or snippet of code into a website, app, or digital platform to collect data and monitor user interactions.",
+            question: "How do I test if my tags are firing correctly?",
+            answer:
+                "Use GTM’s built-in Preview mode or browser extensions like Tag Assistant.",
         },
         {
-            id: 10,
-            path: '/check-up (16).png',
-            title: "Shopify And Enhanced E-commerce Integration",
-            description: "Integration of Google Analytics 4 (GA4) with a Shopify store allows for the tracking and analysis of user behavior and e-commerce transactions.",
+            question: "Is GTM GDPR/CCPA compliant?",
+            answer:
+                "It can be, but it depends on how you configure it. GTM itself doesn’t store data, but the tags you fire might. You should: Set up consent mode, Integrate a Consent Management Platform (CMP), Control tag firing based on user consent",
         },
         {
-            id: 11,
-            path: '/check-up (17).png',
-            title: "GDPR Cookie Integration",
-            description: "GDPR Cookie Integration refers to the process of incorporating mechanisms and practices into a website or online platform to ensure compliance with the General Data Protection Regulation (GDPR) requirements related to the use of cookies.",
+            question: "Why aren’t my tags firing?",
+            answer:
+                "Common reasons include: Trigger conditions not met, Tag is paused, Incorrect variable usage, Preview mode not reflecting changes",
         },
         {
-            id: 12,
-            path: '/check-up (18).png',
-            title: "Website A/B Testing",
-            description: "To validate which variant is working as expected. Before making the changes live to 100% of audiences, this can be tested out for a targeted specified audience using A/B tests tools and then it can be rolled out to wider users.",
-        }
+            question: "Can GTM slow down my website?",
+            answer:
+                "If used correctly, GTM should not significantly impact site performance. However, poorly optimized or excessive third-party tags can affect loading speed.",
+        },
+        {
+            question: "How can I manage GTM access for my team?",
+            answer:
+                "GTM supports user permissions at both account and container levels. You can invite users and assign roles like Viewer, Editor, Approver, or Publisher.",
+        },
+        {
+            question: "Can GTM be used for mobile apps?",
+            answer:
+                "Yes, with Firebase and GTM for mobile apps (using SDKs for Android and iOS).",
+        },
     ];
 
     return (
+
         <>
 
             <MetaSchemaOg
@@ -184,769 +212,325 @@ const google_tag_manager = ({brandsdata}) => {
                 description="GMP Partner for Google Tag Manager services, we specialize in custom tracking and solutions to optimize your reporting strategies and drive growth."
                 twitterTitle="GTM Services by Analytics Liv | Grow Your Business"
                 twitterDescription="Optimize your marketing with GTM. Analytics Liv provides expert consulting for accurate data tracking and strategy improvements."
+                extraHead={
+                    <link
+                        rel="stylesheet"
+                        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap"
+                    />
+                }
+                faqData={content}
             />
-            <section class="banner relative h-full pt-10 pb-20"
-            // style={{backgroundImage: 'url(https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/Shape-banner.png)', backgroundRepeat: 'no-repeat', 
-            // backgroundSize: 'cover'}}
-            >
-                <div class="px-10 lg:flex justify-around lg:items-center">
-                    <div class="inner-banner lg:w-1/2 text-center px-4 md:px-16 pt-4 flex flex-col justify-center">
-                        <h1 class="flex max-sm:flex-col items-center justify-center mb-14">
-                            <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/GTM_Logo-removebg-preview 2.png" alt="logo" />
-                            <span class="2xl:text-[33px] lg:text-[28px] text-[27px] leading-[1.7em] font-['Poppins'] font-semibold text-maintext">Google Tag Manager</span>
+
+            {showCalendly && (
+                <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-40 z-50 flex items-center justify-center p-4"
+                    onClick={() => setShowCalendly(false)}>
+                    <div className="relative bg-white rounded-lg shadow-lg sm:p-4 flex flex-col items-center justify-center 
+            max-w-[380px] w-[100%] sm:w-[90%] h-[80vh] sm:max-w-[400px] sm:h-[450px] lg:max-w-[450px] lg:h-[500px]">
+
+                        <button
+                            className="absolute top-1 left-1 text-gray-500 text-xs font-bold rounded-full w-8 h-8 flex items-center justify-center"
+                            onClick={() => setShowCalendly(false)}
+                        >
+                            ✖
+                        </button>
+
+                        <div className="w-full h-full flex justify-center items-center">
+                            <InlineWidget
+                                url="https://calendly.com/analyticsliv/30min"
+                                styles={{ width: "100%", height: "100%" }}
+                            />
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            <section className='flex max-md:flex-col justify-between max-lg:items-start items-center px-[5%] max-sm:pt-6 pt-8'>
+                <div className='md:w-[50%] xl:w-[45%] flex flex-col gap-7 md:gap-14 2xl:gap-16 justify-around items-center md:items-start'>
+                    <div className='flex flex-col gap-5 md:gap-8 2xl:gap-10'>
+                        <h1 className='text-[#0E1947] text-lg sm:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold max-md:text-center'>
+                            Unlock Powerful Insights with Google Tag Manager (GTM) –
+                            Clean, Consistent & Actionable Data
                         </h1>
-                        <div class="relative">
-                            <h2 class="text-lg font-normal leading-[28px] font-[Poppins]">Enhance Your Digital
-                                Strategy
-                                with Expert Analytics and Tag Management Solutions. From Google Analytics Audits and Setup to
-                                Advanced Custom Event Tracking, We AnalyticsLiv Power Your Data-Driven Success!</h2>
-                            {/* <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/sparkler (1) 1.png" class="absolute bottom-[-25%] min-[1440px]:bottom-[-60%]"
-                                alt="shape" />
-                                <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/sparkler 1.png" class="absolute right-[0] top-[-35%]" alt="shape" /> */}
-                        </div>
-                        <div>
-                            <Link href="/contact?id=google-tag-manager">
-                                <button className="butn max-[425px]:mt-8 mt-6">CONTACT US</button>
-                            </Link>
+                        <h3 className='text-xs 2xl:text-sm font-normal max-md:text-center'>
+                            In today’s data-driven world, accurate tracking and seamless data collection are the foundation of every smart business
+                            decision. Our Google Tag Manager integration services help you streamline your entire data collection strategy — from first
+                            touchpoint to final conversion.
+                        </h3>
+                        <div className='flex justify-center md:justify-start items-center gap-3 md:gap-2 lg:gap-5'>
+                            <a href='/contact'><button className='mainbutn'>Request a Demo</button></a>
+                            <div onClick={() => handleCalendly()} className='group hover:cursor-pointer flex items-center gap-2'>
+                                <button className='text-xs 2xl:text-sm translate-x-1 group-hover:translate-x-0 transition-all duration-300 font-bold max-sm:w-full max-md:text-center'>Book a Call Today</button>
+                                <div className="opacity-0 translate-x-2 sm:translate-x-8 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+                                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%201.svg' alt='arrow right' className='w-2' />
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div className=' w-1/2 max-lg:hidden'>
-                        <img src='/GTM_banner-new.png' className='w-full h-full' alt='gtm' />
+                    <div className='flex max-sm:flex-wrap max-md:justify-center justify-start w-full items-center gap-7 md:gap-10 xl:gap-16'>
+                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/clutch_review.png' alt='clutch review analyticsliv' />
+                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Sortlist_Review_4.8.png' alt='Sortlist review analyticsliv' />
+                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Trustpilot_mobile.svg' alt='trustpilot review analyticsliv' className='' />
                     </div>
+                </div>
+
+                <div className='md:w-[50%] xl:w-[48%] max-md:hidden flex justify-center'>
+                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/GTM_Main_Img_Right.png' alt='Boost your sales with expert Conversion Rate Optimization (CRO) services' />
                 </div>
             </section>
 
-            <div className=' px-4 md:px-20'>
-                <div>
-                    <h2 className='text-center font-bold text-base lg:text-[28px] text-maintext px-4 md:px-20 leading-[24px]'>Trusted by Organisations Worldwide</h2>
-                </div>
-                <div className=' max-sm:w-[90dvw] max-lg:w-[90dvw] w-[100%] m-auto'>
-                    <Marquee gradient={false} puseOnHover="true">
-                        <div className='flex space-x-8 justify-center py-4 px-4 mt-4'>
-                            {brandsdata.brand.map((brand, index) => (
-                                <div key={index} className=''>
-                                    <img src={brand.logo} alt={brand.alt} className='h-[50px] mx-5' />
-                                </div>
-                            ))}
+            <section className='px-4 md:px-[5%] pt-16 pb-6'>
+                <Brands />
+            </section>
+
+            <section className="pt-5 pb-14 xl:pb-20 xl:pt-12 lg:pl-10 2xl:pl-[5%] max-md:overflow-hidden">
+                <div className="flex max-md:flex-col items-center justify-between px-[3%]">
+                    <div className="md:w-[70%] max-md:px-4 flex flex-col justify-start">
+                        <h2 className="text-[#100F1B] text-xl md:text-[26px] 2xl:text-3xl font-bold text-center md:text-start">
+                            Our Google Tag Manager Services
+                        </h2>
+                        <div className="text-[#373642] max-md:text-center text-[13px] md:text-base font-normal pt-8">
+                            AnalyticsLiv offers a variety of GTM services, including tag management setup, regular audits and health
+                            checks, Ongoing management & support, Identifying & fixing issues observed.
                         </div>
-                    </Marquee>
-
-                </div>
-            </div>
-            <section className="py-10 lg:py-16">
-                <div>
-                    <div className="text-2xl md:text-3xl xl:text-[34px] font-bold xl:font-extrabold text-center">
-                        Custom Solutions
                     </div>
-
-                </div>
-                <div className="pt-8 w-[90%] mx-auto  carousel-custom">
-                    <Slider {...settings}>
-                        {content.map((item) => (
-                            <div
-                                key={item.id}
-                                className="text-center md:w-[20%] flex flex-col justify-center items-center h-[231px] w-[300px] flex-shrink-0  border-[1px] rounded-[5px] border-[#EBEBEB] hover:border-[#b1afaf] hover:shadow-md hover:translate-y-[-2 px] transition-all duration-300 ease-in-out p-4 py-4 px-10 mr-4 gap-5"
+                    <div className="flex flex-col max-sm:hidden justify-center items-center gap-2 max-md:pt-5">
+                        <div className="flex justify-center items-center gap-5">
+                            <button
+                                onClick={handlePrev}
+                                className="group relative overflow-hidden z-10 bg-white border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[8px] px-4 py-3 mb-3 transition-all duration-300 ease-linear hover:bg-[#08A4F7]"
                             >
-                                <img
-                                    src={item.path}
-                                    alt="check-up"
-                                    className="h-10 w-10 md:h-12 md:w-12 mb-4 mx-auto"
-                                />
-                                <h3 className=" text-sm sm:text-[15px] font-semibold mb-2">{item.title}</h3>
-                                <div className="text-xs font-normal text-[#152F2E]">
-                                    {item.description}
+                                <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector%20(1).svg' alt='left vector' className='w-3.5 h-3.5 group-hover:hidden block' />
+
+                                <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20right%20white.svg' alt='right vector' className='w-3.5 h-3.5 hidden group-hover:block' />
+
+                            </button>
+                            <button
+                                onClick={handleNext}
+                                className="group relative overflow-hidden z-10 bg-white border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[8px] px-4 py-3 mb-3 transition-all duration-300 ease-linear hover:bg-[#08A4F7]"
+                            >
+                                <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector.svg' alt='right vector' className='w-3.5 h-3.5 group-hover:hidden block' />
+                                <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20left%20white.svg' alt='left vector' className='w-3.5 h-3.5 hidden group-hover:block' />
+                            </button>
+                        </div>
+                        <a href='/services'><button className="mainbutn-opposite">Read More Here</button></a>
+                    </div>
+                </div>
+                <div className="max-sm:hidden sm:pl-5 xl:pl-[3%] py-8 carousel-custom overflow-hidden">
+                    <Slider ref={sliderRef} {...settings}>
+                        {cardsData?.map((card, index) => (
+                            <div key={index} className=" custom-padding-370 custom-padding-540 sm:px-4 flex justify-center">
+                                <div className="border rounded-3xl border-[#F2F2F2] mx-auto h-[280px] w-[320px] md:w-[440px] lg:w-[420px] 2xl:w-[480px]">
+                                    <div className="h-[160px] text-[#373642] text-sm font-normal p-5 md:p-6">
+                                        {card?.description}
+                                    </div>
+                                    <div className="h-[140px] bg-[#08A4F7] rounded-b-3xl">
+                                        <div className="flex items-center">
+                                            <div className="w-[30%] h-[100px] pl-2 md:pl-3 2xl:pl-8">
+                                                <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/white_bg.png" alt="white_bg" className="absolute max-md:h-24 max-md:w-24" />
+                                                <img src={card.image} alt={card.title} className="relative max-md:h-16 max-md:w-16 md:w-16 top-4 left-4 md:top-5 md:left-5" />
+                                            </div>
+                                            <div className="flex flex-col max-md:pl-10 h-[140px] pl-5 pr-2 2xl:pr-5 items-start justify-center gap-1 text-white">
+                                                <div className="text-xl font-bold">{card.title}</div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         ))}
                     </Slider>
                 </div>
-
-            </section>
-
-            <section className='resources'>
-                <div>
-                    <div className="text-2xl md:text-3xl font-bold text-center pt-12 xl:font-extrabold xl:text-[34px]">
-                        Success Stories
-                    </div>
-                </div>
-                <div className="grid lg:grid-cols-3 w-full justify-center justify-items-center items-center gap-4 p-8 md:p-12">
-
-                    <div className='group xl:w-[380px] lg:w-[310px] w-[300px] lg:h-[480px] xl:h-[540px] h-[440px] rounded border border-solid shadow-filtershadow p-[25px] text-center relative'>
-                        <span className='bg-[#5BF0B2] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                        <a href="https://storage.googleapis.com/website-bucket-uploads/cs/5492gjsetdcghtc86683.pdf" target='_blank'>
-                            <div>
-                                <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestudy1.png" alt="Google Analytics 4 Migration" className='w-[350px] h-[250px]  xl:h-[350px]' />
-                            </div>
-                            <div className='flex flex-col gap-7'>
-                                <h3 className='text-base text-slate-900 font-semibold text-left pt-5'>Universal Analytics (GA3) to GA4 Migration for a Website</h3>
-                                <div className='flex items-center justify-center bottom-[25px]'>
-                                    <div className='flex items-end'>
-                                        <div className='flex w-[200px] m-auto items-center py-2.5 justify-center gap-1.5 border border-solid text-center border-maintext  cursor-pointer rounded-[10px] group-hover:bg-maintext  font-medium'>
-                                            <button className='font-medium text-maintext  group-hover:text-white text-sm'>View</button>
-                                            <span className='text-homepagebtn group-hover:text-white'>
-                                                <img src='https://storage.googleapis.com/website-bucket-uploads/static/public/arrow-right%20(8).png' alt='arrow right' className='h-4 w-4 group-hover:hidden' />
-                                                <img src='https://storage.googleapis.com/website-bucket-uploads/static/public/arrow-right%20(7).png' alt='arrow right hover' className='h-4 w-4 hidden group-hover:block' />
-                                            </span>
-                                        </div>
+                <div className="sm:hidden sm:pl-5 xl:pl-16 py-8 max-sm:relative carousel-custom ">
+                    <Slider {...settingsMobile}>
+                        {cardsData?.map((card, index) => (
+                            <div key={index} className="sm:px-4 flex justify-center">
+                                <div className="border rounded-3xl border-[#F2F2F2] mx-auto h-[280px] w-[320px] md:w-[440px] lg:w-[420px] 2xl:w-[480px]">
+                                    <div className="h-[140px] text-[#373642] text-sm font-normal p-5 md:p-8">
+                                        {card?.description}
                                     </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div className='max-lg:hidden group xl:w-[380px] lg:w-[310px] w-[300px] xl:h-[540px] h-[480px] rounded border border-solid shadow-filtershadow p-[25px] text-center relative'>
-                        <span className='bg-[#5BF0B2] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                        <a href="https://storage.googleapis.com/website-bucket-uploads/cs/dv66hpaft245xdg90y5vr.pdf" target='_blank'>
-                            <div>
-                                <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner7.jpg" alt="Maximising Revenue and User Insights" className='w-[350px] h-[250px] xl:h-[350px]' />
-                            </div>
-                            <div className='flex flex-col gap-5'>
-                                <h3 className='text-bas text-slate-900 font-gilroy font-semibold leading-[1.3em] text-left pt-4'>Maximising Revenue and User Insights using Firebase In App Purchases for Mobile Apps</h3>
-                                <div className='flex items-center justify-center bottom-[25px]' >
-                                    <div className='flex w-[200px] m-auto items-center py-2.5 justify-center gap-1.5 border border-solid text-center border-maintext  cursor-pointer rounded-[10px] group-hover:bg-maintext  font-medium'>
-                                        <button className='font-medium text-maintext  group-hover:text-white text-sm'>View</button>
-                                        <span className='text-homepagebtn group-hover:text-white'>
-                                            <img src='https://storage.googleapis.com/website-bucket-uploads/static/public/arrow-right%20(8).png' alt='arrow right' className='h-4 w-4 group-hover:hidden' />
-                                            <img src='https://storage.googleapis.com/website-bucket-uploads/static/public/arrow-right%20(7).png' alt='arrow right hover' className='h-4 w-4 hidden group-hover:block' />
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div className='max-lg:hidden group xl:w-[380px] lg:w-[310px] w-[300px] xl:h-[540px] h-[480px] rounded border border-solid shadow-filtershadow p-[25px] text-center relative'>
-                        <span className='bg-[#5BF0B2] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                        <a href="https://storage.googleapis.com/website-bucket-uploads/cs/mnedfr45893kjswl.pdf" target='_blank'>
-                            <div>
-                                <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestudy2.png" alt="Shopify and GA4 enhanced Ecommerce Tracking" className='w-[350px] h-[250px] xl:h-[350px]' />
-                            </div>
-                            <div className='flex flex-col gap-2 xl:gap-4'>
-
-                                <h3 className='text-bas text-slate-900 font-semibold text-left pt-2'>From Inefficiency to Precision: Learn How AnalyticsLiv Achieved a 78% CPC Reduction for a News Publisher Giant</h3>
-                                {/* <div className='grid grid-rows-2 gap-10 pt-10 2xl:pt-14'> */}
-                                <div className='flex items-center justify-center bottom-[25px]'>
-                                    <div className='flex items-end'>
-                                        <div className='flex w-[200px] m-auto items-center py-2.5 justify-center gap-1.5 border border-solid text-center border-maintext  cursor-pointer rounded-[10px] group-hover:bg-maintext  font-medium'>
-                                            <button className='font-medium text-maintext  group-hover:text-white text-sm'>View</button>
-                                            <span className='text-homepagebtn group-hover:text-white'>
-                                                <img src='https://storage.googleapis.com/website-bucket-uploads/static/public/arrow-right%20(8).png' alt='arrow right' className='h-4 w-4 group-hover:hidden' />
-                                                <img src='https://storage.googleapis.com/website-bucket-uploads/static/public/arrow-right%20(7).png' alt='arrow right hover' className='h-4 w-4 hidden group-hover:block' />
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    {showMore && (
-                        <>
-                            <div className='lg:hidden group xl:w-[380px] lg:w-[310px] w-[300px] xl:h-[540px] h-[480px] rounded border border-solid shadow-filtershadow p-[25px] text-center relative'>
-                                <span className='bg-[#5BF0B2] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                                <a href="https://storage.googleapis.com/website-bucket-uploads/cs/dv66hpaft245xdg90y5vr.pdf" target='_blank'>
-                                    <div>
-                                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner7.jpg" alt="Maximising Revenue and User Insights" className='w-[350px] h-[250px] xl:h-[350px]' />
-                                    </div>
-                                    <div className='flex flex-col gap-5'>
-                                        <h3 className='text-bas text-slate-900 font-gilroy font-semibold leading-[1.3em] text-left pt-4'>Maximising Revenue and User Insights using Firebase In App Purchases for Mobile Apps</h3>
-                                        <div className='flex items-center justify-center bottom-[25px]' >
-                                            <div className='flex w-[200px] m-auto items-center py-2.5 justify-center gap-1.5 border border-solid text-center border-maintext  cursor-pointer rounded-[10px] group-hover:bg-maintext  font-medium'>
-                                                <button className='font-medium text-maintext  group-hover:text-white text-sm'>View</button>
-                                                <span className='text-homepagebtn group-hover:text-white'>
-                                                    <img src='https://storage.googleapis.com/website-bucket-uploads/static/public/arrow-right%20(8).png' alt='arrow right' className='h-4 w-4 group-hover:hidden' />
-                                                    <img src='https://storage.googleapis.com/website-bucket-uploads/static/public/arrow-right%20(7).png' alt='arrow right hover' className='h-4 w-4 hidden group-hover:block' />
-                                                </span>
+                                    <div className="h-[140px] bg-[#08A4F7] rounded-b-3xl">
+                                        <div className="flex items-center">
+                                            <div className="w-[30%] h-[100px] pl-2 md:pl-3 2xl:pl-8">
+                                                <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/white_bg.png" alt="white_bg" className="absolute max-md:h-24 max-md:w-24" />
+                                                <img src={card?.image} alt={card?.title} className="relative max-md:h-16 max-md:w-16 top-4 left-5" />
+                                            </div>
+                                            <div className="flex flex-col max-md:pl-14 h-[140px] items-start justify-center gap-1 text-white">
+                                                <div className="text-xl font-bold">{card?.title}</div>
                                             </div>
                                         </div>
                                     </div>
-                                </a>
+                                </div>
                             </div>
-                            <div className='lg:hidden group xl:w-[380px] lg:w-[310px] w-[300px] xl:h-[540px] h-[480px] rounded border border-solid shadow-filtershadow p-[25px] text-center relative'>
-                                <span className='bg-[#5BF0B2] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                                <a href="https://storage.googleapis.com/website-bucket-uploads/cs/mnedfr45893kjswl.pdf" target='_blank'>
-                                    <div>
-                                        <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestudy2.png" alt="Shopify and GA4 enhanced Ecommerce Tracking" className='w-[350px] h-[250px] xl:h-[350px]' />
-                                    </div>
-                                    <div className='flex flex-col gap-2 xl:gap-4'>
-
-                                        <h3 className='text-bas text-slate-900 font-semibold text-left pt-2'>From Inefficiency to Precision: Learn How AnalyticsLiv Achieved a 78% CPC Reduction for a News Publisher Giant</h3>
-                                        {/* <div className='grid grid-rows-2 gap-10 pt-10 2xl:pt-14'> */}
-                                        <div className='flex items-center justify-center bottom-[25px]'>
-                                            <div className='flex items-end'>
-                                                <div className='flex w-[200px] m-auto items-center py-2.5 justify-center gap-1.5 border border-solid text-center border-maintext  cursor-pointer rounded-[10px] group-hover:bg-maintext  font-medium'>
-                                                    <button className='font-medium text-maintext  group-hover:text-white text-sm'>View</button>
-                                                    <span className='text-homepagebtn group-hover:text-white'>
-                                                        <img src='https://storage.googleapis.com/website-bucket-uploads/static/public/arrow-right%20(8).png' alt='arrow right' className='h-4 w-4 group-hover:hidden' />
-                                                        <img src='https://storage.googleapis.com/website-bucket-uploads/static/public/arrow-right%20(7).png' alt='arrow right hover' className='h-4 w-4 hidden group-hover:block' />
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </>
-                    )}
-                </div>
-                <div className="lg:hidden flex justify-center mb-7">
-                    <button
-                        onClick={toggleShowMore}
-                        className="px-4 py-2 bg-maintext  text-white font-medium rounded-[10px]"
-                    >
-                        {showMore ? 'Show Less' : 'View More'}
-                    </button>
+                        ))}
+                    </Slider>
                 </div>
             </section>
+
+            <section className='bg-[#30486A] rounded-[5px] text-white mx-[3%] xl:mx-[5%] py-7 px-5 xl:px-7 2xl:p-12'>
+                <h2 className='text-lg md:text-2xl xl:text-3xl font-bold text-center pb-8 2xl:pb-12'>Why AnalyticsLiv is your perfect GTM Partner ?</h2>
+                <div className='flex max-lg:grid max-lg:grid-cols-2 max-sm:grid-cols-1 max-lg:gap-6 items-start gap-2 xl:gap-5 2xl:gap-10'>
+                    <div className='flex gap-3 xl:gap-3 2xl:gap-5 items-start lg:w-[23%]'>
+                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/costumer.png' alt='Certified Experts'
+                            className='bg-[#FAE0E1] rounded-[5px] px-3 py-2 min-w-[80px] min-h-[70px] lg:min-h-[80px] max-h-[70px] lg:max-h-[80px]' />
+                        <div className='flex flex-col justify-between gap-3'>
+                            <div className='text-xs xl:text-[13px] 2xl:text-sm font-bold'>Certified Experts</div>
+                            <div className='text-[10px] xl:text-[10px] 2xl:text-xs font-normal'>Our team of experts are certified in Google Tag Manager (GTM) with in-depth knowledge of GTM features & its best practices</div>
+                        </div>
+                    </div>
+
+                    <div className='flex gap-3 xl:gap-3 2xl:gap-5 items-start lg:w-[24%]'>
+                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/laptop%20(3).png' alt='Custom GTM Solutions'
+                            className='bg-[#F3DEB3] rounded-[5px] px-3 py-2 min-w-[80px] min-h-[70px] lg:min-h-[80px] max-h-[70px] lg:max-h-[80px]' />
+                        <div className='flex flex-col justify-between gap-3'>
+                            <div className='text-xs xl:text-[13px] 2xl:text-sm font-bold'>Custom GTM Solutions</div>
+                            <div className='text-[10px] xl:text-[10px] 2xl:text-xs font-normal'>Understanding the need of business, we provide unique scalable solutions as per your requirement.</div>
+                        </div>
+                    </div>
+
+                    <div className='flex gap-3 xl:gap-3 2xl:gap-5 items-start lg:w-[28%]'>
+                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/goal%20(4).png' alt='Enhanced Data Accuracy'
+                            className='bg-[#CBCFFA] rounded-[5px] px-3 py-2 min-w-[80px] min-h-[70px] lg:min-h-[80px] max-h-[70px] lg:max-h-[80px]' />
+                        <div className='flex flex-col justify-between gap-3'>
+                            <div className='text-xs xl:text-[13px] 2xl:text-sm font-bold'>Enhanced Data Accuracy</div>
+                            <div className='text-[10px] xl:text-[10px] 2xl:text-xs font-normal'>We ensure accurate data collection tracking by implementing correct tag configurations and data validation processes. This leads to more reliable insights and better decision making for marketers.</div>
+                        </div>
+                    </div>
+
+                    <div className='flex gap-3 xl:gap-3 2xl:gap-5 items-start lg:w-[27%]'>
+                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/customer-service%20(3).png' alt='Ongoing Support'
+                            className='bg-[#D7FACB] rounded-[5px] px-3 py-2 min-w-[80px] min-h-[70px] lg:min-h-[80px] max-h-[70px] lg:max-h-[80px]' />
+                        <div className='flex flex-col justify-between gap-3'>
+                            <div className='text-xs xl:text-[13px] 2xl:text-sm font-bold'>Ongoing Support</div>
+                            <div className='text-[10px] xl:text-[10px] 2xl:text-xs font-normal'>Right data gives right decision power, considering that our GTM experts perform Monthly audits and share updates, troubleshoots broken tags & analytics issues</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className='pt-16 pb-6 px-4 md:px-10 xl:px-16'>
+                <div className='text-[#100F1B] text-2xl md:text-3xl font-bold text-center lg:text-left'>
+                    From Strategy to Insight: Our 5-Step Tracking Process
+                </div>
+                <div className='pt-12 flex max-lg:grid max-lg:grid-cols-2 max-sm:grid-cols-1 max-lg:justify-items-center max-sm:gap-10 max-lg:gap-16 lg:gap-10 
+            justify-around items-start'>
+                    <div className='w-[75%] lg:w-[27%]'>
+                        <div className='flex flex-col justify-center items-center'>
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/01.png' alt='01' className='absolute' />
+                            <div className='text-2xl font-bold 2xl:text-3xl text-[#30486A] pt-[90px] z-10 text-center'>Discovery &<br></br> Planning</div>
+                        </div>
+                        <div className='pt-8 text-[#6C6C6C] text-base lg:text-xs 2xl:text-base font-normal text-center'>
+                            We understand your tracking goals, KPIs, & tools and accordingly our GTM expert strategically plan out your tracking.
+                        </div>
+                    </div>
+                    <div className='w-[75%] lg:w-[20%]'>
+                        <div className='flex flex-col justify-center items-center'>
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/02.png' alt='02' className='absolute' />
+                            <div className='text-2xl font-bold 2xl:text-3xl text-[#30486A] pt-[90px] z-10 text-center'>Setup &<br></br> Configuration</div>
+                        </div>
+                        <div className='pt-8 text-[#6C6C6C] text-base lg:text-xs 2xl:text-base font-normal text-center'>
+                            GTM container setup, dataLayer planning, and tag mapping. Integrating tags, triggers, and variables to seamlessly measure user actions.
+                        </div>
+                    </div>
+                    <div className='w-[75%] lg:w-[20%]'>
+                        <div className='flex flex-col justify-center items-center'>
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/03.png' alt='03' className='absolute' />
+                            <div className='text-2xl font-bold 2xl:text-3xl text-[#30486A] pt-[90px] z-10 lg:pb-10'>Execute</div>
+                        </div>
+                        <div className='pt-8 text-[#6C6C6C] text-base lg:text-xs 2xl:text-base font-normal text-center'>
+                            Test and validate everything in multiple environments and make implementation to production
+                        </div>
+                    </div>
+                    <div className='w-[75%] lg:w-[20%]'>
+                        <div className='flex flex-col justify-center items-center'>
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/04.png' alt='04' className='absolute' />
+                            <div className='text-2xl font-bold 2xl:text-3xl text-[#30486A] pt-[90px] z-10 lg:pb-10'>Report</div>
+                        </div>
+                        <div className='pt-8 text-[#6C6C6C] text-base lg:text-xs 2xl:text-base font-normal text-center'>
+                            Use GA4 to visualise and create custom reports for key reporting & trends.
+                        </div>
+                    </div>
+                    <div className='w-[75%] lg:w-[20%]'>
+                        <div className='flex flex-col justify-center items-center'>
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/05.png' alt='05' className='absolute' />
+                            <div className='text-2xl font-bold 2xl:text-3xl text-[#30486A] pt-[90px] z-10 lg:pb-10'>Action</div>
+                        </div>
+                        <div className='pt-8 text-[#6C6C6C] text-base lg:text-xs 2xl:text-base font-normal text-center'>
+                            Turn data into actionable insights using GA4 dashboards & build custom audience from data collected by GTM.
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section className='flex max-lg:flex-col-reverse overflow-hidden pt-2 md:pt-8 lg:pt-12'>
+                <div className='lg:w-[40%] bg-[#30486A] flex flex-col justify-center items-start gap-5 2xl:gap-7 max-lg:py-7 px-4 lg:px-8 xl:px-16 2xl:px-20'>
+                    <h2 className='text-[20px] md:text-[25px] 2xl:text-[30px] font-bold text-white'>Let’s Build Your Data Foundation Right</h2>
+                    <div className='text-base font-normal text-[#E2DEDC]'>
+                        Whether you're setting up analytics for the first time, migrating to GA4, or scaling your tracking infrastructure we’re here to make sure your data is accurate, reliable, and insightful.
+                    </div>
+                    <div className='text-base font-normal text-[#E2DEDC]'>
+                        Ready to track smarter?
+                    </div>
+                    <a href='/contact'><button className='mainbutn'>Book a Free Consultation</button></a>
+                </div>
+                <div className='lg:w-[60%] min-h-[250px] sm:min-h-[350px] overflow-hidden 2xl:min-h-[430px] flex'>
+                    <div className='w-full lg:w-[70%] relative'>
+                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/people_collaborate.png' alt='Custom Data Pipeline Solutions' className='absolute sm:w-full sm:h-full' />
+                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Frame%2047.png' alt='Frame 47' className='absolute px-5 md:right-[50px] 2xl:right-[16%] pt-8' />
+                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Rectangle%2026.png' alt='Rectangle 26' className='absolute right-0 top-16' />
+                    </div>
+                    <div className='bg-[#08A4F7] w-[30%] flex justify-center max-md:hidden items-start'>
+                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Frame%2049.png' alt='Frame 49' className='' />
+                    </div>
+                </div>
+            </section>
+
+            <section className="flex md:mb-3 flex-col md:flex-row px-4 max-sm:pt-12 py-9 md:py-14 md:px-8 lg:px-16 md:pb-5 xl:mb-10 xl:pt-14 gap-5 lg:gap-8">
+                <div className="md:w-1/3 flex flex-col md:gap-7 justify-center max-md:text-center sm:justify-start md:pt-7">
+                    <h2 className="text-3xl max-md:flex max-sm:flex-col max-md:justify-center max-md:items-center max-md:gap-2.5 lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-gray-800">
+                        Frequently Asked <div className="text-[#08A4F7] lg:pt-3 xl:pt-4 2xl:pt-5">Questions</div>
+                    </h2>
+                    <p className="mt-4 max-md:mb-5 text-base xl:text-lg text-gray-600 leading-snug">
+                        Discover key FAQs designed to simplify your marketing and analytics approach, helping you achieve better results with actionable guidance.
+                    </p>
+                </div>
+
+                <div className="md:w-2/3 max-h-[400px] overflow-y-auto custom-scrollbar py-5 pr-3 lg:pr-5">
+
+                    <div className="flex flex-col gap-5">
+                        {content?.map((item, index) => (
+                            <div
+                                key={index}
+                                className={`rounded-2xl px-4 lg:px-12 py-4 lg:py-5 cursor-pointer ${activeIndex === index ? 'text-white bg-[#08A4F7]' : 'text-[#232A42]'
+                                    }`}
+                                style={{
+                                    boxShadow: activeIndex === index ? 'none' : '18px 15px 35px 0px #00000017',
+                                }}
+                                onClick={() => handleToggle(index)}
+                            >
+                                <div className="flex items-center justify-between gap-3">
+                                    <div>
+                                        <h3 className="text-[13px] sm:text-base font-semibold">{item?.question}</h3>
+
+                                        {activeIndex === index && (
+                                            <div className="text-[10px] sm:text-xs pt-3 font-normal w-[95%]">{item?.answer}</div>
+                                        )}
+                                    </div>
+                                    <img
+                                        src={`${activeIndex === index ? 'https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector_up.png' : 'https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector_down.png'
+                                            }`}
+                                        alt={activeIndex === index ? 'Collapse' : 'Expand'}
+                                        className="cursor-pointer w-4"
+                                    />
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
 
         </>
     )
 }
 
 export default google_tag_manager
-
-export async function getServerSideProps(context) {
-    // Fetch data from external API
-
-    const res = await fetch(`${process.env.domain}/api/ga4brands`)
-    const brandsdata = await res.json()
-
-
-    //console.log(brandsdata);
-    // Pass data to the page via props
-    return { props: { brandsdata } }
-}
-
-
-
-{/* <section class="audit bg-back py-4">
-                <div class="max-w-screen-xl mx-auto">
-                    <div class="inner-audit mt-4 px-4 md:text-center lg:text-left md:px-20 pt-4 pb-4 md:pb-16">
-                        <div class="top-audit grid lg:grid-cols-2 items-center gap-4">
-                            <div class="left-audit">
-                                <h2 class="text-[50px] font-bold mb-14 leading-snug">Google Analytics, Firebase audit services
-                                </h2>
-                                <p class="text-base font-medium">In need to validate whether your Google Analytics is tracking
-                                    properly?
-                                    AnalyticsLiv can provide detailed audits to validate the health of analytics data setup.
-                                    Google Analytics audit will cover the following:</p>
-                            </div>
-                            <div class="right-audit flex lg:justify-end justify-center">
-                                <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/Audit section.png" alt="Audit img" />
-                            </div>
-                        </div>
-                        <div class="bottom-audit mt-8">
-                            <div class="services grid items-center md:grid-cols-3 lg:grid-cols-6 py-7 md:gap-8 gap-16">
-                                <div class="item-1 text-center cursor-pointer">
-                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/Service-1.png" class="mx-auto" alt="gaps_img" />
-                                    <h6 class="text-service text-base font-semibold pt-5">Gaps in data
-                                        tracking</h6>
-                                </div>
-                                <div class="item-2 text-center cursor-pointer">
-                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/service-2.png" class="mx-auto" alt="gaps_img" />
-                                    <h6 class="text-base font-semibold pt-5">Errors or bugs
-                                        reported</h6>
-                                </div>
-                                <div class="item-3 text-center cursor-pointer">
-                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/service-3.png" class="mx-auto" alt="gaps_img" />
-                                    <h6 class="text-service text-base font-semibold pt-5">Account or product
-                                        linking</h6>
-                                </div>
-                                <div class="item-4 text-center cursor-pointer">
-                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/service-4.png" class="mx-auto" alt="gaps_img" />
-                                    <h6 class="text-service text-base font-semibold pt-5">Data tracking</h6>
-                                </div>
-                                <div class="item-5 text-center cursor-pointer">
-                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/service-5.png" class="mx-auto" alt="gaps_img" />
-                                    <h6 class="text-service text-base font-semibold pt-5">Conversions</h6>
-                                </div>
-                                <div class="item-6 text-center cursor-pointer">
-                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/Service-6.png" class="mx-auto" alt="gaps_img" />
-                                    <h6 class="text-service text-base font-semibold pt-5">Account setup</h6>
-                                </div>
-                            </div>
-                            <div class="botam-text mt-5 text-center">
-                                <p class="text-base font-medium">Our team of certified experts will fix the problems that are
-                                    observed. This will also cover recommended and suggested tracking which might be missing to
-                                    avail analysis for businesses.</p>
-                                 <buutton
-                                    class="butn  text-center text-white rounded-[15px] shadow-2xl text-[17px] font-semibold py-[18px] px-[37px] leading-snug mt-[30px]">
-                                    Get Basic to Advanced
-                                    Audit here
-                                </button>
-                                <Link href="/contact?id=google-tag-manager">
-                                    <button className="butn max-[425px]:mt-0 mt-6">Get Basic to Advanced
-                                        Audit here</button>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-            <section class="account-setup py-4">
-                <div class="max-w-screen-xl mx-auto">
-                    <div
-                        class="inner-account mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
-                        <div class="left-account flex lg:justify-end justify-center">
-                            <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/Account_setup_IMG.png" alt="Account_setup_IMG" />
-                        </div>
-                        <div class="right-account lg:text-left text-center">
-                            <h1 class="text-black text-[50px] font-bold leading-[75px] mb-[30px]">Google Analytics 4
-                                account setup</h1>
-                            <p class="text-base font-medium leading-normal mb-[30px]">Our experts can assist to enable
-                                correct setup and implementation of a new or existing Google Analytics 4 account. We make
-                                sure that the analytics account is configured correctly and that you are capturing the
-                                necessary business data to use in your data analysis as per standard practise.
-                            </p>
-                             <buutton
-                                class="w-[270px] text-center text-white bg-blue-500 hover:bg-blue-600 rounded-[15px] shadow-2xl text-[17px] font-semibold py-[18px] px-[37px] leading-snug mt-[30px]">
-                                Contact us for more
-                                details
-                            </button>
-                            <Link href="/contact?id=google-tag-manager">
-                                <button className="butn max-[425px]:mt-0 mt-6">Contact us for more
-                                    details</button>
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-            <section class="consulting bg-back py-4">
-                <div class="max-w-screen-xl mx-auto">
-                    <div
-                        class="inner-consulting mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
-                        <div class="left-con lg:text-left text-center lg:order-1 order-2">
-                            <h1 class="text-black text-[50px] font-bold leading-[75px] mb-[30px]">Google Analytics
-                                consulting services</h1>
-                            <p class="text-base font-medium leading-normal mb-[30px]">Need help getting your analytics to do
-                                more out of current tracking? Our team of Google Analytics experts can consult with you to
-                                determine your KPIs. We can interpret your existing data, recommend solutions to aggregate data
-                                across multiple platforms (app, web), create customizable reports, set up conversions, journey
-                                funnels and more.</p>
-                        <div class="flex items-center lg:flex-nowrap flex-wrap justify-center">
-                                <button
-                                    class="w-[270px] text-center text-white bg-blue-500 hover:bg-blue-600 rounded-[15px] shadow-2xl text-[17px] font-semibold py-[18px] px-[37px] leading-snug mt-[30px]">
-                                    Get a quote for ongoing consultancy
-                                </button>
-                                <button
-                                    class="w-[270px] text-center sm:ml-2.5 text-white bg-blue-500 hover:bg-blue-600 rounded-[15px] shadow-2xl text-[17px] font-semibold py-[29px] px-[91px] leading-snug mt-[30px]">
-                                    Let’s Chat
-                                </button>
-                            </div>
-                        </div>
-                        <div class="right-con flex lg:justify-end justify-center lg:order-2 order-1">
-                            <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/Setup_IMG.png" alt="Setup_IMG" />
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-            <section class="tag-manager py-4">
-                <div class="max-w-screen-xl mx-auto">
-                    <div
-                        class="inner-tag mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
-                        <div class="left-tag flex lg:justify-end justify-center">
-                            <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/Tag-manager.png" alt="Tag-manager" />
-                        </div>
-                        <div class="right-tag lg:text-left text-center">
-                            <h1 class="text-black text-[50px] font-bold leading-[75px] mb-10">Google Tag Manager
-                                Health Check</h1>
-                            <p class="text-base font-medium leading-normal mb-10">Are you unsure about what is being configured
-                                in your tag management system? No need to worry. <br /><br /> <span class="font-bold">What will be
-                                    covered ?</span> <br /><br />We can conduct a comprehensive and efficient review of your
-                                existing Google Tag Manager set up. This involves, identifying and eliminating unnecessary or
-                                outdated tags, triggers, and variables, as well as reorganizing the structure to improve
-                                efficiency and performance <br /><br />By performing this cleanup, we aim to simplify the tracking
-                                process for analytics and marketing tags on your website. This ensures that only relevant and
-                                crucial tracking elements are in use, and flow in our marketing platforms like Google Analytics,
-                                Google Ads, Facebook etc.
-                            </p>
-                             <buutton
-                                class="w-[270px] text-center text-white bg-blue-500 hover:bg-blue-600 rounded-[15px] shadow-2xl text-[17px] font-semibold py-[18px] px-[37px] leading-snug">
-                                Do your GTM health check up now
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-            <section class="Server-side bg-back py-4">
-                <div class="max-w-screen-xl mx-auto">
-                    <div
-                        class="inner-Server-side mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
-                        <div class="left-server lg:text-left text-center lg:order-1 order-2">
-                            <h1 class="text-black text-[50px] font-bold leading-[75px] mb-[50px]">Server-side Tagging</h1>
-                            <p class="text-base font-medium leading-normal mb-[50px]">Server-side tagging is a method used in
-                                web analytics and digital marketing to manage and deploy various tracking tags and scripts on a
-                                website's server rather than directly on the client's browser. This approach offers several
-                                advantages and is becoming increasingly popular due to privacy concerns, performance
-                                optimization, and the need for more control over data collection.<br /><br />Some other key
-                                aspects of the server-side tagging are:<br />Improve the page load time, reduce ad blocker
-                                impact, flexibility, improve securities, and many more. <br /><br />If you're interested in
-                                implementing server-side tagging, please feel free to contact us for more details.</p>
-                             <buutton
-                                class="w-[270px] text-white bg-blue-500 hover:bg-blue-600 rounded-[15px] shadow-2xl text-[17px] font-semibold py-[18px] px-[37px] leading-snug">
-                                Do your GTM health check up now
-                            </button>
-                        </div>
-                        <div class="right-server flex lg:justify-end justify-center lg:order-2 order-1">
-                            <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/Server_IMG.png" alt="Server_IMG" />
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-            <section class="fb-conversion py-4">
-                <div class="max-w-screen-xl mx-auto">
-                    <div
-                        class="inner-fb mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
-                        <div class="left-fb flex lg:justify-end justify-center">
-                            <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/Facebook_API_IMG.png" alt="Facebook-Conversion" />
-                        </div>
-                        <div class="right-fb lg:text-left text-center">
-                            <h1 class="text-black text-[50px] font-bold leading-[75px] mb-10">Facebook Conversion API
-                                implementation for Shopify</h1>
-                            <p class="text-base font-medium leading-normal mb-10">We have expertise in setting up Enhanced
-                                Ecommerce Tracking for Shopify for Facebook with custom approaches to capture maximum amount of
-                                ecommerce data and to improve the accuracy and enhancement of tracking we can implement
-                                conversion API for facebook by setting up Google Tag Manager Server Side Container and configure
-                                it to deduplicate the browser and server-side events data. We have already achieved 5-10% more
-                                data collection for our clients using this implementation.If you're interested in doing the
-                                same, why delay? Get in touch with us for further information.</p>
-                             <buutton
-                                class="w-[270px] text-white bg-blue-500 hover:bg-blue-600 rounded-[15px] shadow-2xl text-[17px] font-semibold py-[18px] px-[37px] leading-snug">
-                                Do your GTM health check up now
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-            <section class="e-commerce bg-back py-4">
-                <div class="max-w-screen-xl mx-auto">
-                    <div
-                        class="inner-e-commerce mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
-                        <div class="left-e-commerce lg:text-left text-center lg:order-1 order-2">
-                            <h1 class="text-black text-[50px] font-bold leading-[75px] mb-[50px]">Enhanced E-commerce
-                                Implementation</h1>
-                            <p class="text-base font-medium leading-normal mb-[50px]">which products are performing well on your
-                                website/app or struggling to grasp the situation, it suggests that managing and comprehending
-                                your <br />e-commerce data effectively might be a challenge.<br />Yes, We've supported numerous
-                                clients in implementing accurate <br />e-commerce data and boosting their growth through a range
-                                of strategies.<br /><br />With enhanced ecommerce, you can track various stages of the customer
-                                journey, including product views, product detail, adding items to the cart, checkout journey
-                                steps, and completing purchases. This provides valuable data to analyze user interactions and
-                                identify areas for improvement in the e-commerce process in the website.</p>
-                             <buutton
-                                class="w-[270px] text-white bg-blue-500 hover:bg-blue-600 rounded-[15px] shadow-2xl text-[17px] font-semibold py-[18px] px-[37px] leading-snug">
-                                Do your GTM health check up now
-                            </button>
-                        </div>
-                        <div class="right-e-commerce flex lg:justify-end justify-center lg:order-2 order-1
-                ">
-                            <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/Ecommerce_Implementation_img.png" alt="E-commerce_IMG" />
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-            <section class="custom-event py-4">
-                <div class="max-w-screen-xl mx-auto">
-                    <div
-                        class="inner-custom-event mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
-                        <div class="left-fb flex lg:justify-end justify-center">
-                            <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/Custom_Event_tracking_Section_left.png" alt="Custom_Event_tracking" />
-                        </div>
-                        <div class="right-custom-event lg:text-left text-center">
-                            <h1 class="text-black text-[50px] font-bold leading-[75px] mb-10">Custom Event Tracking</h1>
-                            <p class="text-base font-medium leading-normal mb-10">If you're uncertain about what's happening on
-                                your website/app, such as which sections users are engaging with the most, or which buttons,
-                                forms, and other elements are performing well, you might be missing out on valuable insights in
-                                the website, but do not worry, we are here to help!<br /><br />The Custom event tracking in GA4
-                                can help you gather this information, providing clarity on user behavior and interaction
-                                patterns. This knowledge can guide improvements to your website's layout, content, and
-                                functionality, leading to enhanced user experiences and better outcomes for your business.
-                                Unlike default tracking, which covers basic activities like pageviews, custom event tracking
-                                lets you capture specific actions that are crucial to your business goals.</p>
-                             <buutton
-                                class="w-[270px] text-white bg-blue-500 hover:bg-blue-600 rounded-[15px] shadow-2xl text-[17px] font-semibold py-[18px] px-[37px] leading-snug">
-                                Do your GTM health check up now
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-            <section class="integration bg-back py-4">
-                <div class="max-w-screen-xl mx-auto">
-                    <div
-                        class="inner-integration mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
-                        <div class="left-integration lg:text-left text-center lg:order-1 order-2">
-                            <h1 class="text-black text-[50px] font-bold leading-[75px] mb-[50px]">Integration of Offline &
-                                Online Data</h1>
-                            <p class="text-base font-medium leading-normal mb-[50px]">If you're interested in visualizing your
-                                offline data as reports and conducting more thorough analysis, importing your offline data into
-                                GA4 is a definite step. <br /><br />After successfully importing all your offline data by
-                                following specific steps into GA4, you'll have the capability to view and analyze your
-                                information directly within the platform. This integration will provide you with the opportunity
-                                to gather valuable insights by merging data from both online and offline sources, giving you a
-                                complete perspective on your business interactions.</p>
-                             <buutton
-                                class="w-[270px] text-white bg-blue-500 hover:bg-blue-600 rounded-[15px] shadow-2xl text-[17px] font-semibold py-[18px] px-[37px] leading-snug">
-                                Do your GTM health check up now
-                            </button>
-                        </div>
-                        <div class="right-integration flex lg:justify-end justify-center lg:order-2 order-1">
-                            <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/intregration.png" alt="integration_IMG" />
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-            <section class="form-field py-4">
-                <div class="max-w-screen-xl mx-auto">
-                    <div
-                        class="inner-form-field mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
-                        <div class="left-fb flex lg:justify-end justify-center">
-                            <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/form-field.png" alt="form-field" />
-                        </div>
-                        <div class="right-form-field lg:text-left text-center">
-                            <h1 class="text-black text-[50px] font-bold leading-[75px] mb-10">Form Field Analysis</h1>
-                            <p class="text-base font-medium leading-normal mb-10">Forms play a significant role in your business
-                                and collecting insights from user submissions is valuable, then form tracking becomes essential.
-                                <br /><br />With the help of the form field analysis, we can capture user information, such as
-                                contact details, subscriptions, registrations, and more. The form field analysis can help to
-                                determine the objectives of each form on your website. Is it for lead generation, sign-ups,
-                                inquiries, or something else?<br /><br />We can calculate the percentage of users who start
-                                filling out a form versus those who successfully submit it. This helps identify potential
-                                drop-off points.
-                            </p>
-                             <buutton
-                                class="w-[270px] text-white bg-blue-500 hover:bg-blue-600 rounded-[15px] shadow-2xl text-[17px] font-semibold py-[18px] px-[37px] leading-snug">
-                                Do your GTM health check up now
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-            <section class="configuration bg-back py-4">
-                <div class="max-w-screen-xl mx-auto">
-                    <div
-                        class="inner-configuration mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
-                        <div class="left-configuration lg:text-left text-center lg:order-1 order-2">
-                            <h1 class="text-black text-[50px] font-bold leading-[75px] mb-[50px]">Configuration of custom
-                                <br />dimensions
-                            </h1>
-                            <p class="text-base font-medium leading-normal mb-[50px]">If you need to include extra information
-                                with your events in GA4 or Firebase, we can efficiently manage this within the analytics
-                                platform. Custom dimensions and metrics are valuable features that enhance our data analysis
-                                capabilities. These dimensions allow us to enrich our event tracking with the specific
-                                information that matters most to our analysis. Please feel free to reach out to us anytime for
-                                further assistance and support. We're here to help.</p>
-                             <buutton
-                                class="w-[270px] text-white bg-blue-500 hover:bg-blue-600 rounded-[15px] shadow-2xl text-[17px] font-semibold py-[18px] px-[37px] leading-snug">
-                                Do your GTM health check up now
-                            </button>
-                        </div>
-                        <div class="right-configuration flex lg:justify-end justify-center lg:order-2 order-1">
-                            <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/configuration.png" alt="configuration_IMG" />
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-            <section class="user-id py-4">
-                <div class="max-w-screen-xl mx-auto">
-                    <div
-                        class="inner-user-id mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
-                        <div class="left-fb flex lg:justify-end justify-center">
-                            <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/user-id.png" alt="user-id" />
-                        </div>
-                        <div class="right-user-id lg:text-left text-center">
-                            <h1 class="text-black text-[50px] font-bold leading-[75px] mb-10">User id implementation</h1>
-                            <p class="text-base font-medium leading-normal mb-10">There are countless ways in which users can
-                                explore our website/app. Keeping track of the same user's journey across different
-                                devices/browsers/platforms etc. is tricky without any custom approach.<br /><br />Fortunately,
-                                with the help of the user ID implementation solution, we can definitely unify our users and gain
-                                better insights. We can apply this solution to both the web and the app. We've already assisted
-                                many clients in uniting their users and using this information to make smart business decisions
-                                in the field of analytics. Why wait? Please contact us to get in touch with us, and let's start
-                                implementing these improvements in your website or app right away!</p>
-                             <buutton
-                                class="w-[270px] text-white bg-blue-500 hover:bg-blue-600 rounded-[15px] shadow-2xl text-[17px] font-semibold py-[18px] px-[37px] leading-snug">
-                                Do your GTM health check up now
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-            <section class="client-id bg-back py-4">
-                <div class="max-w-screen-xl mx-auto">
-                    <div
-                        class="inner-client-id mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
-                        <div class="left-client-id lg:text-left text-center lg:order-1 order-2">
-                            <h1 class="text-black text-[50px] font-bold leading-[75px] mb-[50px]">Client id implementation</h1>
-                            <p class="text-base font-medium leading-normal mb-[50px]">Google Analytics automatically tracks
-                                Client IDs and displays them in user exploration reports, BigQuery reports, and more. However,
-                                if you want to analyse users alongside events, enhanced ecommerce data, or conduct other types
-                                of in-depth analysis, custom Client ID implementation is the solution. <br /><br />It enables
-                                you to use Client IDs for comprehensive user analysis with various parameters, enhancing your
-                                ability to gain valuable insights from your data.</p>
-                             <buutton
-                                class="w-[270px] text-white bg-blue-500 hover:bg-blue-600 rounded-[15px] shadow-2xl text-[17px] font-semibold py-[18px] px-[37px] leading-snug">
-                                Do your GTM health check up now
-                            </button>
-                        </div>
-                        <div class="right-client-id flex lg:justify-end justify-center lg:order-2 order-1">
-                            <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/Client_id_implementation_Section_right.png" alt="client-id_IMG" />
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-            <section class="app-to-web py-4">
-                <div class="max-w-screen-xl mx-auto">
-                    <div
-                        class="inner-app-to-web mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
-                        <div class="left-app flex lg:justify-end justify-center">
-                            <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/app-to-web.png" alt="app-to" />
-                        </div>
-                        <div class="right-app lg:text-left text-center">
-                            <h1 class="text-black text-[50px] font-bold leading-[75px] mb-10">App to web view <br />stitching
-                                solution</h1>
-                            <p class="text-base font-medium leading-normal mb-10">When an app includes a webview, Firebase may
-                                not be able to track events that occur within the webview. To address this, we must find a
-                                solution and the solution to handle this issue is the app to web view
-                                stitching.<br /><br />We've assisted numerous clients in addressing this significant issue
-                                within their apps. Our solution aids in enhancing and unifying user journeys in analytics,
-                                contributing to improved insights and user experiences.</p>
-                             <buutton
-                                class="w-[270px] text-white bg-blue-500 hover:bg-blue-600 rounded-[15px] shadow-2xl text-[17px] font-semibold py-[18px] px-[37px] leading-snug">
-                                Do your GTM health check up now
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-            <section class="pixels bg-back py-4">
-                <div class="max-w-screen-xl mx-auto">
-                    <div
-                        class="inner-pixels mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 py-7 md:gap-8 gap-16">
-                        <div class="left-pixels lg:text-left text-center lg:order-1 order-2">
-                            <h1 class="text-black text-[50px] font-bold leading-[75px] mb-[50px]">Pixels implementation</h1>
-                            <p class="text-base font-medium leading-normal mb-[50px]">Pixel implementation typically refers to
-                                the process of embedding a tracking pixel or snippet of code into a website, app, or digital
-                                platform to collect data and monitor user interactions. Pixels are often used for various
-                                purposes, including analytics, advertising, and remarketing. <br /><br />We're here to provide
-                                support and implement various types of pixels, including those for platforms like Google Ads,
-                                Facebook, Twitter, TikTok, and more. Whether you need assistance with tracking, analytics, or
-                                advertising, we will cover each of them.</p>
-                             <buutton
-                                class="w-[270px] text-white bg-blue-500 hover:bg-blue-600 rounded-[15px] shadow-2xl text-[17px] font-semibold py-[18px] px-[37px] leading-snug">
-                                Do your GTM health check up now
-                            </button>
-                        </div>
-                        <div class="right-pixels relative flex lg:justify-end justify-center lg:order-2 oorder-1">
-                            <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/Vector.png" alt="frame_IMG" />
-                            <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/Frame.png"
-                                class="absolute min-[425px]:w-[330px] min-[425px]:top-[15%] min-[425px]:left-[11%] md:top-[18%] md:left-[17%] md:w-[415px] lg:top-[17%] lg:left-[12%] lg:w-[340px] min-[1440px]:w-[430px] min-[1440px]:left-[14%]"
-                                alt="" />
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-            <section class="shopify py-4">
-                <div class="max-w-screen-xl mx-auto">
-                    <div
-                        class="inner-shopify mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16 grid items-center md:grid-cols-1 lg:grid-cols-2 md:gap-8 gap-16">
-                        <div class="left-shopify flex lg:justify-end justify-center relative">
-                            <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/shopify.png" alt="shopify" />
-                            <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/Heart.png"
-                                class="absolute min-[375px]:right-[15%] min-[375px]:top-[18%] min-[425px]:right-[15%] min-[425px]:top-[18%] md:right-[21%] lg:right-[16%] md:top-[19%] lg:top-[19%] min-[1440px]:right-[18%]"
-                                alt="" />
-                        </div>
-                        <div class="right-shopify lg:text-left text-center">
-                            <h1 class="text-black text-[50px] font-bold leading-[75px] mb-10">Shopify and enhanced ecommerce
-                                integration</h1>
-                            <p class="text-base font-medium leading-normal mb-10">Integration of Google Analytics 4 (GA4) with a
-                                Shopify store allows for the tracking and analysis of user behavior and e-commerce transactions.
-                                Through GA4 integration in Shopify and with the help of custom approaches, you can
-                                comprehensively track enhanced e-commerce journeys and capture all relevant events.
-                                Additionally, you have the flexibility to include various custom parameters with enhanced
-                                e-commerce data, enabling clients to perform in-depth product analysis.<br /><br />We've
-                                successfully assisted numerous clients with Shopify integration, leading to significant
-                                increases in their revenue. If you're looking to optimize your Shopify store's performance and
-                                gain valuable insights, our expertise in GA4 integration can help you achieve your goals.<br />
-                            </p>
-                             <buutton
-                                class="w-[270px] text-white bg-blue-500 hover:bg-blue-600 rounded-[15px] shadow-2xl text-[17px] font-semibold py-[18px] px-[37px] leading-snug">
-                                Do your GTM health check up now
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
- */}
-{/* <section class="faQ py-4">
-                <div class="max-w-screen-xl mx-auto">
-                    <div class="inner-faQ mt-4 px-4 md:px-20 pt-4 pb-4 md:pb-16">
-                        <h2 class="text-black text-[50px] text-center font-bold mb-[34px]">Frequently Asked Questions</h2>
-
-
-
-                        <form>
-                            <label for="default-search"
-                                class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-                            <div class="relative mb-[52px]">
-                                <input type="search" id="default-search"
-                                    class="block w-full py-[27px] px-10 min-[375px]:text-base md:text-xl text-[#999999] border border-gray-300 rounded-[100px] bg-back focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    placeholder="Search your question here ..." required />
-                                <div class="absolute inset-y-0 right-10 flex items-center pointer-events-none">
-                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/search_icon.png" class="min-[375px]:h-[30px] min-[375px]:w-[30px] md:h-[40px] md:w-[40px]" alt="search_icon" />
-                                </div>
-                            </div>
-                            <div class="Questions grid md:grid-cols-1 lg:grid-cols-2 gap-x-[36px] min-[375px]:gap-y-10 md:gap-y-[60px]">
-                                <div class="first bg-back rounded-[100px] flex items-center text-center min-[375px]:px-10 min-[375px]:py-5 lg:px-[30px] lg:py-5 min-[1440px]:px-[60px] min-[1440px]:py-[30px]">
-                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/arrow1.png" class="min-[375px]:h-[30px] min-[375px]:w-[30px] md:h-10 md:w-10" alt="question_arrow" />
-                                    <h3 class="min-[375px]:text-base text-black md:text-xl font-semibold">What is the difference between property and data stream ?</h3>
-                                </div>
-                                <div class="first bg-back rounded-[100px] flex items-center text-center min-[375px]:px-10 min-[375px]:py-5 lg:px-[30px] lg:py-5 min-[1440px]:px-[60px] min-[1440px]:py-[30px]">
-                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/arrow1.png" class="min-[375px]:h-[30px] min-[375px]:w-[30px] md:h-10 md:w-10" alt="question_arrow" />
-                                    <h3 class="min-[375px]:text-base text-black md:text-xl font-semibold">What is the difference between property and data stream ?</h3>
-                                </div>
-                                <div class="first bg-back rounded-[100px] flex items-center text-center min-[375px]:px-10 min-[375px]:py-5 lg:px-[30px] lg:py-5 min-[1440px]:px-[60px] min-[1440px]:py-[30px]">
-                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/arrow1.png" class="min-[375px]:h-[30px] min-[375px]:w-[30px] md:h-10 md:w-10" alt="question_arrow" />
-                                    <h3 class="min-[375px]:text-base text-black md:text-xl font-semibold">What is the difference between property and data stream ?</h3>
-                                </div>
-                                <div class="first bg-back rounded-[100px] flex items-center text-center min-[375px]:px-10 min-[375px]:py-5 lg:px-[30px] lg:py-5 min-[1440px]:px-[60px] min-[1440px]:py-[30px]">
-                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/gtm_sp/arrow1.png" class="min-[375px]:h-[30px] min-[375px]:w-[30px] md:h-10 md:w-10" alt="question_arrow" />
-                                    <h3 class="min-[375px]:text-base text-black md:text-xl font-semibold">What is the difference between property and data stream ?</h3>
-                                </div>
-                            </div>
-                        </form>
-
-
-
-                    </div>
-                </div>
-
-                // [#0D8CA4]
-            </section>*/}
