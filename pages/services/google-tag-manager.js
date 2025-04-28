@@ -489,8 +489,8 @@ const google_tag_manager = () => {
                     <h2 className="text-3xl max-md:flex max-sm:flex-col max-md:justify-center max-md:items-center max-md:gap-2.5 lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-gray-800">
                         Frequently Asked <div className="text-[#08A4F7] lg:pt-3 xl:pt-4 2xl:pt-5">Questions</div>
                     </h2>
-                    <p className="mt-4 max-md:mb-5 text-base xl:text-lg text-gray-600 leading-snug">
-                        Discover key FAQs designed to simplify your marketing and analytics approach, helping you achieve better results with actionable guidance.
+                    <p className="mt-4 max-md:mb-5 text-base 2xl:text-lg text-gray-600 leading-snug">
+                        Find quick answers to common Google Tag Manager (GTM) questions — covering setup, tracking, compliance, troubleshooting, and advanced use cases for websites and mobile apps.
                     </p>
                 </div>
 
