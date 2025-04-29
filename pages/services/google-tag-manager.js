@@ -163,38 +163,9 @@ const google_tag_manager = () => {
                 "Yes. GTM can be used on all the platforms. Many CMSs and e-commerce platforms have plugins or integrations to simplify GTM setup.",
         },
         {
-            question: "Do I need to know coding to use GTM?",
-            answer:
-                "Not necessarily. GTM is designed to reduce the need for developer intervention, but basic HTML, JavaScript, or understanding of how websites work can be helpful.",
-        },
-        {
-            question: "How do I install GTM on my website?",
-            answer:
-                "You need to paste the GTM container code in two places: In the <head> tag, Immediately after the opening <body> tag",
-        },
-        {
-            question: "Can GTM replace Google Analytics?",
-            answer: " No, GTM doesn’t track data itself. It facilitates the deployment of tracking tools like Google Analytics."
-        },
-        {
             question: "What kind of things can I track with GTM?",
             answer:
-                "You can track: Pageviews, Clicks (e.g., button clicks, outbound links), Form submissions, Scroll depth, Video interactions, Custom events",
-        },
-        {
-            question: "How do I test if my tags are firing correctly?",
-            answer:
-                "Use GTM’s built-in Preview mode or browser extensions like Tag Assistant.",
-        },
-        {
-            question: "Is GTM GDPR/CCPA compliant?",
-            answer:
-                "It can be, but it depends on how you configure it. GTM itself doesn’t store data, but the tags you fire might. You should: Set up consent mode, Integrate a Consent Management Platform (CMP), Control tag firing based on user consent",
-        },
-        {
-            question: "Why aren’t my tags firing?",
-            answer:
-                "Common reasons include: Trigger conditions not met, Tag is paused, Incorrect variable usage, Preview mode not reflecting changes",
+                "You can track: Pageviews, Clicks (e.g., button clicks, outbound links), Form submissions, Scroll depth, Video interactions, Any advanced or Custom events",
         },
         {
             question: "Can GTM slow down my website?",

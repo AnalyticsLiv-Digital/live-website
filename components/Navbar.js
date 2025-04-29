@@ -779,7 +779,7 @@ const navbar = () => {
                                             initial={{ opacity: 0, y: -10 }}
                                             animate={{ opacity: 1, y: 0 }}
                                             transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                                            className="py-8 grid grid-cols-1 2xl:grid-cols-1 max-2xl:w-full justify-items-start gap-5 2xl:gap-5 rounded-md max-h-[500px]"
+                                            className="py-2 grid grid-cols-1 2xl:grid-cols-1 max-2xl:w-full justify-items-start gap-5 2xl:gap-5 rounded-md max-h-[500px]"
                                         >
                                             {servicesData[hoveredIndex]?.links?.map((link, linkIndex) => (
                                                 <div key={linkIndex} className="">
