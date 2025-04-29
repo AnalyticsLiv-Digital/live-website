@@ -11,9 +11,20 @@ const google_tag_manager = () => {
 
     const [showCalendly, setShowCalendly] = useState(false);
     const [activeIndex, setActiveIndex] = useState(0);
+    const itemRefs = useRef([]);
 
     const handleToggle = (index) => {
         setActiveIndex(activeIndex === index ? null : index);
+
+        setTimeout(() => {
+            if (itemRefs.current[index]) {
+                itemRefs.current[index].scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'nearest',
+                });
+            }
+        }, 100);
+
     };
 
     const sliderRef = useRef(null);
@@ -26,32 +37,32 @@ const google_tag_manager = () => {
         {
             title: 'SPA Tracking',
             description: 'Tracking solutions to measure Single Page Application websites and measure users interactions like clicks, submissions, hover, view and other events in SPA websites.',
-            image: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/website%20(2)%201.png',
+            image: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/website%20(2)%201.svg',
         },
         {
             title: 'Conversion Events tracking',
             description: 'Our specialists set up and configure Google Tag Manager to track key events requires for your business and measure conversion events to fulfill macro and micro goals',
-            image: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/conversion%20event%20tracking.png',
+            image: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/conversion%20event%20tracking.svg',
         },
         {
             title: 'Server-side Tagging',
             description: 'Google Tag Manager Server-side tracking offers enhanced security, inline with privacy compliance, boost website performance and get accurate data tracking in tag management system.',
-            image: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/server%20side%20tagging.png',
+            image: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/server%20side%20tagging.svg',
         },
         {
             title: 'Marketing Pixels Tracking',
             description: 'Pixel tracking allows you to effortlessly monitor user actions—like conversions across your website. By centralizing all tracking pixels in one place, GTM reduces code clutter and ensures more accurate data collection for marketers and analysts.',
-            image: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/user%20(11).png',
+            image: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/user%20(11).svg',
         },
         {
             title: 'Conversion API Setup & Implementation',
             description: "Conversion APIs (CAPI) setups for platforms like Meta or any other marketing tools that allows businesses to send data about customer interactions and conversions directly to the tool's servers.",
-            image: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/integration%20(3)%201.png',
+            image: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/integration%20(3)%201.svg',
         },
         {
             title: 'Enhanced Ecommerce Tracking',
             description: "For Ecommerce businesses, From product views to completed purchases, our enhanced ecommerce implementation capabilities foster the full customer journey, empowering you to refine your growth strategies.",
-            image: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/catalog%201.png',
+            image: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/catalog%201.svg',
         },
     ];
 
@@ -327,10 +338,10 @@ const google_tag_manager = () => {
                                         <div className="flex items-center">
                                             <div className="w-[30%] h-[100px] pl-2 md:pl-3 2xl:pl-8">
                                                 <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/white_bg.png" alt="white_bg" className="absolute max-md:h-24 max-md:w-24" />
-                                                <img src={card.image} alt={card.title} className="relative max-md:h-16 max-md:w-16 md:w-16 top-4 left-4 md:top-5 md:left-5" />
+                                                <img src={card?.image} alt={card?.title} className="relative max-md:h-16 max-md:w-16 md:w-16 top-4 left-4 md:top-5 md:left-5" />
                                             </div>
-                                            <div className="flex flex-col max-md:pl-10 h-[140px] pl-5 pr-2 2xl:pr-5 items-start justify-center gap-1 text-white">
-                                                <div className="text-xl font-bold">{card.title}</div>
+                                            <div className="flex flex-col max-md:pl-10 h-[140px] pl-7 pr-2 2xl:pr-2 items-start justify-center gap-1 text-white">
+                                                <div className="text-xl font-bold">{card?.title}</div>
                                             </div>
                                         </div>
                                     </div>
@@ -369,8 +380,8 @@ const google_tag_manager = () => {
                 <h2 className='text-lg md:text-2xl xl:text-3xl font-bold text-center pb-8 2xl:pb-12'>Why AnalyticsLiv is your perfect GTM Partner ?</h2>
                 <div className='flex max-lg:grid max-lg:grid-cols-2 max-sm:grid-cols-1 max-lg:gap-6 items-start gap-2 xl:gap-5 2xl:gap-10'>
                     <div className='flex gap-3 xl:gap-3 2xl:gap-5 items-start lg:w-[23%]'>
-                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/costumer.png' alt='Certified Experts'
-                            className='bg-[#FAE0E1] rounded-[5px] px-3 py-2 min-w-[80px] min-h-[70px] lg:min-h-[80px] max-h-[70px] lg:max-h-[80px]' />
+                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/costumer.svg' alt='Certified Experts'
+                            className='bg-[#FAE0E1] rounded-[5px] px-2 py-2 min-w-[80px] min-h-[70px] lg:min-h-[80px] max-h-[70px] lg:max-h-[80px]' />
                         <div className='flex flex-col justify-between gap-3'>
                             <div className='text-xs xl:text-[13px] 2xl:text-sm font-bold'>Certified Experts</div>
                             <div className='text-[10px] xl:text-[10px] 2xl:text-xs font-normal'>Our team of experts are certified in Google Tag Manager (GTM) with in-depth knowledge of GTM features & its best practices</div>
@@ -378,8 +389,8 @@ const google_tag_manager = () => {
                     </div>
 
                     <div className='flex gap-3 xl:gap-3 2xl:gap-5 items-start lg:w-[24%]'>
-                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/laptop%20(3).png' alt='Custom GTM Solutions'
-                            className='bg-[#F3DEB3] rounded-[5px] px-3 py-2 min-w-[80px] min-h-[70px] lg:min-h-[80px] max-h-[70px] lg:max-h-[80px]' />
+                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/laptop%20(3).svg' alt='Custom GTM Solutions'
+                            className='bg-[#F3DEB3] rounded-[5px] px-2 py-2 min-w-[80px] min-h-[70px] lg:min-h-[80px] max-h-[70px] lg:max-h-[80px]' />
                         <div className='flex flex-col justify-between gap-3'>
                             <div className='text-xs xl:text-[13px] 2xl:text-sm font-bold'>Custom GTM Solutions</div>
                             <div className='text-[10px] xl:text-[10px] 2xl:text-xs font-normal'>Understanding the need of business, we provide unique scalable solutions as per your requirement.</div>
@@ -387,8 +398,8 @@ const google_tag_manager = () => {
                     </div>
 
                     <div className='flex gap-3 xl:gap-3 2xl:gap-5 items-start lg:w-[28%]'>
-                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/goal%20(4).png' alt='Enhanced Data Accuracy'
-                            className='bg-[#CBCFFA] rounded-[5px] px-3 py-2 min-w-[80px] min-h-[70px] lg:min-h-[80px] max-h-[70px] lg:max-h-[80px]' />
+                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/goal%20(4).svg' alt='Enhanced Data Accuracy'
+                            className='bg-[#CBCFFA] rounded-[5px] px-2 py-2 min-w-[80px] min-h-[70px] lg:min-h-[80px] max-h-[70px] lg:max-h-[80px]' />
                         <div className='flex flex-col justify-between gap-3'>
                             <div className='text-xs xl:text-[13px] 2xl:text-sm font-bold'>Enhanced Data Accuracy</div>
                             <div className='text-[10px] xl:text-[10px] 2xl:text-xs font-normal'>We ensure accurate data collection tracking by implementing correct tag configurations and data validation processes. This leads to more reliable insights and better decision making for marketers.</div>
@@ -396,8 +407,8 @@ const google_tag_manager = () => {
                     </div>
 
                     <div className='flex gap-3 xl:gap-3 2xl:gap-5 items-start lg:w-[27%]'>
-                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/customer-service%20(3).png' alt='Ongoing Support'
-                            className='bg-[#D7FACB] rounded-[5px] px-3 py-2 min-w-[80px] min-h-[70px] lg:min-h-[80px] max-h-[70px] lg:max-h-[80px]' />
+                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/customer-service%20(3).svg' alt='Ongoing Support'
+                            className='bg-[#D7FACB] rounded-[5px] px-2 py-2 min-w-[80px] min-h-[70px] lg:min-h-[80px] max-h-[70px] lg:max-h-[80px]' />
                         <div className='flex flex-col justify-between gap-3'>
                             <div className='text-xs xl:text-[13px] 2xl:text-sm font-bold'>Ongoing Support</div>
                             <div className='text-[10px] xl:text-[10px] 2xl:text-xs font-normal'>Right data gives right decision power, considering that our GTM experts perform Monthly audits and share updates, troubleshoots broken tags & analytics issues</div>
@@ -500,6 +511,7 @@ const google_tag_manager = () => {
                         {content?.map((item, index) => (
                             <div
                                 key={index}
+                                ref={(el) => (itemRefs.current[index] = el)}
                                 className={`rounded-2xl px-4 lg:px-12 py-4 lg:py-5 cursor-pointer ${activeIndex === index ? 'text-white bg-[#08A4F7]' : 'text-[#232A42]'
                                     }`}
                                 style={{
