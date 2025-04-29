@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 
 export const content = [
@@ -57,9 +57,19 @@ export const content = [
 
 const FAQ = () => {
     const [activeIndex, setActiveIndex] = useState(0);
-
+    const itemRefs = useRef([]);
     const handleToggle = (index) => {
         setActiveIndex(activeIndex === index ? null : index);
+
+        setTimeout(() => {
+            if (itemRefs.current[index]) {
+                itemRefs.current[index].scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'nearest',
+                });
+            }
+        }, 100);
+
     };
 
 
@@ -80,6 +90,7 @@ const FAQ = () => {
                     {content?.map((item, index) => (
                         <div
                             key={index}
+                            ref={(el) => (itemRefs.current[index] = el)}
                             className={`rounded-2xl px-4 lg:px-12 py-4 lg:py-5 cursor-pointer ${activeIndex === index ? 'text-white bg-[#08A4F7]' : 'text-[#232A42]'
                                 }`}
                             style={{
@@ -99,7 +110,6 @@ const FAQ = () => {
                                     src={`${activeIndex === index ? 'https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector_up.png' : 'https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector_down.png'
                                         }`}
                                     alt={activeIndex === index ? 'Collapse' : 'Expand'}
-                                    // onClick={() => handleToggle(index)}
                                     className="cursor-pointer w-4"
                                 />
                             </div>

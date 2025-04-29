@@ -14,6 +14,7 @@ const conversionRateOptimization = () => {
     const [showCalendly, setShowCalendly] = useState(false);
     const [activeIndex, setActiveIndex] = useState(0);
     const [activeDropdown, setActiveDropdown] = useState(null);
+    const itemRefs = useRef([]);
 
     const toggleDropdown = (key) => {
         setActiveDropdown((prev) => (prev === key ? null : key));
@@ -21,6 +22,16 @@ const conversionRateOptimization = () => {
 
     const handleToggle = (index) => {
         setActiveIndex(activeIndex === index ? null : index);
+
+        setTimeout(() => {
+            if (itemRefs.current[index]) {
+                itemRefs.current[index].scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'nearest',
+                });
+            }
+        }, 100);
+
     };
 
     const sliderRef = useRef(null);
@@ -614,6 +625,7 @@ const conversionRateOptimization = () => {
                         {content?.map((item, index) => (
                             <div
                                 key={index}
+                                ref={(el) => (itemRefs.current[index] = el)}
                                 className={`rounded-2xl px-4 lg:px-12 py-4 lg:py-5 cursor-pointer ${activeIndex === index ? 'text-white bg-[#08A4F7]' : 'text-[#232A42]'
                                     }`}
                                 style={{

@@ -10,12 +10,23 @@ import Brands from '../../components/brands';
 const Ppc = () => {
 
     const sliderRef = useRef(null);
+    const itemRefs = useRef([]);
 
     const [activeIndex, setActiveIndex] = useState(0);
     const [showCalendly, setShowCalendly] = useState(false);
 
     const handleToggle = (index) => {
         setActiveIndex(activeIndex === index ? null : index);
+
+        setTimeout(() => {
+            if (itemRefs.current[index]) {
+                itemRefs.current[index].scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'nearest',
+                });
+            }
+        }, 100);
+
     };
 
     const content = [
@@ -440,6 +451,7 @@ const Ppc = () => {
                             {content?.map((item, index) => (
                                 <div
                                     key={index}
+                                    ref={(el) => (itemRefs.current[index] = el)}
                                     className={`rounded-2xl px-4 lg:px-12 py-4 lg:py-5 cursor-pointer ${activeIndex === index ? 'text-white bg-[#08A4F7]' : 'text-[#232A42]'
                                         }`}
                                     style={{
