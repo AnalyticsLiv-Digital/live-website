@@ -24,6 +24,8 @@ const index = () => {
     category: "",
     relatedTo: [],
     youtube: "",
+    metatitle: "",
+    metadescription: "",
   };
   const [formValues, setFormValues] = useState(initialValues);
   const [formattedDate, setFormattedDate] = useState('');
@@ -211,6 +213,8 @@ const index = () => {
         relatedTo: formValues.relatedTo,
         sequence: formValues.sequence,
         youtube: formValues.youtube,
+        metatitle: formValues.metatitle,
+        metadescription: formValues.metadescription,
       }),
     })
       .then((response) => response.json())
@@ -253,6 +257,8 @@ const index = () => {
           relatedTo: formValues.relatedTo,
           sequence: formValues.sequence,
           youtube: formValues.youtube,
+          metatitle: formValues.metatitle,
+          metadescription: formValues.metadescription,
         }),
       })
         .then((response) => response.json())
@@ -381,6 +387,35 @@ const index = () => {
                 onChange={handleChange}
               />
             </div>
+
+            <div>
+              <label className="block text-base font-semibold mb-2 text-gray-200">
+                Meta Title -
+              </label>
+
+              <input
+                className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500"
+                type="text"
+                name="metatitle"
+                value={formValues?.metatitle}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div>
+              <label className="block text-base font-semibold mb-2 text-gray-200">
+                Meta Description -
+              </label>
+
+              <input
+                className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500"
+                type="text"
+                name="metadescription"
+                value={formValues?.metadescription}
+                onChange={handleChange}
+              />
+            </div>
+
             <div>
               <label className="block text-base font-semibold mb-2 text-gray-200">
                 Coverimage URL-
