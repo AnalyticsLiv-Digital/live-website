@@ -115,10 +115,10 @@ const index = () => {
   return (
     <>
       <Head>
-        <title>AnalyticsLiv - Analytics Services Offered</title>
+        <title>Data Analytics Services for Business Growth | AnalyticsLiv</title>
         <meta
           name="description"
-          content="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads"
+          content="Turn data into strategy with AnalyticsLiv’s analytics services. We deliver actionable insights through advanced tracking, reporting, and performance analysis."
         />
         <link
           rel="canonical"

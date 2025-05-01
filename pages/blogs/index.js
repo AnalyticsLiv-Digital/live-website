@@ -21,8 +21,8 @@ const index = ({ blogDat, count }) => {
     }, []);
     return (
         <><Head>
-            <title>AnalyticsLiv - Blogs</title>
-            <meta name="description" content="Google Marketing Platform Partner - Blogs on GA4, DV360, Google Ads" />
+            <title>AnalyticsLiv Blog: Insights on Google Analytics, DV360, PPC, CRO and More</title>
+            <meta name="description" content="Stay updated with AnalyticsLiv’s blog for expert tips on data extraction & automation, DV360, PPC, CRO, A/B testing, and Google Analytics. Perfect for marketers and analysts." />
             <link rel="canonical" href="https://analyticsliv.com/blogs"></link>
         </Head>
 

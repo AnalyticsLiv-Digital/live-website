@@ -127,8 +127,14 @@ const index = ({ blogDat, similarBlogs }) => {
 
     return (<>
         <Head>
-            <meta name="description" content={blogData && blogData?.description} />
-            <title>{blogData && blogData?.title}</title>
+            <meta name="description" content={blogData &&
+                (blogData?.metadescription && blogData?.metadescription !== '' ? blogData?.metadescription : blogData?.description)
+            } />
+            <title>
+                {blogData &&
+                    (blogData?.metatitle && blogData?.metatitle !== '' ? blogData?.metatitle : blogData?.title)
+                }
+            </title>
             <link rel="canonical" href={url}></link>
             <script
                 type="application/ld+json"

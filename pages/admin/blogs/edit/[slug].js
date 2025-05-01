@@ -25,6 +25,8 @@ const index = ({ blogDat }) => {
     ? blogData.relatedTo
     : blogData.relatedTo?.split(",") || [],
     youtube: blogData.youtube,
+    metatitle: blogData.metatitle,
+    metadescription: blogData.metadescription,
   };
   const [formattedDate, setFormattedDate] = useState(initialValues.date);
   const [formValues, setFormValues] = useState(initialValues);
@@ -180,6 +182,8 @@ const index = ({ blogDat }) => {
         sequence: formValues.sequence,
         relatedTo: formValues.relatedTo,
         youtube: formValues.youtube,
+        metatitle: formValues.metatitle,
+        metadescription: formValues.metadescription,
       }),
     })
       .then((response) => response.json())
@@ -222,6 +226,8 @@ const index = ({ blogDat }) => {
           sequence: formValues.sequence,
           relatedTo: formValues.relatedTo,
           youtube: formValues.youtube,
+          metatitle: formValues.metatitle,
+          metadescription: formValues.metadescription,
         }),
       })
         .then((response) => response.json())
@@ -349,6 +355,35 @@ const index = ({ blogDat }) => {
                 onChange={handleChange}
               />
             </div>
+
+            <div>
+              <label className="block text-base font-semibold mb-2 text-gray-200">
+                Meta Title -
+              </label>
+
+              <input
+                className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500"
+                type="text"
+                name="metatitle"
+                value={formValues?.metatitle}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div>
+              <label className="block text-base font-semibold mb-2 text-gray-200">
+                Meta Description -
+              </label>
+
+              <input
+                className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500"
+                type="text"
+                name="metadescription"
+                value={formValues?.metadescription}
+                onChange={handleChange}
+              />
+            </div>
+
             <div>
               <label className="block text-base font-semibold mb-2 text-gray-200">
                 Coverimage URL-{" "}
