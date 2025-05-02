@@ -80,17 +80,17 @@ const index = ({ casestudyDat }) => {
     </Head>
     <div className='font-sans mb-16'>
       <section>
-        <div className='bg-[#ECF8FF] max-sm:py-10 max-sm:pb-12 px-[3%] xl:px-[3%] flex justify-around h-full items-center relative mb-14'>
-          <div className='sm:w-[70%] md:w-[65%] lg:w-[50%] xl:w-[43%] 2xl:w-[45%] max-sm:text-center flex flex-col items-center sm:items-start justify-around gap-7 sm:gap-5 md:gap-7 lg:gap-12'>
-            <h1 className='text-[#0E1947] text-[22px] sm:text-2xl xl:text-4xl font-bold'>Real Results, Real Growth : AnalyticsLiv Case Studies 🚀</h1>
-            <div className='text-xs xl:text-sm font-normal flex flex-col gap-3 lg:gap-5'>
+        <div className='bg-header-linear max-sm:py-10 max-sm:pb-12 px-[3%] xl:px-[3%] md:pt-5 flex justify-around h-full items-center md:items-end lg:items-center relative mb-14'>
+          <div className='sm:w-[70%] md:w-[50%] xl:w-[43%] 2xl:w-[45%] max-sm:text-center flex flex-col items-center sm:items-start justify-around gap-7 sm:gap-5 md:gap-7 lg:gap-12'>
+            <h1 className='text-white text-[22px] sm:text-2xl xl:text-4xl font-bold'>Real Results, Real Growth : AnalyticsLiv Case Studies</h1>
+            <div className='text-xs xl:text-sm text-white font-normal flex flex-col gap-3 lg:gap-5'>
               <div>Explore how data-driven strategies transform businesses! see how we help brands maximize performance, improve conversions, and drive success. </div>
-              <div>✅ Proven Success. Actionable Insights. Smarter Decisions.</div>
+              <div>Proven Success. Actionable Insights. Smarter Decisions.</div>
             </div>
-            <a href='/contact'><button className='mainbutn'>Contact Us Now</button></a>
+            <a href='/contact'><button className='csbutn md:mb-2'>Contact Us Now</button></a>
           </div>
-          <div className='max-sm:hidden'>
-            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Full_Image%20(1).svg' alt='Improved Conversion Rate' />
+          <div className='max-sm:hidden w-[50%] flex justify-end 2xl:justify-center 2xl:pl-24'>
+            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/CaseStudy_Main_Page_Image_png.png' alt='Improved Conversion Rate' />
           </div>
           <button onClick={handleScrollDown} className='absolute bottom-[-23px] z-20'>
             <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Vector%20(2).svg' alt='Vector'
