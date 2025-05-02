@@ -703,6 +703,33 @@ input[type=number] {
 
 /* new design buttons */
 
+.csbutn {
+  @apply relative overflow-hidden z-10 bg-white text-[#053E84] hover:text-white hover:bg-header-linear cursor-pointer inline px-[40px] mb-3 transition-all duration-500 ease-linear rounded-md py-2.5 text-base font-bold
+}
+
+.csbutn::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  right: 0.1px;
+  top: 0.1px;
+  left: 0.1px;
+  bottom: 0.1px;
+  transform: translateY(-85px);
+  border-radius: 6px;
+  background: #053E84;
+  transition: all 0.3s linear;
+}
+
+.csbutn:hover::before {
+  color: white;
+  transform: translate(0);
+  transition: all 0.3s linear;
+  z-index: -1;
+  border: 1px solid white;
+}
+
 .mainbutn {
   @apply relative overflow-hidden z-10 bg-[#08A4F7] text-[#fff] border border-[#08A4F7] cursor-pointer text-xs sm:text-base lg:text-base font-bold not-italic rounded-[8px] py-[10px] lg:py-3 px-3.5 md:px-5 lg:px-[30px] 2xl:px-[40px] transition-all duration-300 ease-linear hover:text-[#08A4F7]
 }
@@ -1886,9 +1913,11 @@ iframe {
     width: 275px !important;
     display: flex;
   }
+
   .react-chatbot-kit-chat-inner-container {
     width: 275px !important;
   }
+
   .react-chatbot-kit-chat-bot-message {
     padding: 7px 8px !important;
     border-radius: 10px;
