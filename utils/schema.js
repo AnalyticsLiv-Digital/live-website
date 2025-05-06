@@ -58,6 +58,7 @@ export const schema = () => {
           "alternateName": "AnalyticsLiv | Google Marketing Platform Certified Partner",
           "url": "https://analyticsliv.com/",
           "logo": "https://storage.googleapis.com/website-bucket-uploads/static/logo.png",
+          "description": "AnalyticsLiv is a Google Marketing Platform Certified Partner specializing in analytics, data strategy, and performance marketing.",
           "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+91-8320576622",

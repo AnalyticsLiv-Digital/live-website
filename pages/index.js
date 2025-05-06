@@ -30,7 +30,7 @@ const page = ({ ytPlaylistdata }) => {
       <MetaSchemaOg
         url="https://analyticsliv.com/"
         title="AnalyticsLiv | Google Marketing Platform (GMP) Certified Partner"
-        description="Data Influences every touchpoint. As GMP partner we help brands from acquisition to conversion and better retention using personalized data driven solutions"
+        description="AnalyticsLiv, a certified GMP partner, helps brands optimize the customer journey from acquisition to conversion and retention through personalized data driven solutions."
         twitterTitle="AnalyticsLiv | Google Marketing Platform (GMP) Certified Partner"
         twitterDescription="Data Influences every touchpoint. As GMP partner we help brands from acquisition to conversion and better retention using personalized data driven solutions"
         extraHead={
@@ -73,5 +73,6 @@ const page = ({ ytPlaylistdata }) => {
 //   // Pass data to the page via props
 //   return { props: { ytPlaylistdata } }
 // }
+// description="Data Influences every touchpoint. As GMP partner we help brands from acquisition to conversion and better retention using personalized data driven solutions"
 
 export default page
