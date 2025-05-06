@@ -67,10 +67,10 @@ export const schema = () => {
           },
           "sameAs": [
             "https://m.facebook.com/100070503960704/",
-            "https://twitter.com/AnalyticsLiv",
             "https://www.instagram.com/analyticsliv_digital/",
             "https://www.youtube.com/channel/UCSU9utLB2PDe4VcXiI5kMFw",
-            "https://in.linkedin.com/company/analytics-liv-digital/"
+            "https://in.linkedin.com/company/analytics-liv-digital/",
+            "https://twitter.com/AnalyticsLiv",
           ]
         }),
       }}
