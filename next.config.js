@@ -13,21 +13,26 @@ const nextConfig = {
     async redirects() {
         return [
             {
-                source: '/:path*', // Match all paths
-                has: [
-                    {
-                        type: 'host',
-                        value: '(www|.*)\\.analyticsliv\\.com', // Matches www or any subdomain
-                    },
-                ],
-                destination: 'https://analyticsliv.com/:path*', // Redirect to the main domain
-                permanent: true, // 301 Permanent Redirect
+                source: '/services/CRO',
+                destination: '/services/conversion-rate-optimization',
+                permanent: true,
             },
             {
                 source: '/services/sem',
                 destination: '/services/ppc',
                 permanent: true,
-            }
+            },
+            {
+                source: '/:path*',
+                has: [
+                    {
+                        type: 'host',
+                        value: '(www|.*)\\.analyticsliv\\.com',
+                    },
+                ],
+                destination: 'https://analyticsliv.com/:path*',
+                permanent: true,
+            },
         ];
     },
 
