@@ -388,59 +388,8 @@ const google_tag_manager = () => {
                 </div>
             </section>
 
-            <section className='pt-16 pb-6 px-4 md:px-10 xl:px-[5%]'>
-                <div className='text-[#100F1B] text-2xl md:text-3xl font-bold text-center lg:text-left'>
-                    From Strategy to Insight: Our 5-Step Tracking Process
-                </div>
-                <div className='pt-8 sm:pt-12 flex max-lg:grid max-lg:grid-cols-2 max-sm:grid-cols-1 max-lg:justify-items-center max-sm:gap-10 max-lg:gap-16 lg:gap-8 
-            justify-around items-start'>
-                    <div className='w-[75%] lg:w-[20%]'>
-                        <div className='flex flex-col justify-center items-center'>
-                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/01.png' alt='01' className='absolute' />
-                            <div className='text-2xl font-bold 2xl:text-3xl text-[#30486A] pt-[90px] z-10 text-center'>Discovery &<br></br> Planning</div>
-                        </div>
-                        <div className='pt-8 text-[#6C6C6C] text-base lg:text-xs 2xl:text-base font-normal text-center'>
-                            We understand your tracking goals, KPIs, & tools and accordingly our GTM expert strategically plan out your tracking.
-                        </div>
-                    </div>
-                    <div className='w-[75%] lg:w-[20%]'>
-                        <div className='flex flex-col justify-center items-center'>
-                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/02.png' alt='02' className='absolute' />
-                            <div className='text-2xl font-bold 2xl:text-3xl text-[#30486A] pt-[90px] z-10 text-center'>Setup &<br></br> Configuration</div>
-                        </div>
-                        <div className='pt-8 text-[#6C6C6C] text-base lg:text-xs 2xl:text-base font-normal text-center'>
-                            GTM container setup, dataLayer planning, and tag mapping. Integrating tags, triggers, and variables to seamlessly measure user actions.
-                        </div>
-                    </div>
-                    <div className='w-[75%] lg:w-[20%]'>
-                        <div className='flex flex-col justify-center items-center'>
-                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/03.png' alt='03' className='absolute' />
-                            <div className='text-2xl font-bold 2xl:text-3xl text-[#30486A] pt-[90px] z-10 lg:pb-10'>Execute</div>
-                        </div>
-                        <div className='pt-8 text-[#6C6C6C] text-base lg:text-xs 2xl:text-base font-normal text-center'>
-                            Test and validate everything in multiple environments and make implementation to production
-                        </div>
-                    </div>
-                    <div className='w-[75%] lg:w-[20%]'>
-                        <div className='flex flex-col justify-center items-center'>
-                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/04.png' alt='04' className='absolute' />
-                            <div className='text-2xl font-bold 2xl:text-3xl text-[#30486A] pt-[90px] z-10 lg:pb-10'>Report</div>
-                        </div>
-                        <div className='pt-8 text-[#6C6C6C] text-base lg:text-xs 2xl:text-base font-normal text-center'>
-                            Use GA4 to visualise and create custom reports for key reporting & trends.
-                        </div>
-                    </div>
-                    <div className='w-[75%] lg:w-[20%]'>
-                        <div className='flex flex-col justify-center items-center'>
-                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/05.png' alt='05' className='absolute' />
-                            <div className='text-2xl font-bold 2xl:text-3xl text-[#30486A] pt-[90px] z-10 lg:pb-10'>Action</div>
-                        </div>
-                        <div className='pt-8 text-[#6C6C6C] text-base lg:text-xs 2xl:text-base font-normal text-center'>
-                            Turn data into actionable insights using GA4 dashboards & build custom audience from data collected by GTM.
-                        </div>
-                    </div>
-
-                </div>
+            <section className='pt-10 pb-6 max-md:px-2 lg:px-[5%] flex justify-center'>
+                <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/GTM_Tracking_Steps_3.gif' alt='AnalyticsLiv GTM Service' className='' />
             </section>
 
             <section className='flex max-lg:flex-col-reverse overflow-hidden pt-2 md:pt-8 lg:pt-12'>
