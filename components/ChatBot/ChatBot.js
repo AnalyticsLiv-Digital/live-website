@@ -7,6 +7,7 @@ import config from "./chatbotConfig";
 import MessageParser from "./MessageParser";
 import ActionProvider from "./ActionProvider";
 import { usePathname } from "next/navigation";
+import CustomInputWithImage from "./inputBtn";
 // import "./chatStyle.css";
 
 export default function App() {
@@ -61,10 +62,20 @@ export default function App() {
     <div className="">
       {showBot && (
         <div
-          className="max-md:my-8 md:m-8 flex flex-col md:w-[370px] max-h-[380px] 2xl:max-h-[450px] min-h-[250px] 2xl:min-h-[300px] fixed right-10 bottom-[55px] 2xl:bottom-[72px] z-40 bg-white shadow-lg rounded-md overflow-y-hidden custom-scrollbar"
+          className={`transition-all duration-500 ease-in-out transform fixed right-5 md:right-1 bottom-0 z-40 
+    ${showBot ? 'scale-100 opacity-100' : 'scale-0 opacity-0 pointer-events-none'}
+    max-md:my-8 md:m-8 flex flex-col md:w-[370px] max-xl:max-h-[400px] max-[1536px]:max-h-[400px] 2xl:max-h-[460px] min-h-[250px] 2xl:min-h-[300px]
+    bg-white shadow-lg rounded-md overflow-hidden custom-scrollbar`}
         >
           <Chatbot
-            config={config}
+            config={{
+              ...config,
+              customComponents: {
+                ...config.customComponents,
+                header: () => config.customComponents.header(handleToggleBot),
+                userInput: (props) => <CustomInputWithImage {...props} />,
+              },
+            }}
             messageParser={MessageParser}
             actionProvider={ActionProvider}
             // messageHistory={loadMessages()}
@@ -97,10 +108,12 @@ export default function App() {
         </div>
       </div>
       <button
-        className="app-chatbot-button right-5 md:right-10 h-16 2xl:h-20 w-16 2xl:w-20"
+        className={`transition-all duration-500 ease-in-out transform fixed bottom-4 right-5 md:right-10 z-[100000] 
+    h-16 2xl:h-20 w-16 2xl:w-20 
+    ${showBot ? 'scale-0 opacity-0 pointer-events-none' : 'scale-100 opacity-100'}`}
         onClick={handleToggleBot}
       >
-        {showBot ? <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/ChatBot_Close_Btn.png" alt="chatbot" /> : <img src="/ChatBot_1.gif" alt="chatbot" />}
+        <img src="/ChatBot_1.gif" alt="chatbot" />
       </button>
     </div>
   );
