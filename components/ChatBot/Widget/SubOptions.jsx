@@ -26,8 +26,8 @@ const SubOptions = ({ actionProvider, state }) => {
       className="w-5" />
 
     <div className="mr-14 react-chatbot-kit-chat-bot-message">
-      <p className="bg-[#E1E1E1] rounded-[40px] text-xs text-left">
-        Great choice! Now, please select the area you’re most interested in.
+      <p className="bg-[#E1E1E1] rounded-[40px] text-[10px] 2xl:text-xs text-left">
+        Great! Which of our service would you like to check out?
       </p>
     </div>
   </div>;
@@ -49,8 +49,8 @@ const SubOptions = ({ actionProvider, state }) => {
             </div>
           ) : (
             showText && (
-              <p className="bg-[#E1E1E1] rounded-[40px] text-xs text-left">
-                Great choice! Now, please select the area you’re most interested in.
+              <p className="bg-[#E1E1E1] rounded-[40px] text-[10px] 2xl:text-xs text-left">
+                Great! Which of our service would you like to check out?
               </p>
             )
           )}
