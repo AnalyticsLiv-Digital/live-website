@@ -7,13 +7,19 @@ import config from "./chatbotConfig";
 import MessageParser from "./MessageParser";
 import ActionProvider from "./ActionProvider";
 import { usePathname } from "next/navigation";
-import CustomInputWithImage from "./inputBtn";
 // import "./chatStyle.css";
 
 export default function App() {
   const [showBot, setShowBot] = useState(false);
   const [showMsg, setShowMsg] = useState(false);
   const [showCross, setShowCross] = useState(false);
+
+  useEffect(() => {
+    const link = document.createElement("link");
+    link.href = "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap";
+    link.rel = "stylesheet";
+    document.head.appendChild(link);
+  }, []);
 
   const pathname = usePathname();
   const isBlogSlugPage = pathname.startsWith("/blogs/");
@@ -62,18 +68,21 @@ export default function App() {
     <div className="">
       {showBot && (
         <div
-          className={`transition-all duration-500 ease-in-out transform fixed right-5 md:right-1 bottom-0 z-40 
+          className={`font-sans transition-all duration-500 ease-in-out transform fixed right-5 md:right-1 bottom-0 z-40 
     ${showBot ? 'scale-100 opacity-100' : 'scale-0 opacity-0 pointer-events-none'}
     max-md:my-8 md:m-8 flex flex-col md:w-[370px] max-xl:max-h-[400px] max-[1536px]:max-h-[400px] 2xl:max-h-[460px] min-h-[250px] 2xl:min-h-[300px]
     bg-white shadow-lg rounded-md overflow-hidden custom-scrollbar`}
-        >
+        > <style>{`
+            .open-sans-font {
+              font-family: 'Open Sans', sans-serif;
+            }
+          `}</style>
           <Chatbot
             config={{
               ...config,
               customComponents: {
                 ...config.customComponents,
                 header: () => config.customComponents.header(handleToggleBot),
-                userInput: (props) => <CustomInputWithImage {...props} />,
               },
             }}
             messageParser={MessageParser}

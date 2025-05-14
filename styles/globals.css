@@ -1988,8 +1988,8 @@ iframe {
 
 @media (max-width: 1535px) {
   .react-chatbot-kit-chat-bot-message {
-    padding: 6px 8px !important;
-    font-size: 10px !important;
+    padding: 7px 10px !important;
+    font-size: 12px !important;
   }
 
   .react-chatbot-kit-chat-bot-message-arrow {
@@ -2007,7 +2007,7 @@ iframe {
 
   .react-chatbot-kit-user-chat-message {
     padding: 4px 7px !important;
-    font-size: 10px !important;
+    font-size: 12px !important;
   }
 
   .react-chatbot-kit-chat-message-container {
