@@ -7,7 +7,6 @@ import config from "./chatbotConfig";
 import MessageParser from "./MessageParser";
 import ActionProvider from "./ActionProvider";
 import { usePathname } from "next/navigation";
-import CustomInputWithImage from "./inputBtn";
 // import "./chatStyle.css";
 
 export default function App() {
@@ -84,7 +83,6 @@ export default function App() {
               customComponents: {
                 ...config.customComponents,
                 header: () => config.customComponents.header(handleToggleBot),
-                userInput: (props) => <CustomInputWithImage {...props} />,
               },
             }}
             messageParser={MessageParser}

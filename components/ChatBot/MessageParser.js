@@ -8,9 +8,9 @@ class MessageParser {
 
   parse(message) {
     message = message.trim().toLowerCase();
-    // console.log("message", message)
 
     if (!message || message === "") {
+      this.actionProvider.handleUnknown();
       console.log("Empty input ignored.");
       return;
     }
@@ -34,7 +34,7 @@ class MessageParser {
       if (matchedService) {
         this.actionProvider.handleOptionClick(matchedService.name);
       } else {
-        this.actionProvider.actionProvider.handleUnknown();
+        this.actionProvider.handleUnknown();
       }
     }
     else if (awaitingInput === "subOption") {
