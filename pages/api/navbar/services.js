@@ -36,8 +36,8 @@ const handler = async (req, res) => {
             };
 
             if (req.body?.type !== 'footer') {
-                await sendEmail(internalMailOptions.to, internalMailOptions.subject, internalMailOptions.html, 'pruthvirajsinh.rathod@analyticsliv.com');
-                await sendEmail(userMailOptions.to, userMailOptions.subject, userMailOptions.html, 'pruthvirajsinh.rathod@analyticsliv.com');
+                await sendEmail(internalMailOptions.to, internalMailOptions.subject, internalMailOptions.html, 'sales@analyticsliv.com');
+                await sendEmail(userMailOptions.to, userMailOptions.subject, userMailOptions.html, 'sales@analyticsliv.com');
             }
 
             res.status(200).json({ message: "Emails sent successfully" });
