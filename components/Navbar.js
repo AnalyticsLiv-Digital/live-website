@@ -58,7 +58,7 @@ const navbar = () => {
                 "email": formValues?.email,
                 "contact": formValues?.contact,
                 "url": formValues?.url,
-                "type": "services"
+                "type": hoveredIndex == "0" ? 'foundation' : hoveredIndex == '1' ? 'transformation' : hoveredIndex == '2' ? 'marketing' : hoveredIndex == "3" ? 'solution' : 'Services'
             }),
 
         })
@@ -138,6 +138,12 @@ const navbar = () => {
         },
     ];
 
+    const formContent = [
+        { title: 'Unlock the Power of Analytics', subTitle: 'Master the User Journey, Drive Growth, and Make Data-Driven Decisions', btnText: 'Let’s Get in Touch', btnColor: 'bg-btn-linear-foundation', imgUrl: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Navbar_Girl_1.png' },
+        { title: 'Empowering Businesses with Data', subTitle: 'Data-Driven Solutions for Smarter Business Growth', btnText: 'Let’s Get in Touch', btnColor: 'bg-btn-linear-transformation', imgUrl: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Navbar_Boy_2.png' },
+        { title: 'Transform Your Campaigns Today!', subTitle: 'Run Brand Marketing & Performance Campaigns Programmatically', btnText: 'Let’s Get in Touch', btnColor: 'bg-btn-linear-marketing', imgUrl: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Resources_Girl_Img_2.png' },
+        { title: 'Intelligent Solutions Data Decisions', subTitle: 'Empower your business with insight-driven strategies using our advanced analytics and data solutions.', btnText: 'Let’s Get in Touch', btnColor: 'bg-btn-linear-solution', imgUrl: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Navbar_Girl_4.png' },
+    ];
 
     return (
         <>
@@ -754,14 +760,19 @@ const navbar = () => {
                                     {servicesData?.map((service, index) => (
                                         <div
                                             key={index}
-                                            className={`flex items-center justify-between py-4 transition-all duration-75 px-4 border-b border-gray-300 font-medium ${hoveredIndex === index ? "opacity-100 transition duration-100" : " opacity-70"
+                                            className={`flex items-center justify-between transition-all duration-75 px-4 border-b border-gray-300 font-medium ${hoveredIndex === index ? "opacity-100 transition duration-100" : " opacity-70"
                                                 }`}
-                                            onMouseEnter={() => setHoveredIndex(index)}
-                                            onMouseLeave={() => setHoveredIndex(hoveredIndex)}
                                         >
-                                            <h3 className="text-white text-[10px] xl:text-[12px] 2xl:text-[14px]">
-                                                {service?.title}
-                                            </h3>
+                                            <div
+                                                className="w-full py-4 "
+                                                onMouseEnter={() => setHoveredIndex(index)}
+                                                onMouseLeave={() => setHoveredIndex(index)}
+                                            >
+                                                <h3 className="text-white text-[10px] xl:text-[12px] 2xl:text-[14px]">
+                                                    {service?.title}
+                                                </h3>
+                                            </div>
+
                                             {hoveredIndex === index && (
                                                 <div
                                                 ><GoChevronRight className="w-9" />
@@ -798,13 +809,13 @@ const navbar = () => {
                                 </div>
 
                             </div>
-                            <div className="flex justify-center w-[57%] pt-7 gap-5">
-                                <div className="min-w-[250px]">
-                                    <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Resources_Girl_Img_2.png" alt="Analyticsliv Services"
+                            <div className="flex justify-center items-end w-[57%] pt-7 gap-5">
+                                <div className="max-2xl:min-w-[30%]">
+                                    <img src={formContent[hoveredIndex]?.imgUrl} alt="Analyticsliv Services"
                                         className="" />
                                 </div>
 
-                                <div className="bg-white p-4 2xl:p-5 rounded-[20px] text-center mb-7 w-[50%] 2xl:w-[50%]">
+                                <div className="bg-white p-4 2xl:px-5 2xl:py-3 rounded-[20px] text-center mb-7 w-[51%] 2xl:w-[50%]">
                                     {
                                         isSubmit ?
                                             <>
@@ -817,9 +828,9 @@ const navbar = () => {
                                                 </div>
                                             </>
                                             :
-                                            <>
-                                                <div className="text-base xl:text-lg font-extrabold text-black pb-1">Transform Your Campaigns Today!</div>
-                                                <div className="text-[10px] font-normal text-black pb-2.5 leading-[14px]">Run Brand Marketing & Performance Campaigns<br></br> Programmatically</div>
+                                            <div className="flex flex-col items-center justify-evenly min-h-[245px]">
+                                                <div className="text-base xl:text-lg font-extrabold text-black pb-1">{formContent[hoveredIndex]?.title}</div>
+                                                <div className="text-[10px] font-normal text-black pb-2.5 leading-[14px]">{formContent[hoveredIndex]?.subTitle}</div>
                                                 <form className="flex flex-col items-center h-full w-full" onSubmit={handleSubmit}>
                                                     <input autoComplete="off" className="border border-[#DBDBDB] text-gray-600 placeholder-slate-300 font-normal focus:outline-none py-1.5 2xl:py-2 px-5 h-[28px] rounded-[30px] w-full text-[10px]" placeholder="Full Name*" type="text" name="name" value={formValues?.name} onChange={handleChange} />
                                                     <div className="flex items-center gap-4 w-full text-[10px] mt-3">
@@ -836,17 +847,24 @@ const navbar = () => {
                                                     }
 
                                                     {
-                                                        isLoading ?
-                                                            <button className="text-white text-xs font-semibold bg-btn-linear rounded-[30px] w-full py-2 2xl:py-2 mt-[15px] cursor-not-allowed" disabled>Submitting...</button>
-                                                            : <button className="text-white text-xs font-semibold bg-btn-linear hover:text-gray-100 transition-all ease-linear duration-150 rounded-[30px] w-full py-2 2xl:py-2 mt-[15px]">Discuss Your Project</button>
-                                                    }
+                                                        isLoading ? (
+                                                            <button
+                                                                className={`text-white text-xs font-semibold rounded-[30px] w-full py-2 2xl:py-2 mt-[15px] cursor-not-allowed ${formContent[hoveredIndex]?.btnColor}`}
+                                                                disabled
+                                                            >
+                                                                Submitting...
+                                                            </button>
+                                                        ) : (
+                                                            <button
+                                                                className={`text-white text-xs font-semibold hover:text-gray-100 transition-all ease-linear duration-150 rounded-[30px] w-full py-2 2xl:py-2 mt-[15px] ${formContent[hoveredIndex]?.btnColor}`}
+                                                            >
+                                                                {formContent[hoveredIndex]?.btnText}
+                                                            </button>)}
 
                                                 </form>
-                                            </>
+                                            </div>
                                     }
                                 </div>
-
-
                             </div>
                         </div>
                     </motion.div>

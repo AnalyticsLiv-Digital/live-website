@@ -81,7 +81,10 @@ module.exports = {
       backgroundImage: {
         'custom-linear': 'linear-gradient(97.32deg, #FF698D -3.47%, #FB3F6C 108.43%)',
         'header-linear': 'linear-gradient(97.32deg, #003366 -3.47%, #0F52BA 108.43%)',
-        'btn-linear': 'linear-gradient(90deg, #188F3C 0%, #5AB974 100%)',
+        'btn-linear-foundation': 'linear-gradient(90deg, #D18202 0%, #D49031 100%)',
+        'btn-linear-transformation': 'linear-gradient(90deg, #2273EC 0%, #5496ED 100%)',
+        'btn-linear-marketing': 'linear-gradient(90deg, #188F3C 0%, #5AB974 100%)',
+        'btn-linear-solution': 'linear-gradient(90deg, #405F8A 0%, #488AE8 100%)',
       },
     },
 
