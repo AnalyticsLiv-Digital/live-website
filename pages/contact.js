@@ -152,12 +152,12 @@ const contact = () => {
                                                     <div className='ml-0 flex items-start [381px]:mb-[3px] max-[381px]:gap-2'>
                                                         <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Vector%20(3).svg' className='w-[17px] 2xl:w-[21px] h-[18px] 2xl:h-[22px] sm:mr-[7px]' />
                                                         <div className='text-[10px] 2xl:text-xs font-normal leading-5'>
-                                                            <a href="mailto:sales@analyticsliv.com" className='text-black text-[10px] 2xl:text-xs'>sales@analyticsliv.com</a>
+                                                            <a href="mailto:sales@analyticsliv.com" className='analyticsliv-email text-black text-[10px] 2xl:text-xs'>sales@analyticsliv.com</a>
                                                         </div>
                                                     </div>
                                                     <div className='ml-0 msm:pt-2 flex items-center md:pt-1'>
                                                         <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Viber.svg' className='w-[14px] 2xl:w-[18px] h-[14px] 2xl:h-[18px] mr-[7px] max-[374px]:ml-1' />
-                                                        <span className='text-[10px] 2xl:text-xs font-normal leading-5 text-black'><a href="tel:+918320576622">+91 83205 76622</a></span>
+                                                        <span className='analyticsliv-contact text-[10px] 2xl:text-xs font-normal leading-5 text-black'><a href="tel:+918320576622">+91 83205 76622</a></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -168,12 +168,12 @@ const contact = () => {
                                                     <div className='ml-0 flex items-start [381px]:mb-[3px] max-[381px]:gap-2'>
                                                         <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Vector%20(3).svg' className='w-[17px] 2xl:w-[21px] h-[18px] 2xl:h-[22px] sm:mr-[7px]' />
                                                         <div className='text-[10px] 2xl:text-xs font-normal leading-5'>
-                                                            <a href="mailto:hr@analyticsliv.com" className='text-black text-[10px] 2xl:text-xs'>hr@analyticsliv.com</a>
+                                                            <a href="mailto:hr@analyticsliv.com" className='analyticsliv-email text-black text-[10px] 2xl:text-xs'>hr@analyticsliv.com</a>
                                                         </div>
                                                     </div>
                                                     <div className='ml-0 msm:pt-2 flex items-center md:pt-1'>
                                                         <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Viber.svg' className='w-[14px] 2xl:w-[18px] h-[14px] 2xl:h-[18px] mr-[7px] max-[374px]:ml-1' />
-                                                        <span className='text-[10px] 2xl:text-xs font-normal leading-5 text-black'><a href="tel:+919998835732">+91 99988 35732</a></span>
+                                                        <span className='analyticsliv-contact text-[10px] 2xl:text-xs font-normal leading-5 text-black'><a href="tel:+919998835732">+91 99988 35732</a></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -184,18 +184,18 @@ const contact = () => {
                                                     <div className='ml-0 flex items-start [381px]:mb-[3px] max-[381px]:gap-2'>
                                                         <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Vector%20(3).svg' className='w-[17px] 2xl:w-[21px] h-[18px] 2xl:h-[22px] sm:mr-[7px]' />
                                                         <div className='text-[10px] 2xl:text-xs font-normal leading-5'>
-                                                            <a href="mailto:support@analyticsliv.com" className='text-black text-[10px] 2xl:text-xs'>support@analyticsliv.com</a>
+                                                            <a href="mailto:support@analyticsliv.com" className='analyticsliv-email text-black text-[10px] 2xl:text-xs'>support@analyticsliv.com</a>
                                                         </div>
                                                     </div>
                                                     <div className='ml-0 msm:pt-2 flex items-center md:pt-1'>
                                                         <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Viber.svg' className='w-[14px] 2xl:w-[18px] h-[14px] 2xl:h-[18px] mr-[7px] max-[374px]:ml-1' />
-                                                        <span className='text-[10px] 2xl:text-xs font-normal leading-5 text-black'><a href="tel:+918320576622">+91 83205 76622</a></span>
+                                                        <span className='analyticsliv-contact text-[10px] 2xl:text-xs font-normal leading-5 text-black'><a href="tel:+918320576622">+91 83205 76622</a></span>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div className='max-md:hidden flex items-center md:pt-6 justify-center'>
+                                        <div className='social max-md:hidden flex items-center md:pt-6 justify-center'>
                                             <div className='w-full flex items-center justify-evenly max-sm:justify-evenly'>
                                                 <a title='Facebook' href="https://m.facebook.com/100070503960704/">
                                                     <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/facebook.svg' className='w-[47px] hover:shadow-mediaIcons rounded-full transition-all duration-100' alt='facebook' />
@@ -218,13 +218,13 @@ const contact = () => {
                                 </div>
                             </div>
 
-                            {formSubmit && <div className='md:w-[45%] flex flex-col justify-between items-center gap-4 relative text-slate-700 p-4 space-y-4 h-full'>
+                            {formSubmit && <div className='analyticsliv-form-thankyou md:w-[45%] flex flex-col justify-between items-center gap-4 relative text-slate-700 p-4 space-y-4 h-full'>
                                 <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Thank_You_img.png' alt='analyticsLiv' />
                                 <h2 className='align-middle text-xl'>We will get back to you soon.</h2>
                                 <div><a href='/' className='text-blue-500 underline'>Click here</a> to go to Home Page</div>
                             </div>}
 
-                            {!formSubmit && <form className="md:w-[45%] flex flex-col justify-between gap-4" onSubmit={handleSubmit}>
+                            {!formSubmit && <form className="analyticsliv-form md:w-[45%] flex flex-col justify-between gap-4" onSubmit={handleSubmit}>
                                 <div className='w-full'>
                                     <div className='text-sm 2xl:text-lg font-semibold text-[#14183E] pb-1 2xl:pb-1.5'>Full Name*</div>
                                     <input type="text" placeholder="Enter Your Full Name" className="text-sm 2xl:text-base px-5 py-2 2xl:py-3 border-[0.5px] border-[#08A4F7] rounded-md w-full focus:outline-none placeholder-[#747582] placeholder-opacity-75"
@@ -321,7 +321,7 @@ const contact = () => {
                                 {!showWaiting && <button type='submit' className="mainbutn">Submit</button>}
                             </form>}
 
-                            <div className='md:hidden flex items-center md:pt-10 justify-center'>
+                            <div className='social md:hidden flex items-center md:pt-10 justify-center'>
                                 <div className='w-full flex items-center justify-evenly max-sm:justify-evenly'>
                                     <a title='Facebook' href="https://m.facebook.com/100070503960704/">
                                         <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/facebook.svg' className='w-[30px] hover:shadow-mediaIcons rounded-full transition-all duration-100' alt='facebook' />

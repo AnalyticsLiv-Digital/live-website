@@ -320,7 +320,7 @@ const index = ({ casestudyDat }) => {
                     className="absolute top-[320px] right-[3%] lg:w-[330px] xl:w-[400px] z-40 max-lg:hidden 2xl:w-[425px] bg-white shadow-csFormShadow rounded-[5px]"
                 >
                     {formSubmit ? (
-                        <div className="relative p-7 space-y-4 h-full">
+                        <div className="analyticsliv-form-thankyou relative p-7 space-y-4 h-full">
                             <h3 className="align-middle font-medium text-4xl text-[#0E1947]">
                                 Thank You for your interest.
                             </h3>
@@ -337,7 +337,7 @@ const index = ({ casestudyDat }) => {
                             <div className="absolute bottom-0 right-2 rounded-full w-20 h-20 bg-emerald-600 opacity-70 animate-bounce hover:animate-none duration-300 delay-75"></div>
                         </div>
                     ) : (
-                        <form className="space-y-4 md:space-y-4 px-3 md:px-4 py-4 md:py-4 lg:py-[20px] lg:px-[30px] xl:py-[40px] xl:px-[40px]">
+                        <form className="analyticsliv-form space-y-4 md:space-y-4 px-3 md:px-4 py-4 md:py-4 lg:py-[20px] lg:px-[30px] xl:py-[40px] xl:px-[40px]">
                             <div className="text-lg leading-[20px] 2xl:text-[20px] text-[#0E1947] font-semibold text-center">
                                 Enter your details to download the casestudy.
                             </div>
