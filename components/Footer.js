@@ -60,7 +60,7 @@ const Footer = () => {
     };
 
     return (
-        <section id="analyticsliv_footer" className='relative font-sans z-20'>
+        <section className='relative font-sans z-20'>
             <div className='absolute left-[43%] sm:left-[48%] pb-[-60px] z-30 opacity-100 top-[-30px] border-[5px] border-[#2B2E3C] rounded-full'>
                 <button onClick={scrollToTop}
                     className="relative z-10 px-3 py-[17px] rounded-full bg-white text-[#08A4F7] border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline mb-3 transition-all duration-300 ease-linear"
@@ -118,12 +118,12 @@ const Footer = () => {
                                             <div className="relative w-full max-sm:max-w-[380px] max-w-[400px] pt-2.5 md:pt-7">
 
                                                 {isSubmit ?
-                                                    <div className='bg-gray-100 p-3 text-center sm:min-w-[300px] sm:max-w-[310px] rounded-[10px] text-gray-800 font-medium text-base'>
+                                                    <div className='analyticsliv-footer-thankyou bg-gray-100 p-3 text-center sm:min-w-[300px] sm:max-w-[310px] rounded-[10px] text-gray-800 font-medium text-base'>
                                                         <div>Thank You for Connecting !</div>
                                                     </div>
                                                     :
 
-                                                    <div className="flex items-center">
+                                                    <div className="analyticsliv-footer flex items-center">
                                                         <form onSubmit={handleSubmit}>
                                                             <input
                                                                 required

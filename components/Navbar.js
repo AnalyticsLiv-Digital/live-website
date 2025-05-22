@@ -164,10 +164,10 @@ const navbar = () => {
                     href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap"
                 />
             </Head>
-            <div className=" sticky top-0 z-50 bg-header-linear h-[55px] sm:h-[50px] text-white flex justify-center items-center px-2">
+            <div className="sticky top-0 z-50 bg-header-linear h-[55px] sm:h-[50px] text-white flex justify-center items-center px-2">
                 <div className="text-xs max-sm:py-1.5 sm:text-base md:text-base font-normal text-center flex max-sm:flex-col max-sm:gap-1 justify-center items-center">
                     Your Partner for Google Marketing Platform Success
-                    <a href="tel:+918320576622" className="ml-2 sm:ml-5 bg-white px-2 py-1 sm:px-3 sm:py-[5px] rounded-[5px]"><div className="flex justify-center items-center text-[#0E1947] text-[11px] sm:text-sm md:text-[13px] sm:hover:underline sm:hover:text-[13.2px] font-bold">
+                    <a href="tel:+918320576622" className="call-now ml-2 sm:ml-5 bg-white px-2 py-1 sm:px-3 sm:py-[5px] rounded-[5px]"><div className="flex justify-center items-center text-[#0E1947] text-[11px] sm:text-sm md:text-[13px] sm:hover:underline sm:hover:text-[13.2px] font-bold">
                         Call Us Now
                         <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/telephone%20(9).svg" alt="Ringer Volume" className="max-sm:w-3 max-sm:ml-1.5 sm:pl-2" /></div></a>
                 </div>
@@ -819,7 +819,7 @@ const navbar = () => {
                                     {
                                         isSubmit ?
                                             <>
-                                                <div className='flex flex-col justify-between items-center gap-4 relative text-slate-700'>
+                                                <div className='analyticsliv-form-thankyou flex flex-col justify-between items-center gap-4 relative text-slate-700'>
                                                     <img
                                                         src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Thank_You_img.png'
                                                         alt='analyticsLiv'
@@ -828,7 +828,7 @@ const navbar = () => {
                                                 </div>
                                             </>
                                             :
-                                            <div className="flex flex-col items-center justify-evenly min-h-[245px]">
+                                            <div className="analyticsliv-form flex flex-col items-center justify-evenly min-h-[245px]">
                                                 <div className="text-base xl:text-lg font-extrabold text-black pb-1">{formContent[hoveredIndex]?.title}</div>
                                                 <div className="text-[10px] font-normal text-black pb-2.5 leading-[14px]">{formContent[hoveredIndex]?.subTitle}</div>
                                                 <form className="flex flex-col items-center h-full w-full" onSubmit={handleSubmit}>

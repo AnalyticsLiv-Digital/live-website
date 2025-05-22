@@ -65,7 +65,7 @@ export default function App() {
   }
 
   return (
-    <div className="">
+    <div className="analyticsliv-chatbot">
       {showBot && (
         <div
           className={`font-sans transition-all duration-500 ease-in-out transform fixed right-5 md:right-1 bottom-0 z-40 

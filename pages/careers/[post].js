@@ -237,7 +237,7 @@ const post = ({ jobData }) => {
                     </svg>
 
                     <div className=" lg:flex relative w-full lg:w-4/5 space-y-4 lg:space-y-0 lg:space-x-4 mx-auto pt-4 pb-8 px-4">
-                        {formSubmit && <div className='w-full bg-white p-2 lg:p-0 mx-auto h-auto lg:text-center text-slate-600'>
+                        {formSubmit && <div className='analyticsliv-career-thankyou w-full bg-white p-2 lg:p-0 mx-auto h-auto lg:text-center text-slate-600'>
                             <h3 className='m-4 font-bold text-4xl '>Thank You {formValues.firstName}, for applying.</h3>
                             <div className='ml-4 text-xl py-4'>We will get back to you shortly.</div>
                             <div>
@@ -297,7 +297,7 @@ const post = ({ jobData }) => {
 
                             <div className="relative lg:w-1/2 bg-white px-2 md:px-10 py-4">
 
-                                <form className="relative sticky top-20 space-y-4 md:space-y-6 " onSubmit={handleSubmit}>
+                                <form className="analyticsliv-career relative sticky top-20 space-y-4 md:space-y-6 " onSubmit={handleSubmit}>
                                     <h2 className="text-center text-xl">Apply Now</h2>
                                     <div className="h-0.5 bg-cyan-600"></div>
                                     <input type="hidden" id="postName" name="postName" value={jobData.job[0].title} />
