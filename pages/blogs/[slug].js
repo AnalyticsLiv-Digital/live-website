@@ -9,7 +9,7 @@ import { ScaleLoader } from 'react-spinners'
 import SimilarPost from '../../components/SimilarPost'
 import RecommendedBlogs from '../../components/RecommendedBlog';
 import BlogBanner from '../../components/BlogBanner';
-import { generateBlogSchema } from '../../utils/schema';
+import { generateBlogSchema, generateBreadcrumbSchemas } from '../../utils/schema';
 
 const index = ({ blogDat, similarBlogs }) => {
     const blogData = blogDat.blog[0];
@@ -125,6 +125,8 @@ const index = ({ blogDat, similarBlogs }) => {
 
     var url = "https://analyticsliv.com/blogs/" + blogData?.slug;
 
+    const breadcrumbSchema = generateBreadcrumbSchemas(url);
+
     return (<>
         <Head>
             <meta name="description" content={blogData &&
@@ -140,6 +142,12 @@ const index = ({ blogDat, similarBlogs }) => {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
                     __html: JSON.stringify(blogSchema),
+                }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(breadcrumbSchema),
                 }}
             />
         </Head>

@@ -12,6 +12,7 @@ const index = () => {
     open: '', coverimage: '', description: '', title: '', slug: '', author: '', filename: '', date: '', active: 'false', sequence: '',
     heading1: '', heading2: '', heading3: '', heading4: '', heading5: '', content1: '', content2: '', content3: '', content4: '', content5: '',
     percentageBanner: '', clientLogo: '', clientTestimonial: '', testimonialVedioUrl: '', mainImage: '',
+    metatitle: "", metadescription: "",
   };
   const [formValues, setFormValues] = useState(initialValues);
   const [formattedDate, setFormattedDate] = useState('');
@@ -103,6 +104,8 @@ const index = () => {
         "clientTestimonial": formValues.clientTestimonial,
         "testimonialVedioUrl": formValues.testimonialVedioUrl,
         "mainImage": formValues.mainImage,
+        "metatitle": formValues.metatitle,
+        "metadescription": formValues.metadescription,
       }),
     })
       .then((response) => response.json())
@@ -183,6 +186,35 @@ const index = () => {
               Description - </label>
               <input required className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="description" value={formValues.description} onChange={handleChange} /><br />
             </div>
+
+            <div>
+              <label className="block text-base font-semibold mb-2 text-gray-200">
+                Meta Title -
+              </label>
+
+              <input
+                className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500"
+                type="text"
+                name="metatitle"
+                value={formValues?.metatitle}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div>
+              <label className="block text-base font-semibold mb-2 text-gray-200">
+                Meta Description -
+              </label>
+
+              <input
+                className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500"
+                type="text"
+                name="metadescription"
+                value={formValues?.metadescription}
+                onChange={handleChange}
+              />
+            </div>
+
             <div><label className="block text-base font-semibold mb-1 text-gray-200">
               File URL -</label>
               <input required className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="filename" value={formValues.filename} onChange={handleChange} /><br />
