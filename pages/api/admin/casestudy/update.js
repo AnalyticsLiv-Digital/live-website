@@ -7,7 +7,7 @@ const uri = "mongodb+srv://anshuldhurandhar:Admin123@cluster0.b45r7wt.mongodb.ne
 const dbName = "blogsdb";
 const collectionName = "casestudies";
 
-async function updateDatabaseItem(id, title, description, slug, opendownload, coverimage, filename, author, publishdate, active, sequence, content, percentageBanner, clientLogo, clientTestimonial, testimonialVedioUrl, mainImage) {
+async function updateDatabaseItem(id, title, description, slug, opendownload, coverimage, filename, author, publishdate, active, sequence, content, percentageBanner, clientLogo, clientTestimonial, testimonialVedioUrl, mainImage, metatitle, metadescription) {
   const client = new MongoClient(uri);
   try {
     await client.connect();
@@ -36,6 +36,8 @@ async function updateDatabaseItem(id, title, description, slug, opendownload, co
         "clientTestimonial": clientTestimonial,
         "testimonialVedioUrl": testimonialVedioUrl,
         "mainImage": mainImage,
+        'metatitle': metatitle,
+        'metadescription': metadescription,
       }
     };
     const result = await collection.updateOne(filter, updateDoc);
@@ -73,6 +75,8 @@ export default async function handler(req, res) {
       var clientTestimonial = req?.body?.clientTestimonial;
       var testimonialVedioUrl = req?.body?.testimonialVedioUrl;
       var mainImage = req?.body?.mainImage;
+      var metatitle = req.body.metatitle;
+      var metadescription = req.body.metadescription;
       if (req?.body?.heading1 && req?.body?.content1)
         content.push({
           heading: req?.body?.heading1,
@@ -104,7 +108,7 @@ export default async function handler(req, res) {
         });
       // Update the MongoDB database with this data
       await updateDatabaseItem(id, title, description, slug, opendownload, coverimage, filename, author, publishdate, active, sequence, content,
-        percentageBanner, clientLogo, clientTestimonial, testimonialVedioUrl, mainImage
+        percentageBanner, clientLogo, clientTestimonial, testimonialVedioUrl, mainImage, metatitle, metadescription
       );
 
       res.status(200).json({ message: 'Database updated successfully!' });
