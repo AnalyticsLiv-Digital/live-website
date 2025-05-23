@@ -104,3 +104,64 @@ export const generateBlogSchema = (blogData) => ({
   },
   "datePublished": blogData?.date,
 });
+
+export const generateCaseStudySchema = (csData) => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://analyticsliv.com/case-studies/${csData?.slug}`,
+    },
+    "headline": csData?.title,
+    "description": csData?.description,
+    "image": csData?.coverimage,
+    "author": {
+      "@type": "Organization",
+      "name": "AnalyticsLiv"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AnalyticsLiv",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://storage.googleapis.com/website-bucket-uploads/static/logo.png"
+      }
+    }
+  };
+
+  return schema;
+};
+
+export const generateBreadcrumbSchemas = (url) => {
+  const baseUrl = 'https://analyticsliv.com';
+  const path = url?.replace(baseUrl, '')?.split('/')?.filter(Boolean);
+
+  const itemListElement = [{
+    "@type": "ListItem",
+    position: 1,
+    name: "Home",
+    item: baseUrl
+  }];
+
+  path?.forEach((segment, index) => {
+    const name = segment
+      ?.replace(/-/g, ' ')
+      ?.replace(/\b\w/g, char => char.toUpperCase());
+
+    const item = `${baseUrl}/${path?.slice(0, index + 1)?.join('/')}`;
+
+    itemListElement?.push({
+      "@type": "ListItem",
+      position: index + 2,
+      name,
+      item
+    });
+  });
+
+  return {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    itemListElement
+  };
+};

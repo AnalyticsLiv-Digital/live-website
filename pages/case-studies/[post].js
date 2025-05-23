@@ -5,6 +5,7 @@ import 'aos/dist/aos.css';
 import { useState, useEffect } from 'react'
 import { Router, useRouter } from 'next/router';
 import { ScaleLoader } from 'react-spinners'
+import { generateBreadcrumbSchemas, generateCaseStudySchema } from '../../utils/schema';
 
 const index = ({ casestudyDat }) => {
     var cd = casestudyDat.data[0];
@@ -20,6 +21,8 @@ const index = ({ casestudyDat }) => {
     const [selected, setSelected] = useState("");
     const [formSubmit, setFormSubmit] = useState(false);
     const [formFixed, setFormFixed] = useState(false);
+
+    const csSchema = generateCaseStudySchema(cd);
 
     const formRef = useRef(null);
 
@@ -218,13 +221,44 @@ const index = ({ casestudyDat }) => {
 
     var url = "https://analyticsliv.com/case-studies/" + cd.slug;
 
+    const breadcrumbSchema = generateBreadcrumbSchemas(url);
+
     return (<>
-        <Head>
+        {/* <Head>
             <title>AnalyticsLiv - Case Sudies</title>
             <link rel="canonical" href={url}></link>
             <link
                 rel="stylesheet"
                 href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap"
+            />
+        </Head> */}
+        <Head>
+            <meta name="description" content={cd &&
+                (cd?.metadescription && cd?.metadescription !== '' ? cd?.metadescription : cd?.description)
+            } />
+            <title>
+                {cd &&
+                    (cd?.metatitle && cd?.metatitle !== '' ? cd?.metatitle : cd?.title)
+                }
+            </title>
+            <link rel="canonical" href={url}></link>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(csSchema),
+                }}
+            />
+
+            <link
+                rel="stylesheet"
+                href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap"
+            />
+
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(breadcrumbSchema),
+                }}
             />
         </Head>
         {showWaiting && <div className="fixed flex backdrop-blur top-0 left-0 right-0 z-40 w-full p-4 md:overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full"><ScaleLoader
