@@ -341,7 +341,7 @@ const engagement = () => {
                         <div className='w-full m-auto'>
                             <div className='w-full px-4'>
                                 <div className='ea1 text-center'>
-                                    <div className='text-[32px] font-normal font-rbt leading-normal text-[#006EF5] pb-6'>Choosing the Right Model</div>
+                                    <div className='header-form-title text-[32px] font-normal font-rbt leading-normal text-[#006EF5] pb-6'>Choosing the Right Model</div>
                                     <p className='text-base leading-[30px] font-normal mb-4'>Not sure which engagement model is best for you? </p>
                                     <p className='text-[18px] leading-[30px] font-normal'>Don't worry! Contact AnalyticsLiv today for a free consultation. Our team will discuss your business goals and data analytics requirements to recommend the most suitable model to help you achieve your desired outcomes.</p>
                                 </div>

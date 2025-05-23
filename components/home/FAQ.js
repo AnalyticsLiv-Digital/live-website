@@ -100,7 +100,7 @@ const FAQ = () => {
                         >
                             <div className="flex items-center justify-between gap-3">
                                 <div>
-                                    <div className="text-[13px] sm:text-base font-semibold">{item?.question}</div>
+                                    <div className="faq-que text-[13px] sm:text-base font-semibold">{item?.question}</div>
 
                                     {activeIndex === index && (
                                         <div className="text-[10px] sm:text-xs pt-3 font-normal w-[95%]">{item?.answer}</div>
