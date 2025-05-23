@@ -829,7 +829,7 @@ const navbar = () => {
                                             </>
                                             :
                                             <div className="analyticsliv-form flex flex-col items-center justify-evenly min-h-[245px]">
-                                                <div className="text-base xl:text-lg font-extrabold text-black pb-1">{formContent[hoveredIndex]?.title}</div>
+                                                <div className="header-form-title text-base xl:text-lg font-extrabold text-black pb-1">{formContent[hoveredIndex]?.title}</div>
                                                 <div className="text-[10px] font-normal text-black pb-2.5 leading-[14px]">{formContent[hoveredIndex]?.subTitle}</div>
                                                 <form className="flex flex-col items-center h-full w-full" onSubmit={handleSubmit}>
                                                     <input autoComplete="off" className="border border-[#DBDBDB] text-gray-600 placeholder-slate-300 font-normal focus:outline-none py-1.5 2xl:py-2 px-5 h-[28px] rounded-[30px] w-full text-[10px]" placeholder="Full Name*" type="text" name="name" value={formValues?.name} onChange={handleChange} />

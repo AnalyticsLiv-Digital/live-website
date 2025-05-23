@@ -253,7 +253,7 @@ const post = ({ jobData }) => {
 
                         {!formSubmit && <>
                             <div className=" p-4 lg:w-3/4 space-y-6 bg-white ">
-                                <h1 className="text-2xl">{jobData.job[0].title}</h1>
+                                <h1 className="header-form-title text-2xl">{jobData.job[0].title}</h1>
                                 <div className="h-0.5 bg-cyan-500"></div>
                                 <div>
                                     <p className="px-2 md:px-8 mt-4 text-gray-600">

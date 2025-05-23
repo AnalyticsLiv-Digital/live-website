@@ -272,7 +272,7 @@ const index = ({ casestudyDat }) => {
                 <div className="bg-header-linear relative lg:flex max-lg:flex-col justify-center lg:justify-between items-center pl-[5%] lg:min-h-[400px]">
                     <div className="lg:w-[50%] xl:w-[55%] py-10 flex flex-col gap-8 lg:gap-10">
                         {/* <h1 className="text-2xl lg:text-3xl xl:text-3xl 2xl:text-[35px] text-white font-bold">{cd?.title}</h1> */}
-                        <h1 className="text-2xl lg:text-2xl xl:text-3xl 2xl:text-[35px] text-white font-bold">
+                        <h1 className="header-form-title text-2xl lg:text-2xl xl:text-3xl 2xl:text-[35px] text-white font-bold">
                             {cd?.title?.includes(":")
                                 ? cd.title.replace(":", ":\n").split("\n").map((text, index) => (
                                     <React.Fragment key={index}>

@@ -156,12 +156,12 @@ const Footer = () => {
                                                     <div className='ml-0 flex items-start [381px]:mb-[3px] max-[381px]:gap-2'>
                                                         <IoIosMail className='opacity-[30%] w-[21px] h-[22px] sm:mr-[7px]' />
                                                         <div className='text-[13px] font-normal leading-5'>
-                                                            <a href="mailto:sales@analyticsliv.com" className='text-[#efefef]'>sales@analyticsliv.com</a>
+                                                            <a href="mailto:sales@analyticsliv.com" className='analyticsliv-email text-[#efefef]'>sales@analyticsliv.com</a>
                                                         </div>
                                                     </div>
                                                     <div className='ml-0 msm:pt-2 flex items-center '>
                                                         <FaPhone className='opacity-[30%] w-[18px] h-[18px] mr-[7px] max-[374px]:ml-1' />
-                                                        <span className='text-[13px] font-normal leading-5 text-[#efefef]'><a href="tel:+918320576622">+91 83205 76622</a></span>
+                                                        <span className='analyticsliv-contact text-[13px] font-normal leading-5 text-[#efefef]'><a href="tel:+918320576622">+91 83205 76622</a></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -172,12 +172,12 @@ const Footer = () => {
                                                     <div className='ml-0 flex items-start [381px]:mb-[3px] max-[381px]:gap-2'>
                                                         <IoIosMail className='opacity-[30%] w-[21px] h-[22px] sm:mr-[7px]' />
                                                         <div className='text-[13px] font-normal leading-5'>
-                                                            <a href="mailto:hr@analyticsliv.com" className='text-[#efefef]'>hr@analyticsliv.com</a>
+                                                            <a href="mailto:hr@analyticsliv.com" className='analyticsliv-email text-[#efefef]'>hr@analyticsliv.com</a>
                                                         </div>
                                                     </div>
                                                     <div className='ml-0 msm:pt-2 flex items-center '>
                                                         <FaPhone className='opacity-[30%] w-[18px] h-[18px] mr-[7px] max-[374px]:ml-1' />
-                                                        <span className='text-[13px] font-normal leading-5 text-[#efefef]'><a href="tel:+919998835732">+91 99988 35732</a></span>
+                                                        <span className='analyticsliv-contact text-[13px] font-normal leading-5 text-[#efefef]'><a href="tel:+919998835732">+91 99988 35732</a></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -188,12 +188,12 @@ const Footer = () => {
                                                     <div className='ml-0 flex items-start [381px]:mb-[3px] max-[381px]:gap-2'>
                                                         <IoIosMail className='opacity-[30%] w-[21px] h-[22px] sm:mr-[7px]' />
                                                         <div className='text-[13px] font-normal leading-5'>
-                                                            <a href="mailto:support@analyticsliv.com" className='text-[#efefef]'>support@analyticsliv.com</a>
+                                                            <a href="mailto:support@analyticsliv.com" className='analyticsliv-email text-[#efefef]'>support@analyticsliv.com</a>
                                                         </div>
                                                     </div>
                                                     <div className='ml-0 msm:pt-2 flex items-center '>
                                                         <FaPhone className='opacity-[30%] w-[18px] h-[18px] mr-[7px] max-[374px]:ml-1' />
-                                                        <span className='text-[13px] font-normal leading-5 text-[#efefef]'><a href="tel:+918320576622">+91 83205 76622</a></span>
+                                                        <span className='analyticsliv-contact text-[13px] font-normal leading-5 text-[#efefef]'><a href="tel:+918320576622">+91 83205 76622</a></span>
                                                     </div>
                                                 </div>
                                             </div>
