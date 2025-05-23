@@ -75,8 +75,8 @@ export default async function handler(req, res) {
       var clientTestimonial = req?.body?.clientTestimonial;
       var testimonialVedioUrl = req?.body?.testimonialVedioUrl;
       var mainImage = req?.body?.mainImage;
-      var metatitle = req.body.metatitle;
-      var metadescription = req.body.metadescription;
+      var metatitle = req?.body?.metatitle;
+      var metadescription = req?.body?.metadescription;
       if (req?.body?.heading1 && req?.body?.content1)
         content.push({
           heading: req?.body?.heading1,
