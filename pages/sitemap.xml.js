@@ -39,9 +39,6 @@ function generateSiteMap(posts) {
        <loc>https://analyticsliv.com/services/looker-bi-platform</loc>
      </url>
      <url>
-       <loc>https://analyticsliv.com/services/CRO</loc>
-     </url>
-     <url>
        <loc>https://analyticsliv.com/services/conversion-rate-optimization</loc>
      </url>
      <url>
