@@ -6,7 +6,8 @@ const Dv360contactSchema = new mongoose.Schema({
     contact:{type: String},
     message:{type: String},
     website:{type: String},
-    timestamp: { type: Date, default: Date.now}
+    timestamp: { type: Date, default: Date.now},
+    type:{type: String}
 });
 mongoose.models = {};
 export default mongoose.model("Dv360contact", Dv360contactSchema);

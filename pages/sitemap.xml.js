@@ -75,6 +75,9 @@ function generateSiteMap(posts) {
        <loc>https://analyticsliv.com/dv360</loc>
      </url>
      <url>
+       <loc>https://analyticsliv.com/programmatic-advertising</loc>
+     </url>
+     <url>
        <loc>https://analyticsliv.com/gtm</loc>
      </url>
      <url>
