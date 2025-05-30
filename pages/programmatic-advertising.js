@@ -207,8 +207,8 @@ export default function ProgrammaticAdvertising() {
                 </div>
                 <div className='md:w-[50%] text-start flex flex-col justify-center items-center pt-12 gap-5'>
                     <h2 className='text-2xl font-bold'>Run Brand Marketing & Performance Campaigns Programmatically</h2>
-                    <h3 className='text-sm font-normal'>At AnalyticsLiv, we are a performance focused programmatic advertising agency helping brands scale with precision. Our team uses Display & Video 360 (DV360) and Sparkler to build high-impact campaigns, leveraging programmatic buying, targeting, and optimization to maximize both reach and return on ad spend.</h3>
-                    <h3 className='text-sm font-normal'>As a full-service programmatic marketing agency, we design and execute campaigns that cover the entire digital funnel from awareness to conversion. Whether your goal is brand lift, video views, or sales, our DV360-certified experts deliver results with advanced tools, custom bidding strategies, and deep analytics.</h3>
+                    <h3 className='text-sm font-normal text-justify'>At AnalyticsLiv, we are a performance focused programmatic advertising agency helping brands scale with precision. Our team uses Display & Video 360 (DV360) and Sparkler to build high-impact campaigns, leveraging programmatic buying, targeting, and optimization to maximize both reach and return on ad spend.</h3>
+                    <h3 className='text-sm font-normal text-justify'>As a full-service programmatic marketing agency, we design and execute campaigns that cover the entire digital funnel from awareness to conversion. Whether your goal is brand lift, video views, or sales, our DV360-certified experts deliver results with advanced tools, custom bidding strategies, and deep analytics.</h3>
                 </div>
             </section>
             <ScrollElement id="testimonials" name="testimonials" ></ScrollElement>

@@ -175,7 +175,7 @@ const Home = () => {
                                 name="contact-form"
                             ></ScrollElement>
                             {!formSubmit && <div className="block">
-                                <h2 className="text-sky-900 md:p-0 px-[10px]">Contact AnalyticsLiv, your performance driven programmatic advertising agency.</h2>
+                                <h2 className="text-sky-900 md:p-0 px-[10px]">Start Your Journey with a Google-Certified Programmatic Advertising Partner</h2>
                                 <h2 className="font-semibold text-xl p-4 border-dashed border-b-2 border-sky-200">Let us help you !!</h2>
                                 <ScrollElement id="top" name="top" ></ScrollElement>
                                 <form className="px-4 md:pt-4 pb-2 space-y-2 text-gray-600" onSubmit={handleSubmit}>
