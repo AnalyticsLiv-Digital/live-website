@@ -117,7 +117,6 @@ const Home = () => {
 
                 </div>
                 <div className="relative lg:flex md:justify-between items-center">
-
                     <div className='lg:w-[70%] flex flex-col gap-6 md:gap-10'>
                         <div className="flex items-center space-x-4 pt-4">
                             <img alt="Display & Video 360" className="md:w-12 w-10" src="https://storage.googleapis.com/website-bucket-uploads/static/DV360_logo.png" />
@@ -126,7 +125,7 @@ const Home = () => {
                         <div className="space-y-4 w-full max-md:flex-col mb-5 justify-between items-center">
                             <h2 className="py-4 text-xl font-semibold text-sky-600">
                                 <h2 className='text-[24px] font-bold leading-8'>
-                                    Drive Brand & Performance Growth with a Trusted Programmatic Advertising Agency through DV360
+                                    Drive Brand & Performance Growth with a Trusted Programmatic Advertising Agency Using DV360.
                                 </h2>
                             </h2>
                             <ul className=''>
@@ -176,7 +175,7 @@ const Home = () => {
                                 name="contact-form"
                             ></ScrollElement>
                             {!formSubmit && <div className="block">
-                                <h2 className="text-sky-900 md:p-0 px-[10px]">Contact AnalyticsLiv, your performance-driven programmatic advertising agency.</h2>
+                                <h2 className="text-sky-900 md:p-0 px-[10px]">Contact AnalyticsLiv, your performance driven programmatic advertising agency.</h2>
                                 <h2 className="font-semibold text-xl p-4 border-dashed border-b-2 border-sky-200">Let us help you !!</h2>
                                 <ScrollElement id="top" name="top" ></ScrollElement>
                                 <form className="px-4 md:pt-4 pb-2 space-y-2 text-gray-600" onSubmit={handleSubmit}>
