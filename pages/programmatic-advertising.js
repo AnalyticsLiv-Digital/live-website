@@ -84,9 +84,7 @@ export default function ProgrammaticAdvertising() {
             </Head>
             <header className="sticky min-w-full top-0 z-50 shadow-md bg-white">
                 <div className="navbar hidden lg:flex py-2 h-auto flex-wrap px-4 lg:flex-row items-center justify-between">
-                    <a href='https://analyticsliv.com/' target='_blank' className="">
-                        <img alt="analyticsliv-logo" className="h-8 lg:ml-4 w-auto cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" />
-                    </a>
+                    <img alt="analyticsliv-logo" className="h-8 lg:ml-4 w-auto" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" />
                     <nav className="lg:flex text-center">
                         <ul className="lg:flex text-base font-semibold text-left lg:text-center z-[-1] lg:z-auto lg:mr-4 lg:w-auto lg:space-x-6 items-center tracking-wide cursor-pointer">
                             <li onClick={scrolling1} className="hover:text-amber-500">Testimonials</li>
@@ -105,7 +103,7 @@ export default function ProgrammaticAdvertising() {
                 </div>
 
                 <div className="relative flex items-center lg:hidden p-2">
-                    <Link href="https://analyticsliv.com/" target='_blank'><img onClick={() => setIsOpen(false)} src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" alt='AnalyticsLiv Logo' className="relative h-8 md:mx-4 cursor-pointer" /></Link>
+                    <img onClick={() => setIsOpen(false)} src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" alt='AnalyticsLiv Logo' className="relative h-8 md:mx-4" />
                     <a className="ml-4" href="tel:8320576622">
                         <button className="cta px-3 py-1.5 bg-sky-300 rounded-2xl mx-2 text-base font-semibold cursor-pointer hover:bg-sky-400">CALL US</button>
                     </a>
