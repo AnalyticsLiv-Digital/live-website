@@ -352,12 +352,12 @@ const engagement = () => {
                                         <h3 className="text-[20px] font-semibold text-center text-homepagebtn leading-[30px]">Fill the form to get in touch with us</h3>
                                     </div>
 
-                                    {formSubmit && <div className='analyticsliv-form-thankyou relative text-slate-700 p-4 space-y-4 h-full'>
+                                    {formSubmit && <div className='contact-form-thankyou relative text-slate-700 p-4 space-y-4 h-full'>
                                         <div className='align-middle font-medium text-4xl'>Thank You for your interest.</div>
                                         <div className='align-middle text-xl'>We will get back to you soon.</div>
                                         <div className='absolute bottom-0 right-2 rounded-full w-20 h-20 bg-emerald-600 opacity-70 animate-bounce hover:animate-none duration-300 delay-75'></div>
                                     </div>}
-                                    {!formSubmit && <form className="analyticsliv-form space-y-2 md:space-y-6  md:w-[90%] mx-auto" onSubmit={handleSubmit}>
+                                    {!formSubmit && <form className="contact-form space-y-2 md:space-y-6  md:w-[90%] mx-auto" onSubmit={handleSubmit}>
                                         <div className="relative w-full md:flex justify-between md:space-x-8">
                                             <div className="relative md:w-1/2">
                                                 <input type="text" id="firstname" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent  border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " name="firstName" value={formValues.firstName} onChange={handleChange} />

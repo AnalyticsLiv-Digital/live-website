@@ -46,8 +46,13 @@ module.exports = {
         contactShadow: '6.02px 22.69px 117.29px 0px rgba(0, 0, 0, 0.25)',
         mediaIcons: '3px 3px 7px 0px #00000040',
         navShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.1)',
+        ga4Show: '3px 3px 8px 1px #97979759',
+        ga4FormShadow: '5px 5px 30px 5px #0000001A',
+        inputShadow: '0px 2px 2px 0px #0000000D',
       },
-
+      screens: {
+        '3xl': '1600px', // custom breakpoint name
+      },
       colors: {
         btn: '#4285F4',
         h1: '#6D6D6D',
