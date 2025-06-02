@@ -698,6 +698,63 @@ input[type=number] {
   /* Background color of the active dot */
 }
 
+
+/* Custom styling for the dots within the specific carousel */
+.carousel-custom1 .slick-dots {
+  bottom: -40px;
+    display: flex !important;
+  justify-content: flex-start;
+  margin-left: 10px;
+  margin-top: 10px;
+  /* Adjust the position of the dots */
+}
+
+.carousel-custom1 .slick-dots li {
+  margin: 0 5px;
+  /* Spacing between dots */
+}
+
+.carousel-custom1 .slick-dots li button:before {
+  font-size: 14px;
+  /* Increase the size of the dots */
+  color: #ccc;
+  /* Default color of dots */
+  opacity: 1;
+  /* Ensure the dots are visible */
+}
+
+.carousel-custom1 .slick-dots li.slick-active button:before {
+  color: #333;
+  /* Color of the active dot */
+  opacity: 1;
+  /* Ensure the active dot is fully visible */
+}
+
+.carousel-custom1 .slick-dots li button {
+  width: 10px;
+  /* Adjust width of the dots */
+  height: 10px;
+  /* Adjust height of the dots */
+}
+
+.carousel-custom1 .slick-dots li button:before {
+  content: '';
+  /* Remove the default text content */
+  display: block;
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  /* Make the dots rounded */
+  background-color: #94A3B8;
+  /* Default background color of the dots */
+  transition: background-color 0.3s ease;
+  /* Smooth transition for color change */
+}
+
+.carousel-custom1 .slick-dots li.slick-active button:before {
+  background-color: #2563EB;
+  /* Background color of the active dot */
+}
 /* new design buttons */
 
 .csbutn {
@@ -788,6 +845,12 @@ input[type=number] {
   box-shadow: none !important;
 }
 
+.custom-phone-input-container .custom-phone-input1:focus {
+  border: 2px solid #EA580C !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 .custom-phone-input {
   @apply h-[37.6px] 2xl:h-[51px];
 }
@@ -847,6 +910,58 @@ input[type=number] {
   z-index: -1;
 }
 
+
+/* Homepage btn-css */
+.ga4butn {
+  @apply relative overflow-hidden z-10 bg-[#EA580C] text-[#fff] border border-[#EA580C] cursor-pointer text-[15px] font-medium not-italic inline rounded-[8px] py-[8px] px-[28px] transition-all duration-300 ease-linear hover:text-[#EA580C]
+}
+
+.ga4butn::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 101%;
+  right: 0px;
+  top: 0;
+  left: 0px;
+  transform: translateY(-85px);
+  background: #EA580C;
+  transition: all 0.3s linear;
+}
+
+.ga4butn:hover::before {
+  background: white;
+  color: #EA580C;
+  transform: translate(0);
+  transition: all 0.3s linear;
+  z-index: -1;
+}
+
+.ga4butn-opposite {
+  @apply relative overflow-hidden z-10 bg-white text-[#EA580C] border border-[#EA580C] cursor-pointer text-sm xl:text-[16px] font-extrabold not-italic rounded-[8px] py-[8px] px-[28px] transition-all duration-300 ease-linear hover:text-white
+}
+
+.ga4butn-opposite::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 101%;
+  right: 0px;
+  top: 0;
+  left: 0px;
+  transform: translateY(-85px);
+  background: white;
+  transition: all 0.3s linear;
+}
+
+.ga4butn-opposite:hover::before {
+  background: #EA580C;
+  color: white;
+  transform: translate(0);
+  transition: all 0.3s linear;
+  z-index: -1;
+}
+ /* || router.pathname == "/ga42" */
 /* Homepage header-css */
 .hoverable:hover .mega-menu {
   opacity: 1;

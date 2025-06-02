@@ -218,13 +218,13 @@ const contact = () => {
                                 </div>
                             </div>
 
-                            {formSubmit && <div className='analyticsliv-form-thankyou md:w-[45%] flex flex-col justify-between items-center gap-4 relative text-slate-700 p-4 space-y-4 h-full'>
+                            {formSubmit && <div className='contact-form-thankyou md:w-[45%] flex flex-col justify-between items-center gap-4 relative text-slate-700 p-4 space-y-4 h-full'>
                                 <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Thank_You_img.png' alt='analyticsLiv' />
                                 <h2 className='align-middle text-xl'>We will get back to you soon.</h2>
                                 <div><a href='/' className='text-blue-500 underline'>Click here</a> to go to Home Page</div>
                             </div>}
 
-                            {!formSubmit && <form className="analyticsliv-form md:w-[45%] flex flex-col justify-between gap-4" onSubmit={handleSubmit}>
+                            {!formSubmit && <form className="contact-form md:w-[45%] flex flex-col justify-between gap-4" onSubmit={handleSubmit}>
                                 <div className='w-full'>
                                     <div className='text-sm 2xl:text-lg font-semibold text-[#14183E] pb-1 2xl:pb-1.5'>Full Name*</div>
                                     <input type="text" placeholder="Enter Your Full Name" className="text-sm 2xl:text-base px-5 py-2 2xl:py-3 border-[0.5px] border-[#08A4F7] rounded-md w-full focus:outline-none placeholder-[#747582] placeholder-opacity-75"

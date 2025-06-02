@@ -384,7 +384,7 @@ const service_A = () => {
                             </div>
 
                             <div className='xl:w-[60%] lg:w-[65%] w-full h-[690px] flex items-start justify-center rounded-[15px] pt-5'>
-                                <div id="tab1" className={`${activetab == 1 && 'block'} ${activetab != 1 && 'hidden'} relative py-[30px] px-[50px] text-base font-medium leading-8`}>
+                                <div id="tab1" className={`${activetab == 1 && 'block'} ${activetab != 1 && 'hidden'} analyticsliv-services relative py-[30px] px-[50px] text-base font-medium leading-8`}>
                                     <div className='relative'>
                                         <p className='text-[#efefef] text-[20px] font-semibold mb-5'>Campaign Strategy and Setup</p>
                                         <p className='text-[#878787]'>This phase involves a thorough analysis of the client's marketing objectives, target audience, and competitive landscape. We understand their goals and develop a comprehensive strategy for the programmatic campaigns. This strategy takes into account factors such as campaign scheduling, budget allocation, messaging tone, and creative assets. By leveraging data-driven insights, the team ensures that the campaigns are strategically aligned to achieve maximum impact and drive desired outcomes.</p>
@@ -396,7 +396,7 @@ const service_A = () => {
                                     </div>
                                 </div>
 
-                                <div id="tab2" className={`${activetab == 2 && 'block'} ${activetab != 2 && 'hidden'} relative py-[30px] px-[50px] text-base font-medium leading-8`}>
+                                <div id="tab2" className={`${activetab == 2 && 'block'} ${activetab != 2 && 'hidden'} analyticsliv-services relative py-[30px] px-[50px] text-base font-medium leading-8`}>
                                     <div className='relative pl-1'>
                                         <p className='text-[#efefef] text-[20px] font-semibold mb-5'>Audience Targeting</p>
                                         <p className='text-[#878787]'>With DV360's sophisticated targeting capabilities, the service can precisely identify and reach the client's ideal audience segments. This involves segmenting the audience based on demographics, interests, browsing behaviour, location, and other relevant criteria. By using advanced targeting options such as audience lists, contextual targeting, and lookalike modelling, the service ensures that the client's message is delivered to the most relevant and receptive audience across various devices and channels. This targeted approach increases the likelihood of engagement and conversion, ultimately maximising the campaign's effectiveness.</p>
@@ -408,7 +408,7 @@ const service_A = () => {
                                     </div>
                                 </div>
 
-                                <div id="tab3" className={`${activetab == 3 && 'block'} ${activetab != 3 && 'hidden'} relative py-[30px] px-[40px] text-base font-medium leading-8`}>
+                                <div id="tab3" className={`${activetab == 3 && 'block'} ${activetab != 3 && 'hidden'} analyticsliv-services relative py-[30px] px-[40px] text-base font-medium leading-8`}>
                                     <div className='relative pl-1'>
                                         <p className='text-[#efefef] text-[20px] font-semibold mb-5'>Ad Format Optimization</p>
                                         <p className='text-[#878787]'>The creative team focuses on designing ad formats that are specifically tailored for programmatic buying and created for maximum impact and engagement. This includes creating visually appealing ad creatives, compelling copywriting, and clear calls-to-action that resonate with the target audience. Additionally, the team conducts A/B testing and multivariate testing to identify the most effective ad variations and enhance performance further. By continuously refining and iterating on the ad formats, the service ensures that the client's ads stand out in the crowded digital landscape and drive meaningful interactions with the audience.</p>
@@ -419,7 +419,7 @@ const service_A = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div id="tab4" className={`${activetab == 4 && 'block'} ${activetab != 4 && 'hidden'} relative py-[30px] px-[50px] text-base font-medium leading-8`}>
+                                <div id="tab4" className={`${activetab == 4 && 'block'} ${activetab != 4 && 'hidden'} analyticsliv-services relative py-[30px] px-[50px] text-base font-medium leading-8`}>
                                     <p className='text-[#efefef] text-[20px] font-semibold mb-5'>Real-Time Bidding (RTB) Expertise</p>
                                     <p className='text-[#878787]'>RTB is a critical component of programmatic advertising, allowing advertisers to bid for ad placements in real-time auctions. The service leverages sophisticated bidding strategies and algorithms to participate in these auctions and secure optimal ad placements for the client. This involves evaluating bidding data, monitoring auction dynamics, and adjusting bidding strategies based on factors such as audience targeting, ad placement, and budget constraints. By optimizing bids in real-time, the service ensures that the client gets the most value out of their advertising budget and maximises the return on investment.</p>
                                     <div className=''>
@@ -429,7 +429,7 @@ const service_A = () => {
                                     </div>
                                 </div>
 
-                                <div id="tab5" className={`${activetab == 5 && 'block'} ${activetab != 5 && 'hidden'} relative py-[30px] px-[50px] text-base font-medium leading-8`}>
+                                <div id="tab5" className={`${activetab == 5 && 'block'} ${activetab != 5 && 'hidden'} analyticsliv-services relative py-[30px] px-[50px] text-base font-medium leading-8`}>
                                     <p className='text-[#efefef] text-[20px] font-semibold mb-5'>Continuous Campaign Management & Optimization</p>
                                     <p className='text-[#878787]'>This phase involves ongoing monitoring, analysis, and optimization of the campaigns to ensure peak performance and efficiency. We employ a proactive approach to campaign management, continuously monitoring key performance indicators such as click-through rates, conversion rates, cost-per-acquisition, and return on ad spend. Based on performance data and insights, the team makes data-driven optimizations such as adjusting targeting parameters, refining ad creatives, reallocating budget to top-performing channels, and implementing bidding strategy changes. This iterative optimization process ensures that the campaigns remain competitive, relevant, and effective throughout their lifecycle, increasing the client's advertising ROI.</p>
                                     <div className=''>
@@ -439,7 +439,7 @@ const service_A = () => {
                                     </div>
                                 </div>
 
-                                <div id="tab6" className={`${activetab == 6 && 'block'} ${activetab != 6 && 'hidden'} relative py-[30px] px-[50px] text-base font-medium leading-8`}>
+                                <div id="tab6" className={`${activetab == 6 && 'block'} ${activetab != 6 && 'hidden'} analyticsliv-services relative py-[30px] px-[50px] text-base font-medium leading-8`}>
                                     <p className='text-[#efefef] text-[20px] font-semibold mb-5'>In-Depth Reporting & Analytics</p>
                                     <p className='text-[#878787]'>The service provides comprehensive reports and analytics that offer actionable insights into campaign performance and effectiveness. These reports include detailed metrics such as impressions, clicks, conversions, engagement rates, and ROI, presented in intuitive dashboards and visualizations. Additionally, the service conducts in-depth analysis to identify trends, patterns, and opportunities for improvement. <br /> <br />The client can use these insights to track campaign success, measure the impact of their advertising efforts, and make informed decisions for future optimizations and strategic planning. By providing transparent and actionable reporting, the service helps the client understand the performance drivers of their campaigns and change their marketing strategies accordingly.</p>
                                     <div className=''>
