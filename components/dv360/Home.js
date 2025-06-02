@@ -163,7 +163,7 @@ const Home = () => {
                                 id="contact-form"
                                 name="contact-form"
                             ></ScrollElement>
-                            {!formSubmit && <div className="block">
+                            {!formSubmit && <div className="block contact-form">
                                 <h2 className="text-sky-900 md:p-0 p-[10px]">We Understand Its difficult to get DV360 Account and control the outcome</h2>
                                 <h2 className="font-semibold text-2xl p-4 border-dashed border-b-2 border-sky-200">Let us help you !!</h2>
                                 <ScrollElement id="top" name="top" ></ScrollElement>
