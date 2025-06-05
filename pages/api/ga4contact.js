@@ -11,8 +11,8 @@ const handler = async (req, res) => {
       fullName: req.body.fullName,
       email: req.body.email,
       contact: req.body.contact,
-      message: req.body.message
-
+      message: req.body.message,
+      receiveUpdates : req.body.receiveUpdates
     });
     await b.save();
 
@@ -20,7 +20,7 @@ const handler = async (req, res) => {
       from: "support@analyticsliv.com",
       to: ["sales@analyticsliv.com", "anshul.d@analyticsliv.com", "anuj@analyticsliv.com", "nitya@analyticsliv.com", "rajvi@analyticsliv.com", "ansuya@analyticsliv.com","aditya.trivedi@analyticsliv.com","tanu.singh@analyticsliv.com"],
       subject: 'New GA4 Enquiry!!',
-      html: `Enquiry Submitted by <br> Full Name - ${req.body.fullName}  <br> Email- ${req.body.email} <br> Contact - ${req.body.contact} <br> Message - ${req.body.message} `
+      html: `Enquiry Submitted by <br> Full Name - ${req.body.fullName}  <br> Email- ${req.body.email} <br> Contact - ${req.body.contact} <br> Message - ${req.body.message} <br> Receive Updates - ${req.body.receiveUpdates} `
     };
 
     var userMailOptions = {

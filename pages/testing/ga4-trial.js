@@ -10,6 +10,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import PhoneInput from 'react-phone-input-2'
 import "react-phone-input-2/lib/bootstrap.css";
+import MetaSchemaOg from '../../components/MetaSchemaOg'
 
 const { Element: ScrollElement } = Scroll;
 
@@ -18,7 +19,7 @@ export default function Ga42({ brandsdata }) {
     const sliderRef = useRef(null);
     const testimonialSliderRef = useRef(null);
 
-    const initialValues = { firstName: '', lastName: '', email: '', contactno: '', company: '', purpose: '', requirements: '' };
+    const initialValues = { firstName: '', lastName: '', email: '', contactno: '', company: '', purpose: '', requirements: '', receiveUpdates: true, };
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
@@ -28,10 +29,11 @@ export default function Ga42({ brandsdata }) {
     const [isVideoOpen, setIsVideoOpen] = useState(false);
 
     const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormValues({ ...formValues, [name]: value });
-        console.log(formValues);
+        const { name, type, value, checked } = e.target;
+        const val = type === 'checkbox' ? checked : value;
+        setFormValues((prev) => ({ ...prev, [name]: val }));
     };
+
 
     const handleContactChange = (e) => {
         setFormValues({ ...formValues, ['contactno']: e });
@@ -73,7 +75,8 @@ export default function Ga42({ brandsdata }) {
                 // "lastName": formValues.lastName,
                 "email": formValues.email,
                 "contact": formValues.contactno,
-                "message": formValues.requirements
+                "message": formValues.requirements,
+                "receiveUpdates": formValues.receiveUpdates,
             }),
         })
             .then((response) => response.json())
@@ -262,12 +265,19 @@ export default function Ga42({ brandsdata }) {
     }
     return (
         <>
-            <Head>
-                <link
-                    rel="stylesheet"
-                    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap"
-                />
-            </Head>
+            <MetaSchemaOg
+                url="https://analyticsliv.com/ga4"
+                title="GA4 Consulting Services by Certified Experts"
+                description="Hire certified Google Analytics consultants for seamless GA4 setup, advanced tracking, and insights that drive growth and smarter business decisions."
+                twitterTitle="GA4 Consulting Services by Certified Experts"
+                twitterDescription="Hire certified Google Analytics consultants for seamless GA4 setup, advanced tracking, and insights that drive growth and smarter business decisions."
+                extraHead={
+                    <link
+                        rel="stylesheet"
+                        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap"
+                    />
+                }
+            />
             <div>
 
                 {/* desktop menu */}
@@ -388,11 +398,11 @@ export default function Ga42({ brandsdata }) {
                 </div>
 
                 {/* landing */}
-                <section className='flex max-md:flex-col justify-between items-center max-md:text-center px-[4%] 3xl:px-[6%] max-md:pt-12 md:py-12 gap-10'>
+                <section className='flex max-md:flex-col justify-between items-center max-md:text-center px-[4%] 3xl:px-[6%] max-md:pt-12 md:pt-3 lg:mt-6 lg:mb-3 3xl:mb-6 gap-10'>
                     <div className='md:w-[70%] lg:w-[50%] 2xl:w-[40%] 3xl:w-[52%] flex flex-col gap-7 md:gap-10'>
                         <h1 className='text-[#0F172A] text-2xl xl:text-[28px] 2xl:text-[32px] 3xl:text-[46px] 3xl:leading-[50px] font-extrabold'>Google Analytics 4 <span className='relative z-10'>(GA4)<img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Vector%2014.png' alt='' className='absolute right-0 top-8 3xl:top-[50px] z-20' /></span><br className='max-lg:hidden'></br> Implementation and Consulting to<br className='max-2xl:hidden'></br> Power Smarter Decisions</h1>
                         <p className='text-[#0F172A] text-[11px] xl:text-xs 2xl:text-sm font-normal'>As a leading Google Analytics Certified Agency, AnalyticsLiv specializes in<br className='max-lg:hidden'></br> custom Google Analytics 4 Consulting Services. Whether you’re looking to<br className='max-lg:hidden'></br> implement GA4 from scratch, or improve existing setups, our certified team of<br className='max-lg:hidden'></br> Google Analytics Consultants and Data Analytics Consultants is here to help</p>
-                        <div className='flex lg:items-center gap-3 lg:gap-11 max-lg:flex-col'>
+                        <div className='flex max-md:items-center lg:items-center gap-3 lg:gap-11 max-lg:flex-col'>
                             <button onClick={scrolling} className="ga4butn w-max">Call Us Now</button>
                             <button onClick={() => setIsVideoOpen(true)} className='flex items-center gap-3'>
                                 <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/ytplay.png' alt='' />
@@ -427,7 +437,7 @@ export default function Ga42({ brandsdata }) {
                 {/* why choose, form section */}
                 <ScrollElement id="expertise" name="expertise"></ScrollElement>
                 <section className='px-[4%] 3xl:px-[6%] flex max-md:flex-col items-center gap-8 max-md:pb-12 md:gap-8 py-8 justify-between'>
-                    <div className='w-full md:w-[50%] lg:w-[60%] mt-8'>
+                    <div className='w-full md:w-[50%] lg:w-[60%] mt-8 lg:mt-4'>
                         <div className="flex justify-between items-center gap-5">
                             <div className='md:text-2xl xl:text-[32px] 2xl:text-[34px] font-bold lg:leading-10'>Why Choose AnalyticsLiv as Your<br className='max-md:hidden'></br> Analytics Partner?</div>
                             <div className='flex items-center gap-3 pr-5 2xl:pr-16 3xl:pr-36'>
@@ -445,7 +455,7 @@ export default function Ga42({ brandsdata }) {
                                 </button>
                             </div>
                         </div>
-                        <div className="md:mt-2 py-8 carousel-custom1 overflow-hidden">
+                        <div className="md:mt-2 pt-8 pb-20 lg:pt-6 lg:pb-20 carousel-custom1 overflow-hidden">
                             <Slider ref={sliderRef} {...settings}>
                                 {cardsData?.map((card, index) => (
                                     <div>
@@ -478,7 +488,7 @@ export default function Ga42({ brandsdata }) {
                                 :
                                 <div className='flex flex-col gap-[15px] 2xl:gap-[18px]'>
                                     <div className='text-center flex flex-col gap-[5px]'>
-                                        <div className='text-sm'>Deep dive into GA4 with our Free Audit</div>
+                                        <div className='text-[10px] sm:text-xs xl:text-sm'>Partner with a Leading Google Analytics Certified Agency</div>
                                         <div className='text-xl font-extrabold'>Let us help you !!</div>
                                     </div>
                                     <form onSubmit={handleSubmit} className='flex flex-col gap-[14px] 2xl:gap-[16px]'>
@@ -553,15 +563,22 @@ export default function Ga42({ brandsdata }) {
                                             </div>
                                         </div>
                                         <div className='w-full flex flex-col gap-2'>
+                                            <div className="flex items-start xl:items-center gap-1">
+                                                <input
+                                                    type="checkbox"
+                                                    id="receiveUpdates"
+                                                    name="receiveUpdates"
+                                                    checked={formValues?.receiveUpdates}
+                                                    onChange={handleChange}
+                                                    className={`accent-[#EA580C]`}
+                                                />
+                                                <label htmlFor="receiveUpdates" className="text-[9px] 2xl:text-[11px]">
+                                                    Yes, I’d like to receive the latest analytics tips, GA4 updates, and insights via email.
+                                                </label>
+                                            </div>
                                             <button className={`${showWaiting ? 'cursor-not-allowed' : 'cursor-pointer'} ga4butn w-full`}>
                                                 {showWaiting ? 'Loading...' : 'Contact Us'}
                                             </button>
-                                            <a
-                                                href="https://docs.google.com/spreadsheets/d/1a3W4-dojm1F3T7v_mfqd_-kfQXq42q-zM2JHHAH2QbM"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className='text-[9px] mx-auto underline'
-                                            >View Sample GA4 Audit</a>
                                         </div>
                                     </form>
                                 </div>
@@ -590,27 +607,27 @@ export default function Ga42({ brandsdata }) {
                 <section className='px-[4%] 3xl:px-[6%] pt-7 pb-10'>
                     <div>
                         <div className='text-center text-[#0F172A] text-2xl xl:text-[28px] 2xl:text-[32px] font-bold'>Comprehensive Analytics Consulting Services</div>
-                        <div className='text-center text-xs text-[#0F172A] pt-[15px]'>As one of the most agile Analytics Consulting Companies, we deliver full-spectrum analytics services:</div>
+                        <div className='text-center text-sm text-[#0F172A] pt-[15px]'>As one of the most agile Analytics Consulting Companies, we deliver full-spectrum analytics services:</div>
                         <div className='max-lg:hidden flex max-md:flex-wrap items-center justify-between pt-[36px]'>
-                            <div className='border h-[190px] w-[180px] xl:w-[205px] px-[10px] xl:px-[14px] py-[25px] xl:py-[35px] border-[#2563EB] hover:shadow-ga4Show rounded-lg flex flex-col justify-between items-center gap-[27px]'>
+                            <div className='border h-[190px] xl:h-[200px] w-[180px] xl:w-[205px] px-[10px] xl:px-[14px] py-[25px] xl:py-[35px] border-[#2563EB] hover:shadow-ga4Show rounded-lg flex flex-col justify-between items-center gap-[27px]'>
                                 <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/settings%20(7).png' alt='' />
-                                <div className='text-[#0F172A] text-xs text-center'>GA4 Setup, Reporting & Debugging</div>
+                                <div className='text-[#0F172A] text-xs xl:text-sm text-center'>GA4 Setup, Reporting & Debugging</div>
                             </div>
-                            <div className='border h-[190px] w-[180px] xl:w-[205px] px-[10px] xl:px-[14px] py-[25px] xl:py-[35px] border-[#2563EB] hover:shadow-ga4Show rounded-lg flex flex-col justify-between items-center gap-[27px]'>
+                            <div className='border h-[190px] xl:h-[200px] w-[180px] xl:w-[205px] px-[10px] xl:px-[14px] py-[25px] xl:py-[35px] border-[#2563EB] hover:shadow-ga4Show rounded-lg flex flex-col justify-between items-center gap-[27px]'>
                                 <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/dashboard%20(13).png' alt='' />
-                                <div className='text-[#0F172A] text-xs text-center'>Custom Dashboards via Looker Studio & BigQuery</div>
+                                <div className='text-[#0F172A] text-xs xl:text-sm text-center'>Custom Dashboards via Looker Studio & BigQuery</div>
                             </div>
-                            <div className='border h-[190px] w-[180px] xl:w-[205px] px-[10px] xl:px-[14px] py-[25px] xl:py-[35px] border-[#2563EB] hover:shadow-ga4Show rounded-lg flex flex-col justify-between items-center gap-[27px]'>
+                            <div className='border h-[190px] xl:h-[200px] w-[180px] xl:w-[205px] px-[10px] xl:px-[14px] py-[25px] xl:py-[35px] border-[#2563EB] hover:shadow-ga4Show rounded-lg flex flex-col justify-between items-center gap-[27px]'>
                                 <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/customer-segment%20(2).png' alt='' />
-                                <div className='text-[#0F172A] text-xs text-center'>Audience Segmentation & Funnel Analysis</div>
+                                <div className='text-[#0F172A] text-xs xl:text-sm text-center'>Audience Segmentation & Funnel Analysis</div>
                             </div>
-                            <div className='border h-[190px] w-[180px] xl:w-[205px] px-[10px] xl:px-[14px] py-[25px] xl:py-[35px] border-[#2563EB] hover:shadow-ga4Show rounded-lg flex flex-col justify-between items-center gap-[27px]'>
+                            <div className='border h-[190px] xl:h-[200px] w-[180px] xl:w-[205px] px-[10px] xl:px-[14px] py-[25px] xl:py-[35px] border-[#2563EB] hover:shadow-ga4Show rounded-lg flex flex-col justify-between items-center gap-[27px]'>
                                 <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/data-collection%20(8).png' alt='' />
-                                <div className='text-[#0F172A] text-xs text-center'>Privacy-Compliant Data Collection</div>
+                                <div className='text-[#0F172A] text-xs xl:text-sm text-center'>Privacy-Compliant Data Collection</div>
                             </div>
-                            <div className='border h-[190px] w-[180px] xl:w-[205px] px-[10px] xl:px-[14px] py-[25px] xl:py-[35px] border-[#2563EB] hover:shadow-ga4Show rounded-lg flex flex-col justify-between items-center gap-[27px]'>
+                            <div className='border h-[190px] xl:h-[200px] w-[180px] xl:w-[205px] px-[10px] xl:px-[14px] py-[25px] xl:py-[35px] border-[#2563EB] hover:shadow-ga4Show rounded-lg flex flex-col justify-between items-center gap-[27px]'>
                                 <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/order-tracking%20(1).png' alt='' />
-                                <div className='text-[#0F172A] text-xs text-center'>Enhanced Ecommerce <br></br>Tracking</div>
+                                <div className='text-[#0F172A] text-xs xl:text-sm text-center'>Enhanced Ecommerce <br></br>Tracking</div>
                             </div>
                         </div>
                         <div className="lg:hidden md:mt-2 py-8 carousel-custom overflow-hidden">
@@ -679,41 +696,47 @@ export default function Ga42({ brandsdata }) {
                 <section className='px-[4%] 3xl:px-[6%] pt-8 pb-0'>
                     <div className='text-[34px] font-extrabold text-center'>Case Studies</div>
                     <div className='grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-20 justify-items-center items-center py-5 md:py-10'>
-                        <div className='flex flex-col justify-between max-md:gap-5 md:h-[430px] xl:h-[480px] 2xl:h-[524px]'>
-                            <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/cs_1.png' alt='' className='' />
-                            <div className='text-[#111D15] text-xl lg:text-2xl font-semibold'>UA to GA4 Migration</div>
-                            <div className='text-[#666666] text-sm md:text-base'>The migration process was smooth and successful without any data loss, increasing efficiency and reducing manual effort by 30%.</div>
-                            <a href='/case-studies/ua-to-ga4-migration-for-a-website' target='_blank'>
-                                <button className='ga4butn-opposite group w-max flex gap-2 items-center'>
-                                    <div className=''>Read Full</div>
-                                    <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Icon.png' alt='' className='block group-hover:hidden' />
-                                    <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Icon%20(1).png' alt='' className='hidden group-hover:block' />
-                                </button>
-                            </a>
+                        <div className='flex flex-col max-md:gap-5 md:h-[510px] xl:h-[620px] 2xl:h-[664px] 3xl:h-[730px] 3xl:w-[500px]'>
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/cs/1748238244750565.png' alt='Mapped GA4 Data with Backend at 99% Accuracy Using GTM' className='rounded-xl' />
+                            <div className='flex flex-col justify-between h-full gap-3 md:mt-5'>
+                                <div className='text-[#111D15] text-lg xl:text-2xl font-semibold'>How We Mapped GA4 Data with Backend at 99% Accuracy Using GTM</div>
+                                <div className='text-[#666666] text-sm xl:text-base'>By leveraging Google Tag Manager (GTM) and custom scripts, we achieved 99% accuracy in subscription event tracking without backend support.</div>
+                                <a href='/case-studies/ga4-backend-data-mapping-accuracy-gtm' target='_blank'>
+                                    <button className='ga4butn-opposite group w-max flex gap-2 items-center'>
+                                        <div className=''>Read Full</div>
+                                        <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Icon.png' alt='' className='block group-hover:hidden' />
+                                        <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Icon%20(1).png' alt='' className='hidden group-hover:block' />
+                                    </button>
+                                </a>
+                            </div>
                         </div>
-                        <div className='flex flex-col justify-between max-md:gap-5 md:h-[430px] xl:h-[480px] 2xl:h-[524px]'>
-                            <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/cs_2.png' alt='' className='' />
-                            <div className='text-[#111D15] text-xl lg:text-2xl font-semibold'>Enhanced Ecommerce Implementation</div>
-                            <div className='text-[#666666] text-sm md:text-base'>We successfully implemented 90% of purchase events, with the exception of UA, which is at 70% and all GA4 enhanced ecommerce events</div>
-                            <a href='/case-studies/ga4-enhanced-ecommerce-implementation-using-gtm-and-shopify-integration' target='_blank'>
-                                <button className='ga4butn-opposite group w-max flex gap-2 items-center'>
-                                    <div className=''>Read Full</div>
-                                    <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Icon.png' alt='' className='block group-hover:hidden' />
-                                    <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Icon%20(1).png' alt='' className='hidden group-hover:block' />
-                                </button>
-                            </a>
+                        <div className='flex flex-col justify-between max-md:gap-5 md:h-[510px] xl:h-[620px] 2xl:h-[664px] 3xl:h-[730px] 3xl:w-[500px]'>
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/cs/shopify.jpg' alt='Enhanced Ecommerce Implementation' className='rounded-xl' />
+                            <div className='flex flex-col justify-between h-full gap-3 md:mt-5'>
+                                <div className='text-[#111D15] text-lg xl:text-2xl font-semibold 3xl:mt-1'>GA4 Enhanced Ecommerce Implementation</div>
+                                <div className='text-[#666666] text-sm xl:text-base'>We successfully implemented 90% of purchase events, with the exception of UA, which is at 70% and all GA4 enhanced ecommerce events and Shopify parameters are being successfully sent to GA4</div>
+                                <a href='/case-studies/ga4-enhanced-ecommerce-implementation-using-gtm-and-shopify-integration' target='_blank'>
+                                    <button className='ga4butn-opposite group w-max flex gap-2 items-center'>
+                                        <div className=''>Read Full</div>
+                                        <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Icon.png' alt='' className='block group-hover:hidden' />
+                                        <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Icon%20(1).png' alt='' className='hidden group-hover:block' />
+                                    </button>
+                                </a>
+                            </div>
                         </div>
-                        <div className='flex flex-col justify-between max-md:gap-5 md:h-[430px] xl:h-[480px] 2xl:h-[524px]'>
-                            <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/cs_2.png' alt='' className='' />
-                            <div className='text-[#111D15] text-xl lg:text-2xl font-semibold'>Enhanced Ecommerce Implementation</div>
-                            <div className='text-[#666666] text-sm md:text-base'>We successfully implemented 90% of purchase events, with the exception of UA, which is at 70% and all GA4 enhanced ecommerce events </div>
-                            <a href='/case-studies/ga4-enhanced-ecommerce-implementation-using-gtm-and-shopify-integration' target='_blank'>
-                                <button className='ga4butn-opposite group w-max flex gap-2 items-center'>
-                                    <div className=''>Read Full</div>
-                                    <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Icon.png' alt='' className='block group-hover:hidden' />
-                                    <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Icon%20(1).png' alt='' className='hidden group-hover:block' />
-                                </button>
-                            </a>
+                        <div className='flex flex-col justify-between max-md:gap-5 md:h-[510px] xl:h-[620px] 2xl:h-[664px] 3xl:h-[730px] 3xl:w-[500px]'>
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/cs/1729089625023594.png' alt='Boosting Conversion Rates with Customised Cookie Consent Mode' className='rounded-xl' />
+                            <div className='flex flex-col justify-between h-full gap-3 md:mt-5'>
+                                <div className='text-[#111D15] text-lg xl:text-2xl font-semibold'>Boosting Conversion Rates with Customised Cookie Consent Mode</div>
+                                <div className='text-[#666666] text-sm xl:text-base'>We achieved improved conversion rate by 12% and reduced bounce rates by 10%.</div>
+                                <a href='/case-studies/boosting-conversion-rates-with-customised-cookie-consent-mode' target='_blank'>
+                                    <button className='ga4butn-opposite group w-max flex gap-2 items-center'>
+                                        <div className=''>Read Full</div>
+                                        <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Icon.png' alt='' className='block group-hover:hidden' />
+                                        <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Icon%20(1).png' alt='' className='hidden group-hover:block' />
+                                    </button>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -722,10 +745,10 @@ export default function Ga42({ brandsdata }) {
                 <ScrollElement id="testimonial" name="testimonial"></ScrollElement>
                 <section className='px-[4%] 3xl:px-[6%] pb-12'>
                     <div className='w-full mt-8 max-md:flex-col md:flex justify-between md:gap-5 items-center'>
-                        <div className="md:w-[40%] flex flex-col gap-3 md:gap-6">
+                        <div className="md:w-[40%] flex flex-col gap-3 md:gap-8">
                             <div className='text-2xl xl:text-[32px] 2xl:text-[34px] font-bold xl:leading-10'>Trusted by Brands,<br></br> Loved by Clients</div>
                             <div className='text-[#666666] text-xs xl:text-sm 2xl:text-base'>Positive outcomes speak louder than promises. Here's what our<br className='max-lg:hidden'></br> clients say about their journey with us.</div>
-                            <div className='flex items-center gap-3 md:mt-3'>
+                            <div className='flex items-center gap-3 md:mt-3 xl:mt-5'>
                                 <button
                                     onClick={handlePrevTestimonial}
                                     className="group"
@@ -845,14 +868,26 @@ export default function Ga42({ brandsdata }) {
                         <div className='text-white text-base md:text-[28px] font-bold lg:leading-8'>Let’s Build Smarter Analytics Together</div>
                         <div className='text-xs text-white max-lg:pt-2 lg:pt-3'>Partner with one of the leading Analytics Service Providers and unlock the full<br className='max-md:hidden'></br> potential of GA4. Ready to transform your data strategy?</div>
                     </div>
-                    <div className=''>
-                        <div onClick={scrolling} className='h-[45px] md:h-[50px] flex cursor-pointer items-center justify-between w-full lg:w-[400px] 2xl:w-[590px] border border-white'>
-                            <div className='text-white pl-3 pr-2 md:pr-5 lg:pl-[22px] py-3 text-[11px] md:text-sm 2xl:text-base'>
+                    <div onClick={scrolling} className="flex cursor-pointer items-center rounded-md ">
+                        <div
+
+                            className="relative overflow-hidden rounded-l-[5px] group text-white h-[45px] md:h-[50px] flex items-center justify-between w-full lg:w-[370px] 2xl:w-[540px] border border-white hover:border-r-[#2563EB]"
+                        >
+                            {/* Background slider */}
+                            <div className="absolute inset-0 bg-white -translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out z-0"></div>
+
+                            {/* Text Content */}
+                            <div className="relative z-10 pl-3 pr-2 md:pr-5 lg:pl-[22px] py-3 text-[11px] md:text-sm 2xl:text-base text-white group-hover:text-[#2563EB] transition-colors duration-500">
                                 Hire a Certified Google Analytics Expert Today
                             </div>
-                            <div className='bg-white px-3 h-full flex justify-center items-center'>
-                                <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/tap%20(1)%201.png' alt='' />
-                            </div>
+                        </div>
+
+                        <div className="h-[45px] md:h-[50px] bg-white px-3 flex justify-center items-center group w-14 rounded-r-[5px]">
+                            <img
+                                src="https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/tap%20(1)%201.png"
+                                alt=""
+                                className="group-hover:w-7 w-8 transition-all duration-300"
+                            />
                         </div>
                     </div>
                 </footer>
