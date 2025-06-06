@@ -265,6 +265,9 @@ export default function Ga4({ brandsdata }) {
   }
   return (
     <>
+      <Head>
+        <link rel="icon" href="https://storage.googleapis.com/website-bucket-uploads/static/favicon.png" type="image/icon type"></link>
+      </Head>
       <MetaSchemaOg
         url="https://analyticsliv.com/ga4"
         title="GA4 Consulting Services by Certified Experts"
@@ -716,7 +719,7 @@ export default function Ga4({ brandsdata }) {
             </div>
             <div className='flex flex-col justify-between max-md:gap-5 md:h-[420px] lg:h-[480px] xl:h-[560px] 2xl:h-[644px] 3xl:h-[730px] 3xl:w-[500px]'>
               <img src='https://storage.googleapis.com/website-bucket-uploads/cs/shopify.jpg' alt='Enhanced Ecommerce Implementation' className='rounded-xl' />
-              <div className='flex flex-col justify-between h-full gap-3 md:mt-5'>
+              <div className='flex flex-col justify-between h-full gap-3 md:mt-6'>
                 <h3 className='text-[#111D15] text-lg xl:text-[22px] 2xl:text-2xl font-semibold 3xl:mt-1' style={{
                   display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden",
                 }}>GA4 Enhanced Ecommerce Implementation</h3>
