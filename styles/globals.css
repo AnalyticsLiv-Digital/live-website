@@ -702,7 +702,7 @@ input[type=number] {
 /* Custom styling for the dots within the specific carousel */
 .carousel-custom1 .slick-dots {
   bottom: -70px;
-    display: flex !important;
+  display: flex !important;
   justify-content: flex-start;
   margin-left: 10px;
   margin-top: 10px;
@@ -755,6 +755,7 @@ input[type=number] {
   background-color: #333;
   /* Background color of the active dot */
 }
+
 /* new design buttons */
 
 .csbutn {
@@ -961,7 +962,8 @@ input[type=number] {
   transition: all 0.3s linear;
   z-index: -1;
 }
- /* || router.pathname == "/ga42" */
+
+/* || router.pathname == "/ga42" */
 /* Homepage header-css */
 .hoverable:hover .mega-menu {
   opacity: 1;
@@ -2148,5 +2150,11 @@ iframe {
 
   .react-chatbot-kit-user-chat-message-arrow {
     display: none;
+  }
+}
+
+@media (max-width: 797px) {
+  .ga4butn {
+    @apply relative overflow-hidden z-10 bg-[#EA580C] text-[#fff] border border-[#EA580C] cursor-pointer text-[15px] font-medium not-italic inline rounded-[8px] py-[8px] px-[15px] transition-all duration-300 ease-linear hover:text-[#EA580C]
   }
 }
