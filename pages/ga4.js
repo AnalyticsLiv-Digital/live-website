@@ -401,13 +401,13 @@ export default function Ga4({ brandsdata }) {
         </div>
 
         {/* landing */}
-        <section className='flex max-md:flex-col justify-between items-center max-md:text-center px-[4%] 3xl:px-[6%] max-md:pt-12 md:pt-3 lg:mt-6 lg:mb-3 3xl:mb-6 gap-10'>
+        <section className='flex max-md:flex-col justify-between items-center max-md:text-center px-[4%] 3xl:px-[6%] max-md:pt-7 md:pt-3 lg:mt-6 lg:mb-3 3xl:mb-6 gap-10'>
           <div className='md:w-[70%] lg:w-[50%] 2xl:w-[40%] 3xl:w-[52%] flex flex-col gap-7 md:gap-10'>
-            <h1 className='text-[#0F172A] text-2xl xl:text-[28px] 2xl:text-[32px] 3xl:text-[46px] 3xl:leading-[50px] font-extrabold'>Google Analytics 4 <span className='relative z-10'>(GA4)<img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Vector%2014.png' alt='analytics service providers' className='absolute right-0 top-8 3xl:top-[50px] z-20' /></span><br className='max-lg:hidden'></br> Implementation and Consulting to<br className='max-2xl:hidden'></br> Power Smarter Decisions</h1>
+            <h1 className='text-[#0F172A] text-2xl xl:text-[28px] 2xl:text-[32px] 3xl:text-[46px] 3xl:leading-[50px] font-extrabold'>Google Analytics 4 <span className='relative z-10'>(GA4)<img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Vector%2014.png' alt='analytics service providers' className='absolute right-0 top-7 xl:top-8 2xl:top-[35px] 3xl:top-[50px] z-20' /></span><br className='max-lg:hidden'></br> Implementation and Consulting to<br className='max-2xl:hidden'></br> Power Smarter Decisions</h1>
             <h4 className='text-[#0F172A] text-[11px] xl:text-xs 2xl:text-sm font-normal'>As a leading Google Analytics Certified Agency, AnalyticsLiv specializes in<br className='max-lg:hidden'></br> custom Google Analytics 4 Consulting Services. Whether you’re looking to<br className='max-lg:hidden'></br> implement GA4 from scratch, or improve existing setups, our certified team of<br className='max-lg:hidden'></br> Google Analytics Consultants and Data Analytics Consultants is here to help</h4>
-            <div className='flex max-md:items-center lg:items-center gap-3 lg:gap-11 max-lg:flex-col'>
+            <div className='flex max-md:items-center max-md:justify-center lg:items-center gap-5 md:gap-3 lg:gap-11 max-md:flex-row max-lg:flex-col'>
               <button onClick={scrolling} className="ga4butn w-max">Call Us Now</button>
-              <button onClick={() => setIsVideoOpen(true)} className='group flex items-center gap-3'>
+              <button onClick={() => setIsVideoOpen(true)} className='group flex items-center gap-1 md:gap-3'>
                 <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/ytplay.png' alt='Data Analytics Consultant' />
                 <div className='text-lg font-bold text-[#2563EB] group-hover:underline'>Client Success</div>
               </button>
@@ -458,7 +458,7 @@ export default function Ga4({ brandsdata }) {
                 </button>
               </div>
             </div>
-            <div className="md:mt-2 pt-8 pb-20 lg:pt-6 lg:pb-20 carousel-custom1 overflow-hidden">
+            <div className="md:mt-2 pt-8 max-md:pb-12 md:pb-20 lg:pt-6 lg:pb-20 carousel-custom md:carousel-custom1 overflow-hidden">
               <Slider ref={sliderRef} {...settings}>
                 {cardsData?.map((card, index) => (
                   <div>
@@ -674,7 +674,7 @@ export default function Ga4({ brandsdata }) {
           </div>
           <div className='flex flex-col gap-5 2xl:gap-6'>
             <h2 className='font-extrabold text-[30px] 2xl:text-[40px] text-[#0F172A] leading-9 md:leading-[44px]'>
-              Why Businesses Hire Our Google<br></br> Analytics Experts
+              Why Businesses Hire Our Google<br className='max-md:hidden'></br> Analytics Experts
             </h2>
             <div className='text-[#475569] text-sm 2xl:text-[15px] flex flex-col gap-1'>
               <h4>Trusted by global brands</h4>
@@ -701,7 +701,7 @@ export default function Ga4({ brandsdata }) {
           <div className='grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-20 justify-items-center items-center py-5 md:py-10'>
             <div className='flex flex-col max-md:gap-5 md:h-[420px] lg:h-[480px] xl:h-[560px] 2xl:h-[644px] 3xl:h-[730px] 3xl:w-[500px]'>
               <img src='https://storage.googleapis.com/website-bucket-uploads/cs/1748238244750565.png' alt='Mapped GA4 Data with Backend at 99% Accuracy Using GTM' className='rounded-xl' />
-              <div className='flex flex-col justify-between h-full gap-3 md:mt-5'>
+              <div className='flex flex-col md:justify-between md:h-full gap-3 md:mt-5'>
                 <h3 className='text-[#111D15] text-lg xl:text-[22px] 2xl:text-2xl font-semibold' style={{
                   display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden",
                 }}>How We Mapped GA4 Data with Backend at 99% Accuracy Using GTM</h3>
@@ -719,7 +719,7 @@ export default function Ga4({ brandsdata }) {
             </div>
             <div className='flex flex-col justify-between max-md:gap-5 md:h-[420px] lg:h-[480px] xl:h-[560px] 2xl:h-[644px] 3xl:h-[730px] 3xl:w-[500px]'>
               <img src='https://storage.googleapis.com/website-bucket-uploads/cs/shopify.jpg' alt='Enhanced Ecommerce Implementation' className='rounded-xl' />
-              <div className='flex flex-col justify-between h-full gap-3 md:mt-6'>
+              <div className='flex flex-col md:justify-between md:h-full gap-3 md:mt-6'>
                 <h3 className='text-[#111D15] text-lg xl:text-[22px] 2xl:text-2xl font-semibold 3xl:mt-1' style={{
                   display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden",
                 }}>GA4 Enhanced Ecommerce Implementation</h3>
@@ -737,7 +737,7 @@ export default function Ga4({ brandsdata }) {
             </div>
             <div className='flex flex-col justify-between max-md:gap-5 md:h-[420px] lg:h-[480px] xl:h-[560px] 2xl:h-[644px] 3xl:h-[730px] 3xl:w-[500px]'>
               <img src='https://storage.googleapis.com/website-bucket-uploads/cs/1729089625023594.png' alt='Boosting Conversion Rates with Customised Cookie Consent Mode' className='rounded-xl' />
-              <div className='flex flex-col justify-between h-full gap-3 md:mt-5'>
+              <div className='flex flex-col md:justify-between md:h-full gap-3 md:mt-5'>
                 <h3 className='text-[#111D15] text-lg xl:text-[22px] 2xl:text-2xl font-semibold' style={{
                   display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden",
                 }}>Boosting Conversion Rates with Customised Cookie Consent Mode</h3>
@@ -761,9 +761,25 @@ export default function Ga4({ brandsdata }) {
         <section className='px-[4%] 3xl:px-[6%] pb-12'>
           <div className='w-full mt-8 max-md:flex-col md:flex justify-between md:gap-5 items-center'>
             <div className="md:w-[40%] flex flex-col gap-3 md:gap-8">
-              <div className='text-2xl xl:text-[32px] 2xl:text-[34px] font-bold xl:leading-10'>Trusted by Brands,<br></br> Loved by Clients</div>
+              <div className='flex justify-between items-center'>
+                <div className='text-[23px] xl:text-[32px] 2xl:text-[34px] font-bold xl:leading-10'>Trusted by Brands,<br></br> Loved by Clients</div>
+                <div className='flex md:hidden items-center gap-2'>
+                  <button
+                    onClick={handlePrevTestimonial}
+                    className="group"
+                  >
+                    <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Button.png' alt='left vector' className='' />
+                  </button>
+                  <button
+                    onClick={handleNextTestimonial}
+                    className="group"
+                  >
+                    <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Button%20(1).png' alt='right vector' className='' />
+                  </button>
+                </div>
+              </div>
               <div className='text-[#666666] text-xs xl:text-sm 2xl:text-base'>Positive outcomes speak louder than promises. Here's what our<br className='max-lg:hidden'></br> clients say about their journey with us.</div>
-              <div className='flex items-center gap-3 md:mt-3 xl:mt-5'>
+              <div className='flex max-md:hidden items-center gap-3 md:mt-3 xl:mt-5'>
                 <button
                   onClick={handlePrevTestimonial}
                   className="group"
