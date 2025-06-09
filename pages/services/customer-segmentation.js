@@ -122,10 +122,10 @@ const customersegmentation = () => {
                                 </h1>
                                 <div className='flex max-[425px]:flex-wrap flex-nowrap items-center lg:justify-start justify-center gap-5'>
                                     <Link href="/contact?id=programatic-advertising">
-                                        <button className="butn px-6 mt-6">REQUEST A DEMO</button>
+                                        <button className="contact-us-btn butn px-6 mt-6">REQUEST A DEMO</button>
                                     </Link>
                                     <Link href="/contact?id=programatic-advertising">
-                                        <button className="butn px-6 max-[425px]:mt-0 mt-6">CONTACT US</button>
+                                        <button className="contact-us-btn butn px-6 max-[425px]:mt-0 mt-6">CONTACT US</button>
                                     </Link>
                                 </div>
                             </div>

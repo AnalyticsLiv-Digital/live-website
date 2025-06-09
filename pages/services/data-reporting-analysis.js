@@ -128,7 +128,7 @@ export default function AutoPlay() {
               </p>{" "}
               <br />
               <Link href="/contact?id=data-reporting">
-                <button class="butn">Get in Touch</button>
+                <button class="contact-us-btn butn">Get in Touch</button>
               </Link>
             </div>
             <div class="right flex lg:justify-end">

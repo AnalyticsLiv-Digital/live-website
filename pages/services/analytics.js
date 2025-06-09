@@ -153,7 +153,7 @@ const index = () => {
               </p>
               <br />
               <Link href="/contact?id=analytics">
-                <button class="butn">Get in Touch</button>
+                <button class="butn contact-us-btn">Get in Touch</button>
               </Link>
             </div>
             <div class="right flex lg:justify-end">
@@ -494,7 +494,7 @@ const index = () => {
             </Slider>
             <div class="text-center pt-16">
               <Link href="/contact?id=analytics">
-                <button class="butn">Explore Basic Services</button>
+                <button class="contact-us-btn-basic butn">Explore Basic Services</button>
               </Link>
             </div>
           </div>
@@ -623,7 +623,7 @@ const index = () => {
             </Slider>
             <div class="text-center pt-16">
               <Link href="/contact?id=advance-analytics">
-                <button class="butn">Explore Advance Services</button>
+                <button class="contact-us-btn-advance butn">Explore Advance Services</button>
               </Link>
             </div>
           </div>
@@ -659,17 +659,17 @@ const index = () => {
             <br />
             <div class="flex flex-wrap justify-center gap-6">
               <Link href="/contact?id=ecommerce-audit">
-                <button class="butn px-6 py-4 text-white text-lg rounded-lg shadow-md  transition-all duration-200 ease-in-out">
+                <button class="contact-us-btn1 butn px-6 py-4 text-white text-lg rounded-lg shadow-md  transition-all duration-200 ease-in-out">
                   E-commerce Audit
                 </button>
               </Link>
               <Link href="/contact?id=pixel-audit">
-                <button class="butn px-6 py-4 text-white text-lg rounded-lg shadow-md  transition-all duration-200 ease-in-out">
+                <button class="contact-us-btn1 butn px-6 py-4 text-white text-lg rounded-lg shadow-md  transition-all duration-200 ease-in-out">
                   Pixel Audit
                 </button>
               </Link>
               <Link href="/contact?id=events-audit">
-                <button class="butn px-6 py-4 text-white text-lg rounded-lg shadow-md  transition-all duration-200 ease-in-out">
+                <button class="contact-us-btn1 butn px-6 py-4 text-white text-lg rounded-lg shadow-md  transition-all duration-200 ease-in-out">
                   Events Audit
                 </button>
               </Link>
@@ -687,18 +687,18 @@ const index = () => {
             <br />
             <div class="flex flex-wrap justify-center gap-6">
               <Link href="/contact?id=revenue-discrepancy">
-                <button class="butn px-6 py-4  text-white text-lg rounded-lg shadow-md  transition-all duration-200 ease-in-out">
+                <button class="contact-us-btn1 butn px-6 py-4  text-white text-lg rounded-lg shadow-md  transition-all duration-200 ease-in-out">
                   Revenue/ conversion <br />
                   discrepancies
                 </button>
               </Link>
               <Link href="/contact?id=gtm-health-check">
-                <button class="butn px-6 py-4  text-white text-lg rounded-lg shadow-md  transition-all duration-200 ease-in-out">
+                <button class="contact-us-btn1 butn px-6 py-4  text-white text-lg rounded-lg shadow-md  transition-all duration-200 ease-in-out">
                   Tag Manager <br /> Health Check
                 </button>
               </Link>
               <Link href="/contact?id=firebase-healthcheck">
-                <button class="butn px-6 py-4  text-white text-lg rounded-lg shadow-md  transition-all duration-200 ease-in-out">
+                <button class="contact-us-btn1 butn px-6 py-4  text-white text-lg rounded-lg shadow-md  transition-all duration-200 ease-in-out">
                   GA4, GTM, Firebase <br />
                   Health Check
                 </button>

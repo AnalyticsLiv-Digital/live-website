@@ -290,10 +290,10 @@ export default function Ga4({ brandsdata }) {
           </div>
           <div className="mdLw-[75%] 2xl:w-[55%] text-[#0F172A] lg:flex text-center items-center justify-evenly">
             <ul className="lg:flex w-full text-sm xl:text-base font-semibold text-left lg:text-center z-[-1] lg:z-auto lg:mr-4 lg:w-auto lg:space-x-6 items-center tracking-wide cursor-pointer">
-              <button onClick={scrolling1} className="hover:underline hover:text-black">Expertise</button>
-              <button onClick={scrolling2} className="hover:underline hover:text-black">Services</button>
-              <button onClick={scrolling3} className="hover:underline hover:text-black">Case Studies</button>
-              <button onClick={scrolling4} className="hover:underline hover:text-black">Testimonial</button>
+              <button onClick={scrolling1} className="hover:underline hover:text-black ga4-navbar">Expertise</button>
+              <button onClick={scrolling2} className="hover:underline hover:text-black ga4-navbar">Services</button>
+              <button onClick={scrolling3} className="hover:underline hover:text-black ga4-navbar">Case Studies</button>
+              <button onClick={scrolling4} className="hover:underline hover:text-black ga4-navbar">Testimonial</button>
             </ul>
             <a href="tel:8320576622" className='max-2xl:ml-5'>
               <button className="ga4butn-opposite">Call Us Now</button>
@@ -365,14 +365,14 @@ export default function Ga4({ brandsdata }) {
               <div className="bg-white z-50 lg:hidden absolute w-full" id="mobile-menu">
                 <div className="px-4 pt-2 z-50 pb-3 space-y-1 sm:px-3">
                   <p onClick={() => { setIsOpen(!isOpen); scrolling1(); }}
-                    className=" text-slate-900 block px-3 py-2 rounded-md text-base font-medium"
+                    className=" text-slate-900 block px-3 py-2 rounded-md text-base font-medium ga4-navbar"
                   >
                     <div>Expertise</div>
                   </p>
 
                   <p onClick={() => { setIsOpen(!isOpen); scrolling2(); }}
                     href="#"
-                    className="text-slate-900 block px-3 py-2 rounded-md text-base font-medium"
+                    className="text-slate-900 block px-3 py-2 rounded-md text-base font-medium ga4-navbar"
                   >
                     <div >Services</div>
 
@@ -380,14 +380,14 @@ export default function Ga4({ brandsdata }) {
 
                   <p onClick={() => { setIsOpen(!isOpen); scrolling3(); }}
 
-                    className="text-slate-900 block px-3 py-2 rounded-md text-base font-medium"
+                    className="text-slate-900 block px-3 py-2 rounded-md text-base font-medium ga4-navbar"
                   >
                     Case Studies
                   </p>
 
                   <p onClick={() => { setIsOpen(!isOpen); scrolling4(); }}
 
-                    className="text-slate-900 block px-3 py-2 rounded-md text-base font-medium"
+                    className="text-slate-900 block px-3 py-2 rounded-md text-base font-medium ga4-navbar"
                   >
                     Testimonial
                   </p>
@@ -406,8 +406,8 @@ export default function Ga4({ brandsdata }) {
             <h1 className='text-[#0F172A] text-2xl xl:text-[28px] 2xl:text-[32px] 3xl:text-[46px] 3xl:leading-[50px] font-extrabold'>Google Analytics 4 <span className='relative z-10'>(GA4)<img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Vector%2014.png' alt='analytics service providers' className='absolute right-0 top-7 xl:top-8 2xl:top-[35px] 3xl:top-[50px] z-20' /></span><br className='max-lg:hidden'></br> Implementation and Consulting to<br className='max-2xl:hidden'></br> Power Smarter Decisions</h1>
             <h4 className='text-[#0F172A] text-[11px] xl:text-xs 2xl:text-sm font-normal'>As a leading Google Analytics Certified Agency, AnalyticsLiv specializes in<br className='max-lg:hidden'></br> custom Google Analytics 4 Consulting Services. Whether you’re looking to<br className='max-lg:hidden'></br> implement GA4 from scratch, or improve existing setups, our certified team of<br className='max-lg:hidden'></br> Google Analytics Consultants and Data Analytics Consultants is here to help</h4>
             <div className='flex max-md:items-center max-md:justify-center lg:items-center gap-5 md:gap-3 lg:gap-11 max-md:flex-row max-lg:flex-col'>
-              <button onClick={scrolling} className="ga4butn w-max">Call Us Now</button>
-              <button onClick={() => setIsVideoOpen(true)} className='group flex items-center gap-1 md:gap-3'>
+              <button onClick={scrolling} className="contact-us-btn ga4butn w-max">Call Us Now</button>
+              <button onClick={() => setIsVideoOpen(true)} className='yt-video group flex items-center gap-1 md:gap-3'>
                 <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/ytplay.png' alt='Data Analytics Consultant' />
                 <div className='text-lg font-bold text-[#2563EB] group-hover:underline'>Client Success</div>
               </button>
@@ -686,7 +686,7 @@ export default function Ga4({ brandsdata }) {
               Whether you're a startup or enterprise, we’re one of the few Data Analytics<br></br> Service Providers
               offering both deep technical implementation and strategic<br></br> consulting.
             </div>
-            <div onClick={scrolling} className='flex items-center gap-6 group w-max'>
+            <div onClick={scrolling} className='contact-us-btn flex items-center gap-6 group w-max'>
               <div className='text-[#2563EB] text-base font-semibold cursor-pointer'>Connect with expert today</div>
               <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Vector.png' alt='certified google analytics expert'
                 className='cursor-pointer transition-transform duration-300 ease-in-out group-hover:-translate-x-3' />
@@ -899,7 +899,7 @@ export default function Ga4({ brandsdata }) {
             <div className='text-white text-base md:text-[28px] font-bold lg:leading-8'>Let’s Build Smarter Analytics Together</div>
             <div className='text-xs text-white max-lg:pt-2 lg:pt-3'>Partner with one of the leading Analytics Service Providers and unlock the full<br className='max-md:hidden'></br> potential of GA4. Ready to transform your data strategy?</div>
           </div>
-          <div onClick={scrolling} className="flex cursor-pointer items-center rounded-md ">
+          <div onClick={scrolling} className="contact-us-btn flex cursor-pointer items-center rounded-md ">
             <div
 
               className="relative overflow-hidden rounded-l-[5px] group text-white h-[45px] md:h-[50px] flex items-center justify-between w-full lg:w-[370px] 2xl:w-[540px] border border-white hover:border-r-[#2563EB]"

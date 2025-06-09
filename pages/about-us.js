@@ -150,8 +150,8 @@ const aboutus = () => {
             <div className='text-xs xl:text-sm font-normal'>Our journey began with a simple belief: data has the power to transform businesses. Today, we are proud to be at the forefront of
               this transformation, partnering with organizations to create measurable, impactful results.</div>
             <div className='flex gap-3 lg:gap-10 max-md:mt-3'>
-              <a href='/contact'><button className='mainbutn'>Schedule a Call</button></a>
-              <a href='/contact'><button className='mainbutn-opposite'>Contact Us</button></a>
+              <a href='/contact'><button className='contact-us-btn mainbutn'>Schedule a Call</button></a>
+              <a href='/contact'><button className='contact-us-btn mainbutn-opposite'>Contact Us</button></a>
             </div>
           </div>
           <div className='max-sm:w-full max-xl:w-[40%] max-sm:flex max-sm:justify-center max-md:mt-7 max-sm:mx-auto'>

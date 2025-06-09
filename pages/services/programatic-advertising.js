@@ -97,7 +97,7 @@ const service_A = () => {
                                         <button className="butn max-[425px]:mt-0 mt-6">REQUEST A DEMO</button>
                                     </Link> */}
                                     <Link href="/contact?id=programatic-advertising">
-                                        <button className="butn max-[425px]:mt-0 mt-6">CONTACT US</button>
+                                        <button className="contact-us-btn butn max-[425px]:mt-0 mt-6">CONTACT US</button>
                                     </Link>
                                 </div>
                             </div>

@@ -146,7 +146,7 @@ const engagement = () => {
                                     </h1>
                                     <div className='flex items-center justify-center gap-5'>
                                         <Link href="/contact?id=programatic-advertising">
-                                            <button className="butn mt-2 uppercase">Contact Us</button>
+                                            <button className="contact-us-btn butn mt-2 uppercase">Contact Us</button>
                                         </Link>
                                     </div>
                                 </div>
@@ -168,7 +168,7 @@ const engagement = () => {
                                     <p className='text-[18px] leading-[30px] font-normal'>Each business problem demands a different solution. To help you address them, we have four distinct engagement models.</p>
                                 </div>
                                 <div className='pt-10 gap-10 grid lg:grid-cols-2 items-start justify-center'>
-                                    <div className='engagement1 flex items-center justify-center font-gilroy'>
+                                    <div className='engagement1 engagement-card flex items-center justify-center font-gilroy'>
                                         <div className=' border border-solid border-[#E2E2E2] rounded-[10px] p-5 xl:h-[495px] xl:w-full lg:w-[440px] max-[499px]:w-[100%] w-[500px] lg:h-[515px] relative'>
                                             <div className='flex items-center justify-between pb-3 border-b border-solid border-[#455a6475]'>
                                                 <h6 className='text-[#000] text-[18px] font-semibold leading-normal'>Project-Based Engagement</h6>
@@ -210,7 +210,7 @@ const engagement = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className='engagement2 flex items-center justify-center font-gilroy'>
+                                    <div className='engagement2 engagement-card flex items-center justify-center font-gilroy'>
                                         <div className=' border border-solid border-[#E2E2E2] rounded-[10px] p-5 xl:h-[495px] xl:w-full lg:w-[440px] max-[499px]:w-[100%] w-[500px] lg:h-[515px] relative'>
                                             <div className='flex items-center justify-between pb-3 border-b border-solid border-[#455a6475]'>
                                                 <h6 className='text-[#000] text-[18px] font-semibold leading-normal'>Monthly Retainer</h6>
@@ -252,7 +252,7 @@ const engagement = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className='engagement3 flex items-center justify-center'>
+                                    <div className='engagement3 engagement-card flex items-center justify-center'>
                                         <div className=' border border-solid border-[#E2E2E2] rounded-[10px] p-5 xl:h-[510px] xl:w-full lg:w-[440px] max-[499px]:w-[100%] w-[500px] lg:h-[540px] relative'>
                                             <div className='flex items-center justify-between pb-3 border-b border-solid border-[#455a6475]'>
                                                 <h6 className='text-[#000] text-[18px] font-semibold leading-normal'>Dedicated Resource</h6>
@@ -293,7 +293,7 @@ const engagement = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className='engagement4 flex items-center justify-center'>
+                                    <div className='engagement4 engagement-card flex items-center justify-center'>
                                         <div className=' border border-solid border-[#E2E2E2] rounded-[10px] p-5 xl:h-[510px] xl:w-full lg:w-[440px] max-[499px]:w-[100%] w-[500px] lg:h-[540px] relative'>
                                             <div className='flex items-center justify-between pb-3 border-b border-solid border-[#455a6475]'>
                                                 <h6 className='text-[#000] text-[18px] font-semibold leading-normal'>Custom Model</h6>
