@@ -16,8 +16,8 @@ const Landing = () => {
         <h1 className='text-2xl md:text-3xl lg:text-4xl 2xl:text-[45px] font-extrabold leading-7 md:leading-10 2xl:leading-[1]'>Your GMP Partner for Data Driven Media, Analytics & <br></br>Cloud Solutions.</h1>
         <h2 className='text-[15px] md:text-xl 2xl:text-2xl font-light leading-7 md:leading-7'>Data Analytics and Marketing Solutions helps businesses in gaining digital maturity through optimized utilization of data</h2>
         <div className='flex  justify-center items-center max-md:mt-2 gap-3 md:gap-12'>
-          <button className='mainbutn' onClick={scrollToGetInTouch}>Get Free Audit</button>
-          <button className='mainbutn-opposite max-sm:px-3.5' onClick={scrollToGetInTouch}>Talk to Sales</button>
+          <button className='contact-us-btn mainbutn' onClick={scrollToGetInTouch}>Get Free Audit</button>
+          <button className='contact-us-btn mainbutn-opposite max-sm:px-3.5' onClick={scrollToGetInTouch}>Talk to Sales</button>
         </div>
       </div>
     </section>

@@ -239,8 +239,8 @@ const google_tag_manager = () => {
                             touchpoint to final conversion.
                         </h3>
                         <div className='flex justify-center md:justify-start items-center gap-3 md:gap-2 lg:gap-5'>
-                            <a href='/contact'><button className='mainbutn'>Request a Demo</button></a>
-                            <div onClick={() => handleCalendly()} className='group hover:cursor-pointer flex items-center gap-2'>
+                            <a href='/contact'><button className='contact-us-btn mainbutn'>Request a Demo</button></a>
+                            <div onClick={() => handleCalendly()} className='contact-us-btn group hover:cursor-pointer flex items-center gap-2'>
                                 <button className='text-xs 2xl:text-sm translate-x-1 group-hover:translate-x-0 transition-all duration-300 font-bold max-sm:w-full max-md:text-center'>Book a Call Today</button>
                                 <div className="opacity-0 translate-x-2 sm:translate-x-8 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
                                     <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%201.svg' alt='arrow right' className='w-2' />
@@ -401,7 +401,7 @@ const google_tag_manager = () => {
                     <div className='text-base font-normal text-[#E2DEDC]'>
                         Ready to track smarter?
                     </div>
-                    <a href='/contact'><button className='mainbutn'>Book a Free Consultation</button></a>
+                    <a href='/contact'><button className='contact-us-btn mainbutn'>Book a Free Consultation</button></a>
                 </div>
                 <div className='lg:w-[60%] min-h-[250px] sm:min-h-[350px] overflow-hidden 2xl:min-h-[430px] flex'>
                     <div className='w-full lg:w-[70%] relative'>

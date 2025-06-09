@@ -33,10 +33,10 @@ const webapp = () => {
                                 </h3>
                                 <div className='flex max-[455px]:flex-wrap max-sm:justify-center flex-nowrap items-center gap-5'>
                                     <Link href="/contact?id=programatic-advertising">
-                                        <button className="butn mt-6">GET A FREE AUDIT</button>
+                                        <button className="contact-us-btn butn mt-6">GET A FREE AUDIT</button>
                                     </Link>
                                     <Link href="/contact?id=programatic-advertising">
-                                        <button className="butn max-[425px]:mt-0 mt-6">CONTACT US</button>
+                                        <button className="contact-us-btn butn max-[425px]:mt-0 mt-6">CONTACT US</button>
                                     </Link>
                                 </div>
                             </div>

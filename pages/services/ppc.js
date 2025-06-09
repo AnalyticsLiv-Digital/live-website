@@ -199,8 +199,8 @@ const Ppc = () => {
                                 to maximize ROI and drive business growth. 🚀
                             </h2>
                             <div className='flex justify-center md:justify-start items-center gap-3 md:gap-2 lg:gap-5'>
-                                <a href='/contact'><button className='mainbutn'>Talk to our PPC Expert</button></a>
-                                <div onClick={() => handleCalendly()} className='group hover:cursor-pointer flex items-center gap-2'>
+                                <a href='/contact'><button className='contact-us-btn mainbutn'>Talk to our PPC Expert</button></a>
+                                <div onClick={() => handleCalendly()} className='contact-us-btn group hover:cursor-pointer flex items-center gap-2'>
                                     <button className='text-xs 2xl:text-sm translate-x-1 group-hover:translate-x-0 transition-all duration-300 font-bold max-sm:w-full max-md:text-center'>Book a Call Today</button>
                                     <div className="opacity-0 translate-x-2 sm:translate-x-8 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
                                         <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%201.svg' alt='arrow right' className='w-2' />
@@ -286,7 +286,7 @@ const Ppc = () => {
                             </div>
                         </div>
                         <div>
-                            <a href='/contact'><button className='mainbutn'>Contact Now</button></a>
+                            <a href='/contact'><button className='contact-us-btn mainbutn'>Contact Now</button></a>
                         </div>
                     </div>
                 </section>
@@ -421,7 +421,7 @@ const Ppc = () => {
                     <div className='lg:w-[40%] bg-[#30486A] flex flex-col justify-center items-start gap-7 max-lg:py-7 px-4 lg:px-20'>
                         <h3 className='text-2xl md:text-3xl 2xl:text-4xl font-bold text-white'>Excited to Get Started with our PPC Agency?</h3>
                         <div className='text-base font-normal text-[#E2DEDC]'>Contact AnalyticsLiv, a Performance Marketing Agency for a Free Consultation.</div>
-                        <a href='/contact'><button className='mainbutn'>Contact Us Now</button></a>
+                        <a href='/contact'><button className='contact-us-btn mainbutn'>Contact Us Now</button></a>
                     </div>
                     <div className='lg:w-[60%] min-h-[250px] sm:min-h-[350px] overflow-hidden 2xl:min-h-[430px] flex'>
                         <div className='w-full lg:w-[70%] relative'>

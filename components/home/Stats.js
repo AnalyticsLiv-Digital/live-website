@@ -77,7 +77,7 @@ const Stats = () => {
                 {/* Video Slider */}
                 <div className="absolute top-[-130px] sm:top-[-180px] md:top-[-220px] lg:top-[-250px] xl:top-[-220px] 2xl:top-[-250px] left-1/2 transform -translate-x-1/2 w-[100%] sm:w-[75%] md:w-[85%] xl:w-[68%] 2xl:w-[950px] carousel-custom">
                     <Slider {...settings}>
-                        {videos.map((video) => (
+                        {videos?.map((video) => (
                             <div
                                 key={video?.id}
                                 className="relative video-container w-[100%] h-[240px] sm:h-[300px] md:h-[380px] lg:h-[450px] xl:h-[430px] 2xl:h-[480px] rounded-3xl"
