@@ -694,6 +694,26 @@ export default function Ga4({ brandsdata }) {
           </div>
         </section>
 
+        {/* Understand & Optimize */}
+        <section className='px-[4%] 3xl:px-[6%] pt-6 md:pt-8 md:pb-6 flex max-lg:flex-col justify-between items-center w-full gap-8 xl:gap-12'>
+          <div className='flex flex-col gap-6 lg:w-[50%]'>
+            <h2 className='font-extrabold text-[30px] 2xl:text-[40px] text-[#0F172A] leading-9 md:leading-[44px]'>
+              Understand & Optimize Every Step of Your Customer Journey with GA4
+            </h2>
+            <h3 className='text-sm lg:text-base 2xl:text-lg text-[#475569] font-normal'>At AnalyticsLiv, we specialize in Google Analytics 4 setup to help you unlock powerful insights through
+              advanced customer journey tracking. From first click to conversion, our Customer Journey Builder allows you
+              to visualize the complete digital customer journey map and improve every touchpoint.
+            </h3>
+            <h3 className='text-sm lg:text-base 2xl:text-lg text-[#475569] font-normal'>Using GA4's enhanced user journey tracking and customer journey analytics, we help brands track key actions like
+              form submissions in GA4, monitor user behavior across devices, and make data-driven decisions that grow revenue.
+            </h3>
+            <h3 className='text-sm lg:text-base 2xl:text-lg text-[#475569] font-normal'>Start building a smarter strategy with GA4 and take control of your customer journey tracking like never before.</h3>
+          </div>
+          <div>
+            <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Optimize_Right.png' alt='Google Analytics 4 setup' />
+          </div>
+        </section>
+
         {/* case studies */}
         <ScrollElement id="case-studies" name="case-studies"></ScrollElement>
         <section className='px-[4%] 3xl:px-[6%] pt-8 pb-0'>
