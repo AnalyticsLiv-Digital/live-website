@@ -261,7 +261,7 @@ export default function ProgrammaticAdvertising() {
             <div className='leaders bg-dvbackgrnd overflow-hidden'>
                 <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
                     <h2 className='text-[#000] text-2xl md:text-[32px] font-semibold leading-normal text-center'>Why we’re Leaders in Programmatic Advertising</h2>
-                    <p className='text-[#000] text-xs md:text-[16px] font-normal leading-normal text-center pt-7'>We Provide a Complete Programmatic Campaign Management services which include Media Planning, Campaign Setup, Creative Management, Strategy, Troubleshooting, Optimisation, Recommendation & Reporting.</p>
+                    <h3 className='text-[#000] text-xs md:text-[16px] font-normal leading-normal text-center pt-7'>We Provide a Complete Programmatic Campaign Management services which include Media Planning, Campaign Setup, Creative Management, Strategy, Troubleshooting, Optimisation, Recommendation & Reporting.</h3>
                     <Leaders />
                 </div>
             </div>
