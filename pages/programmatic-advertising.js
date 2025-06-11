@@ -207,8 +207,8 @@ export default function ProgrammaticAdvertising() {
                 </div>
                 <div className='md:w-[50%] text-start flex flex-col justify-center items-center pt-12 gap-5'>
                     <h2 className='text-2xl font-bold'>Run Brand Marketing & Performance Campaigns Programmatically</h2>
-                    <h3 className='text-sm font-normal text-justify'>At AnalyticsLiv, we are a performance focused programmatic advertising agency helping brands scale with precision. Our team uses Display & Video 360 (DV360) and Sparkler to build high-impact campaigns, leveraging programmatic buying, targeting, and optimization to maximize both reach and return on ad spend.</h3>
-                    <h3 className='text-sm font-normal text-justify'>As a full-service programmatic marketing agency, we design and execute campaigns that cover the entire digital funnel from awareness to conversion. Whether your goal is brand lift, video views, or sales, our DV360-certified experts deliver results with advanced tools, custom bidding strategies, and deep analytics.</h3>
+                    <h3 className='text-sm font-normal text-justify'>At AnalyticsLiv, we are a performance focused programmatic advertising agency helping brands scale with precision. Our team uses Display & Video 360 (DV360) and Sparkler to build high-impact campaigns, leveraging programmatic media buying, targeting, and optimization to maximize both reach and return on ad spend.</h3>
+                    <h3 className='text-sm font-normal text-justify'>As a full-service DV360 programmatic marketing agency, we design and execute campaigns that cover the entire digital funnel from awareness to conversion. Whether your goal is brand lift, video views, or sales, our DV360-certified experts deliver results with advanced tools, custom bidding strategies, and deep analytics.</h3>
                 </div>
             </section>
             <ScrollElement id="testimonials" name="testimonials" ></ScrollElement>
@@ -252,7 +252,13 @@ export default function ProgrammaticAdvertising() {
                 </div>
             </section>
             <ScrollElement id="expertise" name="expertise" ></ScrollElement>
-            <Leaders headingFontSize="32px" />
+            <div className='leaders bg-dvbackgrnd overflow-hidden'>
+                <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
+                    <h2 className='text-[#000] text-2xl md:text-[32px] font-semibold leading-normal text-center'>Why we’re Leaders in Programmatic Advertising</h2>
+                    <p className='text-[#000] text-xs md:text-[16px] font-normal leading-normal text-center pt-7'>We Provide a Complete Programmatic Campaign Management services which include Media Planning, Campaign Setup, Creative Management, Strategy, Troubleshooting, Optimisation, Recommendation & Reporting. Our expertise in DSP Marketing ensures that your campaigns run on the most effective demand-side platforms for maximum reach and performance.</p>
+                    <Leaders />
+                </div>
+            </div>
             <ScrollElement id="case-studies" name="case-studies" ></ScrollElement>
             <Casestudy />
             <Contact />
