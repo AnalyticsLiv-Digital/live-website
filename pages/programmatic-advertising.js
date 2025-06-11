@@ -216,7 +216,14 @@ export default function ProgrammaticAdvertising() {
             <Advertising />
             <ScrollElement id="services" name="services" ></ScrollElement>
             <Services />
-            <Globalreach />
+            <div className='globalreach bg-dvbackgrnd'>
+                <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
+                    <div className='innerglobl'>
+                        <h2 className='text-[#000] text-[28px] md:text-[32px] font-semibold leading-normal text-center'>Get Global Reach</h2>
+                        <Globalreach />
+                    </div>
+                </div>
+            </div>
             <Discuss />
             <Buypremium />
             <Targeting />
@@ -227,7 +234,6 @@ export default function ProgrammaticAdvertising() {
                             <div className='md:w-[70%]'>
                                 <h3 className='text-[#fff] text-[30px] font-medium'>
                                     Your Expert Partner in Programmatic Marketing
-
                                 </h3>
                                 <p className='text-[#fff] text-sm font-medium pt-4'>AnalyticsLiv is among the most trusted programmatic ad companies, delivering measurable success across industries</p>
                                 <p className='text-[#fff] text-sm font-medium pt-4 pb-8'>Whether you're looking to scale reach, drive conversions, or improve ROAS, our programmatic marketing experts are here to help.</p>
@@ -255,7 +261,7 @@ export default function ProgrammaticAdvertising() {
             <div className='leaders bg-dvbackgrnd overflow-hidden'>
                 <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
                     <h2 className='text-[#000] text-2xl md:text-[32px] font-semibold leading-normal text-center'>Why we’re Leaders in Programmatic Advertising</h2>
-                    <p className='text-[#000] text-xs md:text-[16px] font-normal leading-normal text-center pt-7'>We Provide a Complete Programmatic Campaign Management services which include Media Planning, Campaign Setup, Creative Management, Strategy, Troubleshooting, Optimisation, Recommendation & Reporting. Our expertise in DSP Marketing ensures that your campaigns run on the most effective demand-side platforms for maximum reach and performance.</p>
+                    <p className='text-[#000] text-xs md:text-[16px] font-normal leading-normal text-center pt-7'>We Provide a Complete Programmatic Campaign Management services which include Media Planning, Campaign Setup, Creative Management, Strategy, Troubleshooting, Optimisation, Recommendation & Reporting.</p>
                     <Leaders />
                 </div>
             </div>

@@ -7,7 +7,6 @@ const Globalreach = () => {
             <section className='globalreach bg-dvbackgrnd'>
                 <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
                     <div className='innerglobl'>
-                        <h2 className='text-[#000] text-[28px] md:text-[32px] font-semibold leading-normal text-center'>Get Global Reach with Trusted Google DV360 Partners</h2>
                         <div className='grid lg:grid-cols-2 gap-7 pt-10'>
                             <div className='flex max-[1023px]:justify-center'>
                                 <div className='relative flex'>
