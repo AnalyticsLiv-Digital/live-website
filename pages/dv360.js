@@ -204,13 +204,26 @@ const page = () => {
       <Advertising />
       <ScrollElement id="services" name="services" ></ScrollElement>
       <Services />
-      <Globalreach />
+      <div className='globalreach bg-dvbackgrnd'>
+        <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
+          <div className='innerglobl'>
+            <h2 className='text-[#000] text-[28px] md:text-[32px] font-semibold leading-normal text-center'>Get Global Reach with Trusted Google DV360 Partners</h2>
+            <Globalreach />
+          </div>
+        </div>
+      </div>
       <Discuss />
       <Buypremium />
       <Targeting />
       <Businessfacing />
       <ScrollElement id="expertise" name="expertise" ></ScrollElement>
-      <Leaders headingFontSize="32px" />
+      <div className='leaders bg-dvbackgrnd overflow-hidden'>
+        <div className='leaders px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
+          <h2 className='text-[#000] text-2xl md:text-[32px] font-semibold leading-normal text-center'>Why we’re Leaders in Programmatic Advertising</h2>
+          <h3 className='text-[#000] text-xs md:text-[16px] font-normal leading-normal text-center pt-7'>We Provide a Complete Programmatic Campaign Management services which include Media Planning, Campaign Setup, Creative Management, Strategy, Troubleshooting, Optimisation, Recommendation & Reporting. Our expertise in DSP Marketing ensures that your campaigns run on the most effective demand-side platforms for maximum reach and performance.</h3>
+          <Leaders />
+        </div>
+      </div>
       <ScrollElement id="case-studies" name="case-studies" ></ScrollElement>
       <Casestudy />
       <Contact />
