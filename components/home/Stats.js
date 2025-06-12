@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
@@ -11,11 +11,12 @@ import Image from 'next/image'
 const Stats = () => {
     const [counterOn, setCounterOn] = useState(true);
     const [activeVideo, setActiveVideo] = useState(null);
+    const sliderRef = useRef();
 
     const videos = [
         {
             id: 1,
-            url: "https://www.youtube.com/embed/JFOc7x5ZgaA",
+            url: "https://www.youtube.com/embed/JFOc7x5ZgaA?enablejsapi=1",
             label1: "Grow Your Business",
             label2: "Make Your Data Profitable",
             img1: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Increase.png",
@@ -71,12 +72,40 @@ const Stats = () => {
         prevArrow: <PrevArrow />,
     };
 
+    useEffect(() => {
+        const handleMessage = (event) => {
+            if (typeof event.data === "string") {
+                let data;
+                try {
+                    data = JSON.parse(event.data);
+                } catch {
+                    return;
+                }
+
+                // Detect YT events
+                if (data.event === "onStateChange") {
+                    if (data.info === 1) {
+                        // Playing
+                        sliderRef.current?.slickPause();
+                    } else if (data.info === 2 || data.info === 0) {
+                        // Paused or Ended
+                        sliderRef.current?.slickPlay();
+                    }
+                }
+            }
+        };
+
+        window.addEventListener("message", handleMessage);
+        return () => window.removeEventListener("message", handleMessage);
+    }, []);
+
+
     return (
         <section className="pt-28 sm:pt-40 md:pt-60 xl:pt-60 2xl:pt-64 h-full">
             <div className="relative bg-[#30486A] h-[170px] sm:h-[200px] lg:h-[290px] xl:h-[320px] 2xl:h-[350px] overflow-visible">
                 {/* Video Slider */}
                 <div className="absolute top-[-130px] sm:top-[-180px] md:top-[-220px] lg:top-[-250px] xl:top-[-220px] 2xl:top-[-250px] left-1/2 transform -translate-x-1/2 w-[100%] sm:w-[75%] md:w-[85%] xl:w-[68%] 2xl:w-[950px] carousel-custom">
-                    <Slider {...settings}>
+                    <Slider ref={sliderRef} {...settings}>
                         {videos?.map((video) => (
                             <div
                                 key={video?.id}
