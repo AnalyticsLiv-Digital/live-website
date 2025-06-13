@@ -263,6 +263,51 @@ export default function Ga4({ brandsdata }) {
     autoplay: true,
     autoplaySpeed: 2500,
   }
+
+
+  useEffect(() => {
+    // Create the YouTube API script tag
+    const tag = document.createElement("script");
+    tag.src = "https://www.youtube.com/iframe_api";
+    document.body.appendChild(tag);
+
+    // Declare player change handler FIRST
+    const onPlayerStateChange = (event) => {
+      const state = window.YT.PlayerState;
+      const title = "Client Success"; // Or make this dynamic if needed
+
+      switch (event.data) {
+        case state.PLAYING:
+          window.dataLayer.push({ event: "youtube_play", videoTitle: title });
+          break;
+        case state.PAUSED:
+          window.dataLayer.push({ event: "youtube_pause", videoTitle: title });
+          break;
+        case state.ENDED:
+          window.dataLayer.push({ event: "youtube_end", videoTitle: title });
+          break;
+        default:
+          break;
+      }
+    };
+
+    // YouTube API ready callback
+    window.onYouTubeIframeAPIReady = () => {
+      new window.YT.Player("youtube-player", {
+        events: { onStateChange: onPlayerStateChange },
+      });
+    };
+
+    // Intercept ONLY YouTube-related events for console logging
+    window.dataLayer = window.dataLayer || [];
+    const originalPush = window.dataLayer.push;
+
+    window.dataLayer.push = function (...args) {
+      return originalPush.apply(window.dataLayer, args);
+    };
+
+  }, []);
+
   return (
     <>
       <Head>
@@ -415,8 +460,9 @@ export default function Ga4({ brandsdata }) {
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
                   <div className="relative w-[90%] max-w-3xl aspect-video">
                     <iframe
+                      id="youtube-player"
                       className="w-full h-full rounded-xl"
-                      src="https://www.youtube.com/embed/m0Oo0IL6gAQ?autoplay=1"
+                      src="https://www.youtube.com/embed/m0Oo0IL6gAQ?autoplay=1&enablejsapi=1"
                       title="YouTube video"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
