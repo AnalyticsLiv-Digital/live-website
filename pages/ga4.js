@@ -303,24 +303,6 @@ export default function Ga4({ brandsdata }) {
     const originalPush = window.dataLayer.push;
 
     window.dataLayer.push = function (...args) {
-      const eventData = args[0];
-      console.log("fial-det---", eventData)
-      if (
-        eventData &&
-        typeof eventData === "object" &&
-        eventData.event === "gtm.video" &&
-        ["start", "pause", "play", "complete"].includes(eventData["gtm.videoStatus"])
-      ) {
-        console.log("🎬 YouTube GTM Video Event:", {
-          status: eventData["gtm.videoStatus"],
-          title: eventData["gtm.videoTitle"]
-          ,
-          time: eventData["gtm.videoCurrentTime"]
-          ,
-          percent: eventData["gtm.videoPercent"]
-          ,
-        }, args);
-      }
       return originalPush.apply(window.dataLayer, args);
     };
 
