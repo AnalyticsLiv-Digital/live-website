@@ -430,6 +430,10 @@ const aboutus = () => {
             <div className='flex flex-col gap-3 xl:gap-4'>
               <div className='flex items-center gap-4'>
                 <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector%20(6).png' alt='vector' />
+                <div className='text-[#CED1E5] text-base xl:text-xl font-normal'>Graphic & UI Designer</div>
+              </div>
+              <div className='flex items-center gap-4'>
+                <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector%20(6).png' alt='vector' />
                 <div className='text-[#CED1E5] text-base xl:text-xl font-normal'>Lead Generation Specialist</div>
               </div>
               <div className='flex items-center gap-4'>
