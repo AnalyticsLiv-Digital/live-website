@@ -434,15 +434,15 @@ const aboutus = () => {
               </div>
               <div className='flex items-center gap-4'>
                 <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector%20(6).png' alt='vector' />
-                <div className='text-[#CED1E5] text-base xl:text-xl font-normal'>Lead Generation Specialist</div>
+                <div className='text-[#CED1E5] text-base xl:text-xl font-normal'>Campaign Management Lead</div>
               </div>
               <div className='flex items-center gap-4'>
                 <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector%20(6).png' alt='vector' />
-                <div className='text-[#CED1E5] text-base xl:text-xl font-normal'>Campaign Management Executive</div>
+                <div className='text-[#CED1E5] text-base xl:text-xl font-normal'>Lead Generation Expert</div>
               </div>
               <div className='flex items-center gap-4'>
                 <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector%20(6).png' alt='vector' />
-                <div className='text-[#CED1E5] text-base xl:text-xl font-normal'>Business Development Associates</div>
+                <div className='text-[#CED1E5] text-base xl:text-xl font-normal'>Technical Analyst Lead</div>
               </div>
             </div>
             <a href='/careers'><button className='bg-custom-linear text-white p-3 sm:p-5 border-2 border-white rounded-full hover:text-slate-200'>Check Openings</button></a>

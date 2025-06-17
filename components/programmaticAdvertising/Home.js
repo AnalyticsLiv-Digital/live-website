@@ -47,7 +47,7 @@ const Home = () => {
             dataLayer.push({
                 event: 'dv360_submission'
             });
-            fetch('/api/dv360contactttt', {
+            fetch('/api/dv360contact', {
                 method: 'POST', // or 'PUT'
                 headers: {
                     'Content-Type': 'application/json',
