@@ -65,7 +65,7 @@ const Footer = () => {
                 <button onClick={scrollToTop}
                     className="relative z-10 px-3 py-[17px] rounded-full bg-white text-[#08A4F7] border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline mb-3 transition-all duration-300 ease-linear"
                 >
-                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector%20(4).png' alt='upwards_arrow' />
+                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector%20(4).png' alt='upwards vector' />
                 </button>
             </div>
             <div className='overflow-hidden relative bg-[#2B2E3C]'>
