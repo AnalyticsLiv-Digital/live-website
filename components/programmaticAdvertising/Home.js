@@ -58,7 +58,8 @@ const Home = () => {
                     "email": formValues.email,
                     "contact": formValues.contact,
                     "message": formValues.message,
-                    "website": formValues.website
+                    "website": formValues.website,
+                    "type": "programmatic-advertising"
                 }),
             })
                 .then((response) => response.json())
@@ -111,63 +112,73 @@ const Home = () => {
     };
     return (
         <><section>
-            <div className="md:mx-16 mx-4 pb-16 my-2 md:px-4">
+            <div className="md:mx-10 mx-4 pb-16 my-2 md:px-4">
                 <div className="flex justify-between">
-                    <div className="flex items-center space-x-4 py-4">
-                        <img alt="Display & Video 360" className="md:w-12 w-10" src="https://storage.googleapis.com/website-bucket-uploads/static/DV360_logo.png" />
-                        <h1 className="md:text-4xl text-xl font-bold text-gray-400">Display & Video 360</h1>
-                    </div>
-                    <div><img alt="sparkler" className="w-16" src="https://storage.googleapis.com/website-bucket-uploads/static/sparkler (1) 1.png" /></div>
+
                 </div>
-                <div className="relative md:flex md:justify-between">
-                    <div className="space-y-4 md:w-3/4">
-                        <h2 className="py-4 text-xl font-semibold text-sky-600">Run Brand Marketing & Performance Campaigns Programmatically</h2>
-                        <ul>
-                            <li className='flex items-start mb-2'>
-                                <img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png' />
-                                <span>  Enhance Reach by 10x
-                                </span>
-                            </li>
-                            <li className='flex items-start mb-2'>
-                                <img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png' />
-                                <span>  Buy Placements on Premium Websites and Apps
-                                </span>
-                            </li>
-                            <li className='flex items-start mb-2'>
-                                <img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png' />
-                                <span>  Turn Engagements into Experiences With Rich Media Creatives
-                                </span>
-                            </li>
-                            <li className='flex items-start mb-2'>
-                                <img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png' />
-                                <span>  Reserve placements on YouTube & Other Video Channels
-                                </span>
-                            </li>
-                            <li className='flex items-start mb-2'>
-                                <img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png' />
-                                <span>  Define Custom Bid Strategy To Reach Your KPIs
-                                </span>
-                            </li>
-                            <li className='flex items-start mb-2'>
-                                <img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png' />
-                                <span>  Drive Action Throgh Enhanced Conversion In Floodlight
-                                </span>
-                            </li>
-                        </ul>
-                        <div className="mx-8"><img alt="brand image" src="https://storage.googleapis.com/website-bucket-uploads/static/Brand_IMG.png" /></div>
+                <div className="relative lg:flex md:justify-between items-center">
+                    <div className='lg:w-[70%] flex flex-col gap-6 md:gap-10'>
+                        <div className="flex items-center space-x-4 pt-4">
+                            <img alt="Display & Video 360" className="md:w-12 w-10" src="https://storage.googleapis.com/website-bucket-uploads/static/DV360_logo.png" />
+                            <h1 className="md:text-[30px] text-2xl font-bold text-black leading-8">Programmatic Advertising</h1>
+                        </div>
+                        <div className="space-y-4 w-full max-md:flex-col mb-5 justify-between items-center">
+                            <h2 className="py-4 text-xl font-semibold text-sky-600">
+                                <h2 className='text-[24px] font-bold leading-8'>
+                                    Drive Brand & Performance Growth with a Trusted Programmatic Advertising Agency Using DV360.
+                                </h2>
+                            </h2>
+                            <ul className=''>
+                                <li className='flex items-start mb-2'>
+                                    <img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png' />
+                                    <span>  Enhance Reach by 10x
+                                    </span>
+                                </li>
+                                <li className='flex items-start mb-2'>
+                                    <img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png' />
+                                    <span>  Buy Placements on Premium Websites and Apps
+                                    </span>
+                                </li>
+                                <li className='flex items-start mb-2'>
+                                    <img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png' />
+                                    <span>  Turn Engagements into Experiences With Rich Media Creatives
+                                    </span>
+                                </li>
+                                <li className='flex items-start mb-2'>
+                                    <img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png' />
+                                    <span>  Reserve placements on YouTube & Other Video Channels
+                                    </span>
+                                </li>
+                                <li className='flex items-start mb-2'>
+                                    <img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png' />
+                                    <span>  Define Custom Bid Strategy To Reach Your KPIs
+                                    </span>
+                                </li>
+                                <li className='flex items-start mb-2'>
+                                    <img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_1.png' />
+                                    <span>  Drive Action Throgh Enhanced Conversion In Floodlight
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div className="relative flex md:justify-end justify-center my-4 md:my-0">
-                        <div className="absolute rounded-full bg-sky-100 w-56 h-56 left-0 -top-10 z-0 blur-xl"></div>
-                        <div className="z-10 text-center bg-gray-50 py-8 md:p-8 md:w-3/4 rounded-xl shadow-xl shadow-gray-400">
+
+                    <div className="relative flex lg:justify-end justify-center my-4 md:my-0 md:mt-5">
+                        <div className="absolute rounded-full bg-sky-100 w-56 h-56 left-0 -top-0 z-0 blur-xl"></div>
+
+                        <div>
+                            <img alt="sparkler" className="w-8 md:w-16 absolute -right-0 md:-right-10 -top-7" src="https://storage.googleapis.com/website-bucket-uploads/static/sparkler (1) 1.png" />
+                        </div>
+                        <div className="z-10 text-center bg-gray-50 py-8 md:px-8 md:py-5 md:w-3/4 rounded-xl shadow-xl shadow-gray-400">
                             <ScrollElement
                                 id="contact-form"
                                 name="contact-form"
                             ></ScrollElement>
-                            {!formSubmit && <div className="block contact-form">
-                                <h2 className="text-sky-900 md:p-0 p-[10px]">We Understand Its difficult to get DV360 Account and control the outcome</h2>
-                                <h2 className="font-semibold text-2xl p-4 border-dashed border-b-2 border-sky-200">Let us help you !!</h2>
+                            {!formSubmit && <div className="block">
+                                <h2 className="text-sky-900 md:p-0 px-[10px]">Start Your Journey with a Google-Certified Programmatic Advertising Partner</h2>
+                                <h2 className="font-semibold text-xl p-4 border-dashed border-b-2 border-sky-200">Let us help you !!</h2>
                                 <ScrollElement id="top" name="top" ></ScrollElement>
-                                <form className="px-4 md:pt-4 pb-2 space-y-4 text-gray-600" onSubmit={handleSubmit}>
+                                <form className="px-4 md:pt-4 pb-2 space-y-2 text-gray-600" onSubmit={handleSubmit}>
                                     <div>
                                         <input type="text" placeholder="FULL NAME*" className="bg-transparent px-4 border-b-2 w-full py-2 focus:outline-none focus:border-2 focus:border-sky-200" id="fullName" name="fullName" value={formValues.fullName} onChange={handleChange} />
                                         <span className="text-xs text-red-600 float-left">{formErrors.fullName}</span>
@@ -205,6 +216,8 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+
+
         </section>
 
         </>

@@ -141,10 +141,10 @@ const Serversidetracking = () => {
         <>
             <MetaSchemaOg
                 url="https://analyticsliv.com/services/server-side-tracking"
-                title="Server-Side Tracking & Web Analytics Solutions | AnalyticsLiv"
-                description="Get data accuracy with server-side tracking from AnalyticsLiv. Our tracking solutions provide deeper insights, optimizing performance and driving business success."
-                twitterTitle="Server-Side Tracking & Web Analytics Solutions | AnalyticsLiv"
-                twitterDescription="Get data accuracy with server-side tracking from AnalyticsLiv. Our tracking solutions provide deeper insights, optimizing performance and driving business success."
+                title="Expert Server-Side Analytics Tracking Solutions | AnalyticsLiv"
+                description="Get accurate, secure tracking with AnalyticsLiv’s server-side analytics tracking. Boost your data quality, privacy, and analytical performance for better marketing outcomes."
+                twitterTitle="Expert Server-Side Analytics Tracking Solutions | AnalyticsLiv"
+                twitterDescription="Get accurate, secure tracking with AnalyticsLiv’s server-side analytics tracking. Boost your data quality, privacy, and analytical performance for better marketing outcomes."
             />
 
             <section className='ssthome w-full relative font-gilroy overflow-hidden'>
@@ -161,7 +161,7 @@ const Serversidetracking = () => {
                                 </p> */}
                                 <div className='flex items-center lg:justify-start justify-center gap-5'>
                                     <Link href="/contact?id=programatic-advertising">
-                                        <button className="butn mt-2 uppercase">future-proof your <br /> analytics today</button>
+                                        <button className="contact-us-btn butn mt-2 uppercase">future-proof your <br /> analytics today</button>
                                     </Link>
                                 </div>
                             </div>

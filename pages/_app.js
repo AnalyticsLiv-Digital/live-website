@@ -46,7 +46,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps }, }) {
       }}
     />
     <SessionProvider session={session}>
-      {router.pathname == "/server-side-tracking" || router.pathname == "/dv360-a" || router.pathname.includes("admin") || router.pathname == "/ecommerce" || router.pathname == "/ga4" || router.pathname == "/dv360" || router.pathname == "/gtm" || router.pathname == "/ContactPopup" || router.pathname == "/webinar/cookie-consent" || router.pathname == "/gtmNew" || router.pathname == "/ga41" ? <Component {...pageProps} /> : <><Head>
+      {router.pathname == "/server-side-tracking" || router.pathname == "/dv360-a" || router.pathname.includes("admin") || router.pathname == "/ecommerce" || router.pathname == "/ga4" || router.pathname == "/dv360" || router.pathname == "/programmatic-advertising" || router.pathname == "/gtm" || router.pathname == "/ContactPopup" || router.pathname == "/webinar/cookie-consent" || router.pathname == "/gtmNew" || router.pathname == "/ga41" || router.pathname == "/testing/ga4-trial" || router.pathname == "/ppc" ? <Component {...pageProps} /> : <><Head>
         <link rel="icon" href="https://storage.googleapis.com/website-bucket-uploads/static/favicon.png" type="image/icon type"></link>
         <link
           href="https://fonts.googleapis.com/css2?family=Poppins"

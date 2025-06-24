@@ -14,6 +14,7 @@ const index = (casestudy) => {
     publishdate: casestudydata.publishdate, active: casestudydata.active, sequence: casestudydata.sequence, filename: casestudydata.filename,
     content1: casestudydata.content[0] ? casestudydata.content[0].description : undefined, heading1: casestudydata.content[0] ? casestudydata.content[0].heading : undefined, heading2: casestudydata.content[1] ? casestudydata.content[1].heading : undefined, content2: casestudydata.content[1] ? casestudydata.content[1].description : undefined, heading3: casestudydata.content[2] ? casestudydata.content[2].heading : undefined, content3: casestudydata.content[2] ? casestudydata.content[2].description : undefined, heading4: casestudydata.content[3] ? casestudydata.content[3].heading : undefined, content4: casestudydata.content[3] ? casestudydata.content[3].description : undefined, heading5: casestudydata.content[4] ? casestudydata.content[4].heading : undefined, content5: casestudydata.content[4] ? casestudydata.content[4].description : undefined,
     percentageBanner: casestudydata?.percentageBanner, clientLogo: casestudydata?.clientLogo, clientTestimonial: casestudydata?.clientTestimonial, testimonialVedioUrl: casestudydata?.testimonialVedioUrl, mainImage: casestudydata?.mainImage,
+    metatitle: casestudydata.metatitle, metadescription: casestudydata.metadescription,
   };
   const [formValues, setFormValues] = useState(initialValues);
   const [formattedDate, setFormattedDate] = useState(initialValues.date);
@@ -115,6 +116,8 @@ const index = (casestudy) => {
         "clientTestimonial": formValues.clientTestimonial,
         "testimonialVedioUrl": formValues.testimonialVedioUrl,
         "mainImage": formValues.mainImage,
+        "metatitle": formValues.metatitle,
+        "metadescription": formValues.metadescription,
       }),
     })
       .then((response) => response.json())
@@ -171,6 +174,8 @@ const index = (casestudy) => {
           "clientTestimonial": formValues.clientTestimonial,
           "testimonialVedioUrl": formValues.testimonialVedioUrl,
           "mainImage": formValues.mainImage,
+          "metatitle": formValues.metatitle,
+          "metadescription": formValues.metadescription,
         }),
       })
         .then((response) => response.json())
@@ -240,7 +245,37 @@ const index = (casestudy) => {
             </div><div><label className="block text-base font-semibold mb-2 text-gray-200">
               Description -
             </label><input required className="w-full px-2 py-1 text-sm text-gray-200 bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="description" value={formValues.description} onChange={handleChange} /><br />
-            </div><div><label className="block text-base font-semibold mb-2 text-gray-200">
+            </div>
+
+            <div>
+              <label className="block text-base font-semibold mb-2 text-gray-200">
+                Meta Title -
+              </label>
+
+              <input
+                className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500"
+                type="text"
+                name="metatitle"
+                value={formValues?.metatitle}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div>
+              <label className="block text-base font-semibold mb-2 text-gray-200">
+                Meta Description -
+              </label>
+
+              <input
+                className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500"
+                type="text"
+                name="metadescription"
+                value={formValues?.metadescription}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div><label className="block text-base font-semibold mb-2 text-gray-200">
               File URL -
             </label><input required className="w-full px-2 py-1 text-sm text-gray-200 bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="filename" value={formValues.filename} onChange={handleChange} /><br />
             </div><div><label className="block text-base font-semibold mb-2 text-gray-200">

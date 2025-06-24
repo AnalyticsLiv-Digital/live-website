@@ -21,8 +21,8 @@ const index = ({ blogDat, count }) => {
     }, []);
     return (
         <><Head>
-            <title>AnalyticsLiv - Blogs</title>
-            <meta name="description" content="Google Marketing Platform Partner - Blogs on GA4, DV360, Google Ads" />
+            <title>AnalyticsLiv Blog: Insights on Google Analytics, DV360, PPC, CRO and More</title>
+            <meta name="description" content="Stay updated with AnalyticsLiv’s blog for expert tips on data extraction & automation, DV360, PPC, CRO, A/B testing, and Google Analytics. Perfect for marketers and analysts." />
             <link rel="canonical" href="https://analyticsliv.com/blogs"></link>
         </Head>
 
@@ -37,8 +37,8 @@ const index = ({ blogDat, count }) => {
                     <img src="https://storage.googleapis.com/website-bucket-uploads/static/marketing.jpg" className="absolute h-32 lg:h-48 lg:top-2 lg:right-56 rounded-lg" />
                     <div className="relative lg:border-2 lg:border-slate-900 lg:flex rounded-lg backdrop-blur-xl bg-white h-20 lg:h-36 w-4/5 md:w-3/5 lg:w-1/3 p-6 lg:top-20 top-10 text-left mx-auto mb-6">
                         <div className="lg:pt-8 ">
-                            <h2 className="lg:text-2xl text-slate-700 font-semibold whitespace-relaxed ">B L O G S.</h2>
-                            <div className="bg-slate-700 h-1 w-6 ml-12 lg:ml-20"></div>
+                            <h1 className="lg:text-2xl text-slate-700 font-semibold whitespace-relaxed ">BLOGS</h1>
+                            <div className="bg-slate-700 h-1 w-6 ml-7 lg:ml-14"></div>
                         </div>
 
                     </div>

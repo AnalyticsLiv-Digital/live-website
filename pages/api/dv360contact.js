@@ -6,14 +6,14 @@ import { sendEmail } from "../../utils/sendMail";
 const handler = async (req, res) => {
   if (req.method == 'POST') {
 
-    fetch('https://script.google.com/macros/s/AKfycbxVpjOJZxxAySTkuvHYc4D6Hl-XYhOHXQhBRWwJKajepUE13dmr0Ek0TH-ar5KwRhLD/exec?fullname='+req.body.fullName+'&email='+req.body.email+'&contact='+req.body.contact+'&message='+req.body.message+'&website='+req.body.website);
+    fetch('https://script.google.com/macros/s/AKfycbxVpjOJZxxAySTkuvHYc4D6Hl-XYhOHXQhBRWwJKajepUE13dmr0Ek0TH-ar5KwRhLD/exec?fullname=' + req.body.fullName + '&email=' + req.body.email + '&contact=' + req.body.contact + '&message=' + req.body.message + '&website=' + req.body.website);
     let b = new Dv360contact({
       fullName: req.body.fullName,
       email: req.body.email,
       contact: req.body.contact,
       message: req.body.message,
-      website: req.body.website
-
+      website: req.body.website,
+      type: req.body.type
     });
     await b.save();
 
@@ -22,7 +22,7 @@ const handler = async (req, res) => {
       from: "support@analyticsliv.com",
       to: ["sales@analyticsliv.com", "anshul.d@analyticsliv.com", "anuj@analyticsliv.com", "nitya@analyticsliv.com", "rajvi@analyticsliv.com","aditya.trivedi@analyticsliv.com","tanu.singh@analyticsliv.com"],
       subject: 'New DV360 Enquiry!!',
-      html: `Enquiry Submitted by <br> Full Name - ${req.body.fullName}  <br> Email- ${req.body.email} <br> Contact - ${req.body.contact} <br> Message - ${req.body.message} <br> Website - ${req.body.website} `
+      html: `Enquiry Submitted by <br> Full Name - ${req.body.fullName}  <br> Email- ${req.body.email} <br> Contact - ${req.body.contact} <br> Message - ${req.body.message} <br> Website - ${req.body.website} <br> Type - ${req.body.type}`
     }
 
     const userMailOptions = {

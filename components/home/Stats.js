@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
@@ -11,12 +11,12 @@ import Image from 'next/image'
 const Stats = () => {
     const [counterOn, setCounterOn] = useState(true);
     const [activeVideo, setActiveVideo] = useState(null);
+    const sliderRef = useRef();
 
     const videos = [
         {
             id: 1,
-            url: "https://www.youtube.com/embed/JFOc7x5ZgaA",
-            coverImage: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Shoebacca%20thumbnail.png",
+            url: "https://www.youtube.com/embed/JFOc7x5ZgaA?enablejsapi=1",
             label1: "Grow Your Business",
             label2: "Make Your Data Profitable",
             img1: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Increase.png",
@@ -25,7 +25,6 @@ const Stats = () => {
         {
             id: 2,
             url: "https://www.youtube.com/embed/m0Oo0IL6gAQ",
-            coverImage: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Booby%20Bruno%20Thumbnail.png",
             label1: "Grow Your Business",
             label2: "Make Your Data Profitable",
             img1: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Increase.png",
@@ -34,7 +33,6 @@ const Stats = () => {
         {
             id: 3,
             url: "https://www.youtube.com/embed/OrmmgwXDQyU",
-            coverImage: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Thumbnail_Service_Video_Home_page_.png",
             label1: "Grow Your Business",
             label2: "Make Your Data Profitable",
             img1: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Increase.png",
@@ -74,46 +72,54 @@ const Stats = () => {
         prevArrow: <PrevArrow />,
     };
 
+    useEffect(() => {
+        const handleMessage = (event) => {
+            if (typeof event.data === "string") {
+                let data;
+                try {
+                    data = JSON.parse(event.data);
+                } catch {
+                    return;
+                }
+
+                // Detect YT events
+                if (data.event === "onStateChange") {
+                    if (data.info === 1) {
+                        // Playing
+                        sliderRef.current?.slickPause();
+                    } else if (data.info === 2 || data.info === 0) {
+                        // Paused or Ended
+                        sliderRef.current?.slickPlay();
+                    }
+                }
+            }
+        };
+
+        window.addEventListener("message", handleMessage);
+        return () => window.removeEventListener("message", handleMessage);
+    }, []);
+
+
     return (
         <section className="pt-28 sm:pt-40 md:pt-60 xl:pt-60 2xl:pt-64 h-full">
             <div className="relative bg-[#30486A] h-[170px] sm:h-[200px] lg:h-[290px] xl:h-[320px] 2xl:h-[350px] overflow-visible">
                 {/* Video Slider */}
                 <div className="absolute top-[-130px] sm:top-[-180px] md:top-[-220px] lg:top-[-250px] xl:top-[-220px] 2xl:top-[-250px] left-1/2 transform -translate-x-1/2 w-[100%] sm:w-[75%] md:w-[85%] xl:w-[68%] 2xl:w-[950px] carousel-custom">
-                    <Slider {...settings}>
-                        {videos.map((video) => (
+                    <Slider ref={sliderRef} {...settings}>
+                        {videos?.map((video) => (
                             <div
                                 key={video?.id}
                                 className="relative video-container w-[100%] h-[240px] sm:h-[300px] md:h-[380px] lg:h-[450px] xl:h-[430px] 2xl:h-[480px] rounded-3xl"
                             >
-                                {activeVideo === video?.id ? (
-                                    <iframe
-                                        src={`${video?.url}?autoplay=1&mute=1&rel=0`}
-                                        frameBorder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                        allowFullScreen
-                                        className="w-[90%] lg:w-[76.5%] h-[80%] sm:h-[90%] xl:h-[85%] mx-auto mt-8 rounded-3xl"
-                                    ></iframe>
-                                ) : (
-                                    <div
-                                        className="relative w-[100%] h-[100%] lg:w-[85%] lg:h-[95%] mx-auto cursor-pointer"
-                                        onClick={() => setActiveVideo(video?.id)}
-                                    >
-                                        <Image
-                                            src={video?.coverImage}
-                                            fill
-                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                            quality={70}
-                                            priority
-                                            alt={`Cover for video ${video?.id}`}
-                                            className="w-[90%] mt-5 mx-auto h-[80%] sm:h-[90%] rounded-3xl shadow-ytshadow"
-                                        />
-                                        <div className="absolute inset-0 flex items-center justify-center">
-                                            <FaYoutube className="text-[#08A4F7] text-6xl" />
-                                        </div>
-                                    </div>
-                                )}
+                                <iframe
+                                    src={`${video?.url}`}
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                    className="w-[90%] lg:w-[76.5%] h-[80%] sm:h-[90%] xl:h-[85%] mx-auto mt-8 md:mt-10 2xl:mt-14 rounded-3xl"
+                                ></iframe>
+
                                 {/* Labels */}
-                                {/* <div className="max-sm:flex max-sm:pt-8 justify-center items-start gap-2"> */}
                                 <div className={`max-sm:hidden sm:absolute max-w-[125px] right-[-150px] opacity-90 bottom-[150px] lg:bottom-[180px] xl:bottom-[175px] 2xl:bottom-[200px] transform -translate-y-1/2 text-center z-10`}>
                                     <div className="bg-white text-[#545567] font-light md:font-medium flex flex-col justify-center items-center text-[9px] md:text-sm px-2.5 lg:px-4 py-2.5 lg:py-4 rounded-xl shadow-md">
                                         <div>
@@ -130,7 +136,6 @@ const Stats = () => {
                                         {video?.label2}
                                     </div>
                                 </div>
-                                {/* </div> */}
                             </div>
                         ))}
                     </Slider>

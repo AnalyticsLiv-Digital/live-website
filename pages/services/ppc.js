@@ -5,16 +5,28 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import MetaSchemaOg from '../../components/MetaSchemaOg'
 import { InlineWidget } from 'react-calendly';
+import Brands from '../../components/brands';
 
 const Ppc = () => {
 
     const sliderRef = useRef(null);
+    const itemRefs = useRef([]);
 
     const [activeIndex, setActiveIndex] = useState(0);
     const [showCalendly, setShowCalendly] = useState(false);
 
     const handleToggle = (index) => {
         setActiveIndex(activeIndex === index ? null : index);
+
+        setTimeout(() => {
+            if (itemRefs.current[index]) {
+                itemRefs.current[index].scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'nearest',
+                });
+            }
+        }, 100);
+
     };
 
     const content = [
@@ -141,10 +153,10 @@ const Ppc = () => {
         <>
             <MetaSchemaOg
                 url="https://analyticsliv.com/services/ppc"
-                title="PPC Marketing Agency | Google Partner | Meta Ads | AnalyticsLiv"
-                description="Drive your PPC campaigns for improvement on ROAS and CPA, with proven data driven strategies tested rigorously to enhance conversions"
-                twitterTitle="PPC Marketing Agency | Google Partner | Meta Ads | AnalyticsLiv"
-                twitterDescription="Drive your PPC campaigns for improvement on ROAS and CPA, with proven data driven strategies tested rigorously to enhance conversions"
+                title="Expert Performance Marketing Agency | Meta Ads | Google Ads | AnalyticsLiv"
+                description="Accelerate growth with AnalyticsLiv’s expert PPC services. As a top-tier performance marketing agency, we turn clicks into conversions with precision-targeted campaigns."
+                twitterTitle="Expert Performance Marketing Agency | Meta Ads | Google Ads | AnalyticsLiv"
+                twitterDescription="Accelerate growth with AnalyticsLiv’s expert PPC services. As a top-tier performance marketing agency, we turn clicks into conversions with precision-targeted campaigns."
                 extraHead={
                     <link
                         rel="stylesheet"
@@ -187,8 +199,8 @@ const Ppc = () => {
                                 to maximize ROI and drive business growth. 🚀
                             </h2>
                             <div className='flex justify-center md:justify-start items-center gap-3 md:gap-2 lg:gap-5'>
-                                <a href='/contact'><button className='mainbutn'>Talk to our PPC Expert</button></a>
-                                <div onClick={() => handleCalendly()} className='group hover:cursor-pointer flex items-center gap-2'>
+                                <a href='/contact'><button className='contact-us-btn mainbutn'>Talk to our PPC Expert</button></a>
+                                <div onClick={() => handleCalendly()} className='contact-us-btn group hover:cursor-pointer flex items-center gap-2'>
                                     <button className='text-xs 2xl:text-sm translate-x-1 group-hover:translate-x-0 transition-all duration-300 font-bold max-sm:w-full max-md:text-center'>Book a Call Today</button>
                                     <div className="opacity-0 translate-x-2 sm:translate-x-8 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
                                         <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%201.svg' alt='arrow right' className='w-2' />
@@ -209,24 +221,7 @@ const Ppc = () => {
                 </section>
 
                 <section className='px-4 md:px-[5%] py-12'>
-                    <div className='border border-[#D0D0D0] flex max-md:flex-col justify-evenly max-md:gap-8 md:gap-2 xl:gap-1 2xl:gap-5 items-center max-md:py-6 p-3 md:p-5 xl:p-7 2xl:p-10'>
-                        <div className='text-[#0E1947] text-lg max-sm:text-center md:text-sm xl:text-lg font-bold'>Trusted by over 200+ businesses worldwide!</div>
-                        <div className='grid grid-cols-5 max-md:grid-cols-2 place-items-center gap-6'>
-                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Shoebacca%20logo.png' alt='shoebecca' className='max-md:max-h-10 max-xl:max-h-8 max-2xl:max-h-10' />
-                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Washington_examinor_logo.png' alt='Washington_examinor_logo' className='max-md:max-h-10 max-xl:max-h-8 max-2xl:max-h-10' />
-                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Anantara_logo_New.png' alt='Anantara_logo' className='max-md:max-h-10 max-xl:max-h-8 max-2xl:max-h-10' />
-                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Auxi_logo.coloured.png' alt='Auxi_logo' className='max-md:max-h-10 max-xl:max-h-8 max-2xl:max-h-10' />
-                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Algovation_logo.png' alt='Algovation_logo' className='max-md:max-h-10 max-xl:max-h-8 max-2xl:max-h-10' />
-                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/shiprocket_logo.png' alt='shiprocket_logo' className='max-md:max-h-10 max-xl:max-h-8 max-2xl:max-h-10' />
-                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/we_sort_it_logo.png' alt='we_sort_it_logo' className='max-md:max-h-10 max-xl:max-h-8 max-2xl:max-h-10' />
-                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Mex_insurance_logo.png' alt='Mex_insurance_logo' className='max-md:max-h-10 max-xl:max-h-8 max-2xl:max-h-10' />
-                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/issta_Logo.png' alt='issta_Logo' className='max-md:max-h-10 max-xl:max-h-8 max-2xl:max-h-10' />
-                            <div className='flex items-center gap-5 2xl:gap-10'>
-                                <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/IRIS_LOGO.png' alt='IRIS_LOGO' className='max-md:max-h-10 max-xl:max-h-8 max-2xl:max-h-10' />
-                                <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/league_logo_svg%201.png' alt='league_logo' className='max-md:max-h-10 max-xl:max-h-8 max-2xl:max-h-10' />
-                            </div>
-                        </div>
-                    </div>
+                    <Brands />
                 </section>
 
                 <section className='px-4 lg:px-[5%] md:pt-6 flex max-md:flex-col justify-center items-center gap-8 md:gap-5 lg:gap-24 2xl:gap-10'>
@@ -291,7 +286,7 @@ const Ppc = () => {
                             </div>
                         </div>
                         <div>
-                            <a href='/contact'><button className='mainbutn'>Contact Now</button></a>
+                            <a href='/contact'><button className='contact-us-btn mainbutn'>Contact Now</button></a>
                         </div>
                     </div>
                 </section>
@@ -426,7 +421,7 @@ const Ppc = () => {
                     <div className='lg:w-[40%] bg-[#30486A] flex flex-col justify-center items-start gap-7 max-lg:py-7 px-4 lg:px-20'>
                         <h3 className='text-2xl md:text-3xl 2xl:text-4xl font-bold text-white'>Excited to Get Started with our PPC Agency?</h3>
                         <div className='text-base font-normal text-[#E2DEDC]'>Contact AnalyticsLiv, a Performance Marketing Agency for a Free Consultation.</div>
-                        <a href='/contact'><button className='mainbutn'>Contact Us Now</button></a>
+                        <a href='/contact'><button className='contact-us-btn mainbutn'>Contact Us Now</button></a>
                     </div>
                     <div className='lg:w-[60%] min-h-[250px] sm:min-h-[350px] overflow-hidden 2xl:min-h-[430px] flex'>
                         <div className='w-full lg:w-[70%] relative'>
@@ -456,6 +451,7 @@ const Ppc = () => {
                             {content?.map((item, index) => (
                                 <div
                                     key={index}
+                                    ref={(el) => (itemRefs.current[index] = el)}
                                     className={`rounded-2xl px-4 lg:px-12 py-4 lg:py-5 cursor-pointer ${activeIndex === index ? 'text-white bg-[#08A4F7]' : 'text-[#232A42]'
                                         }`}
                                     style={{

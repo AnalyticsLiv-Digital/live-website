@@ -150,8 +150,8 @@ const aboutus = () => {
             <div className='text-xs xl:text-sm font-normal'>Our journey began with a simple belief: data has the power to transform businesses. Today, we are proud to be at the forefront of
               this transformation, partnering with organizations to create measurable, impactful results.</div>
             <div className='flex gap-3 lg:gap-10 max-md:mt-3'>
-              <a href='/contact'><button className='mainbutn'>Schedule a Call</button></a>
-              <a href='/contact'><button className='mainbutn-opposite'>Contact Us</button></a>
+              <a href='/contact'><button className='contact-us-btn mainbutn'>Schedule a Call</button></a>
+              <a href='/contact'><button className='contact-us-btn mainbutn-opposite'>Contact Us</button></a>
             </div>
           </div>
           <div className='max-sm:w-full max-xl:w-[40%] max-sm:flex max-sm:justify-center max-md:mt-7 max-sm:mx-auto'>
@@ -430,15 +430,19 @@ const aboutus = () => {
             <div className='flex flex-col gap-3 xl:gap-4'>
               <div className='flex items-center gap-4'>
                 <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector%20(6).png' alt='vector' />
-                <div className='text-[#CED1E5] text-base xl:text-xl font-normal'>Lead Generation Specialist</div>
+                <div className='text-[#CED1E5] text-base xl:text-xl font-normal'>Graphic & UI Designer</div>
               </div>
               <div className='flex items-center gap-4'>
                 <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector%20(6).png' alt='vector' />
-                <div className='text-[#CED1E5] text-base xl:text-xl font-normal'>Campaign Management Executive</div>
+                <div className='text-[#CED1E5] text-base xl:text-xl font-normal'>Campaign Management Lead</div>
               </div>
               <div className='flex items-center gap-4'>
                 <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector%20(6).png' alt='vector' />
-                <div className='text-[#CED1E5] text-base xl:text-xl font-normal'>Business Development Associates</div>
+                <div className='text-[#CED1E5] text-base xl:text-xl font-normal'>Lead Generation Expert</div>
+              </div>
+              <div className='flex items-center gap-4'>
+                <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector%20(6).png' alt='vector' />
+                <div className='text-[#CED1E5] text-base xl:text-xl font-normal'>Technical Analyst Lead</div>
               </div>
             </div>
             <a href='/careers'><button className='bg-custom-linear text-white p-3 sm:p-5 border-2 border-white rounded-full hover:text-slate-200'>Check Openings</button></a>

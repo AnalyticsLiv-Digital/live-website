@@ -7,23 +7,6 @@ import UserAvatar from "./UserAvatar";
 const config = {
   lang: "no",
   botName: "AnalyticsBot",
-  // customStyles: {
-  //   botMessageBox: {
-  //     backgroundColor: "#ced6de",
-  //     // color: "black",
-  //     text: "red",
-  //     marginBottom: "10px", // Add space between each message
-  //     borderRadius: "8px",
-  //     fontColour: "red",
-  //   },
-  //   userChatMessage: {
-  //     backgroundColor: "#3c005d",
-  //   },
-  //   chatButton: {
-  //     // backgroundColor: "red",
-  //     // color: "white",
-  //   },
-  // },
   initialMessages: [
     createChatBotMessage("Welcome to AnalyticsLiv!", {
       withAvatar: true,
@@ -47,41 +30,31 @@ const config = {
     }),
   ],
   state: {
-    option:"",
+    option: "",
     subOption: "",
-    email : "",
-    phone : "",
+    email: "",
+    phone: "",
     awaitingInput: "option",
-    requirement : ""
+    requirement: ""
   },
   customComponents: {
-    header: () => (
-      <div className="sticky top-0 z-30 p-2 rounded-[5px] bg-[#3c005d] text-white text-center font-bold shadow-md">
-        🤖 You're with AnalyticsLiv Bot
+    header: (handleToggleBot) => (
+      <div className="flex justify-between items-center py-1 z-30 bg-header-linear border-b border-b-[#c0baba]">
+        <div className="sticky top-0 w-[90%] p-2 pl-3 sm:pl-5 rounded-[5px] text-[10px] sm:text-xs 2xl:text-sm text-white text-center font-bold flex items-center gap-2 sm:gap-3">
+          <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/AnalyticsLiv%20Logo%202%201.png" alt="analyticsLiv" className="w-7 bg-white rounded-full p-1" />
+          Let’s talk growth! We're here to help!
+        </div>
+        <p className={`transition-all duration-300 transform cursor-pointer text-[#AAAAAA] hover:text-[#969696]
+              rounded-full text-[16px] 2xl:text-[20px] pr-3
+            `}
+          onClick={handleToggleBot}
+        >
+          ✖
+        </p>
       </div>
     ),
     botAvatar: (props) => <CoBotAvatar {...props} />,
     userAvatar: (props) => <UserAvatar {...props} />,
-    // botMessageBox: (props) => (
-    //   <div className="flex items-center gap-3 mb-5">
-    //     <div className="flex-shrink-0">
-    //       <CoBotAvatar />
-    //     </div>
-    //     <div className="bg-blue-300 text-white rounded-lg p-4 max-w-[250px]">
-    //       {props.children}
-    //     </div>
-    //   </div>
-    // ),
-    // userMessageBox: (props) => (
-    //   <div className="flex items-center gap-3 justify-end mb-5">
-    //     <div className="bg-blue-600 text-white rounded-lg p-4 max-w-[250px]">
-    //       {props.children}
-    //     </div>
-    //     <div className="flex-shrink-0">
-    //       <UserAvatar />
-    //     </div>
-    //   </div>
-    // ),
   },
   widgets: [
     {

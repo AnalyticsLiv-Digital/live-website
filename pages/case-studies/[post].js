@@ -5,6 +5,7 @@ import 'aos/dist/aos.css';
 import { useState, useEffect } from 'react'
 import { Router, useRouter } from 'next/router';
 import { ScaleLoader } from 'react-spinners'
+import { generateBreadcrumbSchemas, generateCaseStudySchema } from '../../utils/schema';
 
 const index = ({ casestudyDat }) => {
     var cd = casestudyDat.data[0];
@@ -20,6 +21,8 @@ const index = ({ casestudyDat }) => {
     const [selected, setSelected] = useState("");
     const [formSubmit, setFormSubmit] = useState(false);
     const [formFixed, setFormFixed] = useState(false);
+
+    const csSchema = generateCaseStudySchema(cd);
 
     const formRef = useRef(null);
 
@@ -218,13 +221,44 @@ const index = ({ casestudyDat }) => {
 
     var url = "https://analyticsliv.com/case-studies/" + cd.slug;
 
+    const breadcrumbSchema = generateBreadcrumbSchemas(url);
+
     return (<>
-        <Head>
+        {/* <Head>
             <title>AnalyticsLiv - Case Sudies</title>
             <link rel="canonical" href={url}></link>
             <link
                 rel="stylesheet"
                 href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap"
+            />
+        </Head> */}
+        <Head>
+            <meta name="description" content={cd &&
+                (cd?.metadescription && cd?.metadescription !== '' ? cd?.metadescription : cd?.description)
+            } />
+            <title>
+                {cd &&
+                    (cd?.metatitle && cd?.metatitle !== '' ? cd?.metatitle : cd?.title)
+                }
+            </title>
+            <link rel="canonical" href={url}></link>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(csSchema),
+                }}
+            />
+
+            <link
+                rel="stylesheet"
+                href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap"
+            />
+
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(breadcrumbSchema),
+                }}
             />
         </Head>
         {showWaiting && <div className="fixed flex backdrop-blur top-0 left-0 right-0 z-40 w-full p-4 md:overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full"><ScaleLoader
@@ -238,7 +272,7 @@ const index = ({ casestudyDat }) => {
                 <div className="bg-header-linear relative lg:flex max-lg:flex-col justify-center lg:justify-between items-center pl-[5%] lg:min-h-[400px]">
                     <div className="lg:w-[50%] xl:w-[55%] py-10 flex flex-col gap-8 lg:gap-10">
                         {/* <h1 className="text-2xl lg:text-3xl xl:text-3xl 2xl:text-[35px] text-white font-bold">{cd?.title}</h1> */}
-                        <h1 className="text-2xl lg:text-2xl xl:text-3xl 2xl:text-[35px] text-white font-bold">
+                        <h1 className="header-form-title text-2xl lg:text-2xl xl:text-3xl 2xl:text-[35px] text-white font-bold">
                             {cd?.title?.includes(":")
                                 ? cd.title.replace(":", ":\n").split("\n").map((text, index) => (
                                     <React.Fragment key={index}>
@@ -320,7 +354,7 @@ const index = ({ casestudyDat }) => {
                     className="absolute top-[320px] right-[3%] lg:w-[330px] xl:w-[400px] z-40 max-lg:hidden 2xl:w-[425px] bg-white shadow-csFormShadow rounded-[5px]"
                 >
                     {formSubmit ? (
-                        <div className="relative p-7 space-y-4 h-full">
+                        <div className="analyticsliv-form-thankyou relative p-7 space-y-4 h-full">
                             <h3 className="align-middle font-medium text-4xl text-[#0E1947]">
                                 Thank You for your interest.
                             </h3>
@@ -337,7 +371,7 @@ const index = ({ casestudyDat }) => {
                             <div className="absolute bottom-0 right-2 rounded-full w-20 h-20 bg-emerald-600 opacity-70 animate-bounce hover:animate-none duration-300 delay-75"></div>
                         </div>
                     ) : (
-                        <form className="space-y-4 md:space-y-4 px-3 md:px-4 py-4 md:py-4 lg:py-[20px] lg:px-[30px] xl:py-[40px] xl:px-[40px]">
+                        <form className="analyticsliv-form space-y-4 md:space-y-4 px-3 md:px-4 py-4 md:py-4 lg:py-[20px] lg:px-[30px] xl:py-[40px] xl:px-[40px]">
                             <div className="text-lg leading-[20px] 2xl:text-[20px] text-[#0E1947] font-semibold text-center">
                                 Enter your details to download the casestudy.
                             </div>

@@ -145,7 +145,7 @@ class ActionProvider {
         delay: 1000,
       });
 
-      const thanksMessge = this.createChatBotMessage("You're all set! Let us know if you need further assistance.", {
+      const thanksMessge = this.createChatBotMessage("We will get in touch with you soon! Let us know if you have any other queries.", {
         delay: 2000,
         withAvatar: true,
       });

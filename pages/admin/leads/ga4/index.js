@@ -44,6 +44,7 @@ const index = ({ leadDat }) => {
                                         <th className="py-3 px-4">Email</th>
                                         <th className="py-3 px-4">Contact</th>
                                         <th className="py-3 px-4">message</th>
+                                        <th className="py-3 px-4">Receive Updates</th>
                                         <th className="py-3 px-4">Time</th>
                                     </tr>
                                 </thead>
@@ -82,6 +83,7 @@ const index = ({ leadDat }) => {
                                                     )}
                                                 </td>
                                                 <td className="py-4 px-6">{contact.message}</td>
+                                                <td className="py-4 px-6">{contact.receiveUpdates ? "yes" : "-"}</td>
                                                 <td className="py-4 px-6">{contact.timestamp}</td>
                                             </tr>
                                         ))}

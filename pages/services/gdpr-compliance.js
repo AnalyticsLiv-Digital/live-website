@@ -173,10 +173,10 @@ const cookieLanding = ({ brandsdata }) => {
 
       <MetaSchemaOg
         url="https://analyticsliv.com/services/gdpr-compliance"
-        title="Expert GDPR Compliance Services & Solutions | AnalyticsLiv"
-        description="Protect your business with AnalyticsLiv’s expert GDPR compliance services. We offer customized solutions to ensure data privacy, reduce risks, and maintain full regulatory compliance."
-        twitterTitle="Expert GDPR Compliance Services & Solutions | AnalyticsLiv"
-        twitterDescription="Protect your business with AnalyticsLiv’s expert GDPR compliance services. We offer customized solutions to ensure data privacy, reduce risks, and maintain full regulatory compliance."
+        title="Expert GDPR Compliance Services for Data Privacy & Security | AnalyticsLiv"
+        description="Protect your business with AnalyticsLiv’s GDPR compliance services. We ensure data privacy, reduce risks, and maintain full compliance."
+        twitterTitle="Expert GDPR Compliance Services for Data Privacy & Security | AnalyticsLiv"
+        twitterDescription="Protect your business with AnalyticsLiv’s GDPR compliance services. We ensure data privacy, reduce risks, and maintain full compliance."
       />
 
       <div className="">
@@ -195,7 +195,7 @@ const cookieLanding = ({ brandsdata }) => {
              Watch Our Webinar
             </a> */}
               <Link href="/contact?id=gdrp-compliance">
-                <button className="butn">Let’s Get in Touch</button>
+                <button className="contact-us-btn butn">Let’s Get in Touch</button>
               </Link>
             </div>
           </div>
@@ -445,7 +445,7 @@ const cookieLanding = ({ brandsdata }) => {
               Are you looking for the right partner to implement Cookie consent
               for your business?
             </div>
-            <a href="/contact?id=cookie-consent" target="_blank" className="text-center max-sm:w-[220px] max-xl:w-[270px] text-white text-xs md:text-base lg:text-lg font-semibold border border-white rounded-[5px] px-1 md:px-4 py-2">
+            <a href="/contact?id=cookie-consent" target="_blank" className="contact-us-btn text-center max-sm:w-[220px] max-xl:w-[270px] text-white text-xs md:text-base lg:text-lg font-semibold border border-white rounded-[5px] px-1 md:px-4 py-2">
               Contact Us Now
             </a>
           </div>
@@ -521,7 +521,7 @@ const cookieLanding = ({ brandsdata }) => {
               </div>
             </div>
             <div className=" flex justify-center">
-              <a href="/contact?id=cookie-consent" target="_blank" className="butn max-md:mt- text-center">
+              <a href="/contact?id=cookie-consent" target="_blank" className="contact-us-btn butn max-md:mt- text-center">
                 Talk to our Expert
               </a>
             </div>

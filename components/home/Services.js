@@ -85,6 +85,7 @@ const Services = () => {
         " GA4 Implementation & Optimization",
         "Server Side Tracking",
         "Cookie Consent Solution",
+        "Google Tag Manager",
       ],
       images: [
         "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/GA4_Logo%20(1).png",

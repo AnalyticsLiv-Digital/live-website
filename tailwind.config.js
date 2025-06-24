@@ -46,8 +46,13 @@ module.exports = {
         contactShadow: '6.02px 22.69px 117.29px 0px rgba(0, 0, 0, 0.25)',
         mediaIcons: '3px 3px 7px 0px #00000040',
         navShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.1)',
+        ga4Show: '3px 3px 8px 1px #97979759',
+        ga4FormShadow: '5px 5px 30px 5px #0000001A',
+        inputShadow: '0px 2px 2px 0px #0000000D',
       },
-
+      screens: {
+        '3xl': '1600px', // custom breakpoint name
+      },
       colors: {
         btn: '#4285F4',
         h1: '#6D6D6D',
@@ -81,7 +86,10 @@ module.exports = {
       backgroundImage: {
         'custom-linear': 'linear-gradient(97.32deg, #FF698D -3.47%, #FB3F6C 108.43%)',
         'header-linear': 'linear-gradient(97.32deg, #003366 -3.47%, #0F52BA 108.43%)',
-        'btn-linear': 'linear-gradient(90deg, #188F3C 0%, #5AB974 100%)',
+        'btn-linear-foundation': 'linear-gradient(90deg, #D18202 0%, #D49031 100%)',
+        'btn-linear-transformation': 'linear-gradient(90deg, #2273EC 0%, #5496ED 100%)',
+        'btn-linear-marketing': 'linear-gradient(90deg, #188F3C 0%, #5AB974 100%)',
+        'btn-linear-solution': 'linear-gradient(90deg, #405F8A 0%, #488AE8 100%)',
       },
     },
 

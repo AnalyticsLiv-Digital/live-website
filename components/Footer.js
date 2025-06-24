@@ -65,7 +65,7 @@ const Footer = () => {
                 <button onClick={scrollToTop}
                     className="relative z-10 px-3 py-[17px] rounded-full bg-white text-[#08A4F7] border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline mb-3 transition-all duration-300 ease-linear"
                 >
-                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector%20(4).png' alt='upwards_arrow' />
+                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector%20(4).png' alt='upwards vector' />
                 </button>
             </div>
             <div className='overflow-hidden relative bg-[#2B2E3C]'>
@@ -118,12 +118,12 @@ const Footer = () => {
                                             <div className="relative w-full max-sm:max-w-[380px] max-w-[400px] pt-2.5 md:pt-7">
 
                                                 {isSubmit ?
-                                                    <div className='bg-gray-100 p-3 text-center sm:min-w-[300px] sm:max-w-[310px] rounded-[10px] text-gray-800 font-medium text-base'>
+                                                    <div className='analyticsliv-footer-thankyou bg-gray-100 p-3 text-center sm:min-w-[300px] sm:max-w-[310px] rounded-[10px] text-gray-800 font-medium text-base'>
                                                         <div>Thank You for Connecting !</div>
                                                     </div>
                                                     :
 
-                                                    <div className="flex items-center">
+                                                    <div className="analyticsliv-footer flex items-center">
                                                         <form onSubmit={handleSubmit}>
                                                             <input
                                                                 required
@@ -156,12 +156,12 @@ const Footer = () => {
                                                     <div className='ml-0 flex items-start [381px]:mb-[3px] max-[381px]:gap-2'>
                                                         <IoIosMail className='opacity-[30%] w-[21px] h-[22px] sm:mr-[7px]' />
                                                         <div className='text-[13px] font-normal leading-5'>
-                                                            <a href="mailto:sales@analyticsliv.com" className='text-[#efefef]'>sales@analyticsliv.com</a>
+                                                            <a href="mailto:sales@analyticsliv.com" className='analyticsliv-email text-[#efefef]'>sales@analyticsliv.com</a>
                                                         </div>
                                                     </div>
                                                     <div className='ml-0 msm:pt-2 flex items-center '>
                                                         <FaPhone className='opacity-[30%] w-[18px] h-[18px] mr-[7px] max-[374px]:ml-1' />
-                                                        <span className='text-[13px] font-normal leading-5 text-[#efefef]'><a href="tel:+918320576622">+91 83205 76622</a></span>
+                                                        <span className='analyticsliv-contact text-[13px] font-normal leading-5 text-[#efefef]'><a href="tel:+918320576622">+91 83205 76622</a></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -172,12 +172,12 @@ const Footer = () => {
                                                     <div className='ml-0 flex items-start [381px]:mb-[3px] max-[381px]:gap-2'>
                                                         <IoIosMail className='opacity-[30%] w-[21px] h-[22px] sm:mr-[7px]' />
                                                         <div className='text-[13px] font-normal leading-5'>
-                                                            <a href="mailto:hr@analyticsliv.com" className='text-[#efefef]'>hr@analyticsliv.com</a>
+                                                            <a href="mailto:hr@analyticsliv.com" className='analyticsliv-email text-[#efefef]'>hr@analyticsliv.com</a>
                                                         </div>
                                                     </div>
                                                     <div className='ml-0 msm:pt-2 flex items-center '>
                                                         <FaPhone className='opacity-[30%] w-[18px] h-[18px] mr-[7px] max-[374px]:ml-1' />
-                                                        <span className='text-[13px] font-normal leading-5 text-[#efefef]'><a href="tel:+919998835732">+91 99988 35732</a></span>
+                                                        <span className='analyticsliv-contact text-[13px] font-normal leading-5 text-[#efefef]'><a href="tel:+919998835732">+91 99988 35732</a></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -188,12 +188,12 @@ const Footer = () => {
                                                     <div className='ml-0 flex items-start [381px]:mb-[3px] max-[381px]:gap-2'>
                                                         <IoIosMail className='opacity-[30%] w-[21px] h-[22px] sm:mr-[7px]' />
                                                         <div className='text-[13px] font-normal leading-5'>
-                                                            <a href="mailto:support@analyticsliv.com" className='text-[#efefef]'>support@analyticsliv.com</a>
+                                                            <a href="mailto:support@analyticsliv.com" className='analyticsliv-email text-[#efefef]'>support@analyticsliv.com</a>
                                                         </div>
                                                     </div>
                                                     <div className='ml-0 msm:pt-2 flex items-center '>
                                                         <FaPhone className='opacity-[30%] w-[18px] h-[18px] mr-[7px] max-[374px]:ml-1' />
-                                                        <span className='text-[13px] font-normal leading-5 text-[#efefef]'><a href="tel:+918320576622">+91 83205 76622</a></span>
+                                                        <span className='analyticsliv-contact text-[13px] font-normal leading-5 text-[#efefef]'><a href="tel:+918320576622">+91 83205 76622</a></span>
                                                     </div>
                                                 </div>
                                             </div>

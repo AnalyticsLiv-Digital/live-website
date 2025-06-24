@@ -106,10 +106,10 @@ const customersegmentation = () => {
         <>
             <MetaSchemaOg
                 url="https://analyticsliv.com/services/customer-segmentation"
-                title="Audience Segmentation Services in India | AnalyticsLiv"
-                description="Drive growth with customer segmentation and content personalization for better conversion rate across Google and Meta Advertising"
-                twitterTitle="Audience Segmentation Services in India | AnalyticsLiv"
-                twitterDescription="Drive growth with customer segmentation and content personalization for better conversion rate across Google and Meta Advertising"
+                title="Data‑Driven Customer Segmentation Services | AnalyticsLiv"
+                description="Drive more revenue with data‑backed customer segmentation services from AnalyticsLiv. Identify your best customers, tailor campaigns, and boost ROI with precision."
+                twitterTitle="Data‑Driven Customer Segmentation Services | AnalyticsLiv"
+                twitterDescription="Drive more revenue with data‑backed customer segmentation services from AnalyticsLiv. Identify your best customers, tailor campaigns, and boost ROI with precision."
             />
 
             <section className='cshome w-full relative font-gilroy overflow-hidden'>
@@ -122,10 +122,10 @@ const customersegmentation = () => {
                                 </h1>
                                 <div className='flex max-[425px]:flex-wrap flex-nowrap items-center lg:justify-start justify-center gap-5'>
                                     <Link href="/contact?id=programatic-advertising">
-                                        <button className="butn px-6 mt-6">REQUEST A DEMO</button>
+                                        <button className="contact-us-btn butn px-6 mt-6">REQUEST A DEMO</button>
                                     </Link>
                                     <Link href="/contact?id=programatic-advertising">
-                                        <button className="butn px-6 max-[425px]:mt-0 mt-6">CONTACT US</button>
+                                        <button className="contact-us-btn butn px-6 max-[425px]:mt-0 mt-6">CONTACT US</button>
                                     </Link>
                                 </div>
                             </div>
