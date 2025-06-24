@@ -5,7 +5,14 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 
 export const sendEmail = async (to, subject, html, from) => {
-    const emailTemplate = `
+  const combinedContent = `${to} ${subject} ${html}`;
+
+  if (combinedContent.includes('@yop.com')) {
+    console.log('Email not sent: contains @yop.com');
+    return;
+  }
+
+  const emailTemplate = `
       <html>
         <head>
           <style>
@@ -71,19 +78,19 @@ export const sendEmail = async (to, subject, html, from) => {
         </body>
       </html>`;
 
-    const msg = {
-        to,
-        from,
-        subject,
-        html: emailTemplate,
-    };
-    try {
-        await sgMail.send(msg);
-        console.log('Email sent to:- ', to);
-    } catch (error) {
-        console.error(error);
-        if (error.response) {
-            console.error(error.response.body);
-        }
+  const msg = {
+    to,
+    from,
+    subject,
+    html: emailTemplate,
+  };
+  try {
+    await sgMail.send(msg);
+    console.log('Email sent to:- ', to);
+  } catch (error) {
+    console.error(error);
+    if (error.response) {
+      console.error(error.response.body);
     }
+  }
 };
