@@ -526,7 +526,7 @@ export default function Ga4({ brandsdata }) {
             {
               formSubmit ?
                 <div>
-                  <div className='analyticsliv-form-thankyou flex flex-col justify-around md:h-[420px] items-center gap-4 relative text-slate-700'>
+                  <div className='analyticsliv-landing-form-thankyou flex flex-col justify-around md:h-[420px] items-center gap-4 relative text-slate-700'>
                     <img
                       src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Thank_You_img.png'
                       alt='analyticsLiv'
@@ -540,7 +540,7 @@ export default function Ga4({ brandsdata }) {
                     <h2 className='text-[10px] sm:text-xs xl:text-sm'>Partner with a Leading Google Analytics Certified Agency</h2>
                     <div className='text-xl font-extrabold'>Let us help you !!</div>
                   </div>
-                  <form onSubmit={handleSubmit} className='flex flex-col gap-[14px] 2xl:gap-[16px]'>
+                  <form onSubmit={handleSubmit} className='analyticsliv-landing-form flex flex-col gap-[14px] 2xl:gap-[16px]'>
                     <div className='flex flex-col gap-4 2xl:gap-[14px]'>
                       <div className='grid grid-cols-1 lg:grid-cols-2 gap-5'>
                         <div>
