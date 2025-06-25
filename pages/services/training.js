@@ -34,10 +34,10 @@ const training = () => {
         <div class="md:mt-4 px-4 md:px-20 pt-8 md:pt-11 lg:flex justify-around lg:items-center">
           <div class="inner-banner lg:w-1/2 text-center flex flex-col justify-center">
             <div class="px-4 md:px-16 pt-4 flex flex-col justify-center">
-              <div class="2xl:text-[33px] lg:text-[28px] text-[27px] font-['Poppins'] font-semibold text-maintext">
+              <h1 class="2xl:text-[33px] lg:text-[28px] text-[27px] font-['Poppins'] font-semibold text-maintext">
                 Dive into the Analytics Universe with Our Tailored Training for
                 Corporates and Developers – Your Journey Begins Here
-              </div>
+              </h1>
               <div class="flex justify-center">
                 <Link href="/contact?id=training">
                   <button class="butn mt-8">
@@ -72,9 +72,9 @@ const training = () => {
                       alt="arrow"
                     />
                   </div>
-                  <h1 class="text-trainingheading text-3xl font-semibold leading-normal">
+                  <h3 class="text-trainingheading text-3xl font-semibold leading-normal">
                     Customized Corporate Training
-                  </h1>
+                  </h3>
                 </div>
                 <br /> <br />
                 <div class="grid lg:grid-cols-2 justify-center gap-10">
@@ -99,7 +99,7 @@ const training = () => {
                         <br />
                         <Link href="/contact?id=training">
 
-                          <button class="butn">Explore Now</button>
+                          <button class="analyticsliv-explore-btn butn">Explore Now</button>
                         </Link>
                       </div>
                     </div>
@@ -125,7 +125,7 @@ const training = () => {
                         <br />
                         <Link href="/contact?id=training">
 
-                          <button class="butn">Explore Now</button>
+                          <button class="analyticsliv-explore-btn butn">Explore Now</button>
                         </Link>
                       </div>
                     </div>
@@ -168,7 +168,7 @@ const training = () => {
                         <br />
                         <Link href="/contact?id=training">
 
-                          <button class="butn">Explore Now</button>
+                          <button class="analyticsliv-explore-btn butn">Explore Now</button>
                         </Link>
                       </div>
                     </div>
@@ -194,7 +194,7 @@ const training = () => {
                         <br /> <br />
                         <Link href="/contact?id=training">
 
-                          <button class="butn">Explore Now</button>
+                          <button class="analyticsliv-explore-btn butn">Explore Now</button>
                         </Link>
                       </div>
                     </div>
@@ -221,7 +221,7 @@ const training = () => {
                         <br />
                         <Link href="/contact?id=training">
 
-                          <button class="butn">Explore Now</button>
+                          <button class="analyticsliv-explore-btn butn">Explore Now</button>
                         </Link>
                       </div>
                     </div>
@@ -264,7 +264,7 @@ const training = () => {
                         <br />
                         <Link href="/contact?id=training">
 
-                          <button class="butn">Explore Now</button>
+                          <button class="analyticsliv-explore-btn butn">Explore Now</button>
                         </Link>
                       </div>
                     </div>
@@ -290,7 +290,7 @@ const training = () => {
                         <br />
                         <Link href="/contact?id=training">
 
-                          <button class="butn">Explore Now</button>
+                          <button class="analyticsliv-explore-btn butn">Explore Now</button>
                         </Link>
                       </div>
                     </div>
@@ -335,7 +335,7 @@ const training = () => {
                       <br />
                       <Link href="/contact?id=training">
 
-                        <button class="butn">Explore Now</button>
+                        <button class="analyticsliv-explore-btn butn">Explore Now</button>
                       </Link>
                     </div>
                   </div>
