@@ -92,7 +92,7 @@ const HomeBlogs = () => {
           <a href='/blogs' className=''><button className="mainbutn max-md:mt-5">Read More Blogs</button></a>
         </div> */}
         <div className="max-md:hidden flex flex-col max-sm:hidden justify-center items-center gap-2 max-md:pt-5">
-          <a href='/blogs'><button className="mainbutn-opposite">Read More Blogs</button></a>
+          <a href='/blogs'><button className="analyticsliv-readmore-btn mainbutn-opposite">Read More Blogs</button></a>
           <div className="flex justify-center items-center gap-5">
             <button
               onClick={handlePrev}
@@ -295,7 +295,7 @@ const HomeBlogs = () => {
             <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20left%20white.svg' alt='right vector' className='w-3.5 h-3.5 hidden group-hover:block' />
           </button>
         </div>
-        <a href='/blogs' className=''><button className="mainbutn max-md:mt-1">Read More Blogs</button></a>
+        <a href='/blogs' className=''><button className="analyticsliv-readmore-btn mainbutn max-md:mt-1">Read More Blogs</button></a>
       </div>
 
     </section>

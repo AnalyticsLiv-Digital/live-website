@@ -111,7 +111,7 @@ const WhyChooseUs = () => {
                             <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20left%20white.svg' alt='right vector' className='w-3.5 h-3.5 hidden group-hover:block' />
                         </button>
                     </div>
-                    <a href='/services'><button className="mainbutn-opposite">Read More Here</button></a>
+                    <a href='/services'><button className="analyticsliv-readmore-btn mainbutn-opposite">Read More Here</button></a>
                 </div>
             </div>
             <div className="max-sm:hidden sm:pl-5 xl:pl-16 py-8 carousel-custom overflow-hidden">
