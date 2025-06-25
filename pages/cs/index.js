@@ -182,7 +182,7 @@ const CasestudyMain = ({casestudyDat}) => {
               <div className=''>
                 <div className='text-end pb-8'>
                   <form onSubmit={handleSubmit} className='flex'>
-                    <input name='s' type="search" placeholder='Search' className='bg-[#ffffff] w-[200px] rounded-[10px] border border-[#9ca3af] py-2 pl-9 focus:outline-none focus:caret-gray-400' />
+                    <input name='s' type="search" id='search' placeholder='Search' className='bg-[#ffffff] w-[200px] rounded-[10px] border border-[#9ca3af] py-2 pl-9 focus:outline-none focus:caret-gray-400' />
                   </form>
                 </div>
                 <div className='allfilters ml-[10px]'>

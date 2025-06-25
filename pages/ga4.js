@@ -546,13 +546,13 @@ export default function Ga4({ brandsdata }) {
                         <div>
                           <div className='text-sm 2xl:text-[13px] font-semibold text-[#14183E] pb-1 2xl:pb-0.5'>First Name*</div>
                           <input type="text" placeholder="First Name" className="text-sm 2xl:text-base px-4 py-2 2xl:py-2 border-[0.5px] border-[#D2D5DA] focus:border-[1.5px] focus:border-[#EA580C] shadow-inputShadow rounded-md w-full focus:outline-none placeholder-[#747582] placeholder-opacity-75"
-                            id="firstname" name="firstName" value={formValues?.firstName} onChange={handleChange} />
+                            id="firstName" name="firstName" value={formValues?.firstName} onChange={handleChange} />
                           <p className="text-red-600 text-sm">{formErrors?.firstName}</p>
                         </div>
                         <div>
                           <div className='text-sm 2xl:text-[13px] font-semibold text-[#14183E] pb-1 2xl:pb-0.5'>Last Name*</div>
                           <input type="text" placeholder="Last Name" className="text-sm 2xl:text-base px-4 py-2 2xl:py-2 border-[0.5px] border-[#D2D5DA] focus:border-[1.5px] focus:border-[#EA580C] shadow-inputShadow rounded-md w-full focus:outline-none placeholder-[#747582] placeholder-opacity-75"
-                            id="lastname" name="lastName" value={formValues?.lastName} onChange={handleChange} />
+                            id="lastName" name="lastName" value={formValues?.lastName} onChange={handleChange} />
                           <p className="text-red-600 text-sm">{formErrors?.lastName}</p>
                         </div>
                       </div>
@@ -581,7 +581,7 @@ export default function Ga4({ brandsdata }) {
                             borderRadius: '8px 0 0 8px',
                           }}
                           name="contactno"
-                          id="contactno"
+                          id="contact"
                           value={formValues?.contactno}
                           onChange={handleContactChange}
                           country={"in"}
@@ -591,7 +591,7 @@ export default function Ga4({ brandsdata }) {
                       </div>
                       <div className='w-full'>
                         <div className='text-sm 2xl:text-[13px] font-semibold text-[#14183E] pb-1 lg:pb-[5px] lg:pt-1 2xl:pt-0 2xl:pb-0.5'>Email*</div>
-                        <input type="email" placeholder="Enter Your Email" className="text-sm 2xl:text-base px-5 py-2 2xl:py-2 border-[0.5px] border-[#D2D5DA] focus:border-[1.5px] focus:border-[#EA580C] shadow-inputShadow rounded-md w-full focus:outline-none placeholder-[#747582] placeholder-opacity-75"
+                        <input type="email" id='email' placeholder="Enter Your Email" className="text-sm 2xl:text-base px-5 py-2 2xl:py-2 border-[0.5px] border-[#D2D5DA] focus:border-[1.5px] focus:border-[#EA580C] shadow-inputShadow rounded-md w-full focus:outline-none placeholder-[#747582] placeholder-opacity-75"
                           name="email" value={formValues?.email} onChange={handleChange} />
                         <p className="text-red-600 text-sm">{formErrors?.email}</p>
 

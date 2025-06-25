@@ -278,8 +278,8 @@ export default function Home() {
 
                                                     {!formSubmit && <form className="" onSubmit={handleSubmit}>
                                                         <div className="relative mb-6">
-                                                            <input type="text" id="firstname" className="block px-2.5 pt-[9px] pb-0 w-full text-sm bg-[#ffffff] text-[#30486a] border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " name="firstName" value={formValues.firstName} onChange={handleChange} />
-                                                            <label htmlFor="firstname" className="absolute lg:text-[15px] text-[13px] text-[#30486a]  duration-300 transform -translate-y-4 scale-75 top-[5px] origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Name*</label>
+                                                            <input type="text" id="firstName" className="block px-2.5 pt-[9px] pb-0 w-full text-sm bg-[#ffffff] text-[#30486a] border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " name="firstName" value={formValues.firstName} onChange={handleChange} />
+                                                            <label htmlFor="firstName" className="absolute lg:text-[15px] text-[13px] text-[#30486a]  duration-300 transform -translate-y-4 scale-75 top-[5px] origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Name*</label>
                                                             <p className="text-red-600 text-sm">{formErrors.firstName}</p>
                                                         </div>
 
@@ -290,7 +290,7 @@ export default function Home() {
                                                         </div>
                                                         <div className="relative mb-6">
                                                             <PhoneInput className="w-0 mt-4 md:mt-0 text-sm"
-                                                                name="contactno" id="contactno" value={formValues.contactno} onChange={handleContactChange}
+                                                                name="contactno" id="contact" value={formValues.contactno} onChange={handleContactChange}
                                                                 country={"in"}
                                                                 preferredCountries={['in', 'us', 'au']}
                                                                 enableSearch={true}

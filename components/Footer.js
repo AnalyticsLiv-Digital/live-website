@@ -129,6 +129,7 @@ const Footer = () => {
                                                                 required
                                                                 type="email"
                                                                 placeholder="Enter your email"
+                                                                id='email'
                                                                 value={email}
                                                                 onChange={handleEmailChange}
                                                                 className="flex-grow h-10 xl:h-10 pl-2 pr-1 sm:pl-4 rounded-l-[8px] border border-gray-300 focus:outline-none"
