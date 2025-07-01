@@ -752,13 +752,13 @@ function createPopup(onClose, onRegister) {
             <h2>BOOST YOUR CONVERSIONS</h2>
             <p>We offer expert Conversion Rate Optimization (CRO) services to maximize your website's potential.</p>
             <form style="${formStyles}" id="contactForm">
-                <input type="text" name="fullName" placeholder="Name*" required>
+                <input type="text" id='fullName' name="fullName" placeholder="Name*" required>
                 <span class="error" style="color: red;"></span>
-                <input type="email" name="email" placeholder="Email*" required>
+                <input type="email" id='email' name="email" placeholder="Email*" required>
                 <span class="error" style="color: red;"></span>
-                <input type="text" name="contact" placeholder="Contact No*" required>
+                <input type="text" id='contact' name="contact" placeholder="Contact No*" required>
                 <span class="error" style="color: red;"></span>
-                <textarea name="message" placeholder="Message" rows="4"></textarea>
+                <textarea name="message" id='message' placeholder="Message" rows="4"></textarea>
                 <button type="submit">Book Now!</button>
             </form>
         </div>

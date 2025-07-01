@@ -140,6 +140,7 @@ const GetInTouch = () => {
                                 <label className="block text-base font-semibold text-[#14183E]">Full Name</label>
                                 <input
                                     name="fullName"
+                                    id='fullName'
                                     value={formValues.fullName}
                                     onChange={handleChange}
                                     required
@@ -153,6 +154,7 @@ const GetInTouch = () => {
                                     <label className="block text-base font-semibold text-[#14183E]">Email</label>
                                     <input
                                         name="email"
+                                        id='email'
                                         value={formValues.email}
                                         onChange={handleChange}
                                         required
@@ -183,7 +185,7 @@ const GetInTouch = () => {
                                             borderRadius: '8px 0 0 8px',
                                         }}
                                         name="contactno"
-                                        id="contactno"
+                                        id="contact"
                                         value={formValues.contactno}
                                         onChange={handleContactChange}
                                         country={"in"}
@@ -197,6 +199,7 @@ const GetInTouch = () => {
                                     <label className="block text-base font-semibold text-[#14183E]">Contact For</label>
                                     <select
                                         name="purpose"
+                                        id='purpose'
                                         value={formValues.purpose}
                                         onChange={handleChange}
                                         className="w-full text-sm mt-1 px-5 py-2 border border-[#ECECEC] rounded-[5px] focus:outline-none focus:ring-2 focus:ring-[#08A4F7]"
@@ -215,6 +218,7 @@ const GetInTouch = () => {
                                 <label className="block text-base font-semibold text-[#14183E]">Requirements</label>
                                 <textarea
                                     name="requirements"
+                                    id='requirements'
                                     value={formValues.requirements}
                                     onChange={handleChange}
                                     required

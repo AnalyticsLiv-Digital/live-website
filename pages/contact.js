@@ -224,18 +224,18 @@ const contact = () => {
                                 <div><a href='/' className='text-blue-500 underline'>Click here</a> to go to Home Page</div>
                             </div>}
 
-                            {!formSubmit && <form className="contact-form md:w-[45%] flex flex-col justify-between gap-4" onSubmit={handleSubmit}>
+                            {!formSubmit && <form className="analyticsliv-contact-form md:w-[45%] flex flex-col justify-between gap-4" onSubmit={handleSubmit}>
                                 <div className='w-full'>
                                     <div className='text-sm 2xl:text-lg font-semibold text-[#14183E] pb-1 2xl:pb-1.5'>Full Name*</div>
                                     <input type="text" placeholder="Enter Your Full Name" className="text-sm 2xl:text-base px-5 py-2 2xl:py-3 border-[0.5px] border-[#08A4F7] rounded-md w-full focus:outline-none placeholder-[#747582] placeholder-opacity-75"
-                                        id="firstname" name="firstName" value={formValues?.firstName} onChange={handleChange} />
+                                        id="firstName" name="firstName" value={formValues?.firstName} onChange={handleChange} />
                                     <p className="text-red-600 text-sm">{formErrors?.firstName}</p>
                                 </div>
 
                                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-5'>
                                     <div className='w-full'>
                                         <div className='text-sm 2xl:text-lg font-semibold text-[#14183E] pb-1 lg:pb-[5px] lg:pt-1 2xl:pt-0 2xl:pb-1.5'>Email*</div>
-                                        <input type="email" placeholder="Enter Your Email" className="text-sm 2xl:text-base px-5 py-2 2xl:py-3 border-[0.5px] border-[#08A4F7] rounded-md w-full focus:outline-none placeholder-[#747582] placeholder-opacity-75"
+                                        <input type="email" id="email" placeholder="Enter Your Email" className="text-sm 2xl:text-base px-5 py-2 2xl:py-3 border-[0.5px] border-[#08A4F7] rounded-md w-full focus:outline-none placeholder-[#747582] placeholder-opacity-75"
                                             name="email" value={formValues?.email} onChange={handleChange} />
                                         <p className="text-red-600 text-sm">{formErrors?.email}</p>
 
@@ -262,7 +262,7 @@ const contact = () => {
                                                 borderRadius: '8px 0 0 8px',
                                             }}
                                             name="contactno"
-                                            id="contactno"
+                                            id="contact"
                                             value={formValues?.contactno}
                                             onChange={handleContactChange}
                                             country={"in"}

@@ -106,6 +106,7 @@ const index = ({ casestudyDat }) => {
             <form onSubmit={handleSearch} className='flex items-center mx-auto md:w-[35%] 2xl:w-[45%]'>
               <input
                 type="search"
+                id='search'
                 placeholder="Search"
                 className="w-full rounded-l-lg border-l border-t border-b border-[#C1E9FF] text-[#08A4F7] placeholder-[#08A4F7] py-2 pl-6 pr-3 focus:outline-[#08A4F7]"
                 value={searchQuery}

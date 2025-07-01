@@ -103,12 +103,10 @@ export default class AutoPlay extends Component {
         <section class="bg-lookersection ">
           <div class="md:mt-4 px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16">
             <div class="flex items-center space-x-4 py-4 mb-6">
-              <h2 class="text-lookerheading text-center font-bold text-4xl md:text-[40px] leading-normal pb-2">
+              <h3 class="text-lookerheading text-center font-bold text-4xl md:text-[40px] leading-normal pb-2">
                 <span class="relative after:absolute after:left-0 after:bottom-[-5px] after:bg-[#07A9F9] after:h-[9px] after:w-20 after:rounded-[5px]">
-                  Here's
-                </span>
-                What you can expect from our Looker BI services:
-              </h2>
+                  Here's </span>What you can expect from our Looker BI services:
+              </h3>
             </div>
             <br /> <br />
             <div class="flex flex-wrap justify-around gap-10">
@@ -134,7 +132,7 @@ export default class AutoPlay extends Component {
                   </p>
                   {/* btn cursor-pointer w-44 bg-lookerheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold */}
                   <Link href="/contact?id=looker-bi">
-                    <button class="butn">Explore Now</button>
+                    <button class="butn analyticsliv-explore-btn">Explore Now</button>
                   </Link>
                 </div>
               </div>
@@ -159,7 +157,7 @@ export default class AutoPlay extends Component {
                   </p>
                   {/* btn cursor-pointer w-44 bg-lookerheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold */}
                   <Link href="/contact?id=looker-bi">
-                    <button class="butn">Explore Now</button>
+                    <button class="butn analyticsliv-explore-btn">Explore Now</button>
                   </Link>
                 </div>
               </div>
@@ -185,7 +183,7 @@ export default class AutoPlay extends Component {
                   </p>
                   {/* btn cursor-pointer w-44 bg-lookerheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold */}
                   <Link href="/contact?id=looker-bi">
-                    <button class="butn mt-5">Explore Now</button>
+                    <button class="butn mt-5 analyticsliv-explore-btn">Explore Now</button>
                   </Link>
                 </div>
               </div>
@@ -212,7 +210,7 @@ export default class AutoPlay extends Component {
                   </p>
                   {/* btn cursor-pointer w-44 bg-lookerheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold */}
                   <Link href="/contact?id=looker-bi">
-                    <button class="butn">Explore Now</button>
+                    <button class="butn analyticsliv-explore-btn">Explore Now</button>
                   </Link>
                 </div>
               </div>
@@ -225,9 +223,7 @@ export default class AutoPlay extends Component {
             <div class="flex items-center space-x-4 py-4 mb-6">
               <h2 class="text-lookerheading text-center font-bold text-4xl md:text-[40px] leading-normal pb-2">
                 <span class="relative after:absolute after:left-0 after:bottom-[-5px] after:bg-[#07A9F9] after:h-[9px] after:w-20 after:rounded-[5px]">
-                  Why
-                </span>
-                Choose AnalyticsLiv as Your Looker BI Partner?
+                  Why</span> Choose AnalyticsLiv as Your Looker BI Partner?
               </h2>
             </div>
 
