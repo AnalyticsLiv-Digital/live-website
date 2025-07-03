@@ -10,6 +10,12 @@ const { Element: ScrollElement } = Scroll;
 const LookerStudio = () => {
 
     const [menuOpen, setMenuOpen] = useState(false);
+    const initialValues = { fullName: '', email: '', contactno: '', company: '', requirements: '' };
+    const [formValues, setFormValues] = useState(initialValues);
+    const [formErrors, setFormErrors] = useState({});
+    const [isSubmit, setIsSubmit] = useState(false);
+    const [showWaiting, setShowWaiting] = useState(false);
+    const [formSubmit, setFormSubmit] = useState(false);
 
     const scrolling = () => {
         {
@@ -47,6 +53,58 @@ const LookerStudio = () => {
             });
         }
     }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const errors = [];
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+
+        if (!formValues?.fullName?.trim()) errors?.push("Name");
+        // if (!formValues?.lastName?.trim()) errors?.push("Last Name");
+        if (!formValues?.email?.trim() || !regex.test(formValues?.email)) errors?.push("Email");
+        if (!formValues?.company) errors?.push("Company");
+        console.log("formeror-", formValues?.requirements)
+        console.log("errors?.length,", errors?.length)
+        if (errors?.length > 0) {
+            setFormErrors(errors);
+            setIsLoading(false);
+            return;
+        }
+        console.log("check log-", formErrors)
+        // setFormErrors(validate(formValues));
+        setIsSubmit(true);
+        setShowWaiting(true);
+        dataLayer.push({
+            event: 'ga4_submission'
+        });
+        fetch('/api/ga4contact', {
+            method: 'POST', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+                'mode': 'no-cors'
+            },
+            body: JSON.stringify({
+                "fullName": formValues.firstName + " " + formValues.lastName,
+                // "lastName": formValues.lastName,
+                "email": formValues.email,
+                "contact": formValues.contactno,
+                "message": formValues.requirements,
+                "receiveUpdates": formValues.receiveUpdates,
+            }),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                setFormSubmit(true);
+                setShowWaiting(false);
+                window.open("https://calendly.com/analyticsliv/30min", '_blank');
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                setShowWaiting(false);
+            });
+
+    };
 
     return (
         <>
@@ -234,7 +292,7 @@ const LookerStudio = () => {
                                 </h2>
                             </div>
 
-                            <form className="bg-white px-6 py-8 space-y-6">
+                            <form onSubmit={handleSubmit} className="bg-white px-6 py-8 space-y-6">
                                 {/* Name and Email */}
                                 <div className="flex flex-col sm:flex-row gap-4">
                                     <div className="relative w-full">
@@ -242,6 +300,7 @@ const LookerStudio = () => {
                                         <input
                                             type="text"
                                             placeholder="Enter your name"
+                                            id="fullName" name="fullName" value={formValues?.fullName} onChange={handleChange}
                                             className="w-full border border-gray-300 rounded-[9px] py-[12px] 2xl:py-[20px] px-[14px] 2xl:px-[20px] pr-10 text-sm"
                                         />
                                         <img
@@ -255,6 +314,8 @@ const LookerStudio = () => {
                                         <input
                                             type="email"
                                             placeholder="Enter your email"
+                                            id='email'
+                                            name="email" value={formValues?.email}
                                             className="w-full border border-gray-300 rounded-[9px] py-[12px] 2xl:py-[20px] px-[14px] 2xl:px-[20px] pr-10 text-sm"
                                         />
                                         <img
@@ -271,6 +332,10 @@ const LookerStudio = () => {
                                     <input
                                         type="text"
                                         placeholder="Enter your number"
+                                        name="contactno"
+                                        id="contact"
+                                        value={formValues?.contactno}
+                                        //   onChange={handleContactChange}
                                         className="w-full border border-gray-300 rounded-[9px] py-[12px] 2xl:py-[20px] px-[14px] 2xl:px-[20px] pr-10 text-sm"
                                     />
                                     <img
@@ -286,6 +351,8 @@ const LookerStudio = () => {
                                     <input
                                         type="text"
                                         placeholder="Enter your company name"
+                                        id='company'
+                                        name="company" value={formValues?.company}
                                         className="w-full border border-gray-300 rounded-[9px] py-[12px] 2xl:py-[20px] px-[14px] 2xl:px-[20px] pr-10 text-sm"
                                     />
                                     <img
@@ -313,15 +380,26 @@ const LookerStudio = () => {
                                         </label>
                                     </div>
                                 </div>
-
+                                {
+                                    formErrors?.length > 0 &&
+                                    <p className="text-red-500 text-xs font-medium text-left w-full pl-2 pt-1">
+                                        {formErrors?.join(", ")} {formErrors?.length === 1 ? "is" : "are"} required.
+                                    </p>
+                                }
                                 {/* Join Button */}
-                                <button
+                                {/* <button
                                     type="submit"
                                     className="w-full flex items-center justify-center gap-3 bg-[#22A395] hover:bg-[#127f74] text-white font-semibold py-3 rounded-md mt-6 text-2xl"
                                 >
                                     JOIN FREE
                                     <img src='https://storage.googleapis.com/website-bucket-uploads/popup/Right%20Arrow%20(1).png' alt=''
                                         className='w-7' />
+                                </button> */}
+                                <button className={`${showWaiting ? 'cursor-not-allowed' : 'cursor-pointer'} w-full flex items-center justify-center gap-3 bg-[#22A395] hover:bg-[#127f74] text-white font-semibold py-3 rounded-md mt-6 text-2xl`}>
+                                    {showWaiting ? 'Loading...' : <>
+                                        JOIN FREE
+                                        <img src='https://storage.googleapis.com/website-bucket-uploads/popup/Right%20Arrow%20(1).png' alt=''
+                                            className='w-7' /></>}
                                 </button>
                             </form>
                         </div>
