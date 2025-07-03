@@ -17,6 +17,8 @@ module.exports = {
         lato: ['Lato', 'sans-serif'],
         rbt: ['Roboto', 'sans-serif'],
         sans: ['Open Sans', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
+        satisfy: ['Satisfy', 'cursive'],
       },
       boxShadow: {
         btnshadow: '1px 1px 23px 2px rgba(255, 251, 251, 0.25)',
@@ -49,6 +51,12 @@ module.exports = {
         ga4Show: '3px 3px 8px 1px #97979759',
         ga4FormShadow: '5px 5px 30px 5px #0000001A',
         inputShadow: '0px 2px 2px 0px #0000000D',
+        ga4Shadow: '0px 1px 4px 0px #19213D0F',
+        webinarShadow: '2px 0px 3px 0px #00000040',
+        webinarTime: '0px 0px 4px 0px #0C1316A1 inset',
+        webinarCard: '10px 10px 40px 0px #00000026',
+        webinarSpeaker: '-3px 4px 4px 0px #00000040',
+
       },
       screens: {
         '3xl': '1600px', // custom breakpoint name
