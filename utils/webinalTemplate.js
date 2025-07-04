@@ -329,15 +329,6 @@ function generateLookerEmailTemplate(firstName) {
                         <strong>📱 Add to Calendar:</strong> We'll send you calendar invites and reminder emails as the webinar date approaches. Don't worry - we've got you covered!
                     </div>
 
-                    <h3>🎁 Exclusive Bonuses:</h3>
-                    <p>As a registered attendee, you'll receive:</p>
-                    <ul style="padding-left: 25px;">
-                        <li>📊 FREE Looker Studio templates worth $200</li>
-                        <li>📚 Comprehensive webinar resource guide</li>
-                        <li>🎥 Recording access for 30 days</li>
-                        <li>💬 Access to our exclusive Looker Studio community</li>
-                    </ul>
-
                     <p>Can't make it live? <strong>No worries!</strong> All registered attendees will receive the recording within 24 hours.</p>
                     
                     <h3>❓ Got Questions?</h3>
