@@ -4,6 +4,7 @@ import LearningCarousel from "../../components/LookerWeb";
 import { FiMenu, FiX } from "react-icons/fi";
 import * as Scroll from "react-scroll";
 import Head from "next/head";
+import Footer from "../../components/Footer";
 
 const { Element: ScrollElement } = Scroll;
 
@@ -813,6 +814,7 @@ const LookerStudio = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };
