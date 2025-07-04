@@ -6,6 +6,7 @@ const CookieContactSchema = new mongoose.Schema({
     contact: { type: String },
     company: { type: String },
     timestamp: { type: Date, default: Date.now },
+    profession: { type: String },
     type: { type: String },
 });
 mongoose.models = {};

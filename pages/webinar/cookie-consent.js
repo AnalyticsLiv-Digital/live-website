@@ -482,7 +482,7 @@ export default function CookieConsent({ brandsdata }) {
             </div>
             <div className="flex flex-col">
               <img
-                src="/https://storage.googleapis.com/website-bucket-uploads/static/public/Abhishek_Webinar_Profile_Pic_New%20(1).png.png"
+                src="/https://storage.googleapis.com/website-bucket-uploads/static/public/Abhishek_Webinar_Profile_Pic_New%20(1).png"
                 alt=""
                 className="pb-3"
               />
