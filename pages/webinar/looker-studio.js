@@ -3,6 +3,7 @@ import MetaSchemaOg from "../../components/MetaSchemaOg";
 import LearningCarousel from "../../components/LookerWeb";
 import { FiMenu, FiX } from "react-icons/fi";
 import * as Scroll from "react-scroll";
+import Head from "next/head";
 
 const { Element: ScrollElement } = Scroll;
 
@@ -121,6 +122,13 @@ const LookerStudio = () => {
 
   return (
     <>
+      <Head>
+        <link
+          rel="icon"
+          href="https://storage.googleapis.com/website-bucket-uploads/static/favicon.png"
+          type="image/icon type"
+        ></link>
+      </Head>
       <MetaSchemaOg
         url="https://analyticsliv.com/webinar/looker-studio"
         title="Free Webinar: Master Data Storytelling with Looker Studio"
