@@ -1,28 +1,29 @@
 import CookieContact from "../../../models/CookieContact";
 import connectDb from "../../../middleware/mongoose";
 import { sendEmail } from "../../../utils/sendMail";
-import { generateEmailTemplate } from "../../../utils/webinalTemplate";
+import { generateLookerEmailTemplate } from "../../../utils/webinalTemplate";
 
 const handler = async (req, res) => {
   if (req.method == 'POST') {
 
-    fetch('https://script.google.com/a/macros/analyticsliv.com/s/AKfycbyTZ8cSxnbJnAATesckEfLHiza2ovYoq2XgOC-WQrWob9tGwlE7hToRWR3ZrcEr6Xov/exec?fname=' + req.body.fullName + '&email=' + req.body.email + '&contact=' + req.body.contact + '&company=' + req.body.company);
+    fetch('https://script.google.com/macros/s/AKfycbwTXnR62UYYH8QE6o_azyJmp6jK99IvT-maw4q1APBVdr4-eR0kH_Sy-vErAZzPDF8E/exec?fname=' + req.body.fullName + '&email=' + req.body.email + '&contact=' + req.body.contact + '&company=' + req.body.company + '&profession=' + req.body.profession);
     let b = new CookieContact({
       fullName: req.body.fullName,
       email: req.body.email,
       contact: req.body.contact,
       //   message: req.body.message,
       company: req.body.company,
+      profession: req.body.profession,
       type: req.body.type,
     });
     await b.save();
 
     var internalMailOptions = {
       from: "support@analyticsliv.com",
-      //   to:"atulverma@analyticsliv.com",
-      to: ["sales@analyticsliv.com", "anshul.d@analyticsliv.com", "anuj@analyticsliv.com", "nitya@analyticsliv.com", "rajvi@analyticsliv.com", "abhishek.tiwari@analyticsliv.com", "shubhangi@analyticsliv.com"],
-      subject: 'New Registartion for Irec Summit.',
-      html: `Enquiry Submitted by <br> Full Name - ${req.body.fullName}  <br> Email- ${req.body.email} <br> Contact - ${req.body.contact} <br> Message - ${req.body.message} <br> Website - ${req.body.company} <br> Type - ${req.body.type} `
+      // to:"atul.verma@analyticsliv.com",
+      to: ["sales@analyticsliv.com", "anuj@analyticsliv.com", "nitya@analyticsliv.com", "rajvi@analyticsliv.com", "abhishek.tiwari@analyticsliv.com", "shubhangi@analyticsliv.com", "sakina.furniturewala@analyticsliv.com"],
+      subject: 'New Registartion for Looker studio webinar.',
+      html: `Enquiry Submitted by <br> Full Name - ${req.body.fullName}  <br> Email- ${req.body.email} <br> Contact - ${req.body.contact} <br> Website - ${req.body.company} <br> Profession - ${req.body.profession} <br> Type - ${req.body.type} `
     };
 
 
@@ -30,7 +31,7 @@ const handler = async (req, res) => {
       from: "sales@analyticsliv.com",
       to: [req.body.email],
       subject: '🙏 Thank You for Registering!',
-      html: generateEmailTemplate(req.body.fullName)
+      html: generateLookerEmailTemplate(req.body.fullName)
     };
 
     await Promise.all([

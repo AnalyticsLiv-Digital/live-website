@@ -69,7 +69,7 @@ export default function LearningCarousel() {
         slidesToShow: 5,
         speed: 600,
         autoplay: true,
-        autoplaySpeed: 1500,
+        autoplaySpeed: 5000,
         arrows: false,
         beforeChange: (oldIndex, newIndex) => {
             setCurrentSlide(newIndex);
