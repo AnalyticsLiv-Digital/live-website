@@ -433,7 +433,7 @@ const customersegmentation = () => {
                             <div className='lg:grid lg:grid-cols-1 sm:flex sm:justify-between grid justify-center gap-[30px]'>
                                 <div className='first group 2xl:h-[299px] xl:h-[329px] lg:h-[290px] home-blog max-[1024px]:w-full rounded border border-solid border-[#DBDBDB] hover:border-[#979797] hover:shadow-serviceoffer p-[25px] text-center relative'>
                                     <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                                    <a href="/case-studies/ua-to-ga4-migration-for-a-website" className='lg:flex gap-5'>
+                                    <a href="/case-studies/ua-to-ga4-migration-for-a-website" className='lg:flex gap-5 readmore-cs'>
                                         <Image
                                             src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestudy1.png"
                                             width={300}
@@ -458,7 +458,7 @@ const customersegmentation = () => {
                                 </div>
                                 <div className='second group 2xl:h-[299px] xl:h-[329px] lg:h-[290px] home-blog max-[1024px]:w-full max-[640px]:mt-[20px] rounded border border-solid border-[#DBDBDB] hover:border-[#979797] hover:shadow-serviceoffer p-[25px] text-center relative'>
                                     <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                                    <a href="/case-studies/55-percent-increase-in-avg-session-duration" className='lg:flex gap-5'>
+                                    <a href="/case-studies/55-percent-increase-in-avg-session-duration" className='lg:flex gap-5 readmore-cs'>
                                         <Image
                                             src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestudy3.png"
                                             width={300}
@@ -489,7 +489,7 @@ const customersegmentation = () => {
                             <div className='third hidden lg:grid gap-[30px]'>
                                 <div className='home-casestd3 group 2xl:h-[299px] xl:h-[329px] lg:h-[290px] rounded bg-no-repeat bg-cover border border-solid hover:border-[#979797] hover:shadow-serviceoffer p-5 text-center relative'>
                                     <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                                    <a href="/case-studies/skyrocket-your-campaigns-ctr-with-a-95-percent-surge-in-14-days" className='grid gap-5'>
+                                    <a href="/case-studies/skyrocket-your-campaigns-ctr-with-a-95-percent-surge-in-14-days" className='grid gap-5 readmore-cs'>
                                         <div className=''>
                                             <Image
                                                 src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestd.png"
@@ -508,7 +508,7 @@ const customersegmentation = () => {
                                 </div>
                                 <div className='home-casestd3 group 2xl:h-[299px] xl:h-[329px] lg:h-[290px] rounded bg-no-repeat bg-cover border border-solid hover:border-[#979797] hover:shadow-serviceoffer p-5 text-center relative'>
                                     <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                                    <a href="/case-studies/driving-campaigns-in-dv360-to-post-click-attribution-success-with-36-percent-reduction-in-cpi" className='grid gap-1'>
+                                    <a href="/case-studies/driving-campaigns-in-dv360-to-post-click-attribution-success-with-36-percent-reduction-in-cpi" className='grid gap-1 readmore-cs'>
                                         <div className='grid gap-4'>
                                             <Image
                                                 src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestd2.png"
@@ -560,7 +560,7 @@ const customersegmentation = () => {
                     </div>
                 </div>
             </section>
-            <section className='csfaq crofaq relative overflow-hidden font-gilroy'>
+            <section className='faq-section csfaq crofaq relative overflow-hidden font-gilroy'>
                 <div className="relative px-4 md:px-12 pt-8 pb-8 z-20">
                     <div>
                         <h3 className='text-[32px] font-semibold text-[#000000] leading-[1.5em] font-gilroy mb-2'>FAQ's</h3>
@@ -569,7 +569,7 @@ const customersegmentation = () => {
                         <div className='items-start lg:justify-start justify-center gap-7 w-full'>
                             <div className={`faqfst flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full text-[#000000]' onClick={toggleFaqfstVisibility}>
+                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={toggleFaqfstVisibility}>
                                         <div className={`flex items-center w-full justify-between gap-5 ${isFaqfstVisible ? 'mb-[10px]' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <h2 className='text-[17px] font-medium leading-normal'>What data do I need for customer segmentation?</h2>
@@ -588,7 +588,7 @@ const customersegmentation = () => {
                             </div>
                             <div className={`faqsec flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full text-[#000000]' onClick={toggleFaqsecVisibility}>
+                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={toggleFaqsecVisibility}>
                                         <div className={`flex items-center justify-between gap-5 ${isFaqsecVisible ? 'mb-[10px]' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <h2 className='text-[17px] font-medium leading-normal'>How many customer segments will I have?</h2>
@@ -607,7 +607,7 @@ const customersegmentation = () => {
                             </div>
                             <div className={`faqthrd flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqthrdVisibility()}>
+                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqthrdVisibility()}>
                                         <div className={`flex items-center justify-between gap-5 ${isFaqthrdVisible ? 'mb-[10px]' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <h2 className='text-[17px] font-medium leading-normal'>What can I do with my customer segments?</h2>

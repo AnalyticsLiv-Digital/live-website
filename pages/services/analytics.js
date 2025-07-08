@@ -16,7 +16,7 @@ const index = () => {
     const { onClick } = props;
     return (
       <div
-        className="absolute top-1/2 right-[-12px] md:right-[-20px] lg:right-[-40px] transform -translate-y-1/2 z-10 cursor-pointer"
+        className="carousel-button absolute top-1/2 right-[-12px] md:right-[-20px] lg:right-[-40px] transform -translate-y-1/2 z-10 cursor-pointer"
         onClick={onClick}
       >
         <FaArrowRight size={20} />
@@ -28,7 +28,7 @@ const index = () => {
     const { onClick } = props;
     return (
       <div
-        className="absolute top-1/2 left-[-12px] md:left-[-20px] lg:left-[-40px] transform -translate-y-1/2 z-10 cursor-pointer"
+        className="carousel-button absolute top-1/2 left-[-12px] md:left-[-20px] lg:left-[-40px] transform -translate-y-1/2 z-10 cursor-pointer"
         onClick={onClick}
       >
         <FaArrowLeft size={20} />
@@ -301,7 +301,7 @@ const index = () => {
         id="ga4-implementation"
         name="ga4-implementation"
       ></ScrollElement>
-      <section class="bg-analyticssection relative">
+      <section class="ana-services bg-analyticssection relative">
         <div class="md:mt-4 px-4 md:px-20 pt-8 md:pt-11 md:pb-16 pb-8">
           <div class="text-left">
             <h2 class="text-analyticsheading text-[40px] font-bold inline">
@@ -331,7 +331,7 @@ const index = () => {
                   </div>{" "}
                   <br />
                   <a href="#">
-                    <h5 className="text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
+                    <h5 className="service-title text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
                       Enhanced Ecommerce Implementation
                     </h5>
                   </a>{" "}
@@ -353,7 +353,7 @@ const index = () => {
                   </div>
                   <br />
                   <a href="#">
-                    <h5 className="text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
+                    <h5 className="service-title text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
                       Third-party pixel implementation
                     </h5>
                   </a>{" "}
@@ -375,7 +375,7 @@ const index = () => {
                   </div>{" "}
                   <br />
                   <a href="#">
-                    <h5 className="text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
+                    <h5 className="service-title text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
                       Shopify and Enhanced Ecommerce Integration
                     </h5>
                   </a>{" "}
@@ -397,7 +397,7 @@ const index = () => {
                   </div>
                   <br />
                   <a href="#">
-                    <h5 className="text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-5">
+                    <h5 className="service-title text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-5">
                       GDPR Cookie Integration
                     </h5>
                   </a>
@@ -418,7 +418,7 @@ const index = () => {
                   </div>
                   <br />
                   <a href="#">
-                    <h5 className="text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
+                    <h5 className="service-title text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
                       Form Field/Funnel Implementation
                     </h5>
                   </a>{" "}
@@ -439,7 +439,7 @@ const index = () => {
                   </div>{" "}
                   <br />
                   <a href="#">
-                    <h5 className="text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
+                    <h5 className="service-title text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
                       Configuration of dimensions
                     </h5>
                   </a>{" "}
@@ -460,7 +460,7 @@ const index = () => {
                   </div>{" "}
                   <br />
                   <a href="#">
-                    <h5 className="text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
+                    <h5 className="service-title text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
                       Custom Events Tracking
                     </h5>
                   </a>{" "}
@@ -481,7 +481,7 @@ const index = () => {
                   </div>{" "}
                   <br />
                   <a href="#">
-                    <h5 className="text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
+                    <h5 className="service-title text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
                       GTM Cleanup
                     </h5>
                   </a>{" "}
@@ -501,7 +501,7 @@ const index = () => {
         </div>
       </section>
 
-      <section class="relative">
+      <section class="ana-services relative">
         <div class="md:mt-4 px-4 md:px-20 pt-8 md:pt-11 md:pb-10 pb-8">
           <p class="text-analyticsheading text-[30px] font-medium mt-1.5">
             Advanced Analytics Services - For profound insights
@@ -522,7 +522,7 @@ const index = () => {
                   </div>{" "}
                   <br />
                   <a href="#">
-                    <h5 className="text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
+                    <h5 className="service-title text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
                       Server-Side Tagging
                     </h5>
                   </a>{" "}
@@ -545,7 +545,7 @@ const index = () => {
                   </div>
                   <br />
                   <a href="#">
-                    <h5 className="text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
+                    <h5 className="service-title text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
                       Custom Attribution Implementation
                     </h5>
                   </a>{" "}
@@ -567,7 +567,7 @@ const index = () => {
                   </div>{" "}
                   <br />
                   <a href="#">
-                    <h5 className="text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
+                    <h5 className="service-title text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
                       Tracking the user ID
                     </h5>
                   </a>{" "}
@@ -589,7 +589,7 @@ const index = () => {
                   </div>
                   <br />
                   <a href="#">
-                    <h5 className="text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-5">
+                    <h5 className="service-title text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-5">
                       Facebook conversion API implementation
                     </h5>
                   </a>
@@ -610,7 +610,7 @@ const index = () => {
                   </div>
                   <br />
                   <a href="#">
-                    <h5 className="text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
+                    <h5 className="service-title text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
                       Integration of offline and online Data
                     </h5>
                   </a>{" "}

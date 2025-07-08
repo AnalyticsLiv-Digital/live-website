@@ -151,7 +151,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="pt-14 mb-12 xl:mb-20 2xl:mb-12 px-4 md:px-8 lg:px-16 relative">
+    <div className="ana-services pt-14 mb-12 xl:mb-20 2xl:mb-12 px-4 md:px-8 lg:px-16 relative">
       <div className="text-[#100F1B] text-3xl font-bold text-center">
         Services We Offer
       </div>
@@ -182,7 +182,7 @@ const Services = () => {
           <div className="flex justify-center items-center gap-1 md:gap-2 lg:gap-5">
             <button
               onClick={handlePrev}
-              className="group overflow-hidden z-10 bg-transparent border border-white hover:border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[4px] md:rounded-[8px] px-1 py-1 md:px-4 md:py-3 mt-3 transition-all duration-300 ease-linear hover:bg-white"
+              className="group carousel-button overflow-hidden z-10 bg-transparent border border-white hover:border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[4px] md:rounded-[8px] px-1 py-1 md:px-4 md:py-3 mt-3 transition-all duration-300 ease-linear hover:bg-white"
             >
               <img
                 src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector%20(1).svg"
@@ -197,7 +197,7 @@ const Services = () => {
             </button>
             <button
               onClick={handleNext}
-              className="group overflow-hidden z-10 bg-transparent border border-white hover:border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[4px] md:rounded-[8px] px-1 py-1 md:px-4 md:py-3 mt-3 transition-all duration-300 ease-linear hover:bg-white"
+              className="group carousel-button overflow-hidden z-10 bg-transparent border border-white hover:border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[4px] md:rounded-[8px] px-1 py-1 md:px-4 md:py-3 mt-3 transition-all duration-300 ease-linear hover:bg-white"
             >
               <img
                 src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector.svg"
@@ -290,7 +290,7 @@ const Services = () => {
                       alt={service.title}
                       className="w-14"
                     />
-                    <h3 className="text-base xl:text-lg font-bold text-center">
+                    <h3 className="service-title text-base xl:text-lg font-bold text-center">
                       {service.title}
                     </h3>
                   </div>

@@ -5,7 +5,7 @@ const HomeCaseStudies = () => {
         <section className="max-md:pb-7 md:pt-5 lg:pt-10 px-4 md:px-16">
             <div className="flex max-md:flex-col-reverse justify-between py-10 2xl:pb-16 items-center overflow-hidden relative">
                 <div className='max-md:hidden z-20'>
-                    <a href='/case-studies' className=''><button className="analyticsliv-readmore-btn mainbutn max-md:mt-5">Read More Case Studies</button></a>
+                    <a href='/case-studies' className=''><button className="readmore-button mainbutn max-md:mt-5">Read More Case Studies</button></a>
                 </div>
                 <div className="absolute max-md:hidden lg:top-[20%] md:top-[80px] 2xl:top-[-10px] left-[18%] lg:left-[8%] 2xl:left-[7%] z-10 w-full">
                     <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Arrow%20(1).png" alt="arrow" className="w-[40%] 2xl:w-[45%]" />
@@ -18,7 +18,7 @@ const HomeCaseStudies = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <a href='case-studies/elevate-the-brand-reach-with-discovery-campaigns' className="bg-white rounded-lg shadow-lg p-4 2xl:p-6 relative">
+                <a href='case-studies/elevate-the-brand-reach-with-discovery-campaigns' className="readmore-cs bg-white rounded-lg shadow-lg p-4 2xl:p-6 relative">
                     <div className='flex flex-col justify-evenly h-full'>
                         <div className="absolute w-[100px] text-center top-4 2xl:top-6 left-4 2xl:left-6 bg-[#A2EC4E99] text-white font-semibold px-3 py-1 rounded-tl-2xl 2xl:rounded-tl-[20px] rounded-br-md text-sm">Marketing</div>
                         <img
@@ -55,7 +55,7 @@ const HomeCaseStudies = () => {
                         </div>
                     </div>
                 </a>
-                <a href='/case-studies/ga4-enhanced-ecommerce-implementation-using-gtm-and-shopify-integration' className="bg-white rounded-lg shadow-lg p-4 2xl:p-6 relative">
+                <a href='/case-studies/ga4-enhanced-ecommerce-implementation-using-gtm-and-shopify-integration' className="readmore-cs bg-white rounded-lg shadow-lg p-4 2xl:p-6 relative">
                     <div className='flex flex-col justify-evenly h-full'>
 
                         <div className="absolute w-[100px] text-center top-4 2xl:top-6 left-4 2xl:left-6 bg-[#EC954E99] text-white font-semibold px-3 py-1 rounded-tl-[20px] 2xl:rounded-tl-3xl rounded-br-md text-sm">Analytics</div>
@@ -93,7 +93,7 @@ const HomeCaseStudies = () => {
                         </div>
                     </div>
                 </a>
-                <a href='/case-studies/180-percent-increase-in-lead-volume-and-60-percent-reduction-cpl' className="bg-white rounded-lg shadow-lg p-4 2xl:p-6 relative">
+                <a href='/case-studies/180-percent-increase-in-lead-volume-and-60-percent-reduction-cpl' className="readmore-cs bg-white rounded-lg shadow-lg p-4 2xl:p-6 relative">
                     <div className='flex flex-col justify-evenly h-full'>
 
                         <div className="absolute w-[100px] text-center top-4 2xl:top-6 left-4 2xl:left-6 bg-[#A2EC4E99] text-white font-semibold px-3 py-1 rounded-tl-2xl 2xl:rounded-tl-[20px] rounded-br-md text-sm">Marketing</div>
@@ -133,7 +133,7 @@ const HomeCaseStudies = () => {
                     </div>
                 </a>
                 <div className='md:hidden mx-auto'>
-                    <a href='/case-studies' className=''><button className="analyticsliv-readmore-btn mainbutn max-md:mt-2">Read More Case Studies</button></a>
+                    <a href='/case-studies' className=''><button className="readmore-button mainbutn max-md:mt-2">Read More Case Studies</button></a>
                 </div>
             </div>
         </section>

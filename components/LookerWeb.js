@@ -129,7 +129,7 @@ export default function LearningCarousel() {
             </div>
 
             {/* Custom Dots */}
-            <div className="flex justify-center mt-6">
+            <div className="carousel-custom flex justify-center mt-6">
                 {[...Array(5)].map((_, i) => (
                     <div
                         key={i}

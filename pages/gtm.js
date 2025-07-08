@@ -167,7 +167,7 @@ export default function gtmNew({ brandsdata }) {
         const { onClick } = props;
         return (
             <div
-                className="absolute top-1/2 right-[-12px] md:right-[-20px] lg:right-[-40px] transform -translate-y-1/2 z-10 cursor-pointer"
+                className="carousel-button absolute top-1/2 right-[-12px] md:right-[-20px] lg:right-[-40px] transform -translate-y-1/2 z-10 cursor-pointer"
                 onClick={onClick}
             >
                 <FaArrowRight size={20} />
@@ -179,7 +179,7 @@ export default function gtmNew({ brandsdata }) {
         const { onClick } = props;
         return (
             <div
-                className="absolute top-1/2 left-[-12px] md:left-[-20px] lg:left-[-40px] transform -translate-y-1/2 z-10 cursor-pointer"
+                className="carousel-button absolute top-1/2 left-[-12px] md:left-[-20px] lg:left-[-40px] transform -translate-y-1/2 z-10 cursor-pointer"
                 onClick={onClick}
             >
                 <FaArrowLeft size={20} />
@@ -645,12 +645,12 @@ export default function gtmNew({ brandsdata }) {
 
                     </div>
 
-                    {formSubmit ? <div className='gtmForm1 xl:absolute max-md:mx-4 overflow-auto z-10 h-[480px] md:h-[500px] 2xl:h-[550px] md:my-10 right-[10%] max-md:mt-4 md:top-[450px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] text-center flex flex-col justify-around items-center px-3 md:px-7 py-2 md:py-5 bg-white'>
+                    {formSubmit ? <div className='landing-thankyou gtmForm1 xl:absolute max-md:mx-4 overflow-auto z-10 h-[480px] md:h-[500px] 2xl:h-[550px] md:my-10 right-[10%] max-md:mt-4 md:top-[450px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] text-center flex flex-col justify-around items-center px-3 md:px-7 py-2 md:py-5 bg-white'>
                         <h2 className="md:text-xl text-sky-900">Thank you for showing interest with us!</h2>
                         <h2 className="font-semibold text-2xl p-4 md:p-8 border-dashed border-b-2 border-sky-200">We will get back to you shortly !!</h2>
                         <img alt="Thankyou" className="w-64 mx-auto" src="https://storage.googleapis.com/website-bucket-uploads/static/Na_Dec_46.jpg" />
                     </div> :
-                        <div className='gtmForm1 xl:absolute max-md:mx-4 overflow-auto z-10 h-[480px] md:h-[500px] 2xl:h-[550px] md:my-10 right-[10%] max-md:mt-4 md:top-[450px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] 
+                        <div className='landing-form gtmForm1 xl:absolute max-md:mx-4 overflow-auto z-10 h-[480px] md:h-[500px] 2xl:h-[550px] md:my-10 right-[10%] max-md:mt-4 md:top-[450px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] 
                         text-center flex flex-col justify-around items-center px-3 md:px-4 py-2 md:py-3 bg-white'>
 
                             <h4 className='text-2xl md:text-[28px] font-semibold text-[#246096]'>We are here to Help you</h4>
@@ -713,7 +713,7 @@ export default function gtmNew({ brandsdata }) {
                     </div>
                 </section>
 
-                <section className='servicesMobile text-center pb-12 md:hidden'>
+                <section className='ana-services servicesMobile text-center pb-12 md:hidden'>
                     <div className='text-2xl font-bold text-[#152F2E] pb-5'>
                         <span className='inline-block relative'>
                             Our&nbsp;
@@ -735,7 +735,7 @@ export default function gtmNew({ brandsdata }) {
                                 <div className="text-center md:w-[20%] flex flex-col justify-center items-center h-[231px] w-[300px] flex-shrink-0 border border-[#EBEBEB] p-4 py-4  px-5 mr-4 gap-5"
                                     key={item.id}>
                                     <img src={item.path} alt='check-up' className='h-10 w-10 mx-auto md:h-12 md:w-12' />
-                                    <h3 className='text-sm sm:text-[15px] font-semibold py-2'>{item.title}</h3>
+                                    <h3 className='service-title text-sm sm:text-[15px] font-semibold py-2'>{item.title}</h3>
                                     <div className='text-xs py-3 font-normal text-[#152F2E]'>
                                         {item.description}
                                     </div>
@@ -856,7 +856,7 @@ export default function gtmNew({ brandsdata }) {
 
                         <div className='group xl:w-[380px] lg:w-[310px] w-[300px] lg:h-[480px] xl:h-[540px] h-[440px] rounded border border-solid shadow-filtershadow p-[25px] text-center relative'>
                             <span className='bg-[#5BF0B2] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                            <a href="https://storage.googleapis.com/website-bucket-uploads/cs/5492gjsetdcghtc86683.pdf" target='_blank'>
+                            <a href="https://storage.googleapis.com/website-bucket-uploads/cs/5492gjsetdcghtc86683.pdf" target='_blank' className='readmore-cs'>
                                 <div>
                                     <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestudy1.png" alt="Google Analytics 4 Migration" className='w-[350px] h-[250px]  xl:h-[350px]' />
                                 </div>
@@ -878,7 +878,7 @@ export default function gtmNew({ brandsdata }) {
                         </div>
                         <div className='max-lg:hidden group xl:w-[380px] lg:w-[310px] w-[300px] xl:h-[540px] h-[480px] rounded border border-solid shadow-filtershadow p-[25px] text-center relative'>
                             <span className='bg-[#5BF0B2] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                            <a href="https://storage.googleapis.com/website-bucket-uploads/cs/dv66hpaft245xdg90y5vr.pdf" target='_blank'>
+                            <a href="https://storage.googleapis.com/website-bucket-uploads/cs/dv66hpaft245xdg90y5vr.pdf" target='_blank' className='readmore-cs'>
                                 <div>
                                     <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner7.jpg" alt="Maximising Revenue and User Insights" className='w-[350px] h-[250px] xl:h-[350px]' />
                                 </div>
@@ -898,7 +898,7 @@ export default function gtmNew({ brandsdata }) {
                         </div>
                         <div className='max-lg:hidden group xl:w-[380px] lg:w-[310px] w-[300px] xl:h-[540px] h-[480px] rounded border border-solid shadow-filtershadow p-[25px] text-center relative'>
                             <span className='bg-[#5BF0B2] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                            <a href="https://storage.googleapis.com/website-bucket-uploads/cs/mnedfr45893kjswl.pdf" target='_blank'>
+                            <a href="https://storage.googleapis.com/website-bucket-uploads/cs/mnedfr45893kjswl.pdf" target='_blank' className='readmore-cs'>
                                 <div>
                                     <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestudy2.png" alt="Shopify and GA4 enhanced Ecommerce Tracking" className='w-[350px] h-[250px] xl:h-[350px]' />
                                 </div>

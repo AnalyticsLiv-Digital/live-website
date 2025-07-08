@@ -528,7 +528,7 @@ const cro = () => {
                     </div>
                 </div>
             </section>
-            <section className='crofaq relative overflow-hidden'>
+            <section className='faq-section crofaq relative overflow-hidden'>
                 <div className="relative px-4 md:px-12 pt-8 pb-8 md:py-8 z-20">
                     <div>
                         <h3 className='text-[32px] font-semibold text-[#000000] leading-[1.5em] font-gilroy mb-2'>FAQ's</h3>
@@ -537,7 +537,7 @@ const cro = () => {
                         <div className='items-start lg:justify-start justify-center gap-7 w-full'>
                             <div className={`faqfst flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full text-[#000000]' onClick={toggleFaqfstVisibility}>
+                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={toggleFaqfstVisibility}>
                                         <div className={`flex items-center w-full justify-between gap-5 ${isFaqfstVisible ? 'mb-[10px]' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <h2 className='text-[17px] font-medium leading-normal'>What is Conversion Rate Optimization (CRO)?</h2>
@@ -556,7 +556,7 @@ const cro = () => {
                             </div>
                             <div className={`faqsec flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full text-[#000000]' onClick={toggleFaqsecVisibility}>
+                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={toggleFaqsecVisibility}>
                                         <div className={`flex items-center justify-between gap-5 ${isFaqsecVisible ? 'mb-[10px]' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <h2 className='text-[17px] font-medium leading-normal'>How can CRO benefit my business?</h2>
@@ -575,7 +575,7 @@ const cro = () => {
                             </div>
                             <div className={`faqthrd flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqthrdVisibility()}>
+                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqthrdVisibility()}>
                                         <div className={`flex items-center justify-between gap-5 ${isFaqthrdVisible ? 'mb-[10px]' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <h2 className='text-[17px] font-medium leading-normal'>What sets your CRO Service apart?</h2>
@@ -594,7 +594,7 @@ const cro = () => {
                             </div>
                             <div className={`faqfur flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqfurVisibility()}>
+                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqfurVisibility()}>
                                         <div className={`flex items-center justify-between gap-5 ${isFaqfurVisible ? 'mb-[10px]' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <h2 className='text-[17px] font-medium leading-normal'>How do you determine which elements need optimization on my website?</h2>
@@ -613,7 +613,7 @@ const cro = () => {
                             </div>
                             <div className={`faqfiv flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full text-[#000000]' onClick={toggleFaqfivVisibility}>
+                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={toggleFaqfivVisibility}>
                                         <div className={`flex items-center w-full justify-between gap-5 ${isFaqfivVisible ? 'mb-[10px]' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <h2 className='text-[17px] font-medium leading-normal'>Will CRO affect my websites' Search Engine Ranking?</h2>
@@ -632,7 +632,7 @@ const cro = () => {
                             </div>
                             <div className={`faqsix flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full text-[#000000]' onClick={toggleFaqsixVisibility}>
+                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={toggleFaqsixVisibility}>
                                         <div className={`flex items-center justify-between gap-5 ${isFaqsixVisible ? 'mb-[10px]' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <h2 className='text-[17px] font-medium leading-normal'>Do I need technical expertise to implement CRO Strategies?</h2>
@@ -651,7 +651,7 @@ const cro = () => {
                             </div>
                             <div className={`faqsev flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqsevVisibility()}>
+                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqsevVisibility()}>
                                         <div className={`flex items-center justify-between gap-5 ${isFaqsevVisible ? 'mb-[10px]' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <h2 className='text-[17px] font-medium leading-normal'>How do you measure the success of your CRO offering in 90 days?</h2>
@@ -670,7 +670,7 @@ const cro = () => {
                             </div>
                             <div className={`faqeigh flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqeighVisibility()}>
+                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqeighVisibility()}>
                                         <div className={`flex items-center justify-between gap-5 ${isFaqeighVisible ? 'mb-[10px]' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <h2 className='text-[17px] font-medium leading-normal'>What if I don't see significant improvements within 90 days?</h2>

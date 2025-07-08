@@ -12,7 +12,7 @@ const RecommendedBlogs = ({ recommendedBlogsdata }) => {
                     </div>
                 )}            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     {recommendedBlogsdata?.length >= 2 && recommendedBlogsdata?.slice(0, 2)?.map((blog) => (
-                        <Link key={blog.id} href={`/blogs/${blog.slug}`}>
+                        <Link key={blog.id} href={`/blogs/${blog.slug}`} className='readmore-btn'>
                             <div className="text-primary mt-4 inline-block cursor-pointer">
                                 <div className="bg-white md:min-h-[45dvh] p-2 rounded-lg shadow-lg flex flex-col justify-between">
                                     <img src={blog.coverphoto} alt={blog.title} className="w-full md:w-[100dvw] max-lg:w-[100dvw] object-contain rounded-t-lg" />

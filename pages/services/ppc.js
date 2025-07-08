@@ -291,7 +291,7 @@ const Ppc = () => {
                     </div>
                 </section>
 
-                <section className="pt-14 pb-14 xl:pt-16 lg:pl-10 2xl:pl-[5%] max-md:overflow-hidden">
+                <section className="ana-services pt-14 pb-14 xl:pt-16 lg:pl-10 2xl:pl-[5%] max-md:overflow-hidden">
                     <div className="flex max-md:flex-col items-center justify-between px-[3%]">
                         <div className="md:w-[60%] max-md:px-4 flex flex-col justify-start">
                             <h2 className="text-[#100F1B] text-xl md:text-3xl font-bold text-center md:text-start">
@@ -307,7 +307,7 @@ const Ppc = () => {
                             <div className="flex justify-center items-center gap-5">
                                 <button
                                     onClick={handlePrev}
-                                    className="group relative overflow-hidden z-10 bg-white border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[8px] px-4 py-3 mb-3 transition-all duration-300 ease-linear hover:bg-[#08A4F7]"
+                                    className="carousel-button group relative overflow-hidden z-10 bg-white border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[8px] px-4 py-3 mb-3 transition-all duration-300 ease-linear hover:bg-[#08A4F7]"
                                 >
                                     <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector%20(1).svg' alt='left vector' className='w-3.5 h-3.5 group-hover:hidden block' />
 
@@ -316,13 +316,13 @@ const Ppc = () => {
                                 </button>
                                 <button
                                     onClick={handleNext}
-                                    className="group relative overflow-hidden z-10 bg-white border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[8px] px-4 py-3 mb-3 transition-all duration-300 ease-linear hover:bg-[#08A4F7]"
+                                    className="carousel-button group relative overflow-hidden z-10 bg-white border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[8px] px-4 py-3 mb-3 transition-all duration-300 ease-linear hover:bg-[#08A4F7]"
                                 >
                                     <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector.svg' alt='right vector' className='w-3.5 h-3.5 group-hover:hidden block' />
                                     <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20left%20white.svg' alt='left vector' className='w-3.5 h-3.5 hidden group-hover:block' />
                                 </button>
                             </div>
-                            <a href='/services'><button className="mainbutn-opposite">Read More Here</button></a>
+                            <a href='/services'><button className="readmore-button mainbutn-opposite">Read More Here</button></a>
                         </div>
                     </div>
                     <div className="max-sm:hidden sm:pl-5 xl:pl-[3%] py-8 carousel-custom overflow-hidden">
@@ -340,7 +340,7 @@ const Ppc = () => {
                                                     <img src={card.image} alt={card.title} className="relative max-md:h-16 max-md:w-16 md:w-16 top-4 left-4 md:top-5 md:left-5" />
                                                 </div>
                                                 <div className="flex flex-col max-md:pl-10 h-[140px] items-start justify-center gap-1 text-white">
-                                                    <div className="text-xl font-bold">{card.title}</div>
+                                                    <div className="text-xl font-bold service-title">{card.title}</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -364,7 +364,7 @@ const Ppc = () => {
                                                     <img src={card?.image} alt={card?.title} className="relative max-md:h-16 max-md:w-16 top-4 left-5" />
                                                 </div>
                                                 <div className="flex flex-col max-md:pl-10 h-[140px] items-start justify-center gap-1 text-white">
-                                                    <div className="text-xl font-bold">{card?.title}</div>
+                                                    <div className="text-xl font-bold service-title">{card?.title}</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -435,7 +435,7 @@ const Ppc = () => {
                     </div>
                 </section>
 
-                <section className="flex md:mb-3 flex-col md:flex-row px-4 py-7 md:py-14 md:px-8 lg:px-16 md:pb-5 xl:mb-10 xl:pt-14 gap-5 lg:gap-8">
+                <section className="faq-section flex md:mb-3 flex-col md:flex-row px-4 py-7 md:py-14 md:px-8 lg:px-16 md:pb-5 xl:mb-10 xl:pt-14 gap-5 lg:gap-8">
                     <div className="md:w-1/3 flex flex-col md:gap-7 justify-center max-md:text-center sm:justify-start md:pt-7">
                         <h3 className="text-3xl max-md:flex max-sm:flex-col max-md:justify-center max-md:items-center max-md:gap-2.5 lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-gray-800">
                             Frequently Asked <div className="text-[#08A4F7] lg:pt-3 xl:pt-4 2xl:pt-5">Questions</div>
@@ -452,7 +452,7 @@ const Ppc = () => {
                                 <div
                                     key={index}
                                     ref={(el) => (itemRefs.current[index] = el)}
-                                    className={`rounded-2xl px-4 lg:px-12 py-4 lg:py-5 cursor-pointer ${activeIndex === index ? 'text-white bg-[#08A4F7]' : 'text-[#232A42]'
+                                    className={`faq-click rounded-2xl px-4 lg:px-12 py-4 lg:py-5 cursor-pointer ${activeIndex === index ? 'text-white bg-[#08A4F7]' : 'text-[#232A42]'
                                         }`}
                                     style={{
                                         boxShadow: activeIndex === index ? 'none' : '18px 15px 35px 0px #00000017',

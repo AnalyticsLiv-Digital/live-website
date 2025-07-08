@@ -5,7 +5,7 @@ const Casestudy = ({ casestudy }) => {
   return (
     <>
 
-      <a href={`/case-studies/${casestudy?.slug}`} className="font-sans bg-white border border-[#E5E5E5] rounded-[30px] shadow-lg p-4 2xl:p-6 relative">
+      <a href={`/case-studies/${casestudy?.slug}`} className="readmore-cs analyticsliv-case-studies font-sans bg-white border border-[#E5E5E5] rounded-[30px] shadow-lg p-4 2xl:p-6 relative">
         <div className='flex flex-col justify-evenly h-full'>
           {/* <div className="absolute w-[100px] text-center top-4 2xl:top-6 left-4 2xl:left-6 bg-[#A2EC4E99] text-white font-semibold px-3 py-1 rounded-tl-2xl 2xl:rounded-tl-[20px] rounded-br-md text-sm">Marketing</div> */}
           <img
@@ -35,7 +35,7 @@ const Casestudy = ({ casestudy }) => {
             {casestudy?.description}
           </p>
           <div className="flex justify-between items-center text-sm text-[#0066cc]">
-            <span className="text-[#6B7280]">25th Nov 2024</span>
+            <span className="text-[#6B7280] cs-date">25th Nov 2024</span>
             <button className="text-[#08A4F7] text-base font-medium hover:underline">Read Full</button>
           </div>
         </div>

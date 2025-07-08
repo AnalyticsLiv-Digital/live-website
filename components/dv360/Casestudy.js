@@ -75,7 +75,7 @@ const Casestudy = () => {
                         <div className='text-center grid lg:grid-cols-3 gap-4 p-8 md:p-12'>
                             <div className='first group home-blog rounded border border-solid border-[#DBDBDB] hover:border-[#979797] hover:shadow-testishadow p-[25px] text-center relative'>
                                 <span className='bg-[#5BF0B2] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                                <a href="https://storage.googleapis.com/website-bucket-uploads/cs/gfrdf6794yyxp.pdf" target='_blank'>
+                                <a href="https://storage.googleapis.com/website-bucket-uploads/cs/gfrdf6794yyxp.pdf" target='_blank' className='readmore-cs'>
                                     <div>
                                         <Image
                                             src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner3.png"
@@ -100,7 +100,7 @@ const Casestudy = () => {
                             </div>
                             <div className='second group home-blog rounded border border-solid border-[#DBDBDB] hover:border-[#979797] hover:shadow-testishadow p-[25px] text-center relative'>
                                 <span className='bg-[#5BF0B2] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                                <a href="https://storage.googleapis.com/website-bucket-uploads/cs/6754gfhgjfhfh3437.pdf" target='_blank'>
+                                <a href="https://storage.googleapis.com/website-bucket-uploads/cs/6754gfhgjfhfh3437.pdf" target='_blank' className='readmore-cs'>
                                     <div>
                                         <Image
                                             src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner10.png"
@@ -125,7 +125,7 @@ const Casestudy = () => {
                             </div>
                             <div className='third group home-blog rounded border border-solid border-[#DBDBDB] hover:border-[#979797] hover:shadow-testishadow p-[25px] text-center relative'>
                                 <span className='bg-[#5BF0B2] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                                <a href="https://storage.googleapis.com/website-bucket-uploads/cs/cbhnf98765koql.pdf" target='_blank'>
+                                <a href="https://storage.googleapis.com/website-bucket-uploads/cs/cbhnf98765koql.pdf" target='_blank' className='readmore-cs'>
                                     <div>
                                         <Image
                                             src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner11.png"
@@ -156,7 +156,7 @@ const Casestudy = () => {
                             <div aria-hidden="true" className="casestudy m-auto text-center flex justify-center">
                                 <div className='first group home-blog rounded border border-solid border-[#DBDBDB] hover:border-[#979797] hover:shadow-testishadow p-[25px] text-center relative'>
                                     <span className='bg-[#5BF0B2] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                                    <a href="https://storage.googleapis.com/website-bucket-uploads/cs/gfrdf6794yyxp.pdf" target='_blank'>
+                                    <a href="https://storage.googleapis.com/website-bucket-uploads/cs/gfrdf6794yyxp.pdf" target='_blank' className='readmore-cs'>
                                         <div>
                                             <Image
                                                 src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner3.png"
@@ -183,7 +183,7 @@ const Casestudy = () => {
                             <div aria-hidden="true" className="casestudy m-auto text-center flex justify-center">
                                 <div className='second group home-blog rounded border border-solid border-[#DBDBDB] hover:border-[#979797] hover:shadow-testishadow p-[25px] text-center relative'>
                                     <span className='bg-[#5BF0B2] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                                    <a href="https://storage.googleapis.com/website-bucket-uploads/cs/6754gfhgjfhfh3437.pdf" target='_blank'>
+                                    <a href="https://storage.googleapis.com/website-bucket-uploads/cs/6754gfhgjfhfh3437.pdf" target='_blank' className='readmore-cs'>
                                         <div>
                                             <Image
                                                 src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner10.png"
@@ -210,7 +210,7 @@ const Casestudy = () => {
                             <div aria-hidden="true" className="casestudy m-auto text-center flex justify-center">
                                 <div className='third group home-blog rounded border border-solid border-[#DBDBDB] hover:border-[#979797] hover:shadow-testishadow p-[25px] text-center relative'>
                                     <span className='bg-[#5BF0B2] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                                    <a href="https://storage.googleapis.com/website-bucket-uploads/cs/cbhnf98765koql.pdf" target='_blank'>
+                                    <a href="https://storage.googleapis.com/website-bucket-uploads/cs/cbhnf98765koql.pdf" target='_blank' className='readmore-cs'>
                                         <div>
                                             <Image
                                                 src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner11.png"
