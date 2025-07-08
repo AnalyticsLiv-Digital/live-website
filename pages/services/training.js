@@ -133,7 +133,7 @@ const training = () => {
                 </div>
               </li>
               <br />
-              <li class="pb- explore-section">
+              <li class="pb-5 explore-section">
                 <div class="flex">
                   <div class="max-sm:pt-2.5">
                     <img
