@@ -134,31 +134,61 @@ const LookerStudio = () => {
   }, []);
 
   useEffect(() => {
-    // This function will be called once the API is ready
+    let player = null;
+    let interval = null;
+
     (window).onYouTubeIframeAPIReady = () => {
-      new (window).YT.Player('youtube-player', {
-        videoId: 'hBvIw2Y4C60', // Replace with your YouTube video ID
+      player = new (window).YT.Player('youtube-player', {
+        videoId: 'hBvIw2Y4C60',
         events: {
           onStateChange: (event) => {
             const state = event.data;
+
             if (state === 1) {
+              // ▶️ Video Played
               gtag('event', 'video_play', {
                 event_category: 'YouTube Video',
-                event_label: 'Webinar',
+                event_label: 'Looker Webinar',
                 value: 1,
               });
-            } else if (state === 2) {
+
+              // Start tracking time
+              interval = setInterval(() => {
+                const duration = player.getDuration();
+                const currentTime = player.getCurrentTime();
+                const percentage = Math.floor((currentTime / duration) * 100);
+                player.percentageWatched = percentage;
+              }, 1000);
+            }
+
+            if (state === 2) {
+              // ⏸️ Video Paused
+              clearInterval(interval);
+              const watched = player.percentageWatched || 0;
               gtag('event', 'video_pause', {
                 event_category: 'YouTube Video',
-                event_label: 'Webinar',
-                value: 0,
+                event_label: 'Looker Webinar',
+                value: watched,
+              });
+            }
+
+            if (state === 0) {
+              // ⏹️ Video Ended
+              clearInterval(interval);
+              gtag('event', 'video_end', {
+                event_category: 'YouTube Video',
+                event_label: 'Looker Webinar',
+                value: 100,
               });
             }
           },
         },
       });
     };
+
+    return () => clearInterval(interval);
   }, []);
+
 
 
   return (
