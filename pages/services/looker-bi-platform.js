@@ -100,7 +100,7 @@ export default class AutoPlay extends Component {
           </div>
         </section>
 
-        <section class="bg-lookersection ">
+        <section class="explore-section bg-lookersection ">
           <div class="md:mt-4 px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16">
             <div class="flex items-center space-x-4 py-4 mb-6">
               <h3 class="text-lookerheading text-center font-bold text-4xl md:text-[40px] leading-normal pb-2">
@@ -110,7 +110,7 @@ export default class AutoPlay extends Component {
             </div>
             <br /> <br />
             <div class="flex flex-wrap justify-around gap-10">
-              <div class="max-w-sm z-10 text-center flex bg-white rounded-md border border-solid border-heading">
+              <div class="explore-card max-w-sm z-10 text-center flex bg-white rounded-md border border-solid border-heading">
                 <div class="p-6 text-start">
                   <div class="text-center flex items-center mb-5">
                     <img
@@ -132,12 +132,12 @@ export default class AutoPlay extends Component {
                   </p>
                   {/* btn cursor-pointer w-44 bg-lookerheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold */}
                   <Link href="/contact?id=looker-bi">
-                    <button class="butn analyticsliv-explore-btn">Explore Now</button>
+                    <button class="butn explore-btn">Explore Now</button>
                   </Link>
                 </div>
               </div>
 
-              <div class="max-w-sm z-10 text-center flex bg-white rounded-md border border-solid border-heading">
+              <div class="explore-card max-w-sm z-10 text-center flex bg-white rounded-md border border-solid border-heading">
                 <div class="p-6 text-start">
                   <div class="text-center flex items-center mb-5">
                     <img
@@ -157,12 +157,12 @@ export default class AutoPlay extends Component {
                   </p>
                   {/* btn cursor-pointer w-44 bg-lookerheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold */}
                   <Link href="/contact?id=looker-bi">
-                    <button class="butn analyticsliv-explore-btn">Explore Now</button>
+                    <button class="butn explore-btn">Explore Now</button>
                   </Link>
                 </div>
               </div>
 
-              <div class="max-w-sm z-10 text-center flex bg-white rounded-md border border-solid border-heading">
+              <div class="explore-card max-w-sm z-10 text-center flex bg-white rounded-md border border-solid border-heading">
                 <div class="p-6 text-start">
                   <div class="text-center flex items-center mb-5">
                     <img
@@ -183,12 +183,12 @@ export default class AutoPlay extends Component {
                   </p>
                   {/* btn cursor-pointer w-44 bg-lookerheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold */}
                   <Link href="/contact?id=looker-bi">
-                    <button class="butn mt-5 analyticsliv-explore-btn">Explore Now</button>
+                    <button class="butn mt-5 explore-btn">Explore Now</button>
                   </Link>
                 </div>
               </div>
 
-              <div class="max-w-sm z-10 text-center flex bg-white rounded-md border border-solid border-heading">
+              <div class="explore-card max-w-sm z-10 text-center flex bg-white rounded-md border border-solid border-heading">
                 <div class="p-6 text-start">
                   <div class="text-center flex items-center mb-5">
                     <img
@@ -210,7 +210,7 @@ export default class AutoPlay extends Component {
                   </p>
                   {/* btn cursor-pointer w-44 bg-lookerheading hover:bg-sky-800 transition duration-200 delay-75 p-4 rounded-[5px] shadow-lg text-white text-lg font-semibold */}
                   <Link href="/contact?id=looker-bi">
-                    <button class="butn analyticsliv-explore-btn">Explore Now</button>
+                    <button class="butn explore-btn">Explore Now</button>
                   </Link>
                 </div>
               </div>

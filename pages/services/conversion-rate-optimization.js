@@ -291,7 +291,7 @@ const conversionRateOptimization = () => {
                                 <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20left%20white.svg' alt='left vector' className='w-3.5 h-3.5 hidden group-hover:block' />
                             </button>
                         </div>
-                        <a href='/services'><button className="mainbutn-opposite">Read More Here</button></a>
+                        <a href='/services'><button className="readmore-button mainbutn-opposite">Read More Here</button></a>
                     </div>
                 </div>
                 <div className="max-sm:hidden sm:pl-5 xl:pl-[3%] py-8 carousel-custom overflow-hidden">
@@ -609,7 +609,7 @@ const conversionRateOptimization = () => {
                 </div>
             </section>
 
-            <section className="flex md:mb-3 flex-col md:flex-row px-4 max-sm:pt-12 py-9 md:py-14 md:px-8 lg:px-16 md:pb-5 xl:mb-10 xl:pt-14 gap-5 lg:gap-8">
+            <section className="faq-section flex md:mb-3 flex-col md:flex-row px-4 max-sm:pt-12 py-9 md:py-14 md:px-8 lg:px-16 md:pb-5 xl:mb-10 xl:pt-14 gap-5 lg:gap-8">
                 <div className="md:w-1/3 flex flex-col md:gap-7 justify-center max-md:text-center sm:justify-start md:pt-7">
                     <h2 className="text-3xl max-md:flex max-sm:flex-col max-md:justify-center max-md:items-center max-md:gap-2.5 lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-gray-800">
                         Frequently Asked <div className="text-[#08A4F7] lg:pt-3 xl:pt-4 2xl:pt-5">Questions</div>
@@ -626,7 +626,7 @@ const conversionRateOptimization = () => {
                             <div
                                 key={index}
                                 ref={(el) => (itemRefs.current[index] = el)}
-                                className={`rounded-2xl px-4 lg:px-12 py-4 lg:py-5 cursor-pointer ${activeIndex === index ? 'text-white bg-[#08A4F7]' : 'text-[#232A42]'
+                                className={`faq-click rounded-2xl px-4 lg:px-12 py-4 lg:py-5 cursor-pointer ${activeIndex === index ? 'text-white bg-[#08A4F7]' : 'text-[#232A42]'
                                     }`}
                                 style={{
                                     boxShadow: activeIndex === index ? 'none' : '18px 15px 35px 0px #00000017',

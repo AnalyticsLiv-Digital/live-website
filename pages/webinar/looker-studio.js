@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MetaSchemaOg from "../../components/MetaSchemaOg";
 import LearningCarousel from "../../components/LookerWeb";
 import { FiMenu, FiX } from "react-icons/fi";
@@ -121,6 +121,76 @@ const LookerStudio = () => {
       });
   };
 
+  useEffect(() => {
+    // Load YouTube IFrame API
+    const tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    document.body.appendChild(tag);
+
+    // Clean up on unmount
+    return () => {
+      document.body.removeChild(tag);
+    };
+  }, []);
+
+  useEffect(() => {
+    let player = null;
+    let interval = null;
+
+    (window).onYouTubeIframeAPIReady = () => {
+      player = new (window).YT.Player('youtube-player', {
+        videoId: 'hBvIw2Y4C60',
+        events: {
+          onStateChange: (event) => {
+            const state = event.data;
+
+            if (state === 1) {
+              // ▶️ Video Played
+              gtag('event', 'video_play', {
+                event_category: 'YouTube Video',
+                event_label: 'Looker Webinar',
+                value: 1,
+              });
+
+              // Start tracking time
+              interval = setInterval(() => {
+                const duration = player.getDuration();
+                const currentTime = player.getCurrentTime();
+                const percentage = Math.floor((currentTime / duration) * 100);
+                player.percentageWatched = percentage;
+              }, 1000);
+            }
+
+            if (state === 2) {
+              // ⏸️ Video Paused
+              clearInterval(interval);
+              const watched = player.percentageWatched || 0;
+              gtag('event', 'video_pause', {
+                event_category: 'YouTube Video',
+                event_label: 'Looker Webinar',
+                value: watched,
+              });
+            }
+
+            if (state === 0) {
+              // ⏹️ Video Ended
+              clearInterval(interval);
+              gtag('event', 'video_end', {
+                event_category: 'YouTube Video',
+                event_label: 'Looker Webinar',
+                value: 100,
+              });
+            }
+          },
+        },
+      });
+    };
+
+    return () => clearInterval(interval);
+  }, []);
+
+
+
   return (
     <>
       <Head>
@@ -176,7 +246,7 @@ const LookerStudio = () => {
               />
             </div>
             <div className="hidden w-[70%] lg:flex justify-between pr-40 items-center">
-              <div className="w-[80%] flex justify-around items-center text-[#464646] text-sm 2xl:text-[15px] font-bold">
+              <div className="webinar-header w-[80%] flex justify-around items-center text-[#464646] text-sm 2xl:text-[15px] font-bold">
                 <div
                   onClick={scrolling1}
                   className="cursor-pointer opacity-90 hover:opacity-100 hover:underline"
@@ -196,7 +266,7 @@ const LookerStudio = () => {
                   What you’ll Learn
                 </div>
               </div>
-              <button onClick={scrolling} className="relative w-max">
+              <button onClick={scrolling} className="register-now relative w-max">
                 <div className="z-20 relative bg-white border border-[#0D7078] rounded-full pl-3 3xl:pl-4 pr-2.5 3xl:pr-3.5 py-3 3xl:py-4 shadow-webinarShadow">
                   <img
                     src="https://storage.googleapis.com/website-bucket-uploads/popup/Add%20User.png"
@@ -235,7 +305,7 @@ const LookerStudio = () => {
                 <div className="mt-2">
                   <button
                     onClick={scrolling}
-                    className="w-full flex items-center justify-center gap-2 bg-[#0D7078] text-white px-4 py-2 rounded-md text-sm"
+                    className="register-now w-full flex items-center justify-center gap-2 bg-[#0D7078] text-white px-4 py-2 rounded-md text-sm"
                   >
                     REGISTER NOW
                   </button>
@@ -308,7 +378,7 @@ const LookerStudio = () => {
                 <div className="max-sm:col-span-2 max-sm:flex max-sm:justify-center">
                   <button
                     onClick={scrolling}
-                    className="bg-[#0C7077] shadow-teamShadow px-3 2xl:px-4 py-2 max-sm:mt-2 sm:my-4 flex justify-center items-center rounded-[10px] text-white"
+                    className="register-now bg-[#0C7077] shadow-teamShadow px-3 2xl:px-4 py-2 max-sm:mt-2 sm:my-4 flex justify-center items-center rounded-[10px] text-white"
                   >
                     <div className="text-sm 2xl:text-base font-bold">
                       REGISER NOW
@@ -359,7 +429,7 @@ const LookerStudio = () => {
             {formSubmit ? (
               <div>
                 <div
-                  className="analyticsliv-landing-form-thankyou flex flex-col justify-around lg:h-[500px] items-center gap-4 relative text-slate-700
+                  className="landing-thankyou flex flex-col justify-around lg:h-[500px] items-center gap-4 relative text-slate-700
                 w-full lg:w-[450px] xl:w-[600px] max-lg:p-10 max-xl:p-5 rounded-2xl shadow-lg border border-gray-100"
                 >
                   <img
@@ -373,7 +443,7 @@ const LookerStudio = () => {
                 </div>
               </div>
             ) : (
-              <div className="w-full lg:w-[40%] 2xl:w-[40%] rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+              <div className="landing-form w-full lg:w-[40%] 2xl:w-[40%] rounded-2xl shadow-lg overflow-hidden border border-gray-100">
                 <div className="bg-[#18998A] text-white text-center py-5 px-6">
                   <p className="text-base 2xl:text-lg">
                     Welcome to <span className="font-bold">AnalyticsLiv</span>
@@ -488,6 +558,7 @@ const LookerStudio = () => {
                             formValues.profession === "Working Professional"
                           }
                           className="accent-[#18998A]"
+                          id="role"
                         />
                         Working Professional
                       </label>
@@ -499,6 +570,7 @@ const LookerStudio = () => {
                           onChange={handleChange}
                           checked={formValues.profession === "Student"}
                           className="accent-[#18998A]"
+                          id="role"
                         />
                         Student
                       </label>
@@ -510,6 +582,7 @@ const LookerStudio = () => {
                           onChange={handleChange}
                           checked={formValues.profession === "Others"}
                           className="accent-[#18998A]"
+                          id="role"
                         />
                         Others
                       </label>
@@ -531,9 +604,8 @@ const LookerStudio = () => {
                                         className='w-7' />
                                 </button> */}
                   <button
-                    className={`${
-                      showWaiting ? "cursor-not-allowed" : "cursor-pointer"
-                    } w-full flex items-center justify-center gap-3 bg-[#22A395] hover:bg-[#127f74] text-white font-semibold py-3 rounded-md mt-6 text-2xl`}
+                    className={`${showWaiting ? "cursor-not-allowed" : "cursor-pointer"
+                      } w-full flex items-center justify-center gap-3 bg-[#22A395] hover:bg-[#127f74] text-white font-semibold py-3 rounded-md mt-6 text-2xl`}
                   >
                     {showWaiting ? (
                       "Loading..."
@@ -634,6 +706,9 @@ const LookerStudio = () => {
                 Watch Our Previous Webinar
               </h2>
               <div className="relative w-full rounded-2xl overflow-hidden shadow-lg">
+                <div id="youtube-player" className="w-full aspect-video rounded-2xl" />
+              </div>
+              {/* <div className="relative w-full rounded-2xl overflow-hidden shadow-lg">
                 <iframe
                   className="w-full aspect-video rounded-2xl"
                   src="https://www.youtube.com/embed/hBvIw2Y4C60"
@@ -641,7 +716,7 @@ const LookerStudio = () => {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 ></iframe>
-              </div>
+              </div> */}
             </div>
 
             {/* Right side - Event Info */}
@@ -720,7 +795,7 @@ const LookerStudio = () => {
                 </div>
                 <button
                   onClick={scrolling}
-                  className="bg-[#0C7077] hover:bg-[#095e64] flex gap-2 items-center justify-center transition text-white font-semibold px-3.5 2xl:px-6 py-1.5 2xl:py-2 rounded-md shadow-md text-xs 2xl:text-base"
+                  className="register-now bg-[#0C7077] hover:bg-[#095e64] flex gap-2 items-center justify-center transition text-white font-semibold px-3.5 2xl:px-6 py-1.5 2xl:py-2 rounded-md shadow-md text-xs 2xl:text-base"
                 >
                   REGISTER NOW
                   <img

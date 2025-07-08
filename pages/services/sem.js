@@ -445,7 +445,7 @@ const sem = () => {
                 </div>
             </section>
 
-            <section className='sstfaq relative overflow-hidden font-gilroy'>
+            <section className='faq-section sstfaq relative overflow-hidden font-gilroy'>
                 <div className="relative px-4 md:px-12 pt-8 pb-8 z-20">
                     <div>
                         <h3 className='text-[32px] font-semibold text-[#000000] leading-[1.5em] font-gilroy mb-2'>FAQ's</h3>
@@ -454,7 +454,7 @@ const sem = () => {
                         <div className='items-start lg:justify-start justify-center gap-7 w-full'>
                             <div className={`faqfst flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full text-[#000000]' onClick={toggleFaqfstVisibility}>
+                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={toggleFaqfstVisibility}>
                                         <div className={`flex items-center w-full justify-between gap-5 ${isFaqfstVisible ? 'mb-[13px]' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <h2 className='text-[17px] font-medium leading-normal'>What is the difference between SEM and SEO?</h2>
@@ -473,7 +473,7 @@ const sem = () => {
                             </div>
                             <div className={`faqsec flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full text-[#000000]' onClick={toggleFaqsecVisibility}>
+                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={toggleFaqsecVisibility}>
                                         <div className={`flex items-center justify-between gap-5 ${isFaqsecVisible ? 'mb-[10px]' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <h2 className='text-[17px] font-medium leading-normal'>How much does SEM cost?</h2>
@@ -492,7 +492,7 @@ const sem = () => {
                             </div>
                             <div className={`faqthrd flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqthrdVisibility()}>
+                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqthrdVisibility()}>
                                         <div className={`flex items-center justify-between gap-5 ${isFaqthrdVisible ? 'mb-[10px]' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <h2 className='text-[17px] font-medium leading-normal'>Can I manage my own SEM campaigns?</h2>
@@ -511,7 +511,7 @@ const sem = () => {
                             </div>
                             <div className={`faqfur flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqfurVisibility()}>
+                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqfurVisibility()}>
                                         <div className={`flex items-center justify-between gap-5 ${isFaqfurVisible ? 'mb-[10px]' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <h2 className='text-[17px] font-medium leading-normal'>How long does it take to see results from SEM?</h2>
@@ -530,7 +530,7 @@ const sem = () => {
                             </div>
                             <div className={`faqfv flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqfvVisibility()}>
+                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqfvVisibility()}>
                                         <div className={`flex items-center justify-between gap-5 ${isFaqfvVisible ? 'mb-[10px]' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <h2 className='text-[17px] font-medium leading-normal'>What can I expect from AnalyticsLiv's SEM services?</h2>

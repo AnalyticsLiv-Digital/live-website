@@ -163,7 +163,7 @@ const Home = () => {
                                 id="contact-form"
                                 name="contact-form"
                             ></ScrollElement>
-                            {!formSubmit && <div className="block contact-form">
+                            {!formSubmit && <div className="landing-form block contact-form">
                                 <h2 className="text-sky-900 md:p-0 p-[10px]">We Understand Its difficult to get DV360 Account and control the outcome</h2>
                                 <h2 className="font-semibold text-2xl p-4 border-dashed border-b-2 border-sky-200">Let us help you !!</h2>
                                 <ScrollElement id="top" name="top" ></ScrollElement>
@@ -195,7 +195,7 @@ const Home = () => {
                                 </form>
                             </div>}
 
-                            {formSubmit && <div>
+                            {formSubmit && <div className='landing-thankyou'>
                                 <h2 className="md:text-xl text-sky-900">Thank you for showing interest with us!</h2>
                                 <h2 className="font-semibold text-2xl p-4 md:p-8 border-dashed border-b-2 border-sky-200">We will get back to you shortly !!</h2>
                                 <img alt="Thankyou image" className="w-64 mx-auto" src="https://storage.googleapis.com/website-bucket-uploads/static/Na_Dec_46.jpg" />

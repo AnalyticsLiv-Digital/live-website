@@ -14,7 +14,7 @@ const cookieLanding = ({ brandsdata }) => {
     const { onClick } = props;
     return (
       <div
-        className="absolute top-1/2 right-[-12px] md:right-[-20px] lg:right-[-40px] transform -translate-y-1/2 z-10 cursor-pointer"
+        className="carousel-button absolute top-1/2 right-[-12px] md:right-[-20px] lg:right-[-40px] transform -translate-y-1/2 z-10 cursor-pointer"
         onClick={onClick}
       >
         <FaArrowRight size={20} />
@@ -26,7 +26,7 @@ const cookieLanding = ({ brandsdata }) => {
     const { onClick } = props;
     return (
       <div
-        className="absolute top-1/2 left-[-12px] md:left-[-20px] lg:left-[-40px] transform -translate-y-1/2 z-10 cursor-pointer"
+        className="carousel-button absolute top-1/2 left-[-12px] md:left-[-20px] lg:left-[-40px] transform -translate-y-1/2 z-10 cursor-pointer"
         onClick={onClick}
       >
         <FaArrowLeft size={20} />
@@ -382,7 +382,7 @@ const cookieLanding = ({ brandsdata }) => {
             </Marquee>
           </div>
         </div>
-        <section>
+        <section className="ana-services">
           <div className="text-xl md:text-3xl font-bold text-[#30486A] max-lg:px-2 py-14 max-md:hidden text-center">
             <span className="inline-block relative">
               Why&nbsp;
@@ -427,7 +427,7 @@ const cookieLanding = ({ brandsdata }) => {
                     alt="check-up"
                     className="h-10 w-10 md:h-12 md:w-12 mb-4 mx-auto"
                   />
-                  <h3 className=" text-sm sm:text-[15px] font-semibold mb-2">
+                  <h3 className="service-title text-sm sm:text-[15px] font-semibold mb-2">
                     {item.title}
                   </h3>
                   <div className="text-xs font-normal text-[#152F2E]">
@@ -668,6 +668,7 @@ const cookieLanding = ({ brandsdata }) => {
                   <div className="first relative group home-blog rounded border border-solid border-[#DBDBDB] hover:border-[#979797] hover:shadow-serviceoffer p-[25px] pb-[70px] text-center 2xl:h-[540px] xl:h-[495px] lg:h-[520px]">
                     <a
                       targer="_blank"
+                      className="readmore-btn"
                       href="https://analyticsliv.com/blogs/navigating-user-privacy-compliance-a-comprehensive-strategy-with-ga4-and-gtm"
                     >
                       <Image
@@ -706,6 +707,7 @@ const cookieLanding = ({ brandsdata }) => {
                   <div className="first relative group home-blog rounded border border-solid border-[#DBDBDB] hover:border-[#979797] hover:shadow-serviceoffer p-[25px] pb-[70px] text-center 2xl:h-[540px] xl:h-[495px] lg:h-[520px]">
                     <a
                       targer="_blank"
+                      className="readmore-btn"
                       href="https://analyticsliv.com/blogs/navigating-user-privacy-compliance-a-comprehensive-strategy-with-ga4-and-gtm"
                     >
                       <Image
@@ -744,6 +746,7 @@ const cookieLanding = ({ brandsdata }) => {
                   <div className="second group home-blog rounded border border-solid border-[#DBDBDB] hover:border-[#979797]  hover:shadow-serviceoffer p-[25px] pb-[70px] text-center relative 2xl:h-[540px] xl:h-[495px] lg:h-[520px]">
                     <a
                       targer="_blank"
+                      className="readmore-btn"
                       href="https://analyticsliv.com/blogs/top-gdpr-tools-for-2023-revealed"
                     >
                       <Image

@@ -63,7 +63,7 @@ const training = () => {
           <br /> <br />
           <div>
             <ul>
-              <li class="pb-5">
+              <li class="pb-5 explore-section">
                 <div class="flex">
                   <div class="max-sm:pt-2.5">
                     <img
@@ -78,7 +78,7 @@ const training = () => {
                 </div>
                 <br /> <br />
                 <div class="grid lg:grid-cols-2 justify-center gap-10">
-                  <div class="flex items-center justify-center">
+                  <div class="explore-card flex items-center justify-center">
                     <div class="max-w-sm h-[400px] sm:h-96 z-10 text-center flex bg-trainingsection rounded-md">
                       <div class="p-6 text-start">
                         <div class="text-center flex items-center mb-5">
@@ -99,13 +99,13 @@ const training = () => {
                         <br />
                         <Link href="/contact?id=training">
 
-                          <button class="analyticsliv-explore-btn butn">Explore Now</button>
+                          <button class="explore-btn butn">Explore Now</button>
                         </Link>
                       </div>
                     </div>
                   </div>
 
-                  <div class="flex items-center justify-center">
+                  <div class="explore-card flex items-center justify-center">
                     <div class="max-w-sm  h-[400px] sm:h-96 z-10 text-center flex bg-trainingsection rounded-md">
                       <div class="p-6 text-start">
                         <div class="text-center flex items-center mb-5">
@@ -125,7 +125,7 @@ const training = () => {
                         <br />
                         <Link href="/contact?id=training">
 
-                          <button class="analyticsliv-explore-btn butn">Explore Now</button>
+                          <button class="explore-btn butn">Explore Now</button>
                         </Link>
                       </div>
                     </div>
@@ -133,7 +133,7 @@ const training = () => {
                 </div>
               </li>
               <br />
-              <li class="pb-5">
+              <li class="pb-5 explore-section">
                 <div class="flex">
                   <div class="max-sm:pt-2.5">
                     <img
@@ -148,7 +148,7 @@ const training = () => {
                 </div>
                 <br /> <br />
                 <div class="grid lg:grid-cols-3 justify-center gap-10">
-                  <div class="flex content-between justify-center">
+                  <div class="explore-card flex content-between justify-center">
                     <div class="max-w-sm h-[450px] xl:h-[420px] z-10 text-center flex bg-trainingsection rounded-md">
                       <div class="p-6 text-start">
                         <div class="text-center flex items-center mb-5">
@@ -168,13 +168,13 @@ const training = () => {
                         <br />
                         <Link href="/contact?id=training">
 
-                          <button class="analyticsliv-explore-btn butn">Explore Now</button>
+                          <button class="explore-btn butn">Explore Now</button>
                         </Link>
                       </div>
                     </div>
                   </div>
 
-                  <div class="flex content-between justify-center">
+                  <div class="explore-card flex content-between justify-center">
                     <div class="max-w-sm h-[450px] xl:h-[420px] z-10 text-center flex bg-trainingsection rounded-md">
                       <div class="p-6 text-start">
                         <div class="text-center flex items-center mb-5">
@@ -194,13 +194,13 @@ const training = () => {
                         <br /> <br />
                         <Link href="/contact?id=training">
 
-                          <button class="analyticsliv-explore-btn butn">Explore Now</button>
+                          <button class="explore-btn butn">Explore Now</button>
                         </Link>
                       </div>
                     </div>
                   </div>
 
-                  <div class="flex content-between justify-center">
+                  <div class="explore-card flex content-between justify-center">
                     <div class="max-w-sm h-[450px] xl:h-[420px] z-10 text-center flex bg-trainingsection rounded-md">
                       <div class="p-6 text-start">
                         <div class="text-center flex items-center mb-5">
@@ -221,7 +221,7 @@ const training = () => {
                         <br />
                         <Link href="/contact?id=training">
 
-                          <button class="analyticsliv-explore-btn butn">Explore Now</button>
+                          <button class="explore-btn butn">Explore Now</button>
                         </Link>
                       </div>
                     </div>
@@ -229,7 +229,7 @@ const training = () => {
                 </div>
               </li>
               <br />
-              <li class="pb-5">
+              <li class="pb-5 explore-section">
                 <div class="flex">
                   <div class="max-sm:pt-2.5">
                     <img
@@ -244,7 +244,7 @@ const training = () => {
                 </div>
                 <br /> <br />
                 <div class="grid lg:grid-cols-2 justify-center gap-10">
-                  <div class="flex items-center justify-center">
+                  <div class="explore-card flex items-center justify-center">
                     <div class="max-w-sm h-[430px] lg:h-[420px] z-10 text-center flex bg-trainingsection rounded-md">
                       <div class="p-6 text-start">
                         <div class="text-center flex items-center mb-5">
@@ -264,13 +264,13 @@ const training = () => {
                         <br />
                         <Link href="/contact?id=training">
 
-                          <button class="analyticsliv-explore-btn butn">Explore Now</button>
+                          <button class="explore-btn butn">Explore Now</button>
                         </Link>
                       </div>
                     </div>
                   </div>
 
-                  <div class="flex items-center justify-center">
+                  <div class="explore-card flex items-center justify-center">
                     <div class="max-w-sm h-[430px] lg:h-[420px] z-10 text-center flex bg-trainingsection rounded-md">
                       <div class="p-6 text-start">
                         <div class="text-center flex items-center mb-5">
@@ -290,7 +290,7 @@ const training = () => {
                         <br />
                         <Link href="/contact?id=training">
 
-                          <button class="analyticsliv-explore-btn butn">Explore Now</button>
+                          <button class="explore-btn butn">Explore Now</button>
                         </Link>
                       </div>
                     </div>
@@ -298,7 +298,7 @@ const training = () => {
                 </div>
               </li>
               <br />
-              <li class="pb-5">
+              <li class="pb-5 explore-section">
                 <div class="flex">
                   <div class="max-sm:pt-2.5">
                     <img
@@ -312,7 +312,7 @@ const training = () => {
                   </h3>
                 </div>
                 <br /> <br />
-                <div class="flex items-center justify-center">
+                <div class="explore-card flex items-center justify-center">
                   <div class="max-w-sm h-[430px] lg:h-[420px] z-10 text-center flex bg-trainingsection rounded-md">
                     <div class="p-6 text-start">
                       <div class="text-center flex items-center mb-5">
@@ -335,7 +335,7 @@ const training = () => {
                       <br />
                       <Link href="/contact?id=training">
 
-                        <button class="analyticsliv-explore-btn butn">Explore Now</button>
+                        <button class="explore-btn butn">Explore Now</button>
                       </Link>
                     </div>
                   </div>

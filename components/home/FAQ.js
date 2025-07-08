@@ -74,7 +74,7 @@ const FAQ = () => {
 
 
     return (
-        <section className="flex mb-14 md:mb-3 flex-col md:flex-row px-4 py-5 md:py-8 md:px-14 lg:px-16 md:pb-12 xl:pt-5 gap-5 lg:gap-8">
+        <section className="faq-section flex mb-14 md:mb-3 flex-col md:flex-row px-4 py-5 md:py-8 md:px-14 lg:px-16 md:pb-12 xl:pt-5 gap-5 lg:gap-8">
             <div className="md:w-1/3 flex flex-col md:gap-7 justify-center max-md:text-center sm:justify-start md:pt-7">
                 <h3 className="text-3xl max-md:flex max-sm:flex-col max-md:justify-center max-md:items-center max-md:gap-2.5 lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-gray-800">
                     Frequently Asked <div className="text-[#08A4F7] lg:pt-3 xl:pt-4 2xl:pt-5">Questions</div>
@@ -91,7 +91,7 @@ const FAQ = () => {
                         <div
                             key={index}
                             ref={(el) => (itemRefs.current[index] = el)}
-                            className={`rounded-2xl px-4 lg:px-12 py-4 lg:py-5 cursor-pointer ${activeIndex === index ? 'text-white bg-[#08A4F7]' : 'text-[#232A42]'
+                            className={`faq-click rounded-2xl px-4 lg:px-12 py-4 lg:py-5 cursor-pointer ${activeIndex === index ? 'text-white bg-[#08A4F7]' : 'text-[#232A42]'
                                 }`}
                             style={{
                                 boxShadow: activeIndex === index ? 'none' : '18px 15px 35px 0px #00000017',

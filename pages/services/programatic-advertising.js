@@ -614,7 +614,7 @@ const service_A = () => {
                             <div className='lg:grid lg:grid-cols-1 sm:flex sm:justify-between grid justify-center gap-[30px]'>
                                 <div className='first group 2xl:h-[299px] xl:h-[329px] lg:h-[290px] home-blog max-[1024px]:w-full rounded border border-solid border-[#DBDBDB] hover:border-[#979797] hover:shadow-serviceoffer p-[25px] text-center relative'>
                                     <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                                    <a href="/case-studies/ua-to-ga4-migration-for-a-website" className='lg:flex gap-5'>
+                                    <a href="/case-studies/ua-to-ga4-migration-for-a-website" className='lg:flex gap-5 readmore-cs'>
                                         <Image
                                             src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestudy1.png"
                                             width={300}
@@ -639,7 +639,7 @@ const service_A = () => {
                                 </div>
                                 <div className='second group 2xl:h-[299px] xl:h-[329px] lg:h-[290px] home-blog max-[1024px]:w-full max-[640px]:mt-[20px] rounded border border-solid border-[#DBDBDB] hover:border-[#979797] hover:shadow-serviceoffer p-[25px] text-center relative'>
                                     <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                                    <a href="/case-studies/55-percent-increase-in-avg-session-duration" className='lg:flex gap-5'>
+                                    <a href="/case-studies/55-percent-increase-in-avg-session-duration" className='lg:flex gap-5 readmore-cs'>
                                         <Image
                                             src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestudy3.png"
                                             width={300}
@@ -670,7 +670,7 @@ const service_A = () => {
                             <div className='third hidden lg:grid gap-[30px]'>
                                 <div className='home-casestd3 group 2xl:h-[299px] xl:h-[329px] lg:h-[290px] rounded bg-no-repeat bg-cover border border-solid hover:border-[#979797] hover:shadow-serviceoffer p-5 text-center relative'>
                                     <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                                    <a href="/case-studies/skyrocket-your-campaigns-ctr-with-a-95-percent-surge-in-14-days" className='grid gap-5'>
+                                    <a href="/case-studies/skyrocket-your-campaigns-ctr-with-a-95-percent-surge-in-14-days" className='grid gap-5 readmore-cs'>
                                         <div className=''>
                                             <Image
                                                 src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestd.png"
@@ -689,7 +689,7 @@ const service_A = () => {
                                 </div>
                                 <div className='home-casestd3 group 2xl:h-[299px] xl:h-[329px] lg:h-[290px] rounded bg-no-repeat bg-cover border border-solid hover:border-[#979797] hover:shadow-serviceoffer p-5 text-center relative'>
                                     <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                                    <a href="/case-studies/driving-campaigns-in-dv360-to-post-click-attribution-success-with-36-percent-reduction-in-cpi" className='grid gap-1'>
+                                    <a href="/case-studies/driving-campaigns-in-dv360-to-post-click-attribution-success-with-36-percent-reduction-in-cpi" className='grid gap-1 readmore-cs'>
                                         <div className='grid gap-4'>
                                             <Image
                                                 src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestd2.png"

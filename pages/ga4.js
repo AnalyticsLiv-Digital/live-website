@@ -504,10 +504,10 @@ export default function Ga4({ brandsdata }) {
                 </button>
               </div>
             </div>
-            <div className="md:mt-2 pt-8 max-md:pb-12 md:pb-20 lg:pt-6 lg:pb-20 carousel-custom md:carousel-custom1 overflow-hidden">
+            <div className="md:mt-2 pt-8 max-md:pb-12 md:pb-20 lg:pt-6 lg:pb-20 carousel-custom overflow-hidden">
               <Slider ref={sliderRef} {...settings}>
                 {cardsData?.map((card, index) => (
-                  <div>
+                  <div className='pb-8'>
                     <div className="max-w-[320px] xl:max-w-[349px] 2xl:max-w-[369px] flex flex-col gap-3">
                       <div className="">
                         <img src={card?.image} alt={card?.title} className="max-md:h-16 max-md:w-16" />
@@ -526,7 +526,7 @@ export default function Ga4({ brandsdata }) {
             {
               formSubmit ?
                 <div>
-                  <div className='analyticsliv-landing-form-thankyou flex flex-col justify-around md:h-[420px] items-center gap-4 relative text-slate-700'>
+                  <div className='landing-thankyou flex flex-col justify-around md:h-[420px] items-center gap-4 relative text-slate-700'>
                     <img
                       src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Thank_You_img.png'
                       alt='analyticsLiv'
@@ -540,7 +540,7 @@ export default function Ga4({ brandsdata }) {
                     <h2 className='text-[10px] sm:text-xs xl:text-sm'>Partner with a Leading Google Analytics Certified Agency</h2>
                     <div className='text-xl font-extrabold'>Let us help you !!</div>
                   </div>
-                  <form onSubmit={handleSubmit} className='analyticsliv-landing-form flex flex-col gap-[14px] 2xl:gap-[16px]'>
+                  <form onSubmit={handleSubmit} className='landing-form flex flex-col gap-[14px] 2xl:gap-[16px]'>
                     <div className='flex flex-col gap-4 2xl:gap-[14px]'>
                       <div className='grid grid-cols-1 lg:grid-cols-2 gap-5'>
                         <div>
@@ -653,7 +653,7 @@ export default function Ga4({ brandsdata }) {
 
         {/* services */}
         <ScrollElement id="services" name="services"></ScrollElement>
-        <section className='px-[4%] 3xl:px-[6%] pt-7 pb-10'>
+        <section className='ana-services px-[4%] 3xl:px-[6%] pt-7 pb-10'>
           <div>
             <h2 className='text-center text-[#0F172A] text-2xl xl:text-[28px] 2xl:text-[32px] font-bold'>Comprehensive Analytics Consulting Services</h2>
             <h3 className='text-center text-sm text-[#0F172A] pt-[15px]'>As one of the most agile Analytics Consulting Companies, we deliver full-spectrum analytics services:</h3>
@@ -683,23 +683,23 @@ export default function Ga4({ brandsdata }) {
               <Slider {...servieSettings}>
                 <div className='border h-[170px] w-[180px] xl:w-[205px] px-[10px] xl:px-[14px] py-[25px] xl:py-[35px] border-[#2563EB] hover:shadow-ga4Show rounded-lg flex flex-col justify-between items-center gap-[27px]'>
                   <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/settings%20(7).png' alt='GA4 Setup, Reporting & Debugging' className='mx-auto pb-5' />
-                  <div className='text-[#0F172A] text-xs text-center'>GA4 Setup, Reporting & Debugging</div>
+                  <div className='service-title text-[#0F172A] text-xs text-center'>GA4 Setup, Reporting & Debugging</div>
                 </div>
                 <div className='border h-[170px] w-[180px] xl:w-[205px] px-[10px] xl:px-[14px] py-[25px] xl:py-[35px] border-[#2563EB] hover:shadow-ga4Show rounded-lg flex flex-col justify-between items-center gap-[27px]'>
                   <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/dashboard%20(13).png' alt='Custom Dashboards via Looker Studio & BigQuery' className='mx-auto pb-5' />
-                  <div className='text-[#0F172A] text-xs text-center'>Custom Dashboards via Looker Studio & BigQuery</div>
+                  <div className='service-title text-[#0F172A] text-xs text-center'>Custom Dashboards via Looker Studio & BigQuery</div>
                 </div>
                 <div className='border h-[170px] w-[180px] xl:w-[205px] px-[10px] xl:px-[14px] py-[25px] xl:py-[35px] border-[#2563EB] hover:shadow-ga4Show rounded-lg flex flex-col justify-between items-center gap-[27px]'>
                   <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/customer-segment%20(2).png' alt='Audience Segmentation & Funnel Analysis' className='mx-auto pb-5' />
-                  <div className='text-[#0F172A] text-xs text-center'>Audience Segmentation & Funnel Analysis</div>
+                  <div className='service-title text-[#0F172A] text-xs text-center'>Audience Segmentation & Funnel Analysis</div>
                 </div>
                 <div className='border h-[170px] w-[180px] xl:w-[205px] px-[10px] xl:px-[14px] py-[25px] xl:py-[35px] border-[#2563EB] hover:shadow-ga4Show rounded-lg flex flex-col justify-between items-center gap-[27px]'>
                   <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/data-collection%20(8).png' alt='Privacy-Compliant Data Collection' className='mx-auto pb-5' />
-                  <div className='text-[#0F172A] text-xs text-center'>Privacy-Compliant Data Collection</div>
+                  <div className='service-title text-[#0F172A] text-xs text-center'>Privacy-Compliant Data Collection</div>
                 </div>
                 <div className='border h-[170px] w-[180px] xl:w-[205px] px-[10px] xl:px-[14px] py-[25px] xl:py-[35px] border-[#2563EB] hover:shadow-ga4Show rounded-lg flex flex-col justify-between items-center gap-[27px]'>
                   <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/order-tracking%20(1).png' alt='Enhanced Ecommerce Tracking' className='mx-auto pb-5' />
-                  <div className='text-[#0F172A] text-xs text-center'>Enhanced Ecommerce Tracking</div>
+                  <div className='service-title text-[#0F172A] text-xs text-center'>Enhanced Ecommerce Tracking</div>
                 </div>
               </Slider>
             </div>
@@ -774,7 +774,7 @@ export default function Ga4({ brandsdata }) {
                 <div className='text-[#666666] text-sm xl:text-base' style={{
                   display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden",
                 }}>By leveraging Google Tag Manager (GTM) and custom scripts, we achieved 99% accuracy in subscription event tracking without backend support.</div>
-                <a href='/case-studies/ga4-backend-data-mapping-accuracy-gtm' target='_blank'>
+                <a href='/case-studies/ga4-backend-data-mapping-accuracy-gtm' target='_blank' className='readmore-cs-button'>
                   <button className='ga4butn-opposite group w-max flex gap-2 items-center'>
                     <div className=''>Read Full</div>
                     <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Icon.png' alt='Google Analytics 4 Consulting Services' className='block group-hover:hidden' />
@@ -792,7 +792,7 @@ export default function Ga4({ brandsdata }) {
                 <div className='text-[#666666] text-sm xl:text-base' style={{
                   display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden",
                 }}>We successfully implemented 90% of purchase events, with the exception of UA, which is at 70% and all GA4 enhanced ecommerce events and Shopify parameters are being successfully sent to GA4</div>
-                <a href='/case-studies/ga4-enhanced-ecommerce-implementation-using-gtm-and-shopify-integration' target='_blank'>
+                <a href='/case-studies/ga4-enhanced-ecommerce-implementation-using-gtm-and-shopify-integration' target='_blank' className='readmore-cs-button'>
                   <button className='ga4butn-opposite group w-max flex gap-2 items-center'>
                     <div className=''>Read Full</div>
                     <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Icon.png' alt='GA4 Implementation Service' className='block group-hover:hidden' />
@@ -810,7 +810,7 @@ export default function Ga4({ brandsdata }) {
                 <div className='text-[#666666] text-sm xl:text-base pb-5 xl:pb-6' style={{
                   display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden",
                 }}>We achieved improved conversion rate by 12% and reduced bounce rates by 10%.</div>
-                <a href='/case-studies/boosting-conversion-rates-with-customised-cookie-consent-mode' target='_blank'>
+                <a href='/case-studies/boosting-conversion-rates-with-customised-cookie-consent-mode' target='_blank' className='readmore-cs-button'>
                   <button className='ga4butn-opposite group w-max flex gap-2 items-center'>
                     <div className=''>Read Full</div>
                     <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Icon.png' alt='GA4 Implementation Service' className='block group-hover:hidden' />

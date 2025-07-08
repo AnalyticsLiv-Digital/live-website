@@ -275,7 +275,7 @@ const contact = () => {
                                 <div>
                                     <div className='text-sm 2xl:text-lg font-semibold text-[#14183E] pb-1 2xl:pb-1.5'>Company Name or Website</div>
                                     <input type="text" placeholder="Enter Company Name or Website" className="text-sm 2xl:text-base px-5 py-2 2xl:py-3 border-[0.5px] border-[#08A4F7] rounded-md w-full focus:outline-none placeholder-[#747582] placeholder-opacity-75"
-                                        name="company" value={formValues?.company} onChange={handleChange} />
+                                        name="company" id='company' value={formValues?.company} onChange={handleChange} />
                                     <p className="text-red-600 text-sm">{formErrors?.company}</p>
 
                                 </div>

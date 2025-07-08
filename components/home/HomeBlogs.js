@@ -92,7 +92,7 @@ const HomeBlogs = () => {
           <a href='/blogs' className=''><button className="mainbutn max-md:mt-5">Read More Blogs</button></a>
         </div> */}
         <div className="max-md:hidden flex flex-col max-sm:hidden justify-center items-center gap-2 max-md:pt-5">
-          <a href='/blogs'><button className="analyticsliv-readmore-btn mainbutn-opposite">Read More Blogs</button></a>
+          <a href='/blogs'><button className="readmore-button mainbutn-opposite">Read More Blogs</button></a>
           <div className="flex justify-center items-center gap-5">
             <button
               onClick={handlePrev}
@@ -117,7 +117,7 @@ const HomeBlogs = () => {
       {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"> */}
       <div className="md:pt-8 w-full mx-auto relative carousel-custom">
         <Slider ref={sliderRef} {...settings}>
-          <a href='/blogs/google-dv360-removal-of-flight-asap-pacing-at-the-insertion-order-level' className="bg-white rounded-lg shadow-lg p-4 2xl:p-6 relative">
+          <a href='/blogs/google-dv360-removal-of-flight-asap-pacing-at-the-insertion-order-level' className="readmore-btn bg-white rounded-lg shadow-lg p-4 2xl:p-6 relative">
             <div className='flex flex-col justify-evenly h-full'>
               <div className="absolute w-[100px] text-center top-4 2xl:top-6 right-4 2xl:right-6 bg-[#A2EC4E99] text-white font-semibold px-3 py-1 rounded-tr-2xl 2xl:rounded-tr-[20px] rounded-bl-md text-sm">Marketing</div>
               <img
@@ -150,12 +150,12 @@ const HomeBlogs = () => {
                 campaign lifespans.
               </p>
               <div className="flex justify-between items-center text-sm text-[#0066cc]">
-                <span className="text-[#6B7280]">25th Nov 2024</span>
+                <span className="text-[#6B7280] blog-date">25th Nov 2024</span>
                 <button className="text-[#08A4F7] text-base font-medium hover:underline">Read Full</button>
               </div>
             </div>
           </a>
-          <a href='/blogs/behavioral-and-conversion-modeling-in-ga4-with-google-consent-mode-v2' className="bg-white rounded-lg shadow-lg p-4 2xl:p-6 relative">
+          <a href='/blogs/behavioral-and-conversion-modeling-in-ga4-with-google-consent-mode-v2' className="readmore-btn bg-white rounded-lg shadow-lg p-4 2xl:p-6 relative">
             <div className='flex flex-col justify-evenly h-full'>
 
               <div className="absolute w-[100px] text-center top-4 2xl:top-6 right-4 2xl:right-6 bg-[#EC954E99] text-white font-semibold px-3 py-1 rounded-tr-[20px] 2xl:rounded-tr-3xl rounded-bl-md text-sm">Analytics</div>
@@ -190,12 +190,12 @@ const HomeBlogs = () => {
                 opt-out of tracking.
               </p>
               <div className="flex justify-between items-center text-sm text-[#0066cc]">
-                <span className="text-[#6B7280]">06th Aug 2024</span>
+                <span className="text-[#6B7280] blog-date">06th Aug 2024</span>
                 <button className="text-[#08A4F7] text-base font-medium hover:underline">Read Full</button>
               </div>
             </div>
           </a>
-          <a href='/blogs/top-5-key-takeaways-to-improve-conversion-rate-optimization-cro' className="bg-white rounded-lg shadow-lg p-4 2xl:p-6 relative">
+          <a href='/blogs/top-5-key-takeaways-to-improve-conversion-rate-optimization-cro' className="readmore-btn bg-white rounded-lg shadow-lg p-4 2xl:p-6 relative">
             <div className='flex flex-col justify-evenly h-full'>
 
               <div className="absolute w-[100px] text-center top-4 2xl:top-6 right-4 2xl:right-6 bg-[#EC4EDC99] text-white font-semibold px-3 py-1 rounded-tr-[20px] 2xl:rounded-tr-3xl rounded-bl-md text-sm">CRO</div>
@@ -228,12 +228,12 @@ const HomeBlogs = () => {
                 to achieve actionable insights, drive conversions better for Mobile site.
               </p>
               <div className="flex justify-between items-center text-sm text-[#0066cc]">
-                <span className="text-[#6B7280]">9th Aug 2024</span>
+                <span className="text-[#6B7280] blog-date">9th Aug 2024</span>
                 <button className="text-[#08A4F7] text-base font-medium hover:underline">Read Full</button>
               </div>
             </div>
           </a>
-          <a href='/blogs/mastering-looker-studio-formulas-date-string-functions-video-tutorials' className="bg-white rounded-lg shadow-lg p-4 2xl:p-6 relative">
+          <a href='/blogs/mastering-looker-studio-formulas-date-string-functions-video-tutorials' className="readmore-btn bg-white rounded-lg shadow-lg p-4 2xl:p-6 relative">
             <div className='flex flex-col justify-evenly h-full'>
 
               <div className="absolute w-[100px] text-center top-4 2xl:top-6 right-4 2xl:right-6 bg-[#EC954E99] text-white font-semibold px-3 py-1 rounded-tr-[20px] 2xl:rounded-tr-3xl rounded-bl-md text-sm">Analytics</div>
@@ -268,7 +268,7 @@ const HomeBlogs = () => {
                 included a video tutorial for hands-on learning.
               </p>
               <div className="flex justify-between items-center text-sm text-[#0066cc]">
-                <span className="text-[#6B7280]">20th Jan 2025</span>
+                <span className="text-[#6B7280] blog-date">20th Jan 2025</span>
                 <button className="text-[#08A4F7] text-base font-medium hover:underline">Read Full</button>
               </div>
             </div>
@@ -295,7 +295,7 @@ const HomeBlogs = () => {
             <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20left%20white.svg' alt='right vector' className='w-3.5 h-3.5 hidden group-hover:block' />
           </button>
         </div>
-        <a href='/blogs' className=''><button className="analyticsliv-readmore-btn mainbutn max-md:mt-1">Read More Blogs</button></a>
+        <a href='/blogs' className=''><button className="readmore-button mainbutn max-md:mt-1">Read More Blogs</button></a>
       </div>
 
     </section>

@@ -164,7 +164,7 @@ const navbar = () => {
                     href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap"
                 />
             </Head>
-            <header id="analyticsliv-navbar">
+            <header id="analyticsliv-navbar" className="sticky top-0 z-50">
                 <div className="sticky top-0 z-50 bg-header-linear h-[55px] sm:h-[50px] text-white flex justify-center items-center px-2">
                     <div className="text-xs max-sm:py-1.5 sm:text-base md:text-base font-normal text-center flex max-sm:flex-col max-sm:gap-1 justify-center items-center">
                         Your Partner for Google Marketing Platform Success
