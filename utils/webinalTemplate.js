@@ -279,13 +279,13 @@ function generateLookerEmailTemplate(firstName) {
                 }
                 @media (max-width: 600px) {
                     .email-container {
-                        padding: 5px !important;
-                        margin: 2px !important;
+                        padding: 3px !important;
+                        margin: 3px !important;
                         width: 98% !important;
-                        max-width: 98% !important;
+                        max-width: 400px !important;
                     }
                     .email-header {
-                        padding: 15px 5px !important;
+                        padding: 15px 10px !important;
                     }
                     .email-header h1 {
                         font-size: 20px !important;
@@ -296,10 +296,10 @@ function generateLookerEmailTemplate(firstName) {
                         line-height: 1.4 !important;
                     }
                     .email-body {
-                        padding: 10px 5px !important;
+                        padding: 15px 10px !important;
                     }
                     .email-body h3 {
-                        font-size: 16px !important;
+                        font-size: 14.5px !important;
                         margin-top: 20px !important;
                         margin-bottom: 10px !important;
                     }
@@ -309,15 +309,15 @@ function generateLookerEmailTemplate(firstName) {
                         line-height: 1.5 !important;
                     }
                     .webinar-details {
-                        padding: 12px 8px !important;
-                        margin: 10px 0 !important;
+                        padding: 10px 5px !important;
+                        margin: 8px 0 !important;
                     }
                     .webinar-details p {
                         font-size: 13px !important;
                         margin: 8px 0 !important;
                     }
                     .speakers-section {
-                        padding: 12px 8px !important;
+                        padding: 8px 5px !important;
                         margin: 15px 0 !important;
                     }
                     .speakers-title {
@@ -325,8 +325,8 @@ function generateLookerEmailTemplate(firstName) {
                         margin-bottom: 10px !important;
                     }
                     .speaker {
-                        margin: 10px 0 !important;
-                        padding: 8px !important;
+                        margin: 15px 0 !important;
+                        padding: 10px !important;
                     }
                     .speaker-name {
                         font-size: 14px !important;
@@ -341,8 +341,8 @@ function generateLookerEmailTemplate(firstName) {
                         line-height: 1.4 !important;
                     }
                     .benefits-list {
-                        padding: 12px 8px !important;
-                        margin: 10px 0 !important;
+                        padding: 15px 10px !important;
+                        margin: 15px 0 !important;
                     }
                     .benefits-list h3 {
                         font-size: 16px !important;
@@ -372,8 +372,8 @@ function generateLookerEmailTemplate(firstName) {
                         font-size: 14px !important;
                     }
                     .email-footer {
-                        padding: 10px 5px !important;
-                        margin-top: 15px !important;
+                        padding: 15px 10px 10px 10px !important;
+                        margin-top: 20px !important;
                     }
                     .email-footer p {
                         font-size: 12px !important;

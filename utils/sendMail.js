@@ -59,6 +59,14 @@ export const sendEmail = async (to, subject, html, from) => {
               padding-top: 10px;
               border-top: 1px solid #ddd;
             }
+            @media (max-width: 600px) {
+            .container {
+              padding: 15px 8px;
+            }
+            .content {
+              padding: 15px 10px;
+            }
+          }
           </style>
         </head>
         <body>
