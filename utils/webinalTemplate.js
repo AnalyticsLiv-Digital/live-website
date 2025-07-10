@@ -88,16 +88,16 @@ function generateEmailTemplate(firstName) {
                     <!-- <h2>Google Basic vs. Advanced Consent</h2> -->
                     <p>Hi ${firstName},</p>
                     <p>Thank you for signing up to connect with AnalyticsLiv at IREC 2025!
-We’re excited to meet you and explore how data, technology, and strategy can take your brand to the next level.</p>
+We're excited to meet you and explore how data, technology, and strategy can take your brand to the next level.</p>
                     
                     
                     
                     
                     <p>Until then, feel free to check out our services or drop us a line at <strong><a href="mailto:sales@analyticsliv.com">sales@analyticsliv.com</a></strong>
-Let’s unlock the future of retail, together.</p>
+Let's unlock the future of retail, together.</p>
                     
                     <h3>Got Questions?</h3>
-                    <p>Reply to this email with any questions or topics you'd like covered, and we’ll address them in the meeting.</p>
+                    <p>Reply to this email with any questions or topics you'd like covered, and we'll address them in the meeting.</p>
                     
                     <p>Looking forward to seeing you there!</p>
                     <p>Best regards,</p>
@@ -121,8 +121,7 @@ Let’s unlock the future of retail, together.</p>
         </body>
         </html>
     `;
-};
-
+}
 
 function generateLookerEmailTemplate(firstName) {
     return `
@@ -280,21 +279,123 @@ function generateLookerEmailTemplate(firstName) {
                 }
                 @media (max-width: 600px) {
                     .email-container {
-                        padding: 10px;
-                        margin: 10px;
+                        padding: 10px !important;
+                        margin: 5px !important;
+                        width: 95% !important;
+                        max-width: 95% !important;
+                    }
+                    .email-header {
+                        padding: 15px 10px !important;
                     }
                     .email-header h1 {
-                        font-size: 24px;
+                        font-size: 20px !important;
+                        line-height: 1.3 !important;
                     }
                     .email-header p {
-                        font-size: 16px;
+                        font-size: 14px !important;
+                        line-height: 1.4 !important;
                     }
-                    .btn {
-                        width: 90%;
-                        text-align: center;
+                    .email-body {
+                        padding: 15px 10px !important;
+                    }
+                    .email-body h3 {
+                        font-size: 16px !important;
+                        margin-top: 20px !important;
+                        margin-bottom: 10px !important;
+                    }
+                    .email-body p {
+                        font-size: 14px !important;
+                        margin: 10px 0 !important;
+                        line-height: 1.5 !important;
+                    }
+                    .webinar-details {
+                        padding: 15px 10px !important;
+                        margin: 15px 0 !important;
+                    }
+                    .webinar-details p {
+                        font-size: 13px !important;
+                        margin: 8px 0 !important;
+                    }
+                    .speakers-section {
+                        padding: 15px 10px !important;
+                        margin: 20px 0 !important;
+                    }
+                    .speakers-title {
+                        font-size: 16px !important;
+                        margin-bottom: 10px !important;
                     }
                     .speaker {
-                        margin: 15px 0;
+                        margin: 15px 0 !important;
+                        padding: 10px !important;
+                    }
+                    .speaker-name {
+                        font-size: 14px !important;
+                        margin-bottom: 3px !important;
+                    }
+                    .speaker-title {
+                        font-size: 13px !important;
+                        margin-bottom: 5px !important;
+                    }
+                    .speaker-description {
+                        font-size: 12px !important;
+                        line-height: 1.4 !important;
+                    }
+                    .benefits-list {
+                        padding: 15px 10px !important;
+                        margin: 15px 0 !important;
+                    }
+                    .benefits-list h3 {
+                        font-size: 16px !important;
+                        margin-bottom: 10px !important;
+                    }
+                    .benefits-list ul {
+                        padding-left: 15px !important;
+                        margin: 8px 0 !important;
+                    }
+                    .benefits-list li {
+                        font-size: 13px !important;
+                        margin: 8px 0 !important;
+                        line-height: 1.4 !important;
+                    }
+                    .highlight {
+                        padding: 10px !important;
+                        margin: 15px 0 !important;
+                    }
+                    .highlight p {
+                        font-size: 13px !important;
+                        margin: 8px 0 !important;
+                    }
+                    .btn {
+                        width: 90% !important;
+                        text-align: center !important;
+                        padding: 12px 20px !important;
+                        font-size: 14px !important;
+                    }
+                    .email-footer {
+                        padding: 15px 10px 10px 10px !important;
+                        margin-top: 20px !important;
+                    }
+                    .email-footer p {
+                        font-size: 12px !important;
+                        margin: 8px 0 !important;
+                    }
+                    .social-links img {
+                        width: 20px !important;
+                        margin: 0 3px !important;
+                    }
+                    /* Fix for any table-like layouts */
+                    table {
+                        width: 100% !important;
+                    }
+                    /* Ensure images don't overflow */
+                    img {
+                        max-width: 100% !important;
+                        height: auto !important;
+                    }
+                    /* Fix for any potential text overflow */
+                    * {
+                        word-wrap: break-word !important;
+                        word-break: break-word !important;
                     }
                 }
             </style>
