@@ -202,9 +202,9 @@ const LookerStudio = () => {
       </Head>
       <MetaSchemaOg
         url="https://analyticsliv.com/webinar/looker-studio"
-        title="Free Webinar: Master Data Storytelling with Looker Studio"
-        description="Join AnalyticsLiv’s free webinar and learn how to transform raw data into compelling stories using Looker Studio. Discover expert tips, live demos, and real-world strategies to elevate your data game."
-        twitterTitle="Free Webinar: Master Data Storytelling with Looker Studio"
+        title="Free Looker Studio Webinar | AnalyticsLiv"
+        description="Join our free webinar to master Looker Studio dashboards and unlock powerful data insights with experts from AnalyticsLiv"
+        twitterTitle="Free Looker Studio Webinar | AnalyticsLiv"
         twitterDescription="Learn from experts at AnalyticsLiv how to create impactful dashboards and visualize data effectively with Looker Studio. Reserve your free seat today!"
         extraHead={
           <>

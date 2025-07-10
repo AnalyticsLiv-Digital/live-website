@@ -30,7 +30,7 @@ const handler = async (req, res) => {
     var userMailOptions = {
       from: "sales@analyticsliv.com",
       to: [req.body.email],
-      subject: '🙏 Thank You for Registering!',
+      subject: 'You’re In! 🎉 Data Storytelling Webinar Confirmation',
       html: generateLookerEmailTemplate(req.body.fullName)
     };
 
