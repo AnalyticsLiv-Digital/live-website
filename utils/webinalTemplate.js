@@ -279,13 +279,13 @@ function generateLookerEmailTemplate(firstName) {
                 }
                 @media (max-width: 600px) {
                     .email-container {
-                        padding: 10px !important;
-                        margin: 5px !important;
-                        width: 95% !important;
-                        max-width: 95% !important;
+                        padding: 5px !important;
+                        margin: 2px !important;
+                        width: 98% !important;
+                        max-width: 98% !important;
                     }
                     .email-header {
-                        padding: 15px 10px !important;
+                        padding: 15px 5px !important;
                     }
                     .email-header h1 {
                         font-size: 20px !important;
@@ -296,7 +296,7 @@ function generateLookerEmailTemplate(firstName) {
                         line-height: 1.4 !important;
                     }
                     .email-body {
-                        padding: 15px 10px !important;
+                        padding: 10px 5px !important;
                     }
                     .email-body h3 {
                         font-size: 16px !important;
@@ -309,24 +309,24 @@ function generateLookerEmailTemplate(firstName) {
                         line-height: 1.5 !important;
                     }
                     .webinar-details {
-                        padding: 15px 10px !important;
-                        margin: 15px 0 !important;
+                        padding: 12px 8px !important;
+                        margin: 10px 0 !important;
                     }
                     .webinar-details p {
                         font-size: 13px !important;
                         margin: 8px 0 !important;
                     }
                     .speakers-section {
-                        padding: 15px 10px !important;
-                        margin: 20px 0 !important;
+                        padding: 12px 8px !important;
+                        margin: 15px 0 !important;
                     }
                     .speakers-title {
                         font-size: 16px !important;
                         margin-bottom: 10px !important;
                     }
                     .speaker {
-                        margin: 15px 0 !important;
-                        padding: 10px !important;
+                        margin: 10px 0 !important;
+                        padding: 8px !important;
                     }
                     .speaker-name {
                         font-size: 14px !important;
@@ -341,8 +341,8 @@ function generateLookerEmailTemplate(firstName) {
                         line-height: 1.4 !important;
                     }
                     .benefits-list {
-                        padding: 15px 10px !important;
-                        margin: 15px 0 !important;
+                        padding: 12px 8px !important;
+                        margin: 10px 0 !important;
                     }
                     .benefits-list h3 {
                         font-size: 16px !important;
@@ -358,22 +358,22 @@ function generateLookerEmailTemplate(firstName) {
                         line-height: 1.4 !important;
                     }
                     .highlight {
-                        padding: 10px !important;
-                        margin: 15px 0 !important;
+                        padding: 10px 8px !important;
+                        margin: 10px 0 !important;
                     }
                     .highlight p {
                         font-size: 13px !important;
                         margin: 8px 0 !important;
                     }
                     .btn {
-                        width: 90% !important;
+                        width: 95% !important;
                         text-align: center !important;
-                        padding: 12px 20px !important;
+                        padding: 12px 15px !important;
                         font-size: 14px !important;
                     }
                     .email-footer {
-                        padding: 15px 10px 10px 10px !important;
-                        margin-top: 20px !important;
+                        padding: 10px 5px !important;
+                        margin-top: 15px !important;
                     }
                     .email-footer p {
                         font-size: 12px !important;
