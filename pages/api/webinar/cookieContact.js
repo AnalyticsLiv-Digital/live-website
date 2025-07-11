@@ -22,7 +22,7 @@ const handler = async (req, res) => {
       from: "support@analyticsliv.com",
       // to:"atul.verma@analyticsliv.com",
       to: ["sales@analyticsliv.com", "anuj@analyticsliv.com", "nitya@analyticsliv.com", "rajvi@analyticsliv.com", "abhishek.tiwari@analyticsliv.com", "shubhangi@analyticsliv.com", "sakina.furniturewala@analyticsliv.com"],
-      subject: 'New Registartion for Looker studio webinar.',
+      subject: 'New Registration for Looker studio webinar.',
       html: `Enquiry Submitted by <br> Full Name - ${req.body.fullName}  <br> Email- ${req.body.email} <br> Contact - ${req.body.contact} <br> Website - ${req.body.company} <br> Profession - ${req.body.profession} <br> Type - ${req.body.type} `
     };
 

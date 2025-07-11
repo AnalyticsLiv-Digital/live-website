@@ -405,7 +405,7 @@ function generateLookerEmailTemplate(firstName) {
                 <!-- Header -->
                 <div class="email-header">
                     <h1>🎉 Looker Studio Mastery: You're On the Guest List!</h1>
-                    <p>Your Spot is Reserved for the Looker Studio Mastery Webinar</p>
+                    <p>Your Spot is Reserved for the Looker Studio Webinar</p>
                 </div>
                 
                 <!-- Body -->
@@ -416,7 +416,7 @@ function generateLookerEmailTemplate(firstName) {
                     
                     <div class="webinar-details">
                         <h3>📅 Webinar Details:</h3>
-                        <p><strong>Topic:</strong> Looker Studio Mastery – From Beginner to Pro</p>
+                        <p><strong>Topic:</strong> Data Storytelling with Looker Studio</p>
                         <p><strong>Date:</strong> 24th July</p>
                         <p><strong>Time:</strong> 8:00 PM IST | 7:30 AM PST</p>
                         <p><strong>Duration:</strong> 60 minutes + Live Q&A</p>

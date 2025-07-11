@@ -381,7 +381,7 @@ const LookerStudio = () => {
                     className="register-now bg-[#0C7077] shadow-teamShadow px-3 2xl:px-4 py-2 max-sm:mt-2 sm:my-4 flex justify-center items-center rounded-[10px] text-white"
                   >
                     <div className="text-sm 2xl:text-base font-bold">
-                      REGISER NOW
+                      REGISTER NOW
                     </div>
                     <img
                       src="https://storage.googleapis.com/website-bucket-uploads/popup/Right%20Arrow.png"
