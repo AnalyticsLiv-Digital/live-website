@@ -14,6 +14,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import dynamic from "next/dynamic";
+import LookerWebAd from '../components/LookerWebAd';
 
 
 function MyApp({ Component, pageProps: { session, ...pageProps }, }) {
@@ -68,11 +69,11 @@ function MyApp({ Component, pageProps: { session, ...pageProps }, }) {
           <>
 
             <Component {...pageProps} />
+            <LookerWebAd />
 
             <div className='App'>
               <ChatBot />
             </div>
-
 
             <Footer />
 
