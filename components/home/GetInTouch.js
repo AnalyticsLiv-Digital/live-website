@@ -128,14 +128,14 @@ const GetInTouch = () => {
                         Get in touch
                     </h1>
                     {formSubmit && (
-                        <div className='relative text-slate-700 p-4 space-y-4 h-full'>
+                        <div className='analyticsliv-form-thankyou relative text-slate-700 p-4 space-y-4 h-full'>
                             <h1 className='align-middle font-medium text-4xl'>Thank You for your interest.</h1>
                             <h2 className='align-middle text-xl'>We will get back to you soon.</h2>
                             <div className='absolute bottom-0 right-2 rounded-full w-20 h-20 bg-emerald-600 opacity-70 animate-bounce hover:animate-none duration-300 delay-75'></div>
                         </div>
                     )}
                     {!formSubmit && (
-                        <form className="flex flex-col justify-evenly h-full gap-3 2xl:gap-6" onSubmit={handleSubmit}>
+                        <form className="analyticsliv-form flex flex-col justify-evenly h-full gap-3 2xl:gap-6" onSubmit={handleSubmit}>
                             <div className="">
                                 <label className="block text-base font-semibold text-[#14183E]">Full Name</label>
                                 <input
