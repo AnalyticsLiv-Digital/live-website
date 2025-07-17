@@ -12,7 +12,7 @@ const LookerWebAd = () => {
             const totalHeight = document.body.scrollHeight;
             const scrollProgress = scrollY / (totalHeight - viewportHeight);
 
-            const inRange = scrollProgress > 0.08 && scrollProgress < 0.9;
+            const inRange = scrollProgress > 0.06 && scrollProgress < 0.9;
 
             if (!userClosedBanner) {
                 setShowBanner(inRange);
