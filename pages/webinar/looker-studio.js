@@ -266,15 +266,17 @@ const LookerStudio = () => {
                   What you’ll Learn
                 </div>
               </div>
-              <button onClick={scrolling} className="register-now relative w-max">
-                <div className="z-20 relative bg-white border border-[#0D7078] rounded-full pl-3 3xl:pl-4 pr-2.5 3xl:pr-3.5 py-3 3xl:py-4 shadow-webinarShadow">
+              <button onClick={scrolling} className="register-now relative w-max group">
+                <div className="z-20 relative bg-white border border-[#0D7078] rounded-full pl-3 3xl:pl-4 pr-2.5 3xl:pr-3.5 py-3 3xl:py-4 shadow-webinarShadow transition-all duration-300 group-hover:shadow-md group-hover:scale-105">
                   <img
                     src="https://storage.googleapis.com/website-bucket-uploads/popup/Add%20User.png"
                     alt="User Icon"
                     className="w-[24px] 3xl:w-[30px]"
                   />
                 </div>
-                <div className="absolute top-1.5 3xl:top-[9px] left-8 z-10 w-[190px] 3xl:w-[220px] bg-[#0D7078] pl-9 3xl:pl-12 pr-5 py-1.5 3xl:py-2 rounded-lg text-white text-base 3xl:text-xl font-semibold 3xl:font-bold">
+                <div className="absolute top-1.5 3xl:top-[9px] left-8 z-10 w-[190px] 3xl:w-[220px] bg-[#0D7078] pl-9 3xl:pl-12 pr-5 py-1.5 3xl:py-2 rounded-lg text-white text-base 3xl:text-xl font-semibold 3xl:font-bold 
+                transition-all duration-300 transform group-hover:translate-x-1 group-hover:scale-[1.01] group-hover:bg-[#0a5a62]"
+                >
                   REGISTER NOW
                 </div>
               </button>
@@ -378,14 +380,15 @@ const LookerStudio = () => {
                 <div className="max-sm:col-span-2 max-sm:flex max-sm:justify-center">
                   <button
                     onClick={scrolling}
-                    className="register-now bg-[#0C7077] shadow-teamShadow px-3 2xl:px-4 py-2 max-sm:mt-2 sm:my-4 flex justify-center items-center rounded-[10px] text-white"
+                    className="register-now bg-[#0C7077] shadow-teamShadow px-3 2xl:px-4 py-2 max-sm:mt-2 sm:my-4 flex justify-center items-center gap-2 rounded-[10px] text-white transition-all duration-300 transform hover:scale-[1.01] hover:bg-[#095c61] group"
                   >
-                    <div className="text-sm 2xl:text-base font-bold">
+                    <div className="text-sm 2xl:text-base font-bold transition-all duration-300 transform group-hover:translate-x-0.5">
                       REGISTER NOW
                     </div>
                     <img
                       src="https://storage.googleapis.com/website-bucket-uploads/popup/Right%20Arrow.png"
-                      alt=""
+                      alt="Arrow Icon"
+                      className="w-4 h-4 transition-transform duration-300 transform group-hover:translate-x-1"
                     />
                   </button>
                 </div>
@@ -795,13 +798,13 @@ const LookerStudio = () => {
                 </div>
                 <button
                   onClick={scrolling}
-                  className="register-now bg-[#0C7077] hover:bg-[#095e64] flex gap-2 items-center justify-center transition text-white font-semibold px-3.5 2xl:px-6 py-1.5 2xl:py-2 rounded-md shadow-md text-xs 2xl:text-base"
+                  className="register-now bg-[#0C7077] hover:bg-[#095e64] flex gap-2 items-center justify-center transition-all duration-300 transform hover:scale-[1.01] text-white font-semibold px-3.5 2xl:px-6 py-1.5 2xl:py-2 rounded-md shadow-md text-xs 2xl:text-base group"
                 >
                   REGISTER NOW
                   <img
                     src="https://storage.googleapis.com/website-bucket-uploads/popup/Right%20Arrow%20(1).png"
-                    alt=""
-                    className="w-5"
+                    alt="Arrow"
+                    className="w-5 transition-transform duration-300 transform group-hover:translate-x-1"
                   />
                 </button>
               </div>

@@ -68,7 +68,7 @@ export default function App() {
     <div className="analyticsliv-chatbot">
       {showBot && (
         <div
-          className={`font-sans transition-all duration-500 ease-in-out transform fixed right-5 md:right-1 bottom-0 z-40 
+          className={`font-sans transition-all duration-500 ease-in-out transform fixed right-5 md:right-1 bottom-0 z-50 
     ${showBot ? 'scale-100 opacity-100' : 'scale-0 opacity-0 pointer-events-none'}
     max-md:my-8 md:m-8 flex flex-col md:w-[370px] max-xl:max-h-[400px] max-[1536px]:max-h-[400px] 2xl:max-h-[460px] min-h-[250px] 2xl:min-h-[300px]
     bg-white shadow-lg rounded-md overflow-hidden custom-scrollbar`}
