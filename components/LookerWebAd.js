@@ -6,6 +6,14 @@ const LookerWebAd = () => {
     const [userClosedBanner, setUserClosedBanner] = useState(false);
 
     useEffect(() => {
+        const closedTimestamp = localStorage.getItem('lookerWebAdClosedAt');
+        const now = Date.now();
+
+        if (closedTimestamp && now - parseInt(closedTimestamp) < 24 * 60 * 60 * 1000) {
+            setUserClosedBanner(true);
+            return;
+        }
+
         const handleScroll = () => {
             const scrollY = window.scrollY;
             const viewportHeight = window.innerHeight;
@@ -23,6 +31,12 @@ const LookerWebAd = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, [userClosedBanner]);
 
+    const handleCloseBanner = () => {
+        setUserClosedBanner(true);
+        setShowBanner(false);
+        localStorage.setItem('lookerWebAdClosedAt', Date.now().toString());
+    }
+
     return (
         <div
             className={`fixed bottom-0 left-0 right-0 z-50 transform transition-transform duration-500 ease-in-out ${showBanner ? 'translate-y-0' : 'translate-y-full'
@@ -30,14 +44,11 @@ const LookerWebAd = () => {
         >
             <div className="max-sm:hidden relative bg-header-linear transition-all duration-700 
         border-t border-gray-300 shadow-2xl py-5 px-4 sm:px-6 md:px-10 flex flex-col md:flex-row items-center justify-between 
-        max-w-5xl 2xl:max-w-7xl mx-auto rounded-t-2xl backdrop-blur-sm"
+        max-w-5xl 2xl:max-w-6xl mx-auto rounded-t-2xl backdrop-blur-sm"
             >
                 {/* ❌ Close Button */}
                 <button
-                    onClick={() => {
-                        setUserClosedBanner(true);
-                        setShowBanner(false);
-                    }}
+                    onClick={() => handleCloseBanner()}
                     className="absolute top-1 left-3 text-gray-400 hover:text-gray-500 text-lg font-bold focus:outline-none"
                     aria-label="Close"
                 >
@@ -53,7 +64,7 @@ const LookerWebAd = () => {
                     <p className="hidden lg:block text-xs sm:text-sm 2xl:text-base font-medium">Turn data into stories that drive action!</p>
                 </div>
 
-                <div className="flex lg:mr-[100px] 2xl:mr-[120px] items-center gap-3 sm:gap-4 xl:gap-8 mt-1">
+                <div className="flex lg:mr-[100px] 2xl:mr-[90px] items-center gap-3 sm:gap-4 xl:gap-8 2xl:gap-12 mt-1">
                     <div className='flex flex-col items-start justify-between gap-2.5'>
                         <div>
                             <p className="text-xs sm:text-sm 2xl:text-base text-gray-300">
@@ -87,23 +98,20 @@ const LookerWebAd = () => {
          max-w-5xl 2xl:max-w-7xl mx-auto rounded-t-2xl backdrop-blur-sm"
             >
                 <button
-                    onClick={() => {
-                        setUserClosedBanner(true);
-                        setShowBanner(false);
-                    }}
+                    onClick={() => handleCloseBanner()}
                     className="absolute top-1 left-3 text-gray-400 hover:text-gray-500 text-lg font-bold focus:outline-none"
                     aria-label="Close"
                 >
                     &times;
                 </button>
 
-                <div className="flex flex-col text-gray-300 gap-1 sm:gap-2 text-center md:text-left max-md:mb-3">
-                    <p className="text-base sm:text-lg 2xl:text-xl font-semibold leading-relaxed">
+                <div className="flex flex-col text-gray-300 gap-1 sm:gap-2 md:text-left max-md:mb-2">
+                    <p className="text-base sm:text-lg 2xl:text-xl font-semibold leading-relaxed text-center">
                         <span className="text-white">WEBINAR</span> on <span className="text-white">Data Storytelling with <br className='sm:hidden'></br>Looker Studio</span>
                     </p>
-                    <p className="text-xs sm:text-sm 2xl:text-base text-gray-300 pt-3">
-                        <strong>When:</strong> 24 July 2025 · 8:00 PM IST / 7:30 AM PST · 1 Hour
-                    </p>
+                    <div className="flex justify-center text-xs sm:text-sm 2xl:text-base text-gray-300 pt-3 items-center gap-2">
+                        <p>📅 24 July 2025</p> <p>⌛ 8:00 PM IST / 7:30 AM PST</p>
+                    </div>
                 </div>
 
                 {/* Right Side */}
