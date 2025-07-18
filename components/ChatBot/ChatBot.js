@@ -95,7 +95,7 @@ export default function App() {
         </div>
       )}
 
-      <div onMouseEnter={handleShowCross} onMouseLeave={handleHideCross} className="fixed bottom-[70px] 2xl:bottom-24 z-[100000] right-[75px] sm:right-24">
+      <div onMouseEnter={handleShowCross} onMouseLeave={handleHideCross} className="max-md:hidden sm:fixed bottom-[70px] 2xl:bottom-24 z-[100000] right-[75px] sm:right-24">
 
         <p onClick={handleMsg} className={`transition-all duration-300 transform cursor-pointer z-[100001] bg-gray-600 text-white
         ${showCross ? 'opacity-70' : 'lg:opacity-0 lg:pointer-events-none'} ${showBot ? 'hidden' : ''} ${!showMsg ? 'hidden' : ''}
