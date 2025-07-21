@@ -68,7 +68,7 @@ const LookerWebAd = () => {
                     <div className='flex flex-col items-start justify-between gap-2.5'>
                         <div>
                             <p className="text-xs sm:text-sm 2xl:text-base text-gray-300">
-                                <div><strong className='text-white'>📅 </strong> 24 July 2025</div>
+                                <div><strong className='text-white'>📅 </strong> 31 July 2025</div>
                                 <div className='pt-0.5'><strong>⌛ </strong> 8:00 PM IST / 7:30 AM PST</div>
                             </p>
                         </div>
@@ -110,7 +110,7 @@ const LookerWebAd = () => {
                         <span className="text-white">WEBINAR</span> on <span className="text-white">Data Storytelling with <br className='sm:hidden'></br>Looker Studio</span>
                     </p>
                     <div className="flex justify-center text-xs sm:text-sm 2xl:text-base text-gray-300 pt-3 items-center gap-2">
-                        <p>📅 24 July 2025</p> <p>⌛ 8:00 PM IST / 7:30 AM PST</p>
+                        <p>📅 31 July 2025</p> <p>⌛ 8:00 PM IST / 7:30 AM PST</p>
                     </div>
                 </div>
 
