@@ -417,7 +417,7 @@ function generateLookerEmailTemplate(firstName) {
                     <div class="webinar-details">
                         <h3>📅 Webinar Details:</h3>
                         <p><strong>Topic:</strong> Data Storytelling with Looker Studio</p>
-                        <p><strong>Date:</strong> 24th July</p>
+                        <p><strong>Date:</strong> 31st July</p>
                         <p><strong>Time:</strong> 8:00 PM IST | 7:30 AM PST</p>
                         <p><strong>Duration:</strong> 60 minutes + Live Q&A</p>
                         <p><strong>Platform:</strong> Zoom (Access link will be shared 24 hours before)</p>

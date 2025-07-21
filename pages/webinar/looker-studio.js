@@ -352,7 +352,7 @@ const LookerStudio = () => {
                     src="https://storage.googleapis.com/website-bucket-uploads/popup/Date.png"
                     alt=""
                   />
-                  <div className="text-xs text-center">24 July 2025</div>
+                  <div className="text-xs text-center">31 July 2025</div>
                 </div>
                 <div className="flex flex-col items-center gap-3">
                   <img
