@@ -149,30 +149,38 @@ const Footer = () => {
 
                                 <div className='pb-10 max-sm:pt-4 sm:w-[90%] pl-[1.9%] 3xl:pl-[1.2%] sm:pb-14 flex max-sm:flex-wrap max-sm:gap-4 items-center justify-around'>                                {/* <div className="pb-10 max-sm:pt-4 sm:pb-14 grid grid-cols-4 max-sm:flex-wrap max-sm:gap-4 items-center justify-around pl-[7%] w-full"> */}
                                     <p className='text-[21px] max-md:text-base max font-semibold leading-[1.3em] mb-4 text-white max-sm:w-full'>Partner with</p>
-                                    <img
-                                        alt="marketing-partner"
-                                        aria-label="marketing-partner"
-                                        src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/MBP%20Badge%20-%20Dark%20backgrounds%401x.png"
-                                        className='w-[100px] sm:w-[150px]'
-                                    />
-                                    <img
-                                        alt="marketing-partner"
-                                        aria-label="marketing-partner"
-                                        src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/CE4F38BB.png"
-                                        className='w-[175px] sm:w-[200px] hidden sm:block'
-                                    />
-                                    <img
-                                        alt="marketing-partner"
-                                        aria-label="marketing-partner"
-                                        src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Partner-RGB.png"
-                                        className='w-[100px] sm:w-[100px] md:mr-16'
-                                    />
-                                    <img
-                                        alt="marketing-partner"
-                                        aria-label="marketing-partner"
-                                        src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/CE4F38BB.png"
-                                        className='w-[175px] sm:w-[200px] sm:hidden'
-                                    />
+                                    <a href='https://www.facebook.com/business/partner-directory/search?solution_type=campaign_management&ref=pd_home_hero_cta&id=9010642655705899&section=overview'
+                                        target='_blank' className='w-[100px] sm:w-[150px]'>
+                                        <img
+                                            alt="meta-partner"
+                                            aria-label="meta-partner"
+                                            src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/MBP%20Badge%20-%20Dark%20backgrounds%401x.png"
+                                            className=''
+                                        /></a>
+                                    <a href='https://enterprisemarketingportal.google/auth/find-a-partner/analyticslivdigitalllp-in?a=617525855'
+                                        target='_blank' className='w-[175px] sm:w-[200px] hidden sm:block'>
+                                        <img
+                                            alt="gmp-partner"
+                                            aria-label="gmp-partner"
+                                            src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/CE4F38BB.png"
+                                            className=''
+                                        /></a>
+                                    <a href='https://www.google.com/partners/agency?id=4212880325'
+                                        target='_blank' className='w-[100px] sm:w-[100px] md:mr-16'>
+                                        <img
+                                            alt="googleAds-partner"
+                                            aria-label="googleAds-partner"
+                                            src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Partner-RGB.png"
+                                            className=''
+                                        /></a>
+                                    <a href='https://enterprisemarketingportal.google/auth/find-a-partner/analyticslivdigitalllp-in?a=617525855'
+                                        target='_blank' className='w-[175px] sm:w-[200px] sm:hidden'>
+                                        <img
+                                            alt="gmp-partner"
+                                            aria-label="gmp-partner"
+                                            src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/CE4F38BB.png"
+                                            className=''
+                                        /></a>
                                 </div>
 
                                 <div className='left-footer w-full pb-7 px-3 lg:px-6 2xl:px-9'>
