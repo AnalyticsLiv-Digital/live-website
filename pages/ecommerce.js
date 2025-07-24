@@ -213,6 +213,33 @@ export default function ecommerce({brandsdata}) {
                 <meta name="description" content="AnalyticsLiv Digital is one of the leading Web and App analytics agency. We help our customers embrace Google Products to improve their customer experiences."/>
                 <title>Ecommerce - AnalyticsLiv</title>
                 <link rel="canonical" href="https://analyticsliv.com/ecommerce"></link>
+                <script
+                  type="application/ld+json"
+                  dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                      "@context": "https://schema.org",
+                      "@type": "VideoObject",
+                      "name": "Shoebacca Drives Path breaking Success in Google Ads with AnalyticsLiv - ROAS 2.4x to 7.8x",
+                      "description":
+                        "A full-scale online retail footwear brand offering 25,000+ styles from 200+ premium labels. Learn how we used accurate measurement, smart bidding, and data-driven decisions to scale ROAS from 2.4x to 7.8x. Discover how PPC advertising powered this ecommerce success story.",
+                      "thumbnailUrl": [
+                        "https://i.ytimg.com/vi/JFOc7x5ZgaA/maxresdefault.jpg"
+                      ],
+                      "uploadDate": "2023-11-02",
+                      "duration": "PT31S",
+                      "contentUrl": "https://www.youtube.com/watch?v=JFOc7x5ZgaA",
+                      "embedUrl": "https://www.youtube.com/embed/JFOc7x5ZgaA",
+                      "publisher": {
+                        "@type": "Organization",
+                        "name": "AnalyticsLiv",
+                        "logo": {
+                          "@type": "ImageObject",
+                          "url": "https://storage.googleapis.com/website-bucket-uploads/static/favicon.png"
+                        }
+                      }
+                    })
+                  }}
+                />
             </Head>
             <StructuredData data={stuctureData} />
     {showWaiting && <div className="fixed z-50 flex backdrop-blur top-0 left-0 right-0 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full"><ScaleLoader
