@@ -146,9 +146,9 @@ const Stats = () => {
             <div className="bg-[#30486A] max-md:px-4 pt-7 sm:pt-8 md:pt-16 lg:pt-0 pb-10">
                 <div className="flex max-sm:gap-3 max-lg:grid max-lg:grid-cols-2 max-lg:justify-items-center lg:justify-evenly items-center text-white">
                     {[
-                        { count: 200, label: "Satisfied Clients", src: "https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Satisfied%20Clients%20icon.png" },
+                        { count: 275, label: "Satisfied Clients", src: "https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Satisfied%20Clients%20icon.png" },
                         { count: 500, label: "Successful Projects", src: "https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Successful%20Projects%20icon.png" },
-                        { count: 30, label: "Certified Experts", src: "https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Certified%20Experts%20icon.png" },
+                        { count: 40, label: "Certified Experts", src: "https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Certified%20Experts%20icon.png" },
                         { count: 10, label: "Solutions", src: "https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Solutions%20icon.png" },
                     ].map((stat, index) => (
                         <div key={index} className="max-lg:py-5 text-center flex items-center gap-1 sm:gap-3">
