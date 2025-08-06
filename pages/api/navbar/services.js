@@ -7,6 +7,11 @@ import Navbarlead from "../../../models/Navbarlead";
 const handler = async (req, res) => {
     if (req.method === 'POST') {
         try {
+            const allowedTypes = ['foundation', 'transformation', 'marketing', 'solution', 'Services', 'footer'];
+            const type = req.body?.type;
+            if (!type || !allowedTypes.includes(type)) {
+                return res.status(400).json({ error: "Invalid or missing type." });
+            }
             //   fetch(`https://script.google.com/macros/s/AKfycbxS43B15oUP4-LaHnzA5KZ5ly7OgE59ZQpvujB1TRGDvt48JpHVa92OPlq9zPPQ7V7N4g/exec?firstName=${req.body?.firstName}&lastName=${req.body?.lastName}&email=${req.body?.email}&contact=${req.body?.contact || ""}&role=${req.body?.role || ""}&purpose=${req.body?.purpose || ""}&requirements=${req.body?.requirments}&company=${req.body?.company || ""}`);
 
             let b = new Navbarlead({

@@ -27,15 +27,26 @@ const Footer = () => {
         e.preventDefault();
         setIsLoading(true);
 
-        // if (!email?.trim()) setError('Please enter Email address !')
-        await fetch("api/navbar/services", {
+        const selectedType = "footer";
+        const allowedTypes = ['footer'];
+
+        if (!allowedTypes.includes(selectedType)) {
+            alert("Invalid form type.");
+            setIsLoading(false);
+            return;
+        }
+        if (!email?.trim()) {
+            alert("Please enter your email address.");
+            setIsLoading(false);
+            return;
+        } await fetch("api/navbar/services", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 "email": email,
-                "type": "footer"
+                "type": selectedType
             })
         })
             .then((res) => res.json())
