@@ -112,84 +112,44 @@ const navbar = () => {
 
     const servicesData = [
         {
-            title: "Digital Analytics & Tag Implementation",
+            title: "Data Foundation",
             links: [
-                { href: "/services/ga4", label: "Google Analytics 4 (GA4) Implementation", imgSrc: "SEM.png" },
-                // { href: "----/services/web-app-measurement", label: "Mixpanel Setup & Analysis", imgSrc: "media-inner-paid.png" },
-                { href: "/services/google-tag-manager", label: "Google Tag Manager (GTM) Implementation", imgSrc: "media-inner-mobile.png" },
-                { href: "---/services/server-side-tracking", label: "Mobile & App Analytics", imgSrc: "media-inner-E-commerce.png" },
-                { href: "/services/gdpr-compliance", label: "Consent Management & Cookie Compliance", imgSrc: "media-inner-lead.png" },
+                { href: "/services/web-app-measurement", label: "Account health and Opportunity", imgSrc: "media-inner-paid.png" },
+                { href: "/services/web-app-measurement", label: "GA4 Implementation & Optimization", imgSrc: "SEM.png" },
+                { href: "/services/server-side-tracking", label: "Server Side Tracking", imgSrc: "media-inner-E-commerce.png" },
+                { href: "/services/gdpr-compliance", label: "Cookie Consent Solution", imgSrc: "media-inner-lead.png" },
+                { href: "/services/google-tag-manager", label: "Google Tag Manager", imgSrc: "media-inner-mobile.png" },
             ],
         },
         {
-            title: "Cloud & Data Engineering",
+            title: "Data Transformation",
             links: [
-                { href: "/services/data-science", label: "Cloud Migration & Infrastructure Setup (GCP, AWS, Azure)", imgSrc: "Analytics_webapp_logo.png" },
-                { href: "/services/custom-pipeline", label: "Custom Data Pipelines & ETL Solutions", imgSrc: "sst.png" },
-                // { href: "-----/", label: "Business Intelligence Dashboards (Looker, Power BI, Tableau)", imgSrc: "cro_logo.png" },
+                { href: "/services/data-science", label: "Cloud Migration & Engineering", imgSrc: "Analytics_webapp_logo.png" },
+                { href: "/services/custom-pipeline", label: "Custom Pipeline", imgSrc: "sst.png" },
+                { href: "/", label: "Custom Dashboard", imgSrc: "cro_logo.png" },
                 // { href: "/services/data-reporting-analysis", label: "Reporting & Dashboarding", imgSrc: "Analytis_data-reporting.logo.png" },
                 // { href: "/services/google-tag-manager", label: "Google Tag Manager Tagging", imgSrc: "GTM_Gradiant_Logo_for_Header.png" },
             ],
         },
         {
-            title: "Performance Marketing & CRO",
+            title: "Data Driven Marketing",
             links: [
-                { label: "Paid Search & Display Advertising (Google Ads, Meta, etc.)", href: "/services/ppc", imgSrc: "solutions_GDRP.logo.png" },
+                { label: "PPC campaign Management", href: "/services/ppc", imgSrc: "solutions_GDRP.logo.png" },
                 { label: "Programmatic Advertising (DV360)", href: "/services/programatic-advertising", imgSrc: "Solutions_Data-Science.logo.png" },
                 { label: "Conversion Rate Optimization (CRO)", href: "/services/conversion-rate-optimization", imgSrc: "solutions_Data_Attribution.png" },
-                // { label: "--------Marketing Analytics & Campaign Reporting", href: "--------/services/data-reporting-analysis", imgSrc: "solutions_Data_Attribution.png" },
+                { label: "Data Insight & Reporting", href: "/services/data-reporting-analysis", imgSrc: "solutions_Data_Attribution.png" },
             ],
         },
         {
-            title: "Advanced Analytics & AI Solutions",
+            title: "Product & Solutions",
             links: [
-                { label: "MadKPI Performance Intelligence Suite", href: "https://madkpi.com/", imgSrc: "training_Schedule.png" },
-                { label: 'Marketing Mix Modeling (MMM)', href: "/", imgSrc: "solutions_Training-Details.logo.png" },
-                { label: "Product & Content Recommendation Engines", href: "/", imgSrc: "solutions_Training-Details.logo.png" },
-                { label: "Customer Segmentation & RFM Analysis", href: "/services/customer-segmentation", imgSrc: "solutions_Training-Details.logo.png" },
+                { label: "MAdKpi", href: "https://madkpi.com/", imgSrc: "training_Schedule.png" },
+                { label: "MMM Modeling", href: "/", imgSrc: "solutions_Training-Details.logo.png" },
+                { label: "Product & Content Recommendation", href: "/", imgSrc: "solutions_Training-Details.logo.png" },
+                { label: "RFM Analysis", href: "/services/customer-segmentation", imgSrc: "solutions_Training-Details.logo.png" },
             ],
         },
     ];
-    // const servicesData = [
-    //     {
-    //         title: "Data Foundation",
-    //         links: [
-    //             { href: "/services/web-app-measurement", label: "Account health and Opportunity", imgSrc: "media-inner-paid.png" },
-    //             { href: "/services/web-app-measurement", label: "GA4 Implementation & Optimization", imgSrc: "SEM.png" },
-    //             { href: "/services/server-side-tracking", label: "Server Side Tracking", imgSrc: "media-inner-E-commerce.png" },
-    //             { href: "/services/gdpr-compliance", label: "Cookie Consent Solution", imgSrc: "media-inner-lead.png" },
-    //             { href: "/services/google-tag-manager", label: "Google Tag Manager", imgSrc: "media-inner-mobile.png" },
-    //         ],
-    //     },
-    //     {
-    //         title: "Data Transformation",
-    //         links: [
-    //             { href: "/services/data-science", label: "Cloud Migration & Engineering", imgSrc: "Analytics_webapp_logo.png" },
-    //             { href: "/services/custom-pipeline", label: "Custom Pipeline", imgSrc: "sst.png" },
-    //             { href: "/", label: "Custom Dashboard", imgSrc: "cro_logo.png" },
-    //             // { href: "/services/data-reporting-analysis", label: "Reporting & Dashboarding", imgSrc: "Analytis_data-reporting.logo.png" },
-    //             // { href: "/services/google-tag-manager", label: "Google Tag Manager Tagging", imgSrc: "GTM_Gradiant_Logo_for_Header.png" },
-    //         ],
-    //     },
-    //     {
-    //         title: "Data Driven Marketing",
-    //         links: [
-    //             { label: "PPC campaign Management", href: "/services/ppc", imgSrc: "solutions_GDRP.logo.png" },
-    //             { label: "Programmatic Advertising (DV360)", href: "/services/programatic-advertising", imgSrc: "Solutions_Data-Science.logo.png" },
-    //             { label: "Conversion Rate Optimization (CRO)", href: "/services/conversion-rate-optimization", imgSrc: "solutions_Data_Attribution.png" },
-    //             { label: "Data Insight & Reporting", href: "/services/data-reporting-analysis", imgSrc: "solutions_Data_Attribution.png" },
-    //         ],
-    //     },
-    //     {
-    //         title: "Product & Solutions",
-    //         links: [
-    //             { label: "MAdKpi", href: "https://madkpi.com/", imgSrc: "training_Schedule.png" },
-    //             { label: "MMM Modeling", href: "/", imgSrc: "solutions_Training-Details.logo.png" },
-    //             { label: "Product & Content Recommendation", href: "/", imgSrc: "solutions_Training-Details.logo.png" },
-    //             { label: "RFM Analysis", href: "/services/customer-segmentation", imgSrc: "solutions_Training-Details.logo.png" },
-    //         ],
-    //     },
-    // ];
 
     const formContent = [
         { title: 'Unlock the Power of Analytics', subTitle: 'Master the User Journey, Drive Growth, and Make Data-Driven Decisions', btnText: 'Let’s Get in Touch', btnColor: 'bg-btn-linear-foundation', imgUrl: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Navbar_Girl_1.png' },
