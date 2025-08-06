@@ -42,6 +42,18 @@ const navbar = () => {
         if (!formValues?.email?.trim()) errors?.push("Email");
         if (!formValues?.url?.trim()) errors?.push("Website URL");
 
+        const typeMap = {
+            "0": "foundation",
+            "1": "transformation",
+            "2": "marketing",
+            "3": "solution"
+        };
+
+        const selectedType = typeMap[hoveredIndex] || 'Services';
+        const allowedTypes = ['foundation', 'transformation', 'marketing', 'solution', 'Services'];
+        if (!allowedTypes.includes(selectedType)) {
+            errors.push("Invalid form type");
+        }
         if (errors?.length > 0) {
             setFormErrors(errors);
             setIsLoading(false);
@@ -58,7 +70,8 @@ const navbar = () => {
                 "email": formValues?.email,
                 "contact": formValues?.contact,
                 "url": formValues?.url,
-                "type": hoveredIndex == "0" ? 'foundation' : hoveredIndex == '1' ? 'transformation' : hoveredIndex == '2' ? 'marketing' : hoveredIndex == "3" ? 'solution' : 'Services'
+                // "type": hoveredIndex == "0" ? 'foundation' : hoveredIndex == '1' ? 'transformation' : hoveredIndex == '2' ? 'marketing' : hoveredIndex == "3" ? 'solution' : 'Services'
+                "type": selectedType
             }),
 
         })
