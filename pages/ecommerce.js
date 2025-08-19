@@ -225,10 +225,11 @@ export default function ecommerce({brandsdata}) {
                       "thumbnailUrl": [
                         "https://i.ytimg.com/vi/JFOc7x5ZgaA/maxresdefault.jpg"
                       ],
-                      "uploadDate": "2023-11-02T00:00:00+00:00",
+                      "uploadDate": "2023-11-02T10:36:17Z",
                       "duration": "PT31S",
                       "contentUrl": "https://www.youtube.com/watch?v=JFOc7x5ZgaA",
                       "embedUrl": "https://www.youtube.com/embed/JFOc7x5ZgaA",
+                      "interactionCount": "580",
                       "publisher": {
                         "@type": "Organization",
                         "name": "AnalyticsLiv",
