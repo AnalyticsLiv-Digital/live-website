@@ -452,7 +452,7 @@ export default function gtmNew({ brandsdata }) {
                     "thumbnailUrl": [
                         "https://i.ytimg.com/vi/m0Oo0IL6gAQ/maxresdefault.jpg"
                     ],
-                    "uploadDate": "2023-11-28",
+                    "uploadDate": "2023-11-28T00:00:00+00:00",
                     "duration": "PT38S",
                     "contentUrl": "https://www.youtube.com/watch?v=m0Oo0IL6gAQ",
                     "embedUrl": "https://www.youtube.com/embed/m0Oo0IL6gAQ",
