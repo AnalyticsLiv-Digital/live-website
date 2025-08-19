@@ -429,9 +429,6 @@ export default function gtmNew({ brandsdata }) {
 
     return (
         <>
-            <script>
-
-            </script>
             <Head>
                 <link rel="icon" href="https://storage.googleapis.com/website-bucket-uploads/static/favicon.png" type="image/icon type"></link>
                 <link
@@ -442,30 +439,35 @@ export default function gtmNew({ brandsdata }) {
                 <title>Google Tag Manager - AnalyticsLiv</title>
                 <link rel="canonical" href="https://analyticsliv.com/gtm"></link>
                 <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify({
-                    "@context": "https://schema.org",
-                    "@type": "VideoObject",
-                    "name": "GA4 with Looker Studio driving excellence using first party data to drive deep business insights",
-                    "description": "AnalyticsLiv is changing the game for medium scale businesses by helping them bring data into decision making. The businesses today know better about their audiences and sales trends than before.\n\nFor changing the way of decision making of your business, contact AnalyticsLiv at sales@analyticsliv.com.",
-                    "thumbnailUrl": [
-                        "https://i.ytimg.com/vi/m0Oo0IL6gAQ/maxresdefault.jpg"
-                    ],
-                    "uploadDate": "2023-11-28",
-                    "duration": "PT38S",
-                    "contentUrl": "https://www.youtube.com/watch?v=m0Oo0IL6gAQ",
-                    "embedUrl": "https://www.youtube.com/embed/m0Oo0IL6gAQ",
-                    "publisher": {
-                        "@type": "Organization",
-                        "name": "AnalyticsLiv",
-                        "logo": {
-                        "@type": "ImageObject",
-                        "url": "https://storage.googleapis.com/website-bucket-uploads/static/favicon.png"
-                        }
-                    }
-                    })
-                }}
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "VideoObject",
+                            "name": "GA4 with Looker Studio driving excellence using first party data to drive deep business insights",
+                            "description": "AnalyticsLiv is changing the game for medium scale businesses by helping them bring data into decision making. The businesses today know better about their audiences and sales trends than before.\n\nFor changing the way of decision making of your business, contact AnalyticsLiv at sales@analyticsliv.com.",
+                            "thumbnailUrl": [
+                                "https://i.ytimg.com/vi/m0Oo0IL6gAQ/maxresdefault.jpg"
+                            ],
+                            "uploadDate": "2023-11-28T00:00:00+00:00",
+                            "duration": "PT38S",
+                            "contentUrl": "https://www.youtube.com/watch?v=m0Oo0IL6gAQ",
+                            "embedUrl": "https://www.youtube.com/embed/m0Oo0IL6gAQ",
+                            "interactionStatistic": {
+                                "@type": "InteractionCounter",
+                                "interactionType": { "@type": "WatchAction" },
+                                "userInteractionCount": 238
+                            },
+                            "publisher": {
+                                "@type": "Organization",
+                                "name": "AnalyticsLiv",
+                                "logo": {
+                                    "@type": "ImageObject",
+                                    "url": "https://storage.googleapis.com/website-bucket-uploads/static/favicon.png"
+                                }
+                            }
+                        })
+                    }}
                 />
             </Head>
             <div>
