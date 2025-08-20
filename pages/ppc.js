@@ -36,12 +36,10 @@ const Ppc = () => {
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormValues({ ...formValues, [name]: value });
-        console.log(formValues);
     };
 
     const handleContactChange = (e) => {
         setFormValues({ ...formValues, ['contactno']: e });
-        console.log(formValues);
     };
 
     const handleSubmit = (e) => {
@@ -54,29 +52,26 @@ const Ppc = () => {
         if (!formValues?.lastName?.trim()) errors?.push("Last Name");
         if (!formValues?.email?.trim() || !regex.test(formValues?.email)) errors?.push("Email");
         if (!formValues?.requirements) errors?.push("Requirements");
-        console.log("formeror-", formValues?.requirements)
-        console.log("errors?.length,", errors?.length)
+
         if (errors?.length > 0) {
             setFormErrors(errors);
             setIsLoading(false);
             return;
         }
-        console.log("check log-", formErrors)
-        // setFormErrors(validate(formValues));
+
         setIsSubmit(true);
         setShowWaiting(true);
         dataLayer.push({
-            event: 'ga4_submission'
+            event: 'ppc_submission'
         });
         fetch('/api/ppccontact', {
-            method: 'POST', // or 'PUT'
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'mode': 'no-cors'
             },
             body: JSON.stringify({
                 "fullName": formValues.firstName + " " + formValues.lastName,
-                // "lastName": formValues.lastName,
                 "email": formValues.email,
                 "contact": formValues.contactno,
                 "message": formValues.requirements
@@ -92,7 +87,6 @@ const Ppc = () => {
                 console.error('Error:', error);
                 setShowWaiting(false);
             });
-
     };
 
     const scrolling = () => {
@@ -305,9 +299,6 @@ const Ppc = () => {
             <div className='z-50 relative'>
                 <div className="relative z-30 flex lg:hidden p-2">
                     <Link href="/"><img onClick={() => setIsOpen(false)} src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" alt='AnalyticsLiv Logo' className="relative h-10 md:mx-4 cursor-pointer" /></Link>
-                    {/* <a className="ml-4" href="tel:8320576622">
-                            <button className="cta px-5 py-2 bg-sky-300 rounded-2xl mx-2 text-sm font-semibold cursor-pointer hover:bg-sky-400">CALL US</button>
-                        </a> */}
                     <button
                         onClick={() => { setIsOpen(!isOpen); }}
                         type="button"
@@ -414,7 +405,6 @@ const Ppc = () => {
                         </div>
                     </div>
                 )}
-
                 <section className='flex max-lg:flex-col justify-between items-center px-[5%]'>
                     <div className='lg:w-[50%] xl:w-[45%] flex flex-col gap-7 md:gap-14 2xl:gap-16 justify-around items-center lg:items-start'>
                         <div className='flex flex-col gap-5 lg:gap-8 2xl:gap-10'>
@@ -830,7 +820,6 @@ const Ppc = () => {
                         </div>
                     </div>
                 </footer>
-
             </main>
         </>
     )

@@ -81,6 +81,12 @@ const Index = ({ data }) => {
                                 count={data.ecommercecontacts}
                                 imgUrl={imgUrl[6]}
                             />
+                            <LeadsCard
+                                href="/admin/leads/ppc"
+                                title="PPC Leads"
+                                count={data.ppccontact}
+                                imgUrl={imgUrl[6]}
+                            />
                         </div>
                     </div>
                 </div>

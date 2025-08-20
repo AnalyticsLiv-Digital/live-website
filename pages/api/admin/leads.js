@@ -6,6 +6,7 @@ import Ecommercecontact from "../../../models/Ecommercecontact";
 import Ga4contact from "../../../models/Ga4contact";
 import Gtmcontact from "../../../models/Gtmcontact";
 import PopupContact from "../../../models/PopupContact";
+import Ppccontact from "../../../models/Ppccontact";
 
 const handler = async (req, res) => {
     const { type } = req.query;
@@ -24,7 +25,7 @@ const handler = async (req, res) => {
         response.dv360 = dv360;
     }
     else if (type === "ga4") {
-        let ga4 = await Ga4contact.find({}, { fullName: 1, email: 2, contact: 3, message: 4, timestamp: 6 }).sort({ timestamp: -1 });
+        let ga4 = await Ga4contact.find({}, { fullName: 1, email: 2, contact: 3, message: 4, receiveUpdates: 5, timestamp: 6 }).sort({ timestamp: -1 });
         response.ga4 = ga4;
     }
     else if (type === "gtm") {
@@ -34,6 +35,10 @@ const handler = async (req, res) => {
     else if (type === "popup") {
         let popup = await PopupContact.find({}, { fullName: 1, email: 2, contact: 3, message: 4, timestamp: 6 }).sort({ timestamp: -1 });
         response.popup = popup;
+    }
+    else if (type === "ppc") {
+        let ppc = await Ppccontact.find({}, { fullName: 1, email: 2, contact: 3, message: 4, timestamp: 6 }).sort({ timestamp: -1 });
+        response.ppc = ppc;
     }
     else if (type === "ecommerce") {
         let ecommerce = await Ecommercecontact.find({}, { fullName: 1, email: 2, contact: 3, message: 4, website: 5, timestamp: 6 }).sort({ timestamp: -1 });
