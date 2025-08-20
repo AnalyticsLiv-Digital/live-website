@@ -377,12 +377,12 @@ const Ppc = () => {
 
             <main className='pt-10'>
                 <section className='flex max-lg:flex-col justify-between items-center px-[5%]'>
-                    <div className='lg:w-[50%] xl:w-[45%] flex flex-col gap-7 md:gap-14 2xl:gap-16 justify-around items-center lg:items-start'>
+                    <div className='lg:w-[50%] xl:w-[48%] flex flex-col gap-7 md:gap-14 2xl:gap-16 justify-around items-center lg:items-start'>
                         <div className='flex flex-col gap-5 lg:gap-8 2xl:gap-10'>
                             <h1 className='text-[#0E1947] text-lg sm:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold max-lg:text-center'>Certified Google and Meta PPC Agency Helping Brands Win Online</h1>
                             <h2 className='text-xs 2xl:text-sm font-normal max-lg:text-center'>At AnalyticsLiv, we are a Certified Performance Marketing Agency and Meta Business Partner 
                                 that specializes in Google Ads services, PPC marketing, and data-driven ad strategies. Whether you're a startup or an established brand, our 
-                                campaigns are tailored to drive measurable results, boost visibility, and grow your business.
+                                campaigns are customized to drive measurable results, boost visibility, and grow your business.
                             </h2>
                         </div>
                         <div className='flex max-lg:justify-center justify-start items-center gap-7 lg:gap-10'>
