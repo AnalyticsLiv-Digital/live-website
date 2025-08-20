@@ -4,7 +4,6 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import MetaSchemaOg from '../components/MetaSchemaOg';
-import { InlineWidget } from 'react-calendly';
 import Brands from '../components/brands';
 import * as Scroll from 'react-scroll';
 import PhoneInput from 'react-phone-input-2'
@@ -23,8 +22,6 @@ const Ppc = () => {
     const itemRefs = useRef([]);
 
     const [activeIndex, setActiveIndex] = useState(0);
-    const [showCalendly, setShowCalendly] = useState(false);
-
     const initialValues = { firstName: '', lastName: '', email: '', contactno: '', company: '', purpose: '', requirements: '' };
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
@@ -255,10 +252,6 @@ const Ppc = () => {
     const handleNext = () => sliderRef.current.slickNext();
     const handlePrev = () => sliderRef.current.slickPrev();
 
-    const handleCalendly = () => {
-        setShowCalendly(true);
-    }
-
     return (
         <>
             <Head>
@@ -383,28 +376,6 @@ const Ppc = () => {
             </div>
 
             <main className='pt-10'>
-                {showCalendly && (
-                    <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-40 z-50 flex items-center justify-center p-4"
-                        onClick={() => setShowCalendly(false)}>
-                        <div className="relative bg-white rounded-lg shadow-lg sm:p-4 flex flex-col items-center justify-center 
-                        max-w-[380px] w-[100%] sm:w-[90%] h-[80vh] sm:max-w-[400px] sm:h-[450px] lg:max-w-[450px] lg:h-[500px]">
-
-                            <button
-                                className="absolute top-1 left-1 text-gray-500 text-xs font-bold rounded-full w-8 h-8 flex items-center justify-center"
-                                onClick={() => setShowCalendly(false)}
-                            >
-                                ✖
-                            </button>
-
-                            <div className="w-full h-full flex justify-center items-center">
-                                <InlineWidget
-                                    url="https://calendly.com/analyticsliv/30min"
-                                    styles={{ width: "100%", height: "100%" }}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                )}
                 <section className='flex max-lg:flex-col justify-between items-center px-[5%]'>
                     <div className='lg:w-[50%] xl:w-[45%] flex flex-col gap-7 md:gap-14 2xl:gap-16 justify-around items-center lg:items-start'>
                         <div className='flex flex-col gap-5 lg:gap-8 2xl:gap-10'>
@@ -413,15 +384,6 @@ const Ppc = () => {
                                 Agency that specializes in Google Ads services, PPC marketing, and data-driven ad strategies. Whether you're a startup or
                                 an established brand, our campaigns are tailored to drive measurable results, boost visibility, and grow your business.
                             </h2>
-                            <div className='flex justify-center lg:justify-start items-center gap-3 lg:gap-2 lg:gap-5'>
-                                <a href='/contact'><button className='mainbutn'>Talk to our PPC Expert</button></a>
-                                <div onClick={() => handleCalendly()} className='group hover:cursor-pointer flex items-center gap-2'>
-                                    <button className='text-xs 2xl:text-sm translate-x-1 group-hover:translate-x-0 transition-all duration-300 font-bold max-sm:w-full max-lg:text-center'>Book a Call Today</button>
-                                    <div className="opacity-0 translate-x-2 sm:translate-x-8 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
-                                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%201.svg' alt='arrow right' className='w-2' />
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         <div className='flex max-lg:justify-center justify-start items-center gap-7 lg:gap-10'>
                             <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/clutch_review.png' alt='clutch_review' />
