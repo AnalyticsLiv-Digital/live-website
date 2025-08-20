@@ -11,6 +11,7 @@ import connectDb from "../../../middleware/mongoose";
 import ChatBotLead from "../../../models/ChatBotLead";
 import PopupContact from "../../../models/PopupContact";
 import YtPlaylist from "../../../models/YtPlaylist";
+import Ppccontact from "../../../models/Ppccontact";
 
 const handler = async (req, res) => {
 
@@ -27,14 +28,15 @@ const handler = async (req, res) => {
     let ChatBotLeads = await ChatBotLead.find().count();
     let PopupContacts = await PopupContact.find().count();
     let ytplaylist = await YtPlaylist.find().count();
+    let ppccontact = await Ppccontact.find().count();
 
-    let leads = contacts + dv360contacts + ga4contacts + gtmcontacts + ecommercecontacts + ChatBotLeads + PopupContacts + ytplaylist;
+    let leads = contacts + dv360contacts + ga4contacts + gtmcontacts + ecommercecontacts + ChatBotLeads + PopupContacts + ytplaylist + ppccontact;
 
 
     res.status(200).json({
         blog: blogs, casestudy: casestudies, job: jobs, leads: leads, jobapplications: jobapplications,
         contacts: contacts, dv360contacts: dv360contacts, ga4contacts: ga4contacts, gtmcontacts: gtmcontacts, ecommercecontacts: ecommercecontacts,
-        ChatBotLeads: ChatBotLeads, PopupContacts:PopupContacts, ytplaylist:ytplaylist
+        ChatBotLeads: ChatBotLeads, PopupContacts: PopupContacts, ytplaylist: ytplaylist, ppccontact : ppccontact
     });
 
 }
