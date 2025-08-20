@@ -83,6 +83,9 @@ function generateSiteMap(posts) {
      <url>
        <loc>https://analyticsliv.com/ecommerce</loc>
      </url>
+     <url>
+       <loc>https://analyticsliv.com/ppc</loc>
+     </url>
 
      
      ${posts
