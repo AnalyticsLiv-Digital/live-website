@@ -12,20 +12,19 @@ const handler = async (req, res) => {
             email: req.body.email,
             contact: req.body.contact,
             message: req.body.message
-
         });
         await b.save();
 
         var internalMailOptions = {
             from: "support@analyticsliv.com",
-            to: ["sales@analyticsliv.com", "anshul.d@analyticsliv.com", "anuj@analyticsliv.com", "nitya@analyticsliv.com", "rajvi@analyticsliv.com", "ansuya@analyticsliv.com", "aditya.trivedi@analyticsliv.com", "tanu.singh@analyticsliv.com"],
+            to: ["sales@analyticsliv.com", "anuj@analyticsliv.com", "nitya@analyticsliv.com", "rajvi@analyticsliv.com", "himaxi.dalwadi@analyticsliv.com"],
             subject: 'New PPC Enquiry!!',
             html: `Enquiry Submitted by <br> Full Name - ${req.body.fullName}  <br> Email- ${req.body.email} <br> Contact - ${req.body.contact} <br> Message - ${req.body.message} `
         };
 
         var userMailOptions = {
             from: "sales@analyticsliv.com",
-            to: [req.body.email, "anuj@analyticsliv.com"],
+            to: [req.body.email],
             subject: 'Analyticsliv - Thankyou for contacting us.',
             html: `Hi ${req.body.fullName},<br>
             Thank you for reaching out to AnalyticsLiv, one of the fastest growing Google Marketing Platform Partner in India. Our Services have empowered more than 500 businesses to use first party data for analysis and marketing purposes, making businesses independent of third party data intelligence.<br>
