@@ -22,10 +22,12 @@ const index = ({ blogDat, count }) => {
 
         AOS.init();
     }, []);
+
+    const shouldNoIndex = slug === '1';
     return (
         <><Head>
             <title>AnalyticsLiv - Blogs</title>
-
+            {shouldNoIndex && <meta name="robots" content="noindex, nofollow" />}
         </Head>
 
             <div>
