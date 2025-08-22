@@ -1,6 +1,6 @@
 {
   "name": "live-website",
-  "homepage": "https://www.analyticsliv.com/staging/",
+  "homepage": "https://analyticsliv.com/staging/",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -42,6 +42,7 @@
     "path": "^0.12.7",
     "react": "18.2.0",
     "react-calendly": "^4.3.0",
+    "react-chatbot-kit": "^2.2.2",
     "react-countup": "^6.5.0",
     "react-dnd": "^16.0.1",
     "react-dnd-html5-backend": "^16.0.1",

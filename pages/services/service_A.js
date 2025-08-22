@@ -94,7 +94,7 @@ const service_A = () => {
                         <div className='grid lg:grid-cols-3 md:grid-cols-2 items-start justify-center gap-10'>
                             <div className='bg-[#fff8fa] xl:h-[560px] lg:h-[685px] rounded-[10px] py-6 px-4 hover:shadow-programeasure'>
                                 <div className='w-full'></div>
-                                <div className='mb-5 w-[50px] h-[50px]'><img src="/Ad_Format.png" alt="" /></div>
+                                <div className='mb-5 w-[50px] h-[50px]'><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad_Format.png" alt="" /></div>
                                 <div className='w-full'></div>
                                 <h3 className='text-[#1D2124] text-[18px] font-semibold font-gilroy mb-[20px]'>Unmatched Programmatic Capabilities</h3>
                                 <ul className='text-[#646464] text-base font-gilroy2 leading-6 ml-[15px] mb-5'>
@@ -111,7 +111,7 @@ const service_A = () => {
                             </div>
                             <div className='bg-[#fff8fa] xl:h-[560px] lg:h-[685px] rounded-[10px] py-6 px-4 hover:shadow-programeasure'>
                                 <div className='w-full'></div>
-                                <div className='mb-5 w-[50px] h-[50px]'><img src="/Ad_Format.png" alt="" /></div>
+                                <div className='mb-5 w-[50px] h-[50px]'><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad_Format.png" alt="" /></div>
                                 <div className='w-full'></div>
                                 <h3 className='text-[#1D2124] text-[18px] font-semibold font-gilroy mb-[20px]'>Advanced Targeting & Creative Options</h3>
                                 <ul className='text-[#646464] text-base font-gilroy2 leading-6 ml-[15px] mb-5'>
@@ -131,7 +131,7 @@ const service_A = () => {
                             </div>
                             <div className='bg-[#fff8fa] xl:h-[560px] lg:h-[685px] rounded-[10px] py-6 px-4 hover:shadow-programeasure'>
                                 <div className='w-full'></div>
-                                <div className='mb-5 w-[50px] h-[50px]'><img src="/Ad_Format.png" alt="" /></div>
+                                <div className='mb-5 w-[50px] h-[50px]'><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad_Format.png" alt="" /></div>
                                 <div className='w-full'></div>
                                 <h3 className='text-[#1D2124] text-[18px] font-semibold font-gilroy mb-[20px]'>Data-Driven Optimization & Insights</h3>
                                 <ul className='text-[#646464] text-base font-gilroy2 leading-6 ml-[15px] mb-5'>
@@ -148,7 +148,7 @@ const service_A = () => {
                             </div>
                             <div className='bg-[#fff8fa] xl:h-[560px] lg:h-[685px] rounded-[10px] py-6 px-4 hover:shadow-programeasure'>
                                 <div className='w-full'></div>
-                                <div className='mb-5 w-[50px] h-[50px]'><img src="/Ad_Format.png" alt="" /></div>
+                                <div className='mb-5 w-[50px] h-[50px]'><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad_Format.png" alt="" /></div>
                                 <div className='w-full'></div>
                                 <h3 className='text-[#1D2124] text-[18px] font-semibold font-gilroy mb-[20px]'>Unified Buying</h3>
                                 <ul className='text-[#646464] text-base font-gilroy2 leading-6 ml-[15px] mb-5'>
@@ -168,7 +168,7 @@ const service_A = () => {
                             </div>
                             <div className='bg-[#fff8fa] xl:h-[560px] lg:h-[685px] rounded-[10px] py-6 px-4 hover:shadow-programeasure'>
                                 <div className='w-full'></div>
-                                <div className='mb-5 w-[50px] h-[50px]'><img src="/Ad_Format.png" alt="" /></div>
+                                <div className='mb-5 w-[50px] h-[50px]'><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad_Format.png" alt="" /></div>
                                 <div className='w-full'></div>
                                 <h3 className='text-[#1D2124] text-[18px] font-semibold font-gilroy mb-[20px]'>Advanced Bidding Strategies</h3>
                                 <ul className='text-[#646464] text-base font-gilroy2 leading-6 ml-[15px] mb-5'>
@@ -188,7 +188,7 @@ const service_A = () => {
                             </div>
                             <div className='bg-[#fff8fa] rounded-[10px] py-6 px-4'>
                                 <div className='w-full'>
-                                    <div className='mb-5 w-[50px] h-[50px]'><img src="/Ad_Format.png" alt="" /></div></div>
+                                    <div className='mb-5 w-[50px] h-[50px]'><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad_Format.png" alt="" /></div></div>
                                 <div className='w-full'>
                                     <h3 className='text-[#1D2124] text-[18px] font-semibold font-gilroy mb-[20px]'>Custom Marketing</h3>
                                     <ul className='text-[#646464] text-base font-gilroy2 leading-6 ml-[15px] mb-5'>
@@ -211,7 +211,7 @@ const service_A = () => {
                     </div>
                     <div className='lg:flex items-center justify-between mt-10'>
                         <div className='lg:w-[45%] w-full flex items-center justify-center'>
-                            <img src="/4M_Images_Transparent.png" alt="" className='lg:h-auto md:h-[400px]' />
+                            <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/4M_Images_Transparent.png" alt="AnalyticsLiv 4M Approach  for DV360" className='lg:h-auto md:h-[400px]' />
                         </div>
                         <div className='grid md:grid-cols-2 gap-7 lg:w-[55%] w-full'>
                             <div class="flex items-start justify-center md:w-full w-[300px] xl:h-[363px] lg:h-[360px] md:h-[310px] powerbox2 bg-[#0000001f] m-auto mb-5 p-[10px] pt-6 border border-[#13131400] hover:shadow-mediadv360 rounded-[10px]">
@@ -272,15 +272,15 @@ const service_A = () => {
                             <div className='text-black xl:w-[35%] lg:w-[35%] w-full mt-[11px]'>
                                 <div className='p-8 pl-[25px] -mr-[30px] rounded-l-[10px] xl:w-[400px] xl:ml-auto'>
                                     <div onClick={() => setActivetab('1')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '1' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                        <div><img src="/Campaign Strategy and Setup white.png" alt="" className='h-10 w-10' /></div>
+                                        <div><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Campaign%20Strategy%20and%20Setup%20white.png" alt="Campaign Strategy and Planning" className='h-10 w-10' /></div>
                                         <p >Campaign Strategy and Setup</p>
                                     </div>
                                     <div onClick={() => setActivetab('2')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '2' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                        <div><img src="/Audience Targeting white.png" alt="" className='h-10 w-10' /></div>
+                                        <div><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Audience%20Targeting%20white.png" alt="Audience Targeting" className='h-10 w-10' /></div>
                                         <p>Audience Targeting</p>
                                     </div>
                                     <div onClick={() => setActivetab('3')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '3' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                        <div><img src="/Ad Format Optimization white.png" alt="" className='h-10 w-10' /></div>
+                                        <div><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad%20Format%20Optimization%20white.png" alt="" className='h-10 w-10' /></div>
                                         <p>Ad Format Optimization</p>
                                     </div>
                                     <div onClick={() => setActivetab('4')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '4' ? 'border-t-[#0092f4ab]' : ''}`}>
@@ -363,7 +363,7 @@ const service_A = () => {
                         <div className="flex flex-col justify-start max-w-md m-auto lg:hidden">
                             <div className="panel_list powerbox mb-4 rounded-b-[15px]">
                                 <div onClick={() => setActivetab('1')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '1' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                    <div><img src="/Campaign Strategy and Setup white.png" alt="" className='h-10 w-10' /></div>
+                                    <div><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Campaign%20Strategy%20and%20Setup%20white.png" alt="Campaign Strategy and Planning" className='h-10 w-10' /></div>
                                     <p >Campaign Strategy and Setup</p>
                                 </div>
                                 <div id="tab1" className={`${activetab == 1 && 'items-center justify-center'} ${activetab != 1 && 'hidden'} relative p-5 pt-[10px] text-[13px] font-medium leading-8`}>
@@ -378,7 +378,7 @@ const service_A = () => {
 
                             <div className="panel_list powerbox mb-4 rounded-b-[15px]">
                                 <div onClick={() => setActivetab('2')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '2' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                    <div><img src="/Audience Targeting white.png" alt="" className='h-10 w-10' /></div>
+                                    <div><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Audience%20Targeting%20white.png" alt="" className='h-10 w-10' /></div>
                                     <p>Audience Targeting</p>
                                 </div>
                                 <div id="tab2" className={`${activetab == 2 && ' items-center justify-center'} ${activetab != 2 && 'hidden'} relative p-5 pt-[10px] text-[13px] font-medium leading-8`}>
@@ -393,7 +393,7 @@ const service_A = () => {
 
                             <div className="panel_list powerbox mb-4 rounded-b-[15px]">
                                 <div onClick={() => setActivetab('3')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '3' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                    <div><img src="/Ad Format Optimization white.png" alt="" className='h-10 w-10' /></div>
+                                    <div><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad%20Format%20Optimization%20white.png" alt="" className='h-10 w-10' /></div>
                                     <p>Ad Format Optimization</p>
                                 </div>
                                 <div id="tab3" className={`${activetab == 3 && 'items-center justify-center'} ${activetab != 3 && 'hidden'} relative p-5 pt-[10px] text-[13px] font-medium leading-8`}>
@@ -549,10 +549,10 @@ const service_A = () => {
                                     <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
                                     <a href="/case-studies/ua-to-ga4-migration-for-a-website" className='lg:flex gap-5'>
                                         <Image
-                                            src="/casestudy1.png"
+                                            src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestudy1.png"
                                             width={300}
                                             height={300}
-                                            alt="Picture of the author"
+                                            alt="Google Analytics 4 Migration"
                                             priority={true}
                                             className='2xl:w-[40%] w-full m-auto 2xl:h-[247px] xl:h-[277px] lg:h-[227px] lg:object-scale-down'
                                         />
@@ -574,7 +574,7 @@ const service_A = () => {
                                     <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
                                     <a href="/case-studies/ua-to-ga4-migration-for-a-website" className='lg:flex gap-5'>
                                         <Image
-                                            src="/casestudy3.png"
+                                            src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestudy3.png"
                                             width={300}
                                             height={300}
                                             alt="Picture of the author"
@@ -606,7 +606,7 @@ const service_A = () => {
                                     <a href="/case-studies/skyrocket-your-campaigns-ctr-with-a-95-percent-surge-in-14-days" className='grid gap-5'>
                                         <div className=''>
                                             <Image
-                                                src="/casestd.png"
+                                                src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestd.png"
                                                 width={300}
                                                 height={300}
                                                 alt="Picture of the author"
@@ -625,7 +625,7 @@ const service_A = () => {
                                     <a href="/case-studies/driving-campaigns-in-dv360-to-post-click-attribution-success-with-36-percent-reduction-in-cpi" className='grid gap-1'>
                                         <div className='grid gap-4'>
                                             <Image
-                                                src="/casestd2.png"
+                                                src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestd2.png"
                                                 width={300}
                                                 height={300}
                                                 alt="Picture of the author"

@@ -21,7 +21,7 @@ const handler = async (req, res) => {
 
     var internalMailOptions = {
       from: "support@analyticsliv.com",
-      to: ["anshul.d@analyticsliv.com", "hr@analyticsliv.com", "aashana.pathak@analyticsliv.com", "sonali.jain@analyticsliv.com"],
+      to: ["hr@analyticsliv.com", "aashana.pathak@analyticsliv.com", "sonali.jain@analyticsliv.com"],
       subject: 'New Job Application!!',
       html: `Application Submitted by <br> First Name - ${req.body.firstName} <br>Lastname- ${req.body.lastName} <br> Email- ${req.body.email} <br> Contact - ${req.body.contact} <br> Job Title- ${req.body.postName}  <br> Resume -<a href="https://storage.googleapis.com/website-bucket-uploads/${req.body.resume}">Link</a>  <br> Linkedin -${req.body.linkedin} <br> Experience -${req.body.experience} <br> Notice Period - ${req.body.noticePeriod} Days`
     };
@@ -30,10 +30,10 @@ const handler = async (req, res) => {
       from: "hr@analyticsliv.com",
       to: [req.body.email, "aashana.pathak@analyticsliv.com"],
       subject: 'Analyticsliv - Thankyou for your application.',
-      html: `Hi ${req.body.fullName},<br>
-            Thanks for your intrest in ${req.body.postName} role , We'll check your profile , get back to you sortly.
-            <br>
-            Thank you!`
+      html: `Dear ${req.body.firstName},<br>
+            Thank you for your interest in ${req.body.postName} role. We have successfully received your details and appreciate your interest in joining Analyticsliv.
+            Our team will review your application, and if your profile matches our current openings, we will reach out to you for the next steps.<br><br>
+            Best regards,`
     };
 
     await sendEmail(internalMailOptions.to, internalMailOptions.subject, internalMailOptions.html, internalMailOptions?.from);

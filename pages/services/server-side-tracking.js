@@ -10,6 +10,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Image from 'next/image';
 import { motion } from "framer-motion";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import MetaSchemaOg from '../../components/MetaSchemaOg';
 
 const Serversidetracking = () => {
 
@@ -47,7 +48,7 @@ const Serversidetracking = () => {
     const NextArrow = (props) => {
         const { onClick } = props;
         return (
-            <div className="absolute top-1/2 right-[-35px] transform -translate-y-1/2 z-10 cursor-pointer" onClick={onClick}>
+            <div className="absolute top-1/2 right-[-12px] transform -translate-y-1/2 z-10 cursor-pointer" onClick={onClick}>
                 <FaArrowRight size={20} />
             </div>
         );
@@ -56,7 +57,7 @@ const Serversidetracking = () => {
     const PrevArrow = (props) => {
         const { onClick } = props;
         return (
-            <div className="absolute top-1/2 left-[-35px] transform -translate-y-1/2 z-10 cursor-pointer" onClick={onClick}>
+            <div className="absolute top-1/2 left-[-12px] transform -translate-y-1/2 z-10 cursor-pointer" onClick={onClick}>
                 <FaArrowLeft size={20} />
             </div>
         );
@@ -138,12 +139,13 @@ const Serversidetracking = () => {
 
     return (
         <>
-            <Head>
-                <title>AnalyticsLiv - Server-Side Tracking</title>
-                <meta name="description" content="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads" />
-                <link rel="canonical" href="https://analyticsliv.com/services/server-side-tracking"></link>
-            </Head>
-
+            <MetaSchemaOg
+                url="https://analyticsliv.com/services/server-side-tracking"
+                title="Expert Server-Side Analytics Tracking Solutions | AnalyticsLiv"
+                description="Get accurate, secure tracking with AnalyticsLiv’s server-side analytics tracking. Boost your data quality, privacy, and analytical performance for better marketing outcomes."
+                twitterTitle="Expert Server-Side Analytics Tracking Solutions | AnalyticsLiv"
+                twitterDescription="Get accurate, secure tracking with AnalyticsLiv’s server-side analytics tracking. Boost your data quality, privacy, and analytical performance for better marketing outcomes."
+            />
 
             <section className='ssthome w-full relative font-gilroy overflow-hidden'>
                 <div className='h-full'>
@@ -159,12 +161,12 @@ const Serversidetracking = () => {
                                 </p> */}
                                 <div className='flex items-center lg:justify-start justify-center gap-5'>
                                     <Link href="/contact?id=programatic-advertising">
-                                        <button className="butn mt-2 uppercase">future-proof your <br /> analytics today</button>
+                                        <button className="contact-us-btn butn mt-2 uppercase">future-proof your <br /> analytics today</button>
                                     </Link>
                                 </div>
                             </div>
                             <div className=" w-full lg:w-1/2 flex items-center lg:justify-end justify-center lg:order-2 order-1">
-                                <img src="/Server_Side_tracking_Page_Main_Img.png" alt="" className='h-[400px]' />
+                                <img src="/Server_Side_tracking_Page_Main_Img.png" alt="server side analytics tracking" className='h-[400px]' />
                             </div>
                         </div>
                         <div className=''>
@@ -240,7 +242,7 @@ const Serversidetracking = () => {
                             <img src="/Server_Side_tracking_sub_img.png" alt="" className='lg:h-auto md:h-[400px]' />
                         </div> */}
                         <div className='lg:w-[35%] w-full flex items-center justify-center'>
-                            <img src="/Server_Side_tracking_sub_img_White_Circle.png" alt="" className='lg:h-auto md:h-[400px]' />
+                            <img src="/Server_Side_tracking_sub_img_White_Circle.png" alt="server side web analytics" className='lg:h-auto md:h-[400px]' />
                         </div>
                         <div className='grid md:grid-cols-2 items-start lg:justify-start gap-7 lg:w-[60%] w-full lg:mt-0 mt-5'>
                             <div className={`fs4m pwb flex items-start gap-5 w-full max-[350px]:w-[285px] bg-[#0000001f] p-[25px] pt-6 border border-[#131314] hover:shadow-mediadv360 rounded-[10px] ${isFs4mVisible ? 'xl:h-[180px] lg:h-[200px]' : 'h-[100px]'}`}>
@@ -343,7 +345,7 @@ const Serversidetracking = () => {
                     <div className='pt-10 gap-5'>
                         <Slider {...settings}>
                             <div aria-hidden="true" className="m-auto text-center">
-                                <div className='service1 relative w-[329px] m-auto h-[286px] border border-solid border-[#E2E2E2] rounded-[10px] p-5 text-center'>
+                                <div className='service1 relative w-[280px] sm:w-[329px] m-auto h-[286px] border border-solid border-[#E2E2E2] rounded-[10px] p-5 text-center'>
                                     <div className='flex items-center justify-center'>
                                         <Image
                                             src="/leader1.svg"
@@ -353,11 +355,11 @@ const Serversidetracking = () => {
                                         />
                                     </div>
                                     <h6 className='text-[#000] text-base font-gilroy font-semibold leading-normal pt-6'>Define Goals & Objectives</h6>
-                                    <p className='text-[#000] text-xs font-gilroy font-medium pt-11 text-start leading-[22px]'>Identify your key tracking objectives (e.g., user behavior analysis, conversion rate optimization).</p>
+                                    <p className='text-[#000] text-xs font-gilroy font-medium pt-11 text-center leading-[22px]'>Identify your key tracking objectives (e.g., user behavior analysis, conversion rate optimization).</p>
                                 </div>
                             </div>
                             <div aria-hidden="true" className="m-auto text-center">
-                                <div className='service2 relative w-[329px] m-auto h-[286px] border border-solid border-[#E2E2E2] rounded-[10px] p-5 text-center'>
+                                <div className='service2 relative w-[280px] sm:w-[329px] m-auto h-[286px] border border-solid border-[#E2E2E2] rounded-[10px] p-5 text-center'>
                                     <div className='flex items-center justify-center'>
                                         <Image
                                             src="/leader2.svg"
@@ -367,11 +369,11 @@ const Serversidetracking = () => {
                                         />
                                     </div>
                                     <h6 className='text-[#000] text-base font-gilroy font-semibold leading-normal pt-6'>Data Source Mapping</h6>
-                                    <p className='text-[#000] text-xs font-gilroy font-medium pt-11 text-start leading-[22px]'>Determine the data points you want to collect and identify their sources (e.g., website interactions, user attributes).</p>
+                                    <p className='text-[#000] text-xs font-gilroy font-medium pt-11 text-center leading-[22px]'>Determine the data points you want to collect and identify their sources (e.g., website interactions, user attributes).</p>
                                 </div>
                             </div>
                             <div aria-hidden="true" className="m-auto text-center">
-                                <div className='service3 relative w-[329px] m-auto h-[286px] border border-solid border-[#E2E2E2] rounded-[10px] p-5 text-center'>
+                                <div className='service3 relative w-[280px] sm:w-[329px] m-auto h-[286px] border border-solid border-[#E2E2E2] rounded-[10px] p-5 text-center'>
                                     <div className='flex items-center justify-center'>
                                         <Image
                                             src="/leader3.svg"
@@ -381,11 +383,11 @@ const Serversidetracking = () => {
                                         />
                                     </div>
                                     <h6 className='text-[#000] text-base font-gilroy font-semibold leading-normal pt-6'>Server-Side Integration</h6>
-                                    <p className='text-[#000] text-xs font-gilroy font-medium pt-11 text-start leading-[22px]'>Our team seamlessly integrates server-side tracking code with your website architecture.</p>
+                                    <p className='text-[#000] text-xs font-gilroy font-medium pt-11 text-center leading-[22px]'>Our team seamlessly integrates server-side tracking code with your website architecture.</p>
                                 </div>
                             </div>
                             <div aria-hidden="true" className="m-auto text-center">
-                                <div className='service4 relative w-[329px] m-auto h-[286px] border border-solid border-[#E2E2E2] rounded-[10px] p-5 text-center'>
+                                <div className='service4 relative w-[280px] sm:w-[329px] m-auto h-[286px] border border-solid border-[#E2E2E2] rounded-[10px] p-5 text-center'>
                                     <div className='flex items-center justify-center'>
                                         <Image
                                             src="/leader4.svg"
@@ -395,11 +397,11 @@ const Serversidetracking = () => {
                                         />
                                     </div>
                                     <h6 className='text-[#000] text-base font-gilroy font-semibold leading-normal pt-6'>Data Collection & Validation</h6>
-                                    <p className='text-[#000] text-xs font-gilroy font-medium pt-11 text-start leading-[22px]'>We establish secure data collection processes and validate data integrity.</p>
+                                    <p className='text-[#000] text-xs font-gilroy font-medium pt-11 text-center leading-[22px]'>We establish secure data collection processes and validate data integrity.</p>
                                 </div>
                             </div>
                             <div aria-hidden="true" className="m-auto text-center">
-                                <div className='service5 relative w-[329px] m-auto h-[286px] border border-solid border-[#E2E2E2] rounded-[10px] p-5 text-center'>
+                                <div className='service5 relative w-[280px] sm:w-[329px] m-auto h-[286px] border border-solid border-[#E2E2E2] rounded-[10px] p-5 text-center'>
                                     <div className='flex items-center justify-center'>
                                         <Image
                                             src="/leader5.svg"
@@ -409,11 +411,11 @@ const Serversidetracking = () => {
                                         />
                                     </div>
                                     <h6 className='text-[#000] text-base font-gilroy font-semibold leading-normal pt-6'>Integration with Analytics Platforms</h6>
-                                    <p className='text-[#000] text-xs font-gilroy font-medium pt-11 text-start leading-[22px]'>We connect your server-side tracking data with your preferred analytics platforms.</p>
+                                    <p className='text-[#000] text-xs font-gilroy font-medium pt-11 text-center leading-[22px]'>We connect your server-side tracking data with your preferred analytics platforms.</p>
                                 </div>
                             </div>
                             <div aria-hidden="true" className="m-auto text-center">
-                                <div className='service6 relative w-[329px] m-auto h-[286px] border border-solid border-[#E2E2E2] rounded-[10px] p-5 text-center'>
+                                <div className='service6 relative w-[280px] sm:w-[329px] m-auto h-[286px] border border-solid border-[#E2E2E2] rounded-[10px] p-5 text-center'>
                                     <div className='flex items-center justify-center'>
                                         <Image
                                             src="/leader5.svg"
@@ -423,7 +425,7 @@ const Serversidetracking = () => {
                                         />
                                     </div>
                                     <h6 className='text-[#000] text-base font-gilroy font-semibold leading-normal pt-6'>Reporting & Optimization</h6>
-                                    <p className='text-[#000] text-xs font-gilroy font-medium pt-11 text-start leading-[22px]'>We provide comprehensive reports and insights to help you understand user behavior and optimize your marketing efforts.</p>
+                                    <p className='text-[#000] text-xs font-gilroy font-medium pt-11 text-center leading-[22px]'>We provide comprehensive reports and insights to help you understand user behavior and optimize your marketing efforts.</p>
                                 </div>
                             </div>
                         </Slider>
@@ -536,7 +538,7 @@ const Serversidetracking = () => {
                 </div>
             </section>
 
-            <section className='sstfaq relative overflow-hidden font-gilroy'>
+            <section className='sstfaq faq-section relative overflow-hidden font-gilroy'>
                 <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 z-20 md:py-6">
                     <div>
                         <h3 className='text-[32px] font-semibold text-[#000000] leading-[1.5em] font-gilroy mb-2'>FAQ's</h3>
@@ -545,7 +547,7 @@ const Serversidetracking = () => {
                         <div className='items-start lg:justify-start justify-center gap-7 w-full'>
                             <div className={`faqfst flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full text-[#000000]' onClick={toggleFaqfstVisibility}>
+                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={toggleFaqfstVisibility}>
                                         <div className={`flex items-center w-full justify-between gap-5 ${isFaqfstVisible ? 'mb-[13px]' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <h2 className='text-[17px] font-medium leading-normal'>Is server-side tracking complex to implement?</h2>
@@ -564,7 +566,7 @@ const Serversidetracking = () => {
                             </div>
                             <div className={`faqsec flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full text-[#000000]' onClick={toggleFaqsecVisibility}>
+                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={toggleFaqsecVisibility}>
                                         <div className={`flex items-center justify-between gap-5 ${isFaqsecVisible ? 'mb-[10px]' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <h2 className='text-[17px] font-medium leading-normal'>Can server-side tracking replace client-side tracking entirely?</h2>
@@ -583,7 +585,7 @@ const Serversidetracking = () => {
                             </div>
                             <div className={`faqthrd flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqthrdVisibility()}>
+                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqthrdVisibility()}>
                                         <div className={`flex items-center justify-between gap-5 ${isFaqthrdVisible ? 'mb-[10px]' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <h2 className='text-[17px] font-medium leading-normal'>How does server-side tracking improve data security?</h2>
@@ -602,7 +604,7 @@ const Serversidetracking = () => {
                             </div>
                             <div className={`faqfur flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqfurVisibility()}>
+                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqfurVisibility()}>
                                         <div className={`flex items-center justify-between gap-5 ${isFaqfurVisible ? 'mb-[10px]' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <h2 className='text-[17px] font-medium leading-normal'>How long does it take to see results from your solutions?</h2>

@@ -146,7 +146,7 @@ const engagement = () => {
                                     </h1>
                                     <div className='flex items-center justify-center gap-5'>
                                         <Link href="/contact?id=programatic-advertising">
-                                            <button className="butn mt-2 uppercase">Contact Us</button>
+                                            <button className="contact-us-btn butn mt-2 uppercase">Contact Us</button>
                                         </Link>
                                     </div>
                                 </div>
@@ -164,11 +164,11 @@ const engagement = () => {
                         <div className='w-full m-auto'>
                             <div className='w-full px-4'>
                                 <div className='ea1 text-center'>
-                                    <h1 className='text-[32px] font-normal font-rbt leading-normal text-[#006EF5] mb-[22px] pb-6'>Choose Your Preferred Engagement Model</h1>
+                                    <h2 className='text-[32px] font-normal font-rbt leading-normal text-[#006EF5] mb-[22px] pb-6'>Choose Your Preferred Engagement Model</h2>
                                     <p className='text-[18px] leading-[30px] font-normal'>Each business problem demands a different solution. To help you address them, we have four distinct engagement models.</p>
                                 </div>
                                 <div className='pt-10 gap-10 grid lg:grid-cols-2 items-start justify-center'>
-                                    <div className='engagement1 flex items-center justify-center font-gilroy'>
+                                    <div className='engagement1 engagement-card flex items-center justify-center font-gilroy'>
                                         <div className=' border border-solid border-[#E2E2E2] rounded-[10px] p-5 xl:h-[495px] xl:w-full lg:w-[440px] max-[499px]:w-[100%] w-[500px] lg:h-[515px] relative'>
                                             <div className='flex items-center justify-between pb-3 border-b border-solid border-[#455a6475]'>
                                                 <h6 className='text-[#000] text-[18px] font-semibold leading-normal'>Project-Based Engagement</h6>
@@ -210,7 +210,7 @@ const engagement = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className='engagement2 flex items-center justify-center font-gilroy'>
+                                    <div className='engagement2 engagement-card flex items-center justify-center font-gilroy'>
                                         <div className=' border border-solid border-[#E2E2E2] rounded-[10px] p-5 xl:h-[495px] xl:w-full lg:w-[440px] max-[499px]:w-[100%] w-[500px] lg:h-[515px] relative'>
                                             <div className='flex items-center justify-between pb-3 border-b border-solid border-[#455a6475]'>
                                                 <h6 className='text-[#000] text-[18px] font-semibold leading-normal'>Monthly Retainer</h6>
@@ -252,7 +252,7 @@ const engagement = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className='engagement3 flex items-center justify-center'>
+                                    <div className='engagement3 engagement-card flex items-center justify-center'>
                                         <div className=' border border-solid border-[#E2E2E2] rounded-[10px] p-5 xl:h-[510px] xl:w-full lg:w-[440px] max-[499px]:w-[100%] w-[500px] lg:h-[540px] relative'>
                                             <div className='flex items-center justify-between pb-3 border-b border-solid border-[#455a6475]'>
                                                 <h6 className='text-[#000] text-[18px] font-semibold leading-normal'>Dedicated Resource</h6>
@@ -293,7 +293,7 @@ const engagement = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className='engagement4 flex items-center justify-center'>
+                                    <div className='engagement4 engagement-card flex items-center justify-center'>
                                         <div className=' border border-solid border-[#E2E2E2] rounded-[10px] p-5 xl:h-[510px] xl:w-full lg:w-[440px] max-[499px]:w-[100%] w-[500px] lg:h-[540px] relative'>
                                             <div className='flex items-center justify-between pb-3 border-b border-solid border-[#455a6475]'>
                                                 <h6 className='text-[#000] text-[18px] font-semibold leading-normal'>Custom Model</h6>
@@ -341,7 +341,7 @@ const engagement = () => {
                         <div className='w-full m-auto'>
                             <div className='w-full px-4'>
                                 <div className='ea1 text-center'>
-                                    <h1 className='text-[32px] font-normal font-rbt leading-normal text-[#006EF5] pb-6'>Choosing the Right Model</h1>
+                                    <div className='header-form-title text-[32px] font-normal font-rbt leading-normal text-[#006EF5] pb-6'>Choosing the Right Model</div>
                                     <p className='text-base leading-[30px] font-normal mb-4'>Not sure which engagement model is best for you? </p>
                                     <p className='text-[18px] leading-[30px] font-normal'>Don't worry! Contact AnalyticsLiv today for a free consultation. Our team will discuss your business goals and data analytics requirements to recommend the most suitable model to help you achieve your desired outcomes.</p>
                                 </div>
@@ -352,21 +352,21 @@ const engagement = () => {
                                         <h3 className="text-[20px] font-semibold text-center text-homepagebtn leading-[30px]">Fill the form to get in touch with us</h3>
                                     </div>
 
-                                    {formSubmit && <div className='relative text-slate-700 p-4 space-y-4 h-full'>
-                                        <h1 className='align-middle font-medium text-4xl'>Thank You for your interest.</h1>
-                                        <h2 className='align-middle text-xl'>We will get back to you soon.</h2>
+                                    {formSubmit && <div className='contact-form-thankyou relative text-slate-700 p-4 space-y-4 h-full'>
+                                        <div className='align-middle font-medium text-4xl'>Thank You for your interest.</div>
+                                        <div className='align-middle text-xl'>We will get back to you soon.</div>
                                         <div className='absolute bottom-0 right-2 rounded-full w-20 h-20 bg-emerald-600 opacity-70 animate-bounce hover:animate-none duration-300 delay-75'></div>
                                     </div>}
-                                    {!formSubmit && <form className="space-y-2 md:space-y-6  md:w-[90%] mx-auto" onSubmit={handleSubmit}>
+                                    {!formSubmit && <form className="contact-form space-y-2 md:space-y-6  md:w-[90%] mx-auto" onSubmit={handleSubmit}>
                                         <div className="relative w-full md:flex justify-between md:space-x-8">
                                             <div className="relative md:w-1/2">
-                                                <input type="text" id="firstname" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent  border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " name="firstName" value={formValues.firstName} onChange={handleChange} />
-                                                <label htmlFor="firstname" className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-4 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">First Name</label>
+                                                <input type="text" id="firstName" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent  border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " name="firstName" value={formValues.firstName} onChange={handleChange} />
+                                                <label htmlFor="firstName" className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-4 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">First Name</label>
                                                 <p className="text-red-600 text-sm">{formErrors.firstName}</p>
                                             </div>
                                             <div className="relative md:w-1/2">
-                                                <input type="text" id="lastname" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent  border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " name="lastName" value={formValues.lastName} onChange={handleChange} />
-                                                <label htmlFor="lastname" className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-4 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Last Name</label>
+                                                <input type="text" id="lastName" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent  border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " name="lastName" value={formValues.lastName} onChange={handleChange} />
+                                                <label htmlFor="lastName" className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-4 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Last Name</label>
                                                 <p className="text-red-600 text-sm">{formErrors.lastName}</p>
                                             </div>
                                         </div>
@@ -379,7 +379,7 @@ const engagement = () => {
                                             </div>
                                             <div className="relative md:w-1/2">
                                                 <PhoneInput className="w-0 mt-4 md:mt-0 text-sm"
-                                                    name="contactno" id="contactno" value={formValues.contactno} onChange={handleContactChange}
+                                                    name="contactno" id="contact" value={formValues.contactno} onChange={handleContactChange}
                                                     country={"in"}
                                                     preferredCountries={['in', 'us', 'au']}
                                                     enableSearch={true}
@@ -506,7 +506,7 @@ const engagement = () => {
                 </div>
 
             </section>
-            <section className='progracont relative overflow-hidden'>
+            <section className='progracont relative overflow-hidden mb-14'>
                 <div className='relative px-4 md:px-12 pt-8 pb-8 z-20'>
                     <div className='flex md:flex-nowrap flex-wrap items-center mx-auto'>
                         <div className='md:w-[66%] w-full'>

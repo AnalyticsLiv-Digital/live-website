@@ -3,22 +3,20 @@ import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
+import MetaSchemaOg from "../../components/MetaSchemaOg";
 
 const ecommerce_marketing = () => {
   const [activetab, setActivetab] = useState("1");
   return (
     <>
-      <Head>
-        <title>AnalyticsLiv - Ecommerce Marketing</title>
-        <meta
-          name="description"
-          content="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads"
-        />
-        <link
-          rel="canonical"
-          href="https://analyticsliv.com/services/ecommerce-marketing"
-        ></link>
-      </Head>
+      <MetaSchemaOg
+        url="https://analyticsliv.com/services/ecommerce-marketing"
+        title="Results Driven Ecommerce Marketing Services | AnalyticsLiv"
+        description="Boost your online store’s revenue with AnalyticsLiv’s ecommerce marketing services. We deliver tailored strategies across PPC ads and email marketing to grow your brand."
+        twitterTitle="Results Driven Ecommerce Marketing Services | AnalyticsLiv"
+        twitterDescription="Boost your online store’s revenue with AnalyticsLiv’s ecommerce marketing services. We deliver tailored strategies across PPC ads and email marketing to grow your brand."
+      />
+
       <section>
         <div className="relative md:px-24 px-4">
           <div className="-z-10 absolute left-0">
@@ -53,7 +51,7 @@ const ecommerce_marketing = () => {
               </Link>
             </div>
             <div className="py-6 md:py-0">
-              <img src="https://storage.googleapis.com/website-bucket-uploads/static/marketing/rafiki.png" />
+              <img src="https://storage.googleapis.com/website-bucket-uploads/static/marketing/rafiki.png" alt="digital marketing for ecommerce business" />
             </div>
           </div>
         </div>
@@ -73,14 +71,13 @@ const ecommerce_marketing = () => {
                 <div className="p-8 pl-[25px] -mr-[30px] rounded-l-[10px] xl:w-[400px] xl:ml-auto">
                   <div
                     onClick={() => setActivetab("1")}
-                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                      activetab === "1" ? "border-t-[#0092f4ab]" : ""
-                    }`}
+                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "1" ? "border-t-[#0092f4ab]" : ""
+                      }`}
                   >
                     <div>
                       <img
-                        src="/Campaign Strategy and Setup white.png"
-                        alt=""
+                        src="https://storage.googleapis.com/website-bucket-uploads/static/public/Campaign%20Strategy%20and%20Setup%20white.png"
+                        alt="Campaign Strategy and Planning"
                         className="h-10 w-10"
                       />
                     </div>
@@ -88,14 +85,13 @@ const ecommerce_marketing = () => {
                   </div>
                   <div
                     onClick={() => setActivetab("2")}
-                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                      activetab === "2" ? "border-t-[#0092f4ab]" : ""
-                    }`}
+                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "2" ? "border-t-[#0092f4ab]" : ""
+                      }`}
                   >
                     <div>
                       <img
-                        src="/Audience Targeting white.png"
-                        alt=""
+                        src="https://storage.googleapis.com/website-bucket-uploads/static/public/Audience%20Targeting%20white.png"
+                        alt="Performance Max Campaigns"
                         className="h-10 w-10"
                       />
                     </div>
@@ -103,14 +99,13 @@ const ecommerce_marketing = () => {
                   </div>
                   <div
                     onClick={() => setActivetab("3")}
-                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                      activetab === "3" ? "border-t-[#0092f4ab]" : ""
-                    }`}
+                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "3" ? "border-t-[#0092f4ab]" : ""
+                      }`}
                   >
                     <div>
                       <img
-                        src="/Ad Format Optimization white.png"
-                        alt=""
+                        src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad%20Format%20Optimization%20white.png"
+                        alt="Targeted Audience Reach"
                         className="h-10 w-10"
                       />
                     </div>
@@ -118,9 +113,8 @@ const ecommerce_marketing = () => {
                   </div>
                   <div
                     onClick={() => setActivetab("4")}
-                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                      activetab === "4" ? "border-t-[#0092f4ab]" : ""
-                    }`}
+                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "4" ? "border-t-[#0092f4ab]" : ""
+                      }`}
                   >
                     <div>
                       <img
@@ -133,9 +127,8 @@ const ecommerce_marketing = () => {
                   </div>
                   <div
                     onClick={() => setActivetab("5")}
-                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                      activetab === "5" ? "border-t-[#0092f4ab]" : ""
-                    }`}
+                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "5" ? "border-t-[#0092f4ab]" : ""
+                      }`}
                   >
                     <div>
                       <img
@@ -148,14 +141,13 @@ const ecommerce_marketing = () => {
                   </div>
                   <div
                     onClick={() => setActivetab("6")}
-                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                      activetab === "6" ? "border-t-[#0092f4ab]" : ""
-                    }`}
+                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "6" ? "border-t-[#0092f4ab]" : ""
+                      }`}
                   >
                     <div>
                       <img
-                        src="/Campaign Strategy and Setup white.png"
-                        alt=""
+                        src="https://storage.googleapis.com/website-bucket-uploads/static/public/Campaign%20Strategy%20and%20Setup%20white.png"
+                        alt="Campaign Strategy and Planning"
                         className="h-10 w-10"
                       />
                     </div>
@@ -163,14 +155,13 @@ const ecommerce_marketing = () => {
                   </div>
                   <div
                     onClick={() => setActivetab("7")}
-                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                      activetab === "7" ? "border-t-[#0092f4ab]" : ""
-                    }`}
+                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "7" ? "border-t-[#0092f4ab]" : ""
+                      }`}
                   >
                     <div>
                       <img
-                        src="/Ad Format Optimization white.png"
-                        alt=""
+                        src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad%20Format%20Optimization%20white.png"
+                        alt="Remarketing and Dynamic Ads"
                         className="h-10 w-10"
                       />
                     </div>
@@ -178,9 +169,8 @@ const ecommerce_marketing = () => {
                   </div>
                   <div
                     onClick={() => setActivetab("8")}
-                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                      activetab === "8" ? "border-t-[#0092f4ab]" : ""
-                    }`}
+                    className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "8" ? "border-t-[#0092f4ab]" : ""
+                      }`}
                   >
                     <div>
                       <img
@@ -197,9 +187,8 @@ const ecommerce_marketing = () => {
               <div className="xl:w-[60%] lg:w-[65%] w-full h-[500px] flex items-start justify-center rounded-[15px] pt-5 mb-[65px]">
                 <div
                   id="tab1"
-                  className={`${activetab == 1 && "block"} ${
-                    activetab != 1 && "hidden"
-                  } relative py-[30px] px-[50px] text-base font-medium leading-8`}
+                  className={`${activetab == 1 && "block"} ${activetab != 1 && "hidden"
+                    } relative py-[30px] px-[50px] text-base font-medium leading-8`}
                 >
                   <div className="relative">
                     <p className="text-[#efefef] text-[20px] font-semibold mb-5">
@@ -227,9 +216,8 @@ const ecommerce_marketing = () => {
 
                 <div
                   id="tab2"
-                  className={`${activetab == 2 && "block"} ${
-                    activetab != 2 && "hidden"
-                  } relative py-[30px] px-[50px] text-base font-medium leading-8`}
+                  className={`${activetab == 2 && "block"} ${activetab != 2 && "hidden"
+                    } relative py-[30px] px-[50px] text-base font-medium leading-8`}
                 >
                   <div className="relative pl-1">
                     <p className="text-[#efefef] text-[20px] font-semibold mb-5">
@@ -255,9 +243,8 @@ const ecommerce_marketing = () => {
 
                 <div
                   id="tab3"
-                  className={`${activetab == 3 && "block"} ${
-                    activetab != 3 && "hidden"
-                  } relative py-[30px] px-[40px] text-base font-medium leading-8`}
+                  className={`${activetab == 3 && "block"} ${activetab != 3 && "hidden"
+                    } relative py-[30px] px-[40px] text-base font-medium leading-8`}
                 >
                   <div className="relative pl-1">
                     <p className="text-[#efefef] text-[20px] font-semibold mb-5">
@@ -283,9 +270,8 @@ const ecommerce_marketing = () => {
                 </div>
                 <div
                   id="tab4"
-                  className={`${activetab == 4 && "block"} ${
-                    activetab != 4 && "hidden"
-                  } relative py-[30px] px-[50px] text-base font-medium leading-8`}
+                  className={`${activetab == 4 && "block"} ${activetab != 4 && "hidden"
+                    } relative py-[30px] px-[50px] text-base font-medium leading-8`}
                 >
                   <p className="text-[#efefef] text-[20px] font-semibold mb-5">
                     Compelling Ad Creation:
@@ -310,9 +296,8 @@ const ecommerce_marketing = () => {
 
                 <div
                   id="tab5"
-                  className={`${activetab == 5 && "block"} ${
-                    activetab != 5 && "hidden"
-                  } relative py-[30px] px-[50px] text-base font-medium leading-8`}
+                  className={`${activetab == 5 && "block"} ${activetab != 5 && "hidden"
+                    } relative py-[30px] px-[50px] text-base font-medium leading-8`}
                 >
                   <p className="text-[#efefef] text-[20px] font-semibold mb-5">
                     Optimized Landing Pages:
@@ -336,9 +321,8 @@ const ecommerce_marketing = () => {
 
                 <div
                   id="tab6"
-                  className={`${activetab == 6 && "block"} ${
-                    activetab != 6 && "hidden"
-                  } relative py-[30px] px-[50px] text-base font-medium leading-8`}
+                  className={`${activetab == 6 && "block"} ${activetab != 6 && "hidden"
+                    } relative py-[30px] px-[50px] text-base font-medium leading-8`}
                 >
                   <p className="text-[#efefef] text-[20px] font-semibold mb-5">
                     Performance Tracking and Analytics:
@@ -362,9 +346,8 @@ const ecommerce_marketing = () => {
                 </div>
                 <div
                   id="tab7"
-                  className={`${activetab == 7 && "block"} ${
-                    activetab != 7 && "hidden"
-                  } relative py-[30px] px-[50px] text-base font-medium leading-8`}
+                  className={`${activetab == 7 && "block"} ${activetab != 7 && "hidden"
+                    } relative py-[30px] px-[50px] text-base font-medium leading-8`}
                 >
                   <p className="text-[#efefef] text-[20px] font-semibold mb-5">
                     Remarketing and Dynamic Ads:
@@ -387,9 +370,8 @@ const ecommerce_marketing = () => {
                 </div>
                 <div
                   id="tab8"
-                  className={`${activetab == 8 && "block"} ${
-                    activetab != 8 && "hidden"
-                  } relative py-[30px] px-[50px] text-base font-medium leading-8`}
+                  className={`${activetab == 8 && "block"} ${activetab != 8 && "hidden"
+                    } relative py-[30px] px-[50px] text-base font-medium leading-8`}
                 >
                   <p className="text-[#efefef] text-[20px] font-semibold mb-5">
                     Continuous Optimization:
@@ -418,14 +400,13 @@ const ecommerce_marketing = () => {
               <div className="panel_list webbox mb-4 rounded-b-[15px]">
                 <div
                   onClick={() => setActivetab("1")}
-                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                    activetab === "1" ? "border-t-[#0092f4ab]" : ""
-                  }`}
+                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "1" ? "border-t-[#0092f4ab]" : ""
+                    }`}
                 >
                   <div>
                     <img
-                      src="/Campaign Strategy and Setup white.png"
-                      alt=""
+                      src="https://storage.googleapis.com/website-bucket-uploads/static/public/Campaign%20Strategy%20and%20Setup%20white.png"
+                      alt="Campaign Strategy and Planning"
                       className="h-10 w-10"
                     />
                   </div>
@@ -433,11 +414,9 @@ const ecommerce_marketing = () => {
                 </div>
                 <div
                   id="tab1"
-                  className={`${
-                    activetab == 1 && "items-center justify-center"
-                  } ${
-                    activetab != 1 && "hidden"
-                  } relative p-5 pt-[10px] text-[13px] font-medium leading-8`}
+                  className={`${activetab == 1 && "items-center justify-center"
+                    } ${activetab != 1 && "hidden"
+                    } relative p-5 pt-[10px] text-[13px] font-medium leading-8`}
                 >
                   <p className="text-[#ffffff] mb-[10px]">
                     Our team of ecommerce marketing specialists will collaborate
@@ -460,14 +439,13 @@ const ecommerce_marketing = () => {
               <div className="panel_list webbox mb-4 rounded-b-[15px]">
                 <div
                   onClick={() => setActivetab("2")}
-                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                    activetab === "2" ? "border-t-[#0092f4ab]" : ""
-                  }`}
+                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "2" ? "border-t-[#0092f4ab]" : ""
+                    }`}
                 >
                   <div>
                     <img
-                      src="/Audience Targeting white.png"
-                      alt=""
+                      src="https://storage.googleapis.com/website-bucket-uploads/static/public/Audience%20Targeting%20white.png"
+                      alt="Performance Max Campaigns"
                       className="h-10 w-10"
                     />
                   </div>
@@ -475,11 +453,9 @@ const ecommerce_marketing = () => {
                 </div>
                 <div
                   id="tab2"
-                  className={`${
-                    activetab == 2 && " items-center justify-center"
-                  } ${
-                    activetab != 2 && "hidden"
-                  } relative p-5 pt-[10px] text-[13px] font-medium leading-8`}
+                  className={`${activetab == 2 && " items-center justify-center"
+                    } ${activetab != 2 && "hidden"
+                    } relative p-5 pt-[10px] text-[13px] font-medium leading-8`}
                 >
                   <p className="text-[#ffffff]">
                     With Performance Max, we can supercharge your ecommerce
@@ -502,14 +478,13 @@ const ecommerce_marketing = () => {
               <div className="panel_list webbox mb-4 rounded-b-[15px]">
                 <div
                   onClick={() => setActivetab("3")}
-                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                    activetab === "3" ? "border-t-[#0092f4ab]" : ""
-                  }`}
+                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "3" ? "border-t-[#0092f4ab]" : ""
+                    }`}
                 >
                   <div>
                     <img
-                      src="/Ad Format Optimization white.png"
-                      alt=""
+                      src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad%20Format%20Optimization%20white.png"
+                      alt="Targeted Audience Reach"
                       className="h-10 w-10"
                     />
                   </div>
@@ -517,11 +492,9 @@ const ecommerce_marketing = () => {
                 </div>
                 <div
                   id="tab3"
-                  className={`${
-                    activetab == 3 && "items-center justify-center"
-                  } ${
-                    activetab != 3 && "hidden"
-                  } relative p-5 pt-[10px] text-[13px] font-medium leading-8`}
+                  className={`${activetab == 3 && "items-center justify-center"
+                    } ${activetab != 3 && "hidden"
+                    } relative p-5 pt-[10px] text-[13px] font-medium leading-8`}
                 >
                   <p className="text-[#ffffff] mb-[10px]">
                     Using the advanced targeting capabilities of Google Ads and
@@ -545,9 +518,8 @@ const ecommerce_marketing = () => {
               <div className="panel_list webbox mb-4 rounded-b-[15px]">
                 <div
                   onClick={() => setActivetab("4")}
-                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                    activetab === "4" ? "border-t-[#0092f4ab]" : ""
-                  }`}
+                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "4" ? "border-t-[#0092f4ab]" : ""
+                    }`}
                 >
                   <div>
                     <img
@@ -560,11 +532,9 @@ const ecommerce_marketing = () => {
                 </div>
                 <div
                   id="tab4"
-                  className={`${
-                    activetab == 4 && " items-center justify-center"
-                  } ${
-                    activetab != 4 && "hidden"
-                  } relative p-5 pt-[10px] text-[13px] font-medium leading-8`}
+                  className={`${activetab == 4 && " items-center justify-center"
+                    } ${activetab != 4 && "hidden"
+                    } relative p-5 pt-[10px] text-[13px] font-medium leading-8`}
                 >
                   <p className="text-[#ffffff]">
                     Our creative experts will design captivating ad creatives
@@ -588,9 +558,8 @@ const ecommerce_marketing = () => {
               <div className="panel_list webbox mb-4 rounded-b-[15px]">
                 <div
                   onClick={() => setActivetab("5")}
-                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                    activetab === "5" ? "border-t-[#0092f4ab]" : ""
-                  }`}
+                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "5" ? "border-t-[#0092f4ab]" : ""
+                    }`}
                 >
                   <div>
                     <img
@@ -603,11 +572,9 @@ const ecommerce_marketing = () => {
                 </div>
                 <div
                   id="tab5"
-                  className={`${
-                    activetab == 5 && " items-center justify-center"
-                  } ${
-                    activetab != 5 && "hidden"
-                  } relative p-5 pt-[10px] font-gilroy2 text-[13px] font-medium leading-8`}
+                  className={`${activetab == 5 && " items-center justify-center"
+                    } ${activetab != 5 && "hidden"
+                    } relative p-5 pt-[10px] font-gilroy2 text-[13px] font-medium leading-8`}
                 >
                   <p className="text-[#ffffff] mb-[10px]">
                     We'll optimize your ecommerce website's landing pages to
@@ -629,14 +596,13 @@ const ecommerce_marketing = () => {
               <div className="panel_list webbox mb-4 rounded-b-[15px]">
                 <div
                   onClick={() => setActivetab("6")}
-                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                    activetab === "6" ? "border-t-[#0092f4ab]" : ""
-                  }`}
+                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "6" ? "border-t-[#0092f4ab]" : ""
+                    }`}
                 >
                   <div>
                     <img
-                      src="/Campaign Strategy and Setup white.png"
-                      alt=""
+                      src="https://storage.googleapis.com/website-bucket-uploads/static/public/Campaign%20Strategy%20and%20Setup%20white.png"
+                      alt="Campaign Strategy and Planning"
                       className="h-10 w-10"
                     />
                   </div>
@@ -644,11 +610,9 @@ const ecommerce_marketing = () => {
                 </div>
                 <div
                   id="tab6"
-                  className={`${
-                    activetab == 6 && " items-center justify-center"
-                  } ${
-                    activetab != 6 && "hidden"
-                  } relative p-5 pt-[10px] font-gilroy2 text-[13px] font-medium leading-8`}
+                  className={`${activetab == 6 && " items-center justify-center"
+                    } ${activetab != 6 && "hidden"
+                    } relative p-5 pt-[10px] font-gilroy2 text-[13px] font-medium leading-8`}
                 >
                   <p className="text-[#ffffff] mb-[10px]">
                     Our data-driven approach ensures that we constantly monitor
@@ -671,14 +635,13 @@ const ecommerce_marketing = () => {
               <div className="panel_list webbox mb-4 rounded-b-[15px]">
                 <div
                   onClick={() => setActivetab("7")}
-                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                    activetab === "7" ? "border-t-[#0092f4ab]" : ""
-                  }`}
+                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "7" ? "border-t-[#0092f4ab]" : ""
+                    }`}
                 >
                   <div>
                     <img
-                      src="/Ad Format Optimization white.png"
-                      alt=""
+                      src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad%20Format%20Optimization%20white.png"
+                      alt="Remarketing and Dynamic Ads"
                       className="h-10 w-10"
                     />
                   </div>
@@ -686,11 +649,9 @@ const ecommerce_marketing = () => {
                 </div>
                 <div
                   id="tab7"
-                  className={`${
-                    activetab == 7 && " items-center justify-center"
-                  } ${
-                    activetab != 7 && "hidden"
-                  } relative p-5 pt-[10px] font-gilroy2 text-[13px] font-medium leading-8`}
+                  className={`${activetab == 7 && " items-center justify-center"
+                    } ${activetab != 7 && "hidden"
+                    } relative p-5 pt-[10px] font-gilroy2 text-[13px] font-medium leading-8`}
                 >
                   <p className="text-[#ffffff] mb-[10px]">
                     We'll implement remarketing strategies to re-engage users
@@ -712,9 +673,8 @@ const ecommerce_marketing = () => {
               <div className="panel_list webbox mb-4 rounded-b-[15px]">
                 <div
                   onClick={() => setActivetab("8")}
-                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${
-                    activetab === "8" ? "border-t-[#0092f4ab]" : ""
-                  }`}
+                  className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === "8" ? "border-t-[#0092f4ab]" : ""
+                    }`}
                 >
                   <div>
                     <img
@@ -727,11 +687,9 @@ const ecommerce_marketing = () => {
                 </div>
                 <div
                   id="tab8"
-                  className={`${
-                    activetab == 8 && " items-center justify-center"
-                  } ${
-                    activetab != 8 && "hidden"
-                  } relative p-5 pt-[10px] font-gilroy2 text-[13px] font-medium leading-8`}
+                  className={`${activetab == 8 && " items-center justify-center"
+                    } ${activetab != 8 && "hidden"
+                    } relative p-5 pt-[10px] font-gilroy2 text-[13px] font-medium leading-8`}
                 >
                   <p className="text-[#ffffff] mb-[10px]">
                     We believe in continuous improvement. Our team will
@@ -756,7 +714,7 @@ const ecommerce_marketing = () => {
         </div>
       </section>
 
-      <div className="px-4 md:px-20 pt-4 pb-8 md:pb-16">
+      <div className="px-4 md:px-20 pt-4 pb-16 md:pb-20">
         <div>
           <div className="text-start">
             <h2 className="text-maintext lg:text-[28px] text-2xl font-semibold not-italic text-center  block">

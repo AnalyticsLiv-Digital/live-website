@@ -4,18 +4,21 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
- 
+
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
       fontFamily: {
-        'gilroy': ['Gilroy-Bold' , 'sans-serif'],
-        'gilroy2': ['Gilroy-Medium' , 'sans-serif'],
+        'gilroy': ['Gilroy-Bold', 'sans-serif'],
+        'gilroy2': ['Gilroy-Medium', 'sans-serif'],
         'work-sans': ['Work Sans', 'sans-serif'],
         lato: ['Lato', 'sans-serif'],
         rbt: ['Roboto', 'sans-serif'],
+        sans: ['Open Sans', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
+        satisfy: ['Satisfy', 'cursive'],
       },
       boxShadow: {
         btnshadow: '1px 1px 23px 2px rgba(255, 251, 251, 0.25)',
@@ -34,7 +37,29 @@ module.exports = {
         filtershadow: '0 2px 20px 1px rgba(0,0,0,.11)',
         allshadow: '0 .5rem 1rem #2020200a',
         cookiePageShadow: '0px 1px 4px 0px #00000040',
-        customShadow: '0px 3px 10px 0px rgba(0, 0, 0, 0.05)',
+        customShadow: '0px 3px 10px 0px rgba(0, 0, 0, 0.15)',
+        customBoth: '-40px 100px 70px 0px #7979790D, 40px 0px 70px 0px #7979790D',
+        ytshadow: '0px -6px 20px 2px #00000040',
+        teamShadow: '0px 4px 4px 0px #00000040',
+        cardShadow: '-1px 5px 10px -1px #00000040',
+        hoverCard: '-1px 0px 5px -1px #00000040, 0px 4px 4px 0px #00000040',
+        arrowShadow: '-1px 1px 4px 0px #00000040',
+        csFormShadow: '3px 3px 28px 0px #00000040',
+        contactShadow: '6.02px 22.69px 117.29px 0px rgba(0, 0, 0, 0.25)',
+        mediaIcons: '3px 3px 7px 0px #00000040',
+        navShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.1)',
+        ga4Show: '3px 3px 8px 1px #97979759',
+        ga4FormShadow: '5px 5px 30px 5px #0000001A',
+        inputShadow: '0px 2px 2px 0px #0000000D',
+        ga4Shadow: '0px 1px 4px 0px #19213D0F',
+        webinarShadow: '2px 0px 3px 0px #00000040',
+        webinarTime: '0px 0px 4px 0px #0C1316A1 inset',
+        webinarCard: '10px 10px 40px 0px #00000026',
+        webinarSpeaker: '-3px 4px 4px 0px #00000040',
+
+      },
+      screens: {
+        '3xl': '1600px', // custom breakpoint name
       },
       colors: {
         btn: '#4285F4',
@@ -65,8 +90,17 @@ module.exports = {
         "homepagebtn": "#30486A",
         "homepagebg": "#F0F0F9",
         "ractangl": "rgba(194, 233, 245, 0.92)"
-    }
+      },
+      backgroundImage: {
+        'custom-linear': 'linear-gradient(97.32deg, #FF698D -3.47%, #FB3F6C 108.43%)',
+        'header-linear': 'linear-gradient(97.32deg, #003366 -3.47%, #0F52BA 108.43%)',
+        'btn-linear-foundation': 'linear-gradient(90deg, #D18202 0%, #D49031 100%)',
+        'btn-linear-transformation': 'linear-gradient(90deg, #2273EC 0%, #5496ED 100%)',
+        'btn-linear-marketing': 'linear-gradient(90deg, #188F3C 0%, #5AB974 100%)',
+        'btn-linear-solution': 'linear-gradient(90deg, #405F8A 0%, #488AE8 100%)',
+      },
     },
+
   },
   plugins: [],
 }

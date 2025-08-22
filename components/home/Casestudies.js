@@ -24,10 +24,10 @@ const Casestudies = () => {
                                     <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
                                     <a href="/case-studies/ua-to-ga4-migration-for-a-website" className='lg:flex gap-5'>
                                         <Image
-                                            src="/casestudy1.png"
+                                            src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestudy1.png"
                                             width={300}
                                             height={300}
-                                            alt="Picture of the author"
+                                            alt="Google Analytics 4 Migration"
                                             priority={true}
                                             className='2xl:w-[40%] w-full m-auto 2xl:h-[247px] xl:h-[277px] lg:h-[227px] lg:object-scale-down'
                                         />
@@ -49,10 +49,10 @@ const Casestudies = () => {
                                     <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
                                     <a href="/case-studies/55-percent-increase-in-avg-session-duration" className='lg:flex gap-5'>
                                         <Image
-                                            src="/casestudy3.png"
+                                            src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestudy3.png"
                                             width={300}
                                             height={300}
-                                            alt="Picture of the author"
+                                            alt="55% Increase in Avg. Session Duration"
                                             priority={true}
                                             className='2xl:w-[40%] w-full m-auto 2xl:h-[247px] xl:h-[277px] lg:h-[227px] lg:object-scale-down'
                                         />
@@ -81,7 +81,7 @@ const Casestudies = () => {
                                     <a href="/case-studies/skyrocket-your-campaigns-ctr-with-a-95-percent-surge-in-14-days" className='grid gap-5'>
                                         <div className=''>
                                             <Image
-                                                src="/casestd.png"
+                                                src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestd.png"
                                                 width={300}
                                                 height={300}
                                                 alt="Picture of the author"
@@ -100,7 +100,7 @@ const Casestudies = () => {
                                     <a href="/case-studies/driving-campaigns-in-dv360-to-post-click-attribution-success-with-36-percent-reduction-in-cpi" className='grid gap-1'>
                                         <div className='grid gap-4'>
                                             <Image
-                                                src="/casestd2.png"
+                                                src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestd2.png"
                                                 width={300}
                                                 height={300}
                                                 alt="Picture of the author"

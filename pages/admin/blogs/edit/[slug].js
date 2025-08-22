@@ -20,12 +20,38 @@ const index = ({ blogDat }) => {
     document_id: blogData.document_id,
     sequence: blogData.sequence,
     category: ["GA4"],
+    // relatedTo: blogData.relatedTo,
+    relatedTo: Array.isArray(blogData.relatedTo)
+    ? blogData.relatedTo
+    : blogData.relatedTo?.split(",") || [],
+    youtube: blogData.youtube,
+    metatitle: blogData.metatitle,
+    metadescription: blogData.metadescription,
   };
+  const [formattedDate, setFormattedDate] = useState(initialValues.date);
   const [formValues, setFormValues] = useState(initialValues);
   const [isSubmit, setIsSubmit] = useState(false);
   const [loading, setLoading] = useState(false);
   console.log(formValues);
   const router = useRouter();
+
+  const formatDate = (date) => {
+    const day = date.getDate();
+    const month = date.toLocaleString('default', { month: 'short' });
+    const year = date.getFullYear();
+    const suffix = getOrdinalSuffix(day);
+    return `${day}${suffix} ${month} ${year}`;
+  };
+
+  const getOrdinalSuffix = (day) => {
+    if (day > 3 && day < 21) return 'th';
+    switch (day % 10) {
+      case 1: return 'st';
+      case 2: return 'nd';
+      case 3: return 'rd';
+      default: return 'th';
+    }
+  };
 
   const uploadToClient = async (event) => {
     var file_size = event.target.files[0].size;
@@ -102,10 +128,30 @@ const index = ({ blogDat }) => {
     }
   };
 
+  const handleDateChange = (e) => {
+    const selectedDate = new Date(e.target.value);
+    const formatted = formatDate(selectedDate);
+    setFormattedDate(formatted);
+    setFormValues({ ...formValues, date: formatted });
+  };
+
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormValues({ ...formValues, [name]: value });
-    console.log(formValues);
+    const { name, value, type, checked } = e.target;
+  
+    if (type === 'checkbox' && name === 'relatedTo') {
+      let updatedRelatedTo = [...formValues?.relatedTo];
+      if (checked) {
+        updatedRelatedTo?.push(value);
+      } else {
+        updatedRelatedTo = updatedRelatedTo?.filter(item => item !== value);
+      }
+      setFormValues({ ...formValues, relatedTo: updatedRelatedTo });
+    } else {
+      setFormValues({ ...formValues, [name]: value });
+      if (name === 'date') {
+        setFormattedDate(formatDate(value));
+      }
+    }
   };
 
   const handleSubmit = (e) => {
@@ -134,6 +180,10 @@ const index = ({ blogDat }) => {
         active: formValues.active,
         category: formValues.category,
         sequence: formValues.sequence,
+        relatedTo: formValues.relatedTo,
+        youtube: formValues.youtube,
+        metatitle: formValues.metatitle,
+        metadescription: formValues.metadescription,
       }),
     })
       .then((response) => response.json())
@@ -174,6 +224,10 @@ const index = ({ blogDat }) => {
           active: formValues.active,
           category: formValues.category,
           sequence: formValues.sequence,
+          relatedTo: formValues.relatedTo,
+          youtube: formValues.youtube,
+          metatitle: formValues.metatitle,
+          metadescription: formValues.metadescription,
         }),
       })
         .then((response) => response.json())
@@ -258,14 +312,34 @@ const index = ({ blogDat }) => {
             <div className="w-[45%]">              <label className="block text-base font-semibold mb-2 text-gray-200">
                 Publish Date -{" "}
               </label>{" "}
-              <input
+              <div className="flex items-center gap-4">
+                  <input
+                    type="date"
+                    onChange={handleDateChange}
+                    className="absolute cursor-pointer w-1 opacity-0"
+                  />
+                  <div className="flex items-center cursor-pointer" onClick={() => document.querySelector('input[type="date"]').showPicker()}>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-5 h-5 text-gray-300" viewBox="0 0 24 24">
+                      <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm-7-7h5v5h-5z" />
+                    </svg>
+                  </div>
+                  <input
+                    type="text"
+                    required
+                    value={formattedDate}
+                    readOnly
+                    placeholder="Selected date"
+                    className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none"
+                  />
+                </div>
+              {/* <input
                 required
                 className="w-full px-2 py-1 text-sm text-gray-200 bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500"
                 type="text"
                 name="date"
                 value={formValues.date}
                 onChange={handleChange}
-              />
+              /> */}
             </div>
             </div>
             <div>
@@ -281,6 +355,35 @@ const index = ({ blogDat }) => {
                 onChange={handleChange}
               />
             </div>
+
+            <div>
+              <label className="block text-base font-semibold mb-2 text-gray-200">
+                Meta Title -
+              </label>
+
+              <input
+                className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500"
+                type="text"
+                name="metatitle"
+                value={formValues?.metatitle}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div>
+              <label className="block text-base font-semibold mb-2 text-gray-200">
+                Meta Description -
+              </label>
+
+              <input
+                className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500"
+                type="text"
+                name="metadescription"
+                value={formValues?.metadescription}
+                onChange={handleChange}
+              />
+            </div>
+
             <div>
               <label className="block text-base font-semibold mb-2 text-gray-200">
                 Coverimage URL-{" "}
@@ -320,6 +423,43 @@ const index = ({ blogDat }) => {
                 onChange={handleChange}
               />
             </div>
+
+            <div>
+              <label className="block text-base font-semibold mb-2 text-gray-200">
+                Related To
+              </label>
+              <div className="flex gap-5 flex-wrap">
+              {["dv360", "ga4", "gtm", "cro", "googleAds","firebase"]?.map(option => (
+                <div key={option} className="flex items-center mb-1">
+                  <input
+                    type="checkbox"
+                    name="relatedTo"
+                    value={option}
+                    checked={(formValues?.relatedTo)?.includes(option)}
+                    onChange={handleChange}
+                    className="mr-0.5"
+                  />
+                  <label className="text-sm text-gray-200">{option}</label>
+                </div>
+              ))}
+              </div>
+            </div>
+
+            
+            <div>
+              <label className="block text-base font-semibold mb-2 text-gray-200">
+                Youtube Video Link -
+              </label>
+
+              <input
+                className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500"
+                type="text"
+                name="youtube"
+                value={formValues?.youtube || ""}
+                onChange={handleChange}
+              />
+            </div>
+
             <div>
             <label className="block text-base font-semibold mb-2 text-gray-200">
               Sequence -{" "}

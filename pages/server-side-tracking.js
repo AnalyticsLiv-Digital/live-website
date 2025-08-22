@@ -280,7 +280,7 @@ const ServerSideTracking = () => {
             <header className="sticky min-w-full top-0 z-50 shadow-md bg-white">
                 <div className="navbar hidden lg:flex py-2 h-auto flex-wrap px-4 lg:flex-row items-center justify-between">
                     <a className="">
-                        <img alt="analyticsliv-logo" className="h-8 lg:ml-4 w-auto cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" />
+                        <img alt="AnalyticsLiv Logo" className="h-8 lg:ml-4 w-auto cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" />
                     </a>
                     <nav className="lg:flex text-center">
                         <ul className="lg:flex text-base font-semibold text-left lg:text-center z-[-1] lg:z-auto lg:mr-4 lg:w-auto lg:space-x-6 items-center tracking-wide cursor-pointer">
@@ -301,7 +301,7 @@ const ServerSideTracking = () => {
 
 
                 <div className="relative  flex lg:hidden p-2">
-                    <Link href="#"><img onClick={() => setIsOpen(false)} src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="relative h-10 md:mx-4 cursor-pointer" /></Link>
+                    <Link href="#"><img onClick={() => setIsOpen(false)} src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" alt='AnalyticsLiv Logo' className="relative h-10 md:mx-4 cursor-pointer" /></Link>
                     <a className="ml-4" href="tel:8320576622">
                         <button className="cta px-5 py-2 bg-sky-300 rounded-2xl mx-2 text-base font-semibold cursor-pointer hover:bg-sky-400">CALL US</button>
                     </a>
@@ -857,7 +857,7 @@ const ServerSideTracking = () => {
                 </div>
             </section>
 
-            <section className='sstfaq relative overflow-hidden font-gilroy'>
+            <section className='faq-section sstfaq relative overflow-hidden font-gilroy'>
                 <div className='max-w-screen-2xl mx-auto'>
                     <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 z-20">
                         <div>
@@ -868,7 +868,7 @@ const ServerSideTracking = () => {
                             <div className='items-start lg:justify-start justify-center gap-7 w-full'>
                                 <div className={`faqfst flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                     <div className='flex items-center justify-between w-full'>
-                                        <div className='cursor-pointer w-full text-[#000000]' onClick={toggleFaqfstVisibility}>
+                                        <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={toggleFaqfstVisibility}>
                                             <div className={`flex items-center w-full justify-between gap-5 ${isFaqfstVisible ? 'mb-[13px]' : 'mb-0'}`}>
                                                 <div className='flex items-center justify-start'>
                                                     <h2 className='text-[17px] font-medium leading-normal'>Is server-side tracking complex to implement?</h2>
@@ -887,7 +887,7 @@ const ServerSideTracking = () => {
                                 </div>
                                 <div className={`faqsec flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                     <div className='flex items-center justify-between w-full'>
-                                        <div className='cursor-pointer w-full text-[#000000]' onClick={toggleFaqsecVisibility}>
+                                        <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={toggleFaqsecVisibility}>
                                             <div className={`flex items-center justify-between gap-5 ${isFaqsecVisible ? 'mb-[10px]' : 'mb-0'}`}>
                                                 <div className='flex items-center justify-start'>
                                                     <h2 className='text-[17px] font-medium leading-normal'>Can server-side tracking replace client-side tracking entirely?</h2>
@@ -906,7 +906,7 @@ const ServerSideTracking = () => {
                                 </div>
                                 <div className={`faqthrd flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                     <div className='flex items-center justify-between w-full'>
-                                        <div className='cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqthrdVisibility()}>
+                                        <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqthrdVisibility()}>
                                             <div className={`flex items-center justify-between gap-5 ${isFaqthrdVisible ? 'mb-[10px]' : 'mb-0'}`}>
                                                 <div className='flex items-center justify-start'>
                                                     <h2 className='text-[17px] font-medium leading-normal'>How does server-side tracking improve data security?</h2>
@@ -925,7 +925,7 @@ const ServerSideTracking = () => {
                                 </div>
                                 <div className={`faqfur flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                     <div className='flex items-center justify-between w-full'>
-                                        <div className='cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqfurVisibility()}>
+                                        <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqfurVisibility()}>
                                             <div className={`flex items-center justify-between gap-5 ${isFaqfurVisible ? 'mb-[10px]' : 'mb-0'}`}>
                                                 <div className='flex items-center justify-start'>
                                                     <h2 className='text-[17px] font-medium leading-normal'>How long does it take to see results from your solutions?</h2>

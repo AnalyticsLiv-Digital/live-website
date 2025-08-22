@@ -1,8 +1,83 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+
 
 const HomeBlogs = () => {
+
+  const sliderRef = useRef(null);
+
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 1500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    responsive: [
+      {
+        breakpoint: 1150,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          speed: 1000,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 988,
+        settings: {
+          dots: false,
+          speed: 1000,
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          dots: false,
+          speed: 1000,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          dots: false,
+          speed: 1000,
+          // nextArrow: false,
+          // prevArrow: false,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
+  const handleNext = () => sliderRef.current.slickNext();
+  const handlePrev = () => sliderRef.current.slickPrev();
+
   return (
-    <section className="font-lato max-md:pb-7 md:pt-5 lg:pt-10 md:pb-7 lg:pb-14 px-4 md:px-16">
+    <section className="max-md:pb-3 md:pt-5 lg:pt-10 xl:pt-20 2xl:pt-20 md:pb-7 lg:pb-14 px-4 md:px-16">
       <div className="flex max-md:flex-col justify-between py-10 items-center overflow-hidden relative">
         <div className="flex flex-col md:w-[40%] lg:w-[50%] 2xl:w-[45%] gap-6 justify-center md:justify-start items-center md:items-start">
           <h2 className="text-[#100F1B] text-2xl lg:text-3xl font-bold text-center md:text-left">Read Our Insightful Blogs</h2>
@@ -11,134 +86,218 @@ const HomeBlogs = () => {
           </p>
         </div>
         <div className="absolute max-md:hidden 2xl:top-[-50px] left-[28%] lg:left-[37%] z-10 2xl:left-[35%] w-full">
-          <img src="/arrow.png" alt="arrow" className="w-[40%] 2xl:w-[45%]" />
+          <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Arrow.png" alt="arrow" className="w-[40%] 2xl:w-[45%]" />
         </div>
-        <div className='max-md:hidden'>
+        {/* <div className='max-md:hidden'>
           <a href='/blogs' className=''><button className="mainbutn max-md:mt-5">Read More Blogs</button></a>
+        </div> */}
+        <div className="max-md:hidden flex flex-col max-sm:hidden justify-center items-center gap-2 max-md:pt-5">
+          <a href='/blogs'><button className="readmore-button mainbutn-opposite">Read More Blogs</button></a>
+          <div className="flex justify-center items-center gap-5">
+            <button
+              onClick={handlePrev}
+              className="group relative overflow-hidden z-10 bg-white border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[8px] px-4 py-3 mt-3 transition-all duration-300 ease-linear hover:bg-[#08A4F7]"
+            >
+              <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector%20(1).svg' alt='left vector' className='w-3.5 h-3.5 group-hover:hidden block' />
+
+              <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20right%20white.svg' alt='left vector' className='w-3.5 h-3.5 hidden group-hover:block' />
+
+            </button>
+            <button
+              onClick={handleNext}
+              className="group relative overflow-hidden z-10 bg-white border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[8px] px-4 py-3 mt-3 transition-all duration-300 ease-linear hover:bg-[#08A4F7]"
+            >
+              <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector.svg' alt='right vector' className='w-3.5 h-3.5 group-hover:hidden block' />
+              <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20left%20white.svg' alt='right vector' className='w-3.5 h-3.5 hidden group-hover:block' />
+            </button>
+          </div>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <a href='/blogs/google-dv360-removal-of-flight-asap-pacing-at-the-insertion-order-level' className="bg-white rounded-lg shadow-lg p-4 2xl:p-6 relative">
-          <div className='flex flex-col justify-evenly h-full'>
-            <div className="absolute w-[100px] text-center top-4 2xl:top-6 right-4 2xl:right-6 bg-[#A2EC4E99] text-white font-semibold px-3 py-1 rounded-tr-2xl 2xl:rounded-tr-[20px] rounded-bl-md text-sm">Marketing</div>
-            <img
-              src="/Blog_thumbnail_image_29_Removal of Flight ASAP.png"
-              alt="Removal of Flight ASAP"
-              className="rounded-md mb-4 w-full"
-            />
-            <h3
-              className="text-lg font-semibold text-[#100F1B] mb-2 truncate"
-              style={{
-                whiteSpace: 'nowrap',
-                overflow: 'hidden',
-                textOverflow: 'ellipsis',
-              }}
-            >
-              Google’s DV360: Removal of Flight ASAP Pacing at the Insertion Order Level
-            </h3>
-            <p
-              className="text-sm text-[#373642] mb-4"
-              style={{
-                display: '-webkit-box',
-                WebkitBoxOrient: 'vertical',
-                overflow: 'hidden',
-                WebkitLineClamp: 3,
-              }}
-            >
-              In November 2024, Google will remove the Flight ASAP pacing option at the insertion order level from its
-              Display & Video 360 (DV360) platform, a change that significantly impacts how advertisers manage budgets and pacing.
-              This adjustment reflects Google’s ongoing efforts to streamline budget management and ensure more controlled spend throughout
-              campaign lifespans.
-            </p>
-            <div className="flex justify-between items-center text-sm text-[#0066cc]">
-              <span className="text-[#6B7280]">25th Nov 2024</span>
-              <button className="text-[#08A4F7] text-base font-medium hover:underline">Read Full</button>
+      {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"> */}
+      <div className="md:pt-8 w-full mx-auto relative carousel-custom">
+        <Slider ref={sliderRef} {...settings}>
+          <a href='/blogs/google-dv360-removal-of-flight-asap-pacing-at-the-insertion-order-level' className="readmore-btn bg-white rounded-lg shadow-lg p-4 2xl:p-6 relative">
+            <div className='flex flex-col justify-evenly h-full'>
+              <div className="absolute w-[100px] text-center top-4 2xl:top-6 right-4 2xl:right-6 bg-[#A2EC4E99] text-white font-semibold px-3 py-1 rounded-tr-2xl 2xl:rounded-tr-[20px] rounded-bl-md text-sm">Marketing</div>
+              <img
+                src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Blog_thumbnail_image_29_Removal%20of%20Flight%20ASAP.png"
+                alt="Removal of Flight ASAP"
+                className="rounded-md mb-4 w-full"
+              />
+              <h3
+                className="text-lg font-semibold text-[#100F1B] mb-2 truncate"
+                style={{
+                  whiteSpace: 'nowrap',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                }}
+              >
+                Google’s DV360: Removal of Flight ASAP Pacing at the Insertion Order Level
+              </h3>
+              <p
+                className="text-sm text-[#373642] mb-4"
+                style={{
+                  display: '-webkit-box',
+                  WebkitBoxOrient: 'vertical',
+                  overflow: 'hidden',
+                  WebkitLineClamp: 3,
+                }}
+              >
+                In November 2024, Google will remove the Flight ASAP pacing option at the insertion order level from its
+                Display & Video 360 (DV360) platform, a change that significantly impacts how advertisers manage budgets and pacing.
+                This adjustment reflects Google’s ongoing efforts to streamline budget management and ensure more controlled spend throughout
+                campaign lifespans.
+              </p>
+              <div className="flex justify-between items-center text-sm text-[#0066cc]">
+                <span className="text-[#6B7280] blog-date">25th Nov 2024</span>
+                <button className="text-[#08A4F7] text-base font-medium hover:underline">Read Full</button>
+              </div>
             </div>
-          </div>
-        </a>
-        <a href='/blogs/behavioral-and-conversion-modeling-in-ga4-with-google-consent-mode-v2' className="bg-white rounded-lg shadow-lg p-4 2xl:p-6 relative">
-          <div className='flex flex-col justify-evenly h-full'>
+          </a>
+          <a href='/blogs/behavioral-and-conversion-modeling-in-ga4-with-google-consent-mode-v2' className="readmore-btn bg-white rounded-lg shadow-lg p-4 2xl:p-6 relative">
+            <div className='flex flex-col justify-evenly h-full'>
 
-            <div className="absolute w-[100px] text-center top-4 2xl:top-6 right-4 2xl:right-6 bg-[#EC954E99] text-white font-semibold px-3 py-1 rounded-tr-[20px] 2xl:rounded-tr-3xl rounded-bl-md text-sm">Analytics</div>
-            <img
-              src="/Blog_thumbnail_Google_Consent.png"
-              alt="Google_Consent"
-              className="rounded-md mb-4 w-full"
-            />
-            <h3
-              className="text-lg font-semibold text-[#100F1B] mb-2 truncate"
-              style={{
-                whiteSpace: 'nowrap',
-                overflow: 'hidden',
-                textOverflow: 'ellipsis',
-              }}
-            >
-              Bridging the Gap: Behavioral and Conversion Modeling in GA4 with Google Consent Mode v2
-            </h3>
-            <p
-              className="text-sm text-[#373642] mb-4"
-              style={{
-                display: '-webkit-box',
-                WebkitBoxOrient: 'vertical',
-                overflow: 'hidden',
-                WebkitLineClamp: 3,
-              }}
-            >
-              In today's digital marketing landscape, understanding user behavior is critical for success. However, with increasing privacy
-              regulations and user awareness, traditional cookie-based tracking methods are losing effectiveness. This blog delves into how
-              Google Analytics 4 (GA4) tackles this challenge by combining Behavioral Modeling and Conversion Modeling with Google Consent Mode
-              v2 (CMv2). This powerful trio empowers you to gain valuable insights into user journeys and optimize conversions even when users
-              opt-out of tracking.
-            </p>
-            <div className="flex justify-between items-center text-sm text-[#0066cc]">
-              <span className="text-[#6B7280]">06th Aug 2024</span>
-              <button className="text-[#08A4F7] text-base font-medium hover:underline">Read Full</button>
+              <div className="absolute w-[100px] text-center top-4 2xl:top-6 right-4 2xl:right-6 bg-[#EC954E99] text-white font-semibold px-3 py-1 rounded-tr-[20px] 2xl:rounded-tr-3xl rounded-bl-md text-sm">Analytics</div>
+              <img
+                src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Blog_thumbnail_Google_Consent.png"
+                alt="Google_Consent"
+                className="rounded-md mb-4 w-full"
+              />
+              <h3
+                className="text-lg font-semibold text-[#100F1B] mb-2 truncate"
+                style={{
+                  whiteSpace: 'nowrap',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                }}
+              >
+                Bridging the Gap: Behavioral and Conversion Modeling in GA4 with Google Consent Mode v2
+              </h3>
+              <p
+                className="text-sm text-[#373642] mb-4"
+                style={{
+                  display: '-webkit-box',
+                  WebkitBoxOrient: 'vertical',
+                  overflow: 'hidden',
+                  WebkitLineClamp: 3,
+                }}
+              >
+                In today's digital marketing landscape, understanding user behavior is critical for success. However, with increasing privacy
+                regulations and user awareness, traditional cookie-based tracking methods are losing effectiveness. This blog delves into how
+                Google Analytics 4 (GA4) tackles this challenge by combining Behavioral Modeling and Conversion Modeling with Google Consent Mode
+                v2 (CMv2). This powerful trio empowers you to gain valuable insights into user journeys and optimize conversions even when users
+                opt-out of tracking.
+              </p>
+              <div className="flex justify-between items-center text-sm text-[#0066cc]">
+                <span className="text-[#6B7280] blog-date">06th Aug 2024</span>
+                <button className="text-[#08A4F7] text-base font-medium hover:underline">Read Full</button>
+              </div>
             </div>
-          </div>
-        </a>
-        <a href='/blogs/top-5-key-takeaways-to-improve-conversion-rate-optimization-cro' className="bg-white rounded-lg shadow-lg p-4 2xl:p-6 relative">
-          <div className='flex flex-col justify-evenly h-full'>
+          </a>
+          <a href='/blogs/top-5-key-takeaways-to-improve-conversion-rate-optimization-cro' className="readmore-btn bg-white rounded-lg shadow-lg p-4 2xl:p-6 relative">
+            <div className='flex flex-col justify-evenly h-full'>
 
-            <div className="absolute w-[100px] text-center top-4 2xl:top-6 right-4 2xl:right-6 bg-[#EC4EDC99] text-white font-semibold px-3 py-1 rounded-tr-[20px] 2xl:rounded-tr-3xl rounded-bl-md text-sm">CRO</div>
-            <img
-              src="/Website_blog_42_CRO_TIPS_V2.png"
-              alt="CRO_TIPS_V2"
-              className="rounded-md mb-4 w-full"
-            />
-            <h3
-              className="text-lg font-semibold text-[#100F1B] mb-2 truncate"
-              style={{
-                whiteSpace: 'nowrap',
-                overflow: 'hidden',
-                textOverflow: 'ellipsis',
-              }}
-            >
-              Top 5 Key takeaways to improve Conversion Rate Optimization (CRO)
-            </h3>
-            <p
-              className="text-sm text-[#373642] mb-4"
-              style={{
-                display: '-webkit-box',
-                WebkitBoxOrient: 'vertical',
-                overflow: 'hidden',
-                WebkitLineClamp: 3,
-              }}
-            >
-              CRO focuses on increasing the percentage of visitors who completes a desired action, such as making a purchase,
-              filling out a form or performing any actions that later lead to conversion. This blog delves into Top 5 key takeaways
-              to achieve actionable insights, drive conversions better for Mobile site.
-            </p>
-            <div className="flex justify-between items-center text-sm text-[#0066cc]">
-              <span className="text-[#6B7280]">9th Aug 2024</span>
-              <button className="text-[#08A4F7] text-base font-medium hover:underline">Read Full</button>
+              <div className="absolute w-[100px] text-center top-4 2xl:top-6 right-4 2xl:right-6 bg-[#EC4EDC99] text-white font-semibold px-3 py-1 rounded-tr-[20px] 2xl:rounded-tr-3xl rounded-bl-md text-sm">CRO</div>
+              <img
+                src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Website_blog_42_CRO_TIPS_V2.png"
+                alt="CRO_TIPS_V2"
+                className="rounded-md mb-4 w-full"
+              />
+              <h3
+                className="text-lg font-semibold text-[#100F1B] mb-2 truncate"
+                style={{
+                  whiteSpace: 'nowrap',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                }}
+              >
+                Top 5 Key takeaways to improve Conversion Rate Optimization (CRO)
+              </h3>
+              <p
+                className="text-sm text-[#373642] mb-4"
+                style={{
+                  display: '-webkit-box',
+                  WebkitBoxOrient: 'vertical',
+                  overflow: 'hidden',
+                  WebkitLineClamp: 3,
+                }}
+              >
+                CRO focuses on increasing the percentage of visitors who completes a desired action, such as making a purchase,
+                filling out a form or performing any actions that later lead to conversion. This blog delves into Top 5 key takeaways
+                to achieve actionable insights, drive conversions better for Mobile site.
+              </p>
+              <div className="flex justify-between items-center text-sm text-[#0066cc]">
+                <span className="text-[#6B7280] blog-date">9th Aug 2024</span>
+                <button className="text-[#08A4F7] text-base font-medium hover:underline">Read Full</button>
+              </div>
             </div>
-          </div>
-        </a>
-        <div className='md:hidden mx-auto'>
-          <a href='/blogs' className=''><button className="mainbutn max-md:mt-1">Read More Blogs</button></a>
-        </div>
+          </a>
+          <a href='/blogs/mastering-looker-studio-formulas-date-string-functions-video-tutorials' className="readmore-btn bg-white rounded-lg shadow-lg p-4 2xl:p-6 relative">
+            <div className='flex flex-col justify-evenly h-full'>
+
+              <div className="absolute w-[100px] text-center top-4 2xl:top-6 right-4 2xl:right-6 bg-[#EC954E99] text-white font-semibold px-3 py-1 rounded-tr-[20px] 2xl:rounded-tr-3xl rounded-bl-md text-sm">Analytics</div>
+              <img
+                src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Blog_4.png"
+                alt="Google_Consent"
+                className="rounded-md mb-4 w-full"
+              />
+              <h3
+                className="text-lg font-semibold text-[#100F1B] mb-2 truncate"
+                style={{
+                  whiteSpace: 'nowrap',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                }}
+              >
+                Mastering Looker Studio Formulas: Key Date and String Functions with Video Tutorials
+              </h3>
+              <p
+                className="text-sm text-[#373642] mb-4"
+                style={{
+                  display: '-webkit-box',
+                  WebkitBoxOrient: 'vertical',
+                  overflow: 'hidden',
+                  WebkitLineClamp: 3,
+                }}
+              >
+                In this blog, we dive into three powerful formulas in Looker Studio that can help
+                streamline your data analysis and reporting: converting dates to quarters, calculating the number
+                of days between dates and formatting dates, and concatenating values from multiple rows. These techniques
+                are essential for anyone looking to get more out of their Looker Studio dashboards. For each topic, we've
+                included a video tutorial for hands-on learning.
+              </p>
+              <div className="flex justify-between items-center text-sm text-[#0066cc]">
+                <span className="text-[#6B7280] blog-date">20th Jan 2025</span>
+                <button className="text-[#08A4F7] text-base font-medium hover:underline">Read Full</button>
+              </div>
+            </div>
+          </a>
+        </Slider>
+
       </div>
+      <div className='md:hidden mx-auto flex flex-col items-center justify-center mt-6'>
+        <div className="flex justify-center items-center gap-5">
+          <button
+            onClick={handlePrev}
+            className="group relative overflow-hidden z-10 bg-white border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[8px] px-4 py-3 mb-3 transition-all duration-300 ease-linear hover:bg-[#08A4F7]"
+          >
+            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector%20(1).svg' alt='left vector' className='w-3.5 h-3.5 group-hover:hidden block' />
+
+            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20right%20white.svg' alt='left vector' className='w-3.5 h-3.5 hidden group-hover:block' />
+
+          </button>
+          <button
+            onClick={handleNext}
+            className="group relative overflow-hidden z-10 bg-white border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[8px] px-4 py-3 mb-3 transition-all duration-300 ease-linear hover:bg-[#08A4F7]"
+          >
+            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector.svg' alt='right vector' className='w-3.5 h-3.5 group-hover:hidden block' />
+            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20left%20white.svg' alt='right vector' className='w-3.5 h-3.5 hidden group-hover:block' />
+          </button>
+        </div>
+        <a href='/blogs' className=''><button className="readmore-button mainbutn max-md:mt-1">Read More Blogs</button></a>
+      </div>
+
     </section>
   );
 };

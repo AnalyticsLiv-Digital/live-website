@@ -1,5 +1,4 @@
 import React from 'react'
-import ScrollProgress from '../../components/ScrollProgress'
 import AOS from 'aos';
 import { useState, useEffect } from 'react';
 import { Router, useRouter } from 'next/router';
@@ -222,7 +221,6 @@ const post = ({ jobData }) => {
                 <title>AnalyticsLiv Job - {jobData && jobData.job[0].title}</title>
                 <link rel="canonical" href={url}></link>
             </Head>
-            <ScrollProgress />
             {showWaiting && <div className="fixed flex backdrop-blur top-0 left-0 right-0 z-40 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full"><ScaleLoader
                 color="#271d90"
                 loading
@@ -230,7 +228,7 @@ const post = ({ jobData }) => {
                 className="m-auto align-middle"
             /></div>}
             <div className='overflow-hidden'>
-                <section className="relative bg-gray-100  md:pt-12">
+                <section className="relative bg-gray-100  md:pt-12 pb-12">
                     <svg xmlns="http://www.w3.org/2000/svg" className="absolute lg:w-48 w-32 -right-0 top-10 lg:top-8 lg:right-10 fill-orange-500 blur-md rotate-45" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15">
                         <path d="M7.932 1.248a.5.5 0 0 0-.864 0l-7 12A.5.5 0 0 0 .5 14h14a.5.5 0 0 0 .432-.752l-7-12Z" />
                     </svg>
@@ -239,17 +237,23 @@ const post = ({ jobData }) => {
                     </svg>
 
                     <div className=" lg:flex relative w-full lg:w-4/5 space-y-4 lg:space-y-0 lg:space-x-4 mx-auto pt-4 pb-8 px-4">
-                        {formSubmit && <div className='w-full bg-white p-2 lg:p-0 mx-auto h-auto lg:text-center text-slate-600'>
-                            <h1 className='m-4 font-bold text-4xl '>Thank You {formValues.firstName}, for applying.</h1>
+                        {formSubmit && <div className='analyticsliv-career-thankyou w-full bg-white p-2 lg:p-0 mx-auto h-auto lg:text-center text-slate-600'>
+                            <h3 className='m-4 font-bold text-4xl '>Thank You {formValues.firstName}, for applying.</h3>
                             <div className='ml-4 text-xl py-4'>We will get back to you shortly.</div>
-                            <div><a className='underline text-blue-600 mx-2'>Click here</a> to go to Home Page</div>
+                            <div>
+                                <a href="https://analyticsliv.com/" className="underline text-blue-600 mx-2">
+                                    Click here
+                                </a>
+                                to go to Home Page
+                            </div>
+
                             <img className=' mx-auto opacity-80' src='https://img.freepik.com/free-vector/tiny-people-standing-near-big-checkmark-team-male-female-characters-finishing-work-with-list-good-job-sign-flat-vector-illustration-done-job-checklist-time-management-concept_74855-21019.jpg?t=st=1671165312~exp=1671165912~hmac=3278782597e388c76a1bbb109240c67b98b714c0c9c354659a1ab5643b354abd' />
                         </div>}
 
 
                         {!formSubmit && <>
                             <div className=" p-4 lg:w-3/4 space-y-6 bg-white ">
-                                <h1 className="text-2xl">{jobData.job[0].title}</h1>
+                                <h1 className="header-form-title text-2xl">{jobData.job[0].title}</h1>
                                 <div className="h-0.5 bg-cyan-500"></div>
                                 <div>
                                     <p className="px-2 md:px-8 mt-4 text-gray-600">
@@ -293,18 +297,18 @@ const post = ({ jobData }) => {
 
                             <div className="relative lg:w-1/2 bg-white px-2 md:px-10 py-4">
 
-                                <form className="relative sticky top-20 space-y-4 md:space-y-6 " onSubmit={handleSubmit}>
+                                <form className="analyticsliv-career relative sticky top-20 space-y-4 md:space-y-6 " onSubmit={handleSubmit}>
                                     <h2 className="text-center text-xl">Apply Now</h2>
                                     <div className="h-0.5 bg-cyan-600"></div>
                                     <input type="hidden" id="postName" name="postName" value={jobData.job[0].title} />
                                     <div className="relative">
-                                        <input type="text" name="firstName" id="firstname" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent border-b border-slate-500 appearance-none focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " value={formValues.firstName} onChange={handleChange} />
-                                        <label htmlFor="firstname" className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">First Name</label>
+                                        <input type="text" name="firstName" id="firstName" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent border-b border-slate-500 appearance-none focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " value={formValues.firstName} onChange={handleChange} />
+                                        <label htmlFor="firstName" className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">First Name</label>
                                         <p className="text-red-600 text-sm">{formErrors.firstName}</p>
                                     </div>
                                     <div className="relative">
-                                        <input type="text" name="lastName" id="lastname" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent  border-b border-slate-500 appearance-none focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " value={formValues.lastName} onChange={handleChange} />
-                                        <label htmlFor="lastname" className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Last Name</label>
+                                        <input type="text" name="lastName" id="lastName" className="block px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-transparent  border-b border-slate-500 appearance-none focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " value={formValues.lastName} onChange={handleChange} />
+                                        <label htmlFor="lastName" className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Last Name</label>
                                         <p className="text-red-600 text-sm">{formErrors.lastName}</p>
                                     </div>
 

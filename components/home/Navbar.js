@@ -18,10 +18,10 @@ const Navbar = () => {
                     <div className='bg-white rounded-[40px] py-1 px-2'>
                         <a href='/' className='text-2xl font-semibold flex items-center space-x-3 w-52 h-12'>
                             <Image
-                                src="/analyticsLiv-logo.png"
+                                src="https://storage.googleapis.com/website-bucket-uploads/static/public/analyticsLiv-logo.png"
                                 width={500}
                                 height={500}
-                                alt="Picture of the author"
+                                alt="analyticsLiv-logo"
                                 priority={true}
                             />
                         </a>
@@ -60,10 +60,10 @@ const Navbar = () => {
                         <div className='bg-white rounded-[40px] py-1 px-2'>
                             <a href="/">
                                 <Image
-                                    src="/analyticsLiv-logo.png"
+                                    src="https://storage.googleapis.com/website-bucket-uploads/static/public/analyticsLiv-logo.png"
                                     width={200}
                                     height={200}
-                                    alt="Picture of the author"
+                                    alt="analyticsLiv-logo"
                                     className='inline-block h-10 md:mx-4 cursor-pointer'
                                 />
                             </a>
@@ -141,26 +141,26 @@ const Navbar = () => {
 
                                 <div class="flex items-center py-3 gap-2
                                     ">
-                                    <img src="/Analytics-audit-logo.png" alt="audit_logo" />
+                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Analytics-audit-logo.png" alt="audit_logo" />
                                     <a href="/services/analytics?id=audit-and-health-check"
                                         class="text-heading font-poppins text-base font-medium leading-normal">Audit
                                         and Health Check</a>
                                 </div>
                                 <div class="flex items-center py-3 gap-2">
-                                    <img src="/Analytics_webapp_logo.png" alt="webapp_logo" />
+                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytics_webapp_logo.png" alt="webapp_logo" />
                                     <a href="/services/analytics?id=web-app-measurement"
                                         class="text-heading font-poppins text-base font-medium leading-normal">Web
                                         and App measurement</a>
                                 </div>
                                 <div class="flex items-center py-3 gap-2">
-                                    <img src="/Analytis_data-reporting.logo.png"
+                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/Analytis_data-reporting.logo.png"
                                             alt="data-reporting_logo" />
                                     <a href="/services/data-reporting-analysis"
                                         class="text-heading font-poppins text-base font-medium leading-normal">Data
                                         Reporting & Analysis</a>
                                 </div>
                                 <div class="flex items-center py-3 gap-2">
-                                    <img src="/Analytics_Looker.logo.png" alt="Looker_logo" />
+                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Analytics_Looker.logo.png" alt="Looker_logo" />
                                     <a href="/services/looker-bi-platform"
                                         class="text-heading font-poppins text-base font-medium leading-normal">Looker
                                         BI Platform</a>

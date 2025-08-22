@@ -8,6 +8,7 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa6";
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { motion } from "framer-motion";
+import MetaSchemaOg from '../../components/MetaSchemaOg';
 
 const cro = () => {
 
@@ -90,11 +91,15 @@ const cro = () => {
 
     return (
         <>
-            <Head>
-                <title>AnalyticsLiv - Analytics CRO</title>
-                <meta name="description" content="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads" />
-                <link rel="canonical" href="https://analyticsliv.com/services/CRO"></link>
-            </Head>
+
+            <MetaSchemaOg
+                url="https://analyticsliv.com/services/CRO"
+                title="Expert Conversion Rate Optimization Services | AnalyticsLiv"
+                description="Boost your conversions with AnalyticsLiv, a leading conversion rate optimization agency. Our expert services optimize your website to increase leads, sales, and ROI."
+                twitterTitle="Expert Conversion Rate Optimization Services | AnalyticsLiv"
+                twitterDescription="Boost your conversions with AnalyticsLiv, a leading conversion rate optimization agency. Our expert services optimize your website to increase leads, sales, and ROI."
+            />
+
             <section className='crohome w-full relative font-gilroy overflow-hidden'>
                 <div className='h-full'>
                     <div className="relative px-4 md:px-12 pt-8 pb-8 h-full z-20 md:py-0">
@@ -117,7 +122,7 @@ const cro = () => {
                                 </div>
                             </div>
                             <div className=" w-full lg:w-1/2 flex items-center lg:justify-end justify-center lg:order-2 order-1">
-                                <img src="/CRO_Main_img_1.png" alt="" className='h-auto' />
+                                <img src="/CRO_Main_img_1.png" alt="Conversion Rate Optimization Agency" className='h-auto' />
                             </div>
                         </div>
                         <div className='lg:pt-10'>
@@ -148,7 +153,7 @@ const cro = () => {
                         <div className='grid lg:grid-cols-3 md:grid-cols-2 items-start justify-center gap-10'>
                             <div className='bg-[#20dc8617] xl:h-[340px] lg:h-[410px] md:h-[335px] rounded-[10px] py-6 px-4 hover:shadow-programeasure'>
                                 <div className='w-full'></div>
-                                <div className='mb-5 w-[50px] h-[50px]'><img src="/Ad_Format.png" alt="" /></div>
+                                <div className='mb-5 w-[50px] h-[50px]'><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad_Format.png" alt="Revenue Acceleration" /></div>
                                 <div className='w-full'></div>
                                 <h3 className='text-[#1D2124] text-base leading-normal font-semibold font-Gilroy-SemiBold mb-[20px]'>Revenue Acceleration</h3>
                                 <ul className='text-[#646464] text-[13px] font-normal font-gilroy2 leading-[22px] ml-[15px] mb-5'>
@@ -165,7 +170,7 @@ const cro = () => {
                             </div>
                             <div className='bg-[#20dc8617] xl:h-[340px] lg:h-[410px] md:h-[335px] rounded-[10px] py-6 px-4 hover:shadow-programeasure'>
                                 <div className='w-full'></div>
-                                <div className='mb-5 w-[50px] h-[50px]'><img src="/Ad_Format.png" alt="" /></div>
+                                <div className='mb-5 w-[50px] h-[50px]'><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad_Format.png" alt="Friction-Free User Experiences" /></div>
                                 <div className='w-full'></div>
                                 <h3 className='text-[#1D2124] text-base leading-normal font-semibold font-Gilroy-SemiBold mb-[20px]'>Friction-Free User Experiences</h3>
                                 <ul className='text-[#646464] text-[13px] font-normal font-gilroy2 leading-[22px] ml-[15px] mb-5'>
@@ -182,7 +187,7 @@ const cro = () => {
                             </div>
                             <div className='bg-[#20dc8617] xl:h-[340px] lg:h-[410px] md:h-[350px] rounded-[10px] py-6 px-4 hover:shadow-programeasure'>
                                 <div className='w-full'></div>
-                                <div className='mb-5 w-[50px] h-[50px]'><img src="/Ad_Format.png" alt="" /></div>
+                                <div className='mb-5 w-[50px] h-[50px]'><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad_Format.png" alt="Relentless Testing and Optimization" /></div>
                                 <div className='w-full'></div>
                                 <h3 className='text-[#1D2124] text-base leading-normal font-semibold font-Gilroy-SemiBold mb-[20px]'>Relentless Testing and Optimization</h3>
                                 <ul className='text-[#646464] text-[13px] font-normal font-gilroy2 leading-[22px] ml-[15px] mb-5'>
@@ -222,7 +227,7 @@ const cro = () => {
                                     </div>
                                 </li>
                                 <li className='relative md:pl-9 sm:w-1/2 w-full md:order-2 order-1 flex items-center md:justify-end justify-center'>
-                                    <img src="/Fuel_Process_Step_1.png" alt="" className='h-auto w-[350px]' />
+                                    <img src="/Fuel_Process_Step_1.png" alt="best ecommerce marketing agency" className='h-auto w-[350px]' />
                                 </li>
                             </ul>
                             <ul className='sc relative mb-[15px] pt-[20px] flex items-center md:flex-row-reverse flex-col'>
@@ -257,7 +262,7 @@ const cro = () => {
                                     </div>
                                 </li>
                                 <li className='relative md:pr-9 sm:w-1/2 w-full md:order-2 order-1 flex items-center md:justify-start justify-center'>
-                                    <img src="/Fuel_Process_Step_2.png" alt="" className='h-auto w-[350px]' />
+                                    <img src="/Fuel_Process_Step_2.png" alt="Audience segmentation" className='h-auto w-[350px]' />
                                 </li>
                             </ul>
                             <ul className='thr relative mb-[15px] pt-[20px] flex items-center md:flex-row flex-col'>
@@ -320,7 +325,7 @@ const cro = () => {
                                     </div>
                                 </li>
                                 <li className='relative md:pl-9 sm:w-1/2 w-full md:order-2 order-1 flex items-center md:justify-end justify-center'>
-                                    <img src="/Fuel_Process_Step_3.png" alt="" className='h-auto w-[350px]' />
+                                    <img src="/Fuel_Process_Step_3.png" alt="Google Ads expert" className='h-auto w-[350px]' />
                                 </li>
                             </ul>
                             <ul className='fr relative mb-[15px] pt-[20px] flex items-center md:flex-row-reverse flex-col'>
@@ -333,7 +338,7 @@ const cro = () => {
                                     </div>
                                 </li>
                                 <li className='relative md:pl-9 sm:w-1/2 w-full md:order-2 order-1 flex items-center md:justify-start justify-center'>
-                                    <img src="/Fuel_Process_Step_4.png" alt="" className='h-auto w-[350px]' />
+                                    <img src="/Fuel_Process_Step_4.png" alt="google ads management service" className='h-auto w-[350px]' />
                                 </li>
                             </ul>
                             <ul className='fv relative mb-[15px] pt-[20px] flex items-center md:flex-row flex-col'>
@@ -346,7 +351,7 @@ const cro = () => {
                                     </div>
                                 </li>
                                 <li className='relative md:pl-9 sm:w-1/2 w-full md:order-2 order-1 flex items-center md:justify-end justify-center'>
-                                    <img src="/Fuel_Process_Step_5.png" alt="" className='h-auto w-[350px]' />
+                                    <img src="/Fuel_Process_Step_5.png" alt="Lead Generation Experts" className='h-auto w-[350px]' />
                                 </li>
                             </ul>
                             <ul className='six relative mb-[15px] pt-[20px] flex items-center md:flex-row-reverse flex-col'>
@@ -362,7 +367,7 @@ const cro = () => {
                                     </div>
                                 </li>
                                 <li className='relative md:pl-9 sm:w-1/2 w-full md:order-2 order-1 flex items-center md:justify-start justify-center'>
-                                    <img src="/Fuel_Process_Step_6.png" alt="" className='h-auto w-[350px]' />
+                                    <img src="/Fuel_Process_Step_6.png" alt="mobile app marketing" className='h-auto w-[350px]' />
                                 </li>
                             </ul>
                             <ul className='seven relative pt-[20px] flex items-center md:flex-row flex-col'>
@@ -378,7 +383,7 @@ const cro = () => {
                                     </div>
                                 </li>
                                 <li className='relative md:pl-9 sm:w-1/2 w-full md:order-2 order-1 flex items-center md:justify-end justify-center'>
-                                    <img src="/Fuel_Process_Step_7.png" alt="" className='h-auto w-[350px]' />
+                                    <img src="/Fuel_Process_Step_7.png" alt="Conversion Rate Optimization Services" className='h-auto w-[350px]' />
                                 </li>
                             </ul>
                         </div>
@@ -398,10 +403,10 @@ const cro = () => {
                                     <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
                                     <a href="/case-studies/ua-to-ga4-migration-for-a-website" className='lg:flex gap-5'>
                                         <Image
-                                            src="/casestudy1.png"
+                                            src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestudy1.png"
                                             width={300}
                                             height={300}
-                                            alt="Picture of the author"
+                                            alt="Google Analytics 4 Migration"
                                             priority={true}
                                             className='2xl:w-[40%] w-full m-auto 2xl:h-[247px] xl:h-[277px] lg:h-[227px] lg:object-scale-down'
                                         />
@@ -423,10 +428,10 @@ const cro = () => {
                                     <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
                                     <a href="/case-studies/55-percent-increase-in-avg-session-duration" className='lg:flex gap-5'>
                                         <Image
-                                            src="/casestudy3.png"
+                                            src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestudy3.png"
                                             width={300}
                                             height={300}
-                                            alt="Picture of the author"
+                                            alt="55% Increase in Avg. Session Duration"
                                             priority={true}
                                             className='2xl:w-[40%] w-full m-auto 2xl:h-[247px] xl:h-[277px] lg:h-[227px] lg:object-scale-down'
                                         />
@@ -455,10 +460,10 @@ const cro = () => {
                                     <a href="/case-studies/skyrocket-your-campaigns-ctr-with-a-95-percent-surge-in-14-days" className='grid gap-5'>
                                         <div className=''>
                                             <Image
-                                                src="/casestd.png"
+                                                src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestd.png"
                                                 width={300}
                                                 height={300}
-                                                alt="Picture of the author"
+                                                alt="Skyrocket Your Campaign's CTR"
                                                 priority={true}
                                                 className='w-full m-auto 2xl:h-[210px] xl:h-[230px] h-[170px] object-scale-down'
                                             />
@@ -474,10 +479,10 @@ const cro = () => {
                                     <a href="/case-studies/driving-campaigns-in-dv360-to-post-click-attribution-success-with-36-percent-reduction-in-cpi" className='grid gap-1'>
                                         <div className='grid gap-4'>
                                             <Image
-                                                src="/casestd2.png"
+                                                src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestd2.png"
                                                 width={300}
                                                 height={300}
-                                                alt="Picture of the author"
+                                                alt="Post Click Tracking with DV360"
                                                 priority={true}
                                                 className='w-full m-auto 2xl:h-[210px] xl:h-[230px] h-[170px] object-scale-down'
                                             />
@@ -523,7 +528,7 @@ const cro = () => {
                     </div>
                 </div>
             </section>
-            <section className='crofaq relative overflow-hidden'>
+            <section className='faq-section crofaq relative overflow-hidden'>
                 <div className="relative px-4 md:px-12 pt-8 pb-8 md:py-8 z-20">
                     <div>
                         <h3 className='text-[32px] font-semibold text-[#000000] leading-[1.5em] font-gilroy mb-2'>FAQ's</h3>
@@ -532,7 +537,7 @@ const cro = () => {
                         <div className='items-start lg:justify-start justify-center gap-7 w-full'>
                             <div className={`faqfst flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full text-[#000000]' onClick={toggleFaqfstVisibility}>
+                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={toggleFaqfstVisibility}>
                                         <div className={`flex items-center w-full justify-between gap-5 ${isFaqfstVisible ? 'mb-[10px]' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <h2 className='text-[17px] font-medium leading-normal'>What is Conversion Rate Optimization (CRO)?</h2>
@@ -551,7 +556,7 @@ const cro = () => {
                             </div>
                             <div className={`faqsec flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full text-[#000000]' onClick={toggleFaqsecVisibility}>
+                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={toggleFaqsecVisibility}>
                                         <div className={`flex items-center justify-between gap-5 ${isFaqsecVisible ? 'mb-[10px]' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <h2 className='text-[17px] font-medium leading-normal'>How can CRO benefit my business?</h2>
@@ -570,7 +575,7 @@ const cro = () => {
                             </div>
                             <div className={`faqthrd flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqthrdVisibility()}>
+                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqthrdVisibility()}>
                                         <div className={`flex items-center justify-between gap-5 ${isFaqthrdVisible ? 'mb-[10px]' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <h2 className='text-[17px] font-medium leading-normal'>What sets your CRO Service apart?</h2>
@@ -589,7 +594,7 @@ const cro = () => {
                             </div>
                             <div className={`faqfur flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqfurVisibility()}>
+                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqfurVisibility()}>
                                         <div className={`flex items-center justify-between gap-5 ${isFaqfurVisible ? 'mb-[10px]' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <h2 className='text-[17px] font-medium leading-normal'>How do you determine which elements need optimization on my website?</h2>
@@ -608,7 +613,7 @@ const cro = () => {
                             </div>
                             <div className={`faqfiv flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full text-[#000000]' onClick={toggleFaqfivVisibility}>
+                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={toggleFaqfivVisibility}>
                                         <div className={`flex items-center w-full justify-between gap-5 ${isFaqfivVisible ? 'mb-[10px]' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <h2 className='text-[17px] font-medium leading-normal'>Will CRO affect my websites' Search Engine Ranking?</h2>
@@ -627,7 +632,7 @@ const cro = () => {
                             </div>
                             <div className={`faqsix flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full text-[#000000]' onClick={toggleFaqsixVisibility}>
+                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={toggleFaqsixVisibility}>
                                         <div className={`flex items-center justify-between gap-5 ${isFaqsixVisible ? 'mb-[10px]' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <h2 className='text-[17px] font-medium leading-normal'>Do I need technical expertise to implement CRO Strategies?</h2>
@@ -646,7 +651,7 @@ const cro = () => {
                             </div>
                             <div className={`faqsev flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqsevVisibility()}>
+                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqsevVisibility()}>
                                         <div className={`flex items-center justify-between gap-5 ${isFaqsevVisible ? 'mb-[10px]' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <h2 className='text-[17px] font-medium leading-normal'>How do you measure the success of your CRO offering in 90 days?</h2>
@@ -665,7 +670,7 @@ const cro = () => {
                             </div>
                             <div className={`faqeigh flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqeighVisibility()}>
+                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqeighVisibility()}>
                                         <div className={`flex items-center justify-between gap-5 ${isFaqeighVisible ? 'mb-[10px]' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <h2 className='text-[17px] font-medium leading-normal'>What if I don't see significant improvements within 90 days?</h2>

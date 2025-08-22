@@ -17,8 +17,8 @@ const handler = async (req, res) => {
       var postingdate=req.body.postingdate;
       var experience=req.body.experience;
       var details=[];
-      var active=req.body.active;
-      var notice_period=req.body.notice_period;
+      var active=req.body.active == "true" ? true : false;
+      var notice_period=req.body.notice_period == "true" ? true : false;
       if(req.body.heading1  && req.body.content1 ){
       details.push({
             heading:req.body.heading1,

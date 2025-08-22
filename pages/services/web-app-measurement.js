@@ -3,6 +3,7 @@ import React, { useState, useRef } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
 import Image from 'next/image';
+import MetaSchemaOg from '../../components/MetaSchemaOg';
 
 
 const webapp = () => {
@@ -11,11 +12,13 @@ const webapp = () => {
 
     return (
         <>
-            <Head>
-                <title>AnalyticsLiv - Analytics Services Offered</title>
-                <meta name="description" content="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads" />
-                <link rel="canonical" href="https://analyticsliv.com/services/web-app-measurement"></link>
-            </Head>
+            <MetaSchemaOg
+                url="https://analyticsliv.com/services/web-app-measurement"
+                title="Google Analytics 4 Consulting Services for Web & App Success | AnalyticsLiv"
+                description="Get expert guidance with AnalyticsLiv’s Google Analytics 4 consulting services. We offer GA4 audits, seamless implementation, and actionable reporting to maximize your ROI."
+                twitterTitle="Google Analytics 4 Consulting Services for Web & App Success | AnalyticsLiv"
+                twitterDescription="Get expert guidance with AnalyticsLiv’s Google Analytics 4 consulting services. We offer GA4 audits, seamless implementation, and actionable reporting to maximize your ROI."
+            />
 
             <section className='webapphome w-full relative font-gilroy overflow-hidden'>
                 <div className='h-full'>
@@ -30,15 +33,15 @@ const webapp = () => {
                                 </h3>
                                 <div className='flex max-[455px]:flex-wrap max-sm:justify-center flex-nowrap items-center gap-5'>
                                     <Link href="/contact?id=programatic-advertising">
-                                        <button className="butn mt-6">GET A FREE AUDIT</button>
+                                        <button className="contact-us-btn butn mt-6">GET A FREE AUDIT</button>
                                     </Link>
                                     <Link href="/contact?id=programatic-advertising">
-                                        <button className="butn max-[425px]:mt-0 mt-6">CONTACT US</button>
+                                        <button className="contact-us-btn butn max-[425px]:mt-0 mt-6">CONTACT US</button>
                                     </Link>
                                 </div>
                             </div>
                             <div className=" w-full lg:w-1/2 flex items-center lg:justify-end justify-center lg:order-2 order-1">
-                                <img src="/Web_App_Measurenment_Sub_IMG.png" alt="" className='lg:h-[470px] md:h-[400px]' />
+                                <img src="/Web_App_Measurenment_Sub_IMG.png" alt="GA4 Consultant" className='lg:h-[470px] md:h-[400px]' />
                             </div>
                         </div>
                     </div>
@@ -52,7 +55,7 @@ const webapp = () => {
                     </div>
                     <div className='flex flex-wrap lg:flex-nowrap items-center justify-center'>
                         <div className=" w-full lg:w-[40%] flex items-center lg:justify-start justify-center">
-                            <img src="/Web_App_Measurenment_Main_Img.png" alt="" className='lg:h-[470px] md:h-[400px]' />
+                            <img src="/Web_App_Measurenment_Main_Img.png" alt="google analytics 4 consulting services" className='lg:h-[470px] md:h-[400px]' />
                         </div>
                         <div className='w-full lg:w-[60%] py-7 grid lg:grid-cols-2 md:grid-cols-2 gap-10'>
                             <div className='fs border-[3px] border-[#0000] border-solid hover:border-t-[#d054cec7] shadow-webappourexper rounded-b-[15px] p-5'>
@@ -165,10 +168,10 @@ const webapp = () => {
 
                                     <div className='inbox relative pb-4'>
                                         <Image
-                                            src="/analyzing (1).png"
+                                            src="https://storage.googleapis.com/website-bucket-uploads/static/public/analyzing%20(1).png"
                                             width={30}
                                             height={30}
-                                            alt="Picture of the author"
+                                            alt="Data-Driven Decision Making"
                                             priority={true}
 
                                         />
@@ -226,23 +229,23 @@ const webapp = () => {
                             <div className='text-black xl:w-[35%] lg:w-[35%] w-full mt-[11px]'>
                                 <div className='p-8 pl-[25px] -mr-[30px] rounded-l-[10px] xl:w-[400px] xl:ml-auto'>
                                     <div onClick={() => setActivetab('1')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '1' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                        <div><img src="/Campaign Strategy and Setup white.png" alt="" className='h-10 w-10' /></div>
+                                        <div><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Campaign%20Strategy%20and%20Setup%20white.png" alt="Needs Assessment" className='h-10 w-10' /></div>
                                         <p >Needs Assessment</p>
                                     </div>
                                     <div onClick={() => setActivetab('2')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '2' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                        <div><img src="/Audience Targeting white.png" alt="" className='h-10 w-10' /></div>
+                                        <div><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Audience%20Targeting%20white.png" alt="Data Collection & Analysis" className='h-10 w-10' /></div>
                                         <p>Data Collection & Analysis</p>
                                     </div>
                                     <div onClick={() => setActivetab('3')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '3' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                        <div><img src="/Ad Format Optimization white.png" alt="" className='h-10 w-10' /></div>
+                                        <div><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad%20Format%20Optimization%20white.png" alt="Reporting & Recommendations" className='h-10 w-10' /></div>
                                         <p>Reporting & Recommendations</p>
                                     </div>
                                     <div onClick={() => setActivetab('4')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '4' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                        <div><img src="/Real-Time Bidding white.png" alt="" className='h-10 w-10' /></div>
+                                        <div><img src="/Real-Time Bidding white.png" alt="Data-Driven Decisions" className='h-10 w-10' /></div>
                                         <p>Data-Driven Decisions</p>
                                     </div>
                                     <div onClick={() => setActivetab('5')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#de668a14] hover:shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '5' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                        <div><img src="/Continuous Campaign Management & Optimization white.png" alt="" className='h-10 w-[56px]' /></div>
+                                        <div><img src="/Continuous Campaign Management & Optimization white.png" alt="Ongoing Support" className='h-10 w-[56px]' /></div>
                                         <p>Ongoing Support</p>
                                     </div>
                                 </div>
@@ -302,7 +305,7 @@ const webapp = () => {
                                     <p className='text-[#ffffff]'>This includes monitoring performance metrics, conducting periodic reviews, making adjustments as needed, and staying updated with emerging trends and technologies to keep your analytics strategy relevant and effective.</p>
                                     <div className=''>
                                         <Link href="/contact?id=programatic-advertising">
-                                        <button className="bg-[#ffffff] text-[#de668a] border border-solid hover:bg-[#de668a] hover:text-[#ffffff] text-base font-normal tracking-wider rounded-xl py-3 px-6 mt-6">Know More</button>
+                                            <button className="bg-[#ffffff] text-[#de668a] border border-solid hover:bg-[#de668a] hover:text-[#ffffff] text-base font-normal tracking-wider rounded-xl py-3 px-6 mt-6">Know More</button>
                                         </Link>
                                     </div>
                                 </div>
@@ -313,7 +316,7 @@ const webapp = () => {
                         <div className="flex flex-col justify-start max-w-md m-auto lg:hidden">
                             <div className="panel_list webbox mb-4 rounded-b-[15px]">
                                 <div onClick={() => setActivetab('1')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '1' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                    <div><img src="/Campaign Strategy and Setup white.png" alt="" className='h-10 w-10' /></div>
+                                    <div><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Campaign%20Strategy%20and%20Setup%20white.png" alt="Needs Assessment" className='h-10 w-10' /></div>
                                     <p >Needs Assessment</p>
                                 </div>
                                 <div id="tab1" className={`${activetab == 1 && 'items-center justify-center'} ${activetab != 1 && 'hidden'} relative p-5 pt-[10px] text-[13px] font-medium leading-8`}>
@@ -329,7 +332,7 @@ const webapp = () => {
 
                             <div className="panel_list webbox mb-4 rounded-b-[15px]">
                                 <div onClick={() => setActivetab('2')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '2' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                    <div><img src="/Audience Targeting white.png" alt="" className='h-10 w-10' /></div>
+                                    <div><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Audience%20Targeting%20white.png" alt="Data Collection & Analysis" className='h-10 w-10' /></div>
                                     <p>Data Collection & Analysis</p>
                                 </div>
                                 <div id="tab2" className={`${activetab == 2 && ' items-center justify-center'} ${activetab != 2 && 'hidden'} relative p-5 pt-[10px] text-[13px] font-medium leading-8`}>
@@ -344,7 +347,7 @@ const webapp = () => {
 
                             <div className="panel_list webbox mb-4 rounded-b-[15px]">
                                 <div onClick={() => setActivetab('3')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '3' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                    <div><img src="/Ad Format Optimization white.png" alt="" className='h-10 w-10' /></div>
+                                    <div><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad%20Format%20Optimization%20white.png" alt="Reporting & Recommendations" className='h-10 w-10' /></div>
                                     <p>Reporting & Recommendations</p>
                                 </div>
                                 <div id="tab3" className={`${activetab == 3 && 'items-center justify-center'} ${activetab != 3 && 'hidden'} relative p-5 pt-[10px] text-[13px] font-medium leading-8`}>
@@ -360,7 +363,7 @@ const webapp = () => {
 
                             <div className="panel_list webbox mb-4 rounded-b-[15px]">
                                 <div onClick={() => setActivetab('4')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '4' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                    <div><img src="/Real-Time Bidding white.png" alt="" className='h-10 w-10' /></div>
+                                    <div><img src="/Real-Time Bidding white.png" alt="Data-Driven Decisions" className='h-10 w-10' /></div>
                                     <p>Data-Driven Decisions</p>
                                 </div>
                                 <div id="tab4" className={`${activetab == 4 && ' items-center justify-center'} ${activetab != 4 && 'hidden'} relative p-5 pt-[10px] text-[13px] font-medium leading-8`}>
@@ -375,7 +378,7 @@ const webapp = () => {
 
                             <div className="panel_list webbox mb-4 rounded-b-[15px]">
                                 <div onClick={() => setActivetab('5')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '5' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                    <div><img src="/Continuous Campaign Management & Optimization white.png" alt="" className='h-10 w-[56px]' /></div>
+                                    <div><img src="/Continuous Campaign Management & Optimization white.png" alt="Ongoing Support" className='h-10 w-[56px]' /></div>
                                     <p>Ongoing Support</p>
                                 </div>
                                 <div id="tab5" className={`${activetab == 5 && ' items-center justify-center'} ${activetab != 5 && 'hidden'} relative p-5 pt-[10px] font-gilroy2 text-[13px] font-medium leading-8`}>

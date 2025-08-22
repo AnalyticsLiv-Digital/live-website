@@ -153,7 +153,7 @@ export default function Home() {
                         <div className='lg:w-[60%]'>
                             <div className='vb bg-[#ffffff] shadow-allshadow p-4 my-5'>
                                 <div className='text-center flex items-center justify-start gap-4 mb-5'>
-                                    <div className='bg-black rounded-[50%] flex items-center justify-center w-[65px] h-[65px]'><img src="/Background.png" alt="" className='w-10 h-10' /></div>
+                                    <div className='bg-black rounded-[50%] flex items-center justify-center w-[65px] h-[65px]'><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Background.png" alt="Background" className='w-10 h-10' /></div>
                                     <h3 className='text-[25px] font-gilroy font-semibold text-[#011627]'>Background</h3>
                                 </div>
                                 <p className='font-gilroy2'>The client is an automotive manufacturer that produces cars, vans, and SUVs. The clients vehicles are sold in New Zealand through a network of authorised dealerships. In New Zealand, the client offers a range of vehicles and is responsible for marketing, sales, and after-sales service of the brand's products.</p>
@@ -201,7 +201,7 @@ export default function Home() {
                             </div>
                             <div className='vb bg-[#ffffff] shadow-allshadow p-4 my-5'>
                                 <div className='flex items-center gap-4 mb-5'>
-                                    <div className='bg-black rounded-[50%] flex items-center justify-center w-[65px] h-[65px]'><img src="/approach.png" alt="" className='w-12 h-12' /></div>
+                                    <div className='bg-black rounded-[50%] flex items-center justify-center w-[65px] h-[65px]'><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/approach.png" alt="approach" className='w-12 h-12' /></div>
                                     <h3 className='text-[25px] font-semibold text-[#000]'>Approach</h3>
                                 </div>
                                 <p className='text-[16px] text-[#000] font-medium font-gilroy mr-1'>Our data-driven approach leveraged DV360 to optimise ad performance</p>
@@ -271,15 +271,15 @@ export default function Home() {
                                             <div className='relative'>
                                                 <div className='rounded-lg'>
                                                     {formSubmit && <div className='relative text-s[#ffffff] p-4 space-y-4 h-full'>
-                                                        <h1 className='align-middle font-medium text-4xl'>Thank You for your interest.</h1>
+                                                        <h2 className='align-middle font-medium text-4xl'>Thank You for your interest.</h2>
                                                         <h2 className='align-middle text-xl'>We will get back to you soon.</h2>
                                                         <div className='absolute bottom-0 right-2 rounded-full w-20 h-20 bg-emerald-600 opacity-70 animate-bounce hover:animate-none duration-300 delay-75'></div>
                                                     </div>}
 
                                                     {!formSubmit && <form className="" onSubmit={handleSubmit}>
                                                         <div className="relative mb-6">
-                                                            <input type="text" id="firstname" className="block px-2.5 pt-[9px] pb-0 w-full text-sm bg-[#ffffff] text-[#30486a] border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " name="firstName" value={formValues.firstName} onChange={handleChange} />
-                                                            <label htmlFor="firstname" className="absolute lg:text-[15px] text-[13px] text-[#30486a]  duration-300 transform -translate-y-4 scale-75 top-[5px] origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Name*</label>
+                                                            <input type="text" id="firstName" className="block px-2.5 pt-[9px] pb-0 w-full text-sm bg-[#ffffff] text-[#30486a] border-0 border-b-2 border-slate-500 appearance-none  focus:outline-none focus:ring-0 focus:border-cyan-500 peer" placeholder=" " name="firstName" value={formValues.firstName} onChange={handleChange} />
+                                                            <label htmlFor="firstName" className="absolute lg:text-[15px] text-[13px] text-[#30486a]  duration-300 transform -translate-y-4 scale-75 top-[5px] origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Name*</label>
                                                             <p className="text-red-600 text-sm">{formErrors.firstName}</p>
                                                         </div>
 
@@ -290,7 +290,7 @@ export default function Home() {
                                                         </div>
                                                         <div className="relative mb-6">
                                                             <PhoneInput className="w-0 mt-4 md:mt-0 text-sm"
-                                                                name="contactno" id="contactno" value={formValues.contactno} onChange={handleContactChange}
+                                                                name="contactno" id="contact" value={formValues.contactno} onChange={handleContactChange}
                                                                 country={"in"}
                                                                 preferredCountries={['in', 'us', 'au']}
                                                                 enableSearch={true}
@@ -354,19 +354,19 @@ export default function Home() {
                         <div className='flex md:flex-nowrap flex-wrap items-start justify-center gap-[30px]'>
                             <div className='md:w-[33.33%] w-full'>
                                 <a href="">
-                                    <img src="/castdyinner1.png" alt="" className='imgcstdy w-full' />
+                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner1.png" alt="" className='imgcstdy w-full' />
                                 </a>
                                 <h4 className='text-[18px] font-medium text-[#212529] my-[10px]'>Optimizing Email Marketing with Custom Data Pipeline</h4>
                             </div>
                             <div className='md:w-[33.33%] w-full'>
                                 <a href="">
-                                    <img src="/castdyinner2.png" alt="" className='imgcstdy w-full' />
+                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner2.png" alt="" className='imgcstdy w-full' />
                                 </a>
                                 <h4 className='text-[18px] font-medium text-[#212529] my-[10px]'>Skyrocket Your Campaign's CTR with a 95% Surge in 14 Days!</h4>
                             </div>
                             <div className='md:w-[33.33%] w-full'>
                                 <a href="">
-                                    <img src="/castdyinner3.png" alt="" className='imgcstdy w-full' />
+                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner3.png" alt="" className='imgcstdy w-full' />
                                 </a>
                                 <h4 className='text-[18px] font-medium text-[#212529] my-[10px]'>Driving the Campaigns in DV360 to Post Click Attribution Success with a 36% reduction in CPI</h4>
                             </div>

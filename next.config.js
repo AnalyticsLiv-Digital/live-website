@@ -5,6 +5,37 @@ const nextConfig = {
     experiments: {
         topLevelAwait: true
     },
+
+    images: {
+        domains: ["storage.googleapis.com"], // Allow images from this domain
+    },
+
+    async redirects() {
+        return [
+            {
+                source: '/services/CRO',
+                destination: '/services/conversion-rate-optimization',
+                permanent: true,
+            },
+            {
+                source: '/services/sem',
+                destination: '/services/ppc',
+                permanent: true,
+            },
+            {
+                source: '/:path*',
+                has: [
+                    {
+                        type: 'host',
+                        value: '(www|.*)\\.analyticsliv\\.com',
+                    },
+                ],
+                destination: 'https://analyticsliv.com/:path*',
+                permanent: true,
+            },
+        ];
+    },
+
     async headers() {
         return [
             {

@@ -11,19 +11,19 @@ const WhyChooseUs = () => {
             title: 'Expertise',
             description: 'Our certified team of experts consists of seasoned campaign management, data scientists, and analytics experts who bring a wealth of experience to the table.',
             subtitle: 'Your Trusted Certified GMP Expert',
-            image: '/experience.png',
+            image: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/experience.png',
         },
         {
             title: 'Innovation',
             description: 'Stay ahead in the rapidly evolving world of analytics with our commitment to innovative solutions like RFM Analysis, Custom Attribution, and staying abreast of the latest technologies.',
             subtitle: 'Your Partner in Digital Transformation.',
-            image: '/creativity.png',
+            image: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/creativity.png',
         },
         {
             title: 'Client-Centric Approach',
             description: 'We prioritize understanding your unique business challenges, ensuring that our solutions align seamlessly with your business goals.',
             subtitle: 'Your Goals, Our Focus.',
-            image: '/follow.png',
+            image: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/follow.png',
         },
     ];
 
@@ -80,7 +80,7 @@ const WhyChooseUs = () => {
     const handlePrev = () => sliderRef.current.slickPrev();
 
     return (
-        <section className="font-lato pt-14 pb-14 lg:pl-10 2xl:pl-[3%] max-md:overflow-hidden">
+        <section className="pt-14 pb-14 lg:pl-10 2xl:pl-[3%] max-md:overflow-hidden">
             <div className="flex max-md:flex-col items-center justify-around">
                 <div className="md:w-[60%] max-md:px-4 flex flex-col justify-start">
                     <div className="text-[#100F1B] text-3xl font-bold text-center md:text-start">
@@ -96,18 +96,22 @@ const WhyChooseUs = () => {
                     <div className="flex justify-center items-center gap-5">
                         <button
                             onClick={handlePrev}
-                            className="relative overflow-hidden z-10 bg-white text-[#08A4F7] border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[8px] px-3 py-1 mb-3 transition-all duration-300 ease-linear hover:bg-[#08A4F7] hover:text-white"
+                            className="group relative overflow-hidden z-10 bg-white border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[8px] px-4 py-3 mb-3 transition-all duration-300 ease-linear hover:bg-[#08A4F7]"
                         >
-                            {"<"}
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector%20(1).svg' alt='left vector' className='w-3.5 h-3.5 group-hover:hidden block' />
+
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20right%20white.svg' alt='left vector' className='w-3.5 h-3.5 hidden group-hover:block' />
+
                         </button>
                         <button
                             onClick={handleNext}
-                            className="relative overflow-hidden z-10 bg-white text-[#08A4F7] border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[8px] px-3 py-1 mb-3 transition-all duration-300 ease-linear hover:bg-[#08A4F7] hover:text-white"
+                            className="group relative overflow-hidden z-10 bg-white border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[8px] px-4 py-3 mb-3 transition-all duration-300 ease-linear hover:bg-[#08A4F7]"
                         >
-                            {">"}
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector.svg' alt='right vector' className='w-3.5 h-3.5 group-hover:hidden block' />
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20left%20white.svg' alt='right vector' className='w-3.5 h-3.5 hidden group-hover:block' />
                         </button>
                     </div>
-                    <a href='/services'><button className="mainbutn-opposite">Read More Here</button></a>
+                    <a href='/services'><button className="readmore-button mainbutn-opposite">Read More Here</button></a>
                 </div>
             </div>
             <div className="max-sm:hidden sm:pl-5 xl:pl-16 py-8 carousel-custom overflow-hidden">
@@ -121,7 +125,7 @@ const WhyChooseUs = () => {
                                 <div className="h-[140px] bg-[#08A4F7] rounded-b-3xl">
                                     <div className="flex items-center">
                                         <div className="w-[30%] h-[100px] pl-2 md:pl-3 2xl:pl-8">
-                                            <img src="/white_bg.png" alt="white_bg" className="absolute max-md:h-24 max-md:w-24" />
+                                            <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/white_bg.png" alt="white_bg" className="absolute max-md:h-24 max-md:w-24" />
                                             <img src={card.image} alt={card.title} className="relative max-md:h-16 max-md:w-16 top-4 left-4" />
                                         </div>
                                         <div className="flex flex-col max-md:pl-10 h-[140px] items-start justify-center gap-1 text-white">
@@ -138,7 +142,7 @@ const WhyChooseUs = () => {
             <div className="sm:hidden sm:pl-5 xl:pl-16 py-8 carousel-custom overflow-hidden">
                 <Slider {...settingsMobile}>
                     {cardsData?.map((card, index) => (
-                        <div key={index} className=" custom-padding-370 custom-padding-540 sm:px-4 flex justify-center">
+                        <div key={index} className="sm:px-4 flex justify-center">
                             <div className="border rounded-3xl border-[#F2F2F2] mx-auto h-[280px] w-[320px] md:w-[440px] lg:w-[420px] 2xl:w-[480px]">
                                 <div className="h-[140px] text-[#373642] text-sm font-normal p-5 md:p-8">
                                     {card.description}
@@ -146,7 +150,7 @@ const WhyChooseUs = () => {
                                 <div className="h-[140px] bg-[#08A4F7] rounded-b-3xl">
                                     <div className="flex items-center">
                                         <div className="w-[30%] h-[100px] pl-2 md:pl-3 2xl:pl-8">
-                                            <img src="/white_bg.png" alt="white_bg" className="absolute max-md:h-24 max-md:w-24" />
+                                            <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/white_bg.png" alt="white_bg" className="absolute max-md:h-24 max-md:w-24" />
                                             <img src={card.image} alt={card.title} className="relative max-md:h-16 max-md:w-16 top-4 left-4" />
                                         </div>
                                         <div className="flex flex-col max-md:pl-10 h-[140px] items-start justify-center gap-1 text-white">
@@ -279,7 +283,7 @@ export default WhyChooseUs;
 //                                 <div className="h-[140px] bg-[#08A4F7] rounded-b-3xl">
 //                                     <div className="flex items-center">
 //                                         <div className="w-[30%] h-[100px] pl-2 md:pl-3 2xl:pl-8">
-//                                             <img src="/white_bg.png" alt="white_bg" className="absolute max-md:h-24 max-md:w-24" />
+//                                             <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/white_bg.png" alt="white_bg" className="absolute max-md:h-24 max-md:w-24" />
 //                                             <img src={card.image} alt={card.title} className="relative max-md:h-16 max-md:w-16 top-4 left-4" />
 //                                         </div>
 //                                         <div className="flex flex-col max-md:pl-8 h-[140px] items-start justify-center gap-1 text-white">

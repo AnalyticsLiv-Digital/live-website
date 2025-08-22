@@ -1,320 +1,338 @@
-import React from 'react'
-import Head from 'next/head';
-import { useEffect } from 'react';
-import { useRouter } from 'next/router';
-import * as Scroll from 'react-scroll';
-import ScrollProgress from '../../components/ScrollProgress';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
+const ServicesPage = () => {
+    return (
+        <div className="min-h-screen bg-white text-slate-800"
+            style={{ fontFamily: 'ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji"' }}>
+            <main>
+                {/* Hero Section */}
+                <section className="relative overflow-hidden border-b border-slate-200">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#EEF6FF] via-white to-[#F7F7FF]"></div>
+                    <div className="relative mx-auto max-w-7xl px-6 py-20 text-center">
+                        <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-4 py-2 text-sm font-medium tracking-wide text-blue-700 shadow-sm mb-6">
+                            <span className="h-2 w-2 rounded-full bg-blue-500 animate-pulse"></span>
+                            Our Services
+                        </div>
+                        <h1 className="text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl lg:text-7xl">
+                            Services
+                        </h1>
+                        <p className="mx-auto mt-6 max-w-3xl text-xl text-slate-600 leading-relaxed">
+                            Everything we offer, organized the way your team works.
+                        </p>
+                    </div>
+                </section>
 
-const { Element: ScrollElement } = Scroll;
+                {/* Services Content */}
+                <section className="py-20 bg-gradient-to-b from-white to-slate-50">
+                    <div className="mx-auto max-w-7xl px-6 grid gap-12 lg:grid-cols-4">
+                        {/* Sidebar Navigation */}
+                        <aside className="lg:col-span-1">
+                            <div className="sticky top-28 space-y-3">
+                                <h3 className="text-lg font-semibold text-slate-900 mb-4">Navigate Services</h3>
+                                <nav className="space-y-2 text-sm">
+                                    <a
+                                        href="#media"
+                                        className="group block rounded-xl border border-slate-200 bg-white p-4 shadow-sm hover:shadow-md hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:border-blue-200 transition-all duration-300"
+                                    >
+                                        <div className="flex items-center gap-3">
+                                            <div className="h-2 w-2 rounded-full bg-blue-500 group-hover:bg-blue-600"></div>
+                                            <span className="font-medium text-slate-700 group-hover:text-blue-700">Media Activation</span>
+                                        </div>
+                                    </a>
+                                    <a
+                                        href="#analytics"
+                                        className="group block rounded-xl border border-slate-200 bg-white p-4 shadow-sm hover:shadow-md hover:bg-gradient-to-r hover:from-emerald-50 hover:to-teal-50 hover:border-emerald-200 transition-all duration-300"
+                                    >
+                                        <div className="flex items-center gap-3">
+                                            <div className="h-2 w-2 rounded-full bg-emerald-500 group-hover:bg-emerald-600"></div>
+                                            <span className="font-medium text-slate-700 group-hover:text-emerald-700">Digital Analytics</span>
+                                        </div>
+                                    </a>
+                                    <a
+                                        href="#cloud"
+                                        className="group block rounded-xl border border-slate-200 bg-white p-4 shadow-sm hover:shadow-md hover:bg-gradient-to-r hover:from-purple-50 hover:to-violet-50 hover:border-purple-200 transition-all duration-300"
+                                    >
+                                        <div className="flex items-center gap-3">
+                                            <div className="h-2 w-2 rounded-full bg-purple-500 group-hover:bg-purple-600"></div>
+                                            <span className="font-medium text-slate-700 group-hover:text-purple-700">Cloud & Technology</span>
+                                        </div>
+                                    </a>
+                                    <a
+                                        href="#transformation"
+                                        className="group block rounded-xl border border-slate-200 bg-white p-4 shadow-sm hover:shadow-md hover:bg-gradient-to-r hover:from-orange-50 hover:to-amber-50 hover:border-orange-200 transition-all duration-300"
+                                    >
+                                        <div className="flex items-center gap-3">
+                                            <div className="h-2 w-2 rounded-full bg-orange-500 group-hover:bg-orange-600"></div>
+                                            <span className="font-medium text-slate-700 group-hover:text-orange-700">Digital Transformation</span>
+                                        </div>
+                                    </a>
+                                </nav>
+                            </div>
+                        </aside>
 
+                        {/* Main Content */}
+                        <div className="lg:col-span-3 space-y-16">
+                            {/* Media Activation */}
+                            <section id="media" className="scroll-mt-28">
+                                <div className="mb-8">
+                                    <div className="inline-flex items-center gap-2 rounded-full bg-blue-100 px-4 py-2 text-sm font-medium text-blue-700 mb-4">
+                                        <div className="h-2 w-2 rounded-full bg-blue-500"></div>
+                                        Media Activation
+                                    </div>
+                                    <h2 className="text-3xl font-bold text-slate-900">Media Activation</h2>
+                                    <p className="mt-2 text-slate-600">Drive engagement and conversions through strategic media placement</p>
+                                </div>
+                                <div className="grid gap-6 md:grid-cols-2">
+                                    <div className="group rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-blue-50 p-6 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300">
+                                        <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-blue-100 mb-4">
+                                            <div className="h-3 w-3 rounded-full bg-blue-500"></div>
+                                        </div>
+                                        <h3 className="font-semibold text-slate-900 mb-2">Creative Strategy & Design</h3>
+                                        <p className="text-sm text-slate-600 leading-relaxed">Audience‑first creative, landing page design, and ad experiences that convert.</p>
+                                    </div>
 
+                                    <div className="group rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-indigo-50 p-6 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300">
+                                        <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-100 mb-4">
+                                            <div className="h-3 w-3 rounded-full bg-indigo-500"></div>
+                                        </div>
+                                        <h3 className="font-semibold text-slate-900 mb-2">Performance Marketing</h3>
+                                        <p className="text-sm text-slate-600 leading-relaxed">Search, social, and display performance with rigorous experimentation.</p>
+                                    </div>
 
-const index= () => {
+                                    <div className="group rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-cyan-50 p-6 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300">
+                                        <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-cyan-100 mb-4">
+                                            <div className="h-3 w-3 rounded-full bg-cyan-500"></div>
+                                        </div>
+                                        <h3 className="font-semibold text-slate-900 mb-2">Search Engine Optimization</h3>
+                                        <p className="text-sm text-slate-600 leading-relaxed">Technical SEO + content velocity for sustainable organic growth.</p>
+                                    </div>
 
-    
-    useEffect(() => {
-        AOS.init();
-      }, []);
-  const { query } = useRouter();
+                                    <div className="group rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-sky-50 p-6 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300">
+                                        <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-sky-100 mb-4">
+                                            <div className="h-3 w-3 rounded-full bg-sky-500"></div>
+                                        </div>
+                                        <h3 className="font-semibold text-slate-900 mb-2">Programmatic Advertising</h3>
+                                        <p className="text-sm text-slate-600 leading-relaxed">DV360, CTV, YouTube, and custom bidding strategies.</p>
+                                    </div>
 
-  useEffect(() => {
-    if (query.id !== undefined) {
-      setTimeout(() => {
-        Scroll.scroller.scrollTo(query.id, {
-          duration: 500,
-          smooth: true,
-          offset: -100,
-        });
-      }, 100);
-    }
- 
-  }, [query]);
+                                    <div className="group rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-blue-50 p-6 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300">
+                                        <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-blue-100 mb-4">
+                                            <div className="h-3 w-3 rounded-full bg-blue-500"></div>
+                                        </div>
+                                        <h3 className="font-semibold text-slate-900 mb-2">Conversion Rate Optimization</h3>
+                                        <p className="text-sm text-slate-600 leading-relaxed">Hypothesis‑driven A/B testing to reduce CPA and improve ROAS.</p>
+                                    </div>
+                                </div>
+                            </section>
 
-  const [activetab, setActivetab] = useState("1");
-  const [activemtab, setActivemtab] = useState("0");
+                            {/* Digital Analytics */}
+                            <section id="analytics" className="scroll-mt-28">
+                                <div className="mb-8">
+                                    <div className="inline-flex items-center gap-2 rounded-full bg-emerald-100 px-4 py-2 text-sm font-medium text-emerald-700 mb-4">
+                                        <div className="h-2 w-2 rounded-full bg-emerald-500"></div>
+                                        Digital Analytics
+                                    </div>
+                                    <h2 className="text-3xl font-bold text-slate-900">Digital Analytics</h2>
+                                    <p className="mt-2 text-slate-600">Transform data into actionable insights for your business</p>
+                                </div>
+                                <div className="grid gap-6 md:grid-cols-2">
+                                    <div className="group rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-emerald-50 p-6 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300">
+                                        <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-100 mb-4">
+                                            <div className="h-3 w-3 rounded-full bg-emerald-500"></div>
+                                        </div>
+                                        <h3 className="font-semibold text-slate-900 mb-2">Digital Analytics Implementation</h3>
+                                        <p className="text-sm text-slate-600 leading-relaxed">GA4 + GTM event models aligned to business KPIs.</p>
+                                    </div>
 
-  return (
-    <>
-    
-    <Head>
-      <title>AnalyticsLiv - Services Offered</title>
-      <meta name="description" content="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads"/>
-      <link rel="canonical" href="https://analyticsliv.com/services"></link>
-    </Head>
-    <ScrollProgress/>
+                                    <div className="group rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-teal-50 p-6 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300">
+                                        <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-teal-100 mb-4">
+                                            <div className="h-3 w-3 rounded-full bg-teal-500"></div>
+                                        </div>
+                                        <h3 className="font-semibold text-slate-900 mb-2">Privacy‑First Tracking</h3>
+                                        <p className="text-sm text-slate-600 leading-relaxed">Consent mode, server‑side tagging, and durable measurement.</p>
+                                    </div>
 
-    <section className="relative">
-        <div className="md:mt-4 px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16 grid grid-cols-1 md:gap-12 lg:gap-20">
-            <div className="top-banner text-center md:flex md:items-center md:justify-between">
-                <h1 className="text-start text-black sm:text-[40px] text-[33px] font-semibold pb-10">At
-                    AnalyticsLiv, <br/>
-                    we craft global solutions……</h1>
-                <div className="text-center">
-                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/Hand_service_img.png" alt="Hand_service_img"/>
-                </div>
-                <div className="absolute hidden md:block sm:top-[41%] md:top-[27%] lg:top-1/3 left-0 inline-block">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="sm:w-24 md:w-40" width="213" height="225"
-                        viewBox="0 0 213 225" fill="none">
-                        <path
-                            d="M-41.7459 103.817C-47.6849 88.485 -77.1186 7.77481 92.0951 1.15802C261.309 -5.45878 209.028 95.1528 187.867 132.382C166.705 169.611 174.474 221.4 123.636 224.253C72.7984 227.107 46.2064 176.864 21.3556 159.53C4.05609 147.622 -23.1619 147.677 -41.7459 103.817Z"
-                            fill="#60B8C4" />
-                    </svg>
-                </div>
-            </div> <br/> <br/>
-            <div
-                className="bottom-banner text-center md:flex md:items-center md:justify-between sm:pb-20 md:pb-[100px] lg:pb-[70px]">
-                <div className="text-center">
-                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/Laptop_service_img.png" alt="laptop_service_img"/>
-                </div>
-                <h2 className="text-right text-black sm:text-[40px] text-[33px] font-semibold pt-10">… designed to
-                    excel in today's <br/> digital-driven landscape</h2>
-                <div className="absolute hidden md:block bottom-0 right-0 inline-block">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="sm:w-24 md:w-40" width="263" height="223"
-                        viewBox="0 0 263 223" fill="none">
-                        <path
-                            d="M4.19636 160.152C4.19636 160.152 -20.6305 106.763 50.4623 68.6248C121.555 30.4871 101.026 9.62789 147.511 1.06463C193.996 -7.49862 209.604 37.3276 218.857 58.2543C225.953 74.283 245.201 89.9738 262.527 113.029C277.292 132.689 287.185 197.006 242.773 215.062C198.362 233.117 177.883 213.373 161.5 200.84C145.118 188.308 119.364 172.6 80.2444 188.696C41.1248 204.792 15.7755 185.791 4.19636 160.152Z"
-                            fill="#5D8DBC" />
-                    </svg>
-                </div>
-            </div>
+                                    <div className="group rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-green-50 p-6 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300">
+                                        <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-green-100 mb-4">
+                                            <div className="h-3 w-3 rounded-full bg-green-500"></div>
+                                        </div>
+                                        <h3 className="font-semibold text-slate-900 mb-2">Interactive Dashboards</h3>
+                                        <p className="text-sm text-slate-600 leading-relaxed">Looker Studio + BigQuery for unified reporting.</p>
+                                    </div>
+                                </div>
+                            </section>
+
+                            {/* Cloud & Technology */}
+                            <section id="cloud" className="scroll-mt-28">
+                                <div className="mb-8">
+                                    <div className="inline-flex items-center gap-2 rounded-full bg-purple-100 px-4 py-2 text-sm font-medium text-purple-700 mb-4">
+                                        <div className="h-2 w-2 rounded-full bg-purple-500"></div>
+                                        Cloud & Technology
+                                    </div>
+                                    <h2 className="text-3xl font-bold text-slate-900">Cloud & Technology</h2>
+                                    <p className="mt-2 text-slate-600">Scalable technology solutions for modern businesses</p>
+                                </div>
+                                <div className="grid gap-6 md:grid-cols-2">
+                                    <div className="group rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-purple-50 p-6 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300">
+                                        <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-purple-100 mb-4">
+                                            <div className="h-3 w-3 rounded-full bg-purple-500"></div>
+                                        </div>
+                                        <h3 className="font-semibold text-slate-900 mb-2">Cloud Strategy & Architecture</h3>
+                                        <p className="text-sm text-slate-600 leading-relaxed">Secure, scalable architectures for analytics and apps.</p>
+                                    </div>
+
+                                    <div className="group rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-violet-50 p-6 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300">
+                                        <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-violet-100 mb-4">
+                                            <div className="h-3 w-3 rounded-full bg-violet-500"></div>
+                                        </div>
+                                        <h3 className="font-semibold text-slate-900 mb-2">Cloud Migration & Transformation</h3>
+                                        <p className="text-sm text-slate-600 leading-relaxed">Modernize data and workloads with zero‑downtime plans.</p>
+                                    </div>
+                                </div>
+                            </section>
+
+                            {/* Digital Transformation */}
+                            <section id="transformation" className="scroll-mt-28">
+                                <div className="mb-8">
+                                    <div className="inline-flex items-center gap-2 rounded-full bg-orange-100 px-4 py-2 text-sm font-medium text-orange-700 mb-4">
+                                        <div className="h-2 w-2 rounded-full bg-orange-500"></div>
+                                        Digital Transformation
+                                    </div>
+                                    <h2 className="text-3xl font-bold text-slate-900">Digital Transformation</h2>
+                                    <p className="mt-2 text-slate-600">Complete digital evolution for your organization</p>
+                                </div>
+                                <div className="grid gap-6 md:grid-cols-2">
+                                    <div className="group rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-orange-50 p-6 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300">
+                                        <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-orange-100 mb-4">
+                                            <div className="h-3 w-3 rounded-full bg-orange-500"></div>
+                                        </div>
+                                        <h3 className="font-semibold text-slate-900 mb-2">Business Transformation Consulting</h3>
+                                        <p className="text-sm text-slate-600 leading-relaxed">From vision to roadmap with measurable outcomes.</p>
+                                    </div>
+
+                                    <div className="group rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-amber-50 p-6 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300">
+                                        <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-amber-100 mb-4">
+                                            <div className="h-3 w-3 rounded-full bg-amber-500"></div>
+                                        </div>
+                                        <h3 className="font-semibold text-slate-900 mb-2">End‑to‑End Digital Solutions</h3>
+                                        <p className="text-sm text-slate-600 leading-relaxed">Strategy, build, launch, and iterate—under one roof.</p>
+                                    </div>
+
+                                    <div className="group rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-yellow-50 p-6 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300">
+                                        <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-yellow-100 mb-4">
+                                            <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
+                                        </div>
+                                        <h3 className="font-semibold text-slate-900 mb-2">Agentic AI & Automation</h3>
+                                        <p className="text-sm text-slate-600 leading-relaxed">AI agents, copilots, and workflow automation tailored to your stack.</p>
+                                    </div>
+
+                                    <div className="group rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-orange-50 p-6 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300">
+                                        <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-orange-100 mb-4">
+                                            <div className="h-3 w-3 rounded-full bg-orange-500"></div>
+                                        </div>
+                                        <h3 className="font-semibold text-slate-900 mb-2">Business Solutions</h3>
+                                        <p className="text-sm text-slate-600 leading-relaxed">Pre‑built accelerators for ecommerce, leadgen, and more.</p>
+                                    </div>
+
+                                    <div className="group rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-red-50 p-6 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300">
+                                        <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-red-100 mb-4">
+                                            <div className="h-3 w-3 rounded-full bg-red-500"></div>
+                                        </div>
+                                        <h3 className="font-semibold text-slate-900 mb-2">Partnerships</h3>
+                                        <p className="text-sm text-slate-600 leading-relaxed">Certified partner ecosystem across Google & Meta.</p>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Stats Section */}
+                <section className="py-16 bg-gradient-to-r from-[#EEF6FF] to-[#F7F7FF]">
+                    <div className="mx-auto max-w-7xl px-6">
+                        <div className="grid gap-8 md:grid-cols-4">
+                            <div className="text-center">
+                                <div className="mx-auto mb-4 h-16 w-16 rounded-full bg-blue-100 flex items-center justify-center">
+                                    <div className="h-6 w-6 rounded-full bg-blue-500"></div>
+                                </div>
+                                <div className="text-3xl font-bold text-blue-600">500+</div>
+                                <div className="text-sm text-slate-600">Projects Delivered</div>
+                            </div>
+
+                            <div className="text-center">
+                                <div className="mx-auto mb-4 h-16 w-16 rounded-full bg-emerald-100 flex items-center justify-center">
+                                    <div className="h-6 w-6 rounded-full bg-emerald-500"></div>
+                                </div>
+                                <div className="text-3xl font-bold text-emerald-600">98%</div>
+                                <div className="text-sm text-slate-600">Client Satisfaction</div>
+                            </div>
+
+                            <div className="text-center">
+                                <div className="mx-auto mb-4 h-16 w-16 rounded-full bg-purple-100 flex items-center justify-center">
+                                    <div className="h-6 w-6 rounded-full bg-purple-500"></div>
+                                </div>
+                                <div className="text-3xl font-bold text-purple-600">24/7</div>
+                                <div className="text-sm text-slate-600">Support Available</div>
+                            </div>
+
+                            <div className="text-center">
+                                <div className="mx-auto mb-4 h-16 w-16 rounded-full bg-orange-100 flex items-center justify-center">
+                                    <div className="h-6 w-6 rounded-full bg-orange-500"></div>
+                                </div>
+                                <div className="text-3xl font-bold text-orange-600">5★</div>
+                                <div className="text-sm text-slate-600">Average Rating</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* CTA Section */}
+                <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-20 text-white relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10"></div>
+                    <div className="relative mx-auto max-w-7xl px-6 text-center">
+                        <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white mb-6">
+                            <span className="h-2 w-2 rounded-full bg-white animate-pulse"></span>
+                            Ready to Get Started?
+                        </div>
+                        <h3 className="text-4xl font-bold mb-4">Need help picking the right services?</h3>
+                        <p className="mx-auto mt-4 max-w-3xl text-xl text-slate-300 leading-relaxed">
+                            Tell us your goals—we'll recommend an outcome‑focused plan.
+                        </p>
+                        <div className="mt-10 flex flex-wrap justify-center gap-6">
+                            <Link
+                                href="/contact"
+                                className="group rounded-2xl bg-white px-8 py-4 font-semibold text-slate-900 shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105"
+                            >
+                                <span className="flex items-center gap-2">
+                                    Talk to Us
+                                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </span>
+                            </Link>
+                            <Link
+                                href="mailto:hello@analyticsliv.com"
+                                className="group rounded-2xl border border-white/30 px-8 py-4 font-semibold text-white transition-all duration-300 hover:bg-white/10 hover:border-white/50"
+                            >
+                                <span className="flex items-center gap-2">
+                                    Email Us
+                                    <svg className="w-4 h-4 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </span>
+                            </Link>
+                        </div>
+
+                        {/* Decorative elements */}
+                        <div className="absolute top-10 left-10 h-20 w-20 rounded-full bg-blue-500/10 blur-xl"></div>
+                        <div className="absolute bottom-10 right-10 h-32 w-32 rounded-full bg-purple-500/10 blur-xl"></div>
+                    </div>
+                </section>
+            </main>
         </div>
-    </section>
-  
-    <section className="expertise relative overflow-hidden">
-        <div className="md:mt-4 px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16 relative">
-            <div>
-                <h2 className=" text-black text-[50px] font-semibold">
-                    <span
-                        className="relative after:absolute after:left-0 after:bottom-0 after:bg-[#FF7D7D] after:h-[9px] after:w-20 after:rounded-2xl">
-                        We </span> are Expert in
-                </h2>
-            </div> <br/>
-       
-            <div className="flex max-[1023px]:hidden">
-                <div className="p-4">
-                    <button onClick={() => setActivetab('1')}
-                        className={`${activetab==1 && 'bg-[#30486A] text-white'} ${activetab!=1 && ' text-black hover:text-servicemedia'} tab text-[40px] font-semibold tablink block p-5 rounded-3xl text-start active`}>
-                        Media</button>
-                    <button onClick={() => setActivetab('2')}
-                        className={`${activetab==2 && 'bg-[#6A305D] text-white'} ${activetab!=2 && ' text-black hover:text-serviceanalytics'} tab  text-[40px] font-semibold tablink block p-5 rounded-3xl text-start`}>Analytics</button>
-                    <button onClick={() => setActivetab('3')}
-                        className={`${activetab==3 && 'bg-[#1B8AAD] text-white'} ${activetab!=3 && ' text-black hover:text-servicesolutions'} tab hidden text-[40px] font-semibold tablink block p-5 rounded-3xl text-start`}>Solutions</button>
-                    <button onClick={() => setActivetab('4')}
-                        className={`${activetab==4 && 'bg-[#6A3030] text-white'} ${activetab!=4 && ' text-black hover:text-servicetraining'} tab  text-[40px] font-semibold tablink block p-5 rounded-3xl text-start`}>Training
-                        and Consultation</button>
-                </div>
+    );
+};
 
-                <div className="w-3/4 p-4">
-                    <div id="tab1" className={`${activetab==1 && 'block'} ${activetab!=1 && 'hidden'} relative tab-content bg-servicemedia p-8 rounded-[40px]`}>
-                        <div
-                            className="absolute bottom-[calc(100%+1rem)] right-[-5rem] h-44 w-44 bg-transparent border-2 border-servicemedia rounded-full transition-transform ease-in-out duration-500">
-                        </div>
-                        <div
-                            className="absolute right-[-310px] bottom-[-111px] z-[-1] h-64 w-64 bg-servicemedia rounded-[30px] transform rotate-[-10deg] transition-transform ease-in-out duration-500">
-                        </div>
-                        <h2 className="text-white text-[35px] font-semibold leading-normal">Strengthening Businesses</h2>
-                        <p className="text-white text-[16px] font-semibold">Our focus is not limited to targeting.
-                            We transform customers into devoted brand advocates</p>
-                        <ul className="list-disc text-white text-[16px] font-semibold ml-[18px]">
-                            <li><Link className="underline" href="/services/app-marketing">Mobile app marketing</Link></li>
-                            <li><Link className="underline" href="/services/lead-generation">Lead generation</Link></li>
-                            <li><Link className="underline" href="/services/ecommerce-marketing">Search/E-Commerce Marketing</Link></li>
-                            <li><Link className="underline" href="/services/programatic-advertising">Programatic Media Buying</Link></li>
-                        </ul>
-                    </div>
-
-                    <div id="tab2" className={`${activetab==2 && 'block'} ${activetab!=2 && 'hidden'} relative tab-content bg-serviceanalytics mt-[115px] p-8 rounded-[40px]`}>
-                        <div
-                            className="absolute bottom-[calc(100%+1rem)] right-[-5rem] h-44 w-44 bg-transparent border-2 border-serviceanalytics rounded-full transition-transform ease-in-out duration-500">
-                        </div>
-                        <div
-                            className="absolute right-[-310px] bottom-[-111px] z-[-1] h-64 w-64 bg-serviceanalytics rounded-[30px] transform rotate-[-10deg] transition-transform ease-in-out duration-500">
-                        </div>
-                        <h2 className="text-white text-[35px] font-semibold leading-[45px]">Navigating the Digital Landscape
-                            with Expertise
-                        </h2>
-                        <ul className="text-white text-[16px] font-semibold">
-                            <li><Link className="underline" href="/services/analytics?id=ga4-implementation">GA4 Implementation</Link></li>
-                            <li><Link className="underline" href="/services/analytics?id=audit-and-health-check">Audit and Health Check</Link></li>
-                            <li><Link className="underline" href="/services/analytics?id=web-app-measurement">Web and App measurement</Link></li>
-                            <li><Link className="underline" href="/services/data-reporting-analysis">Data Reporting & Analysis</Link></li>
-                            <li><Link className="underline" href="/services/looker-bi-platform">Looker BI Platform</Link></li>
-                        </ul>
-                    </div>
-
-                    <div id="tab3" className={`${activetab==3 && 'block'} ${activetab!=3 && 'hidden'} relative tab-content bg-servicesolutions mt-[220px] p-8 rounded-[40px]`}>
-                        <div
-                            className="absolute bottom-[calc(100%+1rem)] right-[-1rem] h-44 w-44 bg-transparent border-2 border-servicesolutions rounded-full transition-transform ease-in-out duration-500">
-                        </div>
-                        <div
-                            className="absolute right-[-310px] bottom-[-111px] z-[-1] h-64 w-64 bg-servicesolutions rounded-[30px] transform rotate-[-10deg] transition-transform ease-in-out duration-500">
-                        </div>
-                        <ul className="list-disc text-white text-[26px] font-semibold ml-[18px] leading-normal">
-                            <li><a href="">Preserving Historical UA Data</a></li>
-                            <li><a href="">GDPR Compliance</a></li>
-                            <li><a href="">Data Science Solutions</a></li>
-                        </ul>
-                    </div>
-
-                    <div id="tab4"
-                        className={`${activetab==4 && 'block'} ${activetab!=4 && 'hidden'} relative tab-content bg-servicetraining w3-container city mt-[210px] p-8 rounded-[40px]`}>
-                        <div
-                            className="absolute bottom-[calc(100%+1rem)] right-[-1rem] h-44 w-44 bg-transparent border-2 border-servicetraining rounded-full transition-transform ease-in-out duration-500">
-                        </div>
-                        <div
-                            className="absolute right-[-310px] bottom-[-111px] z-[-1] h-64 w-64 bg-servicetraining rounded-[30px] transform rotate-[-10deg] transition-transform ease-in-out duration-500">
-                        </div>
-                        <h2 className="text-white text-[30px] font-semibold leading-normal">Starting Your Analytics Journey
-                            or Feeling
-                            Confused ?</h2> <br/>
-                        <p className="text-white text-[26px] font-semibold">Schedule a One-Hour Consultation</p> <br/>
-                        <Link className="underline text-white text-[16px] font-semibold" href="/services/training">Training Details</Link>
-                    </div>
-
-                </div>
-            </div>
-
-        
-
-       
-            <div className="flex flex-col justify-start max-w-md lg:hidden">
-                <div className="panel_list bg-white mb-4">
-                    <div onClick={() => setActivemtab('1')} className="panel_heading p-4 cursor-pointer inline-block bg-servicemedia text-white">
-                        <h3 className="m-0 text-[40px] font-semibold rounded-3xl text-start">Media</h3>
-                    </div>
-                    <div className={`${activemtab==1 && 'block'} ${activemtab!=1 && 'hidden'} p-4 text-base bg-servicemedia mt-2`}>
-                        <h2 className="text-white text-[35px] font-semibold leading-normal">Strengthening Businesses</h2>
-                        <p className="text-white text-[16px] font-semibold">Our focus is not limited to targeting.
-                            We transform customers into devoted brand advocates</p>
-                        <ul className="list-disc text-white text-[16px] font-semibold ml-[18px]">
-                            <li><Link className="underline" href="/services/app-marketing">Mobile app marketing</Link></li>
-                            <li><Link className="underline" href="/services/lead-generation">Lead generation</Link></li>
-                            <li><Link className="underline" href="/services/ecommerce-marketing">Search/E-Commerce Marketing</Link></li>
-                            <li><Link className="underline" href="/services/programatic-advertising">Programatic Media Buying</Link></li>
-                        
-                        </ul>
-                    </div>
-                </div>
-            
-                <div className="panel_list bg-white mb-4">
-                    <div onClick={() => setActivemtab('2')} className="panel_heading p-4 cursor-pointer inline-block bg-serviceanalytics text-white">
-                        <h3 className="m-0 text-[40px] font-semibold rounded-3xl text-start">Analytics</h3>
-                    </div>
-                    <div className={`${activemtab==2 && 'block'} ${activemtab!=2 && 'hidden'} p-4 text-base bg-serviceanalytics mt-2`}>
-                        <h2 className="text-white text-[35px] font-semibold leading-[45px]">Navigating the Digital Landscape
-                            with Expertise
-                        </h2>
-                        <ul className="text-white text-[16px] font-semibold">
-                        <li><Link className="underline" href="/services/analytics?id=ga4-implementation">GA4 Implementation</Link></li>
-                            <li><Link className="underline" href="/services/analytics?id=audit-and-health-check">Audit and Health Check</Link></li>
-                            <li><Link className="underline" href="/services/analytics?id=web-app-measurement">Web and App measurement</Link></li>
-                            <li><Link className="underline" href="/services/data-reporting-analysis">Data Reporting & Analysis</Link></li>
-                            <li><Link className="underline" href="/services/looker-bi-platform">Looker BI Platform</Link></li>
-                         </ul>
-                    </div>
-                </div>
-            
-                <div className="panel_list bg-white mb-4 hidden">
-                    <div onClick={() => setActivemtab('3')} className="panel_heading p-4 cursor-pointer inline-block bg-servicesolutions text-white">
-                        <h3 className="m-0 text-[40px] font-semibold rounded-3xl text-start">Solutions</h3>
-                    </div>
-                    <div className={`${activemtab==3 && 'block'} ${activemtab!=3 && 'hidden'} panel_para p-4 text-base bg-servicesolutions mt-2`}>
-                        <ul className="list-disc text-white text-[26px] font-semibold ml-[18px] leading-normal">
-                            <li><a href="">Preserving Historical UA Data</a></li>
-                            <li><a href="">GDPR Compliance</a></li>
-                            <li><a href="">Data Science Solutions</a></li>
-                        </ul>
-                    </div>
-                </div>
-            
-                <div className="panel_list bg-white mb-1">
-                    <div onClick={() => setActivemtab('4')} className="panel_heading p-4 cursor-pointer inline-block bg-servicetraining text-white w-72">
-                        <h3 className="m-0 text-[40px] font-semibold rounded-3xl text-start">Training
-                            and Consultation</h3>
-                    </div>
-                    <div className={`${activemtab==4 && 'block'} ${activemtab!=4 && 'hidden'} panel_para p-4 text-base bg-servicetraining mt-2`}>
-                        <h2 className="text-white text-[30px] font-semibold leading-normal">Starting Your Analytics Journey
-                            or Feeling
-                            Confused ?</h2> <br/>
-                        <p className="text-white text-[26px] font-semibold">Schedule a One-Hour Consultation</p> <br/>
-                        <Link className="underline text-white text-[16px] font-semibold" href="/services/training">Training Details</Link>
-                   </div>
-                </div>
-            </div>
-        
-        </div>
-    </section>
-  
-    <section>
-        <div className="md:mt-4 px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16">
-            <h2 className="text-black text-start text-6xl font-bold pb-2 md:mb-16">Case Studies</h2>
-            <div
-                className="case md:flex text-left justify-evenly items-center bg-servicesection min-[375px]:px-10 md:px-20 px-2 min-[375px]:py-8 md:py-8 py-4 md:rounded-full rounded-xl mt-8">
-                <div className="md:w-3/4">
-                    <h3 className="relative lg:text-3xl text-[19px] leading-normal font-bold mb-4">
-                        <img className="absolute top-[3px] -left-[35px]" src="https://storage.googleapis.com/website-bucket-uploads/static/point(1).png" alt="arrow"/>
-                        Universal Analytics (GA3) to GA4 Migration
-                        for a Website
-                    </h3>
-                    <p className="text-serviceheading text-base font-medium">The migration process was smooth and successful
-                        without any data loss,
-                        increasing efficiency and reducing manual effort by 30%. The client now has a more comprehensive
-                        understanding of user behaviour across devices and sessions, enabling them to make more informed
-                        decisions and improve website performance.
-                    </p>
-                </div>
-                <div className="text-center pt-4 md:pt-0 items-center space-x-4">
-                    <img className="inline w-40" src="https://storage.googleapis.com/website-bucket-uploads/static/Case_studies.png" alt="creative"/>
-                    <Link href="/case-studies/ua-to-ga4-migration-for-a-website"><button
-                        className="btn bg-serviceheading cursor-pointer hover:bg-blue-400 transition duration-200 delay-75 px-16 py-2 text-white text-2xl font-semibold rounded-full mt-8">View</button></Link>
-                </div>
-            </div>
-            <div
-                className="case md:flex text-left justify-evenly items-center bg-servicesection min-[375px]:px-10 md:px-20 px-2 min-[375px]:py-8 md:py-8 py-4 md:rounded-full rounded-xl mt-8">
-                <div className="md:w-3/4">
-                    <h3 className="relative lg:text-3xl text-[19px] leading-normal font-bold mb-4">
-                        <img className="absolute top-[3px] -left-[35px]" src="https://storage.googleapis.com/website-bucket-uploads/static/point(1).png" alt="arrow"/>
-                        GA4 Enhanced Ecommerce Implementation
-                        Using GTM and Shopify Integration
-                    </h3>
-                    <p className="text-serviceheading text-base font-medium">We successfully implemented 90% of purchase events,
-                        with the exception of UA, which is at 70% and all GA4 enhanced ecommerce events and Shopify
-                        parameters are being successfully sent to GA4.</p>
-                </div>
-                <div className="text-center pt-4 md:pt-0 items-center space-x-4">
-                    <img className="inline w-40" src="https://storage.googleapis.com/website-bucket-uploads/static/Case_studies(1).png" alt="icons"/>
-                    <Link href="/case-studies/ga4-enhanced-ecommerce-implementation-using-gtm-and-shopify-integration"><button
-                        className="btn bg-serviceheading cursor-pointer hover:bg-blue-400 transition duration-200 delay-75 px-16 py-2 text-white text-2xl font-semibold rounded-full mt-8">View</button></Link>
-                </div>
-            </div>
-            <div className="text-center">
-            <Link href="/case-studies"><button
-                    className=" bg-serviceheading btn cursor-pointer hover:bg-sky-800 transition duration-200 delay-75 rounded-[5px] shadow-lg text-white text-lg font-semibold mt-8 py-[15px] px-[50px] hover:scale-110">More
-                    Case Study</button></Link>
-            </div>
-
-        </div>
-    </section>
-
-    <div className="bg-serviceheading">
-        <div className="md:mt-4 px-4 md:px-20 py-8 md:py-11">
-            
-                <div className="flex flex-wrap items-center justify-between ">
-                    <h2 className="text-white text-[32px] font-bold mt-4">Optimize Your Camapigns  with DV360</h2>
-                    <Link href="/contact?id=dv360"><button id="output"
-                        className="btn text-[25px] cursor-pointer bg-white hover:bg-slate-100 transition duration-200 delay-75 mt-4 rounded-[5px] shadow-lg shadow-gray-400 text-serviceheading font-semibold py-[15px] px-[50px] hover:scale-110">Contact Us</button></Link>
-                </div>
-            
-        </div>
-    </div>
-
-    </>
-  )
-}
-
-export default index
+export default ServicesPage;

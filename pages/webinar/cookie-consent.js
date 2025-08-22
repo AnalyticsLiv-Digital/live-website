@@ -7,12 +7,12 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaArrowLeft, FaArrowRight, FaLongArrowAltRight } from "react-icons/fa";
+import NewPopup from "../../components/newPopup";
 import useContactPopup from "../../components/hooks/useContactPopup";
 import Head from "next/head";
 // import ContactPopup from "../../components/ContactPopup";
 
 export default function CookieConsent({ brandsdata }) {
-  const { showPopup, closePopup, registerUser } = useContactPopup();
   const initialValues = { fullName: "", email: "", contact: "", company: "" };
   const [formSubmit, setFormSubmit] = useState(false);
   const [formValues, setFormValues] = useState(initialValues);
@@ -20,7 +20,8 @@ export default function CookieConsent({ brandsdata }) {
   const [isSubmit, setIsSubmit] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const [showWaiting, setShowWaiting] = useState(false);
-  
+  const { showPopup, closePopup, registerUser } = useContactPopup();
+
   const NextArrow = (props) => {
     const { onClick } = props;
     return (
@@ -210,274 +211,223 @@ export default function CookieConsent({ brandsdata }) {
   }, []);
 
   return (
-    <>
-      <Head>
-        <title>AnalyticsLiv - Webinar</title>
-        <meta name="description" content="AnalyticsLiv - Webinar" />
-        <link rel="canonical" href="https://analyticsliv.com/webinar/cookie-consent"></link>
-      </Head>
-
-      <main className="font-lato">
-        {/* {showPopup && (
+    <main className="font-lato">
+      {/* {showPopup && (
         <NewPopup onClose={closePopup} onRegister={registerUser} />
       )} */}
 
-        <div className="bg-[#2E2C37]">
-          <div className="flex justify-between max-sm:gap-2 px-2 md:px-16 pt-5 ">
-            <img
-              src="/AnalyticsLiv Logo.png"
-              alt="analyticsliv-logo"
-              className="max-sm:h-11 max-md:h-16 max-sm:w-[140px] max-md:w-[30%] bg-white rounded-full px-4"
-            />
-            <img
-              src="/Google_Marketing_Plateform_Certified_Logo 1.png"
-              alt="google-partner"
-              className="max-sm:h-11 max-md:h-16 max-sm:w-[140px] max-md:w-[30%] "
-            />
-          </div>
-          <div
-            className=" 2xl:h-[750px] xl:h-[560px] max-sm:h-[450px] max-md:h-[350px] max-lg:h-[400px] max-xl:h-[525px] mt-5"
-            style={{
-              backgroundImage: "url(/vectormain.png)",
-              backgroundSize: "contain",
-              backgroundPosition: "bottom right",
-              backgroundRepeat: "no-repeat",
-            }}
-          >
-            <div className="flex-grow flex justify-between items-center relative max-sm:px-2 sm:pr-5 2xl:px-10">
-              <div className="text-left max-md:pt-5 flex-1 sm:pl-[5dvw] md:px-[4dvw] lg:px-0 lg:pl-[13dvw] xl:pl-[17dvw] 2xl:pt-0 xl:pt-[100px] 2xl:pl-[11dvw]">
-                <div className="text-2xl md:text-3xl 2xl:text-4xl md:pt-4 lg:pt-14 xl:pt-5 2xl:pt-48 font-black text-white mb-6 max-sm:mb-5 font-lato max-lg:text-center">
-                  Join <span className="flashing-text">WEBINAR</span> for,
-                  <br></br>
-                  Google Basic Consent vs. Advanced Consent - Optimising Your Data
-                  Strategy
+      <div className="bg-[#2E2C37]">
+        <div className="flex justify-between max-sm:gap-2 px-2 md:px-16 pt-5 ">
+          <img
+            src="https://storage.googleapis.com/website-bucket-uploads/static/public/AnalyticsLiv%20Logo.png"
+            alt="analyticsliv-logo"
+            className="max-sm:h-11 max-md:h-16 max-sm:w-[140px] max-md:w-[30%] bg-white rounded-full px-4"
+          />
+          <img
+            src="/Google_Marketing_Plateform_Certified_Logo 1.png"
+            alt="google-partner"
+            className="max-sm:h-11 max-md:h-16 max-sm:w-[140px] max-md:w-[30%] "
+          />
+        </div>
+        <div
+          className=" 2xl:h-[750px] xl:h-[560px] max-sm:h-[450px] max-md:h-[350px] max-lg:h-[400px] max-xl:h-[525px] mt-5"
+          style={{
+            backgroundImage: "url(/vectormain.png)",
+            backgroundSize: "contain",
+            backgroundPosition: "bottom right",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <div className="flex-grow flex justify-between items-center relative max-sm:px-2 sm:pr-5 2xl:px-10">
+            <div className="text-left max-md:pt-5 flex-1 sm:pl-[5dvw] md:px-[4dvw] lg:px-0 lg:pl-[13dvw] xl:pl-[17dvw] 2xl:pt-0 xl:pt-[100px] 2xl:pl-[11dvw]">
+              <div className="text-2xl md:text-3xl 2xl:text-4xl md:pt-4 lg:pt-14 xl:pt-5 2xl:pt-48 font-black text-white mb-6 max-sm:mb-5 font-lato max-lg:text-center">
+                Join <span className="flashing-text">WEBINAR</span> for,
+                <br></br>
+                Google Basic Consent vs. Advanced Consent - Optimising Your Data
+                Strategy
+              </div>
+              <div className="text-base text-white mb-12 sm:mb-8 xl:mb-5 font-lato max-lg:text-center">
+                You should Join this insightful webinar, Whether you're in
+                marketing, web management, or data analytics, this webinar will
+                simplify the process of managing consent for you.
+              </div>
+              <div className="flex justify-center lg:justify-start lg:gap-16 max-md:justify-evenly items-center gap-0 sm:gap-5 md:gap-12">
+                <div className="flex flex-col items-center justify-center">
+                  <img
+                    src="https://storage.googleapis.com/website-bucket-uploads/static/public/calendar%20(5).png"
+                    alt="calender"
+                    className=" w-[65px] h-[65px] max-lg:w-[35px] max-lg:h-[35px] lg:w-[55px] lg:h-[55px]"
+                  />
+                  <div className="text-white text-xs sm:text-base font-extrabold pt-1.5 sm:pt-3 text-center">
+                    15th Oct
+                  </div>
                 </div>
-                <div className="text-base text-white mb-12 sm:mb-8 xl:mb-5 font-lato max-lg:text-center">
-                  You should Join this insightful webinar, Whether you're in
-                  marketing, web management, or data analytics, this webinar will
-                  simplify the process of managing consent for you.
-                </div>
-                <div className="flex justify-center lg:justify-start lg:gap-16 max-md:justify-evenly items-center gap-0 sm:gap-5 md:gap-12">
+                <div>
                   <div className="flex flex-col items-center justify-center">
                     <img
-                      src="/calendar (5).png"
-                      alt="calender"
-                      className=" w-[65px] h-[65px] max-lg:w-[35px] max-lg:h-[35px] lg:w-[55px] lg:h-[55px]"
+                      src="/clock (3) 2.png"
+                      alt="clock"
+                      className="w-[65px] h-[65px] max-lg:w-[35px] max-lg:h-[35px] lg:w-[55px] lg:h-[55px]"
                     />
-                    <div className="text-white text-xs sm:text-base font-extrabold pt-1.5 sm:pt-3 text-center">
-                      15th Oct
-                    </div>
-                  </div>
-                  <div>
-                    <div className="flex flex-col items-center justify-center">
-                      <img
-                        src="/clock (3) 2.png"
-                        alt="clock"
-                        className="w-[65px] h-[65px] max-lg:w-[35px] max-lg:h-[35px] lg:w-[55px] lg:h-[55px]"
-                      />
-                      <div className="text-white text-xs sm:text-base font-extrabold pt-1.5 sm:pt-3">
-                        9:00 PM IST{" "}
-                        <span className="max-sm:hidden">
-                          / 11:30 AM EST / 8:30 AM PST
-                        </span>
-                      </div>
+                    <div className="text-white text-xs sm:text-base font-extrabold pt-1.5 sm:pt-3">
+                      9:00 PM IST{" "}
+                      <span className="max-sm:hidden">
+                        / 11:30 AM EST / 8:30 AM PST
+                      </span>
                     </div>
                   </div>
                 </div>
-                <div className="flex justify-center lg:justify-start pb-4">
-                  <button
-                    onClick={scrolling1}
-                    className="cookiebutton py-2 px-4 text-xs font-semibold md:px-5 md:py-3 lg:py-2.5 lg:px-6 xl:py-2 lg:text-sm lg:font-semibold 2xl:py-3 2xl:px-8 xl:text-lg xl:font-bold 
+              </div>
+              <div className="flex justify-center lg:justify-start pb-4">
+                <button
+                  onClick={scrolling1}
+                  className="cookiebutton py-2 px-4 text-xs font-semibold md:px-5 md:py-3 lg:py-2.5 lg:px-6 xl:py-2 lg:text-sm lg:font-semibold 2xl:py-3 2xl:px-8 xl:text-lg xl:font-bold 
                   border border-[#FFFFFF] rounded-md shadow-[2px_2px_3px_1px_rgba(0,0,0,0.25)] mt-6 md:mt-8 lg:mt-6 xl:mt-10"
-                  >
-                    RESERVE YOUR SPOT
-                  </button>
-                </div>
+                >
+                  RESERVE YOUR SPOT
+                </button>
               </div>
+            </div>
 
-              <div className="flex-none">
-                <img
-                  src="/IMG.png"
-                  alt="main-img"
-                  className="2xl:h-[750px] max-2xl:h-[560px] max-xl:h-[525px] max-lg:h-[438px] max-md:h-[250px] max-lg:hidden"
-                />
-              </div>
+            <div className="flex-none">
+              <img
+                src="/IMG.png"
+                alt="main-img"
+                className="2xl:h-[750px] max-2xl:h-[560px] max-xl:h-[525px] max-lg:h-[438px] max-md:h-[250px] max-lg:hidden"
+              />
             </div>
           </div>
         </div>
-        <section className="flex justify-center lg:justify-evenly max-lg:flex-col xl:gap-36 xl:px-28">
-          {showWaiting ? (
-            <div className="fixed flex backdrop-blur top-0 left-0 right-0 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
-              <ScaleLoader
-                color="#271d90"
-                loading
-                size={100}
-                className="m-auto align-middle"
-              />
-            </div>
-          ) : formSubmit ? (
-            <div
-              className="webinarForm max-md:mx-4 max-lg:mx-28 overflow-auto z-10 h-[400px] md:h-[475px] lg:h-[500px] xl:h-[530px] 2xl:h-[550px] 
+      </div>
+      <section className="flex justify-center lg:justify-evenly max-lg:flex-col xl:gap-36 xl:px-28">
+        {showWaiting ? (
+          <div className="fixed flex backdrop-blur top-0 left-0 right-0 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
+            <ScaleLoader
+              color="#271d90"
+              loading
+              size={100}
+              className="m-auto align-middle"
+            />
+          </div>
+        ) : formSubmit ? (
+          <div
+            className="webinarForm max-md:mx-4 max-lg:mx-28 overflow-auto z-10 h-[400px] md:h-[475px] lg:h-[500px] xl:h-[530px] 2xl:h-[550px] 
                   md:my-10 max-md:mt-4 xl:top-[400px] 2xl:top-[550px] lg:w-[350px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] 
                   shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] text-center flex flex-col justify-around items-center px-3 md:px-4 py-2 md:py-5 bg-white"
-            >
-              <h2 className="md:text-xl text-[#3C292A]">
-                Thank you for registering for our exclusive webinar!
-              </h2>
-              <p className="md:text-lg text-[#3C292A]">
-                A confirmation email has been sent to your registered email address with all the webinar details. Please check your inbox for further information.
-              </p>
-              <img
-                alt="Webinar"
-                className="w-64 mx-auto"
-                src="https://storage.googleapis.com/website-bucket-uploads/static/Na_Dec_46.jpg"
-              />
-            </div>
-          ) : (
-            <div
-              className="webinarForm max-md:mx-4 max-lg:mx-28 overflow-auto z-10 h-[400px] md:h-[475px] lg:h-[500px] xl:h-[530px] 2xl:h-[550px] 
+          >
+            <h2 className="md:text-xl text-[#3C292A]">
+              Thank you for registering for our exclusive webinar!
+            </h2>
+            <p className="md:text-lg text-[#3C292A]">
+              A confirmation email has been sent to your registered email address with all the webinar details. Please check your inbox for further information.
+            </p>
+            <img
+              alt="Webinar"
+              className="w-64 mx-auto"
+              src="https://storage.googleapis.com/website-bucket-uploads/static/Na_Dec_46.jpg"
+            />
+          </div>
+        ) : (
+          <div
+            className="webinarForm max-md:mx-4 max-lg:mx-28 overflow-auto z-10 h-[400px] md:h-[475px] lg:h-[500px] xl:h-[530px] 2xl:h-[550px] 
             md:my-10 max-md:mt-4 xl:top-[400px] 2xl:top-[550px] lg:w-[350px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] 
             shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] text-center flex flex-col justify-around items-center px-3 md:px-4 xl:px-7 py-2 md:py-3 bg-white"
+          >
+            <h1 className="font-extrabold text-3xl md:text-[28px] text-[#3C292A]">
+              On Demand Webinar
+            </h1>
+
+            <div className="text-sm font-normal leading-4 text-[#3C292A]">
+              Register Now to optimize your data strategy while staying
+              compliant with evolving privacy regulations.
+            </div>
+
+            <form
+              className="flex flex-col gap-3.5 md:gap-6 lg:gap-8 2xl:gap-8 w-[90%] md:w-[90%]"
+              onSubmit={handleSubmit}
             >
-              <h1 className="font-extrabold text-3xl md:text-[28px] text-[#3C292A]">
-                On Demand Webinar
-              </h1>
+              <input
+                type="text"
+                placeholder="Name*"
+                style={{ boxShadow: "3px 3px 8px rgba(0, 0, 0, 0.3)" }}
+                className="px-3 py-2 text-sm border border-[#3C292A] rounded-md"
+                id="fullName"
+                name="fullName"
+                value={formValues.fullName}
+                required
+                onChange={handleChange}
+              />
 
-              <div className="text-sm font-normal leading-4 text-[#3C292A]">
-                Register Now to optimize your data strategy while staying
-                compliant with evolving privacy regulations.
-              </div>
+              <input
+                type="email"
+                placeholder="Email*"
+                style={{ boxShadow: "3px 3px 8px rgba(0, 0, 0, 0.3)" }}
+                className="px-3 py-2 text-sm border border-[#3C292A] rounded-md"
+                id="email"
+                name="email"
+                value={formValues.email}
+                required
+                onChange={handleChange}
+              />
 
-              <form
-                className="flex flex-col gap-3.5 md:gap-6 lg:gap-8 2xl:gap-8 w-[90%] md:w-[90%]"
-                onSubmit={handleSubmit}
-              >
-                <input
-                  type="text"
-                  placeholder="Name*"
-                  style={{ boxShadow: "3px 3px 8px rgba(0, 0, 0, 0.3)" }}
-                  className="px-3 py-2 text-sm border border-[#3C292A] rounded-md"
-                  id="fullName"
-                  name="fullName"
-                  value={formValues.fullName}
-                  required
-                  onChange={handleChange}
-                />
-
-                <input
-                  type="email"
-                  placeholder="Email*"
-                  style={{ boxShadow: "3px 3px 8px rgba(0, 0, 0, 0.3)" }}
-                  className="px-3 py-2 text-sm border border-[#3C292A] rounded-md"
-                  id="email"
-                  name="email"
-                  value={formValues.email}
-                  required
-                  onChange={handleChange}
-                />
-
-                <input
-                  type="number"
-                  placeholder="Contact No*"
-                  style={{ boxShadow: "3px 3px 8px rgba(0, 0, 0, 0.3)" }}
-                  className="px-3 py-2 text-sm border border-[#3C292A] rounded-md"
-                  id="contact"
-                  name="contact"
-                  required
-                  value={formValues.contact}
-                  onChange={handleChange}
-                />
+              <input
+                type="number"
+                placeholder="Contact No*"
+                style={{ boxShadow: "3px 3px 8px rgba(0, 0, 0, 0.3)" }}
+                className="px-3 py-2 text-sm border border-[#3C292A] rounded-md"
+                id="contact"
+                name="contact"
+                required
+                value={formValues.contact}
+                onChange={handleChange}
+              />
 
 
-                <input
-                  type="text"
-                  placeholder="Your company"
-                  style={{ boxShadow: "3px 3px 8px rgba(0, 0, 0, 0.3)" }}
-                  className="px-3 py-2 text-sm border border-[#3C292A] rounded-md"
-                  id="company"
-                  name="company"
-                  value={formValues.company}
-                  onChange={handleChange}
-                />
-                <p className="text-red-600 text-sm">{formErrors.contact}</p>
+              <input
+                type="text"
+                placeholder="Your company"
+                style={{ boxShadow: "3px 3px 8px rgba(0, 0, 0, 0.3)" }}
+                className="px-3 py-2 text-sm border border-[#3C292A] rounded-md"
+                id="company"
+                name="company"
+                value={formValues.company}
+                onChange={handleChange}
+              />
+              <p className="text-red-600 text-sm">{formErrors.contact}</p>
 
-                <button className="gtmbutn4 bg-gradient-to-l from-[#EB5442] to-[#ED7754] hover:border-black hover:border-[1px] hover:text-[#EB5442] border border-[#FFFFFF] rounded-md shadow-[2px_2px_3px_1px_rgba(0,0,0,0.25)] py-2 text-sm font-extrabold">
-                  REGISTER NOW
-                </button>
-              </form>
-            </div>
-          )}
-          <div className="w-full lg:w-[50%] xl:w-[50%] 2xl:w-[55%] pt-12 sm:pt-5 lg:pb-10">
-            <div className="text-[35px] font-bold text-[#3C292A] pb-2 lg:pb-4 xl:pb-8 xl:font-extrabold text-center ">
-              <span className="inline-block relative">
-                Meet&nbsp;
-                <span
-                  className="absolute block bg-gradient-to-r from-[#59C3EC] to-[#297AB6]"
-                  style={{
-                    width: "80px",
-                    height: "5px",
-                    borderRadius: "10px",
-                    top: "calc(100% )",
-                    left: "0",
-                  }}
-                ></span>
-              </span>
-              Our Presenters
-            </div>
+              <button className="gtmbutn4 bg-gradient-to-l from-[#EB5442] to-[#ED7754] hover:border-black hover:border-[1px] hover:text-[#EB5442] border border-[#FFFFFF] rounded-md shadow-[2px_2px_3px_1px_rgba(0,0,0,0.25)] py-2 text-sm font-extrabold">
+                REGISTER NOW
+              </button>
+            </form>
+          </div>
+        )}
+        <div className="w-full lg:w-[50%] xl:w-[50%] 2xl:w-[55%] pt-12 sm:pt-5 lg:pb-10">
+          <div className="text-[35px] font-bold text-[#3C292A] pb-2 lg:pb-4 xl:pb-8 xl:font-extrabold text-center ">
+            <span className="inline-block relative">
+              Meet&nbsp;
+              <span
+                className="absolute block bg-gradient-to-r from-[#59C3EC] to-[#297AB6]"
+                style={{
+                  width: "80px",
+                  height: "5px",
+                  borderRadius: "10px",
+                  top: "calc(100% )",
+                  left: "0",
+                }}
+              ></span>
+            </span>
+            Our Presenters
+          </div>
 
-            {/* mobile view */}
+          {/* mobile view */}
 
-            <div className="pb-8 pt-8 md:hidden max-sm:pb-2 w-[90%] mx-auto relative carousel-custom">
-              <Slider {...settings}>
-                <div className="flex flex-col w-[200px] justify-center items-center">
-                  <img
-                    src="/Shubhangi_Webinar_Profile_Pic_New.png"
-                    alt=""
-                    className="pb-3 mx-auto"
-                  />
-                  <div className="text-base font-black text-center text-[#3C292A] pb-2">
-                    Shubhangi Chauhan
-                  </div>
-                  <div className="text-sm font-normal text-center">
-                    Account Manager
-                  </div>
-                </div>
-                <div className="flex flex-col w-[200px] justify-center items-center">
-                  <img
-                    src="/Abhishek_Webinar_Profile_Pic_New (1).png"
-                    alt=""
-                    className="pb-3 mx-auto"
-                  />
-                  <div className="text-base font-black text-center text-[#3C292A] pb-2">
-                    Abhishek Tiwari
-                  </div>
-                  <div className="text-sm font-normal text-center">
-                    CSM & GA4 Expert
-                  </div>
-                </div>
-                <div className="flex flex-col w-[200px] justify-center items-center">
-                  <img
-                    src="/Anshul_Webinar_Profile_Pic_New.png"
-                    alt=""
-                    className="pb-3 mx-auto"
-                  />
-                  <div className="text-base font-black text-center text-[#3C292A] pb-2">
-                    Anshul Dhurandhar
-                  </div>
-                  <div className="text-sm font-normal text-center">
-                    GTM Expert
-                  </div>
-                </div>
-              </Slider>
-            </div>
-
-            {/* desktop view */}
-            <div className="max-md:hidden lg:border-b lg:border-b-[#BBBBBB] lg:pb-5 xl:pb-10 2xl:pb-14 flex max-sm:flex-col max-sm:gap-14 items-center justify-around xl::justify-between">
-              <div className="flex flex-col">
+          <div className="pb-8 pt-8 md:hidden max-sm:pb-2 w-[90%] mx-auto relative carousel-custom">
+            <Slider {...settings}>
+              <div className="flex flex-col w-[200px] justify-center items-center">
                 <img
                   src="/Shubhangi_Webinar_Profile_Pic_New.png"
                   alt=""
-                  className="pb-3"
+                  className="pb-3 mx-auto"
                 />
                 <div className="text-base font-black text-center text-[#3C292A] pb-2">
                   Shubhangi Chauhan
@@ -486,11 +436,11 @@ export default function CookieConsent({ brandsdata }) {
                   Account Manager
                 </div>
               </div>
-              <div className="flex flex-col">
+              <div className="flex flex-col w-[200px] justify-center items-center">
                 <img
-                  src="/Abhishek_Webinar_Profile_Pic_New (1).png"
-                  alt=""
-                  className="pb-3"
+                  src="https://storage.googleapis.com/website-bucket-uploads/static/public/Abhishek_Webinar_Profile_Pic_New%20(1).png"
+                  alt="Abhishek"
+                  className="pb-3 mx-auto"
                 />
                 <div className="text-base font-black text-center text-[#3C292A] pb-2">
                   Abhishek Tiwari
@@ -499,142 +449,185 @@ export default function CookieConsent({ brandsdata }) {
                   CSM & GA4 Expert
                 </div>
               </div>
-              <div className="flex flex-col">
+              <div className="flex flex-col w-[200px] justify-center items-center">
                 <img
-                  src="/Anshul_Webinar_Profile_Pic_New.png"
-                  alt=""
-                  className="pb-3"
+                  src="https://storage.googleapis.com/website-bucket-uploads/static/public/Anshul_Webinar_Profile_Pic_New.png"
+                  alt="Anshul_Webinar_Profile_Pic"
+                  className="pb-3 mx-auto"
                 />
                 <div className="text-base font-black text-center text-[#3C292A] pb-2">
                   Anshul Dhurandhar
                 </div>
-                <div className="text-sm font-normal text-center">GTM Expert</div>
-              </div>
-            </div>
-            <div className="flex justify-center max-md:pb-10">
-              <div className="shadow-cookiePageShadow w-[330px] sm:w-[350px] lg:w-[450px] lg:py-3 rounded-3xl mt-[40px]">
-                <div className="flex justify-evenly py-5">
-                  <div className="flex flex-col justify-center items-center">
-                    <img className="pb-2" src="/Duration.png" alt="time" />
-                    <div className="text-xl font-bold">Duration</div>
-                    <div className="text-sm font-normal text-center ">1 Hour</div>
-                  </div>
-                  <div className="flex flex-col justify-center items-center">
-                    <img
-                      className="pb-2"
-                      src="/reduce-cost (2) 1.png"
-                      alt="time"
-                    />
-                    <div className="text-xl font-bold">Cost</div>
-                    <div className="text-sm font-normal text-center ">Free</div>
-                  </div>
+                <div className="text-sm font-normal text-center">
+                  GTM Expert
                 </div>
               </div>
+            </Slider>
+          </div>
+
+          {/* desktop view */}
+          <div className="max-md:hidden lg:border-b lg:border-b-[#BBBBBB] lg:pb-5 xl:pb-10 2xl:pb-14 flex max-sm:flex-col max-sm:gap-14 items-center justify-around xl::justify-between">
+            <div className="flex flex-col">
+              <img
+                src="/Shubhangi_Webinar_Profile_Pic_New.png"
+                alt=""
+                className="pb-3"
+              />
+              <div className="text-base font-black text-center text-[#3C292A] pb-2">
+                Shubhangi Chauhan
+              </div>
+              <div className="text-sm font-normal text-center">
+                Account Manager
+              </div>
+            </div>
+            <div className="flex flex-col">
+              <img
+                src="/https://storage.googleapis.com/website-bucket-uploads/static/public/Abhishek_Webinar_Profile_Pic_New%20(1).png"
+                alt=""
+                className="pb-3"
+              />
+              <div className="text-base font-black text-center text-[#3C292A] pb-2">
+                Abhishek Tiwari
+              </div>
+              <div className="text-sm font-normal text-center">
+                CSM & GA4 Expert
+              </div>
+            </div>
+            <div className="flex flex-col">
+              <img
+                src="https://storage.googleapis.com/website-bucket-uploads/static/public/Anshul_Webinar_Profile_Pic_New.png"
+                alt="Anshul_webinar_pic"
+                className="pb-3"
+              />
+              <div className="text-base font-black text-center text-[#3C292A] pb-2">
+                Anshul Dhurandhar
+              </div>
+              <div className="text-sm font-normal text-center">GTM Expert</div>
             </div>
           </div>
-        </section>
-        <section className="flex max-xl:flex-col bg-[#F5FDFF] md:pt-7 xl:pt-0 md:mt-16 xl:mt-0">
-          <section className="w-full xl:px-20">
-            <div className="text-2xl md:text-[35px] font-bold text-[#3C292A] pt-16 pb-16 xl:font-extrabold text-center">
-              <span className="inline-block relative">
-                In this&nbsp;
-                <span
-                  className="absolute block bg-gradient-to-r from-[#59C3EC] to-[#297AB6]"
-                  style={{
-                    width: "90px",
-                    marginTop: "8px",
-                    height: "5px",
-                    borderRadius: "10px",
-                    top: "calc(100% )",
-                    left: "0",
-                  }}
-                ></span>
-              </span>
-              webinar, you'll learn :
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 max-md:gap-8 md:gap-16 max-sm:grid-cols-1 justify-around md:px-10 2xl:px-24 pb-8 xl:pb-20">
-              <div className="flex flex-col items-center max-md:gap-4 md:gap-10">
-                <img src="/image 1 1.png" className=" h-32 w-32" alt="privacy" />
-                <div className="text-sm font-medium text-center">
-                  The fundamentals of consent <br></br>& its role in data privacy.
+          <div className="flex justify-center max-md:pb-10">
+            <div className="shadow-cookiePageShadow w-[330px] sm:w-[350px] lg:w-[450px] lg:py-3 rounded-3xl mt-[40px]">
+              <div className="flex justify-evenly py-5">
+                <div className="flex flex-col justify-center items-center">
+                  <img className="pb-2" src="/Duration.png" alt="time" />
+                  <div className="text-xl font-bold">Duration</div>
+                  <div className="text-sm font-normal text-center ">1 Hour</div>
                 </div>
-              </div>
-              <div className="flex flex-col items-center max-md:gap-4 md:gap-10">
-                <img src="/image 2 1.png" className=" h-32 w-32" alt="privacy" />
-                <div className="text-sm font-medium text-center">
-                  A comparison of Basic & <br></br>Advanced Consent Modes.
-                </div>
-              </div>
-              <div className="flex flex-col items-center max-md:gap-4 md:gap-10">
-                <img
-                  src="/image 3 1.png"
-                  className=" h-32 w-32"
-                  alt="online-privacy"
-                />
-                <div className="text-sm font-medium text-center">
-                  How to implement Google’s <br></br>Consent Mode for websites and
-                  <br></br> PPC campaigns.
-                </div>
-              </div>
-              <div className="flex flex-col items-center max-md:gap-4 md:gap-10">
-                <img src="/image 4 1.png" className=" h-32 w-32" alt="settings" />
-                <div className="text-sm font-medium text-center">
-                  Insights on tools like Cookiebot<br></br> and OneTrust for
-                  effective <br></br>consent management.
+                <div className="flex flex-col justify-center items-center">
+                  <img
+                    className="pb-2"
+                    src="/reduce-cost (2) 1.png"
+                    alt="time"
+                  />
+                  <div className="text-xl font-bold">Cost</div>
+                  <div className="text-sm font-normal text-center ">Free</div>
                 </div>
               </div>
             </div>
-          </section>
-        </section>
-        <section
-          id="sticky-section"
-          className={`bg-gradient-to-l from-[#EB5442] to-[#ED7754] max-md:py-3 md:py-5 max-md:gap-0 flex items-center justify-between lg:justify-center 
-                      lg:gap-16 xl:gap-16 px-3.5 md:px-5 lg:px-8 xl:px-16 2xl:px-56  transform transition-all duration-1000 ease-in-out ${isSticky
-              ? "sticky translate-y-0  transform transition-all duration-1000 ease-out"
-              : "transform transition-all duration-1000 ease-in-out translate-y-10"
-            }`}
-        >
-          <div className="text-[12px] max-sm:w-[60%] max-lg:w-[77%] md:text-xl font-semibold text-white">
-            Are you looking for the right partner to implement Cookie consent for
-            your business?
-          </div>
-          <a
-            onClick={scrolling1}
-            target="_blank"
-            className="max-sm:w-[107px] bg-white text-[#ED7754] cursor-pointer shadow-foter 
-                        text-center py-2 border rounded-[5px] px-2 sm:px-3 text-[11px] xl:text-base md:text-sm font-semibold
-                          cookiebutton hover:border-white hover:border-[1px] hover:text-white border-[#FFFFFF] text-sm"
-          >
-            Contact Us Now
-          </a>
-        </section>
-        <div className="bg-[#E8FBFB] py-5 flex flex-col gap-3 px-4 lg:px-20">
-          <h2 className="text-center font-bold text-base lg:text-3xl xl:font-extrabold">
-            Trusted by Organisations Worldwide
-          </h2>
-          <div className="brandsimages flex space-x-8 justify-center py-4 px-4 mt-4">
-            <Marquee gradient={false} pauseOnHover="true">
-              {brandsdata?.brand.map((brands, key) => (
-                <div key={key}>
-                  <img src={brands.logo} alt={brands.brands} />
-                </div>
-              ))}
-            </Marquee>
           </div>
         </div>
-        <section className="bg-[#2E2C37] w-full h-full flex justify-center py-2 px-2 md:px-4 md:py-4 lg:py-8 lg:px-10">
-          <img
-            onClick={scrolling1}
-            src="/Webinar_Landing_Page_Banner_1 (1).png"
-            alt="footer-banner"
-            className="w-full cursor-pointer"
-          />
+      </section>
+      <section className="flex max-xl:flex-col bg-[#F5FDFF] md:pt-7 xl:pt-0 md:mt-16 xl:mt-0">
+        <section className="w-full xl:px-20">
+          <div className="text-2xl md:text-[35px] font-bold text-[#3C292A] pt-16 pb-16 xl:font-extrabold text-center">
+            <span className="inline-block relative">
+              In this&nbsp;
+              <span
+                className="absolute block bg-gradient-to-r from-[#59C3EC] to-[#297AB6]"
+                style={{
+                  width: "90px",
+                  marginTop: "8px",
+                  height: "5px",
+                  borderRadius: "10px",
+                  top: "calc(100% )",
+                  left: "0",
+                }}
+              ></span>
+            </span>
+            webinar, you'll learn :
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 max-md:gap-8 md:gap-16 max-sm:grid-cols-1 justify-around md:px-10 2xl:px-24 pb-8 xl:pb-20">
+            <div className="flex flex-col items-center max-md:gap-4 md:gap-10">
+              <img src="/image 1 1.png" className=" h-32 w-32" alt="privacy" />
+              <div className="text-sm font-medium text-center">
+                The fundamentals of consent <br></br>& its role in data privacy.
+              </div>
+            </div>
+            <div className="flex flex-col items-center max-md:gap-4 md:gap-10">
+              <img src="/image 2 1.png" className=" h-32 w-32" alt="privacy" />
+              <div className="text-sm font-medium text-center">
+                A comparison of Basic & <br></br>Advanced Consent Modes.
+              </div>
+            </div>
+            <div className="flex flex-col items-center max-md:gap-4 md:gap-10">
+              <img
+                src="/image 3 1.png"
+                className=" h-32 w-32"
+                alt="online-privacy"
+              />
+              <div className="text-sm font-medium text-center">
+                How to implement Google’s <br></br>Consent Mode for websites and
+                <br></br> PPC campaigns.
+              </div>
+            </div>
+            <div className="flex flex-col items-center max-md:gap-4 md:gap-10">
+              <img src="/image 4 1.png" className=" h-32 w-32" alt="settings" />
+              <div className="text-sm font-medium text-center">
+                Insights on tools like Cookiebot<br></br> and OneTrust for
+                effective <br></br>consent management.
+              </div>
+            </div>
+          </div>
         </section>
-        {/* {showPopup && (
+      </section>
+      <section
+        id="sticky-section"
+        className={`bg-gradient-to-l from-[#EB5442] to-[#ED7754] max-md:py-3 md:py-5 max-md:gap-0 flex items-center justify-between lg:justify-center 
+                      lg:gap-16 xl:gap-16 px-3.5 md:px-5 lg:px-8 xl:px-16 2xl:px-56  transform transition-all duration-1000 ease-in-out ${isSticky
+            ? "sticky translate-y-0  transform transition-all duration-1000 ease-out"
+            : "transform transition-all duration-1000 ease-in-out translate-y-10"
+          }`}
+      >
+        <div className="text-[12px] max-sm:w-[60%] max-lg:w-[77%] md:text-xl font-semibold text-white">
+          Are you looking for the right partner to implement Cookie consent for
+          your business?
+        </div>
+        <a
+          onClick={scrolling1}
+          target="_blank"
+          className="max-sm:w-[107px] bg-white text-[#ED7754] cursor-pointer shadow-foter 
+                        text-center py-2 border rounded-[5px] px-2 sm:px-3 text-[11px] xl:text-base md:text-sm font-semibold
+                          cookiebutton hover:border-white hover:border-[1px] hover:text-white border-[#FFFFFF] text-sm"
+        >
+          Contact Us Now
+        </a>
+      </section>
+      <div className="bg-[#E8FBFB] py-5 flex flex-col gap-3 px-4 lg:px-20">
+        <h2 className="text-center font-bold text-base lg:text-3xl xl:font-extrabold">
+          Trusted by Organisations Worldwide
+        </h2>
+        <div className="brandsimages flex space-x-8 justify-center py-4 px-4 mt-4">
+          <Marquee gradient={false} pauseOnHover="true">
+            {brandsdata?.brand.map((brands, key) => (
+              <div key={key}>
+                <img src={brands.logo} alt={brands.brands} />
+              </div>
+            ))}
+          </Marquee>
+        </div>
+      </div>
+      <section className="bg-[#2E2C37] w-full h-full flex justify-center py-2 px-2 md:px-4 md:py-4 lg:py-8 lg:px-10">
+        <img
+          onClick={scrolling1}
+          src="/Webinar_Landing_Page_Banner_1 (1).png"
+          alt="footer-banner"
+          className="w-full cursor-pointer"
+        />
+      </section>
+      {/* {showPopup && (
               <ContactPopup onClose={closePopup} onRegister={registerUser} />
             )} */}
-      </main>
-    </>
+    </main>
   );
 }
 
@@ -701,3 +694,140 @@ export async function getServerSideProps(context) {
                 </div>
               </div> */
 }
+
+
+
+// Inline styles (replacing TailwindCSS styles)
+const popupStyles = `
+    position: fixed;
+    inset: 0;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 90%;
+    max-height: fit-content;
+    z-index: 1000;
+    overflow-y: auto;
+    margin: auto;
+`;
+
+const formStyles = `
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+`;
+
+function validate(values) {
+  const errors = {};
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+  const mobileRegex = /^\+?(\d{1,3})[-.\s]?(\d{5,14})$/;
+
+  if (!values.fullName) {
+    errors.fullName = "Name is required!";
+  }
+
+  if (!values.contact) {
+    errors.contact = "Contact is required!";
+  } else if (!mobileRegex.test(values.contact)) {
+    errors.contact = "This is not a valid phone number!";
+  }
+
+  if (!values.email) {
+    errors.email = "Email is required!";
+  } else if (!emailRegex.test(values.email)) {
+    errors.email = "This is not a valid email format!";
+  }
+
+  return errors;
+}
+
+function createPopup(onClose, onRegister) {
+  const popup = document.createElement('div');
+  popup.setAttribute('style', popupStyles);
+
+  popup.innerHTML = `
+        <img src="https://storage.googleapis.com/website-bucket-uploads/cross.png" alt="close" style="position: absolute; top: 10px; right: 10px; cursor: pointer;">
+        <div>
+            <h2>BOOST YOUR CONVERSIONS</h2>
+            <p>We offer expert Conversion Rate Optimization (CRO) services to maximize your website's potential.</p>
+            <form style="${formStyles}" id="contactForm">
+                <input type="text" id='fullName' name="fullName" placeholder="Name*" required>
+                <span class="error" style="color: red;"></span>
+                <input type="email" id='email' name="email" placeholder="Email*" required>
+                <span class="error" style="color: red;"></span>
+                <input type="text" id='contact' name="contact" placeholder="Contact No*" required>
+                <span class="error" style="color: red;"></span>
+                <textarea name="message" id='message' placeholder="Message" rows="4"></textarea>
+                <button type="submit">Book Now!</button>
+            </form>
+        </div>
+    `;
+
+  document.body.appendChild(popup);
+
+  // Close button event listener
+  popup.querySelector('img[alt="close"]').addEventListener('click', () => {
+    onClose();
+    document.body.removeChild(popup);
+  });
+
+  // Form submission with validation
+  popup.querySelector('#contactForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = Object.fromEntries(new FormData(e.target).entries());
+    console.log("in contactForSubmission formData", formData)
+    const errors = validate(formData);
+    console.log("in contactForSubmission error", errors)
+
+    // Clear previous error messages
+    const errorElements = popup.querySelectorAll('.error');
+    errorElements.forEach(el => el.textContent = "");
+
+    // Display validation errors
+    if (Object.keys(errors).length > 0) {
+      if (errors.fullName) popup.querySelectorAll('.error')[0].textContent = errors.fullName;
+      if (errors.email) popup.querySelectorAll('.error')[1].textContent = errors.email;
+      if (errors.contact) popup.querySelectorAll('.error')[2].textContent = errors.contact;
+      return;
+    }
+    console.log("errro check api call finally ", Object.keys(errors).length)
+
+    // Send form data if validation passes
+    fetch('/api/popupContact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    })
+      .then(response => response.json())
+      .then(() => {
+        onRegister();
+        window.dataLayer.push({ event: 'contactFormSubmitted' });
+        document.body.removeChild(popup);
+      })
+      .catch(error => console.error('Error:', error));
+  });
+}
+
+// Functions to handle popup show/hide
+// function useWebinarPopup() {
+//   const popupShown = () => localStorage.getItem('webinarPopupClosed');
+//   const registered = () => localStorage.getItem('webinarRegistered');
+//   console.log("in usewebinarc", popupShown, registered)
+
+//   if (!registered() && (!popupShown() || Date.now() - popupShown() > 86400000)) {
+//     console.log("in usewebinarc if condition..", popupShown, registered)
+//     setTimeout(() => {
+//       createPopup(
+//         () => localStorage.setItem('webinarPopupClosed', Date.now()),
+//         () => localStorage.setItem('webinarRegistered', 'true')
+//       );
+//       window.dataLayer.push({ event: 'popupImpression' });
+//     }, 5000); // Show popup after 10 seconds
+//   }
+// }
+
+// Initialize the popup on page load
+// document.addEventListener('DOMContentLoaded', useWebinarPopup);

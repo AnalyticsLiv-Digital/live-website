@@ -8,7 +8,6 @@ import StructuredData from '../components/StructuredData';
 import Testimonial from '../components/home/Testimonial'
 import "react-multi-carousel/lib/styles.css";
 import Link from 'next/link';
-import ScrollProgress from '../components/ScrollProgress'
 import { Transition } from "@headlessui/react";
 
 const { Element: ScrollElement } = Scroll;
@@ -339,7 +338,6 @@ export default function ga4({ brandsdata }) {
               </div>
             )}
           </Transition>
-          <ScrollProgress color="red" showSpinner={false} />
         </header>
 
         {/* <section>
@@ -868,7 +866,7 @@ export default function ga4({ brandsdata }) {
         <section className='bg-[#656565] pt-[3%] overflow-hidden w-full text-center max-[350px]:h-[32dvh] max-[400px]:h-[38dvh] max-[425px]:h-[35dvh] max-sm:overflow-hidden'>
           <div className='flex relative'>
             <div className='lg:pl-[10%] max-sm:overflow-hidden '>
-              <img src='/boy_IMG.png' alt='Boy image' className='max-sm:h-[50%] max-sm:float-left max-[380px]:mt-[30%] max-[425px]:mt-[20%]' />
+              <img src='https://storage.googleapis.com/website-bucket-uploads/static/public/Boy_IMG.png' alt='Boy image' className='max-sm:h-[50%] max-sm:float-left max-[380px]:mt-[30%] max-[425px]:mt-[20%]' />
             </div>
             <div className='absolute left-[35%] xl:left-[29%]'>
               <div className=' max-[400px]:text-[18px] text-2xl md:text-2xl xl:text-4xl font-semibold text-white pt-[5%] lg:pt-[7%] xl:pt-[5%]'>Take Control of your Campaigns & 

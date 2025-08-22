@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import Head from 'next/head'
-import ScrollProgress from '../../components/ScrollProgress'
 import AOS from 'aos';
 import Link from 'next/link';
 import 'aos/dist/aos.css';
@@ -17,7 +16,6 @@ const Careers = ({ jobsdata }) => {
         <link rel="canonical" href="https://analyticsliv.com/careers"></link>
         <meta name="description" content="Unlock your potential with our dynamic career opportunities. Join a diverse marketing agency committed to data-driven growth using first-party data. " />
       </Head>
-      <ScrollProgress />
       <section className="pb-12">
         <div className="relative py-8 ">
           <div className="absolute w-72 h-72 bg-pink-300 rounded-full right-0 md:right-10 top-2 blur-xl"></div>

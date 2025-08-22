@@ -3,118 +3,63 @@ import { useState, useEffect } from 'react';
 import { useSession, signIn, signOut } from "next-auth/react"
 import { useRouter } from 'next/navigation'
 import GoogleButton from 'react-google-button'
+import { uploadPhoto } from '../../../utils/uploadPhotoFileBlogs';
 
 const index = () => {
 
   //console.log(blogData);
-  const initialValues = { open: 'true', coverimage: '', description: '', title: '', slug: '', author: '', filename: '', date: '', active: '', sequence: '', heading1: '', heading2: '', heading3: '', heading4: '', heading5: '', content1: '', content2: '', content3: '', content4: '', content5: '' };
+  const initialValues = {
+    open: '', coverimage: '', description: '', title: '', slug: '', author: '', filename: '', date: '', active: 'false', sequence: '',
+    heading1: '', heading2: '', heading3: '', heading4: '', heading5: '', content1: '', content2: '', content3: '', content4: '', content5: '',
+    percentageBanner: '', clientLogo: '', clientTestimonial: '', testimonialVedioUrl: '', mainImage: '',
+    metatitle: "", metadescription: "",
+  };
   const [formValues, setFormValues] = useState(initialValues);
+  const [formattedDate, setFormattedDate] = useState('');
   const [isSubmit, setIsSubmit] = useState(false);
   const [loading, setLoading] = useState(false);
   console.log(formValues);
   const router = useRouter();
 
+  useEffect(() => {
+    const today = new Date();
+    const formattedToday = formatDate(today);
+    setFormValues({ ...formValues, date: formattedToday });
+    setFormattedDate(formattedToday);
+  }, []);
 
-
-  const uploadPhoto = async (e) => {
-    const file = e.target.files[0];
-    var file_size = e.target.files[0].size;
-
-    if (file_size < 10000000) {
-      var re = /(?:\.([^.]+))?$/;
-      var x = Date.now() + '' + Math.floor(Math.random() * 1000);
-      var ext = re.exec(file.name)[1];
-      var new_filename = x + '.' + ext;
-      // console.log(new_filename);
-      const filename = encodeURIComponent(file.name);
-      const res = await fetch(`/api/csupload?file=${new_filename}`);
-      const { url, fields } = await res.json();
-      console.log(res.json);
-      const formData = new FormData();
-
-      Object.entries({ ...fields, file }).forEach(([key, value]) => {
-        formData.append(key, value);
-      });
-
-      const upload = await fetch(url, {
-        method: 'POST',
-        mode: 'no-cors', // no-cors, *cors, same-origin
-        body: formData,
-      }).then((data) => {/*console.log(data.json)*/ });
-
-      setFormValues({ ...formValues, coverimage: 'https://storage.googleapis.com/website-bucket-uploads/cs/' + new_filename });
-
-      if (upload) {
-        console.log('Uploaded successfully!');
-        setFormValues({ ...formValues, coverimage: 'https://storage.googleapis.com/website-bucket-uploads/cs/' + new_filename });
-
-      } else {
-        console.log(upload);
-        setFormValues({ ...formValues, coverimage: 'https://storage.googleapis.com/website-bucket-uploads/cs/' + new_filename });
-
-      }
-
-      console.log(formValues)
-    } else {
-      alert('file size should be less than 10MB');
-      document.getElementById('coverimage_file').value = '';
-    }
-
-
+  const formatDate = (date) => {
+    const day = date.getDate();
+    const month = date.toLocaleString('default', { month: 'short' });
+    const year = date.getFullYear();
+    const suffix = getOrdinalSuffix(day);
+    return `${day}${suffix} ${month} ${year}`;
   };
 
-
-  const uploadCaseStudy = async (e) => {
-    const file = e.target.files[0];
-    var file_size = e.target.files[0].size;
-
-    if (file_size < 10000000) {
-      var re = /(?:\.([^.]+))?$/;
-      var x = Date.now() + '' + Math.floor(Math.random() * 1000);
-      var ext = re.exec(file.name)[1];
-      var new_filename = x + '.' + ext;
-      // console.log(new_filename);
-      const filename = encodeURIComponent(file.name);
-      const res = await fetch(`/api/csupload?file=${new_filename}`);
-      const { url, fields } = await res.json();
-      console.log(res.json);
-      const formData = new FormData();
-
-      Object.entries({ ...fields, file }).forEach(([key, value]) => {
-        formData.append(key, value);
-      });
-
-      const upload = await fetch(url, {
-        method: 'POST',
-        mode: 'no-cors', // no-cors, *cors, same-origin
-        body: formData,
-      }).then((data) => {/*console.log(data.json)*/ });
-
-      setFormValues({ ...formValues, filename: 'https://storage.googleapis.com/website-bucket-uploads/cs/' + new_filename });
-
-      if (upload) {
-        console.log('Uploaded successfully!');
-        setFormValues({ ...formValues, filename: 'https://storage.googleapis.com/website-bucket-uploads/cs/' + new_filename });
-
-      } else {
-        console.log(upload);
-        setFormValues({ ...formValues, filename: 'https://storage.googleapis.com/website-bucket-uploads/cs/' + new_filename });
-
-      }
-
-      console.log(formValues)
-    } else {
-      alert('file size should be less than 10MB');
-      document.getElementById('casestudy_file').value = '';
+  const getOrdinalSuffix = (day) => {
+    if (day > 3 && day < 21) return 'th';
+    switch (day % 10) {
+      case 1: return 'st';
+      case 2: return 'nd';
+      case 3: return 'rd';
+      default: return 'th';
     }
+  };
 
-
+  const handleDateChange = (e) => {
+    const selectedDate = new Date(e.target.value);
+    const formatted = formatDate(selectedDate);
+    setFormattedDate(formatted);
+    setFormValues({ ...formValues, date: formatted });
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
-    console.log(formValues);
+
+    if (name === 'date') {
+      setFormattedDate(formatDate(value));
+    }
   };
 
 
@@ -153,7 +98,14 @@ const index = () => {
         "content3": formValues.content3,
         "content4": formValues.content4,
         "content5": formValues.content5,
-        "open": formValues.open
+        "open": formValues.open,
+        'percentageBanner': formValues.percentageBanner,
+        "clientLogo": formValues.clientLogo,
+        "clientTestimonial": formValues.clientTestimonial,
+        "testimonialVedioUrl": formValues.testimonialVedioUrl,
+        "mainImage": formValues.mainImage,
+        "metatitle": formValues.metatitle,
+        "metadescription": formValues.metadescription,
       }),
     })
       .then((response) => response.json())
@@ -207,21 +159,69 @@ const index = () => {
               Slug - </label>
               <input required className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="slug" value={formValues.slug} onChange={handleChange} /><br />
             </div>
-            <div><label className="block text-base font-semibold mb-1 text-gray-200">
-              Publish Date - </label>
-              <input className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="date" value={formValues.date} onChange={handleChange} /><br />
+            <div>
+              <label className="block text-base font-semibold mb-1 text-gray-200">Publish Date - </label>
+              <div className="flex items-center gap-4">
+                <input
+                  type="date"
+                  onChange={handleDateChange}
+                  className="absolute w-8 opacity-0"
+                />
+                <div className="flex items-center cursor-pointer" onClick={() => document.querySelector('input[type="date"]').showPicker()}>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-5 h-5 text-gray-300" viewBox="0 0 24 24">
+                    <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm-7-7h5v5h-5z" />
+                  </svg>
+                </div>
+                <input
+                  type="text"
+                  value={formattedDate}
+                  readOnly
+                  placeholder="Selected date"
+                  className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none"
+                />
+              </div>
+              {/* <input className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="date" value={formValues.date} onChange={handleChange} /><br /> */}
             </div>
             <div><label className="block text-base font-semibold mb-1 text-gray-200">
               Description - </label>
               <input required className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="description" value={formValues.description} onChange={handleChange} /><br />
             </div>
+
+            <div>
+              <label className="block text-base font-semibold mb-2 text-gray-200">
+                Meta Title -
+              </label>
+
+              <input
+                className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500"
+                type="text"
+                name="metatitle"
+                value={formValues?.metatitle}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div>
+              <label className="block text-base font-semibold mb-2 text-gray-200">
+                Meta Description -
+              </label>
+
+              <input
+                className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500"
+                type="text"
+                name="metadescription"
+                value={formValues?.metadescription}
+                onChange={handleChange}
+              />
+            </div>
+
             <div><label className="block text-base font-semibold mb-1 text-gray-200">
               File URL -</label>
               <input required className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="filename" value={formValues.filename} onChange={handleChange} /><br />
             </div>
             <div><label className="block text-base font-semibold mb-1 text-gray-200">
               Casestudy Upload - </label>
-              <input type="file" id="casestudy_file" onChange={uploadCaseStudy} accept=".pdf, .jpg, .jpeg, .docx" className="block px-2.5 bg-slate-100  py-2 w-full text-sm text-gray-900 bg-transparent  border-slate-500 appearance-none" placeholder="No file" />
+              <input type="file" id="casestudy_file" onChange={(e) => uploadPhoto(e, 'filename', formValues, setFormValues)} accept=".pdf, .jpg, .jpeg, .docx" className="block px-2.5 bg-slate-100  py-2 w-full text-sm text-gray-900 bg-transparent  border-slate-500 appearance-none" placeholder="No file" />
             </div>
             <div><label className="block text-base font-semibold mb-1 text-gray-200">
               Coverimage URL- </label>
@@ -229,14 +229,69 @@ const index = () => {
             </div>
             <div><label className="block text-base font-semibold mb-1 text-gray-200">
               Coverimage Upload - </label>
-              <input type="file" id="coverimage_file" onChange={uploadPhoto} accept=".pdf, .jpg, .jpeg, .docx" className="block px-2.5 bg-slate-100  py-2 w-full text-sm text-gray-900 bg-transparent  border-slate-500 appearance-none" placeholder="No file" />
+              <input type="file" id="coverimage_file"
+                onChange={(e) => uploadPhoto(e, 'coverimage', formValues, setFormValues)}
+                accept=".pdf, .jpg, .jpeg, .docx" className="block px-2.5 bg-slate-100  py-2 w-full text-sm text-gray-900 bg-transparent  border-slate-500 appearance-none" placeholder="No file" />
             </div>
+
+            <div><label className="block text-base font-semibold mb-1 text-gray-200">
+              mainImage URL- </label>
+              <input className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="mainImage" value={formValues.mainImage} onChange={handleChange} /><br />
+            </div>
+            <div><label className="block text-base font-semibold mb-1 text-gray-200">
+              mainImage Upload - </label>
+              <input type="file" id="mainImage_file"
+                onChange={(e) => uploadPhoto(e, 'mainImage', formValues, setFormValues)}
+                accept=".pdf, .jpg, .jpeg, .docx" className="block px-2.5 bg-slate-100  py-2 w-full text-sm text-gray-900 bg-transparent  border-slate-500 appearance-none" placeholder="No file" />
+            </div>
+
+            <div><label className="block text-base font-semibold mb-1 text-gray-200">
+              Client Testimonial Video URL- </label>
+              <input className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="testimonialVedioUrl" value={formValues.testimonialVedioUrl} onChange={handleChange} /><br />
+            </div>
+
+            <div><label className="block text-base font-semibold mb-1 text-gray-200">
+              clientLogo URL- </label>
+              <input className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="clientLogo" value={formValues.clientLogo} onChange={handleChange} /><br />
+            </div>
+
+            <div><label className="block text-base font-semibold mb-1 text-gray-200">
+              clientLogo Upload - </label>
+              <input type="file" id="clientLogo_file"
+                onChange={(e) => uploadPhoto(e, 'clientLogo', formValues, setFormValues)}
+                accept=".pdf, .jpg, .jpeg, .docx" className="block px-2.5 bg-slate-100  py-2 w-full text-sm text-gray-900 bg-transparent  border-slate-500 appearance-none" placeholder="No file" />
+            </div>
+
+            <div><label className="block text-base font-semibold mb-1 text-gray-200">
+              clientTestimonial URL- </label>
+              <input className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="clientTestimonial" value={formValues.clientTestimonial} onChange={handleChange} /><br />
+            </div>
+
+            <div><label className="block text-base font-semibold mb-1 text-gray-200">
+              clientTestimonial Upload - </label>
+              <input type="file" id="clientTestimonial_file"
+                onChange={(e) => uploadPhoto(e, 'clientTestimonial', formValues, setFormValues)}
+                accept=".pdf, .jpg, .jpeg, .docx" className="block px-2.5 bg-slate-100  py-2 w-full text-sm text-gray-900 bg-transparent  border-slate-500 appearance-none" placeholder="No file" />
+            </div>
+
+            <div><label className="block text-base font-semibold mb-1 text-gray-200">
+              percentageBanner URL- </label>
+              <input className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="percentageBanner" value={formValues.percentageBanner} onChange={handleChange} /><br />
+            </div>
+            <div><label className="block text-base font-semibold mb-1 text-gray-200">
+              percentageBanner Upload - </label>
+              <input type="file" id="coverimage_file"
+                onChange={(e) => uploadPhoto(e, 'percentageBanner', formValues, setFormValues)}
+                accept=".pdf, .jpg, .jpeg, .docx" className="block px-2.5 bg-slate-100  py-2 w-full text-sm text-gray-900 bg-transparent  border-slate-500 appearance-none" placeholder="No file" />
+            </div>
+
+
             <div><label className="block text-base font-semibold mb-1 text-gray-200">
               Sequence - </label>
               <input required className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="sequence" value={formValues.sequence} onChange={handleChange} /><br />
             </div>
             <label className="block text-base font-semibold mb-1 text-gray-200">Active - </label><select required className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="active" value={formValues.active} onChange={handleChange} ><option value="true">Yes</option><option value="false">No</option> </select><br />
-            <label className="block text-base font-semibold mb-1 text-gray-200">Open Download - </label><select required className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="active" value={formValues.open} onChange={handleChange} ><option value="true">Yes</option><option value="false">No</option> </select><br />
+            <label className="block text-base font-semibold mb-1 text-gray-200">Open Download - </label><select required className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="open" value={formValues.open} onChange={handleChange} ><option value="true">Yes</option><option value="false">No</option> </select><br />
 
             <label className="block text-base font-semibold mb-1 text-gray-200">Content - </label>
             <input required placeholder='Heading 1' className="w-full px-2 py-1 text-sm text-white bg-transparent border-b-2 border-slate-500 focus:outline-none focus:border-cyan-500" type="text" name="heading1" value={formValues.heading1} onChange={handleChange} /><br />

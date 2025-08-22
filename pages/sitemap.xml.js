@@ -26,6 +26,9 @@ function generateSiteMap(posts) {
        <loc>https://analyticsliv.com/services/programatic-advertising</loc>
      </url>
      <url>
+       <loc>https://analyticsliv.com/services/custom-pipeline</loc>
+     </url>
+     <url>
        <loc>https://analyticsliv.com/services/analytics</loc>
      </url>
      
@@ -36,7 +39,7 @@ function generateSiteMap(posts) {
        <loc>https://analyticsliv.com/services/looker-bi-platform</loc>
      </url>
      <url>
-       <loc>https://analyticsliv.com/services/CRO</loc>
+       <loc>https://analyticsliv.com/services/conversion-rate-optimization</loc>
      </url>
      <url>
        <loc>https://analyticsliv.com/services/data-science</loc>
@@ -46,6 +49,18 @@ function generateSiteMap(posts) {
      </url>
      <url>
        <loc>https://analyticsliv.com/services/training</loc>
+     </url>
+     <url>
+       <loc>https://analyticsliv.com/services/ppc</loc>
+     </url>
+     <url>
+       <loc>https://analyticsliv.com/services/google-tag-manager</loc>
+     </url>
+     <url>
+       <loc>https://analyticsliv.com/services/server-side-tracking</loc>
+     </url>
+     <url>
+       <loc>https://analyticsliv.com/services/gdpr-compliance</loc>
      </url>
      <url>
        <loc>https://analyticsliv.com/blogs/</loc>
@@ -60,10 +75,16 @@ function generateSiteMap(posts) {
        <loc>https://analyticsliv.com/dv360</loc>
      </url>
      <url>
+       <loc>https://analyticsliv.com/programmatic-advertising</loc>
+     </url>
+     <url>
        <loc>https://analyticsliv.com/gtm</loc>
      </url>
      <url>
        <loc>https://analyticsliv.com/ecommerce</loc>
+     </url>
+     <url>
+       <loc>https://analyticsliv.com/ppc</loc>
      </url>
 
      

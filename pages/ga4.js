@@ -1,129 +1,95 @@
+import { Transition } from '@headlessui/react'
 import Head from 'next/head'
-import React from 'react'
-import { useEffect, useState } from 'react';
+import Image from 'next/image'
+import Link from 'next/link'
+import React, { useEffect, useRef, useState } from 'react'
+import Marquee from 'react-fast-marquee'
 import * as Scroll from 'react-scroll';
-import { ScaleLoader } from 'react-spinners';
-import Marquee from "react-fast-marquee";
-import StructuredData from '../components/StructuredData';
-import Testimonial from '../components/home/Testimonial'
-import "react-multi-carousel/lib/styles.css";
-import Link from 'next/link';
-import ScrollProgress from '../components/ScrollProgress'
-import { Transition } from "@headlessui/react";
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import PhoneInput from 'react-phone-input-2'
+import "react-phone-input-2/lib/bootstrap.css";
+import MetaSchemaOg from '../components/MetaSchemaOg'
 
 const { Element: ScrollElement } = Scroll;
 
-const responsive = {
-  superLargeDesktop: {
-    // the naming can be any, depends on you.
-    breakpoint: { max: 4000, min: 3000 },
-    items: 1
-  },
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 1
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1
-  }
-};
+export default function Ga4({ brandsdata }) {
 
-export default function ga4({ brandsdata }) {
+  const sliderRef = useRef(null);
+  const testimonialSliderRef = useRef(null);
 
-  const initialValues = { fullName: '', email: '', contact: '', message: '' };
+  const initialValues = { firstName: '', lastName: '', email: '', contactno: '', company: '', purpose: '', requirements: '', receiveUpdates: true, };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
   const [showWaiting, setShowWaiting] = useState(false);
-  const [selected, setSelected] = useState("");
   const [formSubmit, setFormSubmit] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormValues({ ...formValues, [name]: value });
-    //console.log(formValues);
+    const { name, type, value, checked } = e.target;
+    const val = type === 'checkbox' ? checked : value;
+    setFormValues((prev) => ({ ...prev, [name]: val }));
   };
 
+
+  const handleContactChange = (e) => {
+    setFormValues({ ...formValues, ['contactno']: e });
+    console.log(formValues);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFormErrors(validate(formValues));
-    setIsSubmit(true);
 
-  };
-
-  useEffect(() => {
-    //console.log(formErrors);
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
-      // console.log(formValues);
-      setShowWaiting(true);
-      dataLayer.push({
-        event: 'ga4_submission'
-      });
-      fetch('/api/ga4contact', {
-        method: 'POST', // or 'PUT'
-        headers: {
-          'Content-Type': 'application/json',
-          'mode': 'no-cors'
-        },
-        body: JSON.stringify({
-          "fullName": formValues.fullName,
-          "email": formValues.email,
-          "contact": formValues.contact,
-          "message": formValues.message
-        }),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-
-          setFormSubmit(true);
-          setShowWaiting(false);
-          window.open("https://calendly.com/analyticsliv/30min", '_blank');
-        })
-        .catch((error) => {
-          console.error('Error:', error);
-        });
-
-    }
-  }, [formErrors]);
-
-  const validate = (values) => {
-    const errors = {};
+    const errors = [];
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-    const mobile = /^(?=.*\d).{8,}$/i;
-    if (!values.fullName) {
-      errors.fullName = "Name is required!";
+
+    if (!formValues?.firstName?.trim()) errors?.push("First Name");
+    if (!formValues?.lastName?.trim()) errors?.push("Last Name");
+    if (!formValues?.email?.trim() || !regex.test(formValues?.email)) errors?.push("Email");
+    if (!formValues?.requirements) errors?.push("Requirements");
+    console.log("formeror-", formValues?.requirements)
+    console.log("errors?.length,", errors?.length)
+    if (errors?.length > 0) {
+      setFormErrors(errors);
+      setIsLoading(false);
+      return;
     }
+    console.log("check log-", formErrors)
+    // setFormErrors(validate(formValues));
+    setIsSubmit(true);
+    setShowWaiting(true);
+    dataLayer.push({
+      event: 'ga4_submission'
+    });
+    fetch('/api/ga4contact', {
+      method: 'POST', // or 'PUT'
+      headers: {
+        'Content-Type': 'application/json',
+        'mode': 'no-cors'
+      },
+      body: JSON.stringify({
+        "fullName": formValues.firstName + " " + formValues.lastName,
+        // "lastName": formValues.lastName,
+        "email": formValues.email,
+        "contact": formValues.contactno,
+        "message": formValues.requirements,
+        "receiveUpdates": formValues.receiveUpdates,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setFormSubmit(true);
+        setShowWaiting(false);
+        window.open("https://calendly.com/analyticsliv/30min", '_blank');
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        setShowWaiting(false);
+      });
 
-
-
-    if (!values.message) {
-      errors.message = "Message is required!";
-    }
-
-
-
-
-    if (!values.email) {
-      errors.email = "Email is required!";
-    } else if (!regex.test(values.email)) {
-      errors.email = "This is not a valid email format!";
-    }
-
-    /*  if (!values.contact) {
-          errors.contact = "Contact is required!";
-      } else if (!mobile.test(values.contact)) {
-          errors.contact = "This is not a valid phone number!";
-      }
-      */
-
-    return errors;
   };
 
   const scrolling = () => {
@@ -155,7 +121,6 @@ export default function ga4({ brandsdata }) {
         offset: -100,
       });
     }
-
   }
 
   const scrolling3 = () => {
@@ -166,7 +131,6 @@ export default function ga4({ brandsdata }) {
         offset: -100,
       });
     }
-
   }
 
   const scrolling4 = () => {
@@ -177,74 +141,219 @@ export default function ga4({ brandsdata }) {
         offset: -100,
       });
     }
-
   }
 
-  const scrolling5 = () => {
+  const handleNext = () => sliderRef.current.slickNext();
+  const handlePrev = () => sliderRef.current.slickPrev();
+
+  const handleNextTestimonial = () => testimonialSliderRef.current.slickNext();
+  const handlePrevTestimonial = () => testimonialSliderRef.current.slickPrev();
+
+  const cardsData = [
     {
-      Scroll.scroller.scrollTo("data-visualisation", {
-        duration: 500,
-        smooth: true,
-        offset: -100,
-      });
-    }
+      image: 'https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/workflow%201.png',
+      title: 'Proven GA4 Implementation Services',
+      description: 'We ensure seamless GA4 implementation with precise configuration, event tracking, and eCommerce integration. As a trusted GA4 Implementation Service provider, we make sure your data is clean, compliant, and conversion-ready.',
+    },
+    {
+      image: 'https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/analytics%20(6)%201.png',
+      title: 'Strategic Analytics Architecture & Tag Governance',
+      description: 'We go beyond setup by designing a scalable analytics architecture tailored to your business goals. From proper tag taxonomy to data layer strategy, our experts ensure your GA4 framework is built for long-term clarity and performance.',
+    },
+    {
+      image: 'https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Customized%20Conversion%20Tracking%20Solutions.png',
+      title: 'Customized Conversion Tracking Solutions',
+      description: 'Work with a Conversion Tracking Specialist to identify critical KPIs and user interactions. We build tailored tracking plans to measure success accurately across platforms.',
+    },
+    {
+      image: 'https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Actionable%20Insights%20%26%20Customer%20Journey%20Mapping.png',
+      title: 'Actionable Insights & Customer Journey Mapping',
+      description: "Use our Customer Journey Builder tools to visualize your users' full path to conversion. Our analysis turns raw data into meaningful strategies that improve acquisition, retention, and ROI.",
+    },
+    {
+      image: 'https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Training%20%26%20Enablement.png',
+      title: 'Training & Enablement',
+      description: 'Want to manage analytics internally? Our consultants provide 1:1 and team-based GA4 training sessions to empower your teams and upskill internal stakeholders.',
+    },
+  ];
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          initialSlide: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+    ],
+  };
+
+  const servieSettings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          initialSlide: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+    ],
+  };
+
+  const testimonialSettings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2500,
   }
 
 
+  useEffect(() => {
+    // Create the YouTube API script tag
+    const tag = document.createElement("script");
+    tag.src = "https://www.youtube.com/iframe_api";
+    document.body.appendChild(tag);
 
-  const stuctureData = { "@context": "https://schema.org", "@graph": [{ "@type": "WebPage", "@id": "https://analyticsliv.com/", "url": "https://analyticsliv.com/", "name": "Leading Web and App Analytics Agency in India - AnalyticsLiv", "isPartOf": { "@id": "https://analyticsliv.com/#website" }, "primaryImageOfPage": { "@id": "https://analyticsliv.com/#primaryimage" }, "image": { "@id": "https://analyticsliv.com/#primaryimage" }, "thumbnailUrl": "https://storage.googleapis.com/website-bucket-uploads/static/logo.png", "datePublished": "2023-01-11T18:27:34+00:00", "dateModified": "2023-04-07T20:48:38+00:00", "description": "AnalyticsLiv Digital is one of the leading Web and App analytics agency. We help our customers embrace Google Products to improve their customer experiences.", "breadcrumb": { "@id": "https://analyticsliv.com/#breadcrumb" }, "inLanguage": "en-US", "potentialAction": [{ "@type": "ReadAction", "target": ["https://analyticsliv.com/"] }] }, { "@type": "ImageObject", "inLanguage": "en-US", "@id": "https://analyticsliv.com/#primaryimage", "url": "https://storage.googleapis.com/website-bucket-uploads/static/logo.png", "contentUrl": "https://storage.googleapis.com/website-bucket-uploads/static/logo.png", "width": 1200, "height": 628 }, { "@type": "BreadcrumbList", "@id": "https://analyticsliv.com/#breadcrumb", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home" }] }, { "@type": "WebSite", "@id": "https://analyticsliv.com/#website", "url": "https://analyticsliv.com/", "name": "Analyticsliv", "description": "", "potentialAction": [{ "@type": "SearchAction", "target": { "@type": "EntryPoint", "urlTemplate": "https://analyticsliv.com/blogs/search?s={search_term_string}" }, "query-input": "required name=search_term_string" }], "inLanguage": "en-US" }, { "@type": "Organization", "@id": "https://analyticsliv.com/#organization", "name": "Analyticsliv", "url": "https://analyticsliv.com/", "logo": { "@type": "ImageObject", "inLanguage": "en-US", "@id": "https://analyticsliv.com/#/schema/logo/image/", "url": "https://storage.googleapis.com/website-bucket-uploads/static/logo.png", "contentUrl": "https://storage.googleapis.com/website-bucket-uploads/static/logo.png", "width": 512, "height": 114, "caption": "Analyticsliv" }, "image": { "@id": "https://analyticsliv.com/#/schema/logo/image/" }, "sameAs": ["https://m.facebook.com/100070503960704/", "https://in.linkedin.com/company/analytics-liv-digital", "https://www.youtube.com/channel/UCSU9utLB2PDe4VcXiI5kMFw", "https://www.instagram.com/analyticsliv_digital"] }] };
+    // Declare player change handler FIRST
+    const onPlayerStateChange = (event) => {
+      const state = window.YT.PlayerState;
+      const title = "Client Success"; // Or make this dynamic if needed
 
+      switch (event.data) {
+        case state.PLAYING:
+          window.dataLayer.push({ event: "youtube_play", videoTitle: title });
+          break;
+        case state.PAUSED:
+          window.dataLayer.push({ event: "youtube_pause", videoTitle: title });
+          break;
+        case state.ENDED:
+          window.dataLayer.push({ event: "youtube_end", videoTitle: title });
+          break;
+        default:
+          break;
+      }
+    };
+
+    // YouTube API ready callback
+    window.onYouTubeIframeAPIReady = () => {
+      new window.YT.Player("youtube-player", {
+        events: { onStateChange: onPlayerStateChange },
+      });
+    };
+
+    // Intercept ONLY YouTube-related events for console logging
+    window.dataLayer = window.dataLayer || [];
+    const originalPush = window.dataLayer.push;
+
+    window.dataLayer.push = function (...args) {
+      return originalPush.apply(window.dataLayer, args);
+    };
+
+  }, []);
 
   return (
     <>
       <Head>
         <link rel="icon" href="https://storage.googleapis.com/website-bucket-uploads/static/favicon.png" type="image/icon type"></link>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Poppins"
-          rel="stylesheet"
-        />
-        <meta name="description" content="AnalyticsLiv Digital is one of the leading Web and App analytics agency. We help our customers embrace Google Products to improve their customer experiences." />
-        <title>Google Analytics 4 - AnalyticsLiv</title>
-        <link rel="canonical" href="https://analyticsliv.com/ga4"></link>
       </Head>
-      <StructuredData data={stuctureData} />
-      {showWaiting && <div className="fixed z-50 flex backdrop-blur top-0 left-0 right-0 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full"><ScaleLoader
-        color="#271d90"
-        loading
-        size={100}
-        className="m-auto align-middle"
-      /></div>}
-      <div style={{ fontFamily: "'Poppins', sans-serif" }}>
+      <MetaSchemaOg
+        url="https://analyticsliv.com/ga4"
+        title="GA4 Consulting Services by Certified Experts"
+        description="Hire certified Google Analytics consultants for seamless GA4 setup, advanced tracking, and insights that drive growth and smarter business decisions."
+        twitterTitle="GA4 Consulting Services by Certified Experts"
+        twitterDescription="Hire certified Google Analytics consultants for seamless GA4 setup, advanced tracking, and insights that drive growth and smarter business decisions."
+        extraHead={
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap"
+          />
+        }
+      />
+      <div>
 
-        <header className="sticky min-w-full top-0 z-50 shadow-md bg-white">
-          <div className="navbar hidden lg:flex py-2 h-auto flex-wrap px-4 lg:flex-row items-center justify-between">
-            <a className="">
-              <img alt="logo" className="h-8 lg:ml-4 w-auto cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" />
-            </a>
-            <nav className="lg:flex text-center">
-              <ul className="lg:flex text-sm font-semibold text-left lg:text-center z-[-1] lg:z-auto lg:mr-4 lg:w-auto lg:space-x-6 items-center tracking-wide cursor-pointer">
-                <li onClick={scrolling1} className="hover:text-amber-500">Expertise</li>
-                <li onClick={scrolling2} className="hover:text-amber-500">Services</li>
-                <li onClick={scrolling3} className="hover:text-amber-500">Case Studies</li>
-                <li onClick={scrolling4} className="hover:text-amber-500">Testimonial</li>
-                {/* <li onClick={scrolling5} className="hover:text-amber-500">Data Visualisation</li> */}
-              </ul>
-              <a href="tel:8320576622">
-                <button className="cta px-5 py-2 bg-sky-300 rounded-2xl mx-2 text-sm font-semibold cursor-pointer hover:bg-sky-400">CALL US</button>
-              </a>
-              <span className="hidden md:inline px-4">
-                <img alt="gmp partner" className="h-10 w-auto" src="https://storage.googleapis.com/website-bucket-uploads/static/gmp.svg" />
-              </span>
-            </nav>
+        {/* desktop menu */}
+        <nav className='flex max-lg:hidden justify-around items-center py-3 px-[4%] 3xl:px-[6%]'>
+          <div className='md:w-[25%] 2xl:w-[40%]'>
+            <img alt="logo" className="w-[200px] 2xl:w-[250px]" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" />
           </div>
-
-
-          <div className="relative  flex lg:hidden p-2">
-            <Link href="/"><img onClick={() => setIsOpen(false)} src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="relative h-10 md:mx-4 cursor-pointer" /></Link>
-            <a className="ml-4" href="tel:8320576622">
-              <button className="cta px-5 py-2 bg-sky-300 rounded-2xl mx-2 text-sm font-semibold cursor-pointer hover:bg-sky-400">CALL US</button>
+          <div className="mdLw-[75%] 2xl:w-[55%] text-[#0F172A] lg:flex text-center items-center justify-evenly">
+            <ul className="lg:flex w-full text-sm xl:text-base font-semibold text-left lg:text-center z-[-1] lg:z-auto lg:mr-4 lg:w-auto lg:space-x-6 items-center tracking-wide cursor-pointer">
+              <button onClick={scrolling1} className="hover:underline hover:text-black ga4-navbar">Expertise</button>
+              <button onClick={scrolling2} className="hover:underline hover:text-black ga4-navbar">Services</button>
+              <button onClick={scrolling3} className="hover:underline hover:text-black ga4-navbar">Case Studies</button>
+              <button onClick={scrolling4} className="hover:underline hover:text-black ga4-navbar">Testimonial</button>
+            </ul>
+            <a href="tel:8320576622" className='max-2xl:ml-5'>
+              <button className="ga4butn-opposite">Call Us Now</button>
             </a>
+          </div>
+          <img alt="gmp partner" className="h-10 w-auto" src="https://storage.googleapis.com/website-bucket-uploads/static/gmp.svg" />
+        </nav>
+
+        {/* mobile menu */}
+        <div className='z-50 relative'>
+          <div className="relative z-30 flex lg:hidden p-2">
+            <Link href="/"><img onClick={() => setIsOpen(false)} src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" alt='AnalyticsLiv Logo' className="relative h-10 md:mx-4 cursor-pointer" /></Link>
+            {/* <a className="ml-4" href="tel:8320576622">
+                            <button className="cta px-5 py-2 bg-sky-300 rounded-2xl mx-2 text-sm font-semibold cursor-pointer hover:bg-sky-400">CALL US</button>
+                        </a> */}
             <button
               onClick={() => { setIsOpen(!isOpen); }}
               type="button"
@@ -298,18 +407,17 @@ export default function ga4({ brandsdata }) {
             leaveTo="opacity-0 scale-95"
           >
             {() => (
-              <div className="bg-white lg:hidden absolute w-full" id="mobile-menu">
-                <div className="px-4 pt-2 pb-3 space-y-1 sm:px-3">
+              <div className="bg-white z-50 lg:hidden absolute w-full" id="mobile-menu">
+                <div className="px-4 pt-2 z-50 pb-3 space-y-1 sm:px-3">
                   <p onClick={() => { setIsOpen(!isOpen); scrolling1(); }}
-                    className=" text-slate-900 block px-3 py-2 rounded-md text-base font-medium"
+                    className=" text-slate-900 block px-3 py-2 rounded-md text-base font-medium ga4-navbar"
                   >
                     <div>Expertise</div>
-
                   </p>
 
                   <p onClick={() => { setIsOpen(!isOpen); scrolling2(); }}
                     href="#"
-                    className="text-slate-900 block px-3 py-2 rounded-md text-base font-medium"
+                    className="text-slate-900 block px-3 py-2 rounded-md text-base font-medium ga4-navbar"
                   >
                     <div >Services</div>
 
@@ -317,601 +425,573 @@ export default function ga4({ brandsdata }) {
 
                   <p onClick={() => { setIsOpen(!isOpen); scrolling3(); }}
 
-                    className="text-slate-900 block px-3 py-2 rounded-md text-base font-medium"
+                    className="text-slate-900 block px-3 py-2 rounded-md text-base font-medium ga4-navbar"
                   >
                     Case Studies
                   </p>
 
                   <p onClick={() => { setIsOpen(!isOpen); scrolling4(); }}
 
-                    className="text-slate-900 block px-3 py-2 rounded-md text-base font-medium"
+                    className="text-slate-900 block px-3 py-2 rounded-md text-base font-medium ga4-navbar"
                   >
                     Testimonial
                   </p>
-
-                  {/* <p onClick={() => { setIsOpen(!isOpen); scrolling5(); }}
-
-                    className="text-slate-900 block px-3 py-2 rounded-md text-base font-medium"
-                  >
-                    Data Visualisation
-                  </p> */}
+                  <a href="tel:8320576622">
+                    <button className="ga4butn-opposite">Call Us Now</button>
+                  </a>
                 </div>
               </div>
             )}
           </Transition>
-          <ScrollProgress color="red" showSpinner={false} />
-        </header>
+        </div>
 
-        <section>
-          <div className="flex items-center justify-between mt-4 md:px-20 pl-4">
-            <div className="flex items-center m-2 md:float-none"><img alt="GA4 logo" src="https://storage.googleapis.com/website-bucket-uploads/static/Ga4_logo.png" />
-              <h1 className="  md:text-5xl text-2xl font-bold ml-4">Google Analytics 4</h1>
+        {/* landing */}
+        <section className='flex max-md:flex-col justify-between items-center max-md:text-center px-[4%] 3xl:px-[6%] max-md:pt-7 md:pt-3 lg:mt-6 lg:mb-3 3xl:mb-6 gap-10'>
+          <div className='md:w-[70%] lg:w-[50%] 2xl:w-[40%] 3xl:w-[52%] flex flex-col gap-7 md:gap-10'>
+            <h1 className='text-[#0F172A] text-2xl xl:text-[28px] 2xl:text-[32px] 3xl:text-[46px] 3xl:leading-[50px] font-extrabold'>Google Analytics 4 <span className='relative z-10'>(GA4)<img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Vector%2014.png' alt='analytics service providers' className='absolute right-0 top-7 xl:top-8 2xl:top-[35px] 3xl:top-[50px] z-20' /></span><br className='max-lg:hidden'></br> Implementation and Consulting to<br className='max-2xl:hidden'></br> Power Smarter Decisions</h1>
+            <h4 className='text-[#0F172A] text-[11px] xl:text-xs 2xl:text-sm font-normal'>As a leading Google Analytics Certified Agency, AnalyticsLiv specializes in<br className='max-lg:hidden'></br> custom Google Analytics 4 Consulting Services. Whether you’re looking to<br className='max-lg:hidden'></br> implement GA4 from scratch, or improve existing setups, our certified team of<br className='max-lg:hidden'></br> Google Analytics Consultants and Data Analytics Consultants is here to help</h4>
+            <div className='flex max-md:items-center max-md:justify-center lg:items-center gap-5 md:gap-3 lg:gap-11 max-md:flex-row max-lg:flex-col'>
+              <button onClick={scrolling} className="contact-us-btn ga4butn w-max">Let's Connect</button>
+              <button onClick={() => setIsVideoOpen(true)} className='yt-video group flex items-center gap-1 md:gap-3'>
+                <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/ytplay.png' alt='Data Analytics Consultant' />
+                <div className='text-lg font-bold text-[#2563EB] group-hover:underline'>Client Success</div>
+              </button>
+              {isVideoOpen && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
+                  <div className="relative w-[90%] max-w-3xl aspect-video">
+                    <iframe
+                      id="youtube-player"
+                      className="w-full h-full rounded-xl"
+                      src="https://www.youtube.com/embed/m0Oo0IL6gAQ?autoplay=1&enablejsapi=1"
+                      title="YouTube video"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                    <button
+                      onClick={() => setIsVideoOpen(false)}
+                      className="absolute -top-3 -right-3 bg-white text-black rounded-full py-1 px-2 shadow-md hover:bg-gray-100"
+                    >
+                      ✕
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
-
-          <div className="relative md:flex items-center md:px-20 pl-4">
-            <div className="absolute z-0 bg-gradient-to-r from-sky-200 to-transparent md:w-96 md:h-96 w-40 h-40 md:top-0 md:-left-36 top-12 -left-16 rounded-full"></div>
-            <div className="pt-12 md:w-3/4 z-10">
-              <h2 className="text-2xl font-bold">Is your GA4 ready to </h2>
-              <ul style={{ color: '#E37400' }} className="mt-6 mx-2 font-semibold">
-                <li><img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_6.png' />
-                  Explore new features of analytics</li>
-                <li><img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_6.png' />
-                  Better understand website traffic</li>
-                <li><img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_6.png' />
-                  Spend Marketing Budgets more wisely</li>
-              </ul>
-              <img alt="img new" className="" src="https://storage.googleapis.com/website-bucket-uploads/static/IMG_New.png" />
-              <div className="w-full flex justify-center mt-[-39px] mb-[31px] lg:hidden">
-                <button
-                  onClick={scrolling}
-                  className="cta schedule-button bg-amber-500 hover:bg-amber-600 transition-all delay-100 p-4 rounded-xl shadow-md shadow-gray-400 hover:shadow-gray-600 text-white font-semibold"
-                >
-                  Signup for free audit
-                </button>
-              </div>
-            </div>
-            <div className="text-center bg-sky-50 p-4 md:p-8 md:w-3/5 rounded-xl shadow-xl">
-
-              {!formSubmit && <div className="block">
-                <h2 className="md:text-xl text-sky-900">Deep dive into GA4 with our Free Audit </h2>
-                <h2 className="font-semibold text-2xl p-4 md:p-6 border-dashed border-b-2 border-sky-200">Let us help you !!</h2>
-                <ScrollElement
-                  id="contact-form"
-                  name="contact-form"
-                ></ScrollElement>
-                <form className="px-8 pt-6 pb-2 space-y-2" onSubmit={handleSubmit}>
-                  <div>
-                    <input type="text" placeholder="FULL NAME*" className="bg-sky-50 border-b-2 w-full px-4 py-2 focus:outline-none focus:border-2 focus:border-sky-200" id="fullName" name="fullName" value={formValues.fullName} onChange={handleChange} />
-                    <span className="text-xs text-red-600 float-left">{formErrors.fullName}</span>
-                  </div>
-
-                  <div>
-                    <input type="email" placeholder="EMAIL*" className="bg-sky-50 border-b-2 w-full px-4 py-2 focus:outline-none focus:border-2 focus:border-sky-200" id="email" name="email" value={formValues.email} onChange={handleChange} />
-                    <span className="text-xs text-red-600 float-left">{formErrors.email}</span>
-                  </div>
-                  <div>
-                    <input type="tel" placeholder="CONTACT NO." className="bg-sky-50 border-b-2 w-full px-4 py-2 focus:outline-none focus:border-2 focus:border-sky-200" id="contact" name="contact" value={formValues.contact} onChange={handleChange} />
-
-                  </div>
-                  <div>
-                    <textarea type="" placeholder="TYPE MESSAGE*" className="bg-sky-50 border-b-2 w-full px-4 py-2 focus:outline-none focus:border-2 focus:border-sky-200" id="message" name="message" value={formValues.message} onChange={handleChange}></textarea>
-                    <span className="text-xs text-red-600 float-left">{formErrors.message}</span>
-                  </div>
-                  <div>
-                    {/* <button className="cta bg-amber-500 hover:bg-amber-600 font-semibold text-white px-8 py-2 rounded-xl shadow-md shadow-gray-400 hover:shadow-gray-600 transition-transform delay-100">SIGN UP </button> */}
-                    <button
-                      className="cta font-semibold text-white px-8 py-2 rounded-xl shadow-md shadow-gray-400 hover:shadow-gray-600 transition-transform delay-100"
-                      style={{ backgroundColor: '#1A73E8' }}
-                      onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#1558B5'}
-                      onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#1A73E8'}
-                    >
-                      SIGN UP
-                    </button>
-
-                  </div>
-
-                </form>
-              </div>}
-
-              {formSubmit && <div>
-                <h2 className="md:text-xl text-sky-900">Thank you for showing interest with us!</h2>
-                <h2 className="font-semibold text-2xl p-4 md:p-8 border-dashed border-b-2 border-sky-200">We will get back to you shortly !!</h2>
-                <img alt="thank you" src="https://storage.googleapis.com/website-bucket-uploads/static/Na_Dec_46.jpg" />
-              </div>}
-              <a
-                href="https://docs.google.com/spreadsheets/d/1a3W4-dojm1F3T7v_mfqd_-kfQXq42q-zM2JHHAH2QbM"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-xs text-blue-600 hover:text-blue-600 underline"
-              >
-                View Sample GA4 Audit
-              </a>
-
-            </div>
+          <div>
+            <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/GA4_Right_Image.png' alt='google analytics consultants' />
           </div>
         </section>
 
-
-
-        {/* <section>
-          <div className="main bg-cover bg-center relative text-white" style={{ backgroundImage: "url('/ga4-head.png')", height: "105vh" }}>
-            <div className="relative md:flex items-center md:px-10 md:py-10">
-              <div className="pt-6 md:w-3/4 z-10 text-white">
-                <h2 className="font-poppins text-3xl md:text-5xl font-semibold leading-tight text-left">SMART . FAST . ACCURATE</h2>
-                <p className="font-poppins text-lg leading-7 mt-4 w-full md:w-1/2">
-                  Unleash the full potential of Data with AnalyticsLiv, a certified Google Analytics Partner.
-                </p>
-                <div className="w-full flex mt-6">
-                  <button
-                    onClick={scrolling}
-                    className="bg-blue-500 hover:bg-blue-600 transition-all delay-100 p-4 rounded-xl shadow-md hover:shadow-gray-600 text-white font-semibold"
-                  >
-                    Sign up for a Free Audit
-                  </button>
-                </div>
+        {/* why choose, form section */}
+        <ScrollElement id="expertise" name="expertise"></ScrollElement>
+        <section className='px-[4%] 3xl:px-[6%] flex max-md:flex-col items-center gap-8 max-md:pb-12 md:gap-8 py-8 justify-between'>
+          <div className='w-full md:w-[50%] lg:w-[60%] mt-8 lg:mt-4'>
+            <div className="flex justify-between items-center gap-5">
+              <h2 className='md:text-2xl xl:text-[32px] 2xl:text-[34px] font-bold lg:leading-10'>Why Choose AnalyticsLiv as Your<br className='max-md:hidden'></br> Analytics Partner?</h2>
+              <div className='flex items-center gap-3 pr-5 2xl:pr-16 3xl:pr-36'>
+                <button
+                  onClick={handlePrev}
+                  className="group"
+                >
+                  <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Button.png' alt='left vector' className='' />
+                </button>
+                <button
+                  onClick={handleNext}
+                  className="group"
+                >
+                  <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Button%20(1).png' alt='right vector' className='' />
+                </button>
               </div>
-
-              <div className="text-center bg-sky-50 p-4 md:p-8 md:w-1/2 rounded-xl shadow-xl mt-8 md:mt-0">
-
-                {!formSubmit && <div className="block">
-                  <h2 className="font-poppins text-lg font-medium leading-7 text-center text-sky-900">
-                    We Understand setting up GA4 can be complex sometimes.
-                  </h2>
-
-                  <h2 className="font-semibold text-2xl border-dashed border-b-2 border-sky-200 text-black">Let us help you !!</h2>
-                  <ScrollElement
-                    id="contact-form"
-                    name="contact-form"
-                  ></ScrollElement>
-                  <form className="px-8 pt-6 pb-2 space-y-2" onSubmit={handleSubmit}>
-                    <div>
-                      <input type="text" placeholder="FULL NAME*" className="bg-sky-50 border-b-2 w-full px-4 py-2 focus:outline-none focus:border-2 focus:border-sky-200" id="fullName" name="fullName" value={formValues.fullName} onChange={handleChange} />
-                      <span className="text-xs text-red-600 float-left">{formErrors.fullName}</span>
+            </div>
+            <div className="md:mt-2 pt-8 max-md:pb-12 md:pb-20 lg:pt-6 lg:pb-20 carousel-custom overflow-hidden">
+              <Slider ref={sliderRef} {...settings}>
+                {cardsData?.map((card, index) => (
+                  <div className='pb-8'>
+                    <div className="max-w-[320px] xl:max-w-[349px] 2xl:max-w-[369px] flex flex-col gap-3">
+                      <div className="">
+                        <img src={card?.image} alt={card?.title} className="max-md:h-16 max-md:w-16" />
+                      </div>
+                      <h3 className="text-[#0F172A] text-base xl:text-xl 2xl:text-[22px] font-bold leading-7">{card?.title}</h3>
+                      <h5 className="text-[#0F172A] text-xs xl:text-sm 2xl:text-base">{card?.description}</h5>
                     </div>
+                  </div>
+                ))}
+              </Slider>
+            </div>
+          </div>
+          <div className='md:w-[500px] shadow-ga4FormShadow rounded-[20px] max-md:px-5 max-md:py-6 md:p-6 2xl:p-8 '>
 
-                    <div>
-                      <input type="email" placeholder="EMAIL*" className="bg-sky-50 border-b-2 w-full px-4 py-2 focus:outline-none focus:border-2 focus:border-sky-200" id="email" name="email" value={formValues.email} onChange={handleChange} />
-                      <span className="text-xs text-red-600 float-left">{formErrors.email}</span>
-                    </div>
-                    <div>
-                      <input type="tel" placeholder="CONTACT NO." className="bg-sky-50 border-b-2 w-full px-4 py-2 focus:outline-none focus:border-2 focus:border-sky-200" id="contact" name="contact" value={formValues.contact} onChange={handleChange} />
+            <ScrollElement id="contact-form" name="contact-form"></ScrollElement>
+            {
+              formSubmit ?
+                <div>
+                  <div className='landing-thankyou flex flex-col justify-around md:h-[420px] items-center gap-4 relative text-slate-700'>
+                    <img
+                      src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Thank_You_img.png'
+                      alt='analyticsLiv'
+                      className="w-44 xl:w-80" />
+                    <h2 className='align-middle text-xl text-center'>We will get back to you soon.</h2>
+                  </div>
+                </div>
+                :
+                <div className='flex flex-col gap-[15px] 2xl:gap-[18px]'>
+                  <div className='text-center flex flex-col gap-[5px]'>
+                    <h2 className='text-[10px] sm:text-xs xl:text-sm'>Partner with a Leading Google Analytics Certified Agency</h2>
+                    <div className='text-xl font-extrabold'>Let us help you !!</div>
+                  </div>
+                  <form onSubmit={handleSubmit} className='landing-form flex flex-col gap-[14px] 2xl:gap-[16px]'>
+                    <div className='flex flex-col gap-4 2xl:gap-[14px]'>
+                      <div className='grid grid-cols-1 lg:grid-cols-2 gap-5'>
+                        <div>
+                          <div className='text-sm 2xl:text-[13px] font-semibold text-[#14183E] pb-1 2xl:pb-0.5'>First Name*</div>
+                          <input type="text" placeholder="First Name" className="text-sm 2xl:text-base px-4 py-2 2xl:py-2 border-[0.5px] border-[#D2D5DA] focus:border-[1.5px] focus:border-[#EA580C] shadow-inputShadow rounded-md w-full focus:outline-none placeholder-[#747582] placeholder-opacity-75"
+                            id="firstName" name="firstName" value={formValues?.firstName} onChange={handleChange} />
+                          <p className="text-red-600 text-sm">{formErrors?.firstName}</p>
+                        </div>
+                        <div>
+                          <div className='text-sm 2xl:text-[13px] font-semibold text-[#14183E] pb-1 2xl:pb-0.5'>Last Name*</div>
+                          <input type="text" placeholder="Last Name" className="text-sm 2xl:text-base px-4 py-2 2xl:py-2 border-[0.5px] border-[#D2D5DA] focus:border-[1.5px] focus:border-[#EA580C] shadow-inputShadow rounded-md w-full focus:outline-none placeholder-[#747582] placeholder-opacity-75"
+                            id="lastName" name="lastName" value={formValues?.lastName} onChange={handleChange} />
+                          <p className="text-red-600 text-sm">{formErrors?.lastName}</p>
+                        </div>
+                      </div>
+                      <div className="">
+                        <label className="text-sm 2xl:text-[13px] font-semibold text-[#14183E]">Contact No</label>
+                        <PhoneInput
+                          containerClass="custom-phone-input-container"
+                          inputClass="custom-phone-input1"
+                          required
+                          containerStyle={{
+                            width: '100%',
+                            height: '45px',
+                            boxShadow: '0px 2px 2px 0px #0000000D'
+                          }}
+                          inputStyle={{
+                            width: '100%',
+                            height: '30px',
+                            marginTop: '6px',
+                            border: '0.5px solid #D2D5DA',
+                            borderRadius: '8px',
+                            fontSize: '14px',
+                            paddingLeft: '60px',
+                          }}
+                          buttonStyle={{
+                            border: 'none',
+                            borderRadius: '8px 0 0 8px',
+                          }}
+                          name="contactno"
+                          id="contact"
+                          value={formValues?.contactno}
+                          onChange={handleContactChange}
+                          country={"in"}
+                          preferredCountries={['in', 'us', 'au']}
+                          enableSearch={true}
+                        />
+                      </div>
+                      <div className='w-full'>
+                        <div className='text-sm 2xl:text-[13px] font-semibold text-[#14183E] pb-1 lg:pb-[5px] lg:pt-1 2xl:pt-0 2xl:pb-0.5'>Email*</div>
+                        <input type="email" id='email' placeholder="Enter Your Email" className="text-sm 2xl:text-base px-5 py-2 2xl:py-2 border-[0.5px] border-[#D2D5DA] focus:border-[1.5px] focus:border-[#EA580C] shadow-inputShadow rounded-md w-full focus:outline-none placeholder-[#747582] placeholder-opacity-75"
+                          name="email" value={formValues?.email} onChange={handleChange} />
+                        <p className="text-red-600 text-sm">{formErrors?.email}</p>
 
+                      </div>
+                      <div className=''>
+                        <div className='text-sm 2xl:text-[13px] font-semibold text-[#14183E] pb-1 2xl:pb-0.5'>Requirements*</div>
+                        <textarea placeholder="Write Message..." rows={2} className="text-sm 2xl:text-base px-5 py-2 border-[0.5px] border-[#D2D5DA] focus:border-[1.5px] focus:border-[#EA580C] shadow-inputShadow rounded-md md:col-span-2 max-h-20 overflow-auto w-full focus:outline-none placeholder-[#747582] placeholder-opacity-75"
+                          id="requirements" name="requirements" value={formValues?.requirements} onChange={handleChange}></textarea>
+
+                        <p className="text-red-600 text-sm">{formErrors?.requirements}</p>
+
+                        {
+                          formErrors?.length > 0 &&
+                          <p className="text-red-500 text-xs font-medium text-left w-full pl-2 pt-1">
+                            {formErrors?.join(", ")} {formErrors?.length === 1 ? "is" : "are"} required.
+                          </p>
+                        }
+                      </div>
                     </div>
-                    <div>
-                      <textarea placeholder="TYPE MESSAGE*" className="bg-sky-50 border-b-2 w-full px-4 py-2 focus:outline-none focus:border-2 focus:border-sky-200" id="message" name="message" value={formValues.message} onChange={handleChange}></textarea>
-                      <span className="text-xs text-red-600 float-left">{formErrors.message}</span>
-                    </div>
-                    <div>
-                      <button
-                        className="cta font-semibold text-white px-8 py-2 rounded-xl shadow-md shadow-gray-400 hover:shadow-gray-600 transition-transform delay-100"
-                        style={{ backgroundColor: '#1A73E8' }}
-                        onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#1558B5'}
-                        onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#1A73E8'}
-                      >
-                        SIGN UP
+                    <div className='w-full flex flex-col gap-2'>
+                      <div className="flex items-start xl:items-center gap-1">
+                        <input
+                          type="checkbox"
+                          id="receiveUpdates"
+                          name="receiveUpdates"
+                          checked={formValues?.receiveUpdates}
+                          onChange={handleChange}
+                          className={`accent-[#EA580C]`}
+                        />
+                        <label htmlFor="receiveUpdates" className="text-[9px] 2xl:text-[11px]">
+                          Yes, I’d like to receive the latest analytics tips, GA4 updates, and insights via email.
+                        </label>
+                      </div>
+                      <button className={`${showWaiting ? 'cursor-not-allowed' : 'cursor-pointer'} ga4butn w-full`}>
+                        {showWaiting ? 'Loading...' : 'Contact Us'}
                       </button>
                     </div>
-
                   </form>
-                </div>}
-
-                {formSubmit && <div>
-                  <h2 className="md:text-xl text-sky-900">Thank you for showing interest with us!</h2>
-                  <h2 className="font-semibold text-2xl p-4 md:p-8 border-dashed border-b-2 border-sky-200">We will get back to you shortly !!</h2>
-                  <img alt="thank you" src="https://storage.googleapis.com/website-bucket-uploads/static/Na_Dec_46.jpg" />
-                </div>}
-                <a
-                  href="https://docs.google.com/spreadsheets/d/1a3W4-dojm1F3T7v_mfqd_-kfQXq42q-zM2JHHAH2QbM"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs text-blue-600 hover:text-blue-600 underline"
-                >
-                  View Sample GA4 Audit
-                </a>
-
-              </div>
-            </div>
+                </div>
+            }
           </div>
-        </section> */}
+        </section>
 
-        {/* <section>
-          <div className="flex flex-col md:flex-row items-center w-full mt-5 relative h-screen">
-            <div className="flex flex-col justify-center sm:absolute	bg-white z-10 left-0 w-full md:w-2/3 lg:w-1/2 h-auto md:h-3/5 p-6 md:p-6 sm:rounded-3xl shadow-lg pl-8">
-              <p className="text-xl md:text-4xl font-semibold leading-snug text-left text-blue-400 mb-1">
-                Get captivating customer insights and Analysis.
-              </p>
-
-              <p className="text-base md:text-lg leading-relaxed mt-4 text-gray-700">
-                By partnering with AnalyticsLiv, a Google Analytics Partner, you gain access to expert guidance and the latest tools to harness the power of GA4. Let's turn your data into a competitive advantage!
-              </p>
-              <button className="mt-6 py-3 px-6 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded transition-all duration-700 ease-in-out w-max">
-                Get started today
-              </button>
-            </div>
-            <div className="sm:absolute w-full md:w-1/2 lg:w-2/3 right-0 h-5/6 max-sm:h-1/2">
-              <img src="/ga4-second.png" alt="Customer Insights and Analysis" className="w-full h-full object-cover transform scale-x-[-1]" />
-            </div>
-          </div>
-        </section> */}
-
-        {/* <section>
-          <div className="mx-4 sm:mx-auto max-w-7xl">
-            <div className="mid3 text-2xl text-blue-500 font-semibold text-center py-4">
-              <p>Google Analytics - The support system of every marketing team, how it helps ?</p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 px-6 pb-8">
-              <div className="event1 bg-blue-100 shadow-md rounded-md p-4">
-                <div className="flex items-center pb-4">
-                  <div className="bg-blue-500 rounded-full w-14 h-14 overflow-hidden">
-                    <img src="/logo22.jpg" alt="" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="even1 ml-4">
-                    <p>Data Foundation & Automation :</p>
-                  </div>
-                </div>
-                <div className="evevent2b">
-                  <p>Establish a robust GA4 implementation, ensuring accurate data collection with built-in automation.</p>
-                </div>
-              </div>
-
-              <div className="event1 bg-blue-100 shadow-md rounded-md p-4">
-                <div className="flex items-center pb-4">
-                  <div className="bg-blue-500 rounded-full w-14 h-14 overflow-hidden">
-                    <img src="/location.jpg" alt="" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="even1 ml-4">
-                    <p>Customer Journey Mapping :</p>
-                  </div>
-                </div>
-                <div className="evevent2b">
-                  <p>GA4's advanced capabilities to map customer journey across touchpoints, revealing valuable insights into user behaviour.</p>
-                </div>
-              </div>
-
-              <div className="event1 bg-blue-100 shadow-md rounded-md p-4">
-                <div className="flex items-center pb-4">
-                  <div className="bg-blue-500 rounded-full w-14 h-14 overflow-hidden">
-                    <img src="/search.jpg" alt="" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="even1 ml-4">
-                    <p>Actionable Insights and Machine Learning :</p>
-                  </div>
-                </div>
-                <div className="evevent2b">
-                  <p>Leverage Google's machine learning to uncover hidden trends, predict future customer actions</p>
-                </div>
-              </div>
-
-              <div className="event1 bg-blue-100 shadow-md rounded-md p-4">
-                <div className="flex items-center pb-4">
-                  <div className="bg-blue-500 rounded-full w-14 h-14 overflow-hidden">
-                    <img src="/garph.jpg" alt="" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="even1 ml-4">
-                    <p>Seamless Integration & Reporting :</p>
-                  </div>
-                </div>
-                <div className="evevent2b">
-                  <p>Integrate GA4 with your existing marketing ecosystem, enabling 360° view across platforms and generate actionable reports</p>
-                </div>
-              </div>
-
-            </div>
-            <div className='flex justify-center w-full'>
-              <div className="event1 bg-blue-100 shadow-md rounded-md p-4 w-full md:w-3/5">
-                <div className="event1a flex items-center pb-4">
-                  <div className="bg-blue-500 rounded-full w-14 h-14 overflow-hidden">
-                    <img src="/hand.jpg" alt="" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="even1 ml-4">
-                    <p>Expert Guidance & Support :</p>
-                  </div>
-                </div>
-                <div className="evee">
-                  <p>Our team of Google Analytics certified consultants provide ongoing support and guidance to ensure you get the most out of GA4.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section> */}
-
-
-        {/* <section>
-          <div className="flex flex-col p-8">
-            <div className="mid3 text-2xl text-blue-500 font-semibold text-center py-4">
-              <p>Don't just collect data, make it work for you!</p>
-            </div>
-            <div className='w-full flex flex-col justify-center items-center md:flex-row'>
-              <div className="flex flex-col items-center sm:items-start h-full w-1/2">
-                <div className="flex items-center justify-center">
-                  <img className="w-2/3" src="/laptop.png" alt="" />
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-8 w-1/2">
-                <div className="space-y-8">
-                  <div className="flex flex-col items-start gap-8">
-                    <div className="flex items-center gap-8">
-                      <div className="bg-blue-500 rounded-full w-14 h-14 overflow-hidden">
-                        <img src="/clock.png" alt="" className="w-full h-full object-cover" />
-                      </div>
-                      <div className="ml-4">
-                        <p className="font-semibold">Reduced Reporting Time :</p>
-                      </div>
-                    </div>
-                    <div className="mt-4 sm:mt-0">
-                      <p>Spend less time gathering data and more time making strategic decisions. (Example: Short testimonial about reduced reporting time can be included here)</p>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col items-start gap-8">
-                    <div className="flex items-center gap-8">
-                      <div className="bg-blue-500 rounded-full w-14 h-14 overflow-hidden">
-                        <img src="/idea.png" alt="" className="w-full h-full object-cover" />
-                      </div>
-                      <div className="ml-4">
-                        <p className="font-semibold">Cross-Platform Insights :</p>
-                      </div>
-                    </div>
-                    <div className="mt-4 sm:mt-0">
-                      <p>Gain a holistic view of customer behavior across websites and apps.</p>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col items-start gap-8">
-                    <div className="flex items-center gap-8">
-                      <div className="bg-blue-500 rounded-full w-14 h-14 overflow-hidden">
-                        <img src="/speaket.png" alt="" className="w-full h-full object-cover" />
-                      </div>
-                      <div className="ml-4">
-                        <p className="font-semibold">Improved Marketing ROI :</p>
-                      </div>
-                    </div>
-                    <div className="mt-4 sm:mt-0">
-                      <p>Optimize campaigns based on actionable insights and data-driven strategies.</p>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col items-start gap-8">
-                    <div className="flex items-center gap-8">
-                      <div className="bg-blue-500 rounded-full w-14 h-14 overflow-hidden">
-                        <img src="/graph.png" alt="" className="w-full h-full object-cover" />
-                      </div>
-                      <div className="ml-4">
-                        <p className="font-semibold">Predictive Analytics :</p>
-                      </div>
-                    </div>
-                    <div className="mt-4 sm:mt-0">
-                      <p>Anticipate future customer actions and personalize experiences for better engagement.</p>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-        </section> */}
-
-        <section>
+        {/* brands logo */}
+        <section className='px-[4%] 3xl:px-[6%] md:py-8'>
           <div className="bg-white py-4">
-            <h2 className="text-center font-bold text-xl">200+ Clients served for GA4</h2>
-            <div className="brandsimages flex space-x-8 justify-center py-4 px-4 mt-4">
+            <h2 className="text-center text-[24px] text-[#0F172A] font-bold text-xl xl:text-[34px]">200+ Clients served for GA4</h2>
+            <div className="brandsimages flex space-x-8 justify-center py-4 px-4 mt-[40px]">
               <Marquee gradient={false} pauseOnHover="true">
-
                 {
-                  brandsdata.brand.map((brands, key) => (
+                  brandsdata?.brand?.map((brands, key) => (
                     <div key={key}><img src={brands.logo} alt={brands.brands} /></div>
-
                   ))
                 }
-
               </Marquee>
             </div>
           </div>
         </section>
 
-        <section>
-          <ScrollElement
-            id="expertise"
-            name="expertise"
-          ></ScrollElement>
-          <div className="bg-sky-300 relative md:flex md:justify-around md:mt-4 px-4 md:px-20 pt-8 pb-16">
-            <div className="text-center mb-8 md:mb-0">
-              <h2 className="text-4xl font-bold md:mb-16">Our expert can help you</h2>
-              <ul className="my-6 mx-2 text-sm text-left font-semibold space-y-4 mb-8">
-                <li><img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_6.png' />
-                  Set up your GA4 account and configure the tracking code</li>
-                <li><img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_6.png' />
-                  Import your historical data from Universal Analytics</li>
-                <li><img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_6.png' />
-                  Create custom reports and dashboards</li>
-                <li><img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_6.png' />
-                  Track your website traffic and marketing campaigns</li>
-                <li><img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_6.png' />
-                  Analyse your data and identify trends</li>
-                <li><img alt="arrow" className='inline mr-4' src='https://storage.googleapis.com/website-bucket-uploads/static/arrow_6.png' />
-                  Make data-driven decisions that will help you grow your business</li>
-              </ul>
-              <button onClick={scrolling} className="cta schedule-button bg-amber-500 hover:bg-amber-600 transition-all delay-100 p-4 rounded-xl shadow-md shadow-gray-400 hover:shadow-gray-600 text-white font-semibold">Schedule Free Consultation</button>
+        {/* services */}
+        <ScrollElement id="services" name="services"></ScrollElement>
+        <section className='ana-services px-[4%] 3xl:px-[6%] pt-7 pb-10'>
+          <div>
+            <h2 className='text-center text-[#0F172A] text-2xl xl:text-[28px] 2xl:text-[32px] font-bold'>Comprehensive Analytics Consulting Services</h2>
+            <h3 className='text-center text-sm text-[#0F172A] pt-[15px]'>As one of the most agile Analytics Consulting Companies, we deliver full-spectrum analytics services:</h3>
+            <div className='max-lg:hidden flex max-md:flex-wrap items-center justify-between pt-[36px]'>
+              <div className='border h-[190px] xl:h-[200px] w-[180px] xl:w-[205px] px-[10px] xl:px-[14px] py-[25px] xl:py-[35px] border-[#2563EB] hover:shadow-ga4Show rounded-lg flex flex-col justify-between items-center gap-[27px]'>
+                <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/settings%20(7).png' alt='GA4 Setup, Reporting & Debugging' />
+                <h3 className='text-[#0F172A] text-xs xl:text-sm text-center'>GA4 Setup, Reporting & Debugging</h3>
+              </div>
+              <div className='border h-[190px] xl:h-[200px] w-[180px] xl:w-[205px] px-[10px] xl:px-[14px] py-[25px] xl:py-[35px] border-[#2563EB] hover:shadow-ga4Show rounded-lg flex flex-col justify-between items-center gap-[27px]'>
+                <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/dashboard%20(13).png' alt='Custom Dashboards via Looker Studio & BigQuery' />
+                <h3 className='text-[#0F172A] text-xs xl:text-sm text-center'>Custom Dashboards via Looker Studio & BigQuery</h3>
+              </div>
+              <div className='border h-[190px] xl:h-[200px] w-[180px] xl:w-[205px] px-[10px] xl:px-[14px] py-[25px] xl:py-[35px] border-[#2563EB] hover:shadow-ga4Show rounded-lg flex flex-col justify-between items-center gap-[27px]'>
+                <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/customer-segment%20(2).png' alt='Audience Segmentation & Funnel Analysis' />
+                <h3 className='text-[#0F172A] text-xs xl:text-sm text-center'>Audience Segmentation & Funnel Analysis</h3>
+              </div>
+              <div className='border h-[190px] xl:h-[200px] w-[180px] xl:w-[205px] px-[10px] xl:px-[14px] py-[25px] xl:py-[35px] border-[#2563EB] hover:shadow-ga4Show rounded-lg flex flex-col justify-between items-center gap-[27px]'>
+                <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/data-collection%20(8).png' alt='Privacy-Compliant Data Collection' />
+                <h3 className='text-[#0F172A] text-xs xl:text-sm text-center'>Privacy-Compliant Data Collection</h3>
+              </div>
+              <div className='border h-[190px] xl:h-[200px] w-[180px] xl:w-[205px] px-[10px] xl:px-[14px] py-[25px] xl:py-[35px] border-[#2563EB] hover:shadow-ga4Show rounded-lg flex flex-col justify-between items-center gap-[27px]'>
+                <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/order-tracking%20(1).png' alt='Enhanced Ecommerce Tracking' />
+                <h3 className='text-[#0F172A] text-xs xl:text-sm text-center'>Enhanced Ecommerce <br></br>Tracking</h3>
+              </div>
             </div>
-            <div className="text-center">
-              <img alt="graph" src="https://storage.googleapis.com/website-bucket-uploads/static/graph.png" />
+            <div className="lg:hidden md:mt-2 py-8 carousel-custom overflow-hidden">
+              <Slider {...servieSettings}>
+                <div className='border h-[170px] w-[180px] xl:w-[205px] px-[10px] xl:px-[14px] py-[25px] xl:py-[35px] border-[#2563EB] hover:shadow-ga4Show rounded-lg flex flex-col justify-between items-center gap-[27px]'>
+                  <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/settings%20(7).png' alt='GA4 Setup, Reporting & Debugging' className='mx-auto pb-5' />
+                  <div className='service-title text-[#0F172A] text-xs text-center'>GA4 Setup, Reporting & Debugging</div>
+                </div>
+                <div className='border h-[170px] w-[180px] xl:w-[205px] px-[10px] xl:px-[14px] py-[25px] xl:py-[35px] border-[#2563EB] hover:shadow-ga4Show rounded-lg flex flex-col justify-between items-center gap-[27px]'>
+                  <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/dashboard%20(13).png' alt='Custom Dashboards via Looker Studio & BigQuery' className='mx-auto pb-5' />
+                  <div className='service-title text-[#0F172A] text-xs text-center'>Custom Dashboards via Looker Studio & BigQuery</div>
+                </div>
+                <div className='border h-[170px] w-[180px] xl:w-[205px] px-[10px] xl:px-[14px] py-[25px] xl:py-[35px] border-[#2563EB] hover:shadow-ga4Show rounded-lg flex flex-col justify-between items-center gap-[27px]'>
+                  <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/customer-segment%20(2).png' alt='Audience Segmentation & Funnel Analysis' className='mx-auto pb-5' />
+                  <div className='service-title text-[#0F172A] text-xs text-center'>Audience Segmentation & Funnel Analysis</div>
+                </div>
+                <div className='border h-[170px] w-[180px] xl:w-[205px] px-[10px] xl:px-[14px] py-[25px] xl:py-[35px] border-[#2563EB] hover:shadow-ga4Show rounded-lg flex flex-col justify-between items-center gap-[27px]'>
+                  <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/data-collection%20(8).png' alt='Privacy-Compliant Data Collection' className='mx-auto pb-5' />
+                  <div className='service-title text-[#0F172A] text-xs text-center'>Privacy-Compliant Data Collection</div>
+                </div>
+                <div className='border h-[170px] w-[180px] xl:w-[205px] px-[10px] xl:px-[14px] py-[25px] xl:py-[35px] border-[#2563EB] hover:shadow-ga4Show rounded-lg flex flex-col justify-between items-center gap-[27px]'>
+                  <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/order-tracking%20(1).png' alt='Enhanced Ecommerce Tracking' className='mx-auto pb-5' />
+                  <div className='service-title text-[#0F172A] text-xs text-center'>Enhanced Ecommerce Tracking</div>
+                </div>
+              </Slider>
             </div>
           </div>
         </section>
 
-        <section>
-          <ScrollElement
-            id="services"
-            name="services"
-          ></ScrollElement>
-          <div className="relative md:flex justify-around md:mt-4 px-4 md:px-20 md:pt-4 pb-4 md:pb-16">
-            <div className="text-center">
-              <img alt="offer" src="https://storage.googleapis.com/website-bucket-uploads/static/Offer.png" />
+        <section className='px-[4%] 3xl:px-[6%] py-8 md:pt-14 md:pb-10 flex max-md:flex-col justify-between items-center w-full gap-8'>
+          <div className='flex md:w-[45%] 2xl:w-[50%] items-start gap-5'>
+            <div className='mt-14'>
+              <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Screenshot_143.png' alt='Google Analytics Expert' className='2xl:w-[225px]' />
             </div>
-            <div className='text-center'>
-              <h2 className=" text-4xl text-left font-bold md:mb-16">Menu of Services</h2>
-              <ul className="my-6 mx-2 text-left text-sm font-semibold space-y-4 mb-8">
-                <li><svg xmlns="http://www.w3.org/2000/svg" className="inline mr-4" height="1em" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z" /></svg>
-                  GA4 Audit :
-                  <div className="pl-9 text-amber-500">Know about your current GA4 configuration and its gaps</div>
-                </li>
-                <li><svg xmlns="http://www.w3.org/2000/svg" className="inline mr-4" height="1em" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z" /></svg>
-                  Full Service Management :
-                  <div className="pl-9 text-amber-500">Configuration, management, and analysis of your GA4 account </div>
-                </li>
-                <li><svg xmlns="http://www.w3.org/2000/svg" className="inline mr-4" height="1em" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z" /></svg>
-                  Consulting :
-                  <div className="pl-9 text-amber-500">Get guidance and support on how GA4 can help improve your business. </div>
-                </li>
-                <li><svg xmlns="http://www.w3.org/2000/svg" className="inline mr-4" height="1em" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z" /></svg>
-                  Training :
-                  <div className="pl-9 text-amber-500">Get trained by Analytics veterans on how to use GA4 & manage
-                    your account yourself. </div>
-                </li>
-                <li><svg xmlns="http://www.w3.org/2000/svg" className="inline mr-4" height="1em" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z" /></svg>
-                  GA4 Insights and Analysis :
-                  <div className="pl-9 text-amber-500">Visualize GA4 Data & Generate insights to take actions. </div>
-                </li>
-              </ul>
-              <button onClick={scrolling} className="cta schedule-button bg-sky-400 hover:bg-sky-500 text-white p-4 rounded-xl shadow-md shadow-gray-400 hover:shadow-gray-600 transition-all delay-100 font-semibold">Schedule Free Consultation</button>
-
+            <div className=''>
+              <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/team-meeting-modern-office.png' alt='Data Analytics Service Providers' className='2xl:w-[225px]' />
+            </div>
+            <div className='mt-6'>
+              <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Screenshot_144.png' alt='Hire Google Analytics Expert' className='2xl:w-[225px]' />
             </div>
           </div>
-
-        </section>
-
-        {/* <section>
-          <div className="max-2xl:min-h-screen pb-10">
-            <div>
-              <p className="font-bold max-md:px-3 md:font-semibold text-xl md:text-2xl lg:text-2xl lg:px-10 text-center text-blue-400">
-                Explore the full range of GA4 functionalities we can help you implement:
-              </p>
+          <div className='flex flex-col gap-5 2xl:gap-6'>
+            <h2 className='font-extrabold text-[30px] 2xl:text-[40px] text-[#0F172A] leading-9 md:leading-[44px]'>
+              Why Businesses Hire Our Google<br className='max-md:hidden'></br> Analytics Experts
+            </h2>
+            <div className='text-[#475569] text-sm 2xl:text-[15px] flex flex-col gap-1'>
+              <h4>Trusted by global brands</h4>
+              <h4>Transparent processes & fast turnarounds</h4>
+              <h4>Flexible support plans for businesses of all sizes</h4>
+              <h4>100% certified Google Analytics Experts & strategists</h4>
             </div>
-
-            <div className="md:mt-10 2xl:pl-[730px] lg:px-10 max-2xl:min-h-screen overflow-hidden max-lg:flex max-lg:flex-col">
-              <div className="float-left lg:pt-96 xl:pt-72 m-auto lg:pr-20 lg:pl-10 max-sm:py-10">
-                <img src="/Ga4.png" alt="logo" />
-              </div>
-
-              <div className="max-md:px-5 md:ml-16 max-sm:flex max-sm:flex-col max-sm:items-center">
-                <div className="flex flex-col items-center md:flex md:flex-row sm:py-5 lg:transform lg:-translate-x-32">
-                  <p className="rounded-full bg-blue-50 p-3 md:p-8 lg:p-10 max-sm:w-max md:absolute md:z-10 text-lg font-extrabold sm:text-2xl lg:mt-5 text-blue-400">
-                    1
-                  </p>
-                  <span className="bg-blue-50 py-2 relative z-0 px-3 md:px-24 lg:px-32 xl:px-48 lg:ml-2 border border-transparent rounded-3xl md:mt-3 lg:mt-7">
-                    Built-in Automation for streamlined workflows.
-                  </span>
-                </div>
-                <div className="flex flex-col items-center md:flex md:flex-row py-8 lg:py-5 lg:transform lg:-translate-x-10">
-                  <p className="rounded-full bg-blue-50 p-3 md:p-8 lg:p-10 max-sm:w-max max-sm:h-max md:absolute md:z-10 text-lg font-extrabold sm:text-2xl lg:mt-5 text-blue-400">
-                    2
-                  </p>
-                  <span className="bg-blue-50 py-2 relative z-0 px-3 md:px-24 xl:px-48 lg:ml-2 border border-transparent rounded-3xl md:mt-3 lg:mt-7">
-                    Intuitive and Flexible Reporting for deeper analysis.
-                  </span>
-                </div>
-                <div className="flex flex-col items-center md:flex md:flex-row py-5 lg:py-7 lg:transform lg:translate-x-7">
-                  <p className="rounded-full bg-blue-50 p-3 md:p-8 lg:p-10 max-sm:w-max max-sm:h-max md:absolute md:z-10 text-lg font-extrabold sm:text-2xl lg:mt-5 text-blue-400">
-                    3
-                  </p>
-                  <span className="bg-blue-50 py-2 relative z-0 px-3 md:px-24 xl:px-48 lg:ml-2 border border-transparent rounded-3xl md:mt-3 lg:mt-7">
-                    Cross-Platform Attribution for accurate campaign measurement.
-                  </span>
-                </div>
-                <div className="flex flex-col items-center md:flex md:flex-row py-7 lg:transform lg:translate-x-7">
-                  <p className="rounded-full bg-blue-50 p-3 md:p-8 lg:p-10 max-sm:w-max max-sm:h-max md:absolute md:z-10 text-lg font-extrabold sm:text-2xl lg:mt-5 text-blue-400">
-                    4
-                  </p>
-                  <span className="bg-blue-50 py-2 relative z-0 px-3 md:px-24 xl:px-56 lg:ml-2 border border-transparent rounded-3xl md:mt-3 lg:mt-7">
-                    Explorations for custom data analysis.
-                  </span>
-                </div>
-                <div className="flex flex-col items-center md:flex md:flex-row py-5 lg:transform xl:-translate-x-10">
-                  <p className="rounded-full bg-blue-50 p-3 md:p-8 lg:p-10 max-sm:w-max max-sm:h-max md:absolute md:z-10 text-lg font-extrabold sm:text-2xl lg:mt-5 text-blue-400">
-                    5
-                  </p>
-                  <span className="bg-blue-50 py-2 relative z-0 px-3 md:px-24 xl:px-44 lg:ml-2 border border-transparent rounded-3xl md:mt-3 lg:mt-7">
-                    Easy Data Collection & Management with integrated tools.
-                  </span>
-                </div>
-                <div className="flex flex-col items-center md:flex md:flex-row py-8 lg:transform lg:translate-x-28 xl:translate-x-36">
-                  <p className="rounded-full bg-blue-50 p-3 md:p-8 lg:p-10 max-sm:w-max max-sm:h-max md:absolute md:z-10 text-lg font-extrabold sm:text-2xl lg:mt-5 text-blue-400">
-                    6
-                  </p>
-                  <span className="bg-blue-50 py-2 relative z-0 px-3 md:px-24 xl:px-40 lg:ml-2 border border-transparent rounded-3xl md:mt-3 lg:mt-7">
-                    Seamless Integration with existing marketing platforms.
-                  </span>
-                </div>
-              </div>
+            <div className='text-[#475569] text-sm 2xl:text-[15px]'>
+              Whether you're a startup or enterprise, we’re one of the few Data Analytics<br></br> Service Providers
+              offering both deep technical implementation and strategic<br></br> consulting.
             </div>
-          </div>
-
-        </section> */}
-
-        <ScrollElement
-          id="case-studies"
-          name="case-studies"
-        ></ScrollElement>
-        <section className='casestudy'>
-          <div className="bg-sky-300 relative text-center md:px-20 px-2 md:pt-8 py-4 md:pb-6 space-y-8">
-            <h2 className="text-4xl text-left font-bold md:mb-16">Case Studies</h2>
-            <div className="cstudy md:flex text-left justify-evenly bg-white md:px-20 px-2 md:py-8 py-4 md:rounded-full rounded-xl shadow-md shadow-gray-600">
-              <div className="md:w-3/4">
-                <h2 className="text-2xl font-bold mb-4"><svg xmlns="http://www.w3.org/2000/svg" className='inline mr-4 rotate-90' height="1em" viewBox="0 0 448 512"><path d="M160 64c0-8.8 7.2-16 16-16s16 7.2 16 16V200c0 10.3 6.6 19.5 16.4 22.8s20.6-.1 26.8-8.3c3-3.9 7.6-6.4 12.8-6.4c8.8 0 16 7.2 16 16c0 10.3 6.6 19.5 16.4 22.8s20.6-.1 26.8-8.3c3-3.9 7.6-6.4 12.8-6.4c7.8 0 14.3 5.6 15.7 13c1.6 8.2 7.3 15.1 15.1 18s16.7 1.6 23.3-3.6c2.7-2.1 6.1-3.4 9.9-3.4c8.8 0 16 7.2 16 16l0 16V392c0 39.8-32.2 72-72 72H272 212.3h-.9c-37.4 0-72.4-18.7-93.2-49.9L50.7 312.9c-4.9-7.4-2.9-17.3 4.4-22.2s17.3-2.9 22.2 4.4L116 353.2c5.9 8.8 16.8 12.7 26.9 9.7s17-12.4 17-23V320 64zM176 0c-35.3 0-64 28.7-64 64V261.7C91.2 238 55.5 232.8 28.5 250.7C-.9 270.4-8.9 310.1 10.8 339.5L78.3 440.8c29.7 44.5 79.6 71.2 133.1 71.2h.9H272h56c66.3 0 120-53.7 120-120V288l0-16c0-35.3-28.7-64-64-64c-4.5 0-8.8 .5-13 1.3c-11.7-15.4-30.2-25.3-51-25.3c-6.9 0-13.5 1.1-19.7 3.1C288.7 170.7 269.6 160 248 160c-2.7 0-5.4 .2-8 .5V64c0-35.3-28.7-64-64-64zm48 304c0-8.8-7.2-16-16-16s-16 7.2-16 16v96c0 8.8 7.2 16 16 16s16-7.2 16-16V304zm48-16c-8.8 0-16 7.2-16 16v96c0 8.8 7.2 16 16 16s16-7.2 16-16V304c0-8.8-7.2-16-16-16zm80 16c0-8.8-7.2-16-16-16s-16 7.2-16 16v96c0 8.8 7.2 16 16 16s16-7.2 16-16V304z" /></svg>
-                  Universal Analytics (GA3) to GA4 Migration for a Website</h2>
-                <p className="text-amber-600">The migration process was smooth and successful without any data loss,
-                  increasing efficiency and reducing manual effort by 30%. The client now has a more comprehensive understanding of user behaviour across devices and sessions, enabling them to make more informed decisions and improve website performance.
-                </p>
-              </div>
-              <div className="text-center space-x-4">
-                <img alt="GA3 logo" src="https://storage.googleapis.com/website-bucket-uploads/static/UA_Logo.png" className="inline" />
-                <img alt="arrow" src="https://storage.googleapis.com/website-bucket-uploads/static/curved_arrow.png" className="inline" />
-                <img alt="GA4 logo" src="https://storage.googleapis.com/website-bucket-uploads/static/Ga4_logo_png 1.png" className="inline" />
-                <a onClick={scrolling} href="#"><button className="cta bg-amber-500 hover:bg-amber-600 transition-all delay-100 px-16 py-2 text-white font-semibold rounded-full shadow-lg shadow-gray-400 mt-8">View</button></a>
-              </div>
-
+            <div onClick={scrolling} className='contact-us-btn flex items-center gap-6 group w-max'>
+              <div className='text-[#2563EB] text-base font-semibold cursor-pointer'>Connect with expert today</div>
+              <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Vector.png' alt='certified google analytics expert'
+                className='cursor-pointer transition-transform duration-300 ease-in-out group-hover:-translate-x-3' />
             </div>
-
-            <div className="cstudy md:flex text-left justify-evenly bg-white px-2 md:px-20 py-4 md:py-8 md:rounded-full rounded-xl shadow-md shadow-gray-600">
-              <div className="md:w-3/4">
-                <h2 className="text-2xl font-bold mb-4"><svg xmlns="http://www.w3.org/2000/svg" className='inline mr-4 rotate-90' height="1em" viewBox="0 0 448 512"><path d="M160 64c0-8.8 7.2-16 16-16s16 7.2 16 16V200c0 10.3 6.6 19.5 16.4 22.8s20.6-.1 26.8-8.3c3-3.9 7.6-6.4 12.8-6.4c8.8 0 16 7.2 16 16c0 10.3 6.6 19.5 16.4 22.8s20.6-.1 26.8-8.3c3-3.9 7.6-6.4 12.8-6.4c7.8 0 14.3 5.6 15.7 13c1.6 8.2 7.3 15.1 15.1 18s16.7 1.6 23.3-3.6c2.7-2.1 6.1-3.4 9.9-3.4c8.8 0 16 7.2 16 16l0 16V392c0 39.8-32.2 72-72 72H272 212.3h-.9c-37.4 0-72.4-18.7-93.2-49.9L50.7 312.9c-4.9-7.4-2.9-17.3 4.4-22.2s17.3-2.9 22.2 4.4L116 353.2c5.9 8.8 16.8 12.7 26.9 9.7s17-12.4 17-23V320 64zM176 0c-35.3 0-64 28.7-64 64V261.7C91.2 238 55.5 232.8 28.5 250.7C-.9 270.4-8.9 310.1 10.8 339.5L78.3 440.8c29.7 44.5 79.6 71.2 133.1 71.2h.9H272h56c66.3 0 120-53.7 120-120V288l0-16c0-35.3-28.7-64-64-64c-4.5 0-8.8 .5-13 1.3c-11.7-15.4-30.2-25.3-51-25.3c-6.9 0-13.5 1.1-19.7 3.1C288.7 170.7 269.6 160 248 160c-2.7 0-5.4 .2-8 .5V64c0-35.3-28.7-64-64-64zm48 304c0-8.8-7.2-16-16-16s-16 7.2-16 16v96c0 8.8 7.2 16 16 16s16-7.2 16-16V304zm48-16c-8.8 0-16 7.2-16 16v96c0 8.8 7.2 16 16 16s16-7.2 16-16V304c0-8.8-7.2-16-16-16zm80 16c0-8.8-7.2-16-16-16s-16 7.2-16 16v96c0 8.8 7.2 16 16 16s16-7.2 16-16V304z" /></svg>
-                  GA4 Enhanced Ecommerce Implementation
-                  Using GTM and Shopify Integration</h2>
-                <p className="text-sky-600">We successfully implemented 90% of purchase events, with the exception of UA, which is at 70% and all GA4 enhanced ecommerce events and Shopify parameters are being successfully sent to GA4.
-                </p>
-              </div>
-              <div className="text-center pt-4 md:pt-0 space-x-4">
-                <img alt="GTM logo" src="https://storage.googleapis.com/website-bucket-uploads/static/GTM_logo.png" className="inline" />
-                <img alt="AI" src="https://storage.googleapis.com/website-bucket-uploads/static/AI.png" className="inline" />
-                <img alt="Shopify logo" src="https://storage.googleapis.com/website-bucket-uploads/static/Shopify_logo.png" className="inline" />
-                <a onClick={scrolling} href="#"><button className="cta bg-sky-400 hover:bg-sky-500 transition-all delay-100 px-16 py-2 text-white font-semibold rounded-full shadow-lg shadow-gray-400 mt-8">View</button></a>
-              </div>
-            </div>
-            <a href="https://analyticsliv.com/case-studies"><button className="hidden more-casestudy my-8 bg-amber-600 hover:bg-amber-500 text-white font-semibold px-8 py-3 shadow-md shadow-gray-400 hover:shadow-gray-600 transition-all delay-100 rounded-full">More Case Studies</button></a>
           </div>
         </section>
 
-
-        <section>
-          <ScrollElement
-            id="testimonial"
-            name="testimonial"
-          ></ScrollElement>
-          <Testimonial />
+        {/* Understand & Optimize */}
+        <section className='px-[4%] 3xl:px-[6%] pt-6 md:pt-8 md:pb-6 flex max-lg:flex-col justify-between items-center w-full gap-8 xl:gap-12'>
+          <div className='flex flex-col gap-6 lg:w-[50%]'>
+            <h2 className='font-extrabold text-[30px] 2xl:text-[40px] text-[#0F172A] leading-9 md:leading-[44px]'>
+              Understand & Optimize Every Step of Your Customer Journey with GA4
+            </h2>
+            <h3 className='text-sm lg:text-base 2xl:text-lg text-[#475569] font-normal'>At AnalyticsLiv, we specialize in Google Analytics 4 setup to help you unlock powerful insights through
+              advanced customer journey tracking. From first click to conversion, our Customer Journey Builder allows you
+              to visualize the complete digital customer journey map and improve every touchpoint.
+            </h3>
+            <h3 className='text-sm lg:text-base 2xl:text-lg text-[#475569] font-normal'>Using GA4's enhanced user journey tracking and customer journey analytics, we help brands track key actions like
+              form submissions in GA4, monitor user behavior across devices, and make data-driven decisions that grow revenue.
+            </h3>
+            <h3 className='text-sm lg:text-base 2xl:text-lg text-[#475569] font-normal'>Start building a smarter strategy with GA4 and take control of your customer journey tracking like never before.</h3>
+          </div>
+          <div>
+            <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Optimize_Right.png' alt='Google Analytics 4 setup' />
+          </div>
         </section>
-        <div className='md:flex justify-center md:space-x-20 items-center px-2 md:px-16 bg-sky-300 py-2 text-center'>
-          <h2 className='text-left mb-2'>Customize Your Data Visualization with GA4</h2>
-          <button onClick={scrolling} className="cta px-5 py-2 bg-sky-400 rounded-2xl mx-2 text-sm font-semibold cursor-pointer hover:bg-sky-500">CONTACT US</button>
-        </div>
+
+        {/* case studies */}
+        <ScrollElement id="case-studies" name="case-studies"></ScrollElement>
+        <section className='px-[4%] 3xl:px-[6%] pt-8 pb-0'>
+          <div className='text-[34px] font-extrabold text-center'>Case Studies</div>
+          <div className='grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-20 justify-items-center items-center py-5 md:py-10'>
+            <div className='flex flex-col max-md:gap-5 md:h-[420px] lg:h-[480px] xl:h-[560px] 2xl:h-[644px] 3xl:h-[730px] 3xl:w-[500px]'>
+              <img src='https://storage.googleapis.com/website-bucket-uploads/cs/1748238244750565.png' alt='Mapped GA4 Data with Backend at 99% Accuracy Using GTM' className='rounded-xl' />
+              <div className='flex flex-col md:justify-between md:h-full gap-3 md:mt-5'>
+                <h3 className='text-[#111D15] text-lg xl:text-[22px] 2xl:text-2xl font-semibold' style={{
+                  display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden",
+                }}>How We Mapped GA4 Data with Backend at 99% Accuracy Using GTM</h3>
+                <div className='text-[#666666] text-sm xl:text-base' style={{
+                  display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden",
+                }}>By leveraging Google Tag Manager (GTM) and custom scripts, we achieved 99% accuracy in subscription event tracking without backend support.</div>
+                <a href='/case-studies/ga4-backend-data-mapping-accuracy-gtm' target='_blank' className='readmore-cs-button'>
+                  <button className='ga4butn-opposite group w-max flex gap-2 items-center'>
+                    <div className=''>Read Full</div>
+                    <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Icon.png' alt='Google Analytics 4 Consulting Services' className='block group-hover:hidden' />
+                    <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Icon%20(1).png' alt='Google Analytics 4 Consulting Services' className='hidden group-hover:block' />
+                  </button>
+                </a>
+              </div>
+            </div>
+            <div className='flex flex-col justify-between max-md:gap-5 md:h-[420px] lg:h-[480px] xl:h-[560px] 2xl:h-[644px] 3xl:h-[730px] 3xl:w-[500px]'>
+              <img src='https://storage.googleapis.com/website-bucket-uploads/cs/shopify.jpg' alt='Enhanced Ecommerce Implementation' className='rounded-xl' />
+              <div className='flex flex-col md:justify-between md:h-full gap-3 md:mt-6'>
+                <h3 className='text-[#111D15] text-lg xl:text-[22px] 2xl:text-2xl font-semibold 3xl:mt-1' style={{
+                  display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden",
+                }}>GA4 Enhanced Ecommerce Implementation</h3>
+                <div className='text-[#666666] text-sm xl:text-base' style={{
+                  display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden",
+                }}>We successfully implemented 90% of purchase events, with the exception of UA, which is at 70% and all GA4 enhanced ecommerce events and Shopify parameters are being successfully sent to GA4</div>
+                <a href='/case-studies/ga4-enhanced-ecommerce-implementation-using-gtm-and-shopify-integration' target='_blank' className='readmore-cs-button'>
+                  <button className='ga4butn-opposite group w-max flex gap-2 items-center'>
+                    <div className=''>Read Full</div>
+                    <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Icon.png' alt='GA4 Implementation Service' className='block group-hover:hidden' />
+                    <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Icon%20(1).png' alt='GA4 Implementation Service' className='hidden group-hover:block' />
+                  </button>
+                </a>
+              </div>
+            </div>
+            <div className='flex flex-col justify-between max-md:gap-5 md:h-[420px] lg:h-[480px] xl:h-[560px] 2xl:h-[644px] 3xl:h-[730px] 3xl:w-[500px]'>
+              <img src='https://storage.googleapis.com/website-bucket-uploads/cs/1729089625023594.png' alt='Boosting Conversion Rates with Customised Cookie Consent Mode' className='rounded-xl' />
+              <div className='flex flex-col md:justify-between md:h-full gap-3 md:mt-5'>
+                <h3 className='text-[#111D15] text-lg xl:text-[22px] 2xl:text-2xl font-semibold' style={{
+                  display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden",
+                }}>Boosting Conversion Rates with Customised Cookie Consent Mode</h3>
+                <div className='text-[#666666] text-sm xl:text-base pb-5 xl:pb-6' style={{
+                  display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden",
+                }}>We achieved improved conversion rate by 12% and reduced bounce rates by 10%.</div>
+                <a href='/case-studies/boosting-conversion-rates-with-customised-cookie-consent-mode' target='_blank' className='readmore-cs-button'>
+                  <button className='ga4butn-opposite group w-max flex gap-2 items-center'>
+                    <div className=''>Read Full</div>
+                    <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Icon.png' alt='GA4 Implementation Service' className='block group-hover:hidden' />
+                    <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Icon%20(1).png' alt='GA4 Implementation Service' className='hidden group-hover:block' />
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonial */}
+        <ScrollElement id="testimonial" name="testimonial"></ScrollElement>
+        <section className='px-[4%] 3xl:px-[6%] pb-12'>
+          <div className='w-full mt-8 max-md:flex-col md:flex justify-between md:gap-5 items-center'>
+            <div className="md:w-[40%] flex flex-col gap-3 md:gap-8">
+              <div className='flex justify-between items-center'>
+                <div className='text-[23px] xl:text-[32px] 2xl:text-[34px] font-bold xl:leading-10'>Trusted by Brands,<br></br> Loved by Clients</div>
+                <div className='flex md:hidden items-center gap-2'>
+                  <button
+                    onClick={handlePrevTestimonial}
+                    className="group"
+                  >
+                    <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Button.png' alt='left vector' className='' />
+                  </button>
+                  <button
+                    onClick={handleNextTestimonial}
+                    className="group"
+                  >
+                    <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Button%20(1).png' alt='right vector' className='' />
+                  </button>
+                </div>
+              </div>
+              <div className='text-[#666666] text-xs xl:text-sm 2xl:text-base'>Positive outcomes speak louder than promises. Here's what our<br className='max-lg:hidden'></br> clients say about their journey with us.</div>
+              <div className='flex max-md:hidden items-center gap-3 md:mt-3 xl:mt-5'>
+                <button
+                  onClick={handlePrevTestimonial}
+                  className="group"
+                >
+                  <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Button.png' alt='left vector' className='' />
+                </button>
+                <button
+                  onClick={handleNextTestimonial}
+                  className="group"
+                >
+                  <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Button%20(1).png' alt='right vector' className='' />
+                </button>
+              </div>
+            </div>
+            <div className="md:w-[60%] 2xl:w-[55%] mt-8 md:mt-2 pb-8 carousel-custom overflow-hidden">
+              <Slider ref={testimonialSliderRef} {...testimonialSettings}>
+                <div className=''>
+                  <div className='flex max-md:flex-col justify-between items-start md:items-center gap-6 px-[26px] py-[20px] border-t-[10px] border-r-[10px] rounded-[20px] border-[#E06B2E]'>
+                    <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Bobby_Bruno_1.png' alt='Google Analytics Certified Agency' className='' />
+                    <div className='flex flex-col gap-4 justify-between'>
+                      <div className='flex justify-between items-start'>
+                        <div className='flex flex-col gap-1.5 2xl:gap-1.5'>
+                          <div className='text-[#111D15] text-sm lg:text-lg 2xl:text-xl font-semibold'>Bobby Bruno</div>
+                          <div className='text-[#666666] text-[10px] lg:text-sm 2xl:text-base font-normal'>CMO</div>
+                          <div className='text-[#111D15] text-[10px] lg:text-sm 2xl:text-base font-semibold'>Wholesale Socks Deals</div>
+                          <div className='flex items-center gap-1'>
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/star.png' alt='Google Analytics Certified Agency' />
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/star.png' alt='Google Analytics Certified Agency' />
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/star.png' alt='Google Analytics Certified Agency' />
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/star.png' alt='certified google analytics expert' />
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/star.png' alt='certified google analytics expert' />
+                          </div>
+                        </div>
+                        <div className='bg-[#ED7536] p-[10px] rounded max-lg:hidden'>
+                          <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/%E2%80%9C.png' alt='certified google analytics expert' />
+                        </div>
+                      </div>
+                      <div className='text-[#666666] text-[10px] lg:text-sm 2xl:text-base'>
+                        AnalyticsLiv team was an excellent asset to our businesses' switch
+                        from Universal Analytics to GA4. They had excellent communication
+                        throughout the project, giving me feedback, updates and ideas as
+                        the project went on.<br />I would be happy to recommend the AnalyticsLiv
+                        team for analytics and tag manager work, and look forward to working with
+                        them in the future. Thank you!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className=''>
+                  <div className='flex max-md:flex-col justify-between items-start md:items-center gap-6 px-[26px] py-[20px] border-t-[10px] border-r-[10px] rounded-[20px] border-[#E06B2E]'>
+                    <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Charles%20Lundy.png' alt='analytics service providers' className='' />
+                    <div className='flex flex-col gap-4 justify-between'>
+                      <div className='flex justify-between items-start'>
+                        <div className='flex flex-col gap-1.5 2xl:gap-1.5'>
+                          <div className='text-[#111D15] text-sm lg:text-lg 2xl:text-xl font-semibold'>Charles Lundy</div>
+                          <div className='text-[#666666] text-[10px] lg:text-sm 2xl:text-base font-normal'>Co-Founder</div>
+                          <div className='text-[#111D15] text-[10px] lg:text-sm 2xl:text-base font-semibold'>Mex Insurance</div>
+                          <div className='flex items-center gap-1'>
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/star.png' alt='analytics service providers' />
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/star.png' alt='analytics service providers' />
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/star.png' alt='analytics service providers' />
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/star.png' alt='Google Analytics Expert' />
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/star.png' alt='Google Analytics Expert' />
+                          </div>
+                        </div>
+                        <div className='bg-[#ED7536] p-[10px] rounded max-lg:hidden'>
+                          <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/%E2%80%9C.png' alt='Google Analytics Expert' />
+                        </div>
+                      </div>
+                      <div className='text-[#666666] text-[10px] lg:text-sm 2xl:text-base'>
+                        The AnalyticsLiv team estimated the job length accurately and then carried out the work exactly as briefed,
+                        to time and budget. We had one brief hiccup in the conversion tracking code but that was swiftly fixed once identified.
+                        Would definitely consider using it again and for more advanced reporting functionality in future
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className=''>
+                  <div className='flex max-md:flex-col justify-between items-start md:items-center gap-6 px-[26px] py-[20px] border-t-[10px] border-r-[10px] rounded-[20px] border-[#E06B2E]'>
+                    <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Ebenezer_Ferreira.png' alt='Google Analytics 4 Consulting Services' className='' />
+                    <div className='flex flex-col gap-4 justify-between'>
+                      <div className='flex justify-between items-start'>
+                        <div className='flex flex-col gap-1.5 2xl:gap-1.5'>
+                          <div className='text-[#111D15] text-sm lg:text-lg 2xl:text-xl font-semibold'>Ebenezer Ferreira</div>
+                          <div className='text-[#666666] text-[10px] lg:text-sm 2xl:text-base font-normal'>Sr. Product Marketing Manager</div>
+                          <div className='text-[#111D15] text-[10px] lg:text-sm 2xl:text-base font-semibold'>FUTEK</div>
+                          <div className='flex items-center gap-1'>
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/star.png' alt='Google Analytics 4 Consulting Services' />
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/star.png' alt='Google Analytics 4 Consulting Services' />
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/star.png' alt='Google Analytics 4 Consulting Services' />
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/star.png' alt='conversion tracking specialist' />
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/star.png' alt='conversion tracking specialist' />
+                          </div>
+                        </div>
+                        <div className='bg-[#ED7536] p-[10px] rounded max-lg:hidden'>
+                          <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/%E2%80%9C.png' alt='Hire Google Analytics Expert' />
+                        </div>
+                      </div>
+                      <div className='text-[#666666] text-[10px] lg:text-sm 2xl:text-base'>
+                        AnalyticsLiv has been FUTEK web analytics partner for almost 3 years now.
+                        They supported us with GTM implementation, GA to GA4 migration, Looker studio
+                        dashboard creations and Google cloud storage implementation. They respond to our
+                        request in a timely manner and make their best efforts to resolve the web analytics
+                        issues. We are happy with the support provided by AnalyticsLiv
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Slider>
+            </div>
+          </div>
+        </section>
+
+        {/* footer */}
+        <footer className='bg-[#2563EB] flex max-lg:flex-col max-lg:gap-3 items-start md:items-center justify-around max-md:py-2 max-lg:py-4 lg:h-[160px] max-2xl:px-[4%]'>
+          <div>
+            <div className='text-white text-base md:text-[28px] font-bold lg:leading-8'>Let’s Build Smarter Analytics Together</div>
+            <div className='text-xs text-white max-lg:pt-2 lg:pt-3'>Partner with one of the leading Analytics Service Providers and unlock the full<br className='max-md:hidden'></br> potential of GA4. Ready to transform your data strategy?</div>
+          </div>
+          <div onClick={scrolling} className="contact-us-btn flex cursor-pointer items-center rounded-md ">
+            <div
+
+              className="relative overflow-hidden rounded-l-[5px] group text-white h-[45px] md:h-[50px] flex items-center justify-between w-full lg:w-[370px] 2xl:w-[540px] border border-white hover:border-r-[#2563EB]"
+            >
+              {/* Background slider */}
+              <div className="absolute inset-0 bg-white -translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out z-0"></div>
+
+              {/* Text Content */}
+              <h2 className="relative z-10 pl-3 pr-2 md:pr-5 lg:pl-[22px] py-3 text-[11px] md:text-sm 2xl:text-base text-white group-hover:text-[#2563EB] transition-colors duration-500">
+                Hire a Certified Google Analytics Expert Today
+              </h2>
+            </div>
+
+            <div className="h-[45px] md:h-[50px] bg-white px-3 flex justify-center items-center group w-14 rounded-r-[5px]">
+              <img
+                src="https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/tap%20(1)%201.png"
+                alt="Hire Google Analytics Expert"
+                className="group-hover:w-7 w-8 transition-all duration-300"
+              />
+            </div>
+          </div>
+        </footer>
       </div>
-
     </>
   )
 }
-
 
 
 export async function getServerSideProps(context) {

@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { motion } from "framer-motion";
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import MetaSchemaOg from '../../components/MetaSchemaOg';
 
 const sem = () => {
 
@@ -108,11 +109,13 @@ const sem = () => {
 
     return (
         <>
-            <Head>
-                <title>AnalyticsLiv - Search Engine Marketing</title>
-                <meta name="description" content="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads" />
-                <link rel="canonical" href="https://analyticsliv.com/services/sem"></link>
-            </Head>
+            <MetaSchemaOg
+                url="https://analyticsliv.com/services/sem"
+                title="Performance Marketing Agency in India | AnalyticsLiv"
+                description="Maximize ROI with expert Google Ads at AnalyticsLiv, a leading performance marketing agency. Our PPC management services drive results with data-driven strategies and proven success."
+                twitterTitle="Performance Marketing Agency in India | AnalyticsLiv"
+                twitterDescription="Maximize ROI with expert Google Ads at AnalyticsLiv, a leading performance marketing agency. Our PPC management services drive results with data-driven strategies and proven success."
+            />
 
             <section className='ssthome w-full relative font-gilroy overflow-hidden'>
                 <div className='h-full'>
@@ -133,7 +136,7 @@ const sem = () => {
                                 </div>
                             </div>
                             <div className=" w-full lg:w-1/2 flex items-center lg:justify-end justify-center lg:order-2 order-1">
-                                <img src="/SEM_Main_IMG.png" alt="" className='h-[400px]' />
+                                <img src="/SEM_Main_IMG.png" alt="ppc management services" className='h-[400px]' />
                             </div>
                         </div>
                         <div className=''>
@@ -394,7 +397,7 @@ const sem = () => {
                                 <div className='cursor-pointer'>
                                     <div className='inbox relative pb-4'>
                                         <Image
-                                            src="/analyzing (1).png"
+                                            src="https://storage.googleapis.com/website-bucket-uploads/static/public/analyzing%20(1).png"
                                             width={30}
                                             height={30}
                                             alt="Picture of the author"
@@ -442,7 +445,7 @@ const sem = () => {
                 </div>
             </section>
 
-            <section className='sstfaq relative overflow-hidden font-gilroy'>
+            <section className='faq-section sstfaq relative overflow-hidden font-gilroy'>
                 <div className="relative px-4 md:px-12 pt-8 pb-8 z-20">
                     <div>
                         <h3 className='text-[32px] font-semibold text-[#000000] leading-[1.5em] font-gilroy mb-2'>FAQ's</h3>
@@ -451,7 +454,7 @@ const sem = () => {
                         <div className='items-start lg:justify-start justify-center gap-7 w-full'>
                             <div className={`faqfst flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full text-[#000000]' onClick={toggleFaqfstVisibility}>
+                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={toggleFaqfstVisibility}>
                                         <div className={`flex items-center w-full justify-between gap-5 ${isFaqfstVisible ? 'mb-[13px]' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <h2 className='text-[17px] font-medium leading-normal'>What is the difference between SEM and SEO?</h2>
@@ -462,7 +465,7 @@ const sem = () => {
                                         </div>
                                         {isFaqfstVisible && (
                                             <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} className='text-[14px] font-medium leading-[1.7em] pb-2'>
-                                               SEM encompasses both paid search advertising (PPC) and organic search engine optimization (SEO) efforts. SEO focuses on improving your website's ranking in organic search results, while SEM includes paid advertising campaigns to appear at the top of SERPs.
+                                                SEM encompasses both paid search advertising (PPC) and organic search engine optimization (SEO) efforts. SEO focuses on improving your website's ranking in organic search results, while SEM includes paid advertising campaigns to appear at the top of SERPs.
                                             </motion.div>
                                         )}
                                     </div>
@@ -470,7 +473,7 @@ const sem = () => {
                             </div>
                             <div className={`faqsec flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full text-[#000000]' onClick={toggleFaqsecVisibility}>
+                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={toggleFaqsecVisibility}>
                                         <div className={`flex items-center justify-between gap-5 ${isFaqsecVisible ? 'mb-[10px]' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <h2 className='text-[17px] font-medium leading-normal'>How much does SEM cost?</h2>
@@ -489,7 +492,7 @@ const sem = () => {
                             </div>
                             <div className={`faqthrd flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqthrdVisibility()}>
+                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqthrdVisibility()}>
                                         <div className={`flex items-center justify-between gap-5 ${isFaqthrdVisible ? 'mb-[10px]' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <h2 className='text-[17px] font-medium leading-normal'>Can I manage my own SEM campaigns?</h2>
@@ -500,7 +503,7 @@ const sem = () => {
                                         </div>
                                         {isFaqthrdVisible && (
                                             <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} className='text-[14px] font-medium leading-[1.7em] pb-2'>
-                                               While it's possible to manage your own SEM campaigns, it requires ongoing effort, expertise, and knowledge of best practices. Our experienced team can handle the complexities of SEM, freeing you to focus on running your business.
+                                                While it's possible to manage your own SEM campaigns, it requires ongoing effort, expertise, and knowledge of best practices. Our experienced team can handle the complexities of SEM, freeing you to focus on running your business.
                                             </motion.div>
                                         )}
                                     </div>
@@ -508,7 +511,7 @@ const sem = () => {
                             </div>
                             <div className={`faqfur flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqfurVisibility()}>
+                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqfurVisibility()}>
                                         <div className={`flex items-center justify-between gap-5 ${isFaqfurVisible ? 'mb-[10px]' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <h2 className='text-[17px] font-medium leading-normal'>How long does it take to see results from SEM?</h2>
@@ -519,7 +522,7 @@ const sem = () => {
                                         </div>
                                         {isFaqfurVisible && (
                                             <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} className='text-[14px] font-medium leading-[1.7em] pb-2'>
-                                               The timeframe for seeing results from SEM can vary depending on your campaign goals and competitiveness. However, well-managed SEM campaigns can start generating leads within a few weeks.
+                                                The timeframe for seeing results from SEM can vary depending on your campaign goals and competitiveness. However, well-managed SEM campaigns can start generating leads within a few weeks.
                                             </motion.div>
                                         )}
                                     </div>
@@ -527,7 +530,7 @@ const sem = () => {
                             </div>
                             <div className={`faqfv flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqfvVisibility()}>
+                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqfvVisibility()}>
                                         <div className={`flex items-center justify-between gap-5 ${isFaqfvVisible ? 'mb-[10px]' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <h2 className='text-[17px] font-medium leading-normal'>What can I expect from AnalyticsLiv's SEM services?</h2>
@@ -538,7 +541,7 @@ const sem = () => {
                                         </div>
                                         {isFaqfvVisible && (
                                             <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} className='text-[14px] font-medium leading-[1.7em] pb-2'>
-                                              We'll work closely with you to understand your business objectives and develop a targeted SEM strategy. We'll manage your campaigns, optimize them for performance, and provide regular reports with insights to track your progress.
+                                                We'll work closely with you to understand your business objectives and develop a targeted SEM strategy. We'll manage your campaigns, optimize them for performance, and provide regular reports with insights to track your progress.
                                             </motion.div>
                                         )}
                                     </div>

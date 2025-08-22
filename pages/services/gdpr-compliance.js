@@ -6,13 +6,15 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
 import Link from "next/link";
+import Head from "next/head";
+import MetaSchemaOg from "../../components/MetaSchemaOg";
 
 const cookieLanding = ({ brandsdata }) => {
   const NextArrow = (props) => {
     const { onClick } = props;
     return (
       <div
-        className="absolute top-1/2 right-[-12px] md:right-[-20px] lg:right-[-40px] transform -translate-y-1/2 z-10 cursor-pointer"
+        className="carousel-button absolute top-1/2 right-[-12px] md:right-[-20px] lg:right-[-40px] transform -translate-y-1/2 z-10 cursor-pointer"
         onClick={onClick}
       >
         <FaArrowRight size={20} />
@@ -24,7 +26,7 @@ const cookieLanding = ({ brandsdata }) => {
     const { onClick } = props;
     return (
       <div
-        className="absolute top-1/2 left-[-12px] md:left-[-20px] lg:left-[-40px] transform -translate-y-1/2 z-10 cursor-pointer"
+        className="carousel-button absolute top-1/2 left-[-12px] md:left-[-20px] lg:left-[-40px] transform -translate-y-1/2 z-10 cursor-pointer"
         onClick={onClick}
       >
         <FaArrowLeft size={20} />
@@ -168,28 +170,32 @@ const cookieLanding = ({ brandsdata }) => {
 
   return (
     <>
-      <Head>
-        <title>AnalyticsLiv - GDPR Compliance</title>
-        <meta name="description" content="GDPR Compliance" />
-        <link rel="canonical" href="https://analyticsliv.com/services/gdpr-compliance"></link>
-      </Head>
+
+      <MetaSchemaOg
+        url="https://analyticsliv.com/services/gdpr-compliance"
+        title="Expert GDPR Compliance Services for Data Privacy & Security | AnalyticsLiv"
+        description="Protect your business with AnalyticsLiv’s GDPR compliance services. We ensure data privacy, reduce risks, and maintain full compliance."
+        twitterTitle="Expert GDPR Compliance Services for Data Privacy & Security | AnalyticsLiv"
+        twitterDescription="Protect your business with AnalyticsLiv’s GDPR compliance services. We ensure data privacy, reduce risks, and maintain full compliance."
+      />
+
       <div className="">
         <section className="flex max-lg:flex-wrap-reverse lg:px-10 xl:px-28 w-full justify-between gap-12 2xl:gap-16 py-6 lg:py-16 2xl:py-24">
           <div className="w-full lg:w-1/2 max-sm:px-4 max-md:mt-[25dvh] max-lg:mt-[35dvh]">
-            <div className="text-txt text-[30px] 2xl:text-[35px] font-semibold leading-10 text-center lg:text-left pb-8">
+            <h1 className="text-txt text-[30px] 2xl:text-[35px] font-semibold leading-10 text-center lg:text-left pb-8">
               Stay compliant and secure - Embrace Cookie Consent Mode
-            </div>
-            <div className="text-base font-normal text-center lg:text-left pb-8 lg:pb-16">
+            </h1>
+            <h2 className="text-base font-normal text-center lg:text-left pb-8 lg:pb-16">
               As a trusted Google Analytics partner, Analyticsliv helps businesses
               to meet privacy goals with effective Cookie Consent Mode strategies,
               ensuring GDPR compliance.
-            </div>
+            </h2>
             <div className="flex max-md:flex-col max-md:mx-5 justify-center lg:justify-start gap-4 lg:gap-8">
               {/* <a href="/webinar/cookie-consent" target="_blank"  className="butn text-center">
              Watch Our Webinar
             </a> */}
               <Link href="/contact?id=gdrp-compliance">
-                <button className="butn">Let’s Get in Touch</button>
+                <button className="contact-us-btn butn">Let’s Get in Touch</button>
               </Link>
             </div>
           </div>
@@ -322,9 +328,9 @@ const cookieLanding = ({ brandsdata }) => {
                 alt="privacy"
                 className="h-10 w-10 md:h-12 md:w-12"
               />
-              <h1 className="sm:text-[15px] font-semibold">
+              <h3 className="sm:text-[15px] font-semibold">
                 Cookie Consent Mode
-              </h1>
+              </h3>
               <div className="text-xs font-normal text-[#152F2E]">
                 Cookie Consent Mode in Google Analytics helps businesses align
                 data collection with user privacy preferences, ensuring compliance
@@ -337,9 +343,9 @@ const cookieLanding = ({ brandsdata }) => {
                 alt="Consent_Managemnt"
                 className="h-10 w-10 md:h-12 md:w-12"
               />
-              <h1 className="sm:text-[15px] font-semibold">
+              <h3 className="sm:text-[15px] font-semibold">
                 Optimizing Data Use with Consent Management
-              </h1>
+              </h3>
               <div className="text-xs font-normal text-[#152F2E]">
                 Effective consent management allows you to collect and use data
                 legally and ethically by securing clear user permissions.{" "}
@@ -351,9 +357,9 @@ const cookieLanding = ({ brandsdata }) => {
                 alt="web-privacy"
                 className="h-10 w-10 md:h-12 md:w-12"
               />
-              <h1 className="sm:text-[15px] font-semibold">
+              <h3 className="sm:text-[15px] font-semibold">
                 Preparing for Privacy-First Web Analytics
-              </h1>
+              </h3>
               <div className="text-xs font-normal text-[#152F2E]">
                 As privacy gains importance, adapt your analytics to focus on user
                 privacy by understanding new laws, using consent tools, and
@@ -376,7 +382,7 @@ const cookieLanding = ({ brandsdata }) => {
             </Marquee>
           </div>
         </div>
-        <section>
+        <section className="ana-services">
           <div className="text-xl md:text-3xl font-bold text-[#30486A] max-lg:px-2 py-14 max-md:hidden text-center">
             <span className="inline-block relative">
               Why&nbsp;
@@ -421,9 +427,9 @@ const cookieLanding = ({ brandsdata }) => {
                     alt="check-up"
                     className="h-10 w-10 md:h-12 md:w-12 mb-4 mx-auto"
                   />
-                  <h1 className=" text-sm sm:text-[15px] font-semibold mb-2">
+                  <h3 className="service-title text-sm sm:text-[15px] font-semibold mb-2">
                     {item.title}
-                  </h1>
+                  </h3>
                   <div className="text-xs font-normal text-[#152F2E]">
                     {item.description}
                   </div>
@@ -439,7 +445,7 @@ const cookieLanding = ({ brandsdata }) => {
               Are you looking for the right partner to implement Cookie consent
               for your business?
             </div>
-            <a href="/contact?id=cookie-consent" target="_blank" className="text-center max-sm:w-[220px] max-xl:w-[270px] text-white text-xs md:text-base lg:text-lg font-semibold border border-white rounded-[5px] px-1 md:px-4 py-2">
+            <a href="/contact?id=cookie-consent" target="_blank" className="contact-us-btn text-center max-sm:w-[220px] max-xl:w-[270px] text-white text-xs md:text-base lg:text-lg font-semibold border border-white rounded-[5px] px-1 md:px-4 py-2">
               Contact Us Now
             </a>
           </div>
@@ -515,7 +521,7 @@ const cookieLanding = ({ brandsdata }) => {
               </div>
             </div>
             <div className=" flex justify-center">
-              <a href="/contact?id=cookie-consent" target="_blank" className="butn max-md:mt- text-center">
+              <a href="/contact?id=cookie-consent" target="_blank" className="contact-us-btn butn max-md:mt- text-center">
                 Talk to our Expert
               </a>
             </div>
@@ -566,7 +572,7 @@ const cookieLanding = ({ brandsdata }) => {
               </div>
             </div>
             <div>
-              <img src="/Arrow 1.png" alt="-->" />
+              <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Arrow%201.png" alt="-->" />
             </div>
             <div className="h-[240px] w-[250px] rounded-[40px] border border-[#0057E9] px-2 flex flex-col justify-center items-center">
               <div className="text-[#152F2E] text-sm font-semibold pb-7 text-center">
@@ -578,7 +584,7 @@ const cookieLanding = ({ brandsdata }) => {
               </div>
             </div>
             <div>
-              <img src="/Arrow 1.png" alt="-->" />
+              <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Arrow%201.png" alt="-->" />
             </div>
             <div className="h-[240px] w-[250px] rounded-[40px] border border-[#0057E9] px-2 flex flex-col justify-center items-center">
               <div className="text-[#152F2E] text-sm font-semibold pb-7 text-center">
@@ -590,7 +596,7 @@ const cookieLanding = ({ brandsdata }) => {
               </div>
             </div>
             <div>
-              <img src="/Arrow 1.png" alt="-->" />
+              <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Arrow%201.png" alt="-->" />
             </div>
             <div className="h-[240px] w-[250px] rounded-[40px] border border-[#0057E9] px-2 flex flex-col justify-center items-center">
               <div className="text-[#152F2E] text-sm font-semibold pb-7 text-center">
@@ -610,9 +616,9 @@ const cookieLanding = ({ brandsdata }) => {
                   key={item.id}
                   className="h-[200px] w-[180px] py-10 rounded-[40px] border border-[#0057E9] px-5 flex flex-col justify-center items-center"
                 >
-                  <h1 className="text-[#152F2E] text-sm font-semibold pb-7 text-center">
+                  <h3 className="text-[#152F2E] text-sm font-semibold pb-7 text-center">
                     {item.title}
-                  </h1>
+                  </h3>
                   <div className="text-[#152F2E] text-xs font-normal text-center">
                     {item.description}
                   </div>
@@ -662,6 +668,7 @@ const cookieLanding = ({ brandsdata }) => {
                   <div className="first relative group home-blog rounded border border-solid border-[#DBDBDB] hover:border-[#979797] hover:shadow-serviceoffer p-[25px] pb-[70px] text-center 2xl:h-[540px] xl:h-[495px] lg:h-[520px]">
                     <a
                       targer="_blank"
+                      className="readmore-btn"
                       href="https://analyticsliv.com/blogs/navigating-user-privacy-compliance-a-comprehensive-strategy-with-ga4-and-gtm"
                     >
                       <Image
@@ -700,6 +707,7 @@ const cookieLanding = ({ brandsdata }) => {
                   <div className="first relative group home-blog rounded border border-solid border-[#DBDBDB] hover:border-[#979797] hover:shadow-serviceoffer p-[25px] pb-[70px] text-center 2xl:h-[540px] xl:h-[495px] lg:h-[520px]">
                     <a
                       targer="_blank"
+                      className="readmore-btn"
                       href="https://analyticsliv.com/blogs/navigating-user-privacy-compliance-a-comprehensive-strategy-with-ga4-and-gtm"
                     >
                       <Image
@@ -738,6 +746,7 @@ const cookieLanding = ({ brandsdata }) => {
                   <div className="second group home-blog rounded border border-solid border-[#DBDBDB] hover:border-[#979797]  hover:shadow-serviceoffer p-[25px] pb-[70px] text-center relative 2xl:h-[540px] xl:h-[495px] lg:h-[520px]">
                     <a
                       targer="_blank"
+                      className="readmore-btn"
                       href="https://analyticsliv.com/blogs/top-gdpr-tools-for-2023-revealed"
                     >
                       <Image

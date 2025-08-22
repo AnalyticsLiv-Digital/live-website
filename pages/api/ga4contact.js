@@ -11,8 +11,8 @@ const handler = async (req, res) => {
       fullName: req.body.fullName,
       email: req.body.email,
       contact: req.body.contact,
-      message: req.body.message
-
+      message: req.body.message,
+      receiveUpdates : req.body.receiveUpdates
     });
     await b.save();
 
@@ -20,7 +20,7 @@ const handler = async (req, res) => {
       from: "support@analyticsliv.com",
       to: ["sales@analyticsliv.com", "anshul.d@analyticsliv.com", "anuj@analyticsliv.com", "nitya@analyticsliv.com", "rajvi@analyticsliv.com", "ansuya@analyticsliv.com","aditya.trivedi@analyticsliv.com","tanu.singh@analyticsliv.com"],
       subject: 'New GA4 Enquiry!!',
-      html: `Enquiry Submitted by <br> Full Name - ${req.body.fullName}  <br> Email- ${req.body.email} <br> Contact - ${req.body.contact} <br> Message - ${req.body.message} `
+      html: `Enquiry Submitted by <br> Full Name - ${req.body.fullName}  <br> Email- ${req.body.email} <br> Contact - ${req.body.contact} <br> Message - ${req.body.message} <br> Receive Updates - ${req.body.receiveUpdates} `
     };
 
     var userMailOptions = {
@@ -30,7 +30,7 @@ const handler = async (req, res) => {
       html: `Hi ${req.body.fullName},<br>
             Thank you for reaching out to AnalyticsLiv, one of the fastest growing Google Marketing Platform Partner in India. Our Services have empowered more than 500 businesses to use first party data for analysis and marketing purposes, making businesses independent of third party data intelligence.<br>
             
-            We will study the details you have shared and will get back to you with a response to help your business. Meanwhile, you can have a look through our services on <a href="https://analyticsliv.com">www.analyticsliv.com </a> or for any quick chat, contact us at: <br>
+            We will study the details you have shared and will get back to you with a response to help your business. Meanwhile, you can have a look through our services on <a href="https://analyticsliv.com">analyticsliv.com </a> or for any quick chat, contact us at: <br>
             Mobile: <a href="tel:+918320576622">+91 83205 76622</a> <br>
             Email: <a href="mailto:support@analyticsliv.com" class="">support@analyticsliv.com</a>`
     };

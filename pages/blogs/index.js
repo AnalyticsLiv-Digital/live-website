@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import ScrollProgress from '../../components/ScrollProgress'
 import Head from 'next/head';
 import BlogCard from '../../components/BlogCard';
 import AOS from 'aos';
@@ -22,11 +21,10 @@ const index = ({ blogDat, count }) => {
     }, []);
     return (
         <><Head>
-            <title>AnalyticsLiv - Blogs</title>
-            <meta name="description" content="Google Marketing Platform Partner - Blogs on GA4, DV360, Google Ads" />
+            <title>AnalyticsLiv Blog: Insights on Google Analytics, DV360, PPC, CRO and More</title>
+            <meta name="description" content="Stay updated with AnalyticsLiv’s blog for expert tips on data extraction & automation, DV360, PPC, CRO, A/B testing, and Google Analytics. Perfect for marketers and analysts." />
             <link rel="canonical" href="https://analyticsliv.com/blogs"></link>
         </Head>
-            <ScrollProgress />
 
             <div>
 
@@ -39,8 +37,8 @@ const index = ({ blogDat, count }) => {
                     <img src="https://storage.googleapis.com/website-bucket-uploads/static/marketing.jpg" className="absolute h-32 lg:h-48 lg:top-2 lg:right-56 rounded-lg" />
                     <div className="relative lg:border-2 lg:border-slate-900 lg:flex rounded-lg backdrop-blur-xl bg-white h-20 lg:h-36 w-4/5 md:w-3/5 lg:w-1/3 p-6 lg:top-20 top-10 text-left mx-auto mb-6">
                         <div className="lg:pt-8 ">
-                            <h2 className="lg:text-2xl text-slate-700 font-semibold whitespace-relaxed ">B L O G S.</h2>
-                            <div className="bg-slate-700 h-1 w-6 ml-12 lg:ml-20"></div>
+                            <h1 className="lg:text-2xl text-slate-700 font-semibold whitespace-relaxed ">BLOGS</h1>
+                            <div className="bg-slate-700 h-1 w-6 ml-7 lg:ml-14"></div>
                         </div>
 
                     </div>
@@ -51,7 +49,7 @@ const index = ({ blogDat, count }) => {
 
                     <div className="relative lg:flex flex-row  w-full">
 
-                        <div className='bg-cover py-5 lg:pt-8 pb-20 bg-scroll' style={{ backgroundImage: `url("https://img.freepik.com/free-vector/white-abstract-background_23-2148810113.jpg?t=st=1671082381~exp=1671082981~hmac=659665427411ee225ef245d30444c4a2513e113dcfebb8e1dabf685749e40e1e")` }} >
+                        <div className='bg-cover py-5 lg:pt-8 pb-36 bg-scroll' style={{ backgroundImage: `url("https://img.freepik.com/free-vector/white-abstract-background_23-2148810113.jpg?t=st=1671082381~exp=1671082981~hmac=659665427411ee225ef245d30444c4a2513e113dcfebb8e1dabf685749e40e1e")` }} >
 
                             <div className="text-center pb-8 z-2">
                                 <form method="get" action="/blogs/search">
@@ -71,7 +69,7 @@ const index = ({ blogDat, count }) => {
                         </div>
                     </div>
 
-                    <nav className="absolute w-full bottom-0 m-auto inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
+                    <nav className="absolute w-full bottom-10 m-auto inline-flex -space-x-px rounded-md " aria-label="Pagination">
                         <div className="m-auto py-4">
 
                             {rows && rows.map((pages, key) => (

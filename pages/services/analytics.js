@@ -16,7 +16,7 @@ const index = () => {
     const { onClick } = props;
     return (
       <div
-        className="absolute top-1/2 right-[-12px] md:right-[-20px] lg:right-[-40px] transform -translate-y-1/2 z-10 cursor-pointer"
+        className="carousel-button absolute top-1/2 right-[-12px] md:right-[-20px] lg:right-[-40px] transform -translate-y-1/2 z-10 cursor-pointer"
         onClick={onClick}
       >
         <FaArrowRight size={20} />
@@ -28,7 +28,7 @@ const index = () => {
     const { onClick } = props;
     return (
       <div
-        className="absolute top-1/2 left-[-12px] md:left-[-20px] lg:left-[-40px] transform -translate-y-1/2 z-10 cursor-pointer"
+        className="carousel-button absolute top-1/2 left-[-12px] md:left-[-20px] lg:left-[-40px] transform -translate-y-1/2 z-10 cursor-pointer"
         onClick={onClick}
       >
         <FaArrowLeft size={20} />
@@ -115,10 +115,10 @@ const index = () => {
   return (
     <>
       <Head>
-        <title>AnalyticsLiv - Analytics Services Offered</title>
+        <title>Data Analytics Services for Business Growth | AnalyticsLiv</title>
         <meta
           name="description"
-          content="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads"
+          content="Turn data into strategy with AnalyticsLiv’s analytics services. We deliver actionable insights through advanced tracking, reporting, and performance analysis."
         />
         <link
           rel="canonical"
@@ -133,12 +133,12 @@ const index = () => {
         <div class="md:mt-4 px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16">
           <div class="grid lg:grid-cols-2 gap-10">
             <div class="text-left">
-              <h2 class="text-analyticsheading text-[40px] font-bold inline">
+              <h1 class="text-analyticsheading text-[40px] font-bold inline">
                 <span class="relative after:absolute after:left-0 after:bottom-0 after:bg-[#07A9F9] after:h-[9px] after:w-20 after:rounded-2xl">
                   Web{" "}
                 </span>{" "}
                 and App Measurement
-              </h2>{" "}
+              </h1>{" "}
               <br /> <br />
               <h3 class="text-analyticsheading text-[30px] font-medium">
                 Decode Your Users with Web and App Analytics
@@ -153,7 +153,7 @@ const index = () => {
               </p>
               <br />
               <Link href="/contact?id=analytics">
-                <button class="butn">Get in Touch</button>
+                <button class="butn contact-us-btn">Get in Touch</button>
               </Link>
             </div>
             <div class="right flex lg:justify-end">
@@ -301,7 +301,7 @@ const index = () => {
         id="ga4-implementation"
         name="ga4-implementation"
       ></ScrollElement>
-      <section class="bg-analyticssection relative">
+      <section class="ana-services bg-analyticssection relative">
         <div class="md:mt-4 px-4 md:px-20 pt-8 md:pt-11 md:pb-16 pb-8">
           <div class="text-left">
             <h2 class="text-analyticsheading text-[40px] font-bold inline">
@@ -331,7 +331,7 @@ const index = () => {
                   </div>{" "}
                   <br />
                   <a href="#">
-                    <h5 className="text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
+                    <h5 className="service-title text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
                       Enhanced Ecommerce Implementation
                     </h5>
                   </a>{" "}
@@ -353,7 +353,7 @@ const index = () => {
                   </div>
                   <br />
                   <a href="#">
-                    <h5 className="text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
+                    <h5 className="service-title text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
                       Third-party pixel implementation
                     </h5>
                   </a>{" "}
@@ -375,7 +375,7 @@ const index = () => {
                   </div>{" "}
                   <br />
                   <a href="#">
-                    <h5 className="text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
+                    <h5 className="service-title text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
                       Shopify and Enhanced Ecommerce Integration
                     </h5>
                   </a>{" "}
@@ -397,7 +397,7 @@ const index = () => {
                   </div>
                   <br />
                   <a href="#">
-                    <h5 className="text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-5">
+                    <h5 className="service-title text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-5">
                       GDPR Cookie Integration
                     </h5>
                   </a>
@@ -418,7 +418,7 @@ const index = () => {
                   </div>
                   <br />
                   <a href="#">
-                    <h5 className="text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
+                    <h5 className="service-title text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
                       Form Field/Funnel Implementation
                     </h5>
                   </a>{" "}
@@ -439,7 +439,7 @@ const index = () => {
                   </div>{" "}
                   <br />
                   <a href="#">
-                    <h5 className="text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
+                    <h5 className="service-title text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
                       Configuration of dimensions
                     </h5>
                   </a>{" "}
@@ -460,7 +460,7 @@ const index = () => {
                   </div>{" "}
                   <br />
                   <a href="#">
-                    <h5 className="text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
+                    <h5 className="service-title text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
                       Custom Events Tracking
                     </h5>
                   </a>{" "}
@@ -481,7 +481,7 @@ const index = () => {
                   </div>{" "}
                   <br />
                   <a href="#">
-                    <h5 className="text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
+                    <h5 className="service-title text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
                       GTM Cleanup
                     </h5>
                   </a>{" "}
@@ -494,14 +494,14 @@ const index = () => {
             </Slider>
             <div class="text-center pt-16">
               <Link href="/contact?id=analytics">
-                <button class="butn">Explore Basic Services</button>
+                <button class="contact-us-btn-basic butn">Explore Basic Services</button>
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="relative">
+      <section class="ana-services relative">
         <div class="md:mt-4 px-4 md:px-20 pt-8 md:pt-11 md:pb-10 pb-8">
           <p class="text-analyticsheading text-[30px] font-medium mt-1.5">
             Advanced Analytics Services - For profound insights
@@ -522,7 +522,7 @@ const index = () => {
                   </div>{" "}
                   <br />
                   <a href="#">
-                    <h5 className="text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
+                    <h5 className="service-title text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
                       Server-Side Tagging
                     </h5>
                   </a>{" "}
@@ -545,7 +545,7 @@ const index = () => {
                   </div>
                   <br />
                   <a href="#">
-                    <h5 className="text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
+                    <h5 className="service-title text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
                       Custom Attribution Implementation
                     </h5>
                   </a>{" "}
@@ -567,7 +567,7 @@ const index = () => {
                   </div>{" "}
                   <br />
                   <a href="#">
-                    <h5 className="text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
+                    <h5 className="service-title text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
                       Tracking the user ID
                     </h5>
                   </a>{" "}
@@ -589,7 +589,7 @@ const index = () => {
                   </div>
                   <br />
                   <a href="#">
-                    <h5 className="text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-5">
+                    <h5 className="service-title text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-5">
                       Facebook conversion API implementation
                     </h5>
                   </a>
@@ -610,7 +610,7 @@ const index = () => {
                   </div>
                   <br />
                   <a href="#">
-                    <h5 className="text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
+                    <h5 className="service-title text-analyticsheading text-xl leading-none font-semibold mt-1.5 mb-4">
                       Integration of offline and online Data
                     </h5>
                   </a>{" "}
@@ -623,7 +623,7 @@ const index = () => {
             </Slider>
             <div class="text-center pt-16">
               <Link href="/contact?id=advance-analytics">
-                <button class="butn">Explore Advance Services</button>
+                <button class="contact-us-btn-advance butn">Explore Advance Services</button>
               </Link>
             </div>
           </div>
@@ -659,17 +659,17 @@ const index = () => {
             <br />
             <div class="flex flex-wrap justify-center gap-6">
               <Link href="/contact?id=ecommerce-audit">
-                <button class="butn px-6 py-4 text-white text-lg rounded-lg shadow-md  transition-all duration-200 ease-in-out">
+                <button class="contact-us-btn1 butn px-6 py-4 text-white text-lg rounded-lg shadow-md  transition-all duration-200 ease-in-out">
                   E-commerce Audit
                 </button>
               </Link>
               <Link href="/contact?id=pixel-audit">
-                <button class="butn px-6 py-4 text-white text-lg rounded-lg shadow-md  transition-all duration-200 ease-in-out">
+                <button class="contact-us-btn1 butn px-6 py-4 text-white text-lg rounded-lg shadow-md  transition-all duration-200 ease-in-out">
                   Pixel Audit
                 </button>
               </Link>
               <Link href="/contact?id=events-audit">
-                <button class="butn px-6 py-4 text-white text-lg rounded-lg shadow-md  transition-all duration-200 ease-in-out">
+                <button class="contact-us-btn1 butn px-6 py-4 text-white text-lg rounded-lg shadow-md  transition-all duration-200 ease-in-out">
                   Events Audit
                 </button>
               </Link>
@@ -687,18 +687,18 @@ const index = () => {
             <br />
             <div class="flex flex-wrap justify-center gap-6">
               <Link href="/contact?id=revenue-discrepancy">
-                <button class="butn px-6 py-4  text-white text-lg rounded-lg shadow-md  transition-all duration-200 ease-in-out">
+                <button class="contact-us-btn1 butn px-6 py-4  text-white text-lg rounded-lg shadow-md  transition-all duration-200 ease-in-out">
                   Revenue/ conversion <br />
                   discrepancies
                 </button>
               </Link>
               <Link href="/contact?id=gtm-health-check">
-                <button class="butn px-6 py-4  text-white text-lg rounded-lg shadow-md  transition-all duration-200 ease-in-out">
+                <button class="contact-us-btn1 butn px-6 py-4  text-white text-lg rounded-lg shadow-md  transition-all duration-200 ease-in-out">
                   Tag Manager <br /> Health Check
                 </button>
               </Link>
               <Link href="/contact?id=firebase-healthcheck">
-                <button class="butn px-6 py-4  text-white text-lg rounded-lg shadow-md  transition-all duration-200 ease-in-out">
+                <button class="contact-us-btn1 butn px-6 py-4  text-white text-lg rounded-lg shadow-md  transition-all duration-200 ease-in-out">
                   GA4, GTM, Firebase <br />
                   Health Check
                 </button>

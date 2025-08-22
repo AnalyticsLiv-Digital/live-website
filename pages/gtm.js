@@ -167,7 +167,7 @@ export default function gtmNew({ brandsdata }) {
         const { onClick } = props;
         return (
             <div
-                className="absolute top-1/2 right-[-12px] md:right-[-20px] lg:right-[-40px] transform -translate-y-1/2 z-10 cursor-pointer"
+                className="carousel-button absolute top-1/2 right-[-12px] md:right-[-20px] lg:right-[-40px] transform -translate-y-1/2 z-10 cursor-pointer"
                 onClick={onClick}
             >
                 <FaArrowRight size={20} />
@@ -179,7 +179,7 @@ export default function gtmNew({ brandsdata }) {
         const { onClick } = props;
         return (
             <div
-                className="absolute top-1/2 left-[-12px] md:left-[-20px] lg:left-[-40px] transform -translate-y-1/2 z-10 cursor-pointer"
+                className="carousel-button absolute top-1/2 left-[-12px] md:left-[-20px] lg:left-[-40px] transform -translate-y-1/2 z-10 cursor-pointer"
                 onClick={onClick}
             >
                 <FaArrowLeft size={20} />
@@ -429,9 +429,6 @@ export default function gtmNew({ brandsdata }) {
 
     return (
         <>
-            <script>
-
-            </script>
             <Head>
                 <link rel="icon" href="https://storage.googleapis.com/website-bucket-uploads/static/favicon.png" type="image/icon type"></link>
                 <link
@@ -441,12 +438,43 @@ export default function gtmNew({ brandsdata }) {
                 <meta name="description" content="AnalyticsLiv Digital is one of the leading Web and App analytics agency. We help our customers embrace Google Products to improve their customer experiences." />
                 <title>Google Tag Manager - AnalyticsLiv</title>
                 <link rel="canonical" href="https://analyticsliv.com/gtm"></link>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "VideoObject",
+                            "name": "GA4 with Looker Studio driving excellence using first party data to drive deep business insights",
+                            "description": "AnalyticsLiv is changing the game for medium scale businesses by helping them bring data into decision making. The businesses today know better about their audiences and sales trends than before.\n\nFor changing the way of decision making of your business, contact AnalyticsLiv at sales@analyticsliv.com.",
+                            "thumbnailUrl": [
+                                "https://i.ytimg.com/vi/m0Oo0IL6gAQ/maxresdefault.jpg"
+                            ],
+                            "uploadDate": "2023-11-28T00:00:00+00:00",
+                            "duration": "PT38S",
+                            "contentUrl": "https://www.youtube.com/watch?v=m0Oo0IL6gAQ",
+                            "embedUrl": "https://www.youtube.com/embed/m0Oo0IL6gAQ",
+                            "interactionStatistic": {
+                                "@type": "InteractionCounter",
+                                "interactionType": { "@type": "WatchAction" },
+                                "userInteractionCount": 238
+                            },
+                            "publisher": {
+                                "@type": "Organization",
+                                "name": "AnalyticsLiv",
+                                "logo": {
+                                    "@type": "ImageObject",
+                                    "url": "https://storage.googleapis.com/website-bucket-uploads/static/favicon.png"
+                                }
+                            }
+                        })
+                    }}
+                />
             </Head>
             <div>
                 <header className="sticky min-w-full top-0 z-50 shadow-md bg-white">
                     <div className="navbar hidden h-[70px] lg:flex xl:items-center xl:justify-between py-2 flex-wrap px-4 xl:flex-row items-center justify-between xl:w-[100%]">
                         <a href="/" className="xl:w-[20%] lg:w-[18%] w-[15%]">
-                            <img alt="logo" className="h-12 w-48 xl:h-12 lg:ml-4 xl:w-52 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" />
+                            <img alt="AnalyticsLiv Logo" className="h-12 w-48 xl:h-12 lg:ml-4 xl:w-52 cursor-pointer" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" />
                         </a>
                         <nav className="lg:flex lg:justify-between w-[90%] lg:w-[70%] xl:w-[56%]">
                             <ul className="lg:flex lg:items-center lg:justify-around text-[17px] font-semibold text-left lg:text-center z-[-1] lg:z-auto lg:mr-2 lg:w-auto space-x-3 xl:space-x-8 items-center tracking-wide cursor-pointer">
@@ -469,7 +497,7 @@ export default function gtmNew({ brandsdata }) {
 
 
                     <div className="relative flex items-center justify-between lg:hidden p-2">
-                        <a href="/"><img onClick={() => setIsOpen(false)} src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" className="relative left-0 h-8 md:mx-4 cursor-pointer" /></a>
+                        <a href="/"><img onClick={() => setIsOpen(false)} src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" alt='AnalyticsLiv Logo' className="relative left-0 h-8 md:mx-4 cursor-pointer" /></a>
                         <a className="mr-12" href="tel:8320576622">
                             <button className="cta px-1 py-1.5 flex mx-2 w-[132px] rounded-[5px] text-white bg-[#0D8CA4] text-xs font-semibold 
                             cursor-pointer hover:bg-white hover:text-[#0D8CA4]" onMouseEnter={handleTouchStart}
@@ -587,8 +615,8 @@ export default function gtmNew({ brandsdata }) {
 
                     </div>
                     <div className='xl:w-[50%] max-md:items-center max-xl:text-center lg:pl-12 mt-7 xl:h-[50%] 2xl:pt-[10vh]  text-white flex flex-col max-md:gap-6 gap-4 lg:gap-[2vh]'>
-                        <div className='text-2xl md:text-3xl xl:text-4xl font-semibold lg:leading-[50px]'>Optimize Your Website
-                            and Mobile Apps Data with Google Tag Manager </div>
+                        <h1 className='text-2xl md:text-3xl xl:text-4xl font-semibold lg:leading-[50px]'>Optimize Your Website
+                            and Mobile Apps Data with Google Tag Manager </h1>
                         <div className='text-sm lg:text-base font-normal xl:leading-[23px] max-sm:pb-5'>As a certified Google Tag Manager partner, we specialize in comprehensive tag management services. We help streamline your tracking and analytics setup, ensuring efficient and accurate data collection.</div>
                         <a onClick={scrolling6}
                             className='max-sm:hidden' target='_'><button style={{ boxShadow: '3px 3px 7px rgba(0, 0, 0, 0.3)' }}
@@ -645,15 +673,15 @@ export default function gtmNew({ brandsdata }) {
 
                     </div>
 
-                    {formSubmit ? <div className='gtmForm1 xl:absolute max-md:mx-4 overflow-auto z-10 h-[480px] md:h-[500px] 2xl:h-[550px] md:my-10 right-[10%] max-md:mt-4 md:top-[450px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] text-center flex flex-col justify-around items-center px-3 md:px-7 py-2 md:py-5 bg-white'>
+                    {formSubmit ? <div className='landing-thankyou gtmForm1 xl:absolute max-md:mx-4 overflow-auto z-10 h-[480px] md:h-[500px] 2xl:h-[550px] md:my-10 right-[10%] max-md:mt-4 md:top-[450px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] text-center flex flex-col justify-around items-center px-3 md:px-7 py-2 md:py-5 bg-white'>
                         <h2 className="md:text-xl text-sky-900">Thank you for showing interest with us!</h2>
                         <h2 className="font-semibold text-2xl p-4 md:p-8 border-dashed border-b-2 border-sky-200">We will get back to you shortly !!</h2>
                         <img alt="Thankyou" className="w-64 mx-auto" src="https://storage.googleapis.com/website-bucket-uploads/static/Na_Dec_46.jpg" />
                     </div> :
-                        <div className='gtmForm1 xl:absolute max-md:mx-4 overflow-auto z-10 h-[480px] md:h-[500px] 2xl:h-[550px] md:my-10 right-[10%] max-md:mt-4 md:top-[450px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] 
+                        <div className='landing-form gtmForm1 xl:absolute max-md:mx-4 overflow-auto z-10 h-[480px] md:h-[500px] 2xl:h-[550px] md:my-10 right-[10%] max-md:mt-4 md:top-[450px] xl:w-[420px] border-[5px] rounded-lg border-[#FFFFFF] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] 
                         text-center flex flex-col justify-around items-center px-3 md:px-4 py-2 md:py-3 bg-white'>
 
-                            <h1 className='text-2xl md:text-[28px] font-semibold text-[#246096]'>We are here to Help you</h1>
+                            <h4 className='text-2xl md:text-[28px] font-semibold text-[#246096]'>We are here to Help you</h4>
 
                             <div className='text-sm font-normal leading-4 text-[#0D8CA4]'>For better understanding of centralized and optimized your tag management system</div>
 
@@ -704,7 +732,7 @@ export default function gtmNew({ brandsdata }) {
 
                                 {/* <div className='flex flex-col max-[340px]:w-[280px] w-[340px] h-[200px] md:w-[380px] md:h-[230px] border-[3px] rounded-[5px] border-[#EBEBEB] hover:border-[#b1afaf] hover:shadow-md justify-around items-center px-4 md:px-5 py-5 text-center' key={item.id}> */}
                                 <img src={item.path} alt='check-up' className='h-10 w-10 md:h-12 md:w-12' />
-                                <h1 className='sm:text-[15px] font-semibold'>{item.title}</h1>
+                                <h3 className='sm:text-[15px] font-semibold'>{item.title}</h3>
                                 <div className='text-xs font-normal text-[#152F2E]'>
                                     {item.description}
                                 </div>
@@ -713,7 +741,7 @@ export default function gtmNew({ brandsdata }) {
                     </div>
                 </section>
 
-                <section className='servicesMobile text-center pb-12 md:hidden'>
+                <section className='ana-services servicesMobile text-center pb-12 md:hidden'>
                     <div className='text-2xl font-bold text-[#152F2E] pb-5'>
                         <span className='inline-block relative'>
                             Our&nbsp;
@@ -735,7 +763,7 @@ export default function gtmNew({ brandsdata }) {
                                 <div className="text-center md:w-[20%] flex flex-col justify-center items-center h-[231px] w-[300px] flex-shrink-0 border border-[#EBEBEB] p-4 py-4  px-5 mr-4 gap-5"
                                     key={item.id}>
                                     <img src={item.path} alt='check-up' className='h-10 w-10 mx-auto md:h-12 md:w-12' />
-                                    <h1 className='text-sm sm:text-[15px] font-semibold py-2'>{item.title}</h1>
+                                    <h3 className='service-title text-sm sm:text-[15px] font-semibold py-2'>{item.title}</h3>
                                     <div className='text-xs py-3 font-normal text-[#152F2E]'>
                                         {item.description}
                                     </div>
@@ -790,7 +818,7 @@ export default function gtmNew({ brandsdata }) {
                                         alt="check-up"
                                         className="h-10 w-10 md:h-12 md:w-12 mb-4 mx-auto"
                                     />
-                                    <h1 className=" text-sm sm:text-[15px] font-semibold mb-2">{item.title}</h1>
+                                    <h3 className=" text-sm sm:text-[15px] font-semibold mb-2">{item.title}</h3>
                                     <div className="text-xs font-normal text-[#152F2E]">
                                         {item.description}
                                     </div>
@@ -856,9 +884,9 @@ export default function gtmNew({ brandsdata }) {
 
                         <div className='group xl:w-[380px] lg:w-[310px] w-[300px] lg:h-[480px] xl:h-[540px] h-[440px] rounded border border-solid shadow-filtershadow p-[25px] text-center relative'>
                             <span className='bg-[#5BF0B2] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                            <a href="https://storage.googleapis.com/website-bucket-uploads/cs/5492gjsetdcghtc86683.pdf" target='_blank'>
+                            <a href="https://storage.googleapis.com/website-bucket-uploads/cs/5492gjsetdcghtc86683.pdf" target='_blank' className='readmore-cs'>
                                 <div>
-                                    <img src="/casestudy1.png" alt="" className='w-[350px] h-[250px]  xl:h-[350px]' />
+                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestudy1.png" alt="Google Analytics 4 Migration" className='w-[350px] h-[250px]  xl:h-[350px]' />
                                 </div>
                                 <div className='flex flex-col gap-7'>
                                     <h3 className='text-base text-slate-900 font-semibold text-left pt-5'>Universal Analytics (GA3) to GA4 Migration for a Website</h3>
@@ -867,8 +895,8 @@ export default function gtmNew({ brandsdata }) {
                                             <div className='flex w-[200px] m-auto items-center py-2.5 justify-center gap-1.5 border border-solid text-center border-[#0D8CA4] cursor-pointer rounded-[10px] group-hover:bg-[#0D8CA4] font-medium'>
                                                 <button className='font-medium text-[#0D8CA4] group-hover:text-white text-sm'>View</button>
                                                 <span className='text-homepagebtn group-hover:text-white'>
-                                                    <img src='/arrow-right (8).png' alt='arrow right' className='h-4 w-4 group-hover:hidden' />
-                                                    <img src='/arrow-right (7).png' alt='arrow right hover' className='h-4 w-4 hidden group-hover:block' />
+                                                    <img src='https://storage.googleapis.com/website-bucket-uploads/static/public/arrow-right%20(8).png' alt='arrow right' className='h-4 w-4 group-hover:hidden' />
+                                                    <img src='https://storage.googleapis.com/website-bucket-uploads/static/public/arrow-right%20(7).png' alt='arrow right hover' className='h-4 w-4 hidden group-hover:block' />
                                                 </span>
                                             </div>
                                         </div>
@@ -878,9 +906,9 @@ export default function gtmNew({ brandsdata }) {
                         </div>
                         <div className='max-lg:hidden group xl:w-[380px] lg:w-[310px] w-[300px] xl:h-[540px] h-[480px] rounded border border-solid shadow-filtershadow p-[25px] text-center relative'>
                             <span className='bg-[#5BF0B2] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                            <a href="https://storage.googleapis.com/website-bucket-uploads/cs/dv66hpaft245xdg90y5vr.pdf" target='_blank'>
+                            <a href="https://storage.googleapis.com/website-bucket-uploads/cs/dv66hpaft245xdg90y5vr.pdf" target='_blank' className='readmore-cs'>
                                 <div>
-                                    <img src="/castdyinner7.jpg" alt="" className='w-[350px] h-[250px] xl:h-[350px]' />
+                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner7.jpg" alt="Maximising Revenue and User Insights" className='w-[350px] h-[250px] xl:h-[350px]' />
                                 </div>
                                 <div className='flex flex-col gap-5'>
                                     <h3 className='text-bas text-slate-900 font-gilroy font-semibold leading-[1.3em] text-left pt-4'>Maximising Revenue and User Insights using Firebase In App Purchases for Mobile Apps</h3>
@@ -888,8 +916,8 @@ export default function gtmNew({ brandsdata }) {
                                         <div className='flex w-[200px] m-auto items-center py-2.5 justify-center gap-1.5 border border-solid text-center border-[#0D8CA4] cursor-pointer rounded-[10px] group-hover:bg-[#0D8CA4] font-medium'>
                                             <button className='font-medium text-[#0D8CA4] group-hover:text-white text-sm'>View</button>
                                             <span className='text-homepagebtn group-hover:text-white'>
-                                                <img src='/arrow-right (8).png' alt='arrow right' className='h-4 w-4 group-hover:hidden' />
-                                                <img src='/arrow-right (7).png' alt='arrow right hover' className='h-4 w-4 hidden group-hover:block' />
+                                                <img src='https://storage.googleapis.com/website-bucket-uploads/static/public/arrow-right%20(8).png' alt='arrow right' className='h-4 w-4 group-hover:hidden' />
+                                                <img src='https://storage.googleapis.com/website-bucket-uploads/static/public/arrow-right%20(7).png' alt='arrow right hover' className='h-4 w-4 hidden group-hover:block' />
                                             </span>
                                         </div>
                                     </div>
@@ -898,9 +926,9 @@ export default function gtmNew({ brandsdata }) {
                         </div>
                         <div className='max-lg:hidden group xl:w-[380px] lg:w-[310px] w-[300px] xl:h-[540px] h-[480px] rounded border border-solid shadow-filtershadow p-[25px] text-center relative'>
                             <span className='bg-[#5BF0B2] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                            <a href="https://storage.googleapis.com/website-bucket-uploads/cs/mnedfr45893kjswl.pdf" target='_blank'>
+                            <a href="https://storage.googleapis.com/website-bucket-uploads/cs/mnedfr45893kjswl.pdf" target='_blank' className='readmore-cs'>
                                 <div>
-                                    <img src="/casestudy2.png" alt="" className='w-[350px] h-[250px] xl:h-[350px]' />
+                                    <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestudy2.png" alt="Shopify and GA4 enhanced Ecommerce Tracking" className='w-[350px] h-[250px] xl:h-[350px]' />
                                 </div>
                                 <div className='flex flex-col gap-2 xl:gap-4'>
 
@@ -911,8 +939,8 @@ export default function gtmNew({ brandsdata }) {
                                             <div className='flex w-[200px] m-auto items-center py-2.5 justify-center gap-1.5 border border-solid text-center border-[#0D8CA4] cursor-pointer rounded-[10px] group-hover:bg-[#0D8CA4] font-medium'>
                                                 <button className='font-medium text-[#0D8CA4] group-hover:text-white text-sm'>View</button>
                                                 <span className='text-homepagebtn group-hover:text-white'>
-                                                    <img src='/arrow-right (8).png' alt='arrow right' className='h-4 w-4 group-hover:hidden' />
-                                                    <img src='/arrow-right (7).png' alt='arrow right hover' className='h-4 w-4 hidden group-hover:block' />
+                                                    <img src='https://storage.googleapis.com/website-bucket-uploads/static/public/arrow-right%20(8).png' alt='arrow right' className='h-4 w-4 group-hover:hidden' />
+                                                    <img src='https://storage.googleapis.com/website-bucket-uploads/static/public/arrow-right%20(7).png' alt='arrow right hover' className='h-4 w-4 hidden group-hover:block' />
                                                 </span>
                                             </div>
                                         </div>
@@ -926,7 +954,7 @@ export default function gtmNew({ brandsdata }) {
                                     <span className='bg-[#5BF0B2] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
                                     <a href="https://storage.googleapis.com/website-bucket-uploads/cs/dv66hpaft245xdg90y5vr.pdf" target='_blank'>
                                         <div>
-                                            <img src="/castdyinner7.jpg" alt="" className='w-[350px] h-[250px] xl:h-[350px]' />
+                                            <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/castdyinner7.jpg" alt="Maximising Revenue and User Insights" className='w-[350px] h-[250px] xl:h-[350px]' />
                                         </div>
                                         <div className='flex flex-col gap-5'>
                                             <h3 className='text-bas text-slate-900 font-gilroy font-semibold leading-[1.3em] text-left pt-4'>Maximising Revenue and User Insights using Firebase In App Purchases for Mobile Apps</h3>
@@ -934,8 +962,8 @@ export default function gtmNew({ brandsdata }) {
                                                 <div className='flex w-[200px] m-auto items-center py-2.5 justify-center gap-1.5 border border-solid text-center border-[#0D8CA4] cursor-pointer rounded-[10px] group-hover:bg-[#0D8CA4] font-medium'>
                                                     <button className='font-medium text-[#0D8CA4] group-hover:text-white text-sm'>View</button>
                                                     <span className='text-homepagebtn group-hover:text-white'>
-                                                        <img src='/arrow-right (8).png' alt='arrow right' className='h-4 w-4 group-hover:hidden' />
-                                                        <img src='/arrow-right (7).png' alt='arrow right hover' className='h-4 w-4 hidden group-hover:block' />
+                                                        <img src='https://storage.googleapis.com/website-bucket-uploads/static/public/arrow-right%20(8).png' alt='arrow right' className='h-4 w-4 group-hover:hidden' />
+                                                        <img src='https://storage.googleapis.com/website-bucket-uploads/static/public/arrow-right%20(7).png' alt='arrow right hover' className='h-4 w-4 hidden group-hover:block' />
                                                     </span>
                                                 </div>
                                             </div>
@@ -946,7 +974,7 @@ export default function gtmNew({ brandsdata }) {
                                     <span className='bg-[#5BF0B2] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
                                     <a href="https://storage.googleapis.com/website-bucket-uploads/cs/mnedfr45893kjswl.pdf" target='_blank'>
                                         <div>
-                                            <img src="/casestudy2.png" alt="" className='w-[350px] h-[250px] xl:h-[350px]' />
+                                            <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestudy2.png" alt="Shopify and GA4 enhanced Ecommerce Tracking" className='w-[350px] h-[250px] xl:h-[350px]' />
                                         </div>
                                         <div className='flex flex-col gap-2 xl:gap-4'>
 
@@ -957,8 +985,8 @@ export default function gtmNew({ brandsdata }) {
                                                     <div className='flex w-[200px] m-auto items-center py-2.5 justify-center gap-1.5 border border-solid text-center border-[#0D8CA4] cursor-pointer rounded-[10px] group-hover:bg-[#0D8CA4] font-medium'>
                                                         <button className='font-medium text-[#0D8CA4] group-hover:text-white text-sm'>View</button>
                                                         <span className='text-homepagebtn group-hover:text-white'>
-                                                            <img src='/arrow-right (8).png' alt='arrow right' className='h-4 w-4 group-hover:hidden' />
-                                                            <img src='/arrow-right (7).png' alt='arrow right hover' className='h-4 w-4 hidden group-hover:block' />
+                                                            <img src='https://storage.googleapis.com/website-bucket-uploads/static/public/arrow-right%20(8).png' alt='arrow right' className='h-4 w-4 group-hover:hidden' />
+                                                            <img src='https://storage.googleapis.com/website-bucket-uploads/static/public/arrow-right%20(7).png' alt='arrow right hover' className='h-4 w-4 hidden group-hover:block' />
                                                         </span>
                                                     </div>
                                                 </div>

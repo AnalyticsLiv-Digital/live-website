@@ -10,6 +10,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { motion } from "framer-motion";
+import MetaSchemaOg from '../../components/MetaSchemaOg'
 
 const customersegmentation = () => {
 
@@ -103,11 +104,14 @@ const customersegmentation = () => {
 
     return (
         <>
-            <Head>
-                <title>AnalyticsLiv - Analytics Customer Segmentation</title>
-                <meta name="description" content="Experts in GA4, DV360, Google Ads, Meta Ads, Microsoft Ads" />
-                <link rel="canonical" href="https://analyticsliv.com/services/customer-segmentation"></link>
-            </Head>
+            <MetaSchemaOg
+                url="https://analyticsliv.com/services/customer-segmentation"
+                title="Data‑Driven Customer Segmentation Services | AnalyticsLiv"
+                description="Drive more revenue with data‑backed customer segmentation services from AnalyticsLiv. Identify your best customers, tailor campaigns, and boost ROI with precision."
+                twitterTitle="Data‑Driven Customer Segmentation Services | AnalyticsLiv"
+                twitterDescription="Drive more revenue with data‑backed customer segmentation services from AnalyticsLiv. Identify your best customers, tailor campaigns, and boost ROI with precision."
+            />
+
             <section className='cshome w-full relative font-gilroy overflow-hidden'>
                 <div className='h-full'>
                     <div className="relative px-4 md:px-12 pt-8 pb-8 h-full z-20 md:py-0">
@@ -118,15 +122,15 @@ const customersegmentation = () => {
                                 </h1>
                                 <div className='flex max-[425px]:flex-wrap flex-nowrap items-center lg:justify-start justify-center gap-5'>
                                     <Link href="/contact?id=programatic-advertising">
-                                        <button className="butn px-6 mt-6">REQUEST A DEMO</button>
+                                        <button className="contact-us-btn butn px-6 mt-6">REQUEST A DEMO</button>
                                     </Link>
                                     <Link href="/contact?id=programatic-advertising">
-                                        <button className="butn px-6 max-[425px]:mt-0 mt-6">CONTACT US</button>
+                                        <button className="contact-us-btn butn px-6 max-[425px]:mt-0 mt-6">CONTACT US</button>
                                     </Link>
                                 </div>
                             </div>
                             <div className=" w-full lg:w-1/2 flex items-center lg:justify-end justify-center lg:order-2 order-1">
-                                <img src="/Customer_Segment_Main_Img_Croped.png" alt="" className='' />
+                                <img src="/Customer_Segment_Main_Img_Croped.png" alt="customer segmentation services" className='' />
                             </div>
                         </div>
                         <div className=''>
@@ -270,7 +274,7 @@ const customersegmentation = () => {
 
                                             <div className='inbox relative pb-4 flex items-center gap-2'>
                                                 <Image
-                                                    src="/analyzing (1).png"
+                                                    src="https://storage.googleapis.com/website-bucket-uploads/static/public/analyzing%20(1).png"
                                                     width={30}
                                                     height={30}
                                                     alt="Picture of the author"
@@ -303,7 +307,7 @@ const customersegmentation = () => {
                             </div>
                             <div className='lg:w-1/2 w-full'>
                                 <div>
-                                    <img src="/Customer_Segment_Sub_Img.png" alt="" className='' />
+                                    <img src="/Customer_Segment_Sub_Img.png" alt="First Party Data" className='' />
                                 </div>
                             </div>
                         </div>
@@ -429,12 +433,12 @@ const customersegmentation = () => {
                             <div className='lg:grid lg:grid-cols-1 sm:flex sm:justify-between grid justify-center gap-[30px]'>
                                 <div className='first group 2xl:h-[299px] xl:h-[329px] lg:h-[290px] home-blog max-[1024px]:w-full rounded border border-solid border-[#DBDBDB] hover:border-[#979797] hover:shadow-serviceoffer p-[25px] text-center relative'>
                                     <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                                    <a href="/case-studies/ua-to-ga4-migration-for-a-website" className='lg:flex gap-5'>
+                                    <a href="/case-studies/ua-to-ga4-migration-for-a-website" className='lg:flex gap-5 readmore-cs'>
                                         <Image
-                                            src="/casestudy1.png"
+                                            src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestudy1.png"
                                             width={300}
                                             height={300}
-                                            alt="Picture of the author"
+                                            alt="Google Analytics 4 Migration"
                                             priority={true}
                                             className='2xl:w-[40%] w-full m-auto 2xl:h-[247px] xl:h-[277px] lg:h-[227px] lg:object-scale-down'
                                         />
@@ -454,12 +458,12 @@ const customersegmentation = () => {
                                 </div>
                                 <div className='second group 2xl:h-[299px] xl:h-[329px] lg:h-[290px] home-blog max-[1024px]:w-full max-[640px]:mt-[20px] rounded border border-solid border-[#DBDBDB] hover:border-[#979797] hover:shadow-serviceoffer p-[25px] text-center relative'>
                                     <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                                    <a href="/case-studies/55-percent-increase-in-avg-session-duration" className='lg:flex gap-5'>
+                                    <a href="/case-studies/55-percent-increase-in-avg-session-duration" className='lg:flex gap-5 readmore-cs'>
                                         <Image
-                                            src="/casestudy3.png"
+                                            src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestudy3.png"
                                             width={300}
                                             height={300}
-                                            alt="Picture of the author"
+                                            alt="55% Increase in Avg. Session Duration"
                                             priority={true}
                                             className='2xl:w-[40%] w-full m-auto 2xl:h-[247px] xl:h-[277px] lg:h-[227px] lg:object-scale-down'
                                         />
@@ -485,13 +489,13 @@ const customersegmentation = () => {
                             <div className='third hidden lg:grid gap-[30px]'>
                                 <div className='home-casestd3 group 2xl:h-[299px] xl:h-[329px] lg:h-[290px] rounded bg-no-repeat bg-cover border border-solid hover:border-[#979797] hover:shadow-serviceoffer p-5 text-center relative'>
                                     <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                                    <a href="/case-studies/skyrocket-your-campaigns-ctr-with-a-95-percent-surge-in-14-days" className='grid gap-5'>
+                                    <a href="/case-studies/skyrocket-your-campaigns-ctr-with-a-95-percent-surge-in-14-days" className='grid gap-5 readmore-cs'>
                                         <div className=''>
                                             <Image
-                                                src="/casestd.png"
+                                                src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestd.png"
                                                 width={300}
                                                 height={300}
-                                                alt="Picture of the author"
+                                                alt="Skyrocket Your Campaign's CTR"
                                                 priority={true}
                                                 className='w-full m-auto 2xl:h-[210px] xl:h-[230px] h-[170px] object-scale-down'
                                             />
@@ -504,13 +508,13 @@ const customersegmentation = () => {
                                 </div>
                                 <div className='home-casestd3 group 2xl:h-[299px] xl:h-[329px] lg:h-[290px] rounded bg-no-repeat bg-cover border border-solid hover:border-[#979797] hover:shadow-serviceoffer p-5 text-center relative'>
                                     <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                                    <a href="/case-studies/driving-campaigns-in-dv360-to-post-click-attribution-success-with-36-percent-reduction-in-cpi" className='grid gap-1'>
+                                    <a href="/case-studies/driving-campaigns-in-dv360-to-post-click-attribution-success-with-36-percent-reduction-in-cpi" className='grid gap-1 readmore-cs'>
                                         <div className='grid gap-4'>
                                             <Image
-                                                src="/casestd2.png"
+                                                src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestd2.png"
                                                 width={300}
                                                 height={300}
-                                                alt="Picture of the author"
+                                                alt="Post Click Tracking with DV360"
                                                 priority={true}
                                                 className='w-full m-auto 2xl:h-[210px] xl:h-[230px] h-[170px] object-scale-down'
                                             />
@@ -556,7 +560,7 @@ const customersegmentation = () => {
                     </div>
                 </div>
             </section>
-            <section className='csfaq crofaq relative overflow-hidden font-gilroy'>
+            <section className='faq-section csfaq crofaq relative overflow-hidden font-gilroy'>
                 <div className="relative px-4 md:px-12 pt-8 pb-8 z-20">
                     <div>
                         <h3 className='text-[32px] font-semibold text-[#000000] leading-[1.5em] font-gilroy mb-2'>FAQ's</h3>
@@ -565,7 +569,7 @@ const customersegmentation = () => {
                         <div className='items-start lg:justify-start justify-center gap-7 w-full'>
                             <div className={`faqfst flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full text-[#000000]' onClick={toggleFaqfstVisibility}>
+                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={toggleFaqfstVisibility}>
                                         <div className={`flex items-center w-full justify-between gap-5 ${isFaqfstVisible ? 'mb-[10px]' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <h2 className='text-[17px] font-medium leading-normal'>What data do I need for customer segmentation?</h2>
@@ -584,7 +588,7 @@ const customersegmentation = () => {
                             </div>
                             <div className={`faqsec flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full text-[#000000]' onClick={toggleFaqsecVisibility}>
+                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={toggleFaqsecVisibility}>
                                         <div className={`flex items-center justify-between gap-5 ${isFaqsecVisible ? 'mb-[10px]' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <h2 className='text-[17px] font-medium leading-normal'>How many customer segments will I have?</h2>
@@ -603,7 +607,7 @@ const customersegmentation = () => {
                             </div>
                             <div className={`faqthrd flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
                                 <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqthrdVisibility()}>
+                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqthrdVisibility()}>
                                         <div className={`flex items-center justify-between gap-5 ${isFaqthrdVisible ? 'mb-[10px]' : 'mb-0'}`}>
                                             <div className='flex items-center justify-start'>
                                                 <h2 className='text-[17px] font-medium leading-normal'>What can I do with my customer segments?</h2>

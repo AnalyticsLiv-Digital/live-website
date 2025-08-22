@@ -1,26 +1,26 @@
 import '../styles/globals.css'
-import Header from '../components/Header'
-//import { Footer } from '../components/Footer'
-import ScrollProgress from '../components/ScrollProgress'
 import Head from 'next/head'
 import TagManager from 'react-gtm-module';
 import { useEffect, useState } from 'react'
 import Router, { useRouter } from 'next/router'
 import { HashLoader } from 'react-spinners'
 import { SessionProvider } from "next-auth/react"
-import Footer from '../components/home/Footer'
 // import WebinarPopup from '../components/webinarPopup';
 // import useWebinarPopup from '../components/hooks/usePopup'
 import ContactPopup from '../components/ContactPopup';
 import useContactPopup from '../components/hooks/useContactPopup';
 import Script from "next/script";
-import Navbar from '../components/navbar';
-import Footer1 from '../components/home/Footer1';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
+import dynamic from "next/dynamic";
+// import LookerWebAd from '../components/LookerWebAd';
 
 
 function MyApp({ Component, pageProps: { session, ...pageProps }, }) {
   // const { showPopup, closePopup, registerUser, clickHere } = useWebinarPopup();
-  
+  const ChatBot = dynamic(() => import("../components/ChatBot/ChatBot"), { ssr: false });
+  const routerr = useRouter();
   const { showPopup, closePopup, registerUser } = useContactPopup();
   const [showLoader, setShowloader] = useState(false);
   useEffect(() => {
@@ -47,19 +47,19 @@ function MyApp({ Component, pageProps: { session, ...pageProps }, }) {
       }}
     />
     <SessionProvider session={session}>
-      {router.pathname == "/server-side-tracking" || router.pathname == "/dv360-a" || router.pathname.includes("admin") || router.pathname == "/ecommerce" || router.pathname == "/ga4" || router.pathname == "/dv360" || router.pathname == "/gtm" || router.pathname == "/webinar/cookie-consent" || router.pathname == "/gtmNew" || router.pathname == "/ga41" ? <Component {...pageProps} /> : <><Head>
+      {router.pathname == "/server-side-tracking" || router.pathname == "/dv360-a" || router.pathname.includes("admin") || router.pathname == "/ecommerce" || router.pathname == "/ga4" || router.pathname == "/dv360" || router.pathname == "/programmatic-advertising" || router.pathname == "/gtm" || router.pathname == "/ContactPopup" || router.pathname == "/webinar/cookie-consent" || router.pathname == "/webinar/looker-studio" || router.pathname == "/gtmNew" || router.pathname == "/ga41" || router.pathname == "/testing/ga4-trial" || router.pathname == "/ppc" ? <Component {...pageProps} /> : <><Head>
         <link rel="icon" href="https://storage.googleapis.com/website-bucket-uploads/static/favicon.png" type="image/icon type"></link>
         <link
           href="https://fonts.googleapis.com/css2?family=Poppins"
           rel="stylesheet"
         />
-        <script src="https://www.googleoptimize.com/optimize.js?id=OPT-5L8TQ26"></script>
+        {/* <script src="https://www.googleoptimize.com/optimize.js?id=OPT-5L8TQ26"></script> */}
 
         <script src="/antiflicker.js" />
         <meta name="google-site-verification" content="O18N4BhbU7y11EzEu_fOYfNHdp-fCahcKZUpriC3hyQ" />
       </Head>
-        {/* <Header /> */}
-        <Navbar />
+        {routerr.pathname === '/testing/old_home' ? <Header /> : <Navbar />}
+
         {showLoader ? <div className='flex h-screen'><HashLoader
           color="#271d90"
           loading
@@ -69,11 +69,16 @@ function MyApp({ Component, pageProps: { session, ...pageProps }, }) {
           <>
 
             <Component {...pageProps} />
-            {/* <Footer /> */}
-            <Footer1 />
+            {/* <LookerWebAd /> */}
+
+            <div className='App'>
+              <ChatBot />
+            </div>
+
+            <Footer />
 
           </>}</>}
-          {/* {showPopup && (
+      {/* {showPopup && (
               <ContactPopup onClose={closePopup} onRegister={registerUser} />
             )} */}
     </SessionProvider>

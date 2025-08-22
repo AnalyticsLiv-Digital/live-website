@@ -6,23 +6,33 @@ import { useRouter } from "next/navigation";
 import Navbar from "./Navbar";
 
 const index = ({ data }) => {
-  const { data: session } = useSession();
-  const [loginState, setLoginState] = useState(!!session);
+  const { data: session, status } = useSession();
 
+  if (status === 'loading') {
+    return (
+      <div className="flex flex-col min-h-screen justify-center items-center space-y-4">
+        <div className="flex items-center">
+          <div className="w-12 h-12 border-4 border-t-transparent border-blue-500 border-solid rounded-full animate-spin"></div>
+        </div>
+        <span className="text-lg font-semibold text-gray-700">Loading...</span>
+      </div>
+    );
+  }
   const imgUrl = [
-    "/blogs.png",
+    "https://storage.googleapis.com/website-bucket-uploads/static/public/blogs.png",
     "/casestudy.png",
     "/job.png",
-    "/leads.png"
+    "/leads.png",
+    "https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/youtube.svg"
   ];
 
   if (session) {
     return (
       <>
-        <div className="bg-gray-100 h-[100dvh] md:overflow-hidden">
+        <div className="bg-gray-100 min-h-[100dvh]">
           <Navbar />
 
-          <div className="flex flex-col max-md:gap-6 gap-12 items-center justify-evenly">
+          <div className="flex flex-col max-md:gap-6 gap-12 items-center justify-evenly pb-10">
             <h1 className="text-center font-extrabold text-4xl pt-14 pb-10 text-gray-800">
               Dashboard
             </h1>
@@ -54,8 +64,8 @@ const index = ({ data }) => {
               <DashboardCard
                 href="/admin/ytPlaylist"
                 title="Yt Playlist"
-                count={data.leads}
-                imgUrl={imgUrl[3]}
+                count={data.ytplaylist}
+                imgUrl={imgUrl[4]}
               />
             </div>
           </div>
