@@ -5,7 +5,6 @@ import Footer from '../components/Footer'
 const partnerships = () => {
     return (
         <>
-        <NewNavbar />
         <div
             className="min-h-screen bg-white"
             style={{ fontFamily: 'ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji"' }}
@@ -255,7 +254,6 @@ const partnerships = () => {
                 </div>
             </section>
         </div>
-        <Footer />
         </>
     )
 }
