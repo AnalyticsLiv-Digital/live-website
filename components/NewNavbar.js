@@ -63,7 +63,7 @@ const NewNavbar = () => {
                   onMouseEnter={() => setService(true)}
                   onMouseLeave={() => setService(false)}
                 >
-                  <button class="inline-flex items-center h-8 gap-1 hover:text-slate-900">
+                  <a href="/services" class="inline-flex items-center h-8 gap-1 hover:text-slate-900">
                     Services
                     <svg
                       class="h-4 w-4"
@@ -72,7 +72,7 @@ const NewNavbar = () => {
                     >
                       <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 011.08 1.04l-4.25 4.25a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" />
                     </svg>
-                  </button>
+                  </a>
 
                   {service && (
                     <div className="absolute left-[-200px] w-[980px] rounded-3xl border border-slate-200 bg-gradient-to-br from-white to-slate-50/90 backdrop-blur-xl p-8 shadow-2xl transition-all duration-300 hover:shadow-3xl">
