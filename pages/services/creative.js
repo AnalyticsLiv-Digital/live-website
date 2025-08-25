@@ -35,7 +35,6 @@ const Creative = () => {
             'ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji"',
         }}
       >
-        <NewNavbar />
         <section class="relative overflow-hidden border-b border-slate-200">
           <div class="absolute inset-0 bg-gradient-to-br from-[#FFF7ED] via-white to-[#F0F9FF]"></div>
           <div class="relative mx-auto max-w-7xl px-6 py-20 text-center">
@@ -740,7 +739,6 @@ const Creative = () => {
           </div>
         </section>
 
-        <Footer />
       </body>
     </>
   );

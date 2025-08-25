@@ -5,7 +5,6 @@ import Footer from "../../components/Footer";
 const CRO1 = () => {
   return (
     <div>
-      <NewNavbar />
       <div class="bg-white text-slate-800">
         <section class="relative overflow-hidden border-b border-slate-200">
           <div class="absolute inset-0 bg-gradient-to-br from-[#EEF6FF] via-white to-[#F7F7FF]"></div>
@@ -732,7 +731,6 @@ const CRO1 = () => {
           </div>
         </section>
       </div>
-      <Footer />
     </div>
   );
 };

@@ -15,7 +15,6 @@ const ServicesPage = () => {
           .ring-soft::after { content: ''; position: absolute; inset: -10px; border-radius: 24px; border: 1px dashed rgba(15,23,42,.08); }
         `}</style>
       </Head>
-      <NewNavbar />
         <div className="min-h-screen bg-white text-slate-800"
             style={{ fontFamily: 'ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji"' }}>
             <main>
@@ -408,7 +407,6 @@ const ServicesPage = () => {
                 </section>
             </main>
         </div>
-        <Footer />
         </>
     );
 };
