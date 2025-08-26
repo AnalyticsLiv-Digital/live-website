@@ -734,9 +734,6 @@ const Creative = () => {
               </form>
             </div>
           </div>
-          <div class="mx-auto max-w-7xl px-6 mt-6 text-center text-sm text-white/70">
-            © 2025 Analytics Liv Digital LLP
-          </div>
         </section>
 
       </body>
