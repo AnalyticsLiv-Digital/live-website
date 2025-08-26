@@ -42,7 +42,8 @@ const Serversidetracking = () => {
                 twitterDescription="Get accurate, secure tracking with AnalyticsLiv’s server-side analytics tracking. Boost your data quality, privacy, and analytical performance for better marketing outcomes."
             />
 
-            <main class="min-h-screen bg-white text-slate-800">
+            <main class="min-h-screen bg-white text-slate-800"
+            style={{ fontFamily: 'ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji"' }}>
                 <section class="relative overflow-hidden border-b border-slate-200">
                     <div class="absolute inset-0 bg-gradient-to-br from-[#EEF6FF] via-white to-[#F7F7FF]"></div>
                     <div class="relative mx-auto max-w-7xl px-6 max-sm:pt-8 max-sm:pb-12 sm:py-16 lg:py-16">

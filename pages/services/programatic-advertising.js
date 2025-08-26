@@ -1,71 +1,141 @@
 'use client'
-import React, { useState, useRef } from 'react'
-import Link from 'next/link'
+import React, { useState, useRef, useEffect } from 'react'
 import Head from 'next/head'
-import Marquee from "react-fast-marquee";
-import Image from 'next/image';
-import { FaLongArrowAltRight } from "react-icons/fa";
-import { FaCheck } from "react-icons/fa6";
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
-import Leaders from '../../components/dv360/Leaders';
 import MetaSchemaOg from '../../components/MetaSchemaOg';
+import {
+    LineChart,
+    Line,
+    CartesianGrid,
+    XAxis,
+    YAxis,
+    Tooltip,
+    Legend,
+    ResponsiveContainer,
+    BarChart,
+    Bar,
+} from "recharts";
 
-const service_A = () => {
+const ProgramaticAd = () => {
 
-    const [isFs4mVisible, setIsFs4mVisible] = useState(false);
-    const [isSec4mVisible, setIsSec4mVisible] = useState(false);
-    const [isThr4mVisible, setIsThr4mVisible] = useState(false);
-    const [isFur4mVisible, setIsFur4mVisible] = useState(false);
+    const [activeTab, setActiveTab] = useState("tab-ctv");
+    const [spend, setSpend] = useState(2000000);
+    const [monthCount, setMonthCount] = useState(6);
+    const [playing, setPlaying] = useState(false);
 
-    const toggleFs4mVisibility = () => {
-        setIsFs4mVisible(prevState => !prevState);
-        if (isSec4mVisible) setIsSec4mVisible(true);
-        if (isThr4mVisible) setIsThr4mVisible(false);
-        if (isFur4mVisible) setIsFur4mVisible(false);
-    };
 
-    const toggleSec4mVisibility = () => {
-        setIsSec4mVisible(prevState => !prevState);
-        if (isFs4mVisible) setIsFs4mVisible(true);
-        if (isThr4mVisible) setIsThr4mVisible(false);
-        if (isFur4mVisible) setIsFur4mVisible(false);
-    };
+    const cpaRef = useRef(null);
+    const roasRef = useRef(null);
+    const ctrRef = useRef(null);
+    const chartInstances = useRef({});
+    const cpaBase = [1000, 960, 920, 880, 850, 820, 800, 780, 760, 740, 730, 720];
+    const roasBase = [1.2, 1.3, 1.5, 1.7, 1.8, 2.0, 2.2, 2.3, 2.5, 2.7, 2.8, 3.0];
+    const ctrBase = [0.8, 0.9, 0.95, 1.0, 1.02, 1.05, 1.07, 1.1, 1.12, 1.15, 1.14, 1.16];
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const genData = (len) =>
+        months.slice(0, len).map((month, i) => ({
+            month,
+            cpa: cpaBase[i],
+            roas: roasBase[i],
+            ctr: ctrBase[i],
+        }));
+    const [chartData, setChartData] = useState(genData(monthCount));
+    // Update chart data when monthCount changes
+    useEffect(() => {
+        setChartData(genData(monthCount));
+    }, [monthCount]);
 
-    const toggleThr4mVisibility = () => {
-        setIsThr4mVisible(prevState => !prevState);
-        if (isFs4mVisible) setIsFs4mVisible(false);
-        if (isSec4mVisible) setIsSec4mVisible(false);
-        if (isFur4mVisible) setIsFur4mVisible(true);
-    };
 
-    const toggleFur4mVisibility = () => {
-        setIsFur4mVisible(prevState => !prevState);
-        if (isFs4mVisible) setIsFs4mVisible(false);
-        if (isSec4mVisible) setIsSec4mVisible(false);
-        if (isThr4mVisible) setIsThr4mVisible(true);
-    };
+    // --- Update Charts on State Change ---
+    useEffect(() => {
+        const cpaData = [1000, 960, 920, 880, 850, 820, 800, 780, 760, 740, 730, 720].slice(0, monthCount);
+        const roasData = [1.2, 1.3, 1.5, 1.7, 1.8, 2.0, 2.2, 2.3, 2.5, 2.7, 2.8, 3.0].slice(0, monthCount);
+        const ctrData = [0.8, 0.9, 0.95, 1.0, 1.02, 1.05, 1.07, 1.1, 1.12, 1.15, 1.14, 1.16].slice(0, monthCount);
 
-    const [toggle1, setToggle1] = useState(true);
+        if (chartInstances.current.cpa) {
+            chartInstances.current.cpa.data.labels = genData(monthCount);
+            chartInstances.current.cpa.data.datasets[0].data = cpaData;
+            chartInstances.current.cpa.update();
+        }
+        if (chartInstances.current.roas) {
+            chartInstances.current.roas.data.labels = genData(monthCount);
+            chartInstances.current.roas.data.datasets[0].data = roasData;
+            chartInstances.current.roas.update();
+        }
+        if (chartInstances.current.ctr) {
+            chartInstances.current.ctr.data.labels = genData(monthCount);
+            chartInstances.current.ctr.data.datasets[0].data = ctrData;
+            chartInstances.current.ctr.update();
+        }
+    }, [monthCount]);
 
-    const toggleDropdown = () => {
-        setToggle1(!toggle1);
-    };
+    // --- Animation Loop ---
+    useEffect(() => {
+        let timer;
+        if (playing) {
+            timer = setInterval(() => {
+                setMonthCount((prev) => (prev >= 12 ? 3 : prev + 1));
+            }, 1000);
+        }
+        return () => clearInterval(timer);
+    }, [playing]);
 
-    const [activetab, setActivetab] = useState("1");
-    const tabRefs = useRef([]);
+    // --- Price Calculation ---
+    const fmt = (n) => n.toLocaleString("en-IN");
+    const starterFee = Math.max(50000, Math.round(spend * 0.05));
+    const growthFee = Math.max(120000, Math.round(spend * 0.09));
+    const entFee = Math.max(250000, Math.round(spend * 0.12));
 
-    const [activemtab, setActivemtab] = useState("0");
+    const tabs = [
+        {
+            id: "tab-ctv",
+            title: "CTV, YouTube & Online Video",
+            description:
+                "Reach new customers with sequenced creatives, brand lift and action-led optimization.",
+            items: [
+                "YouTube In-Stream, Shorts",
+                "CTV & OTT deals",
+                "Brand lift studies",
+                "Frequency & reach pacing",
+            ],
+        },
+        {
+            id: "tab-display",
+            title: "Display, Discovery & Native",
+            description:
+                "Clean placements, zero-waste targeting and outcomes that ladder into ROAS.",
+            items: [
+                "PMPs & programmatic guaranteed",
+                "Contextual & affinity",
+                "Dynamic creatives",
+                "Viewability & IVT controls",
+            ],
+        },
+        {
+            id: "tab-audio",
+            title: "Digital Audio & Podcast",
+            description:
+                "High-attention formats with measured lift and incremental reach.",
+            items: [
+                "Spotify & partner networks",
+                "Host-read & dynamic",
+                "Brand safety tiers",
+                "Geo & device controls",
+            ],
+        },
+        {
+            id: "tab-data",
+            title: "Data, Audiences & Custom Bidding",
+            description:
+                "Value-based bidding tuned to your profit. First-party data onboarding & modeling.",
+            items: [
+                "GA4 & Floodlight alignment",
+                "Modeled conversions",
+                "First-party audience graphs",
+                "Lookalikes & exclusions",
+            ],
+        },
+    ];
 
-    const Trusteddata = {
-        brand: [
-            { logo: "/ThoughtSpot_logo.png", alt: "ThoughtSpot" },
-            { logo: "/Brizo_logo.png", alt: "Brizo" },
-            { logo: "/bluecrew.png", alt: "BlueCrew" },
-            { logo: "/edanz_logo.png", alt: "Edanz" },
-            { logo: "/shoebacca.png", alt: "Shoebacca" },
-            { logo: "/wholesalesockdeals.png", alt: "WholesaleSockDeals" }
-        ]
-    };
 
     return (
         <>
@@ -77,643 +147,449 @@ const service_A = () => {
                 twitterTitle="Boost ROI with Programmatic Advertising Agency - AnalyticsLiv"
                 twitterDescription="Reach the right audience at the right time. AnalyticsLiv is your go-to programmatic advertising agency for high-impact RTB programmatic advertising solutions."
             />
+            <body className="min-h-screen bg-white text-slate-800"
+                style={{ fontFamily: 'ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji"' }}>
 
-            <section className='prograhome w-full relative font-gilroy overflow-hidden md:pt-5'>
-                <div className='h-full'>
-                    <div className="relative px-4 md:px-12 pt-8 md:pt-0 pb-8 h-full z-20 md:pb-0">
-                        <div className="z-10 flex lg:flex-nowrap items-center flex-wrap justify-between gap-7 pb-8 md:pb-0">
-                            <div className="space-y-4 w-full lg:w-1/2 lg:order-1 order-2">
-                                <h1 className="2xl:text-[33px] lg:text-[28px] text-[27px] leading-[1.7em] font-['Poppins'] font-semibold text-maintext pt-4">
-                                    DV360: Programmatic Media Buying Redefined with AnalyticsLiv
-                                </h1>
-                                <h2 className="text-[23px] text-[#333333] font-semibold leading-[33px]">
-                                    Unleash the Power of Precision Targeting and Automated Bidding
-                                </h2>
-                                <h3 className="text-base font-normal leading-[28px] font-[Poppins]">
-                                    Are you ready to move beyond traditional media buying and embrace the efficiency and effectiveness of programmatic advertising?  AnalyticsLiv's DV360 service empowers you to do just that.
-                                </h3>
-                                <div className='flex max-[425px]:flex-wrap flex-nowrap items-center gap-5'>
-                                    {/* <Link href="/contact?id=programatic-advertising">
-                                        <button className="butn max-[425px]:mt-0 mt-6">REQUEST A DEMO</button>
-                                    </Link> */}
-                                    <Link href="/contact?id=programatic-advertising">
-                                        <button className="contact-us-btn butn max-[425px]:mt-0 mt-6">CONTACT US</button>
-                                    </Link>
-                                </div>
-                            </div>
-                            <div className=" w-full lg:w-1/2 flex items-center lg:justify-end justify-center lg:order-2 order-1">
-                                <img src="/Programmatic_Media_Main_Img_Without_Blur.png" alt="programmatic advertising agency" className='lg:h-[470px] md:h-[400px]' />
-                            </div>
-                        </div>
-                        <div className='mt-5'>
+                <section className="relative overflow-hidden border-b border-slate-200">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#EEF6FF] via-white to-[#F7F7FF]"></div>
+                    <div className="relative mx-auto max-w-7xl px-6 py-16 lg:py-20">
+                        <div className="grid items-center gap-7 md:gap-12 md:grid-cols-2">
                             <div>
-                                <h2 className='text-center font-bold text-base lg:text-[28px] text-maintext leading-[24px]'>Trusted by Organisations Worldwide</h2>
+                                <p className="mb-3 pill border-indigo-200 bg-white text-indigo-700"><span className="h-1.5 w-1.5 rounded-full bg-indigo-500"></span> Google Marketing Platform Certified Partner</p>
+                                <h1 className="text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl md:text-6xl text-slate-900">
+                                    DV360 & Programmatic Advertising <span className="bg-gradient-to-r from-slate-900 to-indigo-600 bg-clip-text text-transparent">That Wins Markets</span>
+                                </h1>
+                                <p className="mt-5 max-w-2xl text-lg text-slate-600">We plan, buy and optimize programmatic across <strong>CTV</strong>, <strong>YouTube</strong>, <strong>Display</strong>, <strong>Audio</strong> & <strong>Native</strong>—with <strong>custom bidding</strong>, <strong>SPO</strong>, and <strong>privacy‑safe measurement</strong>.</p>
+                                <div className="mt-7 flex flex-wrap items-center gap-3">
+                                    <a href="#contact" className="rounded-2xl bg-slate-900 px-6 py-3 text-white shadow-lg shadow-slate-900/10 transition hover:opacity-90">Get a DV360 Audit</a>
+                                    <a href="#pricing" className="rounded-2xl border border-slate-300 px-6 py-3">View Pricing</a>
+                                </div>
+                                <ul className="mt-7 grid gap-3 sm:grid-cols-2">
+                                    <li className="flex items-start gap-3 card p-4"><span className="mt-1 inline-block h-2.5 w-2.5 flex-none rounded-full bg-emerald-500"></span><p className="text-slate-700">DV360 + Floodlight aligned with GA4 & consent‑mode</p></li>
+                                    <li className="flex items-start gap-3 card p-4"><span className="mt-1 inline-block h-2.5 w-2.5 flex-none rounded-full bg-emerald-500"></span><p className="text-slate-700">Custom bidding, curated PMPs, creative sequencing</p></li>
+                                </ul>
                             </div>
-                            <div className='max-sm:w-[95%] w-[90%] md:w-full m-auto'>
-                                <Marquee gradient={false} pauseOnHover="true">
-                                    <div className='flex space-x-8 justify-center py-4 px-4 mt-4'>
-                                        {Trusteddata.brand.map((brand, index) => (
-                                            <div key={index}>
-                                                <img src={brand.logo} alt={brand.alt} className='h-[50px] mx-5' />
-                                            </div>
-                                        ))}
+                            <div className="">
+                                <div className="relative mx-auto w-full max-w-xl card p-6">
+                                    <div className="grid gap-4 sm:grid-cols-2">
+                                        <div className="relative overflow-hidden card p-5"><div className="absolute -right-8 -top-8 h-28 w-28 rounded-full ring-animated opacity-40"></div><div className="text-3xl font-extrabold text-slate-900">3.4×</div><div className="mt-1 text-sm text-slate-600">Median ROAS uplift in 90 days*</div></div>
+                                        <div className="relative overflow-hidden card p-5"><div className="absolute -right-8 -top-8 h-28 w-28 rounded-full ring-animated opacity-40"></div><div className="text-3xl font-extrabold text-slate-900">‑38%</div><div className="mt-1 text-sm text-slate-600">Avg. CPM reduction via PMP & curation*</div></div>
+                                        <div className="relative overflow-hidden card p-5"><div className="absolute -right-8 -top-8 h-28 w-28 rounded-full ring-animated opacity-40"></div><div className="text-3xl font-extrabold text-slate-900">150+</div><div className="mt-1 text-sm text-slate-600">Brands trust our programmatic execution*</div></div>
+                                        <div className="relative overflow-hidden card p-5"><div className="absolute -right-8 -top-8 h-28 w-28 rounded-full ring-animated opacity-40"></div><div className="text-3xl font-extrabold text-slate-900">95%+</div><div className="mt-1 text-sm text-slate-600">Attribution reliability across DV360 & CTV*</div></div>
                                     </div>
-                                </Marquee>
+                                    <p className="mt-3 text-xs text-slate-500">*Replace with your verified AnalyticsLiv client metrics.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <section className='whydv360 overflow-hidden'>
-                <div className='relative px-4 md:px-12 pt-8 md:pt-5 lg:pt-14 pb-8 md:pb-16'>
-                    <div>
-                        <div className='flex items-center justify-center pb-7 md:pb-0'>
-                            <h3 className='text-[#302E53] font-gilroy text-[28px] font-semibold leading-[1.5em] not-italic pb-5'>Why DV360?</h3>
+                <section id="showcase" className="py-16">
+                    <div className="mx-auto max-w-7xl px-6">
+                        <div className="mb-10 text-center">
+                            <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">Selected outcomes</p>
+                            <h2 className="text-2xl md:text-3xl font-bold text-slate-900">Proof That Our DV360 Playbook Works</h2>
+                            <p className="mt-2 text-slate-600 max-w-3xl mx-auto">Highlights pulled from your uploaded case studies. Click through for methodology and charts.</p>
                         </div>
-                        <div className='grid lg:grid-cols-3 md:grid-cols-2 items-start justify-center gap-10'>
-                            <div className='bg-[#fff8fa] xl:h-[460px] lg:h-[600px] md:h-[516px] rounded-[10px] py-6 px-4 hover:shadow-programeasure'>
-                                <div className='w-full'></div>
-                                <div className='mb-5 w-[50px] h-[50px]'><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad_Format.png" alt="Unmatched Programmatic Capabilities" /></div>
-                                <div className='w-full'></div>
-                                <h3 className='text-[#1D2124] text-[18px] font-semibold font-gilroy mb-[20px]'>Unmatched Programmatic Capabilities</h3>
-                                <ul className='text-[#646464] text-[14px] font-medium font-gilroy2 leading-6 ml-[15px] mb-5'>
-                                    <li className='mb-2 flex items-start gap-1'>
-                                        <span className='text-[#de668a] mt-[5px]'><FaCheck /></span>
-                                        <p>Automated Buying & Selling: Streamline ad inventory management across channels with automated buying and selling.</p></li>
-                                    <li className='mb-2 flex items-start gap-1'>
-                                        <span className='text-[#de668a] mt-[5px]'><FaCheck /></span>
-                                        <p>Real-Time Optimization: Leverage real-time data to optimize audience targeting and campaign performance for maximum impact.</p></li>
-                                    <li className='mb-2 flex items-start gap-1'>
-                                        <span className='text-[#de668a] mt-[5px]'><FaCheck /></span>
-                                        <p>Seamless Integrations: Integrate seamlessly with other platforms and data sources for a unified campaign management experience.</p></li>
+
+                        <div className="grid gap-6 lg:grid-cols-3">
+                            <a href="/case-studies/dv360-custom-bidding-cost-per-conversion-improvement" className="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition block" target="_blank" rel="noopener">
+                                <div className="flex items-center gap-3">
+                                    <div className="h-10 w-10 rounded-xl bg-indigo-600/10 text-indigo-700 border border-indigo-200 flex items-center justify-center">CB</div>
+                                    <div>
+                                        <h3 className="text-lg font-semibold text-slate-900">Artarium — Value‑Based Custom Bidding</h3>
+                                        <p className="text-xs text-slate-500">DV360 • Custom Bid • Floodlight</p>
+                                    </div>
+                                </div>
+                                <ul className="mt-3 grid grid-cols-2 gap-2 text-sm text-slate-800">
+                                    <li className="rounded-xl bg-slate-50 border border-slate-200 p-3"><span className="text-2xl font-extrabold">95%↓</span><div className="text-xs text-slate-500">CPA</div></li>
+                                    <li className="rounded-xl bg-slate-50 border border-slate-200 p-3"><span className="text-2xl font-extrabold">13×</span><div className="text-xs text-slate-500">High‑value actions</div></li>
+                                </ul>
+                                <p className="mt-3 text-sm text-slate-600">Targeted value signals + audience curation + inventory controls.</p>
+                                <span className="mt-2 inline-flex items-center text-indigo-700 text-sm font-semibold">Read case study <span className="ml-1 ticker">→</span></span>
+                            </a>
+
+                            <a href="case-study-artarium-event-a.html" className="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition block" target="_blank" rel="noopener">
+                                <div className="flex items-center gap-3">
+                                    <div className="h-10 w-10 rounded-xl bg-emerald-600/10 text-emerald-700 border border-emerald-200 flex items-center justify-center">EV</div>
+                                    <div>
+                                        <h3 className="text-lg font-semibold text-slate-900">Artarium — Event‑Based Creative Sequencing</h3>
+                                        <p className="text-xs text-slate-500">DV360 • Sequencing • Seasonal</p>
+                                    </div>
+                                </div>
+                                <ul className="mt-3 grid grid-cols-3 gap-2 text-sm text-slate-800">
+                                    <li className="rounded-xl bg-slate-50 border border-slate-200 p-3"><span className="text-2xl font-extrabold">30%↑</span><div className="text-xs text-slate-500">Conversions</div></li>
+                                    <li className="rounded-xl bg-slate-50 border border-slate-200 p-3"><span className="text-2xl font-extrabold">66%↑</span><div className="text-xs text-slate-500">CTR</div></li>
+                                    <li className="rounded-xl bg-slate-50 border border-slate-200 p-3"><span className="text-2xl font-extrabold">50%↓</span><div className="text-xs text-slate-500">CPC</div></li>
+                                </ul>
+                                <p className="mt-3 text-sm text-slate-600">Seasonal narratives + audience windows + format mix.</p>
+                                <span className="mt-2 inline-flex items-center text-emerald-700 text-sm font-semibold">Read case study <span className="ml-1 ticker">→</span></span>
+                            </a>
+
+                            <a href="/case-studies/shoebacca-performance-max-roas-increase" className="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition block" target="_blank" rel="noopener">
+                                <div className="flex items-center gap-3">
+                                    <div className="h-10 w-10 rounded-xl bg-amber-600/10 text-amber-700 border border-amber-200 flex items-center justify-center">PM</div>
+                                    <div>
+                                        <h3 className="text-lg font-semibold text-slate-900">Shoebacca — 26% Higher ROAS via PMax + DV360</h3>
+                                        <p className="text-xs text-slate-500">PMax • DV360 • Remarketing</p>
+                                    </div>
+                                </div>
+                                <ul className="mt-3 grid grid-cols-2 gap-2 text-sm text-slate-800">
+                                    <li className="rounded-xl bg-slate-50 border border-slate-200 p-3"><span className="text-2xl font-extrabold">26%↑</span><div className="text-xs text-slate-500">ROAS</div></li>
+                                    <li className="rounded-xl bg-slate-50 border border-slate-200 p-3"><span className="text-2xl font-extrabold">110%↑</span><div className="text-xs text-slate-500">Revenue (remarketing assist)</div></li>
+                                </ul>
+                                <p className="mt-3 text-sm text-slate-600">Clean signals + product feeds + cross‑channel remarketing.</p>
+                                <span className="mt-2 inline-flex items-center text-amber-700 text-sm font-semibold">Read case study <span className="ml-1 ticker">→</span></span>
+                            </a>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section id="capabilities" className="py-16">
+                    <div className="mx-auto max-w-7xl px-6">
+                        <div className="mb-8 text-center">
+                            <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">What we deliver</p>
+                            <h2 className="text-2xl md:text-3xl font-bold text-slate-900">A Programmatic Stack Built for Incrementality</h2>
+                            <p className="mt-2 text-slate-600 max-w-3xl mx-auto">From signal design to supply curation, our stack compounds performance.</p>
+                        </div>
+
+                        <div className="grid gap-6 lg:grid-cols-4">
+                            <div className="card p-6">
+                                <div className="pill border-indigo-200 bg-indigo-50 text-indigo-700 mb-2">Signals</div>
+                                <h3 className="text-lg font-semibold">Measurement Architecture</h3>
+                                <p className="mt-2 text-slate-700">Floodlights, GA4, consent mode, server‑side where relevant. Clean, durable data.</p>
+                                <ul className="mt-3 space-y-1.5 text-sm text-slate-600">
+                                    <li>Enhanced conversions</li>
+                                    <li>Event value mapping</li>
+                                    <li>Incrementality baselines</li>
                                 </ul>
                             </div>
-                            <div className='bg-[#fff8fa] xl:h-[460px] lg:h-[600px] md:h-[516px] rounded-[10px] py-6 px-4 hover:shadow-programeasure'>
-                                <div className='w-full'></div>
-                                <div className='mb-5 w-[50px] h-[50px]'><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad_Format.png" alt="Advanced Targeting & Creative Options" /></div>
-                                <div className='w-full'></div>
-                                <h3 className='text-[#1D2124] text-[18px] font-semibold font-gilroy mb-[20px]'>Advanced Targeting & Creative Options</h3>
-                                <ul className='text-[#646464] text-[14px] font-medium font-gilroy2 leading-6 ml-[15px] mb-5'>
-                                    <li className='mb-2 flex items-start gap-1'>
-                                        <span className='text-[#de668a] mt-[5px]'><FaCheck /></span>
-                                        <p>Sophisticated Targeting: Reach the right audience with precise targeting based on demographics, interests, behaviors, and more.</p></li>
-                                    <li className='mb-2 flex items-start gap-1'>
-                                        <span className='text-[#de668a] mt-[5px]'><FaCheck /></span>
-                                        <p>Diverse Ad Formats: Access a wide range of ad formats and creative templates to tailor your message for different channels.</p></li>
-                                    <li className='mb-2 flex items-start gap-1'>
-                                        <span className='text-[#de668a] mt-[5px]'><FaCheck /></span>
-                                        <p>Dynamic Creative Optimization (DCO): Deliver personalized ads in real-time based on user data and audience segments.</p></li>
+                            <div className="card p-6">
+                                <div className="pill border-emerald-200 bg-emerald-50 text-emerald-700 mb-2">Supply</div>
+                                <h3 className="text-lg font-semibold">SPO & Private Marketplaces</h3>
+                                <p className="mt-2 text-slate-700">Transparent supply paths focused on premium reach and brand safety.</p>
+                                <ul className="mt-3 space-y-1.5 text-sm text-slate-600">
+                                    <li>PMP curation & deals</li>
+                                    <li>CTV & YouTube mixes</li>
+                                    <li>Viewability & IVT controls</li>
                                 </ul>
                             </div>
-                            <div className='bg-[#fff8fa] xl:h-[460px] lg:h-[600px] md:h-[593px] rounded-[10px] py-6 px-4 hover:shadow-programeasure'>
-                                <div className='w-full'></div>
-                                <div className='mb-5 w-[50px] h-[50px]'><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad_Format.png" alt="Data-Driven Optimization & Insights" /></div>
-                                <div className='w-full'></div>
-                                <h3 className='text-[#1D2124] text-[18px] font-semibold font-gilroy mb-[20px]'>Data-Driven Optimization & Insights</h3>
-                                <ul className='text-[#646464] text-[14px] font-medium font-gilroy2 leading-6 ml-[15px] mb-5'>
-                                    <li className='mb-2 flex items-start gap-1'>
-                                        <span className='text-[#de668a] mt-[5px]'><FaCheck /></span>
-                                        <p>Machine Learning Insights: Leverage data analytics and machine learning algorithms to optimize campaign performance and gain actionable insights.</p></li>
-                                    <li className='mb-2 flex items-start gap-1'>
-                                        <span className='text-[#de668a] mt-[5px]'><FaCheck /></span>
-                                        <p>Audience Segmentation & Retargeting: Segment audiences and personalize retargeting strategies based on real-time data analysis.</p></li>
-                                    <li className='mb-2 flex items-start gap-1'>
-                                        <span className='text-[#de668a] mt-[5px]'><FaCheck /></span>
-                                        <p>Data-Driven Decision Making: Make informed decisions based on valuable insights into audience behavior, ad performance, and conversion metrics.</p></li>
+                            <div className="card p-6">
+                                <div className="pill border-sky-200 bg-sky-50 text-sky-700 mb-2">Strategy</div>
+                                <h3 className="text-lg font-semibold">Custom Bidding & Audiences</h3>
+                                <p className="mt-2 text-slate-700">Bids tuned to <em>profit signals</em>, not just clicks. Sequenced creatives by stage.</p>
+                                <ul className="mt-3 space-y-1.5 text-sm text-slate-600">
+                                    <li>First‑party data onboarding</li>
+                                    <li>Lookalikes & modeled reach</li>
+                                    <li>Frequency & reach pacing</li>
                                 </ul>
                             </div>
-                            <div className='bg-[#fff8fa] xl:h-[490px] lg:h-[630px] md:h-[593px] rounded-[10px] py-6 px-4 hover:shadow-programeasure'>
-                                <div className='w-full'></div>
-                                <div className='mb-5 w-[50px] h-[50px]'><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad_Format.png" alt="Unified Buying" /></div>
-                                <div className='w-full'></div>
-                                <h3 className='text-[#1D2124] text-[18px] font-semibold font-gilroy mb-[20px]'>Unified Buying</h3>
-                                <ul className='text-[#646464] text-[14px] font-medium font-gilroy2 leading-6 ml-[15px] mb-5'>
-                                    <li className='mb-2 flex items-start gap-1'>
-                                        <span className='text-[#de668a] mt-[5px]'><FaCheck /></span>
-                                        <p>Single Platform Management: Manage and execute media buys across all channels and formats with a centralized platform.</p></li>
-                                    <li className='mb-2 flex items-start gap-1'>
-                                        <span className='text-[#de668a] mt-[5px]'><FaCheck /></span>
-                                        <p>Streamlined Workflow: Simplify campaign management and reporting with consolidated dashboards and workflows.</p></li>
-                                    <li className='mb-2 flex items-start gap-1'>
-                                        <span className='text-[#de668a] mt-[5px]'><FaCheck /></span>
-                                        <p>Holistic Performance View: Gain a complete understanding of campaign performance with cross-channel attribution and measurement.</p></li>
-                                    <li className='mb-2 flex items-start gap-1'>
-                                        <span className='text-[#de668a] mt-[5px]'><FaCheck /></span>
-                                        <p>Simplified Buying Process: Consolidate ad inventory and audience data within a single platform for effortless campaign setup.</p></li>
+                            <div className="card p-6">
+                                <div className="pill border-amber-200 bg-amber-50 text-amber-700 mb-2">Stories</div>
+                                <h3 className="text-lg font-semibold">Reporting People Believe</h3>
+                                <p className="mt-2 text-slate-700">Board‑ready views: ROAS, MER, new‑to‑brand, assisted impact, cohorts.</p>
+                                <ul className="mt-3 space-y-1.5 text-sm text-slate-600">
+                                    <li>Looker dashboards</li>
+                                    <li>Channel lift analysis</li>
+                                    <li>Quarterly strategy reviews</li>
                                 </ul>
                             </div>
-                            <div className='bg-[#fff8fa] xl:h-[490px] lg:h-[630px] md:h-[593px] rounded-[10px] py-6 px-4 hover:shadow-programeasure'>
-                                <div className='w-full'></div>
-                                <div className='mb-5 w-[50px] h-[50px]'><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad_Format.png" alt="Advanced Bidding Strategies" /></div>
-                                <div className='w-full'></div>
-                                <h3 className='text-[#1D2124] text-[18px] font-semibold font-gilroy mb-[20px]'>Advanced Bidding Strategies</h3>
-                                <ul className='text-[#646464] text-[14px] font-medium font-gilroy2 leading-6 ml-[15px] mb-5'>
-                                    <li className='mb-2 flex items-start gap-1'>
-                                        <span className='text-[#de668a] mt-[5px]'><FaCheck /></span>
-                                        <p>Flexible Bidding Options: Employ various bidding strategies like CPC, CPM, and CPA based on your campaign goals.</p></li>
-                                    <li className='mb-2 flex items-start gap-1'>
-                                        <span className='text-[#de668a] mt-[5px]'><FaCheck /></span>
-                                        <p>Real-Time Bidding (RTB): Optimize bids in real-time based on auction dynamics and performance objectives with RTB technology.</p></li>
-                                    <li className='mb-2 flex items-start gap-1'>
-                                        <span className='text-[#de668a] mt-[5px]'><FaCheck /></span>
-                                        <p>Efficient Budget Allocation: Utilize advanced bidding algorithms and predictive modeling for efficient campaign budget allocation.</p></li>
-                                    <li className='mb-2 flex items-start gap-1'>
-                                        <span className='text-[#de668a] mt-[5px]'><FaCheck /></span>
-                                        <p>Maximized ROI: Make bid adjustments based on targeted segments and device types to maximize your return on investment.</p></li>
-                                </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="manage" className="bg-slate-50 py-16">
+                    <div className="mx-auto max-w-7xl px-6">
+                        {/* Heading */}
+                        <div className="mb-6 text-center">
+                            <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
+                                What we manage
+                            </p>
+                            <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
+                                Channels, Formats & Tactics — All in One Team
+                            </h2>
+                        </div>
+
+                        {/* Tabs */}
+                        <div className="flex flex-wrap justify-center gap-2 mb-6">
+                            {tabs.map((tab) => (
+                                <button
+                                    key={tab.id}
+                                    onClick={() => setActiveTab(tab.id)}
+                                    className={`tab-btn rounded-xl border px-4 py-2 text-sm transition ${activeTab === tab.id
+                                        ? "bg-slate-900 text-white border-slate-900"
+                                        : "border-slate-300 text-slate-700"
+                                        }`}
+                                >
+                                    {tab.title.split(" & ")[0]}
+                                </button>
+                            ))}
+                        </div>
+
+                        {/* Active Tab Content */}
+                        <div className="mx-auto max-w-5xl">
+                            {tabs.map(
+                                (tab) =>
+                                    activeTab === tab.id && (
+                                        <div key={tab.id} className="card p-6">
+                                            <h3 className="text-lg font-semibold text-slate-900">
+                                                {tab.title}
+                                            </h3>
+                                            <p className="mt-1 text-slate-700">{tab.description}</p>
+                                            <ul className="mt-3 grid grid-cols-2 gap-2 text-sm text-slate-600">
+                                                {tab.items.map((item, idx) => (
+                                                    <li key={idx}>{item}</li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    )
+                            )}
+                        </div>
+                    </div>
+                </section>
+
+                <section id="kpi" className="py-16">
+                    <div className="mx-auto max-w-7xl px-6">
+                        <div className="mb-8 max-md:flex-col flex items-center max-md:gap-5 md:items-end justify-between">
+                            <div>
+                                <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-slate-500">Live demo</p>
+                                <h2 className="text-2xl md:text-3xl font-bold text-slate-900">Campaign KPI Trend (Demo)</h2>
+                                <p className="mt-1 text-slate-600">Three distinct charts with different data patterns. Toggle months to see the animation.</p>
                             </div>
-                            <div className='bg-[#fff8fa] xl:h-[490px] lg:h-[630px] md:h-[593px] rounded-[10px] py-6 px-4 hover:shadow-programeasure'>
-                                <div className='w-full'>
-                                    <div className='mb-5 w-[50px] h-[50px]'><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad_Format.png" alt="Custom Marketing" /></div></div>
-                                <div className='w-full'>
-                                    <h3 className='text-[#1D2124] text-[18px] font-semibold font-gilroy mb-[20px]'>Custom Marketing</h3>
-                                    <ul className='text-[#646464] text-[14px] font-medium font-gilroy2 leading-6 ml-[15px] mb-5'>
-                                        <li className='mb-2 flex items-start gap-1'>
-                                            <span className='text-[#de668a] mt-[5px]'><FaCheck /></span>
-                                            <p>Unlock the power of custom attribution models to accurately credit conversions across marketing touchpoints. This provides valuable insights for optimizing marketing spend and maximizing ROI.</p></li>
+                            <div className="flex items-center gap-3">
+                                <input
+                                    type="range"
+                                    min="3"
+                                    max="12"
+                                    value={monthCount}
+                                    onChange={(e) => setMonthCount(Number(e.target.value))}
+                                    className="w-40"
+                                />
+                                <button
+                                    onClick={() => setPlaying(!playing)}
+                                    className="rounded-xl border border-slate-300 px-3 py-1.5 text-sm"
+                                >
+                                    {playing ? "⏸ Pause" : "▶ Play"}
+                                </button>
+                            </div>
+                        </div>
+
+                        <div className="grid gap-6 md:grid-cols-3">
+                            <div className="card p-5 bg-white rounded-xl shadow-md">
+                                <h3 className="text-lg font-semibold mb-2">CPA</h3>
+                                <ResponsiveContainer width="100%" height={200}>
+                                    <LineChart data={chartData}>
+                                        <CartesianGrid strokeDasharray="3 3" />
+                                        <XAxis dataKey="month" />
+                                        <YAxis />
+                                        <Tooltip />
+                                        <Line type="monotone" dataKey="cpa" stroke="#4f46e5" strokeWidth={2} />
+                                    </LineChart>
+                                </ResponsiveContainer>
+                            </div>
+
+                            {/* ROAS Bar Chart */}
+                            <div className="card p-5 bg-white rounded-xl shadow-md">
+                                <h3 className="text-lg font-semibold mb-2">ROAS</h3>
+                                <ResponsiveContainer width="100%" height={200}>
+                                    <BarChart data={chartData}>
+                                        <CartesianGrid strokeDasharray="3 3" />
+                                        <XAxis dataKey="month" />
+                                        <YAxis />
+                                        <Tooltip />
+                                        <Bar dataKey="roas" fill="#10b981" radius={[6, 6, 0, 0]} />
+                                    </BarChart>
+                                </ResponsiveContainer>
+                            </div>
+
+                            {/* CTR Line Chart */}
+                            <div className="card p-5 bg-white rounded-xl shadow-md">
+                                <h3 className="text-lg font-semibold mb-2">CTR</h3>
+                                <ResponsiveContainer width="100%" height={200}>
+                                    <LineChart data={chartData}>
+                                        <CartesianGrid strokeDasharray="3 3" />
+                                        <XAxis dataKey="month" />
+                                        <YAxis />
+                                        <Tooltip />
+                                        <Line type="monotone" dataKey="ctr" stroke="#f59e0b" strokeWidth={2} dot={false} />
+                                    </LineChart>
+                                </ResponsiveContainer>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="process" className="bg-slate-50 py-16">
+                    <div className="max-w-7xl mx-auto px-6">
+                        <div className="text-center mb-10">
+                            <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">How we deliver</p>
+                            <h2 className="text-2xl md:text-3xl font-bold text-slate-900">A Transparent, Test‑Led Program</h2>
+                        </div>
+                        <div className="grid gap-6 lg:grid-cols-2">
+                            <ol className="relative border-l border-slate-200 pl-6 space-y-6 lg:space-y-8">
+                                <li><div className="absolute -left-2.5 h-5 w-5 rounded-full bg-slate-900 ring-4 ring-slate-100"></div>
+                                    <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm"><div className="text-xs font-semibold tracking-wider text-slate-500">01. Audit & Objectives</div><p className="mt-1 text-slate-800">ICP, margins, attribution, data quality, success metrics.</p></div></li>
+                                <li><div className="absolute -left-2.5 h-5 w-5 rounded-full bg-indigo-600 ring-4 ring-slate-100"></div>
+                                    <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm"><div className="text-xs font-semibold tracking-wider text-slate-500">02. Tracking & Signals</div><p className="mt-1 text-slate-800">GA4 + Floodlight + server‑side where relevant.</p></div></li>
+                                <li><div className="absolute -left-2.5 h-5 w-5 rounded-full bg-emerald-600 ring-4 ring-slate-100"></div>
+                                    <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm"><div className="text-xs font-semibold tracking-wider text-slate-500">03. Supply & Safety</div><p className="mt-1 text-slate-800">PMPs, curated deals, brand suitability, viewability.</p></div></li>
+                            </ol>
+                            <ol className="relative border-l border-slate-200 pl-6 space-y-6 lg:space-y-8">
+                                <li><div className="absolute -left-2.5 h-5 w-5 rounded-full bg-amber-600 ring-4 ring-slate-100"></div>
+                                    <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm"><div className="text-xs font-semibold tracking-wider text-slate-500">04. Creative & Sequencing</div><p className="mt-1 text-slate-800">Event‑based narratives by funnel stage.</p></div></li>
+                                <li><div className="absolute -left-2.5 h-5 w-5 rounded-full bg-rose-600 ring-4 ring-slate-100"></div>
+                                    <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm"><div className="text-xs font-semibold tracking-wider text-slate-500">05. Optimization & Tests</div><p className="mt-1 text-slate-800">Bid tuning, budget pacing, lift tests, waste cuts.</p></div></li>
+                                <li><div className="absolute -left-2.5 h-5 w-5 rounded-full bg-teal-600 ring-4 ring-slate-100"></div>
+                                    <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm"><div className="text-xs font-semibold tracking-wider text-slate-500">06. Reporting & Insights</div><p className="mt-1 text-slate-800">ROAS, MER, LTV, cohorts — board‑ready dashboards.</p></div></li>
+                            </ol>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="pricing" className="bg-slate-50 py-16">
+                    <div className="mx-auto max-w-7xl px-6">
+                        {/* Heading */}
+                        <div className="mb-6 text-center">
+                            <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
+                                Pricing
+                            </p>
+                            <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
+                                Flexible Models Aligned to Outcomes
+                            </h2>
+                            <p className="mt-1 text-slate-600">
+                                Slide your monthly media spend to preview a typical engagement.
+                            </p>
+                        </div>
+
+                        {/* Slider & Cards */}
+                        <div className="mx-auto max-w-3xl card p-6">
+                            <label className="text-sm font-medium text-slate-700">
+                                Monthly media spend: <span className="font-semibold">₹{fmt(spend)}</span>
+                            </label>
+                            <input
+                                type="range"
+                                min="100000"
+                                max="20000000"
+                                step="100000"
+                                value={spend}
+                                onChange={(e) => setSpend(Number(e.target.value))}
+                                className="mt-3 w-full"
+                            />
+
+                            <div className="mt-5 grid gap-4 md:grid-cols-3">
+                                {/* Starter */}
+                                <div className="card p-5">
+                                    <h3 className="text-lg font-semibold">Starter</h3>
+                                    <p className="text-sm text-slate-600">For lean accounts & pilots</p>
+                                    <div className="mt-3 text-2xl font-extrabold">₹{fmt(starterFee)}+</div>
+                                    <ul className="mt-3 space-y-1.5 text-sm text-slate-700">
+                                        <li>DV360 setup & QA</li>
+                                        <li>2–3 PMPs</li>
+                                        <li>Monthly report</li>
+                                    </ul>
+                                </div>
+
+                                {/* Growth */}
+                                <div className="card p-5 border-indigo-300">
+                                    <h3 className="text-lg font-semibold">Growth</h3>
+                                    <p className="text-sm text-slate-600">Scaling spend & markets</p>
+                                    <div className="mt-3 text-2xl font-extrabold">₹{fmt(growthFee)}+</div>
+                                    <ul className="mt-3 space-y-1.5 text-sm text-slate-700">
+                                        <li>Custom bidding</li>
+                                        <li>5–8 PMPs</li>
+                                        <li>Weekly insights</li>
+                                    </ul>
+                                </div>
+
+                                {/* Enterprise */}
+                                <div className="card p-5">
+                                    <h3 className="text-lg font-semibold">Enterprise</h3>
+                                    <p className="text-sm text-slate-600">Complex & multi‑geo</p>
+                                    <div className="mt-3 text-2xl font-extrabold">₹{fmt(entFee)}+</div>
+                                    <ul className="mt-3 space-y-1.5 text-sm text-slate-700">
+                                        <li>SS tagging + MMM hooks</li>
+                                        <li>10+ PMPs</li>
+                                        <li>Dedicated pod</li>
                                     </ul>
                                 </div>
                             </div>
+
+                            <p className="mt-3 text-xs text-slate-500">
+                                Exact fees follow scope and geographies. Hybrid retainer + performance incentives available.
+                            </p>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <section className='approach relative overflow-hidden'>
-                <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-0 z-20">
-                    <div>
-                        <h3 className='text-[28px] font-semibold text-white leading-[1.5em] font-gilroy'>AnalyticsLiv 4M Approach  for DV360</h3>
+                <section id="faq" className="py-16">
+                    <div className="mx-auto max-w-7xl px-6">
+                        <div className="mb-8 text-center">
+                            <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">FAQs</p>
+                            <h2 className="text-2xl md:text-3xl font-bold text-slate-900">Everything About Our Programmatic Service</h2>
+                            <p className="mt-2 text-slate-600 max-w-3xl mx-auto">Timelines, tools, and how we prove incrementality.</p>
+                        </div>
+                        <div className="grid gap-4 md:grid-cols-2">
+                            <details className="group card p-5"><summary className="cursor-pointer list-none font-semibold text-slate-900 flex items-center justify-between">How quickly do we see impact?<span className="text-slate-400 group-open:rotate-180 transition">▾</span></summary><p className="mt-2 text-slate-700">Pilot waves typically show lift in 4–6 weeks with reliable baselines.</p></details>
+                            <details className="group card p-5"><summary className="cursor-pointer list-none font-semibold text-slate-900 flex items-center justify-between">Do you support MMM & incrementality testing?<span className="text-slate-400 group-open:rotate-180 transition">▾</span></summary><p className="mt-2 text-slate-700">Yes—geo splits, PSA tests, and MMM hooks for finance teams.</p></details>
+                            <details className="group card p-5"><summary className="cursor-pointer list-none font-semibold text-slate-900 flex items-center justify-between">Can you work with our creative team?<span className="text-slate-400 group-open:rotate-180 transition">▾</span></summary><p className="mt-2 text-slate-700">We supply briefs, variants, and sequencing frameworks or handle end‑to‑end.</p></details>
+                            <details className="group card p-5"><summary className="cursor-pointer list-none font-semibold text-slate-900 flex items-center justify-between">What does onboarding involve?<span className="text-slate-400 group-open:rotate-180 transition">▾</span></summary><p className="mt-2 text-slate-700">Audit → tracking alignment → SPO → launch plan with measurable goals.</p></details>
+                        </div>
+                        {/* <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type":"Question","name":"How quickly do we see impact?","acceptedAnswer":{"@type":"Answer","text":"Pilot waves typically show lift in 4–6 weeks with reliable baselines."}},
+          {"@type":"Question","name":"Do you support MMM & incrementality testing?","acceptedAnswer":{"@type":"Answer","text":"Yes—geo splits, PSA tests, and MMM hooks for finance teams."}},
+          {"@type":"Question","name":"Can you work with our creative team?","acceptedAnswer":{"@type":"Answer","text":"We supply briefs, variants, and sequencing frameworks or handle end‑to‑end."}},
+          {"@type":"Question","name":"What does onboarding involve?","acceptedAnswer":{"@type":"Answer","text":"Audit → tracking alignment → SPO → launch plan with measurable goals."}}
+        ]
+      }
+      </script> */}
                     </div>
-                    <div className='lg:flex items-center justify-start mt-10 md:mt-0'>
-                        <div className='lg:w-[35%] w-full flex items-center justify-center'>
-                            <img src="https://storage.googleapis.com/website-bucket-uploads/static/public/4M_Images_Transparent.png" alt="AnalyticsLiv 4M Approach  for DV360" className='lg:h-auto md:h-[400px]' />
-                        </div>
-                        <div className='grid md:grid-cols-2 items-start lg:justify-start gap-7 lg:w-[60%] w-full'>
-                            <div className={`fs4m flex items-start gap-5 w-full max-[350px]:w-[285px] powerbox2 bg-[#0000001f] p-[25px] pt-6 border border-[#13131400] hover:shadow-mediadv360 rounded-[10px] ${isFs4mVisible ? 'xl:h-[260px] lg:h-[310px]' : 'h-[120px]'}`}>
-                                <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer' onClick={toggleFs4mVisibility}>
-                                        <div className={`flex items-center justify-between gap-5 text-[#ffffff] ${isFs4mVisible ? 'mb-4' : 'mb-0'}`}>
-                                            <div className='flex items-center justify-start'>
-                                                <div className='inbox relative mr-[13px]'>
-                                                    <img src="/Market.png" alt="" className='h-12 lg:w-[60px] w-12' />
-                                                </div>
-                                                <h2 className='text-[15px] font-medium text-[#ffffff] leading-normal'>Audience Targeting (Market)</h2>
-                                            </div>
-                                            <div className='clk'>
-                                                {isFs4mVisible ? <FaChevronUp className='w-5 h-10' /> : <FaChevronDown className='w-5 h-10' />}
-                                            </div>
-                                        </div>
-                                        {isFs4mVisible && (
-                                            <p className='text-[13px] font-medium text-[#ffffff] leading-[1.7em]'>
-                                                Leverage DV360's segmentation features to pinpoint your ideal customer using demographics, psychographics, and behavioral data.
-                                            </p>
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={`sec4m flex items-start gap-5 w-full max-[350px]:w-[285px] powerbox2 bg-[#0000001f] p-[25px] pt-6 border border-[#13131400] hover:shadow-mediadv360 rounded-[10px] ${isSec4mVisible ? 'xl:h-[260px] lg:h-[310px]' : 'h-[120px]'}`}>
-                                <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer' onClick={toggleSec4mVisibility}>
-                                        <div className={`flex items-center justify-between gap-5 text-[#ffffff] ${isSec4mVisible ? 'mb-4' : 'mb-0'}`}>
-                                            <div className='flex items-center justify-start'>
-                                                <div className='inbox relative mr-[13px]'>
-                                                    <img src="/Message.png" alt="" className='h-12 w-12' />
-                                                </div>
-                                                <h2 className='text-[15px] font-medium text-[#ffffff] leading-normal'>Messaging</h2>
-                                            </div>
-                                            <div className='clk'>
-                                                {isSec4mVisible ? <FaChevronUp className='w-5 h-10' /> : <FaChevronDown className='w-5 h-10' />}
-                                            </div>
-                                        </div>
-                                        {isSec4mVisible && (
-                                            <div>
-                                                <p className='text-[13px] font-medium text-[#ffffff] leading-[1.7em] mb-2'>Craft clear and persuasive messages that resonate with your target audience's needs, desires, and pain points.</p>
-                                                <p className='text-[13px] font-medium text-[#ffffff] leading-[1.7em]'>Experiment with different ad formats, copy variations, and creative assets to optimize message impact.</p>
-                                            </div>
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={`thr4m flex items-start gap-5 w-full max-[350px]:w-[285px] powerbox2 bg-[#0000001f] p-[25px] pt-6 border border-[#13131400] hover:shadow-mediadv360 rounded-[10px] ${isThr4mVisible ? 'xl:h-[285px] lg:h-[345px]' : 'h-[120px]'}`}>
-                                <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer' onClick={() => toggleThr4mVisibility()}>
-                                        <div className={`flex items-center justify-between gap-5 text-[#ffffff] ${isThr4mVisible ? 'mb-4' : 'mb-0'}`}>
-                                            <div className='flex items-center justify-start'>
-                                                <div className='inbox relative mr-[13px]'>
-                                                    <img src="/Media.png" alt="" className='h-12 w-12' />
-                                                </div>
-                                                <h2 className='text-[15px] font-medium text-[#ffffff] leading-normal'>Strategic Media Selection</h2>
-                                            </div>
-                                            <div className='clk'>
-                                                {isThr4mVisible ? <FaChevronUp className='w-5 h-10' /> : <FaChevronDown className='w-5 h-10' />}
-                                            </div>
-                                        </div>
-                                        {isThr4mVisible && (
-                                            <div>
-                                                <p className='text-[13px] font-medium text-[#ffffff] leading-[1.7em] mb-2'>Choose the right media channels (programmatic deals, open auction, web/app inventory, etc.) based on audience habits, campaign goals, and budget.</p>
-                                                <p className='text-[13px] font-medium text-[#ffffff] leading-[1.7em]'>DV360's extensive digital media inventory allows for precise targeting and efficient campaign delivery.</p>
-                                            </div>
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={`fur4m flex items-start gap-5 w-full max-[350px]:w-[285px] powerbox2 bg-[#0000001f] p-[25px] pt-6 border border-[#13131400] hover:shadow-mediadv360 rounded-[10px] ${isFur4mVisible ? 'xl:h-[285px] lg:h-[345px]' : 'h-[120px]'}`}>
-                                <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer' onClick={() => toggleFur4mVisibility()}>
-                                        <div className={`flex items-center justify-between gap-5 text-[#ffffff] ${isFur4mVisible ? 'mb-4' : 'mb-0'}`}>
-                                            <div className='flex items-center justify-start'>
-                                                <div className='inbox relative mr-[13px]'>
-                                                    <img src="/Measurment.png" alt="" className='h-12 xl:w-[65px] lg:w-[100px] w-[70px]' />
-                                                </div>
-                                                <h2 className='text-[15px] font-medium text-[#ffffff] leading-normal'>Data-Driven Optimization (Measurement)</h2>
-                                            </div>
-                                            <div className='clk'>
-                                                {isFur4mVisible ? <FaChevronUp className='w-5 h-10' /> : <FaChevronDown className='w-5 h-10' />}
-                                            </div>
-                                        </div>
-                                        {isFur4mVisible && (
-                                            <div>
-                                                <p className='text-[13px] font-medium text-[#ffffff] leading-[1.7em] mb-2'>Utilize DV360's built-in reporting and analytics to track key metrics (reach, engagement, conversions, ROI) in real-time.</p>
-                                                <p className='text-[13px] font-medium text-[#ffffff] leading-[1.7em]'>Gain insights into campaign performance, optimize strategies, and make data-driven decisions for future success</p>
-                                            </div>
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                </section>
 
-            <section className='bg-[#282833] homeftr relative overflow-hidden font-gilroy'>
-                <div className='inrhomeftr relative'>
-                    <div className='relative z-20 px-4 md:px-20 pt-6 pb-4 md:pb-0'>
-                        <div className='flex items-center justify-start pb-0 md:pb-0'>
-                            <h3 className='text-[#efefef] text-[28px] font-semibold leading-[1.5em] not-italic pb-5'>Our Comprehensive DV360 Services:</h3>
-                        </div>
-
-                        <div className='lg:flex lg:flex-nowrap flex-wrap items-center hidden powerbox rounded-xl'>
-                            <div className='text-black xl:w-[35%] lg:w-[35%] w-full mt-[5px]'>
-                                <div className='p-8 pl-[25px] -mr-[30px] rounded-l-[10px] xl:w-[400px] xl:ml-auto'>
-                                    <div onClick={() => setActivetab('1')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '1' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                        <div><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Campaign%20Strategy%20and%20Setup%20white.png" alt="Campaign Strategy and Planning" className='h-10 w-10' /></div>
-                                        <p >Campaign Strategy and Setup</p>
-                                    </div>
-                                    <div onClick={() => setActivetab('2')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '2' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                        <div><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Audience%20Targeting%20white.png" alt="Audience Targeting" className='h-10 w-10' /></div>
-                                        <p>Audience Targeting</p>
-                                    </div>
-                                    <div onClick={() => setActivetab('3')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '3' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                        <div><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad%20Format%20Optimization%20white.png" alt="Ad Format Optimization" className='h-10 w-10' /></div>
-                                        <p>Ad Format Optimization</p>
-                                    </div>
-                                    <div onClick={() => setActivetab('4')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '4' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                        <div><img src="/Real-Time Bidding white.png" alt="Real-Time Bidding (RTB) Expertise" className='h-10 w-10' /></div>
-                                        <p>Real-Time Bidding (RTB) Expertise</p>
-                                    </div>
-                                    <div onClick={() => setActivetab('5')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '5' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                        <div><img src="/Continuous Campaign Management & Optimization white.png" alt="Continuous Campaign Management & Optimization" className='h-10 w-[56px]' /></div>
-                                        <p>Continuous Campaign Management & Optimization</p>
-                                    </div>
-                                    <div onClick={() => setActivetab('6')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '6' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                        <div><img src="/In-Depth Reporting & Analytics white.png" alt="In-Depth Reporting & Analytics" className='h-10 w-10' /></div>
-                                        <p>In-Depth Reporting & Analytics</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className='xl:w-[60%] lg:w-[65%] w-full h-[690px] flex items-start justify-center rounded-[15px] pt-5'>
-                                <div id="tab1" className={`${activetab == 1 && 'block'} ${activetab != 1 && 'hidden'} analyticsliv-services relative py-[30px] px-[50px] text-base font-medium leading-8`}>
-                                    <div className='relative'>
-                                        <p className='text-[#efefef] text-[20px] font-semibold mb-5'>Campaign Strategy and Setup</p>
-                                        <p className='text-[#878787]'>This phase involves a thorough analysis of the client's marketing objectives, target audience, and competitive landscape. We understand their goals and develop a comprehensive strategy for the programmatic campaigns. This strategy takes into account factors such as campaign scheduling, budget allocation, messaging tone, and creative assets. By leveraging data-driven insights, the team ensures that the campaigns are strategically aligned to achieve maximum impact and drive desired outcomes.</p>
-                                        <div className=''>
-                                            <Link href="/contact?id=programatic-advertising">
-                                                <button className="bg-transparent border border-solid border-[#20dc868f] hover:bg-[#20dc868f] text-white text-base font-normal tracking-wider rounded-xl py-3 px-6 mt-6">Know More</button>
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div id="tab2" className={`${activetab == 2 && 'block'} ${activetab != 2 && 'hidden'} analyticsliv-services relative py-[30px] px-[50px] text-base font-medium leading-8`}>
-                                    <div className='relative pl-1'>
-                                        <p className='text-[#efefef] text-[20px] font-semibold mb-5'>Audience Targeting</p>
-                                        <p className='text-[#878787]'>With DV360's sophisticated targeting capabilities, the service can precisely identify and reach the client's ideal audience segments. This involves segmenting the audience based on demographics, interests, browsing behaviour, location, and other relevant criteria. By using advanced targeting options such as audience lists, contextual targeting, and lookalike modelling, the service ensures that the client's message is delivered to the most relevant and receptive audience across various devices and channels. This targeted approach increases the likelihood of engagement and conversion, ultimately maximising the campaign's effectiveness.</p>
-                                        <div className=''>
-                                            <Link href="/contact?id=programatic-advertising">
-                                                <button className="bg-transparent border border-solid border-[#20dc868f] hover:bg-[#20dc868f] text-white text-base font-normal tracking-wider rounded-xl py-3 px-6 mt-6">Know More</button>
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div id="tab3" className={`${activetab == 3 && 'block'} ${activetab != 3 && 'hidden'} analyticsliv-services relative py-[30px] px-[40px] text-base font-medium leading-8`}>
-                                    <div className='relative pl-1'>
-                                        <p className='text-[#efefef] text-[20px] font-semibold mb-5'>Ad Format Optimization</p>
-                                        <p className='text-[#878787]'>The creative team focuses on designing ad formats that are specifically tailored for programmatic buying and created for maximum impact and engagement. This includes creating visually appealing ad creatives, compelling copywriting, and clear calls-to-action that resonate with the target audience. Additionally, the team conducts A/B testing and multivariate testing to identify the most effective ad variations and enhance performance further. By continuously refining and iterating on the ad formats, the service ensures that the client's ads stand out in the crowded digital landscape and drive meaningful interactions with the audience.</p>
-                                        <div className=''>
-                                            <Link href="/contact?id=programatic-advertising">
-                                                <button className="bg-transparent border border-solid border-[#20dc868f] hover:bg-[#20dc868f] text-white text-base font-normal tracking-wider rounded-xl py-3 px-6 mt-6">Know More</button>
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="tab4" className={`${activetab == 4 && 'block'} ${activetab != 4 && 'hidden'} analyticsliv-services relative py-[30px] px-[50px] text-base font-medium leading-8`}>
-                                    <p className='text-[#efefef] text-[20px] font-semibold mb-5'>Real-Time Bidding (RTB) Expertise</p>
-                                    <p className='text-[#878787]'>RTB is a critical component of programmatic advertising, allowing advertisers to bid for ad placements in real-time auctions. The service leverages sophisticated bidding strategies and algorithms to participate in these auctions and secure optimal ad placements for the client. This involves evaluating bidding data, monitoring auction dynamics, and adjusting bidding strategies based on factors such as audience targeting, ad placement, and budget constraints. By optimizing bids in real-time, the service ensures that the client gets the most value out of their advertising budget and maximises the return on investment.</p>
-                                    <div className=''>
-                                        <Link href="/contact?id=programatic-advertising">
-                                            <button className="bg-transparent border border-solid border-[#20dc868f] hover:bg-[#20dc868f] text-white text-base font-normal tracking-wider rounded-xl py-3 px-6 mt-6">Know More</button>
-                                        </Link>
-                                    </div>
-                                </div>
-
-                                <div id="tab5" className={`${activetab == 5 && 'block'} ${activetab != 5 && 'hidden'} analyticsliv-services relative py-[30px] px-[50px] text-base font-medium leading-8`}>
-                                    <p className='text-[#efefef] text-[20px] font-semibold mb-5'>Continuous Campaign Management & Optimization</p>
-                                    <p className='text-[#878787]'>This phase involves ongoing monitoring, analysis, and optimization of the campaigns to ensure peak performance and efficiency. We employ a proactive approach to campaign management, continuously monitoring key performance indicators such as click-through rates, conversion rates, cost-per-acquisition, and return on ad spend. Based on performance data and insights, the team makes data-driven optimizations such as adjusting targeting parameters, refining ad creatives, reallocating budget to top-performing channels, and implementing bidding strategy changes. This iterative optimization process ensures that the campaigns remain competitive, relevant, and effective throughout their lifecycle, increasing the client's advertising ROI.</p>
-                                    <div className=''>
-                                        <Link href="/contact?id=programatic-advertising">
-                                            <button className="bg-transparent border border-solid border-[#20dc868f] hover:bg-[#20dc868f] text-white text-base font-normal tracking-wider rounded-xl py-3 px-6 mt-6">Know More</button>
-                                        </Link>
-                                    </div>
-                                </div>
-
-                                <div id="tab6" className={`${activetab == 6 && 'block'} ${activetab != 6 && 'hidden'} analyticsliv-services relative py-[30px] px-[50px] text-base font-medium leading-8`}>
-                                    <p className='text-[#efefef] text-[20px] font-semibold mb-5'>In-Depth Reporting & Analytics</p>
-                                    <p className='text-[#878787]'>The service provides comprehensive reports and analytics that offer actionable insights into campaign performance and effectiveness. These reports include detailed metrics such as impressions, clicks, conversions, engagement rates, and ROI, presented in intuitive dashboards and visualizations. Additionally, the service conducts in-depth analysis to identify trends, patterns, and opportunities for improvement. <br /> <br />The client can use these insights to track campaign success, measure the impact of their advertising efforts, and make informed decisions for future optimizations and strategic planning. By providing transparent and actionable reporting, the service helps the client understand the performance drivers of their campaigns and change their marketing strategies accordingly.</p>
-                                    <div className=''>
-                                        <Link href="/contact?id=programatic-advertising">
-                                            <button className="bg-transparent border border-solid border-[#20dc868f] hover:bg-[#20dc868f] text-white text-base font-normal tracking-wider rounded-xl py-3 px-6 mt-8">Know More</button>
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {/*  */}
-                        <div className="flex flex-col justify-start max-w-md m-auto lg:hidden">
-                            <div className="panel_list powerbox mb-4 rounded-b-[15px]">
-                                <div onClick={() => setActivetab('1')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 cursor-pointer font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '1' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                    <div><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Campaign%20Strategy%20and%20Setup%20white.png" alt="Campaign Strategy and Planning" className='h-10 w-10' /></div>
-                                    <p >Campaign Strategy and Setup</p>
-                                </div>
-                                <div id="tab1" className={`${activetab == 1 && 'items-center justify-center'} ${activetab != 1 && 'hidden'} relative p-5 pt-[10px] text-[13px] font-medium leading-8`}>
-                                    <p className='text-[#878787]'>This phase involves a thorough analysis of the client's marketing objectives, target audience, and competitive landscape. We understand their goals and develop a comprehensive strategy for the programmatic campaigns. This strategy takes into account factors such as campaign scheduling, budget allocation, messaging tone, and creative assets. By leveraging data-driven insights, the team ensures that the campaigns are strategically aligned to achieve maximum impact and drive desired outcomes.</p>
-                                    <div className=''>
-                                        <Link href="/contact?id=programatic-advertising">
-                                            <button className="bg-transparent border border-solid border-[#20dc868f] hover:bg-[#20dc868f] text-white text-base font-normal tracking-wider rounded-xl py-3 px-6 mt-6">Know More</button>
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="panel_list powerbox mb-4 rounded-b-[15px]">
-                                <div onClick={() => setActivetab('2')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '2' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                    <div><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Audience%20Targeting%20white.png" alt="Audience Targeting" className='h-10 w-10' /></div>
-                                    <p>Audience Targeting</p>
-                                </div>
-                                <div id="tab2" className={`${activetab == 2 && ' items-center justify-center'} ${activetab != 2 && 'hidden'} relative p-5 pt-[10px] text-[13px] font-medium leading-8`}>
-                                    <p className='text-[#878787]'>With DV360's sophisticated targeting capabilities, the service can precisely identify and reach the client's ideal audience segments. This involves segmenting the audience based on demographics, interests, browsing behaviour, location, and other relevant criteria. By using advanced targeting options such as audience lists, contextual targeting, and lookalike modelling, the service ensures that the client's message is delivered to the most relevant and receptive audience across various devices and channels. This targeted approach increases the likelihood of engagement and conversion, ultimately maximising the campaign's effectiveness.</p>
-                                    <div className=''>
-                                        <Link href="/contact?id=programatic-advertising">
-                                            <button className="bg-transparent border border-solid border-[#20dc868f] hover:bg-[#20dc868f] text-white text-base font-normal tracking-wider rounded-xl py-3 px-6 mt-6">Know More</button>
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="panel_list powerbox mb-4 rounded-b-[15px]">
-                                <div onClick={() => setActivetab('3')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '3' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                    <div><img src="https://storage.googleapis.com/website-bucket-uploads/static/public/Ad%20Format%20Optimization%20white.png" alt="Ad Format Optimization" className='h-10 w-10' /></div>
-                                    <p>Ad Format Optimization</p>
-                                </div>
-                                <div id="tab3" className={`${activetab == 3 && 'items-center justify-center'} ${activetab != 3 && 'hidden'} relative p-5 pt-[10px] text-[13px] font-medium leading-8`}>
-                                    <p className='text-[#878787]'>The creative team focuses on designing ad formats that are specifically tailored for programmatic buying and created for maximum impact and engagement. This includes creating visually appealing ad creatives, compelling copywriting, and clear calls-to-action that resonate with the target audience. Additionally, the team conducts A/B testing and multivariate testing to identify the most effective ad variations and enhance performance further. By continuously refining and iterating on the ad formats, the service ensures that the client's ads stand out in the crowded digital landscape and drive meaningful interactions with the audience.</p>
-                                    <div className=''>
-                                        <Link href="/contact?id=programatic-advertising">
-                                            <button className="bg-transparent border border-solid border-[#20dc868f] hover:bg-[#20dc868f] text-white text-base font-normal tracking-wider rounded-xl py-3 px-6 mt-6">Know More</button>
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="panel_list powerbox mb-4 rounded-b-[15px]">
-                                <div onClick={() => setActivetab('4')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '4' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                    <div><img src="/Real-Time Bidding white.png" alt="Real-Time Bidding (RTB) Expertise" className='h-10 w-10' /></div>
-                                    <p>Real-Time Bidding (RTB) Expertise</p>
-                                </div>
-                                <div id="tab4" className={`${activetab == 4 && ' items-center justify-center'} ${activetab != 4 && 'hidden'} relative p-5 pt-[10px] text-[13px] font-medium leading-8`}>
-                                    <p className='text-[#878787]'>RTB is a critical component of programmatic advertising, allowing advertisers to bid for ad placements in real-time auctions. The service leverages sophisticated bidding strategies and algorithms to participate in these auctions and secure optimal ad placements for the client. This involves evaluating bidding data, monitoring auction dynamics, and adjusting bidding strategies based on factors such as audience targeting, ad placement, and budget constraints. By optimizing bids in real-time, the service ensures that the client gets the most value out of their advertising budget and maximises the return on investment.</p>
-                                    <div className=''>
-                                        <Link href="/contact?id=programatic-advertising">
-                                            <button className="bg-transparent border border-solid border-[#20dc868f] hover:bg-[#20dc868f] text-white text-base font-normal tracking-wider rounded-xl py-3 px-6 mt-6">Know More</button>
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="panel_list powerbox mb-4 rounded-b-[15px]">
-                                <div onClick={() => setActivetab('5')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '5' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                    <div><img src="/Continuous Campaign Management & Optimization white.png" alt="Continuous Campaign Management & Optimization" className='h-10 w-[56px]' /></div>
-                                    <p>Continuous Campaign Management & Optimization</p>
-                                </div>
-                                <div id="tab5" className={`${activetab == 5 && ' items-center justify-center'} ${activetab != 5 && 'hidden'} relative p-5 pt-[10px] text-[13px] font-medium leading-8`}>
-                                    <p className='text-[#878787]'>This phase involves ongoing monitoring, analysis, and optimization of the campaigns to ensure peak performance and efficiency. We employ a proactive approach to campaign management, continuously monitoring key performance indicators such as click-through rates, conversion rates, cost-per-acquisition, and return on ad spend. Based on performance data and insights, the team makes data-driven optimizations such as adjusting targeting parameters, refining ad creatives, reallocating budget to top-performing channels, and implementing bidding strategy changes. This iterative optimization process ensures that the campaigns remain competitive, relevant, and effective throughout their lifecycle, increasing the client's advertising ROI.</p>
-                                    <div className=''>
-                                        <Link href="/contact?id=programatic-advertising">
-                                            <button className="bg-transparent border border-solid border-[#20dc868f] hover:bg-[#20dc868f] text-white text-base font-normal tracking-wider rounded-xl py-3 px-6 mt-6">Know More</button>
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="panel_list powerbox mb-4 rounded-b-[15px]">
-                                <div onClick={() => setActivetab('6')} className={`ourcom flex items-center gap-[17px] text-base text-[#efefef] bg-[#13131400] mb-5 font-medium whychoose relative border-[3px] border-solid border-[#efefef08] shadow-programatic rounded-b-[5px] py-4 px-5 ${activetab === '6' ? 'border-t-[#0092f4ab]' : ''}`}>
-                                    <div><img src="/In-Depth Reporting & Analytics white.png" alt="In-Depth Reporting & Analytics" className='h-10 w-10' /></div>
-                                    <p>In-Depth Reporting & Analytics</p>
-                                </div>
-                                <div id="tab6" className={`${activetab == 6 && ' items-center justify-center'} ${activetab != 6 && 'hidden'} relative p-5 pt-[10px] text-[13px] font-medium leading-8`}>
-                                    <p className='text-[#878787]'>The service provides comprehensive reports and analytics that offer actionable insights into campaign performance and effectiveness. These reports include detailed metrics such as impressions, clicks, conversions, engagement rates, and ROI, presented in intuitive dashboards and visualizations. Additionally, the service conducts in-depth analysis to identify trends, patterns, and opportunities for improvement.<br />The client can use these insights to track campaign success, measure the impact of their advertising efforts, and make informed decisions for future optimizations and strategic planning. By providing transparent and actionable reporting, the service helps the client understand the performance drivers of their campaigns and change their marketing strategies accordingly.</p>
-                                    <div className=''>
-                                        <Link href="/contact?id=programatic-advertising">
-                                            <button className="bg-transparent border border-solid border-[#20dc868f] hover:bg-[#20dc868f] text-white text-base font-normal tracking-wider rounded-xl py-3 px-6 mt-6">Know More</button>
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-            <Leaders headingFontSize="28px" />
-
-            <section className='programeasurement relative font-gilroy overflow-hidden'>
-                <div className="relative px-4 md:px-12 pt-8 md:pt-0 pb-8 md:pb-3 z-20">
-                    <div className='flex md:flex-nowrap flex-wrap items-center md:justify-between justify-center gap-5'>
-                        <div className='lg:w-1/2 md:w-[35%] w-[70%] md:mt-10'>
-                            <div className='flex items-center justify-center lg:mt-0'>
-                                <img src="/DV_Infographics_Transparent.png" alt="Dv360 account creation" className=' lg:h-[400px]' />
-                            </div>
-                        </div>
-                        <div className='relative lg:w-1/2 md:w-[65%] w-full lg:mt-0 mt-10'>
-                            <div className='flex items-center justify-center md:mb-10 mb-5'>
-                                <h3 className='xl:text-[30px] lg:text-[25px] text-[22px] font-semibold text-txt leading-[1.5em]'>Measurement - Integrations Available</h3>
-                            </div>
-                            <div className='flex items-center justify-center'>
-                                <Link href="/contact?id=programatic-advertising">
-                                    <button className="butn mt-6">Know More</button>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section className='progracont relative overflow-hidden'>
-                <div className='relative px-4 md:px-12 pt-8 pb-8 z-20'>
-                    <div className='flex md:flex-nowrap flex-wrap items-center mx-auto'>
-                        <div className='md:w-[66%] w-full'>
+                <section id="contact" className="bg-slate-900 py-16 text-white">
+                    <div className="mx-auto max-w-7xl px-6">
+                        <div className="grid items-center gap-8 md:grid-cols-2">
                             <div>
-                                <div>
-                                    <div><h3 className='text-[#ffffff] text-[40px] leading-8 md:mb-[20px] mb-6 font-gilroy font-semibold'>Contact us</h3></div>
-                                    <div>
-                                        <div className='text-[#ffffff] text-base leading-8 md:mb-[15px] mb-6 font-gilroy2 font-medium'>
-                                            <p className='text-[24px] mb-3'> Unlock the power of Display & Video 360 </p>
-                                            Schedule a free consultation with our experts and discover <br /> how we can elevate your campaigns
-                                        </div>
+                                <h3 className="text-2xl font-bold">Start with a first DV360 audit</h3>
+                                <p className="mt-2 max-w-2xl text-slate-300">We’ll review your account, tracking and supply paths—and return with a 90‑day plan.</p>
+                                <ul className="mt-4 space-y-2 text-slate-300">
+                                    <li className="flex items-start gap-3"><span className="mt-2 inline-block h-2.5 w-2.5 rounded-full bg-white"></span><span>Floodlight & GA4 alignment</span></li>
+                                    <li className="flex items-start gap-3"><span className="mt-2 inline-block h-2.5 w-2.5 rounded-full bg-white"></span><span>PMP & curation opportunities</span></li>
+                                    <li className="flex items-start gap-3"><span className="mt-2 inline-block h-2.5 w-2.5 rounded-full bg-white"></span><span>Custom bid strategy ideas</span></li>
+                                </ul>
+                            </div>
+                            <div className="rounded-3xl border border-white/20 bg-white/5 p-6">
+                                <form action="#" method="post" className="grid gap-3 md:grid-cols-2">
+                                    <label className="text-sm" for="name">Full name
+                                        <input id="name" name="name" required placeholder="Your name" className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none" />
+                                    </label>
+                                    <label className="text-sm" for="email">Work email
+                                        <input id="email" type="email" name="email" required placeholder="name@company.com" className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none" />
+                                    </label>
+                                    <label className="text-sm md:col-span-1" for="company">Company
+                                        <input id="company" name="company" placeholder="Company name" className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none" />
+                                    </label>
+                                    <label className="text-sm md:col-span-1" for="spendField">Monthly spend
+                                        <input id="spendField" name="spendField" placeholder="e.g., ₹10,00,000" className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none" />
+                                    </label>
+                                    <label className="text-sm md:col-span-2" for="message">Goals & pain points
+                                        <textarea id="message" name="message" rows="4" placeholder="Targets, geos, formats" className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none"></textarea>
+                                    </label>
+                                    <div className="md:col-span-2">
+                                        <button className="rounded-2xl bg-white px-6 py-3 font-semibold text-slate-900 shadow-md transition hover:opacity-90" type="submit">Request Audit</button>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='md:w-[33%] w-full'>
-                            <div className='p-[10px] pl-0'>
-                                <div className='w-full flex'>
-                                    <div className='flex items-center md:justify-end justify-center'>
-                                        <Link href="/contact?id=programatic-advertising">
-                                            <button className="border border-solid border-[#ffffff] bg-[#ffffff] text-[#de668a] text-base font-normal tracking-wider rounded-xl py-3 px-6">Let's Connect</button>
-                                        </Link>
-                                    </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-
-            <section className='progracasestudy relative font-gilroy overflow-hidden'>
-                <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16 relative z-20'>
-                    <div className='flex items-center justify-center pb-5'>
-                        <h2 className='text-[28px] font-semibold text-[#18265b] leading-[27px] text-center tracking-widest'>Check out our latest Case Studies</h2>
-                    </div>
-                    <div className='text-center lg:flex items-start justify-between gap-[30px]'>
-                        <div className='lg:w-[66%]'>
-                            <h5 className='text-start text-[15px] font-normal leading-none text-maintext mb-2 opacity-0'>Check out our latest Case Studies</h5>
-                            <div className='lg:grid lg:grid-cols-1 sm:flex sm:justify-between grid justify-center gap-[30px]'>
-                                <div className='first group 2xl:h-[299px] xl:h-[329px] lg:h-[290px] home-blog max-[1024px]:w-full rounded border border-solid border-[#DBDBDB] hover:border-[#979797] hover:shadow-serviceoffer p-[25px] text-center relative'>
-                                    <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                                    <a href="/case-studies/ua-to-ga4-migration-for-a-website" className='lg:flex gap-5 readmore-cs'>
-                                        <Image
-                                            src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestudy1.png"
-                                            width={300}
-                                            height={300}
-                                            alt="Google Analytics 4 Migration"
-                                            priority={true}
-                                            className='2xl:w-[40%] w-full m-auto 2xl:h-[247px] xl:h-[277px] lg:h-[227px] lg:object-scale-down'
-                                        />
-                                        <div className='grid gap-2'>
-                                            <h3 className='2xl:text-[18px] text-base text-[#18265b] font-semibold text-left mt-5 lg:mt-0'>Universal Analytics (GA3) to GA4 Migration for a Website</h3>
-                                            <p className='align-middle text-left 2xl:text-[15px] text-[13px] text-gray-500 pb-12 lg:pb-0 xl:leading-[30px] leading-6 mt-5 sm:mt-0'>The client faced difficulty migrating their website from Universal Analytics to Google Analytics 4 and had limited knowledge of GA4. They wanted to ensure a seamless migration without disruption and correct tracking migration.</p>
-
-                                            <div className='view max-[1023px]:absolute max-[1023px]:bottom-[10px] flex w-[130px] h-[50px] xl:p-0 p-[10px] items-center justify-evenly border border-solid text-center mt-5 lg:mt-0 border-homepagebtn cursor-pointer rounded-[10px] group-hover:bg-homepagebtn'>
-                                                <div className='flex items-center justify-center gap-[5px]'>
-                                                    <button className='font-medium text-[#4186F5] group-hover:text-white'>View</button>
-                                                    <span className='text-homepagebtn group-hover:text-white mt-[2px]'><FaLongArrowAltRight /></span>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </a>
-                                </div>
-                                <div className='second group 2xl:h-[299px] xl:h-[329px] lg:h-[290px] home-blog max-[1024px]:w-full max-[640px]:mt-[20px] rounded border border-solid border-[#DBDBDB] hover:border-[#979797] hover:shadow-serviceoffer p-[25px] text-center relative'>
-                                    <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                                    <a href="/case-studies/55-percent-increase-in-avg-session-duration" className='lg:flex gap-5 readmore-cs'>
-                                        <Image
-                                            src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestudy3.png"
-                                            width={300}
-                                            height={300}
-                                            alt="Picture of the author"
-                                            priority={true}
-                                            className='2xl:w-[40%] w-full m-auto 2xl:h-[247px] xl:h-[277px] lg:h-[227px] lg:object-scale-down'
-                                        />
-                                        <div className='grid gap-2 '>
-                                            <h3 className='2xl:text-[18px] text-base text-[#18265b] font-semibold text-left mt-5 lg:mt-0'>55% Increase in Avg. Session Duration</h3>
-                                            <p className='align-middle text-left 2xl:text-[15px] text-[13px] text-gray-500 pb-12 lg:pb-0 xl:leading-[30px] leading-6 mt-5 sm:mt-0'>Increasing the Session Duration of the Website is a difficult challenge, with steady growth in acquiring new users, holding the returning users and other KPIs. It's not a quick trick but a journey of hard work and discipline that Leads to the conversion</p>
-
-                                            <div className='view max-[1023px]:absolute max-[1023px]:bottom-[10px] flex w-[130px] h-[50px] xl:p-0 p-[10px] items-center justify-evenly border border-solid text-center mt-5 lg:mt-0 border-homepagebtn cursor-pointer rounded-[10px] group-hover:bg-homepagebtn'>
-                                                <div className='flex items-center justify-center gap-[5px]'>
-                                                    <button className='font-medium text-[#4186F5] group-hover:text-white'>View</button>
-                                                    <span className='text-homepagebtn group-hover:text-white mt-[2px]'><FaLongArrowAltRight /></span>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div className='hidden lg:grid lg:w-[33%]'>
-                            <h5 className='text-start text-[15px] font-normal leading-none text-maintext mb-2'>More case studies</h5>
-                            <div className='third hidden lg:grid gap-[30px]'>
-                                <div className='home-casestd3 group 2xl:h-[299px] xl:h-[329px] lg:h-[290px] rounded bg-no-repeat bg-cover border border-solid hover:border-[#979797] hover:shadow-serviceoffer p-5 text-center relative'>
-                                    <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                                    <a href="/case-studies/skyrocket-your-campaigns-ctr-with-a-95-percent-surge-in-14-days" className='grid gap-5 readmore-cs'>
-                                        <div className=''>
-                                            <Image
-                                                src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestd.png"
-                                                width={300}
-                                                height={300}
-                                                alt="Picture of the author"
-                                                priority={true}
-                                                className='w-full m-auto 2xl:h-[210px] xl:h-[230px] h-[170px] object-scale-down'
-                                            />
-                                        </div>
-                                        <div className=''>
-                                            <h3 className='text-left text-[13px] text-white font-medium whitespace-relaxed'>Skyrocket Your Campaign's CTR with a 95% Surge in 14 Days!</h3>
-
-                                        </div>
-                                    </a>
-                                </div>
-                                <div className='home-casestd3 group 2xl:h-[299px] xl:h-[329px] lg:h-[290px] rounded bg-no-repeat bg-cover border border-solid hover:border-[#979797] hover:shadow-serviceoffer p-5 text-center relative'>
-                                    <span className='bg-[#FFA9A3] text-[#000] text-xs font-bold py-1 px-3 absolute top-0 left-0'>CASE STUDY</span>
-                                    <a href="/case-studies/driving-campaigns-in-dv360-to-post-click-attribution-success-with-36-percent-reduction-in-cpi" className='grid gap-1 readmore-cs'>
-                                        <div className='grid gap-4'>
-                                            <Image
-                                                src="https://storage.googleapis.com/website-bucket-uploads/static/public/casestd2.png"
-                                                width={300}
-                                                height={300}
-                                                alt="Post Click Tracking with DV360"
-                                                priority={true}
-                                                className='w-full m-auto 2xl:h-[210px] xl:h-[230px] h-[170px] object-scale-down'
-                                            />
-                                        </div>
-                                        <div className='grid gap-1'>
-                                            <h3 className='text-left text-[13px] text-white font-medium whitespace-relaxed pt-[15px]'>Driving the Campaigns in DV360 to Post Click Attribution Success with a 36% reduction in CPI</h3>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
+                </section>
+            </body>
         </>
     )
 }
 
-export default service_A
+export default ProgramaticAd
