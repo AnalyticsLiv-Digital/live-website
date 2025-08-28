@@ -195,7 +195,7 @@ const ProgramaticAd = () => {
                 twitterDescription="Programmatic on DV360 across CTV, YouTube, Display, Audio & Native. Custom bidding, SPO, and privacy-safe measurement. See demo charts and case studies."
                 faqData={content}
             />
-            <body className="min-h-screen bg-white text-slate-800"
+            <main className="min-h-screen bg-white text-slate-800"
                 style={{ fontFamily: 'ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji"' }}>
 
                 <section className="relative overflow-hidden border-b border-slate-200">
@@ -642,7 +642,7 @@ const ProgramaticAd = () => {
                         </div>
                     </div>
                 </section>
-            </body>
+            </main>
         </>
     )
 }
