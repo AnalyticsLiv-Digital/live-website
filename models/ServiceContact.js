@@ -58,7 +58,6 @@ serviceContactSchema.methods.removeAdditionalField = function (key) {
     return this;
 };
 
-const ServiceContact = mongoose.model('ServiceContact', serviceContactSchema);
-
-module.exports = ServiceContact;
+module.exports = mongoose.models.ServiceContact ||
+    mongoose.model('ServiceContact', serviceContactSchema);
 

@@ -2,10 +2,48 @@ import Head from "next/head";
 import React, { useState } from "react";
 import NewNavbar from "../../components/NewNavbar";
 import Footer from "../../components/Footer";
+import MetaSchemaOg from "../../components/MetaSchemaOg";
 
 const Creative = () => {
   const [activeTab, setActiveTab] = useState("brand");
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    message: "",
+    pageSource: "Creative",
+  });
+  const [loading, setLoading] = useState(false);
+  const [responseMessage, setResponseMessage] = useState("");
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setResponseMessage("");
+
+    try {
+      const res = await fetch("/api/serviceContact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setResponseMessage("Your request has been submitted successfully!");
+        setFormData({ fullName: "", email: "", message: "", pageSource: "Creative", });
+      } else {
+        setResponseMessage("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      setResponseMessage("Server error. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <>
       <Head>
@@ -27,6 +65,13 @@ const Creative = () => {
           @keyframes slide { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         `}</style>
       </Head>
+      <MetaSchemaOg
+        url="https://analyticsliv.com/services/creative"
+        title="Creative Strategy & Design | AnalyticsLiv"
+        description="Audience-first creative that wins attention and converts. Brand systems, performance creatives, landing pages, and motion—strategized, designed, tested, and scaled."
+        twitterTitle="Creative Strategy & Design | AnalyticsLiv"
+        twitterDescription="Audience-first creative that wins attention and converts. Brand systems, performance creatives, landing pages, and motion—strategized, designed, tested, and scaled."
+      />
 
       <body
         class="bg-white text-slate-800"
@@ -132,11 +177,10 @@ const Creative = () => {
               ].map((tab) => (
                 <button
                   key={tab.id}
-                  className={`w-1/3 rounded-xl px-3 py-2 text-sm font-semibold ${
-                    activeTab === tab.id
-                      ? "bg-slate-900 text-white"
-                      : "text-slate-700 hover:bg-slate-50"
-                  }`}
+                  className={`w-1/3 rounded-xl px-3 py-2 text-sm font-semibold ${activeTab === tab.id
+                    ? "bg-slate-900 text-white"
+                    : "text-slate-700 hover:bg-slate-50"
+                    }`}
                   onClick={() => setActiveTab(tab.id)}
                 >
                   {tab.label}
@@ -699,43 +743,28 @@ const Creative = () => {
               </ul>
             </div>
             <div class="rounded-3xl border border-white/20 bg-white/5 p-6">
-              <form class="grid gap-3 md:grid-cols-2">
-                <label class="text-sm">
-                  Full name
-                  <input
-                    class="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none"
-                    placeholder="Your name"
-                  />
+              <form onSubmit={handleSubmit} action="#" method="post" className="grid gap-3 md:grid-cols-2">
+                <label className="text-sm" for="fullName">Full name
+                  <input value={formData.fullName} onChange={handleChange} id="fullName" name="fullName" required placeholder="Your Full Name" className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none" />
                 </label>
-                <label class="text-sm">
-                  Work email
-                  <input
-                    type="email"
-                    class="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none"
-                    placeholder="name@company.com"
-                  />
+                <label className="text-sm" for="email">Work email
+                  <input value={formData.email} onChange={handleChange} id="email" type="email" name="email" required placeholder="name@company.com" className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none" />
                 </label>
-                <label class="text-sm md:col-span-2">
-                  What should we audit?
-                  <textarea
-                    rows="4"
-                    class="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none"
-                    placeholder="Share links to brand kit, ads, and pages"
-                  ></textarea>
+                <label className="text-sm md:col-span-2" for="message">What should we audit?
+                  <textarea value={formData.message} onChange={handleChange} id="message" name="message" rows="4" placeholder="Share links to brand kit, ads, and pages" className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none"></textarea>
                 </label>
-                <div class="md:col-span-2">
-                  <button
-                    class="rounded-2xl bg-white px-6 py-3 font-semibold text-slate-900 shadow hover:opacity-90"
-                    type="button"
-                  >
-                    Request Audit
+                <div className="md:col-span-2">
+                  <button disabled={loading} className="rounded-2xl bg-white px-6 py-3 font-semibold text-slate-900 shadow-md transition hover:opacity-90" type="submit">
+                    {loading ? "Submitting..." : "Request Audit"}
                   </button>
                 </div>
+                {responseMessage && (
+                  <p className="md:col-span-2 mt-2 text-sm text-white">{responseMessage}</p>
+                )}
               </form>
             </div>
           </div>
         </section>
-
       </body>
     </>
   );
