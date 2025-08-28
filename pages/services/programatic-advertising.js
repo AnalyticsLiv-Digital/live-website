@@ -13,7 +13,11 @@ import {
     ResponsiveContainer,
     BarChart,
     Bar,
+    AreaChart,
+    Area,
+    ComposedChart,
 } from "recharts";
+import Faq from '../../components/Faq';
 
 const ProgramaticAd = () => {
 
@@ -21,8 +25,46 @@ const ProgramaticAd = () => {
     const [spend, setSpend] = useState(2000000);
     const [monthCount, setMonthCount] = useState(6);
     const [playing, setPlaying] = useState(false);
+    const [formData, setFormData] = useState({
+        fullName: "",
+        email: "",
+        company: "",
+        spend: "",
+        message: "",
+        pageSource: "programmatic advertising",
+    });
+    const [loading, setLoading] = useState(false);
+    const [responseMessage, setResponseMessage] = useState("");
 
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+    };
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        setResponseMessage("");
+
+        try {
+            const res = await fetch("/api/serviceContact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+            });
+
+            if (res.ok) {
+                setResponseMessage("Your request has been submitted successfully!");
+                setFormData({ fullName: "", email: "", company: "", spend: "", message: "", pageSource: "programmatic advertising", });
+            } else {
+                setResponseMessage("Something went wrong. Please try again.");
+            }
+        } catch (error) {
+            setResponseMessage("Server error. Please try again later.");
+        } finally {
+            setLoading(false);
+        }
+    };
     const cpaRef = useRef(null);
     const roasRef = useRef(null);
     const ctrRef = useRef(null);
@@ -136,16 +178,22 @@ const ProgramaticAd = () => {
         },
     ];
 
+    const content = [
+        { question: 'How quickly do we see impact?', answer: 'Pilot waves typically show lift in 4–6 weeks with reliable baselines.' },
+        { question: 'Do you support MMM & incrementality testing?', answer: 'Yes - geo splits, PSA tests, and MMM hooks for finance teams.' },
+        { question: 'Can you work with our creative team?', answer: 'We supply briefs, variants, and sequencing frameworks or handle end‑to‑end.' },
+        { question: 'What does onboarding involve?', answer: 'Audit → tracking alignment → SPO → launch plan with measurable goals.' }
+    ]
 
     return (
         <>
-
             <MetaSchemaOg
                 url="https://analyticsliv.com/services/programatic-advertising"
-                title="Boost ROI with Programmatic Advertising Agency - AnalyticsLiv"
-                description="Reach the right audience at the right time. AnalyticsLiv is your go-to programmatic advertising agency for high-impact RTB programmatic advertising solutions."
-                twitterTitle="Boost ROI with Programmatic Advertising Agency - AnalyticsLiv"
-                twitterDescription="Reach the right audience at the right time. AnalyticsLiv is your go-to programmatic advertising agency for high-impact RTB programmatic advertising solutions."
+                title="DV360 & Programmatic Advertising | AnalyticsLiv"
+                description="Programmatic on DV360 across CTV, YouTube, Display, Audio & Native. Custom bidding, SPO, and privacy-safe measurement. See demo charts and case studies."
+                twitterTitle="DV360 & Programmatic Advertising | AnalyticsLiv"
+                twitterDescription="Programmatic on DV360 across CTV, YouTube, Display, Audio & Native. Custom bidding, SPO, and privacy-safe measurement. See demo charts and case studies."
+                faqData={content}
             />
             <body className="min-h-screen bg-white text-slate-800"
                 style={{ fontFamily: 'ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji"' }}>
@@ -155,7 +203,10 @@ const ProgramaticAd = () => {
                     <div className="relative mx-auto max-w-7xl px-6 py-16 lg:py-20">
                         <div className="grid items-center gap-7 md:gap-12 md:grid-cols-2">
                             <div>
-                                <p className="mb-3 pill border-indigo-200 bg-white text-indigo-700"><span className="h-1.5 w-1.5 rounded-full bg-indigo-500"></span> Google Marketing Platform Certified Partner</p>
+                                <p class="inline-flex items-center gap-[0.4rem] border border-blue-200 text-blue-700 bg-white px-2.5 py-1 rounded-full text-xs font-semibold">
+                                    <span class="inline-block w-[6px] h-[6px] rounded-full bg-indigo-500"></span>
+                                    Google Marketing Platform Certified Partner
+                                </p>
                                 <h1 className="text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl md:text-6xl text-slate-900">
                                     DV360 & Programmatic Advertising <span className="bg-gradient-to-r from-slate-900 to-indigo-600 bg-clip-text text-transparent">That Wins Markets</span>
                                 </h1>
@@ -177,7 +228,6 @@ const ProgramaticAd = () => {
                                         <div className="relative overflow-hidden card p-5"><div className="absolute -right-8 -top-8 h-28 w-28 rounded-full ring-animated opacity-40"></div><div className="text-3xl font-extrabold text-slate-900">150+</div><div className="mt-1 text-sm text-slate-600">Brands trust our programmatic execution*</div></div>
                                         <div className="relative overflow-hidden card p-5"><div className="absolute -right-8 -top-8 h-28 w-28 rounded-full ring-animated opacity-40"></div><div className="text-3xl font-extrabold text-slate-900">95%+</div><div className="mt-1 text-sm text-slate-600">Attribution reliability across DV360 & CTV*</div></div>
                                     </div>
-                                    <p className="mt-3 text-xs text-slate-500">*Replace with your verified AnalyticsLiv client metrics.</p>
                                 </div>
                             </div>
                         </div>
@@ -193,7 +243,7 @@ const ProgramaticAd = () => {
                         </div>
 
                         <div className="grid gap-6 lg:grid-cols-3">
-                            <a href="/case-studies/dv360-custom-bidding-cost-per-conversion-improvement" className="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition block" target="_blank" rel="noopener">
+                            <div className="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition block" rel="noopener">
                                 <div className="flex items-center gap-3">
                                     <div className="h-10 w-10 rounded-xl bg-indigo-600/10 text-indigo-700 border border-indigo-200 flex items-center justify-center">CB</div>
                                     <div>
@@ -207,9 +257,9 @@ const ProgramaticAd = () => {
                                 </ul>
                                 <p className="mt-3 text-sm text-slate-600">Targeted value signals + audience curation + inventory controls.</p>
                                 <span className="mt-2 inline-flex items-center text-indigo-700 text-sm font-semibold">Read case study <span className="ml-1 ticker">→</span></span>
-                            </a>
+                            </div>
 
-                            <a href="case-study-artarium-event-a.html" className="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition block" target="_blank" rel="noopener">
+                            <div className="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition block" rel="noopener">
                                 <div className="flex items-center gap-3">
                                     <div className="h-10 w-10 rounded-xl bg-emerald-600/10 text-emerald-700 border border-emerald-200 flex items-center justify-center">EV</div>
                                     <div>
@@ -224,9 +274,9 @@ const ProgramaticAd = () => {
                                 </ul>
                                 <p className="mt-3 text-sm text-slate-600">Seasonal narratives + audience windows + format mix.</p>
                                 <span className="mt-2 inline-flex items-center text-emerald-700 text-sm font-semibold">Read case study <span className="ml-1 ticker">→</span></span>
-                            </a>
+                            </div>
 
-                            <a href="/case-studies/shoebacca-performance-max-roas-increase" className="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition block" target="_blank" rel="noopener">
+                            <div className="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition block" rel="noopener">
                                 <div className="flex items-center gap-3">
                                     <div className="h-10 w-10 rounded-xl bg-amber-600/10 text-amber-700 border border-amber-200 flex items-center justify-center">PM</div>
                                     <div>
@@ -240,7 +290,7 @@ const ProgramaticAd = () => {
                                 </ul>
                                 <p className="mt-3 text-sm text-slate-600">Clean signals + product feeds + cross‑channel remarketing.</p>
                                 <span className="mt-2 inline-flex items-center text-amber-700 text-sm font-semibold">Read case study <span className="ml-1 ticker">→</span></span>
-                            </a>
+                            </div>
                         </div>
 
                     </div>
@@ -384,7 +434,7 @@ const ProgramaticAd = () => {
                                         <XAxis dataKey="month" />
                                         <YAxis />
                                         <Tooltip />
-                                        <Line type="monotone" dataKey="cpa" stroke="#4f46e5" strokeWidth={2} />
+                                        <Line type="monotone" dataKey="cpa" stroke="#5cc6ff" strokeWidth={2} />
                                     </LineChart>
                                 </ResponsiveContainer>
                             </div>
@@ -398,7 +448,7 @@ const ProgramaticAd = () => {
                                         <XAxis dataKey="month" />
                                         <YAxis />
                                         <Tooltip />
-                                        <Bar dataKey="roas" fill="#10b981" radius={[6, 6, 0, 0]} />
+                                        <Bar dataKey="roas" fill="#5cc6ff" radius={[6, 6, 0, 0]} />
                                     </BarChart>
                                 </ResponsiveContainer>
                             </div>
@@ -407,13 +457,30 @@ const ProgramaticAd = () => {
                             <div className="card p-5 bg-white rounded-xl shadow-md">
                                 <h3 className="text-lg font-semibold mb-2">CTR</h3>
                                 <ResponsiveContainer width="100%" height={200}>
-                                    <LineChart data={chartData}>
+                                    <ComposedChart data={chartData}>
+                                        <defs>
+                                            <linearGradient id="lineFill" x1="0" y1="0" x2="0" y2="1">
+                                                <stop offset="0%" stopColor="#5cc6ff" stopOpacity={0.9} />
+                                                <stop offset="100%" stopColor="#5cc6ff" stopOpacity={0.5} />
+                                            </linearGradient>
+                                        </defs>
                                         <CartesianGrid strokeDasharray="3 3" />
                                         <XAxis dataKey="month" />
                                         <YAxis />
                                         <Tooltip />
-                                        <Line type="monotone" dataKey="ctr" stroke="#f59e0b" strokeWidth={2} dot={false} />
-                                    </LineChart>
+                                        <Area
+                                            type="monotone"
+                                            dataKey="ctr"
+                                            fill="url(#lineFill)"
+                                            stroke={false}
+                                        />
+                                        <Line
+                                            type="monotone"
+                                            dataKey="ctr"
+                                            stroke="#5cc6ff"
+                                            strokeWidth={2}
+                                        />
+                                    </ComposedChart>
                                 </ResponsiveContainer>
                             </div>
                         </div>
@@ -529,24 +596,7 @@ const ProgramaticAd = () => {
                             <h2 className="text-2xl md:text-3xl font-bold text-slate-900">Everything About Our Programmatic Service</h2>
                             <p className="mt-2 text-slate-600 max-w-3xl mx-auto">Timelines, tools, and how we prove incrementality.</p>
                         </div>
-                        <div className="grid gap-4 md:grid-cols-2">
-                            <details className="group card p-5"><summary className="cursor-pointer list-none font-semibold text-slate-900 flex items-center justify-between">How quickly do we see impact?<span className="text-slate-400 group-open:rotate-180 transition">▾</span></summary><p className="mt-2 text-slate-700">Pilot waves typically show lift in 4–6 weeks with reliable baselines.</p></details>
-                            <details className="group card p-5"><summary className="cursor-pointer list-none font-semibold text-slate-900 flex items-center justify-between">Do you support MMM & incrementality testing?<span className="text-slate-400 group-open:rotate-180 transition">▾</span></summary><p className="mt-2 text-slate-700">Yes—geo splits, PSA tests, and MMM hooks for finance teams.</p></details>
-                            <details className="group card p-5"><summary className="cursor-pointer list-none font-semibold text-slate-900 flex items-center justify-between">Can you work with our creative team?<span className="text-slate-400 group-open:rotate-180 transition">▾</span></summary><p className="mt-2 text-slate-700">We supply briefs, variants, and sequencing frameworks or handle end‑to‑end.</p></details>
-                            <details className="group card p-5"><summary className="cursor-pointer list-none font-semibold text-slate-900 flex items-center justify-between">What does onboarding involve?<span className="text-slate-400 group-open:rotate-180 transition">▾</span></summary><p className="mt-2 text-slate-700">Audit → tracking alignment → SPO → launch plan with measurable goals.</p></details>
-                        </div>
-                        {/* <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {"@type":"Question","name":"How quickly do we see impact?","acceptedAnswer":{"@type":"Answer","text":"Pilot waves typically show lift in 4–6 weeks with reliable baselines."}},
-          {"@type":"Question","name":"Do you support MMM & incrementality testing?","acceptedAnswer":{"@type":"Answer","text":"Yes—geo splits, PSA tests, and MMM hooks for finance teams."}},
-          {"@type":"Question","name":"Can you work with our creative team?","acceptedAnswer":{"@type":"Answer","text":"We supply briefs, variants, and sequencing frameworks or handle end‑to‑end."}},
-          {"@type":"Question","name":"What does onboarding involve?","acceptedAnswer":{"@type":"Answer","text":"Audit → tracking alignment → SPO → launch plan with measurable goals."}}
-        ]
-      }
-      </script> */}
+                        <Faq content={content} />
                     </div>
                 </section>
 
@@ -563,25 +613,30 @@ const ProgramaticAd = () => {
                                 </ul>
                             </div>
                             <div className="rounded-3xl border border-white/20 bg-white/5 p-6">
-                                <form action="#" method="post" className="grid gap-3 md:grid-cols-2">
-                                    <label className="text-sm" for="name">Full name
-                                        <input id="name" name="name" required placeholder="Your name" className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none" />
+                                <form onSubmit={handleSubmit} action="#" method="post" className="grid gap-3 md:grid-cols-2">
+                                    <label className="text-sm" for="fullName">Full name
+                                        <input value={formData.fullName} onChange={handleChange} id="fullName" name="fullName" required placeholder="Your Full Name" className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none" />
                                     </label>
                                     <label className="text-sm" for="email">Work email
-                                        <input id="email" type="email" name="email" required placeholder="name@company.com" className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none" />
+                                        <input value={formData.email} onChange={handleChange} id="email" type="email" name="email" required placeholder="name@company.com" className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none" />
                                     </label>
                                     <label className="text-sm md:col-span-1" for="company">Company
-                                        <input id="company" name="company" placeholder="Company name" className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none" />
+                                        <input value={formData.company} onChange={handleChange} id="company" name="company" placeholder="Company name" className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none" />
                                     </label>
-                                    <label className="text-sm md:col-span-1" for="spendField">Monthly spend
-                                        <input id="spendField" name="spendField" placeholder="e.g., ₹10,00,000" className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none" />
+                                    <label className="text-sm md:col-span-1" for="spend">Monthly spend
+                                        <input value={formData.spend} onChange={handleChange} id="spend" name="spend" placeholder="e.g., ₹10,00,000" className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none" />
                                     </label>
                                     <label className="text-sm md:col-span-2" for="message">Goals & pain points
-                                        <textarea id="message" name="message" rows="4" placeholder="Targets, geos, formats" className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none"></textarea>
+                                        <textarea value={formData.message} onChange={handleChange} id="message" name="message" rows="4" placeholder="Targets, geos, formats" className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none"></textarea>
                                     </label>
                                     <div className="md:col-span-2">
-                                        <button className="rounded-2xl bg-white px-6 py-3 font-semibold text-slate-900 shadow-md transition hover:opacity-90" type="submit">Request Audit</button>
+                                        <button disabled={loading} className="rounded-2xl bg-white px-6 py-3 font-semibold text-slate-900 shadow-md transition hover:opacity-90" type="submit">
+                                            {loading ? "Submitting..." : "Request Audit"}
+                                        </button>
                                     </div>
+                                    {responseMessage && (
+                                        <p className="md:col-span-2 mt-2 text-sm text-white">{responseMessage}</p>
+                                    )}
                                 </form>
                             </div>
                         </div>
