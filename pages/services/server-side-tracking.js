@@ -11,9 +11,51 @@ import Image from 'next/image';
 import { motion } from "framer-motion";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import MetaSchemaOg from '../../components/MetaSchemaOg';
+import Faq from '../../components/Faq';
 
 const Serversidetracking = () => {
     const [activeMode, setActiveMode] = useState("hybrid"); // default state
+    const [formData, setFormData] = useState({
+        fullName: "",
+        email: "",
+        company: "",
+        stack: "",
+        message: "",
+        pageSource: "Server Side Tracking",
+    });
+    const [loading, setLoading] = useState(false);
+    const [responseMessage, setResponseMessage] = useState("");
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        setResponseMessage("");
+
+        try {
+            const res = await fetch("/api/serviceContact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+            });
+
+            if (res.ok) {
+                setResponseMessage("Your request has been submitted successfully!");
+                setFormData({ fullName: "", email: "", company: "", stack: "", message: "", pageSource: "Server Side Tracking", });
+            } else {
+                setResponseMessage("Something went wrong. Please try again.");
+            }
+        } catch (error) {
+            setResponseMessage("Server error. Please try again later.");
+        } finally {
+            setLoading(false);
+        }
+    };
+
     function Feature({ title, text }) {
         return (
             <div className="rounded-2xl border border-slate-200 p-4">
@@ -32,6 +74,14 @@ const Serversidetracking = () => {
             </div>
         );
     }
+
+    const content = [
+        { question: 'What does the rollout typically involve?', answer: 'GTM server container on App Engine or Cloud Run, DNS for first‑party endpoint, CMP hookup for Consent Mode v2, CAPI with dedup IDs, and Looker dashboards.' },
+        { question: 'Do we still keep any client‑side tags?', answer: 'Yes—hybrid is common. We keep lightweight client‑side triggers for consent and event IDs, while routing heavy lifting via the server container.' },
+        { question: 'How do you prove ROI?', answer: 'We measure event delivery rate, modeled conversions gained, match quality, CWV improvements, and media outcomes (CPA/ROAS) before vs after.' },
+        { question: 'What about costs?', answer: 'Cloud hosting is usage‑based and modest for most sites. We right‑size architecture and provide cost dashboards so there are no surprises.' }
+    ]
+
     return (
         <>
             <MetaSchemaOg
@@ -40,9 +90,11 @@ const Serversidetracking = () => {
                 description="Get accurate, secure tracking with AnalyticsLiv’s server-side analytics tracking. Boost your data quality, privacy, and analytical performance for better marketing outcomes."
                 twitterTitle="Expert Server-Side Analytics Tracking Solutions | AnalyticsLiv"
                 twitterDescription="Get accurate, secure tracking with AnalyticsLiv’s server-side analytics tracking. Boost your data quality, privacy, and analytical performance for better marketing outcomes."
+                faqData={content}
             />
 
-            <main class="min-h-screen bg-white text-slate-800">
+            <main class="min-h-screen bg-white text-slate-800"
+                style={{ fontFamily: 'ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji"' }}>
                 <section class="relative overflow-hidden border-b border-slate-200">
                     <div class="absolute inset-0 bg-gradient-to-br from-[#EEF6FF] via-white to-[#F7F7FF]"></div>
                     <div class="relative mx-auto max-w-7xl px-6 max-sm:pt-8 max-sm:pb-12 sm:py-16 lg:py-16">
@@ -385,24 +437,7 @@ const Serversidetracking = () => {
                             <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Everything About Server‑Side Tracking</h2>
                             <p class="mt-2 text-slate-600 max-w-3xl mx-auto">Timelines, hosting choices, costs, and how we prove impact.</p>
                         </div>
-                        <div class="grid gap-4 md:grid-cols-2">
-                            <details class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                                <summary class="cursor-pointer list-none font-semibold text-slate-900 flex items-center justify-between">What does the rollout typically involve?<span class="text-slate-400 group-open:rotate-180 transition">▾</span></summary>
-                                <p class="mt-2 text-slate-700">GTM server container on App Engine or Cloud Run, DNS for first‑party endpoint, CMP hookup for Consent Mode v2, CAPI with dedup IDs, and Looker dashboards.</p>
-                            </details>
-                            <details class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                                <summary class="cursor-pointer list-none font-semibold text-slate-900 flex items-center justify-between">Do we still keep any client‑side tags?<span class="text-slate-400 group-open:rotate-180 transition">▾</span></summary>
-                                <p class="mt-2 text-slate-700">Yes—hybrid is common. We keep lightweight client‑side triggers for consent and event IDs, while routing heavy lifting via the server container.</p>
-                            </details>
-                            <details class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                                <summary class="cursor-pointer list-none font-semibold text-slate-900 flex items-center justify-between">How do you prove ROI?<span class="text-slate-400 group-open:rotate-180 transition">▾</span></summary>
-                                <p class="mt-2 text-slate-700">We measure event delivery rate, modeled conversions gained, match quality, CWV improvements, and media outcomes (CPA/ROAS) before vs after.</p>
-                            </details>
-                            <details class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                                <summary class="cursor-pointer list-none font-semibold text-slate-900 flex items-center justify-between">What about costs?<span class="text-slate-400 group-open:rotate-180 transition">▾</span></summary>
-                                <p class="mt-2 text-slate-700">Cloud hosting is usage‑based and modest for most sites. We right‑size architecture and provide cost dashboards so there are no surprises.</p>
-                            </details>
-                        </div>
+                        <Faq content={content} />
                     </div>
                 </section>
 
@@ -419,25 +454,30 @@ const Serversidetracking = () => {
                                 </ul>
                             </div>
                             <div class="rounded-3xl border border-white/20 bg-white/5 p-6">
-                                <form action="#" method="post" class="grid gap-3 md:grid-cols-2">
-                                    <label class="text-sm" for="name">Full name
-                                        <input id="name" name="name" required placeholder="Your name" class="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none" />
+                                <form onSubmit={handleSubmit} action="#" method="post" className="grid gap-3 md:grid-cols-2">
+                                    <label className="text-sm" for="fullName">Full name
+                                        <input value={formData.fullName} onChange={handleChange} id="fullName" name="fullName" required placeholder="Your Full Name" className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none" />
                                     </label>
-                                    <label class="text-sm" for="email">Work email
-                                        <input id="email" type="email" name="email" required placeholder="name@company.com" class="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none" />
+                                    <label className="text-sm" for="email">Work email
+                                        <input value={formData.email} onChange={handleChange} id="email" type="email" name="email" required placeholder="name@company.com" className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none" />
                                     </label>
-                                    <label class="text-sm md:col-span-1" for="company">Company
-                                        <input id="company" name="company" placeholder="Company name" class="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none" />
+                                    <label className="text-sm md:col-span-1" for="company">Company
+                                        <input value={formData.company} onChange={handleChange} id="company" name="company" placeholder="Company name" className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none" />
                                     </label>
-                                    <label class="text-sm md:col-span-1" for="stack">Current stack
-                                        <input id="stack" name="stack" placeholder="e.g., GA4, GTM, CAPI" class="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none" />
+                                    <label className="text-sm md:col-span-1" for="stack">Current stack
+                                        <input value={formData.stack} onChange={handleChange} id="stack" name="stack" placeholder="e.g., GA4, GTM, CAPI" className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none" />
                                     </label>
-                                    <label class="text-sm md:col-span-2" for="message">Goals & pain points
-                                        <textarea id="message" name="message" rows="4" placeholder="What are you solving for?" class="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none"></textarea>
+                                    <label className="text-sm md:col-span-2" for="message">Goals & pain points
+                                        <textarea value={formData.message} onChange={handleChange} id="message" name="message" rows="4" placeholder="What are you solving for?" className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none"></textarea>
                                     </label>
-                                    <div class="md:col-span-2">
-                                        <button class="rounded-2xl bg-white px-6 py-3 font-semibold text-slate-900 shadow-md transition hover:opacity-90" type="submit">Request Audit</button>
+                                    <div className="md:col-span-2">
+                                        <button disabled={loading} className="rounded-2xl bg-white px-6 py-3 font-semibold text-slate-900 shadow-md transition hover:opacity-90" type="submit">
+                                            {loading ? "Submitting..." : "Request Audit"}
+                                        </button>
                                     </div>
+                                    {responseMessage && (
+                                        <p className="md:col-span-2 mt-2 text-sm text-white">{responseMessage}</p>
+                                    )}
                                 </form>
                             </div>
                         </div>

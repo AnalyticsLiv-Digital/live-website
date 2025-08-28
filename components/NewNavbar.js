@@ -41,7 +41,7 @@ const NewNavbar = () => {
             { label: "Conversion API Implementation", href: "/services/data-reporting-analysis" }
           ]
         },
-        { label: "Interactive Dashboards", href: "/services/gdpr-compliance" }
+        { label: "Interactive Dashboards", href: "/services/interactive-dashboards" }
       ]
     },
     {
@@ -300,7 +300,7 @@ const NewNavbar = () => {
                           </li>
                           <li>
                             <a
-                              href="/services/gdpr-compliance"
+                              href="/services/interactive-dashboards"
                               className="block rounded-xl px-3 py-2.5 text-slate-700 hover:bg-gradient-to-r hover:from-blue-50/60 hover:to-indigo-50/40 hover:text-slate-800 transition-all duration-200 hover:translate-x-1 hover:shadow-sm border border-transparent hover:border-blue-100/50"
                             >
                               Interactive Dashboards
