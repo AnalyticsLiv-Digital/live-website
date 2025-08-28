@@ -11,6 +11,7 @@ import Image from 'next/image';
 import { motion } from "framer-motion";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import MetaSchemaOg from '../../components/MetaSchemaOg';
+import Faq from '../../components/Faq';
 
 const Serversidetracking = () => {
     const [activeMode, setActiveMode] = useState("hybrid"); // default state
@@ -73,6 +74,14 @@ const Serversidetracking = () => {
             </div>
         );
     }
+
+    const content = [
+        { question: 'What does the rollout typically involve?', answer: 'GTM server container on App Engine or Cloud Run, DNS for first‑party endpoint, CMP hookup for Consent Mode v2, CAPI with dedup IDs, and Looker dashboards.' },
+        { question: 'Do we still keep any client‑side tags?', answer: 'Yes—hybrid is common. We keep lightweight client‑side triggers for consent and event IDs, while routing heavy lifting via the server container.' },
+        { question: 'How do you prove ROI?', answer: 'We measure event delivery rate, modeled conversions gained, match quality, CWV improvements, and media outcomes (CPA/ROAS) before vs after.' },
+        { question: 'What about costs?', answer: 'Cloud hosting is usage‑based and modest for most sites. We right‑size architecture and provide cost dashboards so there are no surprises.' }
+    ]
+
     return (
         <>
             <MetaSchemaOg
@@ -81,6 +90,7 @@ const Serversidetracking = () => {
                 description="Get accurate, secure tracking with AnalyticsLiv’s server-side analytics tracking. Boost your data quality, privacy, and analytical performance for better marketing outcomes."
                 twitterTitle="Expert Server-Side Analytics Tracking Solutions | AnalyticsLiv"
                 twitterDescription="Get accurate, secure tracking with AnalyticsLiv’s server-side analytics tracking. Boost your data quality, privacy, and analytical performance for better marketing outcomes."
+                faqData={content}
             />
 
             <main class="min-h-screen bg-white text-slate-800"
@@ -427,24 +437,7 @@ const Serversidetracking = () => {
                             <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Everything About Server‑Side Tracking</h2>
                             <p class="mt-2 text-slate-600 max-w-3xl mx-auto">Timelines, hosting choices, costs, and how we prove impact.</p>
                         </div>
-                        <div class="grid gap-4 md:grid-cols-2">
-                            <details class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                                <summary class="cursor-pointer list-none font-semibold text-slate-900 flex items-center justify-between">What does the rollout typically involve?<span class="text-slate-400 group-open:rotate-180 transition">▾</span></summary>
-                                <p class="mt-2 text-slate-700">GTM server container on App Engine or Cloud Run, DNS for first‑party endpoint, CMP hookup for Consent Mode v2, CAPI with dedup IDs, and Looker dashboards.</p>
-                            </details>
-                            <details class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                                <summary class="cursor-pointer list-none font-semibold text-slate-900 flex items-center justify-between">Do we still keep any client‑side tags?<span class="text-slate-400 group-open:rotate-180 transition">▾</span></summary>
-                                <p class="mt-2 text-slate-700">Yes—hybrid is common. We keep lightweight client‑side triggers for consent and event IDs, while routing heavy lifting via the server container.</p>
-                            </details>
-                            <details class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                                <summary class="cursor-pointer list-none font-semibold text-slate-900 flex items-center justify-between">How do you prove ROI?<span class="text-slate-400 group-open:rotate-180 transition">▾</span></summary>
-                                <p class="mt-2 text-slate-700">We measure event delivery rate, modeled conversions gained, match quality, CWV improvements, and media outcomes (CPA/ROAS) before vs after.</p>
-                            </details>
-                            <details class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                                <summary class="cursor-pointer list-none font-semibold text-slate-900 flex items-center justify-between">What about costs?<span class="text-slate-400 group-open:rotate-180 transition">▾</span></summary>
-                                <p class="mt-2 text-slate-700">Cloud hosting is usage‑based and modest for most sites. We right‑size architecture and provide cost dashboards so there are no surprises.</p>
-                            </details>
-                        </div>
+                        <Faq content={content} />
                     </div>
                 </section>
 
