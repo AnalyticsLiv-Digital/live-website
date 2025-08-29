@@ -1,7 +1,10 @@
 import React from 'react'
+import NewNavbar from '../components/NewNavbar'
+import Footer from '../components/Footer'
 
 const partnerships = () => {
     return (
+        <>
         <div
             className="min-h-screen bg-white"
             style={{ fontFamily: 'ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji"' }}
@@ -22,8 +25,8 @@ const partnerships = () => {
                                 Trusted digital analytics and marketing experts. We combine creativity with technical precision to power measurable growth.
                             </p>
                             <div class="mt-8 flex flex-wrap items-center gap-4">
-                                <a href="https://analyticsliv.com/contact" class="rounded-2xl bg-slate-900 px-6 py-3 text-white shadow-lg shadow-slate-900/10 transition hover:opacity-90">Book a Free Strategy Call</a>
-                                <a href="mailto:hello@analyticsliv.com" class="rounded-2xl border border-slate-300 px-6 py-3">Email Us</a>
+                                <a href="https://analyticsliv.com/contact" class="rounded-2xl bg-slate-900 px-6 py-3 text-white shadow-lg shadow-slate-900/10 transition hover:opacity-90">Book a Strategy Call</a>
+                                <a href="mailto:support@analyticsliv.com" class="rounded-2xl border border-slate-300 px-6 py-3">Email Us</a>
                                 <a href="tel:+918320576622" class="rounded-2xl border border-slate-300 px-6 py-3">+91 83205 76622</a>
                             </div>
                             <div class="mt-10 flex max-xl:flex-wrap items-center gap-4">
@@ -245,12 +248,13 @@ const partnerships = () => {
                         </div>
                         <div class="flex md:justify-end gap-3">
                             <a href="https://analyticsliv.com/contact" class="inline-flex items-center justify-center rounded-2xl bg-slate-900 px-6 py-3 font-semibold text-white shadow-md transition hover:opacity-90">Contact Form</a>
-                            <a href="mailto:hello@analyticsliv.com?subject=Free%20Strategy%20Call" class="inline-flex items-center justify-center rounded-2xl border border-white/30 px-6 py-3 font-semibold text-slate-600 transition hover:bg-white/10">Email Us</a>
+                            <a href="mailto:support@analyticsliv.com?subject=Free%20Strategy%20Call" class="inline-flex items-center justify-center rounded-2xl border border-white/30 px-6 py-3 font-semibold text-slate-600 transition hover:bg-white/10">Email Us</a>
                         </div>
                     </div>
                 </div>
             </section>
         </div>
+        </>
     )
 }
 

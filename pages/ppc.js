@@ -126,6 +126,15 @@ const Ppc = () => {
             });
         }
     }
+    const scrolling4 = () => {
+        {
+            Scroll.scroller.scrollTo("case-studies", {
+                duration: 500,
+                smooth: true,
+                offset: -100,
+            });
+        }
+    }
 
     const handleToggle = (index) => {
         setActiveIndex(activeIndex === index ? null : index);
@@ -275,17 +284,17 @@ const Ppc = () => {
                 <div className='md:w-[25%] 2xl:w-[40%]'>
                     <img alt="logo" className="w-[200px] 2xl:w-[250px]" src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" />
                 </div>
-                <div className="mdLw-[75%] 2xl:w-[55%] text-[#0F172A] lg:flex text-center items-center justify-evenly">
+                <div className="md:w-[75%] xl:w-[65%] 2xl:w-[55%] text-[#0F172A] lg:flex text-center items-center justify-evenly xl:justify-evenly">
                     <ul className="lg:flex w-full text-sm xl:text-base font-semibold text-left lg:text-center z-[-1] lg:z-auto lg:mr-4 lg:w-auto lg:space-x-6 items-center tracking-wide cursor-pointer">
                         <button onClick={scrolling1} className="hover:underline hover:text-black">Expertise</button>
                         <button onClick={scrolling2} className="hover:underline hover:text-black">Services</button>
+                        <button onClick={scrolling4} className="hover:underline hover:text-black">Case Studies</button>
                         <button onClick={scrolling3} className="hover:underline hover:text-black">What you'll get</button>
                     </ul>
                     <a href="tel:8320576622">
                         <button className="mainbutn-opposite">Call Us Now</button>
                     </a>
                 </div>
-                <img alt="gmp partner" className="h-10 w-auto" src="https://storage.googleapis.com/website-bucket-uploads/static/gmp.svg" />
             </nav>
 
             {/* mobile menu */}
@@ -359,6 +368,12 @@ const Ppc = () => {
                                     <div >Services</div>
 
                                 </p>
+                                <p onClick={() => { setIsOpen(!isOpen); scrolling4(); }}
+                                    href="#"
+                                    className="text-slate-900 block px-3 py-2 rounded-md text-base font-medium"
+                                >
+                                    <div >Case Studies</div>
+                                </p>
                                 <p onClick={() => { setIsOpen(!isOpen); scrolling3(); }}
                                     href="#"
                                     className="text-slate-900 block px-3 py-2 rounded-md text-base font-medium"
@@ -377,22 +392,52 @@ const Ppc = () => {
 
             <main className='pt-10'>
                 <section className='flex max-lg:flex-col justify-between items-center px-[5%]'>
-                    <div className='lg:w-[50%] xl:w-[48%] flex flex-col gap-7 md:gap-14 2xl:gap-16 justify-around items-center lg:items-start'>
+                    <div className='lg:w-[46%] xl:w-[48%] flex flex-col gap-7 md:gap-14 2xl:gap-16 justify-around items-center lg:items-start'>
                         <div className='flex flex-col gap-5 lg:gap-8 2xl:gap-10'>
-                            <h1 className='text-[#0E1947] text-lg sm:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold max-lg:text-center'>Certified Google and Meta PPC Agency Helping Brands Win Online</h1>
-                            <h2 className='text-xs 2xl:text-sm font-normal max-lg:text-center'>At AnalyticsLiv, we are a Certified Performance Marketing Agency and Meta Business Partner 
-                                that specializes in Google Ads services, PPC marketing, and data-driven ad strategies. Whether you're a startup or an established brand, our 
-                                campaigns are customized to drive measurable results, boost visibility, and grow your business.
+                            <h1 className='text-[#0E1947] text-lg sm:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold max-lg:text-center'>Your Google & Meta PPC Agency Partner for Scalable Online Growth</h1>
+                            <h2 className='text-xs 2xl:text-sm font-normal max-lg:text-center'>As a Google Partner and Meta Business Partner, AnalyticsLiv focuses on Google Ads services, PPC marketing, and data-driven
+                                strategies. With AI-powered optimization, our campaigns are crafted to boost visibility, generate measurable results,
+                                and grow your business online.
                             </h2>
                         </div>
-                        <div className='flex max-lg:justify-center justify-start items-center gap-7 lg:gap-10'>
-                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/clutch_review.png' alt='clutch_review' />
-                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/trustpilot_review.png' alt='trustpilot_review' className='max-sm:hidden' />
-                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Trustpilot_mobile.svg' alt='trustpilot_review' className='sm:hidden' />
+
+                        <div className='flex max-sm:grid max-sm:grid-cols-2 max-lg:justify-center justify-start items-center gap-7 xl:gap-10'>
+                            <a href='https://www.facebook.com/business/partner-directory/search?solution_type=campaign_management&ref=pd_home_hero_cta&id=9010642655705899&section=overview'
+                                target='_blank' className='w-[130px] xl:w-[150px] 2xl:w-[200px]'>
+                                <img
+                                    alt="meta-partner"
+                                    aria-label="meta-partner"
+                                    src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/MBP%20Badge%20-%20Dark%20backgrounds%401x.png"
+                                    className=''
+                                /></a>
+                            <a href='https://enterprisemarketingportal.google/auth/find-a-partner/analyticslivdigitalllp-in?a=617525855'
+                                target='_blank' className='w-[150px] xl:w-[210px] 2xl:w-[250px] hidden sm:block'>
+                                <img
+                                    alt="gmp-partner"
+                                    aria-label="gmp-partner"
+                                    src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/CE4F38BB.png"
+                                    className=''
+                                /></a>
+                            <a href='https://www.google.com/partners/agency?id=4212880325'
+                                target='_blank' className='w-[125px] xl:w-[125px] 2xl:w-[150px] md:mr-16'>
+                                <img
+                                    alt="googleAds-partner"
+                                    aria-label="googleAds-partner"
+                                    src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Partner-RGB.png"
+                                    className=''
+                                /></a>
                         </div>
+                        <a href='https://enterprisemarketingportal.google/auth/find-a-partner/analyticslivdigitalllp-in?a=617525855'
+                            target='_blank' className='w-[175px] 2xl:w-[200px] sm:hidden'>
+                            <img
+                                alt="gmp-partner"
+                                aria-label="gmp-partner"
+                                src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/CE4F38BB.png"
+                                className=''
+                            /></a>
                     </div>
 
-                    <div className='lg:w-[500px] max-md:mt-12 shadow-ga4FormShadow rounded-[20px] max-lg:px-5 max-lg:py-6 lg:p-6 2xl:p-8 '>
+                    <div className='lg:w-[500px] max-lg:mt-12 shadow-ga4FormShadow rounded-[20px] max-lg:px-5 max-lg:py-6 lg:p-6 2xl:p-8 '>
 
                         <ScrollElement id="contact-form" name="contact-form"></ScrollElement>
                         {
@@ -690,6 +735,12 @@ const Ppc = () => {
                     </div>
                 </section>
 
+                <div className='flex justify-center items-center mt-14 gap-7 lg:gap-10'>
+                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Clutch_icon.png' alt='clutch_review' />
+                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/trustpilot_review.png' alt='trustpilot_review' className='max-sm:hidden' />
+                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Trustpilot_mobile.svg' alt='trustpilot_review' className='sm:hidden' />
+                </div>
+
                 <section className='flex max-lg:flex-col-reverse overflow-hidden pt-8 lg:pt-16'>
                     <div className='lg:w-[40%] bg-[#30486A] flex flex-col justify-center items-start gap-7 max-lg:py-7 px-4 lg:px-20'>
                         <h3 className='text-2xl md:text-3xl 2xl:text-4xl font-bold text-white'>Excited to Get Started?</h3>
@@ -704,6 +755,69 @@ const Ppc = () => {
                         </div>
                         <div className='bg-[#08A4F7] w-[30%] flex justify-center max-md:hidden items-start'>
                             <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Frame%2049.png' alt='Frame 49' className='' />
+                        </div>
+                    </div>
+                </section>
+
+                <section className='px-[4%] 3xl:px-[6%] pt-8 pb-0'>
+                    <ScrollElement id="case-studies" name="case-studies"></ScrollElement>
+                    <div className='text-[34px] font-extrabold text-center'>Case Studies</div>
+                    <div className='grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-20 justify-items-center items-center py-5 md:py-10'>
+                        <div className='flex flex-col justify-between max-md:gap-5 md:h-[420px] lg:h-[480px] xl:h-[560px] 2xl:h-[644px] 3xl:h-[730px] 3xl:w-[500px]'>
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/cs/1744002270316568.png' alt='Shoebacca 26% Higher ROAS' className='rounded-xl' />
+                            <div className='flex flex-col md:justify-between md:h-full gap-3 md:mt-6'>
+                                <h3 className='text-[#111D15] text-lg xl:text-[22px] 2xl:text-2xl font-semibold 3xl:mt-1' style={{
+                                    display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden",
+                                }}>Shoebacca's 26% Higher ROAS:
+                                    A Case Study in Performance Max Campaign Optimization</h3>
+                                <div className='text-[#666666] text-sm xl:text-base' style={{
+                                    display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden",
+                                }}>Shoebacca is a Texas-based e-commerce company offering one of the largest assortments of footwear and apparel. Founded in 2002 on the principles of philanthropy and community, the company is committed to providing a hassle-free shopping experience with free shipping, returns, and a 110% price match guarantee.</div>
+                                <a href='/case-studies/shoebacca-performance-max-roas-increase' target='_blank' className='readmore-cs-button'>
+                                    <button className='ppcbutn-opposite group w-max flex gap-2 items-center'>
+                                        <div className=''>Read Full</div>
+                                        <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Icon.png' alt='GA4 Implementation Service' className='block group-hover:hidden' />
+                                        <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Icon%20(1).png' alt='GA4 Implementation Service' className='hidden group-hover:block' />
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                        <div className='flex flex-col justify-between max-md:gap-5 md:h-[420px] lg:h-[480px] xl:h-[560px] 2xl:h-[644px] 3xl:h-[730px] 3xl:w-[500px]'>
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/cs/1733729425065265.png' alt='Maximizing Lead Generation' className='rounded-xl' />
+                            <div className='flex flex-col md:justify-between md:h-full gap-3 md:mt-5'>
+                                <h3 className='text-[#111D15] text-lg xl:text-[22px] 2xl:text-2xl font-semibold' style={{
+                                    display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden",
+                                }}>Maximizing Lead Generation: 180% Increase in Lead Volume and 60% Reduction in CPL</h3>
+                                <div className='text-[#666666] text-sm xl:text-base' style={{
+                                    display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden",
+                                }}>We Sort It, a New Zealand-based brand offering professional cleaning and lawn mowing services for both residential and commercial clients. The services
+                                    include regular cleaning, deep cleaning, garden maintenance, lawn care, and more. With a focus on quality, reliability, and sustainability, they ensure your space remains clean, neat, and well-maintained</div>
+                                <a href='/case-studies/180-percent-increase-in-lead-volume-and-60-percent-reduction-cpl' target='_blank' className='readmore-cs-button'>
+                                    <button className='ppcbutn-opposite group w-max flex gap-2 items-center'>
+                                        <div className=''>Read Full</div>
+                                        <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Icon.png' alt='GA4 Implementation Service' className='block group-hover:hidden' />
+                                        <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Icon%20(1).png' alt='GA4 Implementation Service' className='hidden group-hover:block' />
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                        <div className='flex flex-col max-md:gap-5 md:h-[420px] lg:h-[480px] xl:h-[560px] 2xl:h-[644px] 3xl:h-[730px] 3xl:w-[500px]'>
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/cs/Case_study_9_Reaching_Right_Audiance.png' alt='Driving 41% more engagement with Google Search Ads' className='rounded-xl' />
+                            <div className='flex flex-col md:justify-between md:h-full gap-3 md:mt-5'>
+                                <h3 className='text-[#111D15] text-lg xl:text-[22px] 2xl:text-2xl font-semibold' style={{
+                                    display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden",
+                                }}>Driving 41% more engagement with Google Search Ads</h3>
+                                <div className='text-[#666666] text-sm xl:text-base' style={{
+                                    display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden",
+                                }}>The client specializes exclusively in providing visitors from across the borders the protection, as driving a car across the border areas will require the mandatory Insurance acceptable to the south of the border in Mexico.</div>
+                                <a href='/case-studies/driving-41-percent-more-engagement-with-google-search-ads' target='_blank' className='readmore-cs-button'>
+                                    <button className='ppcbutn-opposite group w-max flex gap-2 items-center'>
+                                        <div className=''>Read Full</div>
+                                        <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Icon.png' alt='Google Analytics 4 Consulting Services' className='block group-hover:hidden' />
+                                        <img src='https://storage.googleapis.com/website-bucket-uploads/ua-and-ga4/Icon%20(1).png' alt='Google Analytics 4 Consulting Services' className='hidden group-hover:block' />
+                                    </button>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </section>

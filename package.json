@@ -52,7 +52,7 @@
     "react-glider": "^4.0.2",
     "react-google-button": "^0.7.2",
     "react-gtm-module": "^2.0.11",
-    "react-icons": "^5.0.1",
+    "react-icons": "^5.5.0",
     "react-iframe": "^1.8.5",
     "react-multi-carousel": "^2.8.2",
     "react-phone-input-2": "^2.15.1",
@@ -64,6 +64,7 @@
     "react-slick": "^0.29.0",
     "react-spinners": "^0.13.7",
     "react-visibility-sensor": "^5.1.1",
+    "recharts": "^3.1.2",
     "request-ip": "^3.3.0",
     "slick-carousel": "^1.8.1"
   },

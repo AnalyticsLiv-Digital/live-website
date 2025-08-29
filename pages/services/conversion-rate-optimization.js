@@ -1,660 +1,705 @@
-'use client'
-import React, { useState, useRef } from 'react'
-import { FaCheck } from "react-icons/fa6";
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
-import MetaSchemaOg from '../../components/MetaSchemaOg';
-import { InlineWidget } from 'react-calendly';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import Brands from '../../components/brands';
+import React, { useState } from "react";
+import MetaSchemaOg from "../../components/MetaSchemaOg";
+import Faq from "../../components/Faq";
 
 const conversionRateOptimization = () => {
+    const [formData, setFormData] = useState({
+        fullName: "",
+        email: "",
+        company: "",
+        stack: "",
+        message: "",
+        pageSource: "Conversion Rate Optimization",
+    });
+    const [loading, setLoading] = useState(false);
+    const [responseMessage, setResponseMessage] = useState("");
 
-    const [showCalendly, setShowCalendly] = useState(false);
-    const [activeIndex, setActiveIndex] = useState(0);
-    const [activeDropdown, setActiveDropdown] = useState(null);
-    const itemRefs = useRef([]);
-
-    const toggleDropdown = (key) => {
-        setActiveDropdown((prev) => (prev === key ? null : key));
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
     };
 
-    const handleToggle = (index) => {
-        setActiveIndex(activeIndex === index ? null : index);
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        setResponseMessage("");
 
-        setTimeout(() => {
-            if (itemRefs.current[index]) {
-                itemRefs.current[index].scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'nearest',
-                });
+        try {
+            const res = await fetch("/api/serviceContact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+            });
+
+            if (res.ok) {
+                setResponseMessage("Your request has been submitted successfully!");
+                setFormData({ fullName: "", email: "", company: "", stack: "", message: "", pageSource: "Conversion Rate Optimization", });
+            } else {
+                setResponseMessage("Something went wrong. Please try again.");
             }
-        }, 100);
-
+        } catch (error) {
+            setResponseMessage("Server error. Please try again later.");
+        } finally {
+            setLoading(false);
+        }
     };
-
-    const sliderRef = useRef(null);
-
-
-    const handleCalendly = () => {
-        setShowCalendly(true);
-    }
-
-    const cardsData = [
-        {
-            title: 'Revenue Acceleration',
-            description: ["Laser-focused user journeys engineered for conversions", "Data-backed tactics to maximize value from every visitor", "Skyrocket your sales and leave competitors in the dust"],
-            image: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Testing_Optimization.png',
-        },
-        {
-            title: 'Friction-Free User Experiences',
-            description: ["Deeply understand your audience's motivations & pain points", "Seamless, personalized experiences that delight & convert", "Build unbreakable customer loyalty and advocacy"],
-            image: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Revenue%20Acceleration%20img.png',
-        },
-        {
-            title: 'Relentless Testing and Optimization',
-            description: ["Continuous experimentation with A/B tests and multivariate campaigns", "Harness advanced tools like Heat Maps, Session Recordings, and more", "Stay ahead of evolving customer needs and industry trends"],
-            image: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/user-experience.png',
-        },
-
-    ];
-
-    const NextArrow = (props) => {
-        const { onClick } = props;
-        return (
-            <div
-                className="absolute text-white shadow-arrowShadow rounded-full top-1/2 right-[5px] sm:right-[-10px] lg:right-[-10px] transform -translate-y-1/2 z-40 cursor-pointer"
-                onClick={onClick}
-            >
-                <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Right%20Arrow.png" alt="right arrow" className="w-7 md:w-10" />
-            </div>
-        );
-    };
-
-    const PrevArrow = (props) => {
-        const { onClick } = props;
-        return (
-            <div
-                className="absolute text-white shadow-arrowShadow rounded-full top-1/2 left-[5px] sm:left-[-10px] lg:left-[-10px] transform -translate-y-1/2 z-40 cursor-pointer"
-                onClick={onClick}
-            >
-                <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Left%20Arrow.png" alt="left arrow" className="w-7 md:w-10" />
-            </div>
-        );
-    };
-
-    const settings = {
-        infinite: true,
-        initialSlide: 0.5,
-        slidesToShow: 2.5,
-        slidesToScroll: 1.5,
-        dots: true,
-        swipe: true,
-        touchMove: true,
-        draggable: true,
-        responsive: [
-            {
-                breakpoint: 1184,
-                settings: {
-                    slidesToShow: 2,
-                },
-            },
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 1.5,
-                    slidesToScroll: 1.5,
-                },
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    initialSlide: 0.5,
-                    slidesToShow: 1.5,
-                    slidesToScroll: 1.5,
-                },
-            },
-            {
-                breakpoint: 500,
-                settings: {
-                    initialSlide: 0,
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                },
-            },
-        ],
-    };
-
-    const settingsMobile = {
-        infinite: true,
-        initialSlide: 0,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: true,
-        nextArrow: <NextArrow />,
-        prevArrow: <PrevArrow />,
-        dots: true,
-    };
-    const handleNext = () => sliderRef.current.slickNext();
-    const handlePrev = () => sliderRef.current.slickPrev();
-
 
     const content = [
-        {
-            question: "What is Conversion Rate Optimization (CRO)?",
-            answer:
-                "Conversion Rate Optimization (CRO) is the systematic process of enhancing your website or digital platform to boost the percentage of visitors who take a desired action, such as making a purchase, filling out a form, or subscribing to a service. It involves analyzing user behavior, identifying friction points, and implementing data-driven strategies to create a seamless, optimized experience that compels visitors to convert.",
-        },
-        {
-            question: "How can CRO benefit my business?",
-            answer:
-                "CRO can be a game-changer for your business by unlocking the true potential of your digital presence. By optimizing your website and user journeys, you'll experience increased conversions, higher revenue, and improved customer satisfaction. CRO enables you to maximize the value of your existing traffic, ensuring that every visitor becomes a high-value lead or customer.",
-        },
-        {
-            question: "What sets your CRO Service apart?",
-            answer:
-                "Our CRO service stands out with its scientific approach and proprietary methodologies. We leverage advanced analytics tools, in-depth user research, and continuous experimentation to uncover insights and opportunities that others miss. Our team of experts combines technical prowess with creative problem-solving to deliver tailored strategies that drive measurable results for your business.",
-        },
-        {
-            question: "How do you determine which elements need optimization on my website?",
-            answer:
-                "We follow a comprehensive discovery process to identify optimization opportunities on your website. This includes analyzing user behavior data, conducting heuristic evaluations, and gathering qualitative feedback through user testing and surveys. Our team meticulously examines every touchpoint of the user journey, from initial awareness to post-conversion engagement, to pinpoint areas for improvement.",
-        },
-        {
-            question: "Will CRO affect my website's Search Engine Ranking?",
-            answer:
-                "CRO strategies can indirectly impact your website's search engine ranking by improving user experience metrics, such as bounce rates, time on site, and engagement. Search engines prioritize websites that provide a superior user experience, as it correlates with high-quality content and user satisfaction. However, direct ranking factors like keyword optimization and technical SEO should be addressed separately for optimal results.",
-        },
-        {
-            question: "Do I need technical expertise to implement CRO Strategies?",
-            answer:
-                "No, you don't need technical expertise to leverage our CRO services. Our team handles all aspects of strategy development, implementation, and ongoing optimization. We work closely with your existing web development and marketing teams to ensure seamless integration and provide comprehensive training and support throughout the process.",
-        },
-        {
-            question: "How do you measure the success of your CRO offering in 90 days?",
-            answer:
-                "Within the first 90 days, we establish clear Key Performance Indicators (KPIs) aligned with your business objectives, such as conversion rates, revenue growth, or lead generation. We continuously monitor and analyze these metrics, leveraging advanced reporting and attribution models to demonstrate the direct impact of our CRO strategies. Regular performance reviews and data-driven adjustments ensure we deliver tangible, measurable results within this timeframe.",
-        },
-        {
-            question: "What if I don't see significant improvements within 90 days?",
-            answer:
-                "While we strive to deliver substantial improvements within the first 90 days, CRO is an iterative process that requires continuous optimization. If you don't see the desired results initially, we'll conduct a comprehensive analysis to identify areas for further refinement. Our team will work tirelessly to fine-tune the strategies, test new hypotheses, and implement additional enhancements until we achieve your conversion goals.",
-        },
-    ];
-
+        { question: 'How long until we see results?', answer: 'Most clients see a measurable uplift within 4–6 weeks as the first wave of experiments conclude. We prioritize “fast wins” while building a long‑term testing engine.' },
+        { question: 'Which tools do you use?', answer: 'GA4 for analytics, Hotjar/Clarity for behavior, VWO/Optimizely/Google Optimize alternatives for testing. We plug into your stack or propose one.' },
+        { question: 'What does pricing look like?', answer: 'Engagements are typically monthly retainers, scoped by test velocity and design needs. We can start lean and scale as wins compound.' },
+        { question: 'How do you ensure statistical validity?', answer: 'We define MDE, run power calculations, and target 95%+ confidence. Tests have clear stop rules and winner criteria to avoid false positives.' }
+    ]
     return (
         <>
-
             <MetaSchemaOg
                 url="https://analyticsliv.com/services/conversion-rate-optimization"
                 title="Boost Revenue With Conversion Rate Optimization Services - AnalyticsLiv"
                 description="Unlock your website’s full potential with AnalyticsLiv. Our CRO services turn more visitors into leads, sales, and real ROI through performance-driven strategies."
                 twitterTitle="Boost Revenue With Conversion Rate Optimization Services - AnalyticsLiv"
                 twitterDescription="Unlock your website’s full potential with AnalyticsLiv. Our CRO services turn more visitors into leads, sales, and real ROI through performance-driven strategies."
-                extraHead={
-                    <link
-                        rel="stylesheet"
-                        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap"
-                    />
-                }
                 faqData={content}
             />
 
-            {showCalendly && (
-                <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-40 z-50 flex items-center justify-center p-4"
-                    onClick={() => setShowCalendly(false)}>
-                    <div className="relative bg-white rounded-lg shadow-lg sm:p-4 flex flex-col items-center justify-center 
-                        max-w-[380px] w-[100%] sm:w-[90%] h-[80vh] sm:max-w-[400px] sm:h-[450px] lg:max-w-[450px] lg:h-[500px]">
-
-                        <button
-                            className="absolute top-1 left-1 text-gray-500 text-xs font-bold rounded-full w-8 h-8 flex items-center justify-center"
-                            onClick={() => setShowCalendly(false)}
-                        >
-                            ✖
-                        </button>
-
-                        <div className="w-full h-full flex justify-center items-center">
-                            <InlineWidget
-                                url="https://calendly.com/analyticsliv/30min"
-                                styles={{ width: "100%", height: "100%" }}
-                            />
-                        </div>
-                    </div>
-                </div>
-            )}
-
-            <section className='flex max-md:flex-col justify-between max-lg:items-start items-center px-[5%] max-sm:pt-6 pt-8'>
-                <div className='md:w-[50%] xl:w-[45%] flex flex-col gap-7 md:gap-14 2xl:gap-16 justify-around items-center md:items-start'>
-                    <div className='flex flex-col gap-5 md:gap-8 2xl:gap-10'>
-                        <h1 className='text-[#0E1947] text-lg sm:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold max-md:text-center'>
-                            Ignite Your Online Growth with Conversion Focused Analytics
-                        </h1>
-                        <div className='text-[#0E1947] text-sm sm:text-lg xl:text-2xl font-bold max-sm:text-center'>🔍 Optimize ➝ Convert ➝ Grow 🚀</div>
-                        <h3 className='text-xs 2xl:text-sm font-normal max-md:text-center'>
-                            At AnalyticsLiv, we craft seamless, high-converting user journeys using data-backed strategies and relentless optimization. With heat maps, session recordings, and A/B testing, we ensure friction-free experiences that drive engagement & loyalty.
-                        </h3>
-                        <div className='flex justify-center md:justify-start items-center gap-3 md:gap-2 lg:gap-5'>
-                            <a href='/contact'><button className='contact-us-btn mainbutn'>Request a Demo</button></a>
-                            <div onClick={() => handleCalendly()} className='contact-us-btn group hover:cursor-pointer flex items-center gap-2'>
-                                <button className='text-xs 2xl:text-sm translate-x-1 group-hover:translate-x-0 transition-all duration-300 font-bold max-sm:w-full max-md:text-center'>Book a Call Today</button>
-                                <div className="opacity-0 translate-x-2 sm:translate-x-8 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
-                                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%201.svg' alt='arrow right' className='w-2' />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='flex max-sm:flex-wrap max-md:justify-center justify-start w-full items-center gap-7 md:gap-10 xl:gap-16'>
-                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/clutch_review.png' alt='clutch review analyticsliv' />
-                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Sortlist_Review_4.8.png' alt='Sortlist review analyticsliv' />
-                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Trustpilot_mobile.svg' alt='trustpilot review analyticsliv' className='' />
-                    </div>
-                </div>
-
-                <div className='md:w-[50%] xl:w-[48%] max-md:hidden flex justify-center'>
-                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/CRO_Main_Img.png' alt='Boost your sales with expert Conversion Rate Optimization (CRO) services' />
-                </div>
-            </section>
-
-            <section className='px-4 md:px-[5%] py-12'>
-                <Brands />
-            </section>
-
-            <section className="pt-5 pb-14 xl:pt-16 lg:pl-10 2xl:pl-[5%] max-md:overflow-hidden">
-                <div className="flex max-md:flex-col items-center justify-between px-[3%]">
-                    <div className="md:w-[70%] max-md:px-4 flex flex-col justify-start">
-                        <h2 className="text-[#100F1B] text-xl md:text-[26px] 2xl:text-3xl font-bold text-center md:text-start">
-                            Unlock Explosive Growth with Our Cutting-Edge CRO Solutions
-                        </h2>
-                        <div className="text-[#373642] max-md:text-center text-[13px] md:text-base font-normal pt-8">
-                            Drive revenue acceleration with laser-focused user journeys and data-backed strategies that maximize conversions.
-                            Create friction-free experiences by deeply understanding user behavior, delivering seamless, personalized interactions
-                            that boost loyalty.
-                        </div>
-                    </div>
-                    <div className="flex flex-col max-sm:hidden justify-center items-center gap-2 max-md:pt-5">
-                        <div className="flex justify-center items-center gap-5">
-                            <button
-                                onClick={handlePrev}
-                                className="group relative overflow-hidden z-10 bg-white border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[8px] px-4 py-3 mb-3 transition-all duration-300 ease-linear hover:bg-[#08A4F7]"
-                            >
-                                <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector%20(1).svg' alt='left vector' className='w-3.5 h-3.5 group-hover:hidden block' />
-
-                                <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20right%20white.svg' alt='right vector' className='w-3.5 h-3.5 hidden group-hover:block' />
-
-                            </button>
-                            <button
-                                onClick={handleNext}
-                                className="group relative overflow-hidden z-10 bg-white border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[8px] px-4 py-3 mb-3 transition-all duration-300 ease-linear hover:bg-[#08A4F7]"
-                            >
-                                <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector.svg' alt='right vector' className='w-3.5 h-3.5 group-hover:hidden block' />
-                                <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20left%20white.svg' alt='left vector' className='w-3.5 h-3.5 hidden group-hover:block' />
-                            </button>
-                        </div>
-                        <a href='/services'><button className="readmore-button mainbutn-opposite">Read More Here</button></a>
-                    </div>
-                </div>
-                <div className="max-sm:hidden sm:pl-5 xl:pl-[3%] py-8 carousel-custom overflow-hidden">
-                    <Slider ref={sliderRef} {...settings}>
-                        {cardsData?.map((card, index) => (
-                            <div key={index} className=" custom-padding-370 custom-padding-540 sm:px-4 flex justify-center">
-                                <div className="border rounded-3xl border-[#F2F2F2] mx-auto h-[280px] w-[320px] md:w-[440px] lg:w-[420px] 2xl:w-[480px]">
-                                    <div className="h-[160px] text-[#373642] text-sm font-normal p-5 md:p-6">
-                                        {card?.description?.map((desc, i) => (
-                                            <div key={i} className='flex items-start gap-2 text-black mb-2'>
-                                                <img
-                                                    src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/point1.png'
-                                                    alt='Analyticsliv CRO'
-                                                    className="w-4 h-4 2xl:mt-1"
-                                                />
-                                                <div className='text-xs 2xl:text-sm'>{desc}</div>
-                                            </div>
-                                        ))}
+            <div style={{ fontFamily: 'ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji"' }}>
+                <div class="bg-white text-slate-800">
+                    <section class="relative overflow-hidden border-b border-slate-200">
+                        <div class="absolute inset-0 bg-gradient-to-br from-[#EEF6FF] via-white to-[#F7F7FF]"></div>
+                        <div class="relative mx-auto max-w-7xl px-6 py-16 lg:py-20">
+                            <div class="grid items-center gap-12 md:grid-cols-2">
+                                <div>
+                                    <p class="mb-3 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white px-4 py-1 text-xs font-medium tracking-wide text-emerald-700">
+                                        <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+                                        Conversion Rate Optimization
+                                    </p>
+                                    <h1 class="text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl md:text-5xl text-slate-900">
+                                        From Clicks to Customers:{" "}
+                                        <span class="bg-gradient-to-r from-slate-900 to-emerald-600 bg-clip-text text-transparent">
+                                            CRO That Compounds Growth
+                                        </span>
+                                    </h1>
+                                    <p class="mt-5 max-w-2xl text-lg text-slate-600">
+                                        We turn your website into a performance engine with research,
+                                        testing, and design—converting visitors into customers for
+                                        ecommerce, banking, travel, and media.
+                                    </p>
+                                    <div class="mt-7 flex flex-wrap items-center gap-3">
+                                        <a
+                                            href="#contact"
+                                            class="rounded-2xl bg-slate-900 px-6 py-3 text-white shadow-lg shadow-slate-900/10 transition hover:opacity-90"
+                                        >
+                                            Get a CRO Audit
+                                        </a>
+                                        <a
+                                            href="#services"
+                                            class="rounded-2xl border border-slate-300 px-6 py-3"
+                                        >
+                                            View Services
+                                        </a>
                                     </div>
-                                    <div className="h-[140px] bg-[#08A4F7] rounded-b-3xl">
-                                        <div className="flex items-center">
-                                            <div className="w-[30%] h-[100px] pl-2 md:pl-3 2xl:pl-8">
-                                                <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/white_bg.png" alt="white_bg" className="absolute max-md:h-24 max-md:w-24" />
-                                                <img src={card.image} alt={card.title} className="relative max-md:h-16 max-md:w-16 md:w-16 top-4 left-4 md:top-5 md:left-5" />
+                                </div>
+                                <div class="order-first md:order-none">
+                                    <div class="relative mx-auto w-full max-w-xl rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                                        <div class="grid gap-4 sm:grid-cols-2">
+                                            <div class="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-5">
+                                                <div class="text-3xl font-extrabold text-slate-900">
+                                                    95%+
+                                                </div>
+                                                <div class="mt-1 text-sm text-slate-600">
+                                                    Experiment accuracy*
+                                                </div>
                                             </div>
-                                            <div className="flex flex-col max-md:pl-10 h-[140px] pl-5 pr-2 2xl:pr-5 items-start justify-center gap-1 text-white">
-                                                <div className="text-xl font-bold">{card.title}</div>
+                                            <div class="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-5">
+                                                <div class="text-3xl font-extrabold text-slate-900">
+                                                    10+/mo
+                                                </div>
+                                                <div class="mt-1 text-sm text-slate-600">
+                                                    A/B test velocity*
+                                                </div>
+                                            </div>
+                                            <div class="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-5">
+                                                <div class="text-3xl font-extrabold text-slate-900">
+                                                    +30%
+                                                </div>
+                                                <div class="mt-1 text-sm text-slate-600">
+                                                    Avg. conversion lift*
+                                                </div>
+                                            </div>
+                                            <div class="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-5">
+                                                <div class="text-3xl font-extrabold text-slate-900">
+                                                    ‑40%
+                                                </div>
+                                                <div class="mt-1 text-sm text-slate-600">
+                                                    Bounce rate drop*
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        ))}
-                    </Slider>
-                </div>
-                <div className="sm:hidden sm:pl-5 xl:pl-16 py-8 max-sm:relative carousel-custom ">
-                    <Slider {...settingsMobile}>
-                        {cardsData?.map((card, index) => (
-                            <div key={index} className="sm:px-4 flex justify-center">
-                                <div className="border rounded-3xl border-[#F2F2F2] mx-auto h-[280px] w-[320px] md:w-[440px] lg:w-[420px] 2xl:w-[480px]">
-                                    <div className="h-[140px] text-[#373642] text-sm font-normal p-5 md:p-8">
-                                        {card?.description?.map((desc, i) => (
-                                            <div key={i} className='flex items-start gap-2 text-black mb-2'>
-                                                <img
-                                                    src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/point1.png'
-                                                    alt='Analyticsliv CRO'
-                                                    className="w-4 h-4 mt-1"
-                                                />
-                                                <div className='text-xs 2xl:text-sm'>{desc}</div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                    <div className="h-[140px] bg-[#08A4F7] rounded-b-3xl">
-                                        <div className="flex items-center">
-                                            <div className="w-[30%] h-[100px] pl-2 md:pl-3 2xl:pl-8">
-                                                <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/white_bg.png" alt="white_bg" className="absolute max-md:h-24 max-md:w-24" />
-                                                <img src={card?.image} alt={card?.title} className="relative max-md:h-16 max-md:w-16 top-4 left-5" />
-                                            </div>
-                                            <div className="flex flex-col max-md:pl-14 h-[140px] items-start justify-center gap-1 text-white">
-                                                <div className="text-xl font-bold">{card?.title}</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                        </div>
+                    </section>
+
+                    <section id="success" class="py-16">
+                        <div class="mx-auto max-w-7xl px-6">
+                            <div class="mb-10 text-center">
+                                <p class="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
+                                    Selected outcomes
+                                </p>
+                                <h2 class="text-2xl md:text-3xl font-bold text-slate-900">
+                                    Experiments That Drove Measurable Revenue
+                                </h2>
+                                <p class="mt-2 text-slate-600 max-w-3xl mx-auto">
+                                    Aligned, comparable metrics across verticals — quick to scan,
+                                    easy to trust. Replace with your verified case studies.
+                                </p>
                             </div>
-                        ))}
-                    </Slider>
-                </div>
-            </section>
 
-
-            <section className='bg-[#30486A] rounded-[5px] text-white mx-[3%] xl:mx-[5%] py-7 px-5 xl:px-7 2xl:p-12'>
-                <h2 className='text-lg md:text-2xl xl:text-3xl font-bold text-center pb-8 2xl:pb-12'>Key Advantages of Our CRO Services</h2>
-                <div className='flex max-lg:grid max-lg:grid-cols-2 max-sm:grid-cols-1 max-lg:gap-6 items-start gap-2 xl:gap-5 2xl:gap-10'>
-                    <div className='flex gap-3 xl:gap-3 2xl:gap-5 items-start lg:w-[25%]'>
-                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/big-data-analytics%20(1)%201.svg' alt='Maximize Potential'
-                            className='bg-[#FAE0E1] rounded-[5px] px-3 py-1.5 min-w-[80px] min-h-[70px] lg:min-h-[80px] max-h-[70px] lg:max-h-[80px]' />
-                        <div className='flex flex-col justify-between gap-3'>
-                            <div className='text-xs xl:text-[13px] 2xl:text-sm font-bold'>Maximize Potential</div>
-                            <div className='text-[10px] xl:text-[10px] 2xl:text-xs font-normal'>Optimize user journeys with data-driven strategies that boost conversions & maximize every visitor’s value.</div>
-                        </div>
-                    </div>
-
-                    <div className='flex gap-3 xl:gap-3 2xl:gap-5 items-start lg:w-[25%]'>
-                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/report%20(5)%201.svg' alt='Eliminate Friction'
-                            className='bg-[#F3DEB3] rounded-[5px] px-3 py-1.5 min-w-[80px] min-h-[70px] lg:min-h-[80px] max-h-[70px] lg:max-h-[80px]' />
-                        <div className='flex flex-col justify-between gap-3'>
-                            <div className='text-xs xl:text-[13px] 2xl:text-sm font-bold'>Eliminate Friction</div>
-                            <div className='text-[10px] xl:text-[10px] 2xl:text-xs font-normal'>Enhance engagement with friction-free, personalized interactions that build customer loyalty & drive long-term growth.</div>
-                        </div>
-                    </div>
-
-                    <div className='flex gap-3 xl:gap-3 2xl:gap-5 items-start lg:w-[25%]'>
-                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/team-bonding%201.svg' alt='Continuous Growth'
-                            className='bg-[#CBCFFA] rounded-[5px] px-3 py-1.5 min-w-[80px] min-h-[70px] lg:min-h-[80px] max-h-[70px] lg:max-h-[80px]' />
-                        <div className='flex flex-col justify-between gap-3'>
-                            <div className='text-xs xl:text-[13px] 2xl:text-sm font-bold'>Continuous Growth</div>
-                            <div className='text-[10px] xl:text-[10px] 2xl:text-xs font-normal'>Leverage A/B testing, heatmaps, & session recordings to continuously refine & improve website performance.</div>
-                        </div>
-                    </div>
-
-                    <div className='flex gap-3 xl:gap-3 2xl:gap-5 items-start lg:w-[25%]'>
-                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/wealth.svg' alt='Outperform Competitors'
-                            className='bg-[#D7FACB] rounded-[5px] px-3 py-1.5 min-w-[80px] min-h-[70px] lg:min-h-[80px] max-h-[70px] lg:max-h-[80px]' />
-                        <div className='flex flex-col justify-between gap-3'>
-                            <div className='text-xs xl:text-[13px] 2xl:text-sm font-bold'>Outperform Competitors</div>
-                            <div className='text-[10px] xl:text-[10px] 2xl:text-xs font-normal'>Our systematic approach, from goal setting to iterative testing, ensures measurable improvements & sustainable business growth.</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-            <section className='fuel relative overflow-hidden'>
-                <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-2 md:pb-0 z-20">
-                    <div>
-                        <h3 className='text-[32px] font-semibold text-black leading-[1.5em] font-rbt text-center'>Our Proven CRO Methodology</h3>
-                    </div>
-                    <p className='text-[18px] font-medium text-black leading-[1.5em] font-rbt text-center mb-4'>We've refined a battle-tested process to propel your online success</p>
-                    <div className='mb-[35px] md:w-[90%] m-auto md:mb-0'>
-                        <div className='innerfuel mt-10'>
-                            <ul className='fs relative mb-[15px] pt-[20px] flex items-center md:flex-row flex-col'>
-                                <li className='relative text-start md:pr-10 text-[#243238] sm:w-1/2 w-full md:order-1 order-2'>
-                                    <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[17px] leading-8 font-semibold'>Define Your Goals and Objectives</h4>
-                                    <div className='text-[#646464] text-[14px] font-normal font-gilroy2 leading-6 mb-5'>
-                                        <div className='mb-2 flex items-start gap-1'>
-                                            <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
-                                            <p>Start by clearly defining the specific goals you want to achieve through CRO efforts. This could be increasing signups for free trials, generating leads through contact forms, or boosting sales of specific services.</p></div>
-                                        <div className='mb-2 flex items-start gap-1'>
-                                            <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
-                                            <p>Define success metrics for each goal. These might include conversion rate, number of leads generated, or average order value.</p></div>
-                                    </div>
-                                </li>
-                                <li className='relative md:pl-9 sm:w-1/2 w-full md:order-2 order-1 flex items-center md:justify-end justify-center'>
-                                    <img src="/Fuel_Process_Step_1.png" alt="best ecommerce marketing agency" className='h-auto w-[350px]' />
-                                </li>
-                            </ul>
-                            <ul className='sc relative mb-[15px] pt-[20px] flex items-center md:flex-row-reverse flex-col'>
-                                <li className='relative text-start md:pl-10 text-[#243238] sm:w-1/2 w-full md:order-1 order-2'>
-                                    <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[17px] leading-8 font-semibold'>Understand Your Users</h4>
-                                    <p className='text-[#646464] text-base font-medium font-gilroy2 leading-6 mb-[10px]'>Conduct user research to understand your target audience's needs, pain points, and behavior on your website. Here are some methods:</p>
-                                    <div className='text-[#646464] text-[14px] font-normal font-gilroy2 leading-6 mb-5'>
-                                        <div className='cursor-pointer w-[90%] border border-solid border-[#30486a21] p-3 mb-[10px] rounded-[10px]' onClick={() => toggleDropdown('fst')}>
-                                            <div className={`flex items-center justify-between ${activeDropdown === 'fst' ? 'mb-2' : 'mb-0'}`}>
-                                                <div className=' flex items-start gap-1 font-semibold'>
-                                                    <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
-                                                    <p>Website Analytics</p></div>
-                                                <div className='clk'>
-                                                    {activeDropdown === 'fst' ? <FaChevronUp className='w-4 h-4' /> : <FaChevronDown className='w-4 h-4' />}
-                                                </div>
-                                            </div>
-                                            {activeDropdown === 'fst' && <div className='ml-3'>
-                                                <p>Utilize tools like Google Analytics to analyze user behavior, such as traffic sources, page visits, time on site, and click-through rates.</p></div>}
-                                        </div>
-                                        <div className='cursor-pointer w-[90%] border border-solid border-[#30486a21] p-2 mb-[10px] rounded-[10px]' onClick={() => toggleDropdown('scn')}>
-                                            <div className={`flex items-center justify-between ${activeDropdown === 'scn' ? 'mb-2' : 'mb-0'}`}>
-                                                <div className=' flex items-start gap-1 font-semibold'>
-                                                    <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
-                                                    <p>Heatmaps & Session Recordings</p></div>
-                                                <div className='clk'>
-                                                    {activeDropdown === 'scn' ? <FaChevronUp className='w-4 h-4' /> : <FaChevronDown className='w-4 h-4' />}
-                                                </div>
-                                            </div>
-                                            {activeDropdown === 'scn' && <div className='mb-2 ml-3'>
-                                                <p>Track user interactions with your website to see where they click, scroll, and abandon conversions.</p></div>}
-                                        </div>
-                                    </div>
-                                </li>
-                                <li className='relative md:pr-9 sm:w-1/2 w-full md:order-2 order-1 flex items-center md:justify-start justify-center'>
-                                    <img src="/Fuel_Process_Step_2.png" alt="Audience segmentation" className='h-auto w-[350px]' />
-                                </li>
-                            </ul>
-                            <ul className='thr relative mb-[15px] pt-[20px] flex items-center md:flex-row flex-col'>
-                                <li className='relative text-start md:pr-10 text-[#243238] sm:w-1/2 w-full md:order-1 order-2'>
-                                    <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[17px] leading-8 font-semibold'>Conduct a CRO Audit</h4>
-                                    <p className='text-[#646464] text-base font-medium font-gilroy2 leading-6 mb-[10px]'>Evaluate your website's current performance from a conversion optimization perspective. Identify elements that might be hindering user experience or hindering conversions. Consider these aspects</p>
-                                    <div className='text-[#646464] text-[14px] font-normal font-gilroy2 leading-6 mb-5'>
-                                        <div className='cursor-pointer w-[90%] border border-solid border-[#30486a21] p-3 mb-[10px] rounded-[10px]' onClick={() => toggleDropdown('thd')}>
-                                            <div className={`flex items-center justify-between ${activeDropdown === 'thd' ? 'mb-2' : 'mb-0'}`}>
-                                                <div className=' flex items-start gap-1 font-semibold'>
-                                                    <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
-                                                    <p>Website Usability</p></div>
-                                                <div>
-                                                    {activeDropdown === 'thd' ? <FaChevronUp /> : <FaChevronDown />}
-                                                </div>
-                                            </div>
-                                            {activeDropdown === 'thd' &&
-                                                <div className='mb-2 ml-3'>
-                                                    <p>Is your website easy to navigate? Can users find the information they need quickly?</p></div>}
-                                        </div>
-                                        <div className='cursor-pointer w-[90%] border border-solid border-[#30486a21] p-3 mb-[10px] rounded-[10px]' onClick={() => toggleDropdown('fr')}>
-                                            <div className={`flex items-center justify-between ${activeDropdown === 'fr' ? 'mb-2' : 'mb-0'}`}>
-                                                <div className=' flex items-start gap-1 font-semibold'>
-                                                    <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
-                                                    <p>Value Proposition</p></div>
-                                                <div>
-                                                    {activeDropdown === 'fr' ? <FaChevronUp /> : <FaChevronDown />}
-                                                </div>
-                                            </div>
-                                            {activeDropdown === 'fr' &&
-                                                <div className='mb-2 ml-3'>
-                                                    <p>Are you clearly communicating the value proposition of your services?</p></div>}
-                                        </div>
-                                        <div className='cursor-pointer w-[90%] border border-solid border-[#30486a21] p-3 mb-[10px] rounded-[10px]' onClick={() => toggleDropdown('fv')}>
-                                            <div className={`flex items-center justify-between ${activeDropdown === 'fv' ? 'mb-2' : 'mb-0'}`}>
-                                                <div className=' flex items-start gap-1 font-semibold'>
-                                                    <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
-                                                    <p>Call to Actions (CTAs)</p></div>
-                                                <div>
-                                                    {activeDropdown === 'fv' ? <FaChevronUp /> : <FaChevronDown />}
-                                                </div>
-                                            </div>
-                                            {activeDropdown === 'fv' &&
-                                                <div className='mb-2 ml-3'>
-                                                    <p>Are your CTAs clear, compelling, and strategically positioned?</p></div>}
-                                        </div>
-                                        <div className='cursor-pointer w-[90%] border border-solid border-[#30486a21] p-3 mb-[10px] rounded-[10px]' onClick={() => toggleDropdown('sx')}>
-                                            <div className={`flex items-center justify-between ${activeDropdown === 'sx' ? 'mb-2' : 'mb-0'}`}>
-                                                <div className=' flex items-start gap-1 font-semibold'>
-                                                    <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
-                                                    <p>Mobile Responsiveness</p></div>
-                                                <div>
-                                                    {activeDropdown === 'sx' ? <FaChevronUp /> : <FaChevronDown />}
-                                                </div>
-                                            </div>
-                                            {activeDropdown === 'sx' &&
-                                                <div className='mb-2 ml-3'>
-                                                    <p>Does your website provide a seamless experience on all devices, including mobile phones and tablets?</p></div>}
-                                        </div>
-                                    </div>
-                                </li>
-                                <li className='relative md:pl-9 sm:w-1/2 w-full md:order-2 order-1 flex items-center md:justify-end justify-center'>
-                                    <img src="/Fuel_Process_Step_3.png" alt="Google Ads expert" className='h-auto w-[350px]' />
-                                </li>
-                            </ul>
-                            <ul className='fr relative mb-[15px] pt-[20px] flex items-center md:flex-row-reverse flex-col'>
-                                <li className='relative text-start md:pl-10 text-[#243238] sm:w-1/2 w-full md:order-1 order-2'>
-                                    <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[17px] leading-8 font-semibold'>Prioritize Opportunities for Improvement</h4>
-                                    <div className='text-[#646464] text-[14px] font-normal font-gilroy2 leading-6 mb-5'>
-                                        <div className='mb-2 flex items-start gap-1'>
-                                            <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
-                                            <p>Based on your user research and CRO audit findings, prioritize areas with the highest potential for improvement. Consider factors like impact on conversion rate, ease of implementation, and resource availability.</p></div>
-                                    </div>
-                                </li>
-                                <li className='relative md:pl-9 sm:w-1/2 w-full md:order-2 order-1 flex items-center md:justify-start justify-center'>
-                                    <img src="/Fuel_Process_Step_4.png" alt="google ads management service" className='h-auto w-[350px]' />
-                                </li>
-                            </ul>
-                            <ul className='fv relative mb-[15px] pt-[20px] flex items-center md:flex-row flex-col'>
-                                <li className='relative text-start md:pr-10 text-[#243238] sm:w-1/2 w-full md:order-1 order-2'>
-                                    <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[17px] leading-8 font-semibold'>Develop Hypotheses for Testing</h4>
-                                    <div className='text-[#646464] text-[14px] font-normal font-gilroy2 leading-6 mb-5'>
-                                        <div className='mb-2 flex items-start gap-1'>
-                                            <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
-                                            <p>Formulate clear hypotheses about how specific changes to your website will impact conversion rates. These hypotheses should be based on user research and data insights.</p></div>
-                                    </div>
-                                </li>
-                                <li className='relative md:pl-9 sm:w-1/2 w-full md:order-2 order-1 flex items-center md:justify-end justify-center'>
-                                    <img src="/Fuel_Process_Step_5.png" alt="Lead Generation Experts" className='h-auto w-[350px]' />
-                                </li>
-                            </ul>
-                            <ul className='six relative mb-[15px] pt-[20px] flex items-center md:flex-row-reverse flex-col'>
-                                <li className='relative text-start md:pl-10 text-[#243238] sm:w-1/2 w-full md:order-1 order-2'>
-                                    <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[17px] leading-8 font-semibold'>A/B Testing & Data Analysis</h4>
-                                    <div className='text-[#646464] text-[14px] font-normal font-gilroy2 leading-6 mb-5'>
-                                        <div className='mb-2 flex items-start gap-1'>
-                                            <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
-                                            <p>Implement A/B testing to compare different versions of your website elements and see which ones perform better. A/B testing allows you to test different hypotheses and gather data on which variations drive higher conversions.</p></div>
-                                        <div className='mb-2 flex items-start gap-1'>
-                                            <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
-                                            <p>Track key metrics and analyze the results of your A/B tests to determine the most effective variations.</p></div>
-                                    </div>
-                                </li>
-                                <li className='relative md:pl-9 sm:w-1/2 w-full md:order-2 order-1 flex items-center md:justify-start justify-center'>
-                                    <img src="/Fuel_Process_Step_6.png" alt="mobile app marketing" className='h-auto w-[350px]' />
-                                </li>
-                            </ul>
-                            <ul className='seven relative pt-[20px] flex items-center md:flex-row flex-col'>
-                                <li className='relative text-start md:pr-10 text-[#243238] sm:w-1/2 w-full md:order-1 order-2'>
-                                    <h4 className='text-[#1E1E1E] md:mb-4 mb-[10px] md:mt-0 mt-[10px] text-[17px] leading-8 font-semibold'>Iteration & Optimization</h4>
-                                    <div className='text-[#646464] text-[14px] font-normal font-gilroy2 leading-6 mb-0 md:mb-3'>
-                                        <div className='mb-2 flex items-start gap-1'>
-                                            <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
-                                            <p>Based on test results, implement the winning variations on your website.</p></div>
-                                        <div className='mb-2 flex items-start gap-1'>
-                                            <span className='text-[#30486ac4] mt-[5px]'><FaCheck /></span>
-                                            <p>This is an iterative process. Continue to monitor performance, conduct new user research, and form new hypotheses for testing to continuously optimize your website for conversions.</p></div>
-                                    </div>
-                                </li>
-                                <li className='relative md:pl-9 sm:w-1/2 w-full md:order-2 order-1 flex items-center md:justify-end justify-center'>
-                                    <img src="/Fuel_Process_Step_7.png" alt="Conversion Rate Optimization Services" className='h-auto w-[350px]' />
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section className='flex max-lg:flex-col-reverse overflow-hidden pt-2 md:pt-8 lg:pt-16'>
-                <div className='lg:w-[40%] bg-[#30486A] flex flex-col justify-center items-start gap-7 max-lg:py-7 px-4 lg:px-8 xl:px-16 2xl:px-20'>
-                    <h2 className='text-[20px] md:text-[25px] 2xl:text-[30px] font-bold text-white'>Transform Clicks into Conversions with Our CRO Expertise</h2>
-                    <div className='text-base font-normal text-[#E2DEDC]'>Schedule a free consultation with our experts and discover how we can elevate your business
-                    </div>
-                    <a href='/contact'><button className='contact-us-btn mainbutn'>Contact Us Now</button></a>
-                </div>
-                <div className='lg:w-[60%] min-h-[250px] sm:min-h-[350px] overflow-hidden 2xl:min-h-[430px] flex'>
-                    <div className='w-full lg:w-[70%] relative'>
-                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/people_collaborate.png' alt='Custom Data Pipeline Solutions' className='absolute sm:w-full sm:h-full' />
-                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Frame%2047.png' alt='Frame 47' className='absolute px-5 md:right-[50px] 2xl:right-[16%] pt-8' />
-                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Rectangle%2026.png' alt='Rectangle 26' className='absolute right-0 top-16' />
-                    </div>
-                    <div className='bg-[#08A4F7] w-[30%] flex justify-center max-md:hidden items-start'>
-                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Frame%2049.png' alt='Frame 49' className='' />
-                    </div>
-                </div>
-            </section>
-
-            <section className="faq-section flex md:mb-3 flex-col md:flex-row px-4 max-sm:pt-12 py-9 md:py-14 md:px-8 lg:px-16 md:pb-5 xl:mb-10 xl:pt-14 gap-5 lg:gap-8">
-                <div className="md:w-1/3 flex flex-col md:gap-7 justify-center max-md:text-center sm:justify-start md:pt-7">
-                    <h2 className="text-3xl max-md:flex max-sm:flex-col max-md:justify-center max-md:items-center max-md:gap-2.5 lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-gray-800">
-                        Frequently Asked <div className="text-[#08A4F7] lg:pt-3 xl:pt-4 2xl:pt-5">Questions</div>
-                    </h2>
-                    <p className="mt-4 max-md:mb-5 text-base xl:text-lg text-gray-600 leading-snug">
-                        Discover key FAQs designed to simplify your marketing and analytics approach, helping you achieve better results with actionable guidance.
-                    </p>
-                </div>
-
-                <div className="md:w-2/3 max-h-[400px] overflow-y-auto custom-scrollbar py-5 pr-3 lg:pr-5">
-
-                    <div className="flex flex-col gap-5">
-                        {content?.map((item, index) => (
-                            <div
-                                key={index}
-                                ref={(el) => (itemRefs.current[index] = el)}
-                                className={`faq-click rounded-2xl px-4 lg:px-12 py-4 lg:py-5 cursor-pointer ${activeIndex === index ? 'text-white bg-[#08A4F7]' : 'text-[#232A42]'
-                                    }`}
-                                style={{
-                                    boxShadow: activeIndex === index ? 'none' : '18px 15px 35px 0px #00000017',
-                                }}
-                                onClick={() => handleToggle(index)}
-                            >
-                                <div className="flex items-center justify-between gap-3">
+                            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                                <article class="group relative flex flex-col items-center justify-between rounded-3xl border border-emerald-200 bg-white p-6 text-center shadow-sm transition hover:shadow-md">
                                     <div>
-                                        <h3 className="text-[13px] sm:text-base font-semibold">{item?.question}</h3>
-
-                                        {activeIndex === index && (
-                                            <div className="text-[10px] sm:text-xs pt-3 font-normal w-[95%]">{item?.answer}</div>
-                                        )}
+                                        <div class="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-700 border border-emerald-200">
+                                            ✓
+                                        </div>
+                                        <div class="mt-3 text-4xl font-extrabold text-slate-900 leading-none">
+                                            +22%
+                                        </div>
+                                        <div class="mt-1 text-sm font-medium text-slate-700">
+                                            Checkout Completion
+                                        </div>
+                                        <p class="mt-2 text-sm text-slate-600">
+                                            Ecommerce: streamlined steps, trust cues, mobile-first UI.
+                                        </p>
                                     </div>
+                                    <div class="mt-4 h-px w-12 bg-emerald-200"></div>
+                                    <div class="mt-3 text-xs uppercase tracking-wide text-emerald-700">
+                                        Retail
+                                    </div>
+                                </article>
+
+                                <article class="group relative flex flex-col items-center justify-between rounded-3xl border border-sky-200 bg-white p-6 text-center shadow-sm transition hover:shadow-md">
+                                    <div>
+                                        <div class="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-sky-50 text-sky-700 border border-sky-200">
+                                            ✈
+                                        </div>
+                                        <div class="mt-3 text-4xl font-extrabold text-slate-900 leading-none">
+                                            +15%
+                                        </div>
+                                        <div class="mt-1 text-sm font-medium text-slate-700">
+                                            Bookings Confirmed
+                                        </div>
+                                        <p class="mt-2 text-sm text-slate-600">
+                                            Travel: fare card hierarchy, urgency & reassurance copy.
+                                        </p>
+                                    </div>
+                                    <div class="mt-4 h-px w-12 bg-sky-200"></div>
+                                    <div class="mt-3 text-xs uppercase tracking-wide text-sky-700">
+                                        Travel
+                                    </div>
+                                </article>
+
+                                <article class="group relative flex flex-col items-center justify-between rounded-3xl border border-indigo-200 bg-white p-6 text-center shadow-sm transition hover:shadow-md">
+                                    <div>
+                                        <div class="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-indigo-50 text-indigo-700 border border-indigo-200">
+                                            🏦
+                                        </div>
+                                        <div class="mt-3 text-4xl font-extrabold text-slate-900 leading-none">
+                                            +18%
+                                        </div>
+                                        <div class="mt-1 text-sm font-medium text-slate-700">
+                                            Applications Submitted
+                                        </div>
+                                        <p class="mt-2 text-sm text-slate-600">
+                                            BFSI: form reduction, progressive steps, trust badges.
+                                        </p>
+                                    </div>
+                                    <div class="mt-4 h-px w-12 bg-indigo-200"></div>
+                                    <div class="mt-3 text-xs uppercase tracking-wide text-indigo-700">
+                                        Banking
+                                    </div>
+                                </article>
+
+                                <article class="group relative flex flex-col items-center justify-between rounded-3xl border border-amber-200 bg-white p-6 text-center shadow-sm transition hover:shadow-md">
+                                    <div>
+                                        <div class="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-50 text-amber-700 border border-amber-200">
+                                            📰
+                                        </div>
+                                        <div class="mt-3 text-4xl font-extrabold text-slate-900 leading-none">
+                                            +27%
+                                        </div>
+                                        <div class="mt-1 text-sm font-medium text-slate-700">
+                                            Email Opt‑ins
+                                        </div>
+                                        <p class="mt-2 text-sm text-slate-600">
+                                            Media: message‑matched templates & paywall micro‑journeys.
+                                        </p>
+                                    </div>
+                                    <div class="mt-4 h-px w-12 bg-amber-200"></div>
+                                    <div class="mt-3 text-xs uppercase tracking-wide text-amber-700">
+                                        Publisher
+                                    </div>
+                                </article>
+
+                                <article class="group relative flex flex-col items-center justify-between rounded-3xl border border-rose-200 bg-white p-6 text-center shadow-sm transition hover:shadow-md">
+                                    <div>
+                                        <div class="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-rose-50 text-rose-700 border border-rose-200">
+                                            📈
+                                        </div>
+                                        <div class="mt-3 text-4xl font-extrabold text-slate-900 leading-none">
+                                            +30%
+                                        </div>
+                                        <div class="mt-1 text-sm font-medium text-slate-700">
+                                            Avg. Conversion Lift
+                                        </div>
+                                        <p class="mt-2 text-sm text-slate-600">
+                                            Cross‑industry median uplift over first 90 days of testing.
+                                        </p>
+                                    </div>
+                                    <div class="mt-4 h-px w-12 bg-rose-200"></div>
+                                    <div class="mt-3 text-xs uppercase tracking-wide text-rose-700">
+                                        Multi‑vertical
+                                    </div>
+                                </article>
+
+                                <article class="group relative flex flex-col items-center justify-between rounded-3xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:shadow-md">
+                                    <div>
+                                        <div class="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-50 text-slate-700 border border-slate-200">
+                                            ⚙
+                                        </div>
+                                        <div class="mt-3 text-4xl font-extrabold text-slate-900 leading-none">
+                                            10+/mo
+                                        </div>
+                                        <div class="mt-1 text-sm font-medium text-slate-700">
+                                            Test Velocity
+                                        </div>
+                                        <p class="mt-2 text-sm text-slate-600">
+                                            High‑tempo iteration with rigorous QA and rollout gates.
+                                        </p>
+                                    </div>
+                                    <div class="mt-4 h-px w-12 bg-slate-200"></div>
+                                    <div class="mt-3 text-xs uppercase tracking-wide text-slate-700">
+                                        Program
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="services" class="py-16">
+                        <div class="mx-auto max-w-7xl px-6">
+                            <div class="mb-10 text-center">
+                                <p class="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
+                                    What we deliver
+                                </p>
+                                <h2 class="text-2xl md:text-3xl font-bold text-slate-900">
+                                    CRO Services That Turn Traffic Into Revenue
+                                </h2>
+                                <p class="mt-2 text-slate-600 max-w-3xl mx-auto">
+                                    Research‑backed hypotheses, fast test velocity, and design
+                                    systems that scale.
+                                </p>
+                            </div>
+
+                            <div class="grid gap-6 md:grid-cols-2">
+                                <div class="rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-6 shadow-sm">
+                                    <div class="flex items-center gap-3">
+                                        <div class="h-10 w-10 rounded-xl border border-slate-200 bg-white flex items-center justify-center">
+                                            <svg viewBox="0 0 24 24" class="h-5 w-5">
+                                                <path fill="currentColor" d="M3 12l7-9 7 9-7 9-7-9z" />
+                                            </svg>
+                                        </div>
+                                        <h3 class="text-lg font-semibold text-slate-900">
+                                            Funnel &amp; UX Audit
+                                        </h3>
+                                    </div>
+                                    <p class="mt-2 text-slate-700">
+                                        Heuristic analysis + GA4 funnels, heatmaps & replays to
+                                        surface friction and prioritize ROI fixes.
+                                    </p>
+                                    <ul class="mt-3 grid grid-cols-2 gap-2 text-sm text-slate-600">
+                                        <li>Heuristics & copy mapping</li>
+                                        <li>Behavior analytics review</li>
+                                        <li>Form UX teardown</li>
+                                        <li>Speed & visual stability</li>
+                                    </ul>
+                                </div>
+
+                                <div class="rounded-3xl border border-emerald-200 bg-gradient-to-br from-emerald-50 to-white p-6 shadow-sm">
+                                    <div class="flex items-center gap-3">
+                                        <div class="h-10 w-10 rounded-xl border border-emerald-200 bg-white flex items-center justify-center">
+                                            <svg viewBox="0 0 24 24" class="h-5 w-5">
+                                                <path
+                                                    fill="currentColor"
+                                                    d="M5 3h14v2H5V3zm0 14h14v2H5v-2zM5 8h14v2H5V8zm0 4h14v2H5v-2z"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <h3 class="text-lg font-semibold text-slate-900">
+                                            A/B &amp; Multivariate Testing
+                                        </h3>
+                                    </div>
+                                    <p class="mt-2 text-slate-700">
+                                        95%+ significance, power checks, experiment design playbooks,
+                                        and rollout criteria.
+                                    </p>
+                                    <ul class="mt-3 grid grid-cols-2 gap-2 text-sm text-slate-600">
+                                        <li>Hypotheses (ICE/PIE)</li>
+                                        <li>Sample size &amp; power</li>
+                                        <li>Test templates</li>
+                                        <li>Winners → rollouts</li>
+                                    </ul>
+                                </div>
+
+                                <div class="rounded-3xl border border-sky-200 bg-gradient-to-br from-sky-50 to-white p-6 shadow-sm">
+                                    <div class="flex items-center gap-3">
+                                        <div class="h-10 w-10 rounded-xl border border-sky-200 bg-white flex items-center justify-center">
+                                            <svg viewBox="0 0 24 24" class="h-5 w-5">
+                                                <path
+                                                    fill="currentColor"
+                                                    d="M12 3l9 4-9 4-9-4 9-4zm0 7l9 4-9 4-9-4 9-4zm0 7l9 4-9 4-9-4 9-4z"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <h3 class="text-lg font-semibold text-slate-900">
+                                            Landing Pages &amp; Copy
+                                        </h3>
+                                    </div>
+                                    <p class="mt-2 text-slate-700">
+                                        Message‑matched pages and creative systems aligned to
+                                        acquisition channels.
+                                    </p>
+                                    <ul class="mt-3 grid grid-cols-2 gap-2 text-sm text-slate-600">
+                                        <li>LP templates</li>
+                                        <li>Ad scent matching</li>
+                                        <li>Trust & risk reversal</li>
+                                        <li>Mobile‑first layouts</li>
+                                    </ul>
+                                </div>
+
+                                <div class="rounded-3xl border border-indigo-200 bg-gradient-to-br from-indigo-50 to-white p-6 shadow-sm">
+                                    <div class="flex items-center gap-3">
+                                        <div class="h-10 w-10 rounded-xl border border-indigo-200 bg-white flex items-center justify-center">
+                                            <svg viewBox="0 0 24 24" class="h-5 w-5">
+                                                <path
+                                                    fill="currentColor"
+                                                    d="M12 2a5 5 0 015 5v3h3l-6 6-6-6h3V7a5 5 0 015-5z"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <h3 class="text-lg font-semibold text-slate-900">
+                                            Personalization &amp; Segmentation
+                                        </h3>
+                                    </div>
+                                    <p class="mt-2 text-slate-700">
+                                        Audience‑based variants for commerce, BFSI and travel
+                                        journeys.
+                                    </p>
+                                    <ul class="mt-3 grid grid-cols-2 gap-2 text-sm text-slate-600">
+                                        <li>Behavioral segments</li>
+                                        <li>Offer maps</li>
+                                        <li>CDP/CRM hooks</li>
+                                        <li>Geo/device targeting</li>
+                                    </ul>
+                                </div>
+
+                                <div class="rounded-3xl border border-amber-200 bg-gradient-to-br from-amber-50 to-white p-6 shadow-sm md:col-span-2">
+                                    <div class="flex items-center gap-3">
+                                        <div class="h-10 w-10 rounded-xl border border-amber-200 bg-white flex items-center justify-center">
+                                            <svg viewBox="0 0 24 24" class="h-5 w-5">
+                                                <path
+                                                    fill="currentColor"
+                                                    d="M3 4h18v4H3V4zm0 6h18v10H3V10z"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <h3 class="text-lg font-semibold text-slate-900">
+                                            Analytics, Heatmaps &amp; Insights
+                                        </h3>
+                                    </div>
+                                    <p class="mt-2 text-slate-700">
+                                        GA4 events & cohorts with Hotjar/Clarity — plus conversion
+                                        reporting (ROAS, MER, LTV) with clear next steps.
+                                    </p>
+                                    <ul class="mt-3 grid grid-cols-2 gap-2 text-sm text-slate-600">
+                                        <li>Funnels & cohorts</li>
+                                        <li>Session replays</li>
+                                        <li>ROI dashboards</li>
+                                        <li>Test learnings repo</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="process" class="bg-slate-50 py-16">
+                        <div class="max-w-7xl mx-auto px-6">
+                            <div class="text-center mb-10">
+                                <p class="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
+                                    How we deliver
+                                </p>
+                                <h2 class="text-2xl md:text-3xl font-bold text-slate-900">
+                                    A Testing Engine That Compounds Results
+                                </h2>
+                            </div>
+                            <div class="grid gap-6 lg:grid-cols-2">
+                                <ol class="relative border-l border-slate-200 pl-6 space-y-6 lg:space-y-8">
+                                    <li>
+                                        <div class="absolute -left-2.5 h-5 w-5 rounded-full bg-slate-900 ring-4 ring-slate-100"></div>
+                                        <div class="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
+                                            <div class="text-xs font-semibold tracking-wider text-slate-500">
+                                                01. Research &amp; Deep Insights
+                                            </div>
+                                            <p class="mt-1 text-slate-800">
+                                                Funnels, GA4 event behaviors, heatmaps &amp; replays to
+                                                locate friction.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="absolute -left-2.5 h-5 w-5 rounded-full bg-emerald-600 ring-4 ring-slate-100"></div>
+                                        <div class="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
+                                            <div class="text-xs font-semibold tracking-wider text-slate-500">
+                                                02. Hypothesis &amp; Prioritization
+                                            </div>
+                                            <p class="mt-1 text-slate-800">
+                                                ICE/PIE frameworks; focus on high‑impact hypotheses first.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="absolute -left-2.5 h-5 w-5 rounded-full bg-sky-600 ring-4 ring-slate-100"></div>
+                                        <div class="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
+                                            <div class="text-xs font-semibold tracking-wider text-slate-500">
+                                                03. Experiment Design
+                                            </div>
+                                            <p class="mt-1 text-slate-800">
+                                                A/B, multivariate &amp; UX copy tests, with sample‑size
+                                                &amp; power checks.
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ol>
+                                <ol class="relative border-l border-slate-200 pl-6 space-y-6 lg:space-y-8">
+                                    <li>
+                                        <div class="absolute -left-2.5 h-5 w-5 rounded-full bg-indigo-600 ring-4 ring-slate-100"></div>
+                                        <div class="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
+                                            <div class="text-xs font-semibold tracking-wider text-slate-500">
+                                                04. Execution at Scale
+                                            </div>
+                                            <p class="mt-1 text-slate-800">
+                                                GTM + GA4 integrated testing, QA, and rollouts.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="absolute -left-2.5 h-5 w-5 rounded-full bg-amber-600 ring-4 ring-slate-100"></div>
+                                        <div class="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
+                                            <div class="text-xs font-semibold tracking-wider text-slate-500">
+                                                05. Analysis &amp; Learnings
+                                            </div>
+                                            <p class="mt-1 text-slate-800">
+                                                95%+ confidence; clear winner rules; insights recap.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="absolute -left-2.5 h-5 w-5 rounded-full bg-rose-600 ring-4 ring-slate-100"></div>
+                                        <div class="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
+                                            <div class="text-xs font-semibold tracking-wider text-slate-500">
+                                                06. Iterate &amp; Scale
+                                            </div>
+                                            <p class="mt-1 text-slate-800">
+                                                Roll out winners and feed learnings into the next batch of
+                                                tests.
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="clients" class="bg-slate-50 py-16">
+                        <div class="mx-auto max-w-7xl px-6 text-center">
+                            <p class="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
+                                Trusted by
+                            </p>
+                            <h2 class="text-2xl font-bold sm:text-3xl text-slate-900 mb-8">
+                                Brands we’ve partnered with
+                            </h2>
+                            <div class="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 items-center">
+                                <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
                                     <img
-                                        src={`${activeIndex === index ? 'https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector_up.png' : 'https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector_down.png'
-                                            }`}
-                                        alt={activeIndex === index ? 'Collapse' : 'Expand'}
-                                        className="cursor-pointer w-4"
+                                        src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Shoebacca%20logo.png"
+                                        alt="Shoebacca"
+                                        class="h-10 max-h-10 object-contain grayscale hover:grayscale-0 transition"
+                                        loading="lazy"
+                                    />
+                                </div>
+                                <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                                    <img
+                                        src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Washington_examinor_logo.png"
+                                        alt="Washington Examiner"
+                                        class="h-10 max-h-10 object-contain grayscale hover:grayscale-0 transition"
+                                        loading="lazy"
+                                    />
+                                </div>
+                                <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                                    <img
+                                        src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Anantara_logo_New.png"
+                                        alt="Anantara"
+                                        class="h-10 max-h-10 object-contain grayscale hover:grayscale-0 transition"
+                                        loading="lazy"
+                                    />
+                                </div>
+                                <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                                    <img
+                                        src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Auxi_logo.coloured.png"
+                                        alt="Auxi"
+                                        class="h-10 max-h-10 object-contain grayscale hover:grayscale-0 transition"
+                                        loading="lazy"
+                                    />
+                                </div>
+                                <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                                    <img
+                                        src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Algovation_logo.png"
+                                        alt="Algovation"
+                                        class="h-10 max-h-10 object-contain grayscale hover:grayscale-0 transition"
+                                        loading="lazy"
+                                    />
+                                </div>
+                                <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                                    <img
+                                        src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/shiprocket_logo.png"
+                                        alt="Shiprocket"
+                                        class="h-10 max-h-10 object-contain grayscale hover:grayscale-0 transition"
+                                        loading="lazy"
+                                    />
+                                </div>
+                                <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                                    <img
+                                        src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/we_sort_it_logo.png"
+                                        alt="We Sort It"
+                                        class="h-10 max-h-10 object-contain grayscale hover:grayscale-0 transition"
+                                        loading="lazy"
+                                    />
+                                </div>
+                                <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                                    <img
+                                        src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Mex_insurance_logo.png"
+                                        alt="Mexico Insurance Services"
+                                        class="h-10 max-h-10 object-contain grayscale hover:grayscale-0 transition"
+                                        loading="lazy"
+                                    />
+                                </div>
+                                <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                                    <img
+                                        src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/issta_Logo.png"
+                                        alt="ISSTA"
+                                        class="h-10 max-h-10 object-contain grayscale hover:grayscale-0 transition"
+                                        loading="lazy"
+                                    />
+                                </div>
+                                <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                                    <img
+                                        src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/IRIS_LOGO.png"
+                                        alt="IRIS"
+                                        class="h-10 max-h-10 object-contain grayscale hover:grayscale-0 transition"
+                                        loading="lazy"
+                                    />
+                                </div>
+                                <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                                    <img
+                                        src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/league_logo_svg%201.png"
+                                        alt="League"
+                                        class="h-10 max-h-10 object-contain grayscale hover:grayscale-0 transition"
+                                        loading="lazy"
                                     />
                                 </div>
                             </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-        </>
-    )
-}
+                            <p class="mt-6 text-sm text-slate-600">
+                                …and 200+ other growth-focused businesses across B2B, D2C, travel,
+                                and finance.
+                            </p>
+                        </div>
+                    </section>
 
-export default conversionRateOptimization
+                    <section id="faq" class="py-16">
+                        <div class="mx-auto max-w-7xl px-6">
+                            <div class="mb-8 text-center">
+                                <p class="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
+                                    FAQs
+                                </p>
+                                <h2 class="text-2xl md:text-3xl font-bold text-slate-900">
+                                    Everything About Our CRO Program
+                                </h2>
+                                <p class="mt-2 text-slate-600 max-w-3xl mx-auto">
+                                    A quick primer on timelines, tools, pricing, and how we measure
+                                    lift.
+                                </p>
+                            </div>
+                            <Faq content={content} />
+                        </div>
+                    </section>
+
+                    <section id="contact" class="bg-slate-900 py-16 text-white">
+                        <div class="mx-auto max-w-7xl px-6">
+                            <div class="grid items-center gap-8 md:grid-cols-2">
+                                <div>
+                                    <h3 class="text-2xl font-bold">Start with a first CRO audit</h3>
+                                    <p class="mt-2 max-w-2xl text-slate-300">
+                                        We’ll review your funnels, highlight friction, and propose
+                                        experiments that can move the needle fastest.
+                                    </p>
+                                    <ul class="mt-4 space-y-2 text-slate-300">
+                                        <li class="flex items-start gap-3">
+                                            <span class="mt-2 inline-block h-2.5 w-2.5 rounded-full bg-white"></span>
+                                            <span>Heuristics &amp; GA4 event review</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <span class="mt-2 inline-block h-2.5 w-2.5 rounded-full bg-white"></span>
+                                            <span>Hypotheses &amp; ICE score</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <span class="mt-2 inline-block h-2.5 w-2.5 rounded-full bg-white"></span>
+                                            <span>Prioritized 30‑day test plan</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="rounded-3xl border border-white/20 bg-white/5 p-6">
+                                    <form onSubmit={handleSubmit} action="#" method="post" className="grid gap-3 md:grid-cols-2">
+                                        <label className="text-sm" for="fullName">Full name
+                                            <input value={formData.fullName} onChange={handleChange} id="fullName" name="fullName" required placeholder="Your Full Name" className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none" />
+                                        </label>
+                                        <label className="text-sm" for="email">Work email
+                                            <input value={formData.email} onChange={handleChange} id="email" type="email" name="email" required placeholder="name@company.com" className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none" />
+                                        </label>
+                                        <label className="text-sm md:col-span-1" for="company">Company
+                                            <input value={formData.company} onChange={handleChange} id="company" name="company" placeholder="Company name" className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none" />
+                                        </label>
+                                        <label className="text-sm md:col-span-1" for="stack">Current stack
+                                            <input value={formData.stack} onChange={handleChange} id="stack" name="stack" placeholder="e.g., GA4, Optimize, VWO" className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none" />
+                                        </label>
+                                        <label className="text-sm md:col-span-2" for="message">Goals & pain points
+                                            <textarea value={formData.message} onChange={handleChange} id="message" name="message" rows="4" placeholder="What’s your funnel goal? Where are users dropping?" className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none"></textarea>
+                                        </label>
+                                        <div className="md:col-span-2">
+                                            <button disabled={loading} className="rounded-2xl bg-white px-6 py-3 font-semibold text-slate-900 shadow-md transition hover:opacity-90" type="submit">
+                                                {loading ? "Submitting..." : "Request Audit"}
+                                            </button>
+                                        </div>
+                                        {responseMessage && (
+                                            <p className="md:col-span-2 mt-2 text-sm text-white">{responseMessage}</p>
+                                        )}
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </>
+    );
+};
+
+export default conversionRateOptimization;

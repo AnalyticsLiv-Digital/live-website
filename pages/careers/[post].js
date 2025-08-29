@@ -220,6 +220,9 @@ const post = ({ jobData }) => {
                 <meta name="description" content={meta_desc} />
                 <title>AnalyticsLiv Job - {jobData && jobData.job[0].title}</title>
                 <link rel="canonical" href={url}></link>
+                {['251684', '157689', '134251']?.includes(String(jobData?.job[0]?.id)) && (
+                    <meta name="robots" content="noindex, nofollow" />
+                )}
             </Head>
             {showWaiting && <div className="fixed flex backdrop-blur top-0 left-0 right-0 z-40 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full"><ScaleLoader
                 color="#271d90"

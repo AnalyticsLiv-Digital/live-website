@@ -14,6 +14,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import dynamic from "next/dynamic";
+import NewNavbar from '../components/NewNavbar';
 // import LookerWebAd from '../components/LookerWebAd';
 
 
@@ -58,7 +59,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps }, }) {
         <script src="/antiflicker.js" />
         <meta name="google-site-verification" content="O18N4BhbU7y11EzEu_fOYfNHdp-fCahcKZUpriC3hyQ" />
       </Head>
-        {routerr.pathname === '/testing/old_home' ? <Header /> : <Navbar />}
+        {routerr.pathname === '/testing/old_home' ? <Header /> : <NewNavbar />}
 
         {showLoader ? <div className='flex h-screen'><HashLoader
           color="#271d90"

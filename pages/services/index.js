@@ -1,9 +1,20 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import Head from 'next/head';
+import NewNavbar from '../../components/NewNavbar';
+import Footer from '../../components/Footer';
 
 const ServicesPage = () => {
     return (
+        <>
+              <Head>
+        <style>{`
+          .kpi-card { transition: box-shadow .2s, transform .2s; }
+          .kpi-card:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(15,23,42,.08); }
+          .ring-soft::after { content: ''; position: absolute; inset: -10px; border-radius: 24px; border: 1px dashed rgba(15,23,42,.08); }
+        `}</style>
+      </Head>
         <div className="min-h-screen bg-white text-slate-800"
             style={{ fontFamily: 'ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji"' }}>
             <main>
@@ -250,7 +261,71 @@ const ServicesPage = () => {
                 </section>
 
                 {/* Stats Section */}
-                <section className="py-16 bg-gradient-to-r from-[#EEF6FF] to-[#F7F7FF]">
+                <section class="relative overflow-hidden" aria-label="Key performance indicators">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#EEF6FF] via-white to-[#FFF8F0]"></div>
+    <div class="relative mx-auto max-w-7xl px-6 py-14">
+      <div class="mx-auto max-w-3xl text-center">
+        <p class="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">Why brands choose AnalyticsLiv</p>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Impact at Scale — Clear. Measurable. Repeatable.</h2>
+      </div>
+
+      <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <article class="kpi-card relative flex flex-col justify-between rounded-3xl border border-slate-200 bg-white p-6 shadow-sm ring-soft">
+          <div>
+            <div class="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-slate-50" aria-hidden="true">
+              <svg viewBox="0 0 24 24" class="h-5 w-5"><path fill="currentColor" d="M3 13h8v8H3v-8zm10-3h8v11h-8V10zM3 3h18v5H3V3z"/></svg>
+            </div>
+            <div class="text-3xl font-extrabold text-slate-900">
+              <span class="kpi" data-target="50" data-prefix="$" data-suffix="M+">50</span>
+            </div>
+            <div class="mt-1 text-sm font-medium text-slate-700">Ad Spend Optimized</div>
+            <p class="mt-1 text-sm text-slate-600">Driving efficient growth across 200+ campaigns.</p>
+          </div>
+        </article>
+
+        <article class="kpi-card relative flex flex-col justify-between rounded-3xl border border-emerald-200 bg-white p-6 shadow-sm ring-soft">
+          <div>
+            <div class="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-emerald-200 bg-emerald-50 text-emerald-700" aria-hidden="true">
+              <svg viewBox="0 0 24 24" class="h-5 w-5"><path fill="currentColor" d="M3 12l5 5L21 4l-2-2-11 11-3-3-2 2z"/></svg>
+            </div>
+            <div class="text-3xl font-extrabold text-slate-900">
+              <span class="kpi" data-target="30" data-suffix="%+">30</span>
+            </div>
+            <div class="mt-1 text-sm font-medium text-slate-700">Avg. Conversion Lift</div>
+            <p class="mt-1 text-sm text-slate-600">Ecommerce, BFSI &amp; Travel funnels.</p>
+          </div>
+        </article>
+
+        <article class="kpi-card relative flex flex-col justify-between rounded-3xl border border-indigo-200 bg-white p-6 shadow-sm ring-soft">
+          <div>
+            <div class="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-indigo-200 bg-indigo-50 text-indigo-700" aria-hidden="true">
+              <svg viewBox="0 0 24 24" class="h-5 w-5"><path fill="currentColor" d="M12 1l9 4v6c0 5-3.8 9.7-9 11-5.2-1.3-9-6-9-11V5l9-4z"/></svg>
+            </div>
+            <div class="text-3xl font-extrabold text-slate-900">
+              <span class="kpi" data-target="95" data-suffix="%+">{`>95%`}</span>
+            </div>
+            <div class="mt-1 text-sm font-medium text-slate-700">Data Accuracy</div>
+            <p class="mt-1 text-sm text-slate-600">GA4 + server‑side GTM with validation.</p>
+          </div>
+        </article>
+
+        <article class="kpi-card relative flex flex-col justify-between rounded-3xl border border-amber-200 bg-white p-6 shadow-sm ring-soft">
+          <div>
+            <div class="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-amber-200 bg-amber-50 text-amber-700" aria-hidden="true">
+              <svg viewBox="0 0 24 24" class="h-5 w-5"><path fill="currentColor" d="M12 12a5 5 0 110-10 5 5 0 010 10zm0 2c-4.4 0-8 2-8 4.5V21h16v-2.5c0-2.5-3.6-4.5-8-4.5z"/></svg>
+            </div>
+            <div class="text-3xl font-extrabold text-slate-900">
+              <span class="kpi" data-target="200" data-suffix="+">200</span>
+            </div>
+            <div class="mt-1 text-sm font-medium text-slate-700">Brands Partnered</div>
+            <p class="mt-1 text-sm text-slate-600">Across 15+ countries and multiple verticals.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  
+                {/* <section className="py-16 bg-gradient-to-r from-[#EEF6FF] to-[#F7F7FF]">
                     <div className="mx-auto max-w-7xl px-6">
                         <div className="grid gap-8 md:grid-cols-4">
                             <div className="text-center">
@@ -286,7 +361,7 @@ const ServicesPage = () => {
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> */}
 
                 {/* CTA Section */}
                 <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-20 text-white relative overflow-hidden">
@@ -313,7 +388,7 @@ const ServicesPage = () => {
                                 </span>
                             </Link>
                             <Link
-                                href="mailto:hello@analyticsliv.com"
+                                href="mailto:support@analyticsliv.com"
                                 className="group rounded-2xl border border-white/30 px-8 py-4 font-semibold text-white transition-all duration-300 hover:bg-white/10 hover:border-white/50"
                             >
                                 <span className="flex items-center gap-2">
@@ -332,6 +407,7 @@ const ServicesPage = () => {
                 </section>
             </main>
         </div>
+        </>
     );
 };
 

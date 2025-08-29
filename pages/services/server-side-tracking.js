@@ -11,131 +11,76 @@ import Image from 'next/image';
 import { motion } from "framer-motion";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import MetaSchemaOg from '../../components/MetaSchemaOg';
+import Faq from '../../components/Faq';
 
 const Serversidetracking = () => {
+    const [activeMode, setActiveMode] = useState("hybrid"); // default state
+    const [formData, setFormData] = useState({
+        fullName: "",
+        email: "",
+        company: "",
+        stack: "",
+        message: "",
+        pageSource: "Server Side Tracking",
+    });
+    const [loading, setLoading] = useState(false);
+    const [responseMessage, setResponseMessage] = useState("");
 
-    const Trusteddata = {
-        brand: [
-            { logo: "/ThoughtSpot_logo.png", alt: "ThoughtSpot" },
-            { logo: "/Brizo_logo.png", alt: "Brizo" },
-            { logo: "/bluecrew.png", alt: "BlueCrew" },
-            { logo: "/edanz_logo.png", alt: "Edanz" },
-            { logo: "/shoebacca.png", alt: "Shoebacca" },
-            { logo: "/wholesalesockdeals.png", alt: "WholesaleSockDeals" }
-        ]
-    };
-    const [isFs4mVisible, setIsFs4mVisible] = useState(false);
-    const [isSec4mVisible, setIsSec4mVisible] = useState(false);
-    const [isThr4mVisible, setIsThr4mVisible] = useState(false);
-    const [isFur4mVisible, setIsFur4mVisible] = useState(false);
-
-    const toggleFs4mVisibility = () => {
-        setIsFs4mVisible(prevState => !prevState);
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
     };
 
-    const toggleSec4mVisibility = () => {
-        setIsSec4mVisible(prevState => !prevState);
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        setResponseMessage("");
+
+        try {
+            const res = await fetch("/api/serviceContact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+            });
+
+            if (res.ok) {
+                setResponseMessage("Your request has been submitted successfully!");
+                setFormData({ fullName: "", email: "", company: "", stack: "", message: "", pageSource: "Server Side Tracking", });
+            } else {
+                setResponseMessage("Something went wrong. Please try again.");
+            }
+        } catch (error) {
+            setResponseMessage("Server error. Please try again later.");
+        } finally {
+            setLoading(false);
+        }
     };
 
-    const toggleThr4mVisibility = () => {
-        setIsThr4mVisible(prevState => !prevState);
-    };
-
-    const toggleFur4mVisibility = () => {
-        setIsFur4mVisible(prevState => !prevState);
-    };
-
-    const NextArrow = (props) => {
-        const { onClick } = props;
+    function Feature({ title, text }) {
         return (
-            <div className="absolute top-1/2 right-[-12px] transform -translate-y-1/2 z-10 cursor-pointer" onClick={onClick}>
-                <FaArrowRight size={20} />
+            <div className="rounded-2xl border border-slate-200 p-4">
+                <div className="text-sm font-semibold text-slate-900">{title}</div>
+                <p className="mt-1 text-sm text-slate-600">{text}</p>
             </div>
         );
-    };
+    }
 
-    const PrevArrow = (props) => {
-        const { onClick } = props;
+    function Kpi({ title, value, description }) {
         return (
-            <div className="absolute top-1/2 left-[-12px] transform -translate-y-1/2 z-10 cursor-pointer" onClick={onClick}>
-                <FaArrowLeft size={20} />
+            <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                <div className="text-sm font-semibold text-slate-900">{title}</div>
+                <div className="mt-1 text-3xl font-extrabold text-slate-900">{value}</div>
+                <p className="mt-1 text-sm text-slate-600">{description}</p>
             </div>
         );
-    };
+    }
 
-    var settings = {
-        dots: true,
-        infinite: true,
-        speed: 1000,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        initialSlide: 0,
-        nextArrow: <NextArrow />,
-        prevArrow: <PrevArrow />,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        responsive: [
-            {
-                breakpoint: 1150,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true,
-                },
-            },
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true,
-                },
-            },
-            {
-                breakpoint: 988,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    initialSlide: 2,
-                },
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    initialSlide: 2,
-                },
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                },
-            },
-        ],
-    };
-    // // // // // FAQ SECTION // // // // // // // // // //   
-    const [isFaqfstVisible, setIsFaqfstVisible] = useState(false);
-    const [isFaqsecVisible, setIsFaqsecVisible] = useState(false);
-    const [isFaqthrdVisible, setIsFaqthrdVisible] = useState(false);
-    const [isFaqfurVisible, setIsFaqfurVisible] = useState(false);
-
-    const toggleFaqfstVisibility = () => {
-        setIsFaqfstVisible(prevState => !prevState);
-    };
-    const toggleFaqsecVisibility = () => {
-        setIsFaqsecVisible(prevState => !prevState);
-    };
-    const toggleFaqthrdVisibility = () => {
-        setIsFaqthrdVisible(prevState => !prevState);
-    };
-    const toggleFaqfurVisibility = () => {
-        setIsFaqfurVisible(prevState => !prevState);
-    };
+    const content = [
+        { question: 'What does the rollout typically involve?', answer: 'GTM server container on App Engine or Cloud Run, DNS for first‑party endpoint, CMP hookup for Consent Mode v2, CAPI with dedup IDs, and Looker dashboards.' },
+        { question: 'Do we still keep any client‑side tags?', answer: 'Yes—hybrid is common. We keep lightweight client‑side triggers for consent and event IDs, while routing heavy lifting via the server container.' },
+        { question: 'How do you prove ROI?', answer: 'We measure event delivery rate, modeled conversions gained, match quality, CWV improvements, and media outcomes (CPA/ROAS) before vs after.' },
+        { question: 'What about costs?', answer: 'Cloud hosting is usage‑based and modest for most sites. We right‑size architecture and provide cost dashboards so there are no surprises.' }
+    ]
 
     return (
         <>
@@ -145,487 +90,401 @@ const Serversidetracking = () => {
                 description="Get accurate, secure tracking with AnalyticsLiv’s server-side analytics tracking. Boost your data quality, privacy, and analytical performance for better marketing outcomes."
                 twitterTitle="Expert Server-Side Analytics Tracking Solutions | AnalyticsLiv"
                 twitterDescription="Get accurate, secure tracking with AnalyticsLiv’s server-side analytics tracking. Boost your data quality, privacy, and analytical performance for better marketing outcomes."
+                faqData={content}
             />
 
-            <section className='ssthome w-full relative font-gilroy overflow-hidden'>
-                <div className='h-full'>
-                    <div className="relative px-4 md:px-12 pt-8 md:pt-[10px] pb-8 md:pb-0 h-full z-20">
-                        <div className="z-10 flex lg:flex-nowrap items-center flex-wrap justify-between gap-7 max-xl:pb-8 max-sm:pt-1 py-6">
-                            <div className="w-full lg:w-1/2 lg:order-1 order-2 lg:mt-8">
-                                <h1 className="lg:text-[41px] text-[32px] lg:leading-[62px] leading-normal font-gilroy font-normal text-[#006EF5] mb-4">
-                                    The Future of Performance Marketing: Server-Side Tracking
-                                </h1>
-                                <h2 className="font-gilroy text-[20px] leading-[30px] font-normal text-[#152e55] mb-5">Cookieless, Compliant Data with Server-Side Tracking</h2>
-                                {/* <p className="text-base font-normal leading-[28px] mb-[10px]">
-                                    Move Beyond Unsafe Browser Tracking and Unreliable Third-Party Cookies. Our Server-side Tracking Solution Provides Access to The Data You Need While Ensuring Full Compliance. With Major Platforms Phasing Out Cookie Support.
-                                </p> */}
-                                <div className='flex items-center lg:justify-start justify-center gap-5'>
-                                    <Link href="/contact?id=programatic-advertising">
-                                        <button className="contact-us-btn butn mt-2 uppercase">future-proof your <br /> analytics today</button>
-                                    </Link>
-                                </div>
-                            </div>
-                            <div className=" w-full lg:w-1/2 flex items-center lg:justify-end justify-center lg:order-2 order-1">
-                                <img src="/Server_Side_tracking_Page_Main_Img.png" alt="server side analytics tracking" className='h-[400px]' />
-                            </div>
-                        </div>
-                        <div className=''>
+            <main class="min-h-screen bg-white text-slate-800"
+                style={{ fontFamily: 'ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji"' }}>
+                <section class="relative overflow-hidden border-b border-slate-200">
+                    <div class="absolute inset-0 bg-gradient-to-br from-[#EEF6FF] via-white to-[#F7F7FF]"></div>
+                    <div class="relative mx-auto max-w-7xl px-6 max-sm:pt-8 max-sm:pb-12 sm:py-16 lg:py-16">
+                        <div class="grid items-center gap-12 md:grid-cols-2">
                             <div>
-                                <h2 className='text-center font-bold font-gilroy text-base lg:text-[28px] text-maintext leading-[24px] xl:py-5'>Trusted by Organisations Worldwide</h2>
-                            </div>
-                            <div className='w-[90%] m-auto md:w-full'>
-                                <Marquee gradient={false} pauseOnHover="true">
-                                    <div className='flex space-x-8 justify-center py-4 px-4 mt-[10px]'>
-                                        {Trusteddata.brand.map((brand, index) => (
-                                            <div key={index}>
-                                                <img src={brand.logo} alt={brand.alt} className='h-[50px] mx-5' />
-                                            </div>
-                                        ))}
-                                    </div>
-                                </Marquee>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section className='sstwhy relative wepappour overflow-hidden'>
-                <div className="relative px-4 md:px-12 pt-8 pb-8 md:pb-6 z-20">
-                    <div>
-                        <h3 className='text-[32px] font-gilroy font-semibold text-[#18265b] leading-[1.5em]'>Why Server-Side Tracking Matters</h3>
-                    </div>
-                    <div className=''>
-                        <h2 className='text-[19px] font-gilroy text-[#000] leading-[1.7em] my-5'>Traditional, client-side tracking relies on code placed on your website to collect user data. While convenient, it has limitations. Browser ad blockers can hinder data collection, and privacy regulations restrict how cookies can be used.</h2>
-                        <p className='text-[18px] font-gilroy text-[#000] leading-[1.7em]'>Server-side tracking offers a robust alternative. Data is collected and processed on your server before being sent to analytics platforms.</p>
-                        <div className='w-full mx-2 py-7 grid lg:grid-cols-4 md:grid-cols-2 gap-10 md:py-4'>
-                            <div className='fs border-[3px] border-[#00000014] border-solid hover:border-t-[#30486a] shadow-webappourexper rounded-b-[15px] p-5'>
-                                <div>
-                                    <img src="/Data-Driven Approach blue.png" alt="" className='h-16 w-16' />
-                                    <h6 className='text-base text-txt font-gilroy font-semibold mt-4 mb-6 leading-[27px]'>Enhanced Data Accuracy</h6>
+                                <p class="mb-3 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white px-4 py-1 text-xs font-medium tracking-wide text-emerald-700">
+                                    <span class="dot bg-emerald-500"></span>
+                                    Privacy‑First Measurement
+                                </p>
+                                <h1 class="text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl md:text-5xl text-slate-900">
+                                    Server‑Side Tracking <span class="bg-gradient-to-r from-slate-900 to-emerald-600 bg-clip-text text-transparent">That Restores Accuracy</span>
+                                </h1>
+                                <p class="mt-5 max-w-2xl text-lg text-slate-600">
+                                    Clean data, faster pages, and durable attribution. We implement GA4 + GTM Server, Consent Mode v2, Enhanced Conversions, and Meta/Google CAPI—wired to your KPIs.
+                                </p>
+                                <div class="mt-7 flex flex-wrap items-center gap-3">
+                                    <a href="#contact" class="rounded-2xl bg-slate-900 px-6 py-3 text-white shadow-lg shadow-slate-900/10 transition hover:opacity-90">Get a Tracking Audit</a>
+                                    <a href="#comparison" class="rounded-2xl border border-slate-300 px-6 py-3">See Why Server‑Side</a>
                                 </div>
-                                <p className='text-xs font-gilroy2 font-normal leading-[22px]'>Overcome browser limitations and ad blockers to capture a more complete picture of user behavior.</p>
+                                <ul class="mt-6 grid gap-3 sm:grid-cols-2 text-slate-700">
+                                    <li class="flex items-start gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"><span class="dot mt-1 bg-emerald-500"></span><p>90%+ event reliability post ‑ implementation*</p></li>
+                                    <li class="flex items-start gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"><span class="dot mt-1 bg-emerald-500"></span><p>20–40% faster LCP by moving tags off the page*</p></li>
+                                </ul>
                             </div>
-                            <div className='sd border-[3px] border-[#00000014] border-solid hover:border-t-[#30486a] shadow-webappourexper rounded-b-[15px] p-5'>
-                                <div>
-                                    <img src="/Transparency You Can Trust blue.png" alt="" className='h-16 w-16' />
-                                    <h6 className='text-base text-txt font-gilroy font-semibold mt-4 mb-6 leading-[27px]'>Improved Privacy Compliance</h6>
-                                </div>
-                                <p className='text-xs font-gilroy2 font-normal leading-[22px]'>Mitigate privacy concerns by giving you more control over data collection and storage.</p>
-                            </div>
-                            <div className='trd border-[3px] border-[#00000014] border-solid hover:border-t-[#30486a] shadow-webappourexper rounded-b-[15px] p-5'>
-                                <div>
-                                    <img src="/Performance at the Forefront blue.png" alt="" className='h-16 w-16' />
-                                    <h6 className='text-base text-txt font-gilroy font-semibold mt-4 mb-6 leading-[27px]'>Flexibility & Security</h6>
-                                </div>
-                                <p className='text-xs font-gilroy2 font-normal leading-[22px]'>Leverage server-side processing for complex data manipulation and analysis, ensuring data security.</p>
-                            </div>
-                            <div className='trd border-[3px] border-[#00000014] border-solid hover:border-t-[#30486a] shadow-webappourexper rounded-b-[15px] p-5'>
-                                <div>
-                                    <img src="/Custom_Analytics_Solution.png" alt="" className='h-16 w-16' />
-                                    <h6 className='text-base text-txt font-gilroy font-semibold mt-4 mb-6 leading-[27px]'>Deeper User Insights</h6>
-                                </div>
-                                <p className='text-xs font-gilroy2 font-normal leading-[22px]'>Gain a more holistic understanding of user journeys by combining server-side data with traditional web analytics.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section className='sstchoose powerup relative overflow-hidden'>
-                <div className="relative px-4 md:px-12 pt-8 pb-8 z-20 md:py-4">
-                    <div>
-                        <h3 className='text-[32px] font-gilroy font-semibold text-[#fff] leading-[1.5em]'>Why Choose AnalyticsLiv for Server-Side Tracking?</h3>
-                    </div>
-                    <p className='text-[18px] font-gilroy text-[#fff] leading-[1.7em] my-5 md:py-0'>At AnalyticsLiv, we're experts in unlocking the power of server-side tracking. <br /> We offer:</p>
-                    <div className='lg:flex items-center justify-start lg:mt-10 md:mt-0'>
-                        {/* <div className='lg:w-[40%] w-full flex items-center justify-center'>
-                            <img src="/Server_Side_tracking_sub_img.png" alt="" className='lg:h-auto md:h-[400px]' />
-                        </div> */}
-                        <div className='lg:w-[35%] w-full flex items-center justify-center'>
-                            <img src="/Server_Side_tracking_sub_img_White_Circle.png" alt="server side web analytics" className='lg:h-auto md:h-[400px]' />
-                        </div>
-                        <div className='grid md:grid-cols-2 items-start lg:justify-start gap-7 lg:w-[60%] w-full lg:mt-0 mt-5'>
-                            <div className={`fs4m pwb flex items-start gap-5 w-full max-[350px]:w-[285px] bg-[#0000001f] p-[25px] pt-6 border border-[#131314] hover:shadow-mediadv360 rounded-[10px] ${isFs4mVisible ? 'xl:h-[180px] lg:h-[200px]' : 'h-[100px]'}`}>
-                                <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full' onClick={toggleFs4mVisibility}>
-                                        <div className={`flex items-center justify-between gap-5 text-[#ffffff] ${isFs4mVisible ? 'mb-6' : 'mb-0'}`}>
-                                            <div className='flex items-center justify-start'>
-                                                <div className='inbox relative mr-[13px]'>
-                                                    <img src="/Market.png" alt="" className='h-12 lg:w-[60px] w-12' />
-                                                </div>
-                                                <h2 className='text-base font-semibold font-gilroy text-[#ffffff] leading-normal'>Expertise & Experience</h2>
-                                            </div>
-                                            <div className='clk'>
-                                                {isFs4mVisible ? <FaChevronUp className='w-5 h-10' /> : <FaChevronDown className='w-5 h-10' />}
-                                            </div>
+                            <div class="">
+                                <div class="relative mx-auto w-full max-w-xl rounded-3xl border border-slate-200 bg-white p-6 shadow-subtle">
+                                    <div class="grid gap-4 sm:grid-cols-2">
+                                        <div class="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-5">
+                                            <div class="absolute -right-8 -top-8 h-28 w-28 rounded-full kpi-ring opacity-40"></div>
+                                            <div class="text-3xl font-extrabold text-slate-900">92%</div>
+                                            <div class="mt-1 text-sm text-slate-600">Data accuracy with Consent Mode v2*</div>
                                         </div>
-                                        {isFs4mVisible && (
-                                            <p className='text-xs font-medium text-[#ffffff] font-gilroy leading-[22px]'>
-                                                Our data analysts understand the intricacies of server-side implementation and optimization.
-                                            </p>
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={`sec4m pwb flex items-start gap-5 w-full max-[350px]:w-[285px] bg-[#0000001f] p-[25px] pt-6 border border-[#131314] hover:shadow-mediadv360 rounded-[10px] ${isSec4mVisible ? 'xl:h-[180px] lg:h-[200px]' : 'h-[100px]'}`}>
-                                <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full' onClick={toggleSec4mVisibility}>
-                                        <div className={`flex items-center justify-between gap-5 text-[#ffffff] ${isSec4mVisible ? 'mb-6' : 'mb-0'}`}>
-                                            <div className='flex items-center justify-start'>
-                                                <div className='inbox relative mr-[13px]'>
-                                                    <img src="/Message.png" alt="" className='h-12 w-12' />
-                                                </div>
-                                                <h2 className='text-base font-semibold font-gilroy text-[#ffffff] leading-normal'>Customizable Solutions</h2>
-                                            </div>
-                                            <div className='clk'>
-                                                {isSec4mVisible ? <FaChevronUp className='w-5 h-10' /> : <FaChevronDown className='w-5 h-10' />}
-                                            </div>
+                                        <div class="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-5">
+                                            <div class="absolute -right-8 -top-8 h-28 w-28 rounded-full kpi-ring opacity-40"></div>
+                                            <div class="text-3xl font-extrabold text-slate-900">‑30%</div>
+                                            <div class="mt-1 text-sm text-slate-600">Tag‑caused page weight*</div>
                                         </div>
-                                        {isSec4mVisible && (
-                                            <div>
-                                                <p className='text-xs font-medium text-[#ffffff] font-gilroy leading-[22px]'>We tailor server-side tracking solutions to your specific business needs and goals.</p>
-                                            </div>
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={`thr4m pwb flex items-start gap-5 w-full max-[350px]:w-[285px] bg-[#0000001f] p-[25px] pt-6 border border-[#131314] hover:shadow-mediadv360 rounded-[10px] ${isThr4mVisible ? 'xl:h-[188px] lg:h-[205px]' : 'h-[100px]'}`}>
-                                <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full' onClick={() => toggleThr4mVisibility()}>
-                                        <div className={`flex items-center justify-between gap-5 text-[#ffffff] ${isThr4mVisible ? 'mb-6' : 'mb-0'}`}>
-                                            <div className='flex items-center justify-start'>
-                                                <div className='inbox relative mr-[13px]'>
-                                                    <img src="/Media.png" alt="" className='h-12 w-12' />
-                                                </div>
-                                                <h2 className='text-base font-semibold text-[#ffffff] font-gilroy leading-normal'>End-to-End Support</h2>
-                                            </div>
-                                            <div className='clk'>
-                                                {isThr4mVisible ? <FaChevronUp className='w-5 h-10' /> : <FaChevronDown className='w-5 h-10' />}
-                                            </div>
+                                        <div class="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-5">
+                                            <div class="absolute -right-8 -top-8 h-28 w-28 rounded-full kpi-ring opacity-40"></div>
+                                            <div class="text-3xl font-extrabold text-slate-900">+18%</div>
+                                            <div class="mt-1 text-sm text-slate-600">Modeled conversions recovered*</div>
                                         </div>
-                                        {isThr4mVisible && (
-                                            <div>
-                                                <p className='text-xs font-medium text-[#ffffff] font-gilroy leading-[22px]'>We guide you through every step, from implementation to ongoing data analysis and reporting.</p>
-                                            </div>
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={`fur4m pwb flex items-start gap-5 w-full max-[350px]:w-[285px] bg-[#0000001f] p-[25px] pt-6 border border-[#131314] hover:shadow-mediadv360 rounded-[10px] ${isFur4mVisible ? 'xl:h-[188px] lg:h-[205px]' : 'h-[100px]'}`}>
-                                <div className='flex items-center justify-between w-full'>
-                                    <div className='cursor-pointer w-full' onClick={() => toggleFur4mVisibility()}>
-                                        <div className={`flex items-center justify-between gap-5 text-[#ffffff] ${isFur4mVisible ? 'mb-6' : 'mb-0'}`}>
-                                            <div className='flex items-center justify-start'>
-                                                <div className='inbox relative mr-[13px]'>
-                                                    <img src="/Measurment.png" alt="" className='h-12 xl:w-[65px] lg:w-[100px] w-[50px]' />
-                                                </div>
-                                                <h2 className='text-base font-semibold text-[#ffffff] font-gilroy leading-normal'>Data Security & Compliance</h2>
-                                            </div>
-                                            <div className='clk'>
-                                                {isFur4mVisible ? <FaChevronUp className='w-5 h-10' /> : <FaChevronDown className='w-5 h-10' />}
-                                            </div>
+                                        <div class="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-5">
+                                            <div class="absolute -right-8 -top-8 h-28 w-28 rounded-full kpi-ring opacity-40"></div>
+                                            <div class="text-3xl font-extrabold text-slate-900">BigQuery</div>
+                                            <div class="mt-1 text-sm text-slate-600">First‑party data foundation</div>
                                         </div>
-                                        {isFur4mVisible && (
-                                            <div>
-                                                <p className='text-xs font-medium text-[#ffffff] font-gilroy leading-[22px]'>We prioritize data security and ensure compliance with relevant data privacy regulations.</p>
-                                            </div>
-                                        )}
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <section className='sstframewrk font-gilroy'>
-                <div className='px-4 md:px-20 pt-8 md:pt-11 pb-8 md:pb-16'>
-                    <h2 className='text-[32px] font-semibold text-[#18265b] leading-[1.5em] font-gilroy'>Our Framework for Implementing Server-Side Tracking</h2>
-                    <p className='text-[18px] font-gilroy text-[#000] leading-[1.7em] my-5 md:my-0'>We follow a structured framework to ensure a seamless server-side tracking implementation:</p>
-                    <div className='pt-10 gap-5'>
-                        <Slider {...settings}>
-                            <div aria-hidden="true" className="m-auto text-center">
-                                <div className='service1 relative w-[280px] sm:w-[329px] m-auto h-[286px] border border-solid border-[#E2E2E2] rounded-[10px] p-5 text-center'>
-                                    <div className='flex items-center justify-center'>
-                                        <Image
-                                            src="/leader1.svg"
-                                            width={50}
-                                            height={50}
-                                            alt="Picture of Media_planing"
-                                        />
-                                    </div>
-                                    <h6 className='text-[#000] text-base font-gilroy font-semibold leading-normal pt-6'>Define Goals & Objectives</h6>
-                                    <p className='text-[#000] text-xs font-gilroy font-medium pt-11 text-center leading-[22px]'>Identify your key tracking objectives (e.g., user behavior analysis, conversion rate optimization).</p>
-                                </div>
-                            </div>
-                            <div aria-hidden="true" className="m-auto text-center">
-                                <div className='service2 relative w-[280px] sm:w-[329px] m-auto h-[286px] border border-solid border-[#E2E2E2] rounded-[10px] p-5 text-center'>
-                                    <div className='flex items-center justify-center'>
-                                        <Image
-                                            src="/leader2.svg"
-                                            width={50}
-                                            height={50}
-                                            alt="Picture of Media_planing"
-                                        />
-                                    </div>
-                                    <h6 className='text-[#000] text-base font-gilroy font-semibold leading-normal pt-6'>Data Source Mapping</h6>
-                                    <p className='text-[#000] text-xs font-gilroy font-medium pt-11 text-center leading-[22px]'>Determine the data points you want to collect and identify their sources (e.g., website interactions, user attributes).</p>
-                                </div>
-                            </div>
-                            <div aria-hidden="true" className="m-auto text-center">
-                                <div className='service3 relative w-[280px] sm:w-[329px] m-auto h-[286px] border border-solid border-[#E2E2E2] rounded-[10px] p-5 text-center'>
-                                    <div className='flex items-center justify-center'>
-                                        <Image
-                                            src="/leader3.svg"
-                                            width={50}
-                                            height={50}
-                                            alt="Picture of Media_planing"
-                                        />
-                                    </div>
-                                    <h6 className='text-[#000] text-base font-gilroy font-semibold leading-normal pt-6'>Server-Side Integration</h6>
-                                    <p className='text-[#000] text-xs font-gilroy font-medium pt-11 text-center leading-[22px]'>Our team seamlessly integrates server-side tracking code with your website architecture.</p>
-                                </div>
-                            </div>
-                            <div aria-hidden="true" className="m-auto text-center">
-                                <div className='service4 relative w-[280px] sm:w-[329px] m-auto h-[286px] border border-solid border-[#E2E2E2] rounded-[10px] p-5 text-center'>
-                                    <div className='flex items-center justify-center'>
-                                        <Image
-                                            src="/leader4.svg"
-                                            width={50}
-                                            height={50}
-                                            alt="Picture of Media_planing"
-                                        />
-                                    </div>
-                                    <h6 className='text-[#000] text-base font-gilroy font-semibold leading-normal pt-6'>Data Collection & Validation</h6>
-                                    <p className='text-[#000] text-xs font-gilroy font-medium pt-11 text-center leading-[22px]'>We establish secure data collection processes and validate data integrity.</p>
-                                </div>
-                            </div>
-                            <div aria-hidden="true" className="m-auto text-center">
-                                <div className='service5 relative w-[280px] sm:w-[329px] m-auto h-[286px] border border-solid border-[#E2E2E2] rounded-[10px] p-5 text-center'>
-                                    <div className='flex items-center justify-center'>
-                                        <Image
-                                            src="/leader5.svg"
-                                            width={50}
-                                            height={50}
-                                            alt="Picture of Media_planing"
-                                        />
-                                    </div>
-                                    <h6 className='text-[#000] text-base font-gilroy font-semibold leading-normal pt-6'>Integration with Analytics Platforms</h6>
-                                    <p className='text-[#000] text-xs font-gilroy font-medium pt-11 text-center leading-[22px]'>We connect your server-side tracking data with your preferred analytics platforms.</p>
-                                </div>
-                            </div>
-                            <div aria-hidden="true" className="m-auto text-center">
-                                <div className='service6 relative w-[280px] sm:w-[329px] m-auto h-[286px] border border-solid border-[#E2E2E2] rounded-[10px] p-5 text-center'>
-                                    <div className='flex items-center justify-center'>
-                                        <Image
-                                            src="/leader5.svg"
-                                            width={50}
-                                            height={50}
-                                            alt="Picture of Media_planing"
-                                        />
-                                    </div>
-                                    <h6 className='text-[#000] text-base font-gilroy font-semibold leading-normal pt-6'>Reporting & Optimization</h6>
-                                    <p className='text-[#000] text-xs font-gilroy font-medium pt-11 text-center leading-[22px]'>We provide comprehensive reports and insights to help you understand user behavior and optimize your marketing efforts.</p>
-                                </div>
-                            </div>
-                        </Slider>
-                    </div>
-                </div>
-            </section>
-
-            <section className='sstservice approach relative overflow-hidden font-gilroy'>
-                <div className='relative z-20 px-4 md:px-20 pt-8 md:pt-6 pb-8 md:pb-6'>
-                    <div>
-                        <div className='text-start'>
-                            <h2 className='text-[32px] font-gilroy font-semibold text-[#fff] leading-[1.5em] tracking-wide text-left block'>Additional Services</h2>
+                <section id="benefits" class="py-16">
+                    <div class="mx-auto max-w-7xl px-6">
+                        <div class="mb-10 text-center">
+                            <p class="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">What you get</p>
+                            <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Durable Measurement, Cleaner Pages, Better ROI</h2>
+                            <p class="mt-2 text-slate-600 max-w-3xl mx-auto">A modern stack that respects privacy and still measures outcomes you can optimize.</p>
                         </div>
-                        <p className='text-[#fff] text-[18px] font-normal leading-normal pt-7 my-5 md:py-0 md:pt-0 md:my-2'>In Addition to server-side tracking implementation, AnalyticsLiv offers a range of complementary services:</p>
-                        <div className='flex flex-col lg:flex-row gap-5 lg:gap-0 justify-between items-center pt-8 md:pt-0'>
-                            <div className='lg:w-3/5'>
-                                <Image
-                                    src="/Data_Science_Mid_Img.png"
-                                    width={500}
-                                    height={500}
-                                    alt="Picture of Google Marketing Platform Partner"
-                                    priority={true}
-                                    className='lg:h-auto'
+                        <div class="grid gap-6 md:grid-cols-3">
+                            <div class="rounded-3xl border border-emerald-200 bg-gradient-to-br from-emerald-50 to-white p-6 shadow-sm">
+                                <h3 class="text-lg font-semibold text-slate-900">GA4 + GTM Server</h3>
+                                <p class="mt-2 text-slate-700">Event models, parameters, and server containers hosted on gcloud, AWS or GCP App Engine.</p>
+                                <ul class="mt-3 space-y-1 text-sm text-slate-600">
+                                    <li>Event & parameter design</li>
+                                    <li>SS container setup & routing</li>
+                                    <li>Webhooks & header enrichment</li>
+                                </ul>
+                            </div>
+                            <div class="rounded-3xl border border-sky-200 bg-gradient-to-br from-sky-50 to-white p-6 shadow-sm">
+                                <h3 class="text-lg font-semibold text-slate-900">Consent Mode v2 & ECL</h3>
+                                <p class="mt-2 text-slate-700">CMP integration, advanced mode, and Enhanced Conversions for modeled recovery.</p>
+                                <ul class="mt-3 space-y-1 text-sm text-slate-600">
+                                    <li>TCF/US‑state strings</li>
+                                    <li>Cookieless pings & modeling</li>
+                                    <li>PII hashing & governance</li>
+                                </ul>
+                            </div>
+                            <div class="rounded-3xl border border-indigo-200 bg-gradient-to-br from-indigo-50 to-white p-6 shadow-sm">
+                                <h3 class="text-lg font-semibold text-slate-900">CAPI & Channel Feeds</h3>
+                                <p class="mt-2 text-slate-700">Server‑to‑server for Google Ads, Meta, LinkedIn, and more—with deduping.</p>
+                                <ul class="mt-3 space-y-1 text-sm text-slate-600">
+                                    <li>Event IDs & deduplication</li>
+                                    <li>Offline & LTV uploads</li>
+                                    <li>Product/feed hygiene</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="comparison" className="bg-slate-50 py-16">
+                    <div className="mx-auto max-w-7xl px-6">
+                        {/* Heading */}
+                        <div className="mb-8 text-center">
+                            <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
+                                Clarity
+                            </p>
+                            <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
+                                Client-Side vs Server-Side - What Actually Changes
+                            </h2>
+                            <p className="mt-2 text-slate-600 max-w-3xl mx-auto">
+                                Same business questions, different mechanics. Hover to learn more; toggle to see our
+                                recommendation by context.
+                            </p>
+                        </div>
+
+                        {/* Toggle Buttons */}
+                        <div className="mx-auto mb-6 flex w-full max-w-md items-center justify-center gap-3 rounded-2xl border border-slate-200 bg-white p-1 shadow-sm">
+                            {["client", "hybrid", "server"].map((mode) => (
+                                <button
+                                    key={mode}
+                                    onClick={() => setActiveMode(mode)}
+                                    className={`flex-1 rounded-xl px-3 py-2 text-sm font-semibold transition-colors duration-200 ${activeMode === mode
+                                        ? "bg-slate-900 text-white"
+                                        : "text-slate-600 hover:bg-slate-50"
+                                        }`}
+                                >
+                                    {mode === "client"
+                                        ? "Client-Side"
+                                        : mode === "hybrid"
+                                            ? "Hybrid (Recommended)"
+                                            : "Server-Side"}
+                                </button>
+                            ))}
+                        </div>
+
+                        {/* Comparison Grid */}
+                        <div className="grid gap-4 md:grid-cols-2">
+                            {/* Client Side Card */}
+                            <div
+                                className={`rounded-3xl border-2 bg-white p-6 shadow-sm group ${activeMode === "client" ? "border-emerald-200" : "border-slate-200"
+                                    }`}
+                            >
+                                <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-700">
+                                    Client-Side
+                                </div>
+                                <div className="grid gap-4 sm:grid-cols-2">
+                                    <Feature title="Data Quality" text="Susceptible to ad-blockers, ITP/ETP; lower event match rates." />
+                                    <Feature title="Performance" text="Tags run in browser → scripts add weight; CLS/LCP risk." />
+                                    <Feature title="Privacy & Control" text="Harder to enforce governance; PII risks without hashing." />
+                                    <Feature title="Use Cases" text="Small sites, low compliance needs, simple pixels." />
+                                </div>
+                            </div>
+
+                            {/* Server Side Card */}
+                            <div
+                                className={`rounded-3xl border-2 bg-white p-6 shadow-sm group ${activeMode === "server" ? "border-emerald-200" : "border-slate-200"
+                                    }`}
+                            >
+                                <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
+                                    Server-Side
+                                </div>
+                                <div className="grid gap-4 sm:grid-cols-2">
+                                    <Feature title="Data Quality" text="Higher match rates via CAPI & modeled fills; resilient to blockers." />
+                                    <Feature title="Performance" text="Offloads scripts to edge/server → faster pages, better CWV." />
+                                    <Feature title="Privacy & Control" text="Hashing, header enrichment, policy filters at the server." />
+                                    <Feature title="Use Cases" text="Regulated markets, performance-sensitive sites, multi-channel." />
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* KPIs */}
+                        <div className="mt-6 grid gap-4 md:grid-cols-3">
+                            <Kpi
+                                title="Modeled Conversion Recovery"
+                                value="+10–25%"
+                                description="with Consent Mode v2 + ECL and server-side routing*"
+                            />
+                            <Kpi
+                                title="Page Performance"
+                                value="LCP −200-500ms"
+                                description="by removing heavy third-party scripts from the browser*"
+                            />
+                            <Kpi
+                                title="Governance"
+                                value="Policy Filters"
+                                description="strip PII, enforce mappings, and log decisions centrally"
+                            />
+                        </div>
+                    </div>
+                </section>
+                <section id="process" class="py-16">
+                    <div class="mx-auto max-w-7xl px-6">
+                        <div class="mb-8 text-center">
+                            <p class="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">How we deliver</p>
+                            <h2 class="text-2xl md:text-3xl font-bold text-slate-900">A Proven 6‑Step Rollout for Server‑Side Success</h2>
+                        </div>
+                        <div class="grid gap-6 lg:grid-cols-2">
+                            <ol class="relative border-l border-slate-200 pl-6 space-y-6 lg:space-y-8">
+                                <li><div class="absolute -left-2.5 h-5 w-5 rounded-full bg-slate-900 ring-4 ring-slate-100"></div>
+                                    <div class="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
+                                        <div class="text-xs font-semibold tracking-wider text-slate-500">01. Audit & Plan</div>
+                                        <p class="mt-1 text-slate-800">Event inventory, consent posture, gaps, and success metrics.</p>
+                                    </div></li>
+                                <li><div class="absolute -left-2.5 h-5 w-5 rounded-full bg-emerald-600 ring-4 ring-slate-100"></div>
+                                    <div class="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
+                                        <div class="text-xs font-semibold tracking-wider text-slate-500">02. Architecture</div>
+                                        <p class="mt-1 text-slate-800">GTM Server on App Engine/Cloud Run, DNS, custom endpoints.</p>
+                                    </div></li>
+                                <li><div class="absolute -left-2.5 h-5 w-5 rounded-full bg-sky-600 ring-4 ring-slate-100"></div>
+                                    <div class="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
+                                        <div class="text-xs font-semibold tracking-wider text-slate-500">03. Consent & ECL</div>
+                                        <p class="mt-1 text-slate-800">CMP integration, Consent Mode v2, enhanced conversions.</p>
+                                    </div></li>
+                            </ol>
+                            <ol class="relative border-l border-slate-200 pl-6 space-y-6 lg:space-y-8">
+                                <li><div class="absolute -left-2.5 h-5 w-5 rounded-full bg-indigo-600 ring-4 ring-slate-100"></div>
+                                    <div class="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
+                                        <div class="text-xs font-semibold tracking-wider text-slate-500">04. CAPI & Channels</div>
+                                        <p class="mt-1 text-slate-800">Google Ads, Meta, LinkedIn, etc. with dedup IDs & policy filters.</p>
+                                    </div></li>
+                                <li><div class="absolute -left-2.5 h-5 w-5 rounded-full bg-amber-600 ring-4 ring-slate-100"></div>
+                                    <div class="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
+                                        <div class="text-xs font-semibold tracking-wider text-slate-500">05. QA & Hardening</div>
+                                        <p class="mt-1 text-slate-800">Event parity checks, payload inspection, security & logging.</p>
+                                    </div></li>
+                                <li><div class="absolute -left-2.5 h-5 w-5 rounded-full bg-rose-600 ring-4 ring-slate-100"></div>
+                                    <div class="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
+                                        <div class="text-xs font-semibold tracking-wider text-slate-500">06. Dashboards & Handover</div>
+                                        <p class="mt-1 text-slate-800">Looker Studio + BigQuery; playbooks & runbooks for the team.</p>
+                                    </div></li>
+                            </ol>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="clients" class="bg-slate-50 pt-12 pb-16">
+                    <div class="mx-auto max-w-7xl px-6 text-center">
+                        <p class="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
+                            Trusted by
+                        </p>
+                        <h2 class="text-2xl font-bold sm:text-3xl text-slate-900 mb-8">
+                            Brands we’ve partnered with
+                        </h2>
+                        <div class="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 items-center">
+                            <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                                <img
+                                    src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Shoebacca%20logo.png"
+                                    alt="Shoebacca"
+                                    class="h-10 max-h-10 object-contain grayscale hover:grayscale-0 transition"
+                                    loading="lazy"
                                 />
                             </div>
-                            <div className='lg:w-2/5 grid gap-4'>
-                                <div className="first group border hover:shadow-none shadow-serviceoffer border-solid border-[#13131400] rounded-[20px] p-5">
-                                    <div className="flex items-start justify-start gap-4 pb-4">
-                                        <div className='rounded-full bg-[#EAF0FF] w-10 h-10 flex items-center justify-center'>
-                                            <Image
-                                                src="/service_need 1.svg"
-                                                width={30}
-                                                height={30}
-                                                alt="Picture of the author"
-                                                priority={true}
-                                                className=''
-                                            />
-                                        </div>
-                                        <h6 className='text-base font-semibold text-[#fff] leading-normal'>Data Analytics & Visualization</h6>
-                                    </div>
-                                    <p className='text-xs font-normal text-[#fff] leading-[22px]'>We transform raw data into actionable insights with clear visualizations for informed decision-making.</p>
-                                </div>
-                                <div className="second group border hover:shadow-none shadow-serviceoffer border-solid border-[#13131400] rounded-[20px] p-5">
-                                    <div className="flex items-start justify-start gap-4 pb-4">
-                                        <div className='rounded-full bg-[#EAF0FF] w-10 h-10 flex items-center justify-center'>
-                                            <Image
-                                                src="/service_need 2.svg"
-                                                width={30}
-                                                height={30}
-                                                alt="Picture of the author"
-                                                priority={true}
-                                                className=''
-                                            />
-                                        </div>
-                                        <h6 className='text-base font-semibold text-[#fff] leading-normal'>Marketing Attribution Modeling</h6>
-                                    </div>
-                                    <p className='text-xs font-normal text-[#fff] leading-[22px]'>We help you understand which marketing channels contribute most to conversions.</p>
-                                </div>
-                                <div className="third group border hover:shadow-none shadow-serviceoffer border-solid border-[#13131400] rounded-[20px] p-5">
-                                    <div className="flex items-start justify-start gap-4 pb-4">
-                                        <div className='rounded-full bg-[#EAF0FF] w-10 h-10 flex items-center justify-center'>
-                                            <Image
-                                                src="/service_need 3.svg"
-                                                width={30}
-                                                height={30}
-                                                alt="Picture of the author"
-                                                priority={true}
-                                                className=''
-                                            />
-                                        </div>
-                                        <h6 className='text-base font-semibold text-[#fff] leading-normal'>Marketing Campaign Optimization</h6>
-                                    </div>
-                                    <p className='text-xs font-normal text-[#fff] leading-[22px]'>We leverage data insights to optimize your marketing campaigns for maximum return on investment (ROI).</p>
-                                </div>
+                            <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                                <img
+                                    src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Washington_examinor_logo.png"
+                                    alt="Washington Examiner"
+                                    class="h-10 max-h-10 object-contain grayscale hover:grayscale-0 transition"
+                                    loading="lazy"
+                                />
+                            </div>
+                            <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                                <img
+                                    src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Anantara_logo_New.png"
+                                    alt="Anantara"
+                                    class="h-10 max-h-10 object-contain grayscale hover:grayscale-0 transition"
+                                    loading="lazy"
+                                />
+                            </div>
+                            <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                                <img
+                                    src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Auxi_logo.coloured.png"
+                                    alt="Auxi"
+                                    class="h-10 max-h-10 object-contain grayscale hover:grayscale-0 transition"
+                                    loading="lazy"
+                                />
+                            </div>
+                            <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                                <img
+                                    src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Algovation_logo.png"
+                                    alt="Algovation"
+                                    class="h-10 max-h-10 object-contain grayscale hover:grayscale-0 transition"
+                                    loading="lazy"
+                                />
+                            </div>
+                            <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                                <img
+                                    src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/shiprocket_logo.png"
+                                    alt="Shiprocket"
+                                    class="h-10 max-h-10 object-contain grayscale hover:grayscale-0 transition"
+                                    loading="lazy"
+                                />
+                            </div>
+                            <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                                <img
+                                    src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/we_sort_it_logo.png"
+                                    alt="We Sort It"
+                                    class="h-10 max-h-10 object-contain grayscale hover:grayscale-0 transition"
+                                    loading="lazy"
+                                />
+                            </div>
+                            <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                                <img
+                                    src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Mex_insurance_logo.png"
+                                    alt="Mexico Insurance Services"
+                                    class="h-10 max-h-10 object-contain grayscale hover:grayscale-0 transition"
+                                    loading="lazy"
+                                />
+                            </div>
+                            <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                                <img
+                                    src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/issta_Logo.png"
+                                    alt="ISSTA"
+                                    class="h-10 max-h-10 object-contain grayscale hover:grayscale-0 transition"
+                                    loading="lazy"
+                                />
+                            </div>
+                            <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                                <img
+                                    src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/IRIS_LOGO.png"
+                                    alt="IRIS"
+                                    class="h-10 max-h-10 object-contain grayscale hover:grayscale-0 transition"
+                                    loading="lazy"
+                                />
+                            </div>
+                            <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                                <img
+                                    src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/league_logo_svg%201.png"
+                                    alt="League"
+                                    class="h-10 max-h-10 object-contain grayscale hover:grayscale-0 transition"
+                                    loading="lazy"
+                                />
                             </div>
                         </div>
+                        <p class="mt-6 text-sm text-slate-600">
+                            …and 200+ other growth-focused businesses across B2B, D2C, travel,
+                            and finance.
+                        </p>
                     </div>
-                </div>
+                </section>
 
-            </section>
 
-            <section className='sstcont progracont relative overflow-hidden font-gilroy'>
-                <div className='relative px-4 md:px-12 pt-8 pb-8 z-20'>
-                    <div className='flex md:flex-nowrap flex-wrap items-center mx-auto'>
-                        <div className='md:w-[66%] w-full'>
+                <section id="faq" class="py-16">
+                    <div class="mx-auto max-w-7xl px-6">
+                        <div class="mb-8 text-center">
+                            <p class="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">FAQs</p>
+                            <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Everything About Server‑Side Tracking</h2>
+                            <p class="mt-2 text-slate-600 max-w-3xl mx-auto">Timelines, hosting choices, costs, and how we prove impact.</p>
+                        </div>
+                        <Faq content={content} />
+                    </div>
+                </section>
+
+                <section id="contact" class="bg-slate-900 py-16 text-white">
+                    <div class="mx-auto max-w-7xl px-6">
+                        <div class="grid items-center gap-8 md:grid-cols-2">
                             <div>
-                                <div>
-                                    <div><h3 className='text-[#ffffff] text-[30px] leading-8 md:mb-[20px] mb-6 font-gilroy font-semibold'>Contact us</h3></div>
-                                    <div>
-                                        <div className='text-[#ffffff] text-base leading-8 mb-6 md:mb-0 font-gilroy2 font-medium'>
-                                            <p className='text-[22px] mb-3'>Ready to Take Control of Your User Data?</p>
-                                            Contact AnalyticsLiv today to schedule a free consultation and unlock the power of server-side tracking!
-                                        </div>
-                                    </div>
-                                </div>
+                                <h3 class="text-2xl font-bold">Start with a first tracking audit</h3>
+                                <p class="mt-2 max-w-2xl text-slate-300">We’ll review your tags, consent posture, and data gaps—and send a prioritized rollout plan.</p>
+                                <ul class="mt-4 space-y-2 text-slate-300">
+                                    <li class="flex items-start gap-3"><span class="mt-2 inline-block h-2.5 w-2.5 rounded-full bg-white"></span><span>Event & parameter map</span></li>
+                                    <li class="flex items-start gap-3"><span class="mt-2 inline-block h-2.5 w-2.5 rounded-full bg-white"></span><span>Server architecture options</span></li>
+                                    <li class="flex items-start gap-3"><span class="mt-2 inline-block h-2.5 w-2.5 rounded-full bg-white"></span><span>90‑day implementation plan</span></li>
+                                </ul>
                             </div>
-                        </div>
-                        <div className='md:w-[33%] w-full'>
-                            <div className='p-[10px] pl-0'>
-                                <div className='w-full flex lg:justify-end justify-center'>
-                                    <div className='flex items-center md:justify-end justify-center'>
-                                        <Link href="/contact?id=programatic-advertising">
-                                            <button className="border border-solid border-[#ffffff] bg-[#ffffff] text-[#de668a] text-base font-normal tracking-wider rounded-xl py-3 px-6">Let's Connect</button>
-                                        </Link>
+                            <div class="rounded-3xl border border-white/20 bg-white/5 p-6">
+                                <form onSubmit={handleSubmit} action="#" method="post" className="grid gap-3 md:grid-cols-2">
+                                    <label className="text-sm" for="fullName">Full name
+                                        <input value={formData.fullName} onChange={handleChange} id="fullName" name="fullName" required placeholder="Your Full Name" className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none" />
+                                    </label>
+                                    <label className="text-sm" for="email">Work email
+                                        <input value={formData.email} onChange={handleChange} id="email" type="email" name="email" required placeholder="name@company.com" className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none" />
+                                    </label>
+                                    <label className="text-sm md:col-span-1" for="company">Company
+                                        <input value={formData.company} onChange={handleChange} id="company" name="company" placeholder="Company name" className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none" />
+                                    </label>
+                                    <label className="text-sm md:col-span-1" for="stack">Current stack
+                                        <input value={formData.stack} onChange={handleChange} id="stack" name="stack" placeholder="e.g., GA4, GTM, CAPI" className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none" />
+                                    </label>
+                                    <label className="text-sm md:col-span-2" for="message">Goals & pain points
+                                        <textarea value={formData.message} onChange={handleChange} id="message" name="message" rows="4" placeholder="What are you solving for?" className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none"></textarea>
+                                    </label>
+                                    <div className="md:col-span-2">
+                                        <button disabled={loading} className="rounded-2xl bg-white px-6 py-3 font-semibold text-slate-900 shadow-md transition hover:opacity-90" type="submit">
+                                            {loading ? "Submitting..." : "Request Audit"}
+                                        </button>
                                     </div>
-                                </div>
+                                    {responseMessage && (
+                                        <p className="md:col-span-2 mt-2 text-sm text-white">{responseMessage}</p>
+                                    )}
+                                </form>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <section className='sstfaq faq-section relative overflow-hidden font-gilroy'>
-                <div className="relative px-4 md:px-12 pt-8 md:pt-11 pb-8 md:pb-16 z-20 md:py-6">
-                    <div>
-                        <h3 className='text-[32px] font-semibold text-[#000000] leading-[1.5em] font-gilroy mb-2'>FAQ's</h3>
-                    </div>
-                    <div className='md:flex items-center justify-start mt-10 md:mt-0'>
-                        <div className='items-start lg:justify-start justify-center gap-7 w-full'>
-                            <div className={`faqfst flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
-                                <div className='flex items-center justify-between w-full'>
-                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={toggleFaqfstVisibility}>
-                                        <div className={`flex items-center w-full justify-between gap-5 ${isFaqfstVisible ? 'mb-[13px]' : 'mb-0'}`}>
-                                            <div className='flex items-center justify-start'>
-                                                <h2 className='text-[17px] font-medium leading-normal'>Is server-side tracking complex to implement?</h2>
-                                            </div>
-                                            <div className='clk'>
-                                                {isFaqfstVisible ? <FaChevronUp className='w-4 h-4' /> : <FaChevronDown className='w-4 h-4' />}
-                                            </div>
-                                        </div>
-                                        {isFaqfstVisible && (
-                                            <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} className='text-[14px] font-medium leading-[1.7em] pb-2'>
-                                                While server-side tracking requires technical expertise, AnalyticsLiv makes the process seamless. Our team guides you through every step, ensuring a smooth implementation.
-                                            </motion.div>
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={`faqsec flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
-                                <div className='flex items-center justify-between w-full'>
-                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={toggleFaqsecVisibility}>
-                                        <div className={`flex items-center justify-between gap-5 ${isFaqsecVisible ? 'mb-[10px]' : 'mb-0'}`}>
-                                            <div className='flex items-center justify-start'>
-                                                <h2 className='text-[17px] font-medium leading-normal'>Can server-side tracking replace client-side tracking entirely?</h2>
-                                            </div>
-                                            <div className='clk'>
-                                                {isFaqsecVisible ? <FaChevronUp className='w-4 h-4' /> : <FaChevronDown className='w-4 h-4' />}
-                                            </div>
-                                        </div>
-                                        {isFaqsecVisible && (
-                                            <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} className='text-[14px] font-medium leading-[1.7em] pb-2'>
-                                                Server-side tracking offers distinct advantages, but it doesn't eliminate the need for client-side tracking entirely. They can work together to provide a more comprehensive view of user behavior.
-                                            </motion.div>
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={`faqthrd flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
-                                <div className='flex items-center justify-between w-full'>
-                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqthrdVisibility()}>
-                                        <div className={`flex items-center justify-between gap-5 ${isFaqthrdVisible ? 'mb-[10px]' : 'mb-0'}`}>
-                                            <div className='flex items-center justify-start'>
-                                                <h2 className='text-[17px] font-medium leading-normal'>How does server-side tracking improve data security?</h2>
-                                            </div>
-                                            <div className='clk'>
-                                                {isFaqthrdVisible ? <FaChevronUp className='w-4 h-4' /> : <FaChevronDown className='w-4 h-4' />}
-                                            </div>
-                                        </div>
-                                        {isFaqthrdVisible && (
-                                            <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} className='text-[14px] font-medium leading-[1.7em] pb-2'>
-                                                By processing data on your server, you have greater control over data access and storage. Server-side tracking also reduces reliance on browser cookies, which can be vulnerable to security breaches.
-                                            </motion.div>
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={`faqfur flex items-start gap-5 mb-5 max-[350px]:w-[285px] powerbox2 p-[15px] border-b border-[#d5d8dc] hover:shadow-mediadv360 h-auto rounded-[10px]`}>
-                                <div className='flex items-center justify-between w-full'>
-                                    <div className='faq-click cursor-pointer w-full text-[#000000]' onClick={() => toggleFaqfurVisibility()}>
-                                        <div className={`flex items-center justify-between gap-5 ${isFaqfurVisible ? 'mb-[10px]' : 'mb-0'}`}>
-                                            <div className='flex items-center justify-start'>
-                                                <h2 className='text-[17px] font-medium leading-normal'>How long does it take to see results from your solutions?</h2>
-                                            </div>
-                                            <div className='clk'>
-                                                {isFaqfurVisible ? <FaChevronUp className='w-4 h-4' /> : <FaChevronDown className='w-4 h-4' />}
-                                            </div>
-                                        </div>
-                                        {isFaqfurVisible && (
-                                            <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }} className='text-[14px] font-medium leading-[1.7em] pb-2'>
-                                                The time to see results varies depending on the complexity of your data and the specific solution implemented. However, we prioritize delivering measurable impact quickly. Our agile approach allows for rapid prototyping, iterative refinements, and continuous optimization to ensure you start seeing value as soon as possible.
-                                            </motion.div>
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
+            </main>
 
         </>
     )
