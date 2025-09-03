@@ -1,19 +1,63 @@
 import StructuredData from '../components/StructuredData';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import MetaSchemaOg from '../components/MetaSchemaOg'
 import Head from 'next/head';
 import { schemaHome } from '../utils/schema';
 // import YtPlaylist from '../components/YtPlaylist';
-import { content } from '../components/home/FAQ';
 import { InlineWidget } from 'react-calendly';
 import Faq from '../components/Faq';
+import HowWeOperate from '../components/home/HowWeOperate';
+import { METRICS, services } from '../utils/const';
 
 const page = ({ ytPlaylistdata }) => {
   const stuctureData = { "@context": "https://schema.org", "@graph": [{ "@type": "WebPage", "@id": "https://analyticsliv.com/", "url": "https://analyticsliv.com/", "name": "Leading Web and App Analytics Agency in India - AnalyticsLiv", "isPartOf": { "@id": "https://analyticsliv.com/#website" }, "primaryImageOfPage": { "@id": "https://analyticsliv.com/#primaryimage" }, "image": { "@id": "https://analyticsliv.com/#primaryimage" }, "thumbnailUrl": "https://storage.googleapis.com/website-bucket-uploads/static/logo.png", "datePublished": "2023-01-11T18:27:34+00:00", "dateModified": "2023-04-07T20:48:38+00:00", "description": "AnalyticsLiv Digital is one of the leading Web and App analytics agency. We help our customers embrace Google Products to improve their customer experiences.", "breadcrumb": { "@id": "https://analyticsliv.com/#breadcrumb" }, "inLanguage": "en-US", "potentialAction": [{ "@type": "ReadAction", "target": ["https://analyticsliv.com/"] }] }, { "@type": "ImageObject", "inLanguage": "en-US", "@id": "https://analyticsliv.com/#primaryimage", "url": "https://storage.googleapis.com/website-bucket-uploads/static/logo.png", "contentUrl": "https://storage.googleapis.com/website-bucket-uploads/static/logo.png", "width": 1200, "height": 628 }, { "@type": "BreadcrumbList", "@id": "https://analyticsliv.com/#breadcrumb", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home" }] }, { "@type": "WebSite", "@id": "https://analyticsliv.com/#website", "url": "https://analyticsliv.com/", "name": "Analyticsliv", "description": "", "potentialAction": [{ "@type": "SearchAction", "target": { "@type": "EntryPoint", "urlTemplate": "https://analyticsliv.com/blogs/search?s={search_term_string}" }, "query-input": "required name=search_term_string" }], "inLanguage": "en-US" }, { "@type": "Organization", "@id": "https://analyticsliv.com/#organization", "name": "Analyticsliv", "url": "https://analyticsliv.com/", "logo": { "@type": "ImageObject", "inLanguage": "en-US", "@id": "https://analyticsliv.com/#/schema/logo/image/", "url": "https://storage.googleapis.com/website-bucket-uploads/static/logo.png", "contentUrl": "https://storage.googleapis.com/website-bucket-uploads/static/logo.png", "width": 512, "height": 114, "caption": "Analyticsliv" }, "image": { "@id": "https://analyticsliv.com/#/schema/logo/image/" }, "sameAs": ["https://m.facebook.com/100070503960704/", "https://in.linkedin.com/company/analytics-liv-digital", "https://www.youtube.com/channel/UCSU9utLB2PDe4VcXiI5kMFw", "https://www.instagram.com/analyticsliv_digital"] }] };
+
   const [showCalendly, setShowCalendly] = useState(false);
+  const [active, setActive] = useState("media");
+
   const handleCalendly = () => {
     setShowCalendly(true);
   }
+
+  useEffect(() => {
+    const headlines = [
+      document.getElementById("headline0"),
+      document.getElementById("headline1"),
+      document.getElementById("headline2"),
+    ];
+    let hIdx = 0;
+
+    // Ensure the first headline is visible at start
+    headlines[0].classList.add("active");
+
+    const interval = setInterval(() => {
+      const current = headlines[hIdx];
+      current.classList.remove("active");
+      current.classList.add("exiting");
+
+      // Reset the current after exit animation
+      setTimeout(() => {
+        current.classList.remove("exiting");
+        current.style.opacity = "0";
+        current.style.transform = "translateY(20px)";
+      }, 700);
+
+      // Move to next headline
+      hIdx = (hIdx + 1) % headlines.length;
+
+      const next = headlines[hIdx];
+      // Reset inline styles and show the next headline
+      setTimeout(() => {
+        next.style.opacity = "1";
+        next.style.transform = "translateY(0)";
+        next.classList.add("active");
+      }, 700);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const activeService = services[active];
 
   const content = [
     { question: 'Why should I choose AnalyticsLiv for my analytics and marketing needs?', answer: 'AnalyticsLiv combines technical expertise in analytics and data-driven marketing with a proven track record of delivering measurable results. Our customized solutions are designed to fit your specific business goals and drive ROI.' },
@@ -21,6 +65,38 @@ const page = ({ ytPlaylistdata }) => {
     { question: 'Can you work with our existing media team?', answer: 'We can run media or operate as an analytics & experimentation layer to improve CPA/ROAS with your current agency.' },
     { question: 'What results can we expect in the first 90 days?', answer: 'A measurement plan, tracking reliability ≥90%, quick‑win CRO tests, and early CPA/ROAS lifts from structured experiments.' },
   ]
+
+  useEffect(() => {
+    const rail = document.getElementById("rail");
+    const buttons = document.querySelectorAll("[data-vert]");
+
+    function renderRail(key = "commerce") {
+      if (!rail) return;
+      rail.innerHTML = METRICS[key]
+        .map(
+          (m) => `
+        <div class='relative min-w-[260px] snap-start overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-sm'>
+          <div class='absolute -right-8 -top-8 h-28 w-28 rounded-full ring-animated opacity-25'></div>
+          <div class='text-2xl font-extrabold text-slate-900'>${m.kpi}</div>
+          <div class='mt-1 text-slate-700'>${m.desc}</div>
+          <p class='mt-2 text-sm text-slate-500'>${m.note}</p>
+        </div>
+      `
+        )
+        .join("");
+    }
+
+    renderRail("commerce");
+
+    buttons.forEach((btn) =>
+      btn.addEventListener("click", () => {
+        buttons.forEach((b) => b.classList.remove("bg-slate-900", "text-white"));
+        btn.classList.add("bg-slate-900", "text-white");
+        renderRail(btn.getAttribute("data-vert") || "commerce");
+      })
+    );
+  }, []);
+
   return (
     <>
       <Head>
@@ -34,121 +110,179 @@ const page = ({ ytPlaylistdata }) => {
         twitterDescription="Data Influences every touchpoint. As GMP partner we help brands from acquisition to conversion and better retention using personalized data driven solutions"
         faqData={content}
       />
-      {/* <StructuredData data={stuctureData} /> */}
+
       <main className="min-h-screen overflow-x-hidden bg-white text-slate-800"
         style={{ fontFamily: 'ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji"' }}>
 
         <section className="relative overflow-hidden border-b border-slate-200">
-          <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-white to-sky-50"></div>
-          <div className="relative mx-auto max-w-7xl px-6 py-16 sm:py-24 text-center">
-            <p className="text-xs font-semibold uppercase tracking-wider text-emerald-700">Google Marketing Platform Certified Partner</p>
-            <h1 className="mt-2 text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">Turning Data into Measurable Growth</h1>
-            <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-600">We help brands activate analytics, transform their technology, and scale performance across PPC, SEO, DV360 and beyond.</p>
+          <div className="relative mx-auto max-w-7xl px-6 py-14 md:py-24 text-center">
+
+            <div class="flex flex-wrap items-center justify-center gap-3 opacity-95">
+              <span className="inline-flex items-center gap-2 rounded-full px-3 py-1 border border-gray-300 bg-white text-xs font-semibold"><span className="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>GMP Certified</span>
+              <span className="inline-flex items-center gap-2 rounded-full px-3 py-1 border border-gray-300 bg-white text-xs font-semibold"><span className="h-1.5 w-1.5 rounded-full bg-sky-500"></span>Google Partner</span>
+              <span className="inline-flex items-center gap-2 rounded-full px-3 py-1 border border-gray-300 bg-white text-xs font-semibold"><span className="h-1.5 w-1.5 rounded-full bg-indigo-500"></span>Meta Partner</span>
+            </div>
+
+            <h1 className="hero-headline relative h-[300px] md:h-[225px] xl:h-[175px] text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl overflow-hidden">
+              <span
+                id="headline0"
+                className="absolute inset-0 flex items-center justify-center opacity-100 translate-y-0 transition-all duration-700"
+              >
+                Turning Data into Measurable Growth
+              </span>
+              <span
+                id="headline1"
+                className="absolute inset-0 flex items-center justify-center opacity-0 translate-y-5 transition-all duration-700"
+              >
+                Data. Technology. Marketing. Growth with Purpose.
+              </span>
+              <span
+                id="headline2"
+                className="absolute inset-0 flex items-center justify-center opacity-0 translate-y-5 transition-all duration-700"
+              >
+                Better Data. Bigger Outcomes
+              </span>
+            </h1>
+
+            {/* Subtext */}
+            <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-600">
+              We help brands activate analytics, transform their technology, and scale performance across PPC, SEO, DV360 and beyond.
+            </p>
+
+            {/* Buttons */}
             <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <a href="#book-calendly" onclick="window.open(CALENDLY_URL,'_blank');return false;" className="btn inline-flex items-center justify-center rounded-xl px-5 py-3 font-semibold bg-emerald-700 text-white shadow-[0_8px_20px_rgba(4,120,87,.18)] hover:brightness-95 transition duration-150" data-gtm="hero_cta_primary">Book a Free Strategy Call</a>
-              <a href="#what-we-do" className="btn inline-flex items-center justify-center rounded-xl px-5 py-3 font-semibold border border-gray-200 text-slate-900 hover:bg-slate-50 transition duration-150" data-gtm="hero_cta_secondary">What we do</a>
-            </div>
-            {/* <div className="mt-8 flex flex-wrap items-center justify-center gap-4 opacity-90">
-              <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/CE4F38BB.png" alt="GMP Certified" className="h-10 w-auto object-contain" loading="lazy" />
-              <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Partner-RGB.png" alt="Google Partner" className="h-10 w-auto object-contain" loading="lazy" />
-              <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/MBP%20Badge%20-%20Dark%20backgrounds%401x.png" alt="Meta Business Partner" className="h-10 w-auto object-contain" loading="lazy" />
-            </div> */}
-            <div className="mt-10 flex max-xl:flex-wrap items-center justify-center gap-4">
-              <a href="#gmp" className="inline-flex items-center rounded-2xl border border-slate-200 bg-white p-2 shadow-sm">
-                <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/CE4F38BB.png" alt="Google Marketing Platform Certified badge" className="h-14 2xl:h-20 w-auto" loading="lazy" />
+              <a
+                href="#book-calendly"
+                className="inline-flex items-center justify-center rounded-xl bg-emerald-600 px-5 py-3 font-semibold text-white shadow-md hover:bg-emerald-700 transition"
+              >
+                Book a Strategy Call
               </a>
-              <a href="#google" className="inline-flex items-center rounded-2xl border border-slate-200 bg-white p-2 shadow-sm">
-                <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Partner-RGB.png" alt="Google Partner badge" className="h-14 2xl:h-20 w-auto" loading="lazy" />
-              </a>
-              <a href="#meta" className="inline-flex items-center rounded-2xl border border-slate-200 bg-white p-2 shadow-sm">
-                <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/MBP%20Badge%20-%20Dark%20backgrounds%401x.png" alt="Meta Business Partner badge" className="h-14 2xl:h-20 w-auto" loading="lazy" />
+              <a
+                href="#why"
+                className="inline-flex items-center justify-center rounded-xl border border-gray-300 px-5 py-3 font-semibold text-slate-900 hover:bg-slate-100 transition"
+              >
+                Why AnalyticsLiv?
               </a>
             </div>
           </div>
         </section>
 
-        <section id="what-we-do" className="py-20">
+        <section id="services" className="py-20">
           <div className="mx-auto max-w-7xl px-6">
-            <div className="text-center mb-12">
-              <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">What we do</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Technology, Creativity &amp; Intelligence - Delivered</h2>
-              <p className="mt-2 text-slate-600 max-w-3xl mx-auto">Three power lanes, one team. We blend <span className="font-semibold">Analytics</span>, <span className="font-semibold">Media</span>, and <span className="font-semibold">Cloud</span> so your growth is measurable and repeatable.</p>
-            </div>
-            <div className="grid gap-6 md:grid-cols-3">
-              <article className="relative overflow-hidden rounded-3xl border border-emerald-200 bg-gradient-to-br from-emerald-50 to-white p-6 shadow-sm">
-                <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white px-3 py-1 text-xs font-semibold text-emerald-700">Analytics</div>
-                <h3 className="text-lg font-semibold text-slate-900">GA4, Server‑Side &amp; Dashboards</h3>
-                <p className="mt-1 text-slate-700">Durable, privacy‑first measurement with GA4, consent mode, and server‑side tagging—visualized in Looker.</p>
-                <ul className="mt-3 grid grid-cols-2 gap-2 text-sm text-slate-700">
-                  <li>Event models</li><li>Consent &amp; SS tagging</li><li>BigQuery exports</li><li>Looker dashboards</li>
+            <h2 className="text-center text-4xl font-bold">
+              One Stack. Four Capabilities.
+            </h2>
+            <p className="mx-auto mt-2 max-w-3xl text-center text-slate-600">
+              Click each capability to see how it contributes to growth.
+            </p>
+
+            <div className="mt-12 flex flex-col items-center lg:flex-row lg:justify-center lg:gap-20">
+              {/* Service Diagram */}
+              <div className="relative w-[300px] h-[300px] md:w-[440px] md:h-[430px] mx-auto rounded-full bg-[radial-gradient(circle_at_center,#f0fdf4,#fff)] flex items-center justify-center">
+                <div className="max-md:text-xs bg-white px-2.5 md:px-5 py-3 rounded-full font-bold shadow-md text-center z-10 pointer-events-none leading-snug max-w-[135px] md:max-w-[190px]">
+                  AnalyticsLiv Stack
+                  <br />
+                  <span className="text-[10px] md:text-xs text-slate-500">
+                    Integrated • Scalable • Outcome-Driven
+                  </span>
+                </div>
+                {/* Media connector */}
+                <div
+                  className="absolute bg-slate-300 z-0 w-[2px] h-[60px] animate-pulseLine"
+                  style={{ top: "18%", left: "50%", transform: "translateX(-50%)" }}
+                ></div>
+
+                {/* Analytics connector */}
+                <div
+                  className="absolute bg-slate-300 z-0 h-[2px] w-[50px] animate-pulseLine"
+                  style={{ top: "50%", left: "18%", transform: "translateY(-50%)" }}
+                ></div>
+
+                {/* Cloud connector */}
+                <div
+                  className="absolute bg-slate-300 z-0 w-[2px] h-[60px] animate-pulseLine"
+                  style={{ bottom: "18%", left: "50%", transform: "translateX(-50%)" }}
+                ></div>
+
+                {/* Transform connector */}
+                <div
+                  className="absolute bg-slate-300 z-0 h-[2px] w-[60px] animate-pulseLine"
+                  style={{ top: "50%", right: "18%", transform: "translateY(-50%)" }}
+                ></div>
+
+                {Object.keys(services).map((key) => (
+                  <button
+                    key={key}
+                    onClick={() => setActive(key)}
+                    className={`absolute py-2 rounded-full border border-slate-300 shadow transition hover:scale-105 ${active === key
+                      ? "bg-green-700 text-white ring-2 ring-emerald-300"
+                      : "bg-white text-slate-700 hover:bg-green-700 hover:text-white"
+                      } ${key === "media"
+                        ? "top-[12%] left-1/2 -translate-x-1/2 -translate-y-1/2 px-2 md:px-4"
+                        : key === "analytics"
+                          ? "top-1/2 left-[10%] md:left-[12%] -translate-x-1/2 -translate-y-1/2 px-2 md:px-4"
+                          : key === "cloud"
+                            ? "bottom-[12%] left-1/2 -translate-x-1/2 translate-y-1/2 px-2 md:px-4"
+                            : "top-1/2 right-[10%] md:right-[12%] translate-x-1/2 -translate-y-1/2 px-2 md:px-[10px]"
+                      }`}
+                  >
+                    {key.charAt(0).toUpperCase() + key.slice(1)}
+                  </button>
+                ))}
+              </div>
+
+              {/* Service Detail */}
+              <div className="mt-10 lg:mt-0 max-w-md space-y-4">
+                <h3 className="text-2xl font-bold">{activeService.title}</h3>
+                <p className="text-slate-700">{activeService.body}</p>
+                <ul className="list-disc list-inside text-slate-600 space-y-1">
+                  {activeService.list.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
                 </ul>
-                <a href="/services" className="mt-4 inline-flex text-emerald-700 font-semibold" data-gtm="wwd_analytics_link">Explore analytics →</a>
-              </article>
-              <article className="relative overflow-hidden rounded-3xl border border-sky-200 bg-gradient-to-br from-sky-50 to-white p-6 shadow-sm">
-                <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-sky-200 bg-white px-3 py-1 text-xs font-semibold text-sky-700">Media</div>
-                <h3 className="text-lg font-semibold text-slate-900">PPC, SEO, Programmatic, CRO</h3>
-                <p className="mt-1 text-slate-700">Full‑funnel activation across Google/Microsoft Ads, DV360, and SEO—powered by experimentation.</p>
-                <ul className="mt-3 grid grid-cols-2 gap-2 text-sm text-slate-700">
-                  <li>Search &amp; Shopping</li><li>PMax &amp; YouTube</li><li>Programmatic (DV360)</li><li>SEO &amp; CRO</li>
-                </ul>
-                <a href="/services" className="mt-4 inline-flex text-sky-700 font-semibold" data-gtm="wwd_media_link">See performance →</a>
-              </article>
-              <article className="relative overflow-hidden rounded-3xl border border-indigo-200 bg-gradient-to-br from-indigo-50 to-white p-6 shadow-sm">
-                <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-white px-3 py-1 text-xs font-semibold text-indigo-700">Cloud</div>
-                <h3 className="text-lg font-semibold text-slate-900">Strategy, Architecture &amp; Migration</h3>
-                <p className="mt-1 text-slate-700">Secure, scalable GCP architectures—data lakes, pipelines, and real‑time activation ready.</p>
-                <ul className="mt-3 grid grid-cols-2 gap-2 text-sm text-slate-700">
-                  <li>Data warehouse</li><li>ETL/ELT</li><li>CDP hooks</li><li>Zero‑downtime moves</li>
-                </ul>
-                <a href="/services" className="mt-4 inline-flex text-indigo-700 font-semibold" data-gtm="wwd_cloud_link">View cloud work →</a>
-              </article>
+                <a
+                  href={activeService.cta}
+                  className="inline-flex items-center justify-center rounded-xl px-5 py-3 font-semibold bg-green-700 text-white shadow-lg shadow-green-700/20 hover:shadow-green-700/30 transition mt-4"
+                >
+                  Explore {activeService.title}
+                </a>
+              </div>
             </div>
           </div>
         </section>
 
-        <section id="outcomes" aria-labelledby="showcase" className="max-xl:py-12 xl:pb-20">
-          <div className="max-w-[1150px] w-[92vw] mx-auto">
-            <div className="flex max-sm:flex-col items-center justify-center gap-4 mt-2">
-              <div className="mb-10 text-center">
-                <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">Showcase</p>
-                <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Work That Moved the Needle</h2>
+        <section id="impact outcomes" className="bg-slate-50 py-12 md:py-20">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="mb-3 flex max-md:flex-col items-center justify-between">
+              <div className="flex max-sm:flex-col items-center justify-start gap-4 mt-2">
+                <div className="mb-10 text-center sm:text-start">
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">Showcase</p>
+                  <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Work That Moved the Needle</h2>
+                </div>
+              </div>
+              <div className="inline-flex gap-2 rounded-full border border-slate-200 bg-white px-2 py-1">
+                <button className="px-3 py-1.5 text-sm rounded-xl bg-slate-900 text-white" data-vert="commerce">
+                  Commerce
+                </button>
+                <button className="px-3 py-1.5 text-sm rounded-xl" data-vert="travel">
+                  Travel
+                </button>
+                <button className="px-3 py-1.5 text-sm rounded-xl" data-vert="bfsi">
+                  BFSI
+                </button>
+                <button className="px-3 py-1.5 text-sm rounded-xl" data-vert="media">
+                  Media
+                </button>
               </div>
             </div>
 
-            <div className="grid grid-cols-4 gap-4 max-md:grid-cols-1">
-              <div className="p-5 border border-black/10 rounded-xl bg-gradient-to-b from-purple-500/10 to-purple-500/5">
-                <div className="text-xs font-semibold uppercase tracking-wide text-slate-500">Revenue Efficiency</div>
-                <div className="text-[34px] font-extrabold text-slate-900">+31% ROAS</div>
-                <div className="text-sm text-slate-600">
-                  Scaled e-commerce PPC with creative testing & clean GA4 signal
-                </div>
-              </div>
-              <div className="p-5 border border-black/10 rounded-xl bg-[linear-gradient(180deg,rgba(47,129,247,0.10),rgba(47,129,247,0.04))]">
-                <div className="text-xs font-semibold uppercase tracking-wide text-slate-500">Acquisition Cost</div>
-                <div className="text-[34px] font-extrabold text-slate-900">-22% CPA</div>
-                <div className="text-sm text-slate-600">
-                  Programmatic funnel with LTV-based bidding & audience design
-                </div>
-              </div>
-              <div className="p-5 border border-black/10 rounded-xl bg-[linear-gradient(180deg,rgba(16,185,129,0.10),rgba(16,185,129,0.04))]">
-                <div className="text-xs font-semibold uppercase tracking-wide text-slate-500">Data Reliability</div>
-                <div className="text-[34px] font-extrabold text-slate-900">95%+</div>
-                <div className="text-sm text-slate-600">
-                  Data quality on server-side tagging & governance for GA4
-                </div>
-              </div>
-              <div className="p-5 border border-black/10 rounded-xl bg-[linear-gradient(180deg,rgba(99,102,241,0.10),rgba(99,102,241,0.04))]">
-                <div className="text-xs font-semibold uppercase tracking-wide text-slate-500">Conversion Rate</div>
-                <div className="text-[34px] font-extrabold text-slate-900">Lift +30%</div>
-                <div className="text-sm text-slate-600">
-                  A/B velocity and audience‑first creatives.
-                </div>
-              </div>
+            <div className="relative">
+              <div id="rail" className="flex gap-4 overflow-x-auto pb-2 snap-x scrollbar-hide"></div>
             </div>
           </div>
         </section>
 
-        <section id="partnerships" className="border-b border-slate-200 bg-slate-50 py-16">
+        <section id="partnerships" className="bg-slate-50 py-16">
           <div className="mx-auto max-w-7xl px-6">
             <div className="grid items-center gap-8 md:grid-cols-2">
               <div>
@@ -175,72 +309,7 @@ const page = ({ ytPlaylistdata }) => {
           </div>
         </section>
 
-        <section id="process" className="bg-slate-50 py-16">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="text-center mb-10">
-              <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">How we deliver</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Our Strategic Process for Scalable Growth</h2>
-              <p className="mt-2 text-slate-600 max-w-3xl mx-auto">Clear steps, clean measurement, and relentless optimization—so performance compounds month after month.</p>
-            </div>
-
-            <div className="grid gap-6 lg:grid-cols-2">
-              <ol className="relative border-l border-slate-200 pl-6 space-y-6 lg:space-y-8">
-                <li>
-                  <div className="absolute -left-2.5 h-5 w-5 rounded-full bg-slate-900 ring-4 ring-slate-100"></div>
-                  <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
-                    <div className="text-xs font-semibold tracking-wider text-slate-500">01. Discovery &amp; Goals</div>
-                    <p className="mt-1 text-slate-800">ICP, margins, seasonality, account state, success metrics.</p>
-                  </div>
-                </li>
-                <li>
-                  <div className="absolute -left-2.5 h-5 w-5 rounded-full bg-sky-600 ring-4 ring-slate-100"></div>
-                  <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
-                    <div className="text-xs font-semibold tracking-wider text-slate-500">02. Tracking &amp; Data</div>
-                    <p className="mt-1 text-slate-800">GA4 &amp; GTM, enhanced conversions, server‑side where relevant, QA.</p>
-                  </div>
-                </li>
-                <li>
-                  <div className="absolute -left-2.5 h-5 w-5 rounded-full bg-emerald-600 ring-4 ring-slate-100"></div>
-                  <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
-                    <div className="text-xs font-semibold tracking-wider text-slate-500">03. Keywords &amp; Audiences</div>
-                    <p className="mt-1 text-slate-800">Intent buckets, negatives, audience overlays, lookalikes.</p>
-                  </div>
-                </li>
-                <li>
-                  <div className="absolute -left-2.5 h-5 w-5 rounded-full bg-indigo-600 ring-4 ring-slate-100"></div>
-                  <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
-                    <div className="text-xs font-semibold tracking-wider text-slate-500">04. Account Structure</div>
-                    <p className="mt-1 text-slate-800">Signal density, bidding control, clean reporting.</p>
-                  </div>
-                </li>
-              </ol>
-
-              <ol className="relative border-l border-slate-200 pl-6 space-y-6 lg:space-y-8">
-                <li>
-                  <div className="absolute -left-2.5 h-5 w-5 rounded-full bg-amber-600 ring-4 ring-slate-100"></div>
-                  <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
-                    <div className="text-xs font-semibold tracking-wider text-slate-500">05. Creatives &amp; Testing</div>
-                    <p className="mt-1 text-slate-800">Message‑match, LP design, experimentation velocity.</p>
-                  </div>
-                </li>
-                <li>
-                  <div className="absolute -left-2.5 h-5 w-5 rounded-full bg-fuchsia-600 ring-4 ring-slate-100"></div>
-                  <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
-                    <div className="text-xs font-semibold tracking-wider text-slate-500">06. Budget &amp; Optimization</div>
-                    <p className="mt-1 text-slate-800">Pacing, waste cuts, guardrails, incrementality checks.</p>
-                  </div>
-                </li>
-                <li>
-                  <div className="absolute -left-2.5 h-5 w-5 rounded-full bg-slate-900 ring-4 ring-slate-100"></div>
-                  <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
-                    <div className="text-xs font-semibold tracking-wider text-slate-500">07. Insights &amp; QBRs</div>
-                    <p className="mt-1 text-slate-800">Board‑ready insights: CPA/ROAS, MER, LTV, cohorts.</p>
-                  </div>
-                </li>
-              </ol>
-            </div>
-          </div>
-        </section>
+        <HowWeOperate />
 
         <section id="why" className="py-16">
           <div className="mx-auto max-w-7xl px-6">
