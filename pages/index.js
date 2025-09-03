@@ -52,7 +52,7 @@ const page = ({ ytPlaylistdata }) => {
         next.style.transform = "translateY(0)";
         next.classList.add("active");
       }, 700);
-    }, 3000);
+    }, 6000);
 
     return () => clearInterval(interval);
   }, []);
@@ -114,7 +114,7 @@ const page = ({ ytPlaylistdata }) => {
       <main className="min-h-screen overflow-x-hidden bg-white text-slate-800"
         style={{ fontFamily: 'ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji"' }}>
 
-        <section className="relative overflow-hidden border-b border-slate-200">
+        <section className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-br from-emerald-50 via-white to-sky-50">
           <div className="relative mx-auto max-w-7xl px-6 py-14 md:py-24 text-center">
 
             <div class="flex flex-wrap items-center justify-center gap-3 opacity-95">
