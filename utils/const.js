@@ -19,7 +19,7 @@ export const services = {
             "BigQuery & Data Warehousing",
             "Looker Studio Dashboards",
         ],
-        cta: "/services/analytics",
+        cta: "/services/",
     },
     cloud: {
         title: "Cloud & Technology",
@@ -30,7 +30,7 @@ export const services = {
             "Machine Learning Hooks",
             "Cloud Infrastructure Design",
         ],
-        cta: "/services/cloud",
+        cta: "/services",
     },
     transform: {
         title: "Digital Transformation",
@@ -41,7 +41,7 @@ export const services = {
             "Innovation Roadmaps",
             "Enterprise Consulting",
         ],
-        cta: "/services/transformation",
+        cta: "/services",
     },
 };
 

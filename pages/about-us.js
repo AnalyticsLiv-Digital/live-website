@@ -1,943 +1,503 @@
-import React, { useEffect, useState } from 'react'
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import Head from "next/head";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import * as Scroll from "react-scroll";
-import { scroller } from "react-scroll"; // Import scroller for smooth scrolling
+'use client'
+import React, { useEffect, useRef, useState } from 'react'
+import "aos/dist/aos.css"; // Import scroller for smooth scrolling
 import MetaSchemaOg from '../components/MetaSchemaOg';
+import { InlineWidget } from 'react-calendly';
 
 const aboutus = () => {
-  useEffect(() => {
-    AOS.init();
 
-    // Check the query parameter for id and scroll to the corresponding section
-    const urlParams = new URLSearchParams(window.location.search);
-    const sectionId = urlParams.get("id"); // Get 'id' from the URL
+  const [showCalendly, setShowCalendly] = useState(false);
 
-    if (sectionId) {
-      scroller.scrollTo(sectionId, {
-        duration: 800,
-        delay: 0,
-        smooth: "easeInOutQuart",
-        offset: -80, // Adjust for any fixed headers
-      });
-    }
-  }, []);
-
-  // const { Element: ScrollElement } = Scroll;
-  const [hoveredYear, setHoveredYear] = useState(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const slidesToShow = 3; // Number of slides visible at once
-  const totalSlides = 5; // Total number of slides (same as timelineData length)
-
-  const timelineData = [
+  const handleCalendly = () => {
+    setShowCalendly(true);
+  }
+  const milestones = [
+    {
+      year: "2019",
+      color: "text-emerald-600",
+      front: "Founded to fix broken measurement",
+      back: "Our Foundation Year",
+    },
     {
       year: "2021",
-      title: "Google Partner",
-      subtitle: 'Certified Partners for DV360',
-      description: "Achieved the Google Partner Status with listing in Partner Directory",
-      color: '#EF4931',
-      logo: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/google%20partner%201.png",
+      color: "text-indigo-600",
+      front: "Privacy-first GA4 & CRO expansion",
+      back: (
+        <>
+          <img
+            src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Partner-RGB.png"
+            data-fallback="https://analyticsliv.com/assets/img/Partner-RGB.png"
+            alt="Google Partner"
+            className="logo-anim logo-delay-1 h-10 sm:h-12 mx-auto"
+          />
+          <p className="logo-text logo-text-delay mt-2 text-slate-600 text-xs sm:text-sm">
+            Google Partner
+          </p>
+        </>
+      ),
     },
     {
       year: "2022",
-      title: "Google Marketing Platform Partner",
-      subtitle: 'Certified Partners for DV360',
-      description: "Certified Partners for DV360",
-      color: '#1E8E3E',
-      logo: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/dv360_log-removebg-preview%201.png",
+      color: "text-amber-600",
+      front: "Scaling further",
+      back: (
+        <>
+          <img
+            src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/CE4F38BB.png"
+            data-fallback="https://analyticsliv.com/assets/img/CE4F38BB.png"
+            alt="Google Marketing Platform Partner"
+            className="logo-anim logo-delay-1 h-10 sm:h-12 mx-auto"
+          />
+          <p className="logo-text logo-text-delay mt-2 text-slate-600 text-xs sm:text-sm">
+            Google Marketing Platform Partner
+          </p>
+        </>
+      ),
     },
     {
       year: "2023",
-      title: "Microsoft Ads Partner",
-      subtitle: 'Certified Partners for DV360',
-      description: "Microsoft Ads offers Partner Status",
-      color: '#174B24',
-      logo: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/image%2015.png",
+      color: "text-pink-600",
+      front: "Cross-channel media growth",
+      back: (
+        <>
+          <div className='flex flex-col items-center justify-center gap-3'>
+            <img
+              src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/microsoft-partner.png"
+              alt="Microsoft Ad Partners"
+              className="logo-anim logo-delay-1 h-10 sm:h-12 mx-auto"
+            />
+            <p className="logo-text logo-text-delay mt-2 text-slate-600 text-xs sm:text-sm">
+              Microsoft Ads Partner
+            </p>
+          </div>
+        </>
+      ),
     },
     {
       year: "2024",
-      title: "Google Marketing Platform Partner",
-      subtitle: 'Certified Partners for DV360',
-      description: "Certified Partners for Google Analytics Platform",
-      color: '#F76B01',
-      logo: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/GA4_Logo%201.png",
+      color: "text-sky-600",
+      front: "Analytics & Tagging Excellence",
+      back: (
+        <>
+          <div className='flex items-center justify-center gap-3'>
+            <img
+              src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/GA4_Logo.png"
+              alt="GA Certified"
+              className="logo-anim logo-delay-1 h-10 sm:h-8 mx-auto"
+            />
+            <img
+              src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/gtm.jpg"
+              alt="GTM Certified"
+              className="logo-anim logo-delay-1 h-10 sm:h-8 mx-auto"
+            />
+          </div>
+          <p className="logo-text logo-text-delay mt-2 text-slate-600 text-xs sm:text-sm">
+            GA & GTM Certified
+          </p>
+          <img
+            src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/MBP%20Badge%20-%20Dark%20backgrounds%401x.png"
+            data-fallback="https://analyticsliv.com/assets/img/MBP-Badge.png"
+            alt="Meta Business Partner"
+            className="logo-anim logo-delay-2 h-8 sm:h-10 mx-auto mt-2"
+          />
+          <p className="logo-text logo-text-delay mt-1 text-slate-600 text-xs sm:text-sm">
+            Meta Business Partner
+          </p>
+        </>
+      ),
     },
     {
-      year: "2024",
-      title: "Google Marketing Platform Partner",
-      subtitle: 'Certified Partners for DV360',
-      description: "Certified Partners for Google Tag Manager",
-      color: '#4086EC',
-      logo: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/GTM_FULL_LOGO%201.png",
+      year: "2025",
+      color: "text-rose-600",
+      front: "Global recognition",
+      back: <p className="text-slate-600 text-xs sm:text-sm">Recognized as growth partner worldwide</p>,
     },
   ];
+  const milestoneSectionRef = useRef(null);
 
-  const NextArrow = ({ onClick, isDisabled }) => (
-    <div
-      className={`absolute top-6 lg:top-1/4 right-[1px] lg:right-[-50px] xl:right-[-100px] transform -translate-y-1/2 z-10 cursor-pointer bg-white rounded-full p-2 ${isDisabled ? 'opacity-50 cursor-not-allowed' : ''}`}
-      onClick={!isDisabled ? onClick : null}
-    >
-      <FaArrowRight size={20} />
-    </div>
-  );
+  useEffect(() => {
+    const cards = document.querySelectorAll("[data-seqflip]");
 
-  const PrevArrow = ({ onClick, isDisabled }) => (
-    <div
-      className={`absolute top-6 lg:top-1/4 left-[1px] lg:left-[-50px] xl:left-[-100px] transform -translate-y-1/2 z-10 cursor-pointer bg-white rounded-full p-2 ${isDisabled ? 'opacity-50 cursor-not-allowed' : ''}`}
-      onClick={!isDisabled ? onClick : null}
-    >
-      <FaArrowLeft size={20} />
-    </div>
-  );
-
-  const settings = {
-    dots: false,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    afterChange: (current) => setCurrentIndex(current), // Update current slide index
-    nextArrow: <NextArrow isDisabled={currentIndex + slidesToShow >= totalSlides} />,
-    prevArrow: <PrevArrow isDisabled={currentIndex === 0} />,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: false,
-          afterChange: (current) => setCurrentIndex(current), // Update current slide index
-          nextArrow: <NextArrow isDisabled={currentIndex + 2 >= totalSlides} />,
-          prevArrow: <PrevArrow isDisabled={currentIndex === 0} />,
-        },
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            cards.forEach((card, i) => {
+              setTimeout(() => {
+                card.classList.add("visible");
+                card.classList.add("auto-flip");
+                setTimeout(() => card.classList.remove("auto-flip"), 4000);
+              }, i * 700);
+            });
+          } else {
+            cards.forEach((card) => card.classList.remove("visible"));
+          }
+        });
       },
-      {
-        breakpoint: 500,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: false,
-          afterChange: (current) => setCurrentIndex(current), // Update current slide index
-          nextArrow: <NextArrow isDisabled={currentIndex + 1 >= totalSlides} />,
-          prevArrow: <PrevArrow isDisabled={currentIndex === 0} />,
+      { threshold: 0.3 }
+    );
+
+    if (milestoneSectionRef.current) observer.observe(milestoneSectionRef.current);
+
+    // Image fallback
+    document.querySelectorAll("img[data-fallback]").forEach((img) => {
+      img.addEventListener(
+        "error",
+        () => {
+          const fb = img.getAttribute("data-fallback");
+          if (fb && img.src !== fb) img.src = fb;
         },
-      },
-    ]
-  };
+        { once: true }
+      );
+    });
+  }, []);
 
   return (
     <>
       <MetaSchemaOg
         url="https://analyticsliv.com/about-us"
         title="AnalyticsLiv - About us"
-        description="Google Marketing Platform Partner - Our Journey"
+        description="AnalyticsLiv is a global team of data scientists, engineers, and marketers delivering privacy-first analytics, programmatic and performance media, and measurable growth."
         twitterTitle="AnalyticsLiv - About us"
-        twitterDescription="Google Marketing Platform Partner - Our Journey"
+        twitterDescription="AnalyticsLiv is a global team of data scientists, engineers, and marketers delivering privacy-first analytics, programmatic and performance media, and measurable growth."
       />
 
-      <section className='font-sans pb-3'>
-        <div className='flex px-4 md:px-7 lg:px-14 max-sm:flex-col max-sm:justify-center sm:justify-around md:justify-between 2xl:justify-between items-center py-5 xl:pt-8 2xl:pt-10 2xl:pr-[135px] 2xl:pl-24'>
-          <div className='flex flex-col max-sm:items-center gap-3 md:gap-5 2xl:gap-7 sm:w-[50%] 2xl:w-[52%] max-sm:text-center'>
-            <div className='text-lg xl:text-xl 2xl:text-2xl font-extrabold'>Welcome to AnalyticsLiv</div>
-            <h1 className='text-[#0E1947] text-3xl xl:text-4xl 2xl:text-5xl font-extrabold'>Turning Data Into Growth</h1>
-            <div className='text-xs xl:text-sm font-normal max-md:pt-2'>At AnalyticsLiv, we’re dedicated to revolutionizing how businesses leverage data. By integrating advanced analytics,
-              cutting-edge digital marketing strategies, and innovative technology, we help businesses unlock their full potential.</div>
-            <div className='text-xs xl:text-sm font-normal'>Our journey began with a simple belief: data has the power to transform businesses. Today, we are proud to be at the forefront of
-              this transformation, partnering with organizations to create measurable, impactful results.</div>
-            <div className='flex gap-3 lg:gap-10 max-md:mt-3'>
-              <a href='/contact'><button className='contact-us-btn mainbutn'>Schedule a Call</button></a>
-              <a href='/contact'><button className='contact-us-btn mainbutn-opposite'>Contact Us</button></a>
-            </div>
+      <main className="min-h-screen bg-white text-slate-800"
+        style={{ fontFamily: 'ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji"' }}>
+        {/* HERO */}
+        <section className="relative overflow-hidden border-b border-slate-200">
+          <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-white to-sky-50"></div>
+          <div className="relative mx-auto max-w-7xl px-6 py-20 text-center">
+            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white px-3 py-1 text-xs font-bold text-emerald-700">
+              About AnalyticsLiv
+            </span>
+            <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
+              Turning Complexity into{" "}
+              <span className="bg-gradient-to-r from-slate-900 to-emerald-600 bg-clip-text text-transparent">
+                Clarity & Growth
+              </span>
+            </h1>
+            <p className="mx-auto mt-4 max-w-3xl text-base text-slate-600 sm:text-lg">
+              We blend analytics, technology, and creativity into outcomes that matter. Our philosophy: measurable
+              progress, transparent processes, and teams who care about your success.
+            </p>
           </div>
-          <div className='max-sm:w-full max-xl:w-[40%] max-sm:flex max-sm:justify-center max-md:mt-7 max-sm:mx-auto'>
-            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/analyticsliv_team.png' alt='AnalyticsLiv Team' />
-          </div>
-        </div>
-        <Scroll.Element id="vision" name="vision"></Scroll.Element>
-        <div className='pt-7 lg:pt-10 xl:pt-8 2xl:pt-10 pb-8 md:pb-14 px-4 md:px-7 lg:px-14 2xl:px-20 2xl:pl-28 flex max-lg:flex-col justify-between items-center gap-[5%] overflow-hidden'>
-          <div className='flex flex-col lg:min-w-[30%] lg:max-w-[35%] gap-6 max-lg:text-center'>
-            <div className='flex justify-between items-center max-lg:justify-center'>
-              <div className='flex flex-col gap-3'>
-                <div className='text-[#F17216] text-xs xl:text-sm font-normal'>WHO WE ARE</div>
-                <div className='text-[#282C4B] text-3xl xl:text-4xl font-bold'>Our Story</div>
-              </div>
-              <div className='max-lg:hidden'>
-                <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Our%20Story.png' alt='our story' />
-              </div>
-            </div>
-            <div className='text-[#747582] text-xs 2xl:text-sm font-normal'>It all started with countless cups of cutting chai (tea), brewed during the after-hours of a corporate professional’s life.
-              Three driven individuals, bound by the constraints of rigid internal processes, shared a common vision: to empower customers by creating data-centric,
-              tangible value through a flexible and fluid approach.</div>
-            <div className='text-[#747582] text-xs 2xl:text-sm font-normal'>This vision gave birth to Analytics Liv Digital, founded on the belief that an agency’s structured protocols should never act as a bottleneck to a
-              customer’s growth and progress. Instead, we aim to break these barriers and provide seamless, impactful solutions.</div>
-          </div>
-          <div className='flex max-sm:flex-col justify-around max-lg:pt-10 2xl:justify-between items-start gap-4 md:gap-5 lg:gap-7 lg:w-[70%]'>
-            <div className='shadow-customBoth h-[270px] sm:h-[295px] xl:h-[310px] 2xl:h-[340px] px-4 sm:px-2 md:px-3 lg:px-4 xl:px-6 py-4 xl:py-5 flex flex-col items-start justify-start w-[250px] sm:w-[185px] md:w-[215px] lg:w-[250px] 2xl:w-[275px]'>
-              <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Philosophy.png' alt='Philosophy' />
-              <div className='text-[#14183E] text-base sm:text-sm md:text-base xl:text-lg 2xl:text-xl font-medium pt-2 xl:pt-3'>Our<br /> Philosophy</div>
-              <div className='text-[#747582] text-xs sm:text-[10px] md:text-[11px] xl:text-xs 2xl:text-sm font-normal pt-3 xl:pt-5'>At Analytics Liv Digital, we thrive on collaboration, innovation, and customer-centricity. Our team comprises highly motivated and skilled
-                specialists with diverse expertise, ready to tackle any challenge our clients may face.</div>
-            </div>
-            <div className='shadow-customBoth h-[270px] sm:h-[295px] xl:h-[310px] 2xl:h-[340px] px-4 sm:px-2 md:px-3 lg:px-4 xl:px-6 py-4 xl:py-5 flex flex-col items-start justify-start w-[250px] sm:w-[185px] md:w-[215px] lg:w-[250px] 2xl:w-[275px]'>
-              <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/relationship.png' alt='Relationship' />
-              <div className='text-[#14183E] text-base sm:text-sm md:text-base xl:text-lg 2xl:text-xl font-medium sm:pt-2 xl:pt-3 max-sm:pt-4'>Building Lasting Relationships</div>
-              <div className='text-[#747582] text-xs sm:text-[10px] md:text-[11px] xl:text-xs 2xl:text-sm font-normal pt-3 xl:pt-5'>We pride ourselves on fostering enduring partnerships built on trust, mutual understanding,
-                and consistent results. By delivering unique and creative solutions alongside exceptional support services.</div>
-            </div>
-            <div className='shadow-customBoth h-[270px] sm:h-[295px] xl:h-[310px] 2xl:h-[340px] px-4 sm:px-2 md:px-3 lg:px-4 xl:px-6 py-4 xl:py-5 flex flex-col items-start justify-start w-[250px] sm:w-[185px] md:w-[215px] lg:w-[250px] 2xl:w-[275px]'>
-              <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Excellence.png' alt='Excellence' />
-              <div className='text-[#14183E] text-base sm:text-sm md:text-base xl:text-lg 2xl:text-xl font-medium sm:pt-2 xl:pt-3 max-sm:pt-4'>Commitment to Excellence</div>
-              <div className='text-[#747582] text-xs sm:text-[10px] md:text-[11px] xl:text-xs 2xl:text-sm font-normal sm:pt-3 xl:pt-5 max-sm:pt-5'>Driven by passion and purpose, we are devoted to redefining possibilities and enabling growth for businesses
-                in an ever-changing digital landscape.</div>
-            </div>
-            <div></div>
-            <div></div>
-          </div>
-        </div>
+        </section>
 
-        <div className='bg-[#F3FBFF]'>
-          <div className="w-full max-w-[1100px] mx-auto px-4 md:px-7 lg:px-14 pt-10 pb-0">
-            <h2 className="text-center text-3xl font-bold mb-8">Timeline</h2>
-            <div className="relative h-[]">
-
-              <div className="absolute top-[57px] transform -translate-y-1/2 w-full border-t border-black z-0"></div>
-
-              <Slider {...settings} className="relative z-30">
-                {timelineData?.map((item, index) => (
-                  <div
-                    key={item}
-                    className="relative flex flex-col items-center text-center px-4 h-[280px]"
-                    onMouseEnter={() => setHoveredYear(index)}
-                    onMouseLeave={() => setHoveredYear(null)}
-                  >
-                    <div className='flex flex-col justify-center items-center'>
-                      <div className="text-lg font-semibold mb-2">{item.year}</div>
-
-                      <div className={`w-3 h-3 rounded-full mt-1 mb-2`}
-                        style={{
-                          backgroundColor: hoveredYear === index ? item.color : 'black',
-                        }}></div>
+        {/* MILESTONES */}
+        <section ref={milestoneSectionRef} className="bg-gradient-to-r from-indigo-50 via-white to-emerald-50 py-20">
+          <div className="mx-auto max-w-7xl px-6 text-center">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-10">Milestones & Partnerships</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-6 justify-items-center">
+              {milestones.map((m, idx) => (
+                <div key={idx} className={`flip-card h-[210px] w-[210px] 2xl:h-[220px] 2xl:w-[220px] year-${m.year}`} data-seqflip>
+                  <div className="flip-card-inner">
+                    <div className="flip-card-front">
+                      <div className={`year-label ${m.color}`}>{m.year}</div>
+                      <p className="mt-2 text-slate-600 text-sm sm:text-base">{m.front}</p>
                     </div>
-
-                    <div className={`${hoveredYear === index ? 'shadow-teamShadow' : 'shadow-none'} px-2 lg:px-8 py-4 flex flex-col items-center justify-around h-40 bg-white hover:shadow-customShadow`}>
-                      <div className="text-base font-semibold text-[#000000]">{item.title}</div>
-                      <div className="text-sm font-normal text-[#000000] pt-2">{item.description}</div>
-                    </div>
-
-                    {hoveredYear === index && (
-                      <div className='absolute top-[60px] h-52 shadow-cardShadow left-1/2 transform -translate-x-1/2 bg-white rounded-lg w-56 z-30'>
-                        <div
-                          className="absolute left-[48%] -top-1 w-0 h-0 border-l-4 border-r-4 border-b-4 border-transparent"
-                          style={{
-                            borderBottomColor: item.color,
-                          }}
-                        ></div>
-                        <div className='h-2'
-                          style={{ backgroundColor: item?.color }}></div>
-                        <div className="p-4 flex flex-col h-full justify-around items-center px-3 pt-3 pb-5">
-                          <img
-                            src={item?.logo}
-                            alt={item.title}
-                            className="mx-auto mb-3"
-                          />
-                          <h3 className="text-base font-semibol font-bold mb-2">{item.title}</h3>
-                          <p className="text-sm font-normal text-gray-600">{item.description}</p>
-                        </div>
-                      </div>
-                    )}
+                    <div className="flip-card-back">{m.back}</div>
                   </div>
-                ))}
-              </Slider>
-            </div>
-          </div>
-        </div>
-
-        <div className='px-4 md:px-7 lg:px-14 2xl:px-20 py-10'>
-          <div className='text-center text-2xl sm:text-3xl font-bold'>
-            A Perfect Blend of Data, Creativity, and Strategy
-          </div>
-          <div className='text-center max-sm:text-xs text-sm font-normal pt-8'>
-            At the core of our work lies a steadfast commitment to driving tangible, measurable results for your business. Our proven methodology integrates a deep understanding of your unique needs with cutting-edge tools and innovative strategies to help you achieve your goals. Here's how we do it:
-          </div>
-          <div className='relative pt-8'>
-            <div className='relative'>
-              <img
-                src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Road_Image_Full%20(1).png'
-                alt='path to success'
-                className='mx-auto max-lg:w-[40%] max-xl:w-[35%]'
-              />
-              <div className='group text-[9px] bg-[#F3FBFF] py-1 lg:py-2 px-1 md:px-2 lg:px-4 transition-all duration-75 hover:shadow-hoverCard  sm:text-xs md:text-sm  xl:text-xl font-bold text-right absolute top-[15%] left-[1%] sm:left-[12%] lg:left-[18%] xl:left-[15%] 2xl:left-[21%]'>
-                Understanding Your<br />Business
-                <div className='absolute hidden group-hover:block text-center top-[10px] md:top-[-50px] w-40 xl:w-40 2xl:w-48 max-sm:left-[85%] lg:left-[-55%] xl:left-[-45%] transform -translate-x-1/2 bg-white shadow-hoverCard rounded-lg z-30'>
-                  <div className="p-2 2xl:p-4 lg:py-4 lg:px-5 2xl:pr-4 2xl:px-4">
-                    {/* <h3 className="text-sm 2xl:text-2xl font-bold mb-2">1.</h3> */}
-                    <p className="text-[10px] leading-[14px] xl:text-[12px] 2xl:text-[13px] font-normal text-gray-600 text-center">We dive deep into your vision, goals, and challenges through detailed discussions and analysis. This ensures our solutions align perfectly with your objectives.
-                    </p>
-                  </div>
-                  <div className='absolute right-0 top-0 h-full w-2 bg-[#EF4931]'></div>
-                  <div className="absolute right-[-3px] top-1/2 w-0 h-0 border-t-4 border-l-4 border-b-4 border-transparent border-l-[#EF4931]"></div>
                 </div>
-              </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
-              <div className='group text-[9px] bg-[#F3FBFF] py-1 lg:py-2 px-1 md:px-2 lg:px-4 transition-all duration-75 hover:shadow-hoverCard sm:text-xs md:text-sm xl:text-xl font-bold text-right absolute bottom-[5%] sm:bottom-[30%] sm:left-[6%] lg:left-[13%] xl:left-[10%] 2xl:left-[16%]'>
-                Crafting & Executing <br />Strategies
+        <section className="py-16 bg-slate-50">
+          <div className="mx-auto max-w-7xl px-6 text-center">
+            <h2 className="text-3xl font-bold text-slate-900">Impact by the Numbers</h2>
+            <p className="mt-2 text-slate-600">A quick glance at the scale and reliability of our work.</p>
+            <div className="mt-10 grid gap-6 md:grid-cols-4">
+              <div className="border border-slate-200 rounded-xl bg-white shadow-md hover:shadow-lg p-6"><div className="text-4xl font-extrabold">250+</div><p className="mt-2 text-slate-600">Projects delivered</p></div>
+              <div className="border border-slate-200 rounded-xl bg-white shadow-md hover:shadow-lg p-6"><div className="text-4xl font-extrabold">95%</div><p className="mt-2 text-slate-600">Measurement reliability</p></div>
+              <div className="border border-slate-200 rounded-xl bg-white shadow-md hover:shadow-lg p-6"><div className="text-4xl font-extrabold">40%+</div><p className="mt-2 text-slate-600">Median ROAS uplift</p></div>
+              <div className="border border-slate-200 rounded-xl bg-white shadow-md hover:shadow-lg p-6"><div className="text-4xl font-extrabold">20+</div><p className="mt-2 text-slate-600">Industries served</p></div>
+            </div>
+          </div>
+        </section>
 
-                <div className='absolute hidden group-hover:block text-center max-md:top-[-50px] md:top-[-30px] w-40 xl:w-40 2xl:w-48 max-sm:left-[90%] lg:left-[-48%] xl:left-[-40%] 2xl:left-[-50%] transform -translate-x-1/2 bg-white shadow-hoverCard rounded-lg z-30'>
-                  <div className="p-2 2xl:p-4 lg:py-4 lg:px-5 2xl:pr-4 2xl:px-4">
-                    {/* <h3 className="text-sm 2xl:text-2xl font-bold mb-2">3.</h3> */}
-                    <p className="text-[10px] leading-[14px] xl:text-[12px] 2xl:text-[12px] font-normal text-gray-600 text-center">We create tailored marketing campaigns—from content to advertising—designed to maximize results and deliver measurable success.
-                    </p>
+        <section className="py-16">
+          <div className="mx-auto max-w-7xl px-6 text-center">
+            <h2 className="text-3xl font-bold text-slate-900">Our Philosophy</h2>
+            <p className="mt-2 max-w-3xl mx-auto text-slate-600">We believe in durable measurement, scalable systems, and experimentation that proves incremental value.</p>
+            <div className="mt-10 grid gap-6 md:grid-cols-3">
+              <div className="border border-slate-200 rounded-xl bg-white shadow-md hover:shadow-lg p-6"><h3 className="font-semibold">Integrity in Data</h3><p className="mt-2 text-slate-600">Consent-safe, accurate, and aligned with your KPIs.</p></div>
+              <div className="border border-slate-200 rounded-xl bg-white shadow-md hover:shadow-lg p-6"><h3 className="font-semibold">Designed for Scale</h3><p className="mt-2 text-slate-600">Cloud-ready, modular, and future-proof.</p></div>
+              <div className="border border-slate-200 rounded-xl bg-white shadow-md hover:shadow-lg p-6"><h3 className="font-semibold">Obsessed with Outcomes</h3><p className="mt-2 text-slate-600">Every test and activation tied to measurable impact.</p></div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-slate-50">
+          <div className="mx-auto max-w-7xl px-6 text-center">
+            <h2 className="text-3xl font-bold text-slate-900 mb-10">Meet Our Pods</h2>
+            <div className="grid gap-6 md:grid-cols-4">
+              <div className="border border-slate-200 rounded-xl bg-white shadow-md hover:shadow-lg p-6"><h3 className="font-semibold text-lg">Analytics Pod</h3><p className="mt-2 text-slate-600 text-sm">Data scientists & analysts ensuring reliable KPIs.</p></div>
+              <div className="border border-slate-200 rounded-xl bg-white shadow-md hover:shadow-lg p-6"><h3 className="font-semibold text-lg">Media Pod</h3><p className="mt-2 text-slate-600 text-sm">Media planners & optimizers driving ROAS uplift.</p></div>
+              <div className="border border-slate-200 rounded-xl bg-white shadow-md hover:shadow-lg p-6"><h3 className="font-semibold text-lg">Tech Pod</h3><p className="mt-2 text-slate-600 text-sm">Engineers building scalable cloud & tracking systems.</p></div>
+              <div className="border border-slate-200 rounded-xl bg-white shadow-md hover:shadow-lg p-6"><h3 className="font-semibold text-lg">Creative Pod</h3><p className="mt-2 text-slate-600 text-sm">Designers & storytellers shaping user-first experiences.</p></div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20">
+          <div className="mx-auto max-w-7xl px-6 text-center">
+            <h2 className="text-3xl font-bold text-slate-900 mb-10">Why Clients Choose Us</h2>
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+              <div className="border border-slate-200 rounded-xl bg-white shadow-md hover:shadow-lg p-6"><h3 className="font-semibold">Privacy-First Measurement</h3><p className="mt-2 text-slate-600 text-sm">GA4, consent mode & server-side tagging.</p></div>
+              <div className="border border-slate-200 rounded-xl bg-white shadow-md hover:shadow-lg p-6"><h3 className="font-semibold">Proven ROI Uplift</h3><p className="mt-2 text-slate-600 text-sm">40%+ median ROAS uplift across industries.</p></div>
+              <div className="border border-slate-200 rounded-xl bg-white shadow-md hover:shadow-lg p-6"><h3 className="font-semibold">Cross-Functional Pods</h3><p className="mt-2 text-slate-600 text-sm">Analytics + Media + Tech + Creative in sync.</p></div>
+              <div className="border border-slate-200 rounded-xl bg-white shadow-md hover:shadow-lg p-6"><h3 className="font-semibold">Global Experience</h3><p className="mt-2 text-slate-600 text-sm">20+ industries, from e-commerce to BFSI.</p></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="process" className="bg-slate-50 py-16">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center mb-10">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">How we deliver</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Our Strategic Process for Scalable Growth</h2>
+              <p className="mt-2 text-slate-600 max-w-3xl mx-auto">Clear steps, clean measurement, and relentless optimization—so performance compounds month after month.</p>
+            </div>
+
+            <div className="grid gap-6 lg:grid-cols-2">
+              <ol className="relative border-l border-slate-200 pl-6 space-y-6 lg:space-y-8">
+                <li>
+                  <div className="absolute -left-2.5 h-5 w-5 rounded-full bg-slate-900 ring-4 ring-slate-100"></div>
+                  <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
+                    <div className="text-xs font-semibold tracking-wider text-slate-500">01. Discovery &amp; Goals</div>
+                    <p className="mt-1 text-slate-800">ICP, margins, seasonality, account state, success metrics.</p>
                   </div>
-                  <div className='absolute right-0 top-0 h-full w-2 bg-[#1E8E3E]'></div>
-                  <div className="absolute right-[-3px] top-1/2 w-0 h-0 border-t-4 border-l-4 border-b-4 border-transparent border-l-[#1E8E3E]"></div>
-                </div>
-
-              </div>
-
-              <div className='group text-[9px] bg-[#F3FBFF] py-1 lg:py-2 px-1 md:px-2 lg:px-4 transition-all duration-75 hover:shadow-hoverCard sm:text-xs md:text-sm xl:text-xl font-bold text-left absolute top-[8%] right-[1%] sm:right-[13%] lg:right-[20%] xl:right-[15%] 2xl:right-[22%]'>
-                Harnessing the Power<br />of Data
-
-                <div className='absolute hidden group-hover:block text-center top-[-30px] sm:top-[-30px] lg:top-[-50px] w-40 xl:w-40 2xl:w-48 right-[-50%] sm:right-[-80%] lg:right-[-140%] xl:right-[-105%] 2xl:right-[-125%] transform -translate-x-1/2 bg-white shadow-hoverCard rounded-lg z-30'>
-                  <div className="p-2 2xl:p-4 lg:py-4 lg:px-5 2xl:pr-4 2xl:px-4">
-                    {/* <h3 className="text-sm 2xl:text-2xl font-bold mb-2">2.</h3> */}
-                    <p className="text-[10px] leading-[14px] xl:text-[12px] 2xl:text-[12px] font-normal text-gray-600 text-center">Using advanced analytics, we uncover actionable insights about your audience, industry trends, and market opportunities. Data drives every decision for precision and impact.</p>
+                </li>
+                <li>
+                  <div className="absolute -left-2.5 h-5 w-5 rounded-full bg-sky-600 ring-4 ring-slate-100"></div>
+                  <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
+                    <div className="text-xs font-semibold tracking-wider text-slate-500">02. Tracking &amp; Data</div>
+                    <p className="mt-1 text-slate-800">GA4 &amp; GTM, enhanced conversions, server‑side where relevant, QA.</p>
                   </div>
-                  <div className='absolute left-0 top-0 h-full w-2 bg-[#174B24]'></div>
-                  <div className="absolute left-[-3px] top-1/2 w-0 h-0 border-t-4 border-r-4 border-b-4 border-transparent border-r-[#174B24]"></div>
-                </div>
-
-              </div>
-
-              <div className='group text-[9px] bg-[#F3FBFF] py-1 lg:py-2 px-1 md:px-2 lg:px-4 transition-all duration-75 hover:shadow-hoverCard sm:text-xs md:text-sm xl:text-xl font-bold text-left absolute bottom-[28%] lg:bottom-[34%] xl:bottom-[40%] sm:bottom-[40%] right-[-3%] sm:right-[10%] lg:right-[16%] xl:right-[13%] 2xl:right-[18%]'>
-                Commitment to Continuous<br />Improvement
-
-                <div className='absolute hidden group-hover:block text-center top-[-80px] sm:top-[-10px] lg:top-[-30px] w-40 xl:w-40 2xl:w-48 right-[-50%] lg:right-[-115%] xl:right-[-85%] 2xl:right-[-100%] transform -translate-x-1/2 bg-white shadow-hoverCard rounded-lg z-30'>
-                  <div className="p-2 2xl:p-4 lg:py-4 lg:px-5 2xl:pr-4 2xl:px-4">
-                    {/* <h3 className="text-sm 2xl:text-2xl font-bold mb-2">4.</h3> */}
-                    <p className="text-[10px] leading-[14px] xl:text-[12px] 2xl:text-[12px] font-normal text-gray-600 text-center">Success is an ongoing journey. We monitor, analyze, and refine strategies to ensure long-term growth, staying agile in a dynamic marketplace.
-                    </p>
+                </li>
+                <li>
+                  <div className="absolute -left-2.5 h-5 w-5 rounded-full bg-emerald-600 ring-4 ring-slate-100"></div>
+                  <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
+                    <div className="text-xs font-semibold tracking-wider text-slate-500">03. Keywords &amp; Audiences</div>
+                    <p className="mt-1 text-slate-800">Intent buckets, negatives, audience overlays, lookalikes.</p>
                   </div>
-                  <div className='absolute left-0 top-0 h-full w-2 bg-[#4086EC]'></div>
-                  <div className="absolute left-[-4px] top-1/2 w-0 h-0 border-t-4 border-r-4 border-b-4 border-transparent border-r-[#4086EC]"></div>
-                </div>
+                </li>
+                <li>
+                  <div className="absolute -left-2.5 h-5 w-5 rounded-full bg-indigo-600 ring-4 ring-slate-100"></div>
+                  <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
+                    <div className="text-xs font-semibold tracking-wider text-slate-500">04. Account Structure</div>
+                    <p className="mt-1 text-slate-800">Signal density, bidding control, clean reporting.</p>
+                  </div>
+                </li>
+              </ol>
 
-              </div>
-            </div>
-
-
-          </div>
-        </div>
-
-        <div className='pt-2 md:pt-8 px-4 md:px-7 lg:px-14'>
-          <div className='text-2xl sm:text-3xl font-bold text-center pb-7'>The Visionaries Behind AnalyticsLiv</div>
-          <div className='flex justify-center max-sm:flex-col max-sm:justify-center max-sm:items-center gap-7 sm:gap-14 text-center'>
-            <div className='flex flex-col justify-center items-center shadow-teamShadow w-[250px] p-3 border border-[#D9D9D9]'>
-              <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/anuj.png' alt='anuj gang' />
-              <div className='text-2xl 2xl:text-2xl font-bold pt-5'>Anuj Gang</div>
-              <div className='text-base 2xl:text-base font-normal pt-2'>CEO &<br className='lg:hidden' /> Co-Founder</div>
-            </div>
-            <div className='flex flex-col justify-center items-center shadow-teamShadow w-[250px] p-3 border border-[#D9D9D9]'>
-              <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Mask%20group%20(15).png' alt='Nitya Prakash' />
-              <div className='text-2xl 2xl:text-2xl font-bold pt-5'>Nitya Prakash</div>
-              <div className='text-base 2xl:text-base font-normal pt-2'>BU Head- Business Support</div>
-            </div>
-            <div className='flex flex-col justify-center items-center shadow-teamShadow w-[250px] p-3 border border-[#D9D9D9]'>
-              <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Mask%20group%20(6).png' alt='Rajvi Shah' />
-              <div className='text-2xl 2xl:text-2xl font-bold pt-5'>Rajvi Shah</div>
-              <div className='text-base 2xl:text-base font-normal pt-2'>Co-Founder & VP, Analytics</div>
-            </div>
-          </div>
-        </div>
-
-        <div className='relative pb-10 pt-12 xl:pt-16 2xl:pt-20 z-30'>
-          <div className='text-[22px] sm:text-3xl font-bold text-center pb-6'>Meet the brilliant minds behind our growth & innovation.</div>
-          <div className='grid grid-cols-4 px-2 md:px-7 xl:px-14  max-lg:grid-cols-2 max-sm:gap-3 justify-items-center text-center'>
-            <div className='flex flex-col justify-start items-center shadow-teamShadow w-[155px] sm:w-[250px] lg:w-[200px] xl:w-[250px] my-2 sm:my-6 max-sm:px-1.5 max-sm:py-3 sm:p-3 border border-[#D9D9D9]'>
-              <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Mask%20group%20(7).png' className='max-sm:w-24 lg:w-36 xl:w-48' alt='Anshul Dhurandhar' />
-              <div className='text-base sm:text-2xl lg:text-lg 2xl:text-2xl font-bold pt-5'>Anshul Dhurandhar</div>
-              <div className='text-xs sm:text-base lg:text-sm 2xl:text-base font-normal pt-2'>Lead- Analytics & technology</div>
-            </div>
-            <div className='flex flex-col justify-start items-center shadow-teamShadow w-[155px] sm:w-[250px] lg:w-[200px] xl:w-[250px] my-2 sm:my-6 max-sm:px-1.5 max-sm:py-3 sm:p-3 border border-[#D9D9D9]'>
-              <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Mask%20group%20(8).png' className='max-sm:w-24 lg:w-36 xl:w-48' alt='Ansuya Kachroo' />
-              <div className='text-base sm:text-2xl lg:text-lg 2xl:text-2xl font-bold pt-5'>Ansuya Kachroo</div>
-              <div className='text-xs sm:text-base lg:text-sm 2xl:text-base font-normal pt-2'>Head- Analytics & Project Management</div>
-            </div>
-            <div className='flex flex-col justify-start items-center shadow-teamShadow w-[155px] sm:w-[250px] lg:w-[200px] xl:w-[250px] my-2 sm:my-6 max-sm:px-1.5 max-sm:py-3 sm:p-3 border border-[#D9D9D9]'>
-              <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Mask%20group%20(9).png' className='max-sm:w-24 lg:w-36 xl:w-48' alt='Deepika Pandey' />
-              <div className='text-base sm:text-2xl lg:text-lg 2xl:text-2xl font-bold pt-5'>Deepika Pandey</div>
-              <div className='text-xs sm:text-base lg:text-sm 2xl:text-base font-normal pt-2'>Head- Data Science</div>
-            </div>
-            <div className='flex flex-col justify-start items-center shadow-teamShadow w-[155px] sm:w-[250px] lg:w-[200px] xl:w-[250px] my-2 sm:my-6 max-sm:px-1.5 max-sm:py-3 sm:p-3 border border-[#D9D9D9]'>
-              <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Mask%20group%20(10).png' className='max-sm:w-24 lg:w-36 xl:w-48' alt='Karan Santani' />
-              <div className='text-base sm:text-2xl lg:text-lg 2xl:text-2xl font-bold pt-5'>Karan Santani</div>
-              <div className='text-xs sm:text-base lg:text-sm 2xl:text-base font-normal pt-2'>Growth Manager<br></br>(Sales & Marketing)</div>
+              <ol className="relative border-l border-slate-200 pl-6 space-y-6 lg:space-y-8">
+                <li>
+                  <div className="absolute -left-2.5 h-5 w-5 rounded-full bg-amber-600 ring-4 ring-slate-100"></div>
+                  <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
+                    <div className="text-xs font-semibold tracking-wider text-slate-500">05. Creatives &amp; Testing</div>
+                    <p className="mt-1 text-slate-800">Message‑match, LP design, experimentation velocity.</p>
+                  </div>
+                </li>
+                <li>
+                  <div className="absolute -left-2.5 h-5 w-5 rounded-full bg-fuchsia-600 ring-4 ring-slate-100"></div>
+                  <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
+                    <div className="text-xs font-semibold tracking-wider text-slate-500">06. Budget &amp; Optimization</div>
+                    <p className="mt-1 text-slate-800">Pacing, waste cuts, guardrails, incrementality checks.</p>
+                  </div>
+                </li>
+                <li>
+                  <div className="absolute -left-2.5 h-5 w-5 rounded-full bg-slate-900 ring-4 ring-slate-100"></div>
+                  <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
+                    <div className="text-xs font-semibold tracking-wider text-slate-500">07. Insights &amp; QBRs</div>
+                    <p className="mt-1 text-slate-800">Board‑ready insights: CPA/ROAS, MER, LTV, cohorts.</p>
+                  </div>
+                </li>
+              </ol>
             </div>
           </div>
-          <div className='absolute w-full px-2 md:px-7 xl:px-14  text-center'>
-            <div className='grid grid-cols-4 max-lg:grid-cols-2 max-sm:gap-3 justify-items-center '>
-              <div className='flex flex-col justify-start items-center shadow-teamShadow w-[155px] sm:w-[250px] lg:w-[200px] xl:w-[250px] my-2 sm:my-6 max-sm:px-1.5 max-sm:py-3 sm:p-3 border border-[#D9D9D9] bg-white z-30'>
-                <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Mask%20group%20(11).png' className='max-sm:w-24 lg:w-36 xl:w-48' alt='Ashwani Singh' />
-                <div className='text-base sm:text-2xl lg:text-lg 2xl:text-2xl font-bold pt-5'>Ashwani Singh</div>
-                <div className='text-xs sm:text-base lg:text-sm 2xl:text-base font-normal pt-2'>Marketing Manager</div>
-              </div>
-              <div className='flex flex-col justify-start items-center shadow-teamShadow w-[155px] sm:w-[250px] lg:w-[200px] xl:w-[250px] my-2 sm:my-6 max-sm:px-1.5 max-sm:py-3 sm:p-3 border border-[#D9D9D9] bg-white z-30'>
-                <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Mask%20group%20(14).png' className='max-sm:w-24 lg:w-36 xl:w-48' alt='Aashana Pathak' />
-                <div className='text-base sm:text-2xl lg:text-lg 2xl:text-2xl font-bold pt-5'>Aashana Pathak</div>
-                <div className='text-xs sm:text-base lg:text-sm 2xl:text-base font-normal pt-2'>Manager<br></br>(Human Resource)</div>
-              </div>
-              <div className='flex flex-col justify-start items-center shadow-teamShadow w-[155px] sm:w-[250px] lg:w-[200px] xl:w-[250px] my-2 sm:my-6 max-sm:px-1.5 max-sm:py-3 sm:p-3 border border-[#D9D9D9] bg-white z-30'>
-                <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Mask%20group%20(12).png' className='max-sm:w-24 lg:w-36 xl:w-48' alt='Yash Ponda' />
-                <div className='text-base sm:text-2xl lg:text-lg 2xl:text-2xl font-bold pt-5'>Yash Ponda</div>
-                <div className='text-xs sm:text-base lg:text-sm 2xl:text-base font-normal pt-2'>Associate UX Designer</div>
-              </div>
-              <div className='flex flex-col justify-start items-center shadow-teamShadow w-[155px] sm:w-[250px] lg:w-[200px] xl:w-[250px] my-2 sm:my-6 max-sm:px-1.5 max-sm:py-3 sm:p-3 border border-[#D9D9D9] bg-white z-30'>
-                <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Mask%20group%20(13).png' className='max-sm:w-24 lg:w-36 xl:w-48' alt='Rajneesh Dhiman' />
-                <div className='text-base sm:text-2xl lg:text-lg 2xl:text-2xl font-bold pt-5'>Rajneesh Dhiman</div>
-                <div className='text-xs sm:text-base lg:text-sm 2xl:text-base font-normal pt-2'>Campaign Management Executive</div>
+        </section>
+
+        <section className="bg-slate-900 py-16 text-white text-center max-sm:px-3">
+          <h3 className="text-2xl font-bold">Let’s Build Measurable Growth Together</h3>
+          <p className="mt-2 max-w-2xl mx-auto text-slate-300">Tell us your goals, we’ll return with a roadmap and outcomes.</p>
+          <div className="mt-6 flex flex-wrap justify-center gap-4">
+            <a href="/contact" className="rounded-2xl bg-white px-6 py-3 font-semibold text-slate-900 shadow-md">Contact Us</a>
+            <button onClick={() => handleCalendly()} className="rounded-2xl border border-white/30 px-6 py-3 font-semibold text-white hover:bg-white/10">Book a Strategy Call</button>
+          </div>
+        </section>
+
+        {showCalendly && (
+          <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-40 z-50 flex items-center justify-center p-4"
+            onClick={() => setShowCalendly(false)}>
+            <div className="relative bg-white rounded-lg shadow-lg sm:p-4 flex flex-col items-center justify-center 
+                        max-w-[380px] w-[100%] sm:w-[90%] h-[80vh] sm:max-w-[400px] sm:h-[450px] lg:max-w-[450px] lg:h-[500px]">
+
+              <button
+                className="absolute top-1 left-1 text-gray-500 text-xs font-bold rounded-full w-8 h-8 flex items-center justify-center"
+                onClick={() => setShowCalendly(false)}
+              >
+                ✖
+              </button>
+
+              <div className="w-full h-full flex justify-center items-center">
+                <InlineWidget
+                  url="https://calendly.com/analyticsliv/30min"
+                  styles={{ width: "100%", height: "100%" }}
+                />
               </div>
             </div>
           </div>
-          {/* </div>  left-[20%] sm:left-[25%] md:left-[30%] xl:left-[37%] */}
-        </div>
+        )}
 
-        <div className='mt-[360px] sm:mt-[580px] md:mt-[550px] lg:mt-32'>
-          <div className='text-lg md:text-5xl w-full font-bold text-center z-20 pt-[17%] xl:pt-[18%] absolute mx-auto text-white'>
-            <div className='text-center mx-auto z-20'>
-              Meet Our Team
-            </div>
-          </div>
-          <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/analytics_team_img.png' alt='analytics_team_img'
-            className='w-full top-[-220px] z-10' />
-        </div>
 
-        <Scroll.Element id="mission" name="mission"></Scroll.Element>
+        {/* Global Flip Animations */}
+        <style jsx>{`
+        .flip-card {
+          background: transparent;
+          perspective: 1000px;
+          opacity: 0;
+          transform: translateY(20px) scale(0.95);
+          transition: opacity 0.6s ease, transform 0.6s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 1rem;
+        }
 
-        <div className='bg-[#30486A] m-2 md:m-5 max-md:py-7 max-lg:py-7 flex max-md:flex-col justify- items-center'>
-          <div className='md:w-[50%]'>
-            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Group%202071.png' alt='' />
-          </div>
-          <div className='md:w-[50%] xl:w-[40%] md:pr-4 max-md:text-center flex flex-col justify-between max-md:items-center items-start gap-5 xl:gap-7'>
-            <div className='text-[#FFF6EF] text-lg font-normal'>
-              We are hiring!
-            </div>
-            <div className='text-3xl md:text-4xl font-bold text-white'>Be part of the team</div>
-            <div className='text-[#FFF6EF] text-sm font-normal max-sm:px-2 max-md:px-10'>We are looking for passionate and enthusiastic people to join us in the challenging journey of creating space for new ways to help building businesses together.</div>
-            <div className='flex flex-col gap-3 xl:gap-4'>
-              <div className='flex items-center gap-4'>
-                <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector%20(6).png' alt='vector' />
-                <div className='text-[#CED1E5] text-base xl:text-xl font-normal'>Graphic & UI Designer</div>
-              </div>
-              <div className='flex items-center gap-4'>
-                <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector%20(6).png' alt='vector' />
-                <div className='text-[#CED1E5] text-base xl:text-xl font-normal'>Campaign Management Lead</div>
-              </div>
-              <div className='flex items-center gap-4'>
-                <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector%20(6).png' alt='vector' />
-                <div className='text-[#CED1E5] text-base xl:text-xl font-normal'>Lead Generation Expert</div>
-              </div>
-              <div className='flex items-center gap-4'>
-                <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector%20(6).png' alt='vector' />
-                <div className='text-[#CED1E5] text-base xl:text-xl font-normal'>Technical Analyst Lead</div>
-              </div>
-            </div>
-            <a href='/careers'><button className='bg-custom-linear text-white p-3 sm:p-5 border-2 border-white rounded-full hover:text-slate-200'>Check Openings</button></a>
-          </div>
-        </div>
-      </section>
+        .flip-card.visible {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+
+        .flip-card-inner {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          transition: transform 0.9s ease-in-out, box-shadow 1.5s ease;
+          transform-style: preserve-3d;
+          border-radius: 1rem;
+        }
+
+        .flip-card.auto-flip .flip-card-inner {
+          transform: rotateY(180deg);
+          animation: pulseGlow 2s ease-in-out;
+          animation-delay: 0.25s;
+        }
+
+        .flip-card.year-2019.auto-flip .flip-card-inner {
+          box-shadow: 0 0 25px rgba(16, 185, 129, 0.6);
+        }
+        .flip-card.year-2021.auto-flip .flip-card-inner {
+          box-shadow: 0 0 25px rgba(79, 70, 229, 0.6);
+        }
+        .flip-card.year-2022.auto-flip .flip-card-inner {
+          box-shadow: 0 0 25px rgba(245, 158, 11, 0.6);
+        }
+        .flip-card.year-2023.auto-flip .flip-card-inner {
+          box-shadow: 0 0 25px rgba(236, 72, 153, 0.6);
+        }
+        .flip-card.year-2024.auto-flip .flip-card-inner {
+          box-shadow: 0 0 25px rgba(14, 165, 233, 0.6);
+        }
+        .flip-card.year-2025.auto-flip .flip-card-inner {
+          box-shadow: 0 0 25px rgba(244, 63, 94, 0.6);
+        }
+
+        @keyframes pulseGlow {
+          0% {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            transform: rotateY(180deg) scale(1);
+          }
+          50% {
+            box-shadow: 0 0 40px currentColor;
+            transform: rotateY(180deg) scale(1.05);
+          }
+          100% {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            transform: rotateY(180deg) scale(1);
+          }
+        }
+
+        .logo-anim,
+        .logo-text {
+          opacity: 0;
+          transform: translateY(10px);
+          transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .flip-card.auto-flip .logo-anim {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        .flip-card.auto-flip .logo-text {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        .logo-delay-1 {
+          transition-delay: 0.2s;
+        }
+        .logo-delay-2 {
+          transition-delay: 0.5s;
+        }
+        .logo-text-delay {
+          transition-delay: 0.8s;
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          backface-visibility: hidden;
+          border-radius: 1rem;
+          border: 1px solid #e5e7eb;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 1rem;
+        }
+        .flip-card-front {
+          background: #fff;
+          box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+        }
+        .flip-card-back {
+          background: #f8fafc;
+          transform: rotateY(180deg);
+          box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+        }
+        .year-label {
+          font-size: 2.25rem;
+          line-height: 1;
+          font-weight: 800;
+          text-align: center;
+          display: block;
+          width: 100%;
+        }
+
+        @media (max-width: 640px) {
+          .flip-card {
+            width: 100%;
+            height: 180px;
+          }
+          .year-label {
+            font-size: 1.75rem;
+          }
+          h1 {
+            font-size: 2rem;
+          }
+          h2 {
+            font-size: 1.5rem;
+          }
+        }
+      `}</style>
+      </main>
     </>
 
   )
 }
 
 export default aboutus
-
-
-
-// import React, { useEffect } from "react";
-// import Head from "next/head";
-// import AOS from "aos";
-// import "aos/dist/aos.css";
-// import * as Scroll from "react-scroll";
-// import { scroller } from "react-scroll"; // Import scroller for smooth scrolling
-
-// const aboutus = () => {
-//   useEffect(() => {
-//     AOS.init();
-
-//     // Check the query parameter for id and scroll to the corresponding section
-//     const urlParams = new URLSearchParams(window.location.search);
-//     const sectionId = urlParams.get("id"); // Get 'id' from the URL
-
-//     if (sectionId) {
-//       scroller.scrollTo(sectionId, {
-//         duration: 800,
-//         delay: 0,
-//         smooth: "easeInOutQuart",
-//         offset: -80, // Adjust for any fixed headers
-//       });
-//     }
-//   }, []);
-//   // const { Element: ScrollElement } = Scroll;
-//   return (
-//     <>
-//       <Head>
-//         <title>AnalyticsLiv - About us</title>
-//         <meta
-//           name="description"
-//           content="Google Marketing Platform Partner - Our Journey"
-//         />
-//         <link
-//           rel="canonical"
-//           href="https://analyticsliv.com/about-us"
-//         ></link>
-//       </Head>
-
-//       <section className="overflow-x-hidden">
-//         <div className="relative" data-aos="fade-down" data-aos-once="true">
-//           <img
-//             src="https://storage.googleapis.com/website-bucket-uploads/static/about us.png"
-//             className="lg:w-full"
-//           />
-//           <div className="absolute w-24 h-24 lg:w-80 lg:h-80 bg-gradient-to-b from-blue-900 to-transparent blur rounded-full top-2 right-0"></div>
-//           <div className="absolute w-16 h-16 lg:w-40 lg:h-40 bg-gradient-to-b from-amber-400 to-transparent blur rounded-full right-8 -bottom-2 lg:bottom-8 lg:right-40"></div>
-//           <h1 className="uppercase tracking-wider absolute right-6 bottom-4 text-white lg:text-3xl">
-//             AnalyticsLiv - Our Journey to Success
-//           </h1>
-//         </div>
-
-//         <div
-//           data-aos="zoom-in"
-//           data-aos-once="true"
-//           className="lg:flex justify-evenly p-8"
-//         >
-//           <div className="md:pt-16 lg:w-1/2 pb-6 lg:pb-0">
-//             <img
-//               src="https://storage.googleapis.com/website-bucket-uploads/static/story.png"
-//               className="mx-auto w-3/4 lg:w-fit"
-//             />
-//           </div>
-//           <div className="lg:w-1/2 lg:space-y-4 space-y-2 tracking-wider">
-//             <h2 className="uppercase tracking-wider font-semibold text-slate-800 text:xl lg:text-3xl text-center lg:text-left">
-//               Our Story
-//             </h2>
-//             <h2 className="text-cyan-500 underline underline-offset-4 lg:text-xl font-semibold text-center lg:text-left uppercase">
-//               Genesis
-//             </h2>
-//             <p className="lg:pr-24 text-slate-600 text-justify">
-//               The thought was brewed over multiple cups of cutting chai(tea) in
-//               the after hours of a corporate professional’s life. Three
-//               individuals restricted by internal processes and systems yearning
-//               to create data-centric tangible value for their customers through
-//               a fluidic approach. Analytics Liv Digital was conceived with the
-//               motto that an agency’s rigid protocols shouldn’t act as a
-//               bottleneck for customer’s progression.
-//               <br />
-//               Our team consists of highly motivated and skilled specialists who
-//               know how to deal with any issue that you may come across. This
-//               creates a basis for lasting relationships with our clients built
-//               on trust and mutual understanding. We are devoted to creating
-//               unique and innovative solutions along with the high- quality
-//               supporting services.
-//             </p>
-//           </div>
-//         </div>
-//         <Scroll.Element id="vision" name="vision"></Scroll.Element>
-
-//         <div className="w-1/3 h-0.5 bg-cyan-600 mx-auto rounded-xl"></div>
-
-//         <Scroll.Element id="mission" name="mission"></Scroll.Element>
-//         <div className="lg:flex px-2 lg:px-8 py-8 tracking-wider">
-//           <div
-//             data-aos="fade-right"
-//             data-aos-once="true"
-//             className="flex justify-evenly lg:w-1/2"
-//           >
-//             <div className="px-3 pt-12">
-//               <img
-//                 src="https://storage.googleapis.com/website-bucket-uploads/static/mission.gif"
-//                 className="inline "
-//               />
-//             </div>
-//             <div className="w-2/3">
-//               <h2 className="inline text-cyan-500 underline underline-offset-4 text-xl font-semibold ">
-//                 Mission
-//               </h2>
-//               <p className="pt-6 text-slate-700">
-//                 We learned over the years how different strategies of data come
-//                 together to help businesses. We intend to spread our learnings
-//                 while aligning the businesses with the ever changing technology
-//                 around data, analytics and its usage to empower the business.
-//               </p>
-//             </div>
-//           </div>
-
-//           <div
-//             data-aos="fade-left"
-//             data-aos-once="true"
-//             className="flex justify-evenly pt-8 lg:pt-0 lg:w-1/2"
-//           >
-//             <div className="px-3 pt-12">
-//               <img
-//                 src="https://storage.googleapis.com/website-bucket-uploads/static/vision.gif"
-//                 className="inline "
-//               />
-//             </div>
-//             <div className="w-2/3">
-//               <h2 className="inline text-cyan-500 underline underline-offset-4 text-xl font-semibold ">
-//                 Vision
-//               </h2>
-//               <p className="pt-6 text-slate-700">
-//                 Enable Business partners to harness the power of data in
-//                 decision making and gaining digital transformation.
-//               </p>
-//             </div>
-//           </div>
-//         </div>
-//         <div className="w-1/3 h-0.5 bg-cyan-600 mx-auto rounded-xl"></div>
-
-//         <div
-//           data-aos="fade-up"
-//           data-aos-once="true"
-//           className="lg:flex lg:flex-row-reverse justify-evenly p-8"
-//         >
-//           <div className="pt-16 lg:w-1/2 pb-6 lg:pb-0">
-//             <img
-//               src="https://storage.googleapis.com/website-bucket-uploads/static/aboutus.png"
-//               className="mx-auto w-3/4 lg:w-fit"
-//             />
-//           </div>
-//           <div className="lg:w-1/2 tracking-wider lg:space-y-4 lg:pl-28 space-y-2">
-//             <h2 className="uppercase font-semibold text-slate-800 text:xl lg:text-3xl text-center lg:text-left">
-//               About us
-//             </h2>
-//             <p className="text-slate-600 text-justify">
-//               Analytics Liv Digital (“AnalyticsLiv”) is a new age marketing firm
-//               focused on delivering data driven customer experiences. Cutting
-//               through the noise of digital data fatigue to take cognizance of a
-//               brand’s first party data is our prime focus. A website, mobile
-//               app, PPC campaigns or landing pages- whatever be your customer
-//               touchpoint(s), we will make it count.
-//               <br />
-//               We believe that one size doesn’t fit all as each customer is on
-//               it’s unique journey towards achieving enhanced digital marketing
-//               maturity. Our customer centric ethos drives us to operate on an
-//               outside-in approach via which the brand’s present digital journey
-//               is internalized for crafting relevant customized offerings.
-//               <br />
-//               We create unique and innovative solutions for our customers along
-//               with the high-quality support services and personal approach to
-//               any case. Feel free to entrust your business to our experts, and
-//               you’ll see the difference!
-//             </p>
-//           </div>
-//         </div>
-
-//         <div
-//           data-aos="zoom-in"
-//           data-aos-once="true"
-//           className="relative py-8 space-y-6 bg-gray-100 "
-//         >
-//           <h2 className="relative uppercase tracking-wider text-center lg:text-3xl">
-//             Platform Expertise
-//           </h2>
-//           <div className="flex lg:flex-row justify-evenly">
-//             <div className=" space-y-2">
-//               <img
-//                 src="https://storage.googleapis.com/website-bucket-uploads/static/Bigquery.png"
-//                 className="mx-auto "
-//               />
-//               <div className="text-slate-700">Big Query</div>
-//             </div>
-
-//             <div className="hidden lg:block space-y-2">
-//               <img
-//                 src="/Looker_Studio_Blue_Logo.png"
-//                 className="mx-auto h-20 w-14"
-//               />
-//               <h2 className="text-slate-700 text-center">
-//                 Looker Studio
-//               </h2>
-//             </div>
-
-//             <div className="space-y-2">
-//               <img
-//                 src="https://storage.googleapis.com/website-bucket-uploads/static/dv360.png"
-//                 className="mx-auto"
-//               />
-//               <h2 className="text-slate-700 text-center">
-//                 Display and Video <br /> 360
-//               </h2>
-//             </div>
-
-//             <div className="hidden lg:block space-y-2">
-//               <img
-//                 src="https://storage.googleapis.com/website-bucket-uploads/static/googlecampaignmanager.png"
-//                 className="mx-auto"
-//               />
-//               <h2 className="text-slate-700 text-center">
-//                 Google Campaign <br />
-//                 Manager
-//               </h2>
-//             </div>
-//           </div>
-
-//           <div className="flex flex-row justify-evenly">
-//             <div className="space-y-2">
-//               <img
-//                 src="https://storage.googleapis.com/website-bucket-uploads/static/GAnalytics.png"
-//                 className="mx-auto"
-//               />
-//               <h2 className="text-slate-700 text-center">Google Analytics</h2>
-//             </div>
-
-//             <div className="hidden lg:block space-y-2">
-//               <img
-//                 src="/firebase_logo.png"
-//                 className="mx-auto h-[70px] w-[56px]"
-//               />
-//               <h2 className="text-slate-700 text-center">
-//                 Firebase
-//                 <br />
-//               </h2>
-//             </div>
-
-//             <div className="hidden lg:block space-y-2">
-//               <img
-//                 src="https://storage.googleapis.com/website-bucket-uploads/static/Google ads.png"
-//                 className="h-2/3 mx-auto"
-//               />
-//               <h2 className="text-slate-700 text-center">Google Ads</h2>
-//             </div>
-
-//             <div className="space-y-2">
-//               <img
-//                 src="https://storage.googleapis.com/website-bucket-uploads/static/Google tag manager.png"
-//                 className="mx-auto"
-//               />
-//               <h2 className="text-slate-700 text-center">
-//                 Google Tag
-//                 <br /> Manager
-//               </h2>
-//             </div>
-//           </div>
-
-//           <div className="flex flex-row text-center justify-around">
-//             <div className="space-y-2 hidden lg:block">
-//               <img
-//                 src="https://storage.googleapis.com/website-bucket-uploads/static/Linkedin.png"
-//                 className="mx-auto"
-//               />
-//               <h2 className="text-slate-700 text-center">
-//                 LinkedIn
-//                 <br /> Marketing
-//               </h2>
-//             </div>
-//             <div className="space-y-2 hidden lg:block">
-//               <img
-//                 src="/yt_logo.png"
-//                 className="mx-auto h-26 w-24"
-//               />
-//               <h2 className="text-slate-700 text-center">
-//                 Youtube Ads
-//               </h2>
-//             </div>
-
-//             <div className="space-y-2">
-//               <img
-//                 src="/meta.png"
-//                 className="mx-auto w-24 h-20"
-//               />
-//               <h2 className="text-slate-700 text-center">Meta Ads</h2>
-//             </div>
-
-//             <div className="space-y-2">
-//               <img
-//                 src="https://storage.googleapis.com/website-bucket-uploads/static/search ads.png"
-//                 className="mx-auto"
-//               />
-//               <h2 className="text-slate-700 text-center">Search Ads</h2>
-//             </div>
-//           </div>
-//           <div className="lg:hidden flex flex-row text-center justify-around">
-//             <div className="space-y-2">
-//               <img
-//                 src="https://storage.googleapis.com/website-bucket-uploads/static/Linkedin.png"
-//                 className="mx-auto"
-//               />
-//               <h2 className="text-slate-700 text-center">
-//                 LinkedIn
-//                 <br /> Marketing
-//               </h2>
-//             </div>
-//             <div className="space-y-2">
-//               <img
-//                 src="https://storage.googleapis.com/website-bucket-uploads/static/Google ads.png"
-//                 className="mx-auto h-16"
-//               />
-//               <h2 className="text-slate-700 text-center">Google Ads</h2>
-//             </div>
-//           </div>
-//           <div className="lg:hidden flex flex-row text-center justify-around">
-//             <div className="space-y-2">
-//               <img
-//                 src="/Looker_Studio_Blue_Logo.png"
-//                 className="mx-auto h-24 w-16"
-//               />
-//               <h2 className="text-slate-700 text-center">
-//                 Looker Studio
-//               </h2>
-//             </div>
-//             <div className="space-y-2">
-//               <img
-//                 src="https://storage.googleapis.com/website-bucket-uploads/static/googlecampaignmanager.png"
-//                 className="mx-auto"
-//               />
-//               <h2 className="text-slate-700">
-//                 Google Campaign <br />
-//                 Manager
-//               </h2>
-//             </div>
-
-//           </div>
-//           <div className="lg:hidden flex flex-row text-center justify-around">
-//             <div className="space-y-2 w-full lg:hidden">
-//               <img
-//                 src="/yt_logo.png"
-//                 className="mx-auto h-26 w-24"
-//               />
-//               <h2 className="text-slate-700 text-center">
-//                 Youtube Ads
-//               </h2>
-//             </div>
-//             <div className="space-y-2 w-full lg:hidden">
-//               <img
-//                 src="/firebase_logo.png"
-//                 className="mx-auto h-[70px] w-[56px]"
-//               />
-//               <h2 className="text-slate-700 text-center">
-//                 Firebase
-//                 <br />
-//               </h2>
-//             </div>
-//           </div>
-//         </div>
-
-//         <div
-//           data-aos="fade-down"
-//           data-aos-once="true"
-//           className="py-8 lg:px-16"
-//         >
-//           <h2 className="relative text-slate-800 uppercase tracking-wider text-center lg:text-left lg:inset-x-12 lg:text-3xl font-semibold">
-//             Solutions Offered
-//           </h2>
-//           <div className="flex max-lg:flex-col max-lg:items-center sm:px-8 justify-center uppercase">
-//             <ul className="space-y-2 px-8 pt-2 lg:pt-10 lg:w-1/2">
-//               <li>
-//                 <svg
-//                   xmlns="http://www.w3.org/2000/svg"
-//                   className="w-8 mr-2 inline fill-amber-400"
-//                   preserveAspectRatio="xMidYMid meet"
-//                   viewBox="0 0 24 24"
-//                 >
-//                   <path d="m12 2.6l-3 9.8l-7 7.5l10-2.3L22 20l-7-7.5l-3-9.9Z" />
-//                 </svg>
-//                 Measurement Strategy
-//               </li>
-//               <li>
-//                 <svg
-//                   xmlns="http://www.w3.org/2000/svg"
-//                   className="w-8 mr-2 inline fill-amber-400"
-//                   preserveAspectRatio="xMidYMid meet"
-//                   viewBox="0 0 24 24"
-//                 >
-//                   <path d="m12 2.6l-3 9.8l-7 7.5l10-2.3L22 20l-7-7.5l-3-9.9Z" />
-//                 </svg>
-//                 Search Engine Marketing
-//               </li>
-//               <li>
-//                 <svg
-//                   xmlns="http://www.w3.org/2000/svg"
-//                   className="w-8 mr-2 inline fill-amber-400"
-//                   preserveAspectRatio="xMidYMid meet"
-//                   viewBox="0 0 24 24"
-//                 >
-//                   <path d="m12 2.6l-3 9.8l-7 7.5l10-2.3L22 20l-7-7.5l-3-9.9Z" />
-//                 </svg>
-//                 Media Planning & Buying
-//               </li>
-//               <li>
-//                 <svg
-//                   xmlns="http://www.w3.org/2000/svg"
-//                   className="w-8 mr-2 inline fill-amber-400"
-//                   preserveAspectRatio="xMidYMid meet"
-//                   viewBox="0 0 24 24"
-//                 >
-//                   <path d="m12 2.6l-3 9.8l-7 7.5l10-2.3L22 20l-7-7.5l-3-9.9Z" />
-//                 </svg>
-//                 ETL / Data Warehousing
-//               </li>
-//             </ul>
-//             <ul className="space-y-2 px-8 pt-2 lg:pt-10 lg:w-1/2">
-//               <li>
-//                 <svg
-//                   xmlns="http://www.w3.org/2000/svg"
-//                   className="w-8 mr-2 inline fill-amber-400"
-//                   preserveAspectRatio="xMidYMid meet"
-//                   viewBox="0 0 24 24"
-//                 >
-//                   <path d="m12 2.6l-3 9.8l-7 7.5l10-2.3L22 20l-7-7.5l-3-9.9Z" />
-//                 </svg>
-//                 <div className="inline whitespace-pre">Data Tracking</div>
-//               </li>
-//               <li>
-//                 <svg
-//                   xmlns="http://www.w3.org/2000/svg"
-//                   className="w-8 mr-2 inline fill-amber-400"
-//                   preserveAspectRatio="xMidYMid meet"
-//                   viewBox="0 0 24 24"
-//                 >
-//                   <path d="m12 2.6l-3 9.8l-7 7.5l10-2.3L22 20l-7-7.5l-3-9.9Z" />
-//                 </svg>
-//                 Social Media Marketing
-//               </li>
-//               <li>
-//                 <svg
-//                   xmlns="http://www.w3.org/2000/svg"
-//                   className="w-8 mr-2 inline fill-amber-400"
-//                   preserveAspectRatio="xMidYMid meet"
-//                   viewBox="0 0 24 24"
-//                 >
-//                   <path d="m12 2.6l-3 9.8l-7 7.5l10-2.3L22 20l-7-7.5l-3-9.9Z" />
-//                 </svg>
-//                 Reporting & Analysis
-//               </li>
-//               <li>
-//                 <svg
-//                   xmlns="http://www.w3.org/2000/svg"
-//                   className="w-8 mr-2 inline fill-amber-400"
-//                   preserveAspectRatio="xMidYMid meet"
-//                   viewBox="0 0 24 24"
-//                 >
-//                   <path d="m12 2.6l-3 9.8l-7 7.5l10-2.3L22 20l-7-7.5l-3-9.9Z" />
-//                 </svg>
-//                 <div className="inline whitespace pre">
-//                   Marketing Consulting{" "}
-//                 </div>
-//               </li>
-//             </ul>
-//             <div>
-//               <img src="https://storage.googleapis.com/website-bucket-uploads/static/services7.jpg" />
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-//     </>
-//   );
-// };
-
-// export default aboutus;
