@@ -60,9 +60,16 @@ const aboutus = () => {
       front: "Cross-channel media growth",
       back: (
         <>
-          <p className="logo-text logo-text-delay mt-2 text-slate-600 text-xs sm:text-sm">
-            Microsoft Ads Partner
-          </p>
+          <div className='flex flex-col items-center justify-center gap-3'>
+            <img
+              src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/microsoft-partner.png"
+              alt="Microsoft Ad Partners"
+              className="logo-anim logo-delay-1 h-10 sm:h-12 mx-auto"
+            />
+            <p className="logo-text logo-text-delay mt-2 text-slate-600 text-xs sm:text-sm">
+              Microsoft Ads Partner
+            </p>
+          </div>
         </>
       ),
     },
@@ -73,7 +80,6 @@ const aboutus = () => {
       back: (
         <>
           <div className='flex items-center justify-center gap-3'>
-
             <img
               src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/GA4_Logo.png"
               alt="GA Certified"
