@@ -183,6 +183,32 @@ const Careers = ({ jobsdata }) => {
     return colorSchemes[index % colorSchemes.length];
   };
 
+  function openLightbox(src) {
+    galleryImages = Array.from(document.querySelectorAll(".team-photo")).map(
+      (img) => img.src || window.FALLBACK_IMG
+    );
+    currentIndex = Math.max(0, galleryImages.indexOf(src));
+    const lightbox = document.getElementById("lightbox");
+    const img = lightbox.querySelector("img");
+    img.src = src || window.FALLBACK_IMG;
+    lightbox.style.display = "flex";
+  }
+  function closeLightbox() {
+    const lightbox = document.getElementById("lightbox");
+    lightbox.style.display = "none";
+  }
+  function showNext() {
+    if (!galleryImages.length) return;
+    currentIndex = (currentIndex + 1) % galleryImages.length;
+    document.querySelector("#lightbox img").src = galleryImages[currentIndex];
+  }
+  function showPrev() {
+    if (!galleryImages.length) return;
+    currentIndex =
+      (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+    document.querySelector("#lightbox img").src = galleryImages[currentIndex];
+  }
+
   return (
     <>
       <Head>
