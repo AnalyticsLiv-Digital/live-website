@@ -32,14 +32,14 @@ const Index = ({ applications }) => {
                 </tr>
               </thead>
               <tbody className="text-center text-gray-300">
-                {job && job?.length  ?
+                {job && job?.length ?
                   job?.map((job, key) => (
                     <tr
                       key={key}
                       className="border-b border-gray-700 hover:bg-gray-700 transition-colors"
                     >
                       <td className="py-3 px-3 max-w-xs break-words">
-                        {job.firstName} {job.lastName}
+                        {job?.fullName ? job.fullName : `${job?.firstName || ""} ${job?.lastName || ""}`}
                       </td>
                       <td className="py-4 px-6">{job.experience}</td>
                       <td className="py-4 px-6">
@@ -96,7 +96,7 @@ const Index = ({ applications }) => {
                       </td>
                       <td className="py-4 px-6">{job.noticePeriod}</td>
                     </tr>
-                  )) : 
+                  )) :
                   (
                     <tr>
                       <td colSpan="7" className="py-6 text-gray-400 text-lg">
