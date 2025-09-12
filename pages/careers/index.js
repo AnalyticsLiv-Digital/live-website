@@ -789,13 +789,13 @@ const Careers = ({ jobsdata }) => {
           </div>
         </section>
 
-        <section class="bg-white text-slate-800">
-          <section class="py-20 bg-slate-50">
-            <div class="mx-auto max-w-7xl px-6 text-center">
-              <h2 class="text-3xl md:text-4xl font-bold text-slate-900">
+        <section className="bg-white text-slate-800">
+          <section className="py-20 bg-slate-50">
+            <div className="mx-auto max-w-7xl px-6 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
                 Life at AnalyticsLiv
               </h2>
-              <p class="mt-2 text-slate-600 max-w-3xl mx-auto">
+              <p className="mt-2 text-slate-600 max-w-3xl mx-auto">
                 We believe in curiosity, collaboration, and creativity. Here’s a
                 peek into our culture.
               </p>
@@ -810,7 +810,7 @@ const Careers = ({ jobsdata }) => {
             class="fixed inset-0 bg-black/90 hidden items-center justify-center z-60 flex-col"
           >
             <button
-              class="absolute top-5 right-5 bg-white rounded-full px-3 py-2 font-bold text-lg"
+              className="absolute top-5 right-5 bg-white rounded-full px-3 py-2 font-bold text-lg"
               onclick="event.stopPropagation(); closeLightbox()"
             >
               ×
@@ -818,18 +818,18 @@ const Careers = ({ jobsdata }) => {
             <img
               src=""
               alt="Expanded view"
-              class="max-h-[80%] max-w-[90%] rounded-xl"
+              className="max-h-[80%] max-w-[90%] rounded-xl"
             />
-            <div class="mt-4 flex gap-4">
+            <div className="mt-4 flex gap-4">
               <button
                 onclick="event.stopPropagation(); showPrev()"
-                class="bg-white rounded-md px-4 py-2 font-semibold"
+                className="bg-white rounded-md px-4 py-2 font-semibold"
               >
                 Prev
               </button>
               <button
                 onclick="event.stopPropagation(); showNext()"
-                class="bg-white rounded-md px-4 py-2 font-semibold"
+                className="bg-white rounded-md px-4 py-2 font-semibold"
               >
                 Next
               </button>
