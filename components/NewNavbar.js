@@ -70,7 +70,7 @@ const NewNavbar = () => {
         fontFamily: 'ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji"',
       }}
     >
-      {/* <div className="w-full bg-gradient-to-r from-slate-800 via-slate-900 to-slate-800 text-white text-xs sm:text-sm relative overflow-hidden">
+      <div className="w-full bg-gradient-to-r from-slate-800 via-slate-900 to-slate-800 text-white text-xs sm:text-sm relative overflow-hidden">
 
         <div className="mx-auto max-w-7xl flex max-md:flex-col items-center justify-between px-3.5 md:px-6 py-2 relative">
           <div className="flex items-center max-sm:justify-center max-md:text-center md:space-x-3">
@@ -105,7 +105,7 @@ const NewNavbar = () => {
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-      </div> */}
+      </div>
 
       <header className="bg-white/95 backdrop-blur border-b border-slate-200">
         <div className="mx-auto max-w-7xl px-6">

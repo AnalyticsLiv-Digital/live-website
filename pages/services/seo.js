@@ -98,7 +98,7 @@ const Seo = () => {
                     </a>
                   </div>
                 </div>
-                <div class="">
+                <div class="order-first md:order-none">
                   <div class="relative mx-auto w-full max-w-xl rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
                     <div class="grid gap-4 sm:grid-cols-2">
                       <div class="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-5">
