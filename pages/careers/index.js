@@ -57,6 +57,7 @@ export async function getServerSideProps(context) {
   //console.log(brandsdata);
   // Pass data to the page via props
   return { props: { jobsdata } }
+  return { props: { jobsdata } }
 }
 
 export default Careers
