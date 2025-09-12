@@ -1,884 +1,487 @@
-import React, { useState } from "react";
-import Faq from "../../components/Faq";
-import MetaSchemaOg from "../../components/MetaSchemaOg";
+"use client"
+import React, { useRef, useState } from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import MetaSchemaOg from '../../components/MetaSchemaOg'
+import { InlineWidget } from 'react-calendly';
+import Brands from '../../components/brands';
 
 const Ppc = () => {
-  const [active, setActive] = useState("tracking");
 
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    company: "",
-    spend: "",
-    message: "",
-    pageSource: "ppc",
-  });
-  const [loading, setLoading] = useState(false);
-  const [responseMessage, setResponseMessage] = useState("");
+    const sliderRef = useRef(null);
+    const itemRefs = useRef([]);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [showCalendly, setShowCalendly] = useState(false);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setResponseMessage("");
+    const handleToggle = (index) => {
+        setActiveIndex(activeIndex === index ? null : index);
 
-    try {
-      const res = await fetch("/api/serviceContact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+        setTimeout(() => {
+            if (itemRefs.current[index]) {
+                itemRefs.current[index].scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'nearest',
+                });
+            }
+        }, 100);
 
-      if (res.ok) {
-        setResponseMessage("Your request has been submitted successfully!");
-        setFormData({
-          fullName: "",
-          email: "",
-          company: "",
-          spend: "",
-          message: "",
-          pageSource: "ppc",
-        });
-      } else {
-        setResponseMessage("Something went wrong. Please try again.");
-      }
-    } catch (error) {
-      setResponseMessage("Server error. Please try again later.");
-    } finally {
-      setLoading(false);
+    };
+
+    const content = [
+        {
+            question: "What can I expect from AnalyticsLiv's Performance Marketing Agency?",
+            answer:
+                "We'll work closely with you to understand your business objectives and develop a targeted PPC strategy. We'll manage your campaigns, optimize them for performance, and provide regular reports with insights to track your progress.",
+        },
+        {
+            question: "What is the difference between Performance Marketing and SEO?",
+            answer:
+                "PPC encompasses both paid search advertising (PPC) and organic search engine optimization (SEO) efforts. SEO focuses on improving your website's ranking in organic search results, while PPC includes paid advertising campaigns to appear at the top of SERPs.",
+        },
+        {
+            question: "How much does PPC Management cost?",
+            answer:
+                "PPC Management budgets can vary depending on your industry, target audience, and desired results. We offer customized PPC solutions to fit your specific needs and budget.",
+        },
+        {
+            question: "What kind of results can I expect from your PPC services?",
+            answer:
+                "The timeframe for seeing results from PPC can vary depending on your campaign goals and competitiveness. However, well-managed PPC campaigns can start generating leads within a few weeks.",
+        },
+    ];
+
+    const cardsData = [
+        {
+            title: 'Remarketing & Retargeting',
+            description: "We capture the attention of website visitors who haven't converted yet, bringing them back with targeted ads.",
+            image: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Remarketing_%20and_Retargeting.svg',
+        },
+        {
+            title: 'Keyword Research and Strategy',
+            description: 'We identify high-volume, relevant keywords that drive targeted traffic.',
+            image: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Keyword_Research_and_Strategy.svg',
+        },
+        {
+            title: 'Campaign Setup and Management',
+            description: 'We create & manage effective PPC (Pay-Per-Click) campaigns across major search engines like Google Ads & Bing Ads.',
+            image: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Campaign_Setup_and_Management.svg',
+        },
+        {
+            title: 'Ad Copywriting & Optimization',
+            description: 'We craft compelling ad copy that resonates with your target audience & encourages clicks.',
+            image: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Ad_Copywriting_and_Optimization.svg',
+        },
+        {
+            title: 'Landing Page Optimization',
+            description: 'We ensure your landing pages convert clicks into leads or sales.',
+            image: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/landing_page_optimization.svg',
+        },
+        {
+            title: 'Conversion Tracking & Analysis',
+            description: 'We meticulously track conversions and analyze data to optimize campaigns for better results.',
+            image: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Conversion%20_Tarcking_and%20_Analysis.svg',
+        },
+        {
+            title: 'Competitor Analysis',
+            description: 'We stay ahead of the competition by analyzing their strategies and identifying opportunities for improvement.',
+            image: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/competitor_analysis.svg',
+        },
+    ];
+
+    const settings = {
+        infinite: true,
+        initialSlide: 0.5,
+        slidesToShow: 2.5,
+        slidesToScroll: 1.5,
+        arrows: true,
+        dots: true,
+        swipe: true,
+        touchMove: true,
+        draggable: true,
+        responsive: [
+            {
+                breakpoint: 1184,
+                settings: {
+                    slidesToShow: 2,
+                },
+            },
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 1.5,
+                    slidesToScroll: 1.5,
+                },
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    initialSlide: 0.5,
+                    slidesToShow: 1.5,
+                    slidesToScroll: 1.5,
+                },
+            },
+            {
+                breakpoint: 500,
+                settings: {
+                    initialSlide: 0,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+        ],
+    };
+
+    const settingsMobile = {
+        infinite: true,
+        initialSlide: 0,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: true,
+    };
+
+    const handleNext = () => sliderRef.current.slickNext();
+    const handlePrev = () => sliderRef.current.slickPrev();
+
+    const handleCalendly = () => {
+        setShowCalendly(true);
     }
-  };
 
-  const content = [
-    {
-      question: "What’s the difference between SEM and PPC?",
-      answer:
-        "SEM includes both PPC (paid) and SEO (organic). PPC is the paid component-buying visibility on SERPs via Google Ads and Microsoft Advertising",
-    },
-    {
-      question: "How much does PPC cost?",
-      answer:
-        "Budgets vary by competition and goals. We align spend to targets, then improve efficiency with negatives, creative testing, and bid strategy tuning.",
-    },
-    {
-      question: "How quickly will I see results?",
-      answer:
-        "Most accounts see qualified traffic quickly, with conversions stabilizing as data accrues. Expect early wins in weeks with steady improvements after.",
-    },
-    {
-      question: "Can you manage everything end‑to‑end?",
-      answer:
-        "Yes-strategy, setup, tracking, creatives, landing pages, optimization, and reporting are all included.",
-    },
-  ];
-
-  return (
-    <>
-      <MetaSchemaOg
-        url="https://analyticsliv.com/services/ppc"
-        title="Expert Performance Marketing Agency | Meta Ads | Google Ads | AnalyticsLiv"
-        description="Accelerate growth with AnalyticsLiv’s expert PPC services. As a top-tier performance marketing agency, we turn clicks into conversions with precision-targeted campaigns."
-        twitterTitle="Expert Performance Marketing Agency | Meta Ads | Google Ads | AnalyticsLiv"
-        twitterDescription="Accelerate growth with AnalyticsLiv’s expert PPC services. As a top-tier performance marketing agency, we turn clicks into conversions with precision-targeted campaigns."
-        faqData={content}
-      />
-      <main
-        class="min-h-screen bg-white text-slate-800"
-        style={{
-          fontFamily:
-            'ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji"',
-        }}
-      >
-        <section class="relative overflow-hidden border-b border-slate-200">
-          <div class="absolute inset-0 bg-gradient-to-br from-[#EEF6FF] via-white to-[#F7F7FF]"></div>
-          <div class="relative mx-auto max-w-7xl px-6 py-16 lg:py-20">
-            <div class="grid items-center gap-12 md:grid-cols-2">
-              <div>
-                <p class="mb-3 inline-flex items-center gap-2 rounded-full border border-sky-200 bg-white px-4 py-1 text-xs font-medium tracking-wide text-sky-700">
-                  <span class="h-1.5 w-1.5 rounded-full bg-sky-500"></span>
-                  Performance Marketing
-                </p>
-
-                <h1 class="text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl md:text-5xl text-slate-900">
-                  Profit‑Focused PPC,{" "}
-                  <span class="bg-gradient-to-r from-slate-900 to-sky-600 bg-clip-text text-transparent">
-                    Engineered for Scale
-                  </span>
-                </h1>
-                <p class="mt-5 max-w-2xl text-lg text-slate-600">
-                  Drive predictable growth across Search, Shopping, Performance
-                  Max, and YouTube with GA4‑clean tracking and data‑obsessed
-                  execution.
-                </p>
-
-                <div class="mt-7 flex flex-wrap items-center gap-3">
-                  <a
-                    href="#contact"
-                    class="rounded-2xl bg-slate-900 px-6 py-3 text-white shadow-lg shadow-slate-900/10 transition hover:opacity-90"
-                  >
-                    Get a First PPC Audit
-                  </a>
-                  <a
-                    href="#pricing"
-                    class="rounded-2xl border border-slate-300 px-6 py-3"
-                  >
-                    View Pricing
-                  </a>
-                </div>
-                <ul class="mt-7 grid gap-3 sm:grid-cols-2">
-                  <li class="flex items-start gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-                    <span class="mt-1 inline-block h-2.5 w-2.5 flex-none rounded-full bg-emerald-500"></span>
-                    <p class="text-slate-700">
-                      Strategy‑first account structures that protect ROAS
-                    </p>
-                  </li>
-                  <li class="flex items-start gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-                    <span class="mt-1 inline-block h-2.5 w-2.5 flex-none rounded-full bg-emerald-500"></span>
-                    <p class="text-slate-700">
-                      GA4‑based measurement, Looker reporting, clear insights
-                    </p>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="">
-                <div class="relative mx-auto w-full max-w-xl rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-                  <div class="grid gap-4 sm:grid-cols-2">
-                    <div class="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-5">
-                      <div class="absolute -right-8 -top-8 h-28 w-28 rounded-full ring-animated opacity-40"></div>
-                      <div class="text-3xl font-extrabold text-slate-900">
-                        3.2×
-                      </div>
-                      <div class="mt-1 text-sm text-slate-600">
-                        Median ROAS uplift in 90 days*
-                      </div>
-                    </div>
-                    <div class="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-5">
-                      <div class="absolute -right-8 -top-8 h-28 w-28 rounded-full ring-animated opacity-40"></div>
-                      <div class="text-3xl font-extrabold text-slate-900">
-                        ₹10Cr+
-                      </div>
-                      <div class="mt-1 text-sm text-slate-600">
-                        Ad spend managed to date*
-                      </div>
-                    </div>
-                    <div class="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-5">
-                      <div class="absolute -right-8 -top-8 h-28 w-28 rounded-full ring-animated opacity-40"></div>
-                      <div class="text-3xl font-extrabold text-slate-900">
-                        120+
-                      </div>
-                      <div class="mt-1 text-sm text-slate-600">
-                        Clients served across B2B, D2C, Apps*
-                      </div>
-                    </div>
-                    <div class="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-5">
-                      <div class="absolute -right-8 -top-8 h-28 w-28 rounded-full ring-animated opacity-40"></div>
-                      <div class="text-3xl font-extrabold text-slate-900">
-                        ‑28%
-                      </div>
-                      <div class="mt-1 text-sm text-slate-600">
-                        Avg. CPA reduction in first quarter*
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="capabilities" class="py-16">
-          <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-10 text-center">
-              <p class="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
-                What sets us apart
-              </p>
-              <h2 class="text-2xl md:text-3xl font-bold text-slate-900">
-                Technology, Transparency & Momentum—Every Month
-              </h2>
-              <p class="mt-2 text-slate-600 max-w-3xl mx-auto">
-                You get clean data, proactive optimization, and board‑ready
-                reporting that turns PPC into an engine of predictable growth.
-              </p>
-            </div>
-            <div class="grid gap-6 md:grid-cols-2">
-              <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                <div class="mb-3 inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-700">
-                  Tracking & Tech
-                </div>
-                <ul class="space-y-2 text-slate-700">
-                  <li class="flex items-start gap-3">
-                    <span class="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-sky-600"></span>
-                    <span>
-                      GA4 + GTM done right (events, parameters, enhanced
-                      conversions)
-                    </span>
-                  </li>
-                  <li class="flex items-start gap-3">
-                    <span class="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-sky-600"></span>
-                    <span>
-                      Server‑side tagging where relevant; consent mode
-                      compliance
-                    </span>
-                  </li>
-                  <li class="flex items-start gap-3">
-                    <span class="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-sky-600"></span>
-                    <span>Feed & product data hygiene for Shopping / PMax</span>
-                  </li>
-                  <li class="flex items-start gap-3">
-                    <span class="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-sky-600"></span>
-                    <span>Looker/Studio dashboards wired to business KPIs</span>
-                  </li>
-                </ul>
-              </div>
-              <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                <div class="mb-3 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
-                  What you get monthly
-                </div>
-                <ul class="space-y-2 text-slate-700">
-                  <li class="flex items-start gap-3">
-                    <span class="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-emerald-600"></span>
-                    <span>
-                      Roadmap & tests: ad copy, creatives, assets, audiences,
-                      bids
-                    </span>
-                  </li>
-                  <li class="flex items-start gap-3">
-                    <span class="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-emerald-600"></span>
-                    <span>
-                      Budget pacing alerts and waste‑cut opportunities
-                    </span>
-                  </li>
-                  <li class="flex items-start gap-3">
-                    <span class="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-emerald-600"></span>
-                    <span>
-                      Insights tied to CPL/CPA, ROAS, MER, LTV, cohorts
-                    </span>
-                  </li>
-                  <li class="flex items-start gap-3">
-                    <span class="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-emerald-600"></span>
-                    <span>
-                      Quarterly strategy reviews with action‑led recommendations
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="py-12">
-          <div class="mx-auto max-w-7xl px-6">
-            <div class="mb-6 flex items-end justify-between">
-              <div>
-                <p class="mb-1 text-xs font-semibold uppercase tracking-wider text-slate-500">
-                  Performance at a glance
-                </p>
-                <h2 class="text-2xl font-bold sm:text-3xl text-slate-900">
-                  Outcomes we optimize every week
-                </h2>
-              </div>
-            </div>
-            <div class="grid gap-4 md:grid-cols-4">
-              <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                <div class="text-sm font-semibold text-slate-900">
-                  Revenue Efficiency
-                </div>
-                <div class="mt-1 text-2xl font-extrabold text-slate-900">
-                  ROAS ↑
-                </div>
-                <p class="mt-1 text-sm text-slate-600">
-                  Bid strategy guardrails and query hygiene to protect margin.
-                </p>
-              </div>
-              <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                <div class="text-sm font-semibold text-slate-900">
-                  Acquisition Cost
-                </div>
-                <div class="mt-1 text-2xl font-extrabold text-slate-900">
-                  CPA ↓
-                </div>
-                <p class="mt-1 text-sm text-slate-600">
-                  Negatives, audience layering, and creative testing.
-                </p>
-              </div>
-              <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                <div class="text-sm font-semibold text-slate-900">
-                  Incrementality
-                </div>
-                <div class="mt-1 text-2xl font-extrabold text-slate-900">
-                  Lift ↑
-                </div>
-                <p class="mt-1 text-sm text-slate-600">
-                  PMax budget split and remarketing windows that add net new.
-                </p>
-              </div>
-              <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                <div class="text-sm font-semibold text-slate-900">Quality</div>
-                <div class="mt-1 text-2xl font-extrabold text-slate-900">
-                  Conv. Rate ↑
-                </div>
-                <p class="mt-1 text-sm text-slate-600">
-                  Message‑matched LPs and CRO quick wins.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="process" class="bg-slate-50 py-16">
-          <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-10">
-              <p class="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
-                How we deliver
-              </p>
-              <h2 class="text-3xl md:text-4xl font-bold text-slate-900">
-                Our Strategic Process for Scalable Growth
-              </h2>
-              <p class="mt-2 text-slate-600 max-w-3xl mx-auto">
-                Clear steps, clean measurement, and relentless optimization—so
-                performance compounds month after month.
-              </p>
-            </div>
-
-            <div class="grid gap-6 lg:grid-cols-2">
-              <ol class="relative border-l border-slate-200 pl-6 space-y-6 lg:space-y-8">
-                <li>
-                  <div class="absolute -left-2.5 h-5 w-5 rounded-full bg-slate-900 ring-4 ring-slate-100"></div>
-                  <div class="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
-                    <div class="text-xs font-semibold tracking-wider text-slate-500">
-                      01. Discovery &amp; Goals
-                    </div>
-                    <p class="mt-1 text-slate-800">
-                      Business deep‑dive — ICP, margins, seasonality, account
-                      state, success metrics.
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <div class="absolute -left-2.5 h-5 w-5 rounded-full bg-sky-600 ring-4 ring-slate-100"></div>
-                  <div class="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
-                    <div class="text-xs font-semibold tracking-wider text-slate-500">
-                      02. Tracking &amp; Data
-                    </div>
-                    <p class="mt-1 text-slate-800">
-                      GA4 &amp; GTM, enhanced conversions, server‑side where
-                      relevant, QA.
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <div class="absolute -left-2.5 h-5 w-5 rounded-full bg-emerald-600 ring-4 ring-slate-100"></div>
-                  <div class="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
-                    <div class="text-xs font-semibold tracking-wider text-slate-500">
-                      03. Keywords &amp; Audiences
-                    </div>
-                    <p class="mt-1 text-slate-800">
-                      Theme research, intent buckets, negatives, audience
-                      overlays.
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <div class="absolute -left-2.5 h-5 w-5 rounded-full bg-indigo-600 ring-4 ring-slate-100"></div>
-                  <div class="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
-                    <div class="text-xs font-semibold tracking-wider text-slate-500">
-                      04. Account Structure
-                    </div>
-                    <p class="mt-1 text-slate-800">
-                      Signal density, bidding control, clean reporting.
-                    </p>
-                  </div>
-                </li>
-              </ol>
-
-              <ol class="relative border-l border-slate-200 pl-6 space-y-6 lg:space-y-8">
-                <li>
-                  <div class="absolute -left-2.5 h-5 w-5 rounded-full bg-amber-600 ring-4 ring-slate-100"></div>
-                  <div class="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
-                    <div class="text-xs font-semibold tracking-wider text-slate-500">
-                      05. Creatives &amp; LPs
-                    </div>
-                    <p class="mt-1 text-slate-800">
-                      Message‑matched copy, extensions, high‑converting landing
-                      pages.
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <div class="absolute -left-2.5 h-5 w-5 rounded-full bg-rose-600 ring-4 ring-slate-100"></div>
-                  <div class="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
-                    <div class="text-xs font-semibold tracking-wider text-slate-500">
-                      06. Optimization
-                    </div>
-                    <p class="mt-1 text-slate-800">
-                      Query mining, budget pacing, bid tuning, tests, waste
-                      cuts.
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <div class="absolute -left-2.5 h-5 w-5 rounded-full bg-teal-600 ring-4 ring-slate-100"></div>
-                  <div class="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
-                    <div class="text-xs font-semibold tracking-wider text-slate-500">
-                      07. Reporting &amp; Insights
-                    </div>
-                    <p class="mt-1 text-slate-800">
-                      CPL/CPA, ROAS, MER, LTV, cohorts — with clear next steps.
-                    </p>
-                  </div>
-                </li>
-              </ol>
-            </div>
-
-            <div class="mt-10 text-center">
-              <a
-                href="#contact"
-                class="inline-flex items-center justify-center rounded-2xl bg-slate-900 px-6 py-3 text-white shadow-sm hover:opacity-90"
-              >
-                Get your first PPC audit
-              </a>
-            </div>
-          </div>
-        </section>
-
-        <section id="services" class="scroll-mt-24 py-16">
-          <div class="mx-auto max-w-7xl px-6">
-            <div class="mb-8">
-              <p class="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
-                What We Manage
-              </p>
-              <h2 class="text-2xl font-bold sm:text-3xl text-slate-900">
-                Search, Shopping, Performance Max, YouTube &amp; Remarketing
-              </h2>
-            </div>
-            <div class="grid gap-4 md:grid-cols-3">
-              <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                <h3 class="text-lg font-semibold text-slate-900">
-                  Search (Google &amp; Bing)
-                </h3>
-                <p class="mt-1 text-slate-700">
-                  Tight match types, query mining, and negative systems to
-                  protect ROAS.
-                </p>
-              </div>
-              <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                <h3 class="text-lg font-semibold text-slate-900">
-                  Shopping &amp; Performance Max
-                </h3>
-                <p class="mt-1 text-slate-700">
-                  Feed optimization, product groups, and PMax guardrails to curb
-                  waste.
-                </p>
-              </div>
-              <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                <h3 class="text-lg font-semibold text-slate-900">
-                  YouTube &amp; Discovery
-                </h3>
-                <p class="mt-1 text-slate-700">
-                  Full‑funnel creatives, audience layering, and action‑led
-                  optimization.
-                </p>
-              </div>
-              <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                <h3 class="text-lg font-semibold text-slate-900">
-                  Remarketing
-                </h3>
-                <p class="mt-1 text-slate-700">
-                  Abandoners, high‑value segments, time windows—tailored
-                  creatives and caps.
-                </p>
-              </div>
-              <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                <h3 class="text-lg font-semibold text-slate-900">
-                  App Campaigns
-                </h3>
-                <p class="mt-1 text-slate-700">
-                  Install &amp; in‑app action optimization with GA4/SKAN
-                  measurement.
-                </p>
-              </div>
-              <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                <h3 class="text-lg font-semibold text-slate-900">
-                  Account Restructure
-                </h3>
-                <p class="mt-1 text-slate-700">
-                  Rebuilds for signal density, less overlap, and better bidding
-                  control.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="process" class="scroll-mt-24 py-8">
-          <div class="mx-auto max-w-7xl px-6">
-            <div class="mb-8">
-              <p class="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
-                How We Work
-              </p>
-            </div>
-            <div className="flex w-fit mb-6 rounded-full overflow-hidden border border-black">
-              <button
-                onClick={() => setActive("tracking")}
-                className={`px-5 sm:px-6 py-2 font-medium transition-all duration-300 ${
-                  active === "tracking"
-                    ? "bg-black text-white"
-                    : "bg-white text-black"
-                }`}
-              >
-                Tracking & Tech
-              </button>
-              <button
-                onClick={() => setActive("monthly")}
-                className={`px-9 sm:px-12 py-2 font-medium transition-all duration-300 ${
-                  active === "monthly"
-                    ? "bg-black text-white"
-                    : "bg-white text-black"
-                }`}
-              >
-                Monthly
-              </button>
-            </div>
-            <div className="relative">
-              {/* Tracking & Tech Card */}
-              <div
-                className={`rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-500 ${
-                  active === "tracking"
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-3 pointer-events-none absolute inset-0"
-                }`}
-              >
-                <h3 className="text-lg font-semibold text-slate-900">
-                  Tracking &amp; Tech
-                </h3>
-                <ul className="mt-2 space-y-2 text-slate-700">
-                  {[
-                    "Google Ads, Microsoft Advertising",
-                    "GA4 + GTM (web & server-side)",
-                    "Looker Studio dashboards & BigQuery exports",
-                    "Feed management & CRO toolset",
-                  ].map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <span className="mt-2 inline-block h-2.5 w-2.5 rounded-full bg-emerald-500"></span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Monthly Card */}
-              <div
-                className={`rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-500 ${
-                  active === "monthly"
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-3 pointer-events-none absolute inset-0"
-                }`}
-              >
-                <h3 className="text-lg font-semibold text-slate-900">
-                  What you get monthly
-                </h3>
-                <ul className="mt-2 space-y-2 text-slate-700">
-                  {[
-                    "Account management & daily optimizations",
-                    "Ad creation & testing roadmap",
-                    "Landing page recommendations",
-                    "Executive summary & deep-dive report",
-                    "Strategy review & next-month plan",
-                  ].map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <span className="mt-2 inline-block h-2.5 w-2.5 rounded-full bg-slate-900"></span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="pricing" class="scroll-mt-24 py-16">
-          <div class="mx-auto max-w-7xl px-6">
-            <div class="mb-8">
-              <p class="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
-                Pricing
-              </p>
-              <h2 class="text-2xl font-bold sm:text-3xl text-slate-900">
-                Flexible models aligned to outcomes
-              </h2>
-            </div>
-            <div class="grid gap-6 md:grid-cols-3">
-              <div class="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                <h3 class="text-lg font-semibold text-slate-900">
-                  Starter Management
-                </h3>
-                <p class="mt-2 text-slate-700">
-                  For early‑stage or niche accounts. Fixed fee, focused scope,
-                  fast feedback.
-                </p>
-              </div>
-              <div class="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                <h3 class="text-lg font-semibold text-slate-900">
-                  Growth Management
-                </h3>
-                <p class="mt-2 text-slate-700">
-                  Scaling spend with performance targets. Tiered fee across
-                  spend brackets.
-                </p>
-              </div>
-              <div class="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                <h3 class="text-lg font-semibold text-slate-900">
-                  Custom / Hybrid
-                </h3>
-                <p class="mt-2 text-slate-700">
-                  Multi‑market or complex stacks. Hybrid retainer + performance
-                  incentives.
-                </p>
-              </div>
-            </div>
-            <p class="mt-4 text-sm text-slate-600">
-              We’ll recommend the most efficient model after a quick audit.
-            </p>
-          </div>
-        </section>
-
-        <section id="faqs" class="scroll-mt-24 py-16">
-          <div class="mx-auto max-w-7xl px-6">
-            <div class="mb-8">
-              <p class="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
-                FAQs
-              </p>
-              <h2 class="text-2xl font-bold sm:text-3xl text-slate-900">
-                What clients ask us
-              </h2>
-            </div>
-            <Faq content={content} />
-          </div>
-        </section>
-        <section id="clients" class="bg-slate-50 py-16">
-          <div class="mx-auto max-w-7xl px-6 text-center">
-            <p class="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
-              Trusted by
-            </p>
-            <h2 class="text-2xl font-bold sm:text-3xl text-slate-900 mb-8">
-              Brands we’ve partnered with
-            </h2>
-            <div class="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 items-center">
-              <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-                <img
-                  src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Shoebacca%20logo.png"
-                  alt="Shoebacca"
-                  class="h-10 max-h-10 object-contain grayscale hover:grayscale-0 transition"
-                  loading="lazy"
-                />
-              </div>
-              <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-                <img
-                  src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Washington_examinor_logo.png"
-                  alt="Washington Examiner"
-                  class="h-10 max-h-10 object-contain grayscale hover:grayscale-0 transition"
-                  loading="lazy"
-                />
-              </div>
-              <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-                <img
-                  src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Anantara_logo_New.png"
-                  alt="Anantara"
-                  class="h-10 max-h-10 object-contain grayscale hover:grayscale-0 transition"
-                  loading="lazy"
-                />
-              </div>
-              <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-                <img
-                  src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Auxi_logo.coloured.png"
-                  alt="Auxi"
-                  class="h-10 max-h-10 object-contain grayscale hover:grayscale-0 transition"
-                  loading="lazy"
-                />
-              </div>
-              <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-                <img
-                  src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Algovation_logo.png"
-                  alt="Algovation"
-                  class="h-10 max-h-10 object-contain grayscale hover:grayscale-0 transition"
-                  loading="lazy"
-                />
-              </div>
-              <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-                <img
-                  src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/shiprocket_logo.png"
-                  alt="Shiprocket"
-                  class="h-10 max-h-10 object-contain grayscale hover:grayscale-0 transition"
-                  loading="lazy"
-                />
-              </div>
-              <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-                <img
-                  src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/we_sort_it_logo.png"
-                  alt="We Sort It"
-                  class="h-10 max-h-10 object-contain grayscale hover:grayscale-0 transition"
-                  loading="lazy"
-                />
-              </div>
-              <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-                <img
-                  src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Mex_insurance_logo.png"
-                  alt="Mexico Insurance Services"
-                  class="h-10 max-h-10 object-contain grayscale hover:grayscale-0 transition"
-                  loading="lazy"
-                />
-              </div>
-              <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-                <img
-                  src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/issta_Logo.png"
-                  alt="ISSTA"
-                  class="h-10 max-h-10 object-contain grayscale hover:grayscale-0 transition"
-                  loading="lazy"
-                />
-              </div>
-              <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-                <img
-                  src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/IRIS_LOGO.png"
-                  alt="IRIS"
-                  class="h-10 max-h-10 object-contain grayscale hover:grayscale-0 transition"
-                  loading="lazy"
-                />
-              </div>
-              <div class="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-                <img
-                  src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/league_logo_svg%201.png"
-                  alt="League"
-                  class="h-10 max-h-10 object-contain grayscale hover:grayscale-0 transition"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-            <p class="mt-6 text-sm text-slate-600">
-              …and 200+ other growth-focused businesses across B2B, D2C, and
-              apps.
-            </p>
-          </div>
-        </section>
-        <section id="contact" class="bg-slate-900 py-16 text-white">
-          <div class="mx-auto max-w-7xl px-6">
-            <div class="grid items-center gap-8 md:grid-cols-2">
-              <div>
-                <h3 class="text-2xl font-bold">Get your first PPC audit</h3>
-                <p class="mt-2 max-w-2xl text-slate-300">
-                  Share your goals, monthly ad spend, and markets. We’ll return
-                  with a prioritized 90‑day plan.
-                </p>
-                <ul class="mt-4 space-y-2 text-slate-300">
-                  <li class="flex items-start gap-3">
-                    <span class="mt-2 inline-block h-2.5 w-2.5 rounded-full bg-white"></span>
-                    <span>Structure &amp; waste analysis</span>
-                  </li>
-                  <li class="flex items-start gap-3">
-                    <span class="mt-2 inline-block h-2.5 w-2.5 rounded-full bg-white"></span>
-                    <span>Tracking &amp; conversion quality check</span>
-                  </li>
-                  <li class="flex items-start gap-3">
-                    <span class="mt-2 inline-block h-2.5 w-2.5 rounded-full bg-white"></span>
-                    <span>Keyword, query &amp; audience opportunities</span>
-                  </li>
-                  <li class="flex items-start gap-3">
-                    <span class="mt-2 inline-block h-2.5 w-2.5 rounded-full bg-white"></span>
-                    <span>PMax &amp; Shopping improvements</span>
-                  </li>
-                </ul>
-              </div>
-              <div class="rounded-3xl border border-white/20 bg-white/5 p-6">
-                <form
-                  onSubmit={handleSubmit}
-                  action="#"
-                  method="post"
-                  className="grid gap-3 md:grid-cols-2"
-                >
-                  <label className="text-sm" for="fullName">
-                    Full name
-                    <input
-                      value={formData.fullName}
-                      onChange={handleChange}
-                      id="fullName"
-                      name="fullName"
-                      required
-                      placeholder="Your Full Name"
-                      className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none"
+    return (
+        <>
+            <MetaSchemaOg
+                url="https://analyticsliv.com/services/ppc"
+                title="Expert Performance Marketing Agency | Meta Ads | Google Ads | AnalyticsLiv"
+                description="Accelerate growth with AnalyticsLiv’s expert PPC services. As a top-tier performance marketing agency, we turn clicks into conversions with precision-targeted campaigns."
+                twitterTitle="Expert Performance Marketing Agency | Meta Ads | Google Ads | AnalyticsLiv"
+                twitterDescription="Accelerate growth with AnalyticsLiv’s expert PPC services. As a top-tier performance marketing agency, we turn clicks into conversions with precision-targeted campaigns."
+                extraHead={
+                    <link
+                        rel="stylesheet"
+                        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap"
                     />
-                  </label>
-                  <label className="text-sm" for="email">
-                    Work email
-                    <input
-                      value={formData.email}
-                      onChange={handleChange}
-                      id="email"
-                      type="email"
-                      name="email"
-                      required
-                      placeholder="name@company.com"
-                      className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none"
-                    />
-                  </label>
-                  <label className="text-sm md:col-span-1" for="company">
-                    Company
-                    <input
-                      value={formData.company}
-                      onChange={handleChange}
-                      id="company"
-                      name="company"
-                      placeholder="Company name"
-                      className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none"
-                    />
-                  </label>
-                  <label className="text-sm md:col-span-1" for="spend">
-                    Monthly ad spend
-                    <input
-                      value={formData.spend}
-                      onChange={handleChange}
-                      id="spend"
-                      name="spend"
-                      placeholder="e.g. ₹2,00,000"
-                      className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none"
-                    />
-                  </label>
-                  <label className="text-sm md:col-span-2" for="message">
-                    Goals &amp; markets
-                    <textarea
-                      value={formData.message}
-                      onChange={handleChange}
-                      id="message"
-                      name="message"
-                      rows="4"
-                      placeholder="Targets, products, and geographies"
-                      className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:outline-none"
-                    ></textarea>
-                  </label>
-                  <div className="md:col-span-2">
-                    <button
-                      disabled={loading}
-                      className="rounded-2xl bg-white px-6 py-3 font-semibold text-slate-900 shadow-md transition hover:opacity-90"
-                      type="submit"
-                    >
-                      {loading ? "Submitting..." : "Request Audit"}
-                    </button>
-                  </div>
-                  {responseMessage && (
-                    <p className="md:col-span-2 mt-2 text-sm text-white">
-                      {responseMessage}
-                    </p>
-                  )}
-                </form>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-    </>
-  );
-};
+                }
+                faqData={content}
+            />
+            <main className='py-10'>
 
-export default Ppc;
+                {showCalendly && (
+                    <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-40 z-50 flex items-center justify-center p-4"
+                        onClick={() => setShowCalendly(false)}>
+                        <div className="relative bg-white rounded-lg shadow-lg sm:p-4 flex flex-col items-center justify-center 
+                        max-w-[380px] w-[100%] sm:w-[90%] h-[80vh] sm:max-w-[400px] sm:h-[450px] lg:max-w-[450px] lg:h-[500px]">
+
+                            <button
+                                className="absolute top-1 left-1 text-gray-500 text-xs font-bold rounded-full w-8 h-8 flex items-center justify-center"
+                                onClick={() => setShowCalendly(false)}
+                            >
+                                ✖
+                            </button>
+
+                            <div className="w-full h-full flex justify-center items-center">
+                                <InlineWidget
+                                    url="https://calendly.com/analyticsliv/30min"
+                                    styles={{ width: "100%", height: "100%" }}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                )}
+
+                <section className='flex max-md:flex-col justify-between max-lg:items-start items-center px-[5%]'>
+                    <div className='md:w-[50%] xl:w-[45%] flex flex-col gap-7 md:gap-14 2xl:gap-16 justify-around items-center md:items-start'>
+                        <div className='flex flex-col gap-5 md:gap-8 2xl:gap-10'>
+                            <h1 className='text-[#0E1947] text-lg sm:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold max-md:text-center'>Drive Qualified Traffic & Leads with Powerful Performance Marketing Strategies with Us</h1>
+                            <h2 className='text-xs 2xl:text-sm font-normal max-md:text-center'>We are a Certified Performance Marketing Agency specializing in PPC and Performance Marketing.
+                                As experts in Google Ads, Microsoft Ads, and data-driven strategies, we deliver measurable results
+                                to maximize ROI and drive business growth. 🚀
+                            </h2>
+                            <div className='flex justify-center md:justify-start items-center gap-3 md:gap-2 lg:gap-5'>
+                                <a href='/contact'><button className='contact-us-btn mainbutn'>Talk to our PPC Expert</button></a>
+                                <div onClick={() => handleCalendly()} className='contact-us-btn group hover:cursor-pointer flex items-center gap-2'>
+                                    <button className='text-xs 2xl:text-sm translate-x-1 group-hover:translate-x-0 transition-all duration-300 font-bold max-sm:w-full max-md:text-center'>Book a Call Today</button>
+                                    <div className="opacity-0 translate-x-2 sm:translate-x-8 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+                                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%201.svg' alt='arrow right' className='w-2' />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='flex max-md:justify-center justify-start items-center gap-7 md:gap-10'>
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/clutch_review.png' alt='clutch_review' />
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/trustpilot_review.png' alt='trustpilot_review' className='max-sm:hidden' />
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Trustpilot_mobile.svg' alt='trustpilot_review' className='sm:hidden' />
+                        </div>
+                    </div>
+
+                    <div className='md:w-[50%] xl:w-[55%] max-md:hidden flex justify-center'>
+                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Main_Img_Right.png' alt='Performance Marketing Strategies' />
+                    </div>
+                </section>
+
+                <section className='px-4 md:px-[5%] py-12'>
+                    <Brands />
+                </section>
+
+                <section className='px-4 lg:px-[5%] md:pt-6 flex max-md:flex-col justify-center items-center gap-8 md:gap-5 lg:gap-24 2xl:gap-10'>
+                    <div className='md:w-[50%] flex justify-center'>
+                        <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Choose_img_Left_crop.png' alt='why choose us' className='' />
+                    </div>
+                    <div className='md:w-[50%] flex flex-col gap-5'>
+                        <h2 className='text-[#0E1947] text-lg xl:text-[27px] 2xl:text-3xl font-bold'>
+                            Why to Choose a Performance Marketing Agency for Your Business?
+                        </h2>
+                        <div className='text-sm font-normal'>We are making every business grow!</div>
+                        <div className='flex flex-col gap-4'>
+                            <div className='flex max-xl:items-center gap-4'>
+                                <div className='bg-[#F0FCFF] max-xl:min-w-[30px] max-xl:min-h-[30px] xl:p-2.5 max-xl:flex max-xl:justify-center max-xl:items-center rounded-[5px]'>
+                                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Tick%20Square.svg' alt='tick squar'
+                                        className='max-xl:w-5 rounded-[5px]' />
+                                </div>
+                                <div className='flex flex-col items-start justify-between'>
+                                    <div className='text-[#0E1947] text-base font-bold'>Targeted Reach</div>
+                                    <div className='text-xs font-normal'>Reach potential customers actively searching for products or services like yours.</div>
+                                </div>
+                            </div>
+                            <div className='flex max-xl:items-center gap-4'>
+                                <div className='bg-[#F0FCFF] max-xl:min-w-[30px] max-xl:min-h-[30px] xl:p-2.5 max-xl:flex max-xl:justify-center max-xl:items-center rounded-[5px]'>
+                                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Tick%20Square.svg' alt='tick squar'
+                                        className='max-xl:w-5 rounded-[5px]' />
+                                </div>
+                                <div className='flex flex-col items-start justify-between'>
+                                    <div className='text-[#0E1947] text-base font-bold'>Increased Visibility</div>
+                                    <div className='text-xs font-normal'>Secure prominent placements on search engine results pages (SERPs).</div>
+                                </div>
+                            </div>
+                            <div className='flex max-xl:items-center gap-4'>
+                                <div className='bg-[#F0FCFF] max-xl:min-w-[30px] max-xl:min-h-[30px] xl:p-2.5 max-xl:flex max-xl:justify-center max-xl:items-center rounded-[5px]'>
+                                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Tick%20Square.svg' alt='tick squar'
+                                        className='max-xl:w-5 rounded-[5px]' />
+                                </div>
+                                <div className='flex flex-col items-start justify-between'>
+                                    <div className='text-[#0E1947] text-base font-bold'>Measurable Results</div>
+                                    <div className='text-xs font-normal'>Track PPC Campaign Performance</div>
+                                </div>
+                            </div>
+                            <div className='flex max-xl:items-center gap-4'>
+                                <div className='bg-[#F0FCFF] max-xl:min-w-[30px] max-xl:min-h-[30px] xl:p-2.5 max-xl:flex max-xl:justify-center max-xl:items-center rounded-[5px]'>
+                                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Tick%20Square.svg' alt='tick squar'
+                                        className='max-xl:w-5 rounded-[5px]' />
+                                </div>
+                                <div className='flex flex-col items-start justify-between'>
+                                    <div className='text-[#0E1947] text-base font-bold'>Improved Brand Awareness</div>
+                                    <div className='text-xs font-normal'>Increase brand recognition and establish your expertise in your industry.</div>
+                                </div>
+                            </div>
+                            <div className='flex max-xl:items-center gap-4'>
+                                <div className='bg-[#F0FCFF] max-xl:min-w-[30px] max-xl:min-h-[30px] xl:p-2.5 max-xl:flex max-xl:justify-center max-xl:items-center rounded-[5px]'>
+                                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Tick%20Square.svg' alt='tick squar'
+                                        className='max-xl:w-5 rounded-[5px]' />
+                                </div>
+                                <div className='flex flex-col items-start justify-between'>
+                                    <div className='text-[#0E1947] text-base font-bold'>Cost-Effective Lead Generation</div>
+                                    <div className='text-xs font-normal'>Generate qualified leads at a competitive cost compared to other marketing channels.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href='/contact'><button className='contact-us-btn mainbutn'>Contact Now</button></a>
+                        </div>
+                    </div>
+                </section>
+
+                <section className="ana-services pt-14 pb-14 xl:pt-16 lg:pl-10 2xl:pl-[5%] max-md:overflow-hidden">
+                    <div className="flex max-md:flex-col items-center justify-between px-[3%]">
+                        <div className="md:w-[60%] max-md:px-4 flex flex-col justify-start">
+                            <h2 className="text-[#100F1B] text-xl md:text-3xl font-bold text-center md:text-start">
+                                Performance Marketing Process & Strategy
+                            </h2>
+                            <div className="text-[#373642] max-md:text-center text-[13px] md:text-base font-normal pt-8">
+                                In today's Digital landscape, ranking high on search engines is crucial for attracting new customers and
+                                driving business growth. At AnalyticsLiv, we offer comprehensive Search Engine Marketing (SEM) services
+                                designed to put your brand at the forefront of relevant online searches
+                            </div>
+                        </div>
+                        <div className="flex flex-col max-sm:hidden justify-center items-center gap-2 max-md:pt-5">
+                            <div className="flex justify-center items-center gap-5">
+                                <button
+                                    onClick={handlePrev}
+                                    className="carousel-button group relative overflow-hidden z-10 bg-white border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[8px] px-4 py-3 mb-3 transition-all duration-300 ease-linear hover:bg-[#08A4F7]"
+                                >
+                                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector%20(1).svg' alt='left vector' className='w-3.5 h-3.5 group-hover:hidden block' />
+
+                                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20right%20white.svg' alt='right vector' className='w-3.5 h-3.5 hidden group-hover:block' />
+
+                                </button>
+                                <button
+                                    onClick={handleNext}
+                                    className="carousel-button group relative overflow-hidden z-10 bg-white border border-[#08A4F7] cursor-pointer text-lg font-bold not-italic inline rounded-[8px] px-4 py-3 mb-3 transition-all duration-300 ease-linear hover:bg-[#08A4F7]"
+                                >
+                                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector.svg' alt='right vector' className='w-3.5 h-3.5 group-hover:hidden block' />
+                                    <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20left%20white.svg' alt='left vector' className='w-3.5 h-3.5 hidden group-hover:block' />
+                                </button>
+                            </div>
+                            <a href='/services'><button className="readmore-button mainbutn-opposite">Read More Here</button></a>
+                        </div>
+                    </div>
+                    <div className="max-sm:hidden sm:pl-5 xl:pl-[3%] py-8 carousel-custom overflow-hidden">
+                        <Slider ref={sliderRef} {...settings}>
+                            {cardsData?.map((card, index) => (
+                                <div key={index} className=" custom-padding-370 custom-padding-540 sm:px-4 flex justify-center">
+                                    <div className="border rounded-3xl border-[#F2F2F2] mx-auto h-[280px] w-[320px] md:w-[440px] lg:w-[420px] 2xl:w-[480px]">
+                                        <div className="h-[140px] text-[#373642] text-sm font-normal p-5 md:p-8">
+                                            {card.description}
+                                        </div>
+                                        <div className="h-[140px] bg-[#08A4F7] rounded-b-3xl">
+                                            <div className="flex items-center">
+                                                <div className="w-[30%] h-[100px] pl-2 md:pl-3 2xl:pl-8">
+                                                    <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/white_bg.png" alt="white_bg" className="absolute max-md:h-24 max-md:w-24" />
+                                                    <img src={card.image} alt={card.title} className="relative max-md:h-16 max-md:w-16 md:w-16 top-4 left-4 md:top-5 md:left-5" />
+                                                </div>
+                                                <div className="flex flex-col max-md:pl-10 h-[140px] items-start justify-center gap-1 text-white">
+                                                    <div className="text-xl font-bold service-title">{card.title}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </Slider>
+                    </div>
+                    <div className="sm:hidden sm:pl-5 xl:pl-16 py-8 carousel-custom overflow-hidden">
+                        <Slider {...settingsMobile}>
+                            {cardsData?.map((card, index) => (
+                                <div key={index} className="sm:px-4 flex justify-center">
+                                    <div className="border rounded-3xl border-[#F2F2F2] mx-auto h-[280px] w-[320px] md:w-[440px] lg:w-[420px] 2xl:w-[480px]">
+                                        <div className="h-[140px] text-[#373642] text-sm font-normal p-5 md:p-8">
+                                            {card?.description}
+                                        </div>
+                                        <div className="h-[140px] bg-[#08A4F7] rounded-b-3xl">
+                                            <div className="flex items-center">
+                                                <div className="w-[30%] h-[100px] pl-2 md:pl-3 2xl:pl-8">
+                                                    <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/white_bg.png" alt="white_bg" className="absolute max-md:h-24 max-md:w-24" />
+                                                    <img src={card?.image} alt={card?.title} className="relative max-md:h-16 max-md:w-16 top-4 left-5" />
+                                                </div>
+                                                <div className="flex flex-col max-md:pl-10 h-[140px] items-start justify-center gap-1 text-white">
+                                                    <div className="text-xl font-bold service-title">{card?.title}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </Slider>
+                    </div>
+                </section>
+
+                <section className='bg-[#30486A] rounded-[5px] text-white mx-[3%] xl:mx-[5%] py-7 px-5 xl:px-7 2xl:p-12'>
+                    <h2 className='text-lg md:text-2xl xl:text-3xl font-bold text-center pb-8 2xl:pb-12'>Advantage of PPC Advertising with AnaltyticsLiv</h2>
+                    <div className='flex max-lg:grid max-lg:grid-cols-2 max-sm:grid-cols-1 max-lg:gap-6 items-center gap-2 xl:gap-5 2xl:gap-10'>
+                        <div className='flex gap-3 xl:gap-3 2xl:gap-5 items-stretch lg:w-[25%]'>
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/big-data-analytics%20(1)%201.svg' alt='Data-Driven Approach'
+                                className='bg-[#FAE0E1] rounded-[5px] px-5 min-w-[80px]' />
+                            <div className='flex flex-col justify-between gap-3'>
+                                <div className='text-xs xl:text-[13px] 2xl:text-sm font-bold'>Data-Driven Approach</div>
+                                <div className='text-[10px] xl:text-[11px] 2xl:text-xs font-normal'>We leverage data insights to optimize your campaigns for maximum effectiveness.</div>
+                            </div>
+                        </div>
+
+                        <div className='flex gap-3 xl:gap-3 2xl:gap-5 items-stretch lg:w-[25%]'>
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/report%20(5)%201.svg' alt='Transparent Reporting'
+                                className='bg-[#F3DEB3] rounded-[5px] px-5 min-w-[80px]' />
+                            <div className='flex flex-col justify-between gap-3'>
+                                <div className='text-xs xl:text-[13px] 2xl:text-sm font-bold'>Transparent Reporting</div>
+                                <div className='text-[10px] xl:text-[11px] 2xl:text-xs font-normal'>We provide regular reports with key metrics & actionable recommendations.</div>
+                            </div>
+                        </div>
+
+                        <div className='flex gap-3 xl:gap-3 2xl:gap-5 items-stretch lg:w-[25%] 2xl:w-[20%]'>
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/team-bonding%201.svg' alt='Experienced Team'
+                                className='bg-[#CBCFFA] rounded-[5px] px-5 min-w-[80px]' />
+                            <div className='flex flex-col justify-between gap-3'>
+                                <div className='text-xs xl:text-[13px] 2xl:text-sm font-bold'>Experienced Team</div>
+                                <div className='text-[10px] xl:text-[11px] 2xl:text-xs font-normal'>Our Team of Certified Performance Marketing Specialists</div>
+                            </div>
+                        </div>
+
+                        <div className='flex gap-3 xl:gap-3 2xl:gap-5 items-stretch lg:w-[27%] xl:w-[25%]'>
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/wealth.svg' alt='Focus on ROI'
+                                className='bg-[#D7FACB] rounded-[5px] px-5 min-w-[80px]' />
+                            <div className='flex flex-col justify-between gap-3'>
+                                <div className='text-xs xl:text-[13px] 2xl:text-sm font-bold'>Focus on ROI</div>
+                                <div className='text-[10px] xl:text-[11px] 2xl:text-xs font-normal'>We prioritize delivering measurable results that contribute
+                                    to your business goals.</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section className='flex max-lg:flex-col-reverse overflow-hidden pt-8 lg:pt-16'>
+                    <div className='lg:w-[40%] bg-[#30486A] flex flex-col justify-center items-start gap-7 max-lg:py-7 px-4 lg:px-20'>
+                        <h3 className='text-2xl md:text-3xl 2xl:text-4xl font-bold text-white'>Excited to Get Started with our PPC Agency?</h3>
+                        <div className='text-base font-normal text-[#E2DEDC]'>Contact AnalyticsLiv, a Performance Marketing Agency for a Free Consultation.</div>
+                        <a href='/contact'><button className='contact-us-btn mainbutn'>Contact Us Now</button></a>
+                    </div>
+                    <div className='lg:w-[60%] min-h-[250px] sm:min-h-[350px] overflow-hidden 2xl:min-h-[430px] flex'>
+                        <div className='w-full lg:w-[70%] relative'>
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/people_collaborate.png' alt='people_collaborate' className='absolute sm:w-full sm:h-full' />
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Frame%2047.png' alt='Frame 47' className='absolute px-5 md:right-[50px] 2xl:right-[16%] pt-8' />
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Rectangle%2026.png' alt='Rectangle 26' className='absolute right-0 top-16' />
+                        </div>
+                        <div className='bg-[#08A4F7] w-[30%] flex justify-center max-md:hidden items-start'>
+                            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Frame%2049.png' alt='Frame 49' className='' />
+                        </div>
+                    </div>
+                </section>
+
+                <section className="faq-section flex md:mb-3 flex-col md:flex-row px-4 py-7 md:py-14 md:px-8 lg:px-16 md:pb-5 xl:mb-10 xl:pt-14 gap-5 lg:gap-8">
+                    <div className="md:w-1/3 flex flex-col md:gap-7 justify-center max-md:text-center sm:justify-start md:pt-7">
+                        <h3 className="text-3xl max-md:flex max-sm:flex-col max-md:justify-center max-md:items-center max-md:gap-2.5 lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-gray-800">
+                            Frequently Asked <div className="text-[#08A4F7] lg:pt-3 xl:pt-4 2xl:pt-5">Questions</div>
+                        </h3>
+                        <p className="mt-4 max-md:mb-5 text-base xl:text-lg text-gray-600 leading-snug">
+                            Discover key FAQs designed to simplify your marketing and analytics approach, helping you achieve better results with actionable guidance.
+                        </p>
+                    </div>
+
+                    <div className="md:w-2/3 max-h-[400px] overflow-y-auto custom-scrollbar py-5 pr-3 lg:pr-5">
+
+                        <div className="flex flex-col gap-5">
+                            {content?.map((item, index) => (
+                                <div
+                                    key={index}
+                                    ref={(el) => (itemRefs.current[index] = el)}
+                                    className={`faq-click rounded-2xl px-4 lg:px-12 py-4 lg:py-5 cursor-pointer ${activeIndex === index ? 'text-white bg-[#08A4F7]' : 'text-[#232A42]'
+                                        }`}
+                                    style={{
+                                        boxShadow: activeIndex === index ? 'none' : '18px 15px 35px 0px #00000017',
+                                    }}
+                                    onClick={() => handleToggle(index)}
+                                >
+                                    <div className="flex items-center justify-between gap-3">
+                                        <div>
+                                            <div className="text-[13px] sm:text-base font-semibold">{item?.question}</div>
+
+                                            {activeIndex === index && (
+                                                <div className="text-[10px] sm:text-xs pt-3 font-normal w-[95%]">{item?.answer}</div>
+                                            )}
+                                        </div>
+                                        <img
+                                            src={`${activeIndex === index ? 'https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector_up.png' : 'https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Vector_down.png'
+                                                }`}
+                                            alt={activeIndex === index ? 'Collapse' : 'Expand'}
+                                            className="cursor-pointer w-4"
+                                        />
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </>
+    )
+}
+export default Ppc
