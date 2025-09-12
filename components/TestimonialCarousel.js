@@ -19,17 +19,17 @@ export default function TestimonialCarousel() {
         {
             text:
                 "Working at AnalyticsLiv means challenging projects and supportive mentors. I’ve grown so much in my career here.",
-            author: "— Employee 1",
+            author: "— Ansuya Kachroo",
         },
         {
             text:
                 "The culture is innovation-driven. We experiment, learn, and celebrate wins together.",
-            author: "— Employee 2",
+            author: "— Atul Verma",
         },
         {
             text:
                 "Collaboration is at the heart of what we do. I feel valued and heard every day.",
-            author: "— Employee 3",
+            author: "— Anshul Dhurandhar",
         },
     ];
 

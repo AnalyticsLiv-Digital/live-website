@@ -1,19 +1,19 @@
-import React, { useState, useEffect, useRef } from 'react'
-import Head from 'next/head'
-import Link from 'next/link'
-import TestimonialCarousel from '../../components/TestimonialCarousel'
-import post from './[post]'
+import React, { useState, useEffect, useRef } from "react";
+import Head from "next/head";
+import Link from "next/link";
+import TestimonialCarousel from "../../components/TestimonialCarousel";
+import post from "./[post]";
+import TeamGallery from "../../components/TeamGallery";
 
 const Careers = ({ jobsdata }) => {
-
   const [activeModal, setActiveModal] = useState(null);
   const [formValues, setFormValues] = useState({
-    name: '',
-    email: '',
-    role: '',
+    name: "",
+    email: "",
+    role: "",
     resume: null,
-    cover: '',
-    post: ''
+    cover: "",
+    post: "",
   });
   const [errors, setErrors] = useState({});
   const [showWaiting, setShowWaiting] = useState(false);
@@ -21,9 +21,9 @@ const Careers = ({ jobsdata }) => {
 
   const validate = () => {
     const newErrors = {};
-    if (!formValues.name?.trim()) newErrors.name = 'Full Name is required';
-    if (!formValues.email?.trim()) newErrors.email = 'Email is required';
-    if (!formValues.role?.trim()) newErrors.role = 'Please select a role';
+    if (!formValues.name?.trim()) newErrors.name = "Full Name is required";
+    if (!formValues.email?.trim()) newErrors.email = "Email is required";
+    if (!formValues.role?.trim()) newErrors.role = "Please select a role";
     if (!formValues.resume || formValues.resume.trim() === "") {
       newErrors.resume = "Please upload your resume";
     }
@@ -53,7 +53,9 @@ const Careers = ({ jobsdata }) => {
 
     // generate new filename
     const ext = file.name.split(".").pop();
-    const newFilename = `${Date.now()}${Math.floor(Math.random() * 1000)}.${ext}`;
+    const newFilename = `${Date.now()}${Math.floor(
+      Math.random() * 1000
+    )}.${ext}`;
 
     // get signed URL from API
     const res = await fetch(`/api/resumegoogleupload?file=${newFilename}`);
@@ -64,14 +66,16 @@ const Careers = ({ jobsdata }) => {
       formData.append(key, value);
     });
     const upload = await fetch(url, {
-      method: 'POST',
-      mode: 'no-cors', // no-cors, *cors, same-origin
+      method: "POST",
+      mode: "no-cors", // no-cors, *cors, same-origin
       body: formData,
-    }).then((data) => {/*console.log(data.json)*/ });
+    }).then((data) => {
+      /*console.log(data.json)*/
+    });
 
     setFormValues({ ...formValues, resume: newFilename });
     if (upload) {
-      console.log('Uploaded successfully!');
+      console.log("Uploaded successfully!");
       setFormValues({ ...formValues, resume: newFilename });
     } else {
       console.log(upload);
@@ -90,15 +94,15 @@ const Careers = ({ jobsdata }) => {
       // Fire GTM dataLayer event
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
-        event: 'job_application',
+        event: "job_application",
         eventCategory: formValues.role,
-        eventAction: 'apply',
+        eventAction: "apply",
       });
 
       try {
-        const response = await fetch('/api/jobapplication', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+        const response = await fetch("/api/jobapplication", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formValues),
         });
 
@@ -106,7 +110,7 @@ const Careers = ({ jobsdata }) => {
           setFormSubmit(true);
         }
       } catch (error) {
-        console.error('Error:', error);
+        console.error("Error:", error);
       } finally {
         setShowWaiting(false);
       }
@@ -114,115 +118,209 @@ const Careers = ({ jobsdata }) => {
   };
 
   const openModal = (jobId) => {
-    setActiveModal(jobId)
-    document.body.style.overflow = 'hidden'
-  }
+    setActiveModal(jobId);
+    document.body.style.overflow = "hidden";
+  };
 
   const closeModal = () => {
-    setActiveModal(null)
-    document.body.style.overflow = ''
-  }
+    setActiveModal(null);
+    document.body.style.overflow = "";
+  };
 
   useEffect(() => {
     const handleEscape = (e) => {
-      if (e.key === 'Escape') {
-        closeModal()
+      if (e.key === "Escape") {
+        closeModal();
       }
-    }
+    };
 
     const handleBackdropClick = (e) => {
-      if (e.target.classList.contains('modal')) {
-        closeModal()
+      if (e.target.classList.contains("modal")) {
+        closeModal();
       }
-    }
+    };
 
-    document.addEventListener('keydown', handleEscape)
-    document.addEventListener('click', handleBackdropClick)
+    document.addEventListener("keydown", handleEscape);
+    document.addEventListener("click", handleBackdropClick);
 
     return () => {
-      document.removeEventListener('keydown', handleEscape)
-      document.removeEventListener('click', handleBackdropClick)
-    }
-  }, [])
+      document.removeEventListener("keydown", handleEscape);
+      document.removeEventListener("click", handleBackdropClick);
+    };
+  }, []);
 
   // Color scheme array for rotating colors
   const colorSchemes = [
-    { border: 'border-emerald-200', bg: 'bg-emerald-600', bgHover: 'hover:bg-emerald-700' },
-    { border: 'border-sky-200', bg: 'bg-sky-600', bgHover: 'hover:bg-sky-700' },
-    { border: 'border-indigo-200', bg: 'bg-indigo-600', bgHover: 'hover:bg-indigo-700' },
-    { border: 'border-rose-200', bg: 'bg-rose-600', bgHover: 'hover:bg-rose-700' },
-    { border: 'border-purple-200', bg: 'bg-purple-600', bgHover: 'hover:bg-purple-700' },
-    { border: 'border-amber-200', bg: 'bg-amber-600', bgHover: 'hover:bg-amber-700' }
-  ]
+    {
+      border: "border-emerald-200",
+      bg: "bg-emerald-600",
+      bgHover: "hover:bg-emerald-700",
+    },
+    { border: "border-sky-200", bg: "bg-sky-600", bgHover: "hover:bg-sky-700" },
+    {
+      border: "border-indigo-200",
+      bg: "bg-indigo-600",
+      bgHover: "hover:bg-indigo-700",
+    },
+    {
+      border: "border-rose-200",
+      bg: "bg-rose-600",
+      bgHover: "hover:bg-rose-700",
+    },
+    {
+      border: "border-purple-200",
+      bg: "bg-purple-600",
+      bgHover: "hover:bg-purple-700",
+    },
+    {
+      border: "border-amber-200",
+      bg: "bg-amber-600",
+      bgHover: "hover:bg-amber-700",
+    },
+  ];
 
   const getColorScheme = (index) => {
-    return colorSchemes[index % colorSchemes.length]
+    return colorSchemes[index % colorSchemes.length];
+  };
+
+  function openLightbox(src) {
+    galleryImages = Array.from(document.querySelectorAll(".team-photo")).map(
+      (img) => img.src || window.FALLBACK_IMG
+    );
+    currentIndex = Math.max(0, galleryImages.indexOf(src));
+    const lightbox = document.getElementById("lightbox");
+    const img = lightbox.querySelector("img");
+    img.src = src || window.FALLBACK_IMG;
+    lightbox.style.display = "flex";
+  }
+  function closeLightbox() {
+    const lightbox = document.getElementById("lightbox");
+    lightbox.style.display = "none";
+  }
+  function showNext() {
+    if (!galleryImages.length) return;
+    currentIndex = (currentIndex + 1) % galleryImages.length;
+    document.querySelector("#lightbox img").src = galleryImages[currentIndex];
+  }
+  function showPrev() {
+    if (!galleryImages.length) return;
+    currentIndex =
+      (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+    document.querySelector("#lightbox img").src = galleryImages[currentIndex];
   }
 
   return (
     <>
       <Head>
         <title>Careers at AnalyticsLiv | Join Our Data & Marketing Team</title>
-        <meta name="description" content="Explore open roles at AnalyticsLiv. Join a Google Marketing Platform Certified Partner working across GA4, PPC, Programmatic, CRO, and Cloud." />
+        <meta
+          name="description"
+          content="Explore open roles at AnalyticsLiv. Join a Google Marketing Platform Certified Partner working across GA4, PPC, Programmatic, CRO, and Cloud."
+        />
         <link rel="canonical" href="https://analyticsliv.com/careers" />
-        <meta property="og:title" content="Careers at AnalyticsLiv | Join Our Data & Marketing Team" />
-        <meta property="og:description" content="Explore open roles at AnalyticsLiv. Be part of a certified partner in GA4, PPC, CRO, DV360, and Cloud." />
+        <meta
+          property="og:title"
+          content="Careers at AnalyticsLiv | Join Our Data & Marketing Team"
+        />
+        <meta
+          property="og:description"
+          content="Explore open roles at AnalyticsLiv. Be part of a certified partner in GA4, PPC, CRO, DV360, and Cloud."
+        />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://analyticsliv.com/careers" />
-        <meta property="og:image" content="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" />
+        <meta
+          property="og:image"
+          content="https://storage.googleapis.com/website-bucket-uploads/static/logo.png"
+        />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Careers at AnalyticsLiv | Join Our Data & Marketing Team" />
-        <meta name="twitter:description" content="Explore open roles and apply to join AnalyticsLiv's growing team." />
-        <meta name="twitter:image" content="https://storage.googleapis.com/website-bucket-uploads/static/logo.png" />
+        <meta
+          name="twitter:title"
+          content="Careers at AnalyticsLiv | Join Our Data & Marketing Team"
+        />
+        <meta
+          name="twitter:description"
+          content="Explore open roles and apply to join AnalyticsLiv's growing team."
+        />
+        <meta
+          name="twitter:image"
+          content="https://storage.googleapis.com/website-bucket-uploads/static/logo.png"
+        />
       </Head>
 
       <style jsx>{`
-      .animate-gradient { background-size: 300% 300%; animation: gradientBG 8s ease infinite; }
-      @keyframes gradientBG { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-        
-        .modal { 
-          position: fixed; 
-          inset: 0; 
-          background: rgba(0,0,0,0.6); 
-          display: flex; 
-          align-items: center; 
-          justify-content: center; 
-          z-index: 50; 
-        }
-        .modal-content { 
-          background: #fff; 
-          max-width: 880px; 
-          width: 95%; 
-          border-radius: 1rem; 
-          padding: 2rem; 
-          box-shadow: 0 10px 25px rgba(0,0,0,0.2); 
-          overflow-y: auto; 
-          max-height: 85vh; 
-        }
-        .modal-content h3 { 
-          margin-bottom: .75rem; 
-        }
-        .modal-content ul { 
-          list-style: disc; 
-          padding-left: 1.25rem; 
-        }
-        .modal-content li { 
-          margin: .25rem 0; 
+        .animate-gradient {
+          background-size: 300% 300%;
+          animation: gradientBG 8s ease infinite;
         }
         @keyframes gradientBG {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+
+        .modal {
+          position: fixed;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.6);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 50;
+        }
+        .modal-content {
+          background: #fff;
+          max-width: 880px;
+          width: 95%;
+          border-radius: 1rem;
+          padding: 2rem;
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+          overflow-y: auto;
+          max-height: 85vh;
+        }
+        .modal-content h3 {
+          margin-bottom: 0.75rem;
+        }
+        .modal-content ul {
+          list-style: disc;
+          padding-left: 1.25rem;
+        }
+        .modal-content li {
+          margin: 0.25rem 0;
+        }
+        @keyframes gradientBG {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
         }
         .animate-gradient {
           background-size: 300% 300%;
           animation: gradientBG 8s ease infinite;
         }
-        .carousel::-webkit-scrollbar { display: none; }
-
+        .carousel::-webkit-scrollbar {
+          display: none;
+        }
       `}</style>
 
-      <div style={{ backgroundColor: 'white', color: '#1e293b', fontFamily: 'ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji"' }}>
+      <div
+        style={{
+          backgroundColor: "white",
+          color: "#1e293b",
+          fontFamily:
+            'ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji"',
+        }}
+      >
         {/* HERO */}
         <section className="relative overflow-hidden border-b border-gray-200">
           <div className="animate-gradient absolute inset-0 bg-gradient-to-r from-emerald-400 via-sky-500 to-indigo-500"></div>
@@ -231,7 +329,8 @@ const Careers = ({ jobsdata }) => {
               Grow With AnalyticsLiv
             </h1>
             <p className="max-w-2xl mx-auto mb-6 text-lg">
-              We're building the future of analytics, media, and technology - and we want curious, driven minds to join us.
+              We're building the future of analytics, media, and technology -
+              and we want curious, driven minds to join us.
             </p>
             <a
               href="#roles"
@@ -301,32 +400,53 @@ const Careers = ({ jobsdata }) => {
                 jobsdata?.job
                   .filter((job) => job.active)
                   .map((job, index) => {
-                    const colorScheme = getColorScheme(index)
+                    const colorScheme = getColorScheme(index);
                     return (
                       <div
                         key={job.id}
                         className="relative rounded-2xl border p-6 bg-white shadow-md transition-shadow duration-300 hover:shadow-xl"
                         style={{
                           borderColor:
-                            colorScheme.border.replace("border-", "").replace("-200", "") === "emerald"
+                            colorScheme.border
+                              .replace("border-", "")
+                              .replace("-200", "") === "emerald"
                               ? "#a7f3d0"
-                              : colorScheme.border.replace("border-", "").replace("-200", "") === "sky"
-                                ? "#bae6fd"
-                                : colorScheme.border.replace("border-", "").replace("-200", "") === "indigo"
-                                  ? "#c7d2fe"
-                                  : colorScheme.border.replace("border-", "").replace("-200", "") === "rose"
-                                    ? "#fecdd3"
-                                    : colorScheme.border.replace("border-", "").replace("-200", "") === "purple"
-                                      ? "#ddd6fe"
-                                      : "#fed7aa",
+                              : colorScheme.border
+                                  .replace("border-", "")
+                                  .replace("-200", "") === "sky"
+                              ? "#bae6fd"
+                              : colorScheme.border
+                                  .replace("border-", "")
+                                  .replace("-200", "") === "indigo"
+                              ? "#c7d2fe"
+                              : colorScheme.border
+                                  .replace("border-", "")
+                                  .replace("-200", "") === "rose"
+                              ? "#fecdd3"
+                              : colorScheme.border
+                                  .replace("border-", "")
+                                  .replace("-200", "") === "purple"
+                              ? "#ddd6fe"
+                              : "#fed7aa",
                         }}
                       >
                         <h3 className="text-lg font-semibold text-slate-900 mb-2">
                           {job.title}
                         </h3>
-                        <p className="text-slate-600 text-sm mb-1">{job.brief}</p>
+                        <div className="text-slate-600 text-sm mb-1">
+                          <span className="overflow-hidden text-ellipsis [display:-webkit-box] [-webkit-line-clamp:3] [-webkit-box-orient:vertical]">
+                            {job.brief}
+                          </span>
+                          <button
+                            onClick={() => openModal(job.id)}
+                            className="text-blue-700 font-semibold hover:underline"
+                          >
+                            Read more
+                          </button>
+                        </div>
                         <p className="text-xs text-slate-500 mb-4">
-                          Location: {job.location} | Experience: {job.experience}
+                          Location: {job.location} | Experience:{" "}
+                          {job.experience}
                         </p>
                         <div className="flex gap-2">
                           <button
@@ -340,17 +460,27 @@ const Careers = ({ jobsdata }) => {
                               className="rounded-md px-4 py-2 text-sm text-white"
                               style={{
                                 backgroundColor:
-                                  colorScheme.border.replace("border-", "").replace("-200", "") === "emerald"
+                                  colorScheme.border
+                                    .replace("border-", "")
+                                    .replace("-200", "") === "emerald"
                                     ? "#059669"
-                                    : colorScheme.border.replace("border-", "").replace("-200", "") === "sky"
-                                      ? "#0284c7"
-                                      : colorScheme.border.replace("border-", "").replace("-200", "") === "indigo"
-                                        ? "#4f46e5"
-                                        : colorScheme.border.replace("border-", "").replace("-200", "") === "rose"
-                                          ? "#e11d48"
-                                          : colorScheme.border.replace("border-", "").replace("-200", "") === "purple"
-                                            ? "#9333ea"
-                                            : "#d97706",
+                                    : colorScheme.border
+                                        .replace("border-", "")
+                                        .replace("-200", "") === "sky"
+                                    ? "#0284c7"
+                                    : colorScheme.border
+                                        .replace("border-", "")
+                                        .replace("-200", "") === "indigo"
+                                    ? "#4f46e5"
+                                    : colorScheme.border
+                                        .replace("border-", "")
+                                        .replace("-200", "") === "rose"
+                                    ? "#e11d48"
+                                    : colorScheme.border
+                                        .replace("border-", "")
+                                        .replace("-200", "") === "purple"
+                                    ? "#9333ea"
+                                    : "#d97706",
                               }}
                             >
                               Apply Now
@@ -358,7 +488,7 @@ const Careers = ({ jobsdata }) => {
                           </Link>
                         </div>
                       </div>
-                    )
+                    );
                   })}
             </div>
           </div>
@@ -369,73 +499,122 @@ const Careers = ({ jobsdata }) => {
           <div className="modal">
             <div className="modal-content">
               {(() => {
-                const job = jobsdata?.job?.find(j => j.id === activeModal)
-                console.log("job job ---", job)
-                if (!job) return null
+                const job = jobsdata?.job?.find((j) => j.id === activeModal);
+                console.log("job job ---", job);
+                if (!job) return null;
 
                 return (
                   <>
-                    <h3 style={{ fontSize: '1.25rem', fontWeight: '700' }}>{job?.title}</h3>
-                    <p style={{ fontSize: '0.875rem', color: '#64748b', marginBottom: '1rem' }}>
+                    <h3 style={{ fontSize: "1.25rem", fontWeight: "700" }}>
+                      {job?.title}
+                    </h3>
+                    <p
+                      style={{
+                        fontSize: "0.875rem",
+                        color: "#64748b",
+                        marginBottom: "1rem",
+                      }}
+                    >
                       Location: {job?.location} | Experience: {job?.experience}
                     </p>
 
                     <div>
-                      <div style={{ fontWeight: '600', marginBottom: '0.5rem' }}>Description:</div>
-                      <p style={{ fontSize: '0.875rem', color: '#64748b', marginBottom: '1rem' }}>
+                      <div
+                        style={{ fontWeight: "600", marginBottom: "0.5rem" }}
+                      >
+                        Description:
+                      </div>
+                      <p
+                        style={{
+                          fontSize: "0.875rem",
+                          color: "#64748b",
+                          marginBottom: "1rem",
+                        }}
+                      >
                         {job?.our_description}
                       </p>
                     </div>
 
-                    {job?.details && job?.details?.map((detail, index) => (
-                      <div key={index} style={{ marginBottom: '1.30rem' }}>
-                        <h4 style={{ fontWeight: '600', marginBottom: '0.5rem' }}>{detail?.heading}</h4>
-                        <ul style={{ color: '#374151', fontSize: '0.875rem' }}>
-                          {detail?.points?.map((point, pointIndex) => (
-                            <li key={pointIndex} style={{ margin: '0.25rem 0' }}>
-                              {point?.trim()}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
+                    {job?.details &&
+                      job?.details?.map((detail, index) => (
+                        <div key={index} style={{ marginBottom: "1.30rem" }}>
+                          <h4
+                            style={{
+                              fontWeight: "600",
+                              marginBottom: "0.5rem",
+                            }}
+                          >
+                            {detail?.heading}
+                          </h4>
+                          <ul
+                            style={{ color: "#374151", fontSize: "0.875rem" }}
+                          >
+                            {detail?.points?.map((point, pointIndex) => (
+                              <li
+                                key={pointIndex}
+                                style={{ margin: "0.25rem 0" }}
+                              >
+                                {point?.trim()}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
                     <div>
-                      <div style={{ fontWeight: '600', marginBottom: '0.5rem' }}>Posted on:</div>
-                      <p style={{ fontSize: '0.875rem', color: '#64748b', marginBottom: '0.5rem' }}>
+                      <div
+                        style={{ fontWeight: "600", marginBottom: "0.5rem" }}
+                      >
+                        Posted on:
+                      </div>
+                      <p
+                        style={{
+                          fontSize: "0.875rem",
+                          color: "#64748b",
+                          marginBottom: "0.5rem",
+                        }}
+                      >
                         {job?.postingdate}
                       </p>
                     </div>
 
-                    <div style={{ marginTop: '1.5rem', display: 'flex', justifyContent: 'flex-end', gap: '0.75rem' }}>
+                    <div
+                      style={{
+                        marginTop: "1.5rem",
+                        display: "flex",
+                        justifyContent: "flex-end",
+                        gap: "0.75rem",
+                      }}
+                    >
                       <Link href={`#apply`}>
                         <button
                           onClick={closeModal}
                           style={{
-                            borderRadius: '0.25rem',
-                            backgroundColor: '#059669',
-                            color: 'white',
-                            padding: '0.5rem 1rem',
-                            textDecoration: 'none'
-                          }}>
+                            borderRadius: "0.25rem",
+                            backgroundColor: "#059669",
+                            color: "white",
+                            padding: "0.5rem 1rem",
+                            textDecoration: "none",
+                          }}
+                        >
                           Apply
                         </button>
                       </Link>
                       <button
                         onClick={closeModal}
                         style={{
-                          borderRadius: '0.25rem',
-                          backgroundColor: '#0f172a',
-                          color: 'white',
-                          padding: '0.5rem 1rem',
-                          border: 'none',
-                          cursor: 'pointer'
+                          borderRadius: "0.25rem",
+                          backgroundColor: "#0f172a",
+                          color: "white",
+                          padding: "0.5rem 1rem",
+                          border: "none",
+                          cursor: "pointer",
                         }}
                       >
                         Close
                       </button>
                     </div>
                   </>
-                )
+                );
               })()}
             </div>
           </div>
@@ -443,21 +622,21 @@ const Careers = ({ jobsdata }) => {
 
         <section id="apply" className="py-10 md:py-20">
           <div className="max-w-3xl mx-auto px-6">
-
-            {formSubmit ?
+            {formSubmit ? (
               <section className="py-20 text-center">
                 <div className="max-w-xl mx-auto">
                   <img
-                    src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Thank_You_img.png'
+                    src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Thank_You_img.png"
                     alt="Thank you"
                     className="mx-auto mb-6 rounded-lg shadow-md"
                   />
                   <p className="mt-2 text-slate-600">
-                    Our team will review your application and get back to you soon.
+                    Our team will review your application and get back to you
+                    soon.
                   </p>
                 </div>
               </section>
-              :
+            ) : (
               <div>
                 <h2 className="text-center text-slate-900 font-bold mb-12 text-[clamp(1.875rem,4vw,2.25rem)]">
                   Apply Now
@@ -476,8 +655,9 @@ const Careers = ({ jobsdata }) => {
                       name="name"
                       value={formValues.name}
                       onChange={handleChange}
-                      className={`mt-1 w-full rounded-lg border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-800 ${errors.name ? 'border-red-500' : 'border-slate-300'
-                        }`}
+                      className={`mt-1 w-full rounded-lg border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-800 ${
+                        errors.name ? "border-red-500" : "border-slate-300"
+                      }`}
                     />
                     {errors.name && (
                       <p className="text-red-500 text-sm mt-1">{errors.name}</p>
@@ -494,11 +674,14 @@ const Careers = ({ jobsdata }) => {
                       name="email"
                       value={formValues.email}
                       onChange={handleChange}
-                      className={`mt-1 w-full rounded-lg border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-800 ${errors.email ? 'border-red-500' : 'border-slate-300'
-                        }`}
+                      className={`mt-1 w-full rounded-lg border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-800 ${
+                        errors.email ? "border-red-500" : "border-slate-300"
+                      }`}
                     />
                     {errors.email && (
-                      <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                      <p className="text-red-500 text-sm mt-1">
+                        {errors.email}
+                      </p>
                     )}
                   </div>
 
@@ -511,15 +694,18 @@ const Careers = ({ jobsdata }) => {
                       name="role"
                       value={formValues.post || ""}
                       onChange={(e) => {
-                        const selectedJob = jobsdata?.job?.find(job => job.id === e.target.value);
+                        const selectedJob = jobsdata?.job?.find(
+                          (job) => job.id === e.target.value
+                        );
                         setFormValues((prev) => ({
                           ...prev,
                           post: selectedJob?.id || "",
                           role: selectedJob?.title || "",
                         }));
                       }}
-                      className={`mt-1 w-full rounded-lg border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-800 ${errors.role ? "border-red-500" : "border-slate-300"
-                        }`}
+                      className={`mt-1 w-full rounded-lg border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-800 ${
+                        errors.role ? "border-red-500" : "border-slate-300"
+                      }`}
                     >
                       <option value="">Select a role</option>
                       {jobsdata?.job
@@ -545,11 +731,14 @@ const Careers = ({ jobsdata }) => {
                       type="file"
                       accept=".pdf, .jpg, .jpeg, .docx"
                       onChange={uploadResume}
-                      className={`mt-1 w-full rounded-lg border px-3 py-2 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-slate-800 file:text-white hover:file:bg-slate-700 ${errors.resume ? 'border-red-500' : 'border-slate-300'
-                        }`}
+                      className={`mt-1 w-full rounded-lg border px-3 py-2 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-slate-800 file:text-white hover:file:bg-slate-700 ${
+                        errors.resume ? "border-red-500" : "border-slate-300"
+                      }`}
                     />
                     {errors.resume && (
-                      <p className="text-red-500 text-sm mt-1">{errors.resume}</p>
+                      <p className="text-red-500 text-sm mt-1">
+                        {errors.resume}
+                      </p>
                     )}
                   </div>
 
@@ -573,11 +762,11 @@ const Careers = ({ jobsdata }) => {
                     disabled={showWaiting}
                     className="rounded-lg bg-slate-900 px-6 py-3 text-white font-semibold hover:bg-slate-700 transition-colors duration-300 disabled:opacity-50"
                   >
-                    {showWaiting ? 'Submitting...' : 'Submit Application'}
+                    {showWaiting ? "Submitting..." : "Submit Application"}
                   </button>
                 </form>
               </div>
-            }
+            )}
           </div>
         </section>
 
@@ -588,8 +777,8 @@ const Careers = ({ jobsdata }) => {
               Perks & Benefits
             </h2>
             <p className="text-slate-600 max-w-3xl mx-auto mb-12">
-              We believe people do their best work when they're supported and inspired.
-              Here's how we make it happen.
+              We believe people do their best work when they're supported and
+              inspired. Here's how we make it happen.
             </p>
             <div className="grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(250px,1fr))]">
               {[
@@ -627,33 +816,49 @@ const Careers = ({ jobsdata }) => {
         </section>
 
         <section class="bg-white text-slate-800">
-
           <section class="py-20 bg-slate-50">
             <div class="mx-auto max-w-7xl px-6 text-center">
-              <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Life at AnalyticsLiv</h2>
-              <p class="mt-2 text-slate-600 max-w-3xl mx-auto">We believe in curiosity, collaboration, and creativity. Here’s a peek into our culture.</p>
+              <h2 class="text-3xl md:text-4xl font-bold text-slate-900">
+                Life at AnalyticsLiv
+              </h2>
+              <p class="mt-2 text-slate-600 max-w-3xl mx-auto">
+                We believe in curiosity, collaboration, and creativity. Here’s a
+                peek into our culture.
+              </p>
               <TestimonialCarousel />
 
-              <div class="mt-16 grid gap-6 md:grid-cols-3">
-                <img src="/career.JPG" alt="Team Photo 1"
-                  class="w-full h-[250px] object-cover rounded-xl shadow-md cursor-pointer"
-                  onclick="openLightbox(this.src)" />
-                <img src="https://picsum.photos/seed/aliv-team-2/600/400" alt="Team Photo 2"
-                  class="w-full h-[250px] object-cover rounded-xl shadow-md cursor-pointer"
-                  onclick="openLightbox(this.src)" />
-                <img src="https://picsum.photos/seed/aliv-team-3/600/400" alt="Team Photo 3"
-                  class="w-full h-[250px] object-cover rounded-xl shadow-md cursor-pointer"
-                  onclick="openLightbox(this.src)" />
-              </div>
+              <TeamGallery />
             </div>
           </section>
 
-          <div id="lightbox" class="fixed inset-0 bg-black/90 hidden items-center justify-center z-60 flex-col">
-            <button class="absolute top-5 right-5 bg-white rounded-full px-3 py-2 font-bold text-lg" onclick="event.stopPropagation(); closeLightbox()">×</button>
-            <img src="" alt="Expanded view" class="max-h-[80%] max-w-[90%] rounded-xl" />
+          <div
+            id="lightbox"
+            class="fixed inset-0 bg-black/90 hidden items-center justify-center z-60 flex-col"
+          >
+            <button
+              class="absolute top-5 right-5 bg-white rounded-full px-3 py-2 font-bold text-lg"
+              onclick="event.stopPropagation(); closeLightbox()"
+            >
+              ×
+            </button>
+            <img
+              src=""
+              alt="Expanded view"
+              class="max-h-[80%] max-w-[90%] rounded-xl"
+            />
             <div class="mt-4 flex gap-4">
-              <button onclick="event.stopPropagation(); showPrev()" class="bg-white rounded-md px-4 py-2 font-semibold">Prev</button>
-              <button onclick="event.stopPropagation(); showNext()" class="bg-white rounded-md px-4 py-2 font-semibold">Next</button>
+              <button
+                onclick="event.stopPropagation(); showPrev()"
+                class="bg-white rounded-md px-4 py-2 font-semibold"
+              >
+                Prev
+              </button>
+              <button
+                onclick="event.stopPropagation(); showNext()"
+                class="bg-white rounded-md px-4 py-2 font-semibold"
+              >
+                Next
+              </button>
             </div>
           </div>
         </section>
@@ -675,16 +880,16 @@ const Careers = ({ jobsdata }) => {
         </section>
       </div>
     </>
-  )
-}
+  );
+};
 
 export async function getServerSideProps(context) {
-  // Fetch data from external API 
-  const res = await fetch(`${process.env.domain}/api/alljobs`)
-  const jobsdata = await res.json()
+  // Fetch data from external API
+  const res = await fetch(`${process.env.domain}/api/alljobs`);
+  const jobsdata = await res.json();
 
   // Pass data to the page via props
-  return { props: { jobsdata } }
+  return { props: { jobsdata } };
 }
 
-export default Careers
+export default Careers;
