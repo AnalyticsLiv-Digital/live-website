@@ -63,18 +63,6 @@ function generateSiteMap(posts) {
        <loc>https://analyticsliv.com/services/gdpr-compliance</loc>
      </url>
      <url>
-       <loc>https://analyticsliv.com/services/interactive-dashboards</loc>
-     </url>
-     <url>
-       <loc>https://analyticsliv.com/services/seo</loc>
-     </url>
-     <url>
-       <loc>https://analyticsliv.com/services/creative</loc>
-     </url>
-     <url>
-       <loc>https://analyticsliv.com/partnerships</loc>
-     </url>
-     <url>
        <loc>https://analyticsliv.com/blogs/</loc>
      </url>
      <url>
@@ -101,14 +89,14 @@ function generateSiteMap(posts) {
 
      
      ${posts
-      .map(({ url }) => {
-        return `
+       .map(({ url }) => {
+         return `
        <url>
            <loc>${`${url}`}</loc>
        </url>
      `;
-      })
-      .join('')}
+       })
+       .join('')}
    </urlset>
  `;
 }
