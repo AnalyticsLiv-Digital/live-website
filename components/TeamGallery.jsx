@@ -32,7 +32,7 @@ export default function TeamGallery() {
       {/* ==== Grid of team photos ==== */}
       <div className="mt-16 grid gap-6 md:grid-cols-3">
         {photos?.map((photo, i) => (
-          <Image
+          <img
             key={i}
             src={photo?.src}
             alt={photo?.alt}
@@ -40,9 +40,6 @@ export default function TeamGallery() {
             height={400}
             className="w-full h-[250px] object-cover rounded-xl shadow-md cursor-pointer"
             onClick={() => openLightbox(i)}
-            onError={(e) => {
-              (e.currentTarget).src = FALLBACK_IMG;
-            }}
           />
         ))}
       </div>
