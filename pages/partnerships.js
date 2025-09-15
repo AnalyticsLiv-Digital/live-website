@@ -1,6 +1,4 @@
 import React from 'react'
-import NewNavbar from '../components/NewNavbar'
-import Footer from '../components/Footer'
 
 const partnerships = () => {
     return (

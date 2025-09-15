@@ -1,7 +1,5 @@
 import Head from "next/head";
 import React, { useState } from "react";
-import NewNavbar from "../../components/NewNavbar";
-import Footer from "../../components/Footer";
 import MetaSchemaOg from "../../components/MetaSchemaOg";
 
 const Creative = () => {
