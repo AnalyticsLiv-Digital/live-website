@@ -2,12 +2,12 @@
 import { useState } from "react";
 import Image from "next/image";
 
-const FALLBACK_IMG = "/fallback.jpg"; // keep a local fallback image
+const FALLBACK_IMG = "https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/career2.jpg"; // keep a local fallback image
 
 const photos = [
-  { src: "https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/career2.jpg", alt: "Team Photo 2" },
-  { src: "https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/career_img.JPG", alt: "Team Photo 1" },
-  { src: "https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/career3.JPG", alt: "Team Photo 3" },
+  { src: "https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/career2.jpg", alt: "GMP Partner" },
+  { src: "https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/career_img.JPG", alt: "Meta Partner" },
+  { src: "https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/career3.JPG", alt: "Google parnter" },
 ];
 
 export default function TeamGallery() {
@@ -31,11 +31,11 @@ export default function TeamGallery() {
     <>
       {/* ==== Grid of team photos ==== */}
       <div className="mt-16 grid gap-6 md:grid-cols-3">
-        {photos.map((photo, i) => (
+        {photos?.map((photo, i) => (
           <Image
             key={i}
-            src={photo.src}
-            alt={photo.alt}
+            src={photo?.src}
+            alt={photo?.alt}
             width={600}
             height={400}
             className="w-full h-[250px] object-cover rounded-xl shadow-md cursor-pointer"
