@@ -8,6 +8,12 @@ module.exports = {
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  safelist: [
+    {
+      pattern: /(bg|hover:bg|disabled:bg)-(brand|emerald)-(400|600|700)/,
+    },
+  ],
+
   theme: {
     extend: {
       fontFamily: {
@@ -62,6 +68,11 @@ module.exports = {
         '3xl': '1600px', // custom breakpoint name
       },
       colors: {
+        brand: {
+          600: "#6BB343",
+          700: "#5CA236",
+          400: "#8ED36B",
+        },
         btn: '#4285F4',
         h1: '#6D6D6D',
         back: '#F8FDFE',
@@ -89,7 +100,7 @@ module.exports = {
         "maintext": "#18265B",
         "homepagebtn": "#30486A",
         "homepagebg": "#F0F0F9",
-        "ractangl": "rgba(194, 233, 245, 0.92)"
+        "ractangl": "rgba(194, 233, 245, 0.92)",
       },
       backgroundImage: {
         'custom-linear': 'linear-gradient(97.32deg, #FF698D -3.47%, #FB3F6C 108.43%)',
@@ -98,6 +109,16 @@ module.exports = {
         'btn-linear-transformation': 'linear-gradient(90deg, #2273EC 0%, #5496ED 100%)',
         'btn-linear-marketing': 'linear-gradient(90deg, #188F3C 0%, #5AB974 100%)',
         'btn-linear-solution': 'linear-gradient(90deg, #405F8A 0%, #488AE8 100%)',
+      },
+      keyframes: {
+        shift: {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
+        },
+      },
+      animation: {
+        shift: 'shift 10s ease-in-out infinite',
       },
     },
 

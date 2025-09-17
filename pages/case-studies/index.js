@@ -1,24 +1,40 @@
 import React, { useEffect, useState } from 'react'
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import Head from 'next/head';
-import Link from 'next/link';
-import Casestudy from '../../components/Casestudy';
 import { useRouter } from 'next/router';
+import Casestudy from '../../components/Casestudy';
 
 const index = ({ casestudyDat }) => {
-
   const router = useRouter();
   const { s } = router.query;
 
   const [casestudyData, setCasestudyData] = useState(casestudyDat?.casestudy || []);
   const [searchQuery, setSearchQuery] = useState(s || '');
   const [currentPage, setCurrentPage] = useState(1);
+  const [channelFilter, setChannelFilter] = useState('');
+  const [industryFilter, setIndustryFilter] = useState('');
 
   const itemsPerPage = 9;
-  const totalPages = Math.ceil(casestudyData?.length / itemsPerPage);
 
-  const currentData = casestudyData?.slice(
+  // Filter data based on search, channel, and industry
+  const filteredData = casestudyData?.filter(item => {
+    const searchMatch = !searchQuery ||
+      item.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.description?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.tags?.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
+
+    const channelMatch = !channelFilter ||
+      item.channel?.toLowerCase() === channelFilter.toLowerCase() ||
+      item.tags?.some(tag => tag.toLowerCase() === channelFilter.toLowerCase());
+
+    const industryMatch = !industryFilter ||
+      item.industry?.toLowerCase() === industryFilter.toLowerCase() ||
+      item.tags?.some(tag => tag.toLowerCase() === industryFilter.toLowerCase());
+
+    return searchMatch && channelMatch && industryMatch;
+  }) || [];
+
+  const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+  const currentData = filteredData.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );
@@ -26,11 +42,12 @@ const index = ({ casestudyDat }) => {
   const handlePageChange = (page) => {
     if (page >= 1 && page <= totalPages) {
       setCurrentPage(page);
+      handleScrollToTop();
     }
   };
 
   const handleScrollToTop = () => {
-    const targetElement = document.getElementById("case-studies");
+    const targetElement = document.getElementById("case-studies-grid");
     if (targetElement) {
       targetElement.scrollIntoView({ behavior: "smooth" });
     }
@@ -63,203 +80,201 @@ const index = ({ casestudyDat }) => {
     }
   };
 
-  function handleScrollDown() {
-    const element = document.getElementById('case-studies');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      console.error("Element to scroll into view not found.");
-    }
-  }
+  // Reset to first page when filters change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchQuery, channelFilter, industryFilter]);
 
-  return (<>
-    <Head>
-      <title>AnalyticsLiv - Case Studies</title>
-      <meta name="description" content="Google Marketing Platform Partner - Our Case Studies" />
-      <link rel="canonical" href="https://analyticsliv.com/case-studies"></link>
-    </Head>
-    <div className='font-sans mb-16'>
-      <section>
-        <div className='bg-header-linear max-sm:py-10 max-sm:pb-12 px-[3%] xl:px-[3%] md:pt-5 flex justify-around h-full items-center md:items-end lg:items-center relative mb-14'>
-          <div className='sm:w-[70%] md:w-[50%] xl:w-[43%] 2xl:w-[45%] max-sm:text-center flex flex-col items-center sm:items-start justify-around gap-7 sm:gap-5 md:gap-7 lg:gap-12'>
-            <h1 className='text-white text-[22px] sm:text-2xl xl:text-4xl font-bold'>Real Results, Real Growth : AnalyticsLiv Case Studies</h1>
-            <div className='text-xs xl:text-sm text-white font-normal flex flex-col gap-3 lg:gap-5'>
-              <div>Explore how data-driven strategies transform businesses! see how we help brands maximize performance, improve conversions, and drive success. </div>
-              <div>Proven Success. Actionable Insights. Smarter Decisions.</div>
-            </div>
-            <a href='/contact'><button className='csbutn md:mb-2'>Contact Us Now</button></a>
+  const gradientColors = [
+    'from-emerald-50 via-white to-sky-50',
+    'from-sky-50 via-white to-emerald-50',
+    'from-indigo-50 via-white to-emerald-50',
+    'from-amber-50 via-white to-emerald-50',
+    'from-rose-50 via-white to-indigo-50',
+    'from-green-50 via-white to-slate-50',
+    'from-slate-50 via-white to-rose-50',
+    'from-purple-50 via-white to-indigo-50',
+    'from-teal-50 via-white to-emerald-50',
+  ];
+
+  return (
+    <>
+      <Head>
+        <title>Case Studies | AnalyticsLiv</title>
+        <meta name="description" content="Explore real case studies where AnalyticsLiv delivered measurable growth across e-commerce, BFSI, travel, publishers, and more with data-driven marketing, CRO, PPC, and programmatic strategies." />
+        <link rel="canonical" href="https://analyticsliv.com/case-studies" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Case Studies | AnalyticsLiv" />
+        <meta property="og:description" content="Real client success stories across industries — powered by AnalyticsLiv." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://analyticsliv.com/case-studies" />
+        <meta property="og:image" content="https://analyticsliv.com/static/logo.png" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Case Studies | AnalyticsLiv" />
+        <meta name="twitter:description" content="Explore how AnalyticsLiv drives measurable growth for brands worldwide." />
+        <meta name="twitter:image" content="https://analyticsliv.com/static/logo.png" />
+      </Head>
+
+      <div className="bg-white text-slate-800" style={{
+        fontFamily:
+          'ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji"',
+      }}>
+        {/* HERO */}
+        <section className="border-b border-slate-200 bg-gradient-to-b from-white to-slate-50">
+          <div className="mx-auto max-w-7xl px-6 py-16 text-center">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900">
+              <span className="
+             bg-[linear-gradient(90deg,#0f172a,#059669,#0ea5e9,#0f172a)] 
+             bg-[length:200%_100%] 
+             bg-clip-text text-transparent 
+             animate-shift">
+                Client Results & Case Studies
+              </span>
+            </h1>
+            <p className="mt-4 max-w-2xl mx-auto text-lg text-slate-600">
+              Proof over promises - measurable growth delivered across industries.
+            </p>
           </div>
-          <div className='max-sm:hidden w-[50%] flex justify-end 2xl:justify-center 2xl:pl-24'>
-            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/CaseStudy_Main_Page_Image_png.png' alt='Improved Conversion Rate' />
-          </div>
-          <button onClick={handleScrollDown} className='absolute bottom-[-23px] z-20'>
-            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Vector%20(2).svg' alt='Vector'
-              className='border-[5px] border-[#97C4DF] rounded-full p-2 py-[13px] bg-[#ECF8FF]' />
-          </button>
-          <div id='case-studies' className='absolute bottom-[80px] z-20'></div>
-        </div>
+        </section>
 
-        <div className='px-[6%] mb-12'>
-          <div className='flex max-md:flex-col max-md:gap-7 items-center justify-between'>
-            <h1 className='text-[#0E1947] text-3xl sm:text-2xl xl:text-4xl font-bold'>Case Studies</h1>
-
-            <form onSubmit={handleSearch} className='flex items-center mx-auto md:w-[35%] 2xl:w-[45%]'>
+        {/* FILTER BAR */}
+        <section className="py-6 border-b border-slate-200 bg-white">
+          <div className="mx-auto max-w-7xl px-6 flex justify-center gap-4 items-center">
+            <form onSubmit={handleSearch} className="flex items-center w-full sm:w-[67%]">
               <input
                 type="search"
-                id='search'
-                placeholder="Search"
-                className="w-full rounded-l-lg border-l border-t border-b border-[#C1E9FF] text-[#08A4F7] placeholder-[#08A4F7] py-2 pl-6 pr-3 focus:outline-[#08A4F7]"
+                placeholder="Search by client, channel, or outcome..."
+                className="w-full rounded-l-xl border border-slate-300 px-4 py-3 focus:outline-none focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
               <button
                 type="submit"
-                className="bg-[#08A4F7] text-white rounded-r-lg border border-[#08A4F7] -ml-1 py-[10px] md:py-[9px] px-4 focus:outline-none"
+                className="bg-emerald-600 text-white rounded-r-xl border border-emerald-600 px-4 py-[15px] hover:bg-emerald-700 transition-colors"
               >
-                <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/search_icon_white.svg' alt='Search'
-                  className='w-6' />
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
               </button>
             </form>
-
-            {/* <div class="relative inline-block md:w-60 2xl:w-72">
+            {/* <div className="flex gap-3 justify-between md:justify-end md:col-span-1">
               <select
-                class="block w-full bg-white text-[#08A4F7] py-2 2xl:py-2.5 px-4 pr-10 font-medium rounded-md border border-[#C1E9FF] focus:outline-[#08A4F7] cursor-pointer appearance-none relative"
+                value={channelFilter}
+                onChange={(e) => setChannelFilter(e.target.value)}
+                className="rounded-xl border border-slate-300 px-3 py-3 w-1/2 md:w-auto focus:outline-none focus:ring-2 focus:ring-emerald-500"
               >
-                <option
-                  value=""
-                  class="bg-white text-[#08A4F7] py-2 px-3 border-b border-[#08A4F7]"
-                >
-                  - Select a type -
-                </option>
-
-                <option
-                  value="ga"
-                  class="text-[#08A4F7] border-b border-[#08A4F7] py-2 px-3 hover:bg-[#08A4F7] hover:text-white"
-                >
-                  Google Ads
-                </option>
-                <option
-                  value="dv360"
-                  class="text-[#08A4F7] border-b border-[#08A4F7] py-2 px-3 hover:bg-[#08A4F7] hover:text-white"
-                >
-                  Display & Video 360
-                </option>
-                <option
-                  value="ga4"
-                  class="text-[#08A4F7] border-b border-[#08A4F7] py-2 px-3 hover:bg-[#08A4F7] hover:text-white"
-                >
-                  Google Analytics 4
-                </option>
-                <option
-                  value="looker-studio"
-                  class="text-[#08A4F7] border-b border-[#08A4F7] py-2 px-3 hover:bg-[#08A4F7] hover:text-white"
-                >
-                  Looker Studio
-                </option>
-                <option
-                  value="cro"
-                  class="text-[#08A4F7] border-b border-[#08A4F7] py-2 px-3 hover:bg-[#08A4F7] hover:text-white"
-                >
-                  Conversion Rate Optimization
-                </option>
-                <option
-                  value="gtm"
-                  class="text-[#08A4F7] border-b border-[#08A4F7] py-2 px-3 hover:bg-[#08A4F7] hover:text-white"
-                >
-                  Google Tag Manager
-                </option>
-                <option
-                  value="merchant-center"
-                  class="text-[#08A4F7] border-b border-[#08A4F7] py-2 px-3 hover:bg-[#08A4F7] hover:text-white"
-                >
-                  Google Merchant Center
-                </option>
-                <option
-                  value="gdpr"
-                  class="text-[#08A4F7] py-2 px-3 hover:bg-[#08A4F7] hover:text-white"
-                >
-                  GDPR
-                </option>
+                <option value="">All Channels</option>
+                <option value="analytics">Analytics</option>
+                <option value="cro">CRO</option>
+                <option value="dv360">DV360</option>
+                <option value="pmax">Performance Max</option>
+                <option value="programmatic">Programmatic</option>
               </select>
-
-              <div class="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none">
-                <svg
-                  class="w-4 h-4 text-[#08A4F7]"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </div>
+              <select
+                value={industryFilter}
+                onChange={(e) => setIndustryFilter(e.target.value)}
+                className="rounded-xl border border-slate-300 px-3 py-3 w-1/2 md:w-auto focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              >
+                <option value="">All Industries</option>
+                <option value="publishing">Publishing</option>
+                <option value="retail">Retail</option>
+                <option value="ecommerce">E-commerce</option>
+                <option value="dairy">Dairy</option>
+                <option value="technology">Technology</option>
+                <option value="bfsi">BFSI</option>
+                <option value="travel">Travel</option>
+              </select>
             </div> */}
-
           </div>
-        </div>
+        </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center px-[10%] lg:px-[5%] gap-14">
+        {/* GRID */}
+        <section className="py-16" id="case-studies-grid">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {currentData?.length > 0 ? (
+                currentData.map((casest, index) => (
+                  <Casestudy
+                    key={casest.id || index}
+                    casestudy={casest}
+                    gradientClass={gradientColors[index % gradientColors.length]}
+                  />
+                ))
+              ) : (
+                <div className="col-span-full text-center py-12">
+                  <div className="mx-auto w-24 h-24 bg-slate-100 rounded-full flex items-center justify-center mb-4">
+                    <svg className="w-12 h-12 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                  </div>
+                  <p className="text-slate-500 text-lg">No case studies found matching your criteria.</p>
+                  <p className="text-slate-400 text-sm mt-2">Try adjusting your search or filters.</p>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
 
-          {currentData?.length > 0 ? (
-            currentData?.map((casest, key) => <Casestudy key={key} casestudy={casest} />)
-          ) : (
-            <p className="text-center col-span-full text-gray-500">No case studies found.</p>
-          )}
-        </div>
-
-        <div className="flex justify-center items-center mt-12 space-x-4">
-          <button
-            className={`px-4 py-3 rounded-md ${currentPage === 1 ? "bg-gray-300 cursor-not-allowed" : "bg-[#08A4F7] text-white"
-              }`}
-            disabled={currentPage === 1}
-            onClick={() => {
-              handlePageChange(currentPage - 1);
-              handleScrollToTop();
-            }}
-          >
-            {currentPage === 1 ? <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Stroke%201.svg' alt='arrow left' className='' />
-              : <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20right%20white.svg' alt='arrow left' className='' />}
-          </button>
-
-          {Array.from({ length: totalPages }, (_, index) => (
+        {/* PAGINATION */}
+        {totalPages > 1 && (
+          <div className="flex items-center justify-center gap-2 pb-12">
             <button
-              key={index}
-              className={`px-4 py-2 rounded-md ${currentPage === index + 1
-                ? "bg-[#08A4F7] text-white"
-                : "bg-white text-[#08A4F7] border border-[#08A4F7]"
+              className={`rounded-xl border px-4 py-2 text-sm transition-colors ${currentPage === 1
+                ? 'border-slate-300 text-slate-400 cursor-not-allowed'
+                : 'border-slate-300 text-slate-700 hover:bg-slate-50'
                 }`}
-              onClick={() => {
-                handlePageChange(index + 1);
-                handleScrollToTop();
-              }}
+              disabled={currentPage === 1}
+              onClick={() => handlePageChange(currentPage - 1)}
             >
-              {index + 1}
+              Previous
             </button>
-          ))}
 
-          <button
-            className={`px-4 py-3 rounded-md ${currentPage === totalPages
-              ? "bg-gray-300 cursor-not-allowed"
-              : "bg-[#08A4F7] text-white"
-              }`}
-            disabled={currentPage === totalPages}
-            onClick={() => {
-              handlePageChange(currentPage + 1);
-              handleScrollToTop();
-            }}
-          >
-            {currentPage === totalPages ? <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%201.svg' alt='arrow right' className='' />
-              : <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20left%20white.svg' alt='arrow right' className='' />}
-          </button>
-        </div>
+            {Array.from({ length: totalPages }, (_, index) => (
+              <button
+                key={index}
+                className={`rounded-xl px-4 py-2 text-sm transition-colors ${currentPage === index + 1
+                  ? 'bg-slate-900 text-white'
+                  : 'border border-slate-300 text-slate-700 hover:bg-slate-50'
+                  }`}
+                onClick={() => handlePageChange(index + 1)}
+              >
+                {index + 1}
+              </button>
+            ))}
 
-      </section>
+            <button
+              className={`rounded-xl border px-4 py-2 text-sm transition-colors ${currentPage === totalPages
+                ? 'border-slate-300 text-slate-400 cursor-not-allowed'
+                : 'border-slate-300 text-slate-700 hover:bg-slate-50'
+                }`}
+              disabled={currentPage === totalPages}
+              onClick={() => handlePageChange(currentPage + 1)}
+            >
+              Next
+            </button>
+          </div>
+        )}
 
-    </div></>
-  )
-}
-
+        {/* CTA */}
+        <section className="bg-emerald-600 py-16 text-white text-center">
+          <div className="mx-auto max-w-3xl px-6">
+            <h2 className="text-3xl font-bold">Want results like these?</h2>
+            <p className="mt-2 text-lg text-emerald-100">Let's build your next growth story together.</p>
+            <a
+              href="/contact"
+              className="mt-6 inline-flex items-center justify-center rounded-2xl bg-white px-6 py-3 text-slate-900 font-semibold shadow hover:opacity-90 transition-opacity"
+            >
+              Book a Strategy Call
+            </a>
+          </div>
+        </section>
+      </div>
+    </>
+  );
+};
 
 export async function getServerSideProps(context) {
   const { s } = context.query;
@@ -275,62 +290,4 @@ export async function getServerSideProps(context) {
   return { props: { casestudyDat } };
 }
 
-export default index
-
-
-
-
-// import React, { useState } from 'react'
-// import AOS from 'aos';
-// import 'aos/dist/aos.css';
-// import Head from 'next/head';
-// import Link from 'next/link';
-// import Casestudy from '../../components/Casestudy';
-
-// const index = ({ casestudyDat }) => {
-
-//   const [casestudydata, setBlogsData] = useState(casestudyDat.casestudy);
-//   //console.log(casestudyDat);
-//   return (<>
-//     <Head>
-//       <title>AnalyticsLiv - Case Studies</title>
-//       <meta name="description" content="Google Marketing Platform Partner - Our Case Studies" />
-//       <link rel="canonical" href="https://analyticsliv.com/case-studies"></link>
-//     </Head>
-//     <div>
-//       <section>
-//         <div className="bg-gray-50 py-8 pb-20">
-//           <div className="text-center md:mx-auto mx-8 py-2 bg-white md:w-2/5">
-//             <h1 className="font-bold text-4xl uppercase tracking-wide">Case Study</h1>
-//           </div>
-
-//           {/* <div className="space-y-6 lg:w-4/5 mx-2 md:mx-5 lg:mx-auto mt-8 "> */}
-//           <div className="space-y-6 xl:w-4/5 mx-2 md:mx-5 xl:mx-auto mt-8 ">
-
-
-
-//             {casestudydata && casestudydata.map((casest, key) => (
-//               <Casestudy key={key} casestudy={casest} />
-//             ))}
-
-
-//           </div>
-//         </div>
-//       </section>
-
-//     </div></>
-//   )
-// }
-
-// export async function getServerSideProps(context) {
-//   // Fetch data from external API
-
-//   const res = await fetch(`${process.env.domain}/api/allcasestudies`)
-//   const casestudyDat = await res.json()
-//   console.log(casestudyDat);
-//   // Pass data to the page via props
-//   return { props: { casestudyDat } }
-// }
-
-
-// export default index
+export default index;
