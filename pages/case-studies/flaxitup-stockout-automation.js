@@ -133,8 +133,8 @@ const FlaxitUpCaseStudy = () => {
                         </div>
                         <div className="flex justify-center">
 
-                            <div className="h-16 w-48 rounded-xl border border-slate-200 flex items-center justify-center text-slate-400">
-                                <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/flax-logo-1%201.png" alt="FlaxitUp logo" className="" />
+                            <div className="h-48 w-56 rounded-xl border border-slate-200 flex items-center justify-center text-slate-400">
+                                <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/flax-logo-1.png" alt="FlaxitUp logo" className="w-40" />
                             </div>
                         </div>
                     </div>
