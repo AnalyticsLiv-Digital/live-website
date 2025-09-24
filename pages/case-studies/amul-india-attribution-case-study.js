@@ -21,7 +21,7 @@ const AmulIndiaCaseStudy = () => {
         coverimage:
             "https://storage.googleapis.com/website-bucket-uploads/cs/amul-india-attribution-case-study-attribution-case-study-cover.png",
         id: "cs7",
-        pdf: "https://storage.googleapis.com/website-bucket-uploads/cs/1744002263636865.pdf",
+        pdf: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Amul%20India-%20Case%20Study.pdf",
     };
 
     const csSchema = generateCaseStudySchema(cd);
