@@ -18,7 +18,7 @@ const staticCaseStudies = [
     logoimage:
       "https://storage.googleapis.com/website-bucket-uploads/logos/amul.png",
     metrics: ["+320% ROAS", "Attribution"],
-    pdf: 'https://storage.googleapis.com/website-bucket-uploads/cs/1744002263636865.pdf',
+    pdf: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Amul%20India-%20Case%20Study.pdf',
     isFeatured: true,
   },
   {//done
