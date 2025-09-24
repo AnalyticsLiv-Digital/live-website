@@ -15,13 +15,13 @@ const AmulIndiaCaseStudy = () => {
 
     const cd = {
         slug: "amul-india-attribution-case-study",
-        title: "Amul India - Attribution & Insights Across Channels",
+        title: "Amul India — Data Accuracy, Attribution & Conversion Tracking",
         description:
             "How Amul India partnered with AnalyticsLiv to implement attribution modeling, boosting ROAS by 320% across dairy e-commerce.",
         coverimage:
             "https://storage.googleapis.com/website-bucket-uploads/cs/amul-india-attribution-case-study-attribution-case-study-cover.png",
         id: "cs7",
-        pdf: "https://storage.googleapis.com/website-bucket-uploads/cs/amul-india-attribution-case-study-attribution-growth-case-study.pdf",
+        pdf: "https://storage.googleapis.com/website-bucket-uploads/cs/1744002263636865.pdf",
     };
 
     const csSchema = generateCaseStudySchema(cd);
@@ -33,15 +33,15 @@ const AmulIndiaCaseStudy = () => {
         <>
             <Head>
                 <title>
-                    Amul India - +320% ROAS with Cross-Channel Attribution | AnalyticsLiv
+                    Amul India Case Study | Data Accuracy & Attribution Tracking
                 </title>
                 <meta
                     name="description"
-                    content="Discover how Amul India partnered with AnalyticsLiv to implement attribution modeling, boosting ROAS by 320% across dairy e-commerce. Read the full case study."
+                    content="How Amul India partnered with AnalyticsLiv to enhance data accuracy, conversion tracking, e-commerce measurement, and attribution reporting."
                 />
                 <link
                     rel="canonical"
-                    href="https://analyticsliv.com/case-studies/amul-india"
+                    href="https://analyticsliv.com/case-studies/amul-india-attribution-case-study"
                 />
                 <script
                     type="application/ld+json"
@@ -72,7 +72,7 @@ const AmulIndiaCaseStudy = () => {
                                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight tracking-tight text-slate-900">
                                     {cd.title}
                                 </h1>
-                                <h2 className="mt-5 max-w-2xl text-lg text-slate-600">Unified attribution modeling and GA4-driven measurement enabled Amul to scale dairy e-commerce with +320% ROAS.</h2>
+                                <h2 className="mt-5 max-w-2xl text-lg text-slate-600">Strengthening e-commerce tracking with accurate data, corrected conversions, and attribution mapping to enhance decision-making.</h2>
                                 <div className="mt-7 flex flex-wrap items-center gap-3">
                                     <a href="/case-studies" className="rounded-2xl border border-slate-300 px-6 py-3">Back to Case Studies</a>
                                     <button onClick={() => handleCalendly()} className="rounded-2xl bg-slate-900 px-6 py-3 text-white shadow hover:opacity-90">Book a Strategy Call</button>
@@ -81,10 +81,10 @@ const AmulIndiaCaseStudy = () => {
                             <div className="order-first md:order-none">
                                 <div className="relative mx-auto w-full max-w-xl rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
                                     <div className="grid gap-4 sm:grid-cols-2">
-                                        <div className="rounded-2xl border border-slate-200 bg-white p-5"><div className="text-3xl font-extrabold text-slate-900">+320%</div><div className="mt-1 text-sm text-slate-600">ROAS Increase</div></div>
-                                        <div className="rounded-2xl border border-slate-200 bg-white p-5"><div className="text-3xl font-extrabold text-slate-900">‑27%</div><div className="mt-1 text-sm text-slate-600">CPA Reduction</div></div>
-                                        <div className="rounded-2xl border border-slate-200 bg-white p-5"><div className="text-3xl font-extrabold text-slate-900">+40%</div><div className="mt-1 text-sm text-slate-600">New-to-Brand Customers</div></div>
-                                        <div className="rounded-2xl border border-slate-200 bg-white p-5"><div className="text-3xl font-extrabold text-slate-900">99%</div><div className="mt-1 text-sm text-slate-600">Attribution Accuracy</div></div>
+                                        <div className="rounded-2xl border border-slate-200 bg-white p-5"><div className="text-3xl font-extrabold text-slate-900">+35%</div><div className="mt-1 text-sm text-slate-600">Data Accuracy Improvement</div></div>
+                                        <div className="rounded-2xl border border-slate-200 bg-white p-5"><div className="text-3xl font-extrabold text-slate-900">+25%</div><div className="mt-1 text-sm text-slate-600">E-commerce Data Correction</div></div>
+                                        <div className="rounded-2xl border border-slate-200 bg-white p-5"><div className="text-3xl font-extrabold text-slate-900">+40%</div><div className="mt-1 text-sm text-slate-600">Validated Conversions</div></div>
+                                        <div className="rounded-2xl border border-slate-200 bg-white p-5"><div className="text-3xl font-extrabold text-slate-900">95%</div><div className="mt-1 text-sm text-slate-600">Attribution Accuracy</div></div>
                                     </div>
                                 </div>
                             </div>
@@ -125,11 +125,12 @@ const AmulIndiaCaseStudy = () => {
                             </div>
                         </div>
                         <div className="md:col-span-2 space-y-4 text-slate-700">
-                            <p>Amul faced fragmented tracking across digital channels, making it difficult to attribute sales to campaigns. Rising CPAs and lack of incrementality insights limited efficient budget allocation.</p>
+                            <p>Amul India faced significant challenges in tracking user behavior and conversions across digital platforms. Inconsistent data collection reduced accuracy and created discrepancies between reported and actual performance.</p>
                             <ul className="list-disc pl-5 space-y-2">
-                                <li>Inconsistent event taxonomy across GA4 and CRM</li>
-                                <li>No unified attribution view across campaigns</li>
-                                <li>High CPAs in prospecting channels</li>
+                                <li>Data accuracy gaps due to fragmented tracking</li>
+                                <li>Inconsistent e-commerce tracking leading to incorrect revenue capture</li>
+                                <li>Duplicate or missing conversions across GA4 and CRM</li>
+                                <li>Lack of reliable attribution tracking for user journeys</li>
                             </ul>
                         </div>
                     </div>
@@ -145,29 +146,29 @@ const AmulIndiaCaseStudy = () => {
                                     <li>
                                         <div className="absolute -left-2.5 h-5 w-5 rounded-full bg-emerald-600 ring-4 ring-slate-100"></div>
                                         <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
-                                            <div className="text-xs font-semibold tracking-wider text-slate-500">01. Tracking & Data</div>
-                                            <p className="mt-1">Aligned GA4 + Floodlight with CRM data. Introduced consent mode and durable identifiers.</p>
+                                            <div className="text-xs font-semibold tracking-wider text-slate-500">01. Data Tracking & Validation</div>
+                                            <p className="mt-1">Audited GA4 events and e-commerce parameters; aligned with CRM to ensure consistent and accurate tracking.</p>
                                         </div>
                                     </li>
                                     <li>
                                         <div className="absolute -left-2.5 h-5 w-5 rounded-full bg-indigo-600 ring-4 ring-slate-100"></div>
                                         <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
-                                            <div className="text-xs font-semibold tracking-wider text-slate-500">02. Attribution & Modeling</div>
-                                            <p className="mt-1">Implemented cross-channel attribution in GA4 + MMM baselines to inform budget reallocation.</p>
+                                            <div className="text-xs font-semibold tracking-wider text-slate-500">02. E-commerce Accuracy Correction</div>
+                                            <p className="mt-1">Fixed missing and duplicate transactions by validating order IDs, revenue values, and refunds.</p>
                                         </div>
                                     </li>
                                     <li>
                                         <div className="absolute -left-2.5 h-5 w-5 rounded-full bg-amber-600 ring-4 ring-slate-100"></div>
                                         <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
-                                            <div className="text-xs font-semibold tracking-wider text-slate-500">03. Optimization</div>
-                                            <p className="mt-1">Shifted budgets to high-incrementality channels. Improved creatives and funnels for dairy ecommerce.</p>
+                                            <div className="text-xs font-semibold tracking-wider text-slate-500">03. Conversion Tracking Enhancement</div>
+                                            <p className="mt-1">Redesigned GA4 conversion events to capture funnel actions precisely; implemented server-side validation.</p>
                                         </div>
                                     </li>
                                     <li>
                                         <div className="absolute -left-2.5 h-5 w-5 rounded-full bg-rose-600 ring-4 ring-slate-100"></div>
                                         <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
-                                            <div className="text-xs font-semibold tracking-wider text-slate-500">04. Reporting & Insights</div>
-                                            <p className="mt-1">Delivered Looker dashboards for CMO with clear ROAS, CPA, incrementality and cohort trends.</p>
+                                            <div className="text-xs font-semibold tracking-wider text-slate-500">04. Attribution Tracking Framework</div>
+                                            <p className="mt-1">Introduced multi-touch attribution models to map user journeys and built Looker dashboards for funnel insights.</p>
                                         </div>
                                     </li>
                                 </ol>
@@ -189,13 +190,13 @@ const AmulIndiaCaseStudy = () => {
                 <section className="py-16">
                     <div className="mx-auto max-w-7xl px-6">
                         <div className="mb-8 text-center">
-                            <h2 className="text-2xl md:text-3xl font-bold text-slate-900">Results That Matter</h2>
+                            <h2 className="text-2xl md:text-3xl font-bold text-slate-900">Results & Impact</h2>
                         </div>
                         <div className="grid gap-6 md:grid-cols-4">
-                            <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"><div className="text-sm font-semibold text-slate-900">ROAS</div><div className="mt-1 text-2xl font-extrabold text-slate-900">+320%</div></div>
-                            <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"><div className="text-sm font-semibold text-slate-900">CPA</div><div className="mt-1 text-2xl font-extrabold text-slate-900">‑27%</div></div>
-                            <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"><div className="text-sm font-semibold text-slate-900">New Customers</div><div className="mt-1 text-2xl font-extrabold text-slate-900">+40%</div></div>
-                            <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"><div className="text-sm font-semibold text-slate-900">Attribution Accuracy</div><div className="mt-1 text-2xl font-extrabold text-slate-900">99%</div></div>
+                            <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"><div className="text-sm font-semibold text-slate-900">Data Accuracy</div><div className="mt-1 text-2xl font-extrabold text-slate-900">+35%</div></div>
+                            <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"><div className="text-sm font-semibold text-slate-900">E-commerce Data Correction</div><div className="mt-1 text-2xl font-extrabold text-slate-900">+25%</div></div>
+                            <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"><div className="text-sm font-semibold text-slate-900">Validated Conversions</div><div className="mt-1 text-2xl font-extrabold text-slate-900">+40%</div></div>
+                            <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"><div className="text-sm font-semibold text-slate-900">Attribution Accuracy</div><div className="mt-1 text-2xl font-extrabold text-slate-900">95%</div></div>
                         </div>
                         <div className="mt-10 text-center">
                             <Link href="/contact" className="inline-flex items-center justify-center rounded-2xl bg-slate-900 px-6 py-3 text-white shadow-sm hover:opacity-90">Talk to Us</Link>
@@ -206,7 +207,7 @@ const AmulIndiaCaseStudy = () => {
                 {/* CTA */}
                 <section className="bg-slate-900 py-14 text-white text-center">
                     <h3 className="text-2xl font-bold">Want results like these?</h3>
-                    <p className="mt-2 text-slate-300">Let's build your next success story-start with a free strategy call.</p>
+                    <p className="mt-2 text-slate-300">Let’s fix your tracking and attribution challenges-start with a free strategy call.</p>
                     <div className="mt-6">
                         <Link href="/contact" className="rounded-2xl bg-white px-6 py-3 font-semibold text-slate-900 shadow hover:opacity-90">Book a Call</Link>
                     </div>
