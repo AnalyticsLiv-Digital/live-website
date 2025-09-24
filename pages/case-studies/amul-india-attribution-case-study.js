@@ -137,48 +137,50 @@ const AmulIndiaCaseStudy = () => {
 
                 {/* APPROACH */}
                 <section className="bg-slate-50 py-16 border-y border-slate-200">
-                    <div className="mx-auto max-w-7xl px-6 grid gap-10 md:grid-cols-2 items-start">
-                        <div>
-                            <h2 className="text-2xl font-bold text-slate-900 mb-8">Approach</h2>
-                            <ol className="relative border-l border-slate-200 pl-6 space-y-6">
-                                <li>
-                                    <div className="absolute -left-2.5 h-5 w-5 rounded-full bg-emerald-600 ring-4 ring-slate-100"></div>
-                                    <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
-                                        <div className="text-xs font-semibold tracking-wider text-slate-500">01. Tracking & Data</div>
-                                        <p className="mt-1">Aligned GA4 + Floodlight with CRM data. Introduced consent mode and durable identifiers.</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="absolute -left-2.5 h-5 w-5 rounded-full bg-indigo-600 ring-4 ring-slate-100"></div>
-                                    <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
-                                        <div className="text-xs font-semibold tracking-wider text-slate-500">02. Attribution & Modeling</div>
-                                        <p className="mt-1">Implemented cross-channel attribution in GA4 + MMM baselines to inform budget reallocation.</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="absolute -left-2.5 h-5 w-5 rounded-full bg-amber-600 ring-4 ring-slate-100"></div>
-                                    <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
-                                        <div className="text-xs font-semibold tracking-wider text-slate-500">03. Optimization</div>
-                                        <p className="mt-1">Shifted budgets to high-incrementality channels. Improved creatives and funnels for dairy ecommerce.</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="absolute -left-2.5 h-5 w-5 rounded-full bg-rose-600 ring-4 ring-slate-100"></div>
-                                    <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
-                                        <div className="text-xs font-semibold tracking-wider text-slate-500">04. Reporting & Insights</div>
-                                        <p className="mt-1">Delivered Looker dashboards for CMO with clear ROAS, CPA, incrementality and cohort trends.</p>
-                                    </div>
-                                </li>
-                            </ol>
-                        </div>
+                    <div className="max-w-7xl mx-auto px-8">
+                        <h2 className="text-2xl font-bold text-slate-900 mb-8">Approach</h2>
+                        <div className="px-6 grid gap-10 md:grid-cols-2 items-start">
+                            <div>
+                                <ol className="relative border-l border-slate-200 pl-6 space-y-6">
+                                    <li>
+                                        <div className="absolute -left-2.5 h-5 w-5 rounded-full bg-emerald-600 ring-4 ring-slate-100"></div>
+                                        <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
+                                            <div className="text-xs font-semibold tracking-wider text-slate-500">01. Tracking & Data</div>
+                                            <p className="mt-1">Aligned GA4 + Floodlight with CRM data. Introduced consent mode and durable identifiers.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div className="absolute -left-2.5 h-5 w-5 rounded-full bg-indigo-600 ring-4 ring-slate-100"></div>
+                                        <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
+                                            <div className="text-xs font-semibold tracking-wider text-slate-500">02. Attribution & Modeling</div>
+                                            <p className="mt-1">Implemented cross-channel attribution in GA4 + MMM baselines to inform budget reallocation.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div className="absolute -left-2.5 h-5 w-5 rounded-full bg-amber-600 ring-4 ring-slate-100"></div>
+                                        <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
+                                            <div className="text-xs font-semibold tracking-wider text-slate-500">03. Optimization</div>
+                                            <p className="mt-1">Shifted budgets to high-incrementality channels. Improved creatives and funnels for dairy ecommerce.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div className="absolute -left-2.5 h-5 w-5 rounded-full bg-rose-600 ring-4 ring-slate-100"></div>
+                                        <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
+                                            <div className="text-xs font-semibold tracking-wider text-slate-500">04. Reporting & Insights</div>
+                                            <p className="mt-1">Delivered Looker dashboards for CMO with clear ROAS, CPA, incrementality and cohort trends.</p>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </div>
 
-                        <div className='flex justify-center w-full'>
-                            <CaseStudyDownloadModal
-                                isOpen={true}
-                                onClose={() => { }}
-                                casestudy={cd}
-                                parentContext="inline"
-                            />
+                            <div className='flex justify-center w-full'>
+                                <CaseStudyDownloadModal
+                                    isOpen={true}
+                                    onClose={() => { }}
+                                    casestudy={cd}
+                                    parentContext="inline"
+                                />
+                            </div>
                         </div>
                     </div>
                 </section>
