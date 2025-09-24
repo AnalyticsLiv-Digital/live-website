@@ -4,7 +4,7 @@ const Faq = ({ content }) => {
     return (
         <div className="grid gap-4 md:grid-cols-2">
             {content?.map((item, index) => (
-                <details key={index} className="group card p-5 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                <details key={index} className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
                     <summary className="cursor-pointer list-none font-semibold text-slate-900 flex items-center justify-between">
                         {item?.question}
                         <span className="text-slate-400 group-open:rotate-180 transition">▾</span>
