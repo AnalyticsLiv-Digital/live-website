@@ -1,117 +1,140 @@
 import React, { useState, useMemo } from "react";
 import Head from "next/head";
 import Link from "next/link";
+import CaseStudyDownloadModal from "../../components/CaseStudyDownloadModal";
 
 // Static case studies data
 const staticCaseStudies = [
-  {
+  {//pdf
     id: 1,
     title: "Amul India — Attribution & Insights",
-    slug: "amul-india",
+    slug: "amul-india-attribution-case-study",
     description: "Unified measurement linking media to retail outcomes.",
     channel: "analytics",
     industry: "dairy",
     tags: ["Attribution"],
-    coverimage:
-      "https://storage.googleapis.com/website-bucket-uploads/case-studies/amul-hero.jpg",
+    // coverimage:
+    //   "https://storage.googleapis.com/website-bucket-uploads/case-studies/amul-hero.jpg",
     logoimage:
       "https://storage.googleapis.com/website-bucket-uploads/logos/amul.png",
     metrics: ["+320% ROAS", "Attribution"],
+    pdf: 'https://storage.googleapis.com/website-bucket-uploads/cs/1744002263636865.pdf',
     isFeatured: true,
   },
-  {
+  {//done
     id: 2,
-    title: "Shoebacca — Performance Max",
-    slug: "shoebacca-pmax",
+    title: "Shoebacca Achieves 26% Higher ROAS with Performance Max",
+    slug: "shoebacca-performance-max",
     description: "26% higher ROAS with PMax + DV360 synergy.",
     channel: "pmax",
     industry: "ecommerce",
     tags: ["New Customers"],
-    coverimage:
-      "https://storage.googleapis.com/website-bucket-uploads/case-studies/shoebacca-hero.jpg",
+    // coverimage:
+    //   "https://storage.googleapis.com/website-bucket-uploads/case-studies/shoebacca-hero.jpg",
     metrics: ["+26% ROAS", "New Customers"],
+    pdf: 'https://storage.googleapis.com/website-bucket-uploads/cs/1744002263636865.pdf',
   },
-  {
+  {//done
     id: 3,
-    title: "Washington Examiner — 99% Accuracy with GTM",
-    slug: "washington-examiner-gtm",
+    title: "99% Accuracy in GA4 Subscription Tracking Using GTM",
+    slug: "ga4-subscription-tracking-gtm",
     description:
-      "Mapped GA4 subscription data with 99% accuracy using only GTM.",
+      "How Washington Examiner achieved 99% accuracy in GA4 subscription tracking with Google Tag Manager.",
     channel: "analytics",
     industry: "publishing",
     tags: ["GA4", "GTM"],
-    coverimage:
-      "https://storage.googleapis.com/website-bucket-uploads/case-studies/washington-examiner-hero.jpg",
+    // coverimage:
+    //   "https://storage.googleapis.com/website-bucket-uploads/case-studies/washington-examiner-hero.jpg",
     metrics: ["99% Accuracy", "GA4", "GTM"],
+    pdf: 'https://storage.googleapis.com/website-bucket-uploads/cs/1748238278384721.pdf',
   },
-  {
+  {//done
     id: 4,
-    title: "Artarium — Event‑Based Creatives (DV360)",
-    slug: "artarium-event-creatives",
-    description:
-      "30% more conversions and 66% better CPA with festive narratives.",
-    channel: "dv360",
-    industry: "retail",
-    tags: ["Seasonal"],
-    coverimage:
-      "https://storage.googleapis.com/website-bucket-uploads/case-studies/artarium-event-hero.jpg",
-    metrics: ["+30% Conversions", "‑66% CPA", "Seasonal"],
-  },
-  {
-    id: 5,
     title: "Artarium — Custom Bidding (DV360)",
-    slug: "artarium-custom-bidding",
+    slug: "dv360-custom-bidding-artarium",
     description:
       "13× conversions, 95% lower CPA, and 42% higher CTR with value‑based bidding.",
     channel: "dv360",
     industry: "retail",
     tags: ["Custom Bids"],
-    coverimage:
-      "https://storage.googleapis.com/website-bucket-uploads/case-studies/artarium-custom-bid-hero.jpg",
+    // coverimage:
+    //   "https://storage.googleapis.com/website-bucket-uploads/case-studies/artarium-custom-bid-hero.jpg",
     metrics: ["13× Conversions", "‑95% CPA", "Custom Bidding"],
+    pdf: 'https://storage.googleapis.com/website-bucket-uploads/cs/1743762198760388.pdf',
   },
-  {
-    id: 6,
-    title: "E‑commerce Optimization — CRO + Analytics",
-    slug: "ecommerce-optimization",
+  {//done
+    id: 5,
+    title: "We Sort It Achieves 180% More Leads & 60% Lower CPL with Facebook Advantage Targeting",
+    slug: "we-sort-it-facebook-ads",
     description:
-      "A/B experimentation framework lifting conversion rates and AOV.",
-    channel: "cro",
-    industry: "ecommerce",
-    tags: ["A/B Testing", "GA4"],
-    coverimage:
-      "https://storage.googleapis.com/website-bucket-uploads/case-studies/ecom-hero.jpg",
-    metrics: ["A/B Testing", "Conversion Rate", "AOV"],
-  },
-  {
-    id: 7,
-    title: "Cloud Migration — Analytics Stack",
-    slug: "cloud-migration",
-    description:
-      "From legacy to modern cloud analytics with automated pipelines.",
+      "We Sort It is a New Zealand-based brand offering professional cleaning and lawn mowing services for both residential and commercial clients. With a focus on quality, reliability, and sustainability, their services include regular cleaning, deep cleaning, garden maintenance, lawn care, and more.",
     channel: "analytics",
     industry: "technology",
-    tags: ["BigQuery", "ETL"],
-    coverimage:
-      "https://storage.googleapis.com/website-bucket-uploads/case-studies/cloud-migration-hero.jpg",
-    metrics: ["BigQuery", "ETL", "Automation"],
+    tags: ["Facebook Ads", "Leads", "CPL"],
+    // coverimage:
+    //   "https://storage.googleapis.com/website-bucket-uploads/case-studies/cloud-migration-hero.jpg",
+    metrics: ["Facebook Ads", "60% Lower CPL", "180% More Leads"],
+    pdf: 'https://storage.googleapis.com/website-bucket-uploads/cs/1733729399146434.pdf',
   },
-  {
-    id: 8,
-    title: "Travel SEO — Organic Growth Strategy",
-    slug: "travel-seo",
+  {//done
+    id: 6,
+    title: "FlaxitUp Cuts Stockout Risks by 35% with Automation",
+    slug: "flaxitup-stockout-automation",
     description:
-      "200% increase in organic traffic through technical SEO and content optimization.",
-    channel: "seo",
-    industry: "travel",
-    tags: ["Technical SEO", "Content"],
-    coverimage:
-      "https://storage.googleapis.com/website-bucket-uploads/case-studies/travel-seo-hero.jpg",
-    metrics: ["+200% Traffic", "Organic Growth", "Technical SEO"],
+      "How FlaxitUp reduced stockout risks by 35%, improved forecasting accuracy by 28%, and automated operations with data-driven workflows and dashboards.",
+    channel: "analytics",
+    industry: "technology",
+    tags: ["Looker Studio", "Dashboards"],
+    // coverimage:
+    //   "https://storage.googleapis.com/website-bucket-uploads/case-studies/travel-seo-hero.jpg",
+    metrics: ["Automation", "Looker Studio", "Dashboards"],
+    pdf: 'https://storage.googleapis.com/website-bucket-uploads/cs/1743678159051732.pdf',
+  },
+  {//done
+    id: 7,
+    title: "Balancing Compliance & Growth with Consent Mode v2",
+    slug: "consent-mode-v2",
+    description:
+      "13× conversions, 95% lower CPA, and 42% higher CTR with value‑based bidding.",
+    channel: "analytics",
+    industry: "technology",
+    tags: ["GA4", "GoogleAds"],
+    // coverimage:
+    //   "https://storage.googleapis.com/website-bucket-uploads/case-studies/travel-seo-hero.jpg",
+    metrics: ["13× conversions", "95% lower CPA", "42% higher CTR", "GA4", "GoogleAds"],
+    pdf: 'https://storage.googleapis.com/website-bucket-uploads/cs/1755864551345419.pdf',
+  },
+  {//pdf
+    id: 8,
+    title: "DV360 Ads Optimization: Lower CPA with Smarter Signals",
+    slug: "dv360-ads-optimization-cost-per-conversion-reduction",
+    description:
+      "We reduced acquisition costs by optimizing placements, budgets and signals while maintaining conversion volume.",
+    channel: "dv360",
+    industry: "technology",
+    tags: ["dv360", "Display & Video 360"],
+    // coverimage:
+    //   "https://storage.googleapis.com/website-bucket-uploads/case-studies/ecom-hero.jpg",
+    metrics: ["32%↓ CPA / CPV", "3.2×ROAS", "+24% CVR"],
+    pdf: 'https://storage.googleapis.com/website-bucket-uploads/cs/1744002263636865.pdf',
+  },
+  {//pdf
+    id: 9,
+    title: "Artarium — Event‑Based Creatives (DV360)",
+    slug: "artarium-seasonal-creatives",
+    description:
+      "30% more conversions and 66% better CPA with festive narratives.",
+    channel: "dv360",
+    industry: "retail",
+    tags: ["Seasonal"],
+    // coverimage:
+    //   "https://storage.googleapis.com/website-bucket-uploads/case-studies/artarium-event-hero.jpg",
+    metrics: ["+30% Conversions", "‑66% CPA", "Seasonal"],
+    pdf: 'https://storage.googleapis.com/website-bucket-uploads/cs/1744002263636865.pdf',
   },
 ];
 
-const CaseStudyCard = ({ casestudy, isFeatured = false }) => {
+const CaseStudyCard = ({ casestudy, isFeatured = false, onDownloadClick }) => {
   const getInitials = (title) => {
     if (!title) return "CS";
     return title
@@ -123,51 +146,58 @@ const CaseStudyCard = ({ casestudy, isFeatured = false }) => {
   };
 
   const handleCardClick = (e) => {
-    if (e.target.closest(".cta")) return; // Don't navigate if clicking CTA buttons
+    if (e.target.closest(".no-redirect")) return; // Don't navigate if clicking CTA buttons
     window.location.href = `/case-studies/${casestudy.slug}`;
   };
 
   const handleDownloadClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    // Open lead modal - for now just alert
-    alert(`Download PDF for: ${casestudy.title}`);
   };
 
   return (
     <article
       role="link"
       tabIndex={0}
-      className={`card group relative overflow-hidden border border-slate-100 bg-white transition shadow-none hover:shadow-md cursor-pointer rounded-2xl ${
-        isFeatured ? "sm:row-span-2" : ""
-      }`}
+      className={`card group relative overflow-hidden border border-slate-100 bg-white transition shadow-none hover:shadow-md cursor-pointer rounded-2xl ${isFeatured ? "sm:row-span-2" : ""
+        }`}
       onClick={handleCardClick}
       onKeyDown={(e) => {
         if (e.key === "Enter") handleCardClick(e);
       }}
     >
       <div
-        className={`thumb relative ${
-          isFeatured ? "h-56 sm:h-full" : "aspect-[16/9]"
-        }`}
+        className={`thumb relative ${isFeatured ? "h-56 sm:h-full min-h-[225px]" : "aspect-[16/9]"
+          }`}
       >
         {/* Skeleton loader */}
         <div className="absolute inset-0 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 animate-pulse"></div>
 
         {/* Main image */}
-        <img
-          src={casestudy.coverimage}
-          alt={casestudy.title}
-          className="absolute inset-0 h-full w-full object-cover transition-transform duration-400 group-hover:scale-105"
-          loading="lazy"
-          onLoad={(e) => {
-            const skeleton = e.target.previousElementSibling;
-            if (skeleton) skeleton.remove();
-          }}
-          onError={(e) => {
-            e.target.style.display = "none";
-          }}
-        />
+        {casestudy?.coverimage ? (
+          <img
+            src={casestudy.coverimage}
+            alt={casestudy.title}
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-400 group-hover:scale-105"
+            loading="lazy"
+            onLoad={(e) => {
+              const skeleton = e.target.previousElementSibling;
+              if (skeleton) skeleton.remove();
+            }}
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="h-14 3xl:h-16 w-14 3xl:w-16 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 flex items-center justify-center text-white font-bold text-lg shadow-md">
+              {casestudy?.title
+                ?.split(/\s+/) // split by spaces
+                .filter((w) => /^[A-Za-z]+$/.test(w)) // only alphabetical words
+                .slice(0, 2) // first 2 words
+                .map((w) => w[0])
+                .join("")
+                .toUpperCase()}
+            </div>
+          </div>
+        )}
 
         {/* Channel/Industry badge */}
         <div className="absolute top-3 left-3 inline-flex items-center gap-2 rounded-xl bg-white/80 backdrop-blur-sm px-3 py-1 text-[11px] font-medium text-slate-700 border border-slate-200">
@@ -181,21 +211,17 @@ const CaseStudyCard = ({ casestudy, isFeatured = false }) => {
         </div>
 
         {/* Logo (for featured card) */}
-        {isFeatured && casestudy.logoimage && (
+        {/* {isFeatured && casestudy.logoimage && (
           <div className="absolute bottom-3 left-3 flex items-center gap-2">
             <img
               src={casestudy.logoimage}
               className="h-10 w-10 rounded-full border border-white bg-white p-1 shadow"
-              onError={(e) => {
-                e.target.style.display = "none";
-                e.target.nextElementSibling.style.display = "inline-flex";
-              }}
             />
             <span className="logo-fallback hidden inline-flex items-center justify-center w-10 h-10 rounded-full font-bold bg-white text-slate-900 border border-white text-sm">
               {getInitials(casestudy.title)}
             </span>
           </div>
-        )}
+        )} */}
 
         {/* Hover overlay - 40% height from bottom */}
         <div className="overlay absolute inset-x-0 bottom-0 h-2/5 opacity-0 transform translate-y-full transition-all duration-[450ms] ease-out group-hover:opacity-100 group-hover:translate-y-0">
@@ -226,8 +252,12 @@ const CaseStudyCard = ({ casestudy, isFeatured = false }) => {
                   </svg>
                 </button>
                 <button
-                  className="cta cta-secondary inline-flex items-center gap-2 px-3 py-2 text-xs rounded-lg border border-white/55 bg-white/12 text-white backdrop-blur hover:bg-white/18 transition-colors"
-                  onClick={handleDownloadClick}
+                  className="no-redirect cta cta-secondary inline-flex items-center gap-2 px-3 py-2 text-xs rounded-lg border border-white/55 bg-white/12 text-white backdrop-blur hover:bg-white/18 transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    onDownloadClick?.(); // 🔥 open modal from parent
+                  }}
                 >
                   <svg
                     className="w-3 h-3"
@@ -246,23 +276,23 @@ const CaseStudyCard = ({ casestudy, isFeatured = false }) => {
 
       {/* Card content below image */}
       <div className="p-6">
-        <h3 className="text-lg font-semibold text-slate-900 group-hover:underline">
+        <h3 className="text-lg font-semibold text-slate-900 group-hover:underline overflow-hidden text-ellipsis [display:-webkit-box] [-webkit-line-clamp:1] [-webkit-box-orient:vertical]">
           {casestudy.title}
         </h3>
-        <p className="mt-2 text-sm text-slate-600 line-clamp-2">
+        <p className="mt-2 text-sm text-slate-600 overflow-hidden text-ellipsis [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]">
           {casestudy.description}
         </p>
+
         <div className="mt-3 flex flex-wrap gap-2 text-[11px]">
           {casestudy.metrics?.slice(0, 2).map((metric, index) => (
             <span
               key={index}
-              className={`inline-flex items-center rounded-full px-2.5 py-0.5 ${
-                metric.includes("+") ||
+              className={`inline-flex items-center rounded-full px-2.5 py-0.5 ${metric.includes("+") ||
                 metric.includes("‑") ||
                 metric.includes("%")
-                  ? "border border-emerald-200 text-emerald-700 bg-emerald-50"
-                  : "border border-slate-200 text-slate-700"
-              }`}
+                ? "border border-emerald-200 text-emerald-700 bg-emerald-50"
+                : "border border-slate-200 text-slate-700"
+                }`}
             >
               {metric}
             </span>
@@ -319,11 +349,10 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
         disabled={currentPage === 1}
         className={`inline-flex items-center gap-2 px-4 py-2 text-sm rounded-xl transition-colors
        border border-slate-300
-        ${
-          currentPage === 1
+        ${currentPage === 1
             ? "text-slate-400 cursor-not-allowed"
             : "text-slate-700 hover:bg-slate-100"
-        }`}
+          }`}
       >
         <svg
           className="w-4 h-4"
@@ -351,11 +380,10 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
               onClick={() => onPageChange(page)}
               className={`transition-colors border border-slate-300
               rounded-xl px-4 py-2 text-sm
-              ${
-                currentPage === page
+              ${currentPage === page
                   ? "bg-slate-900 text-white"
                   : "text-slate-900 bg-white hover:bg-slate-100"
-              }`}
+                }`}
             >
               {page}
             </button>
@@ -367,11 +395,12 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
       <button
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className={`inline-flex items-center gap-2 px-3 py-2 text-sm rounded-lg transition-colors ${
-          currentPage === totalPages
+        className={`inline-flex items-center gap-2 px-4 py-2 text-sm rounded-xl transition-colors
+       border border-slate-300
+        ${currentPage === totalPages
             ? "text-slate-400 cursor-not-allowed"
             : "text-slate-700 hover:bg-slate-100"
-        }`}
+          }`}
       >
         Next
         <svg
@@ -397,6 +426,19 @@ const Index = () => {
   const [channelFilter, setChannelFilter] = useState("");
   const [industryFilter, setIndustryFilter] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedCaseStudy, setSelectedCaseStudy] = useState(null);
+
+  const handleDownloadClick = (casestudy) => {
+    // e.stopPropagation();
+    setIsModalOpen(true);
+    setSelectedCaseStudy(casestudy);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
 
   // Get unique channels and industries
   const channels = [
@@ -546,7 +588,7 @@ const Index = () => {
                 Unified measurement linking media to retail outcomes. Building
                 an always-on loop between media, distribution and sales.
               </p>
-              <div className="mt-6 flex gap-3">
+              <div className="mt-6 flex gap-3 max-md:flex-wrap">
                 <Link
                   href="/case-studies"
                   className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm hover:bg-slate-50 transition-colors"
@@ -554,7 +596,7 @@ const Index = () => {
                   ← All case studies
                 </Link>
                 <Link
-                  href="/case-studies/amul-india"
+                  href="/case-studies/amul-india-attribution-case-study"
                   className="inline-flex items-center gap-2 rounded-full bg-emerald-600 text-white px-4 py-2 text-sm hover:bg-emerald-700 transition-colors"
                 >
                   Read Case Study
@@ -576,21 +618,9 @@ const Index = () => {
             </div>
             <div className="relative">
               <img
-                src="/assets/logos/amul.png"
-                alt="Amul logo"
-                className="h-12 md:h-16 drop-shadow-md"
-                onError={(e) => {
-                  e.target.style.display = "none";
-                }}
-              />
-              <img
-                src="/assets/products/amul-butter.png"
+                src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Amul_official_logo.svg%20(1).png"
                 alt="Amul product"
-                className="mt-6 ml-6 w-[480px] max-w-full rounded-3xl shadow-xl ring-1 ring-black/5"
-                onError={(e) => {
-                  e.target.src =
-                    "https://images.unsplash.com/photo-1580910051074-3eb694886505?w=1200&q=80&auto=format&fit=crop";
-                }}
+                className="md:mt-6 md:ml-6 lg:w-[380px] xl:w-[480px] 3xl:w-[580px] max-w-full rounded-3xl shadow-xl ring-1 ring-black/5"
               />
               <div className="pointer-events-none absolute -z-10 -top-16 -right-16 h-64 w-64 rounded-full bg-red-500/10 blur-3xl"></div>
               <div className="pointer-events-none absolute -z-10 -bottom-10 -left-24 h-72 w-72 rounded-full bg-amber-400/10 blur-3xl"></div>
@@ -636,11 +666,10 @@ const Index = () => {
                           channelFilter === channel ? "" : channel
                         )
                       }
-                      className={`rounded-full border px-3 py-1.5 text-sm whitespace-nowrap transition-colors ${
-                        channelFilter === channel
-                          ? "border-emerald-500 bg-emerald-50 text-emerald-700"
-                          : "border-slate-300 text-slate-700 hover:border-slate-400"
-                      }`}
+                      className={`rounded-full border px-3 py-1.5 text-sm whitespace-nowrap transition-colors ${channelFilter === channel
+                        ? "border-emerald-500 bg-emerald-50 text-emerald-700"
+                        : "border-slate-300 text-slate-700 hover:border-slate-400"
+                        }`}
                     >
                       {channel.charAt(0).toUpperCase() + channel.slice(1)}
                     </button>
@@ -655,7 +684,7 @@ const Index = () => {
               <div
                 className="relative flex gap-6 whitespace-nowrap py-3 pl-4"
                 style={{
-                  animation: "ticker 60s linear infinite",
+                  animation: "ticker 20s linear infinite",
                 }}
               >
                 <span className="inline-flex items-center gap-2 text-sm text-slate-600">
@@ -784,6 +813,7 @@ const Index = () => {
                         key={casestudy.id}
                         casestudy={casestudy}
                         isFeatured={casestudy.isFeatured && index === 0}
+                        onDownloadClick={() => handleDownloadClick(casestudy)}
                       />
                     ))}
                   </div>
@@ -795,6 +825,7 @@ const Index = () => {
                         key={casestudy.id}
                         casestudy={casestudy}
                         isFeatured={false}
+                        onDownloadClick={() => handleDownloadClick(casestudy)}
                       />
                     ))}
                   </div>
@@ -859,6 +890,12 @@ const Index = () => {
             </Link>
           </div>
         </section>
+
+        <CaseStudyDownloadModal
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+          casestudy={selectedCaseStudy}
+        />
       </div>
 
       <style jsx>{`
