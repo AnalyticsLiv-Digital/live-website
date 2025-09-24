@@ -39,7 +39,7 @@ const ArtariumCaseStudy = () => {
                 />
                 <link
                     rel="canonical"
-                    href="https://analyticsliv.com/case-studies/dv360-ads-optimization-cost-per-conversion-reduction"
+                    href="https://analyticsliv.com/case-studies/artarium-seasonal-creatives"
                 />
                 <script
                     type="application/ld+json"
