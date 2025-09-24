@@ -214,40 +214,37 @@ const CaseStudyDownloadModal = ({ isOpen, onClose, casestudy, parentContext = "p
                         </div>
                     ) : (
                         <form className="space-y-4" onSubmit={handleSubmit}>
-                            <div className="relative">
+                            <div className="">
                                 <input
                                     type="text"
                                     name="fullName"
-                                    className={`block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg appearance-none focus:outline-none focus:border-${colorClass(500)} peer`}
-                                    placeholder=" "
+                                    className={`block px-2.5 py-4 w-full text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg appearance-none focus:outline-none focus:border-${colorClass(500)} peer`}
+                                    placeholder="Full Name*"
                                     value={formValues.fullName}
                                     onChange={handleChange}
                                 />
-                                <label className={`absolute text-xs text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 left-2.5 peer-focus:text-${colorClass(600)} peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0`}>Full Name*</label>
                             </div>
 
-                            <div className="relative">
+                            <div className="">
                                 <input
                                     type="email"
                                     name="email"
-                                    className={`block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg appearance-none focus:outline-none focus:border-${colorClass(500)} peer`}
-                                    placeholder=" "
+                                    className={`block px-2.5 py-4 w-full text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg appearance-none focus:outline-none focus:border-${colorClass(500)} peer`}
+                                    placeholder="Email*"
                                     value={formValues.email}
                                     onChange={handleChange}
                                 />
-                                <label className={`absolute text-xs text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 left-2.5 peer-focus:text-${colorClass(600)} peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0`}>Email*</label>
                             </div>
 
-                            <div className="relative">
+                            <div className="">
                                 <input
                                     type="text"
                                     name="company"
-                                    className={`block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg appearance-none focus:outline-none focus:border-${colorClass(500)} peer`}
-                                    placeholder=" "
+                                    className={`block px-2.5 py-4 w-full text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg appearance-none focus:outline-none focus:border-${colorClass(500)} peer`}
+                                    placeholder="Company (Optional)"
                                     value={formValues.company}
                                     onChange={handleChange}
                                 />
-                                <label className={`absolute text-xs text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 left-2.5 peer-focus:text-${colorClass(600)} peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0`}>Company (Optional)</label>
                             </div>
 
                             <button
