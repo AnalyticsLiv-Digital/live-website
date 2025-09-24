@@ -1,336 +1,1654 @@
-import React, { useEffect, useState } from 'react'
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import Head from 'next/head';
-import Link from 'next/link';
-import Casestudy from '../../components/Casestudy';
-import { useRouter } from 'next/router';
+import React, { useState, useMemo } from "react";
+import Head from "next/head";
+import Link from "next/link";
+import CaseStudyDownloadModal from "../../components/CaseStudyDownloadModal";
 
-const index = ({ casestudyDat }) => {
+// Static case studies data
+const staticCaseStudies = [
+  {//pdf
+    id: 1,
+    title: "Amul India — Attribution & Insights",
+    slug: "amul-india-attribution-case-study",
+    description: "Unified measurement linking media to retail outcomes.",
+    channel: "analytics",
+    industry: "dairy",
+    tags: ["Attribution"],
+    // coverimage:
+    //   "https://storage.googleapis.com/website-bucket-uploads/case-studies/amul-hero.jpg",
+    logoimage:
+      "https://storage.googleapis.com/website-bucket-uploads/logos/amul.png",
+    metrics: ["+320% ROAS", "Attribution"],
+    pdf: 'https://storage.googleapis.com/website-bucket-uploads/cs/1744002263636865.pdf',
+    isFeatured: true,
+  },
+  {//done
+    id: 2,
+    title: "Shoebacca Achieves 26% Higher ROAS with Performance Max",
+    slug: "shoebacca-performance-max",
+    description: "26% higher ROAS with PMax + DV360 synergy.",
+    channel: "pmax",
+    industry: "ecommerce",
+    tags: ["New Customers"],
+    // coverimage:
+    //   "https://storage.googleapis.com/website-bucket-uploads/case-studies/shoebacca-hero.jpg",
+    metrics: ["+26% ROAS", "New Customers"],
+    pdf: 'https://storage.googleapis.com/website-bucket-uploads/cs/1744002263636865.pdf',
+  },
+  {//done
+    id: 3,
+    title: "99% Accuracy in GA4 Subscription Tracking Using GTM",
+    slug: "ga4-subscription-tracking-gtm",
+    description:
+      "How Washington Examiner achieved 99% accuracy in GA4 subscription tracking with Google Tag Manager.",
+    channel: "analytics",
+    industry: "publishing",
+    tags: ["GA4", "GTM"],
+    // coverimage:
+    //   "https://storage.googleapis.com/website-bucket-uploads/case-studies/washington-examiner-hero.jpg",
+    metrics: ["99% Accuracy", "GA4", "GTM"],
+    pdf: 'https://storage.googleapis.com/website-bucket-uploads/cs/1748238278384721.pdf',
+  },
+  {//done
+    id: 4,
+    title: "Artarium — Custom Bidding (DV360)",
+    slug: "dv360-custom-bidding-artarium",
+    description:
+      "13× conversions, 95% lower CPA, and 42% higher CTR with value‑based bidding.",
+    channel: "dv360",
+    industry: "retail",
+    tags: ["Custom Bids"],
+    // coverimage:
+    //   "https://storage.googleapis.com/website-bucket-uploads/case-studies/artarium-custom-bid-hero.jpg",
+    metrics: ["13× Conversions", "‑95% CPA", "Custom Bidding"],
+    pdf: 'https://storage.googleapis.com/website-bucket-uploads/cs/1743762198760388.pdf',
+  },
+  {//done
+    id: 5,
+    title: "We Sort It Achieves 180% More Leads & 60% Lower CPL with Facebook Advantage Targeting",
+    slug: "we-sort-it-facebook-ads",
+    description:
+      "We Sort It is a New Zealand-based brand offering professional cleaning and lawn mowing services for both residential and commercial clients. With a focus on quality, reliability, and sustainability, their services include regular cleaning, deep cleaning, garden maintenance, lawn care, and more.",
+    channel: "analytics",
+    industry: "technology",
+    tags: ["Facebook Ads", "Leads", "CPL"],
+    // coverimage:
+    //   "https://storage.googleapis.com/website-bucket-uploads/case-studies/cloud-migration-hero.jpg",
+    metrics: ["Facebook Ads", "60% Lower CPL", "180% More Leads"],
+    pdf: 'https://storage.googleapis.com/website-bucket-uploads/cs/1733729399146434.pdf',
+  },
+  {//done
+    id: 6,
+    title: "FlaxitUp Cuts Stockout Risks by 35% with Automation",
+    slug: "flaxitup-stockout-automation",
+    description:
+      "How FlaxitUp reduced stockout risks by 35%, improved forecasting accuracy by 28%, and automated operations with data-driven workflows and dashboards.",
+    channel: "analytics",
+    industry: "technology",
+    tags: ["Looker Studio", "Dashboards"],
+    // coverimage:
+    //   "https://storage.googleapis.com/website-bucket-uploads/case-studies/travel-seo-hero.jpg",
+    metrics: ["Automation", "Looker Studio", "Dashboards"],
+    pdf: 'https://storage.googleapis.com/website-bucket-uploads/cs/1743678159051732.pdf',
+  },
+  {//done
+    id: 7,
+    title: "Balancing Compliance & Growth with Consent Mode v2",
+    slug: "consent-mode-v2",
+    description:
+      "13× conversions, 95% lower CPA, and 42% higher CTR with value‑based bidding.",
+    channel: "analytics",
+    industry: "technology",
+    tags: ["GA4", "GoogleAds"],
+    // coverimage:
+    //   "https://storage.googleapis.com/website-bucket-uploads/case-studies/travel-seo-hero.jpg",
+    metrics: ["13× conversions", "95% lower CPA", "42% higher CTR", "GA4", "GoogleAds"],
+    pdf: 'https://storage.googleapis.com/website-bucket-uploads/cs/1755864551345419.pdf',
+  },
+  {//pdf
+    id: 8,
+    title: "DV360 Ads Optimization: Lower CPA with Smarter Signals",
+    slug: "dv360-ads-optimization-cost-per-conversion-reduction",
+    description:
+      "We reduced acquisition costs by optimizing placements, budgets and signals while maintaining conversion volume.",
+    channel: "dv360",
+    industry: "technology",
+    tags: ["dv360", "Display & Video 360"],
+    // coverimage:
+    //   "https://storage.googleapis.com/website-bucket-uploads/case-studies/ecom-hero.jpg",
+    metrics: ["32%↓ CPA / CPV", "3.2×ROAS", "+24% CVR"],
+    pdf: 'https://storage.googleapis.com/website-bucket-uploads/cs/1744002263636865.pdf',
+  },
+  {//pdf
+    id: 9,
+    title: "Artarium — Event‑Based Creatives (DV360)",
+    slug: "artarium-seasonal-creatives",
+    description:
+      "30% more conversions and 66% better CPA with festive narratives.",
+    channel: "dv360",
+    industry: "retail",
+    tags: ["Seasonal"],
+    // coverimage:
+    //   "https://storage.googleapis.com/website-bucket-uploads/case-studies/artarium-event-hero.jpg",
+    metrics: ["+30% Conversions", "‑66% CPA", "Seasonal"],
+    pdf: 'https://storage.googleapis.com/website-bucket-uploads/cs/1744002263636865.pdf',
+  },
+];
 
-  const router = useRouter();
-  const { s } = router.query;
-
-  const [casestudyData, setCasestudyData] = useState(casestudyDat?.casestudy || []);
-  const [searchQuery, setSearchQuery] = useState(s || '');
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const itemsPerPage = 9;
-  const totalPages = Math.ceil(casestudyData?.length / itemsPerPage);
-
-  const currentData = casestudyData?.slice(
-    (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
-  );
-
-  const handlePageChange = (page) => {
-    if (page >= 1 && page <= totalPages) {
-      setCurrentPage(page);
-    }
+const CaseStudyCard = ({ casestudy, isFeatured = false, onDownloadClick }) => {
+  const getInitials = (title) => {
+    if (!title) return "CS";
+    return title
+      .split(" ")
+      .slice(0, 2)
+      .map((word) => word.charAt(0))
+      .join("")
+      .toUpperCase();
   };
 
-  const handleScrollToTop = () => {
-    const targetElement = document.getElementById("case-studies");
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: "smooth" });
-    }
+  const handleCardClick = (e) => {
+    if (e.target.closest(".no-redirect")) return; // Don't navigate if clicking CTA buttons
+    window.location.href = `/case-studies/${casestudy.slug}`;
   };
 
-  useEffect(() => {
-    const fetchFilteredData = async () => {
-      if (s) {
-        try {
-          const res = await fetch(`/api/casestudiesfilter?search=${s}`);
-          const data = await res.json();
-          setCasestudyData(data.casestudy);
-        } catch (error) {
-          console.error("Error fetching filtered case studies:", error);
-        }
-      } else {
-        setCasestudyData(casestudyDat?.casestudy || []);
-      }
-    };
-
-    fetchFilteredData();
-  }, [s, casestudyDat]);
-
-  const handleSearch = async (e) => {
+  const handleDownloadClick = (e) => {
     e.preventDefault();
-    if (searchQuery.trim()) {
-      router.push(`/case-studies?s=${searchQuery}`);
+    e.stopPropagation();
+  };
+
+  return (
+    <article
+      role="link"
+      tabIndex={0}
+      className={`card group relative overflow-hidden border border-slate-100 bg-white transition shadow-none hover:shadow-md cursor-pointer rounded-2xl ${isFeatured ? "sm:row-span-2" : ""
+        }`}
+      onClick={handleCardClick}
+      onKeyDown={(e) => {
+        if (e.key === "Enter") handleCardClick(e);
+      }}
+    >
+      <div
+        className={`thumb relative ${isFeatured ? "h-56 sm:h-full min-h-[225px]" : "aspect-[16/9]"
+          }`}
+      >
+        {/* Skeleton loader */}
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 animate-pulse"></div>
+
+        {/* Main image */}
+        {casestudy?.coverimage ? (
+          <img
+            src={casestudy.coverimage}
+            alt={casestudy.title}
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-400 group-hover:scale-105"
+            loading="lazy"
+            onLoad={(e) => {
+              const skeleton = e.target.previousElementSibling;
+              if (skeleton) skeleton.remove();
+            }}
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="h-14 3xl:h-16 w-14 3xl:w-16 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 flex items-center justify-center text-white font-bold text-lg shadow-md">
+              {casestudy?.title
+                ?.split(/\s+/) // split by spaces
+                .filter((w) => /^[A-Za-z]+$/.test(w)) // only alphabetical words
+                .slice(0, 2) // first 2 words
+                .map((w) => w[0])
+                .join("")
+                .toUpperCase()}
+            </div>
+          </div>
+        )}
+
+        {/* Channel/Industry badge */}
+        <div className="absolute top-3 left-3 inline-flex items-center gap-2 rounded-xl bg-white/80 backdrop-blur-sm px-3 py-1 text-[11px] font-medium text-slate-700 border border-slate-200">
+          {casestudy.channel.charAt(0).toUpperCase() +
+            casestudy.channel.slice(1)}
+          <span className="hidden sm:inline">
+            ·{" "}
+            {casestudy.industry.charAt(0).toUpperCase() +
+              casestudy.industry.slice(1)}
+          </span>
+        </div>
+
+        {/* Logo (for featured card) */}
+        {/* {isFeatured && casestudy.logoimage && (
+          <div className="absolute bottom-3 left-3 flex items-center gap-2">
+            <img
+              src={casestudy.logoimage}
+              className="h-10 w-10 rounded-full border border-white bg-white p-1 shadow"
+            />
+            <span className="logo-fallback hidden inline-flex items-center justify-center w-10 h-10 rounded-full font-bold bg-white text-slate-900 border border-white text-sm">
+              {getInitials(casestudy.title)}
+            </span>
+          </div>
+        )} */}
+
+        {/* Hover overlay - 40% height from bottom */}
+        <div className="overlay absolute inset-x-0 bottom-0 h-2/5 opacity-0 transform translate-y-full transition-all duration-[450ms] ease-out group-hover:opacity-100 group-hover:translate-y-0">
+          <div className="h-full bg-gradient-to-t from-[rgba(15,23,42,0.85)] to-[rgba(15,23,42,0.20)] text-white p-4 flex items-end">
+            <div className="w-full flex items-end justify-between gap-4">
+              <div className="min-w-0">
+                <div className="text-[11px] opacity-80 pt-1">Case Study</div>
+                <div className="text-sm md:text-base font-semibold truncate">
+                  {casestudy.title}
+                </div>
+                <p className="mt-0.5 text-[11px] md:text-xs opacity-90 line-clamp-1 truncate">
+                  {casestudy.description}
+                </p>
+              </div>
+              <div className="flex gap-2 shrink-0">
+                <button className="cta cta-primary inline-flex items-center gap-2 px-3 py-2 text-xs rounded-lg bg-gradient-to-r from-emerald-500 to-blue-500 text-white hover:opacity-90 transition-opacity">
+                  Read more
+                  <svg
+                    className="w-3 h-3"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L13.586 11H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </button>
+                <button
+                  className="no-redirect cta cta-secondary inline-flex items-center gap-2 px-3 py-2 text-xs rounded-lg border border-white/55 bg-white/12 text-white backdrop-blur hover:bg-white/18 transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    onDownloadClick?.(); // 🔥 open modal from parent
+                  }}
+                >
+                  <svg
+                    className="w-3 h-3"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" />
+                  </svg>
+                  Download
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Card content below image */}
+      <div className="p-6">
+        <h3 className="text-lg font-semibold text-slate-900 group-hover:underline overflow-hidden text-ellipsis [display:-webkit-box] [-webkit-line-clamp:1] [-webkit-box-orient:vertical]">
+          {casestudy.title}
+        </h3>
+        <p className="mt-2 text-sm text-slate-600 overflow-hidden text-ellipsis [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]">
+          {casestudy.description}
+        </p>
+
+        <div className="mt-3 flex flex-wrap gap-2 text-[11px]">
+          {casestudy.metrics?.slice(0, 2).map((metric, index) => (
+            <span
+              key={index}
+              className={`inline-flex items-center rounded-full px-2.5 py-0.5 ${metric.includes("+") ||
+                metric.includes("‑") ||
+                metric.includes("%")
+                ? "border border-emerald-200 text-emerald-700 bg-emerald-50"
+                : "border border-slate-200 text-slate-700"
+                }`}
+            >
+              {metric}
+            </span>
+          ))}
+        </div>
+      </div>
+    </article>
+  );
+};
+
+// Pagination Component
+const Pagination = ({ currentPage, totalPages, onPageChange }) => {
+  const getVisiblePages = () => {
+    const pages = [];
+    const maxVisiblePages = 5;
+
+    if (totalPages <= maxVisiblePages) {
+      for (let i = 1; i <= totalPages; i++) {
+        pages.push(i);
+      }
     } else {
-      router.push(`/case-studies`);
+      if (currentPage <= 3) {
+        pages.push(1, 2, 3, 4, "...", totalPages);
+      } else if (currentPage >= totalPages - 2) {
+        pages.push(
+          1,
+          "...",
+          totalPages - 3,
+          totalPages - 2,
+          totalPages - 1,
+          totalPages
+        );
+      } else {
+        pages.push(
+          1,
+          "...",
+          currentPage - 1,
+          currentPage,
+          currentPage + 1,
+          "...",
+          totalPages
+        );
+      }
+    }
+
+    return pages;
+  };
+
+  return (
+    <div className="flex items-center justify-center gap-2 py-8">
+      {/* Previous button */}
+      <button
+        onClick={() => onPageChange(currentPage - 1)}
+        disabled={currentPage === 1}
+        className={`inline-flex items-center gap-2 px-4 py-2 text-sm rounded-xl transition-colors
+       border border-slate-300
+        ${currentPage === 1
+            ? "text-slate-400 cursor-not-allowed"
+            : "text-slate-700 hover:bg-slate-100"
+          }`}
+      >
+        <svg
+          className="w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+        Previous
+      </button>
+
+      {/* Page numbers */}
+      {getVisiblePages().map((page, index) => (
+        <React.Fragment key={index}>
+          {page === "..." ? (
+            <span className="px-3 py-2 text-slate-400">...</span>
+          ) : (
+            <button
+              onClick={() => onPageChange(page)}
+              className={`transition-colors border border-slate-300
+              rounded-xl px-4 py-2 text-sm
+              ${currentPage === page
+                  ? "bg-slate-900 text-white"
+                  : "text-slate-900 bg-white hover:bg-slate-100"
+                }`}
+            >
+              {page}
+            </button>
+          )}
+        </React.Fragment>
+      ))}
+
+      {/* Next button */}
+      <button
+        onClick={() => onPageChange(currentPage + 1)}
+        disabled={currentPage === totalPages}
+        className={`inline-flex items-center gap-2 px-4 py-2 text-sm rounded-xl transition-colors
+       border border-slate-300
+        ${currentPage === totalPages
+            ? "text-slate-400 cursor-not-allowed"
+            : "text-slate-700 hover:bg-slate-100"
+          }`}
+      >
+        Next
+        <svg
+          className="w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M9 5l7 7-7 7"
+          />
+        </svg>
+      </button>
+    </div>
+  );
+};
+
+const Index = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [channelFilter, setChannelFilter] = useState("");
+  const [industryFilter, setIndustryFilter] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedCaseStudy, setSelectedCaseStudy] = useState(null);
+
+  const handleDownloadClick = (casestudy) => {
+    // e.stopPropagation();
+    setIsModalOpen(true);
+    setSelectedCaseStudy(casestudy);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+
+  // Get unique channels and industries
+  const channels = [
+    ...new Set(staticCaseStudies.map((item) => item.channel)),
+  ].sort();
+  const industries = [
+    ...new Set(staticCaseStudies.map((item) => item.industry)),
+  ].sort();
+
+  // Filter case studies based on search and filters
+  const filteredData = useMemo(() => {
+    return staticCaseStudies.filter((item) => {
+      const searchMatch =
+        !searchQuery ||
+        item.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.description?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.tags?.some((tag) =>
+          tag.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+
+      const channelMatch =
+        !channelFilter ||
+        item.channel?.toLowerCase() === channelFilter.toLowerCase();
+
+      const industryMatch =
+        !industryFilter ||
+        item.industry?.toLowerCase() === industryFilter.toLowerCase();
+
+      return searchMatch && channelMatch && industryMatch;
+    });
+  }, [searchQuery, channelFilter, industryFilter]);
+
+  // Pagination logic
+  const { paginatedData, totalPages } = useMemo(() => {
+    const itemsPerPage = currentPage === 1 ? 5 : 6; // First page: 5 items, others: 6 items
+
+    let startIndex;
+    if (currentPage === 1) {
+      startIndex = 0;
+    } else {
+      startIndex = 5 + (currentPage - 2) * 6; // 5 from first page + (page-2) * 6
+    }
+
+    const endIndex = startIndex + itemsPerPage;
+    const paginatedItems = filteredData.slice(startIndex, endIndex);
+
+    // Calculate total pages
+    const totalItems = filteredData.length;
+    const totalPagesCount =
+      totalItems <= 5 ? 1 : Math.ceil((totalItems - 5) / 6) + 1;
+
+    return {
+      paginatedData: paginatedItems,
+      totalPages: totalPagesCount,
+    };
+  }, [filteredData, currentPage]);
+
+  // Reset to page 1 when filters change
+  useMemo(() => {
+    setCurrentPage(1);
+  }, [searchQuery, channelFilter, industryFilter]);
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+  };
+
+  // handlePageChange function with scroll to case studies section
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+
+    // Scroll to the case studies grid section instead of top
+    const caseStudiesSection = document.querySelector(
+      '[data-section="case-studies-grid"]'
+    );
+    if (caseStudiesSection) {
+      caseStudiesSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start", // Aligns to the top of the section
+      });
     }
   };
 
-  function handleScrollDown() {
-    const element = document.getElementById('case-studies');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      console.error("Element to scroll into view not found.");
-    }
-  }
+  return (
+    <>
+      <Head>
+        <title>Case Studies | AnalyticsLiv</title>
+        <meta
+          name="description"
+          content="Explore real case studies where AnalyticsLiv delivered measurable growth across e-commerce, BFSI, travel, publishers, and more with data-driven marketing, CRO, PPC, and programmatic strategies."
+        />
+        <link rel="canonical" href="https://analyticsliv.com/case-studies" />
 
-  return (<>
-    <Head>
-      <title>AnalyticsLiv - Case Studies</title>
-      <meta name="description" content="Google Marketing Platform Partner - Our Case Studies" />
-      <link rel="canonical" href="https://analyticsliv.com/case-studies"></link>
-    </Head>
-    <div className='font-sans mb-16'>
-      <section>
-        <div className='bg-header-linear max-sm:py-10 max-sm:pb-12 px-[3%] xl:px-[3%] md:pt-5 flex justify-around h-full items-center md:items-end lg:items-center relative mb-14'>
-          <div className='sm:w-[70%] md:w-[50%] xl:w-[43%] 2xl:w-[45%] max-sm:text-center flex flex-col items-center sm:items-start justify-around gap-7 sm:gap-5 md:gap-7 lg:gap-12'>
-            <h1 className='text-white text-[22px] sm:text-2xl xl:text-4xl font-bold'>Real Results, Real Growth : AnalyticsLiv Case Studies</h1>
-            <div className='text-xs xl:text-sm text-white font-normal flex flex-col gap-3 lg:gap-5'>
-              <div>Explore how data-driven strategies transform businesses! see how we help brands maximize performance, improve conversions, and drive success. </div>
-              <div>Proven Success. Actionable Insights. Smarter Decisions.</div>
-            </div>
-            <a href='/contact'><button className='csbutn md:mb-2'>Contact Us Now</button></a>
-          </div>
-          <div className='max-sm:hidden w-[50%] flex justify-end 2xl:justify-center 2xl:pl-24'>
-            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/CaseStudy_Main_Page_Image_png.png' alt='Improved Conversion Rate' />
-          </div>
-          <button onClick={handleScrollDown} className='absolute bottom-[-23px] z-20'>
-            <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Vector%20(2).svg' alt='Vector'
-              className='border-[5px] border-[#97C4DF] rounded-full p-2 py-[13px] bg-[#ECF8FF]' />
-          </button>
-          <div id='case-studies' className='absolute bottom-[80px] z-20'></div>
-        </div>
+        {/* Open Graph */}
+        <meta property="og:title" content="Case Studies | AnalyticsLiv" />
+        <meta
+          property="og:description"
+          content="Real client success stories across industries — powered by AnalyticsLiv."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://analyticsliv.com/case-studies"
+        />
+        <meta
+          property="og:image"
+          content="https://analyticsliv.com/static/logo.png"
+        />
 
-        <div className='px-[6%] mb-12'>
-          <div className='flex max-md:flex-col max-md:gap-7 items-center justify-between'>
-            <h1 className='text-[#0E1947] text-3xl sm:text-2xl xl:text-4xl font-bold'>Case Studies</h1>
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Case Studies | AnalyticsLiv" />
+        <meta
+          name="twitter:description"
+          content="Explore how AnalyticsLiv drives measurable growth for brands worldwide."
+        />
+        <meta
+          name="twitter:image"
+          content="https://analyticsliv.com/static/logo.png"
+        />
 
-            <form onSubmit={handleSearch} className='flex items-center mx-auto md:w-[35%] 2xl:w-[45%]'>
-              <input
-                type="search"
-                id='search'
-                placeholder="Search"
-                className="w-full rounded-l-lg border-l border-t border-b border-[#C1E9FF] text-[#08A4F7] placeholder-[#08A4F7] py-2 pl-6 pr-3 focus:outline-[#08A4F7]"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-              <button
-                type="submit"
-                className="bg-[#08A4F7] text-white rounded-r-lg border border-[#08A4F7] -ml-1 py-[10px] md:py-[9px] px-4 focus:outline-none"
-              >
-                <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/search_icon_white.svg' alt='Search'
-                  className='w-6' />
-              </button>
-            </form>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
 
-            {/* <div class="relative inline-block md:w-60 2xl:w-72">
-              <select
-                class="block w-full bg-white text-[#08A4F7] py-2 2xl:py-2.5 px-4 pr-10 font-medium rounded-md border border-[#C1E9FF] focus:outline-[#08A4F7] cursor-pointer appearance-none relative"
-              >
-                <option
-                  value=""
-                  class="bg-white text-[#08A4F7] py-2 px-3 border-b border-[#08A4F7]"
-                >
-                  - Select a type -
-                </option>
-
-                <option
-                  value="ga"
-                  class="text-[#08A4F7] border-b border-[#08A4F7] py-2 px-3 hover:bg-[#08A4F7] hover:text-white"
-                >
-                  Google Ads
-                </option>
-                <option
-                  value="dv360"
-                  class="text-[#08A4F7] border-b border-[#08A4F7] py-2 px-3 hover:bg-[#08A4F7] hover:text-white"
-                >
-                  Display & Video 360
-                </option>
-                <option
-                  value="ga4"
-                  class="text-[#08A4F7] border-b border-[#08A4F7] py-2 px-3 hover:bg-[#08A4F7] hover:text-white"
-                >
-                  Google Analytics 4
-                </option>
-                <option
-                  value="looker-studio"
-                  class="text-[#08A4F7] border-b border-[#08A4F7] py-2 px-3 hover:bg-[#08A4F7] hover:text-white"
-                >
-                  Looker Studio
-                </option>
-                <option
-                  value="cro"
-                  class="text-[#08A4F7] border-b border-[#08A4F7] py-2 px-3 hover:bg-[#08A4F7] hover:text-white"
-                >
-                  Conversion Rate Optimization
-                </option>
-                <option
-                  value="gtm"
-                  class="text-[#08A4F7] border-b border-[#08A4F7] py-2 px-3 hover:bg-[#08A4F7] hover:text-white"
-                >
-                  Google Tag Manager
-                </option>
-                <option
-                  value="merchant-center"
-                  class="text-[#08A4F7] border-b border-[#08A4F7] py-2 px-3 hover:bg-[#08A4F7] hover:text-white"
-                >
-                  Google Merchant Center
-                </option>
-                <option
-                  value="gdpr"
-                  class="text-[#08A4F7] py-2 px-3 hover:bg-[#08A4F7] hover:text-white"
-                >
-                  GDPR
-                </option>
-              </select>
-
-              <div class="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none">
-                <svg
-                  class="w-4 h-4 text-[#08A4F7]"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
-                </svg>
+      <div
+        className="bg-white text-slate-800"
+        style={{
+          fontFamily:
+            'Inter, system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif',
+        }}
+      >
+        {/* Featured Case Study Banner */}
+        <section className="relative isolate overflow-hidden bg-gradient-to-br from-rose-50 via-white to-amber-50 rounded-3xl m-6 shadow-sm">
+          <div className="mx-auto max-w-7xl px-6 py-14 md:py-20 grid md:grid-cols-2 gap-10 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white px-3 py-1 text-[11px] font-medium text-emerald-700">
+                Case Study · Dairy · Analytics
               </div>
-            </div> */}
-
+              <h1 className="mt-3 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+                Amul India — Attribution & Insights
+              </h1>
+              <p className="mt-3 text-slate-600 md:text-lg max-w-xl">
+                Unified measurement linking media to retail outcomes. Building
+                an always-on loop between media, distribution and sales.
+              </p>
+              <div className="mt-6 flex gap-3 max-md:flex-wrap">
+                <Link
+                  href="/case-studies"
+                  className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm hover:bg-slate-50 transition-colors"
+                >
+                  ← All case studies
+                </Link>
+                <Link
+                  href="/case-studies/amul-india-attribution-case-study"
+                  className="inline-flex items-center gap-2 rounded-full bg-emerald-600 text-white px-4 py-2 text-sm hover:bg-emerald-700 transition-colors"
+                >
+                  Read Case Study
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+            <div className="relative">
+              <img
+                src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Amul_official_logo.svg%20(1).png"
+                alt="Amul product"
+                className="md:mt-6 md:ml-6 lg:w-[380px] xl:w-[480px] 3xl:w-[580px] max-w-full rounded-3xl shadow-xl ring-1 ring-black/5"
+              />
+              <div className="pointer-events-none absolute -z-10 -top-16 -right-16 h-64 w-64 rounded-full bg-red-500/10 blur-3xl"></div>
+              <div className="pointer-events-none absolute -z-10 -bottom-10 -left-24 h-72 w-72 rounded-full bg-amber-400/10 blur-3xl"></div>
+            </div>
           </div>
-        </div>
+        </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center px-[10%] lg:px-[5%] gap-14">
+        {/* HERO SECTION */}
+        <section className="border-t border-slate-100 bg-gradient-to-b from-white to-slate-50">
+          <div className="mx-auto max-w-7xl px-6 py-14 md:py-16">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+              <div>
+                <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white px-4 py-1 text-xs font-medium tracking-wide text-emerald-700">
+                  Case Studies
+                </div>
+                <h2 className="mt-3 text-3xl md:text-5xl font-extrabold leading-tight tracking-tight">
+                  <span
+                    className="bg-gradient-to-r from-blue-500 via-emerald-500 to-purple-600 bg-[length:200%_100%] bg-clip-text text-transparent"
+                    style={{
+                      animation: "shine 12s ease-in-out infinite",
+                    }}
+                  >
+                    Delivering measurable outcomes
+                  </span>
+                  <span className="block mt-2 text-slate-700 text-xl md:text-2xl">
+                    Every single day
+                  </span>
+                </h2>
+                <p className="mt-4 max-w-2xl text-slate-600">
+                  Browse real results by channel and industry. Click a card to
+                  dive deeper, or download a PDF after a quick lead form.
+                </p>
+              </div>
 
-          {currentData?.length > 0 ? (
-            currentData?.map((casest, key) => <Casestudy key={key} casestudy={casest} />)
-          ) : (
-            <p className="text-center col-span-full text-gray-500">No case studies found.</p>
-          )}
-        </div>
+              {/* Quick filter chips */}
+              <div className="mt-2 w-full md:w-auto">
+                <div className="flex gap-2 overflow-x-auto no-scrollbar">
+                  {channels.slice(0, 4).map((channel) => (
+                    <button
+                      key={channel}
+                      onClick={() =>
+                        setChannelFilter(
+                          channelFilter === channel ? "" : channel
+                        )
+                      }
+                      className={`rounded-full border px-3 py-1.5 text-sm whitespace-nowrap transition-colors ${channelFilter === channel
+                        ? "border-emerald-500 bg-emerald-50 text-emerald-700"
+                        : "border-slate-300 text-slate-700 hover:border-slate-400"
+                        }`}
+                    >
+                      {channel.charAt(0).toUpperCase() + channel.slice(1)}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
 
-        <div className="flex justify-center items-center mt-12 space-x-4">
-          <button
-            className={`px-4 py-3 rounded-md ${currentPage === 1 ? "bg-gray-300 cursor-not-allowed" : "bg-[#08A4F7] text-white"
-              }`}
-            disabled={currentPage === 1}
-            onClick={() => {
-              handlePageChange(currentPage - 1);
-              handleScrollToTop();
-            }}
-          >
-            {currentPage === 1 ? <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Stroke%201.svg' alt='arrow left' className='' />
-              : <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20right%20white.svg' alt='arrow left' className='' />}
-          </button>
+            {/* Outcomes ticker */}
+            <div className="relative mt-8 overflow-hidden rounded-2xl border border-slate-100 bg-white">
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-50/50 via-white to-sky-50/50"></div>
+              <div
+                className="relative flex gap-6 whitespace-nowrap py-3 pl-4"
+                style={{
+                  animation: "ticker 20s linear infinite",
+                }}
+              >
+                <span className="inline-flex items-center gap-2 text-sm text-slate-600">
+                  <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-emerald-700">
+                    +320% ROAS
+                  </span>
+                  Amul India — Attribution & Insights
+                </span>
+                <span className="inline-flex items-center gap-2 text-sm text-slate-600">
+                  <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-emerald-700">
+                    +26% ROAS
+                  </span>
+                  Shoebacca — Performance Max
+                </span>
+                <span className="inline-flex items-center gap-2 text-sm text-slate-600">
+                  <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-emerald-700">
+                    99% Accuracy
+                  </span>
+                  Washington Examiner — GTM
+                </span>
+                <span className="inline-flex items-center gap-2 text-sm text-slate-600">
+                  <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-emerald-700">
+                    13× Conversions
+                  </span>
+                  Artarium — Custom Bidding
+                </span>
+                <span className="inline-flex items-center gap-2 text-sm text-slate-600">
+                  <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-emerald-700">
+                    ‑66% CPA
+                  </span>
+                  Event‑based Creatives — DV360
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
 
-          {Array.from({ length: totalPages }, (_, index) => (
-            <button
-              key={index}
-              className={`px-4 py-2 rounded-md ${currentPage === index + 1
-                ? "bg-[#08A4F7] text-white"
-                : "bg-white text-[#08A4F7] border border-[#08A4F7]"
-                }`}
-              onClick={() => {
-                handlePageChange(index + 1);
-                handleScrollToTop();
-              }}
+        {/* FILTER BAR */}
+        <section className="py-6 border-b border-slate-200 bg-white">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="flex flex-col md:flex-row gap-4 items-center">
+              <form
+                onSubmit={handleSearch}
+                className="flex items-center w-full md:w-2/3"
+              >
+                <input
+                  type="search"
+                  placeholder="Search by client, channel, industry, or outcome…"
+                  className="w-full rounded-l-xl border border-slate-300 px-4 py-3 focus:outline-none focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
+                <button
+                  type="submit"
+                  className="bg-emerald-600 text-white rounded-r-xl border border-emerald-600 px-4 py-[15px] hover:bg-emerald-700 transition-colors"
+                >
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                    />
+                  </svg>
+                </button>
+              </form>
+
+              <div className="flex gap-3 w-full md:w-auto">
+                <select
+                  value={channelFilter}
+                  onChange={(e) => setChannelFilter(e.target.value)}
+                  className="rounded-xl border border-slate-300 px-3 py-3 w-1/2 md:w-auto focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                >
+                  <option value="">All Channels</option>
+                  {channels.map((channel) => (
+                    <option key={channel} value={channel}>
+                      {channel.charAt(0).toUpperCase() + channel.slice(1)}
+                    </option>
+                  ))}
+                </select>
+
+                <select
+                  value={industryFilter}
+                  onChange={(e) => setIndustryFilter(e.target.value)}
+                  className="rounded-xl border border-slate-300 px-3 py-3 w-1/2 md:w-auto focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                >
+                  <option value="">All Industries</option>
+                  {industries.map((industry) => (
+                    <option key={industry} value={industry}>
+                      {industry.charAt(0).toUpperCase() + industry.slice(1)}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            {/* Results count */}
+            {filteredData.length > 0 && (
+              <div className="mt-4 text-sm text-slate-600">
+                Showing {paginatedData.length} of {filteredData.length} case
+                studies
+                {currentPage > 1 && ` (Page ${currentPage} of ${totalPages})`}
+              </div>
+            )}
+          </div>
+        </section>
+
+        {/* CASE STUDIES GRID */}
+        <section
+          className="py-14 border-t border-slate-100"
+          data-section="case-studies-grid"
+        >
+          <div className="mx-auto max-w-7xl px-6">
+            {filteredData.length > 0 ? (
+              <>
+                {/* First page special layout: Amul featured + 4 regular cards */}
+                {currentPage === 1 ? (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {paginatedData.map((casestudy, index) => (
+                      <CaseStudyCard
+                        key={casestudy.id}
+                        casestudy={casestudy}
+                        isFeatured={casestudy.isFeatured && index === 0}
+                        onDownloadClick={() => handleDownloadClick(casestudy)}
+                      />
+                    ))}
+                  </div>
+                ) : (
+                  /* Other pages: Regular 2x3 grid */
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {paginatedData.map((casestudy) => (
+                      <CaseStudyCard
+                        key={casestudy.id}
+                        casestudy={casestudy}
+                        isFeatured={false}
+                        onDownloadClick={() => handleDownloadClick(casestudy)}
+                      />
+                    ))}
+                  </div>
+                )}
+
+                {/* Pagination */}
+                {totalPages > 1 && (
+                  <Pagination
+                    currentPage={currentPage}
+                    totalPages={totalPages}
+                    onPageChange={handlePageChange}
+                  />
+                )}
+              </>
+            ) : (
+              <div className="col-span-full text-center py-12">
+                <div className="mx-auto w-24 h-24 bg-slate-100 rounded-full flex items-center justify-center mb-4">
+                  <svg
+                    className="w-12 h-12 text-slate-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    />
+                  </svg>
+                </div>
+                <p className="text-slate-500 text-lg">
+                  No case studies match your filters. Try clearing them.
+                </p>
+                <button
+                  onClick={() => {
+                    setChannelFilter("");
+                    setIndustryFilter("");
+                    setSearchQuery("");
+                  }}
+                  className="mt-4 inline-flex items-center rounded-xl bg-emerald-600 text-white px-4 py-2 text-sm hover:bg-emerald-700 transition-colors"
+                >
+                  Clear all filters
+                </button>
+              </div>
+            )}
+          </div>
+        </section>
+
+        {/* CTA SECTION */}
+        <section className="bg-emerald-600 py-16 text-white text-center">
+          <div className="mx-auto max-w-3xl px-6">
+            <h2 className="text-3xl font-bold">Want results like these?</h2>
+            <p className="mt-2 text-lg text-emerald-100">
+              Let's build your next growth story together.
+            </p>
+            <Link
+              href="/contact"
+              className="mt-6 inline-flex items-center justify-center rounded-2xl bg-white px-6 py-3 text-slate-900 font-semibold shadow hover:opacity-90 transition-opacity"
             >
-              {index + 1}
-            </button>
-          ))}
+              Book a Free Strategy Call
+            </Link>
+          </div>
+        </section>
 
-          <button
-            className={`px-4 py-3 rounded-md ${currentPage === totalPages
-              ? "bg-gray-300 cursor-not-allowed"
-              : "bg-[#08A4F7] text-white"
-              }`}
-            disabled={currentPage === totalPages}
-            onClick={() => {
-              handlePageChange(currentPage + 1);
-              handleScrollToTop();
-            }}
-          >
-            {currentPage === totalPages ? <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%201.svg' alt='arrow right' className='' />
-              : <img src='https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Stroke%20left%20white.svg' alt='arrow right' className='' />}
-          </button>
-        </div>
+        <CaseStudyDownloadModal
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+          casestudy={selectedCaseStudy}
+        />
+      </div>
 
-      </section>
+      <style jsx>{`
+        @keyframes shine {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
 
-    </div></>
-  )
-}
+        @keyframes ticker {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
 
+        .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
 
-export async function getServerSideProps(context) {
-  const { s } = context.query;
-  let apiUrl = `${process.env.domain}/api/allcasestudies`;
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
 
-  if (s) {
-    apiUrl = `${process.env.domain}/api/casestudiesfilter?search=${s}`;
-  }
+        .line-clamp-1 {
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
 
-  const res = await fetch(apiUrl);
-  const casestudyDat = await res.json();
+        .line-clamp-2 {
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+      `}</style>
+    </>
+  );
+};
 
-  return { props: { casestudyDat } };
-}
+export default Index;
 
-export default index
+// import React, { useState, useMemo } from "react";
+// import Head from "next/head";
+// import Link from "next/link";
 
+// // Static case studies data
+// const staticCaseStudies = [
+//   {
+//     id: 1,
+//     title: "Amul India — Attribution & Insights",
+//     slug: "amul-india",
+//     description: "Unified measurement linking media to retail outcomes.",
+//     channel: "analytics",
+//     industry: "dairy",
+//     tags: ["Attribution"],
+//     coverimage:
+//       "https://storage.googleapis.com/website-bucket-uploads/case-studies/amul-hero.jpg",
+//     logoimage:
+//       "https://storage.googleapis.com/website-bucket-uploads/logos/amul.png",
+//     metrics: ["+320% ROAS", "Attribution"],
+//     isFeatured: true,
+//   },
+//   {
+//     id: 2,
+//     title: "Shoebacca — Performance Max",
+//     slug: "shoebacca-pmax",
+//     description: "26% higher ROAS with PMax + DV360 synergy.",
+//     channel: "pmax",
+//     industry: "ecommerce",
+//     tags: ["New Customers"],
+//     coverimage:
+//       "https://storage.googleapis.com/website-bucket-uploads/case-studies/shoebacca-hero.jpg",
+//     metrics: ["+26% ROAS", "New Customers"],
+//   },
+//   {
+//     id: 3,
+//     title: "Washington Examiner — 99% Accuracy with GTM",
+//     slug: "washington-examiner-gtm",
+//     description:
+//       "Mapped GA4 subscription data with 99% accuracy using only GTM.",
+//     channel: "analytics",
+//     industry: "publishing",
+//     tags: ["GA4", "GTM"],
+//     coverimage:
+//       "https://storage.googleapis.com/website-bucket-uploads/case-studies/washington-examiner-hero.jpg",
+//     metrics: ["99% Accuracy", "GA4", "GTM"],
+//   },
+//   {
+//     id: 4,
+//     title: "Artarium — Event‑Based Creatives (DV360)",
+//     slug: "artarium-event-creatives",
+//     description:
+//       "30% more conversions and 66% better CPA with festive narratives.",
+//     channel: "dv360",
+//     industry: "retail",
+//     tags: ["Seasonal"],
+//     coverimage:
+//       "https://storage.googleapis.com/website-bucket-uploads/case-studies/artarium-event-hero.jpg",
+//     metrics: ["+30% Conversions", "‑66% CPA", "Seasonal"],
+//   },
+//   {
+//     id: 5,
+//     title: "Artarium — Custom Bidding (DV360)",
+//     slug: "artarium-custom-bidding",
+//     description:
+//       "13× conversions, 95% lower CPA, and 42% higher CTR with value‑based bidding.",
+//     channel: "dv360",
+//     industry: "retail",
+//     tags: ["Custom Bids"],
+//     coverimage:
+//       "https://storage.googleapis.com/website-bucket-uploads/case-studies/artarium-custom-bid-hero.jpg",
+//     metrics: ["13× Conversions", "‑95% CPA", "Custom Bidding"],
+//   },
+//   {
+//     id: 6,
+//     title: "E‑commerce Optimization — CRO + Analytics",
+//     slug: "ecommerce-optimization",
+//     description:
+//       "A/B experimentation framework lifting conversion rates and AOV.",
+//     channel: "cro",
+//     industry: "ecommerce",
+//     tags: ["A/B Testing", "GA4"],
+//     coverimage:
+//       "https://storage.googleapis.com/website-bucket-uploads/case-studies/ecom-hero.jpg",
+//     metrics: ["A/B Testing", "Conversion Rate", "AOV"],
+//   },
+//   {
+//     id: 7,
+//     title: "Cloud Migration — Analytics Stack",
+//     slug: "cloud-migration",
+//     description:
+//       "From legacy to modern cloud analytics with automated pipelines.",
+//     channel: "analytics",
+//     industry: "technology",
+//     tags: ["BigQuery", "ETL"],
+//     coverimage:
+//       "https://storage.googleapis.com/website-bucket-uploads/case-studies/cloud-migration-hero.jpg",
+//     metrics: ["BigQuery", "ETL", "Automation"],
+//   },
+//   {
+//     id: 8,
+//     title: "Travel SEO — Organic Growth Strategy",
+//     slug: "travel-seo",
+//     description:
+//       "200% increase in organic traffic through technical SEO and content optimization.",
+//     channel: "seo",
+//     industry: "travel",
+//     tags: ["Technical SEO", "Content"],
+//     coverimage:
+//       "https://storage.googleapis.com/website-bucket-uploads/case-studies/travel-seo-hero.jpg",
+//     metrics: ["+200% Traffic", "Organic Growth", "Technical SEO"],
+//   },
+// ];
 
+// const CaseStudyCard = ({ casestudy, isFeatured = false }) => {
+//   const getInitials = (title) => {
+//     if (!title) return "CS";
+//     return title
+//       .split(" ")
+//       .slice(0, 2)
+//       .map((word) => word.charAt(0))
+//       .join("")
+//       .toUpperCase();
+//   };
 
+//   const handleCardClick = (e) => {
+//     if (e.target.closest(".cta")) return; // Don't navigate if clicking CTA buttons
+//     window.location.href = `/case-studies/${casestudy.slug}`;
+//   };
 
-// import React, { useState } from 'react'
-// import AOS from 'aos';
-// import 'aos/dist/aos.css';
-// import Head from 'next/head';
-// import Link from 'next/link';
-// import Casestudy from '../../components/Casestudy';
+//   const handleDownloadClick = (e) => {
+//     e.preventDefault();
+//     e.stopPropagation();
+//     // Open lead modal - for now just alert
+//     alert(`Download PDF for: ${casestudy.title}`);
+//   };
 
-// const index = ({ casestudyDat }) => {
+//   return (
+//     <article
+//       role="link"
+//       tabIndex={0}
+//       className={`card group relative overflow-hidden border border-slate-100 bg-white transition shadow-none hover:shadow-md cursor-pointer rounded-2xl ${
+//         isFeatured ? "sm:row-span-2" : ""
+//       }`}
+//       onClick={handleCardClick}
+//       onKeyDown={(e) => {
+//         if (e.key === "Enter") handleCardClick(e);
+//       }}
+//     >
+//       <div
+//         className={`thumb relative ${
+//           isFeatured ? "h-56 sm:h-full" : "aspect-[16/9]"
+//         }`}
+//       >
+//         {/* Skeleton loader */}
+//         <div className="absolute inset-0 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 animate-pulse"></div>
 
-//   const [casestudydata, setBlogsData] = useState(casestudyDat.casestudy);
-//   //console.log(casestudyDat);
-//   return (<>
-//     <Head>
-//       <title>AnalyticsLiv - Case Studies</title>
-//       <meta name="description" content="Google Marketing Platform Partner - Our Case Studies" />
-//       <link rel="canonical" href="https://analyticsliv.com/case-studies"></link>
-//     </Head>
-//     <div>
-//       <section>
-//         <div className="bg-gray-50 py-8 pb-20">
-//           <div className="text-center md:mx-auto mx-8 py-2 bg-white md:w-2/5">
-//             <h1 className="font-bold text-4xl uppercase tracking-wide">Case Study</h1>
+//         {/* Main image */}
+//         <img
+//           src={casestudy.coverimage}
+//           alt={casestudy.title}
+//           className="absolute inset-0 h-full w-full object-cover transition-transform duration-400 group-hover:scale-105"
+//           loading="lazy"
+//           onLoad={(e) => {
+//             const skeleton = e.target.previousElementSibling;
+//             if (skeleton) skeleton.remove();
+//           }}
+//           onError={(e) => {
+//             e.target.style.display = "none";
+//           }}
+//         />
+
+//         {/* Channel/Industry badge */}
+//         <div className="absolute top-3 left-3 inline-flex items-center gap-2 rounded-xl bg-white/80 backdrop-blur-sm px-3 py-1 text-[11px] font-medium text-slate-700 border border-slate-200">
+//           {casestudy.channel.charAt(0).toUpperCase() +
+//             casestudy.channel.slice(1)}
+//           <span className="hidden sm:inline">
+//             ·{" "}
+//             {casestudy.industry.charAt(0).toUpperCase() +
+//               casestudy.industry.slice(1)}
+//           </span>
+//         </div>
+
+//         {/* Logo (for featured card) */}
+//         {isFeatured && casestudy.logoimage && (
+//           <div className="absolute bottom-3 left-3 flex items-center gap-2">
+//             <img
+//               src={casestudy.logoimage}
+//               className="h-10 w-10 rounded-full border border-white bg-white p-1 shadow"
+//               onError={(e) => {
+//                 e.target.style.display = "none";
+//                 e.target.nextElementSibling.style.display = "inline-flex";
+//               }}
+//             />
+//             <span className="logo-fallback hidden inline-flex items-center justify-center w-10 h-10 rounded-full font-bold bg-white text-slate-900 border border-white text-sm">
+//               {getInitials(casestudy.title)}
+//             </span>
 //           </div>
+//         )}
 
-//           {/* <div className="space-y-6 lg:w-4/5 mx-2 md:mx-5 lg:mx-auto mt-8 "> */}
-//           <div className="space-y-6 xl:w-4/5 mx-2 md:mx-5 xl:mx-auto mt-8 ">
-
-
-
-//             {casestudydata && casestudydata.map((casest, key) => (
-//               <Casestudy key={key} casestudy={casest} />
-//             ))}
-
-
+//         {/* Hover overlay - 40% height from bottom */}
+//         <div className="overlay absolute inset-x-0 bottom-0 h-2/5 opacity-0 transform translate-y-full transition-all duration-[450ms] ease-out group-hover:opacity-100 group-hover:translate-y-0">
+//           <div className="h-full bg-gradient-to-t from-[rgba(15,23,42,0.85)] to-[rgba(15,23,42,0.20)] text-white p-4 flex items-end">
+//             <div className="w-full flex items-end justify-between gap-4">
+//               <div className="min-w-0">
+//                 <div className="text-[11px] opacity-80 pt-1">Case Study</div>
+//                 <div className="text-sm md:text-base font-semibold truncate">
+//                   {casestudy.title}
+//                 </div>
+//                 <p className="mt-0.5 text-[11px] md:text-xs opacity-90 line-clamp-1 truncate">
+//                   {casestudy.description}
+//                 </p>
+//               </div>
+//               <div className="flex gap-2 shrink-0">
+//                 <button className="cta cta-primary inline-flex items-center gap-2 px-3 py-2 text-xs rounded-lg bg-gradient-to-r from-emerald-500 to-blue-500 text-white hover:opacity-90 transition-opacity">
+//                   Read more
+//                   <svg
+//                     className="w-3 h-3"
+//                     fill="currentColor"
+//                     viewBox="0 0 20 20"
+//                   >
+//                     <path
+//                       fillRule="evenodd"
+//                       d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L13.586 11H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z"
+//                       clipRule="evenodd"
+//                     />
+//                   </svg>
+//                 </button>
+//                 <button
+//                   className="cta cta-secondary inline-flex items-center gap-2 px-3 py-2 text-xs rounded-lg border border-white/55 bg-white/12 text-white backdrop-blur hover:bg-white/18 transition-colors"
+//                   onClick={handleDownloadClick}
+//                 >
+//                   <svg
+//                     className="w-3 h-3"
+//                     fill="currentColor"
+//                     viewBox="0 0 20 20"
+//                   >
+//                     <path d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" />
+//                   </svg>
+//                   Download
+//                 </button>
+//               </div>
+//             </div>
 //           </div>
 //         </div>
-//       </section>
+//       </div>
 
-//     </div></>
-//   )
-// }
+//       {/* Card content below image */}
+//       <div className="p-6">
+//         <h3 className="text-lg font-semibold text-slate-900 group-hover:underline">
+//           {casestudy.title}
+//         </h3>
+//         <p className="mt-2 text-sm text-slate-600 line-clamp-2">
+//           {casestudy.description}
+//         </p>
+//         <div className="mt-3 flex flex-wrap gap-2 text-[11px]">
+//           {casestudy.metrics?.slice(0, 2).map((metric, index) => (
+//             <span
+//               key={index}
+//               className={`inline-flex items-center rounded-full px-2.5 py-0.5 ${
+//                 metric.includes("+") ||
+//                 metric.includes("‑") ||
+//                 metric.includes("%")
+//                   ? "border border-emerald-200 text-emerald-700 bg-emerald-50"
+//                   : "border border-slate-200 text-slate-700"
+//               }`}
+//             >
+//               {metric}
+//             </span>
+//           ))}
+//         </div>
+//       </div>
+//     </article>
+//   );
+// };
 
-// export async function getServerSideProps(context) {
-//   // Fetch data from external API
+// const Index = () => {
+//   const [searchQuery, setSearchQuery] = useState("");
+//   const [channelFilter, setChannelFilter] = useState("");
+//   const [industryFilter, setIndustryFilter] = useState("");
 
-//   const res = await fetch(`${process.env.domain}/api/allcasestudies`)
-//   const casestudyDat = await res.json()
-//   console.log(casestudyDat);
-//   // Pass data to the page via props
-//   return { props: { casestudyDat } }
-// }
+//   // Get unique channels and industries
+//   const channels = [
+//     ...new Set(staticCaseStudies.map((item) => item.channel)),
+//   ].sort();
+//   const industries = [
+//     ...new Set(staticCaseStudies.map((item) => item.industry)),
+//   ].sort();
 
+//   // Filter case studies based on search and filters
+//   const filteredData = useMemo(() => {
+//     return staticCaseStudies.filter((item) => {
+//       const searchMatch =
+//         !searchQuery ||
+//         item.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+//         item.description?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+//         item.tags?.some((tag) =>
+//           tag.toLowerCase().includes(searchQuery.toLowerCase())
+//         );
 
-// export default index
+//       const channelMatch =
+//         !channelFilter ||
+//         item.channel?.toLowerCase() === channelFilter.toLowerCase();
+
+//       const industryMatch =
+//         !industryFilter ||
+//         item.industry?.toLowerCase() === industryFilter.toLowerCase();
+
+//       return searchMatch && channelMatch && industryMatch;
+//     });
+//   }, [searchQuery, channelFilter, industryFilter]);
+
+//   const handleSearch = (e) => {
+//     e.preventDefault();
+//   };
+
+//   return (
+//     <>
+//       <Head>
+//         <title>Case Studies | AnalyticsLiv</title>
+//         <meta
+//           name="description"
+//           content="Explore real case studies where AnalyticsLiv delivered measurable growth across e-commerce, BFSI, travel, publishers, and more with data-driven marketing, CRO, PPC, and programmatic strategies."
+//         />
+//         <link rel="canonical" href="https://analyticsliv.com/case-studies" />
+
+//         {/* Open Graph */}
+//         <meta property="og:title" content="Case Studies | AnalyticsLiv" />
+//         <meta
+//           property="og:description"
+//           content="Real client success stories across industries — powered by AnalyticsLiv."
+//         />
+//         <meta property="og:type" content="website" />
+//         <meta
+//           property="og:url"
+//           content="https://analyticsliv.com/case-studies"
+//         />
+//         <meta
+//           property="og:image"
+//           content="https://analyticsliv.com/static/logo.png"
+//         />
+
+//         {/* Twitter */}
+//         <meta name="twitter:card" content="summary_large_image" />
+//         <meta name="twitter:title" content="Case Studies | AnalyticsLiv" />
+//         <meta
+//           name="twitter:description"
+//           content="Explore how AnalyticsLiv drives measurable growth for brands worldwide."
+//         />
+//         <meta
+//           name="twitter:image"
+//           content="https://analyticsliv.com/static/logo.png"
+//         />
+
+//         <link rel="preconnect" href="https://fonts.googleapis.com" />
+//         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+//         <link
+//           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+//           rel="stylesheet"
+//         />
+//       </Head>
+
+//       <div
+//         className="bg-white text-slate-800"
+//         style={{
+//           fontFamily:
+//             'Inter, system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif',
+//         }}
+//       >
+//         {/* Featured Case Study Banner */}
+//         <section className="relative isolate overflow-hidden bg-gradient-to-br from-rose-50 via-white to-amber-50 rounded-3xl m-6 shadow-sm">
+//           <div className="mx-auto max-w-7xl px-6 py-14 md:py-20 grid md:grid-cols-2 gap-10 items-center">
+//             <div>
+//               <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white px-3 py-1 text-[11px] font-medium text-emerald-700">
+//                 Case Study · Dairy · Analytics
+//               </div>
+//               <h1 className="mt-3 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+//                 Amul India — Attribution & Insights
+//               </h1>
+//               <p className="mt-3 text-slate-600 md:text-lg max-w-xl">
+//                 Unified measurement linking media to retail outcomes. Building
+//                 an always-on loop between media, distribution and sales.
+//               </p>
+//               <div className="mt-6 flex gap-3">
+//                 <Link
+//                   href="/case-studies"
+//                   className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm hover:bg-slate-50 transition-colors"
+//                 >
+//                   ← All case studies
+//                 </Link>
+//                 <Link
+//                   href="/case-studies/amul-india"
+//                   className="inline-flex items-center gap-2 rounded-full bg-emerald-600 text-white px-4 py-2 text-sm hover:bg-emerald-700 transition-colors"
+//                 >
+//                   Read Case Study
+//                   <svg
+//                     className="w-4 h-4"
+//                     fill="none"
+//                     stroke="currentColor"
+//                     viewBox="0 0 24 24"
+//                   >
+//                     <path
+//                       strokeLinecap="round"
+//                       strokeLinejoin="round"
+//                       strokeWidth={2}
+//                       d="M17 8l4 4m0 0l-4 4m4-4H3"
+//                     />
+//                   </svg>
+//                 </Link>
+//               </div>
+//             </div>
+//             <div className="relative">
+//               <img
+//                 src="/assets/logos/amul.png"
+//                 alt="Amul logo"
+//                 className="h-12 md:h-16 drop-shadow-md"
+//                 onError={(e) => {
+//                   e.target.style.display = "none";
+//                 }}
+//               />
+//               <img
+//                 src="/assets/products/amul-butter.png"
+//                 alt="Amul product"
+//                 className="mt-6 ml-6 w-[480px] max-w-full rounded-3xl shadow-xl ring-1 ring-black/5"
+//                 onError={(e) => {
+//                   e.target.src =
+//                     "https://images.unsplash.com/photo-1580910051074-3eb694886505?w=1200&q=80&auto=format&fit=crop";
+//                 }}
+//               />
+//               <div className="pointer-events-none absolute -z-10 -top-16 -right-16 h-64 w-64 rounded-full bg-red-500/10 blur-3xl"></div>
+//               <div className="pointer-events-none absolute -z-10 -bottom-10 -left-24 h-72 w-72 rounded-full bg-amber-400/10 blur-3xl"></div>
+//             </div>
+//           </div>
+//         </section>
+
+//         {/* HERO SECTION */}
+//         <section className="border-t border-slate-100 bg-gradient-to-b from-white to-slate-50">
+//           <div className="mx-auto max-w-7xl px-6 py-14 md:py-16">
+//             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+//               <div>
+//                 <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white px-4 py-1 text-xs font-medium tracking-wide text-emerald-700">
+//                   Case Studies
+//                 </div>
+//                 <h2 className="mt-3 text-3xl md:text-5xl font-extrabold leading-tight tracking-tight">
+//                   <span
+//                     className="bg-gradient-to-r from-blue-500 via-emerald-500 to-purple-600 bg-[length:200%_100%] bg-clip-text text-transparent"
+//                     style={{
+//                       animation: "shine 12s ease-in-out infinite",
+//                     }}
+//                   >
+//                     Delivering measurable outcomes
+//                   </span>
+//                   <span className="block mt-2 text-slate-700 text-xl md:text-2xl">
+//                     Every single day
+//                   </span>
+//                 </h2>
+//                 <p className="mt-4 max-w-2xl text-slate-600">
+//                   Browse real results by channel and industry. Click a card to
+//                   dive deeper, or download a PDF after a quick lead form.
+//                 </p>
+//               </div>
+
+//               {/* Quick filter chips */}
+//               <div className="mt-2 w-full md:w-auto">
+//                 <div className="flex gap-2 overflow-x-auto no-scrollbar">
+//                   {channels.slice(0, 4).map((channel) => (
+//                     <button
+//                       key={channel}
+//                       onClick={() =>
+//                         setChannelFilter(
+//                           channelFilter === channel ? "" : channel
+//                         )
+//                       }
+//                       className={`rounded-full border px-3 py-1.5 text-sm whitespace-nowrap transition-colors ${
+//                         channelFilter === channel
+//                           ? "border-emerald-500 bg-emerald-50 text-emerald-700"
+//                           : "border-slate-300 text-slate-700 hover:border-slate-400"
+//                       }`}
+//                     >
+//                       {channel.charAt(0).toUpperCase() + channel.slice(1)}
+//                     </button>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Outcomes ticker */}
+//             <div className="relative mt-8 overflow-hidden rounded-2xl border border-slate-100 bg-white">
+//               <div className="absolute inset-0 bg-gradient-to-r from-emerald-50/50 via-white to-sky-50/50"></div>
+//               <div
+//                 className="relative flex gap-6 whitespace-nowrap py-3 pl-4"
+//                 style={{
+//                   animation: "ticker 60s linear infinite",
+//                 }}
+//               >
+//                 <span className="inline-flex items-center gap-2 text-sm text-slate-600">
+//                   <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-emerald-700">
+//                     +320% ROAS
+//                   </span>
+//                   Amul India — Attribution & Insights
+//                 </span>
+//                 <span className="inline-flex items-center gap-2 text-sm text-slate-600">
+//                   <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-emerald-700">
+//                     +26% ROAS
+//                   </span>
+//                   Shoebacca — Performance Max
+//                 </span>
+//                 <span className="inline-flex items-center gap-2 text-sm text-slate-600">
+//                   <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-emerald-700">
+//                     99% Accuracy
+//                   </span>
+//                   Washington Examiner — GTM
+//                 </span>
+//                 <span className="inline-flex items-center gap-2 text-sm text-slate-600">
+//                   <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-emerald-700">
+//                     13× Conversions
+//                   </span>
+//                   Artarium — Custom Bidding
+//                 </span>
+//                 <span className="inline-flex items-center gap-2 text-sm text-slate-600">
+//                   <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-emerald-700">
+//                     ‑66% CPA
+//                   </span>
+//                   Event‑based Creatives — DV360
+//                 </span>
+//               </div>
+//             </div>
+//           </div>
+//         </section>
+
+//         {/* FILTER BAR */}
+//         <section className="py-6 border-b border-slate-200 bg-white">
+//           <div className="mx-auto max-w-7xl px-6">
+//             <div className="flex flex-col md:flex-row gap-4 items-center">
+//               <form
+//                 onSubmit={handleSearch}
+//                 className="flex items-center w-full md:w-2/3"
+//               >
+//                 <input
+//                   type="search"
+//                   placeholder="Search by client, channel, industry, or outcome…"
+//                   className="w-full rounded-l-xl border border-slate-300 px-4 py-3 focus:outline-none focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500"
+//                   value={searchQuery}
+//                   onChange={(e) => setSearchQuery(e.target.value)}
+//                 />
+//                 <button
+//                   type="submit"
+//                   className="bg-emerald-600 text-white rounded-r-xl border border-emerald-600 px-4 py-[15px] hover:bg-emerald-700 transition-colors"
+//                 >
+//                   <svg
+//                     className="w-5 h-5"
+//                     fill="none"
+//                     stroke="currentColor"
+//                     viewBox="0 0 24 24"
+//                   >
+//                     <path
+//                       strokeLinecap="round"
+//                       strokeLinejoin="round"
+//                       strokeWidth={2}
+//                       d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+//                     />
+//                   </svg>
+//                 </button>
+//               </form>
+
+//               <div className="flex gap-3 w-full md:w-auto">
+//                 <select
+//                   value={channelFilter}
+//                   onChange={(e) => setChannelFilter(e.target.value)}
+//                   className="rounded-xl border border-slate-300 px-3 py-3 w-1/2 md:w-auto focus:outline-none focus:ring-2 focus:ring-emerald-500"
+//                 >
+//                   <option value="">All Channels</option>
+//                   {channels.map((channel) => (
+//                     <option key={channel} value={channel}>
+//                       {channel.charAt(0).toUpperCase() + channel.slice(1)}
+//                     </option>
+//                   ))}
+//                 </select>
+
+//                 <select
+//                   value={industryFilter}
+//                   onChange={(e) => setIndustryFilter(e.target.value)}
+//                   className="rounded-xl border border-slate-300 px-3 py-3 w-1/2 md:w-auto focus:outline-none focus:ring-2 focus:ring-emerald-500"
+//                 >
+//                   <option value="">All Industries</option>
+//                   {industries.map((industry) => (
+//                     <option key={industry} value={industry}>
+//                       {industry.charAt(0).toUpperCase() + industry.slice(1)}
+//                     </option>
+//                   ))}
+//                 </select>
+//               </div>
+//             </div>
+//           </div>
+//         </section>
+
+//         {/* CASE STUDIES GRID */}
+//         <section className="py-14 border-t border-slate-100">
+//           <div className="mx-auto max-w-7xl px-6">
+//             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+//               {filteredData.length > 0 ? (
+//                 filteredData.map((casestudy, index) => (
+//                   <CaseStudyCard
+//                     key={casestudy.id}
+//                     casestudy={casestudy}
+//                     isFeatured={casestudy.isFeatured && index === 0}
+//                   />
+//                 ))
+//               ) : (
+//                 <div className="col-span-full text-center py-12">
+//                   <div className="mx-auto w-24 h-24 bg-slate-100 rounded-full flex items-center justify-center mb-4">
+//                     <svg
+//                       className="w-12 h-12 text-slate-400"
+//                       fill="none"
+//                       stroke="currentColor"
+//                       viewBox="0 0 24 24"
+//                     >
+//                       <path
+//                         strokeLinecap="round"
+//                         strokeLinejoin="round"
+//                         strokeWidth={2}
+//                         d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+//                       />
+//                     </svg>
+//                   </div>
+//                   <p className="text-slate-500 text-lg">
+//                     No case studies match your filters. Try clearing them.
+//                   </p>
+//                   <button
+//                     onClick={() => {
+//                       setChannelFilter("");
+//                       setIndustryFilter("");
+//                       setSearchQuery("");
+//                     }}
+//                     className="mt-4 inline-flex items-center rounded-xl bg-emerald-600 text-white px-4 py-2 text-sm hover:bg-emerald-700 transition-colors"
+//                   >
+//                     Clear all filters
+//                   </button>
+//                 </div>
+//               )}
+//             </div>
+//           </div>
+//         </section>
+
+//         {/* CTA SECTION */}
+//         <section className="bg-emerald-600 py-16 text-white text-center">
+//           <div className="mx-auto max-w-3xl px-6">
+//             <h2 className="text-3xl font-bold">Want results like these?</h2>
+//             <p className="mt-2 text-lg text-emerald-100">
+//               Let's build your next growth story together.
+//             </p>
+//             <Link
+//               href="/contact"
+//               className="mt-6 inline-flex items-center justify-center rounded-2xl bg-white px-6 py-3 text-slate-900 font-semibold shadow hover:opacity-90 transition-opacity"
+//             >
+//               Book a Free Strategy Call
+//             </Link>
+//           </div>
+//         </section>
+//       </div>
+
+//       <style jsx>{`
+//         @keyframes shine {
+//           0% {
+//             background-position: 0% 50%;
+//           }
+//           50% {
+//             background-position: 100% 50%;
+//           }
+//           100% {
+//             background-position: 0% 50%;
+//           }
+//         }
+
+//         @keyframes ticker {
+//           0% {
+//             transform: translateX(0);
+//           }
+//           100% {
+//             transform: translateX(-50%);
+//           }
+//         }
+
+//         .no-scrollbar {
+//           -ms-overflow-style: none;
+//           scrollbar-width: none;
+//         }
+
+//         .no-scrollbar::-webkit-scrollbar {
+//           display: none;
+//         }
+
+//         .line-clamp-2 {
+//           display: -webkit-box;
+//           -webkit-line-clamp: 2;
+//           -webkit-box-orient: vertical;
+//           overflow: hidden;
+//         }
+//       `}</style>
+//     </>
+//   );
+// };
+
+// export default Index;

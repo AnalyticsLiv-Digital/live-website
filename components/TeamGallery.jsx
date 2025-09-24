@@ -57,9 +57,6 @@ export default function TeamGallery() {
             src={photos[currentIndex]?.src || FALLBACK_IMG}
             alt={photos[currentIndex]?.alt || "Team Photo"}
             className="max-h-[80%] max-w-[90%] rounded-xl"
-            onError={(e) => {
-              (e.currentTarget).src = FALLBACK_IMG;
-            }}
           />
           <div className="mt-4 flex gap-4">
             <button
