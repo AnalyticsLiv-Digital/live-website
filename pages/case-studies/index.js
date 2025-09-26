@@ -21,6 +21,17 @@ const staticCaseStudies = [
     pdf: 'https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Amul%20India-%20Case%20Study.pdf',
     isFeatured: true,
   },
+  {
+    id: 10,
+    title: "Boosting Meta CAPI Match Rate in a Cookieless World",
+    slug: "inhubber-meta-capi-match-rate",
+    description: "How Inhubber increased Meta CAPI match rates from 43% to 87% by fixing identifiers, syncing client-server events, and enriching user data.",
+    channel: "meta",
+    industry: "technology",
+    tags: ["Meta Ads", "CAPI", "Attribution"],
+    metrics: ["+44pp Match Rate", "87% CAPI Match Rate", "8/10 Event Quality", "Better Attribution"],
+    pdf: "https://storage.googleapis.com/website-bucket-uploads/cs/Case%20Study%20_%20Boosting%20Facebook_Meta%20CAPI%20Match%20Rate%20in%20a%20Cookieless%20World.pdf",
+  },
   {//done
     id: 2,
     title: "Shoebacca Achieves 26% Higher ROAS with Performance Max",
