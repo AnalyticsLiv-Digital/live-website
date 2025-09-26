@@ -134,11 +134,12 @@ const InhubberMetaCs = () => {
                                 But with iOS 14+ restrictions and third-party cookie loss, their Meta CAPI match rates
                                 dropped sharply — hurting attribution accuracy and campaign optimization.</p>
                         </div>
-                        {/* <div className="flex justify-center">
-                            <div className="h-16 w-48 rounded-xl border border-slate-200 flex items-center justify-center text-slate-400">
-                                <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Shoebacca%20logo.png" alt="Shoebacca | AnalyticsLiv" />
+                        <div className="flex justify-center">
+                            <div className="h-24 w-64 rounded-xl border border-slate-200 flex items-center justify-center text-slate-400">
+                                <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/Inhubber_Logo.svg" alt="Inhubber | AnalyticsLiv"
+                                className="w-52" />
                             </div>
-                        </div> */}
+                        </div>
                     </div>
                 </section>
 
