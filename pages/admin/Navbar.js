@@ -7,14 +7,40 @@ const Navbar = () => {
   const router = useRouter();
   const currentPath = router.pathname;
 
-  const navLinks = [
-    { href: '/admin/dashboard', label: 'Dashboard' },
-    { href: '/admin/blogs', label: 'Blogs' },
-    { href: '/admin/casestudies', label: 'Case Studies' },
-    { href: '/admin/jobs', label: 'Jobs/Applications' },
-    { href: '/admin/leads', label: 'Leads' },
-    { href: '/admin/ytPlaylist', label: 'Yt Playlist' }
+  const allNavLinks = [
+    { href: '/admin/dashboard', label: 'Dashboard', permission: null },
+    { href: '/admin/blogs', label: 'Blogs', permission: 'blogs' },
+    { href: '/admin/casestudies', label: 'Case Studies', permission: 'casestudies' },
+    { href: '/admin/jobs', label: 'Jobs/Applications', permission: 'jobs' },
+    { href: '/admin/upwork-jobs', label: 'Upwork Jobs', permission: 'upwork-jobs' },
+    { href: '/admin/leads', label: 'Leads', permission: 'leads' },
+    { href: '/admin/ytPlaylist', label: 'Yt Playlist', permission: 'ytplaylist' },
+    { href: '/admin/users', label: 'Users', permission: 'superadmin' }
   ];
+
+  // Filter nav links based on user permissions
+  const getVisibleNavLinks = () => {
+    if (!session || !session.user) return [{ href: '/admin/dashboard', label: 'Dashboard', permission: null }];
+
+    const userPermissions = session.user.permissions || [];
+    const isSuperAdmin = session.user.isSuperAdmin || false;
+
+    return allNavLinks.filter(link => {
+      // Dashboard is always visible
+      if (!link.permission) return true;
+
+      // User Management only for super admin
+      if (link.permission === 'superadmin') return isSuperAdmin;
+
+      // Super admin sees everything
+      if (isSuperAdmin) return true;
+
+      // Regular users see only their permitted modules
+      return userPermissions.includes(link.permission);
+    });
+  };
+
+  const navLinks = getVisibleNavLinks();
 
   return (
     <nav className="bg-gray-800 text-white py-4">

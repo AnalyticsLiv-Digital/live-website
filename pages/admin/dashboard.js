@@ -18,13 +18,40 @@ const index = ({ data }) => {
       </div>
     );
   }
+
   const imgUrl = [
     "https://storage.googleapis.com/website-bucket-uploads/static/public/blogs.png",
     "/casestudy.png",
     "/job.png",
     "/leads.png",
-    "https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/youtube.svg"
+    "https://storage.googleapis.com/website-bucket-uploads/home_page/Images_and_Icons/youtube.svg",
+    "/job.png" // upwork-jobs will use same as jobs
   ];
+
+  const allDashboardCards = [
+    { href: "/admin/blogs", title: "Blogs", count: data.blog, imgUrl: imgUrl[0], permission: 'blogs' },
+    { href: "/admin/casestudies", title: "Case Studies", count: data.casestudy, imgUrl: imgUrl[1], permission: 'casestudies' },
+    { href: "/admin/jobs", title: "Jobs/Applications", count: `${data.job}/${data.jobapplications}`, imgUrl: imgUrl[2], permission: 'jobs' },
+    { href: "/admin/leads", title: "Leads", count: data.leads, imgUrl: imgUrl[3], permission: 'leads' },
+    { href: "/admin/ytPlaylist", title: "Yt Playlist", count: data.ytplaylist, imgUrl: imgUrl[4], permission: 'ytplaylist' },
+    { href: "/admin/upwork-jobs", title: "Upwork Jobs", count: 0, imgUrl: imgUrl[5], permission: 'upwork-jobs' }
+  ];
+
+  // Filter dashboard cards based on user permissions
+  const getVisibleCards = () => {
+    if (!session || !session.user) return [];
+
+    const userPermissions = session.user.permissions || [];
+    const isSuperAdmin = session.user.isSuperAdmin || false;
+
+    // Super admin sees all cards
+    if (isSuperAdmin) return allDashboardCards;
+
+    // Regular users see only their permitted modules
+    return allDashboardCards.filter(card => userPermissions.includes(card.permission));
+  };
+
+  const visibleCards = getVisibleCards();
 
   if (session) {
     return (
@@ -36,38 +63,24 @@ const index = ({ data }) => {
             <h1 className="text-center font-extrabold text-4xl pt-14 pb-10 text-gray-800">
               Dashboard
             </h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 max-md:gap-4 gap-8 max-w-4xl max-md:px-4 w-full">
-              <DashboardCard
-                href="/admin/blogs"
-                title="Blogs"
-                count={data.blog}
-                imgUrl={imgUrl[0]}
-              />
-              <DashboardCard
-                href="/admin/casestudies"
-                title="Case Studies"
-                count={data.casestudy}
-                imgUrl={imgUrl[1]}
-              />
-              <DashboardCard
-                href="/admin/jobs"
-                title="Jobs/Applications"
-                count={`${data.job}/${data.jobapplications}`}
-                imgUrl={imgUrl[2]}
-              />
-              <DashboardCard
-                href="/admin/leads"
-                title="Leads"
-                count={data.leads}
-                imgUrl={imgUrl[3]}
-              />
-              <DashboardCard
-                href="/admin/ytPlaylist"
-                title="Yt Playlist"
-                count={data.ytplaylist}
-                imgUrl={imgUrl[4]}
-              />
-            </div>
+            {visibleCards.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 max-md:gap-4 gap-8 max-w-4xl max-md:px-4 w-full">
+                {visibleCards.map((card, index) => (
+                  <DashboardCard
+                    key={index}
+                    href={card.href}
+                    title={card.title}
+                    count={card.count}
+                    imgUrl={card.imgUrl}
+                  />
+                ))}
+              </div>
+            ) : (
+              <div className="text-center text-gray-600">
+                <p className="text-lg">No modules assigned to your account.</p>
+                <p className="text-sm mt-2">Please contact the administrator for access.</p>
+              </div>
+            )}
           </div>
         </div>
       </>
