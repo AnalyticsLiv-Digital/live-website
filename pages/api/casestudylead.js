@@ -28,7 +28,7 @@ const handler = async (req, res) => {
       from: "support@analyticsliv.com",
       to: req.body.email,
       subject: 'AnalyticsLiv - Download link for the case study',
-      html: `<div id="title"><h3>Thankyou for showing interest on our Case Study!!</h3></div><div id="content">To download the Case Study on ${req.body.casestudy}, Please click <a href="${data[0].filename}">here</a>.</div>`
+      html: `<div id="title"><h3>Thankyou for showing interest on our Case Study!!</h3></div><div id="content">To download the Case Study on ${req.body.casestudy}, Please click <a href="${req.body.pdf ? req.body.pdf : data[0].filename}">here</a>.</div>`
     };
 
     var internalMailOptions = {

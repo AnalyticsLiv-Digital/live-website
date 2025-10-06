@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import TestimonialCarousel from "../../components/TestimonialCarousel";
-import post from "./[post]";
 import TeamGallery from "../../components/TeamGallery";
 
 const Careers = ({ jobsdata }) => {
@@ -182,32 +181,6 @@ const Careers = ({ jobsdata }) => {
   const getColorScheme = (index) => {
     return colorSchemes[index % colorSchemes.length];
   };
-
-  function openLightbox(src) {
-    galleryImages = Array.from(document.querySelectorAll(".team-photo")).map(
-      (img) => img.src || window.FALLBACK_IMG
-    );
-    currentIndex = Math.max(0, galleryImages.indexOf(src));
-    const lightbox = document.getElementById("lightbox");
-    const img = lightbox.querySelector("img");
-    img.src = src || window.FALLBACK_IMG;
-    lightbox.style.display = "flex";
-  }
-  function closeLightbox() {
-    const lightbox = document.getElementById("lightbox");
-    lightbox.style.display = "none";
-  }
-  function showNext() {
-    if (!galleryImages.length) return;
-    currentIndex = (currentIndex + 1) % galleryImages.length;
-    document.querySelector("#lightbox img").src = galleryImages[currentIndex];
-  }
-  function showPrev() {
-    if (!galleryImages.length) return;
-    currentIndex =
-      (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-    document.querySelector("#lightbox img").src = galleryImages[currentIndex];
-  }
 
   return (
     <>
@@ -412,22 +385,22 @@ const Careers = ({ jobsdata }) => {
                               .replace("-200", "") === "emerald"
                               ? "#a7f3d0"
                               : colorScheme.border
-                                  .replace("border-", "")
-                                  .replace("-200", "") === "sky"
-                              ? "#bae6fd"
-                              : colorScheme.border
+                                .replace("border-", "")
+                                .replace("-200", "") === "sky"
+                                ? "#bae6fd"
+                                : colorScheme.border
                                   .replace("border-", "")
                                   .replace("-200", "") === "indigo"
-                              ? "#c7d2fe"
-                              : colorScheme.border
-                                  .replace("border-", "")
-                                  .replace("-200", "") === "rose"
-                              ? "#fecdd3"
-                              : colorScheme.border
-                                  .replace("border-", "")
-                                  .replace("-200", "") === "purple"
-                              ? "#ddd6fe"
-                              : "#fed7aa",
+                                  ? "#c7d2fe"
+                                  : colorScheme.border
+                                    .replace("border-", "")
+                                    .replace("-200", "") === "rose"
+                                    ? "#fecdd3"
+                                    : colorScheme.border
+                                      .replace("border-", "")
+                                      .replace("-200", "") === "purple"
+                                      ? "#ddd6fe"
+                                      : "#fed7aa",
                         }}
                       >
                         <h3 className="text-lg font-semibold text-slate-900 mb-2">
@@ -465,22 +438,22 @@ const Careers = ({ jobsdata }) => {
                                     .replace("-200", "") === "emerald"
                                     ? "#059669"
                                     : colorScheme.border
-                                        .replace("border-", "")
-                                        .replace("-200", "") === "sky"
-                                    ? "#0284c7"
-                                    : colorScheme.border
+                                      .replace("border-", "")
+                                      .replace("-200", "") === "sky"
+                                      ? "#0284c7"
+                                      : colorScheme.border
                                         .replace("border-", "")
                                         .replace("-200", "") === "indigo"
-                                    ? "#4f46e5"
-                                    : colorScheme.border
-                                        .replace("border-", "")
-                                        .replace("-200", "") === "rose"
-                                    ? "#e11d48"
-                                    : colorScheme.border
-                                        .replace("border-", "")
-                                        .replace("-200", "") === "purple"
-                                    ? "#9333ea"
-                                    : "#d97706",
+                                        ? "#4f46e5"
+                                        : colorScheme.border
+                                          .replace("border-", "")
+                                          .replace("-200", "") === "rose"
+                                          ? "#e11d48"
+                                          : colorScheme.border
+                                            .replace("border-", "")
+                                            .replace("-200", "") === "purple"
+                                            ? "#9333ea"
+                                            : "#d97706",
                               }}
                             >
                               Apply Now
@@ -655,9 +628,8 @@ const Careers = ({ jobsdata }) => {
                       name="name"
                       value={formValues.name}
                       onChange={handleChange}
-                      className={`mt-1 w-full rounded-lg border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-800 ${
-                        errors.name ? "border-red-500" : "border-slate-300"
-                      }`}
+                      className={`mt-1 w-full rounded-lg border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-800 ${errors.name ? "border-red-500" : "border-slate-300"
+                        }`}
                     />
                     {errors.name && (
                       <p className="text-red-500 text-sm mt-1">{errors.name}</p>
@@ -674,9 +646,8 @@ const Careers = ({ jobsdata }) => {
                       name="email"
                       value={formValues.email}
                       onChange={handleChange}
-                      className={`mt-1 w-full rounded-lg border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-800 ${
-                        errors.email ? "border-red-500" : "border-slate-300"
-                      }`}
+                      className={`mt-1 w-full rounded-lg border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-800 ${errors.email ? "border-red-500" : "border-slate-300"
+                        }`}
                     />
                     {errors.email && (
                       <p className="text-red-500 text-sm mt-1">
@@ -703,9 +674,8 @@ const Careers = ({ jobsdata }) => {
                           role: selectedJob?.title || "",
                         }));
                       }}
-                      className={`mt-1 w-full rounded-lg border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-800 ${
-                        errors.role ? "border-red-500" : "border-slate-300"
-                      }`}
+                      className={`mt-1 w-full rounded-lg border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-800 ${errors.role ? "border-red-500" : "border-slate-300"
+                        }`}
                     >
                       <option value="">Select a role</option>
                       {jobsdata?.job
@@ -731,9 +701,8 @@ const Careers = ({ jobsdata }) => {
                       type="file"
                       accept=".pdf, .jpg, .jpeg, .docx"
                       onChange={uploadResume}
-                      className={`mt-1 w-full rounded-lg border px-3 py-2 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-slate-800 file:text-white hover:file:bg-slate-700 ${
-                        errors.resume ? "border-red-500" : "border-slate-300"
-                      }`}
+                      className={`mt-1 w-full rounded-lg border px-3 py-2 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-slate-800 file:text-white hover:file:bg-slate-700 ${errors.resume ? "border-red-500" : "border-slate-300"
+                        }`}
                     />
                     {errors.resume && (
                       <p className="text-red-500 text-sm mt-1">
@@ -815,13 +784,13 @@ const Careers = ({ jobsdata }) => {
           </div>
         </section>
 
-        <section class="bg-white text-slate-800">
-          <section class="py-20 bg-slate-50">
-            <div class="mx-auto max-w-7xl px-6 text-center">
-              <h2 class="text-3xl md:text-4xl font-bold text-slate-900">
+        <section className="bg-white text-slate-800">
+          <section className="py-20 bg-slate-50">
+            <div className="mx-auto max-w-7xl px-6 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
                 Life at AnalyticsLiv
               </h2>
-              <p class="mt-2 text-slate-600 max-w-3xl mx-auto">
+              <p className="mt-2 text-slate-600 max-w-3xl mx-auto">
                 We believe in curiosity, collaboration, and creativity. Here’s a
                 peek into our culture.
               </p>
@@ -830,37 +799,6 @@ const Careers = ({ jobsdata }) => {
               <TeamGallery />
             </div>
           </section>
-
-          <div
-            id="lightbox"
-            class="fixed inset-0 bg-black/90 hidden items-center justify-center z-60 flex-col"
-          >
-            <button
-              class="absolute top-5 right-5 bg-white rounded-full px-3 py-2 font-bold text-lg"
-              onclick="event.stopPropagation(); closeLightbox()"
-            >
-              ×
-            </button>
-            <img
-              src=""
-              alt="Expanded view"
-              class="max-h-[80%] max-w-[90%] rounded-xl"
-            />
-            <div class="mt-4 flex gap-4">
-              <button
-                onclick="event.stopPropagation(); showPrev()"
-                class="bg-white rounded-md px-4 py-2 font-semibold"
-              >
-                Prev
-              </button>
-              <button
-                onclick="event.stopPropagation(); showNext()"
-                class="bg-white rounded-md px-4 py-2 font-semibold"
-              >
-                Next
-              </button>
-            </div>
-          </div>
         </section>
 
         {/* FINAL CTA */}

@@ -117,8 +117,8 @@ const InteractiveDashboards = () => {
                                     <a href="#showcase" className="rounded-2xl border border-slate-300 px-6 py-3">See Case Study</a>
                                 </div>
                                 <ul className="mt-7 grid gap-3 sm:grid-cols-2">
-                                    <li className="flex items-start gap-3 card p-4"><span className="mt-1 inline-block h-2.5 w-2.5 flex-none rounded-full bg-emerald-500"></span><p className="text-slate-700">KPI taxonomy + governance with definitions your teams align on</p></li>
-                                    <li className="flex items-start gap-3 card p-4"><span className="mt-1 inline-block h-2.5 w-2.5 flex-none rounded-full bg-emerald-500"></span><p className="text-slate-700">Warehouse-first models (BigQuery/Snowflake) for speed & accuracy</p></li>
+                                    <li className="flex items-start gap-3 rounded-xl border border-gray-200 bg-white shadow-md shadow-black/5 p-4"><span className="mt-1 inline-block h-2.5 w-2.5 flex-none rounded-full bg-emerald-500"></span><p className="text-slate-700">KPI taxonomy + governance with definitions your teams align on</p></li>
+                                    <li className="flex items-start gap-3 rounded-xl border border-gray-200 bg-white shadow-md shadow-black/5 p-4"><span className="mt-1 inline-block h-2.5 w-2.5 flex-none rounded-full bg-emerald-500"></span><p className="text-slate-700">Warehouse-first models (BigQuery/Snowflake) for speed & accuracy</p></li>
                                 </ul>
                             </div>
 
@@ -160,7 +160,7 @@ const InteractiveDashboards = () => {
                             <p className="mt-2 text-slate-600 max-w-3xl mx-auto">Executive, function and analyst views; drilldowns; cross‑filters; and alerting—aligned to business KPIs.</p>
                         </div>
                         <div className="grid gap-6 md:grid-cols-2">
-                            <div className="card p-6">
+                            <div className="rounded-xl border border-gray-200 bg-white shadow-md shadow-black/5 p-6">
                                 <div className="flex items-center gap-3">
                                     <div className="h-10 w-10 rounded-xl border border-emerald-200 bg-emerald-50 flex items-center justify-center">✓</div>
                                     <h3 className="text-lg font-semibold text-slate-900">Access, Security & Governance</h3>
@@ -170,7 +170,7 @@ const InteractiveDashboards = () => {
                                     <li>RLS & RBAC</li><li>SLAs & alerts</li><li>Audit & docs</li><li>Governed models</li>
                                 </ul>
                             </div>
-                            <div className="card p-6">
+                            <div className="rounded-xl border border-gray-200 bg-white shadow-md shadow-black/5 p-6">
                                 <div className="flex items-center gap-3">
                                     <div className="h-10 w-10 rounded-xl border border-sky-200 bg-sky-50 flex items-center justify-center">⚙</div>
                                     <h3 className="text-lg font-semibold text-slate-900">Distribution & Adoption</h3>
@@ -192,7 +192,7 @@ const InteractiveDashboards = () => {
                             <p className="mt-2 text-slate-600 max-w-3xl mx-auto">Snippet from our cloud migration & analytics stack work. Click through for detail.</p>
                         </div>
                         <div className="grid gap-6 md:grid-cols-3">
-                            <div className="card p-6 hover:shadow-md transition block" aria-label="Cloud Migration case study">
+                            <div className="rounded-xl border border-gray-200 bg-white shadow-md shadow-black/5 p-6 hover:shadow-md transition block" aria-label="Cloud Migration case study">
                                 <div className="flex items-center gap-3">
                                     <div className="h-10 w-10 flex items-center justify-center rounded-2xl bg-indigo-50 text-indigo-700 border border-indigo-200">CM</div>
                                     <div>
@@ -207,7 +207,7 @@ const InteractiveDashboards = () => {
                                 </ul>
                                 <span className="mt-4 inline-flex items-center gap-2 text-indigo-700 font-semibold">Read case study →</span>
                             </div>
-                            <div className="card p-6">
+                            <div className="rounded-xl border border-gray-200 bg-white shadow-md shadow-black/5 p-6">
                                 <h4 className="font-semibold text-slate-900">Dashboard Gallery</h4>
                                 <p className="mt-1 text-sm text-slate-600">Examples for e‑commerce, B2B leadgen, and subscription products.</p>
                                 <ul className="mt-3 grid grid-cols-2 gap-2 text-xs text-slate-700">
@@ -217,7 +217,7 @@ const InteractiveDashboards = () => {
                                     <li className="rounded-lg border border-slate-200 p-2">Product & Funnel</li>
                                 </ul>
                             </div>
-                            <div className="card p-6">
+                            <div className="rounded-xl border border-gray-200 bg-white shadow-md shadow-black/5 p-6">
                                 <h4 className="font-semibold text-slate-900">Data Sources</h4>
                                 <p className="mt-1 text-sm text-slate-600">Ads, analytics, CRM, subscriptions, finance.</p>
                                 <ul className="mt-3 grid grid-cols-2 gap-2 text-xs text-slate-700">
@@ -240,7 +240,7 @@ const InteractiveDashboards = () => {
                             <h2 className="text-2xl md:text-3xl font-bold text-slate-900">Cloud Data → Dashboard, Reliably</h2>
                         </div>
                         <div className="grid md:grid-cols-2 gap-6 items-start">
-                            <div className="card p-6">
+                            <div className="rounded-xl border border-gray-200 bg-white shadow-md shadow-black/5 p-6">
                                 <h3 className="text-lg font-semibold text-slate-900">Modern data stack</h3>
                                 <ul className="mt-3 space-y-2 text-slate-700">
                                     <li>BigQuery / Snowflake / Redshift warehouses</li>
@@ -249,7 +249,7 @@ const InteractiveDashboards = () => {
                                     <li>Semantic metrics layer</li>
                                 </ul>
                             </div>
-                            <div className="card p-6">
+                            <div className="rounded-xl border border-gray-200 bg-white shadow-md shadow-black/5 p-6">
                                 <h3 className="text-lg font-semibold text-slate-900">Reference architecture</h3>
                                 <div className="mt-3 grid grid-cols-6 gap-2 text-xs">
                                     <div className="col-span-2 rounded-xl border border-slate-200 bg-slate-50 p-3">Sources<br /><span className="text-slate-500">GA4 • Ads • CRM • ERP</span></div>
@@ -296,7 +296,7 @@ const InteractiveDashboards = () => {
                         {/* Charts */}
                         <div className="grid gap-6 md:grid-cols-3">
                             {/* Revenue Chart */}
-                            <div className="card p-5 bg-white rounded-xl shadow-md">
+                            <div className="rounded-xl border border-gray-200 bg-white shadow-md shadow-black/5 p-5 bg-white rounded-xl shadow-md">
                                 <div className="flex items-center justify-between mb-2">
                                     <h3 className="font-semibold">Revenue (₹ Cr)</h3>
                                     <span className="text-xs text-slate-500">Higher is better</span>
@@ -313,7 +313,7 @@ const InteractiveDashboards = () => {
                             </div>
 
                             {/* CPA Chart */}
-                            <div className="card p-5 bg-white rounded-xl shadow-md">
+                            <div className="rounded-xl border border-gray-200 bg-white shadow-md shadow-black/5 p-5 bg-white rounded-xl shadow-md">
                                 <div className="flex items-center justify-between mb-2">
                                     <h3 className="font-semibold">CPA (₹)</h3>
                                     <span className="text-xs text-slate-500">Lower is better</span>
@@ -335,7 +335,7 @@ const InteractiveDashboards = () => {
                             </div>
 
                             {/* Conversion Rate Chart */}
-                            <div className="card p-5 bg-white rounded-xl shadow-md">
+                            <div className="rounded-xl border border-gray-200 bg-white shadow-md shadow-black/5 p-5 bg-white rounded-xl shadow-md">
                                 <div className="flex items-center justify-between mb-2">
                                     <h3 className="font-semibold">Conv. Rate (%)</h3>
                                     <span className="text-xs text-slate-500">Stability</span>
@@ -380,19 +380,19 @@ const InteractiveDashboards = () => {
                         <div class="grid gap-6 lg:grid-cols-2">
                             <ol class="relative border-l border-slate-200 pl-6 space-y-6 lg:space-y-8">
                                 <li><div class="absolute -left-2.5 h-5 w-5 rounded-full bg-slate-900 ring-4 ring-slate-100"></div>
-                                    <div class="card p-5"><div class="text-xs font-semibold tracking-wider text-slate-500">01. Discovery & KPIs</div><p class="mt-1 text-slate-800">Use‑case mapping, KPI trees & success metrics.</p></div></li>
+                                    <div class="rounded-xl border border-gray-200 bg-white shadow-md shadow-black/5 p-5"><div class="text-xs font-semibold tracking-wider text-slate-500">01. Discovery & KPIs</div><p class="mt-1 text-slate-800">Use‑case mapping, KPI trees & success metrics.</p></div></li>
                                 <li><div class="absolute -left-2.5 h-5 w-5 rounded-full bg-indigo-600 ring-4 ring-slate-100"></div>
-                                    <div class="card p-5"><div class="text-xs font-semibold tracking-wider text-slate-500">02. Data & Modeling</div><p class="mt-1 text-slate-800">Pipelines, dbt models, tests, metrics layer.</p></div></li>
+                                    <div class="rounded-xl border border-gray-200 bg-white shadow-md shadow-black/5 p-5"><div class="text-xs font-semibold tracking-wider text-slate-500">02. Data & Modeling</div><p class="mt-1 text-slate-800">Pipelines, dbt models, tests, metrics layer.</p></div></li>
                                 <li><div class="absolute -left-2.5 h-5 w-5 rounded-full bg-emerald-600 ring-4 ring-slate-100"></div>
-                                    <div class="card p-5"><div class="text-xs font-semibold tracking-wider text-slate-500">03. Design & Build</div><p class="mt-1 text-slate-800">Wireframes, RBAC/RLS, schedules & alerts.</p></div></li>
+                                    <div class="rounded-xl border border-gray-200 bg-white shadow-md shadow-black/5 p-5"><div class="text-xs font-semibold tracking-wider text-slate-500">03. Design & Build</div><p class="mt-1 text-slate-800">Wireframes, RBAC/RLS, schedules & alerts.</p></div></li>
                             </ol>
                             <ol class="relative border-l border-slate-200 pl-6 space-y-6 lg:space-y-8">
                                 <li><div class="absolute -left-2.5 h-5 w-5 rounded-full bg-amber-600 ring-4 ring-slate-100"></div>
-                                    <div class="card p-5"><div class="text-xs font-semibold tracking-wider text-slate-500">04. UAT & Training</div><p class="mt-1 text-slate-800">Stakeholder testing, docs, and go‑live runbook.</p></div></li>
+                                    <div class="rounded-xl border border-gray-200 bg-white shadow-md shadow-black/5 p-5"><div class="text-xs font-semibold tracking-wider text-slate-500">04. UAT & Training</div><p class="mt-1 text-slate-800">Stakeholder testing, docs, and go‑live runbook.</p></div></li>
                                 <li><div class="absolute -left-2.5 h-5 w-5 rounded-full bg-rose-600 ring-4 ring-slate-100"></div>
-                                    <div class="card p-5"><div class="text-xs font-semibold tracking-wider text-slate-500">05. Run & Improve</div><p class="mt-1 text-slate-800">Iterate with adoption and outcome metrics.</p></div></li>
+                                    <div class="rounded-xl border border-gray-200 bg-white shadow-md shadow-black/5 p-5"><div class="text-xs font-semibold tracking-wider text-slate-500">05. Run & Improve</div><p class="mt-1 text-slate-800">Iterate with adoption and outcome metrics.</p></div></li>
                                 <li><div class="absolute -left-2.5 h-5 w-5 rounded-full bg-teal-600 ring-4 ring-slate-100"></div>
-                                    <div class="card p-5"><div class="text-xs font-semibold tracking-wider text-slate-500">06. Support & SLAs</div><p class="mt-1 text-slate-800">Data quality checks, refresh SLAs & enhancements.</p></div></li>
+                                    <div class="rounded-xl border border-gray-200 bg-white shadow-md shadow-black/5 p-5"><div class="text-xs font-semibold tracking-wider text-slate-500">06. Support & SLAs</div><p class="mt-1 text-slate-800">Data quality checks, refresh SLAs & enhancements.</p></div></li>
                             </ol>
                         </div>
                         <div class="mt-10 text-center">
@@ -410,7 +410,7 @@ const InteractiveDashboards = () => {
                             <h2 className="text-2xl md:text-3xl font-bold text-slate-900">Flexible Models Aligned to Outcomes</h2>
                         </div>
                         <div className="grid gap-6 md:grid-cols-3">
-                            <div className="card p-6">
+                            <div className="rounded-xl border border-gray-200 bg-white shadow-md shadow-black/5 p-6">
                                 <h3 className="text-lg font-semibold text-slate-900">Pilot Dashboards</h3>
                                 <p className="mt-2 text-slate-700">2–3 core views, governed KPIs, scheduled refresh.</p>
                                 <ul className="mt-3 space-y-2 text-sm text-slate-700">
@@ -419,7 +419,7 @@ const InteractiveDashboards = () => {
                                     <li className="flex items-start gap-2"><span className="mt-2 inline-block h-2.5 w-2.5 rounded-full bg-emerald-500"></span>QA, alerts & enablement</li>
                                 </ul>
                             </div>
-                            <div className="card p-6 border-indigo-300">
+                            <div className="rounded-xl border border-gray-200 bg-white shadow-md shadow-black/5 p-6 border-indigo-300">
                                 <h3 className="text-lg font-semibold text-slate-900">Growth Program</h3>
                                 <p className="mt-2 text-slate-700">Cross‑function views, modelled data, role‑based access.</p>
                                 <ul className="mt-3 space-y-2 text-sm text-slate-700">
@@ -428,7 +428,7 @@ const InteractiveDashboards = () => {
                                     <li className="flex items-start gap-2"><span className="mt-2 inline-block h-2.5 w-2.5 rounded-full bg-emerald-500"></span>Weekly insights & roadmap</li>
                                 </ul>
                             </div>
-                            <div className="card p-6">
+                            <div className="rounded-xl border border-gray-200 bg-white shadow-md shadow-black/5 p-6">
                                 <h3 className="text-lg font-semibold text-slate-900">Enterprise</h3>
                                 <p className="mt-2 text-slate-700">Multi‑geo, RLS/SSAS, advanced governance.</p>
                                 <ul className="mt-3 space-y-2 text-sm text-slate-700">
