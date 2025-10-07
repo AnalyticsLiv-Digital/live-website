@@ -15,9 +15,9 @@ const UpworkJobs = () => {
   // Filter states
   const [filters, setFilters] = useState({
     search_term: "",
-    country: "",
-    min_budget: "",
-    max_applicants: ""
+    max_applicants: "",
+    last_n_hours: "",
+    contract_type: ""
   });
 
   // Pagination
@@ -30,6 +30,12 @@ const UpworkJobs = () => {
   const [generatedProposal, setGeneratedProposal] = useState("");
   const [proposalLoading, setProposalLoading] = useState(false);
   const [detailsModalOpen, setDetailsModalOpen] = useState(false);
+
+  // Sync jobs states
+  const [syncLoading, setSyncLoading] = useState(false);
+  const [syncStatus, setSyncStatus] = useState(null);
+  const [lastSyncTime, setLastSyncTime] = useState(null);
+  const [cooldownRemaining, setCooldownRemaining] = useState(0);
 
   // Search terms from API guide
   const searchTerms = [
@@ -50,9 +56,9 @@ const UpworkJobs = () => {
         limit: limit.toString(),
         offset: offset.toString(),
         ...(filters.search_term && { search_term: filters.search_term }),
-        ...(filters.country && { country: filters.country }),
-        ...(filters.min_budget && { min_budget: filters.min_budget }),
-        ...(filters.max_applicants && { max_applicants: filters.max_applicants })
+        ...(filters.max_applicants && { max_applicants: filters.max_applicants }),
+        ...(filters.last_n_hours && { last_n_hours: filters.last_n_hours }),
+        ...(filters.contract_type && { contract_type: filters.contract_type })
       });
 
       const response = await fetch(`https://upwork-llm-bot-135392845747.europe-west1.run.app/jobs?${params}`);
@@ -117,6 +123,100 @@ const UpworkJobs = () => {
     alert('Proposal copied to clipboard!');
   };
 
+  // Check cooldown on mount
+  useEffect(() => {
+    const storedSyncTime = localStorage.getItem('lastUpworkSyncTime');
+    if (storedSyncTime) {
+      const syncTime = parseInt(storedSyncTime);
+      const currentTime = Date.now();
+      const timeDiff = currentTime - syncTime;
+      const cooldownMs = 10 * 60 * 1000; // 10 minutes in milliseconds
+
+      if (timeDiff < cooldownMs) {
+        setLastSyncTime(syncTime);
+        setCooldownRemaining(Math.ceil((cooldownMs - timeDiff) / 1000));
+      }
+    }
+  }, []);
+
+  // Update cooldown timer
+  useEffect(() => {
+    if (cooldownRemaining > 0) {
+      const timer = setInterval(() => {
+        setCooldownRemaining(prev => {
+          if (prev <= 1) {
+            clearInterval(timer);
+            return 0;
+          }
+          return prev - 1;
+        });
+      }, 1000);
+      return () => clearInterval(timer);
+    }
+  }, [cooldownRemaining]);
+
+  // Sync jobs from Upwork
+  const syncUpworkJobs = async () => {
+    // Check cooldown
+    if (cooldownRemaining > 0) {
+      const minutes = Math.floor(cooldownRemaining / 60);
+      const seconds = cooldownRemaining % 60;
+      alert(`⏳ Please wait! You can trigger sync again in ${minutes}m ${seconds}s`);
+      return;
+    }
+
+    if (window.confirm('🔄 This will fetch latest jobs from Upwork and update the database. Continue?')) {
+      setSyncLoading(true);
+      setSyncStatus('pending');
+
+      try {
+        const response = await fetch('https://upwork-llm-bot-135392845747.europe-west1.run.app/fetch-upwork-jobs', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to sync jobs');
+        }
+
+        const data = await response.json();
+
+        // Set sync status
+        setSyncStatus('completed');
+
+        // Store sync time in localStorage
+        const currentTime = Date.now();
+        localStorage.setItem('lastUpworkSyncTime', currentTime.toString());
+        setLastSyncTime(currentTime);
+        setCooldownRemaining(10 * 60); // 10 minutes in seconds
+
+        // Show success message
+        alert(`✅ Sync completed successfully! ${data.message || 'Jobs updated in database.'}`);
+
+        // Refresh the jobs list
+        fetchJobs();
+
+      } catch (err) {
+        setSyncStatus('failed');
+        alert('❌ Failed to sync jobs. Please try again later.');
+        console.error('Error syncing jobs:', err);
+      } finally {
+        setSyncLoading(false);
+        setTimeout(() => setSyncStatus(null), 3000);
+      }
+    }
+  };
+
+  // Format cooldown time
+  const formatCooldownTime = () => {
+    if (cooldownRemaining <= 0) return '';
+    const minutes = Math.floor(cooldownRemaining / 60);
+    const seconds = cooldownRemaining % 60;
+    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+  };
+
   // Get applicant color
   const getApplicantColor = (count) => {
     if (count <= 5) return 'text-green-500';
@@ -130,6 +230,23 @@ const UpworkJobs = () => {
     if (min >= 50) return 'text-green-500';
     if (min >= 30) return 'text-blue-400';
     return 'text-gray-400';
+  };
+
+  // Format date and time
+  const formatDateTime = (dateString) => {
+    const date = new Date(dateString);
+
+    // Format: "Oct 6, 2025 at 7:35 PM"
+    const options = {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: '2-digit',
+      hour12: true
+    };
+
+    return date.toLocaleString('en-US', options);
   };
 
   // Get time ago
@@ -155,9 +272,9 @@ const UpworkJobs = () => {
   const handleClearFilters = () => {
     setFilters({
       search_term: "",
-      country: "",
-      min_budget: "",
-      max_applicants: ""
+      max_applicants: "",
+      last_n_hours: "",
+      contract_type: ""
     });
     setCurrentPage(1);
   };
@@ -167,12 +284,23 @@ const UpworkJobs = () => {
     setCurrentPage(newPage);
   };
 
+  // Track if initial fetch is done
+  const [initialFetchDone, setInitialFetchDone] = useState(false);
+
   // Load jobs on mount and when page changes
   useEffect(() => {
-    if (session) {
+    if (session && !initialFetchDone) {
+      fetchJobs();
+      setInitialFetchDone(true);
+    }
+  }, [session]);
+
+  // Load jobs when page changes (but only after initial fetch)
+  useEffect(() => {
+    if (session && initialFetchDone && currentPage > 1) {
       fetchJobs();
     }
-  }, [currentPage, session]);
+  }, [currentPage]);
 
   // Loading state
   if (status === 'loading') {
@@ -208,8 +336,44 @@ const UpworkJobs = () => {
               <img src="/logo22.jpg" alt="AnalyticsLiv Logo" className="h-12 w-12 rounded-lg" />
               <h1 className="text-4xl font-extrabold text-gray-800">Upwork Jobs</h1>
             </div>
-            <div className="text-gray-600 font-medium">
-              Total Jobs: <span className="text-[#0D8CA4] font-bold">{total}</span>
+            <div className="flex items-center gap-4">
+              {/* Sync Button */}
+              <button
+                onClick={syncUpworkJobs}
+                disabled={syncLoading || cooldownRemaining > 0}
+                className={`flex items-center gap-2 px-6 py-2.5 font-semibold rounded-md transition duration-300 ${
+                  syncLoading || cooldownRemaining > 0
+                    ? 'bg-gray-400 text-gray-700 cursor-not-allowed'
+                    : 'bg-green-600 text-white hover:bg-green-700'
+                }`}
+              >
+                {syncLoading ? (
+                  <>
+                    <div className="w-4 h-4 border-2 border-t-transparent border-white border-solid rounded-full animate-spin"></div>
+                    <span>Syncing...</span>
+                  </>
+                ) : cooldownRemaining > 0 ? (
+                  <>
+                    <span>🔒</span>
+                    <span>Wait {formatCooldownTime()}</span>
+                  </>
+                ) : syncStatus === 'completed' ? (
+                  <>
+                    <span>✅</span>
+                    <span>Sync Jobs</span>
+                  </>
+                ) : (
+                  <>
+                    <span>🔄</span>
+                    <span>Sync Jobs</span>
+                  </>
+                )}
+              </button>
+
+              {/* Total Jobs */}
+              <div className="text-gray-600 font-medium">
+                Total Jobs: <span className="text-[#0D8CA4] font-bold">{total}</span>
+              </div>
             </div>
           </div>
 
@@ -234,46 +398,54 @@ const UpworkJobs = () => {
                 </select>
               </div>
 
-              {/* Country */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Country
-                </label>
-                <input
-                  type="text"
-                  value={filters.country}
-                  onChange={(e) => setFilters({ ...filters, country: e.target.value })}
-                  placeholder="e.g., United States"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0D8CA4]"
-                />
-              </div>
-
-              {/* Min Budget */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Min Budget ($/hr)
-                </label>
-                <input
-                  type="number"
-                  value={filters.min_budget}
-                  onChange={(e) => setFilters({ ...filters, min_budget: e.target.value })}
-                  placeholder="e.g., 50"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0D8CA4]"
-                />
-              </div>
-
               {/* Max Applicants */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Max Applicants
                 </label>
-                <input
-                  type="number"
+                <select
                   value={filters.max_applicants}
                   onChange={(e) => setFilters({ ...filters, max_applicants: e.target.value })}
-                  placeholder="e.g., 10"
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0D8CA4]"
-                />
+                >
+                  <option value="">Any</option>
+                  <option value="5">Low Competition (≤5)</option>
+                  <option value="10">Medium Competition (≤10)</option>
+                  <option value="20">High Competition (≤20)</option>
+                </select>
+              </div>
+
+              {/* Last N Hours */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Time Posted
+                </label>
+                <select
+                  value={filters.last_n_hours}
+                  onChange={(e) => setFilters({ ...filters, last_n_hours: e.target.value })}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0D8CA4]"
+                >
+                  <option value="">Any Time</option>
+                  <option value="1">Last 1 Hours</option>
+                  <option value="5">Last 5 Hours</option>
+                  <option value="12">Last 12 Hours</option>
+                </select>
+              </div>
+
+              {/* Contract Type */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Contract Type
+                </label>
+                <select
+                  value={filters.contract_type}
+                  onChange={(e) => setFilters({ ...filters, contract_type: e.target.value })}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0D8CA4]"
+                >
+                  <option value="">All Types</option>
+                  <option value="HOURLY">Hourly</option>
+                  <option value="FIXED">Fixed Price</option>
+                </select>
               </div>
             </div>
 
@@ -324,7 +496,9 @@ const UpworkJobs = () => {
                     <span className="px-3 py-1 bg-purple-100 text-purple-800 text-xs font-semibold rounded-full">
                       {job.contractType}
                     </span>
-                    <span className="ml-auto text-sm text-gray-500">{getTimeAgo(job.createdDateTime)}</span>
+                    <span className="ml-auto text-sm text-gray-500">
+                      {formatDateTime(job.createdDateTime)}
+                    </span>
                   </div>
 
                   <h3 className="text-xl font-bold text-gray-800 mb-2">{job.title}</h3>
@@ -470,7 +644,7 @@ const UpworkJobs = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-700 mb-2">Posted</h3>
-                  <p className="text-gray-600">{getTimeAgo(selectedJob.createdDateTime)}</p>
+                  <p className="text-gray-600">{formatDateTime(selectedJob.createdDateTime)}</p>
                 </div>
               </div>
             </div>
