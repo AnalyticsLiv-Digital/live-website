@@ -18,7 +18,6 @@ import MetaSchemaOg from "../../components/MetaSchemaOg";
 
 const InteractiveDashboards = () => {
 
-
     const [formData, setFormData] = useState({
         fullName: "",
         email: "",
@@ -28,6 +27,143 @@ const InteractiveDashboards = () => {
     });
     const [loading, setLoading] = useState(false);
     const [responseMessage, setResponseMessage] = useState("");
+
+    const [activeTab, setActiveTab] = useState("looker");
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [formFilled, setFormFilled] = useState(false);
+    const [currentDemo, setCurrentDemo] = useState("");
+    const [selectedDashboard, setSelectedDashboard] = useState("");
+    const [formDataUnlock, setFormDataUnlock] = useState({
+        name: "",
+        email: "",
+        company: "",
+    });
+
+    const lookerSamples = [
+        {
+            img: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Screenshot_1.png",
+            title: "E-Commerce Dashboard",
+            demo: "/C-Suite-Dashboards.html",
+        },
+        {
+            img: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Screenshot_2.png",
+            title: "Marketing Dashboard",
+            demo: "/C-Suite-Dashboards.html",
+        },
+        {
+            img: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Screenshot_3.png",
+            title: "Finance Dashboard",
+            demo: "/C-Suite-Dashboards.html",
+        },
+    ];
+
+    const interactiveSamples = [
+        {
+            img: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Screenshot_8.png",
+            title: "C-Suite Dashboard (Demo)",
+            demo: "/C-Suite-Dashboards.html",
+        },
+        {
+            img: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Screenshot_9.png",
+            title: "SEO Dashboard",
+            demo: "/C-Suite-Dashboards.html",
+        },
+        {
+            img: "https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Screenshot_7.png",
+            title: "Sales Funnel Dashboard",
+            demo: "/C-Suite-Dashboards.html",
+        },
+    ];
+
+    const handleOpenDemo = (demo, title) => {
+        setCurrentDemo(demo);
+        setSelectedDashboard(title);
+        setFormFilled(false);
+        setIsModalOpen(true);
+    };
+
+    const handleSubmitUnlock = async (e) => {
+        e.preventDefault();
+        console.log("formDataUnlock-------", formDataUnlock, selectedDashboard)
+
+        if (!formDataUnlock.name || !formDataUnlock.email) {
+            return setResponseMessage("Please fill in required fields.");
+        }
+
+        setLoading(true);
+        setResponseMessage("");
+
+        try {
+            const payload = {
+                fullName: formDataUnlock.name,
+                email: formDataUnlock.email,
+                company: formDataUnlock.company || "",
+                dashboard: selectedDashboard || "",
+            };
+
+            const res = await fetch("/api/dashboardLead", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload),
+            });
+
+            if (res.ok) {
+                setResponseMessage("Thank you! Your request has been submitted successfully.");
+                setFormDataUnlock({ name: "", email: "", company: "" });
+                setFormFilled(true);
+
+                // 🔹 After successful submission — handle tab-specific behavior
+                if (activeTab === "looker") {
+                    // Redirect user to selected Looker dashboard
+                    let dashboardURL = "";
+
+                    switch (selectedDashboard) {
+                        case "E-Commerce Dashboard":
+                            dashboardURL =
+                                "https://lookerstudio.google.com/reporting/a99c2003-6ce4-4829-a189-e20467ae6b9e/page/luPqD";
+                            break;
+                        case "Marketing Dashboard":
+                            dashboardURL =
+                                "https://lookerstudio.google.com/reporting/85854b92-da63-49bd-a24d-b720049839b7/page/VSGKD";
+                            break;
+                        case "Finance Dashboard":
+                            dashboardURL =
+                                "https://lookerstudio.google.com/reporting/a99c2003-6ce4-4829-a189-e20467ae6b9e/page/luPqD";
+                            break;
+                        default:
+                            dashboardURL = "";
+                    }
+
+                    if (dashboardURL) {
+                        window.open(dashboardURL, "_blank");
+                    }
+                    setIsModalOpen(false);
+                } else {
+                    // 🔹 Interactive tab — keep the download logic
+                    const link = document.createElement("a");
+                    link.href = "/C-Suite-Dashboards.html";
+                    link.download = "C-Suite-Dashboards.html";
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                }
+            } else {
+                setResponseMessage("Something went wrong. Please try again.");
+            }
+        } catch (error) {
+            console.error(error);
+            setResponseMessage("Server error. Please try again later.");
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const handleClose = () => {
+        setIsModalOpen(false);
+    };
+
+    const currentSamples =
+        activeTab === "looker" ? lookerSamples : interactiveSamples;
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -371,6 +507,138 @@ const InteractiveDashboards = () => {
                     </div>
                 </section>
 
+                <section id="samples" className="py-16 bg-slate-50">
+                    <div className="mx-auto max-w-7xl px-6 text-center">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900">Sample Dashboards</h2>
+                        <p className="mt-2 text-slate-600">
+                            Preview our Looker Studio and Interactive dashboards. Fill out the form once to unlock the full dashboard view.
+                        </p>
+
+                        {/* Tabs */}
+                        <div className="mt-6 flex justify-center gap-3">
+                            <button
+                                onClick={() => setActiveTab('looker')}
+                                className={`tab-btn px-4 py-2 rounded-xl border transition ${activeTab === 'looker'
+                                    ? 'bg-slate-900 text-white border-slate-900'
+                                    : 'bg-white text-slate-700 hover:bg-slate-100'
+                                    }`}
+                            >
+                                Looker Studio
+                            </button>
+                            <button
+                                onClick={() => setActiveTab('interactive')}
+                                className={`tab-btn px-4 py-2 rounded-xl border transition ${activeTab === 'interactive'
+                                    ? 'bg-slate-900 text-white border-slate-900'
+                                    : 'bg-white text-slate-700 hover:bg-slate-100'
+                                    }`}
+                            >
+                                Interactive
+                            </button>
+                        </div>
+
+                        {/* Dashboard Grid */}
+                        <div className="grid gap-6 mt-8 md:grid-cols-3">
+                            {currentSamples.map((item, i) => (
+                                <div key={i} className="card p-4 bg-white rounded-xl shadow-sm">
+                                    <img
+                                        src={item.img}
+                                        alt={item.title}
+                                        className="rounded-xl w-full h-40 object-cover"
+                                        style={{ filter: "blur(3px)" }}
+                                    />
+                                    <h3 className="mt-3 font-semibold">{item.title}</h3>
+                                    <button
+                                        onClick={() => handleOpenDemo(item.demo, item.title)}
+                                        className="mt-3 bg-slate-900 text-white px-4 py-2 rounded-xl"
+                                    >
+                                        See Full Dashboard
+                                    </button>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Modal */}
+                    {isModalOpen && (
+                        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+                            <div className="bg-white rounded-2xl p-6 max-w-3xl w-full relative">
+                                <button
+                                    onClick={handleClose}
+                                    className="absolute top-3 right-3 text-slate-500 text-2xl"
+                                >
+                                    &times;
+                                </button>
+
+                                {/* Only show form for Interactive tab or before submission */}
+                                {!formFilled || activeTab === "looker" ? (
+                                    <div>
+                                        <h3 className="text-lg font-semibold mb-3">
+                                            Fill details to unlock dashboard
+                                        </h3>
+                                        <form onSubmit={handleSubmitUnlock} className="space-y-3">
+                                            <input
+                                                type="text"
+                                                name="name"
+                                                placeholder="Name"
+                                                className="w-full border p-2 rounded"
+                                                required
+                                                value={formDataUnlock.name}
+                                                onChange={(e) =>
+                                                    setFormDataUnlock({ ...formDataUnlock, name: e.target.value })
+                                                }
+                                            />
+                                            <input
+                                                type="email"
+                                                name="email"
+                                                placeholder="Email"
+                                                className="w-full border p-2 rounded"
+                                                required
+                                                value={formDataUnlock.email}
+                                                onChange={(e) =>
+                                                    setFormDataUnlock({ ...formDataUnlock, email: e.target.value })
+                                                }
+                                            />
+                                            <input
+                                                type="text"
+                                                name="company"
+                                                placeholder="Company"
+                                                className="w-full border p-2 rounded"
+                                                value={formDataUnlock.company}
+                                                onChange={(e) =>
+                                                    setFormDataUnlock({
+                                                        ...formDataUnlock,
+                                                        company: e.target.value,
+                                                    })
+                                                }
+                                            />
+                                            <button
+                                                type="submit"
+                                                className="bg-emerald-600 text-white px-4 py-2 rounded-xl w-full"
+                                            >
+                                                Unlock Dashboard
+                                            </button>
+                                        </form>
+                                    </div>
+                                ) : (
+                                    // Only show iframe if interactive and form submitted
+                                    activeTab === "interactive" && (
+                                        <div>
+                                            <h3 className="text-lg font-semibold mb-3">
+                                                {selectedDashboard}
+                                            </h3>
+                                            <iframe
+                                                src={currentDemo}
+                                                className="w-full h-96 rounded-xl mt-4"
+                                            ></iframe>
+                                        </div>
+                                    )
+                                )}
+                            </div>
+                        </div>
+                    )}
+
+                </section>
+
                 <section id="process" class="py-12">
                     <div class="max-w-7xl mx-auto px-6">
                         <div class="text-center mb-10">
@@ -419,7 +687,7 @@ const InteractiveDashboards = () => {
                                     <li className="flex items-start gap-2"><span className="mt-2 inline-block h-2.5 w-2.5 rounded-full bg-emerald-500"></span>QA, alerts & enablement</li>
                                 </ul>
                             </div>
-                            <div className="rounded-xl border border-gray-200 bg-white shadow-md shadow-black/5 p-6 border-indigo-300">
+                            <div className="rounded-xl border border-gray-200 bg-white shadow-md shadow-black/5 p-6">
                                 <h3 className="text-lg font-semibold text-slate-900">Growth Program</h3>
                                 <p className="mt-2 text-slate-700">Cross‑function views, modelled data, role‑based access.</p>
                                 <ul className="mt-3 space-y-2 text-sm text-slate-700">
