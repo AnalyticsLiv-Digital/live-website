@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Module 2 — C-Suite Dashboards (with Journey)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    .tab-btn[aria-selected="true"]{ @apply bg-gray-900 text-white; }
+  </style>
+  <script>
+    // ---- API base from query (?api=...) + health badge ----
+    window.API_BASE = (location.search.match(/api=([^&]+)/) || [])[1] ? decodeURIComponent((location.search.match(/api=([^&]+)/)||[])[1]) : "http://localhost:8000";
+    async function pingHealth(){
+      const el = document.getElementById("health");
+      try{
+        const r = await fetch(window.API_BASE + "/health", {cache: "no-store"});
+        if(!r.ok) throw new Error();
+        el.textContent = "API: Online"; el.classList.remove("opacity-60");
+      }catch(e){
+        el.textContent = "API: Offline"; el.classList.add("opacity-60");
+      }
+    }
+    window.addEventListener("load", ()=>{ pingHealth(); setInterval(pingHealth, 20000); });
+  </script>
+</head>
+<body class="bg-gray-50 text-slate-900">
+  <div class="max-w-7xl mx-auto p-6">
+    <div class="flex items-center justify-between mb-4">
+      <h1 class="text-2xl font-semibold">C-Suite Dashboards</h1>
+      <span id="health" class="text-xs px-2 py-1 rounded bg-gray-200">API: ...</span>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="flex flex-wrap items-center gap-3 mb-6">
+      <div class="text-xs text-slate-500">Range</div>
+      <select id="range" class="border rounded px-2 py-1 text-sm">
+        <option value="7d">7d</option>
+        <option value="30d" selected>30d</option>
+        <option value="90d">90d</option>
+        <option value="quarter">Quarter</option>
+      </select>
+      <div class="h-6 w-px bg-slate-200"></div>
+      <div class="text-xs text-slate-500">Attribution</div>
+      <select id="attr" class="border rounded px-2 py-1 text-sm">
+        <option>First-touch</option>
+        <option selected>Last-touch</option>
+        <option>Data-driven</option>
+        <option>Markov</option>
+      </select>
+      <div class="h-6 w-px bg-slate-200"></div>
+      <div class="text-xs text-slate-500">Segment</div>
+      <select id="segment" class="border rounded px-2 py-1 text-sm">
+        <option value="All" selected>All Users</option>
+        <option value="New">New</option>
+        <option value="Returning">Returning</option>
+        <option value="Loyal (RFM Top)">Loyal (RFM Top)</option>
+      </select>
+      <div class="ml-auto flex items-center gap-2">
+        <button id="btnExportToolbar" class="border rounded px-2 py-1 text-xs">Export CSV</button>
+      </div>
+    </div>
+
+    <!-- Forecast strip -->
+    <div class="grid md:grid-cols-4 gap-3 mb-6">
+      <div class="bg-white rounded-2xl shadow p-4"><div class="text-lg font-bold" id="k_forecast">$2.9M</div><div class="text-xs text-slate-500">Forecast (90d)</div><div class="text-[11px] text-slate-400">MMM/Trend model</div></div>
+      <div class="bg-white rounded-2xl shadow p-4"><div class="text-lg font-bold">$21</div><div class="text-xs text-slate-500">Expected CAC</div><div class="text-[11px] text-slate-400">vs $23 (L30)</div></div>
+      <div class="bg-white rounded-2xl shadow p-4"><div class="text-lg font-bold">$410</div><div class="text-xs text-slate-500">Projected LTV</div><div class="text-[11px] text-slate-400">Cohort-based</div></div>
+      <div class="bg-white rounded-2xl shadow p-4"><div class="text-lg font-bold">8.2%</div><div class="text-xs text-slate-500">Risk: Churn</div><div class="text-[11px] text-slate-400">vs 7.6% (L30)</div></div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="mb-4 flex gap-2">
+      <button class="tab-btn border rounded-full px-3 py-1 text-sm" data-tab="ecommerce" aria-selected="true">Ecommerce</button>
+      <button class="tab-btn border rounded-full px-3 py-1 text-sm" data-tab="lead">Lead Gen</button>
+      <button class="tab-btn border rounded-full px-3 py-1 text-sm" data-tab="publisher">Publisher</button>
+      <button class="tab-btn border rounded-full px-3 py-1 text-sm" data-tab="journey">Journey</button>
+    </div>
+
+    <!-- ============== Ecommerce ============== -->
+    <section id="tab_ecommerce" class="space-y-6">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-white rounded-2xl shadow p-4"><div class="text-lg font-bold">$2.4M</div><div class="text-xs text-slate-500">Total Revenue</div></div>
+        <div class="bg-white rounded-2xl shadow p-4"><div class="text-lg font-bold">$82</div><div class="text-xs text-slate-500">AOV</div></div>
+        <div class="bg-white rounded-2xl shadow p-4"><div class="text-lg font-bold">46%</div><div class="text-xs text-slate-500">Repeat Revenue %</div></div>
+        <div class="bg-white rounded-2xl shadow p-4"><div class="text-lg font-bold">3.2x</div><div class="text-xs text-slate-500">ROAS</div><div class="text-[11px] text-slate-400" id="k_e_roas_model">Model: Last-touch</div></div>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow p-4">
+        <div class="flex items-center justify-between"><div class="font-semibold">Revenue vs Spend by Channel (ROAS)</div><button id="exp_ecom_channels" class="border rounded px-2 py-1 text-xs">Export</button></div>
+        <canvas id="ecom_channels" height="280"></canvas>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow p-4">
+        <div class="flex items-center justify-between"><div class="font-semibold">Attribution Model Trend</div><button id="exp_ecom_trend" class="border rounded px-2 py-1 text-xs">Export</button></div>
+        <canvas id="ecom_trend" height="240"></canvas>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow p-4">
+        <div class="flex items-center justify-between"><div class="font-semibold">Markov Attribution (Removal Effects)</div><button id="exp_ecom_markov" class="border rounded px-2 py-1 text-xs">Export</button></div>
+        <table id="ecom_markov_tbl" class="w-full text-sm mt-2"><thead><tr class="text-left"><th class="py-1">Channel</th><th class="py-1">Contribution %</th><th class="py-1">Removal Effect %</th></tr></thead><tbody></tbody></table>
+        <div class="text-[11px] text-slate-500 mt-2">Mock Markov: computed from adjusted revenue shares.</div>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow p-4">
+        <div class="flex items-center justify-between"><div class="font-semibold">RFM Segmentation (Bubble)</div><button id="exp_rfm" class="border rounded px-2 py-1 text-xs">Export</button></div>
+        <canvas id="rfm_bubble" height="260"></canvas>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow p-4">
+        <div class="flex items-center justify-between"><div class="font-semibold">Ecommerce Funnel (Drop-off % + Lost Revenue)</div><button id="exp_ecom_funnel" class="border rounded px-2 py-1 text-xs">Export</button></div>
+        <div id="ecom_funnel_list" class="space-y-2 mt-2"></div>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow p-4">
+        <div class="flex items-center justify-between"><div class="font-semibold">Conversion Lag (days)</div><button id="exp_ecom_lag" class="border rounded px-2 py-1 text-xs">Export</button></div>
+        <canvas id="ecom_lag" height="200"></canvas>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow p-4">
+        <div class="flex items-center justify-between"><div class="font-semibold">CLTV Model Output (Cohort)</div><button id="exp_ecom_cltv" class="border rounded px-2 py-1 text-xs">Export</button></div>
+        <canvas id="ecom_cltv" height="220"></canvas>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow p-4">
+        <div class="flex items-center justify-between"><div class="font-semibold">Geo Heatmap (Revenue)</div><button id="exp_ecom_geo" class="border rounded px-2 py-1 text-xs">Export</button></div>
+        <div id="ecom_geo" class="grid grid-cols-5 gap-2 text-center text-xs mt-2"></div>
+      </div>
+    </section>
+
+    <!-- ============== Lead Gen ============== -->
+    <section id="tab_lead" class="space-y-6 hidden">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-white rounded-2xl shadow p-4"><div class="text-lg font-bold" id="k_leads">1,850</div><div class="text-xs text-slate-500">Leads Captured</div></div>
+        <div class="bg-white rounded-2xl shadow p-4"><div class="text-lg font-bold">$12.4</div><div class="text-xs text-slate-500">CPL</div></div>
+        <div class="bg-white rounded-2xl shadow p-4"><div class="text-lg font-bold">32%</div><div class="text-xs text-slate-500">Lead → SQL Rate</div></div>
+        <div class="bg-white rounded-2xl shadow p-4"><div class="text-lg font-bold">2.1x</div><div class="text-xs text-slate-500">LTV:CAC Ratio</div></div>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow p-4">
+        <div class="flex items-center justify-between"><div class="font-semibold">Leads by Channel</div><button id="exp_lead_channels" class="border rounded px-2 py-1 text-xs">Export</button></div>
+        <canvas id="lead_channels" height="260"></canvas>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow p-4">
+        <div class="flex items-center justify-between"><div class="font-semibold">Campaign ROI (CPL vs Conv% vs Revenue)</div><button id="exp_lead_roi" class="border rounded px-2 py-1 text-xs">Export</button></div>
+        <canvas id="lead_roi" height="280"></canvas>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow p-4">
+        <div class="flex items-center justify-between"><div class="font-semibold">Markov Attribution (Removal Effects)</div><button id="exp_lead_markov" class="border rounded px-2 py-1 text-xs">Export</button></div>
+        <table id="lead_markov_tbl" class="w-full text-sm mt-2"><thead><tr class="text-left"><th class="py-1">Channel</th><th class="py-1">Contribution %</th><th class="py-1">Removal Effect %</th></tr></thead><tbody></tbody></table>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow p-4">
+        <div class="flex items-center justify-between"><div class="font-semibold">Lead Funnel (Drop-off % & Lost Opportunity)</div><button id="exp_lead_funnel" class="border rounded px-2 py-1 text-xs">Export</button></div>
+        <div id="lead_funnel_list" class="space-y-2 mt-2"></div>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow p-4">
+        <div class="flex items-center justify-between"><div class="font-semibold">Lead Quality Scorecard</div><button id="exp_lead_score" class="border rounded px-2 py-1 text-xs">Export</button></div>
+        <div id="lead_score" class="grid md:grid-cols-2 gap-2 text-sm mt-2"></div>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow p-4">
+        <div class="flex items-center justify-between"><div class="font-semibold">Retention Cohorts (30/60/90d)</div><button id="exp_lead_cohorts" class="border rounded px-2 py-1 text-xs">Export</button></div>
+        <div id="lead_cohorts" class="grid grid-cols-8 gap-1 text-xs mt-2"></div>
+      </div>
+    </section>
+
+    <!-- ============== Publisher ============== -->
+    <section id="tab_publisher" class="space-y-6 hidden">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-white rounded-2xl shadow p-4"><div class="text-lg font-bold">450k</div><div class="text-xs text-slate-500">MAU</div></div>
+        <div class="bg-white rounded-2xl shadow p-4"><div class="text-lg font-bold">2.1M</div><div class="text-xs text-slate-500">Pageviews</div></div>
+        <div class="bg-white rounded-2xl shadow p-4"><div class="text-lg font-bold">3m 42s</div><div class="text-xs text-slate-500">Avg Session Duration</div></div>
+        <div class="bg-white rounded-2xl shadow p-4"><div class="text-lg font-bold">62%</div><div class="text-xs text-slate-500">Scroll Depth %</div></div>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-white rounded-2xl shadow p-4"><div class="text-lg font-bold">87k</div><div class="text-xs text-slate-500">Subscribers</div></div>
+        <div class="bg-white rounded-2xl shadow p-4"><div class="text-lg font-bold">5.4%</div><div class="text-xs text-slate-500">Subscription Conv Rate</div></div>
+        <div class="bg-white rounded-2xl shadow p-4"><div class="text-lg font-bold">$5.1</div><div class="text-xs text-slate-500">Ad Revenue (RPM)</div></div>
+        <div class="bg-white rounded-2xl shadow p-4"><div class="text-lg font-bold">8%</div><div class="text-xs text-slate-500">Churn %</div></div>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow p-4">
+        <div class="flex items-center justify-between"><div class="font-semibold">Content Leaderboard (Engagement & Revenue)</div><button id="exp_pub_leader" class="border rounded px-2 py-1 text-xs">Export</button></div>
+        <table id="pub_leader" class="w-full text-sm mt-2"><thead><tr class="text-left"><th class="py-1">Article</th><th class="py-1">Engagement</th><th class="py-1">Subs</th></tr></thead><tbody></tbody></table>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow p-4">
+        <div class="flex items-center justify-between"><div class="font-semibold">Revenue by Source (RPM × Pageviews)</div><button id="exp_pub_sources" class="border rounded px-2 py-1 text-xs">Export</button></div>
+        <canvas id="pub_sources" height="260"></canvas>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow p-4">
+        <div class="flex items-center justify-between"><div class="font-semibold">Markov Attribution (Removal Effects)</div><button id="exp_pub_markov" class="border rounded px-2 py-1 text-xs">Export</button></div>
+        <table id="pub_markov_tbl" class="w-full text-sm mt-2"><thead><tr class="text-left"><th class="py-1">Source</th><th class="py-1">Contribution %</th><th class="py-1">Removal Effect %</th></tr></thead><tbody></tbody></table>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow p-4">
+        <div class="flex items-center justify-between"><div class="font-semibold">Subscriber Funnel & Retention</div><button id="exp_pub_funnel" class="border rounded px-2 py-1 text-xs">Export</button></div>
+        <div id="pub_funnel_list" class="space-y-2 mt-2"></div>
+        <div id="pub_retain" class="grid grid-cols-8 gap-1 text-xs mt-3"></div>
+      </div>
+    </section>
+
+    <!-- ============== Journey ============== -->
+    <section id="tab_journey" class="space-y-6 hidden">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-white rounded-2xl shadow p-4"><div class="text-lg font-bold" id="j_sessions">185k</div><div class="text-xs text-slate-500">Sessions</div></div>
+        <div class="bg-white rounded-2xl shadow p-4"><div class="text-lg font-bold" id="j_users">92k</div><div class="text-xs text-slate-500">Users</div></div>
+        <div class="bg-white rounded-2xl shadow p-4"><div class="text-lg font-bold" id="j_depth">3.2</div><div class="text-xs text-slate-500">Avg Depth</div></div>
+        <div class="bg-white rounded-2xl shadow p-4"><div class="text-lg font-bold" id="j_ttp">36h</div><div class="text-xs text-slate-500">Median Time-to-Purchase</div></div>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow p-4">
+        <div class="flex items-center justify-between"><div class="font-semibold">Journey Funnel</div><button id="exp_j_funnel" class="border rounded px-2 py-1 text-xs">Export</button></div>
+        <canvas id="j_funnel" height="240"></canvas>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-6">
+        <div class="bg-white rounded-2xl shadow p-4">
+          <div class="flex items-center justify-between"><div class="font-semibold">Top Paths</div><button id="exp_j_paths" class="border rounded px-2 py-1 text-xs">Export</button></div>
+          <table id="j_paths" class="w-full text-sm mt-2"><thead><tr class="text-left"><th class="py-1">Path</th><th class="py-1">Users</th></tr></thead><tbody></tbody></table>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow p-4">
+          <div class="flex items-center justify-between"><div class="font-semibold">Touchpoint Influence</div><button id="exp_j_touch" class="border rounded px-2 py-1 text-xs">Export</button></div>
+          <canvas id="j_touch" height="220"></canvas>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow p-4">
+        <div class="flex items-center justify-between"><div class="font-semibold">Retention Cohorts (Weeks)</div><button id="exp_j_ret" class="border rounded px-2 py-1 text-xs">Export</button></div>
+        <div id="j_ret" class="grid grid-cols-8 gap-1 text-xs mt-3"></div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // ---------- Utilities ----------
+    const fmt = Intl.NumberFormat('en', {notation:'compact'});
+    function exportCSV(name, rows, cols){
+      const c = cols && cols.length ? cols : [...new Set(rows.flatMap(r=>Object.keys(r)))];
+      const esc = v => { const s = v==null? '' : String(v); return /[",\n]/.test(s) ? '"'+s.replace(/"/g,'""')+'"' : s; };
+      const csv = [c.join(','), ...rows.map(r=>c.map(k=>esc(r[k])).join(','))].join('\n');
+      const b = new Blob([csv], {type:'text/csv;charset=utf-8;'});
+      const a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = name; a.click(); URL.revokeObjectURL(a.href);
+    }
+    function markovRowsFrom(dataset, keyRev, keyName){
+      const total = dataset.reduce((a,r)=>a+(r[keyRev]||r.revenue||0),0) || 1;
+      return dataset.map(r=>{
+        const base = (r[keyRev]||r.revenue||0)/total;
+        const removal = Math.max(0, Math.min(1, base * (0.85 + Math.random()*0.4)));
+        return { channel: r[keyName]||r.channel||r.source, contribution_pct: +(base*100).toFixed(1), removal_effect_pct: +(removal*100).toFixed(1) };
+      }).sort((a,b)=>b.contribution_pct-a.contribution_pct);
+    }
+
+    // ---------- Data (base) ----------
+    const ATTR_WEIGHTS = {"First-touch":0.97,"Last-touch":1.03,"Data-driven":1.00,"Markov":1.08};
+    const SEG_WEIGHTS = {"All":1.0,"New":0.92,"Returning":1.06,"Loyal (RFM Top)":1.15};
+    const ecomChannelBase=[
+      {channel:'Paid', revenue:420000, spend:135000},
+      {channel:'Organic', revenue:310000, spend:0},
+      {channel:'Direct', revenue:180000, spend:0},
+      {channel:'Social', revenue:120000, spend:57000},
+      {channel:'Referral', revenue:90000, spend:0},
+    ];
+    const ecomTrend = Array.from({length:12},(_,i)=>({m:'M'+(i+1), first: 90000+Math.round(Math.random()*50000), last: 100000+Math.round(Math.random()*50000), data: 110000+Math.round(Math.random()*50000)}));
+    const rfmPoints=[{label:'Loyalists',r:9,f:10,m:950},{label:'Big Spenders',r:6,f:6,m:1250},{label:'At Risk',r:3,f:4,m:380},{label:'Churn Risk',r:2,f:2,m:120}];
+    const ecomFunnel=[{step:'Product View',v:12000},{step:'Add to Cart',v:4000},{step:'Checkout',v:2000},{step:'Purchase',v:1000}];
+    const lagBins=[24,52,120,210,180,120,60,22];
+    const cltv=Array.from({length:6},(_,i)=>({cohort:'M'+(i+1),cltv:220+i*30}));
+    const ecomGeo=[{geo:'IN',rev:220000},{geo:'US',rev:310000},{geo:'EU',rev:260000},{geo:'SEA',rev:140000},{geo:'ME',rev:90000}];
+
+    const leadChannels=[
+      {channel:'Paid', leads:800, cpl:18, conv:0.12, revenue:160000},
+      {channel:'Organic', leads:600, cpl:6, conv:0.10, revenue:90000},
+      {channel:'Referral', leads:400, cpl:8, conv:0.08, revenue:62000},
+      {channel:'Social', leads:300, cpl:12, conv:0.07, revenue:40000},
+    ];
+    const leadFunnel=[{step:'LP View',v:10000},{step:'CTA Click',v:5200},{step:'Form Submit',v:2400},{step:'MQL',v:1200},{step:'SQL',v:650},{step:'Customer',v:320}];
+    const leadQuality=[{segment:'Engaged (3+ pages)',score:86},{segment:'Downloaded asset',score:72},{segment:'Returning within 7d',score:64},{segment:'One-and-done',score:22}];
+    const leadCohorts=Array.from({length:6},()=>Array.from({length:8},(_,j)=>100-j*(9+Math.floor(Math.random()*5))));
+
+    const pubSources=[{source:'Organic',rpm:5.4,pageviews:420000},{source:'Social',rpm:3.2,pageviews:260000},{source:'Referral',rpm:2.6,pageviews:140000},{source:'Paid',rpm:4.1,pageviews:120000}];
+    const pubLeaderboard=[{title:'How to scale GA4 reporting',views:12000,subs:420},{title:'Future of Programmatic Ads',views:9000,subs:310},{title:'Top CRO Tactics 2025',views:7000,subs:250}];
+    const pubFunnel=[{step:'Content View',v:120000},{step:'Multi-Visit',v:52000},{step:'Registration',v:18000},{step:'Subscription',v:7000},{step:'Paid Renewal',v:5100}];
+    const pubRetain=Array.from({length:6},()=>Array.from({length:8},(_,j)=>100-j*(8+Math.floor(Math.random()*5))));
+
+    const journeyOverview={sessions:185000,users:92000,avg_depth:3.2,median_ttp_hours:36};
+    const journeyFunnel=[{step:'Landing Page',v:150000},{step:'Product View',v:90000},{step:'Add to Cart',v:35000},{step:'Checkout',v:16000},{step:'Purchase',v:9000}];
+    const journeyPaths=[
+      {path:'Paid > Landing > PV > Cart > Checkout > Purchase',users:2200},
+      {path:'Organic > Landing > PV > Purchase',users:1800},
+      {path:'Social > Landing > PV > Cart > Purchase',users:950},
+      {path:'Email > PV > Purchase',users:700},
+    ];
+    const journeyTouch=[{channel:'Paid',influence_pct:34.2},{channel:'Organic',influence_pct:28.5},{channel:'Email',influence_pct:12.7},{channel:'Social',influence_pct:10.8},{channel:'Direct',influence_pct:9.6}];
+    const journeyRet=Array.from({length:6},()=>Array.from({length:8},(_,j)=>100-j*(7+Math.floor(Math.random()*6))));
+
+    // ---------- Derived data helpers ----------
+    function adjustedEcomChannels(){
+      const attr = document.getElementById('attr').value;
+      const seg = document.getElementById('segment').value;
+      const a = ATTR_WEIGHTS[attr] || 1.0, s = SEG_WEIGHTS[seg] || 1.0;
+      return ecomChannelBase.map(r=>{
+        const revenueAdj = Math.round(r.revenue*a*s);
+        const roas = r.spend ? +(revenueAdj/r.spend).toFixed(2) : 0;
+        return {...r, revenueAdj, roas};
+      });
+    }
+    function adjustedLeadChannels(){
+      const attr = document.getElementById('attr').value;
+      const seg = document.getElementById('segment').value;
+      const a = ATTR_WEIGHTS[attr] || 1.0, s = SEG_WEIGHTS[seg] || 1.0;
+      return leadChannels.map(r=>({ ...r, leadsAdj: Math.round(r.leads*s), revenueAdj: Math.round(r.revenue*a*s) }));
+    }
+    function pubSourcesAdj(){
+      const seg = document.getElementById('segment').value;
+      const s = SEG_WEIGHTS[seg] || 1.0;
+      return pubSources.map(r=>({ ...r, revenue: Math.round(r.rpm*(r.pageviews/1000)*s) }));
+    }
+
+    // ---------- Charts state ----------
+    const charts = {};
+    function ensureChart(ctxId, ctor){
+      if(charts[ctxId]){ charts[ctxId].destroy(); }
+      const ctx = document.getElementById(ctxId).getContext('2d');
+      charts[ctxId] = new Chart(ctx, ctor());
+    }
+
+    // ---------- Renderers ----------
+    function renderEcommerce(){
+      document.getElementById('k_e_roas_model').textContent = 'Model: ' + document.getElementById('attr').value;
+      const rows = adjustedEcomChannels();
+      // Revenue vs Spend + ROAS (bar+line with 2 axes)
+      ensureChart('ecom_channels', ()=>({type:'bar', data:{labels: rows.map(r=>r.channel), datasets:[
+        {label:'Spend', data: rows.map(r=>r.spend), yAxisID:'y1'},
+        {label:'Revenue', data: rows.map(r=>r.revenueAdj), yAxisID:'y1'},
+        {type:'line', label:'ROAS', data: rows.map(r=>r.roas), yAxisID:'y2'}
+      ]}, options:{responsive:true, stacked:false, scales:{y1:{type:'linear', position:'left'}, y2:{type:'linear', position:'right', grid:{drawOnChartArea:false}}}}}));
+      document.getElementById('exp_ecom_channels').onclick = ()=>exportCSV('ecommerce_channels.csv', rows, ['channel','spend','revenueAdj','roas']);
+
+      // Attr trend
+      ensureChart('ecom_trend', ()=>({type:'line', data:{labels:ecomTrend.map(x=>x.m), datasets:[
+        {label:'First', data:ecomTrend.map(x=>x.first)},
+        {label:'Last', data:ecomTrend.map(x=>x.last)},
+        {label:'Data-driven', data:ecomTrend.map(x=>x.data)}
+      ]}}));
+      document.getElementById('exp_ecom_trend').onclick = ()=>exportCSV('attr_trend.csv', ecomTrend, ['m','first','last','data']);
+
+      // Markov table
+      const mk = markovRowsFrom(rows, 'revenueAdj', 'channel');
+      const tb = document.querySelector('#ecom_markov_tbl tbody'); tb.innerHTML = '';
+      mk.forEach(r=>{ const tr=document.createElement('tr'); tr.className='border-t'; tr.innerHTML=`<td class='py-1'>${r.channel}</td><td class='py-1'>${r.contribution_pct}%</td><td class='py-1'>${r.removal_effect_pct}%</td>`; tb.appendChild(tr); });
+      document.getElementById('exp_ecom_markov').onclick = ()=>exportCSV('ecommerce_markov.csv', mk, ['channel','contribution_pct','removal_effect_pct']);
+
+      // RFM bubble
+      ensureChart('rfm_bubble', ()=>({type:'bubble', data:{datasets: rfmPoints.map(s=>({label:s.label, data:[{x:s.r,y:s.f,r:Math.max(8, Math.min(30, s.m/50))}]}))}}));
+      document.getElementById('exp_rfm').onclick = ()=>exportCSV('rfm.csv', rfmPoints, ['label','r','f','m']);
+
+      // Funnel list
+      const list = document.getElementById('ecom_funnel_list'); list.innerHTML='';
+      ecomFunnel.forEach((f,i)=>{
+        const prev = i===0 ? f.v : ecomFunnel[i-1].v;
+        const drop = i===0 ? 0 : Math.max(0, Math.round((1 - f.v/prev)*100));
+        const lost = i===ecomFunnel.length-1 ? 0 : Math.max(0, (prev - f.v)*82);
+        const el = document.createElement('div'); el.className='flex justify-between items-center border p-2 rounded';
+        el.innerHTML = `<span>${f.step}</span><div class='flex items-center gap-3'><span>${fmt.format(f.v)}</span><span class='text-xs border rounded px-2 py-0.5'>${i? 'drop '+drop+'%' : 'entry'}</span>${i? `<span class='text-xs bg-gray-100 rounded px-2 py-0.5'>Lost $${fmt.format(lost)}</span>`:''}</div>`;
+        list.appendChild(el);
+      });
+      document.getElementById('exp_ecom_funnel').onclick = ()=>exportCSV('ecommerce_funnel.csv', ecomFunnel, ['step','v']);
+
+      // Lag
+      ensureChart('ecom_lag', ()=>({type:'bar', data:{labels: lagBins.map((_,i)=>i), datasets:[{label:'Count', data: lagBins}]}}));
+      document.getElementById('exp_ecom_lag').onclick = ()=>exportCSV('ecommerce_lag.csv', lagBins.map((v,i)=>({bin:i,v})), ['bin','v']);
+
+      // CLTV
+      ensureChart('ecom_cltv', ()=>({type:'line', data:{labels: cltv.map(x=>x.cohort), datasets:[{label:'CLTV', data: cltv.map(x=>x.cltv), fill:true}]}}));
+      document.getElementById('exp_ecom_cltv').onclick = ()=>exportCSV('ecommerce_cltv.csv', cltv, ['cohort','cltv']);
+
+      // Geo
+      const grid = document.getElementById('ecom_geo'); grid.innerHTML='';
+      ecomGeo.forEach(g=>{
+        const alpha = Math.min(1, g.rev/320000);
+        const d = document.createElement('div'); d.className='p-3 rounded'; d.style.background = `rgba(17,17,17,${0.15+alpha*0.75})`; d.style.color = alpha>0.55? '#fff':'#111';
+        d.innerHTML = `<div class='font-semibold'>${g.geo}</div><div>$${fmt.format(g.rev)}</div>`;
+        grid.appendChild(d);
+      });
+      document.getElementById('exp_ecom_geo').onclick = ()=>exportCSV('ecommerce_geo.csv', ecomGeo, ['geo','rev']);
+    }
+
+    function renderLead(){
+      const rows = adjustedLeadChannels();
+      ensureChart('lead_channels', ()=>({type:'bar', data:{labels: rows.map(r=>r.channel), datasets:[{label:'Leads', data: rows.map(r=>r.leadsAdj)}]}}));
+      document.getElementById('exp_lead_channels').onclick = ()=>exportCSV('leadgen_channels.csv', rows, ['channel','leadsAdj','cpl','conv','revenueAdj']);
+
+      // ROI bubble (CPL vs Conv% vs Revenue)
+      ensureChart('lead_roi', ()=>({type:'bubble', data:{datasets:[{label:'Campaigns', data: rows.map(r=>({x:r.cpl, y:r.conv*100, r: Math.max(6, Math.min(25, r.revenueAdj/3000))}))}]}, options:{scales:{x:{title:{display:true,text:'CPL'}}, y:{title:{display:true,text:'Conv %'}}}}}));
+      document.getElementById('exp_lead_roi').onclick = ()=>exportCSV('leadgen_campaign_roi.csv', rows, ['channel','cpl','conv','revenueAdj']);
+
+      // Markov
+      const mk = markovRowsFrom(rows, 'revenueAdj', 'channel');
+      const tb = document.querySelector('#lead_markov_tbl tbody'); tb.innerHTML='';
+      mk.forEach(r=>{ const tr=document.createElement('tr'); tr.className='border-t'; tr.innerHTML=`<td class='py-1'>${r.channel}</td><td class='py-1'>${r.contribution_pct}%</td><td class='py-1'>${r.removal_effect_pct}%</td>`; tb.appendChild(tr); });
+      document.getElementById('exp_lead_markov').onclick = ()=>exportCSV('leadgen_markov.csv', mk, ['channel','contribution_pct','removal_effect_pct']);
+
+      // Funnel
+      const list = document.getElementById('lead_funnel_list'); list.innerHTML='';
+      leadFunnel.forEach((f,i)=>{
+        const prev = i===0 ? f.v : leadFunnel[i-1].v;
+        const drop = i===0 ? 0 : Math.max(0, Math.round((1 - f.v/prev)*100));
+        const lost = i===leadFunnel.length-1 ? 0 : Math.max(0, (prev - f.v))*500;
+        const el = document.createElement('div'); el.className='flex justify-between items-center border p-2 rounded';
+        el.innerHTML = `<span>${f.step}</span><div class='flex items-center gap-3'><span>${fmt.format(f.v)}</span><span class='text-xs border rounded px-2 py-0.5'>${i? 'drop '+drop+'%' : 'entry'}</span>${i? `<span class='text-xs bg-gray-100 rounded px-2 py-0.5'>Lost $${fmt.format(lost)}</span>`:''}</div>`;
+        list.appendChild(el);
+      });
+      document.getElementById('exp_lead_funnel').onclick = ()=>exportCSV('leadgen_funnel.csv', leadFunnel, ['step','v']);
+
+      // Scorecard
+      const sc = document.getElementById('lead_score'); sc.innerHTML='';
+      leadQuality.forEach(r=>{
+        const c = document.createElement('div'); c.className='border rounded p-3 flex items-center justify-between';
+        c.innerHTML = `<div>${r.segment}</div><span class='text-xs bg-gray-100 rounded px-2 py-0.5'>${r.score}</span>`;
+        sc.appendChild(c);
+      });
+      document.getElementById('exp_lead_score').onclick = ()=>exportCSV('leadgen_scorecard.csv', leadQuality, ['segment','score']);
+
+      // Cohorts
+      const grid = document.getElementById('lead_cohorts'); grid.innerHTML='';
+      leadCohorts.forEach((row,i)=> row.forEach((val,j)=>{
+        const d=document.createElement('div'); d.className='p-2 text-center rounded'; d.style.background=`rgba(17,17,17,${Math.max(0.15, val/120)})`; d.style.color = val>55?'#fff':'#111'; d.textContent = val+'%'; grid.appendChild(d);
+      }));
+      document.getElementById('exp_lead_cohorts').onclick = ()=>exportCSV('leadgen_cohorts.csv', leadCohorts.flatMap((row,i)=>row.map((v,j)=>({cohort:i+1,week:j+1,retention:v}))), ['cohort','week','retention']);
+    }
+
+    function renderPublisher(){
+      // Leaderboard
+      const tbl = document.querySelector('#pub_leader tbody'); tbl.innerHTML='';
+      pubLeaderboard.forEach(r=>{ const tr=document.createElement('tr'); tr.className='border-t'; tr.innerHTML = `<td class='py-1'>${r.title}</td><td class='py-1'>${r.views.toLocaleString()} views</td><td class='py-1'>${r.subs}</td>`; tbl.appendChild(tr); });
+      document.getElementById('exp_pub_leader').onclick = ()=>exportCSV('publisher_leaderboard.csv', pubLeaderboard, ['title','views','subs']);
+
+      // Sources
+      const rows = pubSourcesAdj();
+      ensureChart('pub_sources', ()=>({type:'bar', data:{labels: rows.map(r=>r.source), datasets:[{label:'Pageviews', data: rows.map(r=>r.pageviews)}, {label:'Ad Revenue', data: rows.map(r=>r.revenue)}]}}));
+      document.getElementById('exp_pub_sources').onclick = ()=>exportCSV('publisher_sources.csv', rows, ['source','rpm','pageviews','revenue']);
+
+      // Markov
+      const mk = markovRowsFrom(rows, 'revenue', 'source');
+      const tb = document.querySelector('#pub_markov_tbl tbody'); tb.innerHTML='';
+      mk.forEach(r=>{ const tr=document.createElement('tr'); tr.className='border-t'; tr.innerHTML=`<td class='py-1'>${r.channel}</td><td class='py-1'>${r.contribution_pct}%</td><td class='py-1'>${r.removal_effect_pct}%</td>`; tb.appendChild(tr); });
+      document.getElementById('exp_pub_markov').onclick = ()=>exportCSV('publisher_markov.csv', mk, ['channel','contribution_pct','removal_effect_pct']);
+
+      // Funnel & retention
+      const list = document.getElementById('pub_funnel_list'); list.innerHTML='';
+      pubFunnel.forEach((f,i)=>{
+        const prev = i===0 ? f.v : pubFunnel[i-1].v;
+        const drop = i===0 ? 0 : Math.max(0, Math.round((1 - f.v/prev)*100));
+        const el = document.createElement('div'); el.className='flex justify-between items-center border p-2 rounded';
+        el.innerHTML = `<span>${f.step}</span><div class='flex items-center gap-3'><span>${fmt.format(f.v)}</span><span class='text-xs border rounded px-2 py-0.5'>${i? 'drop '+drop+'%' : 'entry'}</span></div>`;
+        list.appendChild(el);
+      });
+      document.getElementById('exp_pub_funnel').onclick = ()=>exportCSV('publisher_funnel.csv', pubFunnel, ['step','v']);
+      const grid = document.getElementById('pub_retain'); grid.innerHTML='';
+      pubRetain.forEach((row,i)=> row.forEach((val,j)=>{ const d=document.createElement('div'); d.className='p-2 text-center rounded'; d.style.background=`rgba(17,17,17,${Math.max(0.15, val/120)})`; d.style.color = val>55?'#fff':'#111'; d.textContent = val+'%'; grid.appendChild(d); }));
+    }
+
+    function renderJourney(){
+      document.getElementById('j_sessions').textContent = (journeyOverview.sessions/1000).toFixed(0)+'k';
+      document.getElementById('j_users').textContent = (journeyOverview.users/1000).toFixed(0)+'k';
+      document.getElementById('j_depth').textContent = journeyOverview.avg_depth.toFixed(1);
+      document.getElementById('j_ttp').textContent = journeyOverview.median_ttp_hours+'h';
+
+      ensureChart('j_funnel', ()=>({type:'bar', data:{labels: journeyFunnel.map(x=>x.step), datasets:[{label:'Users', data: journeyFunnel.map(x=>x.v)}]}}));
+      document.getElementById('exp_j_funnel').onclick = ()=>exportCSV('journey_funnel.csv', journeyFunnel, ['step','v']);
+
+      const tb = document.querySelector('#j_paths tbody'); tb.innerHTML='';
+      journeyPaths.forEach(p=>{ const tr=document.createElement('tr'); tr.className='border-t'; tr.innerHTML=`<td class='py-1'>${p.path}</td><td class='py-1'>${p.users}</td>`; tb.appendChild(tr); });
+      document.getElementById('exp_j_paths').onclick = ()=>exportCSV('journey_paths.csv', journeyPaths, ['path','users']);
+
+      ensureChart('j_touch', ()=>({type:'bar', data:{labels: journeyTouch.map(x=>x.channel), datasets:[{label:'Influence %', data: journeyTouch.map(x=>x.influence_pct)}]}}));
+      document.getElementById('exp_j_touch').onclick = ()=>exportCSV('journey_touchpoints.csv', journeyTouch, ['channel','influence_pct']);
+
+      const grid = document.getElementById('j_ret'); grid.innerHTML='';
+      journeyRet.forEach((row,i)=> row.forEach((val,j)=>{ const d=document.createElement('div'); d.className='p-2 text-center rounded'; d.style.background=`rgba(17,17,17,${Math.max(0.15, val/120)})`; d.style.color = val>55?'#fff':'#111'; d.textContent = val+'%'; grid.appendChild(d); }));
+      document.getElementById('exp_j_ret').onclick = ()=>exportCSV('journey_retention.csv', journeyRet.flatMap((row,i)=>row.map((v,j)=>({cohort:i+1,week:j+1,retention:v}))), ['cohort','week','retention']);
+    }
+
+    // ---------- Tab switching ----------
+    function showTab(name){
+      document.querySelectorAll('section[id^="tab_"]').forEach(el=>el.classList.add('hidden'));
+      document.getElementById('tab_'+name).classList.remove('hidden');
+      document.querySelectorAll('.tab-btn').forEach(b=>b.setAttribute('aria-selected','false'));
+      document.querySelector(`.tab-btn[data-tab="${name}"]`).setAttribute('aria-selected','true');
+      // Render specific tab
+      if(name==='ecommerce') renderEcommerce();
+      if(name==='lead') renderLead();
+      if(name==='publisher') renderPublisher();
+      if(name==='journey') renderJourney();
+    }
+    document.querySelectorAll('.tab-btn').forEach(b=> b.addEventListener('click', ()=> showTab(b.dataset.tab) ));
+
+    // ---------- Toolbar export ----------
+    document.getElementById('btnExportToolbar').addEventListener('click', ()=>{
+      const active = document.querySelector('.tab-btn[aria-selected="true"]').dataset.tab;
+      if(active==='ecommerce'){
+        const rows = adjustedEcomChannels().map(r=>({channel:r.channel, spend:r.spend, revenue:r.revenueAdj, roas:r.roas}));
+        exportCSV('ecommerce_channels_toolbar.csv', rows, ['channel','spend','revenue','roas']);
+      }else if(active==='lead'){
+        const rows = adjustedLeadChannels().map(r=>({channel:r.channel, leads:r.leadsAdj, cpl:r.cpl, conv:r.conv, revenue:r.revenueAdj}));
+        exportCSV('leadgen_channels_toolbar.csv', rows, ['channel','leads','cpl','conv','revenue']);
+      }else if(active==='publisher'){
+        const rows = pubSourcesAdj().map(r=>({source:r.source, rpm:r.rpm, pageviews:r.pageviews, revenue:r.revenue}));
+        exportCSV('publisher_sources_toolbar.csv', rows, ['source','rpm','pageviews','revenue']);
+      }else if(active==='journey'){
+        exportCSV('journey_funnel_toolbar.csv', journeyFunnel, ['step','v']);
+      }
+    });
+
+    // ---------- Reactivity for selects ----------
+    ['range','attr','segment'].forEach(id=> document.getElementById(id).addEventListener('change', ()=>{
+      const active = document.querySelector('.tab-btn[aria-selected="true"]').dataset.tab;
+      showTab(active);
+    }));
+
+    // First render
+    showTab('ecommerce');
+  </script>
+</body>
+</html>
