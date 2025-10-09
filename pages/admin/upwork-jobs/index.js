@@ -20,6 +20,9 @@ const UpworkJobs = () => {
     contract_type: ""
   });
 
+  // Title search state
+  const [titleSearch, setTitleSearch] = useState("");
+
   // Pagination
   const [currentPage, setCurrentPage] = useState(1);
   const [limit] = useState(20);
@@ -52,24 +55,45 @@ const UpworkJobs = () => {
 
     try {
       const offset = (currentPage - 1) * limit;
-      const params = new URLSearchParams({
-        limit: limit.toString(),
-        offset: offset.toString(),
-        ...(filters.search_term && { search_term: filters.search_term }),
-        ...(filters.max_applicants && { max_applicants: filters.max_applicants }),
-        ...(filters.last_n_hours && { last_n_hours: filters.last_n_hours }),
-        ...(filters.contract_type && { contract_type: filters.contract_type })
-      });
 
-      const response = await fetch(`https://upwork-llm-bot-135392845747.europe-west1.run.app/jobs?${params}`);
+      // If title search is active, use the search-jobs endpoint
+      if (titleSearch.trim()) {
+        const params = new URLSearchParams({
+          title: titleSearch.trim(),
+          limit: limit.toString(),
+          offset: offset.toString()
+        });
 
-      if (!response.ok) {
-        throw new Error('Failed to fetch jobs');
+        const response = await fetch(`https://upwork-llm-bot-135392845747.europe-west1.run.app/search-jobs?${params}`);
+
+        if (!response.ok) {
+          throw new Error('Failed to search jobs by title');
+        }
+
+        const data = await response.json();
+        setJobs(data.jobs || []);
+        setTotal(data.total || 0);
+      } else {
+        // Otherwise use the regular jobs endpoint with filters
+        const params = new URLSearchParams({
+          limit: limit.toString(),
+          offset: offset.toString(),
+          ...(filters.search_term && { search_term: filters.search_term }),
+          ...(filters.max_applicants && { max_applicants: filters.max_applicants }),
+          ...(filters.last_n_hours && { last_n_hours: filters.last_n_hours }),
+          ...(filters.contract_type && { contract_type: filters.contract_type })
+        });
+
+        const response = await fetch(`https://upwork-llm-bot-135392845747.europe-west1.run.app/jobs?${params}`);
+
+        if (!response.ok) {
+          throw new Error('Failed to fetch jobs');
+        }
+
+        const data = await response.json();
+        setJobs(data.jobs || []);
+        setTotal(data.total || 0);
       }
-
-      const data = await response.json();
-      setJobs(data.jobs || []);
-      setTotal(data.total || 0);
     } catch (err) {
       setError(err.message);
       console.error('Error fetching jobs:', err);
@@ -377,9 +401,53 @@ const UpworkJobs = () => {
             </div>
           </div>
 
+          {/* Search by Title */}
+          <div className="bg-white rounded-lg shadow-md p-6 mb-6">
+            <h2 className="text-xl font-bold text-gray-800 mb-4">🔍 Search Jobs by Title</h2>
+            <div className="flex gap-3">
+              <input
+                type="text"
+                placeholder="Search by job title (e.g., Python Developer, Web Designer)..."
+                value={titleSearch}
+                onChange={(e) => setTitleSearch(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    setCurrentPage(1);
+                    fetchJobs();
+                  }
+                }}
+                className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0D8CA4]"
+              />
+              <button
+                onClick={() => {
+                  setCurrentPage(1);
+                  fetchJobs();
+                }}
+                className="px-6 py-2 bg-[#0D8CA4] text-white font-semibold rounded-md hover:bg-[#0a7388] transition-colors"
+              >
+                Search
+              </button>
+              {titleSearch && (
+                <button
+                  onClick={() => {
+                    setTitleSearch("");
+                    setCurrentPage(1);
+                    fetchJobs();
+                  }}
+                  className="px-4 py-2 bg-gray-200 text-gray-700 font-semibold rounded-md hover:bg-gray-300 transition-colors"
+                >
+                  Clear
+                </button>
+              )}
+            </div>
+            <p className="text-sm text-gray-500 mt-2">
+              💡 Results are sorted by relevance - exact matches first, then titles starting with your search, then containing it
+            </p>
+          </div>
+
           {/* Filters */}
           <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-            <h2 className="text-xl font-bold text-gray-800 mb-4">Filters</h2>
+            <h2 className="text-xl font-bold text-gray-800 mb-4">Filters {titleSearch && <span className="text-sm text-gray-500 font-normal">(Disabled during title search)</span>}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {/* Search Term */}
               <div>
@@ -389,7 +457,8 @@ const UpworkJobs = () => {
                 <select
                   value={filters.search_term}
                   onChange={(e) => setFilters({ ...filters, search_term: e.target.value })}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0D8CA4]"
+                  disabled={!!titleSearch}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0D8CA4] disabled:bg-gray-100 disabled:cursor-not-allowed"
                 >
                   <option value="">All Skills</option>
                   {searchTerms.map(term => (
@@ -406,7 +475,8 @@ const UpworkJobs = () => {
                 <select
                   value={filters.max_applicants}
                   onChange={(e) => setFilters({ ...filters, max_applicants: e.target.value })}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0D8CA4]"
+                  disabled={!!titleSearch}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0D8CA4] disabled:bg-gray-100 disabled:cursor-not-allowed"
                 >
                   <option value="">Any</option>
                   <option value="5">Low Competition (≤5)</option>
@@ -423,7 +493,8 @@ const UpworkJobs = () => {
                 <select
                   value={filters.last_n_hours}
                   onChange={(e) => setFilters({ ...filters, last_n_hours: e.target.value })}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0D8CA4]"
+                  disabled={!!titleSearch}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0D8CA4] disabled:bg-gray-100 disabled:cursor-not-allowed"
                 >
                   <option value="">Any Time</option>
                   <option value="1">Last 1 Hours</option>
@@ -440,7 +511,8 @@ const UpworkJobs = () => {
                 <select
                   value={filters.contract_type}
                   onChange={(e) => setFilters({ ...filters, contract_type: e.target.value })}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0D8CA4]"
+                  disabled={!!titleSearch}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0D8CA4] disabled:bg-gray-100 disabled:cursor-not-allowed"
                 >
                   <option value="">All Types</option>
                   <option value="HOURLY">Hourly</option>
@@ -511,7 +583,9 @@ const UpworkJobs = () => {
                     <div className="flex items-center gap-2">
                       <span className="text-gray-500">💰 Budget:</span>
                       <span className={`font-semibold ${getBudgetColor(job.hourlyBudgetMin)}`}>
-                        ${job.hourlyBudgetMin}-${job.hourlyBudgetMax}/hr
+                        {job.hourlyBudgetMin && job.hourlyBudgetMax
+                          ? `$${job.hourlyBudgetMin}-$${job.hourlyBudgetMax}/hr`
+                          : job.amountDisplay || '0'}
                       </span>
                     </div>
 
