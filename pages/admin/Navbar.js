@@ -13,6 +13,7 @@ const Navbar = () => {
     { href: '/admin/casestudies', label: 'Case Studies', permission: 'casestudies' },
     { href: '/admin/jobs', label: 'Jobs/Applications', permission: 'jobs' },
     { href: '/admin/upwork-jobs', label: 'Upwork Jobs', permission: 'upwork-jobs' },
+    { href: '/admin/candidate-analysis', label: 'Candidate Analysis', permission: 'candidate-analysis' },
     { href: '/admin/leads', label: 'Leads', permission: 'leads' },
     { href: '/admin/ytPlaylist', label: 'Yt Playlist', permission: 'ytplaylist' },
     { href: '/admin/users', label: 'Users', permission: 'superadmin' }
