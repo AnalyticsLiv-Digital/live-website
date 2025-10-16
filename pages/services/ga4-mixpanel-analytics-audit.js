@@ -709,19 +709,6 @@ const Ga4MixpanelAnalyticsAudit = () => {
                         <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-5">
                             <div className="brand-card g-ga4 tilt-wrap reveal">
                                 <div className="relative tilt rounded-2xl h-32 p-5 flex flex-col items-center justify-center border border-white/20 float-anim">
-                                    {/* <img
-                                        src="https://analyticsliv.com/assets/logos/ga4.svg"
-                                        alt="Google Analytics 4"
-                                        className="logo-glow h-10 object-contain"
-                                        onError={(e) =>
-                                            e.target.replaceWith(
-                                                Object.assign(document.createElement('span'), {
-                                                    className: 'text-sm font-bold',
-                                                    innerText: 'GA4',
-                                                })
-                                            )
-                                        }
-                                    /> */}
                                     <div className="tool-label">Google Analytics 4</div>
                                     <div className="text-xs text-slate-600 text-center mt-1">
                                         <span className="inline-block text-[0.65rem] font-normal py-1 px-2 rounded-full bg-slate-50 text-slate-900 border border-slate-200 subchip">
