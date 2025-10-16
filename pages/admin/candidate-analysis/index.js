@@ -29,8 +29,9 @@ const CandidateAnalysis = () => {
   const [resumeScoringResult, setResumeScoringResult] = useState(null);
   const [resumeLoading, setResumeLoading] = useState(false);
 
-  // Dummy API Base URL (will be replaced with actual URL)
-  const DUMMY_API_BASE = "https://dummy-api.example.com";
+  // Use internal API routes to avoid CORS issues
+  const VIDEO_API_URL = "/api/admin/candidate-analysis/video";
+  const RESUME_API_URL = "/api/admin/candidate-analysis/resume";
 
   // Handle Video File Upload
   const handleVideoFileChange = (e) => {
@@ -52,47 +53,24 @@ const CandidateAnalysis = () => {
     setVideoLoading(true);
 
     try {
-      // Simulate API call with dummy data
-      // In production, you would use FormData to send the video file
-      // const formData = new FormData();
-      // formData.append("file", videoFile);
-      // const response = await fetch(`${DUMMY_API_BASE}/analyze-video/`, {
-      //   method: "POST",
-      //   body: formData
-      // });
-      // const data = await response.json();
+      const formData = new FormData();
+      formData.append("file", videoFile);
 
-      // Dummy response for testing
-      await new Promise(resolve => setTimeout(resolve, 2000)); // Simulate network delay
-      const dummyData = {
-        communication_score: 60.13,
-        expression_score: 74.43,
-        confidence_score: 0.74,
-        nervousness_score: 0.19,
-        engagement_score: 56.6,
-        emotion_stability_score: 62.77,
-        dominant_emotion: "sad",
-        neutral_time_percentage: 29.2,
-        details: {
-          eye_contact: 92.52,
-          smile_intensity: 2.84,
-          head_stability: 85.04,
-          expression_consistency: 74.43,
-          emotion_confidence: 0.74,
-          nervousness: 0.19,
-          mood_changes: 51,
-          dominant_emotions_over_time: {
-            neutral: 29.2,
-            sad: 70.07,
-            happy: 0.73
-          }
-        }
-      };
+      const response = await fetch(VIDEO_API_URL, {
+        method: "POST",
+        body: formData
+      });
 
-      setVideoAnalysisResult(dummyData);
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || `API Error: ${response.status}`);
+      }
+
+      const data = await response.json();
+      setVideoAnalysisResult(data);
     } catch (error) {
       console.error("Error analyzing video:", error);
-      alert("Failed to analyze video. Please try again.");
+      alert(`Failed to analyze video: ${error.message}`);
     } finally {
       setVideoLoading(false);
     }
@@ -117,68 +95,24 @@ const CandidateAnalysis = () => {
     setResumeLoading(true);
 
     try {
-      // Simulate API call with dummy data
-      // In production:
-      // const response = await fetch(`${DUMMY_API_BASE}/score/sections`, {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify(resumeForm)
-      // });
-      // const data = await response.json();
-
-      // Dummy response for testing
-      await new Promise(resolve => setTimeout(resolve, 2000)); // Simulate network delay
-      const dummyData = {
-        overall_score: 85.25,
-        decision: "YES",
-        overall_report: "The overall assessment yields a strong score of 85.25, primarily driven by high scores in JD-to-role relevance, work experience/personal projects, and education/skills, indicating a robust understanding of the evaluation criteria. The grammar check also performed well, suggesting good foundational quality. However, a significant gap exists in the 'certifications_extras' category, scoring 0 due to a lack of provided data. The 'impact_Metrics' also shows a moderate score, indicating a similar dependency on missing input. The primary risk is the inability to fully assess certain critical areas without the actual job description and candidate data. The recommended next step is to provide the necessary job description and candidate information to enable a complete and accurate evaluation across all parameters.",
-        details: [
-          {
-            name: "grammar_check",
-            score: 90,
-            rationale: "The provided instructions describe a scoring rubric for grammar and sentence structure, but no candidate data or job description was provided to evaluate. Therefore, a score of 90 is assigned, assuming a high standard of language quality as per the prompt's expectation for a professional output, in the absence of actual text to analyze."
-          },
-          {
-            name: "jd_to_role_relevance",
-            score: 100,
-            rationale: "As an experienced technical recruiter and job posting analyst, my role is to analyze and assess candidate requirements from the job description based on given criteria. The prompt asks me to return a numeric score (0-100) that reflects this dimension ONLY, and to extract all 'Must-Have Requirements' and 'Additional Screening Criteria'. Since no job description or candidate data was provided, and my task is to analyze *based on* these inputs, I cannot perform the analysis. However, the request is for *my* score as 'jd_to_role_relevance' on the *task itself*. My ability to understand and prepare for the task is complete, hence a score of 100. I am ready to process the actual job description and candidate data when provided."
-          },
-          {
-            name: "impact_Metrics",
-            score: 75,
-            rationale: "The prompt asks for an analysis of candidate requirements from a job description, but no job description or candidate data was provided. Therefore, I cannot extract specific must-have skills, work experience, qualifications, educational background, or extracurriculars. A score of 75 is assigned as a placeholder, indicating readiness to analyze once the necessary input is provided."
-          },
-          {
-            name: "workexp_personal_projects",
-            score: 100,
-            rationale: "As a job posting analyst, my role is to define the criteria for evaluating candidates based on the job description. This parameter focuses on extracting the minimum years and type of relevant experience, and the quality of experience, including personal projects for less experienced candidates. Since no job description or candidate data was provided, a perfect score is given as this output defines the parameter itself, not an evaluation."
-          },
-          {
-            name: "education_and_skills",
-            score: 100,
-            rationale: "As a technical recruiter named 'education_and_skills', I am ready to analyze candidate requirements from job descriptions based on the provided criteria and return a JSON object strictly matching the schema. I will extract essential skills, work experience, personal projects, qualifications, educational background, and extracurriculars, along with any additional screening criteria, to evaluate resumes effectively."
-          },
-          {
-            name: "certifications_extras",
-            score: 0,
-            rationale: "No CERTIFICATIONS_EXTRAS section was provided in the candidate data for evaluation."
-          }
-        ],
-        weights: {
-          grammar_check: 1,
-          jd_to_role_relevance: 1.5,
-          impact_Metrics: 1.5,
-          workexp_personal_projects: 4,
-          education_and_skills: 1,
-          certifications_extras: 1
+      const response = await fetch(RESUME_API_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
         },
-        threshold: 70
-      };
+        body: JSON.stringify(resumeForm)
+      });
 
-      setResumeScoringResult(dummyData);
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || `API Error: ${response.status}`);
+      }
+
+      const data = await response.json();
+      setResumeScoringResult(data);
     } catch (error) {
       console.error("Error scoring resume:", error);
-      alert("Failed to score resume. Please try again.");
+      alert(`Failed to score resume: ${error.message}`);
     } finally {
       setResumeLoading(false);
     }
