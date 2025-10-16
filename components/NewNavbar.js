@@ -27,11 +27,11 @@ const NewNavbar = () => {
       title: "Digital Analytics",
       services: [
         {
-          label: "Digital Analytics Implementation",
-          subServices: [
-            { label: "Audit & GA4 Mixpanel", href: "/services/web-app-measurement" },
-            { label: "GTM", href: "/services/google-tag-manager" }
-          ]
+          label: "Digital Analytics Implementation", href: "/services/ga4-mixpanel-analytics-audit"
+          // subServices: [
+          //   { label: "Audit & GA4 Mixpanel", href: "/services/ga4-mixpanel-analytics-audit" },
+          //   { label: "GTM", href: "/services/google-tag-manager" }
+          // ]
         },
         {
           label: "Privacy-First Tracking",
@@ -194,58 +194,13 @@ const NewNavbar = () => {
                           Digital Analytics
                         </h4>
                         <ul className="mt-4 space-y-2 text-sm">
-                          {/* <li>
-                              <a
-                                href="/services/analytics"
-                                className="block rounded-xl px-3 py-2.5 text-slate-700 hover:bg-gradient-to-r hover:from-blue-50/60 hover:to-indigo-50/40 hover:text-slate-800 transition-all duration-200 hover:translate-x-1 hover:shadow-sm border border-transparent hover:border-blue-100/50"
-                              >
-                                Analytics &amp; GA4
-                              </a>
-                            </li> */}
-                          <li className="relative group/sub">
-                            <div className="flex items-center justify-between rounded-xl px-3 py-2.5 text-slate-700 hover:bg-gradient-to-r hover:from-blue-50/60 hover:to-indigo-50/40 hover:text-slate-800 transition-all duration-200 hover:translate-x-1 hover:shadow-sm border border-transparent hover:border-blue-100/50 cursor-pointer">
-                              <span>Digital Analytics Implementation</span>
-                              <svg
-                                className="w-3 h-3 text-slate-500 group-hover/sub:text-slate-700 transition-all duration-200 group-hover/sub:rotate-90"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth={2}
-                                  d="M9 5l7 7-7 7"
-                                />
-                              </svg>
-                            </div>
-
-                            <div className="absolute left-full top-0 ml-2 w-72 bg-white/95 backdrop-blur-xl rounded-xl shadow-xl border border-slate-200/60 p-4 z-50 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 transform translate-x-2 group-hover/sub:translate-x-0">
-                              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-blue-50/30 to-indigo-50/20"></div>
-                              <div className="relative space-y-1">
-                                <a
-                                  href="/services/web-app-measurement"
-                                  className="block text-xs text-slate-600 hover:text-slate-800 hover:bg-blue-50/60 py-2 px-3 rounded-lg transition-all duration-200 hover:translate-x-1"
-                                >
-                                  <div className="flex items-center space-x-2">
-                                    <div className="w-1 h-1 bg-slate-400 rounded-full"></div>
-                                    <span>Audit &amp; GA4 Mixpanel</span>
-                                  </div>
-                                </a>
-                                <a
-                                  href="/services/google-tag-manager"
-                                  className="block text-xs text-slate-600 hover:text-slate-800 hover:bg-blue-50/60 py-2 px-3 rounded-lg transition-all duration-200 hover:translate-x-1"
-                                >
-                                  <div className="flex items-center space-x-2">
-                                    <div className="w-1 h-1 bg-slate-400 rounded-full"></div>
-                                    <span>GTM</span>
-                                  </div>
-                                </a>
-                              </div>
-                              <div className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-2">
-                                <div className="w-0 h-0 border-t-4 border-b-4 border-r-8 border-t-transparent border-b-transparent border-r-white/95"></div>
-                              </div>
-                            </div>
+                          <li>
+                            <a
+                              href="/services/ga4-mixpanel-analytics-audit"
+                              className="block rounded-xl px-3 py-2.5 text-slate-700 hover:bg-gradient-to-r hover:from-blue-50/60 hover:to-indigo-50/40 hover:text-slate-800 transition-all duration-200 hover:translate-x-1 hover:shadow-sm border border-transparent hover:border-blue-100/50"
+                            >
+                              Digital Analytics Implementation
+                            </a>
                           </li>
                           <li className="relative group/sub">
                             <div className="flex items-center justify-between rounded-xl px-3 py-2.5 text-slate-700 hover:bg-gradient-to-r hover:from-blue-50/60 hover:to-indigo-50/40 hover:text-slate-800 transition-all duration-200 hover:translate-x-1 hover:shadow-sm border border-transparent hover:border-blue-100/50 cursor-pointer">
@@ -690,3 +645,50 @@ const NewNavbar = () => {
 };
 
 export default NewNavbar;
+
+
+// {/* <li className="relative group/sub">
+//                             <div className="flex items-center justify-between rounded-xl px-3 py-2.5 text-slate-700 hover:bg-gradient-to-r hover:from-blue-50/60 hover:to-indigo-50/40 hover:text-slate-800 transition-all duration-200 hover:translate-x-1 hover:shadow-sm border border-transparent hover:border-blue-100/50 cursor-pointer">
+//                               <span>Digital Analytics Implementation</span>
+//                               <svg
+//                                 className="w-3 h-3 text-slate-500 group-hover/sub:text-slate-700 transition-all duration-200 group-hover/sub:rotate-90"
+//                                 fill="none"
+//                                 stroke="currentColor"
+//                                 viewBox="0 0 24 24"
+//                               >
+//                                 <path
+//                                   strokeLinecap="round"
+//                                   strokeLinejoin="round"
+//                                   strokeWidth={2}
+//                                   d="M9 5l7 7-7 7"
+//                                 />
+//                               </svg>
+//                             </div>
+
+//                             <div className="absolute left-full top-0 ml-2 w-72 bg-white/95 backdrop-blur-xl rounded-xl shadow-xl border border-slate-200/60 p-4 z-50 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 transform translate-x-2 group-hover/sub:translate-x-0">
+//                               <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-blue-50/30 to-indigo-50/20"></div>
+//                               <div className="relative space-y-1">
+//                                 <a
+//                                   href="/services/ga4-mixpanel-analytics-audit"
+//                                   className="block text-xs text-slate-600 hover:text-slate-800 hover:bg-blue-50/60 py-2 px-3 rounded-lg transition-all duration-200 hover:translate-x-1"
+//                                 >
+//                                   <div className="flex items-center space-x-2">
+//                                     <div className="w-1 h-1 bg-slate-400 rounded-full"></div>
+//                                     <span>Audit &amp; GA4 Mixpanel</span>
+//                                   </div>
+//                                 </a>
+//                                 <a
+//                                   href="/services/google-tag-manager"
+//                                   className="block text-xs text-slate-600 hover:text-slate-800 hover:bg-blue-50/60 py-2 px-3 rounded-lg transition-all duration-200 hover:translate-x-1"
+//                                 >
+//                                   <div className="flex items-center space-x-2">
+//                                     <div className="w-1 h-1 bg-slate-400 rounded-full"></div>
+//                                     <span>GTM</span>
+//                                   </div>
+//                                 </a>
+//                               </div>
+//                               <div className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-2">
+//                                 <div className="w-0 h-0 border-t-4 border-b-4 border-r-8 border-t-transparent border-b-transparent border-r-white/95"></div>
+//                               </div>
+//                             </div>
+//                           </li> */}

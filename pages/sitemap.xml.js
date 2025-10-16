@@ -31,7 +31,9 @@ function generateSiteMap(posts) {
      <url>
        <loc>https://analyticsliv.com/services/analytics</loc>
      </url>
-     
+     <url>
+       <loc>https://analyticsliv.com/services/ga4-mixpanel-analytics-audit</loc>
+     </url>
      <url>
        <loc>https://analyticsliv.com/services/data-reporting-analysis</loc>
      </url>
