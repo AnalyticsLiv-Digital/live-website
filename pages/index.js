@@ -419,6 +419,9 @@ const page = ({ ytPlaylistdata }) => {
             <h2 className="text-2xl font-bold sm:text-3xl text-slate-900 mb-8">Brands we’ve partnered with</h2>
             <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 items-center">
               <div className="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Amul_official_logo.svg%20(1).png" alt="Amul" className="h-10 max-h-10 object-contain grayscale hover:grayscale-0 transition" loading="lazy" />
+              </div>
+              <div className="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
                 <img src="https://storage.googleapis.com/website-bucket-uploads/home_page/Homepage_Img/Shoebacca%20logo.png" alt="Shoebacca" className="h-10 max-h-10 object-contain grayscale hover:grayscale-0 transition" loading="lazy" />
               </div>
               <div className="flex items-center justify-center rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
