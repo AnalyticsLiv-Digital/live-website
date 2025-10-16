@@ -77,12 +77,11 @@ const handler = async (req, res) => {
             const internalMailOptions = {
                 to: [
                     "atul.verma@analyticsliv.com",
-                    "pruthvirajsinh.rathod@analyticsliv.com"
-                    // "sales@analyticsliv.com",
-                    // "anuj@analyticsliv.com",
-                    // "nitya@analyticsliv.com",
-                    // "rajvi@analyticsliv.com",
-                    // "anshul.d@analyticsliv.com"
+                    "pruthvirajsinh.rathod@analyticsliv.com",
+                    "sales@analyticsliv.com",
+                    "anuj@analyticsliv.com",
+                    "nitya@analyticsliv.com",
+                    "rajvi@analyticsliv.com",
                 ],
                 subject: `New ${serviceName} Enquiry - ${fullName}`,
                 html: `
