@@ -9,7 +9,8 @@ const MODULES = [
   { id: "jobs", label: "Jobs/Applications" },
   { id: "leads", label: "Leads" },
   { id: "ytplaylist", label: "YouTube Playlist" },
-  { id: "upwork-jobs", label: "Upwork Jobs" }
+  { id: "upwork-jobs", label: "Upwork Jobs" },
+  { id: "candidate-analysis", label: "Candidate Analysis" }
 ];
 
 const UsersManagement = () => {

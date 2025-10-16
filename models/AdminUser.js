@@ -11,7 +11,7 @@ const AdminUserSchema = new mongoose.Schema({
     permissions: {
         type: [String],
         default: [],
-        enum: ['blogs', 'casestudies', 'jobs', 'leads', 'ytplaylist', 'upwork-jobs']
+        enum: ['blogs', 'casestudies', 'jobs', 'leads', 'ytplaylist', 'upwork-jobs', 'candidate-analysis']
     },
     isSuperAdmin: {
         type: Boolean,
