@@ -608,7 +608,7 @@ const CandidateAnalysis = () => {
                     {[
                       { label: 'Communication', value: videoAnalysisResult.communication_score },
                       { label: 'Expression', value: videoAnalysisResult.expression_score },
-                      { label: 'Confidence', value: videoAnalysisResult.confidence_score * 100 },
+                      { label: 'Confidence', value: videoAnalysisResult.confidence_score },
                       { label: 'Engagement', value: videoAnalysisResult.engagement_score }
                     ].map((metric, idx) => (
                       <div key={idx} className={`border rounded-xl p-5 ${getScoreBgColor(metric.value)}`}>
@@ -635,10 +635,10 @@ const CandidateAnalysis = () => {
                     <h3 className="text-lg font-bold text-gray-900">Detailed Metrics</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                       {[
-                        { label: 'Eye Contact', value: videoAnalysisResult.details.eye_contact, unit: '%' },
-                        { label: 'Head Stability', value: videoAnalysisResult.details.head_stability, unit: '%' },
-                        { label: 'Smile Intensity', value: (videoAnalysisResult.details.smile_intensity / 10) * 100, unit: '%' },
-                        { label: 'Nervousness', value: videoAnalysisResult.details.nervousness * 100, unit: '%', isNegative: true }
+                        { label: 'Eye Contact', value: videoAnalysisResult?.details?.eye_contact, unit: '%' },
+                        { label: 'Head Stability', value: videoAnalysisResult?.details?.head_stability, unit: '%' },
+                        { label: 'Smile Intensity', value: (videoAnalysisResult?.details?.smile_intensity), unit: '%' },
+                        { label: 'Nervousness', value: videoAnalysisResult?.details?.nervousness, unit: '%', isNegative: true }
                       ].map((metric, idx) => (
                         <div key={idx} className="bg-gray-50 border border-gray-200 rounded-xl p-5">
                           <div className="flex items-center justify-between mb-3">
