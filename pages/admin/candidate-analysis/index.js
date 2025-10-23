@@ -177,7 +177,7 @@ const CandidateAnalysis = () => {
             </div>
             <div class="metric-row">
               <span class="metric-label">Confidence Score:</span>
-              <span class="metric-value">${(videoAnalysisResult.confidence_score * 100).toFixed(2)}</span>
+              <span class="metric-value">${(videoAnalysisResult.confidence_score).toFixed(2)}</span>
             </div>
             <div class="metric-row">
               <span class="metric-label">Engagement Score:</span>
@@ -185,7 +185,7 @@ const CandidateAnalysis = () => {
             </div>
             <div class="metric-row">
               <span class="metric-label">Nervousness Score:</span>
-              <span class="metric-value">${(videoAnalysisResult.nervousness_score * 100).toFixed(2)}</span>
+              <span class="metric-value">${(videoAnalysisResult.nervousness_score).toFixed(2)}</span>
             </div>
             <div class="metric-row">
               <span class="metric-label">Emotion Stability:</span>
