@@ -29,6 +29,7 @@ const Index = ({ applications }) => {
                   <th className="py-3 px-4">Email</th>
                   <th className="py-3 px-4">Contact</th>
                   <th className="py-3 px-4">Notice Period</th>
+                  <th className="py-3 px-4">Applied Date</th>
                 </tr>
               </thead>
               <tbody className="text-center text-gray-300">
@@ -95,11 +96,18 @@ const Index = ({ applications }) => {
                         )}
                       </td>
                       <td className="py-4 px-6">{job.noticePeriod}</td>
+                      <td className="py-4 px-6">
+                        {job.timestamp ? new Date(job.timestamp).toLocaleDateString('en-GB', {
+                          day: '2-digit',
+                          month: 'short',
+                          year: 'numeric'
+                        }) : 'N/A'}
+                      </td>
                     </tr>
                   )) :
                   (
                     <tr>
-                      <td colSpan="7" className="py-6 text-gray-400 text-lg">
+                      <td colSpan="8" className="py-6 text-gray-400 text-lg">
                         🚀 No applications received yet! Stay tuned for new job submissions.
                       </td>
                     </tr>
