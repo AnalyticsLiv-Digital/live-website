@@ -29,9 +29,16 @@ const CandidateAnalysis = () => {
   const [resumeScoringResult, setResumeScoringResult] = useState(null);
   const [resumeLoading, setResumeLoading] = useState(false);
 
+  // Resume Parsing States
+  const [resumeFile, setResumeFile] = useState(null);
+  const [resumeFileName, setResumeFileName] = useState("");
+  const [resumeParseLoading, setResumeParseLoading] = useState(false);
+  const [showEditForm, setShowEditForm] = useState(false);
+
   // Use internal API routes to avoid CORS issues
   const VIDEO_API_URL = "/api/admin/candidate-analysis/video";
   const RESUME_API_URL = "/api/admin/candidate-analysis/resume";
+  const RESUME_PARSE_API_URL = "/api/admin/candidate-analysis/resume-parse";
 
   // Handle Video File Upload
   const handleVideoFileChange = (e) => {
@@ -74,6 +81,99 @@ const CandidateAnalysis = () => {
     } finally {
       setVideoLoading(false);
     }
+  };
+
+  // Handle Resume File Upload
+  const handleResumeFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setResumeFile(file);
+      setResumeFileName(file.name);
+    }
+  };
+
+  // Handle Resume Parse Submit
+  const handleResumeParseSubmit = async (e) => {
+    e.preventDefault();
+    if (!resumeFile) {
+      alert("Please upload a resume file");
+      return;
+    }
+
+    setResumeParseLoading(true);
+
+    try {
+      const formData = new FormData();
+      formData.append("file", resumeFile);
+
+      const response = await fetch(RESUME_PARSE_API_URL, {
+        method: "POST",
+        body: formData
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || `API Error: ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      // Parse and fill the form with extracted data
+      fillFormWithParsedData(data);
+      setShowEditForm(true);
+
+    } catch (error) {
+      console.error("Error parsing resume:", error);
+      alert(`Failed to parse resume: ${error.message}`);
+    } finally {
+      setResumeParseLoading(false);
+    }
+  };
+
+  // Fill form with parsed resume data
+  const fillFormWithParsedData = (parsedData) => {
+    // Format work experience
+    let workExperience = "";
+    if (parsedData.workExperience && parsedData.workExperience.length > 0) {
+      workExperience = parsedData.workExperience.map(exp => {
+        let expText = `${exp.jobTitle} at ${exp.company} (${exp.dates})\n`;
+        if (exp.responsibilities && exp.responsibilities.length > 0) {
+          expText += exp.responsibilities.map(r => `- ${r}`).join('\n');
+        }
+        return expText;
+      }).join('\n\n');
+    }
+
+    // Format education
+    let education = "";
+    if (parsedData.education && parsedData.education.length > 0) {
+      education = parsedData.education.map(edu =>
+        `${edu.degree} from ${edu.school} (${edu.graduationDate})`
+      ).join('\n');
+    }
+
+    // Format skills
+    let skills = "";
+    if (parsedData.skills && parsedData.skills.length > 0) {
+      skills = parsedData.skills.join(', ');
+    }
+
+    // Format certifications
+    let certifications = "";
+    if (parsedData.certifications && parsedData.certifications.length > 0) {
+      certifications = parsedData.certifications.join('\n');
+    }
+
+    // Update form state
+    setResumeForm({
+      NAME: parsedData.personalDetails?.name || "",
+      SUMMARY: parsedData.summary || "",
+      WORK_EXPERIENCE_PERSONAL_PROJECTS: workExperience,
+      EDUCATION: education,
+      SKILLS_TOOLS: skills,
+      CERTIFICATIONS_EXTRAS: certifications,
+      JD: resumeForm.JD // Keep existing JD if any
+    });
   };
 
   // Handle Resume Form Change
@@ -377,6 +477,9 @@ const CandidateAnalysis = () => {
       JD: ""
     });
     setResumeScoringResult(null);
+    setResumeFile(null);
+    setResumeFileName("");
+    setShowEditForm(false);
   };
 
   // Get score color (Upwork-inspired)
@@ -692,15 +795,109 @@ const CandidateAnalysis = () => {
           {/* Resume Scoring Section */}
           {activeTab === "resume" && (
             <div className="space-y-6">
-              {/* Resume Form */}
-              <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="bg-green-100 p-2 rounded-lg">
-                    <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
+              {/* Resume Upload & Parse Section */}
+              {!showEditForm && (
+                <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="bg-purple-100 p-2 rounded-lg">
+                      <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h2 className="text-2xl font-bold text-gray-900">Upload Resume for Auto-Fill</h2>
+                      <p className="text-sm text-gray-600">Upload a resume file to automatically extract candidate information</p>
+                    </div>
                   </div>
-                  <h2 className="text-2xl font-bold text-gray-900">Candidate Information</h2>
+
+                  <form onSubmit={handleResumeParseSubmit} className="space-y-5">
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                        Resume File (PDF, DOC, DOCX)
+                      </label>
+                      <div className="flex items-center gap-4">
+                        <label className="flex-1 cursor-pointer">
+                          <div className="border-2 border-dashed border-gray-300 rounded-xl p-8 hover:border-purple-500 hover:bg-purple-50 transition-all duration-200">
+                            <div className="text-center">
+                              <svg className="mx-auto h-16 w-16 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48">
+                                <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                              </svg>
+                              <p className="mt-3 text-base font-medium text-gray-700">
+                                {resumeFileName || "Click to upload resume file"}
+                              </p>
+                              <p className="mt-1 text-sm text-gray-500">
+                                Supported formats: PDF, DOC, DOCX
+                              </p>
+                            </div>
+                          </div>
+                          <input
+                            type="file"
+                            accept=".pdf,.doc,.docx"
+                            onChange={handleResumeFileChange}
+                            className="hidden"
+                          />
+                        </label>
+                      </div>
+                    </div>
+
+                    <div className="flex gap-3 pt-2">
+                      <button
+                        type="submit"
+                        disabled={resumeParseLoading || !resumeFile}
+                        className={`px-8 py-3 font-semibold rounded-lg transition-all duration-200 shadow-sm ${
+                          resumeParseLoading || !resumeFile
+                            ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                            : "bg-purple-600 text-white hover:bg-purple-700 hover:shadow-md"
+                        }`}
+                      >
+                        {resumeParseLoading ? (
+                          <span className="flex items-center gap-2">
+                            <div className="w-5 h-5 border-2 border-t-transparent border-white border-solid rounded-full animate-spin"></div>
+                            Parsing Resume...
+                          </span>
+                        ) : (
+                          <span className="flex items-center gap-2">
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                            Parse Resume & Auto-Fill
+                          </span>
+                        )}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setShowEditForm(true)}
+                        className="px-6 py-3 bg-gray-100 text-gray-700 font-semibold rounded-lg hover:bg-gray-200 transition-all duration-200"
+                      >
+                        Skip & Enter Manually
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              )}
+
+              {/* Resume Form */}
+              {showEditForm && (
+                <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
+                <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center gap-3">
+                    <div className="bg-green-100 p-2 rounded-lg">
+                      <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                    </div>
+                    <h2 className="text-2xl font-bold text-gray-900">Candidate Information</h2>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setShowEditForm(false)}
+                    className="px-4 py-2 bg-purple-100 text-purple-700 font-semibold rounded-lg hover:bg-purple-200 transition-all duration-200 flex items-center gap-2"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                    </svg>
+                    Upload Resume Instead
+                  </button>
                 </div>
 
                 <form onSubmit={handleResumeScoringSubmit} className="space-y-5">
@@ -842,6 +1039,7 @@ const CandidateAnalysis = () => {
                   </div>
                 </form>
               </div>
+              )}
 
               {/* Resume Scoring Results */}
               {resumeScoringResult && (
