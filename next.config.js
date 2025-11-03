@@ -6,6 +6,14 @@ const nextConfig = {
         topLevelAwait: true
     },
 
+    // Configure API routes to handle large file uploads
+    api: {
+        bodyParser: {
+            sizeLimit: '500mb',
+        },
+        responseLimit: '500mb',
+    },
+
     images: {
         domains: ["storage.googleapis.com"], // Allow images from this domain
     },

@@ -15,6 +15,10 @@ const CandidateAnalysis = () => {
   const [videoLoading, setVideoLoading] = useState(false);
   const [videoFileName, setVideoFileName] = useState("");
   const [candidateName, setCandidateName] = useState("");
+  const [uploadProgress, setUploadProgress] = useState(0);
+  const [uploadSuccess, setUploadSuccess] = useState(false);
+  const [videoUrl, setVideoUrl] = useState("");
+  const [useExistingUrl, setUseExistingUrl] = useState(false);
 
   // Resume Scoring States
   const [resumeForm, setResumeForm] = useState({
@@ -49,38 +53,138 @@ const CandidateAnalysis = () => {
     }
   };
 
-  // Handle Video Analysis Submit
+  // Handle Video Analysis Submit with two-step upload (GCS then process)
   const handleVideoAnalysisSubmit = async (e) => {
     e.preventDefault();
-    if (!videoFile) {
-      alert("Please upload a video file");
-      return;
+
+    // Check if using existing URL or uploading new file
+    if (useExistingUrl) {
+      if (!videoUrl || !videoUrl.trim()) {
+        alert("Please enter a valid video URL");
+        return;
+      }
+    } else {
+      if (!videoFile) {
+        alert("Please upload a video file");
+        return;
+      }
     }
 
     setVideoLoading(true);
+    setUploadProgress(0);
+    setUploadSuccess(false);
+    setVideoAnalysisResult(null);
 
     try {
-      const formData = new FormData();
-      formData.append("file", videoFile);
+      let publicUrl;
 
-      const response = await fetch(VIDEO_API_URL, {
-        method: "POST",
-        body: formData
-      });
+      if (useExistingUrl) {
+        // Use existing URL - skip upload
+        publicUrl = videoUrl;
+        setUploadSuccess(true);
+      } else {
+        // Step 1: Upload to GCS via our server
+        setUploadProgress(5);
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || `API Error: ${response.status}`);
+        const uploadFormData = new FormData();
+        uploadFormData.append('file', videoFile);
+
+        // Upload to GCS with progress tracking
+        publicUrl = await new Promise((resolve, reject) => {
+          const xhr = new XMLHttpRequest();
+
+          xhr.upload.addEventListener("progress", (e) => {
+            if (e.lengthComputable) {
+              const percentComplete = 5 + (e.loaded / e.total) * 95;
+              setUploadProgress(Math.round(percentComplete));
+            }
+          });
+
+          xhr.addEventListener("load", () => {
+            if (xhr.status >= 200 && xhr.status < 300) {
+              try {
+                const response = JSON.parse(xhr.responseText);
+                resolve(response.publicUrl);
+              } catch (parseError) {
+                reject(new Error("Failed to parse upload response"));
+              }
+            } else {
+              try {
+                const errorData = JSON.parse(xhr.responseText);
+                reject(new Error(errorData.error || `Upload failed: ${xhr.status}`));
+              } catch (parseError) {
+                reject(new Error(`Upload failed: ${xhr.status}`));
+              }
+            }
+          });
+
+          xhr.addEventListener("error", () => {
+            reject(new Error("Network error during upload"));
+          });
+
+          xhr.addEventListener("timeout", () => {
+            reject(new Error("Upload timed out"));
+          });
+
+          xhr.open("POST", "/api/admin/candidate-analysis/upload-to-gcs");
+          xhr.timeout = 600000; // 10 minutes
+          xhr.send(uploadFormData);
+        });
+
+        // Upload complete - show success message and store URL
+        setUploadProgress(100);
+        setVideoUrl(publicUrl);
+        setUploadSuccess(true);
+        setVideoLoading(false);
+
+        // Wait 1 second to show success message, then start analysis
+        await new Promise(resolve => setTimeout(resolve, 1000));
       }
 
-      const data = await response.json();
+      // Step 2: Automatically trigger analysis
+      setVideoLoading(true);
+      setUploadProgress(0);
+
+      const analysisResponse = await fetch(VIDEO_API_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          video_url: publicUrl
+        })
+      });
+
+      if (!analysisResponse.ok) {
+        const errorData = await analysisResponse.json();
+        throw new Error(errorData.error || errorData.details || `Analysis failed: ${analysisResponse.status}`);
+      }
+
+      const data = await analysisResponse.json();
       setVideoAnalysisResult(data);
+
     } catch (error) {
-      console.error("Error analyzing video:", error);
-      alert(`Failed to analyze video: ${error.message}`);
+      console.error("Error:", error);
+
+      let errorMessage = error.message;
+      if (error.message.includes("timeout") || error.message.includes("timed out")) {
+        errorMessage = "Upload timed out. Please try again or use a smaller file.";
+      } else if (error.message.includes("cloud storage")) {
+        errorMessage = "Failed to upload to cloud storage. Please try again.";
+      }
+
+      alert(`Failed: ${errorMessage}`);
+      setUploadProgress(0);
+      setUploadSuccess(false);
     } finally {
       setVideoLoading(false);
     }
+  };
+
+  // Copy video URL to clipboard
+  const copyVideoUrl = () => {
+    navigator.clipboard.writeText(videoUrl);
+    alert("Video URL copied to clipboard!");
   };
 
   // Handle Resume File Upload
@@ -464,6 +568,10 @@ const CandidateAnalysis = () => {
     setVideoFileName("");
     setVideoAnalysisResult(null);
     setCandidateName("");
+    setUploadProgress(0);
+    setUploadSuccess(false);
+    setVideoUrl("");
+    setUseExistingUrl(false);
   };
 
   const clearResumeScoring = () => {
@@ -606,41 +714,150 @@ const CandidateAnalysis = () => {
                     />
                   </div>
 
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      Video File (MP4, AVI, MOV)
-                    </label>
-                    <div className="flex items-center gap-4">
-                      <label className="flex-1 cursor-pointer">
-                        <div className="border-2 border-dashed border-gray-300 rounded-xl p-8 hover:border-green-500 hover:bg-green-50 transition-all duration-200">
-                          <div className="text-center">
-                            <svg className="mx-auto h-16 w-16 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48">
-                              <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                            <p className="mt-3 text-base font-medium text-gray-700">
-                              {videoFileName || "Click to upload video file"}
-                            </p>
-                            <p className="mt-1 text-sm text-gray-500">
-                              Supported formats: MP4, AVI, MOV
-                            </p>
+                  {/* Toggle between upload new or use existing URL */}
+                  <div className="flex items-center gap-4 bg-gray-50 p-4 rounded-lg">
+                    <button
+                      type="button"
+                      onClick={() => setUseExistingUrl(false)}
+                      className={`flex-1 py-2 px-4 rounded-lg font-semibold transition-all ${
+                        !useExistingUrl
+                          ? "bg-green-600 text-white shadow-sm"
+                          : "bg-white text-gray-700 border border-gray-300"
+                      }`}
+                    >
+                      Upload New Video
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setUseExistingUrl(true)}
+                      className={`flex-1 py-2 px-4 rounded-lg font-semibold transition-all ${
+                        useExistingUrl
+                          ? "bg-green-600 text-white shadow-sm"
+                          : "bg-white text-gray-700 border border-gray-300"
+                      }`}
+                    >
+                      Use Existing URL
+                    </button>
+                  </div>
+
+                  {!useExistingUrl ? (
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                        Video File (MP4, AVI, MOV)
+                      </label>
+                      <div className="flex items-center gap-4">
+                        <label className="flex-1 cursor-pointer">
+                          <div className="border-2 border-dashed border-gray-300 rounded-xl p-8 hover:border-green-500 hover:bg-green-50 transition-all duration-200">
+                            <div className="text-center">
+                              <svg className="mx-auto h-16 w-16 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48">
+                                <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                              </svg>
+                              <p className="mt-3 text-base font-medium text-gray-700">
+                                {videoFileName || "Click to upload video file"}
+                              </p>
+                              <p className="mt-1 text-sm text-gray-500">
+                                Supported formats: MP4, AVI, MOV (up to 500MB)
+                              </p>
+                            </div>
+                          </div>
+                          <input
+                            type="file"
+                            accept="video/*"
+                            onChange={handleVideoFileChange}
+                            className="hidden"
+                          />
+                        </label>
+                      </div>
+                    </div>
+                  ) : (
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                        Video URL from Cloud Storage
+                      </label>
+                      <input
+                        type="text"
+                        value={videoUrl}
+                        onChange={(e) => setVideoUrl(e.target.value)}
+                        placeholder="https://storage.googleapis.com/website-bucket-uploads/..."
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent font-mono text-sm"
+                      />
+                      <p className="mt-2 text-xs text-gray-500">
+                        Paste the GCS URL from a previous upload to reuse the same video
+                      </p>
+                    </div>
+                  )}
+
+                  {/* Upload Progress Bar */}
+                  {videoLoading && uploadProgress > 0 && !uploadSuccess && (
+                    <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-sm font-semibold text-blue-900">
+                          Uploading video to cloud storage...
+                        </span>
+                        <span className="text-sm font-bold text-blue-600">{uploadProgress}%</span>
+                      </div>
+                      <div className="bg-blue-200 rounded-full h-3 overflow-hidden">
+                        <div
+                          className="bg-blue-600 h-3 rounded-full transition-all duration-300"
+                          style={{ width: `${uploadProgress}%` }}
+                        ></div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Upload Success Message */}
+                  {uploadSuccess && videoUrl && (
+                    <div className="bg-green-50 border border-green-200 rounded-xl p-4">
+                      <div className="flex items-start gap-3">
+                        <div className="flex-shrink-0 mt-1">
+                          <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h3 className="text-sm font-semibold text-green-900">
+                            {useExistingUrl ? "Using existing video" : "Video uploaded successfully!"}
+                          </h3>
+                          <p className="text-sm text-green-700 mt-1">
+                            {videoLoading ? "Starting analysis..." : "Analysis complete"}
+                          </p>
+                          <div className="mt-3 bg-white border border-green-200 rounded-lg p-3">
+                            <div className="flex items-center gap-2 mb-2">
+                              <svg className="w-4 h-4 text-gray-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                              </svg>
+                              <p className="text-xs font-semibold text-gray-700">Video URL (save this to reuse later):</p>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <input
+                                type="text"
+                                value={videoUrl}
+                                readOnly
+                                className="flex-1 px-3 py-2 bg-gray-50 border border-gray-200 rounded text-xs font-mono text-gray-700 focus:outline-none"
+                              />
+                              <button
+                                type="button"
+                                onClick={copyVideoUrl}
+                                className="px-4 py-2 bg-green-600 text-white text-xs font-semibold rounded hover:bg-green-700 transition-all flex items-center gap-1 flex-shrink-0"
+                              >
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                </svg>
+                                Copy
+                              </button>
+                            </div>
                           </div>
                         </div>
-                        <input
-                          type="file"
-                          accept="video/*"
-                          onChange={handleVideoFileChange}
-                          className="hidden"
-                        />
-                      </label>
+                      </div>
                     </div>
-                  </div>
+                  )}
 
                   <div className="flex gap-3 pt-2">
                     <button
                       type="submit"
-                      disabled={videoLoading || !videoFile}
+                      disabled={videoLoading || (!useExistingUrl && !videoFile) || (useExistingUrl && !videoUrl)}
                       className={`px-8 py-3 font-semibold rounded-lg transition-all duration-200 shadow-sm ${
-                        videoLoading || !videoFile
+                        videoLoading || (!useExistingUrl && !videoFile) || (useExistingUrl && !videoUrl)
                           ? "bg-gray-300 text-gray-500 cursor-not-allowed"
                           : "bg-green-600 text-white hover:bg-green-700 hover:shadow-md"
                       }`}
@@ -648,7 +865,7 @@ const CandidateAnalysis = () => {
                       {videoLoading ? (
                         <span className="flex items-center gap-2">
                           <div className="w-5 h-5 border-2 border-t-transparent border-white border-solid rounded-full animate-spin"></div>
-                          Analyzing...
+                          {uploadSuccess ? "Analyzing..." : "Uploading..."}
                         </span>
                       ) : (
                         <span className="flex items-center gap-2">
