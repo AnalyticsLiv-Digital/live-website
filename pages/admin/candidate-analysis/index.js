@@ -926,15 +926,15 @@ const CandidateAnalysis = () => {
                   {/* Key Metrics Grid */}
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                     {[
-                      { label: 'Communication', value: videoAnalysisResult.communication_score },
-                      { label: 'Expression', value: videoAnalysisResult.expression_score },
-                      { label: 'Confidence', value: videoAnalysisResult.confidence_score },
-                      { label: 'Engagement', value: videoAnalysisResult.engagement_score }
+                      { label: 'Communication', value: videoAnalysisResult.video_analysis?.communication_score },
+                      { label: 'Expression', value: videoAnalysisResult.video_analysis?.expression_score },
+                      { label: 'Confidence', value: videoAnalysisResult.video_analysis?.confidence_score },
+                      { label: 'Engagement', value: videoAnalysisResult.video_analysis?.engagement_score }
                     ].map((metric, idx) => (
                       <div key={idx} className={`border rounded-xl p-5 ${getScoreBgColor(metric.value)}`}>
                         <p className="text-sm font-medium text-gray-600 mb-2">{metric.label}</p>
                         <p className={`text-3xl font-bold ${getScoreColor(metric.value)}`}>
-                          {metric.value.toFixed(1)}
+                          {metric.value?.toFixed(1)}
                         </p>
                         <div className="mt-3 bg-white rounded-full h-2 overflow-hidden">
                           <div
@@ -955,16 +955,16 @@ const CandidateAnalysis = () => {
                     <h3 className="text-lg font-bold text-gray-900">Detailed Metrics</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                       {[
-                        { label: 'Eye Contact', value: videoAnalysisResult?.details?.eye_contact, unit: '%' },
-                        { label: 'Head Stability', value: videoAnalysisResult?.details?.head_stability, unit: '%' },
-                        { label: 'Smile Intensity', value: (videoAnalysisResult?.details?.smile_intensity), unit: '%' },
-                        { label: 'Nervousness', value: videoAnalysisResult?.details?.nervousness, unit: '%', isNegative: true }
+                        { label: 'Eye Contact', value: videoAnalysisResult?.video_analysis?.details?.eye_contact, unit: '%' },
+                        { label: 'Head Stability', value: videoAnalysisResult?.video_analysis?.details?.head_stability, unit: '%' },
+                        { label: 'Smile Intensity', value: videoAnalysisResult?.video_analysis?.details?.smile_intensity, unit: '%' },
+                        { label: 'Nervousness', value: videoAnalysisResult?.video_analysis?.details?.nervousness, unit: '%', isNegative: true }
                       ].map((metric, idx) => (
                         <div key={idx} className="bg-gray-50 border border-gray-200 rounded-xl p-5">
                           <div className="flex items-center justify-between mb-3">
                             <p className="text-sm font-semibold text-gray-700">{metric.label}</p>
                             <span className={`text-lg font-bold ${metric.isNegative ? 'text-red-600' : 'text-green-600'}`}>
-                              {metric.value.toFixed(1)}{metric.unit}
+                              {metric.value?.toFixed(1)}{metric.unit}
                             </span>
                           </div>
                           <div className="bg-gray-200 rounded-full h-2.5 overflow-hidden">
@@ -980,29 +980,57 @@ const CandidateAnalysis = () => {
                     </div>
 
                     {/* Emotion Distribution */}
-                    <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-6 mt-6">
-                      <h4 className="text-lg font-bold text-gray-900 mb-4">Emotion Distribution</h4>
-                      <div className="space-y-4">
-                        {Object.entries(videoAnalysisResult.details.dominant_emotions_over_time).map(([emotion, percentage]) => (
-                          <div key={emotion}>
-                            <div className="flex items-center justify-between mb-2">
-                              <span className="text-sm font-semibold text-gray-700 capitalize">{emotion}</span>
-                              <span className="text-sm font-bold text-gray-900">{percentage.toFixed(1)}%</span>
+                    {videoAnalysisResult?.video_analysis?.dominant_distribution && (
+                      <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-6 mt-6">
+                        <h4 className="text-lg font-bold text-gray-900 mb-4">Emotion Distribution</h4>
+                        <div className="space-y-4">
+                          {Object.entries(videoAnalysisResult.video_analysis.dominant_distribution).map(([emotion, percentage]) => (
+                            <div key={emotion}>
+                              <div className="flex items-center justify-between mb-2">
+                                <span className="text-sm font-semibold text-gray-700 capitalize">{emotion}</span>
+                                <span className="text-sm font-bold text-gray-900">{percentage?.toFixed(1)}%</span>
+                              </div>
+                              <div className="bg-white rounded-full h-3 overflow-hidden shadow-inner">
+                                <div
+                                  className={`h-3 rounded-full transition-all duration-500 ${
+                                    emotion === "happy" ? "bg-green-500" :
+                                    emotion === "sad" ? "bg-blue-500" :
+                                    emotion === "fear" ? "bg-red-500" :
+                                    "bg-gray-400"
+                                  }`}
+                                  style={{ width: `${percentage}%` }}
+                                ></div>
+                              </div>
                             </div>
-                            <div className="bg-white rounded-full h-3 overflow-hidden shadow-inner">
-                              <div
-                                className={`h-3 rounded-full transition-all duration-500 ${
-                                  emotion === "happy" ? "bg-green-500" :
-                                  emotion === "sad" ? "bg-blue-500" :
-                                  "bg-gray-400"
-                                }`}
-                                style={{ width: `${percentage}%` }}
-                              ></div>
-                            </div>
-                          </div>
-                        ))}
+                          ))}
+                        </div>
                       </div>
-                    </div>
+                    )}
+
+                    {/* Additional Analysis Sections */}
+                    {videoAnalysisResult?.speech_transcription && (
+                      <div className="bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-200 rounded-xl p-6 mt-6">
+                        <h4 className="text-lg font-bold text-gray-900 mb-4">Speech Transcription</h4>
+                        <p className="text-gray-700 leading-relaxed">{videoAnalysisResult.speech_transcription}</p>
+                      </div>
+                    )}
+
+                    {videoAnalysisResult?.english_speech_score && (
+                      <div className="bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 rounded-xl p-6 mt-6">
+                        <div className="flex items-center justify-between mb-4">
+                          <h4 className="text-lg font-bold text-gray-900">English Communication Score</h4>
+                          <span className="text-3xl font-bold text-green-600">{videoAnalysisResult.english_speech_score?.toFixed(1)}</span>
+                        </div>
+                        <p className="text-gray-700 text-sm leading-relaxed whitespace-pre-line">{videoAnalysisResult.english_feedback}</p>
+                      </div>
+                    )}
+
+                    {videoAnalysisResult?.hr_summary && (
+                      <div className="bg-gradient-to-br from-orange-50 to-amber-50 border border-orange-200 rounded-xl p-6 mt-6">
+                        <h4 className="text-lg font-bold text-gray-900 mb-4">HR Summary</h4>
+                        <p className="text-gray-700 text-sm leading-relaxed whitespace-pre-line">{videoAnalysisResult.hr_summary}</p>
+                      </div>
+                    )}
                   </div>
                 </div>
               )}
