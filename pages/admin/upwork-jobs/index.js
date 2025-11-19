@@ -34,6 +34,7 @@ const UpworkJobs = () => {
   const [proposalLoading, setProposalLoading] = useState(false);
   const [detailsModalOpen, setDetailsModalOpen] = useState(false);
   const [filtersModalOpen, setFiltersModalOpen] = useState(false);
+  const [createdFor, setCreatedFor] = useState("anshul"); // Default to anshul
 
   // Sync jobs states
   const [syncLoading, setSyncLoading] = useState(false);
@@ -124,7 +125,8 @@ const UpworkJobs = () => {
           country: job.country,
           city: job.city,
           searchTerm: job.searchTerm,
-          totalApplicants: job.totalApplicants
+          totalApplicants: job.totalApplicants,
+          createdFor: createdFor
         })
       });
 
@@ -796,7 +798,7 @@ const UpworkJobs = () => {
                       onClick={() => {
                         setSelectedJob(job);
                         setProposalModalOpen(true);
-                        generateProposal(job);
+                        setGeneratedProposal(""); // Clear previous proposal
                       }}
                       className="px-4 py-2 bg-[#0D8CA4] text-white font-semibold rounded-md hover:bg-[#0a7186] transition duration-300"
                     >
@@ -921,13 +923,91 @@ const UpworkJobs = () => {
                 <p className="text-sm text-gray-600 mb-2">Job: {selectedJob.title}</p>
               </div>
 
-              {proposalLoading ? (
+              {/* Show selection screen if no proposal generated yet */}
+              {!generatedProposal && !proposalLoading ? (
+                <div className="py-8">
+                  <div className="text-center mb-6">
+                    <h3 className="text-lg font-bold text-gray-800 mb-2">Select Team Member</h3>
+                    <p className="text-sm text-gray-600">Choose who this proposal should be created for</p>
+                  </div>
+
+                  {/* Created For Selection */}
+                  <div className="mb-6">
+                    <div className="flex gap-4 justify-center">
+                      <button
+                        onClick={() => setCreatedFor("anshul")}
+                        className={`flex-1 max-w-xs py-4 px-6 rounded-lg font-semibold transition-all ${
+                          createdFor === "anshul"
+                            ? "bg-[#0D8CA4] text-white shadow-lg scale-105"
+                            : "bg-gray-100 text-gray-700 hover:bg-gray-200 hover:scale-102"
+                        }`}
+                      >
+                        <div className="flex items-center justify-center gap-2">
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                          </svg>
+                          <span>Anshul</span>
+                        </div>
+                      </button>
+                      <button
+                        onClick={() => setCreatedFor("rajvi")}
+                        className={`flex-1 max-w-xs py-4 px-6 rounded-lg font-semibold transition-all ${
+                          createdFor === "rajvi"
+                            ? "bg-[#0D8CA4] text-white shadow-lg scale-105"
+                            : "bg-gray-100 text-gray-700 hover:bg-gray-200 hover:scale-102"
+                        }`}
+                      >
+                        <div className="flex items-center justify-center gap-2">
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                          </svg>
+                          <span>Rajvi</span>
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Generate Button */}
+                  <div className="flex justify-center gap-3">
+                    <button
+                      onClick={() => {
+                        setProposalModalOpen(false);
+                        setGeneratedProposal("");
+                      }}
+                      className="px-6 py-3 bg-gray-200 text-gray-700 font-semibold rounded-lg hover:bg-gray-300 transition-all"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      onClick={() => generateProposal(selectedJob)}
+                      className="px-8 py-3 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition-all shadow-md hover:shadow-lg"
+                    >
+                      <div className="flex items-center gap-2">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                        <span>Generate Proposal for {createdFor.charAt(0).toUpperCase() + createdFor.slice(1)}</span>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              ) : proposalLoading ? (
                 <div className="flex flex-col items-center justify-center py-12">
                   <div className="w-12 h-12 border-4 border-t-transparent border-[#0D8CA4] border-solid rounded-full animate-spin mb-4"></div>
                   <p className="text-gray-600">Generating your personalized proposal using AI... (2-5 seconds)</p>
                 </div>
               ) : (
                 <>
+                  {/* Show who the proposal was created for */}
+                  <div className="mb-3 flex items-center gap-2 bg-blue-50 border border-blue-200 rounded-lg px-3 py-2">
+                    <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                    <span className="text-sm text-blue-800">
+                      <span className="font-semibold">Created for:</span> {createdFor.charAt(0).toUpperCase() + createdFor.slice(1)}
+                    </span>
+                  </div>
+
                   <div className="bg-gray-50 p-4 rounded-md mb-4 max-h-96 overflow-y-auto">
                     <pre className="whitespace-pre-wrap text-gray-800 font-sans">{generatedProposal}</pre>
                   </div>
@@ -942,11 +1022,10 @@ const UpworkJobs = () => {
                     <button
                       onClick={() => {
                         setGeneratedProposal("");
-                        generateProposal(selectedJob);
                       }}
                       className="flex-1 px-4 py-2 bg-gray-700 text-white font-semibold rounded-md hover:bg-gray-800 transition duration-300"
                     >
-                      Regenerate
+                      Change Person & Regenerate
                     </button>
                   </div>
                 </>
