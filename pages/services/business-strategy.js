@@ -110,39 +110,39 @@ const BusinessStrategy = () => {
         `}</style>
 
                 {/* HERO SECTION */}
-                <section className="relative overflow-hidden gradient-bg-her py-12 md:py-16 lg:py-20">
+                <section className="relative overflow-hidden gradient-bg-hero py-20 lg:py-32">
                     {/* Animated Background Blobs */}
-                    {/* <div className="absolute top-20 left-10 w-72 h-72 bg-pink-400 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
+                    <div className="absolute top-20 left-10 w-72 h-72 bg-pink-400 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
                     <div className="absolute top-40 right-20 w-96 h-96 bg-yellow-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse" style={{ animationDelay: '1s' }}></div>
-                    <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse" style={{ animationDelay: '2s' }}></div> */}
+                    <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse" style={{ animationDelay: '2s' }}></div>
 
                     <div className="relative mx-auto max-w-7xl px-6">
                         <div className="grid items-center gap-12 lg:grid-cols-2">
 
                             {/* Left Content */}
-                            <div className="text-black">
-                                <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-black/20 backdrop-blur-md px-5 py-2 text-sm font-semibold">
+                            <div className="text-white">
+                                <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-md px-5 py-2 text-sm font-semibold">
                                     <span className="relative flex h-3 w-3">
-                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-black opacity-75"></span>
-                                        <span className="relative inline-flex rounded-full h-3 w-3 bg-black"></span>
+                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                                        <span className="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
                                     </span>
                                     Business Strategy & Transformation
                                 </div>
 
                                 <h1 className="text-4xl font-black leading-tight lg:text-6xl">
                                     Strategy That Connects
-                                    <span className="block mt-2 text-blue-400">Boardroom to Dashboards</span>
+                                    <span className="block mt-2 text-yellow-300">Boardroom to Dashboards</span>
                                 </h1>
 
-                                <p className="mt-6 text-lg lg:text-xl text-black/90 leading-relaxed">
+                                <p className="mt-6 text-lg lg:text-xl text-white/90 leading-relaxed">
                                     We help leadership teams design <strong>data-backed strategy</strong>, align marketing, product, and technology, and ship a roadmap that your teams can actually execute.
                                 </p>
 
                                 <div className="mt-8 flex flex-wrap gap-4">
-                                    <a href="#contact" className="rounded-full bg-black px-8 py-4 font-bold text-white shadow-2xl transition hover:scale-105">
+                                    <a href="#contact" className="rounded-full bg-white px-8 py-4 font-bold text-purple-700 shadow-2xl transition hover:scale-105">
                                         Schedule a Strategy Call →
                                     </a>
-                                    <a href="#framework" className="rounded-full px-8 py-4 font-semibold text-black transition hover:bg-black/20 bg-black/10 backdrop-blur-md border border-black/20">
+                                    <a href="#framework" className="rounded-full px-8 py-4 font-semibold text-white transition hover:bg-white/20 bg-white/10 backdrop-blur-md border border-white/20">
                                         See Our Framework
                                     </a>
                                 </div>
@@ -150,16 +150,16 @@ const BusinessStrategy = () => {
                                 {/* Quick Stats */}
                                 <div className="mt-10 grid grid-cols-3 gap-4">
                                     <div className="text-center">
-                                        <div className="text-xl md:text-3xl font-black text-blue-400">2-3×</div>
-                                        <div className="text-sm text-black/80">Decision Velocity</div>
+                                        <div className="text-xl md:text-3xl font-black text-yellow-300">2-3×</div>
+                                        <div className="text-sm text-white/80">Decision Velocity</div>
                                     </div>
                                     <div className="text-center">
-                                        <div className="text-xl md:text-3xl font-black text-blue-400">20-30%</div>
-                                        <div className="text-sm text-black/80">Media Efficiency</div>
+                                        <div className="text-xl md:text-3xl font-black text-yellow-300">20-30%</div>
+                                        <div className="text-sm text-white/80">Media Efficiency</div>
                                     </div>
                                     <div className="text-center">
-                                        <div className="text-xl md:text-3xl font-black text-blue-400">90 Days</div>
-                                        <div className="text-sm text-black/80">To Impact</div>
+                                        <div className="text-xl md:text-3xl font-black text-yellow-300">90 Days</div>
+                                        <div className="text-sm text-white/80">To Impact</div>
                                     </div>
                                 </div>
                             </div>
@@ -168,47 +168,47 @@ const BusinessStrategy = () => {
                             <div className="relative">
                                 <div className="grid grid-cols-2 gap-4">
                                     {/* Card 1 */}
-                                    <div className="rounded-3xl p-6 transition-all hover:transform hover:-translate-y-2 hover:shadow-xl bg-white backdrop-blur-md border border-gray-600 float-animation">
+                                    <div className="rounded-3xl p-6 transition-all hover:transform hover:-translate-y-2 hover:shadow-xl bg-black/20 backdrop-blur-md border border-white/10 float-animation">
                                         <div className="mb-3 inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-400 to-pink-400">
                                             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                                             </svg>
                                         </div>
-                                        <div className="text-sm font-medium text-black/70">Analytics-Driven</div>
-                                        <div className="mt-1 text-lg md:text-2xl font-black text-black">GA4 + Cloud</div>
+                                        <div className="text-sm font-medium text-white/70">Analytics-Driven</div>
+                                        <div className="mt-1 text-lg md:text-2xl font-black text-white">GA4 + Cloud</div>
                                     </div>
 
                                     {/* Card 2 */}
-                                    <div className="rounded-3xl p-6 transition-all hover:transform hover:-translate-y-2 hover:shadow-xl bg-white backdrop-blur-md border border-gray-600 float-animation" style={{ animationDelay: '0.5s' }}>
+                                    <div className="rounded-3xl p-6 transition-all hover:transform hover:-translate-y-2 hover:shadow-xl bg-black/20 backdrop-blur-md border border-white/10 float-animation" style={{ animationDelay: '0.5s' }}>
                                         <div className="mb-3 inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-400 to-cyan-400">
                                             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                                             </svg>
                                         </div>
-                                        <div className="text-sm font-medium text-black/70">Rapid Execution</div>
-                                        <div className="mt-1 text-lg md:text-2xl font-black text-black">90-Day Plan</div>
+                                        <div className="text-sm font-medium text-white/70">Rapid Execution</div>
+                                        <div className="mt-1 text-lg md:text-2xl font-black text-white">90-Day Plan</div>
                                     </div>
 
                                     {/* Card 3 */}
-                                    <div className="rounded-3xl p-6 transition-all hover:transform hover:-translate-y-2 hover:shadow-xl bg-white backdrop-blur-md border border-gray-600 float-animation" style={{ animationDelay: '1s' }}>
+                                    <div className="rounded-3xl p-6 transition-all hover:transform hover:-translate-y-2 hover:shadow-xl bg-black/20 backdrop-blur-md border border-white/10 float-animation" style={{ animationDelay: '1s' }}>
                                         <div className="mb-3 inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-br from-green-400 to-emerald-400">
                                             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                             </svg>
                                         </div>
-                                        <div className="text-sm font-medium text-black/70">ROI Focused</div>
-                                        <div className="mt-1 text-lg md:text-2xl font-black text-black">Measurable</div>
+                                        <div className="text-sm font-medium text-white/70">ROI Focused</div>
+                                        <div className="mt-1 text-lg md:text-2xl font-black text-white">Measurable</div>
                                     </div>
 
                                     {/* Card 4 */}
-                                    <div className="rounded-3xl p-6 transition-all hover:transform hover:-translate-y-2 hover:shadow-xl bg-white backdrop-blur-md border border-gray-600 float-animation" style={{ animationDelay: '1.5s' }}>
+                                    <div className="rounded-3xl p-6 transition-all hover:transform hover:-translate-y-2 hover:shadow-xl bg-black/20 backdrop-blur-md border border-white/10 float-animation" style={{ animationDelay: '1.5s' }}>
                                         <div className="mb-3 inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-br from-yellow-400 to-orange-400">
                                             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                                             </svg>
                                         </div>
-                                        <div className="text-sm font-medium text-black/70">Team Alignment</div>
-                                        <div className="mt-1 text-lg md:text-2xl font-black text-black">80%+ Adoption</div>
+                                        <div className="text-sm font-medium text-white/70">Team Alignment</div>
+                                        <div className="mt-1 text-lg md:text-2xl font-black text-white">80%+ Adoption</div>
                                     </div>
                                 </div>
                             </div>
@@ -216,7 +216,6 @@ const BusinessStrategy = () => {
                         </div>
                     </div>
                 </section>
-
                 {/* WHO WE WORK WITH */}
                 <section className="py-20 bg-white">
                     <div className="mx-auto max-w-7xl px-6">
@@ -1001,3 +1000,104 @@ const BusinessStrategy = () => {
 };
 
 export default BusinessStrategy;
+
+
+// <section className="relative overflow-hidden bg-gradient-to-br from-[#FFF7ED] via-white to-[#F0F9FF] py-12 md:py-16 lg:py-20">
+
+//     <div className="relative mx-auto max-w-7xl px-6">
+//         <div className="grid items-center gap-12 lg:grid-cols-2">
+//             <div className="text-black">
+//                 <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-black/20 backdrop-blur-md px-5 py-2 text-sm font-semibold">
+//                     <span className="relative flex h-3 w-3">
+//                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-black opacity-75"></span>
+//                         <span className="relative inline-flex rounded-full h-3 w-3 bg-black"></span>
+//                     </span>
+//                     Business Strategy & Transformation
+//                 </div>
+
+//                 <h1 className="text-4xl font-black leading-tight lg:text-6xl">
+//                     Strategy That Connects
+//                     <span className="block mt-2 text-blue-400">Boardroom to Dashboards</span>
+//                 </h1>
+
+//                 <p className="mt-6 text-lg lg:text-xl text-black/90 leading-relaxed">
+//                     We help leadership teams design <strong>data-backed strategy</strong>, align marketing, product, and technology, and ship a roadmap that your teams can actually execute.
+//                 </p>
+
+//                 <div className="mt-8 flex flex-wrap gap-4">
+//                     <a href="#contact" className="rounded-full bg-black px-8 py-4 font-bold text-white shadow-2xl transition hover:scale-105">
+//                         Schedule a Strategy Call →
+//                     </a>
+//                     <a href="#framework" className="rounded-full px-8 py-4 font-semibold text-black transition hover:bg-black/20 bg-black/10 backdrop-blur-md border border-black/20">
+//                         See Our Framework
+//                     </a>
+//                 </div>
+
+//                 <div className="mt-10 grid grid-cols-3 gap-4">
+//                     <div className="text-center">
+//                         <div className="text-xl md:text-3xl font-black text-blue-400">2-3×</div>
+//                         <div className="text-sm text-black/80">Decision Velocity</div>
+//                     </div>
+//                     <div className="text-center">
+//                         <div className="text-xl md:text-3xl font-black text-blue-400">20-30%</div>
+//                         <div className="text-sm text-black/80">Media Efficiency</div>
+//                     </div>
+//                     <div className="text-center">
+//                         <div className="text-xl md:text-3xl font-black text-blue-400">90 Days</div>
+//                         <div className="text-sm text-black/80">To Impact</div>
+//                     </div>
+//                 </div>
+//             </div>
+
+//             {/* Right - Floating Cards */}
+//             <div className="relative">
+//                 <div className="grid grid-cols-2 gap-4">
+//                     {/* Card 1 */}
+//                     <div className="rounded-3xl p-6 transition-all hover:transform hover:-translate-y-2 hover:shadow-xl bg-white backdrop-blur-md border border-gray-600 float-animation">
+//                         <div className="mb-3 inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-400 to-pink-400">
+//                             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+//                             </svg>
+//                         </div>
+//                         <div className="text-sm font-medium text-black/70">Analytics-Driven</div>
+//                         <div className="mt-1 text-lg md:text-2xl font-black text-black">GA4 + Cloud</div>
+//                     </div>
+
+//                     {/* Card 2 */}
+//                     <div className="rounded-3xl p-6 transition-all hover:transform hover:-translate-y-2 hover:shadow-xl bg-white backdrop-blur-md border border-gray-600 float-animation" style={{ animationDelay: '0.5s' }}>
+//                         <div className="mb-3 inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-400 to-cyan-400">
+//                             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+//                             </svg>
+//                         </div>
+//                         <div className="text-sm font-medium text-black/70">Rapid Execution</div>
+//                         <div className="mt-1 text-lg md:text-2xl font-black text-black">90-Day Plan</div>
+//                     </div>
+
+//                     {/* Card 3 */}
+//                     <div className="rounded-3xl p-6 transition-all hover:transform hover:-translate-y-2 hover:shadow-xl bg-white backdrop-blur-md border border-gray-600 float-animation" style={{ animationDelay: '1s' }}>
+//                         <div className="mb-3 inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-br from-green-400 to-emerald-400">
+//                             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+//                             </svg>
+//                         </div>
+//                         <div className="text-sm font-medium text-black/70">ROI Focused</div>
+//                         <div className="mt-1 text-lg md:text-2xl font-black text-black">Measurable</div>
+//                     </div>
+
+//                     {/* Card 4 */}
+//                     <div className="rounded-3xl p-6 transition-all hover:transform hover:-translate-y-2 hover:shadow-xl bg-white backdrop-blur-md border border-gray-600 float-animation" style={{ animationDelay: '1.5s' }}>
+//                         <div className="mb-3 inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-br from-yellow-400 to-orange-400">
+//                             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+//                             </svg>
+//                         </div>
+//                         <div className="text-sm font-medium text-black/70">Team Alignment</div>
+//                         <div className="mt-1 text-lg md:text-2xl font-black text-black">80%+ Adoption</div>
+//                     </div>
+//                 </div>
+//             </div>
+
+//         </div>
+//     </div>
+// </section >
