@@ -110,7 +110,7 @@ const BusinessStrategy = () => {
         `}</style>
 
                 {/* HERO SECTION */}
-                <section className="relative overflow-hidden gradient-bg-her py-16 lg:py-20">
+                <section className="relative overflow-hidden gradient-bg-her py-12 md:py-16 lg:py-20">
                     {/* Animated Background Blobs */}
                     {/* <div className="absolute top-20 left-10 w-72 h-72 bg-pink-400 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
                     <div className="absolute top-40 right-20 w-96 h-96 bg-yellow-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse" style={{ animationDelay: '1s' }}></div>
@@ -150,15 +150,15 @@ const BusinessStrategy = () => {
                                 {/* Quick Stats */}
                                 <div className="mt-10 grid grid-cols-3 gap-4">
                                     <div className="text-center">
-                                        <div className="text-3xl font-black text-blue-400">2-3×</div>
+                                        <div className="text-xl md:text-3xl font-black text-blue-400">2-3×</div>
                                         <div className="text-sm text-black/80">Decision Velocity</div>
                                     </div>
                                     <div className="text-center">
-                                        <div className="text-3xl font-black text-blue-400">20-30%</div>
+                                        <div className="text-xl md:text-3xl font-black text-blue-400">20-30%</div>
                                         <div className="text-sm text-black/80">Media Efficiency</div>
                                     </div>
                                     <div className="text-center">
-                                        <div className="text-3xl font-black text-blue-400">90 Days</div>
+                                        <div className="text-xl md:text-3xl font-black text-blue-400">90 Days</div>
                                         <div className="text-sm text-black/80">To Impact</div>
                                     </div>
                                 </div>
@@ -175,7 +175,7 @@ const BusinessStrategy = () => {
                                             </svg>
                                         </div>
                                         <div className="text-sm font-medium text-black/70">Analytics-Driven</div>
-                                        <div className="mt-1 text-2xl font-black text-black">GA4 + Cloud</div>
+                                        <div className="mt-1 text-lg md:text-2xl font-black text-black">GA4 + Cloud</div>
                                     </div>
 
                                     {/* Card 2 */}
@@ -186,7 +186,7 @@ const BusinessStrategy = () => {
                                             </svg>
                                         </div>
                                         <div className="text-sm font-medium text-black/70">Rapid Execution</div>
-                                        <div className="mt-1 text-2xl font-black text-black">90-Day Plan</div>
+                                        <div className="mt-1 text-lg md:text-2xl font-black text-black">90-Day Plan</div>
                                     </div>
 
                                     {/* Card 3 */}
@@ -197,7 +197,7 @@ const BusinessStrategy = () => {
                                             </svg>
                                         </div>
                                         <div className="text-sm font-medium text-black/70">ROI Focused</div>
-                                        <div className="mt-1 text-2xl font-black text-black">Measurable</div>
+                                        <div className="mt-1 text-lg md:text-2xl font-black text-black">Measurable</div>
                                     </div>
 
                                     {/* Card 4 */}
@@ -208,7 +208,7 @@ const BusinessStrategy = () => {
                                             </svg>
                                         </div>
                                         <div className="text-sm font-medium text-black/70">Team Alignment</div>
-                                        <div className="mt-1 text-2xl font-black text-black">80%+ Adoption</div>
+                                        <div className="mt-1 text-lg md:text-2xl font-black text-black">80%+ Adoption</div>
                                     </div>
                                 </div>
                             </div>
