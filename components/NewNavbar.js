@@ -54,7 +54,7 @@ const NewNavbar = () => {
     {
       title: "Digital Transformation",
       services: [
-        { label: "Business Transformation Consulting", href: "/services/business-transformation" },
+        { label: "Business Transformation Consulting", href: "/services/business-strategy" },
         { label: "End-to-End Digital Solutions", href: "/services/end-to-end-digital-solutions" },
         { label: "Agentic AI & Automation", href: "/services/agentic-ai-automation" },
         { label: "Business Solutions", href: "/services/business-solutions" },
@@ -295,7 +295,7 @@ const NewNavbar = () => {
                         <ul className="mt-4 space-y-2 text-sm">
                           <li>
                             <a
-                              href="/services/business-transformation"
+                              href="/services/business-strategy"
                               className="block rounded-xl px-3 py-2.5 text-slate-700 hover:bg-gradient-to-r hover:from-blue-50/60 hover:to-indigo-50/40 hover:text-slate-800 transition-all duration-200 hover:translate-x-1 hover:shadow-sm border border-transparent hover:border-blue-100/50"
                             >
                               Business Transformation Consulting
