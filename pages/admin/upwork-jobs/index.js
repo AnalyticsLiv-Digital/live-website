@@ -36,6 +36,12 @@ const UpworkJobs = () => {
   const [filtersModalOpen, setFiltersModalOpen] = useState(false);
   const [createdFor, setCreatedFor] = useState("anshul"); // Default to anshul
 
+  // New states for existing proposals
+  const [existingProposals, setExistingProposals] = useState([]);
+  const [selectedProposal, setSelectedProposal] = useState(null);
+  const [showExistingProposals, setShowExistingProposals] = useState(false);
+  const [fetchingProposals, setFetchingProposals] = useState(false);
+
   // Sync jobs states
   const [syncLoading, setSyncLoading] = useState(false);
   const [syncStatus, setSyncStatus] = useState(null);
@@ -104,10 +110,88 @@ const UpworkJobs = () => {
     }
   };
 
-  // Generate proposal function
-  const generateProposal = async (job) => {
-    setProposalLoading(true);
+  // Fetch existing proposals for a job
+  const fetchExistingProposals = async (jobId, name) => {
+    setFetchingProposals(true);
     try {
+      const response = await fetch(`/api/admin/upwork/proposals?jobId=${jobId}&name=${name}`);
+
+      if (response.status === 404) {
+        // No proposals found
+        return [];
+      }
+
+      if (!response.ok) {
+        throw new Error('Failed to fetch existing proposals');
+      }
+
+      const data = await response.json();
+      return data.proposals || [];
+    } catch (err) {
+      console.error('Error fetching existing proposals:', err);
+      return [];
+    } finally {
+      setFetchingProposals(false);
+    }
+  };
+
+  // Save proposal to database
+  const saveProposal = async (jobId, name, proposal) => {
+    try {
+      const response = await fetch('/api/admin/upwork/proposals', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          job_id: jobId,
+          name: name,
+          proposal: proposal
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to save proposal');
+      }
+
+      console.log('Proposal saved successfully');
+    } catch (err) {
+      console.error('Error saving proposal:', err);
+      // Don't show error to user since proposal was generated successfully
+    }
+  };
+
+  // NEW: Handle generate proposal button click
+  const handleGenerateProposalClick = async () => {
+    setProposalLoading(true);
+
+    try {
+      // First, check if there are existing proposals
+      const existingProposalsData = await fetchExistingProposals(selectedJob.id, createdFor);
+
+      if (existingProposalsData.length > 0) {
+        // Show existing proposals
+        setExistingProposals(existingProposalsData);
+        setShowExistingProposals(true);
+        setProposalLoading(false);
+      } else {
+        // No existing proposals, generate new one
+        await generateNewProposal(selectedJob);
+      }
+    } catch (err) {
+      console.error('Error checking existing proposals:', err);
+      setProposalLoading(false);
+      alert('Failed to check existing proposals. Please try again.');
+    }
+  };
+
+  // NEW: Generate new proposal and save it
+  const generateNewProposal = async (job) => {
+    setProposalLoading(true);
+    setShowExistingProposals(false);
+
+    try {
+      // Generate proposal
       const response = await fetch('https://upwork-llm-bot-135392845747.europe-west1.run.app/generate-proposal', {
         method: 'POST',
         headers: {
@@ -135,13 +219,25 @@ const UpworkJobs = () => {
       }
 
       const data = await response.json();
-      setGeneratedProposal(data.proposal);
+      const newProposal = data.proposal;
+      setGeneratedProposal(newProposal);
+
+      // Save the proposal to database
+      await saveProposal(job.id, createdFor, newProposal);
+
     } catch (err) {
       alert('Failed to generate proposal. Please try again.');
       console.error('Error generating proposal:', err);
     } finally {
       setProposalLoading(false);
     }
+  };
+
+  // Select an existing proposal
+  const handleSelectExistingProposal = (proposal) => {
+    setSelectedProposal(proposal);
+    setGeneratedProposal(proposal.proposal);
+    setShowExistingProposals(false);
   };
 
   // Copy to clipboard
@@ -428,11 +524,10 @@ const UpworkJobs = () => {
               <button
                 onClick={syncUpworkJobs}
                 disabled={syncLoading || cooldownRemaining > 0}
-                className={`flex items-center gap-2 px-6 py-2.5 font-semibold rounded-md transition duration-300 ${
-                  syncLoading || cooldownRemaining > 0
+                className={`flex items-center gap-2 px-6 py-2.5 font-semibold rounded-md transition duration-300 ${syncLoading || cooldownRemaining > 0
                     ? 'bg-gray-400 text-gray-700 cursor-not-allowed'
                     : 'bg-green-600 text-white hover:bg-green-700'
-                }`}
+                  }`}
               >
                 {syncLoading ? (
                   <>
@@ -495,11 +590,10 @@ const UpworkJobs = () => {
 
               <button
                 onClick={() => setFiltersModalOpen(!filtersModalOpen)}
-                className={`flex items-center gap-2 px-6 py-3 font-semibold rounded-lg transition-colors shadow-sm ${
-                  getActiveFiltersCount() > 0
+                className={`flex items-center gap-2 px-6 py-3 font-semibold rounded-lg transition-colors shadow-sm ${getActiveFiltersCount() > 0
                     ? 'bg-[#0D8CA4] text-white hover:bg-[#0a7388]'
                     : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'
-                }`}
+                  }`}
               >
                 <span>⚙️</span>
                 <span>Filters</span>
@@ -810,7 +904,10 @@ const UpworkJobs = () => {
                       onClick={() => {
                         setSelectedJob(job);
                         setProposalModalOpen(true);
-                        setGeneratedProposal(""); // Clear previous proposal
+                        setGeneratedProposal("");
+                        setExistingProposals([]);
+                        setShowExistingProposals(false);
+                        setSelectedProposal(null);
                       }}
                       className="px-4 py-2 bg-[#0D8CA4] text-white font-semibold rounded-md hover:bg-[#0a7186] transition duration-300"
                     >
@@ -916,13 +1013,16 @@ const UpworkJobs = () => {
       {/* Proposal Modal */}
       {proposalModalOpen && selectedJob && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 p-4">
-          <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full">
-            <div className="bg-gray-800 text-white p-6 rounded-t-lg flex justify-between items-center">
+          <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="bg-gray-800 text-white p-6 rounded-t-lg flex justify-between items-center sticky top-0 z-10">
               <h2 className="text-2xl font-bold">Generated Proposal</h2>
               <button
                 onClick={() => {
                   setProposalModalOpen(false);
                   setGeneratedProposal("");
+                  setExistingProposals([]);
+                  setShowExistingProposals(false);
+                  setSelectedProposal(null);
                 }}
                 className="text-white hover:text-gray-300 text-3xl font-bold"
               >
@@ -936,7 +1036,7 @@ const UpworkJobs = () => {
               </div>
 
               {/* Show selection screen if no proposal generated yet */}
-              {!generatedProposal && !proposalLoading ? (
+              {!generatedProposal && !proposalLoading && !showExistingProposals ? (
                 <div className="py-8">
                   <div className="text-center mb-6">
                     <h3 className="text-lg font-bold text-gray-800 mb-2">Select Team Member</h3>
@@ -948,11 +1048,10 @@ const UpworkJobs = () => {
                     <div className="flex gap-4 justify-center">
                       <button
                         onClick={() => setCreatedFor("anshul")}
-                        className={`flex-1 max-w-xs py-4 px-6 rounded-lg font-semibold transition-all ${
-                          createdFor === "anshul"
-                            ? "bg-[#0D8CA4] text-white shadow-lg scale-105"
-                            : "bg-gray-100 text-gray-700 hover:bg-gray-200 hover:scale-102"
-                        }`}
+                        className={`flex-1 max-w-xs py-4 px-6 rounded-lg font-semibold transition-all ${createdFor === "anshul"
+                          ? "bg-[#0D8CA4] text-white shadow-lg scale-105"
+                          : "bg-gray-100 text-gray-700 hover:bg-gray-200 hover:scale-102"
+                          }`}
                       >
                         <div className="flex items-center justify-center gap-2">
                           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -963,11 +1062,10 @@ const UpworkJobs = () => {
                       </button>
                       <button
                         onClick={() => setCreatedFor("rajvi")}
-                        className={`flex-1 max-w-xs py-4 px-6 rounded-lg font-semibold transition-all ${
-                          createdFor === "rajvi"
-                            ? "bg-[#0D8CA4] text-white shadow-lg scale-105"
-                            : "bg-gray-100 text-gray-700 hover:bg-gray-200 hover:scale-102"
-                        }`}
+                        className={`flex-1 max-w-xs py-4 px-6 rounded-lg font-semibold transition-all ${createdFor === "rajvi"
+                          ? "bg-[#0D8CA4] text-white shadow-lg scale-105"
+                          : "bg-gray-100 text-gray-700 hover:bg-gray-200 hover:scale-102"
+                          }`}
                       >
                         <div className="flex items-center justify-center gap-2">
                           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -991,15 +1089,94 @@ const UpworkJobs = () => {
                       Cancel
                     </button>
                     <button
-                      onClick={() => generateProposal(selectedJob)}
-                      className="px-8 py-3 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition-all shadow-md hover:shadow-lg"
+                      onClick={handleGenerateProposalClick}
+                      disabled={fetchingProposals}
+                      className="px-8 py-3 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition-all shadow-md hover:shadow-lg disabled:bg-gray-400 disabled:cursor-not-allowed"
                     >
                       <div className="flex items-center gap-2">
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
+                        {fetchingProposals ? (
+                          <div className="w-5 h-5 border-2 border-t-transparent border-white border-solid rounded-full animate-spin"></div>
+                        ) : (
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                          </svg>
+                        )}
                         <span>Generate Proposal for {createdFor.charAt(0).toUpperCase() + createdFor.slice(1)}</span>
                       </div>
+                    </button>
+                  </div>
+                </div>
+              ) : showExistingProposals && existingProposals.length > 0 ? (
+                /* Show existing proposals list */
+                <div className="py-4">
+                  <div className="mb-4">
+                    <h3 className="text-lg font-bold text-gray-800 mb-2">
+                      📋 Existing Proposals for {createdFor.charAt(0).toUpperCase() + createdFor.slice(1)}
+                    </h3>
+                    <p className="text-sm text-gray-600">
+                      Found {existingProposals.length} existing proposal{existingProposals.length > 1 ? 's' : ''}. Select one to use or generate a new one.
+                    </p>
+                  </div>
+
+                  {/* Scrollable proposals list */}
+                  <div className="max-h-[400px] overflow-y-auto space-y-3 mb-4 pr-2">
+                    {existingProposals?.map((proposal, index) => (
+                      <div
+                        key={index}
+                        className="border border-gray-200 rounded-lg p-4 hover:border-[#0D8CA4] hover:shadow-md transition-all cursor-pointer"
+                        onClick={() => handleSelectExistingProposal(proposal)}
+                      >
+                        <div className="flex items-start justify-between mb-2">
+                          <div className="flex items-center gap-2">
+                            <span className="text-xs font-semibold text-gray-500">
+                              Proposal #{index + 1}
+                            </span>
+                            <span className="text-xs text-gray-400">
+                              {new Date(proposal.createdAt).toLocaleDateString('en-US', {
+                                month: 'short',
+                                day: 'numeric',
+                                year: 'numeric',
+                                hour: '2-digit',
+                                minute: '2-digit'
+                              })}
+                            </span>
+                          </div>
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleSelectExistingProposal(proposal);
+                            }}
+                            className="px-3 py-1 bg-[#0D8CA4] text-white text-xs font-semibold rounded hover:bg-[#0a7186] transition-all"
+                          >
+                            Use This
+                          </button>
+                        </div>
+                        <p className="text-sm text-gray-700 line-clamp-3">
+                          {proposal.proposal}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Action buttons */}
+                  <div className="flex gap-3 pt-4 border-t border-gray-200">
+                    <button
+                      onClick={() => {
+                        setShowExistingProposals(false);
+                        setExistingProposals([]);
+                      }}
+                      className="flex-1 px-4 py-2 bg-gray-200 text-gray-700 font-semibold rounded-lg hover:bg-gray-300 transition-all"
+                    >
+                      Back
+                    </button>
+                    <button
+                      onClick={() => generateNewProposal(selectedJob)}
+                      className="flex-1 px-4 py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-all flex items-center justify-center gap-2"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" />
+                      </svg>
+                      Generate New Proposal
                     </button>
                   </div>
                 </div>
@@ -1018,6 +1195,11 @@ const UpworkJobs = () => {
                     <span className="text-sm text-blue-800">
                       <span className="font-semibold">Created for:</span> {createdFor.charAt(0).toUpperCase() + createdFor.slice(1)}
                     </span>
+                    {selectedProposal && (
+                      <span className="ml-2 text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full">
+                        Existing Proposal
+                      </span>
+                    )}
                   </div>
 
                   {/* Upwork Apply URL */}
@@ -1062,6 +1244,9 @@ const UpworkJobs = () => {
                     <button
                       onClick={() => {
                         setGeneratedProposal("");
+                        setSelectedProposal(null);
+                        setExistingProposals([]);
+                        setShowExistingProposals(false);
                       }}
                       className="flex-1 px-4 py-2 bg-gray-700 text-white font-semibold rounded-md hover:bg-gray-800 transition duration-300"
                     >
