@@ -14,7 +14,7 @@ const UpworkJobs = () => {
 
   // Filter states
   const [filters, setFilters] = useState({
-    search_term: "",
+    search_term: [], // Changed to array for multiple selections
     max_applicants: "",
     last_n_hours: "",
     contract_type: ""
@@ -35,6 +35,7 @@ const UpworkJobs = () => {
   const [detailsModalOpen, setDetailsModalOpen] = useState(false);
   const [filtersModalOpen, setFiltersModalOpen] = useState(false);
   const [createdFor, setCreatedFor] = useState("anshul"); // Default to anshul
+  const [searchTermDropdownOpen, setSearchTermDropdownOpen] = useState(false); // For multi-select dropdown
 
   // New states for existing proposals
   const [existingProposals, setExistingProposals] = useState([]);
@@ -86,11 +87,17 @@ const UpworkJobs = () => {
         const params = new URLSearchParams({
           limit: limit.toString(),
           offset: offset.toString(),
-          ...(filters.search_term && { search_term: filters.search_term }),
           ...(filters.max_applicants && { max_applicants: filters.max_applicants }),
           ...(filters.last_n_hours && { last_n_hours: filters.last_n_hours }),
           ...(filters.contract_type && { contract_type: filters.contract_type })
         });
+
+        // Add multiple search_term values if array has items
+        if (filters.search_term && filters.search_term.length > 0) {
+          filters.search_term.forEach(term => {
+            params.append('search_term', term);
+          });
+        }
 
         const response = await fetch(`https://upwork-llm-bot-135392845747.europe-west1.run.app/jobs?${params}`);
 
@@ -294,7 +301,7 @@ const UpworkJobs = () => {
   const handleClearAll = async () => {
     setTitleSearch("");
     setFilters({
-      search_term: "",
+      search_term: [],
       max_applicants: "",
       last_n_hours: "",
       contract_type: ""
@@ -393,7 +400,7 @@ const UpworkJobs = () => {
   // Count active filters
   const getActiveFiltersCount = () => {
     let count = 0;
-    if (filters.search_term) count++;
+    if (filters.search_term && filters.search_term.length > 0) count += filters.search_term.length;
     if (filters.max_applicants) count++;
     if (filters.last_n_hours) count++;
     if (filters.contract_type) count++;
@@ -454,7 +461,7 @@ const UpworkJobs = () => {
   // Clear filters
   const handleClearFilters = () => {
     setFilters({
-      search_term: "",
+      search_term: [],
       max_applicants: "",
       last_n_hours: "",
       contract_type: ""
@@ -484,6 +491,20 @@ const UpworkJobs = () => {
       fetchJobs();
     }
   }, [currentPage]);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (searchTermDropdownOpen && !event.target.closest('.search-term-dropdown-container')) {
+        setSearchTermDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [searchTermDropdownOpen]);
 
   // Loading state
   if (status === 'loading') {
@@ -639,13 +660,14 @@ const UpworkJobs = () => {
                     </button>
                   </div>
                 )}
-                {filters.search_term && (
-                  <div className="inline-flex items-center gap-2 bg-green-50 text-green-700 px-3 py-1.5 rounded-full text-sm">
+                {filters.search_term && filters.search_term.length > 0 && filters.search_term.map((term, index) => (
+                  <div key={index} className="inline-flex items-center gap-2 bg-green-50 text-green-700 px-3 py-1.5 rounded-full text-sm">
                     <span className="font-medium">Skill:</span>
-                    <span>{filters.search_term}</span>
+                    <span>{term}</span>
                     <button
                       onClick={() => {
-                        setFilters({ ...filters, search_term: "" });
+                        const newSearchTerms = filters.search_term.filter((_, i) => i !== index);
+                        setFilters({ ...filters, search_term: newSearchTerms });
                         setCurrentPage(1);
                       }}
                       className="ml-1 hover:bg-green-200 rounded-full p-0.5"
@@ -653,7 +675,7 @@ const UpworkJobs = () => {
                       ✕
                     </button>
                   </div>
-                )}
+                ))}
                 {filters.max_applicants && (
                   <div className="inline-flex items-center gap-2 bg-purple-50 text-purple-700 px-3 py-1.5 rounded-full text-sm">
                     <span className="font-medium">Max Applicants:</span>
@@ -717,21 +739,59 @@ const UpworkJobs = () => {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                {/* Search Term */}
+                {/* Search Term - Multi-select Dropdown */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     💼 Skill / Technology
                   </label>
-                  <select
-                    value={filters.search_term}
-                    onChange={(e) => setFilters({ ...filters, search_term: e.target.value })}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0D8CA4]"
-                  >
-                    <option value="">All Skills</option>
-                    {searchTerms.map(term => (
-                      <option key={term} value={term}>{term}</option>
-                    ))}
-                  </select>
+                  <div className="relative search-term-dropdown-container">
+                    <button
+                      type="button"
+                      onClick={() => setSearchTermDropdownOpen(!searchTermDropdownOpen)}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md bg-white text-left focus:outline-none focus:ring-2 focus:ring-[#0D8CA4] flex items-center justify-between"
+                    >
+                      <span className="text-sm text-gray-700">
+                        {filters.search_term.length === 0
+                          ? "Select skills..."
+                          : `${filters.search_term.length} selected`}
+                      </span>
+                      <svg
+                        className={`w-4 h-4 text-gray-500 transition-transform ${searchTermDropdownOpen ? 'transform rotate-180' : ''}`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    {searchTermDropdownOpen && (
+                      <div className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-y-auto">
+                        <div className="p-2 space-y-1">
+                          {searchTerms.map(term => (
+                            <label
+                              key={term}
+                              className="flex items-center gap-2 hover:bg-gray-50 p-2 rounded cursor-pointer"
+                            >
+                              <input
+                                type="checkbox"
+                                checked={filters.search_term.includes(term)}
+                                onChange={(e) => {
+                                  if (e.target.checked) {
+                                    setFilters({ ...filters, search_term: [...filters.search_term, term] });
+                                  } else {
+                                    setFilters({ ...filters, search_term: filters.search_term.filter(t => t !== term) });
+                                  }
+                                }}
+                                className="w-4 h-4 text-[#0D8CA4] border-gray-300 rounded focus:ring-[#0D8CA4]"
+                              />
+                              <span className="text-sm text-gray-700">{term}</span>
+                            </label>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 </div>
 
                 {/* Max Applicants */}
@@ -765,6 +825,8 @@ const UpworkJobs = () => {
                     <option value="1">Last 1 Hour</option>
                     <option value="5">Last 5 Hours</option>
                     <option value="12">Last 12 Hours</option>
+                    <option value="24">Last 1 Day</option>
+                    <option value="120">Last 5 Days</option>
                   </select>
                 </div>
 
@@ -792,6 +854,7 @@ const UpworkJobs = () => {
                     setCurrentPage(1);
                     fetchJobs();
                     setFiltersModalOpen(false);
+                    setSearchTermDropdownOpen(false);
                   }}
                   className="px-6 py-2.5 bg-[#0D8CA4] text-white font-semibold rounded-lg hover:bg-[#0a7186] transition duration-300 shadow-sm"
                 >
@@ -800,12 +863,13 @@ const UpworkJobs = () => {
                 <button
                   onClick={() => {
                     setFilters({
-                      search_term: "",
+                      search_term: [],
                       max_applicants: "",
                       last_n_hours: "",
                       contract_type: ""
                     });
                     setCurrentPage(1);
+                    setSearchTermDropdownOpen(false);
                   }}
                   className="px-6 py-2.5 bg-gray-200 text-gray-700 font-semibold rounded-lg hover:bg-gray-300 transition duration-300"
                 >
