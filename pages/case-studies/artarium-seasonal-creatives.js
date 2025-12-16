@@ -19,7 +19,7 @@ const ArtariumCaseStudy = () => {
         coverimage:
             "https://analyticsliv.com/static/logo.png",
         id: "cs10",
-        pdf: "https://storage.googleapis.com/website-bucket-uploads/cs/1744002263636865.pdf",
+        pdf: "https://storage.googleapis.com/website-bucket-uploads/cs/_%5BArtarium%5D%20Case%20Study%20Event%20Based%20Creatives%20.pdf",
     };
 
     const csSchema = generateCaseStudySchema(cd);
