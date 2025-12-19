@@ -54,6 +54,7 @@ const NewNavbar = () => {
     {
       title: "Digital Transformation",
       services: [
+        { label: "Digital Maturity Assessment", href: "/services/digital-maturity-assessment" },
         { label: "Business Transformation Consulting", href: "/services/business-strategy" },
         { label: "End-to-End Digital Solutions", href: "/services/end-to-end-digital-solutions" },
         { label: "Agentic AI & Automation", href: "/services/agentic-ai-automation" },
@@ -293,6 +294,14 @@ const NewNavbar = () => {
                           Digital Transformation
                         </h4>
                         <ul className="mt-4 space-y-2 text-sm">
+                          <li>
+                            <a
+                              href="/services/digital-maturity-assessment"
+                              className="block rounded-xl px-3 py-2.5 text-slate-700 hover:bg-gradient-to-r hover:from-blue-50/60 hover:to-indigo-50/40 hover:text-slate-800 transition-all duration-200 hover:translate-x-1 hover:shadow-sm border border-transparent hover:border-blue-100/50"
+                            >
+                              Digital Maturity Assessment
+                            </a>
+                          </li>
                           <li>
                             <a
                               href="/services/business-strategy"
