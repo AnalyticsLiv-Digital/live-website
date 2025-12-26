@@ -1,3 +1,4 @@
+'use client'
 export default function Toast({ show, message }) {
     if (!show) return null;
 

@@ -1,3 +1,4 @@
+'use client'
 import Hero from './hero';
 import ResultsPanel from './Resultspanel';
 
