@@ -159,7 +159,7 @@ export default function RadarChart({ categories, centerText, onClick }) {
         <>
             <canvas
                 ref={canvasRef}
-                className="block w-full h-[340px] px-8"
+                className="block w-full h-[340px]"
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
                 onClick={onClick}

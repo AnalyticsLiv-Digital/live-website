@@ -1,6 +1,9 @@
 import { useState, useRef, useEffect } from 'react';
 import { stages, services, catReason, catAction } from "../../utils/data";
 import RadarChart from './Radarchart';
+import * as Scroll from 'react-scroll';
+
+const { Element: ScrollElement } = Scroll;
 
 export default function ResultsPanel({ scores, mode, depth, model, email, onEmailChange, activeTab, onTabChange, onOpenRadarModal, showToast }) {
   const pdfAreaRef = useRef(null);
@@ -165,40 +168,42 @@ ${nextText}`;
         return;
       }
 
-      // Generate canvas from the content
       const canvas = await html2canvas(printArea, {
-        scale: 2,
+        scale: 1.5,
         useCORS: true,
         logging: false,
-        backgroundColor: '#ffffff'
+        backgroundColor: '#ffffff',
+        imageTimeout: 0,
+        removeContainer: true,
+        windowWidth: printArea.scrollWidth,
+        windowHeight: printArea.scrollHeight
       });
 
-      const imgData = canvas.toDataURL('image/png');
-      const pdf = new jsPDF('p', 'mm', 'a4');
+      const imgData = canvas.toDataURL('image/jpeg', 0.7);
+
+      const pdf = new jsPDF('p', 'mm', 'a4', true);
 
       const pdfWidth = pdf.internal.pageSize.getWidth();
       const pdfHeight = pdf.internal.pageSize.getHeight();
-      const imgWidth = pdfWidth;
-      const imgHeight = (canvas.height * pdfWidth) / canvas.width;
+      const imgWidth = pdfWidth - 20;
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
       let heightLeft = imgHeight;
-      let position = 0;
+      let position = 10;
 
-      // Add first page
-      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+      pdf.addImage(imgData, 'JPEG', 10, position, imgWidth, imgHeight, undefined, 'FAST');
       heightLeft -= pdfHeight;
 
       // Add additional pages if content is longer
       while (heightLeft > 0) {
-        position = heightLeft - imgHeight;
+        position = heightLeft - imgHeight + 10;
         pdf.addPage();
-        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+        pdf.addImage(imgData, 'JPEG', 10, position, imgWidth, imgHeight, undefined, 'FAST');
         heightLeft -= pdfHeight;
       }
 
-      // Download the PDF
       const fileName = `maturity-assessment-${modeLabel(mode).toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${Date.now()}.pdf`;
-      pdf.save(fileName);
+      pdf.save(fileName, { compress: true });
 
       showToast('✅ PDF downloaded successfully!');
     } catch (error) {
@@ -244,6 +249,8 @@ ${nextText}`;
 
   return (
     <div className="border border-gray-300 rounded-[32px] bg-white/85 shadow-[0_18px_60px_rgba(15,23,42,0.08)] p-5 overflow-hidden" id="resultsPanel">
+      <ScrollElement id="resultsPanel" name="resultsPanel"></ScrollElement>
+
       <div className="flex justify-center lg:justify-between gap-3.5 items-start mb-3.5 max-lg:flex-wrap">
         <div>
           <h2 className="m-0 text-[16.5px] font-medium tracking-tight">Results</h2>
