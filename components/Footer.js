@@ -268,7 +268,7 @@ const Footer = () => {
                                 </div>
 
                                 <div className='flex items-center pb-4 justify-center opacity-[50%]'>
-                                    <div className='text-[14px] font-normal text-white'>© Created by Analytics Liv Digital LLP, In Collaboration With Collabo LLC, All rights reserved.&nbsp;&nbsp;
+                                    <div className='text-[14px] font-normal text-white'>© Created by Analytics Liv Digital LLP, All rights reserved.&nbsp;&nbsp;
                                         <br className='lg:hidden'></br><Link href="/privacy-policy" className='text-blue-200'>Privacy Policy</Link>
                                         &nbsp; | &nbsp;
                                         <Link href="/terms-and-conditions" className='text-blue-200'>Terms & Conditions&nbsp; | &nbsp;</Link>

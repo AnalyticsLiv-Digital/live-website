@@ -20,7 +20,7 @@ const DV360CaseStudy = () => {
     coverimage:
       "https://analyticsliv.com/static/logo.png",
     id: "cs8",
-    pdf: "https://storage.googleapis.com/website-bucket-uploads/cs/1744002263636865.pdf",
+    pdf: "https://storage.googleapis.com/website-bucket-uploads/cs/DV360%20Ads%20Optimization_%20Lower%20CPA%20with%20Smarter%20Signals.pdf",
   };
 
   const csSchema = generateCaseStudySchema(cd);
