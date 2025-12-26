@@ -10,24 +10,24 @@ export default function Hero({ mode, depth, scores, onStart, onShareResume, onSh
     const deg = Math.max(0, Math.min(360, Math.round((scores.overall / 100) * 360)));
 
     return (
-        <section className="mt-5 border border-gray-200/60 rounded-[32px] bg-white/85 shadow-[0_18px_60px_rgba(15,23,42,0.08)] overflow-hidden relative" aria-label="Hero">
+        <section className="mt-5 border border-gray-300 rounded-[32px] bg-white/85 shadow-[0_18px_60px_rgba(15,23,42,0.08)] overflow-hidden relative" aria-label="Hero">
             <div className="absolute inset-[-2px] bg-[radial-gradient(900px_360px_at_14%_16%,rgba(91,94,247,0.18),transparent_60%),radial-gradient(760px_320px_at_86%_6%,rgba(14,165,233,0.16),transparent_60%)] pointer-events-none"></div>
 
             <div className="relative grid lg:grid-cols-[1.2fr_0.8fr] gap-5 p-8 items-stretch">
                 <div>
                     <div className="flex gap-2.5 flex-wrap items-center mb-3.5">
-                        <span className="border border-gray-200/60 bg-white/90 text-gray-500 px-3 py-2 rounded-full text-[12.5px] font-[750]">
+                        <span className="border border-gray-300 bg-white/90 text-gray-500 px-3 py-2 rounded-full text-[12.5px] font-[750]">
                             <strong className="text-gray-900">AI-Ready</strong> Marketing & Data Maturity
                         </span>
-                        <span className="border border-gray-200/60 bg-white/90 text-gray-500 px-3 py-2 rounded-full text-[12.5px] font-[750]">
+                        <span className="border border-gray-300 bg-white/90 text-gray-500 px-3 py-2 rounded-full text-[12.5px] font-[750]">
                             Nascent → Emerging → Connected → Multi-Moment
                         </span>
-                        <span className="border border-gray-200/60 bg-white/90 text-gray-500 px-3 py-2 rounded-full text-[12.5px] font-[750]" id="dimsTag">
+                        <span className="border border-gray-300 bg-white/90 text-gray-500 px-3 py-2 rounded-full text-[12.5px] font-[750]" id="dimsTag">
                             ~{scores.totalCount} dimensions ({depthLabel(depth)} Scan)
                         </span>
                     </div>
 
-                    <h1 className="m-0 mb-3 text-5xl tracking-tight leading-tight font-[800]">
+                    <h1 className="m-0 mb-3 text-3xl lg:text-5xl tracking-tight leading-tight font-[800]">
                         Know your digital maturity — and your next best move.
                     </h1>
                     <p className="m-0 mb-4 text-gray-500 text-[16.2px] max-w-[80ch]">
@@ -58,13 +58,13 @@ export default function Hero({ mode, depth, scores, onStart, onShareResume, onSh
                         >
                             Copy landing link
                         </button>
-                        <div className="flex gap-2 items-center border border-gray-200/60 bg-white/75 px-3 py-2 rounded-full text-[12.5px] text-gray-500" title="Confidence increases as you answer more">
+                        <div className="flex gap-2 items-center border border-gray-300 bg-white/75 px-3 py-2 rounded-full text-[12.5px] text-gray-500" title="Confidence increases as you answer more">
                             <span className="w-2 h-2 rounded-full bg-green-500"></span>
                             <span>Confidence: <b className="text-gray-900">{confLabel}</b> (<b className="text-gray-900">{scores.confidence}%</b>)</span>
                         </div>
                     </div>
 
-                    <div className="border-t border-gray-200/60 my-4"></div>
+                    <div className="border-t border-gray-300 my-4"></div>
 
                     <div className="flex gap-3 items-start border border-sky-500/20 bg-sky-500/5 rounded-[20px] p-3.5">
                         <div className="w-[38px] h-[38px] rounded-2xl bg-sky-500/15 grid place-items-center font-black text-sky-900 flex-shrink-0">★</div>
@@ -77,7 +77,7 @@ export default function Hero({ mode, depth, scores, onStart, onShareResume, onSh
                     </div>
                 </div>
 
-                <aside className="border border-gray-200/60 bg-gradient-to-b from-[#fbfcff] to-white/75 rounded-[32px] shadow-[0_12px_28px_rgba(15,23,42,0.05)] p-4 relative overflow-hidden" aria-label="Visual overview">
+                <aside className="border border-gray-300 bg-gradient-to-b from-[#fbfcff] to-white/75 rounded-[32px] shadow-[0_12px_28px_rgba(15,23,42,0.05)] p-4 relative overflow-hidden" aria-label="Visual overview">
                     <div className="absolute inset-0 bg-[radial-gradient(620px_260px_at_20%_10%,rgba(91,94,247,0.14),transparent_55%)] pointer-events-none"></div>
 
                     <div className="relative">
@@ -86,7 +86,7 @@ export default function Hero({ mode, depth, scores, onStart, onShareResume, onSh
                                 <h3 className="m-0 text-[14.5px] tracking-wide font-semibold">Live summary</h3>
                                 <p className="m-0 mt-1 text-[12.5px] text-gray-500">Interactive + % values</p>
                             </div>
-                            <span className="border border-gray-200/60 bg-white/90 text-gray-500 px-3 py-2 rounded-full text-[12.5px] font-[750]">
+                            <span className="border border-gray-300 bg-white/90 text-gray-500 px-3 py-2 rounded-full text-[12.5px] font-[750]">
                                 <strong className="text-gray-900">Mode:</strong> {modeLabel(mode)}
                             </span>
                         </div>
@@ -96,7 +96,7 @@ export default function Hero({ mode, depth, scores, onStart, onShareResume, onSh
                                 <small className="text-gray-500 font-black">Confidence progress</small>
                                 <small className="text-gray-500 font-black">{scores.confidence}%</small>
                             </div>
-                            <div className="h-3 rounded-full border border-gray-200/60 bg-gray-900/5 overflow-hidden mt-2.5">
+                            <div className="h-3 rounded-full border border-gray-300 bg-gray-900/5 overflow-hidden mt-2.5">
                                 <i
                                     className="block h-full bg-gradient-to-r from-indigo-500 to-sky-500 rounded-full transition-all duration-700"
                                     style={{ width: `${scores.confidence}%` }}
@@ -105,22 +105,22 @@ export default function Hero({ mode, depth, scores, onStart, onShareResume, onSh
                         </div>
 
                         <div className="grid grid-cols-2 gap-3 mt-3.5 max-md:grid-cols-1">
-                            <div className="border border-gray-200 rounded-[20px] bg-white/90 p-3.5 shadow-[0_10px_24px_rgba(15,23,42,0.05)] min-h-[112px] flex flex-col justify-between">
+                            <div className="border border-gray-300 rounded-[20px] bg-white/90 p-3.5 shadow-[0_10px_24px_rgba(15,23,42,0.05)] min-h-[112px] flex flex-col justify-between">
                                 <b className="block text-[12.5px]">Overall maturity</b>
                                 <small className="block mt-1 text-[12.5px] text-gray-500">{stage.name} • {scores.overall}/100</small>
                                 <div className="flex gap-4 items-center mt-2.5">
                                     <div
-                                        className="w-[68px] h-[68px] rounded-full border border-gray-200/60 shadow-[0_10px_26px_rgba(15,23,42,0.06)] flex-shrink-0 relative"
+                                        className="w-[68px] h-[68px] rounded-full border border-gray-300 shadow-[0_10px_26px_rgba(15,23,42,0.06)] flex-shrink-0 relative"
                                         style={{
                                             background: `conic-gradient(from 180deg, rgb(91,94,247) 0deg, rgb(14,165,233) ${Math.max(20, Math.min(340, deg))}deg, rgba(15,23,42,0.08) 0deg)`
                                         }}
                                     >
-                                        <div className="absolute inset-[9px] rounded-full bg-white/95 border border-gray-200/60"></div>
+                                        <div className="absolute inset-[9px] rounded-full bg-white/95 border border-gray-300"></div>
                                         <strong className="absolute inset-0 grid place-items-center text-[13px] font-black tracking-tight">{scores.overall}%</strong>
                                     </div>
                                     <div className="flex-1">
                                         <small className="text-gray-500 font-black">Weighted score</small>
-                                        <div className="h-3 rounded-full border border-gray-200/60 bg-gray-900/5 overflow-hidden mt-2.5">
+                                        <div className="h-3 rounded-full border border-gray-300 bg-gray-900/5 overflow-hidden mt-2.5">
                                             <i
                                                 className="block h-full bg-gradient-to-r from-indigo-500 to-sky-500 rounded-full transition-all duration-700"
                                                 style={{ width: `${scores.overall}%` }}
@@ -130,17 +130,17 @@ export default function Hero({ mode, depth, scores, onStart, onShareResume, onSh
                                 </div>
                             </div>
 
-                            <div className="border border-gray-200/60 rounded-[20px] bg-white/90 p-3.5 shadow-[0_10px_24px_rgba(15,23,42,0.05)] min-h-[112px] flex flex-col justify-between">
+                            <div className="border border-gray-300 rounded-[20px] bg-white/90 p-3.5 shadow-[0_10px_24px_rgba(15,23,42,0.05)] min-h-[112px] flex flex-col justify-between">
                                 <b className="block text-[12.5px]">Next stage focus</b>
                                 <small className="block mt-1 text-[12.5px] text-gray-500">
                                     {stage.next ? `Target: ${stage.next}` : 'Maintain & scale'}
                                 </small>
-                                <div className="h-3 rounded-full border border-gray-200/60 bg-gray-900/5 overflow-hidden mt-2.5">
+                                <div className="h-3 rounded-full border border-gray-300 bg-gray-900/5 overflow-hidden mt-2.5">
                                     <i className="block h-full w-[42%] bg-gradient-to-r from-indigo-500 to-sky-500 rounded-full animate-pulse"></i>
                                 </div>
                             </div>
 
-                            <div className="border border-gray-200/60 rounded-[20px] bg-white/90 p-3.5 shadow-[0_10px_24px_rgba(15,23,42,0.05)] min-h-[112px] flex flex-col justify-between">
+                            <div className="border border-gray-300 rounded-[20px] bg-white/90 p-3.5 shadow-[0_10px_24px_rgba(15,23,42,0.05)] min-h-[112px] flex flex-col justify-between">
                                 <b className="block text-[12.5px]">Quick insights</b>
                                 <small className="block mt-1 text-[12.5px] text-gray-500">
                                     {scores.confidence < 25
@@ -148,7 +148,7 @@ export default function Hero({ mode, depth, scores, onStart, onShareResume, onSh
                                         : `Top gap: ${[...scores.categories].sort((a, b) => a.pct - b.pct)[0]?.name || '—'}`
                                     }
                                 </small>
-                                <div className="h-3 rounded-full border border-gray-200/60 bg-gray-900/5 overflow-hidden mt-2.5">
+                                <div className="h-3 rounded-full border border-gray-300 bg-gray-900/5 overflow-hidden mt-2.5">
                                     <i
                                         className="block h-full bg-gradient-to-r from-indigo-500 to-sky-500 rounded-full transition-all duration-700"
                                         style={{ width: `${Math.min(100, Math.max(12, scores.overall))}%` }}
