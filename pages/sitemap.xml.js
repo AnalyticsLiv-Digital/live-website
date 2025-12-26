@@ -74,6 +74,9 @@ function generateSiteMap(posts) {
        <loc>https://analyticsliv.com/services/creative</loc>
      </url>
      <url>
+       <loc>https://analyticsliv.com/services/digital-maturity-assessment</loc>
+     </url>
+     <url>
        <loc>https://analyticsliv.com/partnerships</loc>
      </url>
      <url>
