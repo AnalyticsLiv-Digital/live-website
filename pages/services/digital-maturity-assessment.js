@@ -5,11 +5,11 @@ import { stages, categoryWeights, baseModel, modeAddons, quickIds, services } fr
 import Header from '../../components/digitalMaturityAssessment/header';
 import Hero from '../../components/digitalMaturityAssessment/hero';
 import AssessmentPanel from '../../components/digitalMaturityAssessment/Assessmentpanel';
-import ResultsPanel from '../../components/digitalMaturityAssessment/ResultsPanel';
+import ResultsPanel from '../../components/digitalMaturityAssessment/Resultspanel';
 import RadarModal from '../../components/digitalMaturityAssessment/Radarmodal';
 import Toast from '../../components/digitalMaturityAssessment/Toast';
 import MetaSchemaOg from '../../components/MetaSchemaOg';
-import PrintableContent from '../../components/digitalMaturityAssessment/Printablecontent';
+import PrintableContent from '../../components/digitalMaturityAssessment/PrintableContent';
 
 const STORAGE_KEY = "al_maturity_v2";
 const SNAP_KEY = "s";
@@ -275,7 +275,7 @@ export default function Home() {
             // faqData={content}
             />
             <div className="max-w-[1560px] mx-auto px-[26px] py-6 pb-24">
-                <div className="print:hidden sticky top-16 z-30 mt-2.5 ">
+                <div className="print:hidden lg:sticky lg:top-16 z-30 mt-2.5 ">
                     <Header
                         mode={mode}
                         depth={depth}
