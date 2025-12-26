@@ -159,7 +159,7 @@ export default function RadarChart({ categories, centerText, onClick }) {
         <>
             <canvas
                 ref={canvasRef}
-                className="block w-full h-[340px]"
+                className="block w-full h-[340px] px-8"
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
                 onClick={onClick}
@@ -167,7 +167,7 @@ export default function RadarChart({ categories, centerText, onClick }) {
             {tooltip.show && (
                 <div
                     className="fixed z-[200] pointer-events-none bg-white/95 border border-gray-900/10 shadow-[0_14px_40px_rgba(15,23,42,0.12)] px-2.5 py-2.5 rounded-2xl min-w-[190px]"
-                    style={{ left: tooltip.x + 12, top: tooltip.y + 12 }}
+                    style={{ left: tooltip.x - 50, top: tooltip.y - 50 }}
                 >
                     <b className="block text-[12.8px]">{tooltip.title}</b>
                     <small className="block text-gray-500 mt-1 font-[850]">{tooltip.value}</small>
