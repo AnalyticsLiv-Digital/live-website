@@ -15,7 +15,6 @@ import PrintableContent from '../../components/digitalMaturityAssessment/Printab
 const STORAGE_KEY = "al_maturity_v2";
 const SNAP_KEY = "s";
 
-
 export default function Home() {
     const [mode, setMode] = useState('general');
     const [depth, setDepth] = useState('quick');
