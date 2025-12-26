@@ -1,3 +1,4 @@
+'use client'
 import { useState, useRef, useEffect } from 'react';
 import { stages, services, catReason, catAction } from "../../utils/data";
 import RadarChart from './Radarchart';
@@ -136,8 +137,12 @@ Next 60 days:
 ${nextText}`;
 
     try {
-      await navigator.clipboard.writeText(text);
-      showToast('Copied summary ✅');
+      if (typeof navigator !== 'undefined' && navigator.clipboard) {
+        await navigator.clipboard.writeText(text);
+        showToast('Copied summary ✅');
+      } else {
+        showToast('Clipboard not available.');
+      }
     } catch (e) {
       showToast('Copy failed (clipboard blocked).');
     }
@@ -145,7 +150,9 @@ ${nextText}`;
 
   const handlePrint = () => {
     // Trigger print for the specific content
-    window.print();
+    if (typeof window !== 'undefined') {
+      window.print();
+    }
   };
 
   const handleDownloadPDF = async () => {
@@ -162,6 +169,10 @@ ${nextText}`;
       const { jsPDF } = await import('jspdf');
 
       // Get the printable area
+      if (typeof document === 'undefined') {
+        showToast('Not available on server.');
+        return;
+      }
       const printArea = document.getElementById('printable-content');
       if (!printArea) {
         showToast('Content not found.');

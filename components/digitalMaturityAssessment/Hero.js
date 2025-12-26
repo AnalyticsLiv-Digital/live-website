@@ -1,3 +1,4 @@
+'use client'
 import { stages } from "../../utils/data";
 
 export default function Hero({ mode, depth, scores, onStart, onShareResume, onShareLanding }) {

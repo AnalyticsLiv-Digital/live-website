@@ -1,3 +1,4 @@
+'use client'
 import * as Scroll from 'react-scroll';
 
 const { Element: ScrollElement } = Scroll;
