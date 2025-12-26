@@ -6,9 +6,9 @@ export default function Header({ mode, depth, scores, onModeChange, onDepthChang
 
     return (
         <div className="">
-            <div className="flex items-center justify-between gap-4 p-3.5 px-4 border border-gray-200/60 rounded-[20px] bg-white/80 backdrop-blur-sm shadow-[0_10px_30px_rgba(15,23,42,0.06)]">
-                <div className="flex items-center gap-3.5 min-w-[320px] max-md:min-w-0">
-                    <div className="w-[46px] h-[46px] rounded-2xl border border-gray-200/60 bg-white/95 shadow-[0_14px_30px_rgba(15,23,42,0.06)] grid place-items-center flex-shrink-0 overflow-hidden">
+            <div className="flex max-lg:flex-wrap items-center justify-between gap-4 p-3.5 px-4 border border-gray-300 rounded-[20px] bg-white/80 backdrop-blur-sm shadow-[0_10px_30px_rgba(15,23,42,0.06)]">
+                <div className="flex max-lg:flex-wrap items-center max-md:justify-center max-md:mx-auto gap-3.5 min-w-[320px] max-md:min-w-0">
+                    <div className="w-[46px] h-[46px] rounded-2xl border border-gray-300 bg-white/95 shadow-[0_14px_30px_rgba(15,23,42,0.06)] grid place-items-center flex-shrink-0 overflow-hidden">
                         <img
                             src="https://storage.googleapis.com/website-bucket-uploads/static/logo.png"
                             alt="AnalyticsLiv"
@@ -21,8 +21,8 @@ export default function Header({ mode, depth, scores, onModeChange, onDepthChang
                     </div>
                 </div>
 
-                <div className="flex gap-3 items-center flex- justify-end w-full" aria-label="Top nav">
-                    <div className="flex gap-1.5 p-1.5 rounded-full border border-gray-300 bg-white/75 shadow-[0_10px_26px_rgba(15,23,42,0.05)]" aria-label="Business mode toggle">
+                <div className="flex gap-3 items-center max-md:justify-center max-lg:flex-wrap justify-end w-full" aria-label="Top nav">
+                    <div className="flex max-lg:flex-wrap max-lg:justify-center gap-1.5 p-1.5 rounded-full border border-gray-300 bg-white/75 shadow-[0_10px_26px_rgba(15,23,42,0.05)]" aria-label="Business mode toggle">
                         {['general', 'ecommerce', 'leadgen', 'publisher'].map(m => (
                             <button
                                 key={m}
@@ -38,7 +38,7 @@ export default function Header({ mode, depth, scores, onModeChange, onDepthChang
                         ))}
                     </div>
 
-                    <div className="flex gap-1.5 p-1.5 rounded-full border border-gray-300 bg-white/75 shadow-[0_10px_26px_rgba(15,23,42,0.05)]" aria-label="Assessment depth">
+                    <div className="flex max-lg:flex-wrap gap-1.5 p-1.5 rounded-full border border-gray-300 bg-white/75 shadow-[0_10px_26px_rgba(15,23,42,0.05)]" aria-label="Assessment depth">
                         <button
                             type="button"
                             onClick={() => onDepthChange('quick')}
@@ -63,7 +63,7 @@ export default function Header({ mode, depth, scores, onModeChange, onDepthChang
                         </button>
                     </div>
 
-                    <div className="flex gap-2 items-center border border-gray-200 bg-white/75 px-3 py-2 rounded-full text-[12.5px] text-gray-500 whitespace-nowrap" title="Progress">
+                    <div className="flex max-lg:flex-wrap gap-2 items-center border border-gray-200 bg-white/75 px-3 py-2 rounded-full text-[12.5px] text-gray-500 whitespace-nowrap" title="Progress">
                         <span className="w-2 h-2 rounded-full bg-indigo-500"></span>
                         <span><b className="text-gray-900">{scores.answeredCount}</b>/<span>{scores.totalCount}</span></span>
                     </div>
