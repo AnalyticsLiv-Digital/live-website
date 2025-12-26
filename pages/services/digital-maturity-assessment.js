@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import * as Scroll from 'react-scroll';
 import { stages, categoryWeights, baseModel, modeAddons, quickIds, services } from '../../utils/data';
 import Header from '../../components/digitalMaturityAssessment/header';
 import Hero from '../../components/digitalMaturityAssessment/hero';
@@ -24,7 +25,6 @@ export default function Home() {
     const [showRadarModal, setShowRadarModal] = useState(false);
     const [email, setEmail] = useState('');
     const [activeTab, setActiveTab] = useState('visuals');
-
 
     // Build model based on mode and depth
     const buildModel = (currentMode, currentDepth) => {
@@ -262,6 +262,22 @@ export default function Home() {
 
     const scores = calculateScores();
 
+    const scrolling = () => {
+        Scroll.scroller.scrollTo("assessmentPanel", {
+            duration: 500,
+            smooth: true,
+            offset: -100,
+        });
+    }
+
+    const scrollingResults = () => {
+        Scroll.scroller.scrollTo("resultsPanel", {
+            duration: 500,
+            smooth: true,
+            offset: -100,
+        });
+    }
+
     return (
         <div className="min-h-screen max-w-7xl mx-auto"
             style={{ fontFamily: 'ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji"' }}>
@@ -272,37 +288,49 @@ export default function Home() {
                 description="Get a maturity score + stage (Nascent → Multi-Moment) and a tailored roadmap."
                 twitterTitle="Digital & Marketing Maturity Assessment | AnalyticsLiv"
                 twitterDescription="Get a maturity score + stage (Nascent → Multi-Moment) and a tailored roadmap."
-            // faqData={content}
             />
-            <div className="max-w-[1560px] mx-auto px-[26px] py-6 pb-24">
-                <div className="print:hidden lg:sticky lg:top-16 z-30 mt-2.5 ">
-                    <Header
-                        mode={mode}
-                        depth={depth}
-                        scores={scores}
-                        onModeChange={handleModeChange}
-                        onDepthChange={handleDepthChange}
-                        onReset={handleReset}
-                        onShowResults={() => document.getElementById('resultsPanel')?.scrollIntoView({ behavior: 'smooth' })}
-                    />
 
-                    <div className="hidden print:block">
-                        <PrintableContent
+            <div className="print:hidden">
+                <div className="max-w-[1560px] mx-auto px-[26px] py-6 pb-24">
+                    <div className="lg:sticky lg:top-16 z-30 mt-2.5">
+                        <Header
                             mode={mode}
                             depth={depth}
                             scores={scores}
+                            onModeChange={handleModeChange}
+                            onDepthChange={handleDepthChange}
+                            onReset={handleReset}
+                            onShowResults={scrollingResults}
+                        />
+                    </div>
+
+                    <Hero
+                        mode={mode}
+                        depth={depth}
+                        scores={scores}
+                        onStart={scrolling}
+                        onShareResume={handleShareResume}
+                        onShareLanding={handleShareLanding}
+                    />
+
+                    <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-5 mt-5">
+                        <AssessmentPanel
                             model={model}
                             activeCat={activeCat}
-                            email={email}
-                            activeTab={activeTab}
-                            onStart={() => { }}
-                            onShareResume={handleShareResume}
-                            onShareLanding={handleShareLanding}
                             onSetActiveCat={setActiveCat}
                             onSetAnswer={setAnswer}
                             onNext={() => activeCat < model.length - 1 && setActiveCat(activeCat + 1)}
                             onPrev={() => activeCat > 0 && setActiveCat(activeCat - 1)}
+                        />
+
+                        <ResultsPanel
+                            scores={scores}
+                            mode={mode}
+                            depth={depth}
+                            model={model}
+                            email={email}
                             onEmailChange={setEmail}
+                            activeTab={activeTab}
                             onTabChange={setActiveTab}
                             onOpenRadarModal={() => setShowRadarModal(true)}
                             showToast={showToast}
@@ -310,51 +338,49 @@ export default function Home() {
                     </div>
                 </div>
 
-                <Hero
-                    mode={mode}
-                    depth={depth}
-                    scores={scores}
-                    onStart={() => document.getElementById('assessmentPanel')?.scrollIntoView({ behavior: 'smooth' })}
-                    onShareResume={handleShareResume}
-                    onShareLanding={handleShareLanding}
-                />
-
-                <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-5 mt-5">
-                    <AssessmentPanel
-                        model={model}
-                        activeCat={activeCat}
-                        onSetActiveCat={setActiveCat}
-                        onSetAnswer={setAnswer}
-                        onNext={() => activeCat < model.length - 1 && setActiveCat(activeCat + 1)}
-                        onPrev={() => activeCat > 0 && setActiveCat(activeCat - 1)}
-                    />
-
-                    <ResultsPanel
-                        scores={scores}
-                        mode={mode}
-                        depth={depth}
-                        model={model}
-                        email={email}
-                        onEmailChange={setEmail}
-                        activeTab={activeTab}
-                        onTabChange={setActiveTab}
-                        onOpenRadarModal={() => setShowRadarModal(true)}
-                        showToast={showToast}
-                    />
-                </div>
-            </div>
-            <div className="print:hidden">
-
                 <RadarModal
                     show={showRadarModal}
                     onClose={() => setShowRadarModal(false)}
                     categories={scores.categories}
                     overall={scores.overall}
                 />
-            </div>
-            <div className="print:hidden">
 
                 <Toast show={toast.show} message={toast.message} />
+            </div>
+
+            {/* Printable Content - Visible in DOM but positioned off-screen */}
+            <div
+                style={{
+                    position: 'absolute',
+                    left: '-9999px',
+                    top: 0,
+                    visibility: 'visible',
+                    opacity: 1
+                }}
+                className="print:!static print:!left-0 print:!visible"
+            >
+                <div className="max-w-[1560px] mx-auto px-[26px] py-6 pb-24">
+                    <PrintableContent
+                        mode={mode}
+                        depth={depth}
+                        scores={scores}
+                        model={model}
+                        activeCat={activeCat}
+                        email={email}
+                        activeTab={activeTab}
+                        onStart={() => { }}
+                        onShareResume={handleShareResume}
+                        onShareLanding={handleShareLanding}
+                        onSetActiveCat={setActiveCat}
+                        onSetAnswer={setAnswer}
+                        onNext={() => activeCat < model.length - 1 && setActiveCat(activeCat + 1)}
+                        onPrev={() => activeCat > 0 && setActiveCat(activeCat - 1)}
+                        onEmailChange={setEmail}
+                        onTabChange={setActiveTab}
+                        onOpenRadarModal={() => setShowRadarModal(true)}
+                        showToast={showToast}
+                    />
+                </div>
             </div>
         </div>
     );
