@@ -1,3 +1,7 @@
+import * as Scroll from 'react-scroll';
+
+const { Element: ScrollElement } = Scroll;
+
 export default function AssessmentPanel({ model, activeCat, onSetActiveCat, onSetAnswer, onNext, onPrev }) {
     const currentCat = model[activeCat];
 
@@ -10,6 +14,8 @@ export default function AssessmentPanel({ model, activeCat, onSetActiveCat, onSe
 
     return (
         <div className="border border-gray-300 rounded-[32px] bg-white/85 shadow-[0_18px_60px_rgba(15,23,42,0.08)] p-5 overflow-hidden" id="assessmentPanel">
+
+            <ScrollElement id="assessmentPanel" name="assessmentPanel"></ScrollElement>
             <div className="flex justify-between gap-3.5 items-start mb-3.5">
                 <div>
                     <h2 className="m-0 text-[16.5px] font-medium tracking-tight">Assessment</h2>
