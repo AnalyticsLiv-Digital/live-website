@@ -100,8 +100,7 @@ const handler = async (req, res) => {
 
             // User acknowledgment email
             const userMailOptions = {
-                to: [email, "pruthvirajsinh.rathod@analyticsliv.com"],
-                // to: [email, "anuj@analyticsliv.com"],
+                to: [email, "anuj@analyticsliv.com"],
                 subject: `AnalyticsLiv - Thank you for your ${serviceName} inquiry`,
                 html: `
           <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
