@@ -1,5 +1,5 @@
 'use client'
-import Hero from './hero';
+import Hero from './Hero';
 import ResultsPanel from './Resultspanel';
 
 export default function PrintableContent({

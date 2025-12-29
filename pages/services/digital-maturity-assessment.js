@@ -3,14 +3,14 @@
 import { useState, useEffect, useRef } from 'react';
 import * as Scroll from 'react-scroll';
 import { stages, categoryWeights, baseModel, modeAddons, quickIds, services } from '../../utils/data';
-import Header from '../../components/digitalMaturityAssessment/header';
-import Hero from '../../components/digitalMaturityAssessment/hero';
+import Header from '../../components/digitalMaturityAssessment/Header';
+import Hero from '../../components/digitalMaturityAssessment/Hero';
 import AssessmentPanel from '../../components/digitalMaturityAssessment/Assessmentpanel';
 import ResultsPanel from '../../components/digitalMaturityAssessment/Resultspanel';
 import RadarModal from '../../components/digitalMaturityAssessment/Radarmodal';
 import Toast from '../../components/digitalMaturityAssessment/Toast';
 import MetaSchemaOg from '../../components/MetaSchemaOg';
-import PrintableContent from '../../components/digitalMaturityAssessment/PrintableContent';
+import PrintableContent from '../../components/digitalMaturityAssessment/Printablecontent';
 
 const STORAGE_KEY = "al_maturity_v2";
 const SNAP_KEY = "s";
