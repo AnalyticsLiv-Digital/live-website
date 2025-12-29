@@ -78,7 +78,7 @@ const Serversidetracking = () => {
     const content = [
         { question: 'What does the rollout typically involve?', answer: 'GTM server container on App Engine or Cloud Run, DNS for first‑party endpoint, CMP hookup for Consent Mode v2, CAPI with dedup IDs, and Looker dashboards.' },
         { question: 'Do we still keep any client‑side tags?', answer: 'Yes—hybrid is common. We keep lightweight client‑side triggers for consent and event IDs, while routing heavy lifting via the server container.' },
-        { question: 'How do you prove ROI?', answer: 'We measure event delivery rate, modeled conversions gained, match quality, CWV improvements, and media outcomes (CPA/ROAS) before vs after.' },
+        { question: 'How do you prove ROI?', answer: 'We measure event delivery rate, modeled conversions gained, match quality before vs after.' },
         { question: 'What about costs?', answer: 'Cloud hosting is usage‑based and modest for most sites. We right‑size architecture and provide cost dashboards so there are no surprises.' }
     ]
 
